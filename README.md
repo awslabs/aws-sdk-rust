@@ -1,4 +1,4 @@
-# The AWS SDK for Rust [![Docs](https://img.shields.io/badge/docs-v0.0.9--alpha-blue)](https://awslabs.github.io/aws-sdk-rust/)
+# The AWS SDK for Rust [![Docs](https://img.shields.io/badge/docs-v0.0.9--alpha-blue)](https://awslabs.github.io/aws-sdk-rust/) ![MSRV](https://img.shields.io/badge/msrv-1.52.1-red)
 
 This repo contains the new AWS SDK for Rust and its [public roadmap](https://github.com/awslabs/aws-sdk-rust/projects/1)
 
@@ -74,6 +74,10 @@ If you are interested in contributing to the new AWS SDK for Rust, please take a
 ## AWS Services Supported
 
 This alpha SDK currently does not provide support for every AWS service. You can see all the services currently supported on [AWS_SERVICES_SUPPORTED](AWS_SERVICES_SUPPORTED.md)
+
+## Supported Rust Versions (MSRV)
+
+The SDK currently requires a minimum of Rust 1.52.1, and is not guaranteed to build on compiler versions earlier than that. While we are still in alpha, we will be keeping the minimum compiler version two releases behind the latest stable release where possible (so if the latest stable is 1.55, we will be on 1.53). However, we are not making any guarantees around this at present. Increases in minimum required Rust version will be called out in the Release Notes for new releases of the SDK.
 
 ## Additional Resources
 
