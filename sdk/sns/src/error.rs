@@ -8,20 +8,20 @@ pub struct AddPermissionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AddPermissionErrorKind {
-    AuthorizationErrorError(crate::error::AuthorizationErrorError),
-    InternalErrorError(crate::error::InternalErrorError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    NotFoundError(crate::error::NotFoundError),
+    AuthorizationErrorException(crate::error::AuthorizationErrorException),
+    InternalErrorException(crate::error::InternalErrorException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AddPermissionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            AddPermissionErrorKind::AuthorizationErrorError(_inner) => _inner.fmt(f),
-            AddPermissionErrorKind::InternalErrorError(_inner) => _inner.fmt(f),
-            AddPermissionErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            AddPermissionErrorKind::NotFoundError(_inner) => _inner.fmt(f),
+            AddPermissionErrorKind::AuthorizationErrorException(_inner) => _inner.fmt(f),
+            AddPermissionErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
+            AddPermissionErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            AddPermissionErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             AddPermissionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -70,29 +70,35 @@ impl AddPermissionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_authorization_error_error(&self) -> bool {
+    pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            AddPermissionErrorKind::AuthorizationErrorError(_)
+            AddPermissionErrorKind::AuthorizationErrorException(_)
         )
     }
-    pub fn is_internal_error_error(&self) -> bool {
-        matches!(&self.kind, AddPermissionErrorKind::InternalErrorError(_))
+    pub fn is_internal_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AddPermissionErrorKind::InternalErrorException(_)
+        )
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
-        matches!(&self.kind, AddPermissionErrorKind::InvalidParameterError(_))
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AddPermissionErrorKind::InvalidParameterException(_)
+        )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, AddPermissionErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, AddPermissionErrorKind::NotFoundException(_))
     }
 }
 impl std::error::Error for AddPermissionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            AddPermissionErrorKind::AuthorizationErrorError(_inner) => Some(_inner),
-            AddPermissionErrorKind::InternalErrorError(_inner) => Some(_inner),
-            AddPermissionErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            AddPermissionErrorKind::NotFoundError(_inner) => Some(_inner),
+            AddPermissionErrorKind::AuthorizationErrorException(_inner) => Some(_inner),
+            AddPermissionErrorKind::InternalErrorException(_inner) => Some(_inner),
+            AddPermissionErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            AddPermissionErrorKind::NotFoundException(_inner) => Some(_inner),
             AddPermissionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -107,20 +113,24 @@ pub struct CheckIfPhoneNumberIsOptedOutError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CheckIfPhoneNumberIsOptedOutErrorKind {
-    AuthorizationErrorError(crate::error::AuthorizationErrorError),
-    InternalErrorError(crate::error::InternalErrorError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ThrottledError(crate::error::ThrottledError),
+    AuthorizationErrorException(crate::error::AuthorizationErrorException),
+    InternalErrorException(crate::error::InternalErrorException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ThrottledException(crate::error::ThrottledException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CheckIfPhoneNumberIsOptedOutError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CheckIfPhoneNumberIsOptedOutErrorKind::AuthorizationErrorError(_inner) => _inner.fmt(f),
-            CheckIfPhoneNumberIsOptedOutErrorKind::InternalErrorError(_inner) => _inner.fmt(f),
-            CheckIfPhoneNumberIsOptedOutErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            CheckIfPhoneNumberIsOptedOutErrorKind::ThrottledError(_inner) => _inner.fmt(f),
+            CheckIfPhoneNumberIsOptedOutErrorKind::AuthorizationErrorException(_inner) => {
+                _inner.fmt(f)
+            }
+            CheckIfPhoneNumberIsOptedOutErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
+            CheckIfPhoneNumberIsOptedOutErrorKind::InvalidParameterException(_inner) => {
+                _inner.fmt(f)
+            }
+            CheckIfPhoneNumberIsOptedOutErrorKind::ThrottledException(_inner) => _inner.fmt(f),
             CheckIfPhoneNumberIsOptedOutErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -169,38 +179,42 @@ impl CheckIfPhoneNumberIsOptedOutError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_authorization_error_error(&self) -> bool {
+    pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CheckIfPhoneNumberIsOptedOutErrorKind::AuthorizationErrorError(_)
+            CheckIfPhoneNumberIsOptedOutErrorKind::AuthorizationErrorException(_)
         )
     }
-    pub fn is_internal_error_error(&self) -> bool {
+    pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CheckIfPhoneNumberIsOptedOutErrorKind::InternalErrorError(_)
+            CheckIfPhoneNumberIsOptedOutErrorKind::InternalErrorException(_)
         )
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CheckIfPhoneNumberIsOptedOutErrorKind::InvalidParameterError(_)
+            CheckIfPhoneNumberIsOptedOutErrorKind::InvalidParameterException(_)
         )
     }
-    pub fn is_throttled_error(&self) -> bool {
+    pub fn is_throttled_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CheckIfPhoneNumberIsOptedOutErrorKind::ThrottledError(_)
+            CheckIfPhoneNumberIsOptedOutErrorKind::ThrottledException(_)
         )
     }
 }
 impl std::error::Error for CheckIfPhoneNumberIsOptedOutError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CheckIfPhoneNumberIsOptedOutErrorKind::AuthorizationErrorError(_inner) => Some(_inner),
-            CheckIfPhoneNumberIsOptedOutErrorKind::InternalErrorError(_inner) => Some(_inner),
-            CheckIfPhoneNumberIsOptedOutErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            CheckIfPhoneNumberIsOptedOutErrorKind::ThrottledError(_inner) => Some(_inner),
+            CheckIfPhoneNumberIsOptedOutErrorKind::AuthorizationErrorException(_inner) => {
+                Some(_inner)
+            }
+            CheckIfPhoneNumberIsOptedOutErrorKind::InternalErrorException(_inner) => Some(_inner),
+            CheckIfPhoneNumberIsOptedOutErrorKind::InvalidParameterException(_inner) => {
+                Some(_inner)
+            }
+            CheckIfPhoneNumberIsOptedOutErrorKind::ThrottledException(_inner) => Some(_inner),
             CheckIfPhoneNumberIsOptedOutErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -215,24 +229,28 @@ pub struct ConfirmSubscriptionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ConfirmSubscriptionErrorKind {
-    AuthorizationErrorError(crate::error::AuthorizationErrorError),
-    FilterPolicyLimitExceededError(crate::error::FilterPolicyLimitExceededError),
-    InternalErrorError(crate::error::InternalErrorError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    NotFoundError(crate::error::NotFoundError),
-    SubscriptionLimitExceededError(crate::error::SubscriptionLimitExceededError),
+    AuthorizationErrorException(crate::error::AuthorizationErrorException),
+    FilterPolicyLimitExceededException(crate::error::FilterPolicyLimitExceededException),
+    InternalErrorException(crate::error::InternalErrorException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    NotFoundException(crate::error::NotFoundException),
+    SubscriptionLimitExceededException(crate::error::SubscriptionLimitExceededException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ConfirmSubscriptionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ConfirmSubscriptionErrorKind::AuthorizationErrorError(_inner) => _inner.fmt(f),
-            ConfirmSubscriptionErrorKind::FilterPolicyLimitExceededError(_inner) => _inner.fmt(f),
-            ConfirmSubscriptionErrorKind::InternalErrorError(_inner) => _inner.fmt(f),
-            ConfirmSubscriptionErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            ConfirmSubscriptionErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            ConfirmSubscriptionErrorKind::SubscriptionLimitExceededError(_inner) => _inner.fmt(f),
+            ConfirmSubscriptionErrorKind::AuthorizationErrorException(_inner) => _inner.fmt(f),
+            ConfirmSubscriptionErrorKind::FilterPolicyLimitExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            ConfirmSubscriptionErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
+            ConfirmSubscriptionErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            ConfirmSubscriptionErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            ConfirmSubscriptionErrorKind::SubscriptionLimitExceededException(_inner) => {
+                _inner.fmt(f)
+            }
             ConfirmSubscriptionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -281,49 +299,56 @@ impl ConfirmSubscriptionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_authorization_error_error(&self) -> bool {
+    pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ConfirmSubscriptionErrorKind::AuthorizationErrorError(_)
+            ConfirmSubscriptionErrorKind::AuthorizationErrorException(_)
         )
     }
-    pub fn is_filter_policy_limit_exceeded_error(&self) -> bool {
+    pub fn is_filter_policy_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ConfirmSubscriptionErrorKind::FilterPolicyLimitExceededError(_)
+            ConfirmSubscriptionErrorKind::FilterPolicyLimitExceededException(_)
         )
     }
-    pub fn is_internal_error_error(&self) -> bool {
+    pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ConfirmSubscriptionErrorKind::InternalErrorError(_)
+            ConfirmSubscriptionErrorKind::InternalErrorException(_)
         )
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ConfirmSubscriptionErrorKind::InvalidParameterError(_)
+            ConfirmSubscriptionErrorKind::InvalidParameterException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, ConfirmSubscriptionErrorKind::NotFoundError(_))
-    }
-    pub fn is_subscription_limit_exceeded_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ConfirmSubscriptionErrorKind::SubscriptionLimitExceededError(_)
+            ConfirmSubscriptionErrorKind::NotFoundException(_)
+        )
+    }
+    pub fn is_subscription_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ConfirmSubscriptionErrorKind::SubscriptionLimitExceededException(_)
         )
     }
 }
 impl std::error::Error for ConfirmSubscriptionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ConfirmSubscriptionErrorKind::AuthorizationErrorError(_inner) => Some(_inner),
-            ConfirmSubscriptionErrorKind::FilterPolicyLimitExceededError(_inner) => Some(_inner),
-            ConfirmSubscriptionErrorKind::InternalErrorError(_inner) => Some(_inner),
-            ConfirmSubscriptionErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            ConfirmSubscriptionErrorKind::NotFoundError(_inner) => Some(_inner),
-            ConfirmSubscriptionErrorKind::SubscriptionLimitExceededError(_inner) => Some(_inner),
+            ConfirmSubscriptionErrorKind::AuthorizationErrorException(_inner) => Some(_inner),
+            ConfirmSubscriptionErrorKind::FilterPolicyLimitExceededException(_inner) => {
+                Some(_inner)
+            }
+            ConfirmSubscriptionErrorKind::InternalErrorException(_inner) => Some(_inner),
+            ConfirmSubscriptionErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            ConfirmSubscriptionErrorKind::NotFoundException(_inner) => Some(_inner),
+            ConfirmSubscriptionErrorKind::SubscriptionLimitExceededException(_inner) => {
+                Some(_inner)
+            }
             ConfirmSubscriptionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -338,18 +363,20 @@ pub struct CreatePlatformApplicationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreatePlatformApplicationErrorKind {
-    AuthorizationErrorError(crate::error::AuthorizationErrorError),
-    InternalErrorError(crate::error::InternalErrorError),
-    InvalidParameterError(crate::error::InvalidParameterError),
+    AuthorizationErrorException(crate::error::AuthorizationErrorException),
+    InternalErrorException(crate::error::InternalErrorException),
+    InvalidParameterException(crate::error::InvalidParameterException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreatePlatformApplicationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreatePlatformApplicationErrorKind::AuthorizationErrorError(_inner) => _inner.fmt(f),
-            CreatePlatformApplicationErrorKind::InternalErrorError(_inner) => _inner.fmt(f),
-            CreatePlatformApplicationErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
+            CreatePlatformApplicationErrorKind::AuthorizationErrorException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreatePlatformApplicationErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
+            CreatePlatformApplicationErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
             CreatePlatformApplicationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -398,31 +425,31 @@ impl CreatePlatformApplicationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_authorization_error_error(&self) -> bool {
+    pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreatePlatformApplicationErrorKind::AuthorizationErrorError(_)
+            CreatePlatformApplicationErrorKind::AuthorizationErrorException(_)
         )
     }
-    pub fn is_internal_error_error(&self) -> bool {
+    pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreatePlatformApplicationErrorKind::InternalErrorError(_)
+            CreatePlatformApplicationErrorKind::InternalErrorException(_)
         )
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreatePlatformApplicationErrorKind::InvalidParameterError(_)
+            CreatePlatformApplicationErrorKind::InvalidParameterException(_)
         )
     }
 }
 impl std::error::Error for CreatePlatformApplicationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreatePlatformApplicationErrorKind::AuthorizationErrorError(_inner) => Some(_inner),
-            CreatePlatformApplicationErrorKind::InternalErrorError(_inner) => Some(_inner),
-            CreatePlatformApplicationErrorKind::InvalidParameterError(_inner) => Some(_inner),
+            CreatePlatformApplicationErrorKind::AuthorizationErrorException(_inner) => Some(_inner),
+            CreatePlatformApplicationErrorKind::InternalErrorException(_inner) => Some(_inner),
+            CreatePlatformApplicationErrorKind::InvalidParameterException(_inner) => Some(_inner),
             CreatePlatformApplicationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -437,20 +464,20 @@ pub struct CreatePlatformEndpointError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreatePlatformEndpointErrorKind {
-    AuthorizationErrorError(crate::error::AuthorizationErrorError),
-    InternalErrorError(crate::error::InternalErrorError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    NotFoundError(crate::error::NotFoundError),
+    AuthorizationErrorException(crate::error::AuthorizationErrorException),
+    InternalErrorException(crate::error::InternalErrorException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreatePlatformEndpointError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreatePlatformEndpointErrorKind::AuthorizationErrorError(_inner) => _inner.fmt(f),
-            CreatePlatformEndpointErrorKind::InternalErrorError(_inner) => _inner.fmt(f),
-            CreatePlatformEndpointErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            CreatePlatformEndpointErrorKind::NotFoundError(_inner) => _inner.fmt(f),
+            CreatePlatformEndpointErrorKind::AuthorizationErrorException(_inner) => _inner.fmt(f),
+            CreatePlatformEndpointErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
+            CreatePlatformEndpointErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            CreatePlatformEndpointErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             CreatePlatformEndpointErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -499,38 +526,38 @@ impl CreatePlatformEndpointError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_authorization_error_error(&self) -> bool {
+    pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreatePlatformEndpointErrorKind::AuthorizationErrorError(_)
+            CreatePlatformEndpointErrorKind::AuthorizationErrorException(_)
         )
     }
-    pub fn is_internal_error_error(&self) -> bool {
+    pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreatePlatformEndpointErrorKind::InternalErrorError(_)
+            CreatePlatformEndpointErrorKind::InternalErrorException(_)
         )
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreatePlatformEndpointErrorKind::InvalidParameterError(_)
+            CreatePlatformEndpointErrorKind::InvalidParameterException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreatePlatformEndpointErrorKind::NotFoundError(_)
+            CreatePlatformEndpointErrorKind::NotFoundException(_)
         )
     }
 }
 impl std::error::Error for CreatePlatformEndpointError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreatePlatformEndpointErrorKind::AuthorizationErrorError(_inner) => Some(_inner),
-            CreatePlatformEndpointErrorKind::InternalErrorError(_inner) => Some(_inner),
-            CreatePlatformEndpointErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            CreatePlatformEndpointErrorKind::NotFoundError(_inner) => Some(_inner),
+            CreatePlatformEndpointErrorKind::AuthorizationErrorException(_inner) => Some(_inner),
+            CreatePlatformEndpointErrorKind::InternalErrorException(_inner) => Some(_inner),
+            CreatePlatformEndpointErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            CreatePlatformEndpointErrorKind::NotFoundException(_inner) => Some(_inner),
             CreatePlatformEndpointErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -545,24 +572,28 @@ pub struct CreateSMSSandboxPhoneNumberError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateSMSSandboxPhoneNumberErrorKind {
-    AuthorizationErrorError(crate::error::AuthorizationErrorError),
-    InternalErrorError(crate::error::InternalErrorError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    OptedOutError(crate::error::OptedOutError),
-    ThrottledError(crate::error::ThrottledError),
-    UserErrorError(crate::error::UserErrorError),
+    AuthorizationErrorException(crate::error::AuthorizationErrorException),
+    InternalErrorException(crate::error::InternalErrorException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    OptedOutException(crate::error::OptedOutException),
+    ThrottledException(crate::error::ThrottledException),
+    UserErrorException(crate::error::UserErrorException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateSMSSandboxPhoneNumberError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateSMSSandboxPhoneNumberErrorKind::AuthorizationErrorError(_inner) => _inner.fmt(f),
-            CreateSMSSandboxPhoneNumberErrorKind::InternalErrorError(_inner) => _inner.fmt(f),
-            CreateSMSSandboxPhoneNumberErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            CreateSMSSandboxPhoneNumberErrorKind::OptedOutError(_inner) => _inner.fmt(f),
-            CreateSMSSandboxPhoneNumberErrorKind::ThrottledError(_inner) => _inner.fmt(f),
-            CreateSMSSandboxPhoneNumberErrorKind::UserErrorError(_inner) => _inner.fmt(f),
+            CreateSMSSandboxPhoneNumberErrorKind::AuthorizationErrorException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateSMSSandboxPhoneNumberErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
+            CreateSMSSandboxPhoneNumberErrorKind::InvalidParameterException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateSMSSandboxPhoneNumberErrorKind::OptedOutException(_inner) => _inner.fmt(f),
+            CreateSMSSandboxPhoneNumberErrorKind::ThrottledException(_inner) => _inner.fmt(f),
+            CreateSMSSandboxPhoneNumberErrorKind::UserErrorException(_inner) => _inner.fmt(f),
             CreateSMSSandboxPhoneNumberErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -611,52 +642,54 @@ impl CreateSMSSandboxPhoneNumberError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_authorization_error_error(&self) -> bool {
+    pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateSMSSandboxPhoneNumberErrorKind::AuthorizationErrorError(_)
+            CreateSMSSandboxPhoneNumberErrorKind::AuthorizationErrorException(_)
         )
     }
-    pub fn is_internal_error_error(&self) -> bool {
+    pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateSMSSandboxPhoneNumberErrorKind::InternalErrorError(_)
+            CreateSMSSandboxPhoneNumberErrorKind::InternalErrorException(_)
         )
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateSMSSandboxPhoneNumberErrorKind::InvalidParameterError(_)
+            CreateSMSSandboxPhoneNumberErrorKind::InvalidParameterException(_)
         )
     }
-    pub fn is_opted_out_error(&self) -> bool {
+    pub fn is_opted_out_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateSMSSandboxPhoneNumberErrorKind::OptedOutError(_)
+            CreateSMSSandboxPhoneNumberErrorKind::OptedOutException(_)
         )
     }
-    pub fn is_throttled_error(&self) -> bool {
+    pub fn is_throttled_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateSMSSandboxPhoneNumberErrorKind::ThrottledError(_)
+            CreateSMSSandboxPhoneNumberErrorKind::ThrottledException(_)
         )
     }
-    pub fn is_user_error_error(&self) -> bool {
+    pub fn is_user_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateSMSSandboxPhoneNumberErrorKind::UserErrorError(_)
+            CreateSMSSandboxPhoneNumberErrorKind::UserErrorException(_)
         )
     }
 }
 impl std::error::Error for CreateSMSSandboxPhoneNumberError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateSMSSandboxPhoneNumberErrorKind::AuthorizationErrorError(_inner) => Some(_inner),
-            CreateSMSSandboxPhoneNumberErrorKind::InternalErrorError(_inner) => Some(_inner),
-            CreateSMSSandboxPhoneNumberErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            CreateSMSSandboxPhoneNumberErrorKind::OptedOutError(_inner) => Some(_inner),
-            CreateSMSSandboxPhoneNumberErrorKind::ThrottledError(_inner) => Some(_inner),
-            CreateSMSSandboxPhoneNumberErrorKind::UserErrorError(_inner) => Some(_inner),
+            CreateSMSSandboxPhoneNumberErrorKind::AuthorizationErrorException(_inner) => {
+                Some(_inner)
+            }
+            CreateSMSSandboxPhoneNumberErrorKind::InternalErrorException(_inner) => Some(_inner),
+            CreateSMSSandboxPhoneNumberErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            CreateSMSSandboxPhoneNumberErrorKind::OptedOutException(_inner) => Some(_inner),
+            CreateSMSSandboxPhoneNumberErrorKind::ThrottledException(_inner) => Some(_inner),
+            CreateSMSSandboxPhoneNumberErrorKind::UserErrorException(_inner) => Some(_inner),
             CreateSMSSandboxPhoneNumberErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -671,30 +704,30 @@ pub struct CreateTopicError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateTopicErrorKind {
-    AuthorizationErrorError(crate::error::AuthorizationErrorError),
-    ConcurrentAccessError(crate::error::ConcurrentAccessError),
-    InternalErrorError(crate::error::InternalErrorError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    InvalidSecurityError(crate::error::InvalidSecurityError),
-    StaleTagError(crate::error::StaleTagError),
-    TagLimitExceededError(crate::error::TagLimitExceededError),
-    TagPolicyError(crate::error::TagPolicyError),
-    TopicLimitExceededError(crate::error::TopicLimitExceededError),
+    AuthorizationErrorException(crate::error::AuthorizationErrorException),
+    ConcurrentAccessException(crate::error::ConcurrentAccessException),
+    InternalErrorException(crate::error::InternalErrorException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    InvalidSecurityException(crate::error::InvalidSecurityException),
+    StaleTagException(crate::error::StaleTagException),
+    TagLimitExceededException(crate::error::TagLimitExceededException),
+    TagPolicyException(crate::error::TagPolicyException),
+    TopicLimitExceededException(crate::error::TopicLimitExceededException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateTopicError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateTopicErrorKind::AuthorizationErrorError(_inner) => _inner.fmt(f),
-            CreateTopicErrorKind::ConcurrentAccessError(_inner) => _inner.fmt(f),
-            CreateTopicErrorKind::InternalErrorError(_inner) => _inner.fmt(f),
-            CreateTopicErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            CreateTopicErrorKind::InvalidSecurityError(_inner) => _inner.fmt(f),
-            CreateTopicErrorKind::StaleTagError(_inner) => _inner.fmt(f),
-            CreateTopicErrorKind::TagLimitExceededError(_inner) => _inner.fmt(f),
-            CreateTopicErrorKind::TagPolicyError(_inner) => _inner.fmt(f),
-            CreateTopicErrorKind::TopicLimitExceededError(_inner) => _inner.fmt(f),
+            CreateTopicErrorKind::AuthorizationErrorException(_inner) => _inner.fmt(f),
+            CreateTopicErrorKind::ConcurrentAccessException(_inner) => _inner.fmt(f),
+            CreateTopicErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
+            CreateTopicErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            CreateTopicErrorKind::InvalidSecurityException(_inner) => _inner.fmt(f),
+            CreateTopicErrorKind::StaleTagException(_inner) => _inner.fmt(f),
+            CreateTopicErrorKind::TagLimitExceededException(_inner) => _inner.fmt(f),
+            CreateTopicErrorKind::TagPolicyException(_inner) => _inner.fmt(f),
+            CreateTopicErrorKind::TopicLimitExceededException(_inner) => _inner.fmt(f),
             CreateTopicErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -743,46 +776,64 @@ impl CreateTopicError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_authorization_error_error(&self) -> bool {
-        matches!(&self.kind, CreateTopicErrorKind::AuthorizationErrorError(_))
+    pub fn is_authorization_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateTopicErrorKind::AuthorizationErrorException(_)
+        )
     }
-    pub fn is_concurrent_access_error(&self) -> bool {
-        matches!(&self.kind, CreateTopicErrorKind::ConcurrentAccessError(_))
+    pub fn is_concurrent_access_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateTopicErrorKind::ConcurrentAccessException(_)
+        )
     }
-    pub fn is_internal_error_error(&self) -> bool {
-        matches!(&self.kind, CreateTopicErrorKind::InternalErrorError(_))
+    pub fn is_internal_error_exception(&self) -> bool {
+        matches!(&self.kind, CreateTopicErrorKind::InternalErrorException(_))
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
-        matches!(&self.kind, CreateTopicErrorKind::InvalidParameterError(_))
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateTopicErrorKind::InvalidParameterException(_)
+        )
     }
-    pub fn is_invalid_security_error(&self) -> bool {
-        matches!(&self.kind, CreateTopicErrorKind::InvalidSecurityError(_))
+    pub fn is_invalid_security_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateTopicErrorKind::InvalidSecurityException(_)
+        )
     }
-    pub fn is_stale_tag_error(&self) -> bool {
-        matches!(&self.kind, CreateTopicErrorKind::StaleTagError(_))
+    pub fn is_stale_tag_exception(&self) -> bool {
+        matches!(&self.kind, CreateTopicErrorKind::StaleTagException(_))
     }
-    pub fn is_tag_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, CreateTopicErrorKind::TagLimitExceededError(_))
+    pub fn is_tag_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateTopicErrorKind::TagLimitExceededException(_)
+        )
     }
-    pub fn is_tag_policy_error(&self) -> bool {
-        matches!(&self.kind, CreateTopicErrorKind::TagPolicyError(_))
+    pub fn is_tag_policy_exception(&self) -> bool {
+        matches!(&self.kind, CreateTopicErrorKind::TagPolicyException(_))
     }
-    pub fn is_topic_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, CreateTopicErrorKind::TopicLimitExceededError(_))
+    pub fn is_topic_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateTopicErrorKind::TopicLimitExceededException(_)
+        )
     }
 }
 impl std::error::Error for CreateTopicError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateTopicErrorKind::AuthorizationErrorError(_inner) => Some(_inner),
-            CreateTopicErrorKind::ConcurrentAccessError(_inner) => Some(_inner),
-            CreateTopicErrorKind::InternalErrorError(_inner) => Some(_inner),
-            CreateTopicErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            CreateTopicErrorKind::InvalidSecurityError(_inner) => Some(_inner),
-            CreateTopicErrorKind::StaleTagError(_inner) => Some(_inner),
-            CreateTopicErrorKind::TagLimitExceededError(_inner) => Some(_inner),
-            CreateTopicErrorKind::TagPolicyError(_inner) => Some(_inner),
-            CreateTopicErrorKind::TopicLimitExceededError(_inner) => Some(_inner),
+            CreateTopicErrorKind::AuthorizationErrorException(_inner) => Some(_inner),
+            CreateTopicErrorKind::ConcurrentAccessException(_inner) => Some(_inner),
+            CreateTopicErrorKind::InternalErrorException(_inner) => Some(_inner),
+            CreateTopicErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            CreateTopicErrorKind::InvalidSecurityException(_inner) => Some(_inner),
+            CreateTopicErrorKind::StaleTagException(_inner) => Some(_inner),
+            CreateTopicErrorKind::TagLimitExceededException(_inner) => Some(_inner),
+            CreateTopicErrorKind::TagPolicyException(_inner) => Some(_inner),
+            CreateTopicErrorKind::TopicLimitExceededException(_inner) => Some(_inner),
             CreateTopicErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -797,18 +848,18 @@ pub struct DeleteEndpointError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteEndpointErrorKind {
-    AuthorizationErrorError(crate::error::AuthorizationErrorError),
-    InternalErrorError(crate::error::InternalErrorError),
-    InvalidParameterError(crate::error::InvalidParameterError),
+    AuthorizationErrorException(crate::error::AuthorizationErrorException),
+    InternalErrorException(crate::error::InternalErrorException),
+    InvalidParameterException(crate::error::InvalidParameterException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteEndpointError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteEndpointErrorKind::AuthorizationErrorError(_inner) => _inner.fmt(f),
-            DeleteEndpointErrorKind::InternalErrorError(_inner) => _inner.fmt(f),
-            DeleteEndpointErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
+            DeleteEndpointErrorKind::AuthorizationErrorException(_inner) => _inner.fmt(f),
+            DeleteEndpointErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
+            DeleteEndpointErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
             DeleteEndpointErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -857,28 +908,31 @@ impl DeleteEndpointError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_authorization_error_error(&self) -> bool {
+    pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteEndpointErrorKind::AuthorizationErrorError(_)
+            DeleteEndpointErrorKind::AuthorizationErrorException(_)
         )
     }
-    pub fn is_internal_error_error(&self) -> bool {
-        matches!(&self.kind, DeleteEndpointErrorKind::InternalErrorError(_))
-    }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteEndpointErrorKind::InvalidParameterError(_)
+            DeleteEndpointErrorKind::InternalErrorException(_)
+        )
+    }
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteEndpointErrorKind::InvalidParameterException(_)
         )
     }
 }
 impl std::error::Error for DeleteEndpointError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteEndpointErrorKind::AuthorizationErrorError(_inner) => Some(_inner),
-            DeleteEndpointErrorKind::InternalErrorError(_inner) => Some(_inner),
-            DeleteEndpointErrorKind::InvalidParameterError(_inner) => Some(_inner),
+            DeleteEndpointErrorKind::AuthorizationErrorException(_inner) => Some(_inner),
+            DeleteEndpointErrorKind::InternalErrorException(_inner) => Some(_inner),
+            DeleteEndpointErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DeleteEndpointErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -893,18 +947,20 @@ pub struct DeletePlatformApplicationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeletePlatformApplicationErrorKind {
-    AuthorizationErrorError(crate::error::AuthorizationErrorError),
-    InternalErrorError(crate::error::InternalErrorError),
-    InvalidParameterError(crate::error::InvalidParameterError),
+    AuthorizationErrorException(crate::error::AuthorizationErrorException),
+    InternalErrorException(crate::error::InternalErrorException),
+    InvalidParameterException(crate::error::InvalidParameterException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeletePlatformApplicationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeletePlatformApplicationErrorKind::AuthorizationErrorError(_inner) => _inner.fmt(f),
-            DeletePlatformApplicationErrorKind::InternalErrorError(_inner) => _inner.fmt(f),
-            DeletePlatformApplicationErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
+            DeletePlatformApplicationErrorKind::AuthorizationErrorException(_inner) => {
+                _inner.fmt(f)
+            }
+            DeletePlatformApplicationErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
+            DeletePlatformApplicationErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
             DeletePlatformApplicationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -953,31 +1009,31 @@ impl DeletePlatformApplicationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_authorization_error_error(&self) -> bool {
+    pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeletePlatformApplicationErrorKind::AuthorizationErrorError(_)
+            DeletePlatformApplicationErrorKind::AuthorizationErrorException(_)
         )
     }
-    pub fn is_internal_error_error(&self) -> bool {
+    pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeletePlatformApplicationErrorKind::InternalErrorError(_)
+            DeletePlatformApplicationErrorKind::InternalErrorException(_)
         )
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeletePlatformApplicationErrorKind::InvalidParameterError(_)
+            DeletePlatformApplicationErrorKind::InvalidParameterException(_)
         )
     }
 }
 impl std::error::Error for DeletePlatformApplicationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeletePlatformApplicationErrorKind::AuthorizationErrorError(_inner) => Some(_inner),
-            DeletePlatformApplicationErrorKind::InternalErrorError(_inner) => Some(_inner),
-            DeletePlatformApplicationErrorKind::InvalidParameterError(_inner) => Some(_inner),
+            DeletePlatformApplicationErrorKind::AuthorizationErrorException(_inner) => Some(_inner),
+            DeletePlatformApplicationErrorKind::InternalErrorException(_inner) => Some(_inner),
+            DeletePlatformApplicationErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DeletePlatformApplicationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -992,24 +1048,30 @@ pub struct DeleteSMSSandboxPhoneNumberError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteSMSSandboxPhoneNumberErrorKind {
-    AuthorizationErrorError(crate::error::AuthorizationErrorError),
-    InternalErrorError(crate::error::InternalErrorError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ThrottledError(crate::error::ThrottledError),
-    UserErrorError(crate::error::UserErrorError),
+    AuthorizationErrorException(crate::error::AuthorizationErrorException),
+    InternalErrorException(crate::error::InternalErrorException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ThrottledException(crate::error::ThrottledException),
+    UserErrorException(crate::error::UserErrorException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteSMSSandboxPhoneNumberError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteSMSSandboxPhoneNumberErrorKind::AuthorizationErrorError(_inner) => _inner.fmt(f),
-            DeleteSMSSandboxPhoneNumberErrorKind::InternalErrorError(_inner) => _inner.fmt(f),
-            DeleteSMSSandboxPhoneNumberErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            DeleteSMSSandboxPhoneNumberErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            DeleteSMSSandboxPhoneNumberErrorKind::ThrottledError(_inner) => _inner.fmt(f),
-            DeleteSMSSandboxPhoneNumberErrorKind::UserErrorError(_inner) => _inner.fmt(f),
+            DeleteSMSSandboxPhoneNumberErrorKind::AuthorizationErrorException(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteSMSSandboxPhoneNumberErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
+            DeleteSMSSandboxPhoneNumberErrorKind::InvalidParameterException(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteSMSSandboxPhoneNumberErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteSMSSandboxPhoneNumberErrorKind::ThrottledException(_inner) => _inner.fmt(f),
+            DeleteSMSSandboxPhoneNumberErrorKind::UserErrorException(_inner) => _inner.fmt(f),
             DeleteSMSSandboxPhoneNumberErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1058,52 +1120,54 @@ impl DeleteSMSSandboxPhoneNumberError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_authorization_error_error(&self) -> bool {
+    pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteSMSSandboxPhoneNumberErrorKind::AuthorizationErrorError(_)
+            DeleteSMSSandboxPhoneNumberErrorKind::AuthorizationErrorException(_)
         )
     }
-    pub fn is_internal_error_error(&self) -> bool {
+    pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteSMSSandboxPhoneNumberErrorKind::InternalErrorError(_)
+            DeleteSMSSandboxPhoneNumberErrorKind::InternalErrorException(_)
         )
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteSMSSandboxPhoneNumberErrorKind::InvalidParameterError(_)
+            DeleteSMSSandboxPhoneNumberErrorKind::InvalidParameterException(_)
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteSMSSandboxPhoneNumberErrorKind::ResourceNotFoundError(_)
+            DeleteSMSSandboxPhoneNumberErrorKind::ResourceNotFoundException(_)
         )
     }
-    pub fn is_throttled_error(&self) -> bool {
+    pub fn is_throttled_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteSMSSandboxPhoneNumberErrorKind::ThrottledError(_)
+            DeleteSMSSandboxPhoneNumberErrorKind::ThrottledException(_)
         )
     }
-    pub fn is_user_error_error(&self) -> bool {
+    pub fn is_user_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteSMSSandboxPhoneNumberErrorKind::UserErrorError(_)
+            DeleteSMSSandboxPhoneNumberErrorKind::UserErrorException(_)
         )
     }
 }
 impl std::error::Error for DeleteSMSSandboxPhoneNumberError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteSMSSandboxPhoneNumberErrorKind::AuthorizationErrorError(_inner) => Some(_inner),
-            DeleteSMSSandboxPhoneNumberErrorKind::InternalErrorError(_inner) => Some(_inner),
-            DeleteSMSSandboxPhoneNumberErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            DeleteSMSSandboxPhoneNumberErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            DeleteSMSSandboxPhoneNumberErrorKind::ThrottledError(_inner) => Some(_inner),
-            DeleteSMSSandboxPhoneNumberErrorKind::UserErrorError(_inner) => Some(_inner),
+            DeleteSMSSandboxPhoneNumberErrorKind::AuthorizationErrorException(_inner) => {
+                Some(_inner)
+            }
+            DeleteSMSSandboxPhoneNumberErrorKind::InternalErrorException(_inner) => Some(_inner),
+            DeleteSMSSandboxPhoneNumberErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            DeleteSMSSandboxPhoneNumberErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteSMSSandboxPhoneNumberErrorKind::ThrottledException(_inner) => Some(_inner),
+            DeleteSMSSandboxPhoneNumberErrorKind::UserErrorException(_inner) => Some(_inner),
             DeleteSMSSandboxPhoneNumberErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1118,26 +1182,26 @@ pub struct DeleteTopicError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteTopicErrorKind {
-    AuthorizationErrorError(crate::error::AuthorizationErrorError),
-    ConcurrentAccessError(crate::error::ConcurrentAccessError),
-    InternalErrorError(crate::error::InternalErrorError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    NotFoundError(crate::error::NotFoundError),
-    StaleTagError(crate::error::StaleTagError),
-    TagPolicyError(crate::error::TagPolicyError),
+    AuthorizationErrorException(crate::error::AuthorizationErrorException),
+    ConcurrentAccessException(crate::error::ConcurrentAccessException),
+    InternalErrorException(crate::error::InternalErrorException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    NotFoundException(crate::error::NotFoundException),
+    StaleTagException(crate::error::StaleTagException),
+    TagPolicyException(crate::error::TagPolicyException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteTopicError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteTopicErrorKind::AuthorizationErrorError(_inner) => _inner.fmt(f),
-            DeleteTopicErrorKind::ConcurrentAccessError(_inner) => _inner.fmt(f),
-            DeleteTopicErrorKind::InternalErrorError(_inner) => _inner.fmt(f),
-            DeleteTopicErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            DeleteTopicErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            DeleteTopicErrorKind::StaleTagError(_inner) => _inner.fmt(f),
-            DeleteTopicErrorKind::TagPolicyError(_inner) => _inner.fmt(f),
+            DeleteTopicErrorKind::AuthorizationErrorException(_inner) => _inner.fmt(f),
+            DeleteTopicErrorKind::ConcurrentAccessException(_inner) => _inner.fmt(f),
+            DeleteTopicErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
+            DeleteTopicErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            DeleteTopicErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DeleteTopicErrorKind::StaleTagException(_inner) => _inner.fmt(f),
+            DeleteTopicErrorKind::TagPolicyException(_inner) => _inner.fmt(f),
             DeleteTopicErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1186,38 +1250,47 @@ impl DeleteTopicError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_authorization_error_error(&self) -> bool {
-        matches!(&self.kind, DeleteTopicErrorKind::AuthorizationErrorError(_))
+    pub fn is_authorization_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteTopicErrorKind::AuthorizationErrorException(_)
+        )
     }
-    pub fn is_concurrent_access_error(&self) -> bool {
-        matches!(&self.kind, DeleteTopicErrorKind::ConcurrentAccessError(_))
+    pub fn is_concurrent_access_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteTopicErrorKind::ConcurrentAccessException(_)
+        )
     }
-    pub fn is_internal_error_error(&self) -> bool {
-        matches!(&self.kind, DeleteTopicErrorKind::InternalErrorError(_))
+    pub fn is_internal_error_exception(&self) -> bool {
+        matches!(&self.kind, DeleteTopicErrorKind::InternalErrorException(_))
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
-        matches!(&self.kind, DeleteTopicErrorKind::InvalidParameterError(_))
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteTopicErrorKind::InvalidParameterException(_)
+        )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, DeleteTopicErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, DeleteTopicErrorKind::NotFoundException(_))
     }
-    pub fn is_stale_tag_error(&self) -> bool {
-        matches!(&self.kind, DeleteTopicErrorKind::StaleTagError(_))
+    pub fn is_stale_tag_exception(&self) -> bool {
+        matches!(&self.kind, DeleteTopicErrorKind::StaleTagException(_))
     }
-    pub fn is_tag_policy_error(&self) -> bool {
-        matches!(&self.kind, DeleteTopicErrorKind::TagPolicyError(_))
+    pub fn is_tag_policy_exception(&self) -> bool {
+        matches!(&self.kind, DeleteTopicErrorKind::TagPolicyException(_))
     }
 }
 impl std::error::Error for DeleteTopicError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteTopicErrorKind::AuthorizationErrorError(_inner) => Some(_inner),
-            DeleteTopicErrorKind::ConcurrentAccessError(_inner) => Some(_inner),
-            DeleteTopicErrorKind::InternalErrorError(_inner) => Some(_inner),
-            DeleteTopicErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            DeleteTopicErrorKind::NotFoundError(_inner) => Some(_inner),
-            DeleteTopicErrorKind::StaleTagError(_inner) => Some(_inner),
-            DeleteTopicErrorKind::TagPolicyError(_inner) => Some(_inner),
+            DeleteTopicErrorKind::AuthorizationErrorException(_inner) => Some(_inner),
+            DeleteTopicErrorKind::ConcurrentAccessException(_inner) => Some(_inner),
+            DeleteTopicErrorKind::InternalErrorException(_inner) => Some(_inner),
+            DeleteTopicErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            DeleteTopicErrorKind::NotFoundException(_inner) => Some(_inner),
+            DeleteTopicErrorKind::StaleTagException(_inner) => Some(_inner),
+            DeleteTopicErrorKind::TagPolicyException(_inner) => Some(_inner),
             DeleteTopicErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1232,20 +1305,20 @@ pub struct GetEndpointAttributesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetEndpointAttributesErrorKind {
-    AuthorizationErrorError(crate::error::AuthorizationErrorError),
-    InternalErrorError(crate::error::InternalErrorError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    NotFoundError(crate::error::NotFoundError),
+    AuthorizationErrorException(crate::error::AuthorizationErrorException),
+    InternalErrorException(crate::error::InternalErrorException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetEndpointAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetEndpointAttributesErrorKind::AuthorizationErrorError(_inner) => _inner.fmt(f),
-            GetEndpointAttributesErrorKind::InternalErrorError(_inner) => _inner.fmt(f),
-            GetEndpointAttributesErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            GetEndpointAttributesErrorKind::NotFoundError(_inner) => _inner.fmt(f),
+            GetEndpointAttributesErrorKind::AuthorizationErrorException(_inner) => _inner.fmt(f),
+            GetEndpointAttributesErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
+            GetEndpointAttributesErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            GetEndpointAttributesErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             GetEndpointAttributesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1294,35 +1367,38 @@ impl GetEndpointAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_authorization_error_error(&self) -> bool {
+    pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetEndpointAttributesErrorKind::AuthorizationErrorError(_)
+            GetEndpointAttributesErrorKind::AuthorizationErrorException(_)
         )
     }
-    pub fn is_internal_error_error(&self) -> bool {
+    pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetEndpointAttributesErrorKind::InternalErrorError(_)
+            GetEndpointAttributesErrorKind::InternalErrorException(_)
         )
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetEndpointAttributesErrorKind::InvalidParameterError(_)
+            GetEndpointAttributesErrorKind::InvalidParameterException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, GetEndpointAttributesErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetEndpointAttributesErrorKind::NotFoundException(_)
+        )
     }
 }
 impl std::error::Error for GetEndpointAttributesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetEndpointAttributesErrorKind::AuthorizationErrorError(_inner) => Some(_inner),
-            GetEndpointAttributesErrorKind::InternalErrorError(_inner) => Some(_inner),
-            GetEndpointAttributesErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            GetEndpointAttributesErrorKind::NotFoundError(_inner) => Some(_inner),
+            GetEndpointAttributesErrorKind::AuthorizationErrorException(_inner) => Some(_inner),
+            GetEndpointAttributesErrorKind::InternalErrorException(_inner) => Some(_inner),
+            GetEndpointAttributesErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            GetEndpointAttributesErrorKind::NotFoundException(_inner) => Some(_inner),
             GetEndpointAttributesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1337,24 +1413,26 @@ pub struct GetPlatformApplicationAttributesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetPlatformApplicationAttributesErrorKind {
-    AuthorizationErrorError(crate::error::AuthorizationErrorError),
-    InternalErrorError(crate::error::InternalErrorError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    NotFoundError(crate::error::NotFoundError),
+    AuthorizationErrorException(crate::error::AuthorizationErrorException),
+    InternalErrorException(crate::error::InternalErrorException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetPlatformApplicationAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetPlatformApplicationAttributesErrorKind::AuthorizationErrorError(_inner) => {
+            GetPlatformApplicationAttributesErrorKind::AuthorizationErrorException(_inner) => {
                 _inner.fmt(f)
             }
-            GetPlatformApplicationAttributesErrorKind::InternalErrorError(_inner) => _inner.fmt(f),
-            GetPlatformApplicationAttributesErrorKind::InvalidParameterError(_inner) => {
+            GetPlatformApplicationAttributesErrorKind::InternalErrorException(_inner) => {
                 _inner.fmt(f)
             }
-            GetPlatformApplicationAttributesErrorKind::NotFoundError(_inner) => _inner.fmt(f),
+            GetPlatformApplicationAttributesErrorKind::InvalidParameterException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetPlatformApplicationAttributesErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             GetPlatformApplicationAttributesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1403,42 +1481,44 @@ impl GetPlatformApplicationAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_authorization_error_error(&self) -> bool {
+    pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetPlatformApplicationAttributesErrorKind::AuthorizationErrorError(_)
+            GetPlatformApplicationAttributesErrorKind::AuthorizationErrorException(_)
         )
     }
-    pub fn is_internal_error_error(&self) -> bool {
+    pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetPlatformApplicationAttributesErrorKind::InternalErrorError(_)
+            GetPlatformApplicationAttributesErrorKind::InternalErrorException(_)
         )
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetPlatformApplicationAttributesErrorKind::InvalidParameterError(_)
+            GetPlatformApplicationAttributesErrorKind::InvalidParameterException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetPlatformApplicationAttributesErrorKind::NotFoundError(_)
+            GetPlatformApplicationAttributesErrorKind::NotFoundException(_)
         )
     }
 }
 impl std::error::Error for GetPlatformApplicationAttributesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetPlatformApplicationAttributesErrorKind::AuthorizationErrorError(_inner) => {
+            GetPlatformApplicationAttributesErrorKind::AuthorizationErrorException(_inner) => {
                 Some(_inner)
             }
-            GetPlatformApplicationAttributesErrorKind::InternalErrorError(_inner) => Some(_inner),
-            GetPlatformApplicationAttributesErrorKind::InvalidParameterError(_inner) => {
+            GetPlatformApplicationAttributesErrorKind::InternalErrorException(_inner) => {
                 Some(_inner)
             }
-            GetPlatformApplicationAttributesErrorKind::NotFoundError(_inner) => Some(_inner),
+            GetPlatformApplicationAttributesErrorKind::InvalidParameterException(_inner) => {
+                Some(_inner)
+            }
+            GetPlatformApplicationAttributesErrorKind::NotFoundException(_inner) => Some(_inner),
             GetPlatformApplicationAttributesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1453,20 +1533,20 @@ pub struct GetSMSAttributesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetSMSAttributesErrorKind {
-    AuthorizationErrorError(crate::error::AuthorizationErrorError),
-    InternalErrorError(crate::error::InternalErrorError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ThrottledError(crate::error::ThrottledError),
+    AuthorizationErrorException(crate::error::AuthorizationErrorException),
+    InternalErrorException(crate::error::InternalErrorException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ThrottledException(crate::error::ThrottledException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSMSAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetSMSAttributesErrorKind::AuthorizationErrorError(_inner) => _inner.fmt(f),
-            GetSMSAttributesErrorKind::InternalErrorError(_inner) => _inner.fmt(f),
-            GetSMSAttributesErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            GetSMSAttributesErrorKind::ThrottledError(_inner) => _inner.fmt(f),
+            GetSMSAttributesErrorKind::AuthorizationErrorException(_inner) => _inner.fmt(f),
+            GetSMSAttributesErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
+            GetSMSAttributesErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            GetSMSAttributesErrorKind::ThrottledException(_inner) => _inner.fmt(f),
             GetSMSAttributesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1515,32 +1595,35 @@ impl GetSMSAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_authorization_error_error(&self) -> bool {
+    pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetSMSAttributesErrorKind::AuthorizationErrorError(_)
+            GetSMSAttributesErrorKind::AuthorizationErrorException(_)
         )
     }
-    pub fn is_internal_error_error(&self) -> bool {
-        matches!(&self.kind, GetSMSAttributesErrorKind::InternalErrorError(_))
-    }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetSMSAttributesErrorKind::InvalidParameterError(_)
+            GetSMSAttributesErrorKind::InternalErrorException(_)
         )
     }
-    pub fn is_throttled_error(&self) -> bool {
-        matches!(&self.kind, GetSMSAttributesErrorKind::ThrottledError(_))
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetSMSAttributesErrorKind::InvalidParameterException(_)
+        )
+    }
+    pub fn is_throttled_exception(&self) -> bool {
+        matches!(&self.kind, GetSMSAttributesErrorKind::ThrottledException(_))
     }
 }
 impl std::error::Error for GetSMSAttributesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetSMSAttributesErrorKind::AuthorizationErrorError(_inner) => Some(_inner),
-            GetSMSAttributesErrorKind::InternalErrorError(_inner) => Some(_inner),
-            GetSMSAttributesErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            GetSMSAttributesErrorKind::ThrottledError(_inner) => Some(_inner),
+            GetSMSAttributesErrorKind::AuthorizationErrorException(_inner) => Some(_inner),
+            GetSMSAttributesErrorKind::InternalErrorException(_inner) => Some(_inner),
+            GetSMSAttributesErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            GetSMSAttributesErrorKind::ThrottledException(_inner) => Some(_inner),
             GetSMSAttributesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1555,18 +1638,20 @@ pub struct GetSMSSandboxAccountStatusError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetSMSSandboxAccountStatusErrorKind {
-    AuthorizationErrorError(crate::error::AuthorizationErrorError),
-    InternalErrorError(crate::error::InternalErrorError),
-    ThrottledError(crate::error::ThrottledError),
+    AuthorizationErrorException(crate::error::AuthorizationErrorException),
+    InternalErrorException(crate::error::InternalErrorException),
+    ThrottledException(crate::error::ThrottledException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSMSSandboxAccountStatusError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetSMSSandboxAccountStatusErrorKind::AuthorizationErrorError(_inner) => _inner.fmt(f),
-            GetSMSSandboxAccountStatusErrorKind::InternalErrorError(_inner) => _inner.fmt(f),
-            GetSMSSandboxAccountStatusErrorKind::ThrottledError(_inner) => _inner.fmt(f),
+            GetSMSSandboxAccountStatusErrorKind::AuthorizationErrorException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetSMSSandboxAccountStatusErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
+            GetSMSSandboxAccountStatusErrorKind::ThrottledException(_inner) => _inner.fmt(f),
             GetSMSSandboxAccountStatusErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1615,31 +1700,33 @@ impl GetSMSSandboxAccountStatusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_authorization_error_error(&self) -> bool {
+    pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetSMSSandboxAccountStatusErrorKind::AuthorizationErrorError(_)
+            GetSMSSandboxAccountStatusErrorKind::AuthorizationErrorException(_)
         )
     }
-    pub fn is_internal_error_error(&self) -> bool {
+    pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetSMSSandboxAccountStatusErrorKind::InternalErrorError(_)
+            GetSMSSandboxAccountStatusErrorKind::InternalErrorException(_)
         )
     }
-    pub fn is_throttled_error(&self) -> bool {
+    pub fn is_throttled_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetSMSSandboxAccountStatusErrorKind::ThrottledError(_)
+            GetSMSSandboxAccountStatusErrorKind::ThrottledException(_)
         )
     }
 }
 impl std::error::Error for GetSMSSandboxAccountStatusError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetSMSSandboxAccountStatusErrorKind::AuthorizationErrorError(_inner) => Some(_inner),
-            GetSMSSandboxAccountStatusErrorKind::InternalErrorError(_inner) => Some(_inner),
-            GetSMSSandboxAccountStatusErrorKind::ThrottledError(_inner) => Some(_inner),
+            GetSMSSandboxAccountStatusErrorKind::AuthorizationErrorException(_inner) => {
+                Some(_inner)
+            }
+            GetSMSSandboxAccountStatusErrorKind::InternalErrorException(_inner) => Some(_inner),
+            GetSMSSandboxAccountStatusErrorKind::ThrottledException(_inner) => Some(_inner),
             GetSMSSandboxAccountStatusErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1654,20 +1741,22 @@ pub struct GetSubscriptionAttributesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetSubscriptionAttributesErrorKind {
-    AuthorizationErrorError(crate::error::AuthorizationErrorError),
-    InternalErrorError(crate::error::InternalErrorError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    NotFoundError(crate::error::NotFoundError),
+    AuthorizationErrorException(crate::error::AuthorizationErrorException),
+    InternalErrorException(crate::error::InternalErrorException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSubscriptionAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetSubscriptionAttributesErrorKind::AuthorizationErrorError(_inner) => _inner.fmt(f),
-            GetSubscriptionAttributesErrorKind::InternalErrorError(_inner) => _inner.fmt(f),
-            GetSubscriptionAttributesErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            GetSubscriptionAttributesErrorKind::NotFoundError(_inner) => _inner.fmt(f),
+            GetSubscriptionAttributesErrorKind::AuthorizationErrorException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetSubscriptionAttributesErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
+            GetSubscriptionAttributesErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            GetSubscriptionAttributesErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             GetSubscriptionAttributesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1716,38 +1805,38 @@ impl GetSubscriptionAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_authorization_error_error(&self) -> bool {
+    pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetSubscriptionAttributesErrorKind::AuthorizationErrorError(_)
+            GetSubscriptionAttributesErrorKind::AuthorizationErrorException(_)
         )
     }
-    pub fn is_internal_error_error(&self) -> bool {
+    pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetSubscriptionAttributesErrorKind::InternalErrorError(_)
+            GetSubscriptionAttributesErrorKind::InternalErrorException(_)
         )
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetSubscriptionAttributesErrorKind::InvalidParameterError(_)
+            GetSubscriptionAttributesErrorKind::InvalidParameterException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetSubscriptionAttributesErrorKind::NotFoundError(_)
+            GetSubscriptionAttributesErrorKind::NotFoundException(_)
         )
     }
 }
 impl std::error::Error for GetSubscriptionAttributesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetSubscriptionAttributesErrorKind::AuthorizationErrorError(_inner) => Some(_inner),
-            GetSubscriptionAttributesErrorKind::InternalErrorError(_inner) => Some(_inner),
-            GetSubscriptionAttributesErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            GetSubscriptionAttributesErrorKind::NotFoundError(_inner) => Some(_inner),
+            GetSubscriptionAttributesErrorKind::AuthorizationErrorException(_inner) => Some(_inner),
+            GetSubscriptionAttributesErrorKind::InternalErrorException(_inner) => Some(_inner),
+            GetSubscriptionAttributesErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            GetSubscriptionAttributesErrorKind::NotFoundException(_inner) => Some(_inner),
             GetSubscriptionAttributesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1762,22 +1851,22 @@ pub struct GetTopicAttributesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetTopicAttributesErrorKind {
-    AuthorizationErrorError(crate::error::AuthorizationErrorError),
-    InternalErrorError(crate::error::InternalErrorError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    InvalidSecurityError(crate::error::InvalidSecurityError),
-    NotFoundError(crate::error::NotFoundError),
+    AuthorizationErrorException(crate::error::AuthorizationErrorException),
+    InternalErrorException(crate::error::InternalErrorException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    InvalidSecurityException(crate::error::InvalidSecurityException),
+    NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetTopicAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetTopicAttributesErrorKind::AuthorizationErrorError(_inner) => _inner.fmt(f),
-            GetTopicAttributesErrorKind::InternalErrorError(_inner) => _inner.fmt(f),
-            GetTopicAttributesErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            GetTopicAttributesErrorKind::InvalidSecurityError(_inner) => _inner.fmt(f),
-            GetTopicAttributesErrorKind::NotFoundError(_inner) => _inner.fmt(f),
+            GetTopicAttributesErrorKind::AuthorizationErrorException(_inner) => _inner.fmt(f),
+            GetTopicAttributesErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
+            GetTopicAttributesErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            GetTopicAttributesErrorKind::InvalidSecurityException(_inner) => _inner.fmt(f),
+            GetTopicAttributesErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             GetTopicAttributesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1826,42 +1915,45 @@ impl GetTopicAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_authorization_error_error(&self) -> bool {
+    pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetTopicAttributesErrorKind::AuthorizationErrorError(_)
+            GetTopicAttributesErrorKind::AuthorizationErrorException(_)
         )
     }
-    pub fn is_internal_error_error(&self) -> bool {
+    pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetTopicAttributesErrorKind::InternalErrorError(_)
+            GetTopicAttributesErrorKind::InternalErrorException(_)
         )
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetTopicAttributesErrorKind::InvalidParameterError(_)
+            GetTopicAttributesErrorKind::InvalidParameterException(_)
         )
     }
-    pub fn is_invalid_security_error(&self) -> bool {
+    pub fn is_invalid_security_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetTopicAttributesErrorKind::InvalidSecurityError(_)
+            GetTopicAttributesErrorKind::InvalidSecurityException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, GetTopicAttributesErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetTopicAttributesErrorKind::NotFoundException(_)
+        )
     }
 }
 impl std::error::Error for GetTopicAttributesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetTopicAttributesErrorKind::AuthorizationErrorError(_inner) => Some(_inner),
-            GetTopicAttributesErrorKind::InternalErrorError(_inner) => Some(_inner),
-            GetTopicAttributesErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            GetTopicAttributesErrorKind::InvalidSecurityError(_inner) => Some(_inner),
-            GetTopicAttributesErrorKind::NotFoundError(_inner) => Some(_inner),
+            GetTopicAttributesErrorKind::AuthorizationErrorException(_inner) => Some(_inner),
+            GetTopicAttributesErrorKind::InternalErrorException(_inner) => Some(_inner),
+            GetTopicAttributesErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            GetTopicAttributesErrorKind::InvalidSecurityException(_inner) => Some(_inner),
+            GetTopicAttributesErrorKind::NotFoundException(_inner) => Some(_inner),
             GetTopicAttributesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1876,26 +1968,26 @@ pub struct ListEndpointsByPlatformApplicationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListEndpointsByPlatformApplicationErrorKind {
-    AuthorizationErrorError(crate::error::AuthorizationErrorError),
-    InternalErrorError(crate::error::InternalErrorError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    NotFoundError(crate::error::NotFoundError),
+    AuthorizationErrorException(crate::error::AuthorizationErrorException),
+    InternalErrorException(crate::error::InternalErrorException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListEndpointsByPlatformApplicationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListEndpointsByPlatformApplicationErrorKind::AuthorizationErrorError(_inner) => {
+            ListEndpointsByPlatformApplicationErrorKind::AuthorizationErrorException(_inner) => {
                 _inner.fmt(f)
             }
-            ListEndpointsByPlatformApplicationErrorKind::InternalErrorError(_inner) => {
+            ListEndpointsByPlatformApplicationErrorKind::InternalErrorException(_inner) => {
                 _inner.fmt(f)
             }
-            ListEndpointsByPlatformApplicationErrorKind::InvalidParameterError(_inner) => {
+            ListEndpointsByPlatformApplicationErrorKind::InvalidParameterException(_inner) => {
                 _inner.fmt(f)
             }
-            ListEndpointsByPlatformApplicationErrorKind::NotFoundError(_inner) => _inner.fmt(f),
+            ListEndpointsByPlatformApplicationErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             ListEndpointsByPlatformApplicationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1947,42 +2039,44 @@ impl ListEndpointsByPlatformApplicationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_authorization_error_error(&self) -> bool {
+    pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListEndpointsByPlatformApplicationErrorKind::AuthorizationErrorError(_)
+            ListEndpointsByPlatformApplicationErrorKind::AuthorizationErrorException(_)
         )
     }
-    pub fn is_internal_error_error(&self) -> bool {
+    pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListEndpointsByPlatformApplicationErrorKind::InternalErrorError(_)
+            ListEndpointsByPlatformApplicationErrorKind::InternalErrorException(_)
         )
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListEndpointsByPlatformApplicationErrorKind::InvalidParameterError(_)
+            ListEndpointsByPlatformApplicationErrorKind::InvalidParameterException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListEndpointsByPlatformApplicationErrorKind::NotFoundError(_)
+            ListEndpointsByPlatformApplicationErrorKind::NotFoundException(_)
         )
     }
 }
 impl std::error::Error for ListEndpointsByPlatformApplicationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListEndpointsByPlatformApplicationErrorKind::AuthorizationErrorError(_inner) => {
+            ListEndpointsByPlatformApplicationErrorKind::AuthorizationErrorException(_inner) => {
                 Some(_inner)
             }
-            ListEndpointsByPlatformApplicationErrorKind::InternalErrorError(_inner) => Some(_inner),
-            ListEndpointsByPlatformApplicationErrorKind::InvalidParameterError(_inner) => {
+            ListEndpointsByPlatformApplicationErrorKind::InternalErrorException(_inner) => {
                 Some(_inner)
             }
-            ListEndpointsByPlatformApplicationErrorKind::NotFoundError(_inner) => Some(_inner),
+            ListEndpointsByPlatformApplicationErrorKind::InvalidParameterException(_inner) => {
+                Some(_inner)
+            }
+            ListEndpointsByPlatformApplicationErrorKind::NotFoundException(_inner) => Some(_inner),
             ListEndpointsByPlatformApplicationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1997,22 +2091,22 @@ pub struct ListOriginationNumbersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListOriginationNumbersErrorKind {
-    AuthorizationErrorError(crate::error::AuthorizationErrorError),
-    InternalErrorError(crate::error::InternalErrorError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ThrottledError(crate::error::ThrottledError),
-    ValidationError(crate::error::ValidationError),
+    AuthorizationErrorException(crate::error::AuthorizationErrorException),
+    InternalErrorException(crate::error::InternalErrorException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ThrottledException(crate::error::ThrottledException),
+    ValidationException(crate::error::ValidationException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListOriginationNumbersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListOriginationNumbersErrorKind::AuthorizationErrorError(_inner) => _inner.fmt(f),
-            ListOriginationNumbersErrorKind::InternalErrorError(_inner) => _inner.fmt(f),
-            ListOriginationNumbersErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            ListOriginationNumbersErrorKind::ThrottledError(_inner) => _inner.fmt(f),
-            ListOriginationNumbersErrorKind::ValidationError(_inner) => _inner.fmt(f),
+            ListOriginationNumbersErrorKind::AuthorizationErrorException(_inner) => _inner.fmt(f),
+            ListOriginationNumbersErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
+            ListOriginationNumbersErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            ListOriginationNumbersErrorKind::ThrottledException(_inner) => _inner.fmt(f),
+            ListOriginationNumbersErrorKind::ValidationException(_inner) => _inner.fmt(f),
             ListOriginationNumbersErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2061,45 +2155,45 @@ impl ListOriginationNumbersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_authorization_error_error(&self) -> bool {
+    pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListOriginationNumbersErrorKind::AuthorizationErrorError(_)
+            ListOriginationNumbersErrorKind::AuthorizationErrorException(_)
         )
     }
-    pub fn is_internal_error_error(&self) -> bool {
+    pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListOriginationNumbersErrorKind::InternalErrorError(_)
+            ListOriginationNumbersErrorKind::InternalErrorException(_)
         )
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListOriginationNumbersErrorKind::InvalidParameterError(_)
+            ListOriginationNumbersErrorKind::InvalidParameterException(_)
         )
     }
-    pub fn is_throttled_error(&self) -> bool {
+    pub fn is_throttled_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListOriginationNumbersErrorKind::ThrottledError(_)
+            ListOriginationNumbersErrorKind::ThrottledException(_)
         )
     }
-    pub fn is_validation_error(&self) -> bool {
+    pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListOriginationNumbersErrorKind::ValidationError(_)
+            ListOriginationNumbersErrorKind::ValidationException(_)
         )
     }
 }
 impl std::error::Error for ListOriginationNumbersError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListOriginationNumbersErrorKind::AuthorizationErrorError(_inner) => Some(_inner),
-            ListOriginationNumbersErrorKind::InternalErrorError(_inner) => Some(_inner),
-            ListOriginationNumbersErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            ListOriginationNumbersErrorKind::ThrottledError(_inner) => Some(_inner),
-            ListOriginationNumbersErrorKind::ValidationError(_inner) => Some(_inner),
+            ListOriginationNumbersErrorKind::AuthorizationErrorException(_inner) => Some(_inner),
+            ListOriginationNumbersErrorKind::InternalErrorException(_inner) => Some(_inner),
+            ListOriginationNumbersErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            ListOriginationNumbersErrorKind::ThrottledException(_inner) => Some(_inner),
+            ListOriginationNumbersErrorKind::ValidationException(_inner) => Some(_inner),
             ListOriginationNumbersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2114,20 +2208,20 @@ pub struct ListPhoneNumbersOptedOutError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListPhoneNumbersOptedOutErrorKind {
-    AuthorizationErrorError(crate::error::AuthorizationErrorError),
-    InternalErrorError(crate::error::InternalErrorError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ThrottledError(crate::error::ThrottledError),
+    AuthorizationErrorException(crate::error::AuthorizationErrorException),
+    InternalErrorException(crate::error::InternalErrorException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ThrottledException(crate::error::ThrottledException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListPhoneNumbersOptedOutError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListPhoneNumbersOptedOutErrorKind::AuthorizationErrorError(_inner) => _inner.fmt(f),
-            ListPhoneNumbersOptedOutErrorKind::InternalErrorError(_inner) => _inner.fmt(f),
-            ListPhoneNumbersOptedOutErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            ListPhoneNumbersOptedOutErrorKind::ThrottledError(_inner) => _inner.fmt(f),
+            ListPhoneNumbersOptedOutErrorKind::AuthorizationErrorException(_inner) => _inner.fmt(f),
+            ListPhoneNumbersOptedOutErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
+            ListPhoneNumbersOptedOutErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            ListPhoneNumbersOptedOutErrorKind::ThrottledException(_inner) => _inner.fmt(f),
             ListPhoneNumbersOptedOutErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2176,38 +2270,38 @@ impl ListPhoneNumbersOptedOutError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_authorization_error_error(&self) -> bool {
+    pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListPhoneNumbersOptedOutErrorKind::AuthorizationErrorError(_)
+            ListPhoneNumbersOptedOutErrorKind::AuthorizationErrorException(_)
         )
     }
-    pub fn is_internal_error_error(&self) -> bool {
+    pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListPhoneNumbersOptedOutErrorKind::InternalErrorError(_)
+            ListPhoneNumbersOptedOutErrorKind::InternalErrorException(_)
         )
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListPhoneNumbersOptedOutErrorKind::InvalidParameterError(_)
+            ListPhoneNumbersOptedOutErrorKind::InvalidParameterException(_)
         )
     }
-    pub fn is_throttled_error(&self) -> bool {
+    pub fn is_throttled_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListPhoneNumbersOptedOutErrorKind::ThrottledError(_)
+            ListPhoneNumbersOptedOutErrorKind::ThrottledException(_)
         )
     }
 }
 impl std::error::Error for ListPhoneNumbersOptedOutError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListPhoneNumbersOptedOutErrorKind::AuthorizationErrorError(_inner) => Some(_inner),
-            ListPhoneNumbersOptedOutErrorKind::InternalErrorError(_inner) => Some(_inner),
-            ListPhoneNumbersOptedOutErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            ListPhoneNumbersOptedOutErrorKind::ThrottledError(_inner) => Some(_inner),
+            ListPhoneNumbersOptedOutErrorKind::AuthorizationErrorException(_inner) => Some(_inner),
+            ListPhoneNumbersOptedOutErrorKind::InternalErrorException(_inner) => Some(_inner),
+            ListPhoneNumbersOptedOutErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            ListPhoneNumbersOptedOutErrorKind::ThrottledException(_inner) => Some(_inner),
             ListPhoneNumbersOptedOutErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2222,18 +2316,18 @@ pub struct ListPlatformApplicationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListPlatformApplicationsErrorKind {
-    AuthorizationErrorError(crate::error::AuthorizationErrorError),
-    InternalErrorError(crate::error::InternalErrorError),
-    InvalidParameterError(crate::error::InvalidParameterError),
+    AuthorizationErrorException(crate::error::AuthorizationErrorException),
+    InternalErrorException(crate::error::InternalErrorException),
+    InvalidParameterException(crate::error::InvalidParameterException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListPlatformApplicationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListPlatformApplicationsErrorKind::AuthorizationErrorError(_inner) => _inner.fmt(f),
-            ListPlatformApplicationsErrorKind::InternalErrorError(_inner) => _inner.fmt(f),
-            ListPlatformApplicationsErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
+            ListPlatformApplicationsErrorKind::AuthorizationErrorException(_inner) => _inner.fmt(f),
+            ListPlatformApplicationsErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
+            ListPlatformApplicationsErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
             ListPlatformApplicationsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2282,31 +2376,31 @@ impl ListPlatformApplicationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_authorization_error_error(&self) -> bool {
+    pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListPlatformApplicationsErrorKind::AuthorizationErrorError(_)
+            ListPlatformApplicationsErrorKind::AuthorizationErrorException(_)
         )
     }
-    pub fn is_internal_error_error(&self) -> bool {
+    pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListPlatformApplicationsErrorKind::InternalErrorError(_)
+            ListPlatformApplicationsErrorKind::InternalErrorException(_)
         )
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListPlatformApplicationsErrorKind::InvalidParameterError(_)
+            ListPlatformApplicationsErrorKind::InvalidParameterException(_)
         )
     }
 }
 impl std::error::Error for ListPlatformApplicationsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListPlatformApplicationsErrorKind::AuthorizationErrorError(_inner) => Some(_inner),
-            ListPlatformApplicationsErrorKind::InternalErrorError(_inner) => Some(_inner),
-            ListPlatformApplicationsErrorKind::InvalidParameterError(_inner) => Some(_inner),
+            ListPlatformApplicationsErrorKind::AuthorizationErrorException(_inner) => Some(_inner),
+            ListPlatformApplicationsErrorKind::InternalErrorException(_inner) => Some(_inner),
+            ListPlatformApplicationsErrorKind::InvalidParameterException(_inner) => Some(_inner),
             ListPlatformApplicationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2321,22 +2415,24 @@ pub struct ListSMSSandboxPhoneNumbersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListSMSSandboxPhoneNumbersErrorKind {
-    AuthorizationErrorError(crate::error::AuthorizationErrorError),
-    InternalErrorError(crate::error::InternalErrorError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ThrottledError(crate::error::ThrottledError),
+    AuthorizationErrorException(crate::error::AuthorizationErrorException),
+    InternalErrorException(crate::error::InternalErrorException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ThrottledException(crate::error::ThrottledException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListSMSSandboxPhoneNumbersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListSMSSandboxPhoneNumbersErrorKind::AuthorizationErrorError(_inner) => _inner.fmt(f),
-            ListSMSSandboxPhoneNumbersErrorKind::InternalErrorError(_inner) => _inner.fmt(f),
-            ListSMSSandboxPhoneNumbersErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            ListSMSSandboxPhoneNumbersErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            ListSMSSandboxPhoneNumbersErrorKind::ThrottledError(_inner) => _inner.fmt(f),
+            ListSMSSandboxPhoneNumbersErrorKind::AuthorizationErrorException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListSMSSandboxPhoneNumbersErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
+            ListSMSSandboxPhoneNumbersErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            ListSMSSandboxPhoneNumbersErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ListSMSSandboxPhoneNumbersErrorKind::ThrottledException(_inner) => _inner.fmt(f),
             ListSMSSandboxPhoneNumbersErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2385,45 +2481,47 @@ impl ListSMSSandboxPhoneNumbersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_authorization_error_error(&self) -> bool {
+    pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListSMSSandboxPhoneNumbersErrorKind::AuthorizationErrorError(_)
+            ListSMSSandboxPhoneNumbersErrorKind::AuthorizationErrorException(_)
         )
     }
-    pub fn is_internal_error_error(&self) -> bool {
+    pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListSMSSandboxPhoneNumbersErrorKind::InternalErrorError(_)
+            ListSMSSandboxPhoneNumbersErrorKind::InternalErrorException(_)
         )
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListSMSSandboxPhoneNumbersErrorKind::InvalidParameterError(_)
+            ListSMSSandboxPhoneNumbersErrorKind::InvalidParameterException(_)
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListSMSSandboxPhoneNumbersErrorKind::ResourceNotFoundError(_)
+            ListSMSSandboxPhoneNumbersErrorKind::ResourceNotFoundException(_)
         )
     }
-    pub fn is_throttled_error(&self) -> bool {
+    pub fn is_throttled_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListSMSSandboxPhoneNumbersErrorKind::ThrottledError(_)
+            ListSMSSandboxPhoneNumbersErrorKind::ThrottledException(_)
         )
     }
 }
 impl std::error::Error for ListSMSSandboxPhoneNumbersError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListSMSSandboxPhoneNumbersErrorKind::AuthorizationErrorError(_inner) => Some(_inner),
-            ListSMSSandboxPhoneNumbersErrorKind::InternalErrorError(_inner) => Some(_inner),
-            ListSMSSandboxPhoneNumbersErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            ListSMSSandboxPhoneNumbersErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            ListSMSSandboxPhoneNumbersErrorKind::ThrottledError(_inner) => Some(_inner),
+            ListSMSSandboxPhoneNumbersErrorKind::AuthorizationErrorException(_inner) => {
+                Some(_inner)
+            }
+            ListSMSSandboxPhoneNumbersErrorKind::InternalErrorException(_inner) => Some(_inner),
+            ListSMSSandboxPhoneNumbersErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            ListSMSSandboxPhoneNumbersErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ListSMSSandboxPhoneNumbersErrorKind::ThrottledException(_inner) => Some(_inner),
             ListSMSSandboxPhoneNumbersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2438,18 +2536,18 @@ pub struct ListSubscriptionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListSubscriptionsErrorKind {
-    AuthorizationErrorError(crate::error::AuthorizationErrorError),
-    InternalErrorError(crate::error::InternalErrorError),
-    InvalidParameterError(crate::error::InvalidParameterError),
+    AuthorizationErrorException(crate::error::AuthorizationErrorException),
+    InternalErrorException(crate::error::InternalErrorException),
+    InvalidParameterException(crate::error::InvalidParameterException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListSubscriptionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListSubscriptionsErrorKind::AuthorizationErrorError(_inner) => _inner.fmt(f),
-            ListSubscriptionsErrorKind::InternalErrorError(_inner) => _inner.fmt(f),
-            ListSubscriptionsErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
+            ListSubscriptionsErrorKind::AuthorizationErrorException(_inner) => _inner.fmt(f),
+            ListSubscriptionsErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
+            ListSubscriptionsErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
             ListSubscriptionsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2498,31 +2596,31 @@ impl ListSubscriptionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_authorization_error_error(&self) -> bool {
+    pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListSubscriptionsErrorKind::AuthorizationErrorError(_)
+            ListSubscriptionsErrorKind::AuthorizationErrorException(_)
         )
     }
-    pub fn is_internal_error_error(&self) -> bool {
+    pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListSubscriptionsErrorKind::InternalErrorError(_)
+            ListSubscriptionsErrorKind::InternalErrorException(_)
         )
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListSubscriptionsErrorKind::InvalidParameterError(_)
+            ListSubscriptionsErrorKind::InvalidParameterException(_)
         )
     }
 }
 impl std::error::Error for ListSubscriptionsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListSubscriptionsErrorKind::AuthorizationErrorError(_inner) => Some(_inner),
-            ListSubscriptionsErrorKind::InternalErrorError(_inner) => Some(_inner),
-            ListSubscriptionsErrorKind::InvalidParameterError(_inner) => Some(_inner),
+            ListSubscriptionsErrorKind::AuthorizationErrorException(_inner) => Some(_inner),
+            ListSubscriptionsErrorKind::InternalErrorException(_inner) => Some(_inner),
+            ListSubscriptionsErrorKind::InvalidParameterException(_inner) => Some(_inner),
             ListSubscriptionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2537,20 +2635,20 @@ pub struct ListSubscriptionsByTopicError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListSubscriptionsByTopicErrorKind {
-    AuthorizationErrorError(crate::error::AuthorizationErrorError),
-    InternalErrorError(crate::error::InternalErrorError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    NotFoundError(crate::error::NotFoundError),
+    AuthorizationErrorException(crate::error::AuthorizationErrorException),
+    InternalErrorException(crate::error::InternalErrorException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListSubscriptionsByTopicError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListSubscriptionsByTopicErrorKind::AuthorizationErrorError(_inner) => _inner.fmt(f),
-            ListSubscriptionsByTopicErrorKind::InternalErrorError(_inner) => _inner.fmt(f),
-            ListSubscriptionsByTopicErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            ListSubscriptionsByTopicErrorKind::NotFoundError(_inner) => _inner.fmt(f),
+            ListSubscriptionsByTopicErrorKind::AuthorizationErrorException(_inner) => _inner.fmt(f),
+            ListSubscriptionsByTopicErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
+            ListSubscriptionsByTopicErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            ListSubscriptionsByTopicErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             ListSubscriptionsByTopicErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2599,38 +2697,38 @@ impl ListSubscriptionsByTopicError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_authorization_error_error(&self) -> bool {
+    pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListSubscriptionsByTopicErrorKind::AuthorizationErrorError(_)
+            ListSubscriptionsByTopicErrorKind::AuthorizationErrorException(_)
         )
     }
-    pub fn is_internal_error_error(&self) -> bool {
+    pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListSubscriptionsByTopicErrorKind::InternalErrorError(_)
+            ListSubscriptionsByTopicErrorKind::InternalErrorException(_)
         )
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListSubscriptionsByTopicErrorKind::InvalidParameterError(_)
+            ListSubscriptionsByTopicErrorKind::InvalidParameterException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListSubscriptionsByTopicErrorKind::NotFoundError(_)
+            ListSubscriptionsByTopicErrorKind::NotFoundException(_)
         )
     }
 }
 impl std::error::Error for ListSubscriptionsByTopicError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListSubscriptionsByTopicErrorKind::AuthorizationErrorError(_inner) => Some(_inner),
-            ListSubscriptionsByTopicErrorKind::InternalErrorError(_inner) => Some(_inner),
-            ListSubscriptionsByTopicErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            ListSubscriptionsByTopicErrorKind::NotFoundError(_inner) => Some(_inner),
+            ListSubscriptionsByTopicErrorKind::AuthorizationErrorException(_inner) => Some(_inner),
+            ListSubscriptionsByTopicErrorKind::InternalErrorException(_inner) => Some(_inner),
+            ListSubscriptionsByTopicErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            ListSubscriptionsByTopicErrorKind::NotFoundException(_inner) => Some(_inner),
             ListSubscriptionsByTopicErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2645,22 +2743,22 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    AuthorizationErrorError(crate::error::AuthorizationErrorError),
-    ConcurrentAccessError(crate::error::ConcurrentAccessError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    TagPolicyError(crate::error::TagPolicyError),
+    AuthorizationErrorException(crate::error::AuthorizationErrorException),
+    ConcurrentAccessException(crate::error::ConcurrentAccessException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    TagPolicyException(crate::error::TagPolicyException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListTagsForResourceErrorKind::AuthorizationErrorError(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::ConcurrentAccessError(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::TagPolicyError(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::AuthorizationErrorException(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::ConcurrentAccessException(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::TagPolicyException(_inner) => _inner.fmt(f),
             ListTagsForResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2709,42 +2807,45 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_authorization_error_error(&self) -> bool {
+    pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListTagsForResourceErrorKind::AuthorizationErrorError(_)
+            ListTagsForResourceErrorKind::AuthorizationErrorException(_)
         )
     }
-    pub fn is_concurrent_access_error(&self) -> bool {
+    pub fn is_concurrent_access_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListTagsForResourceErrorKind::ConcurrentAccessError(_)
+            ListTagsForResourceErrorKind::ConcurrentAccessException(_)
         )
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListTagsForResourceErrorKind::InvalidParameterError(_)
+            ListTagsForResourceErrorKind::InvalidParameterException(_)
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListTagsForResourceErrorKind::ResourceNotFoundError(_)
+            ListTagsForResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    pub fn is_tag_policy_error(&self) -> bool {
-        matches!(&self.kind, ListTagsForResourceErrorKind::TagPolicyError(_))
+    pub fn is_tag_policy_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForResourceErrorKind::TagPolicyException(_)
+        )
     }
 }
 impl std::error::Error for ListTagsForResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListTagsForResourceErrorKind::AuthorizationErrorError(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::ConcurrentAccessError(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::TagPolicyError(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::AuthorizationErrorException(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::ConcurrentAccessException(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::TagPolicyException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2759,18 +2860,18 @@ pub struct ListTopicsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTopicsErrorKind {
-    AuthorizationErrorError(crate::error::AuthorizationErrorError),
-    InternalErrorError(crate::error::InternalErrorError),
-    InvalidParameterError(crate::error::InvalidParameterError),
+    AuthorizationErrorException(crate::error::AuthorizationErrorException),
+    InternalErrorException(crate::error::InternalErrorException),
+    InvalidParameterException(crate::error::InvalidParameterException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTopicsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListTopicsErrorKind::AuthorizationErrorError(_inner) => _inner.fmt(f),
-            ListTopicsErrorKind::InternalErrorError(_inner) => _inner.fmt(f),
-            ListTopicsErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
+            ListTopicsErrorKind::AuthorizationErrorException(_inner) => _inner.fmt(f),
+            ListTopicsErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
+            ListTopicsErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
             ListTopicsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2819,22 +2920,28 @@ impl ListTopicsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_authorization_error_error(&self) -> bool {
-        matches!(&self.kind, ListTopicsErrorKind::AuthorizationErrorError(_))
+    pub fn is_authorization_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTopicsErrorKind::AuthorizationErrorException(_)
+        )
     }
-    pub fn is_internal_error_error(&self) -> bool {
-        matches!(&self.kind, ListTopicsErrorKind::InternalErrorError(_))
+    pub fn is_internal_error_exception(&self) -> bool {
+        matches!(&self.kind, ListTopicsErrorKind::InternalErrorException(_))
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
-        matches!(&self.kind, ListTopicsErrorKind::InvalidParameterError(_))
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTopicsErrorKind::InvalidParameterException(_)
+        )
     }
 }
 impl std::error::Error for ListTopicsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListTopicsErrorKind::AuthorizationErrorError(_inner) => Some(_inner),
-            ListTopicsErrorKind::InternalErrorError(_inner) => Some(_inner),
-            ListTopicsErrorKind::InvalidParameterError(_inner) => Some(_inner),
+            ListTopicsErrorKind::AuthorizationErrorException(_inner) => Some(_inner),
+            ListTopicsErrorKind::InternalErrorException(_inner) => Some(_inner),
+            ListTopicsErrorKind::InvalidParameterException(_inner) => Some(_inner),
             ListTopicsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2849,20 +2956,20 @@ pub struct OptInPhoneNumberError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum OptInPhoneNumberErrorKind {
-    AuthorizationErrorError(crate::error::AuthorizationErrorError),
-    InternalErrorError(crate::error::InternalErrorError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ThrottledError(crate::error::ThrottledError),
+    AuthorizationErrorException(crate::error::AuthorizationErrorException),
+    InternalErrorException(crate::error::InternalErrorException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ThrottledException(crate::error::ThrottledException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for OptInPhoneNumberError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            OptInPhoneNumberErrorKind::AuthorizationErrorError(_inner) => _inner.fmt(f),
-            OptInPhoneNumberErrorKind::InternalErrorError(_inner) => _inner.fmt(f),
-            OptInPhoneNumberErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            OptInPhoneNumberErrorKind::ThrottledError(_inner) => _inner.fmt(f),
+            OptInPhoneNumberErrorKind::AuthorizationErrorException(_inner) => _inner.fmt(f),
+            OptInPhoneNumberErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
+            OptInPhoneNumberErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            OptInPhoneNumberErrorKind::ThrottledException(_inner) => _inner.fmt(f),
             OptInPhoneNumberErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2911,32 +3018,35 @@ impl OptInPhoneNumberError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_authorization_error_error(&self) -> bool {
+    pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            OptInPhoneNumberErrorKind::AuthorizationErrorError(_)
+            OptInPhoneNumberErrorKind::AuthorizationErrorException(_)
         )
     }
-    pub fn is_internal_error_error(&self) -> bool {
-        matches!(&self.kind, OptInPhoneNumberErrorKind::InternalErrorError(_))
-    }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            OptInPhoneNumberErrorKind::InvalidParameterError(_)
+            OptInPhoneNumberErrorKind::InternalErrorException(_)
         )
     }
-    pub fn is_throttled_error(&self) -> bool {
-        matches!(&self.kind, OptInPhoneNumberErrorKind::ThrottledError(_))
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            OptInPhoneNumberErrorKind::InvalidParameterException(_)
+        )
+    }
+    pub fn is_throttled_exception(&self) -> bool {
+        matches!(&self.kind, OptInPhoneNumberErrorKind::ThrottledException(_))
     }
 }
 impl std::error::Error for OptInPhoneNumberError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            OptInPhoneNumberErrorKind::AuthorizationErrorError(_inner) => Some(_inner),
-            OptInPhoneNumberErrorKind::InternalErrorError(_inner) => Some(_inner),
-            OptInPhoneNumberErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            OptInPhoneNumberErrorKind::ThrottledError(_inner) => Some(_inner),
+            OptInPhoneNumberErrorKind::AuthorizationErrorException(_inner) => Some(_inner),
+            OptInPhoneNumberErrorKind::InternalErrorException(_inner) => Some(_inner),
+            OptInPhoneNumberErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            OptInPhoneNumberErrorKind::ThrottledException(_inner) => Some(_inner),
             OptInPhoneNumberErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2951,40 +3061,40 @@ pub struct PublishError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PublishErrorKind {
-    AuthorizationErrorError(crate::error::AuthorizationErrorError),
-    EndpointDisabledError(crate::error::EndpointDisabledError),
-    InternalErrorError(crate::error::InternalErrorError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    InvalidParameterValueError(crate::error::InvalidParameterValueError),
-    InvalidSecurityError(crate::error::InvalidSecurityError),
-    KMSAccessDeniedError(crate::error::KMSAccessDeniedError),
-    KMSDisabledError(crate::error::KMSDisabledError),
-    KMSInvalidStateError(crate::error::KMSInvalidStateError),
-    KMSNotFoundError(crate::error::KMSNotFoundError),
-    KMSOptInRequired(crate::error::KMSOptInRequired),
-    KMSThrottlingError(crate::error::KMSThrottlingError),
-    NotFoundError(crate::error::NotFoundError),
-    PlatformApplicationDisabledError(crate::error::PlatformApplicationDisabledError),
+    AuthorizationErrorException(crate::error::AuthorizationErrorException),
+    EndpointDisabledException(crate::error::EndpointDisabledException),
+    InternalErrorException(crate::error::InternalErrorException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    InvalidSecurityException(crate::error::InvalidSecurityException),
+    KmsAccessDeniedException(crate::error::KmsAccessDeniedException),
+    KmsDisabledException(crate::error::KmsDisabledException),
+    KmsInvalidStateException(crate::error::KmsInvalidStateException),
+    KmsNotFoundException(crate::error::KmsNotFoundException),
+    KmsOptInRequired(crate::error::KmsOptInRequired),
+    KmsThrottlingException(crate::error::KmsThrottlingException),
+    NotFoundException(crate::error::NotFoundException),
+    PlatformApplicationDisabledException(crate::error::PlatformApplicationDisabledException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PublishError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PublishErrorKind::AuthorizationErrorError(_inner) => _inner.fmt(f),
-            PublishErrorKind::EndpointDisabledError(_inner) => _inner.fmt(f),
-            PublishErrorKind::InternalErrorError(_inner) => _inner.fmt(f),
-            PublishErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            PublishErrorKind::InvalidParameterValueError(_inner) => _inner.fmt(f),
-            PublishErrorKind::InvalidSecurityError(_inner) => _inner.fmt(f),
-            PublishErrorKind::KMSAccessDeniedError(_inner) => _inner.fmt(f),
-            PublishErrorKind::KMSDisabledError(_inner) => _inner.fmt(f),
-            PublishErrorKind::KMSInvalidStateError(_inner) => _inner.fmt(f),
-            PublishErrorKind::KMSNotFoundError(_inner) => _inner.fmt(f),
-            PublishErrorKind::KMSOptInRequired(_inner) => _inner.fmt(f),
-            PublishErrorKind::KMSThrottlingError(_inner) => _inner.fmt(f),
-            PublishErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            PublishErrorKind::PlatformApplicationDisabledError(_inner) => _inner.fmt(f),
+            PublishErrorKind::AuthorizationErrorException(_inner) => _inner.fmt(f),
+            PublishErrorKind::EndpointDisabledException(_inner) => _inner.fmt(f),
+            PublishErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
+            PublishErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            PublishErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            PublishErrorKind::InvalidSecurityException(_inner) => _inner.fmt(f),
+            PublishErrorKind::KmsAccessDeniedException(_inner) => _inner.fmt(f),
+            PublishErrorKind::KmsDisabledException(_inner) => _inner.fmt(f),
+            PublishErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
+            PublishErrorKind::KmsNotFoundException(_inner) => _inner.fmt(f),
+            PublishErrorKind::KmsOptInRequired(_inner) => _inner.fmt(f),
+            PublishErrorKind::KmsThrottlingException(_inner) => _inner.fmt(f),
+            PublishErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            PublishErrorKind::PlatformApplicationDisabledException(_inner) => _inner.fmt(f),
             PublishErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3033,69 +3143,72 @@ impl PublishError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_authorization_error_error(&self) -> bool {
-        matches!(&self.kind, PublishErrorKind::AuthorizationErrorError(_))
+    pub fn is_authorization_error_exception(&self) -> bool {
+        matches!(&self.kind, PublishErrorKind::AuthorizationErrorException(_))
     }
-    pub fn is_endpoint_disabled_error(&self) -> bool {
-        matches!(&self.kind, PublishErrorKind::EndpointDisabledError(_))
+    pub fn is_endpoint_disabled_exception(&self) -> bool {
+        matches!(&self.kind, PublishErrorKind::EndpointDisabledException(_))
     }
-    pub fn is_internal_error_error(&self) -> bool {
-        matches!(&self.kind, PublishErrorKind::InternalErrorError(_))
+    pub fn is_internal_error_exception(&self) -> bool {
+        matches!(&self.kind, PublishErrorKind::InternalErrorException(_))
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
-        matches!(&self.kind, PublishErrorKind::InvalidParameterError(_))
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(&self.kind, PublishErrorKind::InvalidParameterException(_))
     }
-    pub fn is_invalid_parameter_value_error(&self) -> bool {
-        matches!(&self.kind, PublishErrorKind::InvalidParameterValueError(_))
-    }
-    pub fn is_invalid_security_error(&self) -> bool {
-        matches!(&self.kind, PublishErrorKind::InvalidSecurityError(_))
-    }
-    pub fn is_kms_access_denied_error(&self) -> bool {
-        matches!(&self.kind, PublishErrorKind::KMSAccessDeniedError(_))
-    }
-    pub fn is_kms_disabled_error(&self) -> bool {
-        matches!(&self.kind, PublishErrorKind::KMSDisabledError(_))
-    }
-    pub fn is_kms_invalid_state_error(&self) -> bool {
-        matches!(&self.kind, PublishErrorKind::KMSInvalidStateError(_))
-    }
-    pub fn is_kms_not_found_error(&self) -> bool {
-        matches!(&self.kind, PublishErrorKind::KMSNotFoundError(_))
-    }
-    pub fn is_kms_opt_in_required(&self) -> bool {
-        matches!(&self.kind, PublishErrorKind::KMSOptInRequired(_))
-    }
-    pub fn is_kms_throttling_error(&self) -> bool {
-        matches!(&self.kind, PublishErrorKind::KMSThrottlingError(_))
-    }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, PublishErrorKind::NotFoundError(_))
-    }
-    pub fn is_platform_application_disabled_error(&self) -> bool {
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PublishErrorKind::PlatformApplicationDisabledError(_)
+            PublishErrorKind::InvalidParameterValueException(_)
+        )
+    }
+    pub fn is_invalid_security_exception(&self) -> bool {
+        matches!(&self.kind, PublishErrorKind::InvalidSecurityException(_))
+    }
+    pub fn is_kms_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, PublishErrorKind::KmsAccessDeniedException(_))
+    }
+    pub fn is_kms_disabled_exception(&self) -> bool {
+        matches!(&self.kind, PublishErrorKind::KmsDisabledException(_))
+    }
+    pub fn is_kms_invalid_state_exception(&self) -> bool {
+        matches!(&self.kind, PublishErrorKind::KmsInvalidStateException(_))
+    }
+    pub fn is_kms_not_found_exception(&self) -> bool {
+        matches!(&self.kind, PublishErrorKind::KmsNotFoundException(_))
+    }
+    pub fn is_kms_opt_in_required(&self) -> bool {
+        matches!(&self.kind, PublishErrorKind::KmsOptInRequired(_))
+    }
+    pub fn is_kms_throttling_exception(&self) -> bool {
+        matches!(&self.kind, PublishErrorKind::KmsThrottlingException(_))
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, PublishErrorKind::NotFoundException(_))
+    }
+    pub fn is_platform_application_disabled_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PublishErrorKind::PlatformApplicationDisabledException(_)
         )
     }
 }
 impl std::error::Error for PublishError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PublishErrorKind::AuthorizationErrorError(_inner) => Some(_inner),
-            PublishErrorKind::EndpointDisabledError(_inner) => Some(_inner),
-            PublishErrorKind::InternalErrorError(_inner) => Some(_inner),
-            PublishErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            PublishErrorKind::InvalidParameterValueError(_inner) => Some(_inner),
-            PublishErrorKind::InvalidSecurityError(_inner) => Some(_inner),
-            PublishErrorKind::KMSAccessDeniedError(_inner) => Some(_inner),
-            PublishErrorKind::KMSDisabledError(_inner) => Some(_inner),
-            PublishErrorKind::KMSInvalidStateError(_inner) => Some(_inner),
-            PublishErrorKind::KMSNotFoundError(_inner) => Some(_inner),
-            PublishErrorKind::KMSOptInRequired(_inner) => Some(_inner),
-            PublishErrorKind::KMSThrottlingError(_inner) => Some(_inner),
-            PublishErrorKind::NotFoundError(_inner) => Some(_inner),
-            PublishErrorKind::PlatformApplicationDisabledError(_inner) => Some(_inner),
+            PublishErrorKind::AuthorizationErrorException(_inner) => Some(_inner),
+            PublishErrorKind::EndpointDisabledException(_inner) => Some(_inner),
+            PublishErrorKind::InternalErrorException(_inner) => Some(_inner),
+            PublishErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            PublishErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
+            PublishErrorKind::InvalidSecurityException(_inner) => Some(_inner),
+            PublishErrorKind::KmsAccessDeniedException(_inner) => Some(_inner),
+            PublishErrorKind::KmsDisabledException(_inner) => Some(_inner),
+            PublishErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
+            PublishErrorKind::KmsNotFoundException(_inner) => Some(_inner),
+            PublishErrorKind::KmsOptInRequired(_inner) => Some(_inner),
+            PublishErrorKind::KmsThrottlingException(_inner) => Some(_inner),
+            PublishErrorKind::NotFoundException(_inner) => Some(_inner),
+            PublishErrorKind::PlatformApplicationDisabledException(_inner) => Some(_inner),
             PublishErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3110,20 +3223,20 @@ pub struct RemovePermissionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RemovePermissionErrorKind {
-    AuthorizationErrorError(crate::error::AuthorizationErrorError),
-    InternalErrorError(crate::error::InternalErrorError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    NotFoundError(crate::error::NotFoundError),
+    AuthorizationErrorException(crate::error::AuthorizationErrorException),
+    InternalErrorException(crate::error::InternalErrorException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RemovePermissionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            RemovePermissionErrorKind::AuthorizationErrorError(_inner) => _inner.fmt(f),
-            RemovePermissionErrorKind::InternalErrorError(_inner) => _inner.fmt(f),
-            RemovePermissionErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            RemovePermissionErrorKind::NotFoundError(_inner) => _inner.fmt(f),
+            RemovePermissionErrorKind::AuthorizationErrorException(_inner) => _inner.fmt(f),
+            RemovePermissionErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
+            RemovePermissionErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            RemovePermissionErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             RemovePermissionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3172,32 +3285,35 @@ impl RemovePermissionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_authorization_error_error(&self) -> bool {
+    pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            RemovePermissionErrorKind::AuthorizationErrorError(_)
+            RemovePermissionErrorKind::AuthorizationErrorException(_)
         )
     }
-    pub fn is_internal_error_error(&self) -> bool {
-        matches!(&self.kind, RemovePermissionErrorKind::InternalErrorError(_))
-    }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            RemovePermissionErrorKind::InvalidParameterError(_)
+            RemovePermissionErrorKind::InternalErrorException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, RemovePermissionErrorKind::NotFoundError(_))
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RemovePermissionErrorKind::InvalidParameterException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, RemovePermissionErrorKind::NotFoundException(_))
     }
 }
 impl std::error::Error for RemovePermissionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            RemovePermissionErrorKind::AuthorizationErrorError(_inner) => Some(_inner),
-            RemovePermissionErrorKind::InternalErrorError(_inner) => Some(_inner),
-            RemovePermissionErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            RemovePermissionErrorKind::NotFoundError(_inner) => Some(_inner),
+            RemovePermissionErrorKind::AuthorizationErrorException(_inner) => Some(_inner),
+            RemovePermissionErrorKind::InternalErrorException(_inner) => Some(_inner),
+            RemovePermissionErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            RemovePermissionErrorKind::NotFoundException(_inner) => Some(_inner),
             RemovePermissionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3212,20 +3328,20 @@ pub struct SetEndpointAttributesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SetEndpointAttributesErrorKind {
-    AuthorizationErrorError(crate::error::AuthorizationErrorError),
-    InternalErrorError(crate::error::InternalErrorError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    NotFoundError(crate::error::NotFoundError),
+    AuthorizationErrorException(crate::error::AuthorizationErrorException),
+    InternalErrorException(crate::error::InternalErrorException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SetEndpointAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            SetEndpointAttributesErrorKind::AuthorizationErrorError(_inner) => _inner.fmt(f),
-            SetEndpointAttributesErrorKind::InternalErrorError(_inner) => _inner.fmt(f),
-            SetEndpointAttributesErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            SetEndpointAttributesErrorKind::NotFoundError(_inner) => _inner.fmt(f),
+            SetEndpointAttributesErrorKind::AuthorizationErrorException(_inner) => _inner.fmt(f),
+            SetEndpointAttributesErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
+            SetEndpointAttributesErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            SetEndpointAttributesErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             SetEndpointAttributesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3274,35 +3390,38 @@ impl SetEndpointAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_authorization_error_error(&self) -> bool {
+    pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            SetEndpointAttributesErrorKind::AuthorizationErrorError(_)
+            SetEndpointAttributesErrorKind::AuthorizationErrorException(_)
         )
     }
-    pub fn is_internal_error_error(&self) -> bool {
+    pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            SetEndpointAttributesErrorKind::InternalErrorError(_)
+            SetEndpointAttributesErrorKind::InternalErrorException(_)
         )
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
-            SetEndpointAttributesErrorKind::InvalidParameterError(_)
+            SetEndpointAttributesErrorKind::InvalidParameterException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, SetEndpointAttributesErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SetEndpointAttributesErrorKind::NotFoundException(_)
+        )
     }
 }
 impl std::error::Error for SetEndpointAttributesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            SetEndpointAttributesErrorKind::AuthorizationErrorError(_inner) => Some(_inner),
-            SetEndpointAttributesErrorKind::InternalErrorError(_inner) => Some(_inner),
-            SetEndpointAttributesErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            SetEndpointAttributesErrorKind::NotFoundError(_inner) => Some(_inner),
+            SetEndpointAttributesErrorKind::AuthorizationErrorException(_inner) => Some(_inner),
+            SetEndpointAttributesErrorKind::InternalErrorException(_inner) => Some(_inner),
+            SetEndpointAttributesErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            SetEndpointAttributesErrorKind::NotFoundException(_inner) => Some(_inner),
             SetEndpointAttributesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3317,24 +3436,26 @@ pub struct SetPlatformApplicationAttributesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SetPlatformApplicationAttributesErrorKind {
-    AuthorizationErrorError(crate::error::AuthorizationErrorError),
-    InternalErrorError(crate::error::InternalErrorError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    NotFoundError(crate::error::NotFoundError),
+    AuthorizationErrorException(crate::error::AuthorizationErrorException),
+    InternalErrorException(crate::error::InternalErrorException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SetPlatformApplicationAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            SetPlatformApplicationAttributesErrorKind::AuthorizationErrorError(_inner) => {
+            SetPlatformApplicationAttributesErrorKind::AuthorizationErrorException(_inner) => {
                 _inner.fmt(f)
             }
-            SetPlatformApplicationAttributesErrorKind::InternalErrorError(_inner) => _inner.fmt(f),
-            SetPlatformApplicationAttributesErrorKind::InvalidParameterError(_inner) => {
+            SetPlatformApplicationAttributesErrorKind::InternalErrorException(_inner) => {
                 _inner.fmt(f)
             }
-            SetPlatformApplicationAttributesErrorKind::NotFoundError(_inner) => _inner.fmt(f),
+            SetPlatformApplicationAttributesErrorKind::InvalidParameterException(_inner) => {
+                _inner.fmt(f)
+            }
+            SetPlatformApplicationAttributesErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             SetPlatformApplicationAttributesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3383,42 +3504,44 @@ impl SetPlatformApplicationAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_authorization_error_error(&self) -> bool {
+    pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            SetPlatformApplicationAttributesErrorKind::AuthorizationErrorError(_)
+            SetPlatformApplicationAttributesErrorKind::AuthorizationErrorException(_)
         )
     }
-    pub fn is_internal_error_error(&self) -> bool {
+    pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            SetPlatformApplicationAttributesErrorKind::InternalErrorError(_)
+            SetPlatformApplicationAttributesErrorKind::InternalErrorException(_)
         )
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
-            SetPlatformApplicationAttributesErrorKind::InvalidParameterError(_)
+            SetPlatformApplicationAttributesErrorKind::InvalidParameterException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            SetPlatformApplicationAttributesErrorKind::NotFoundError(_)
+            SetPlatformApplicationAttributesErrorKind::NotFoundException(_)
         )
     }
 }
 impl std::error::Error for SetPlatformApplicationAttributesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            SetPlatformApplicationAttributesErrorKind::AuthorizationErrorError(_inner) => {
+            SetPlatformApplicationAttributesErrorKind::AuthorizationErrorException(_inner) => {
                 Some(_inner)
             }
-            SetPlatformApplicationAttributesErrorKind::InternalErrorError(_inner) => Some(_inner),
-            SetPlatformApplicationAttributesErrorKind::InvalidParameterError(_inner) => {
+            SetPlatformApplicationAttributesErrorKind::InternalErrorException(_inner) => {
                 Some(_inner)
             }
-            SetPlatformApplicationAttributesErrorKind::NotFoundError(_inner) => Some(_inner),
+            SetPlatformApplicationAttributesErrorKind::InvalidParameterException(_inner) => {
+                Some(_inner)
+            }
+            SetPlatformApplicationAttributesErrorKind::NotFoundException(_inner) => Some(_inner),
             SetPlatformApplicationAttributesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3433,20 +3556,20 @@ pub struct SetSMSAttributesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SetSMSAttributesErrorKind {
-    AuthorizationErrorError(crate::error::AuthorizationErrorError),
-    InternalErrorError(crate::error::InternalErrorError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ThrottledError(crate::error::ThrottledError),
+    AuthorizationErrorException(crate::error::AuthorizationErrorException),
+    InternalErrorException(crate::error::InternalErrorException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ThrottledException(crate::error::ThrottledException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SetSMSAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            SetSMSAttributesErrorKind::AuthorizationErrorError(_inner) => _inner.fmt(f),
-            SetSMSAttributesErrorKind::InternalErrorError(_inner) => _inner.fmt(f),
-            SetSMSAttributesErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            SetSMSAttributesErrorKind::ThrottledError(_inner) => _inner.fmt(f),
+            SetSMSAttributesErrorKind::AuthorizationErrorException(_inner) => _inner.fmt(f),
+            SetSMSAttributesErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
+            SetSMSAttributesErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            SetSMSAttributesErrorKind::ThrottledException(_inner) => _inner.fmt(f),
             SetSMSAttributesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3495,32 +3618,35 @@ impl SetSMSAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_authorization_error_error(&self) -> bool {
+    pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            SetSMSAttributesErrorKind::AuthorizationErrorError(_)
+            SetSMSAttributesErrorKind::AuthorizationErrorException(_)
         )
     }
-    pub fn is_internal_error_error(&self) -> bool {
-        matches!(&self.kind, SetSMSAttributesErrorKind::InternalErrorError(_))
-    }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            SetSMSAttributesErrorKind::InvalidParameterError(_)
+            SetSMSAttributesErrorKind::InternalErrorException(_)
         )
     }
-    pub fn is_throttled_error(&self) -> bool {
-        matches!(&self.kind, SetSMSAttributesErrorKind::ThrottledError(_))
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SetSMSAttributesErrorKind::InvalidParameterException(_)
+        )
+    }
+    pub fn is_throttled_exception(&self) -> bool {
+        matches!(&self.kind, SetSMSAttributesErrorKind::ThrottledException(_))
     }
 }
 impl std::error::Error for SetSMSAttributesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            SetSMSAttributesErrorKind::AuthorizationErrorError(_inner) => Some(_inner),
-            SetSMSAttributesErrorKind::InternalErrorError(_inner) => Some(_inner),
-            SetSMSAttributesErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            SetSMSAttributesErrorKind::ThrottledError(_inner) => Some(_inner),
+            SetSMSAttributesErrorKind::AuthorizationErrorException(_inner) => Some(_inner),
+            SetSMSAttributesErrorKind::InternalErrorException(_inner) => Some(_inner),
+            SetSMSAttributesErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            SetSMSAttributesErrorKind::ThrottledException(_inner) => Some(_inner),
             SetSMSAttributesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3535,24 +3661,26 @@ pub struct SetSubscriptionAttributesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SetSubscriptionAttributesErrorKind {
-    AuthorizationErrorError(crate::error::AuthorizationErrorError),
-    FilterPolicyLimitExceededError(crate::error::FilterPolicyLimitExceededError),
-    InternalErrorError(crate::error::InternalErrorError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    NotFoundError(crate::error::NotFoundError),
+    AuthorizationErrorException(crate::error::AuthorizationErrorException),
+    FilterPolicyLimitExceededException(crate::error::FilterPolicyLimitExceededException),
+    InternalErrorException(crate::error::InternalErrorException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SetSubscriptionAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            SetSubscriptionAttributesErrorKind::AuthorizationErrorError(_inner) => _inner.fmt(f),
-            SetSubscriptionAttributesErrorKind::FilterPolicyLimitExceededError(_inner) => {
+            SetSubscriptionAttributesErrorKind::AuthorizationErrorException(_inner) => {
                 _inner.fmt(f)
             }
-            SetSubscriptionAttributesErrorKind::InternalErrorError(_inner) => _inner.fmt(f),
-            SetSubscriptionAttributesErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            SetSubscriptionAttributesErrorKind::NotFoundError(_inner) => _inner.fmt(f),
+            SetSubscriptionAttributesErrorKind::FilterPolicyLimitExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            SetSubscriptionAttributesErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
+            SetSubscriptionAttributesErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            SetSubscriptionAttributesErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             SetSubscriptionAttributesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3601,47 +3729,47 @@ impl SetSubscriptionAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_authorization_error_error(&self) -> bool {
+    pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            SetSubscriptionAttributesErrorKind::AuthorizationErrorError(_)
+            SetSubscriptionAttributesErrorKind::AuthorizationErrorException(_)
         )
     }
-    pub fn is_filter_policy_limit_exceeded_error(&self) -> bool {
+    pub fn is_filter_policy_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            SetSubscriptionAttributesErrorKind::FilterPolicyLimitExceededError(_)
+            SetSubscriptionAttributesErrorKind::FilterPolicyLimitExceededException(_)
         )
     }
-    pub fn is_internal_error_error(&self) -> bool {
+    pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            SetSubscriptionAttributesErrorKind::InternalErrorError(_)
+            SetSubscriptionAttributesErrorKind::InternalErrorException(_)
         )
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
-            SetSubscriptionAttributesErrorKind::InvalidParameterError(_)
+            SetSubscriptionAttributesErrorKind::InvalidParameterException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            SetSubscriptionAttributesErrorKind::NotFoundError(_)
+            SetSubscriptionAttributesErrorKind::NotFoundException(_)
         )
     }
 }
 impl std::error::Error for SetSubscriptionAttributesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            SetSubscriptionAttributesErrorKind::AuthorizationErrorError(_inner) => Some(_inner),
-            SetSubscriptionAttributesErrorKind::FilterPolicyLimitExceededError(_inner) => {
+            SetSubscriptionAttributesErrorKind::AuthorizationErrorException(_inner) => Some(_inner),
+            SetSubscriptionAttributesErrorKind::FilterPolicyLimitExceededException(_inner) => {
                 Some(_inner)
             }
-            SetSubscriptionAttributesErrorKind::InternalErrorError(_inner) => Some(_inner),
-            SetSubscriptionAttributesErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            SetSubscriptionAttributesErrorKind::NotFoundError(_inner) => Some(_inner),
+            SetSubscriptionAttributesErrorKind::InternalErrorException(_inner) => Some(_inner),
+            SetSubscriptionAttributesErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            SetSubscriptionAttributesErrorKind::NotFoundException(_inner) => Some(_inner),
             SetSubscriptionAttributesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3656,22 +3784,22 @@ pub struct SetTopicAttributesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SetTopicAttributesErrorKind {
-    AuthorizationErrorError(crate::error::AuthorizationErrorError),
-    InternalErrorError(crate::error::InternalErrorError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    InvalidSecurityError(crate::error::InvalidSecurityError),
-    NotFoundError(crate::error::NotFoundError),
+    AuthorizationErrorException(crate::error::AuthorizationErrorException),
+    InternalErrorException(crate::error::InternalErrorException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    InvalidSecurityException(crate::error::InvalidSecurityException),
+    NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SetTopicAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            SetTopicAttributesErrorKind::AuthorizationErrorError(_inner) => _inner.fmt(f),
-            SetTopicAttributesErrorKind::InternalErrorError(_inner) => _inner.fmt(f),
-            SetTopicAttributesErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            SetTopicAttributesErrorKind::InvalidSecurityError(_inner) => _inner.fmt(f),
-            SetTopicAttributesErrorKind::NotFoundError(_inner) => _inner.fmt(f),
+            SetTopicAttributesErrorKind::AuthorizationErrorException(_inner) => _inner.fmt(f),
+            SetTopicAttributesErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
+            SetTopicAttributesErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            SetTopicAttributesErrorKind::InvalidSecurityException(_inner) => _inner.fmt(f),
+            SetTopicAttributesErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             SetTopicAttributesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3720,42 +3848,45 @@ impl SetTopicAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_authorization_error_error(&self) -> bool {
+    pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            SetTopicAttributesErrorKind::AuthorizationErrorError(_)
+            SetTopicAttributesErrorKind::AuthorizationErrorException(_)
         )
     }
-    pub fn is_internal_error_error(&self) -> bool {
+    pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            SetTopicAttributesErrorKind::InternalErrorError(_)
+            SetTopicAttributesErrorKind::InternalErrorException(_)
         )
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
-            SetTopicAttributesErrorKind::InvalidParameterError(_)
+            SetTopicAttributesErrorKind::InvalidParameterException(_)
         )
     }
-    pub fn is_invalid_security_error(&self) -> bool {
+    pub fn is_invalid_security_exception(&self) -> bool {
         matches!(
             &self.kind,
-            SetTopicAttributesErrorKind::InvalidSecurityError(_)
+            SetTopicAttributesErrorKind::InvalidSecurityException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, SetTopicAttributesErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SetTopicAttributesErrorKind::NotFoundException(_)
+        )
     }
 }
 impl std::error::Error for SetTopicAttributesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            SetTopicAttributesErrorKind::AuthorizationErrorError(_inner) => Some(_inner),
-            SetTopicAttributesErrorKind::InternalErrorError(_inner) => Some(_inner),
-            SetTopicAttributesErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            SetTopicAttributesErrorKind::InvalidSecurityError(_inner) => Some(_inner),
-            SetTopicAttributesErrorKind::NotFoundError(_inner) => Some(_inner),
+            SetTopicAttributesErrorKind::AuthorizationErrorException(_inner) => Some(_inner),
+            SetTopicAttributesErrorKind::InternalErrorException(_inner) => Some(_inner),
+            SetTopicAttributesErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            SetTopicAttributesErrorKind::InvalidSecurityException(_inner) => Some(_inner),
+            SetTopicAttributesErrorKind::NotFoundException(_inner) => Some(_inner),
             SetTopicAttributesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3770,26 +3901,26 @@ pub struct SubscribeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SubscribeErrorKind {
-    AuthorizationErrorError(crate::error::AuthorizationErrorError),
-    FilterPolicyLimitExceededError(crate::error::FilterPolicyLimitExceededError),
-    InternalErrorError(crate::error::InternalErrorError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    InvalidSecurityError(crate::error::InvalidSecurityError),
-    NotFoundError(crate::error::NotFoundError),
-    SubscriptionLimitExceededError(crate::error::SubscriptionLimitExceededError),
+    AuthorizationErrorException(crate::error::AuthorizationErrorException),
+    FilterPolicyLimitExceededException(crate::error::FilterPolicyLimitExceededException),
+    InternalErrorException(crate::error::InternalErrorException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    InvalidSecurityException(crate::error::InvalidSecurityException),
+    NotFoundException(crate::error::NotFoundException),
+    SubscriptionLimitExceededException(crate::error::SubscriptionLimitExceededException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SubscribeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            SubscribeErrorKind::AuthorizationErrorError(_inner) => _inner.fmt(f),
-            SubscribeErrorKind::FilterPolicyLimitExceededError(_inner) => _inner.fmt(f),
-            SubscribeErrorKind::InternalErrorError(_inner) => _inner.fmt(f),
-            SubscribeErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            SubscribeErrorKind::InvalidSecurityError(_inner) => _inner.fmt(f),
-            SubscribeErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            SubscribeErrorKind::SubscriptionLimitExceededError(_inner) => _inner.fmt(f),
+            SubscribeErrorKind::AuthorizationErrorException(_inner) => _inner.fmt(f),
+            SubscribeErrorKind::FilterPolicyLimitExceededException(_inner) => _inner.fmt(f),
+            SubscribeErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
+            SubscribeErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            SubscribeErrorKind::InvalidSecurityException(_inner) => _inner.fmt(f),
+            SubscribeErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            SubscribeErrorKind::SubscriptionLimitExceededException(_inner) => _inner.fmt(f),
             SubscribeErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3838,44 +3969,47 @@ impl SubscribeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_authorization_error_error(&self) -> bool {
-        matches!(&self.kind, SubscribeErrorKind::AuthorizationErrorError(_))
-    }
-    pub fn is_filter_policy_limit_exceeded_error(&self) -> bool {
+    pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            SubscribeErrorKind::FilterPolicyLimitExceededError(_)
+            SubscribeErrorKind::AuthorizationErrorException(_)
         )
     }
-    pub fn is_internal_error_error(&self) -> bool {
-        matches!(&self.kind, SubscribeErrorKind::InternalErrorError(_))
-    }
-    pub fn is_invalid_parameter_error(&self) -> bool {
-        matches!(&self.kind, SubscribeErrorKind::InvalidParameterError(_))
-    }
-    pub fn is_invalid_security_error(&self) -> bool {
-        matches!(&self.kind, SubscribeErrorKind::InvalidSecurityError(_))
-    }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, SubscribeErrorKind::NotFoundError(_))
-    }
-    pub fn is_subscription_limit_exceeded_error(&self) -> bool {
+    pub fn is_filter_policy_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            SubscribeErrorKind::SubscriptionLimitExceededError(_)
+            SubscribeErrorKind::FilterPolicyLimitExceededException(_)
+        )
+    }
+    pub fn is_internal_error_exception(&self) -> bool {
+        matches!(&self.kind, SubscribeErrorKind::InternalErrorException(_))
+    }
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(&self.kind, SubscribeErrorKind::InvalidParameterException(_))
+    }
+    pub fn is_invalid_security_exception(&self) -> bool {
+        matches!(&self.kind, SubscribeErrorKind::InvalidSecurityException(_))
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, SubscribeErrorKind::NotFoundException(_))
+    }
+    pub fn is_subscription_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SubscribeErrorKind::SubscriptionLimitExceededException(_)
         )
     }
 }
 impl std::error::Error for SubscribeError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            SubscribeErrorKind::AuthorizationErrorError(_inner) => Some(_inner),
-            SubscribeErrorKind::FilterPolicyLimitExceededError(_inner) => Some(_inner),
-            SubscribeErrorKind::InternalErrorError(_inner) => Some(_inner),
-            SubscribeErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            SubscribeErrorKind::InvalidSecurityError(_inner) => Some(_inner),
-            SubscribeErrorKind::NotFoundError(_inner) => Some(_inner),
-            SubscribeErrorKind::SubscriptionLimitExceededError(_inner) => Some(_inner),
+            SubscribeErrorKind::AuthorizationErrorException(_inner) => Some(_inner),
+            SubscribeErrorKind::FilterPolicyLimitExceededException(_inner) => Some(_inner),
+            SubscribeErrorKind::InternalErrorException(_inner) => Some(_inner),
+            SubscribeErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            SubscribeErrorKind::InvalidSecurityException(_inner) => Some(_inner),
+            SubscribeErrorKind::NotFoundException(_inner) => Some(_inner),
+            SubscribeErrorKind::SubscriptionLimitExceededException(_inner) => Some(_inner),
             SubscribeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3890,26 +4024,26 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    AuthorizationErrorError(crate::error::AuthorizationErrorError),
-    ConcurrentAccessError(crate::error::ConcurrentAccessError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    StaleTagError(crate::error::StaleTagError),
-    TagLimitExceededError(crate::error::TagLimitExceededError),
-    TagPolicyError(crate::error::TagPolicyError),
+    AuthorizationErrorException(crate::error::AuthorizationErrorException),
+    ConcurrentAccessException(crate::error::ConcurrentAccessException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    StaleTagException(crate::error::StaleTagException),
+    TagLimitExceededException(crate::error::TagLimitExceededException),
+    TagPolicyException(crate::error::TagPolicyException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            TagResourceErrorKind::AuthorizationErrorError(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::ConcurrentAccessError(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::StaleTagError(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::TagLimitExceededError(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::TagPolicyError(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::AuthorizationErrorException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::ConcurrentAccessException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::StaleTagException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::TagLimitExceededException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::TagPolicyException(_inner) => _inner.fmt(f),
             TagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3958,38 +4092,53 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_authorization_error_error(&self) -> bool {
-        matches!(&self.kind, TagResourceErrorKind::AuthorizationErrorError(_))
+    pub fn is_authorization_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            TagResourceErrorKind::AuthorizationErrorException(_)
+        )
     }
-    pub fn is_concurrent_access_error(&self) -> bool {
-        matches!(&self.kind, TagResourceErrorKind::ConcurrentAccessError(_))
+    pub fn is_concurrent_access_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            TagResourceErrorKind::ConcurrentAccessException(_)
+        )
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
-        matches!(&self.kind, TagResourceErrorKind::InvalidParameterError(_))
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            TagResourceErrorKind::InvalidParameterException(_)
+        )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
-        matches!(&self.kind, TagResourceErrorKind::ResourceNotFoundError(_))
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            TagResourceErrorKind::ResourceNotFoundException(_)
+        )
     }
-    pub fn is_stale_tag_error(&self) -> bool {
-        matches!(&self.kind, TagResourceErrorKind::StaleTagError(_))
+    pub fn is_stale_tag_exception(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::StaleTagException(_))
     }
-    pub fn is_tag_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, TagResourceErrorKind::TagLimitExceededError(_))
+    pub fn is_tag_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            TagResourceErrorKind::TagLimitExceededException(_)
+        )
     }
-    pub fn is_tag_policy_error(&self) -> bool {
-        matches!(&self.kind, TagResourceErrorKind::TagPolicyError(_))
+    pub fn is_tag_policy_exception(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::TagPolicyException(_))
     }
 }
 impl std::error::Error for TagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            TagResourceErrorKind::AuthorizationErrorError(_inner) => Some(_inner),
-            TagResourceErrorKind::ConcurrentAccessError(_inner) => Some(_inner),
-            TagResourceErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            TagResourceErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            TagResourceErrorKind::StaleTagError(_inner) => Some(_inner),
-            TagResourceErrorKind::TagLimitExceededError(_inner) => Some(_inner),
-            TagResourceErrorKind::TagPolicyError(_inner) => Some(_inner),
+            TagResourceErrorKind::AuthorizationErrorException(_inner) => Some(_inner),
+            TagResourceErrorKind::ConcurrentAccessException(_inner) => Some(_inner),
+            TagResourceErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            TagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            TagResourceErrorKind::StaleTagException(_inner) => Some(_inner),
+            TagResourceErrorKind::TagLimitExceededException(_inner) => Some(_inner),
+            TagResourceErrorKind::TagPolicyException(_inner) => Some(_inner),
             TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4004,22 +4153,22 @@ pub struct UnsubscribeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UnsubscribeErrorKind {
-    AuthorizationErrorError(crate::error::AuthorizationErrorError),
-    InternalErrorError(crate::error::InternalErrorError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    InvalidSecurityError(crate::error::InvalidSecurityError),
-    NotFoundError(crate::error::NotFoundError),
+    AuthorizationErrorException(crate::error::AuthorizationErrorException),
+    InternalErrorException(crate::error::InternalErrorException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    InvalidSecurityException(crate::error::InvalidSecurityException),
+    NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UnsubscribeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UnsubscribeErrorKind::AuthorizationErrorError(_inner) => _inner.fmt(f),
-            UnsubscribeErrorKind::InternalErrorError(_inner) => _inner.fmt(f),
-            UnsubscribeErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            UnsubscribeErrorKind::InvalidSecurityError(_inner) => _inner.fmt(f),
-            UnsubscribeErrorKind::NotFoundError(_inner) => _inner.fmt(f),
+            UnsubscribeErrorKind::AuthorizationErrorException(_inner) => _inner.fmt(f),
+            UnsubscribeErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
+            UnsubscribeErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            UnsubscribeErrorKind::InvalidSecurityException(_inner) => _inner.fmt(f),
+            UnsubscribeErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             UnsubscribeErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4068,30 +4217,39 @@ impl UnsubscribeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_authorization_error_error(&self) -> bool {
-        matches!(&self.kind, UnsubscribeErrorKind::AuthorizationErrorError(_))
+    pub fn is_authorization_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UnsubscribeErrorKind::AuthorizationErrorException(_)
+        )
     }
-    pub fn is_internal_error_error(&self) -> bool {
-        matches!(&self.kind, UnsubscribeErrorKind::InternalErrorError(_))
+    pub fn is_internal_error_exception(&self) -> bool {
+        matches!(&self.kind, UnsubscribeErrorKind::InternalErrorException(_))
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
-        matches!(&self.kind, UnsubscribeErrorKind::InvalidParameterError(_))
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UnsubscribeErrorKind::InvalidParameterException(_)
+        )
     }
-    pub fn is_invalid_security_error(&self) -> bool {
-        matches!(&self.kind, UnsubscribeErrorKind::InvalidSecurityError(_))
+    pub fn is_invalid_security_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UnsubscribeErrorKind::InvalidSecurityException(_)
+        )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, UnsubscribeErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, UnsubscribeErrorKind::NotFoundException(_))
     }
 }
 impl std::error::Error for UnsubscribeError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UnsubscribeErrorKind::AuthorizationErrorError(_inner) => Some(_inner),
-            UnsubscribeErrorKind::InternalErrorError(_inner) => Some(_inner),
-            UnsubscribeErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            UnsubscribeErrorKind::InvalidSecurityError(_inner) => Some(_inner),
-            UnsubscribeErrorKind::NotFoundError(_inner) => Some(_inner),
+            UnsubscribeErrorKind::AuthorizationErrorException(_inner) => Some(_inner),
+            UnsubscribeErrorKind::InternalErrorException(_inner) => Some(_inner),
+            UnsubscribeErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            UnsubscribeErrorKind::InvalidSecurityException(_inner) => Some(_inner),
+            UnsubscribeErrorKind::NotFoundException(_inner) => Some(_inner),
             UnsubscribeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4106,26 +4264,26 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    AuthorizationErrorError(crate::error::AuthorizationErrorError),
-    ConcurrentAccessError(crate::error::ConcurrentAccessError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    StaleTagError(crate::error::StaleTagError),
-    TagLimitExceededError(crate::error::TagLimitExceededError),
-    TagPolicyError(crate::error::TagPolicyError),
+    AuthorizationErrorException(crate::error::AuthorizationErrorException),
+    ConcurrentAccessException(crate::error::ConcurrentAccessException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    StaleTagException(crate::error::StaleTagException),
+    TagLimitExceededException(crate::error::TagLimitExceededException),
+    TagPolicyException(crate::error::TagPolicyException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UntagResourceErrorKind::AuthorizationErrorError(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::ConcurrentAccessError(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::StaleTagError(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::TagLimitExceededError(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::TagPolicyError(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::AuthorizationErrorException(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::ConcurrentAccessException(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::StaleTagException(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::TagLimitExceededException(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::TagPolicyException(_inner) => _inner.fmt(f),
             UntagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4174,41 +4332,53 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_authorization_error_error(&self) -> bool {
+    pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UntagResourceErrorKind::AuthorizationErrorError(_)
+            UntagResourceErrorKind::AuthorizationErrorException(_)
         )
     }
-    pub fn is_concurrent_access_error(&self) -> bool {
-        matches!(&self.kind, UntagResourceErrorKind::ConcurrentAccessError(_))
+    pub fn is_concurrent_access_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UntagResourceErrorKind::ConcurrentAccessException(_)
+        )
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
-        matches!(&self.kind, UntagResourceErrorKind::InvalidParameterError(_))
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UntagResourceErrorKind::InvalidParameterException(_)
+        )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
-        matches!(&self.kind, UntagResourceErrorKind::ResourceNotFoundError(_))
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UntagResourceErrorKind::ResourceNotFoundException(_)
+        )
     }
-    pub fn is_stale_tag_error(&self) -> bool {
-        matches!(&self.kind, UntagResourceErrorKind::StaleTagError(_))
+    pub fn is_stale_tag_exception(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::StaleTagException(_))
     }
-    pub fn is_tag_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, UntagResourceErrorKind::TagLimitExceededError(_))
+    pub fn is_tag_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UntagResourceErrorKind::TagLimitExceededException(_)
+        )
     }
-    pub fn is_tag_policy_error(&self) -> bool {
-        matches!(&self.kind, UntagResourceErrorKind::TagPolicyError(_))
+    pub fn is_tag_policy_exception(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::TagPolicyException(_))
     }
 }
 impl std::error::Error for UntagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UntagResourceErrorKind::AuthorizationErrorError(_inner) => Some(_inner),
-            UntagResourceErrorKind::ConcurrentAccessError(_inner) => Some(_inner),
-            UntagResourceErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            UntagResourceErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            UntagResourceErrorKind::StaleTagError(_inner) => Some(_inner),
-            UntagResourceErrorKind::TagLimitExceededError(_inner) => Some(_inner),
-            UntagResourceErrorKind::TagPolicyError(_inner) => Some(_inner),
+            UntagResourceErrorKind::AuthorizationErrorException(_inner) => Some(_inner),
+            UntagResourceErrorKind::ConcurrentAccessException(_inner) => Some(_inner),
+            UntagResourceErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            UntagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UntagResourceErrorKind::StaleTagException(_inner) => Some(_inner),
+            UntagResourceErrorKind::TagLimitExceededException(_inner) => Some(_inner),
+            UntagResourceErrorKind::TagPolicyException(_inner) => Some(_inner),
             UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4223,24 +4393,30 @@ pub struct VerifySMSSandboxPhoneNumberError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum VerifySMSSandboxPhoneNumberErrorKind {
-    AuthorizationErrorError(crate::error::AuthorizationErrorError),
-    InternalErrorError(crate::error::InternalErrorError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ThrottledError(crate::error::ThrottledError),
-    VerificationError(crate::error::VerificationError),
+    AuthorizationErrorException(crate::error::AuthorizationErrorException),
+    InternalErrorException(crate::error::InternalErrorException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ThrottledException(crate::error::ThrottledException),
+    VerificationException(crate::error::VerificationException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for VerifySMSSandboxPhoneNumberError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            VerifySMSSandboxPhoneNumberErrorKind::AuthorizationErrorError(_inner) => _inner.fmt(f),
-            VerifySMSSandboxPhoneNumberErrorKind::InternalErrorError(_inner) => _inner.fmt(f),
-            VerifySMSSandboxPhoneNumberErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            VerifySMSSandboxPhoneNumberErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            VerifySMSSandboxPhoneNumberErrorKind::ThrottledError(_inner) => _inner.fmt(f),
-            VerifySMSSandboxPhoneNumberErrorKind::VerificationError(_inner) => _inner.fmt(f),
+            VerifySMSSandboxPhoneNumberErrorKind::AuthorizationErrorException(_inner) => {
+                _inner.fmt(f)
+            }
+            VerifySMSSandboxPhoneNumberErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
+            VerifySMSSandboxPhoneNumberErrorKind::InvalidParameterException(_inner) => {
+                _inner.fmt(f)
+            }
+            VerifySMSSandboxPhoneNumberErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            VerifySMSSandboxPhoneNumberErrorKind::ThrottledException(_inner) => _inner.fmt(f),
+            VerifySMSSandboxPhoneNumberErrorKind::VerificationException(_inner) => _inner.fmt(f),
             VerifySMSSandboxPhoneNumberErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4289,52 +4465,54 @@ impl VerifySMSSandboxPhoneNumberError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_authorization_error_error(&self) -> bool {
+    pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            VerifySMSSandboxPhoneNumberErrorKind::AuthorizationErrorError(_)
+            VerifySMSSandboxPhoneNumberErrorKind::AuthorizationErrorException(_)
         )
     }
-    pub fn is_internal_error_error(&self) -> bool {
+    pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            VerifySMSSandboxPhoneNumberErrorKind::InternalErrorError(_)
+            VerifySMSSandboxPhoneNumberErrorKind::InternalErrorException(_)
         )
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
-            VerifySMSSandboxPhoneNumberErrorKind::InvalidParameterError(_)
+            VerifySMSSandboxPhoneNumberErrorKind::InvalidParameterException(_)
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            VerifySMSSandboxPhoneNumberErrorKind::ResourceNotFoundError(_)
+            VerifySMSSandboxPhoneNumberErrorKind::ResourceNotFoundException(_)
         )
     }
-    pub fn is_throttled_error(&self) -> bool {
+    pub fn is_throttled_exception(&self) -> bool {
         matches!(
             &self.kind,
-            VerifySMSSandboxPhoneNumberErrorKind::ThrottledError(_)
+            VerifySMSSandboxPhoneNumberErrorKind::ThrottledException(_)
         )
     }
-    pub fn is_verification_error(&self) -> bool {
+    pub fn is_verification_exception(&self) -> bool {
         matches!(
             &self.kind,
-            VerifySMSSandboxPhoneNumberErrorKind::VerificationError(_)
+            VerifySMSSandboxPhoneNumberErrorKind::VerificationException(_)
         )
     }
 }
 impl std::error::Error for VerifySMSSandboxPhoneNumberError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            VerifySMSSandboxPhoneNumberErrorKind::AuthorizationErrorError(_inner) => Some(_inner),
-            VerifySMSSandboxPhoneNumberErrorKind::InternalErrorError(_inner) => Some(_inner),
-            VerifySMSSandboxPhoneNumberErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            VerifySMSSandboxPhoneNumberErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            VerifySMSSandboxPhoneNumberErrorKind::ThrottledError(_inner) => Some(_inner),
-            VerifySMSSandboxPhoneNumberErrorKind::VerificationError(_inner) => Some(_inner),
+            VerifySMSSandboxPhoneNumberErrorKind::AuthorizationErrorException(_inner) => {
+                Some(_inner)
+            }
+            VerifySMSSandboxPhoneNumberErrorKind::InternalErrorException(_inner) => Some(_inner),
+            VerifySMSSandboxPhoneNumberErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            VerifySMSSandboxPhoneNumberErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            VerifySMSSandboxPhoneNumberErrorKind::ThrottledException(_inner) => Some(_inner),
+            VerifySMSSandboxPhoneNumberErrorKind::VerificationException(_inner) => Some(_inner),
             VerifySMSSandboxPhoneNumberErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4343,37 +4521,37 @@ impl std::error::Error for VerifySMSSandboxPhoneNumberError {
 /// <p>Indicates that the one-time password (OTP) used for verification is invalid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct VerificationError {
+pub struct VerificationException {
     pub message: std::option::Option<std::string::String>,
     /// <p>The status of the verification error.</p>
     pub status: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for VerificationError {
+impl std::fmt::Debug for VerificationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VerificationError");
+        let mut formatter = f.debug_struct("VerificationException");
         formatter.field("message", &self.message);
         formatter.field("status", &self.status);
         formatter.finish()
     }
 }
-impl VerificationError {
+impl VerificationException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for VerificationError {
+impl std::fmt::Display for VerificationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "VerificationError [VerificationException]")?;
+        write!(f, "VerificationException")?;
         if let Some(inner_1) = &self.message {
             write!(f, ": {}", inner_1)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for VerificationError {}
-/// See [`VerificationError`](crate::error::VerificationError)
-pub mod verification_error {
-    /// A builder for [`VerificationError`](crate::error::VerificationError)
+impl std::error::Error for VerificationException {}
+/// See [`VerificationException`](crate::error::VerificationException)
+pub mod verification_exception {
+    /// A builder for [`VerificationException`](crate::error::VerificationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -4398,19 +4576,19 @@ pub mod verification_error {
             self.status = input;
             self
         }
-        /// Consumes the builder and constructs a [`VerificationError`](crate::error::VerificationError)
-        pub fn build(self) -> crate::error::VerificationError {
-            crate::error::VerificationError {
+        /// Consumes the builder and constructs a [`VerificationException`](crate::error::VerificationException)
+        pub fn build(self) -> crate::error::VerificationException {
+            crate::error::VerificationException {
                 message: self.message,
                 status: self.status,
             }
         }
     }
 }
-impl VerificationError {
-    /// Creates a new builder-style object to manufacture [`VerificationError`](crate::error::VerificationError)
-    pub fn builder() -> crate::error::verification_error::Builder {
-        crate::error::verification_error::Builder::default()
+impl VerificationException {
+    /// Creates a new builder-style object to manufacture [`VerificationException`](crate::error::VerificationException)
+    pub fn builder() -> crate::error::verification_exception::Builder {
+        crate::error::verification_exception::Builder::default()
     }
 }
 
@@ -4418,35 +4596,35 @@ impl VerificationError {
 /// the limit for your account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ThrottledError {
+pub struct ThrottledException {
     /// <p>Throttled request.</p>
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ThrottledError {
+impl std::fmt::Debug for ThrottledException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ThrottledError");
+        let mut formatter = f.debug_struct("ThrottledException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl ThrottledError {
+impl ThrottledException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ThrottledError {
+impl std::fmt::Display for ThrottledException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ThrottledError [ThrottledException]")?;
+        write!(f, "ThrottledException")?;
         if let Some(inner_2) = &self.message {
             write!(f, ": {}", inner_2)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ThrottledError {}
-/// See [`ThrottledError`](crate::error::ThrottledError)
-pub mod throttled_error {
-    /// A builder for [`ThrottledError`](crate::error::ThrottledError)
+impl std::error::Error for ThrottledException {}
+/// See [`ThrottledException`](crate::error::ThrottledException)
+pub mod throttled_exception {
+    /// A builder for [`ThrottledException`](crate::error::ThrottledException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -4462,18 +4640,18 @@ pub mod throttled_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ThrottledError`](crate::error::ThrottledError)
-        pub fn build(self) -> crate::error::ThrottledError {
-            crate::error::ThrottledError {
+        /// Consumes the builder and constructs a [`ThrottledException`](crate::error::ThrottledException)
+        pub fn build(self) -> crate::error::ThrottledException {
+            crate::error::ThrottledException {
                 message: self.message,
             }
         }
     }
 }
-impl ThrottledError {
-    /// Creates a new builder-style object to manufacture [`ThrottledError`](crate::error::ThrottledError)
-    pub fn builder() -> crate::error::throttled_error::Builder {
-        crate::error::throttled_error::Builder::default()
+impl ThrottledException {
+    /// Creates a new builder-style object to manufacture [`ThrottledException`](crate::error::ThrottledException)
+    pub fn builder() -> crate::error::throttled_exception::Builder {
+        crate::error::throttled_exception::Builder::default()
     }
 }
 
@@ -4481,34 +4659,34 @@ impl ThrottledError {
 /// exists.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ResourceNotFoundError {
+pub struct ResourceNotFoundException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ResourceNotFoundError {
+impl std::fmt::Debug for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceNotFoundError");
+        let mut formatter = f.debug_struct("ResourceNotFoundException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl ResourceNotFoundError {
+impl ResourceNotFoundException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ResourceNotFoundError {
+impl std::fmt::Display for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ResourceNotFoundError [ResourceNotFoundException]")?;
+        write!(f, "ResourceNotFoundException")?;
         if let Some(inner_3) = &self.message {
             write!(f, ": {}", inner_3)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ResourceNotFoundError {}
-/// See [`ResourceNotFoundError`](crate::error::ResourceNotFoundError)
-pub mod resource_not_found_error {
-    /// A builder for [`ResourceNotFoundError`](crate::error::ResourceNotFoundError)
+impl std::error::Error for ResourceNotFoundException {}
+/// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
+pub mod resource_not_found_exception {
+    /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -4523,18 +4701,18 @@ pub mod resource_not_found_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResourceNotFoundError`](crate::error::ResourceNotFoundError)
-        pub fn build(self) -> crate::error::ResourceNotFoundError {
-            crate::error::ResourceNotFoundError {
+        /// Consumes the builder and constructs a [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
+        pub fn build(self) -> crate::error::ResourceNotFoundException {
+            crate::error::ResourceNotFoundException {
                 message: self.message,
             }
         }
     }
 }
-impl ResourceNotFoundError {
-    /// Creates a new builder-style object to manufacture [`ResourceNotFoundError`](crate::error::ResourceNotFoundError)
-    pub fn builder() -> crate::error::resource_not_found_error::Builder {
-        crate::error::resource_not_found_error::Builder::default()
+impl ResourceNotFoundException {
+    /// Creates a new builder-style object to manufacture [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
+    pub fn builder() -> crate::error::resource_not_found_exception::Builder {
+        crate::error::resource_not_found_exception::Builder::default()
     }
 }
 
@@ -4542,34 +4720,34 @@ impl ResourceNotFoundError {
 /// constraints.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidParameterError {
+pub struct InvalidParameterException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidParameterError {
+impl std::fmt::Debug for InvalidParameterException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidParameterError");
+        let mut formatter = f.debug_struct("InvalidParameterException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl InvalidParameterError {
+impl InvalidParameterException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InvalidParameterError {
+impl std::fmt::Display for InvalidParameterException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidParameterError [InvalidParameterException]")?;
+        write!(f, "InvalidParameterException")?;
         if let Some(inner_4) = &self.message {
             write!(f, ": {}", inner_4)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InvalidParameterError {}
-/// See [`InvalidParameterError`](crate::error::InvalidParameterError)
-pub mod invalid_parameter_error {
-    /// A builder for [`InvalidParameterError`](crate::error::InvalidParameterError)
+impl std::error::Error for InvalidParameterException {}
+/// See [`InvalidParameterException`](crate::error::InvalidParameterException)
+pub mod invalid_parameter_exception {
+    /// A builder for [`InvalidParameterException`](crate::error::InvalidParameterException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -4584,52 +4762,52 @@ pub mod invalid_parameter_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidParameterError`](crate::error::InvalidParameterError)
-        pub fn build(self) -> crate::error::InvalidParameterError {
-            crate::error::InvalidParameterError {
+        /// Consumes the builder and constructs a [`InvalidParameterException`](crate::error::InvalidParameterException)
+        pub fn build(self) -> crate::error::InvalidParameterException {
+            crate::error::InvalidParameterException {
                 message: self.message,
             }
         }
     }
 }
-impl InvalidParameterError {
-    /// Creates a new builder-style object to manufacture [`InvalidParameterError`](crate::error::InvalidParameterError)
-    pub fn builder() -> crate::error::invalid_parameter_error::Builder {
-        crate::error::invalid_parameter_error::Builder::default()
+impl InvalidParameterException {
+    /// Creates a new builder-style object to manufacture [`InvalidParameterException`](crate::error::InvalidParameterException)
+    pub fn builder() -> crate::error::invalid_parameter_exception::Builder {
+        crate::error::invalid_parameter_exception::Builder::default()
     }
 }
 
 /// <p>Indicates an internal service error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct InternalErrorError {
+pub struct InternalErrorException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InternalErrorError {
+impl std::fmt::Debug for InternalErrorException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InternalErrorError");
+        let mut formatter = f.debug_struct("InternalErrorException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl InternalErrorError {
+impl InternalErrorException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InternalErrorError {
+impl std::fmt::Display for InternalErrorException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InternalErrorError [InternalErrorException]")?;
+        write!(f, "InternalErrorException")?;
         if let Some(inner_5) = &self.message {
             write!(f, ": {}", inner_5)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InternalErrorError {}
-/// See [`InternalErrorError`](crate::error::InternalErrorError)
-pub mod internal_error_error {
-    /// A builder for [`InternalErrorError`](crate::error::InternalErrorError)
+impl std::error::Error for InternalErrorException {}
+/// See [`InternalErrorException`](crate::error::InternalErrorException)
+pub mod internal_error_exception {
+    /// A builder for [`InternalErrorException`](crate::error::InternalErrorException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -4644,52 +4822,52 @@ pub mod internal_error_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InternalErrorError`](crate::error::InternalErrorError)
-        pub fn build(self) -> crate::error::InternalErrorError {
-            crate::error::InternalErrorError {
+        /// Consumes the builder and constructs a [`InternalErrorException`](crate::error::InternalErrorException)
+        pub fn build(self) -> crate::error::InternalErrorException {
+            crate::error::InternalErrorException {
                 message: self.message,
             }
         }
     }
 }
-impl InternalErrorError {
-    /// Creates a new builder-style object to manufacture [`InternalErrorError`](crate::error::InternalErrorError)
-    pub fn builder() -> crate::error::internal_error_error::Builder {
-        crate::error::internal_error_error::Builder::default()
+impl InternalErrorException {
+    /// Creates a new builder-style object to manufacture [`InternalErrorException`](crate::error::InternalErrorException)
+    pub fn builder() -> crate::error::internal_error_exception::Builder {
+        crate::error::internal_error_exception::Builder::default()
     }
 }
 
 /// <p>Indicates that the user has been denied access to the requested resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct AuthorizationErrorError {
+pub struct AuthorizationErrorException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for AuthorizationErrorError {
+impl std::fmt::Debug for AuthorizationErrorException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AuthorizationErrorError");
+        let mut formatter = f.debug_struct("AuthorizationErrorException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl AuthorizationErrorError {
+impl AuthorizationErrorException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for AuthorizationErrorError {
+impl std::fmt::Display for AuthorizationErrorException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "AuthorizationErrorError [AuthorizationErrorException]")?;
+        write!(f, "AuthorizationErrorException")?;
         if let Some(inner_6) = &self.message {
             write!(f, ": {}", inner_6)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for AuthorizationErrorError {}
-/// See [`AuthorizationErrorError`](crate::error::AuthorizationErrorError)
-pub mod authorization_error_error {
-    /// A builder for [`AuthorizationErrorError`](crate::error::AuthorizationErrorError)
+impl std::error::Error for AuthorizationErrorException {}
+/// See [`AuthorizationErrorException`](crate::error::AuthorizationErrorException)
+pub mod authorization_error_exception {
+    /// A builder for [`AuthorizationErrorException`](crate::error::AuthorizationErrorException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -4704,18 +4882,18 @@ pub mod authorization_error_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`AuthorizationErrorError`](crate::error::AuthorizationErrorError)
-        pub fn build(self) -> crate::error::AuthorizationErrorError {
-            crate::error::AuthorizationErrorError {
+        /// Consumes the builder and constructs a [`AuthorizationErrorException`](crate::error::AuthorizationErrorException)
+        pub fn build(self) -> crate::error::AuthorizationErrorException {
+            crate::error::AuthorizationErrorException {
                 message: self.message,
             }
         }
     }
 }
-impl AuthorizationErrorError {
-    /// Creates a new builder-style object to manufacture [`AuthorizationErrorError`](crate::error::AuthorizationErrorError)
-    pub fn builder() -> crate::error::authorization_error_error::Builder {
-        crate::error::authorization_error_error::Builder::default()
+impl AuthorizationErrorException {
+    /// Creates a new builder-style object to manufacture [`AuthorizationErrorException`](crate::error::AuthorizationErrorException)
+    pub fn builder() -> crate::error::authorization_error_exception::Builder {
+        crate::error::authorization_error_exception::Builder::default()
     }
 }
 
@@ -4723,34 +4901,34 @@ impl AuthorizationErrorError {
 /// retry it.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct TagPolicyError {
+pub struct TagPolicyException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for TagPolicyError {
+impl std::fmt::Debug for TagPolicyException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagPolicyError");
+        let mut formatter = f.debug_struct("TagPolicyException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl TagPolicyError {
+impl TagPolicyException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for TagPolicyError {
+impl std::fmt::Display for TagPolicyException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TagPolicyError [TagPolicyException]")?;
+        write!(f, "TagPolicyException")?;
         if let Some(inner_7) = &self.message {
             write!(f, ": {}", inner_7)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for TagPolicyError {}
-/// See [`TagPolicyError`](crate::error::TagPolicyError)
-pub mod tag_policy_error {
-    /// A builder for [`TagPolicyError`](crate::error::TagPolicyError)
+impl std::error::Error for TagPolicyException {}
+/// See [`TagPolicyException`](crate::error::TagPolicyException)
+pub mod tag_policy_exception {
+    /// A builder for [`TagPolicyException`](crate::error::TagPolicyException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -4765,52 +4943,52 @@ pub mod tag_policy_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TagPolicyError`](crate::error::TagPolicyError)
-        pub fn build(self) -> crate::error::TagPolicyError {
-            crate::error::TagPolicyError {
+        /// Consumes the builder and constructs a [`TagPolicyException`](crate::error::TagPolicyException)
+        pub fn build(self) -> crate::error::TagPolicyException {
+            crate::error::TagPolicyException {
                 message: self.message,
             }
         }
     }
 }
-impl TagPolicyError {
-    /// Creates a new builder-style object to manufacture [`TagPolicyError`](crate::error::TagPolicyError)
-    pub fn builder() -> crate::error::tag_policy_error::Builder {
-        crate::error::tag_policy_error::Builder::default()
+impl TagPolicyException {
+    /// Creates a new builder-style object to manufacture [`TagPolicyException`](crate::error::TagPolicyException)
+    pub fn builder() -> crate::error::tag_policy_exception::Builder {
+        crate::error::tag_policy_exception::Builder::default()
     }
 }
 
 /// <p>Can't add more than 50 tags to a topic.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct TagLimitExceededError {
+pub struct TagLimitExceededException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for TagLimitExceededError {
+impl std::fmt::Debug for TagLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagLimitExceededError");
+        let mut formatter = f.debug_struct("TagLimitExceededException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl TagLimitExceededError {
+impl TagLimitExceededException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for TagLimitExceededError {
+impl std::fmt::Display for TagLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TagLimitExceededError [TagLimitExceededException]")?;
+        write!(f, "TagLimitExceededException")?;
         if let Some(inner_8) = &self.message {
             write!(f, ": {}", inner_8)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for TagLimitExceededError {}
-/// See [`TagLimitExceededError`](crate::error::TagLimitExceededError)
-pub mod tag_limit_exceeded_error {
-    /// A builder for [`TagLimitExceededError`](crate::error::TagLimitExceededError)
+impl std::error::Error for TagLimitExceededException {}
+/// See [`TagLimitExceededException`](crate::error::TagLimitExceededException)
+pub mod tag_limit_exceeded_exception {
+    /// A builder for [`TagLimitExceededException`](crate::error::TagLimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -4825,18 +5003,18 @@ pub mod tag_limit_exceeded_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TagLimitExceededError`](crate::error::TagLimitExceededError)
-        pub fn build(self) -> crate::error::TagLimitExceededError {
-            crate::error::TagLimitExceededError {
+        /// Consumes the builder and constructs a [`TagLimitExceededException`](crate::error::TagLimitExceededException)
+        pub fn build(self) -> crate::error::TagLimitExceededException {
+            crate::error::TagLimitExceededException {
                 message: self.message,
             }
         }
     }
 }
-impl TagLimitExceededError {
-    /// Creates a new builder-style object to manufacture [`TagLimitExceededError`](crate::error::TagLimitExceededError)
-    pub fn builder() -> crate::error::tag_limit_exceeded_error::Builder {
-        crate::error::tag_limit_exceeded_error::Builder::default()
+impl TagLimitExceededException {
+    /// Creates a new builder-style object to manufacture [`TagLimitExceededException`](crate::error::TagLimitExceededException)
+    pub fn builder() -> crate::error::tag_limit_exceeded_exception::Builder {
+        crate::error::tag_limit_exceeded_exception::Builder::default()
     }
 }
 
@@ -4844,34 +5022,34 @@ impl TagLimitExceededError {
 /// short while and then retry the operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct StaleTagError {
+pub struct StaleTagException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for StaleTagError {
+impl std::fmt::Debug for StaleTagException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StaleTagError");
+        let mut formatter = f.debug_struct("StaleTagException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl StaleTagError {
+impl StaleTagException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for StaleTagError {
+impl std::fmt::Display for StaleTagException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "StaleTagError [StaleTagException]")?;
+        write!(f, "StaleTagException")?;
         if let Some(inner_9) = &self.message {
             write!(f, ": {}", inner_9)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for StaleTagError {}
-/// See [`StaleTagError`](crate::error::StaleTagError)
-pub mod stale_tag_error {
-    /// A builder for [`StaleTagError`](crate::error::StaleTagError)
+impl std::error::Error for StaleTagException {}
+/// See [`StaleTagException`](crate::error::StaleTagException)
+pub mod stale_tag_exception {
+    /// A builder for [`StaleTagException`](crate::error::StaleTagException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -4886,18 +5064,18 @@ pub mod stale_tag_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`StaleTagError`](crate::error::StaleTagError)
-        pub fn build(self) -> crate::error::StaleTagError {
-            crate::error::StaleTagError {
+        /// Consumes the builder and constructs a [`StaleTagException`](crate::error::StaleTagException)
+        pub fn build(self) -> crate::error::StaleTagException {
+            crate::error::StaleTagException {
                 message: self.message,
             }
         }
     }
 }
-impl StaleTagError {
-    /// Creates a new builder-style object to manufacture [`StaleTagError`](crate::error::StaleTagError)
-    pub fn builder() -> crate::error::stale_tag_error::Builder {
-        crate::error::stale_tag_error::Builder::default()
+impl StaleTagException {
+    /// Creates a new builder-style object to manufacture [`StaleTagException`](crate::error::StaleTagException)
+    pub fn builder() -> crate::error::stale_tag_exception::Builder {
+        crate::error::stale_tag_exception::Builder::default()
     }
 }
 
@@ -4905,34 +5083,34 @@ impl StaleTagError {
 /// sequentially.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ConcurrentAccessError {
+pub struct ConcurrentAccessException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ConcurrentAccessError {
+impl std::fmt::Debug for ConcurrentAccessException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConcurrentAccessError");
+        let mut formatter = f.debug_struct("ConcurrentAccessException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl ConcurrentAccessError {
+impl ConcurrentAccessException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ConcurrentAccessError {
+impl std::fmt::Display for ConcurrentAccessException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ConcurrentAccessError [ConcurrentAccessException]")?;
+        write!(f, "ConcurrentAccessException")?;
         if let Some(inner_10) = &self.message {
             write!(f, ": {}", inner_10)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ConcurrentAccessError {}
-/// See [`ConcurrentAccessError`](crate::error::ConcurrentAccessError)
-pub mod concurrent_access_error {
-    /// A builder for [`ConcurrentAccessError`](crate::error::ConcurrentAccessError)
+impl std::error::Error for ConcurrentAccessException {}
+/// See [`ConcurrentAccessException`](crate::error::ConcurrentAccessException)
+pub mod concurrent_access_exception {
+    /// A builder for [`ConcurrentAccessException`](crate::error::ConcurrentAccessException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -4947,52 +5125,52 @@ pub mod concurrent_access_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ConcurrentAccessError`](crate::error::ConcurrentAccessError)
-        pub fn build(self) -> crate::error::ConcurrentAccessError {
-            crate::error::ConcurrentAccessError {
+        /// Consumes the builder and constructs a [`ConcurrentAccessException`](crate::error::ConcurrentAccessException)
+        pub fn build(self) -> crate::error::ConcurrentAccessException {
+            crate::error::ConcurrentAccessException {
                 message: self.message,
             }
         }
     }
 }
-impl ConcurrentAccessError {
-    /// Creates a new builder-style object to manufacture [`ConcurrentAccessError`](crate::error::ConcurrentAccessError)
-    pub fn builder() -> crate::error::concurrent_access_error::Builder {
-        crate::error::concurrent_access_error::Builder::default()
+impl ConcurrentAccessException {
+    /// Creates a new builder-style object to manufacture [`ConcurrentAccessException`](crate::error::ConcurrentAccessException)
+    pub fn builder() -> crate::error::concurrent_access_exception::Builder {
+        crate::error::concurrent_access_exception::Builder::default()
     }
 }
 
 /// <p>Indicates that the requested resource does not exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct NotFoundError {
+pub struct NotFoundException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for NotFoundError {
+impl std::fmt::Debug for NotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotFoundError");
+        let mut formatter = f.debug_struct("NotFoundException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl NotFoundError {
+impl NotFoundException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for NotFoundError {
+impl std::fmt::Display for NotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "NotFoundError [NotFoundException]")?;
+        write!(f, "NotFoundException")?;
         if let Some(inner_11) = &self.message {
             write!(f, ": {}", inner_11)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for NotFoundError {}
-/// See [`NotFoundError`](crate::error::NotFoundError)
-pub mod not_found_error {
-    /// A builder for [`NotFoundError`](crate::error::NotFoundError)
+impl std::error::Error for NotFoundException {}
+/// See [`NotFoundException`](crate::error::NotFoundException)
+pub mod not_found_exception {
+    /// A builder for [`NotFoundException`](crate::error::NotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -5007,18 +5185,18 @@ pub mod not_found_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`NotFoundError`](crate::error::NotFoundError)
-        pub fn build(self) -> crate::error::NotFoundError {
-            crate::error::NotFoundError {
+        /// Consumes the builder and constructs a [`NotFoundException`](crate::error::NotFoundException)
+        pub fn build(self) -> crate::error::NotFoundException {
+            crate::error::NotFoundException {
                 message: self.message,
             }
         }
     }
 }
-impl NotFoundError {
-    /// Creates a new builder-style object to manufacture [`NotFoundError`](crate::error::NotFoundError)
-    pub fn builder() -> crate::error::not_found_error::Builder {
-        crate::error::not_found_error::Builder::default()
+impl NotFoundException {
+    /// Creates a new builder-style object to manufacture [`NotFoundException`](crate::error::NotFoundException)
+    pub fn builder() -> crate::error::not_found_exception::Builder {
+        crate::error::not_found_exception::Builder::default()
     }
 }
 
@@ -5026,34 +5204,34 @@ impl NotFoundError {
 /// request using Signature Version 4.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidSecurityError {
+pub struct InvalidSecurityException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidSecurityError {
+impl std::fmt::Debug for InvalidSecurityException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidSecurityError");
+        let mut formatter = f.debug_struct("InvalidSecurityException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl InvalidSecurityError {
+impl InvalidSecurityException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InvalidSecurityError {
+impl std::fmt::Display for InvalidSecurityException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidSecurityError [InvalidSecurityException]")?;
+        write!(f, "InvalidSecurityException")?;
         if let Some(inner_12) = &self.message {
             write!(f, ": {}", inner_12)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InvalidSecurityError {}
-/// See [`InvalidSecurityError`](crate::error::InvalidSecurityError)
-pub mod invalid_security_error {
-    /// A builder for [`InvalidSecurityError`](crate::error::InvalidSecurityError)
+impl std::error::Error for InvalidSecurityException {}
+/// See [`InvalidSecurityException`](crate::error::InvalidSecurityException)
+pub mod invalid_security_exception {
+    /// A builder for [`InvalidSecurityException`](crate::error::InvalidSecurityException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -5068,18 +5246,18 @@ pub mod invalid_security_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidSecurityError`](crate::error::InvalidSecurityError)
-        pub fn build(self) -> crate::error::InvalidSecurityError {
-            crate::error::InvalidSecurityError {
+        /// Consumes the builder and constructs a [`InvalidSecurityException`](crate::error::InvalidSecurityException)
+        pub fn build(self) -> crate::error::InvalidSecurityException {
+            crate::error::InvalidSecurityException {
                 message: self.message,
             }
         }
     }
 }
-impl InvalidSecurityError {
-    /// Creates a new builder-style object to manufacture [`InvalidSecurityError`](crate::error::InvalidSecurityError)
-    pub fn builder() -> crate::error::invalid_security_error::Builder {
-        crate::error::invalid_security_error::Builder::default()
+impl InvalidSecurityException {
+    /// Creates a new builder-style object to manufacture [`InvalidSecurityException`](crate::error::InvalidSecurityException)
+    pub fn builder() -> crate::error::invalid_security_exception::Builder {
+        crate::error::invalid_security_exception::Builder::default()
     }
 }
 
@@ -5087,37 +5265,34 @@ impl InvalidSecurityError {
 /// subscriptions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct SubscriptionLimitExceededError {
+pub struct SubscriptionLimitExceededException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for SubscriptionLimitExceededError {
+impl std::fmt::Debug for SubscriptionLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubscriptionLimitExceededError");
+        let mut formatter = f.debug_struct("SubscriptionLimitExceededException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl SubscriptionLimitExceededError {
+impl SubscriptionLimitExceededException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for SubscriptionLimitExceededError {
+impl std::fmt::Display for SubscriptionLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "SubscriptionLimitExceededError [SubscriptionLimitExceededException]"
-        )?;
+        write!(f, "SubscriptionLimitExceededException")?;
         if let Some(inner_13) = &self.message {
             write!(f, ": {}", inner_13)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for SubscriptionLimitExceededError {}
-/// See [`SubscriptionLimitExceededError`](crate::error::SubscriptionLimitExceededError)
-pub mod subscription_limit_exceeded_error {
-    /// A builder for [`SubscriptionLimitExceededError`](crate::error::SubscriptionLimitExceededError)
+impl std::error::Error for SubscriptionLimitExceededException {}
+/// See [`SubscriptionLimitExceededException`](crate::error::SubscriptionLimitExceededException)
+pub mod subscription_limit_exceeded_exception {
+    /// A builder for [`SubscriptionLimitExceededException`](crate::error::SubscriptionLimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -5132,18 +5307,18 @@ pub mod subscription_limit_exceeded_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`SubscriptionLimitExceededError`](crate::error::SubscriptionLimitExceededError)
-        pub fn build(self) -> crate::error::SubscriptionLimitExceededError {
-            crate::error::SubscriptionLimitExceededError {
+        /// Consumes the builder and constructs a [`SubscriptionLimitExceededException`](crate::error::SubscriptionLimitExceededException)
+        pub fn build(self) -> crate::error::SubscriptionLimitExceededException {
+            crate::error::SubscriptionLimitExceededException {
                 message: self.message,
             }
         }
     }
 }
-impl SubscriptionLimitExceededError {
-    /// Creates a new builder-style object to manufacture [`SubscriptionLimitExceededError`](crate::error::SubscriptionLimitExceededError)
-    pub fn builder() -> crate::error::subscription_limit_exceeded_error::Builder {
-        crate::error::subscription_limit_exceeded_error::Builder::default()
+impl SubscriptionLimitExceededException {
+    /// Creates a new builder-style object to manufacture [`SubscriptionLimitExceededException`](crate::error::SubscriptionLimitExceededException)
+    pub fn builder() -> crate::error::subscription_limit_exceeded_exception::Builder {
+        crate::error::subscription_limit_exceeded_exception::Builder::default()
     }
 }
 
@@ -5152,37 +5327,34 @@ impl SubscriptionLimitExceededError {
 /// Center.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct FilterPolicyLimitExceededError {
+pub struct FilterPolicyLimitExceededException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for FilterPolicyLimitExceededError {
+impl std::fmt::Debug for FilterPolicyLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FilterPolicyLimitExceededError");
+        let mut formatter = f.debug_struct("FilterPolicyLimitExceededException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl FilterPolicyLimitExceededError {
+impl FilterPolicyLimitExceededException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for FilterPolicyLimitExceededError {
+impl std::fmt::Display for FilterPolicyLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "FilterPolicyLimitExceededError [FilterPolicyLimitExceededException]"
-        )?;
+        write!(f, "FilterPolicyLimitExceededException")?;
         if let Some(inner_14) = &self.message {
             write!(f, ": {}", inner_14)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for FilterPolicyLimitExceededError {}
-/// See [`FilterPolicyLimitExceededError`](crate::error::FilterPolicyLimitExceededError)
-pub mod filter_policy_limit_exceeded_error {
-    /// A builder for [`FilterPolicyLimitExceededError`](crate::error::FilterPolicyLimitExceededError)
+impl std::error::Error for FilterPolicyLimitExceededException {}
+/// See [`FilterPolicyLimitExceededException`](crate::error::FilterPolicyLimitExceededException)
+pub mod filter_policy_limit_exceeded_exception {
+    /// A builder for [`FilterPolicyLimitExceededException`](crate::error::FilterPolicyLimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -5197,56 +5369,53 @@ pub mod filter_policy_limit_exceeded_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`FilterPolicyLimitExceededError`](crate::error::FilterPolicyLimitExceededError)
-        pub fn build(self) -> crate::error::FilterPolicyLimitExceededError {
-            crate::error::FilterPolicyLimitExceededError {
+        /// Consumes the builder and constructs a [`FilterPolicyLimitExceededException`](crate::error::FilterPolicyLimitExceededException)
+        pub fn build(self) -> crate::error::FilterPolicyLimitExceededException {
+            crate::error::FilterPolicyLimitExceededException {
                 message: self.message,
             }
         }
     }
 }
-impl FilterPolicyLimitExceededError {
-    /// Creates a new builder-style object to manufacture [`FilterPolicyLimitExceededError`](crate::error::FilterPolicyLimitExceededError)
-    pub fn builder() -> crate::error::filter_policy_limit_exceeded_error::Builder {
-        crate::error::filter_policy_limit_exceeded_error::Builder::default()
+impl FilterPolicyLimitExceededException {
+    /// Creates a new builder-style object to manufacture [`FilterPolicyLimitExceededException`](crate::error::FilterPolicyLimitExceededException)
+    pub fn builder() -> crate::error::filter_policy_limit_exceeded_exception::Builder {
+        crate::error::filter_policy_limit_exceeded_exception::Builder::default()
     }
 }
 
 /// <p>Exception error indicating platform application disabled.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct PlatformApplicationDisabledError {
+pub struct PlatformApplicationDisabledException {
     /// <p>Message for platform application disabled.</p>
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for PlatformApplicationDisabledError {
+impl std::fmt::Debug for PlatformApplicationDisabledException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PlatformApplicationDisabledError");
+        let mut formatter = f.debug_struct("PlatformApplicationDisabledException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl PlatformApplicationDisabledError {
+impl PlatformApplicationDisabledException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for PlatformApplicationDisabledError {
+impl std::fmt::Display for PlatformApplicationDisabledException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "PlatformApplicationDisabledError [PlatformApplicationDisabledException]"
-        )?;
+        write!(f, "PlatformApplicationDisabledException")?;
         if let Some(inner_15) = &self.message {
             write!(f, ": {}", inner_15)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for PlatformApplicationDisabledError {}
-/// See [`PlatformApplicationDisabledError`](crate::error::PlatformApplicationDisabledError)
-pub mod platform_application_disabled_error {
-    /// A builder for [`PlatformApplicationDisabledError`](crate::error::PlatformApplicationDisabledError)
+impl std::error::Error for PlatformApplicationDisabledException {}
+/// See [`PlatformApplicationDisabledException`](crate::error::PlatformApplicationDisabledException)
+pub mod platform_application_disabled_exception {
+    /// A builder for [`PlatformApplicationDisabledException`](crate::error::PlatformApplicationDisabledException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -5262,18 +5431,18 @@ pub mod platform_application_disabled_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`PlatformApplicationDisabledError`](crate::error::PlatformApplicationDisabledError)
-        pub fn build(self) -> crate::error::PlatformApplicationDisabledError {
-            crate::error::PlatformApplicationDisabledError {
+        /// Consumes the builder and constructs a [`PlatformApplicationDisabledException`](crate::error::PlatformApplicationDisabledException)
+        pub fn build(self) -> crate::error::PlatformApplicationDisabledException {
+            crate::error::PlatformApplicationDisabledException {
                 message: self.message,
             }
         }
     }
 }
-impl PlatformApplicationDisabledError {
-    /// Creates a new builder-style object to manufacture [`PlatformApplicationDisabledError`](crate::error::PlatformApplicationDisabledError)
-    pub fn builder() -> crate::error::platform_application_disabled_error::Builder {
-        crate::error::platform_application_disabled_error::Builder::default()
+impl PlatformApplicationDisabledException {
+    /// Creates a new builder-style object to manufacture [`PlatformApplicationDisabledException`](crate::error::PlatformApplicationDisabledException)
+    pub fn builder() -> crate::error::platform_application_disabled_exception::Builder {
+        crate::error::platform_application_disabled_exception::Builder::default()
     }
 }
 
@@ -5283,34 +5452,34 @@ impl PlatformApplicationDisabledError {
 /// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct KMSThrottlingError {
+pub struct KmsThrottlingException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for KMSThrottlingError {
+impl std::fmt::Debug for KmsThrottlingException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KMSThrottlingError");
+        let mut formatter = f.debug_struct("KmsThrottlingException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl KMSThrottlingError {
+impl KmsThrottlingException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for KMSThrottlingError {
+impl std::fmt::Display for KmsThrottlingException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "KMSThrottlingError [KMSThrottlingException]")?;
+        write!(f, "KmsThrottlingException [KMSThrottlingException]")?;
         if let Some(inner_16) = &self.message {
             write!(f, ": {}", inner_16)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for KMSThrottlingError {}
-/// See [`KMSThrottlingError`](crate::error::KMSThrottlingError)
-pub mod kms_throttling_error {
-    /// A builder for [`KMSThrottlingError`](crate::error::KMSThrottlingError)
+impl std::error::Error for KmsThrottlingException {}
+/// See [`KmsThrottlingException`](crate::error::KmsThrottlingException)
+pub mod kms_throttling_exception {
+    /// A builder for [`KmsThrottlingException`](crate::error::KmsThrottlingException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -5325,52 +5494,52 @@ pub mod kms_throttling_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`KMSThrottlingError`](crate::error::KMSThrottlingError)
-        pub fn build(self) -> crate::error::KMSThrottlingError {
-            crate::error::KMSThrottlingError {
+        /// Consumes the builder and constructs a [`KmsThrottlingException`](crate::error::KmsThrottlingException)
+        pub fn build(self) -> crate::error::KmsThrottlingException {
+            crate::error::KmsThrottlingException {
                 message: self.message,
             }
         }
     }
 }
-impl KMSThrottlingError {
-    /// Creates a new builder-style object to manufacture [`KMSThrottlingError`](crate::error::KMSThrottlingError)
-    pub fn builder() -> crate::error::kms_throttling_error::Builder {
-        crate::error::kms_throttling_error::Builder::default()
+impl KmsThrottlingException {
+    /// Creates a new builder-style object to manufacture [`KmsThrottlingException`](crate::error::KmsThrottlingException)
+    pub fn builder() -> crate::error::kms_throttling_exception::Builder {
+        crate::error::kms_throttling_exception::Builder::default()
     }
 }
 
 /// <p>The AWS access key ID needs a subscription for the service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct KMSOptInRequired {
+pub struct KmsOptInRequired {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for KMSOptInRequired {
+impl std::fmt::Debug for KmsOptInRequired {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KMSOptInRequired");
+        let mut formatter = f.debug_struct("KmsOptInRequired");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl KMSOptInRequired {
+impl KmsOptInRequired {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for KMSOptInRequired {
+impl std::fmt::Display for KmsOptInRequired {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "KMSOptInRequired")?;
+        write!(f, "KmsOptInRequired [KMSOptInRequired]")?;
         if let Some(inner_17) = &self.message {
             write!(f, ": {}", inner_17)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for KMSOptInRequired {}
-/// See [`KMSOptInRequired`](crate::error::KMSOptInRequired)
+impl std::error::Error for KmsOptInRequired {}
+/// See [`KmsOptInRequired`](crate::error::KmsOptInRequired)
 pub mod kms_opt_in_required {
-    /// A builder for [`KMSOptInRequired`](crate::error::KMSOptInRequired)
+    /// A builder for [`KmsOptInRequired`](crate::error::KmsOptInRequired)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -5385,16 +5554,16 @@ pub mod kms_opt_in_required {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`KMSOptInRequired`](crate::error::KMSOptInRequired)
-        pub fn build(self) -> crate::error::KMSOptInRequired {
-            crate::error::KMSOptInRequired {
+        /// Consumes the builder and constructs a [`KmsOptInRequired`](crate::error::KmsOptInRequired)
+        pub fn build(self) -> crate::error::KmsOptInRequired {
+            crate::error::KmsOptInRequired {
                 message: self.message,
             }
         }
     }
 }
-impl KMSOptInRequired {
-    /// Creates a new builder-style object to manufacture [`KMSOptInRequired`](crate::error::KMSOptInRequired)
+impl KmsOptInRequired {
+    /// Creates a new builder-style object to manufacture [`KmsOptInRequired`](crate::error::KmsOptInRequired)
     pub fn builder() -> crate::error::kms_opt_in_required::Builder {
         crate::error::kms_opt_in_required::Builder::default()
     }
@@ -5404,34 +5573,34 @@ impl KMSOptInRequired {
 /// found.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct KMSNotFoundError {
+pub struct KmsNotFoundException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for KMSNotFoundError {
+impl std::fmt::Debug for KmsNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KMSNotFoundError");
+        let mut formatter = f.debug_struct("KmsNotFoundException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl KMSNotFoundError {
+impl KmsNotFoundException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for KMSNotFoundError {
+impl std::fmt::Display for KmsNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "KMSNotFoundError [KMSNotFoundException]")?;
+        write!(f, "KmsNotFoundException [KMSNotFoundException]")?;
         if let Some(inner_18) = &self.message {
             write!(f, ": {}", inner_18)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for KMSNotFoundError {}
-/// See [`KMSNotFoundError`](crate::error::KMSNotFoundError)
-pub mod kms_not_found_error {
-    /// A builder for [`KMSNotFoundError`](crate::error::KMSNotFoundError)
+impl std::error::Error for KmsNotFoundException {}
+/// See [`KmsNotFoundException`](crate::error::KmsNotFoundException)
+pub mod kms_not_found_exception {
+    /// A builder for [`KmsNotFoundException`](crate::error::KmsNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -5446,18 +5615,18 @@ pub mod kms_not_found_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`KMSNotFoundError`](crate::error::KMSNotFoundError)
-        pub fn build(self) -> crate::error::KMSNotFoundError {
-            crate::error::KMSNotFoundError {
+        /// Consumes the builder and constructs a [`KmsNotFoundException`](crate::error::KmsNotFoundException)
+        pub fn build(self) -> crate::error::KmsNotFoundException {
+            crate::error::KmsNotFoundException {
                 message: self.message,
             }
         }
     }
 }
-impl KMSNotFoundError {
-    /// Creates a new builder-style object to manufacture [`KMSNotFoundError`](crate::error::KMSNotFoundError)
-    pub fn builder() -> crate::error::kms_not_found_error::Builder {
-        crate::error::kms_not_found_error::Builder::default()
+impl KmsNotFoundException {
+    /// Creates a new builder-style object to manufacture [`KmsNotFoundException`](crate::error::KmsNotFoundException)
+    pub fn builder() -> crate::error::kms_not_found_exception::Builder {
+        crate::error::kms_not_found_exception::Builder::default()
     }
 }
 
@@ -5467,34 +5636,34 @@ impl KMSNotFoundError {
 /// Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct KMSInvalidStateError {
+pub struct KmsInvalidStateException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for KMSInvalidStateError {
+impl std::fmt::Debug for KmsInvalidStateException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KMSInvalidStateError");
+        let mut formatter = f.debug_struct("KmsInvalidStateException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl KMSInvalidStateError {
+impl KmsInvalidStateException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for KMSInvalidStateError {
+impl std::fmt::Display for KmsInvalidStateException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "KMSInvalidStateError [KMSInvalidStateException]")?;
+        write!(f, "KmsInvalidStateException [KMSInvalidStateException]")?;
         if let Some(inner_19) = &self.message {
             write!(f, ": {}", inner_19)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for KMSInvalidStateError {}
-/// See [`KMSInvalidStateError`](crate::error::KMSInvalidStateError)
-pub mod kms_invalid_state_error {
-    /// A builder for [`KMSInvalidStateError`](crate::error::KMSInvalidStateError)
+impl std::error::Error for KmsInvalidStateException {}
+/// See [`KmsInvalidStateException`](crate::error::KmsInvalidStateException)
+pub mod kms_invalid_state_exception {
+    /// A builder for [`KmsInvalidStateException`](crate::error::KmsInvalidStateException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -5509,18 +5678,18 @@ pub mod kms_invalid_state_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`KMSInvalidStateError`](crate::error::KMSInvalidStateError)
-        pub fn build(self) -> crate::error::KMSInvalidStateError {
-            crate::error::KMSInvalidStateError {
+        /// Consumes the builder and constructs a [`KmsInvalidStateException`](crate::error::KmsInvalidStateException)
+        pub fn build(self) -> crate::error::KmsInvalidStateException {
+            crate::error::KmsInvalidStateException {
                 message: self.message,
             }
         }
     }
 }
-impl KMSInvalidStateError {
-    /// Creates a new builder-style object to manufacture [`KMSInvalidStateError`](crate::error::KMSInvalidStateError)
-    pub fn builder() -> crate::error::kms_invalid_state_error::Builder {
-        crate::error::kms_invalid_state_error::Builder::default()
+impl KmsInvalidStateException {
+    /// Creates a new builder-style object to manufacture [`KmsInvalidStateException`](crate::error::KmsInvalidStateException)
+    pub fn builder() -> crate::error::kms_invalid_state_exception::Builder {
+        crate::error::kms_invalid_state_exception::Builder::default()
     }
 }
 
@@ -5528,34 +5697,34 @@ impl KMSInvalidStateError {
 /// enabled.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct KMSDisabledError {
+pub struct KmsDisabledException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for KMSDisabledError {
+impl std::fmt::Debug for KmsDisabledException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KMSDisabledError");
+        let mut formatter = f.debug_struct("KmsDisabledException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl KMSDisabledError {
+impl KmsDisabledException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for KMSDisabledError {
+impl std::fmt::Display for KmsDisabledException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "KMSDisabledError [KMSDisabledException]")?;
+        write!(f, "KmsDisabledException [KMSDisabledException]")?;
         if let Some(inner_20) = &self.message {
             write!(f, ": {}", inner_20)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for KMSDisabledError {}
-/// See [`KMSDisabledError`](crate::error::KMSDisabledError)
-pub mod kms_disabled_error {
-    /// A builder for [`KMSDisabledError`](crate::error::KMSDisabledError)
+impl std::error::Error for KmsDisabledException {}
+/// See [`KmsDisabledException`](crate::error::KmsDisabledException)
+pub mod kms_disabled_exception {
+    /// A builder for [`KmsDisabledException`](crate::error::KmsDisabledException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -5570,18 +5739,18 @@ pub mod kms_disabled_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`KMSDisabledError`](crate::error::KMSDisabledError)
-        pub fn build(self) -> crate::error::KMSDisabledError {
-            crate::error::KMSDisabledError {
+        /// Consumes the builder and constructs a [`KmsDisabledException`](crate::error::KmsDisabledException)
+        pub fn build(self) -> crate::error::KmsDisabledException {
+            crate::error::KmsDisabledException {
                 message: self.message,
             }
         }
     }
 }
-impl KMSDisabledError {
-    /// Creates a new builder-style object to manufacture [`KMSDisabledError`](crate::error::KMSDisabledError)
-    pub fn builder() -> crate::error::kms_disabled_error::Builder {
-        crate::error::kms_disabled_error::Builder::default()
+impl KmsDisabledException {
+    /// Creates a new builder-style object to manufacture [`KmsDisabledException`](crate::error::KmsDisabledException)
+    pub fn builder() -> crate::error::kms_disabled_exception::Builder {
+        crate::error::kms_disabled_exception::Builder::default()
     }
 }
 
@@ -5589,34 +5758,34 @@ impl KMSDisabledError {
 /// to.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct KMSAccessDeniedError {
+pub struct KmsAccessDeniedException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for KMSAccessDeniedError {
+impl std::fmt::Debug for KmsAccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KMSAccessDeniedError");
+        let mut formatter = f.debug_struct("KmsAccessDeniedException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl KMSAccessDeniedError {
+impl KmsAccessDeniedException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for KMSAccessDeniedError {
+impl std::fmt::Display for KmsAccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "KMSAccessDeniedError [KMSAccessDeniedException]")?;
+        write!(f, "KmsAccessDeniedException [KMSAccessDeniedException]")?;
         if let Some(inner_21) = &self.message {
             write!(f, ": {}", inner_21)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for KMSAccessDeniedError {}
-/// See [`KMSAccessDeniedError`](crate::error::KMSAccessDeniedError)
-pub mod kms_access_denied_error {
-    /// A builder for [`KMSAccessDeniedError`](crate::error::KMSAccessDeniedError)
+impl std::error::Error for KmsAccessDeniedException {}
+/// See [`KmsAccessDeniedException`](crate::error::KmsAccessDeniedException)
+pub mod kms_access_denied_exception {
+    /// A builder for [`KmsAccessDeniedException`](crate::error::KmsAccessDeniedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -5631,18 +5800,18 @@ pub mod kms_access_denied_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`KMSAccessDeniedError`](crate::error::KMSAccessDeniedError)
-        pub fn build(self) -> crate::error::KMSAccessDeniedError {
-            crate::error::KMSAccessDeniedError {
+        /// Consumes the builder and constructs a [`KmsAccessDeniedException`](crate::error::KmsAccessDeniedException)
+        pub fn build(self) -> crate::error::KmsAccessDeniedException {
+            crate::error::KmsAccessDeniedException {
                 message: self.message,
             }
         }
     }
 }
-impl KMSAccessDeniedError {
-    /// Creates a new builder-style object to manufacture [`KMSAccessDeniedError`](crate::error::KMSAccessDeniedError)
-    pub fn builder() -> crate::error::kms_access_denied_error::Builder {
-        crate::error::kms_access_denied_error::Builder::default()
+impl KmsAccessDeniedException {
+    /// Creates a new builder-style object to manufacture [`KmsAccessDeniedException`](crate::error::KmsAccessDeniedException)
+    pub fn builder() -> crate::error::kms_access_denied_exception::Builder {
+        crate::error::kms_access_denied_exception::Builder::default()
     }
 }
 
@@ -5650,38 +5819,35 @@ impl KMSAccessDeniedError {
 /// constraints.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidParameterValueError {
+pub struct InvalidParameterValueException {
     /// <p>The parameter value is invalid.</p>
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidParameterValueError {
+impl std::fmt::Debug for InvalidParameterValueException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidParameterValueError");
+        let mut formatter = f.debug_struct("InvalidParameterValueException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl InvalidParameterValueError {
+impl InvalidParameterValueException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InvalidParameterValueError {
+impl std::fmt::Display for InvalidParameterValueException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "InvalidParameterValueError [InvalidParameterValueException]"
-        )?;
+        write!(f, "InvalidParameterValueException")?;
         if let Some(inner_22) = &self.message {
             write!(f, ": {}", inner_22)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InvalidParameterValueError {}
-/// See [`InvalidParameterValueError`](crate::error::InvalidParameterValueError)
-pub mod invalid_parameter_value_error {
-    /// A builder for [`InvalidParameterValueError`](crate::error::InvalidParameterValueError)
+impl std::error::Error for InvalidParameterValueException {}
+/// See [`InvalidParameterValueException`](crate::error::InvalidParameterValueException)
+pub mod invalid_parameter_value_exception {
+    /// A builder for [`InvalidParameterValueException`](crate::error::InvalidParameterValueException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -5697,53 +5863,53 @@ pub mod invalid_parameter_value_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidParameterValueError`](crate::error::InvalidParameterValueError)
-        pub fn build(self) -> crate::error::InvalidParameterValueError {
-            crate::error::InvalidParameterValueError {
+        /// Consumes the builder and constructs a [`InvalidParameterValueException`](crate::error::InvalidParameterValueException)
+        pub fn build(self) -> crate::error::InvalidParameterValueException {
+            crate::error::InvalidParameterValueException {
                 message: self.message,
             }
         }
     }
 }
-impl InvalidParameterValueError {
-    /// Creates a new builder-style object to manufacture [`InvalidParameterValueError`](crate::error::InvalidParameterValueError)
-    pub fn builder() -> crate::error::invalid_parameter_value_error::Builder {
-        crate::error::invalid_parameter_value_error::Builder::default()
+impl InvalidParameterValueException {
+    /// Creates a new builder-style object to manufacture [`InvalidParameterValueException`](crate::error::InvalidParameterValueException)
+    pub fn builder() -> crate::error::invalid_parameter_value_exception::Builder {
+        crate::error::invalid_parameter_value_exception::Builder::default()
     }
 }
 
 /// <p>Exception error indicating endpoint disabled.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct EndpointDisabledError {
+pub struct EndpointDisabledException {
     /// <p>Message for endpoint disabled.</p>
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for EndpointDisabledError {
+impl std::fmt::Debug for EndpointDisabledException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EndpointDisabledError");
+        let mut formatter = f.debug_struct("EndpointDisabledException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl EndpointDisabledError {
+impl EndpointDisabledException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for EndpointDisabledError {
+impl std::fmt::Display for EndpointDisabledException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "EndpointDisabledError [EndpointDisabledException]")?;
+        write!(f, "EndpointDisabledException")?;
         if let Some(inner_23) = &self.message {
             write!(f, ": {}", inner_23)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for EndpointDisabledError {}
-/// See [`EndpointDisabledError`](crate::error::EndpointDisabledError)
-pub mod endpoint_disabled_error {
-    /// A builder for [`EndpointDisabledError`](crate::error::EndpointDisabledError)
+impl std::error::Error for EndpointDisabledException {}
+/// See [`EndpointDisabledException`](crate::error::EndpointDisabledException)
+pub mod endpoint_disabled_exception {
+    /// A builder for [`EndpointDisabledException`](crate::error::EndpointDisabledException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -5759,52 +5925,52 @@ pub mod endpoint_disabled_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`EndpointDisabledError`](crate::error::EndpointDisabledError)
-        pub fn build(self) -> crate::error::EndpointDisabledError {
-            crate::error::EndpointDisabledError {
+        /// Consumes the builder and constructs a [`EndpointDisabledException`](crate::error::EndpointDisabledException)
+        pub fn build(self) -> crate::error::EndpointDisabledException {
+            crate::error::EndpointDisabledException {
                 message: self.message,
             }
         }
     }
 }
-impl EndpointDisabledError {
-    /// Creates a new builder-style object to manufacture [`EndpointDisabledError`](crate::error::EndpointDisabledError)
-    pub fn builder() -> crate::error::endpoint_disabled_error::Builder {
-        crate::error::endpoint_disabled_error::Builder::default()
+impl EndpointDisabledException {
+    /// Creates a new builder-style object to manufacture [`EndpointDisabledException`](crate::error::EndpointDisabledException)
+    pub fn builder() -> crate::error::endpoint_disabled_exception::Builder {
+        crate::error::endpoint_disabled_exception::Builder::default()
     }
 }
 
 /// <p>Indicates that a parameter in the request is invalid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ValidationError {
+pub struct ValidationException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ValidationError {
+impl std::fmt::Debug for ValidationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidationError");
+        let mut formatter = f.debug_struct("ValidationException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl ValidationError {
+impl ValidationException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ValidationError {
+impl std::fmt::Display for ValidationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ValidationError [ValidationException]")?;
+        write!(f, "ValidationException")?;
         if let Some(inner_24) = &self.message {
             write!(f, ": {}", inner_24)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ValidationError {}
-/// See [`ValidationError`](crate::error::ValidationError)
-pub mod validation_error {
-    /// A builder for [`ValidationError`](crate::error::ValidationError)
+impl std::error::Error for ValidationException {}
+/// See [`ValidationException`](crate::error::ValidationException)
+pub mod validation_exception {
+    /// A builder for [`ValidationException`](crate::error::ValidationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -5819,18 +5985,18 @@ pub mod validation_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ValidationError`](crate::error::ValidationError)
-        pub fn build(self) -> crate::error::ValidationError {
-            crate::error::ValidationError {
+        /// Consumes the builder and constructs a [`ValidationException`](crate::error::ValidationException)
+        pub fn build(self) -> crate::error::ValidationException {
+            crate::error::ValidationException {
                 message: self.message,
             }
         }
     }
 }
-impl ValidationError {
-    /// Creates a new builder-style object to manufacture [`ValidationError`](crate::error::ValidationError)
-    pub fn builder() -> crate::error::validation_error::Builder {
-        crate::error::validation_error::Builder::default()
+impl ValidationException {
+    /// Creates a new builder-style object to manufacture [`ValidationException`](crate::error::ValidationException)
+    pub fn builder() -> crate::error::validation_exception::Builder {
+        crate::error::validation_exception::Builder::default()
     }
 }
 
@@ -5838,34 +6004,34 @@ impl ValidationError {
 /// constraints.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UserErrorError {
+pub struct UserErrorException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for UserErrorError {
+impl std::fmt::Debug for UserErrorException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UserErrorError");
+        let mut formatter = f.debug_struct("UserErrorException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl UserErrorError {
+impl UserErrorException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for UserErrorError {
+impl std::fmt::Display for UserErrorException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "UserErrorError [UserErrorException]")?;
+        write!(f, "UserErrorException")?;
         if let Some(inner_25) = &self.message {
             write!(f, ": {}", inner_25)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for UserErrorError {}
-/// See [`UserErrorError`](crate::error::UserErrorError)
-pub mod user_error_error {
-    /// A builder for [`UserErrorError`](crate::error::UserErrorError)
+impl std::error::Error for UserErrorException {}
+/// See [`UserErrorException`](crate::error::UserErrorException)
+pub mod user_error_exception {
+    /// A builder for [`UserErrorException`](crate::error::UserErrorException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -5880,52 +6046,52 @@ pub mod user_error_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`UserErrorError`](crate::error::UserErrorError)
-        pub fn build(self) -> crate::error::UserErrorError {
-            crate::error::UserErrorError {
+        /// Consumes the builder and constructs a [`UserErrorException`](crate::error::UserErrorException)
+        pub fn build(self) -> crate::error::UserErrorException {
+            crate::error::UserErrorException {
                 message: self.message,
             }
         }
     }
 }
-impl UserErrorError {
-    /// Creates a new builder-style object to manufacture [`UserErrorError`](crate::error::UserErrorError)
-    pub fn builder() -> crate::error::user_error_error::Builder {
-        crate::error::user_error_error::Builder::default()
+impl UserErrorException {
+    /// Creates a new builder-style object to manufacture [`UserErrorException`](crate::error::UserErrorException)
+    pub fn builder() -> crate::error::user_error_exception::Builder {
+        crate::error::user_error_exception::Builder::default()
     }
 }
 
 /// <p>Indicates that the customer already owns the maximum allowed number of topics.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct TopicLimitExceededError {
+pub struct TopicLimitExceededException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for TopicLimitExceededError {
+impl std::fmt::Debug for TopicLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TopicLimitExceededError");
+        let mut formatter = f.debug_struct("TopicLimitExceededException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl TopicLimitExceededError {
+impl TopicLimitExceededException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for TopicLimitExceededError {
+impl std::fmt::Display for TopicLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TopicLimitExceededError [TopicLimitExceededException]")?;
+        write!(f, "TopicLimitExceededException")?;
         if let Some(inner_26) = &self.message {
             write!(f, ": {}", inner_26)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for TopicLimitExceededError {}
-/// See [`TopicLimitExceededError`](crate::error::TopicLimitExceededError)
-pub mod topic_limit_exceeded_error {
-    /// A builder for [`TopicLimitExceededError`](crate::error::TopicLimitExceededError)
+impl std::error::Error for TopicLimitExceededException {}
+/// See [`TopicLimitExceededException`](crate::error::TopicLimitExceededException)
+pub mod topic_limit_exceeded_exception {
+    /// A builder for [`TopicLimitExceededException`](crate::error::TopicLimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -5940,18 +6106,18 @@ pub mod topic_limit_exceeded_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TopicLimitExceededError`](crate::error::TopicLimitExceededError)
-        pub fn build(self) -> crate::error::TopicLimitExceededError {
-            crate::error::TopicLimitExceededError {
+        /// Consumes the builder and constructs a [`TopicLimitExceededException`](crate::error::TopicLimitExceededException)
+        pub fn build(self) -> crate::error::TopicLimitExceededException {
+            crate::error::TopicLimitExceededException {
                 message: self.message,
             }
         }
     }
 }
-impl TopicLimitExceededError {
-    /// Creates a new builder-style object to manufacture [`TopicLimitExceededError`](crate::error::TopicLimitExceededError)
-    pub fn builder() -> crate::error::topic_limit_exceeded_error::Builder {
-        crate::error::topic_limit_exceeded_error::Builder::default()
+impl TopicLimitExceededException {
+    /// Creates a new builder-style object to manufacture [`TopicLimitExceededException`](crate::error::TopicLimitExceededException)
+    pub fn builder() -> crate::error::topic_limit_exceeded_exception::Builder {
+        crate::error::topic_limit_exceeded_exception::Builder::default()
     }
 }
 
@@ -5959,34 +6125,34 @@ impl TopicLimitExceededError {
 /// your AWS account. You can't send SMS messages to phone numbers that opt out.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct OptedOutError {
+pub struct OptedOutException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for OptedOutError {
+impl std::fmt::Debug for OptedOutException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OptedOutError");
+        let mut formatter = f.debug_struct("OptedOutException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl OptedOutError {
+impl OptedOutException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for OptedOutError {
+impl std::fmt::Display for OptedOutException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "OptedOutError [OptedOutException]")?;
+        write!(f, "OptedOutException")?;
         if let Some(inner_27) = &self.message {
             write!(f, ": {}", inner_27)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for OptedOutError {}
-/// See [`OptedOutError`](crate::error::OptedOutError)
-pub mod opted_out_error {
-    /// A builder for [`OptedOutError`](crate::error::OptedOutError)
+impl std::error::Error for OptedOutException {}
+/// See [`OptedOutException`](crate::error::OptedOutException)
+pub mod opted_out_exception {
+    /// A builder for [`OptedOutException`](crate::error::OptedOutException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -6001,17 +6167,17 @@ pub mod opted_out_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`OptedOutError`](crate::error::OptedOutError)
-        pub fn build(self) -> crate::error::OptedOutError {
-            crate::error::OptedOutError {
+        /// Consumes the builder and constructs a [`OptedOutException`](crate::error::OptedOutException)
+        pub fn build(self) -> crate::error::OptedOutException {
+            crate::error::OptedOutException {
                 message: self.message,
             }
         }
     }
 }
-impl OptedOutError {
-    /// Creates a new builder-style object to manufacture [`OptedOutError`](crate::error::OptedOutError)
-    pub fn builder() -> crate::error::opted_out_error::Builder {
-        crate::error::opted_out_error::Builder::default()
+impl OptedOutException {
+    /// Creates a new builder-style object to manufacture [`OptedOutException`](crate::error::OptedOutException)
+    pub fn builder() -> crate::error::opted_out_exception::Builder {
+        crate::error::opted_out_exception::Builder::default()
     }
 }

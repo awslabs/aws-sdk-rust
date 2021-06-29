@@ -19,67 +19,11 @@ pub fn parse_accept_input_device_transfer_error(
     Err(match error_code {
         "BadGatewayException" => crate::error::AcceptInputDeviceTransferError {
             meta: generic,
-            kind: crate::error::AcceptInputDeviceTransferErrorKind::BadGatewayError({
+            kind: crate::error::AcceptInputDeviceTransferErrorKind::BadGatewayException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_gateway_error::Builder::default();
+                let mut output = crate::error::bad_gateway_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_gateway_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::AcceptInputDeviceTransferError::unhandled)?;
-                output.build()
-            }),
-        },
-        "BadRequestException" => crate::error::AcceptInputDeviceTransferError {
-            meta: generic,
-            kind: crate::error::AcceptInputDeviceTransferErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::AcceptInputDeviceTransferError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ConflictException" => crate::error::AcceptInputDeviceTransferError {
-            meta: generic,
-            kind: crate::error::AcceptInputDeviceTransferErrorKind::ConflictError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::AcceptInputDeviceTransferError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ForbiddenException" => crate::error::AcceptInputDeviceTransferError {
-            meta: generic,
-            kind: crate::error::AcceptInputDeviceTransferErrorKind::ForbiddenError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::forbidden_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::AcceptInputDeviceTransferError::unhandled)?;
-                output.build()
-            }),
-        },
-        "GatewayTimeoutException" => crate::error::AcceptInputDeviceTransferError {
-            meta: generic,
-            kind: crate::error::AcceptInputDeviceTransferErrorKind::GatewayTimeoutError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::gateway_timeout_error::Builder::default();
-                let _ = response;
-                output =
-                    crate::json_deser::gateway_timeout_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::AcceptInputDeviceTransferError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalServerErrorException" => crate::error::AcceptInputDeviceTransferError {
-            meta: generic,
-            kind: crate::error::AcceptInputDeviceTransferErrorKind::InternalServerErrorError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_error_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::internal_server_error_exception(
+                output = crate::json_deser::deser_structure_bad_gateway_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -87,24 +31,98 @@ pub fn parse_accept_input_device_transfer_error(
                 output.build()
             }),
         },
+        "BadRequestException" => crate::error::AcceptInputDeviceTransferError {
+            meta: generic,
+            kind: crate::error::AcceptInputDeviceTransferErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::bad_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::AcceptInputDeviceTransferError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ConflictException" => crate::error::AcceptInputDeviceTransferError {
+            meta: generic,
+            kind: crate::error::AcceptInputDeviceTransferErrorKind::ConflictException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::conflict_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::AcceptInputDeviceTransferError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ForbiddenException" => crate::error::AcceptInputDeviceTransferError {
+            meta: generic,
+            kind: crate::error::AcceptInputDeviceTransferErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::forbidden_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::AcceptInputDeviceTransferError::unhandled)?;
+                output.build()
+            }),
+        },
+        "GatewayTimeoutException" => crate::error::AcceptInputDeviceTransferError {
+            meta: generic,
+            kind: crate::error::AcceptInputDeviceTransferErrorKind::GatewayTimeoutException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::gateway_timeout_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_gateway_timeout_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::AcceptInputDeviceTransferError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InternalServerErrorException" => crate::error::AcceptInputDeviceTransferError {
+            meta: generic,
+            kind: crate::error::AcceptInputDeviceTransferErrorKind::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::internal_server_error_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_internal_server_error_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::AcceptInputDeviceTransferError::unhandled)?;
+                output.build()
+            }),
+        },
         "NotFoundException" => crate::error::AcceptInputDeviceTransferError {
             meta: generic,
-            kind: crate::error::AcceptInputDeviceTransferErrorKind::NotFoundError({
+            kind: crate::error::AcceptInputDeviceTransferErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::AcceptInputDeviceTransferError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::AcceptInputDeviceTransferError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::AcceptInputDeviceTransferError {
             meta: generic,
-            kind: crate::error::AcceptInputDeviceTransferErrorKind::TooManyRequestsError({
+            kind: crate::error::AcceptInputDeviceTransferErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -114,11 +132,11 @@ pub fn parse_accept_input_device_transfer_error(
         },
         "UnprocessableEntityException" => crate::error::AcceptInputDeviceTransferError {
             meta: generic,
-            kind: crate::error::AcceptInputDeviceTransferErrorKind::UnprocessableEntityError({
+            kind: crate::error::AcceptInputDeviceTransferErrorKind::UnprocessableEntityException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unprocessable_entity_error::Builder::default();
+                let mut output = crate::error::unprocessable_entity_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::unprocessable_entity_exception(
+                output = crate::json_deser::deser_structure_unprocessable_entity_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -158,67 +176,11 @@ pub fn parse_batch_delete_error(
     Err(match error_code {
         "BadGatewayException" => crate::error::BatchDeleteError {
             meta: generic,
-            kind: crate::error::BatchDeleteErrorKind::BadGatewayError({
+            kind: crate::error::BatchDeleteErrorKind::BadGatewayException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_gateway_error::Builder::default();
+                let mut output = crate::error::bad_gateway_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_gateway_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::BatchDeleteError::unhandled)?;
-                output.build()
-            }),
-        },
-        "BadRequestException" => crate::error::BatchDeleteError {
-            meta: generic,
-            kind: crate::error::BatchDeleteErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::BatchDeleteError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ConflictException" => crate::error::BatchDeleteError {
-            meta: generic,
-            kind: crate::error::BatchDeleteErrorKind::ConflictError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::BatchDeleteError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ForbiddenException" => crate::error::BatchDeleteError {
-            meta: generic,
-            kind: crate::error::BatchDeleteErrorKind::ForbiddenError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::forbidden_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::BatchDeleteError::unhandled)?;
-                output.build()
-            }),
-        },
-        "GatewayTimeoutException" => crate::error::BatchDeleteError {
-            meta: generic,
-            kind: crate::error::BatchDeleteErrorKind::GatewayTimeoutError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::gateway_timeout_error::Builder::default();
-                let _ = response;
-                output =
-                    crate::json_deser::gateway_timeout_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::BatchDeleteError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalServerErrorException" => crate::error::BatchDeleteError {
-            meta: generic,
-            kind: crate::error::BatchDeleteErrorKind::InternalServerErrorError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_error_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::internal_server_error_exception(
+                output = crate::json_deser::deser_structure_bad_gateway_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -226,24 +188,98 @@ pub fn parse_batch_delete_error(
                 output.build()
             }),
         },
+        "BadRequestException" => crate::error::BatchDeleteError {
+            meta: generic,
+            kind: crate::error::BatchDeleteErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::bad_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::BatchDeleteError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ConflictException" => crate::error::BatchDeleteError {
+            meta: generic,
+            kind: crate::error::BatchDeleteErrorKind::ConflictException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::conflict_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::BatchDeleteError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ForbiddenException" => crate::error::BatchDeleteError {
+            meta: generic,
+            kind: crate::error::BatchDeleteErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::forbidden_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::BatchDeleteError::unhandled)?;
+                output.build()
+            }),
+        },
+        "GatewayTimeoutException" => crate::error::BatchDeleteError {
+            meta: generic,
+            kind: crate::error::BatchDeleteErrorKind::GatewayTimeoutException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::gateway_timeout_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_gateway_timeout_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::BatchDeleteError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InternalServerErrorException" => crate::error::BatchDeleteError {
+            meta: generic,
+            kind: crate::error::BatchDeleteErrorKind::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::internal_server_error_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_internal_server_error_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::BatchDeleteError::unhandled)?;
+                output.build()
+            }),
+        },
         "NotFoundException" => crate::error::BatchDeleteError {
             meta: generic,
-            kind: crate::error::BatchDeleteErrorKind::NotFoundError({
+            kind: crate::error::BatchDeleteErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::BatchDeleteError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::BatchDeleteError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::BatchDeleteError {
             meta: generic,
-            kind: crate::error::BatchDeleteErrorKind::TooManyRequestsError({
+            kind: crate::error::BatchDeleteErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -263,7 +299,7 @@ pub fn parse_batch_delete_response(
         #[allow(unused_mut)]
         let mut output = crate::output::batch_delete_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::batch_delete_deser_operation(response.body().as_ref(), output)
+        output = crate::json_deser::deser_operation_batch_delete(response.body().as_ref(), output)
             .map_err(crate::error::BatchDeleteError::unhandled)?;
         output.build()
     })
@@ -282,67 +318,11 @@ pub fn parse_batch_start_error(
     Err(match error_code {
         "BadGatewayException" => crate::error::BatchStartError {
             meta: generic,
-            kind: crate::error::BatchStartErrorKind::BadGatewayError({
+            kind: crate::error::BatchStartErrorKind::BadGatewayException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_gateway_error::Builder::default();
+                let mut output = crate::error::bad_gateway_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_gateway_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::BatchStartError::unhandled)?;
-                output.build()
-            }),
-        },
-        "BadRequestException" => crate::error::BatchStartError {
-            meta: generic,
-            kind: crate::error::BatchStartErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::BatchStartError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ConflictException" => crate::error::BatchStartError {
-            meta: generic,
-            kind: crate::error::BatchStartErrorKind::ConflictError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::BatchStartError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ForbiddenException" => crate::error::BatchStartError {
-            meta: generic,
-            kind: crate::error::BatchStartErrorKind::ForbiddenError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::forbidden_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::BatchStartError::unhandled)?;
-                output.build()
-            }),
-        },
-        "GatewayTimeoutException" => crate::error::BatchStartError {
-            meta: generic,
-            kind: crate::error::BatchStartErrorKind::GatewayTimeoutError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::gateway_timeout_error::Builder::default();
-                let _ = response;
-                output =
-                    crate::json_deser::gateway_timeout_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::BatchStartError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalServerErrorException" => crate::error::BatchStartError {
-            meta: generic,
-            kind: crate::error::BatchStartErrorKind::InternalServerErrorError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_error_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::internal_server_error_exception(
+                output = crate::json_deser::deser_structure_bad_gateway_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -350,24 +330,98 @@ pub fn parse_batch_start_error(
                 output.build()
             }),
         },
+        "BadRequestException" => crate::error::BatchStartError {
+            meta: generic,
+            kind: crate::error::BatchStartErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::bad_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::BatchStartError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ConflictException" => crate::error::BatchStartError {
+            meta: generic,
+            kind: crate::error::BatchStartErrorKind::ConflictException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::conflict_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::BatchStartError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ForbiddenException" => crate::error::BatchStartError {
+            meta: generic,
+            kind: crate::error::BatchStartErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::forbidden_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::BatchStartError::unhandled)?;
+                output.build()
+            }),
+        },
+        "GatewayTimeoutException" => crate::error::BatchStartError {
+            meta: generic,
+            kind: crate::error::BatchStartErrorKind::GatewayTimeoutException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::gateway_timeout_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_gateway_timeout_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::BatchStartError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InternalServerErrorException" => crate::error::BatchStartError {
+            meta: generic,
+            kind: crate::error::BatchStartErrorKind::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::internal_server_error_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_internal_server_error_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::BatchStartError::unhandled)?;
+                output.build()
+            }),
+        },
         "NotFoundException" => crate::error::BatchStartError {
             meta: generic,
-            kind: crate::error::BatchStartErrorKind::NotFoundError({
+            kind: crate::error::BatchStartErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::BatchStartError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::BatchStartError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::BatchStartError {
             meta: generic,
-            kind: crate::error::BatchStartErrorKind::TooManyRequestsError({
+            kind: crate::error::BatchStartErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -387,7 +441,7 @@ pub fn parse_batch_start_response(
         #[allow(unused_mut)]
         let mut output = crate::output::batch_start_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::batch_start_deser_operation(response.body().as_ref(), output)
+        output = crate::json_deser::deser_operation_batch_start(response.body().as_ref(), output)
             .map_err(crate::error::BatchStartError::unhandled)?;
         output.build()
     })
@@ -406,67 +460,11 @@ pub fn parse_batch_stop_error(
     Err(match error_code {
         "BadGatewayException" => crate::error::BatchStopError {
             meta: generic,
-            kind: crate::error::BatchStopErrorKind::BadGatewayError({
+            kind: crate::error::BatchStopErrorKind::BadGatewayException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_gateway_error::Builder::default();
+                let mut output = crate::error::bad_gateway_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_gateway_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::BatchStopError::unhandled)?;
-                output.build()
-            }),
-        },
-        "BadRequestException" => crate::error::BatchStopError {
-            meta: generic,
-            kind: crate::error::BatchStopErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::BatchStopError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ConflictException" => crate::error::BatchStopError {
-            meta: generic,
-            kind: crate::error::BatchStopErrorKind::ConflictError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::BatchStopError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ForbiddenException" => crate::error::BatchStopError {
-            meta: generic,
-            kind: crate::error::BatchStopErrorKind::ForbiddenError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::forbidden_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::BatchStopError::unhandled)?;
-                output.build()
-            }),
-        },
-        "GatewayTimeoutException" => crate::error::BatchStopError {
-            meta: generic,
-            kind: crate::error::BatchStopErrorKind::GatewayTimeoutError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::gateway_timeout_error::Builder::default();
-                let _ = response;
-                output =
-                    crate::json_deser::gateway_timeout_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::BatchStopError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalServerErrorException" => crate::error::BatchStopError {
-            meta: generic,
-            kind: crate::error::BatchStopErrorKind::InternalServerErrorError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_error_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::internal_server_error_exception(
+                output = crate::json_deser::deser_structure_bad_gateway_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -474,24 +472,98 @@ pub fn parse_batch_stop_error(
                 output.build()
             }),
         },
+        "BadRequestException" => crate::error::BatchStopError {
+            meta: generic,
+            kind: crate::error::BatchStopErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::bad_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::BatchStopError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ConflictException" => crate::error::BatchStopError {
+            meta: generic,
+            kind: crate::error::BatchStopErrorKind::ConflictException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::conflict_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::BatchStopError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ForbiddenException" => crate::error::BatchStopError {
+            meta: generic,
+            kind: crate::error::BatchStopErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::forbidden_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::BatchStopError::unhandled)?;
+                output.build()
+            }),
+        },
+        "GatewayTimeoutException" => crate::error::BatchStopError {
+            meta: generic,
+            kind: crate::error::BatchStopErrorKind::GatewayTimeoutException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::gateway_timeout_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_gateway_timeout_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::BatchStopError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InternalServerErrorException" => crate::error::BatchStopError {
+            meta: generic,
+            kind: crate::error::BatchStopErrorKind::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::internal_server_error_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_internal_server_error_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::BatchStopError::unhandled)?;
+                output.build()
+            }),
+        },
         "NotFoundException" => crate::error::BatchStopError {
             meta: generic,
-            kind: crate::error::BatchStopErrorKind::NotFoundError({
+            kind: crate::error::BatchStopErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::BatchStopError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::BatchStopError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::BatchStopError {
             meta: generic,
-            kind: crate::error::BatchStopErrorKind::TooManyRequestsError({
+            kind: crate::error::BatchStopErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -511,7 +583,7 @@ pub fn parse_batch_stop_response(
         #[allow(unused_mut)]
         let mut output = crate::output::batch_stop_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::batch_stop_deser_operation(response.body().as_ref(), output)
+        output = crate::json_deser::deser_operation_batch_stop(response.body().as_ref(), output)
             .map_err(crate::error::BatchStopError::unhandled)?;
         output.build()
     })
@@ -533,56 +605,11 @@ pub fn parse_batch_update_schedule_error(
     Err(match error_code {
         "BadGatewayException" => crate::error::BatchUpdateScheduleError {
             meta: generic,
-            kind: crate::error::BatchUpdateScheduleErrorKind::BadGatewayError({
+            kind: crate::error::BatchUpdateScheduleErrorKind::BadGatewayException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_gateway_error::Builder::default();
+                let mut output = crate::error::bad_gateway_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_gateway_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::BatchUpdateScheduleError::unhandled)?;
-                output.build()
-            }),
-        },
-        "BadRequestException" => crate::error::BatchUpdateScheduleError {
-            meta: generic,
-            kind: crate::error::BatchUpdateScheduleErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::BatchUpdateScheduleError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ForbiddenException" => crate::error::BatchUpdateScheduleError {
-            meta: generic,
-            kind: crate::error::BatchUpdateScheduleErrorKind::ForbiddenError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::forbidden_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::BatchUpdateScheduleError::unhandled)?;
-                output.build()
-            }),
-        },
-        "GatewayTimeoutException" => crate::error::BatchUpdateScheduleError {
-            meta: generic,
-            kind: crate::error::BatchUpdateScheduleErrorKind::GatewayTimeoutError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::gateway_timeout_error::Builder::default();
-                let _ = response;
-                output =
-                    crate::json_deser::gateway_timeout_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::BatchUpdateScheduleError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalServerErrorException" => crate::error::BatchUpdateScheduleError {
-            meta: generic,
-            kind: crate::error::BatchUpdateScheduleErrorKind::InternalServerErrorError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_error_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::internal_server_error_exception(
+                output = crate::json_deser::deser_structure_bad_gateway_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -590,24 +617,84 @@ pub fn parse_batch_update_schedule_error(
                 output.build()
             }),
         },
+        "BadRequestException" => crate::error::BatchUpdateScheduleError {
+            meta: generic,
+            kind: crate::error::BatchUpdateScheduleErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::bad_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::BatchUpdateScheduleError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ForbiddenException" => crate::error::BatchUpdateScheduleError {
+            meta: generic,
+            kind: crate::error::BatchUpdateScheduleErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::forbidden_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::BatchUpdateScheduleError::unhandled)?;
+                output.build()
+            }),
+        },
+        "GatewayTimeoutException" => crate::error::BatchUpdateScheduleError {
+            meta: generic,
+            kind: crate::error::BatchUpdateScheduleErrorKind::GatewayTimeoutException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::gateway_timeout_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_gateway_timeout_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::BatchUpdateScheduleError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InternalServerErrorException" => crate::error::BatchUpdateScheduleError {
+            meta: generic,
+            kind: crate::error::BatchUpdateScheduleErrorKind::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::internal_server_error_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_internal_server_error_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::BatchUpdateScheduleError::unhandled)?;
+                output.build()
+            }),
+        },
         "NotFoundException" => crate::error::BatchUpdateScheduleError {
             meta: generic,
-            kind: crate::error::BatchUpdateScheduleErrorKind::NotFoundError({
+            kind: crate::error::BatchUpdateScheduleErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::BatchUpdateScheduleError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::BatchUpdateScheduleError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::BatchUpdateScheduleError {
             meta: generic,
-            kind: crate::error::BatchUpdateScheduleErrorKind::TooManyRequestsError({
+            kind: crate::error::BatchUpdateScheduleErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -617,11 +704,11 @@ pub fn parse_batch_update_schedule_error(
         },
         "UnprocessableEntityException" => crate::error::BatchUpdateScheduleError {
             meta: generic,
-            kind: crate::error::BatchUpdateScheduleErrorKind::UnprocessableEntityError({
+            kind: crate::error::BatchUpdateScheduleErrorKind::UnprocessableEntityException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unprocessable_entity_error::Builder::default();
+                let mut output = crate::error::unprocessable_entity_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::unprocessable_entity_exception(
+                output = crate::json_deser::deser_structure_unprocessable_entity_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -644,7 +731,7 @@ pub fn parse_batch_update_schedule_response(
         #[allow(unused_mut)]
         let mut output = crate::output::batch_update_schedule_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::batch_update_schedule_deser_operation(
+        output = crate::json_deser::deser_operation_batch_update_schedule(
             response.body().as_ref(),
             output,
         )
@@ -673,67 +760,11 @@ pub fn parse_cancel_input_device_transfer_error(
     Err(match error_code {
         "BadGatewayException" => crate::error::CancelInputDeviceTransferError {
             meta: generic,
-            kind: crate::error::CancelInputDeviceTransferErrorKind::BadGatewayError({
+            kind: crate::error::CancelInputDeviceTransferErrorKind::BadGatewayException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_gateway_error::Builder::default();
+                let mut output = crate::error::bad_gateway_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_gateway_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CancelInputDeviceTransferError::unhandled)?;
-                output.build()
-            }),
-        },
-        "BadRequestException" => crate::error::CancelInputDeviceTransferError {
-            meta: generic,
-            kind: crate::error::CancelInputDeviceTransferErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CancelInputDeviceTransferError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ConflictException" => crate::error::CancelInputDeviceTransferError {
-            meta: generic,
-            kind: crate::error::CancelInputDeviceTransferErrorKind::ConflictError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CancelInputDeviceTransferError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ForbiddenException" => crate::error::CancelInputDeviceTransferError {
-            meta: generic,
-            kind: crate::error::CancelInputDeviceTransferErrorKind::ForbiddenError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::forbidden_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CancelInputDeviceTransferError::unhandled)?;
-                output.build()
-            }),
-        },
-        "GatewayTimeoutException" => crate::error::CancelInputDeviceTransferError {
-            meta: generic,
-            kind: crate::error::CancelInputDeviceTransferErrorKind::GatewayTimeoutError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::gateway_timeout_error::Builder::default();
-                let _ = response;
-                output =
-                    crate::json_deser::gateway_timeout_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::CancelInputDeviceTransferError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalServerErrorException" => crate::error::CancelInputDeviceTransferError {
-            meta: generic,
-            kind: crate::error::CancelInputDeviceTransferErrorKind::InternalServerErrorError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_error_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::internal_server_error_exception(
+                output = crate::json_deser::deser_structure_bad_gateway_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -741,24 +772,98 @@ pub fn parse_cancel_input_device_transfer_error(
                 output.build()
             }),
         },
+        "BadRequestException" => crate::error::CancelInputDeviceTransferError {
+            meta: generic,
+            kind: crate::error::CancelInputDeviceTransferErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::bad_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CancelInputDeviceTransferError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ConflictException" => crate::error::CancelInputDeviceTransferError {
+            meta: generic,
+            kind: crate::error::CancelInputDeviceTransferErrorKind::ConflictException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::conflict_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CancelInputDeviceTransferError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ForbiddenException" => crate::error::CancelInputDeviceTransferError {
+            meta: generic,
+            kind: crate::error::CancelInputDeviceTransferErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::forbidden_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CancelInputDeviceTransferError::unhandled)?;
+                output.build()
+            }),
+        },
+        "GatewayTimeoutException" => crate::error::CancelInputDeviceTransferError {
+            meta: generic,
+            kind: crate::error::CancelInputDeviceTransferErrorKind::GatewayTimeoutException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::gateway_timeout_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_gateway_timeout_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CancelInputDeviceTransferError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InternalServerErrorException" => crate::error::CancelInputDeviceTransferError {
+            meta: generic,
+            kind: crate::error::CancelInputDeviceTransferErrorKind::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::internal_server_error_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_internal_server_error_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CancelInputDeviceTransferError::unhandled)?;
+                output.build()
+            }),
+        },
         "NotFoundException" => crate::error::CancelInputDeviceTransferError {
             meta: generic,
-            kind: crate::error::CancelInputDeviceTransferErrorKind::NotFoundError({
+            kind: crate::error::CancelInputDeviceTransferErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CancelInputDeviceTransferError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CancelInputDeviceTransferError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::CancelInputDeviceTransferError {
             meta: generic,
-            kind: crate::error::CancelInputDeviceTransferErrorKind::TooManyRequestsError({
+            kind: crate::error::CancelInputDeviceTransferErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -768,11 +873,11 @@ pub fn parse_cancel_input_device_transfer_error(
         },
         "UnprocessableEntityException" => crate::error::CancelInputDeviceTransferError {
             meta: generic,
-            kind: crate::error::CancelInputDeviceTransferErrorKind::UnprocessableEntityError({
+            kind: crate::error::CancelInputDeviceTransferErrorKind::UnprocessableEntityException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unprocessable_entity_error::Builder::default();
+                let mut output = crate::error::unprocessable_entity_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::unprocessable_entity_exception(
+                output = crate::json_deser::deser_structure_unprocessable_entity_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -812,67 +917,11 @@ pub fn parse_create_channel_error(
     Err(match error_code {
         "BadGatewayException" => crate::error::CreateChannelError {
             meta: generic,
-            kind: crate::error::CreateChannelErrorKind::BadGatewayError({
+            kind: crate::error::CreateChannelErrorKind::BadGatewayException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_gateway_error::Builder::default();
+                let mut output = crate::error::bad_gateway_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_gateway_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateChannelError::unhandled)?;
-                output.build()
-            }),
-        },
-        "BadRequestException" => crate::error::CreateChannelError {
-            meta: generic,
-            kind: crate::error::CreateChannelErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateChannelError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ConflictException" => crate::error::CreateChannelError {
-            meta: generic,
-            kind: crate::error::CreateChannelErrorKind::ConflictError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateChannelError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ForbiddenException" => crate::error::CreateChannelError {
-            meta: generic,
-            kind: crate::error::CreateChannelErrorKind::ForbiddenError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::forbidden_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateChannelError::unhandled)?;
-                output.build()
-            }),
-        },
-        "GatewayTimeoutException" => crate::error::CreateChannelError {
-            meta: generic,
-            kind: crate::error::CreateChannelErrorKind::GatewayTimeoutError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::gateway_timeout_error::Builder::default();
-                let _ = response;
-                output =
-                    crate::json_deser::gateway_timeout_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::CreateChannelError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalServerErrorException" => crate::error::CreateChannelError {
-            meta: generic,
-            kind: crate::error::CreateChannelErrorKind::InternalServerErrorError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_error_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::internal_server_error_exception(
+                output = crate::json_deser::deser_structure_bad_gateway_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -880,13 +929,84 @@ pub fn parse_create_channel_error(
                 output.build()
             }),
         },
+        "BadRequestException" => crate::error::CreateChannelError {
+            meta: generic,
+            kind: crate::error::CreateChannelErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::bad_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateChannelError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ConflictException" => crate::error::CreateChannelError {
+            meta: generic,
+            kind: crate::error::CreateChannelErrorKind::ConflictException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::conflict_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateChannelError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ForbiddenException" => crate::error::CreateChannelError {
+            meta: generic,
+            kind: crate::error::CreateChannelErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::forbidden_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateChannelError::unhandled)?;
+                output.build()
+            }),
+        },
+        "GatewayTimeoutException" => crate::error::CreateChannelError {
+            meta: generic,
+            kind: crate::error::CreateChannelErrorKind::GatewayTimeoutException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::gateway_timeout_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_gateway_timeout_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateChannelError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InternalServerErrorException" => crate::error::CreateChannelError {
+            meta: generic,
+            kind: crate::error::CreateChannelErrorKind::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::internal_server_error_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_internal_server_error_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CreateChannelError::unhandled)?;
+                output.build()
+            }),
+        },
         "TooManyRequestsException" => crate::error::CreateChannelError {
             meta: generic,
-            kind: crate::error::CreateChannelErrorKind::TooManyRequestsError({
+            kind: crate::error::CreateChannelErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -896,11 +1016,11 @@ pub fn parse_create_channel_error(
         },
         "UnprocessableEntityException" => crate::error::CreateChannelError {
             meta: generic,
-            kind: crate::error::CreateChannelErrorKind::UnprocessableEntityError({
+            kind: crate::error::CreateChannelErrorKind::UnprocessableEntityException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unprocessable_entity_error::Builder::default();
+                let mut output = crate::error::unprocessable_entity_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::unprocessable_entity_exception(
+                output = crate::json_deser::deser_structure_unprocessable_entity_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -921,7 +1041,7 @@ pub fn parse_create_channel_response(
         let mut output = crate::output::create_channel_output::Builder::default();
         let _ = response;
         output =
-            crate::json_deser::create_channel_deser_operation(response.body().as_ref(), output)
+            crate::json_deser::deser_operation_create_channel(response.body().as_ref(), output)
                 .map_err(crate::error::CreateChannelError::unhandled)?;
         output.build()
     })
@@ -940,56 +1060,11 @@ pub fn parse_create_input_error(
     Err(match error_code {
         "BadGatewayException" => crate::error::CreateInputError {
             meta: generic,
-            kind: crate::error::CreateInputErrorKind::BadGatewayError({
+            kind: crate::error::CreateInputErrorKind::BadGatewayException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_gateway_error::Builder::default();
+                let mut output = crate::error::bad_gateway_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_gateway_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateInputError::unhandled)?;
-                output.build()
-            }),
-        },
-        "BadRequestException" => crate::error::CreateInputError {
-            meta: generic,
-            kind: crate::error::CreateInputErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateInputError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ForbiddenException" => crate::error::CreateInputError {
-            meta: generic,
-            kind: crate::error::CreateInputErrorKind::ForbiddenError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::forbidden_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateInputError::unhandled)?;
-                output.build()
-            }),
-        },
-        "GatewayTimeoutException" => crate::error::CreateInputError {
-            meta: generic,
-            kind: crate::error::CreateInputErrorKind::GatewayTimeoutError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::gateway_timeout_error::Builder::default();
-                let _ = response;
-                output =
-                    crate::json_deser::gateway_timeout_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::CreateInputError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalServerErrorException" => crate::error::CreateInputError {
-            meta: generic,
-            kind: crate::error::CreateInputErrorKind::InternalServerErrorError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_error_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::internal_server_error_exception(
+                output = crate::json_deser::deser_structure_bad_gateway_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -997,13 +1072,70 @@ pub fn parse_create_input_error(
                 output.build()
             }),
         },
+        "BadRequestException" => crate::error::CreateInputError {
+            meta: generic,
+            kind: crate::error::CreateInputErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::bad_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateInputError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ForbiddenException" => crate::error::CreateInputError {
+            meta: generic,
+            kind: crate::error::CreateInputErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::forbidden_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateInputError::unhandled)?;
+                output.build()
+            }),
+        },
+        "GatewayTimeoutException" => crate::error::CreateInputError {
+            meta: generic,
+            kind: crate::error::CreateInputErrorKind::GatewayTimeoutException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::gateway_timeout_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_gateway_timeout_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateInputError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InternalServerErrorException" => crate::error::CreateInputError {
+            meta: generic,
+            kind: crate::error::CreateInputErrorKind::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::internal_server_error_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_internal_server_error_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CreateInputError::unhandled)?;
+                output.build()
+            }),
+        },
         "TooManyRequestsException" => crate::error::CreateInputError {
             meta: generic,
-            kind: crate::error::CreateInputErrorKind::TooManyRequestsError({
+            kind: crate::error::CreateInputErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -1023,7 +1155,7 @@ pub fn parse_create_input_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_input_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::create_input_deser_operation(response.body().as_ref(), output)
+        output = crate::json_deser::deser_operation_create_input(response.body().as_ref(), output)
             .map_err(crate::error::CreateInputError::unhandled)?;
         output.build()
     })
@@ -1049,56 +1181,11 @@ pub fn parse_create_input_security_group_error(
     Err(match error_code {
         "BadGatewayException" => crate::error::CreateInputSecurityGroupError {
             meta: generic,
-            kind: crate::error::CreateInputSecurityGroupErrorKind::BadGatewayError({
+            kind: crate::error::CreateInputSecurityGroupErrorKind::BadGatewayException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_gateway_error::Builder::default();
+                let mut output = crate::error::bad_gateway_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_gateway_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateInputSecurityGroupError::unhandled)?;
-                output.build()
-            }),
-        },
-        "BadRequestException" => crate::error::CreateInputSecurityGroupError {
-            meta: generic,
-            kind: crate::error::CreateInputSecurityGroupErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateInputSecurityGroupError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ForbiddenException" => crate::error::CreateInputSecurityGroupError {
-            meta: generic,
-            kind: crate::error::CreateInputSecurityGroupErrorKind::ForbiddenError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::forbidden_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateInputSecurityGroupError::unhandled)?;
-                output.build()
-            }),
-        },
-        "GatewayTimeoutException" => crate::error::CreateInputSecurityGroupError {
-            meta: generic,
-            kind: crate::error::CreateInputSecurityGroupErrorKind::GatewayTimeoutError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::gateway_timeout_error::Builder::default();
-                let _ = response;
-                output =
-                    crate::json_deser::gateway_timeout_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::CreateInputSecurityGroupError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalServerErrorException" => crate::error::CreateInputSecurityGroupError {
-            meta: generic,
-            kind: crate::error::CreateInputSecurityGroupErrorKind::InternalServerErrorError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_error_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::internal_server_error_exception(
+                output = crate::json_deser::deser_structure_bad_gateway_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -1106,13 +1193,70 @@ pub fn parse_create_input_security_group_error(
                 output.build()
             }),
         },
+        "BadRequestException" => crate::error::CreateInputSecurityGroupError {
+            meta: generic,
+            kind: crate::error::CreateInputSecurityGroupErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::bad_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateInputSecurityGroupError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ForbiddenException" => crate::error::CreateInputSecurityGroupError {
+            meta: generic,
+            kind: crate::error::CreateInputSecurityGroupErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::forbidden_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateInputSecurityGroupError::unhandled)?;
+                output.build()
+            }),
+        },
+        "GatewayTimeoutException" => crate::error::CreateInputSecurityGroupError {
+            meta: generic,
+            kind: crate::error::CreateInputSecurityGroupErrorKind::GatewayTimeoutException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::gateway_timeout_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_gateway_timeout_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateInputSecurityGroupError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InternalServerErrorException" => {
+            crate::error::CreateInputSecurityGroupError {
+                meta: generic,
+                kind: crate::error::CreateInputSecurityGroupErrorKind::InternalServerErrorException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::internal_server_error_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_internal_server_error_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateInputSecurityGroupError::unhandled)?;
+                        output.build()
+                    },
+                ),
+            }
+        }
         "TooManyRequestsException" => crate::error::CreateInputSecurityGroupError {
             meta: generic,
-            kind: crate::error::CreateInputSecurityGroupErrorKind::TooManyRequestsError({
+            kind: crate::error::CreateInputSecurityGroupErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -1135,7 +1279,7 @@ pub fn parse_create_input_security_group_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_input_security_group_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::create_input_security_group_deser_operation(
+        output = crate::json_deser::deser_operation_create_input_security_group(
             response.body().as_ref(),
             output,
         )
@@ -1157,67 +1301,11 @@ pub fn parse_create_multiplex_error(
     Err(match error_code {
         "BadGatewayException" => crate::error::CreateMultiplexError {
             meta: generic,
-            kind: crate::error::CreateMultiplexErrorKind::BadGatewayError({
+            kind: crate::error::CreateMultiplexErrorKind::BadGatewayException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_gateway_error::Builder::default();
+                let mut output = crate::error::bad_gateway_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_gateway_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateMultiplexError::unhandled)?;
-                output.build()
-            }),
-        },
-        "BadRequestException" => crate::error::CreateMultiplexError {
-            meta: generic,
-            kind: crate::error::CreateMultiplexErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateMultiplexError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ConflictException" => crate::error::CreateMultiplexError {
-            meta: generic,
-            kind: crate::error::CreateMultiplexErrorKind::ConflictError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateMultiplexError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ForbiddenException" => crate::error::CreateMultiplexError {
-            meta: generic,
-            kind: crate::error::CreateMultiplexErrorKind::ForbiddenError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::forbidden_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateMultiplexError::unhandled)?;
-                output.build()
-            }),
-        },
-        "GatewayTimeoutException" => crate::error::CreateMultiplexError {
-            meta: generic,
-            kind: crate::error::CreateMultiplexErrorKind::GatewayTimeoutError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::gateway_timeout_error::Builder::default();
-                let _ = response;
-                output =
-                    crate::json_deser::gateway_timeout_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::CreateMultiplexError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalServerErrorException" => crate::error::CreateMultiplexError {
-            meta: generic,
-            kind: crate::error::CreateMultiplexErrorKind::InternalServerErrorError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_error_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::internal_server_error_exception(
+                output = crate::json_deser::deser_structure_bad_gateway_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -1225,13 +1313,84 @@ pub fn parse_create_multiplex_error(
                 output.build()
             }),
         },
+        "BadRequestException" => crate::error::CreateMultiplexError {
+            meta: generic,
+            kind: crate::error::CreateMultiplexErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::bad_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateMultiplexError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ConflictException" => crate::error::CreateMultiplexError {
+            meta: generic,
+            kind: crate::error::CreateMultiplexErrorKind::ConflictException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::conflict_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateMultiplexError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ForbiddenException" => crate::error::CreateMultiplexError {
+            meta: generic,
+            kind: crate::error::CreateMultiplexErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::forbidden_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateMultiplexError::unhandled)?;
+                output.build()
+            }),
+        },
+        "GatewayTimeoutException" => crate::error::CreateMultiplexError {
+            meta: generic,
+            kind: crate::error::CreateMultiplexErrorKind::GatewayTimeoutException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::gateway_timeout_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_gateway_timeout_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateMultiplexError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InternalServerErrorException" => crate::error::CreateMultiplexError {
+            meta: generic,
+            kind: crate::error::CreateMultiplexErrorKind::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::internal_server_error_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_internal_server_error_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CreateMultiplexError::unhandled)?;
+                output.build()
+            }),
+        },
         "TooManyRequestsException" => crate::error::CreateMultiplexError {
             meta: generic,
-            kind: crate::error::CreateMultiplexErrorKind::TooManyRequestsError({
+            kind: crate::error::CreateMultiplexErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -1241,11 +1400,11 @@ pub fn parse_create_multiplex_error(
         },
         "UnprocessableEntityException" => crate::error::CreateMultiplexError {
             meta: generic,
-            kind: crate::error::CreateMultiplexErrorKind::UnprocessableEntityError({
+            kind: crate::error::CreateMultiplexErrorKind::UnprocessableEntityException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unprocessable_entity_error::Builder::default();
+                let mut output = crate::error::unprocessable_entity_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::unprocessable_entity_exception(
+                output = crate::json_deser::deser_structure_unprocessable_entity_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -1266,7 +1425,7 @@ pub fn parse_create_multiplex_response(
         let mut output = crate::output::create_multiplex_output::Builder::default();
         let _ = response;
         output =
-            crate::json_deser::create_multiplex_deser_operation(response.body().as_ref(), output)
+            crate::json_deser::deser_operation_create_multiplex(response.body().as_ref(), output)
                 .map_err(crate::error::CreateMultiplexError::unhandled)?;
         output.build()
     })
@@ -1292,67 +1451,11 @@ pub fn parse_create_multiplex_program_error(
     Err(match error_code {
         "BadGatewayException" => crate::error::CreateMultiplexProgramError {
             meta: generic,
-            kind: crate::error::CreateMultiplexProgramErrorKind::BadGatewayError({
+            kind: crate::error::CreateMultiplexProgramErrorKind::BadGatewayException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_gateway_error::Builder::default();
+                let mut output = crate::error::bad_gateway_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_gateway_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateMultiplexProgramError::unhandled)?;
-                output.build()
-            }),
-        },
-        "BadRequestException" => crate::error::CreateMultiplexProgramError {
-            meta: generic,
-            kind: crate::error::CreateMultiplexProgramErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateMultiplexProgramError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ConflictException" => crate::error::CreateMultiplexProgramError {
-            meta: generic,
-            kind: crate::error::CreateMultiplexProgramErrorKind::ConflictError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateMultiplexProgramError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ForbiddenException" => crate::error::CreateMultiplexProgramError {
-            meta: generic,
-            kind: crate::error::CreateMultiplexProgramErrorKind::ForbiddenError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::forbidden_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateMultiplexProgramError::unhandled)?;
-                output.build()
-            }),
-        },
-        "GatewayTimeoutException" => crate::error::CreateMultiplexProgramError {
-            meta: generic,
-            kind: crate::error::CreateMultiplexProgramErrorKind::GatewayTimeoutError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::gateway_timeout_error::Builder::default();
-                let _ = response;
-                output =
-                    crate::json_deser::gateway_timeout_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::CreateMultiplexProgramError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalServerErrorException" => crate::error::CreateMultiplexProgramError {
-            meta: generic,
-            kind: crate::error::CreateMultiplexProgramErrorKind::InternalServerErrorError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_error_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::internal_server_error_exception(
+                output = crate::json_deser::deser_structure_bad_gateway_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -1360,13 +1463,84 @@ pub fn parse_create_multiplex_program_error(
                 output.build()
             }),
         },
+        "BadRequestException" => crate::error::CreateMultiplexProgramError {
+            meta: generic,
+            kind: crate::error::CreateMultiplexProgramErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::bad_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateMultiplexProgramError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ConflictException" => crate::error::CreateMultiplexProgramError {
+            meta: generic,
+            kind: crate::error::CreateMultiplexProgramErrorKind::ConflictException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::conflict_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateMultiplexProgramError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ForbiddenException" => crate::error::CreateMultiplexProgramError {
+            meta: generic,
+            kind: crate::error::CreateMultiplexProgramErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::forbidden_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateMultiplexProgramError::unhandled)?;
+                output.build()
+            }),
+        },
+        "GatewayTimeoutException" => crate::error::CreateMultiplexProgramError {
+            meta: generic,
+            kind: crate::error::CreateMultiplexProgramErrorKind::GatewayTimeoutException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::gateway_timeout_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_gateway_timeout_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateMultiplexProgramError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InternalServerErrorException" => {
+            crate::error::CreateMultiplexProgramError {
+                meta: generic,
+                kind: crate::error::CreateMultiplexProgramErrorKind::InternalServerErrorException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::internal_server_error_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_internal_server_error_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateMultiplexProgramError::unhandled)?;
+                        output.build()
+                    },
+                ),
+            }
+        }
         "TooManyRequestsException" => crate::error::CreateMultiplexProgramError {
             meta: generic,
-            kind: crate::error::CreateMultiplexProgramErrorKind::TooManyRequestsError({
+            kind: crate::error::CreateMultiplexProgramErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -1376,11 +1550,11 @@ pub fn parse_create_multiplex_program_error(
         },
         "UnprocessableEntityException" => crate::error::CreateMultiplexProgramError {
             meta: generic,
-            kind: crate::error::CreateMultiplexProgramErrorKind::UnprocessableEntityError({
+            kind: crate::error::CreateMultiplexProgramErrorKind::UnprocessableEntityException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unprocessable_entity_error::Builder::default();
+                let mut output = crate::error::unprocessable_entity_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::unprocessable_entity_exception(
+                output = crate::json_deser::deser_structure_unprocessable_entity_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -1403,7 +1577,7 @@ pub fn parse_create_multiplex_program_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_multiplex_program_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::create_multiplex_program_deser_operation(
+        output = crate::json_deser::deser_operation_create_multiplex_program(
             response.body().as_ref(),
             output,
         )
@@ -1428,56 +1602,11 @@ pub fn parse_create_partner_input_error(
     Err(match error_code {
         "BadGatewayException" => crate::error::CreatePartnerInputError {
             meta: generic,
-            kind: crate::error::CreatePartnerInputErrorKind::BadGatewayError({
+            kind: crate::error::CreatePartnerInputErrorKind::BadGatewayException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_gateway_error::Builder::default();
+                let mut output = crate::error::bad_gateway_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_gateway_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreatePartnerInputError::unhandled)?;
-                output.build()
-            }),
-        },
-        "BadRequestException" => crate::error::CreatePartnerInputError {
-            meta: generic,
-            kind: crate::error::CreatePartnerInputErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreatePartnerInputError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ForbiddenException" => crate::error::CreatePartnerInputError {
-            meta: generic,
-            kind: crate::error::CreatePartnerInputErrorKind::ForbiddenError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::forbidden_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreatePartnerInputError::unhandled)?;
-                output.build()
-            }),
-        },
-        "GatewayTimeoutException" => crate::error::CreatePartnerInputError {
-            meta: generic,
-            kind: crate::error::CreatePartnerInputErrorKind::GatewayTimeoutError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::gateway_timeout_error::Builder::default();
-                let _ = response;
-                output =
-                    crate::json_deser::gateway_timeout_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::CreatePartnerInputError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalServerErrorException" => crate::error::CreatePartnerInputError {
-            meta: generic,
-            kind: crate::error::CreatePartnerInputErrorKind::InternalServerErrorError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_error_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::internal_server_error_exception(
+                output = crate::json_deser::deser_structure_bad_gateway_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -1485,13 +1614,70 @@ pub fn parse_create_partner_input_error(
                 output.build()
             }),
         },
+        "BadRequestException" => crate::error::CreatePartnerInputError {
+            meta: generic,
+            kind: crate::error::CreatePartnerInputErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::bad_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreatePartnerInputError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ForbiddenException" => crate::error::CreatePartnerInputError {
+            meta: generic,
+            kind: crate::error::CreatePartnerInputErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::forbidden_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreatePartnerInputError::unhandled)?;
+                output.build()
+            }),
+        },
+        "GatewayTimeoutException" => crate::error::CreatePartnerInputError {
+            meta: generic,
+            kind: crate::error::CreatePartnerInputErrorKind::GatewayTimeoutException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::gateway_timeout_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_gateway_timeout_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreatePartnerInputError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InternalServerErrorException" => crate::error::CreatePartnerInputError {
+            meta: generic,
+            kind: crate::error::CreatePartnerInputErrorKind::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::internal_server_error_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_internal_server_error_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CreatePartnerInputError::unhandled)?;
+                output.build()
+            }),
+        },
         "TooManyRequestsException" => crate::error::CreatePartnerInputError {
             meta: generic,
-            kind: crate::error::CreatePartnerInputErrorKind::TooManyRequestsError({
+            kind: crate::error::CreatePartnerInputErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -1514,7 +1700,7 @@ pub fn parse_create_partner_input_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_partner_input_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::create_partner_input_deser_operation(
+        output = crate::json_deser::deser_operation_create_partner_input(
             response.body().as_ref(),
             output,
         )
@@ -1536,33 +1722,11 @@ pub fn parse_create_tags_error(
     Err(match error_code {
         "BadRequestException" => crate::error::CreateTagsError {
             meta: generic,
-            kind: crate::error::CreateTagsErrorKind::BadRequestError({
+            kind: crate::error::CreateTagsErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateTagsError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ForbiddenException" => crate::error::CreateTagsError {
-            meta: generic,
-            kind: crate::error::CreateTagsErrorKind::ForbiddenError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::forbidden_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateTagsError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalServerErrorException" => crate::error::CreateTagsError {
-            meta: generic,
-            kind: crate::error::CreateTagsErrorKind::InternalServerErrorError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_error_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::internal_server_error_exception(
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -1570,14 +1734,46 @@ pub fn parse_create_tags_error(
                 output.build()
             }),
         },
+        "ForbiddenException" => crate::error::CreateTagsError {
+            meta: generic,
+            kind: crate::error::CreateTagsErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::forbidden_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateTagsError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InternalServerErrorException" => crate::error::CreateTagsError {
+            meta: generic,
+            kind: crate::error::CreateTagsErrorKind::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::internal_server_error_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_internal_server_error_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CreateTagsError::unhandled)?;
+                output.build()
+            }),
+        },
         "NotFoundException" => crate::error::CreateTagsError {
             meta: generic,
-            kind: crate::error::CreateTagsErrorKind::NotFoundError({
+            kind: crate::error::CreateTagsErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateTagsError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateTagsError::unhandled)?;
                 output.build()
             }),
         },
@@ -1610,67 +1806,11 @@ pub fn parse_delete_channel_error(
     Err(match error_code {
         "BadGatewayException" => crate::error::DeleteChannelError {
             meta: generic,
-            kind: crate::error::DeleteChannelErrorKind::BadGatewayError({
+            kind: crate::error::DeleteChannelErrorKind::BadGatewayException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_gateway_error::Builder::default();
+                let mut output = crate::error::bad_gateway_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_gateway_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteChannelError::unhandled)?;
-                output.build()
-            }),
-        },
-        "BadRequestException" => crate::error::DeleteChannelError {
-            meta: generic,
-            kind: crate::error::DeleteChannelErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteChannelError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ConflictException" => crate::error::DeleteChannelError {
-            meta: generic,
-            kind: crate::error::DeleteChannelErrorKind::ConflictError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteChannelError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ForbiddenException" => crate::error::DeleteChannelError {
-            meta: generic,
-            kind: crate::error::DeleteChannelErrorKind::ForbiddenError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::forbidden_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteChannelError::unhandled)?;
-                output.build()
-            }),
-        },
-        "GatewayTimeoutException" => crate::error::DeleteChannelError {
-            meta: generic,
-            kind: crate::error::DeleteChannelErrorKind::GatewayTimeoutError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::gateway_timeout_error::Builder::default();
-                let _ = response;
-                output =
-                    crate::json_deser::gateway_timeout_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::DeleteChannelError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalServerErrorException" => crate::error::DeleteChannelError {
-            meta: generic,
-            kind: crate::error::DeleteChannelErrorKind::InternalServerErrorError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_error_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::internal_server_error_exception(
+                output = crate::json_deser::deser_structure_bad_gateway_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -1678,24 +1818,98 @@ pub fn parse_delete_channel_error(
                 output.build()
             }),
         },
+        "BadRequestException" => crate::error::DeleteChannelError {
+            meta: generic,
+            kind: crate::error::DeleteChannelErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::bad_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteChannelError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ConflictException" => crate::error::DeleteChannelError {
+            meta: generic,
+            kind: crate::error::DeleteChannelErrorKind::ConflictException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::conflict_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteChannelError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ForbiddenException" => crate::error::DeleteChannelError {
+            meta: generic,
+            kind: crate::error::DeleteChannelErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::forbidden_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteChannelError::unhandled)?;
+                output.build()
+            }),
+        },
+        "GatewayTimeoutException" => crate::error::DeleteChannelError {
+            meta: generic,
+            kind: crate::error::DeleteChannelErrorKind::GatewayTimeoutException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::gateway_timeout_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_gateway_timeout_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteChannelError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InternalServerErrorException" => crate::error::DeleteChannelError {
+            meta: generic,
+            kind: crate::error::DeleteChannelErrorKind::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::internal_server_error_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_internal_server_error_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeleteChannelError::unhandled)?;
+                output.build()
+            }),
+        },
         "NotFoundException" => crate::error::DeleteChannelError {
             meta: generic,
-            kind: crate::error::DeleteChannelErrorKind::NotFoundError({
+            kind: crate::error::DeleteChannelErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteChannelError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteChannelError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::DeleteChannelError {
             meta: generic,
-            kind: crate::error::DeleteChannelErrorKind::TooManyRequestsError({
+            kind: crate::error::DeleteChannelErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -1716,7 +1930,7 @@ pub fn parse_delete_channel_response(
         let mut output = crate::output::delete_channel_output::Builder::default();
         let _ = response;
         output =
-            crate::json_deser::delete_channel_deser_operation(response.body().as_ref(), output)
+            crate::json_deser::deser_operation_delete_channel(response.body().as_ref(), output)
                 .map_err(crate::error::DeleteChannelError::unhandled)?;
         output.build()
     })
@@ -1735,67 +1949,11 @@ pub fn parse_delete_input_error(
     Err(match error_code {
         "BadGatewayException" => crate::error::DeleteInputError {
             meta: generic,
-            kind: crate::error::DeleteInputErrorKind::BadGatewayError({
+            kind: crate::error::DeleteInputErrorKind::BadGatewayException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_gateway_error::Builder::default();
+                let mut output = crate::error::bad_gateway_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_gateway_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteInputError::unhandled)?;
-                output.build()
-            }),
-        },
-        "BadRequestException" => crate::error::DeleteInputError {
-            meta: generic,
-            kind: crate::error::DeleteInputErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteInputError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ConflictException" => crate::error::DeleteInputError {
-            meta: generic,
-            kind: crate::error::DeleteInputErrorKind::ConflictError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteInputError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ForbiddenException" => crate::error::DeleteInputError {
-            meta: generic,
-            kind: crate::error::DeleteInputErrorKind::ForbiddenError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::forbidden_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteInputError::unhandled)?;
-                output.build()
-            }),
-        },
-        "GatewayTimeoutException" => crate::error::DeleteInputError {
-            meta: generic,
-            kind: crate::error::DeleteInputErrorKind::GatewayTimeoutError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::gateway_timeout_error::Builder::default();
-                let _ = response;
-                output =
-                    crate::json_deser::gateway_timeout_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::DeleteInputError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalServerErrorException" => crate::error::DeleteInputError {
-            meta: generic,
-            kind: crate::error::DeleteInputErrorKind::InternalServerErrorError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_error_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::internal_server_error_exception(
+                output = crate::json_deser::deser_structure_bad_gateway_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -1803,24 +1961,98 @@ pub fn parse_delete_input_error(
                 output.build()
             }),
         },
+        "BadRequestException" => crate::error::DeleteInputError {
+            meta: generic,
+            kind: crate::error::DeleteInputErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::bad_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteInputError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ConflictException" => crate::error::DeleteInputError {
+            meta: generic,
+            kind: crate::error::DeleteInputErrorKind::ConflictException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::conflict_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteInputError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ForbiddenException" => crate::error::DeleteInputError {
+            meta: generic,
+            kind: crate::error::DeleteInputErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::forbidden_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteInputError::unhandled)?;
+                output.build()
+            }),
+        },
+        "GatewayTimeoutException" => crate::error::DeleteInputError {
+            meta: generic,
+            kind: crate::error::DeleteInputErrorKind::GatewayTimeoutException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::gateway_timeout_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_gateway_timeout_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteInputError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InternalServerErrorException" => crate::error::DeleteInputError {
+            meta: generic,
+            kind: crate::error::DeleteInputErrorKind::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::internal_server_error_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_internal_server_error_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeleteInputError::unhandled)?;
+                output.build()
+            }),
+        },
         "NotFoundException" => crate::error::DeleteInputError {
             meta: generic,
-            kind: crate::error::DeleteInputErrorKind::NotFoundError({
+            kind: crate::error::DeleteInputErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteInputError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteInputError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::DeleteInputError {
             meta: generic,
-            kind: crate::error::DeleteInputErrorKind::TooManyRequestsError({
+            kind: crate::error::DeleteInputErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -1864,56 +2096,11 @@ pub fn parse_delete_input_security_group_error(
     Err(match error_code {
         "BadGatewayException" => crate::error::DeleteInputSecurityGroupError {
             meta: generic,
-            kind: crate::error::DeleteInputSecurityGroupErrorKind::BadGatewayError({
+            kind: crate::error::DeleteInputSecurityGroupErrorKind::BadGatewayException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_gateway_error::Builder::default();
+                let mut output = crate::error::bad_gateway_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_gateway_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteInputSecurityGroupError::unhandled)?;
-                output.build()
-            }),
-        },
-        "BadRequestException" => crate::error::DeleteInputSecurityGroupError {
-            meta: generic,
-            kind: crate::error::DeleteInputSecurityGroupErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteInputSecurityGroupError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ForbiddenException" => crate::error::DeleteInputSecurityGroupError {
-            meta: generic,
-            kind: crate::error::DeleteInputSecurityGroupErrorKind::ForbiddenError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::forbidden_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteInputSecurityGroupError::unhandled)?;
-                output.build()
-            }),
-        },
-        "GatewayTimeoutException" => crate::error::DeleteInputSecurityGroupError {
-            meta: generic,
-            kind: crate::error::DeleteInputSecurityGroupErrorKind::GatewayTimeoutError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::gateway_timeout_error::Builder::default();
-                let _ = response;
-                output =
-                    crate::json_deser::gateway_timeout_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::DeleteInputSecurityGroupError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalServerErrorException" => crate::error::DeleteInputSecurityGroupError {
-            meta: generic,
-            kind: crate::error::DeleteInputSecurityGroupErrorKind::InternalServerErrorError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_error_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::internal_server_error_exception(
+                output = crate::json_deser::deser_structure_bad_gateway_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -1921,24 +2108,84 @@ pub fn parse_delete_input_security_group_error(
                 output.build()
             }),
         },
+        "BadRequestException" => crate::error::DeleteInputSecurityGroupError {
+            meta: generic,
+            kind: crate::error::DeleteInputSecurityGroupErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::bad_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteInputSecurityGroupError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ForbiddenException" => crate::error::DeleteInputSecurityGroupError {
+            meta: generic,
+            kind: crate::error::DeleteInputSecurityGroupErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::forbidden_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteInputSecurityGroupError::unhandled)?;
+                output.build()
+            }),
+        },
+        "GatewayTimeoutException" => crate::error::DeleteInputSecurityGroupError {
+            meta: generic,
+            kind: crate::error::DeleteInputSecurityGroupErrorKind::GatewayTimeoutException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::gateway_timeout_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_gateway_timeout_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteInputSecurityGroupError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InternalServerErrorException" => {
+            crate::error::DeleteInputSecurityGroupError {
+                meta: generic,
+                kind: crate::error::DeleteInputSecurityGroupErrorKind::InternalServerErrorException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::internal_server_error_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_internal_server_error_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteInputSecurityGroupError::unhandled)?;
+                        output.build()
+                    },
+                ),
+            }
+        }
         "NotFoundException" => crate::error::DeleteInputSecurityGroupError {
             meta: generic,
-            kind: crate::error::DeleteInputSecurityGroupErrorKind::NotFoundError({
+            kind: crate::error::DeleteInputSecurityGroupErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteInputSecurityGroupError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteInputSecurityGroupError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::DeleteInputSecurityGroupError {
             meta: generic,
-            kind: crate::error::DeleteInputSecurityGroupErrorKind::TooManyRequestsError({
+            kind: crate::error::DeleteInputSecurityGroupErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -1978,67 +2225,11 @@ pub fn parse_delete_multiplex_error(
     Err(match error_code {
         "BadGatewayException" => crate::error::DeleteMultiplexError {
             meta: generic,
-            kind: crate::error::DeleteMultiplexErrorKind::BadGatewayError({
+            kind: crate::error::DeleteMultiplexErrorKind::BadGatewayException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_gateway_error::Builder::default();
+                let mut output = crate::error::bad_gateway_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_gateway_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteMultiplexError::unhandled)?;
-                output.build()
-            }),
-        },
-        "BadRequestException" => crate::error::DeleteMultiplexError {
-            meta: generic,
-            kind: crate::error::DeleteMultiplexErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteMultiplexError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ConflictException" => crate::error::DeleteMultiplexError {
-            meta: generic,
-            kind: crate::error::DeleteMultiplexErrorKind::ConflictError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteMultiplexError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ForbiddenException" => crate::error::DeleteMultiplexError {
-            meta: generic,
-            kind: crate::error::DeleteMultiplexErrorKind::ForbiddenError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::forbidden_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteMultiplexError::unhandled)?;
-                output.build()
-            }),
-        },
-        "GatewayTimeoutException" => crate::error::DeleteMultiplexError {
-            meta: generic,
-            kind: crate::error::DeleteMultiplexErrorKind::GatewayTimeoutError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::gateway_timeout_error::Builder::default();
-                let _ = response;
-                output =
-                    crate::json_deser::gateway_timeout_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::DeleteMultiplexError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalServerErrorException" => crate::error::DeleteMultiplexError {
-            meta: generic,
-            kind: crate::error::DeleteMultiplexErrorKind::InternalServerErrorError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_error_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::internal_server_error_exception(
+                output = crate::json_deser::deser_structure_bad_gateway_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -2046,24 +2237,98 @@ pub fn parse_delete_multiplex_error(
                 output.build()
             }),
         },
+        "BadRequestException" => crate::error::DeleteMultiplexError {
+            meta: generic,
+            kind: crate::error::DeleteMultiplexErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::bad_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteMultiplexError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ConflictException" => crate::error::DeleteMultiplexError {
+            meta: generic,
+            kind: crate::error::DeleteMultiplexErrorKind::ConflictException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::conflict_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteMultiplexError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ForbiddenException" => crate::error::DeleteMultiplexError {
+            meta: generic,
+            kind: crate::error::DeleteMultiplexErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::forbidden_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteMultiplexError::unhandled)?;
+                output.build()
+            }),
+        },
+        "GatewayTimeoutException" => crate::error::DeleteMultiplexError {
+            meta: generic,
+            kind: crate::error::DeleteMultiplexErrorKind::GatewayTimeoutException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::gateway_timeout_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_gateway_timeout_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteMultiplexError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InternalServerErrorException" => crate::error::DeleteMultiplexError {
+            meta: generic,
+            kind: crate::error::DeleteMultiplexErrorKind::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::internal_server_error_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_internal_server_error_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeleteMultiplexError::unhandled)?;
+                output.build()
+            }),
+        },
         "NotFoundException" => crate::error::DeleteMultiplexError {
             meta: generic,
-            kind: crate::error::DeleteMultiplexErrorKind::NotFoundError({
+            kind: crate::error::DeleteMultiplexErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteMultiplexError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteMultiplexError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::DeleteMultiplexError {
             meta: generic,
-            kind: crate::error::DeleteMultiplexErrorKind::TooManyRequestsError({
+            kind: crate::error::DeleteMultiplexErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -2084,7 +2349,7 @@ pub fn parse_delete_multiplex_response(
         let mut output = crate::output::delete_multiplex_output::Builder::default();
         let _ = response;
         output =
-            crate::json_deser::delete_multiplex_deser_operation(response.body().as_ref(), output)
+            crate::json_deser::deser_operation_delete_multiplex(response.body().as_ref(), output)
                 .map_err(crate::error::DeleteMultiplexError::unhandled)?;
         output.build()
     })
@@ -2110,67 +2375,11 @@ pub fn parse_delete_multiplex_program_error(
     Err(match error_code {
         "BadGatewayException" => crate::error::DeleteMultiplexProgramError {
             meta: generic,
-            kind: crate::error::DeleteMultiplexProgramErrorKind::BadGatewayError({
+            kind: crate::error::DeleteMultiplexProgramErrorKind::BadGatewayException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_gateway_error::Builder::default();
+                let mut output = crate::error::bad_gateway_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_gateway_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteMultiplexProgramError::unhandled)?;
-                output.build()
-            }),
-        },
-        "BadRequestException" => crate::error::DeleteMultiplexProgramError {
-            meta: generic,
-            kind: crate::error::DeleteMultiplexProgramErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteMultiplexProgramError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ConflictException" => crate::error::DeleteMultiplexProgramError {
-            meta: generic,
-            kind: crate::error::DeleteMultiplexProgramErrorKind::ConflictError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteMultiplexProgramError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ForbiddenException" => crate::error::DeleteMultiplexProgramError {
-            meta: generic,
-            kind: crate::error::DeleteMultiplexProgramErrorKind::ForbiddenError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::forbidden_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteMultiplexProgramError::unhandled)?;
-                output.build()
-            }),
-        },
-        "GatewayTimeoutException" => crate::error::DeleteMultiplexProgramError {
-            meta: generic,
-            kind: crate::error::DeleteMultiplexProgramErrorKind::GatewayTimeoutError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::gateway_timeout_error::Builder::default();
-                let _ = response;
-                output =
-                    crate::json_deser::gateway_timeout_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::DeleteMultiplexProgramError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalServerErrorException" => crate::error::DeleteMultiplexProgramError {
-            meta: generic,
-            kind: crate::error::DeleteMultiplexProgramErrorKind::InternalServerErrorError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_error_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::internal_server_error_exception(
+                output = crate::json_deser::deser_structure_bad_gateway_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -2178,24 +2387,98 @@ pub fn parse_delete_multiplex_program_error(
                 output.build()
             }),
         },
+        "BadRequestException" => crate::error::DeleteMultiplexProgramError {
+            meta: generic,
+            kind: crate::error::DeleteMultiplexProgramErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::bad_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteMultiplexProgramError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ConflictException" => crate::error::DeleteMultiplexProgramError {
+            meta: generic,
+            kind: crate::error::DeleteMultiplexProgramErrorKind::ConflictException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::conflict_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteMultiplexProgramError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ForbiddenException" => crate::error::DeleteMultiplexProgramError {
+            meta: generic,
+            kind: crate::error::DeleteMultiplexProgramErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::forbidden_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteMultiplexProgramError::unhandled)?;
+                output.build()
+            }),
+        },
+        "GatewayTimeoutException" => crate::error::DeleteMultiplexProgramError {
+            meta: generic,
+            kind: crate::error::DeleteMultiplexProgramErrorKind::GatewayTimeoutException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::gateway_timeout_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_gateway_timeout_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteMultiplexProgramError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InternalServerErrorException" => {
+            crate::error::DeleteMultiplexProgramError {
+                meta: generic,
+                kind: crate::error::DeleteMultiplexProgramErrorKind::InternalServerErrorException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::internal_server_error_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_internal_server_error_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteMultiplexProgramError::unhandled)?;
+                        output.build()
+                    },
+                ),
+            }
+        }
         "NotFoundException" => crate::error::DeleteMultiplexProgramError {
             meta: generic,
-            kind: crate::error::DeleteMultiplexProgramErrorKind::NotFoundError({
+            kind: crate::error::DeleteMultiplexProgramErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteMultiplexProgramError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteMultiplexProgramError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::DeleteMultiplexProgramError {
             meta: generic,
-            kind: crate::error::DeleteMultiplexProgramErrorKind::TooManyRequestsError({
+            kind: crate::error::DeleteMultiplexProgramErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -2218,7 +2501,7 @@ pub fn parse_delete_multiplex_program_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_multiplex_program_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::delete_multiplex_program_deser_operation(
+        output = crate::json_deser::deser_operation_delete_multiplex_program(
             response.body().as_ref(),
             output,
         )
@@ -2241,67 +2524,11 @@ pub fn parse_delete_reservation_error(
     Err(match error_code {
         "BadGatewayException" => crate::error::DeleteReservationError {
             meta: generic,
-            kind: crate::error::DeleteReservationErrorKind::BadGatewayError({
+            kind: crate::error::DeleteReservationErrorKind::BadGatewayException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_gateway_error::Builder::default();
+                let mut output = crate::error::bad_gateway_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_gateway_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteReservationError::unhandled)?;
-                output.build()
-            }),
-        },
-        "BadRequestException" => crate::error::DeleteReservationError {
-            meta: generic,
-            kind: crate::error::DeleteReservationErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteReservationError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ConflictException" => crate::error::DeleteReservationError {
-            meta: generic,
-            kind: crate::error::DeleteReservationErrorKind::ConflictError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteReservationError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ForbiddenException" => crate::error::DeleteReservationError {
-            meta: generic,
-            kind: crate::error::DeleteReservationErrorKind::ForbiddenError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::forbidden_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteReservationError::unhandled)?;
-                output.build()
-            }),
-        },
-        "GatewayTimeoutException" => crate::error::DeleteReservationError {
-            meta: generic,
-            kind: crate::error::DeleteReservationErrorKind::GatewayTimeoutError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::gateway_timeout_error::Builder::default();
-                let _ = response;
-                output =
-                    crate::json_deser::gateway_timeout_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::DeleteReservationError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalServerErrorException" => crate::error::DeleteReservationError {
-            meta: generic,
-            kind: crate::error::DeleteReservationErrorKind::InternalServerErrorError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_error_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::internal_server_error_exception(
+                output = crate::json_deser::deser_structure_bad_gateway_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -2309,24 +2536,98 @@ pub fn parse_delete_reservation_error(
                 output.build()
             }),
         },
+        "BadRequestException" => crate::error::DeleteReservationError {
+            meta: generic,
+            kind: crate::error::DeleteReservationErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::bad_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteReservationError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ConflictException" => crate::error::DeleteReservationError {
+            meta: generic,
+            kind: crate::error::DeleteReservationErrorKind::ConflictException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::conflict_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteReservationError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ForbiddenException" => crate::error::DeleteReservationError {
+            meta: generic,
+            kind: crate::error::DeleteReservationErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::forbidden_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteReservationError::unhandled)?;
+                output.build()
+            }),
+        },
+        "GatewayTimeoutException" => crate::error::DeleteReservationError {
+            meta: generic,
+            kind: crate::error::DeleteReservationErrorKind::GatewayTimeoutException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::gateway_timeout_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_gateway_timeout_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteReservationError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InternalServerErrorException" => crate::error::DeleteReservationError {
+            meta: generic,
+            kind: crate::error::DeleteReservationErrorKind::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::internal_server_error_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_internal_server_error_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeleteReservationError::unhandled)?;
+                output.build()
+            }),
+        },
         "NotFoundException" => crate::error::DeleteReservationError {
             meta: generic,
-            kind: crate::error::DeleteReservationErrorKind::NotFoundError({
+            kind: crate::error::DeleteReservationErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteReservationError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteReservationError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::DeleteReservationError {
             meta: generic,
-            kind: crate::error::DeleteReservationErrorKind::TooManyRequestsError({
+            kind: crate::error::DeleteReservationErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -2348,7 +2649,7 @@ pub fn parse_delete_reservation_response(
         let mut output = crate::output::delete_reservation_output::Builder::default();
         let _ = response;
         output =
-            crate::json_deser::delete_reservation_deser_operation(response.body().as_ref(), output)
+            crate::json_deser::deser_operation_delete_reservation(response.body().as_ref(), output)
                 .map_err(crate::error::DeleteReservationError::unhandled)?;
         output.build()
     })
@@ -2367,56 +2668,11 @@ pub fn parse_delete_schedule_error(
     Err(match error_code {
         "BadGatewayException" => crate::error::DeleteScheduleError {
             meta: generic,
-            kind: crate::error::DeleteScheduleErrorKind::BadGatewayError({
+            kind: crate::error::DeleteScheduleErrorKind::BadGatewayException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_gateway_error::Builder::default();
+                let mut output = crate::error::bad_gateway_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_gateway_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteScheduleError::unhandled)?;
-                output.build()
-            }),
-        },
-        "BadRequestException" => crate::error::DeleteScheduleError {
-            meta: generic,
-            kind: crate::error::DeleteScheduleErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteScheduleError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ForbiddenException" => crate::error::DeleteScheduleError {
-            meta: generic,
-            kind: crate::error::DeleteScheduleErrorKind::ForbiddenError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::forbidden_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteScheduleError::unhandled)?;
-                output.build()
-            }),
-        },
-        "GatewayTimeoutException" => crate::error::DeleteScheduleError {
-            meta: generic,
-            kind: crate::error::DeleteScheduleErrorKind::GatewayTimeoutError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::gateway_timeout_error::Builder::default();
-                let _ = response;
-                output =
-                    crate::json_deser::gateway_timeout_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::DeleteScheduleError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalServerErrorException" => crate::error::DeleteScheduleError {
-            meta: generic,
-            kind: crate::error::DeleteScheduleErrorKind::InternalServerErrorError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_error_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::internal_server_error_exception(
+                output = crate::json_deser::deser_structure_bad_gateway_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -2424,24 +2680,84 @@ pub fn parse_delete_schedule_error(
                 output.build()
             }),
         },
+        "BadRequestException" => crate::error::DeleteScheduleError {
+            meta: generic,
+            kind: crate::error::DeleteScheduleErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::bad_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteScheduleError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ForbiddenException" => crate::error::DeleteScheduleError {
+            meta: generic,
+            kind: crate::error::DeleteScheduleErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::forbidden_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteScheduleError::unhandled)?;
+                output.build()
+            }),
+        },
+        "GatewayTimeoutException" => crate::error::DeleteScheduleError {
+            meta: generic,
+            kind: crate::error::DeleteScheduleErrorKind::GatewayTimeoutException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::gateway_timeout_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_gateway_timeout_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteScheduleError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InternalServerErrorException" => crate::error::DeleteScheduleError {
+            meta: generic,
+            kind: crate::error::DeleteScheduleErrorKind::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::internal_server_error_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_internal_server_error_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeleteScheduleError::unhandled)?;
+                output.build()
+            }),
+        },
         "NotFoundException" => crate::error::DeleteScheduleError {
             meta: generic,
-            kind: crate::error::DeleteScheduleErrorKind::NotFoundError({
+            kind: crate::error::DeleteScheduleErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteScheduleError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteScheduleError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::DeleteScheduleError {
             meta: generic,
-            kind: crate::error::DeleteScheduleErrorKind::TooManyRequestsError({
+            kind: crate::error::DeleteScheduleErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -2478,33 +2794,11 @@ pub fn parse_delete_tags_error(
     Err(match error_code {
         "BadRequestException" => crate::error::DeleteTagsError {
             meta: generic,
-            kind: crate::error::DeleteTagsErrorKind::BadRequestError({
+            kind: crate::error::DeleteTagsErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteTagsError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ForbiddenException" => crate::error::DeleteTagsError {
-            meta: generic,
-            kind: crate::error::DeleteTagsErrorKind::ForbiddenError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::forbidden_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteTagsError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalServerErrorException" => crate::error::DeleteTagsError {
-            meta: generic,
-            kind: crate::error::DeleteTagsErrorKind::InternalServerErrorError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_error_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::internal_server_error_exception(
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -2512,14 +2806,46 @@ pub fn parse_delete_tags_error(
                 output.build()
             }),
         },
+        "ForbiddenException" => crate::error::DeleteTagsError {
+            meta: generic,
+            kind: crate::error::DeleteTagsErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::forbidden_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteTagsError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InternalServerErrorException" => crate::error::DeleteTagsError {
+            meta: generic,
+            kind: crate::error::DeleteTagsErrorKind::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::internal_server_error_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_internal_server_error_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeleteTagsError::unhandled)?;
+                output.build()
+            }),
+        },
         "NotFoundException" => crate::error::DeleteTagsError {
             meta: generic,
-            kind: crate::error::DeleteTagsErrorKind::NotFoundError({
+            kind: crate::error::DeleteTagsErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteTagsError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteTagsError::unhandled)?;
                 output.build()
             }),
         },
@@ -2552,56 +2878,11 @@ pub fn parse_describe_channel_error(
     Err(match error_code {
         "BadGatewayException" => crate::error::DescribeChannelError {
             meta: generic,
-            kind: crate::error::DescribeChannelErrorKind::BadGatewayError({
+            kind: crate::error::DescribeChannelErrorKind::BadGatewayException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_gateway_error::Builder::default();
+                let mut output = crate::error::bad_gateway_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_gateway_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DescribeChannelError::unhandled)?;
-                output.build()
-            }),
-        },
-        "BadRequestException" => crate::error::DescribeChannelError {
-            meta: generic,
-            kind: crate::error::DescribeChannelErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DescribeChannelError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ForbiddenException" => crate::error::DescribeChannelError {
-            meta: generic,
-            kind: crate::error::DescribeChannelErrorKind::ForbiddenError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::forbidden_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DescribeChannelError::unhandled)?;
-                output.build()
-            }),
-        },
-        "GatewayTimeoutException" => crate::error::DescribeChannelError {
-            meta: generic,
-            kind: crate::error::DescribeChannelErrorKind::GatewayTimeoutError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::gateway_timeout_error::Builder::default();
-                let _ = response;
-                output =
-                    crate::json_deser::gateway_timeout_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::DescribeChannelError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalServerErrorException" => crate::error::DescribeChannelError {
-            meta: generic,
-            kind: crate::error::DescribeChannelErrorKind::InternalServerErrorError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_error_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::internal_server_error_exception(
+                output = crate::json_deser::deser_structure_bad_gateway_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -2609,24 +2890,84 @@ pub fn parse_describe_channel_error(
                 output.build()
             }),
         },
+        "BadRequestException" => crate::error::DescribeChannelError {
+            meta: generic,
+            kind: crate::error::DescribeChannelErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::bad_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DescribeChannelError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ForbiddenException" => crate::error::DescribeChannelError {
+            meta: generic,
+            kind: crate::error::DescribeChannelErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::forbidden_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DescribeChannelError::unhandled)?;
+                output.build()
+            }),
+        },
+        "GatewayTimeoutException" => crate::error::DescribeChannelError {
+            meta: generic,
+            kind: crate::error::DescribeChannelErrorKind::GatewayTimeoutException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::gateway_timeout_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_gateway_timeout_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DescribeChannelError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InternalServerErrorException" => crate::error::DescribeChannelError {
+            meta: generic,
+            kind: crate::error::DescribeChannelErrorKind::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::internal_server_error_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_internal_server_error_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DescribeChannelError::unhandled)?;
+                output.build()
+            }),
+        },
         "NotFoundException" => crate::error::DescribeChannelError {
             meta: generic,
-            kind: crate::error::DescribeChannelErrorKind::NotFoundError({
+            kind: crate::error::DescribeChannelErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DescribeChannelError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DescribeChannelError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::DescribeChannelError {
             meta: generic,
-            kind: crate::error::DescribeChannelErrorKind::TooManyRequestsError({
+            kind: crate::error::DescribeChannelErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -2647,7 +2988,7 @@ pub fn parse_describe_channel_response(
         let mut output = crate::output::describe_channel_output::Builder::default();
         let _ = response;
         output =
-            crate::json_deser::describe_channel_deser_operation(response.body().as_ref(), output)
+            crate::json_deser::deser_operation_describe_channel(response.body().as_ref(), output)
                 .map_err(crate::error::DescribeChannelError::unhandled)?;
         output.build()
     })
@@ -2666,56 +3007,11 @@ pub fn parse_describe_input_error(
     Err(match error_code {
         "BadGatewayException" => crate::error::DescribeInputError {
             meta: generic,
-            kind: crate::error::DescribeInputErrorKind::BadGatewayError({
+            kind: crate::error::DescribeInputErrorKind::BadGatewayException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_gateway_error::Builder::default();
+                let mut output = crate::error::bad_gateway_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_gateway_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DescribeInputError::unhandled)?;
-                output.build()
-            }),
-        },
-        "BadRequestException" => crate::error::DescribeInputError {
-            meta: generic,
-            kind: crate::error::DescribeInputErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DescribeInputError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ForbiddenException" => crate::error::DescribeInputError {
-            meta: generic,
-            kind: crate::error::DescribeInputErrorKind::ForbiddenError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::forbidden_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DescribeInputError::unhandled)?;
-                output.build()
-            }),
-        },
-        "GatewayTimeoutException" => crate::error::DescribeInputError {
-            meta: generic,
-            kind: crate::error::DescribeInputErrorKind::GatewayTimeoutError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::gateway_timeout_error::Builder::default();
-                let _ = response;
-                output =
-                    crate::json_deser::gateway_timeout_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::DescribeInputError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalServerErrorException" => crate::error::DescribeInputError {
-            meta: generic,
-            kind: crate::error::DescribeInputErrorKind::InternalServerErrorError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_error_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::internal_server_error_exception(
+                output = crate::json_deser::deser_structure_bad_gateway_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -2723,24 +3019,84 @@ pub fn parse_describe_input_error(
                 output.build()
             }),
         },
+        "BadRequestException" => crate::error::DescribeInputError {
+            meta: generic,
+            kind: crate::error::DescribeInputErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::bad_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DescribeInputError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ForbiddenException" => crate::error::DescribeInputError {
+            meta: generic,
+            kind: crate::error::DescribeInputErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::forbidden_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DescribeInputError::unhandled)?;
+                output.build()
+            }),
+        },
+        "GatewayTimeoutException" => crate::error::DescribeInputError {
+            meta: generic,
+            kind: crate::error::DescribeInputErrorKind::GatewayTimeoutException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::gateway_timeout_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_gateway_timeout_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DescribeInputError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InternalServerErrorException" => crate::error::DescribeInputError {
+            meta: generic,
+            kind: crate::error::DescribeInputErrorKind::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::internal_server_error_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_internal_server_error_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DescribeInputError::unhandled)?;
+                output.build()
+            }),
+        },
         "NotFoundException" => crate::error::DescribeInputError {
             meta: generic,
-            kind: crate::error::DescribeInputErrorKind::NotFoundError({
+            kind: crate::error::DescribeInputErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DescribeInputError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DescribeInputError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::DescribeInputError {
             meta: generic,
-            kind: crate::error::DescribeInputErrorKind::TooManyRequestsError({
+            kind: crate::error::DescribeInputErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -2761,7 +3117,7 @@ pub fn parse_describe_input_response(
         let mut output = crate::output::describe_input_output::Builder::default();
         let _ = response;
         output =
-            crate::json_deser::describe_input_deser_operation(response.body().as_ref(), output)
+            crate::json_deser::deser_operation_describe_input(response.body().as_ref(), output)
                 .map_err(crate::error::DescribeInputError::unhandled)?;
         output.build()
     })
@@ -2783,56 +3139,11 @@ pub fn parse_describe_input_device_error(
     Err(match error_code {
         "BadGatewayException" => crate::error::DescribeInputDeviceError {
             meta: generic,
-            kind: crate::error::DescribeInputDeviceErrorKind::BadGatewayError({
+            kind: crate::error::DescribeInputDeviceErrorKind::BadGatewayException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_gateway_error::Builder::default();
+                let mut output = crate::error::bad_gateway_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_gateway_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DescribeInputDeviceError::unhandled)?;
-                output.build()
-            }),
-        },
-        "BadRequestException" => crate::error::DescribeInputDeviceError {
-            meta: generic,
-            kind: crate::error::DescribeInputDeviceErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DescribeInputDeviceError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ForbiddenException" => crate::error::DescribeInputDeviceError {
-            meta: generic,
-            kind: crate::error::DescribeInputDeviceErrorKind::ForbiddenError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::forbidden_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DescribeInputDeviceError::unhandled)?;
-                output.build()
-            }),
-        },
-        "GatewayTimeoutException" => crate::error::DescribeInputDeviceError {
-            meta: generic,
-            kind: crate::error::DescribeInputDeviceErrorKind::GatewayTimeoutError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::gateway_timeout_error::Builder::default();
-                let _ = response;
-                output =
-                    crate::json_deser::gateway_timeout_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::DescribeInputDeviceError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalServerErrorException" => crate::error::DescribeInputDeviceError {
-            meta: generic,
-            kind: crate::error::DescribeInputDeviceErrorKind::InternalServerErrorError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_error_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::internal_server_error_exception(
+                output = crate::json_deser::deser_structure_bad_gateway_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -2840,24 +3151,84 @@ pub fn parse_describe_input_device_error(
                 output.build()
             }),
         },
+        "BadRequestException" => crate::error::DescribeInputDeviceError {
+            meta: generic,
+            kind: crate::error::DescribeInputDeviceErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::bad_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DescribeInputDeviceError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ForbiddenException" => crate::error::DescribeInputDeviceError {
+            meta: generic,
+            kind: crate::error::DescribeInputDeviceErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::forbidden_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DescribeInputDeviceError::unhandled)?;
+                output.build()
+            }),
+        },
+        "GatewayTimeoutException" => crate::error::DescribeInputDeviceError {
+            meta: generic,
+            kind: crate::error::DescribeInputDeviceErrorKind::GatewayTimeoutException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::gateway_timeout_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_gateway_timeout_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DescribeInputDeviceError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InternalServerErrorException" => crate::error::DescribeInputDeviceError {
+            meta: generic,
+            kind: crate::error::DescribeInputDeviceErrorKind::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::internal_server_error_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_internal_server_error_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DescribeInputDeviceError::unhandled)?;
+                output.build()
+            }),
+        },
         "NotFoundException" => crate::error::DescribeInputDeviceError {
             meta: generic,
-            kind: crate::error::DescribeInputDeviceErrorKind::NotFoundError({
+            kind: crate::error::DescribeInputDeviceErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DescribeInputDeviceError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DescribeInputDeviceError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::DescribeInputDeviceError {
             meta: generic,
-            kind: crate::error::DescribeInputDeviceErrorKind::TooManyRequestsError({
+            kind: crate::error::DescribeInputDeviceErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -2880,7 +3251,7 @@ pub fn parse_describe_input_device_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_input_device_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::describe_input_device_deser_operation(
+        output = crate::json_deser::deser_operation_describe_input_device(
             response.body().as_ref(),
             output,
         )
@@ -2900,50 +3271,24 @@ pub fn parse_describe_input_device_thumbnail(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_input_device_thumbnail_output::Builder::default();
         let _ = response;
-        output = output.set_body(Some(
-            crate::http_serde::deser_payload_describe_input_device_thumbnail_body(
-                response.body_mut(),
-            )?,
-        ));
+        output = output.set_body(
+            Some(crate::http_serde::deser_payload_describe_input_device_thumbnail_describe_input_device_thumbnail_output_body(response.body_mut())?)
+        );
         output = output.set_content_length(
-            crate::http_serde::deser_header_describe_input_device_thumbnail_content_length(
-                response.headers(),
-            )
-            .map_err(|_| {
-                crate::error::DescribeInputDeviceThumbnailError::unhandled(
-                    "Failed to parse ContentLength from header `Content-Length",
-                )
-            })?,
+            crate::http_serde::deser_header_describe_input_device_thumbnail_describe_input_device_thumbnail_output_content_length(response.headers())
+                                        .map_err(|_|crate::error::DescribeInputDeviceThumbnailError::unhandled("Failed to parse ContentLength from header `Content-Length"))?
         );
         output = output.set_content_type(
-            crate::http_serde::deser_header_describe_input_device_thumbnail_content_type(
-                response.headers(),
-            )
-            .map_err(|_| {
-                crate::error::DescribeInputDeviceThumbnailError::unhandled(
-                    "Failed to parse ContentType from header `Content-Type",
-                )
-            })?,
+            crate::http_serde::deser_header_describe_input_device_thumbnail_describe_input_device_thumbnail_output_content_type(response.headers())
+                                        .map_err(|_|crate::error::DescribeInputDeviceThumbnailError::unhandled("Failed to parse ContentType from header `Content-Type"))?
         );
         output = output.set_e_tag(
-            crate::http_serde::deser_header_describe_input_device_thumbnail_e_tag(
-                response.headers(),
-            )
-            .map_err(|_| {
-                crate::error::DescribeInputDeviceThumbnailError::unhandled(
-                    "Failed to parse ETag from header `ETag",
-                )
-            })?,
+            crate::http_serde::deser_header_describe_input_device_thumbnail_describe_input_device_thumbnail_output_e_tag(response.headers())
+                                        .map_err(|_|crate::error::DescribeInputDeviceThumbnailError::unhandled("Failed to parse ETag from header `ETag"))?
         );
         output = output.set_last_modified(
-            crate::http_serde::deser_header_describe_input_device_thumbnail_last_modified(
-                response.headers(),
-            )
-            .map_err(|_| {
-                crate::error::DescribeInputDeviceThumbnailError::unhandled(
-                    "Failed to parse LastModified from header `Last-Modified",
-                )
-            })?,
+            crate::http_serde::deser_header_describe_input_device_thumbnail_describe_input_device_thumbnail_output_last_modified(response.headers())
+                                        .map_err(|_|crate::error::DescribeInputDeviceThumbnailError::unhandled("Failed to parse LastModified from header `Last-Modified"))?
         );
         output.build()
     })
@@ -2969,56 +3314,11 @@ pub fn parse_describe_input_device_thumbnail_error(
     Err(match error_code {
         "BadGatewayException" => crate::error::DescribeInputDeviceThumbnailError {
             meta: generic,
-            kind: crate::error::DescribeInputDeviceThumbnailErrorKind::BadGatewayError({
+            kind: crate::error::DescribeInputDeviceThumbnailErrorKind::BadGatewayException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_gateway_error::Builder::default();
+                let mut output = crate::error::bad_gateway_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_gateway_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DescribeInputDeviceThumbnailError::unhandled)?;
-                output.build()
-            }),
-        },
-        "BadRequestException" => crate::error::DescribeInputDeviceThumbnailError {
-            meta: generic,
-            kind: crate::error::DescribeInputDeviceThumbnailErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DescribeInputDeviceThumbnailError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ForbiddenException" => crate::error::DescribeInputDeviceThumbnailError {
-            meta: generic,
-            kind: crate::error::DescribeInputDeviceThumbnailErrorKind::ForbiddenError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::forbidden_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DescribeInputDeviceThumbnailError::unhandled)?;
-                output.build()
-            }),
-        },
-        "GatewayTimeoutException" => crate::error::DescribeInputDeviceThumbnailError {
-            meta: generic,
-            kind: crate::error::DescribeInputDeviceThumbnailErrorKind::GatewayTimeoutError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::gateway_timeout_error::Builder::default();
-                let _ = response;
-                output =
-                    crate::json_deser::gateway_timeout_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::DescribeInputDeviceThumbnailError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalServerErrorException" => crate::error::DescribeInputDeviceThumbnailError {
-            meta: generic,
-            kind: crate::error::DescribeInputDeviceThumbnailErrorKind::InternalServerErrorError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_error_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::internal_server_error_exception(
+                output = crate::json_deser::deser_structure_bad_gateway_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -3026,24 +3326,87 @@ pub fn parse_describe_input_device_thumbnail_error(
                 output.build()
             }),
         },
+        "BadRequestException" => crate::error::DescribeInputDeviceThumbnailError {
+            meta: generic,
+            kind: crate::error::DescribeInputDeviceThumbnailErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::bad_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DescribeInputDeviceThumbnailError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ForbiddenException" => crate::error::DescribeInputDeviceThumbnailError {
+            meta: generic,
+            kind: crate::error::DescribeInputDeviceThumbnailErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::forbidden_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DescribeInputDeviceThumbnailError::unhandled)?;
+                output.build()
+            }),
+        },
+        "GatewayTimeoutException" => crate::error::DescribeInputDeviceThumbnailError {
+            meta: generic,
+            kind: crate::error::DescribeInputDeviceThumbnailErrorKind::GatewayTimeoutException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::gateway_timeout_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_gateway_timeout_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DescribeInputDeviceThumbnailError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InternalServerErrorException" => crate::error::DescribeInputDeviceThumbnailError {
+            meta: generic,
+            kind: crate::error::DescribeInputDeviceThumbnailErrorKind::InternalServerErrorException(
+                {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::internal_server_error_exception::Builder::default();
+                    let _ = response;
+                    output =
+                        crate::json_deser::deser_structure_internal_server_error_exceptionjson_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::DescribeInputDeviceThumbnailError::unhandled)?;
+                    output.build()
+                },
+            ),
+        },
         "NotFoundException" => crate::error::DescribeInputDeviceThumbnailError {
             meta: generic,
-            kind: crate::error::DescribeInputDeviceThumbnailErrorKind::NotFoundError({
+            kind: crate::error::DescribeInputDeviceThumbnailErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DescribeInputDeviceThumbnailError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DescribeInputDeviceThumbnailError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::DescribeInputDeviceThumbnailError {
             meta: generic,
-            kind: crate::error::DescribeInputDeviceThumbnailErrorKind::TooManyRequestsError({
+            kind: crate::error::DescribeInputDeviceThumbnailErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -3075,56 +3438,11 @@ pub fn parse_describe_input_security_group_error(
     Err(match error_code {
         "BadGatewayException" => crate::error::DescribeInputSecurityGroupError {
             meta: generic,
-            kind: crate::error::DescribeInputSecurityGroupErrorKind::BadGatewayError({
+            kind: crate::error::DescribeInputSecurityGroupErrorKind::BadGatewayException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_gateway_error::Builder::default();
+                let mut output = crate::error::bad_gateway_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_gateway_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DescribeInputSecurityGroupError::unhandled)?;
-                output.build()
-            }),
-        },
-        "BadRequestException" => crate::error::DescribeInputSecurityGroupError {
-            meta: generic,
-            kind: crate::error::DescribeInputSecurityGroupErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DescribeInputSecurityGroupError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ForbiddenException" => crate::error::DescribeInputSecurityGroupError {
-            meta: generic,
-            kind: crate::error::DescribeInputSecurityGroupErrorKind::ForbiddenError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::forbidden_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DescribeInputSecurityGroupError::unhandled)?;
-                output.build()
-            }),
-        },
-        "GatewayTimeoutException" => crate::error::DescribeInputSecurityGroupError {
-            meta: generic,
-            kind: crate::error::DescribeInputSecurityGroupErrorKind::GatewayTimeoutError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::gateway_timeout_error::Builder::default();
-                let _ = response;
-                output =
-                    crate::json_deser::gateway_timeout_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::DescribeInputSecurityGroupError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalServerErrorException" => crate::error::DescribeInputSecurityGroupError {
-            meta: generic,
-            kind: crate::error::DescribeInputSecurityGroupErrorKind::InternalServerErrorError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_error_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::internal_server_error_exception(
+                output = crate::json_deser::deser_structure_bad_gateway_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -3132,24 +3450,85 @@ pub fn parse_describe_input_security_group_error(
                 output.build()
             }),
         },
+        "BadRequestException" => crate::error::DescribeInputSecurityGroupError {
+            meta: generic,
+            kind: crate::error::DescribeInputSecurityGroupErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::bad_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DescribeInputSecurityGroupError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ForbiddenException" => crate::error::DescribeInputSecurityGroupError {
+            meta: generic,
+            kind: crate::error::DescribeInputSecurityGroupErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::forbidden_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DescribeInputSecurityGroupError::unhandled)?;
+                output.build()
+            }),
+        },
+        "GatewayTimeoutException" => crate::error::DescribeInputSecurityGroupError {
+            meta: generic,
+            kind: crate::error::DescribeInputSecurityGroupErrorKind::GatewayTimeoutException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::gateway_timeout_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_gateway_timeout_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DescribeInputSecurityGroupError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InternalServerErrorException" => {
+            crate::error::DescribeInputSecurityGroupError {
+                meta: generic,
+                kind:
+                    crate::error::DescribeInputSecurityGroupErrorKind::InternalServerErrorException(
+                        {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::internal_server_error_exception::Builder::default();
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_internal_server_error_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeInputSecurityGroupError::unhandled)?;
+                            output.build()
+                        },
+                    ),
+            }
+        }
         "NotFoundException" => crate::error::DescribeInputSecurityGroupError {
             meta: generic,
-            kind: crate::error::DescribeInputSecurityGroupErrorKind::NotFoundError({
+            kind: crate::error::DescribeInputSecurityGroupErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DescribeInputSecurityGroupError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DescribeInputSecurityGroupError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::DescribeInputSecurityGroupError {
             meta: generic,
-            kind: crate::error::DescribeInputSecurityGroupErrorKind::TooManyRequestsError({
+            kind: crate::error::DescribeInputSecurityGroupErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -3172,7 +3551,7 @@ pub fn parse_describe_input_security_group_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_input_security_group_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::describe_input_security_group_deser_operation(
+        output = crate::json_deser::deser_operation_describe_input_security_group(
             response.body().as_ref(),
             output,
         )
@@ -3195,56 +3574,11 @@ pub fn parse_describe_multiplex_error(
     Err(match error_code {
         "BadGatewayException" => crate::error::DescribeMultiplexError {
             meta: generic,
-            kind: crate::error::DescribeMultiplexErrorKind::BadGatewayError({
+            kind: crate::error::DescribeMultiplexErrorKind::BadGatewayException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_gateway_error::Builder::default();
+                let mut output = crate::error::bad_gateway_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_gateway_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DescribeMultiplexError::unhandled)?;
-                output.build()
-            }),
-        },
-        "BadRequestException" => crate::error::DescribeMultiplexError {
-            meta: generic,
-            kind: crate::error::DescribeMultiplexErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DescribeMultiplexError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ForbiddenException" => crate::error::DescribeMultiplexError {
-            meta: generic,
-            kind: crate::error::DescribeMultiplexErrorKind::ForbiddenError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::forbidden_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DescribeMultiplexError::unhandled)?;
-                output.build()
-            }),
-        },
-        "GatewayTimeoutException" => crate::error::DescribeMultiplexError {
-            meta: generic,
-            kind: crate::error::DescribeMultiplexErrorKind::GatewayTimeoutError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::gateway_timeout_error::Builder::default();
-                let _ = response;
-                output =
-                    crate::json_deser::gateway_timeout_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::DescribeMultiplexError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalServerErrorException" => crate::error::DescribeMultiplexError {
-            meta: generic,
-            kind: crate::error::DescribeMultiplexErrorKind::InternalServerErrorError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_error_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::internal_server_error_exception(
+                output = crate::json_deser::deser_structure_bad_gateway_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -3252,24 +3586,84 @@ pub fn parse_describe_multiplex_error(
                 output.build()
             }),
         },
+        "BadRequestException" => crate::error::DescribeMultiplexError {
+            meta: generic,
+            kind: crate::error::DescribeMultiplexErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::bad_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DescribeMultiplexError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ForbiddenException" => crate::error::DescribeMultiplexError {
+            meta: generic,
+            kind: crate::error::DescribeMultiplexErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::forbidden_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DescribeMultiplexError::unhandled)?;
+                output.build()
+            }),
+        },
+        "GatewayTimeoutException" => crate::error::DescribeMultiplexError {
+            meta: generic,
+            kind: crate::error::DescribeMultiplexErrorKind::GatewayTimeoutException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::gateway_timeout_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_gateway_timeout_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DescribeMultiplexError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InternalServerErrorException" => crate::error::DescribeMultiplexError {
+            meta: generic,
+            kind: crate::error::DescribeMultiplexErrorKind::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::internal_server_error_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_internal_server_error_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DescribeMultiplexError::unhandled)?;
+                output.build()
+            }),
+        },
         "NotFoundException" => crate::error::DescribeMultiplexError {
             meta: generic,
-            kind: crate::error::DescribeMultiplexErrorKind::NotFoundError({
+            kind: crate::error::DescribeMultiplexErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DescribeMultiplexError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DescribeMultiplexError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::DescribeMultiplexError {
             meta: generic,
-            kind: crate::error::DescribeMultiplexErrorKind::TooManyRequestsError({
+            kind: crate::error::DescribeMultiplexErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -3291,7 +3685,7 @@ pub fn parse_describe_multiplex_response(
         let mut output = crate::output::describe_multiplex_output::Builder::default();
         let _ = response;
         output =
-            crate::json_deser::describe_multiplex_deser_operation(response.body().as_ref(), output)
+            crate::json_deser::deser_operation_describe_multiplex(response.body().as_ref(), output)
                 .map_err(crate::error::DescribeMultiplexError::unhandled)?;
         output.build()
     })
@@ -3317,56 +3711,11 @@ pub fn parse_describe_multiplex_program_error(
     Err(match error_code {
         "BadGatewayException" => crate::error::DescribeMultiplexProgramError {
             meta: generic,
-            kind: crate::error::DescribeMultiplexProgramErrorKind::BadGatewayError({
+            kind: crate::error::DescribeMultiplexProgramErrorKind::BadGatewayException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_gateway_error::Builder::default();
+                let mut output = crate::error::bad_gateway_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_gateway_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DescribeMultiplexProgramError::unhandled)?;
-                output.build()
-            }),
-        },
-        "BadRequestException" => crate::error::DescribeMultiplexProgramError {
-            meta: generic,
-            kind: crate::error::DescribeMultiplexProgramErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DescribeMultiplexProgramError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ForbiddenException" => crate::error::DescribeMultiplexProgramError {
-            meta: generic,
-            kind: crate::error::DescribeMultiplexProgramErrorKind::ForbiddenError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::forbidden_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DescribeMultiplexProgramError::unhandled)?;
-                output.build()
-            }),
-        },
-        "GatewayTimeoutException" => crate::error::DescribeMultiplexProgramError {
-            meta: generic,
-            kind: crate::error::DescribeMultiplexProgramErrorKind::GatewayTimeoutError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::gateway_timeout_error::Builder::default();
-                let _ = response;
-                output =
-                    crate::json_deser::gateway_timeout_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::DescribeMultiplexProgramError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalServerErrorException" => crate::error::DescribeMultiplexProgramError {
-            meta: generic,
-            kind: crate::error::DescribeMultiplexProgramErrorKind::InternalServerErrorError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_error_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::internal_server_error_exception(
+                output = crate::json_deser::deser_structure_bad_gateway_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -3374,24 +3723,84 @@ pub fn parse_describe_multiplex_program_error(
                 output.build()
             }),
         },
+        "BadRequestException" => crate::error::DescribeMultiplexProgramError {
+            meta: generic,
+            kind: crate::error::DescribeMultiplexProgramErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::bad_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DescribeMultiplexProgramError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ForbiddenException" => crate::error::DescribeMultiplexProgramError {
+            meta: generic,
+            kind: crate::error::DescribeMultiplexProgramErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::forbidden_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DescribeMultiplexProgramError::unhandled)?;
+                output.build()
+            }),
+        },
+        "GatewayTimeoutException" => crate::error::DescribeMultiplexProgramError {
+            meta: generic,
+            kind: crate::error::DescribeMultiplexProgramErrorKind::GatewayTimeoutException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::gateway_timeout_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_gateway_timeout_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DescribeMultiplexProgramError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InternalServerErrorException" => {
+            crate::error::DescribeMultiplexProgramError {
+                meta: generic,
+                kind: crate::error::DescribeMultiplexProgramErrorKind::InternalServerErrorException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::internal_server_error_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_internal_server_error_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeMultiplexProgramError::unhandled)?;
+                        output.build()
+                    },
+                ),
+            }
+        }
         "NotFoundException" => crate::error::DescribeMultiplexProgramError {
             meta: generic,
-            kind: crate::error::DescribeMultiplexProgramErrorKind::NotFoundError({
+            kind: crate::error::DescribeMultiplexProgramErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DescribeMultiplexProgramError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DescribeMultiplexProgramError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::DescribeMultiplexProgramError {
             meta: generic,
-            kind: crate::error::DescribeMultiplexProgramErrorKind::TooManyRequestsError({
+            kind: crate::error::DescribeMultiplexProgramErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -3414,7 +3823,7 @@ pub fn parse_describe_multiplex_program_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_multiplex_program_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::describe_multiplex_program_deser_operation(
+        output = crate::json_deser::deser_operation_describe_multiplex_program(
             response.body().as_ref(),
             output,
         )
@@ -3437,56 +3846,11 @@ pub fn parse_describe_offering_error(
     Err(match error_code {
         "BadGatewayException" => crate::error::DescribeOfferingError {
             meta: generic,
-            kind: crate::error::DescribeOfferingErrorKind::BadGatewayError({
+            kind: crate::error::DescribeOfferingErrorKind::BadGatewayException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_gateway_error::Builder::default();
+                let mut output = crate::error::bad_gateway_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_gateway_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DescribeOfferingError::unhandled)?;
-                output.build()
-            }),
-        },
-        "BadRequestException" => crate::error::DescribeOfferingError {
-            meta: generic,
-            kind: crate::error::DescribeOfferingErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DescribeOfferingError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ForbiddenException" => crate::error::DescribeOfferingError {
-            meta: generic,
-            kind: crate::error::DescribeOfferingErrorKind::ForbiddenError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::forbidden_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DescribeOfferingError::unhandled)?;
-                output.build()
-            }),
-        },
-        "GatewayTimeoutException" => crate::error::DescribeOfferingError {
-            meta: generic,
-            kind: crate::error::DescribeOfferingErrorKind::GatewayTimeoutError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::gateway_timeout_error::Builder::default();
-                let _ = response;
-                output =
-                    crate::json_deser::gateway_timeout_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::DescribeOfferingError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalServerErrorException" => crate::error::DescribeOfferingError {
-            meta: generic,
-            kind: crate::error::DescribeOfferingErrorKind::InternalServerErrorError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_error_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::internal_server_error_exception(
+                output = crate::json_deser::deser_structure_bad_gateway_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -3494,24 +3858,84 @@ pub fn parse_describe_offering_error(
                 output.build()
             }),
         },
+        "BadRequestException" => crate::error::DescribeOfferingError {
+            meta: generic,
+            kind: crate::error::DescribeOfferingErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::bad_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DescribeOfferingError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ForbiddenException" => crate::error::DescribeOfferingError {
+            meta: generic,
+            kind: crate::error::DescribeOfferingErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::forbidden_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DescribeOfferingError::unhandled)?;
+                output.build()
+            }),
+        },
+        "GatewayTimeoutException" => crate::error::DescribeOfferingError {
+            meta: generic,
+            kind: crate::error::DescribeOfferingErrorKind::GatewayTimeoutException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::gateway_timeout_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_gateway_timeout_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DescribeOfferingError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InternalServerErrorException" => crate::error::DescribeOfferingError {
+            meta: generic,
+            kind: crate::error::DescribeOfferingErrorKind::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::internal_server_error_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_internal_server_error_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DescribeOfferingError::unhandled)?;
+                output.build()
+            }),
+        },
         "NotFoundException" => crate::error::DescribeOfferingError {
             meta: generic,
-            kind: crate::error::DescribeOfferingErrorKind::NotFoundError({
+            kind: crate::error::DescribeOfferingErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DescribeOfferingError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DescribeOfferingError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::DescribeOfferingError {
             meta: generic,
-            kind: crate::error::DescribeOfferingErrorKind::TooManyRequestsError({
+            kind: crate::error::DescribeOfferingErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -3533,7 +3957,7 @@ pub fn parse_describe_offering_response(
         let mut output = crate::output::describe_offering_output::Builder::default();
         let _ = response;
         output =
-            crate::json_deser::describe_offering_deser_operation(response.body().as_ref(), output)
+            crate::json_deser::deser_operation_describe_offering(response.body().as_ref(), output)
                 .map_err(crate::error::DescribeOfferingError::unhandled)?;
         output.build()
     })
@@ -3555,56 +3979,11 @@ pub fn parse_describe_reservation_error(
     Err(match error_code {
         "BadGatewayException" => crate::error::DescribeReservationError {
             meta: generic,
-            kind: crate::error::DescribeReservationErrorKind::BadGatewayError({
+            kind: crate::error::DescribeReservationErrorKind::BadGatewayException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_gateway_error::Builder::default();
+                let mut output = crate::error::bad_gateway_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_gateway_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DescribeReservationError::unhandled)?;
-                output.build()
-            }),
-        },
-        "BadRequestException" => crate::error::DescribeReservationError {
-            meta: generic,
-            kind: crate::error::DescribeReservationErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DescribeReservationError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ForbiddenException" => crate::error::DescribeReservationError {
-            meta: generic,
-            kind: crate::error::DescribeReservationErrorKind::ForbiddenError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::forbidden_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DescribeReservationError::unhandled)?;
-                output.build()
-            }),
-        },
-        "GatewayTimeoutException" => crate::error::DescribeReservationError {
-            meta: generic,
-            kind: crate::error::DescribeReservationErrorKind::GatewayTimeoutError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::gateway_timeout_error::Builder::default();
-                let _ = response;
-                output =
-                    crate::json_deser::gateway_timeout_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::DescribeReservationError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalServerErrorException" => crate::error::DescribeReservationError {
-            meta: generic,
-            kind: crate::error::DescribeReservationErrorKind::InternalServerErrorError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_error_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::internal_server_error_exception(
+                output = crate::json_deser::deser_structure_bad_gateway_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -3612,24 +3991,84 @@ pub fn parse_describe_reservation_error(
                 output.build()
             }),
         },
+        "BadRequestException" => crate::error::DescribeReservationError {
+            meta: generic,
+            kind: crate::error::DescribeReservationErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::bad_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DescribeReservationError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ForbiddenException" => crate::error::DescribeReservationError {
+            meta: generic,
+            kind: crate::error::DescribeReservationErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::forbidden_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DescribeReservationError::unhandled)?;
+                output.build()
+            }),
+        },
+        "GatewayTimeoutException" => crate::error::DescribeReservationError {
+            meta: generic,
+            kind: crate::error::DescribeReservationErrorKind::GatewayTimeoutException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::gateway_timeout_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_gateway_timeout_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DescribeReservationError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InternalServerErrorException" => crate::error::DescribeReservationError {
+            meta: generic,
+            kind: crate::error::DescribeReservationErrorKind::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::internal_server_error_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_internal_server_error_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DescribeReservationError::unhandled)?;
+                output.build()
+            }),
+        },
         "NotFoundException" => crate::error::DescribeReservationError {
             meta: generic,
-            kind: crate::error::DescribeReservationErrorKind::NotFoundError({
+            kind: crate::error::DescribeReservationErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DescribeReservationError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DescribeReservationError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::DescribeReservationError {
             meta: generic,
-            kind: crate::error::DescribeReservationErrorKind::TooManyRequestsError({
+            kind: crate::error::DescribeReservationErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -3652,7 +4091,7 @@ pub fn parse_describe_reservation_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_reservation_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::describe_reservation_deser_operation(
+        output = crate::json_deser::deser_operation_describe_reservation(
             response.body().as_ref(),
             output,
         )
@@ -3675,56 +4114,11 @@ pub fn parse_describe_schedule_error(
     Err(match error_code {
         "BadGatewayException" => crate::error::DescribeScheduleError {
             meta: generic,
-            kind: crate::error::DescribeScheduleErrorKind::BadGatewayError({
+            kind: crate::error::DescribeScheduleErrorKind::BadGatewayException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_gateway_error::Builder::default();
+                let mut output = crate::error::bad_gateway_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_gateway_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DescribeScheduleError::unhandled)?;
-                output.build()
-            }),
-        },
-        "BadRequestException" => crate::error::DescribeScheduleError {
-            meta: generic,
-            kind: crate::error::DescribeScheduleErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DescribeScheduleError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ForbiddenException" => crate::error::DescribeScheduleError {
-            meta: generic,
-            kind: crate::error::DescribeScheduleErrorKind::ForbiddenError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::forbidden_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DescribeScheduleError::unhandled)?;
-                output.build()
-            }),
-        },
-        "GatewayTimeoutException" => crate::error::DescribeScheduleError {
-            meta: generic,
-            kind: crate::error::DescribeScheduleErrorKind::GatewayTimeoutError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::gateway_timeout_error::Builder::default();
-                let _ = response;
-                output =
-                    crate::json_deser::gateway_timeout_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::DescribeScheduleError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalServerErrorException" => crate::error::DescribeScheduleError {
-            meta: generic,
-            kind: crate::error::DescribeScheduleErrorKind::InternalServerErrorError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_error_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::internal_server_error_exception(
+                output = crate::json_deser::deser_structure_bad_gateway_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -3732,24 +4126,84 @@ pub fn parse_describe_schedule_error(
                 output.build()
             }),
         },
+        "BadRequestException" => crate::error::DescribeScheduleError {
+            meta: generic,
+            kind: crate::error::DescribeScheduleErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::bad_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DescribeScheduleError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ForbiddenException" => crate::error::DescribeScheduleError {
+            meta: generic,
+            kind: crate::error::DescribeScheduleErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::forbidden_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DescribeScheduleError::unhandled)?;
+                output.build()
+            }),
+        },
+        "GatewayTimeoutException" => crate::error::DescribeScheduleError {
+            meta: generic,
+            kind: crate::error::DescribeScheduleErrorKind::GatewayTimeoutException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::gateway_timeout_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_gateway_timeout_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DescribeScheduleError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InternalServerErrorException" => crate::error::DescribeScheduleError {
+            meta: generic,
+            kind: crate::error::DescribeScheduleErrorKind::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::internal_server_error_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_internal_server_error_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DescribeScheduleError::unhandled)?;
+                output.build()
+            }),
+        },
         "NotFoundException" => crate::error::DescribeScheduleError {
             meta: generic,
-            kind: crate::error::DescribeScheduleErrorKind::NotFoundError({
+            kind: crate::error::DescribeScheduleErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DescribeScheduleError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DescribeScheduleError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::DescribeScheduleError {
             meta: generic,
-            kind: crate::error::DescribeScheduleErrorKind::TooManyRequestsError({
+            kind: crate::error::DescribeScheduleErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -3771,7 +4225,7 @@ pub fn parse_describe_schedule_response(
         let mut output = crate::output::describe_schedule_output::Builder::default();
         let _ = response;
         output =
-            crate::json_deser::describe_schedule_deser_operation(response.body().as_ref(), output)
+            crate::json_deser::deser_operation_describe_schedule(response.body().as_ref(), output)
                 .map_err(crate::error::DescribeScheduleError::unhandled)?;
         output.build()
     })
@@ -3790,56 +4244,11 @@ pub fn parse_list_channels_error(
     Err(match error_code {
         "BadGatewayException" => crate::error::ListChannelsError {
             meta: generic,
-            kind: crate::error::ListChannelsErrorKind::BadGatewayError({
+            kind: crate::error::ListChannelsErrorKind::BadGatewayException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_gateway_error::Builder::default();
+                let mut output = crate::error::bad_gateway_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_gateway_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::ListChannelsError::unhandled)?;
-                output.build()
-            }),
-        },
-        "BadRequestException" => crate::error::ListChannelsError {
-            meta: generic,
-            kind: crate::error::ListChannelsErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::ListChannelsError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ForbiddenException" => crate::error::ListChannelsError {
-            meta: generic,
-            kind: crate::error::ListChannelsErrorKind::ForbiddenError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::forbidden_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::ListChannelsError::unhandled)?;
-                output.build()
-            }),
-        },
-        "GatewayTimeoutException" => crate::error::ListChannelsError {
-            meta: generic,
-            kind: crate::error::ListChannelsErrorKind::GatewayTimeoutError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::gateway_timeout_error::Builder::default();
-                let _ = response;
-                output =
-                    crate::json_deser::gateway_timeout_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::ListChannelsError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalServerErrorException" => crate::error::ListChannelsError {
-            meta: generic,
-            kind: crate::error::ListChannelsErrorKind::InternalServerErrorError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_error_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::internal_server_error_exception(
+                output = crate::json_deser::deser_structure_bad_gateway_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -3847,13 +4256,70 @@ pub fn parse_list_channels_error(
                 output.build()
             }),
         },
+        "BadRequestException" => crate::error::ListChannelsError {
+            meta: generic,
+            kind: crate::error::ListChannelsErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::bad_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListChannelsError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ForbiddenException" => crate::error::ListChannelsError {
+            meta: generic,
+            kind: crate::error::ListChannelsErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::forbidden_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListChannelsError::unhandled)?;
+                output.build()
+            }),
+        },
+        "GatewayTimeoutException" => crate::error::ListChannelsError {
+            meta: generic,
+            kind: crate::error::ListChannelsErrorKind::GatewayTimeoutException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::gateway_timeout_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_gateway_timeout_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListChannelsError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InternalServerErrorException" => crate::error::ListChannelsError {
+            meta: generic,
+            kind: crate::error::ListChannelsErrorKind::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::internal_server_error_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_internal_server_error_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ListChannelsError::unhandled)?;
+                output.build()
+            }),
+        },
         "TooManyRequestsException" => crate::error::ListChannelsError {
             meta: generic,
-            kind: crate::error::ListChannelsErrorKind::TooManyRequestsError({
+            kind: crate::error::ListChannelsErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -3873,7 +4339,7 @@ pub fn parse_list_channels_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_channels_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::list_channels_deser_operation(response.body().as_ref(), output)
+        output = crate::json_deser::deser_operation_list_channels(response.body().as_ref(), output)
             .map_err(crate::error::ListChannelsError::unhandled)?;
         output.build()
     })
@@ -3893,56 +4359,11 @@ pub fn parse_list_input_devices_error(
     Err(match error_code {
         "BadGatewayException" => crate::error::ListInputDevicesError {
             meta: generic,
-            kind: crate::error::ListInputDevicesErrorKind::BadGatewayError({
+            kind: crate::error::ListInputDevicesErrorKind::BadGatewayException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_gateway_error::Builder::default();
+                let mut output = crate::error::bad_gateway_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_gateway_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::ListInputDevicesError::unhandled)?;
-                output.build()
-            }),
-        },
-        "BadRequestException" => crate::error::ListInputDevicesError {
-            meta: generic,
-            kind: crate::error::ListInputDevicesErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::ListInputDevicesError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ForbiddenException" => crate::error::ListInputDevicesError {
-            meta: generic,
-            kind: crate::error::ListInputDevicesErrorKind::ForbiddenError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::forbidden_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::ListInputDevicesError::unhandled)?;
-                output.build()
-            }),
-        },
-        "GatewayTimeoutException" => crate::error::ListInputDevicesError {
-            meta: generic,
-            kind: crate::error::ListInputDevicesErrorKind::GatewayTimeoutError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::gateway_timeout_error::Builder::default();
-                let _ = response;
-                output =
-                    crate::json_deser::gateway_timeout_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::ListInputDevicesError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalServerErrorException" => crate::error::ListInputDevicesError {
-            meta: generic,
-            kind: crate::error::ListInputDevicesErrorKind::InternalServerErrorError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_error_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::internal_server_error_exception(
+                output = crate::json_deser::deser_structure_bad_gateway_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -3950,13 +4371,70 @@ pub fn parse_list_input_devices_error(
                 output.build()
             }),
         },
+        "BadRequestException" => crate::error::ListInputDevicesError {
+            meta: generic,
+            kind: crate::error::ListInputDevicesErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::bad_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListInputDevicesError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ForbiddenException" => crate::error::ListInputDevicesError {
+            meta: generic,
+            kind: crate::error::ListInputDevicesErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::forbidden_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListInputDevicesError::unhandled)?;
+                output.build()
+            }),
+        },
+        "GatewayTimeoutException" => crate::error::ListInputDevicesError {
+            meta: generic,
+            kind: crate::error::ListInputDevicesErrorKind::GatewayTimeoutException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::gateway_timeout_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_gateway_timeout_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListInputDevicesError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InternalServerErrorException" => crate::error::ListInputDevicesError {
+            meta: generic,
+            kind: crate::error::ListInputDevicesErrorKind::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::internal_server_error_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_internal_server_error_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ListInputDevicesError::unhandled)?;
+                output.build()
+            }),
+        },
         "TooManyRequestsException" => crate::error::ListInputDevicesError {
             meta: generic,
-            kind: crate::error::ListInputDevicesErrorKind::TooManyRequestsError({
+            kind: crate::error::ListInputDevicesErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -3978,7 +4456,7 @@ pub fn parse_list_input_devices_response(
         let mut output = crate::output::list_input_devices_output::Builder::default();
         let _ = response;
         output =
-            crate::json_deser::list_input_devices_deser_operation(response.body().as_ref(), output)
+            crate::json_deser::deser_operation_list_input_devices(response.body().as_ref(), output)
                 .map_err(crate::error::ListInputDevicesError::unhandled)?;
         output.build()
     })
@@ -4004,56 +4482,11 @@ pub fn parse_list_input_device_transfers_error(
     Err(match error_code {
         "BadGatewayException" => crate::error::ListInputDeviceTransfersError {
             meta: generic,
-            kind: crate::error::ListInputDeviceTransfersErrorKind::BadGatewayError({
+            kind: crate::error::ListInputDeviceTransfersErrorKind::BadGatewayException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_gateway_error::Builder::default();
+                let mut output = crate::error::bad_gateway_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_gateway_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::ListInputDeviceTransfersError::unhandled)?;
-                output.build()
-            }),
-        },
-        "BadRequestException" => crate::error::ListInputDeviceTransfersError {
-            meta: generic,
-            kind: crate::error::ListInputDeviceTransfersErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::ListInputDeviceTransfersError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ForbiddenException" => crate::error::ListInputDeviceTransfersError {
-            meta: generic,
-            kind: crate::error::ListInputDeviceTransfersErrorKind::ForbiddenError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::forbidden_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::ListInputDeviceTransfersError::unhandled)?;
-                output.build()
-            }),
-        },
-        "GatewayTimeoutException" => crate::error::ListInputDeviceTransfersError {
-            meta: generic,
-            kind: crate::error::ListInputDeviceTransfersErrorKind::GatewayTimeoutError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::gateway_timeout_error::Builder::default();
-                let _ = response;
-                output =
-                    crate::json_deser::gateway_timeout_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::ListInputDeviceTransfersError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalServerErrorException" => crate::error::ListInputDeviceTransfersError {
-            meta: generic,
-            kind: crate::error::ListInputDeviceTransfersErrorKind::InternalServerErrorError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_error_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::internal_server_error_exception(
+                output = crate::json_deser::deser_structure_bad_gateway_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -4061,13 +4494,70 @@ pub fn parse_list_input_device_transfers_error(
                 output.build()
             }),
         },
+        "BadRequestException" => crate::error::ListInputDeviceTransfersError {
+            meta: generic,
+            kind: crate::error::ListInputDeviceTransfersErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::bad_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListInputDeviceTransfersError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ForbiddenException" => crate::error::ListInputDeviceTransfersError {
+            meta: generic,
+            kind: crate::error::ListInputDeviceTransfersErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::forbidden_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListInputDeviceTransfersError::unhandled)?;
+                output.build()
+            }),
+        },
+        "GatewayTimeoutException" => crate::error::ListInputDeviceTransfersError {
+            meta: generic,
+            kind: crate::error::ListInputDeviceTransfersErrorKind::GatewayTimeoutException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::gateway_timeout_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_gateway_timeout_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListInputDeviceTransfersError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InternalServerErrorException" => {
+            crate::error::ListInputDeviceTransfersError {
+                meta: generic,
+                kind: crate::error::ListInputDeviceTransfersErrorKind::InternalServerErrorException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::internal_server_error_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_internal_server_error_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListInputDeviceTransfersError::unhandled)?;
+                        output.build()
+                    },
+                ),
+            }
+        }
         "TooManyRequestsException" => crate::error::ListInputDeviceTransfersError {
             meta: generic,
-            kind: crate::error::ListInputDeviceTransfersErrorKind::TooManyRequestsError({
+            kind: crate::error::ListInputDeviceTransfersErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -4077,11 +4567,11 @@ pub fn parse_list_input_device_transfers_error(
         },
         "UnprocessableEntityException" => crate::error::ListInputDeviceTransfersError {
             meta: generic,
-            kind: crate::error::ListInputDeviceTransfersErrorKind::UnprocessableEntityError({
+            kind: crate::error::ListInputDeviceTransfersErrorKind::UnprocessableEntityException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unprocessable_entity_error::Builder::default();
+                let mut output = crate::error::unprocessable_entity_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::unprocessable_entity_exception(
+                output = crate::json_deser::deser_structure_unprocessable_entity_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -4104,7 +4594,7 @@ pub fn parse_list_input_device_transfers_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_input_device_transfers_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::list_input_device_transfers_deser_operation(
+        output = crate::json_deser::deser_operation_list_input_device_transfers(
             response.body().as_ref(),
             output,
         )
@@ -4126,56 +4616,11 @@ pub fn parse_list_inputs_error(
     Err(match error_code {
         "BadGatewayException" => crate::error::ListInputsError {
             meta: generic,
-            kind: crate::error::ListInputsErrorKind::BadGatewayError({
+            kind: crate::error::ListInputsErrorKind::BadGatewayException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_gateway_error::Builder::default();
+                let mut output = crate::error::bad_gateway_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_gateway_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::ListInputsError::unhandled)?;
-                output.build()
-            }),
-        },
-        "BadRequestException" => crate::error::ListInputsError {
-            meta: generic,
-            kind: crate::error::ListInputsErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::ListInputsError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ForbiddenException" => crate::error::ListInputsError {
-            meta: generic,
-            kind: crate::error::ListInputsErrorKind::ForbiddenError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::forbidden_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::ListInputsError::unhandled)?;
-                output.build()
-            }),
-        },
-        "GatewayTimeoutException" => crate::error::ListInputsError {
-            meta: generic,
-            kind: crate::error::ListInputsErrorKind::GatewayTimeoutError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::gateway_timeout_error::Builder::default();
-                let _ = response;
-                output =
-                    crate::json_deser::gateway_timeout_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::ListInputsError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalServerErrorException" => crate::error::ListInputsError {
-            meta: generic,
-            kind: crate::error::ListInputsErrorKind::InternalServerErrorError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_error_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::internal_server_error_exception(
+                output = crate::json_deser::deser_structure_bad_gateway_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -4183,13 +4628,70 @@ pub fn parse_list_inputs_error(
                 output.build()
             }),
         },
+        "BadRequestException" => crate::error::ListInputsError {
+            meta: generic,
+            kind: crate::error::ListInputsErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::bad_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListInputsError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ForbiddenException" => crate::error::ListInputsError {
+            meta: generic,
+            kind: crate::error::ListInputsErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::forbidden_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListInputsError::unhandled)?;
+                output.build()
+            }),
+        },
+        "GatewayTimeoutException" => crate::error::ListInputsError {
+            meta: generic,
+            kind: crate::error::ListInputsErrorKind::GatewayTimeoutException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::gateway_timeout_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_gateway_timeout_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListInputsError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InternalServerErrorException" => crate::error::ListInputsError {
+            meta: generic,
+            kind: crate::error::ListInputsErrorKind::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::internal_server_error_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_internal_server_error_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ListInputsError::unhandled)?;
+                output.build()
+            }),
+        },
         "TooManyRequestsException" => crate::error::ListInputsError {
             meta: generic,
-            kind: crate::error::ListInputsErrorKind::TooManyRequestsError({
+            kind: crate::error::ListInputsErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -4209,7 +4711,7 @@ pub fn parse_list_inputs_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_inputs_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::list_inputs_deser_operation(response.body().as_ref(), output)
+        output = crate::json_deser::deser_operation_list_inputs(response.body().as_ref(), output)
             .map_err(crate::error::ListInputsError::unhandled)?;
         output.build()
     })
@@ -4235,56 +4737,11 @@ pub fn parse_list_input_security_groups_error(
     Err(match error_code {
         "BadGatewayException" => crate::error::ListInputSecurityGroupsError {
             meta: generic,
-            kind: crate::error::ListInputSecurityGroupsErrorKind::BadGatewayError({
+            kind: crate::error::ListInputSecurityGroupsErrorKind::BadGatewayException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_gateway_error::Builder::default();
+                let mut output = crate::error::bad_gateway_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_gateway_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::ListInputSecurityGroupsError::unhandled)?;
-                output.build()
-            }),
-        },
-        "BadRequestException" => crate::error::ListInputSecurityGroupsError {
-            meta: generic,
-            kind: crate::error::ListInputSecurityGroupsErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::ListInputSecurityGroupsError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ForbiddenException" => crate::error::ListInputSecurityGroupsError {
-            meta: generic,
-            kind: crate::error::ListInputSecurityGroupsErrorKind::ForbiddenError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::forbidden_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::ListInputSecurityGroupsError::unhandled)?;
-                output.build()
-            }),
-        },
-        "GatewayTimeoutException" => crate::error::ListInputSecurityGroupsError {
-            meta: generic,
-            kind: crate::error::ListInputSecurityGroupsErrorKind::GatewayTimeoutError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::gateway_timeout_error::Builder::default();
-                let _ = response;
-                output =
-                    crate::json_deser::gateway_timeout_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::ListInputSecurityGroupsError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalServerErrorException" => crate::error::ListInputSecurityGroupsError {
-            meta: generic,
-            kind: crate::error::ListInputSecurityGroupsErrorKind::InternalServerErrorError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_error_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::internal_server_error_exception(
+                output = crate::json_deser::deser_structure_bad_gateway_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -4292,13 +4749,70 @@ pub fn parse_list_input_security_groups_error(
                 output.build()
             }),
         },
+        "BadRequestException" => crate::error::ListInputSecurityGroupsError {
+            meta: generic,
+            kind: crate::error::ListInputSecurityGroupsErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::bad_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListInputSecurityGroupsError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ForbiddenException" => crate::error::ListInputSecurityGroupsError {
+            meta: generic,
+            kind: crate::error::ListInputSecurityGroupsErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::forbidden_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListInputSecurityGroupsError::unhandled)?;
+                output.build()
+            }),
+        },
+        "GatewayTimeoutException" => crate::error::ListInputSecurityGroupsError {
+            meta: generic,
+            kind: crate::error::ListInputSecurityGroupsErrorKind::GatewayTimeoutException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::gateway_timeout_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_gateway_timeout_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListInputSecurityGroupsError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InternalServerErrorException" => {
+            crate::error::ListInputSecurityGroupsError {
+                meta: generic,
+                kind: crate::error::ListInputSecurityGroupsErrorKind::InternalServerErrorException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::internal_server_error_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_internal_server_error_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListInputSecurityGroupsError::unhandled)?;
+                        output.build()
+                    },
+                ),
+            }
+        }
         "TooManyRequestsException" => crate::error::ListInputSecurityGroupsError {
             meta: generic,
-            kind: crate::error::ListInputSecurityGroupsErrorKind::TooManyRequestsError({
+            kind: crate::error::ListInputSecurityGroupsErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -4321,7 +4835,7 @@ pub fn parse_list_input_security_groups_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_input_security_groups_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::list_input_security_groups_deser_operation(
+        output = crate::json_deser::deser_operation_list_input_security_groups(
             response.body().as_ref(),
             output,
         )
@@ -4343,56 +4857,11 @@ pub fn parse_list_multiplexes_error(
     Err(match error_code {
         "BadGatewayException" => crate::error::ListMultiplexesError {
             meta: generic,
-            kind: crate::error::ListMultiplexesErrorKind::BadGatewayError({
+            kind: crate::error::ListMultiplexesErrorKind::BadGatewayException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_gateway_error::Builder::default();
+                let mut output = crate::error::bad_gateway_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_gateway_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::ListMultiplexesError::unhandled)?;
-                output.build()
-            }),
-        },
-        "BadRequestException" => crate::error::ListMultiplexesError {
-            meta: generic,
-            kind: crate::error::ListMultiplexesErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::ListMultiplexesError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ForbiddenException" => crate::error::ListMultiplexesError {
-            meta: generic,
-            kind: crate::error::ListMultiplexesErrorKind::ForbiddenError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::forbidden_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::ListMultiplexesError::unhandled)?;
-                output.build()
-            }),
-        },
-        "GatewayTimeoutException" => crate::error::ListMultiplexesError {
-            meta: generic,
-            kind: crate::error::ListMultiplexesErrorKind::GatewayTimeoutError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::gateway_timeout_error::Builder::default();
-                let _ = response;
-                output =
-                    crate::json_deser::gateway_timeout_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::ListMultiplexesError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalServerErrorException" => crate::error::ListMultiplexesError {
-            meta: generic,
-            kind: crate::error::ListMultiplexesErrorKind::InternalServerErrorError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_error_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::internal_server_error_exception(
+                output = crate::json_deser::deser_structure_bad_gateway_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -4400,13 +4869,70 @@ pub fn parse_list_multiplexes_error(
                 output.build()
             }),
         },
+        "BadRequestException" => crate::error::ListMultiplexesError {
+            meta: generic,
+            kind: crate::error::ListMultiplexesErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::bad_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListMultiplexesError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ForbiddenException" => crate::error::ListMultiplexesError {
+            meta: generic,
+            kind: crate::error::ListMultiplexesErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::forbidden_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListMultiplexesError::unhandled)?;
+                output.build()
+            }),
+        },
+        "GatewayTimeoutException" => crate::error::ListMultiplexesError {
+            meta: generic,
+            kind: crate::error::ListMultiplexesErrorKind::GatewayTimeoutException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::gateway_timeout_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_gateway_timeout_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListMultiplexesError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InternalServerErrorException" => crate::error::ListMultiplexesError {
+            meta: generic,
+            kind: crate::error::ListMultiplexesErrorKind::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::internal_server_error_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_internal_server_error_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ListMultiplexesError::unhandled)?;
+                output.build()
+            }),
+        },
         "TooManyRequestsException" => crate::error::ListMultiplexesError {
             meta: generic,
-            kind: crate::error::ListMultiplexesErrorKind::TooManyRequestsError({
+            kind: crate::error::ListMultiplexesErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -4427,7 +4953,7 @@ pub fn parse_list_multiplexes_response(
         let mut output = crate::output::list_multiplexes_output::Builder::default();
         let _ = response;
         output =
-            crate::json_deser::list_multiplexes_deser_operation(response.body().as_ref(), output)
+            crate::json_deser::deser_operation_list_multiplexes(response.body().as_ref(), output)
                 .map_err(crate::error::ListMultiplexesError::unhandled)?;
         output.build()
     })
@@ -4449,56 +4975,11 @@ pub fn parse_list_multiplex_programs_error(
     Err(match error_code {
         "BadGatewayException" => crate::error::ListMultiplexProgramsError {
             meta: generic,
-            kind: crate::error::ListMultiplexProgramsErrorKind::BadGatewayError({
+            kind: crate::error::ListMultiplexProgramsErrorKind::BadGatewayException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_gateway_error::Builder::default();
+                let mut output = crate::error::bad_gateway_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_gateway_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::ListMultiplexProgramsError::unhandled)?;
-                output.build()
-            }),
-        },
-        "BadRequestException" => crate::error::ListMultiplexProgramsError {
-            meta: generic,
-            kind: crate::error::ListMultiplexProgramsErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::ListMultiplexProgramsError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ForbiddenException" => crate::error::ListMultiplexProgramsError {
-            meta: generic,
-            kind: crate::error::ListMultiplexProgramsErrorKind::ForbiddenError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::forbidden_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::ListMultiplexProgramsError::unhandled)?;
-                output.build()
-            }),
-        },
-        "GatewayTimeoutException" => crate::error::ListMultiplexProgramsError {
-            meta: generic,
-            kind: crate::error::ListMultiplexProgramsErrorKind::GatewayTimeoutError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::gateway_timeout_error::Builder::default();
-                let _ = response;
-                output =
-                    crate::json_deser::gateway_timeout_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::ListMultiplexProgramsError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalServerErrorException" => crate::error::ListMultiplexProgramsError {
-            meta: generic,
-            kind: crate::error::ListMultiplexProgramsErrorKind::InternalServerErrorError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_error_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::internal_server_error_exception(
+                output = crate::json_deser::deser_structure_bad_gateway_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -4506,24 +4987,84 @@ pub fn parse_list_multiplex_programs_error(
                 output.build()
             }),
         },
+        "BadRequestException" => crate::error::ListMultiplexProgramsError {
+            meta: generic,
+            kind: crate::error::ListMultiplexProgramsErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::bad_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListMultiplexProgramsError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ForbiddenException" => crate::error::ListMultiplexProgramsError {
+            meta: generic,
+            kind: crate::error::ListMultiplexProgramsErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::forbidden_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListMultiplexProgramsError::unhandled)?;
+                output.build()
+            }),
+        },
+        "GatewayTimeoutException" => crate::error::ListMultiplexProgramsError {
+            meta: generic,
+            kind: crate::error::ListMultiplexProgramsErrorKind::GatewayTimeoutException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::gateway_timeout_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_gateway_timeout_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListMultiplexProgramsError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InternalServerErrorException" => crate::error::ListMultiplexProgramsError {
+            meta: generic,
+            kind: crate::error::ListMultiplexProgramsErrorKind::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::internal_server_error_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_internal_server_error_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ListMultiplexProgramsError::unhandled)?;
+                output.build()
+            }),
+        },
         "NotFoundException" => crate::error::ListMultiplexProgramsError {
             meta: generic,
-            kind: crate::error::ListMultiplexProgramsErrorKind::NotFoundError({
+            kind: crate::error::ListMultiplexProgramsErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::ListMultiplexProgramsError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListMultiplexProgramsError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::ListMultiplexProgramsError {
             meta: generic,
-            kind: crate::error::ListMultiplexProgramsErrorKind::TooManyRequestsError({
+            kind: crate::error::ListMultiplexProgramsErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -4546,7 +5087,7 @@ pub fn parse_list_multiplex_programs_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_multiplex_programs_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::list_multiplex_programs_deser_operation(
+        output = crate::json_deser::deser_operation_list_multiplex_programs(
             response.body().as_ref(),
             output,
         )
@@ -4568,56 +5109,11 @@ pub fn parse_list_offerings_error(
     Err(match error_code {
         "BadGatewayException" => crate::error::ListOfferingsError {
             meta: generic,
-            kind: crate::error::ListOfferingsErrorKind::BadGatewayError({
+            kind: crate::error::ListOfferingsErrorKind::BadGatewayException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_gateway_error::Builder::default();
+                let mut output = crate::error::bad_gateway_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_gateway_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::ListOfferingsError::unhandled)?;
-                output.build()
-            }),
-        },
-        "BadRequestException" => crate::error::ListOfferingsError {
-            meta: generic,
-            kind: crate::error::ListOfferingsErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::ListOfferingsError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ForbiddenException" => crate::error::ListOfferingsError {
-            meta: generic,
-            kind: crate::error::ListOfferingsErrorKind::ForbiddenError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::forbidden_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::ListOfferingsError::unhandled)?;
-                output.build()
-            }),
-        },
-        "GatewayTimeoutException" => crate::error::ListOfferingsError {
-            meta: generic,
-            kind: crate::error::ListOfferingsErrorKind::GatewayTimeoutError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::gateway_timeout_error::Builder::default();
-                let _ = response;
-                output =
-                    crate::json_deser::gateway_timeout_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::ListOfferingsError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalServerErrorException" => crate::error::ListOfferingsError {
-            meta: generic,
-            kind: crate::error::ListOfferingsErrorKind::InternalServerErrorError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_error_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::internal_server_error_exception(
+                output = crate::json_deser::deser_structure_bad_gateway_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -4625,13 +5121,70 @@ pub fn parse_list_offerings_error(
                 output.build()
             }),
         },
+        "BadRequestException" => crate::error::ListOfferingsError {
+            meta: generic,
+            kind: crate::error::ListOfferingsErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::bad_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListOfferingsError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ForbiddenException" => crate::error::ListOfferingsError {
+            meta: generic,
+            kind: crate::error::ListOfferingsErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::forbidden_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListOfferingsError::unhandled)?;
+                output.build()
+            }),
+        },
+        "GatewayTimeoutException" => crate::error::ListOfferingsError {
+            meta: generic,
+            kind: crate::error::ListOfferingsErrorKind::GatewayTimeoutException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::gateway_timeout_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_gateway_timeout_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListOfferingsError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InternalServerErrorException" => crate::error::ListOfferingsError {
+            meta: generic,
+            kind: crate::error::ListOfferingsErrorKind::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::internal_server_error_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_internal_server_error_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ListOfferingsError::unhandled)?;
+                output.build()
+            }),
+        },
         "TooManyRequestsException" => crate::error::ListOfferingsError {
             meta: generic,
-            kind: crate::error::ListOfferingsErrorKind::TooManyRequestsError({
+            kind: crate::error::ListOfferingsErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -4652,7 +5205,7 @@ pub fn parse_list_offerings_response(
         let mut output = crate::output::list_offerings_output::Builder::default();
         let _ = response;
         output =
-            crate::json_deser::list_offerings_deser_operation(response.body().as_ref(), output)
+            crate::json_deser::deser_operation_list_offerings(response.body().as_ref(), output)
                 .map_err(crate::error::ListOfferingsError::unhandled)?;
         output.build()
     })
@@ -4672,56 +5225,11 @@ pub fn parse_list_reservations_error(
     Err(match error_code {
         "BadGatewayException" => crate::error::ListReservationsError {
             meta: generic,
-            kind: crate::error::ListReservationsErrorKind::BadGatewayError({
+            kind: crate::error::ListReservationsErrorKind::BadGatewayException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_gateway_error::Builder::default();
+                let mut output = crate::error::bad_gateway_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_gateway_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::ListReservationsError::unhandled)?;
-                output.build()
-            }),
-        },
-        "BadRequestException" => crate::error::ListReservationsError {
-            meta: generic,
-            kind: crate::error::ListReservationsErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::ListReservationsError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ForbiddenException" => crate::error::ListReservationsError {
-            meta: generic,
-            kind: crate::error::ListReservationsErrorKind::ForbiddenError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::forbidden_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::ListReservationsError::unhandled)?;
-                output.build()
-            }),
-        },
-        "GatewayTimeoutException" => crate::error::ListReservationsError {
-            meta: generic,
-            kind: crate::error::ListReservationsErrorKind::GatewayTimeoutError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::gateway_timeout_error::Builder::default();
-                let _ = response;
-                output =
-                    crate::json_deser::gateway_timeout_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::ListReservationsError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalServerErrorException" => crate::error::ListReservationsError {
-            meta: generic,
-            kind: crate::error::ListReservationsErrorKind::InternalServerErrorError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_error_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::internal_server_error_exception(
+                output = crate::json_deser::deser_structure_bad_gateway_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -4729,13 +5237,70 @@ pub fn parse_list_reservations_error(
                 output.build()
             }),
         },
+        "BadRequestException" => crate::error::ListReservationsError {
+            meta: generic,
+            kind: crate::error::ListReservationsErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::bad_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListReservationsError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ForbiddenException" => crate::error::ListReservationsError {
+            meta: generic,
+            kind: crate::error::ListReservationsErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::forbidden_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListReservationsError::unhandled)?;
+                output.build()
+            }),
+        },
+        "GatewayTimeoutException" => crate::error::ListReservationsError {
+            meta: generic,
+            kind: crate::error::ListReservationsErrorKind::GatewayTimeoutException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::gateway_timeout_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_gateway_timeout_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListReservationsError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InternalServerErrorException" => crate::error::ListReservationsError {
+            meta: generic,
+            kind: crate::error::ListReservationsErrorKind::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::internal_server_error_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_internal_server_error_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ListReservationsError::unhandled)?;
+                output.build()
+            }),
+        },
         "TooManyRequestsException" => crate::error::ListReservationsError {
             meta: generic,
-            kind: crate::error::ListReservationsErrorKind::TooManyRequestsError({
+            kind: crate::error::ListReservationsErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -4757,7 +5322,7 @@ pub fn parse_list_reservations_response(
         let mut output = crate::output::list_reservations_output::Builder::default();
         let _ = response;
         output =
-            crate::json_deser::list_reservations_deser_operation(response.body().as_ref(), output)
+            crate::json_deser::deser_operation_list_reservations(response.body().as_ref(), output)
                 .map_err(crate::error::ListReservationsError::unhandled)?;
         output.build()
     })
@@ -4779,33 +5344,11 @@ pub fn parse_list_tags_for_resource_error(
     Err(match error_code {
         "BadRequestException" => crate::error::ListTagsForResourceError {
             meta: generic,
-            kind: crate::error::ListTagsForResourceErrorKind::BadRequestError({
+            kind: crate::error::ListTagsForResourceErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::ListTagsForResourceError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ForbiddenException" => crate::error::ListTagsForResourceError {
-            meta: generic,
-            kind: crate::error::ListTagsForResourceErrorKind::ForbiddenError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::forbidden_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::ListTagsForResourceError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalServerErrorException" => crate::error::ListTagsForResourceError {
-            meta: generic,
-            kind: crate::error::ListTagsForResourceErrorKind::InternalServerErrorError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_error_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::internal_server_error_exception(
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -4813,14 +5356,46 @@ pub fn parse_list_tags_for_resource_error(
                 output.build()
             }),
         },
+        "ForbiddenException" => crate::error::ListTagsForResourceError {
+            meta: generic,
+            kind: crate::error::ListTagsForResourceErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::forbidden_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InternalServerErrorException" => crate::error::ListTagsForResourceError {
+            meta: generic,
+            kind: crate::error::ListTagsForResourceErrorKind::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::internal_server_error_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_internal_server_error_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                output.build()
+            }),
+        },
         "NotFoundException" => crate::error::ListTagsForResourceError {
             meta: generic,
-            kind: crate::error::ListTagsForResourceErrorKind::NotFoundError({
+            kind: crate::error::ListTagsForResourceErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListTagsForResourceError::unhandled)?;
                 output.build()
             }),
         },
@@ -4839,7 +5414,7 @@ pub fn parse_list_tags_for_resource_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_tags_for_resource_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::list_tags_for_resource_deser_operation(
+        output = crate::json_deser::deser_operation_list_tags_for_resource(
             response.body().as_ref(),
             output,
         )
@@ -4862,67 +5437,11 @@ pub fn parse_purchase_offering_error(
     Err(match error_code {
         "BadGatewayException" => crate::error::PurchaseOfferingError {
             meta: generic,
-            kind: crate::error::PurchaseOfferingErrorKind::BadGatewayError({
+            kind: crate::error::PurchaseOfferingErrorKind::BadGatewayException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_gateway_error::Builder::default();
+                let mut output = crate::error::bad_gateway_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_gateway_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::PurchaseOfferingError::unhandled)?;
-                output.build()
-            }),
-        },
-        "BadRequestException" => crate::error::PurchaseOfferingError {
-            meta: generic,
-            kind: crate::error::PurchaseOfferingErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::PurchaseOfferingError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ConflictException" => crate::error::PurchaseOfferingError {
-            meta: generic,
-            kind: crate::error::PurchaseOfferingErrorKind::ConflictError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::PurchaseOfferingError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ForbiddenException" => crate::error::PurchaseOfferingError {
-            meta: generic,
-            kind: crate::error::PurchaseOfferingErrorKind::ForbiddenError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::forbidden_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::PurchaseOfferingError::unhandled)?;
-                output.build()
-            }),
-        },
-        "GatewayTimeoutException" => crate::error::PurchaseOfferingError {
-            meta: generic,
-            kind: crate::error::PurchaseOfferingErrorKind::GatewayTimeoutError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::gateway_timeout_error::Builder::default();
-                let _ = response;
-                output =
-                    crate::json_deser::gateway_timeout_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::PurchaseOfferingError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalServerErrorException" => crate::error::PurchaseOfferingError {
-            meta: generic,
-            kind: crate::error::PurchaseOfferingErrorKind::InternalServerErrorError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_error_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::internal_server_error_exception(
+                output = crate::json_deser::deser_structure_bad_gateway_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -4930,24 +5449,98 @@ pub fn parse_purchase_offering_error(
                 output.build()
             }),
         },
+        "BadRequestException" => crate::error::PurchaseOfferingError {
+            meta: generic,
+            kind: crate::error::PurchaseOfferingErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::bad_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PurchaseOfferingError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ConflictException" => crate::error::PurchaseOfferingError {
+            meta: generic,
+            kind: crate::error::PurchaseOfferingErrorKind::ConflictException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::conflict_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PurchaseOfferingError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ForbiddenException" => crate::error::PurchaseOfferingError {
+            meta: generic,
+            kind: crate::error::PurchaseOfferingErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::forbidden_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PurchaseOfferingError::unhandled)?;
+                output.build()
+            }),
+        },
+        "GatewayTimeoutException" => crate::error::PurchaseOfferingError {
+            meta: generic,
+            kind: crate::error::PurchaseOfferingErrorKind::GatewayTimeoutException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::gateway_timeout_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_gateway_timeout_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PurchaseOfferingError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InternalServerErrorException" => crate::error::PurchaseOfferingError {
+            meta: generic,
+            kind: crate::error::PurchaseOfferingErrorKind::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::internal_server_error_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_internal_server_error_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::PurchaseOfferingError::unhandled)?;
+                output.build()
+            }),
+        },
         "NotFoundException" => crate::error::PurchaseOfferingError {
             meta: generic,
-            kind: crate::error::PurchaseOfferingErrorKind::NotFoundError({
+            kind: crate::error::PurchaseOfferingErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::PurchaseOfferingError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PurchaseOfferingError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::PurchaseOfferingError {
             meta: generic,
-            kind: crate::error::PurchaseOfferingErrorKind::TooManyRequestsError({
+            kind: crate::error::PurchaseOfferingErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -4969,7 +5562,7 @@ pub fn parse_purchase_offering_response(
         let mut output = crate::output::purchase_offering_output::Builder::default();
         let _ = response;
         output =
-            crate::json_deser::purchase_offering_deser_operation(response.body().as_ref(), output)
+            crate::json_deser::deser_operation_purchase_offering(response.body().as_ref(), output)
                 .map_err(crate::error::PurchaseOfferingError::unhandled)?;
         output.build()
     })
@@ -4995,67 +5588,11 @@ pub fn parse_reject_input_device_transfer_error(
     Err(match error_code {
         "BadGatewayException" => crate::error::RejectInputDeviceTransferError {
             meta: generic,
-            kind: crate::error::RejectInputDeviceTransferErrorKind::BadGatewayError({
+            kind: crate::error::RejectInputDeviceTransferErrorKind::BadGatewayException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_gateway_error::Builder::default();
+                let mut output = crate::error::bad_gateway_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_gateway_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::RejectInputDeviceTransferError::unhandled)?;
-                output.build()
-            }),
-        },
-        "BadRequestException" => crate::error::RejectInputDeviceTransferError {
-            meta: generic,
-            kind: crate::error::RejectInputDeviceTransferErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::RejectInputDeviceTransferError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ConflictException" => crate::error::RejectInputDeviceTransferError {
-            meta: generic,
-            kind: crate::error::RejectInputDeviceTransferErrorKind::ConflictError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::RejectInputDeviceTransferError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ForbiddenException" => crate::error::RejectInputDeviceTransferError {
-            meta: generic,
-            kind: crate::error::RejectInputDeviceTransferErrorKind::ForbiddenError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::forbidden_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::RejectInputDeviceTransferError::unhandled)?;
-                output.build()
-            }),
-        },
-        "GatewayTimeoutException" => crate::error::RejectInputDeviceTransferError {
-            meta: generic,
-            kind: crate::error::RejectInputDeviceTransferErrorKind::GatewayTimeoutError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::gateway_timeout_error::Builder::default();
-                let _ = response;
-                output =
-                    crate::json_deser::gateway_timeout_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::RejectInputDeviceTransferError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalServerErrorException" => crate::error::RejectInputDeviceTransferError {
-            meta: generic,
-            kind: crate::error::RejectInputDeviceTransferErrorKind::InternalServerErrorError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_error_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::internal_server_error_exception(
+                output = crate::json_deser::deser_structure_bad_gateway_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -5063,24 +5600,98 @@ pub fn parse_reject_input_device_transfer_error(
                 output.build()
             }),
         },
+        "BadRequestException" => crate::error::RejectInputDeviceTransferError {
+            meta: generic,
+            kind: crate::error::RejectInputDeviceTransferErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::bad_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::RejectInputDeviceTransferError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ConflictException" => crate::error::RejectInputDeviceTransferError {
+            meta: generic,
+            kind: crate::error::RejectInputDeviceTransferErrorKind::ConflictException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::conflict_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::RejectInputDeviceTransferError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ForbiddenException" => crate::error::RejectInputDeviceTransferError {
+            meta: generic,
+            kind: crate::error::RejectInputDeviceTransferErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::forbidden_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::RejectInputDeviceTransferError::unhandled)?;
+                output.build()
+            }),
+        },
+        "GatewayTimeoutException" => crate::error::RejectInputDeviceTransferError {
+            meta: generic,
+            kind: crate::error::RejectInputDeviceTransferErrorKind::GatewayTimeoutException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::gateway_timeout_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_gateway_timeout_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::RejectInputDeviceTransferError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InternalServerErrorException" => crate::error::RejectInputDeviceTransferError {
+            meta: generic,
+            kind: crate::error::RejectInputDeviceTransferErrorKind::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::internal_server_error_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_internal_server_error_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::RejectInputDeviceTransferError::unhandled)?;
+                output.build()
+            }),
+        },
         "NotFoundException" => crate::error::RejectInputDeviceTransferError {
             meta: generic,
-            kind: crate::error::RejectInputDeviceTransferErrorKind::NotFoundError({
+            kind: crate::error::RejectInputDeviceTransferErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::RejectInputDeviceTransferError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::RejectInputDeviceTransferError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::RejectInputDeviceTransferError {
             meta: generic,
-            kind: crate::error::RejectInputDeviceTransferErrorKind::TooManyRequestsError({
+            kind: crate::error::RejectInputDeviceTransferErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -5090,11 +5701,11 @@ pub fn parse_reject_input_device_transfer_error(
         },
         "UnprocessableEntityException" => crate::error::RejectInputDeviceTransferError {
             meta: generic,
-            kind: crate::error::RejectInputDeviceTransferErrorKind::UnprocessableEntityError({
+            kind: crate::error::RejectInputDeviceTransferErrorKind::UnprocessableEntityException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unprocessable_entity_error::Builder::default();
+                let mut output = crate::error::unprocessable_entity_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::unprocessable_entity_exception(
+                output = crate::json_deser::deser_structure_unprocessable_entity_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -5134,67 +5745,11 @@ pub fn parse_start_channel_error(
     Err(match error_code {
         "BadGatewayException" => crate::error::StartChannelError {
             meta: generic,
-            kind: crate::error::StartChannelErrorKind::BadGatewayError({
+            kind: crate::error::StartChannelErrorKind::BadGatewayException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_gateway_error::Builder::default();
+                let mut output = crate::error::bad_gateway_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_gateway_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::StartChannelError::unhandled)?;
-                output.build()
-            }),
-        },
-        "BadRequestException" => crate::error::StartChannelError {
-            meta: generic,
-            kind: crate::error::StartChannelErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::StartChannelError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ConflictException" => crate::error::StartChannelError {
-            meta: generic,
-            kind: crate::error::StartChannelErrorKind::ConflictError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::StartChannelError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ForbiddenException" => crate::error::StartChannelError {
-            meta: generic,
-            kind: crate::error::StartChannelErrorKind::ForbiddenError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::forbidden_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::StartChannelError::unhandled)?;
-                output.build()
-            }),
-        },
-        "GatewayTimeoutException" => crate::error::StartChannelError {
-            meta: generic,
-            kind: crate::error::StartChannelErrorKind::GatewayTimeoutError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::gateway_timeout_error::Builder::default();
-                let _ = response;
-                output =
-                    crate::json_deser::gateway_timeout_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::StartChannelError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalServerErrorException" => crate::error::StartChannelError {
-            meta: generic,
-            kind: crate::error::StartChannelErrorKind::InternalServerErrorError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_error_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::internal_server_error_exception(
+                output = crate::json_deser::deser_structure_bad_gateway_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -5202,24 +5757,98 @@ pub fn parse_start_channel_error(
                 output.build()
             }),
         },
+        "BadRequestException" => crate::error::StartChannelError {
+            meta: generic,
+            kind: crate::error::StartChannelErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::bad_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::StartChannelError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ConflictException" => crate::error::StartChannelError {
+            meta: generic,
+            kind: crate::error::StartChannelErrorKind::ConflictException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::conflict_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::StartChannelError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ForbiddenException" => crate::error::StartChannelError {
+            meta: generic,
+            kind: crate::error::StartChannelErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::forbidden_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::StartChannelError::unhandled)?;
+                output.build()
+            }),
+        },
+        "GatewayTimeoutException" => crate::error::StartChannelError {
+            meta: generic,
+            kind: crate::error::StartChannelErrorKind::GatewayTimeoutException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::gateway_timeout_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_gateway_timeout_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::StartChannelError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InternalServerErrorException" => crate::error::StartChannelError {
+            meta: generic,
+            kind: crate::error::StartChannelErrorKind::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::internal_server_error_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_internal_server_error_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::StartChannelError::unhandled)?;
+                output.build()
+            }),
+        },
         "NotFoundException" => crate::error::StartChannelError {
             meta: generic,
-            kind: crate::error::StartChannelErrorKind::NotFoundError({
+            kind: crate::error::StartChannelErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::StartChannelError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::StartChannelError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::StartChannelError {
             meta: generic,
-            kind: crate::error::StartChannelErrorKind::TooManyRequestsError({
+            kind: crate::error::StartChannelErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -5239,7 +5868,7 @@ pub fn parse_start_channel_response(
         #[allow(unused_mut)]
         let mut output = crate::output::start_channel_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::start_channel_deser_operation(response.body().as_ref(), output)
+        output = crate::json_deser::deser_operation_start_channel(response.body().as_ref(), output)
             .map_err(crate::error::StartChannelError::unhandled)?;
         output.build()
     })
@@ -5258,67 +5887,11 @@ pub fn parse_start_multiplex_error(
     Err(match error_code {
         "BadGatewayException" => crate::error::StartMultiplexError {
             meta: generic,
-            kind: crate::error::StartMultiplexErrorKind::BadGatewayError({
+            kind: crate::error::StartMultiplexErrorKind::BadGatewayException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_gateway_error::Builder::default();
+                let mut output = crate::error::bad_gateway_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_gateway_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::StartMultiplexError::unhandled)?;
-                output.build()
-            }),
-        },
-        "BadRequestException" => crate::error::StartMultiplexError {
-            meta: generic,
-            kind: crate::error::StartMultiplexErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::StartMultiplexError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ConflictException" => crate::error::StartMultiplexError {
-            meta: generic,
-            kind: crate::error::StartMultiplexErrorKind::ConflictError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::StartMultiplexError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ForbiddenException" => crate::error::StartMultiplexError {
-            meta: generic,
-            kind: crate::error::StartMultiplexErrorKind::ForbiddenError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::forbidden_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::StartMultiplexError::unhandled)?;
-                output.build()
-            }),
-        },
-        "GatewayTimeoutException" => crate::error::StartMultiplexError {
-            meta: generic,
-            kind: crate::error::StartMultiplexErrorKind::GatewayTimeoutError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::gateway_timeout_error::Builder::default();
-                let _ = response;
-                output =
-                    crate::json_deser::gateway_timeout_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::StartMultiplexError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalServerErrorException" => crate::error::StartMultiplexError {
-            meta: generic,
-            kind: crate::error::StartMultiplexErrorKind::InternalServerErrorError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_error_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::internal_server_error_exception(
+                output = crate::json_deser::deser_structure_bad_gateway_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -5326,24 +5899,98 @@ pub fn parse_start_multiplex_error(
                 output.build()
             }),
         },
+        "BadRequestException" => crate::error::StartMultiplexError {
+            meta: generic,
+            kind: crate::error::StartMultiplexErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::bad_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::StartMultiplexError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ConflictException" => crate::error::StartMultiplexError {
+            meta: generic,
+            kind: crate::error::StartMultiplexErrorKind::ConflictException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::conflict_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::StartMultiplexError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ForbiddenException" => crate::error::StartMultiplexError {
+            meta: generic,
+            kind: crate::error::StartMultiplexErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::forbidden_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::StartMultiplexError::unhandled)?;
+                output.build()
+            }),
+        },
+        "GatewayTimeoutException" => crate::error::StartMultiplexError {
+            meta: generic,
+            kind: crate::error::StartMultiplexErrorKind::GatewayTimeoutException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::gateway_timeout_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_gateway_timeout_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::StartMultiplexError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InternalServerErrorException" => crate::error::StartMultiplexError {
+            meta: generic,
+            kind: crate::error::StartMultiplexErrorKind::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::internal_server_error_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_internal_server_error_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::StartMultiplexError::unhandled)?;
+                output.build()
+            }),
+        },
         "NotFoundException" => crate::error::StartMultiplexError {
             meta: generic,
-            kind: crate::error::StartMultiplexErrorKind::NotFoundError({
+            kind: crate::error::StartMultiplexErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::StartMultiplexError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::StartMultiplexError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::StartMultiplexError {
             meta: generic,
-            kind: crate::error::StartMultiplexErrorKind::TooManyRequestsError({
+            kind: crate::error::StartMultiplexErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -5364,7 +6011,7 @@ pub fn parse_start_multiplex_response(
         let mut output = crate::output::start_multiplex_output::Builder::default();
         let _ = response;
         output =
-            crate::json_deser::start_multiplex_deser_operation(response.body().as_ref(), output)
+            crate::json_deser::deser_operation_start_multiplex(response.body().as_ref(), output)
                 .map_err(crate::error::StartMultiplexError::unhandled)?;
         output.build()
     })
@@ -5383,67 +6030,11 @@ pub fn parse_stop_channel_error(
     Err(match error_code {
         "BadGatewayException" => crate::error::StopChannelError {
             meta: generic,
-            kind: crate::error::StopChannelErrorKind::BadGatewayError({
+            kind: crate::error::StopChannelErrorKind::BadGatewayException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_gateway_error::Builder::default();
+                let mut output = crate::error::bad_gateway_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_gateway_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::StopChannelError::unhandled)?;
-                output.build()
-            }),
-        },
-        "BadRequestException" => crate::error::StopChannelError {
-            meta: generic,
-            kind: crate::error::StopChannelErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::StopChannelError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ConflictException" => crate::error::StopChannelError {
-            meta: generic,
-            kind: crate::error::StopChannelErrorKind::ConflictError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::StopChannelError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ForbiddenException" => crate::error::StopChannelError {
-            meta: generic,
-            kind: crate::error::StopChannelErrorKind::ForbiddenError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::forbidden_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::StopChannelError::unhandled)?;
-                output.build()
-            }),
-        },
-        "GatewayTimeoutException" => crate::error::StopChannelError {
-            meta: generic,
-            kind: crate::error::StopChannelErrorKind::GatewayTimeoutError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::gateway_timeout_error::Builder::default();
-                let _ = response;
-                output =
-                    crate::json_deser::gateway_timeout_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::StopChannelError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalServerErrorException" => crate::error::StopChannelError {
-            meta: generic,
-            kind: crate::error::StopChannelErrorKind::InternalServerErrorError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_error_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::internal_server_error_exception(
+                output = crate::json_deser::deser_structure_bad_gateway_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -5451,24 +6042,98 @@ pub fn parse_stop_channel_error(
                 output.build()
             }),
         },
+        "BadRequestException" => crate::error::StopChannelError {
+            meta: generic,
+            kind: crate::error::StopChannelErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::bad_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::StopChannelError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ConflictException" => crate::error::StopChannelError {
+            meta: generic,
+            kind: crate::error::StopChannelErrorKind::ConflictException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::conflict_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::StopChannelError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ForbiddenException" => crate::error::StopChannelError {
+            meta: generic,
+            kind: crate::error::StopChannelErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::forbidden_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::StopChannelError::unhandled)?;
+                output.build()
+            }),
+        },
+        "GatewayTimeoutException" => crate::error::StopChannelError {
+            meta: generic,
+            kind: crate::error::StopChannelErrorKind::GatewayTimeoutException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::gateway_timeout_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_gateway_timeout_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::StopChannelError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InternalServerErrorException" => crate::error::StopChannelError {
+            meta: generic,
+            kind: crate::error::StopChannelErrorKind::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::internal_server_error_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_internal_server_error_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::StopChannelError::unhandled)?;
+                output.build()
+            }),
+        },
         "NotFoundException" => crate::error::StopChannelError {
             meta: generic,
-            kind: crate::error::StopChannelErrorKind::NotFoundError({
+            kind: crate::error::StopChannelErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::StopChannelError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::StopChannelError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::StopChannelError {
             meta: generic,
-            kind: crate::error::StopChannelErrorKind::TooManyRequestsError({
+            kind: crate::error::StopChannelErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -5488,7 +6153,7 @@ pub fn parse_stop_channel_response(
         #[allow(unused_mut)]
         let mut output = crate::output::stop_channel_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::stop_channel_deser_operation(response.body().as_ref(), output)
+        output = crate::json_deser::deser_operation_stop_channel(response.body().as_ref(), output)
             .map_err(crate::error::StopChannelError::unhandled)?;
         output.build()
     })
@@ -5507,67 +6172,11 @@ pub fn parse_stop_multiplex_error(
     Err(match error_code {
         "BadGatewayException" => crate::error::StopMultiplexError {
             meta: generic,
-            kind: crate::error::StopMultiplexErrorKind::BadGatewayError({
+            kind: crate::error::StopMultiplexErrorKind::BadGatewayException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_gateway_error::Builder::default();
+                let mut output = crate::error::bad_gateway_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_gateway_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::StopMultiplexError::unhandled)?;
-                output.build()
-            }),
-        },
-        "BadRequestException" => crate::error::StopMultiplexError {
-            meta: generic,
-            kind: crate::error::StopMultiplexErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::StopMultiplexError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ConflictException" => crate::error::StopMultiplexError {
-            meta: generic,
-            kind: crate::error::StopMultiplexErrorKind::ConflictError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::StopMultiplexError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ForbiddenException" => crate::error::StopMultiplexError {
-            meta: generic,
-            kind: crate::error::StopMultiplexErrorKind::ForbiddenError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::forbidden_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::StopMultiplexError::unhandled)?;
-                output.build()
-            }),
-        },
-        "GatewayTimeoutException" => crate::error::StopMultiplexError {
-            meta: generic,
-            kind: crate::error::StopMultiplexErrorKind::GatewayTimeoutError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::gateway_timeout_error::Builder::default();
-                let _ = response;
-                output =
-                    crate::json_deser::gateway_timeout_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::StopMultiplexError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalServerErrorException" => crate::error::StopMultiplexError {
-            meta: generic,
-            kind: crate::error::StopMultiplexErrorKind::InternalServerErrorError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_error_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::internal_server_error_exception(
+                output = crate::json_deser::deser_structure_bad_gateway_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -5575,24 +6184,98 @@ pub fn parse_stop_multiplex_error(
                 output.build()
             }),
         },
+        "BadRequestException" => crate::error::StopMultiplexError {
+            meta: generic,
+            kind: crate::error::StopMultiplexErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::bad_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::StopMultiplexError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ConflictException" => crate::error::StopMultiplexError {
+            meta: generic,
+            kind: crate::error::StopMultiplexErrorKind::ConflictException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::conflict_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::StopMultiplexError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ForbiddenException" => crate::error::StopMultiplexError {
+            meta: generic,
+            kind: crate::error::StopMultiplexErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::forbidden_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::StopMultiplexError::unhandled)?;
+                output.build()
+            }),
+        },
+        "GatewayTimeoutException" => crate::error::StopMultiplexError {
+            meta: generic,
+            kind: crate::error::StopMultiplexErrorKind::GatewayTimeoutException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::gateway_timeout_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_gateway_timeout_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::StopMultiplexError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InternalServerErrorException" => crate::error::StopMultiplexError {
+            meta: generic,
+            kind: crate::error::StopMultiplexErrorKind::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::internal_server_error_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_internal_server_error_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::StopMultiplexError::unhandled)?;
+                output.build()
+            }),
+        },
         "NotFoundException" => crate::error::StopMultiplexError {
             meta: generic,
-            kind: crate::error::StopMultiplexErrorKind::NotFoundError({
+            kind: crate::error::StopMultiplexErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::StopMultiplexError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::StopMultiplexError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::StopMultiplexError {
             meta: generic,
-            kind: crate::error::StopMultiplexErrorKind::TooManyRequestsError({
+            kind: crate::error::StopMultiplexErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -5613,7 +6296,7 @@ pub fn parse_stop_multiplex_response(
         let mut output = crate::output::stop_multiplex_output::Builder::default();
         let _ = response;
         output =
-            crate::json_deser::stop_multiplex_deser_operation(response.body().as_ref(), output)
+            crate::json_deser::deser_operation_stop_multiplex(response.body().as_ref(), output)
                 .map_err(crate::error::StopMultiplexError::unhandled)?;
         output.build()
     })
@@ -5635,67 +6318,11 @@ pub fn parse_transfer_input_device_error(
     Err(match error_code {
         "BadGatewayException" => crate::error::TransferInputDeviceError {
             meta: generic,
-            kind: crate::error::TransferInputDeviceErrorKind::BadGatewayError({
+            kind: crate::error::TransferInputDeviceErrorKind::BadGatewayException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_gateway_error::Builder::default();
+                let mut output = crate::error::bad_gateway_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_gateway_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::TransferInputDeviceError::unhandled)?;
-                output.build()
-            }),
-        },
-        "BadRequestException" => crate::error::TransferInputDeviceError {
-            meta: generic,
-            kind: crate::error::TransferInputDeviceErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::TransferInputDeviceError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ConflictException" => crate::error::TransferInputDeviceError {
-            meta: generic,
-            kind: crate::error::TransferInputDeviceErrorKind::ConflictError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::TransferInputDeviceError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ForbiddenException" => crate::error::TransferInputDeviceError {
-            meta: generic,
-            kind: crate::error::TransferInputDeviceErrorKind::ForbiddenError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::forbidden_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::TransferInputDeviceError::unhandled)?;
-                output.build()
-            }),
-        },
-        "GatewayTimeoutException" => crate::error::TransferInputDeviceError {
-            meta: generic,
-            kind: crate::error::TransferInputDeviceErrorKind::GatewayTimeoutError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::gateway_timeout_error::Builder::default();
-                let _ = response;
-                output =
-                    crate::json_deser::gateway_timeout_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::TransferInputDeviceError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalServerErrorException" => crate::error::TransferInputDeviceError {
-            meta: generic,
-            kind: crate::error::TransferInputDeviceErrorKind::InternalServerErrorError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_error_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::internal_server_error_exception(
+                output = crate::json_deser::deser_structure_bad_gateway_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -5703,24 +6330,98 @@ pub fn parse_transfer_input_device_error(
                 output.build()
             }),
         },
+        "BadRequestException" => crate::error::TransferInputDeviceError {
+            meta: generic,
+            kind: crate::error::TransferInputDeviceErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::bad_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::TransferInputDeviceError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ConflictException" => crate::error::TransferInputDeviceError {
+            meta: generic,
+            kind: crate::error::TransferInputDeviceErrorKind::ConflictException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::conflict_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::TransferInputDeviceError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ForbiddenException" => crate::error::TransferInputDeviceError {
+            meta: generic,
+            kind: crate::error::TransferInputDeviceErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::forbidden_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::TransferInputDeviceError::unhandled)?;
+                output.build()
+            }),
+        },
+        "GatewayTimeoutException" => crate::error::TransferInputDeviceError {
+            meta: generic,
+            kind: crate::error::TransferInputDeviceErrorKind::GatewayTimeoutException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::gateway_timeout_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_gateway_timeout_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::TransferInputDeviceError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InternalServerErrorException" => crate::error::TransferInputDeviceError {
+            meta: generic,
+            kind: crate::error::TransferInputDeviceErrorKind::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::internal_server_error_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_internal_server_error_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::TransferInputDeviceError::unhandled)?;
+                output.build()
+            }),
+        },
         "NotFoundException" => crate::error::TransferInputDeviceError {
             meta: generic,
-            kind: crate::error::TransferInputDeviceErrorKind::NotFoundError({
+            kind: crate::error::TransferInputDeviceErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::TransferInputDeviceError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::TransferInputDeviceError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::TransferInputDeviceError {
             meta: generic,
-            kind: crate::error::TransferInputDeviceErrorKind::TooManyRequestsError({
+            kind: crate::error::TransferInputDeviceErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -5730,11 +6431,11 @@ pub fn parse_transfer_input_device_error(
         },
         "UnprocessableEntityException" => crate::error::TransferInputDeviceError {
             meta: generic,
-            kind: crate::error::TransferInputDeviceErrorKind::UnprocessableEntityError({
+            kind: crate::error::TransferInputDeviceErrorKind::UnprocessableEntityException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unprocessable_entity_error::Builder::default();
+                let mut output = crate::error::unprocessable_entity_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::unprocessable_entity_exception(
+                output = crate::json_deser::deser_structure_unprocessable_entity_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -5774,67 +6475,11 @@ pub fn parse_update_channel_error(
     Err(match error_code {
         "BadGatewayException" => crate::error::UpdateChannelError {
             meta: generic,
-            kind: crate::error::UpdateChannelErrorKind::BadGatewayError({
+            kind: crate::error::UpdateChannelErrorKind::BadGatewayException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_gateway_error::Builder::default();
+                let mut output = crate::error::bad_gateway_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_gateway_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateChannelError::unhandled)?;
-                output.build()
-            }),
-        },
-        "BadRequestException" => crate::error::UpdateChannelError {
-            meta: generic,
-            kind: crate::error::UpdateChannelErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateChannelError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ConflictException" => crate::error::UpdateChannelError {
-            meta: generic,
-            kind: crate::error::UpdateChannelErrorKind::ConflictError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateChannelError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ForbiddenException" => crate::error::UpdateChannelError {
-            meta: generic,
-            kind: crate::error::UpdateChannelErrorKind::ForbiddenError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::forbidden_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateChannelError::unhandled)?;
-                output.build()
-            }),
-        },
-        "GatewayTimeoutException" => crate::error::UpdateChannelError {
-            meta: generic,
-            kind: crate::error::UpdateChannelErrorKind::GatewayTimeoutError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::gateway_timeout_error::Builder::default();
-                let _ = response;
-                output =
-                    crate::json_deser::gateway_timeout_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::UpdateChannelError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalServerErrorException" => crate::error::UpdateChannelError {
-            meta: generic,
-            kind: crate::error::UpdateChannelErrorKind::InternalServerErrorError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_error_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::internal_server_error_exception(
+                output = crate::json_deser::deser_structure_bad_gateway_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -5842,13 +6487,84 @@ pub fn parse_update_channel_error(
                 output.build()
             }),
         },
+        "BadRequestException" => crate::error::UpdateChannelError {
+            meta: generic,
+            kind: crate::error::UpdateChannelErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::bad_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateChannelError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ConflictException" => crate::error::UpdateChannelError {
+            meta: generic,
+            kind: crate::error::UpdateChannelErrorKind::ConflictException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::conflict_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateChannelError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ForbiddenException" => crate::error::UpdateChannelError {
+            meta: generic,
+            kind: crate::error::UpdateChannelErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::forbidden_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateChannelError::unhandled)?;
+                output.build()
+            }),
+        },
+        "GatewayTimeoutException" => crate::error::UpdateChannelError {
+            meta: generic,
+            kind: crate::error::UpdateChannelErrorKind::GatewayTimeoutException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::gateway_timeout_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_gateway_timeout_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateChannelError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InternalServerErrorException" => crate::error::UpdateChannelError {
+            meta: generic,
+            kind: crate::error::UpdateChannelErrorKind::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::internal_server_error_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_internal_server_error_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UpdateChannelError::unhandled)?;
+                output.build()
+            }),
+        },
         "UnprocessableEntityException" => crate::error::UpdateChannelError {
             meta: generic,
-            kind: crate::error::UpdateChannelErrorKind::UnprocessableEntityError({
+            kind: crate::error::UpdateChannelErrorKind::UnprocessableEntityException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unprocessable_entity_error::Builder::default();
+                let mut output = crate::error::unprocessable_entity_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::unprocessable_entity_exception(
+                output = crate::json_deser::deser_structure_unprocessable_entity_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -5869,7 +6585,7 @@ pub fn parse_update_channel_response(
         let mut output = crate::output::update_channel_output::Builder::default();
         let _ = response;
         output =
-            crate::json_deser::update_channel_deser_operation(response.body().as_ref(), output)
+            crate::json_deser::deser_operation_update_channel(response.body().as_ref(), output)
                 .map_err(crate::error::UpdateChannelError::unhandled)?;
         output.build()
     })
@@ -5891,67 +6607,11 @@ pub fn parse_update_channel_class_error(
     Err(match error_code {
         "BadGatewayException" => crate::error::UpdateChannelClassError {
             meta: generic,
-            kind: crate::error::UpdateChannelClassErrorKind::BadGatewayError({
+            kind: crate::error::UpdateChannelClassErrorKind::BadGatewayException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_gateway_error::Builder::default();
+                let mut output = crate::error::bad_gateway_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_gateway_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateChannelClassError::unhandled)?;
-                output.build()
-            }),
-        },
-        "BadRequestException" => crate::error::UpdateChannelClassError {
-            meta: generic,
-            kind: crate::error::UpdateChannelClassErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateChannelClassError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ConflictException" => crate::error::UpdateChannelClassError {
-            meta: generic,
-            kind: crate::error::UpdateChannelClassErrorKind::ConflictError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateChannelClassError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ForbiddenException" => crate::error::UpdateChannelClassError {
-            meta: generic,
-            kind: crate::error::UpdateChannelClassErrorKind::ForbiddenError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::forbidden_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateChannelClassError::unhandled)?;
-                output.build()
-            }),
-        },
-        "GatewayTimeoutException" => crate::error::UpdateChannelClassError {
-            meta: generic,
-            kind: crate::error::UpdateChannelClassErrorKind::GatewayTimeoutError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::gateway_timeout_error::Builder::default();
-                let _ = response;
-                output =
-                    crate::json_deser::gateway_timeout_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::UpdateChannelClassError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalServerErrorException" => crate::error::UpdateChannelClassError {
-            meta: generic,
-            kind: crate::error::UpdateChannelClassErrorKind::InternalServerErrorError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_error_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::internal_server_error_exception(
+                output = crate::json_deser::deser_structure_bad_gateway_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -5959,24 +6619,98 @@ pub fn parse_update_channel_class_error(
                 output.build()
             }),
         },
+        "BadRequestException" => crate::error::UpdateChannelClassError {
+            meta: generic,
+            kind: crate::error::UpdateChannelClassErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::bad_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateChannelClassError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ConflictException" => crate::error::UpdateChannelClassError {
+            meta: generic,
+            kind: crate::error::UpdateChannelClassErrorKind::ConflictException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::conflict_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateChannelClassError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ForbiddenException" => crate::error::UpdateChannelClassError {
+            meta: generic,
+            kind: crate::error::UpdateChannelClassErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::forbidden_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateChannelClassError::unhandled)?;
+                output.build()
+            }),
+        },
+        "GatewayTimeoutException" => crate::error::UpdateChannelClassError {
+            meta: generic,
+            kind: crate::error::UpdateChannelClassErrorKind::GatewayTimeoutException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::gateway_timeout_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_gateway_timeout_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateChannelClassError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InternalServerErrorException" => crate::error::UpdateChannelClassError {
+            meta: generic,
+            kind: crate::error::UpdateChannelClassErrorKind::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::internal_server_error_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_internal_server_error_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UpdateChannelClassError::unhandled)?;
+                output.build()
+            }),
+        },
         "NotFoundException" => crate::error::UpdateChannelClassError {
             meta: generic,
-            kind: crate::error::UpdateChannelClassErrorKind::NotFoundError({
+            kind: crate::error::UpdateChannelClassErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateChannelClassError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateChannelClassError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::UpdateChannelClassError {
             meta: generic,
-            kind: crate::error::UpdateChannelClassErrorKind::TooManyRequestsError({
+            kind: crate::error::UpdateChannelClassErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -5986,11 +6720,11 @@ pub fn parse_update_channel_class_error(
         },
         "UnprocessableEntityException" => crate::error::UpdateChannelClassError {
             meta: generic,
-            kind: crate::error::UpdateChannelClassErrorKind::UnprocessableEntityError({
+            kind: crate::error::UpdateChannelClassErrorKind::UnprocessableEntityException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unprocessable_entity_error::Builder::default();
+                let mut output = crate::error::unprocessable_entity_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::unprocessable_entity_exception(
+                output = crate::json_deser::deser_structure_unprocessable_entity_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -6013,7 +6747,7 @@ pub fn parse_update_channel_class_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_channel_class_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::update_channel_class_deser_operation(
+        output = crate::json_deser::deser_operation_update_channel_class(
             response.body().as_ref(),
             output,
         )
@@ -6035,67 +6769,11 @@ pub fn parse_update_input_error(
     Err(match error_code {
         "BadGatewayException" => crate::error::UpdateInputError {
             meta: generic,
-            kind: crate::error::UpdateInputErrorKind::BadGatewayError({
+            kind: crate::error::UpdateInputErrorKind::BadGatewayException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_gateway_error::Builder::default();
+                let mut output = crate::error::bad_gateway_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_gateway_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateInputError::unhandled)?;
-                output.build()
-            }),
-        },
-        "BadRequestException" => crate::error::UpdateInputError {
-            meta: generic,
-            kind: crate::error::UpdateInputErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateInputError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ConflictException" => crate::error::UpdateInputError {
-            meta: generic,
-            kind: crate::error::UpdateInputErrorKind::ConflictError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateInputError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ForbiddenException" => crate::error::UpdateInputError {
-            meta: generic,
-            kind: crate::error::UpdateInputErrorKind::ForbiddenError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::forbidden_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateInputError::unhandled)?;
-                output.build()
-            }),
-        },
-        "GatewayTimeoutException" => crate::error::UpdateInputError {
-            meta: generic,
-            kind: crate::error::UpdateInputErrorKind::GatewayTimeoutError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::gateway_timeout_error::Builder::default();
-                let _ = response;
-                output =
-                    crate::json_deser::gateway_timeout_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::UpdateInputError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalServerErrorException" => crate::error::UpdateInputError {
-            meta: generic,
-            kind: crate::error::UpdateInputErrorKind::InternalServerErrorError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_error_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::internal_server_error_exception(
+                output = crate::json_deser::deser_structure_bad_gateway_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -6103,14 +6781,88 @@ pub fn parse_update_input_error(
                 output.build()
             }),
         },
+        "BadRequestException" => crate::error::UpdateInputError {
+            meta: generic,
+            kind: crate::error::UpdateInputErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::bad_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateInputError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ConflictException" => crate::error::UpdateInputError {
+            meta: generic,
+            kind: crate::error::UpdateInputErrorKind::ConflictException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::conflict_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateInputError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ForbiddenException" => crate::error::UpdateInputError {
+            meta: generic,
+            kind: crate::error::UpdateInputErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::forbidden_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateInputError::unhandled)?;
+                output.build()
+            }),
+        },
+        "GatewayTimeoutException" => crate::error::UpdateInputError {
+            meta: generic,
+            kind: crate::error::UpdateInputErrorKind::GatewayTimeoutException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::gateway_timeout_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_gateway_timeout_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateInputError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InternalServerErrorException" => crate::error::UpdateInputError {
+            meta: generic,
+            kind: crate::error::UpdateInputErrorKind::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::internal_server_error_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_internal_server_error_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UpdateInputError::unhandled)?;
+                output.build()
+            }),
+        },
         "NotFoundException" => crate::error::UpdateInputError {
             meta: generic,
-            kind: crate::error::UpdateInputErrorKind::NotFoundError({
+            kind: crate::error::UpdateInputErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateInputError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateInputError::unhandled)?;
                 output.build()
             }),
         },
@@ -6126,7 +6878,7 @@ pub fn parse_update_input_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_input_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::update_input_deser_operation(response.body().as_ref(), output)
+        output = crate::json_deser::deser_operation_update_input(response.body().as_ref(), output)
             .map_err(crate::error::UpdateInputError::unhandled)?;
         output.build()
     })
@@ -6146,56 +6898,11 @@ pub fn parse_update_input_device_error(
     Err(match error_code {
         "BadGatewayException" => crate::error::UpdateInputDeviceError {
             meta: generic,
-            kind: crate::error::UpdateInputDeviceErrorKind::BadGatewayError({
+            kind: crate::error::UpdateInputDeviceErrorKind::BadGatewayException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_gateway_error::Builder::default();
+                let mut output = crate::error::bad_gateway_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_gateway_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateInputDeviceError::unhandled)?;
-                output.build()
-            }),
-        },
-        "BadRequestException" => crate::error::UpdateInputDeviceError {
-            meta: generic,
-            kind: crate::error::UpdateInputDeviceErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateInputDeviceError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ForbiddenException" => crate::error::UpdateInputDeviceError {
-            meta: generic,
-            kind: crate::error::UpdateInputDeviceErrorKind::ForbiddenError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::forbidden_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateInputDeviceError::unhandled)?;
-                output.build()
-            }),
-        },
-        "GatewayTimeoutException" => crate::error::UpdateInputDeviceError {
-            meta: generic,
-            kind: crate::error::UpdateInputDeviceErrorKind::GatewayTimeoutError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::gateway_timeout_error::Builder::default();
-                let _ = response;
-                output =
-                    crate::json_deser::gateway_timeout_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::UpdateInputDeviceError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalServerErrorException" => crate::error::UpdateInputDeviceError {
-            meta: generic,
-            kind: crate::error::UpdateInputDeviceErrorKind::InternalServerErrorError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_error_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::internal_server_error_exception(
+                output = crate::json_deser::deser_structure_bad_gateway_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -6203,24 +6910,84 @@ pub fn parse_update_input_device_error(
                 output.build()
             }),
         },
+        "BadRequestException" => crate::error::UpdateInputDeviceError {
+            meta: generic,
+            kind: crate::error::UpdateInputDeviceErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::bad_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateInputDeviceError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ForbiddenException" => crate::error::UpdateInputDeviceError {
+            meta: generic,
+            kind: crate::error::UpdateInputDeviceErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::forbidden_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateInputDeviceError::unhandled)?;
+                output.build()
+            }),
+        },
+        "GatewayTimeoutException" => crate::error::UpdateInputDeviceError {
+            meta: generic,
+            kind: crate::error::UpdateInputDeviceErrorKind::GatewayTimeoutException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::gateway_timeout_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_gateway_timeout_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateInputDeviceError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InternalServerErrorException" => crate::error::UpdateInputDeviceError {
+            meta: generic,
+            kind: crate::error::UpdateInputDeviceErrorKind::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::internal_server_error_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_internal_server_error_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UpdateInputDeviceError::unhandled)?;
+                output.build()
+            }),
+        },
         "NotFoundException" => crate::error::UpdateInputDeviceError {
             meta: generic,
-            kind: crate::error::UpdateInputDeviceErrorKind::NotFoundError({
+            kind: crate::error::UpdateInputDeviceErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateInputDeviceError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateInputDeviceError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::UpdateInputDeviceError {
             meta: generic,
-            kind: crate::error::UpdateInputDeviceErrorKind::TooManyRequestsError({
+            kind: crate::error::UpdateInputDeviceErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -6230,11 +6997,11 @@ pub fn parse_update_input_device_error(
         },
         "UnprocessableEntityException" => crate::error::UpdateInputDeviceError {
             meta: generic,
-            kind: crate::error::UpdateInputDeviceErrorKind::UnprocessableEntityError({
+            kind: crate::error::UpdateInputDeviceErrorKind::UnprocessableEntityException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unprocessable_entity_error::Builder::default();
+                let mut output = crate::error::unprocessable_entity_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::unprocessable_entity_exception(
+                output = crate::json_deser::deser_structure_unprocessable_entity_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -6255,7 +7022,7 @@ pub fn parse_update_input_device_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_input_device_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::update_input_device_deser_operation(
+        output = crate::json_deser::deser_operation_update_input_device(
             response.body().as_ref(),
             output,
         )
@@ -6284,67 +7051,11 @@ pub fn parse_update_input_security_group_error(
     Err(match error_code {
         "BadGatewayException" => crate::error::UpdateInputSecurityGroupError {
             meta: generic,
-            kind: crate::error::UpdateInputSecurityGroupErrorKind::BadGatewayError({
+            kind: crate::error::UpdateInputSecurityGroupErrorKind::BadGatewayException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_gateway_error::Builder::default();
+                let mut output = crate::error::bad_gateway_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_gateway_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateInputSecurityGroupError::unhandled)?;
-                output.build()
-            }),
-        },
-        "BadRequestException" => crate::error::UpdateInputSecurityGroupError {
-            meta: generic,
-            kind: crate::error::UpdateInputSecurityGroupErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateInputSecurityGroupError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ConflictException" => crate::error::UpdateInputSecurityGroupError {
-            meta: generic,
-            kind: crate::error::UpdateInputSecurityGroupErrorKind::ConflictError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateInputSecurityGroupError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ForbiddenException" => crate::error::UpdateInputSecurityGroupError {
-            meta: generic,
-            kind: crate::error::UpdateInputSecurityGroupErrorKind::ForbiddenError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::forbidden_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateInputSecurityGroupError::unhandled)?;
-                output.build()
-            }),
-        },
-        "GatewayTimeoutException" => crate::error::UpdateInputSecurityGroupError {
-            meta: generic,
-            kind: crate::error::UpdateInputSecurityGroupErrorKind::GatewayTimeoutError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::gateway_timeout_error::Builder::default();
-                let _ = response;
-                output =
-                    crate::json_deser::gateway_timeout_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::UpdateInputSecurityGroupError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalServerErrorException" => crate::error::UpdateInputSecurityGroupError {
-            meta: generic,
-            kind: crate::error::UpdateInputSecurityGroupErrorKind::InternalServerErrorError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_error_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::internal_server_error_exception(
+                output = crate::json_deser::deser_structure_bad_gateway_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -6352,14 +7063,88 @@ pub fn parse_update_input_security_group_error(
                 output.build()
             }),
         },
+        "BadRequestException" => crate::error::UpdateInputSecurityGroupError {
+            meta: generic,
+            kind: crate::error::UpdateInputSecurityGroupErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::bad_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateInputSecurityGroupError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ConflictException" => crate::error::UpdateInputSecurityGroupError {
+            meta: generic,
+            kind: crate::error::UpdateInputSecurityGroupErrorKind::ConflictException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::conflict_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateInputSecurityGroupError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ForbiddenException" => crate::error::UpdateInputSecurityGroupError {
+            meta: generic,
+            kind: crate::error::UpdateInputSecurityGroupErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::forbidden_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateInputSecurityGroupError::unhandled)?;
+                output.build()
+            }),
+        },
+        "GatewayTimeoutException" => crate::error::UpdateInputSecurityGroupError {
+            meta: generic,
+            kind: crate::error::UpdateInputSecurityGroupErrorKind::GatewayTimeoutException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::gateway_timeout_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_gateway_timeout_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateInputSecurityGroupError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InternalServerErrorException" => {
+            crate::error::UpdateInputSecurityGroupError {
+                meta: generic,
+                kind: crate::error::UpdateInputSecurityGroupErrorKind::InternalServerErrorException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::internal_server_error_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_internal_server_error_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateInputSecurityGroupError::unhandled)?;
+                        output.build()
+                    },
+                ),
+            }
+        }
         "NotFoundException" => crate::error::UpdateInputSecurityGroupError {
             meta: generic,
-            kind: crate::error::UpdateInputSecurityGroupErrorKind::NotFoundError({
+            kind: crate::error::UpdateInputSecurityGroupErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateInputSecurityGroupError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateInputSecurityGroupError::unhandled)?;
                 output.build()
             }),
         },
@@ -6378,7 +7163,7 @@ pub fn parse_update_input_security_group_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_input_security_group_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::update_input_security_group_deser_operation(
+        output = crate::json_deser::deser_operation_update_input_security_group(
             response.body().as_ref(),
             output,
         )
@@ -6400,67 +7185,11 @@ pub fn parse_update_multiplex_error(
     Err(match error_code {
         "BadGatewayException" => crate::error::UpdateMultiplexError {
             meta: generic,
-            kind: crate::error::UpdateMultiplexErrorKind::BadGatewayError({
+            kind: crate::error::UpdateMultiplexErrorKind::BadGatewayException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_gateway_error::Builder::default();
+                let mut output = crate::error::bad_gateway_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_gateway_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateMultiplexError::unhandled)?;
-                output.build()
-            }),
-        },
-        "BadRequestException" => crate::error::UpdateMultiplexError {
-            meta: generic,
-            kind: crate::error::UpdateMultiplexErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateMultiplexError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ConflictException" => crate::error::UpdateMultiplexError {
-            meta: generic,
-            kind: crate::error::UpdateMultiplexErrorKind::ConflictError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateMultiplexError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ForbiddenException" => crate::error::UpdateMultiplexError {
-            meta: generic,
-            kind: crate::error::UpdateMultiplexErrorKind::ForbiddenError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::forbidden_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateMultiplexError::unhandled)?;
-                output.build()
-            }),
-        },
-        "GatewayTimeoutException" => crate::error::UpdateMultiplexError {
-            meta: generic,
-            kind: crate::error::UpdateMultiplexErrorKind::GatewayTimeoutError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::gateway_timeout_error::Builder::default();
-                let _ = response;
-                output =
-                    crate::json_deser::gateway_timeout_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::UpdateMultiplexError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalServerErrorException" => crate::error::UpdateMultiplexError {
-            meta: generic,
-            kind: crate::error::UpdateMultiplexErrorKind::InternalServerErrorError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_error_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::internal_server_error_exception(
+                output = crate::json_deser::deser_structure_bad_gateway_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -6468,24 +7197,98 @@ pub fn parse_update_multiplex_error(
                 output.build()
             }),
         },
+        "BadRequestException" => crate::error::UpdateMultiplexError {
+            meta: generic,
+            kind: crate::error::UpdateMultiplexErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::bad_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateMultiplexError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ConflictException" => crate::error::UpdateMultiplexError {
+            meta: generic,
+            kind: crate::error::UpdateMultiplexErrorKind::ConflictException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::conflict_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateMultiplexError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ForbiddenException" => crate::error::UpdateMultiplexError {
+            meta: generic,
+            kind: crate::error::UpdateMultiplexErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::forbidden_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateMultiplexError::unhandled)?;
+                output.build()
+            }),
+        },
+        "GatewayTimeoutException" => crate::error::UpdateMultiplexError {
+            meta: generic,
+            kind: crate::error::UpdateMultiplexErrorKind::GatewayTimeoutException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::gateway_timeout_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_gateway_timeout_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateMultiplexError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InternalServerErrorException" => crate::error::UpdateMultiplexError {
+            meta: generic,
+            kind: crate::error::UpdateMultiplexErrorKind::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::internal_server_error_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_internal_server_error_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UpdateMultiplexError::unhandled)?;
+                output.build()
+            }),
+        },
         "NotFoundException" => crate::error::UpdateMultiplexError {
             meta: generic,
-            kind: crate::error::UpdateMultiplexErrorKind::NotFoundError({
+            kind: crate::error::UpdateMultiplexErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateMultiplexError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateMultiplexError::unhandled)?;
                 output.build()
             }),
         },
         "UnprocessableEntityException" => crate::error::UpdateMultiplexError {
             meta: generic,
-            kind: crate::error::UpdateMultiplexErrorKind::UnprocessableEntityError({
+            kind: crate::error::UpdateMultiplexErrorKind::UnprocessableEntityException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unprocessable_entity_error::Builder::default();
+                let mut output = crate::error::unprocessable_entity_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::unprocessable_entity_exception(
+                output = crate::json_deser::deser_structure_unprocessable_entity_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -6506,7 +7309,7 @@ pub fn parse_update_multiplex_response(
         let mut output = crate::output::update_multiplex_output::Builder::default();
         let _ = response;
         output =
-            crate::json_deser::update_multiplex_deser_operation(response.body().as_ref(), output)
+            crate::json_deser::deser_operation_update_multiplex(response.body().as_ref(), output)
                 .map_err(crate::error::UpdateMultiplexError::unhandled)?;
         output.build()
     })
@@ -6532,67 +7335,11 @@ pub fn parse_update_multiplex_program_error(
     Err(match error_code {
         "BadGatewayException" => crate::error::UpdateMultiplexProgramError {
             meta: generic,
-            kind: crate::error::UpdateMultiplexProgramErrorKind::BadGatewayError({
+            kind: crate::error::UpdateMultiplexProgramErrorKind::BadGatewayException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_gateway_error::Builder::default();
+                let mut output = crate::error::bad_gateway_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_gateway_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateMultiplexProgramError::unhandled)?;
-                output.build()
-            }),
-        },
-        "BadRequestException" => crate::error::UpdateMultiplexProgramError {
-            meta: generic,
-            kind: crate::error::UpdateMultiplexProgramErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateMultiplexProgramError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ConflictException" => crate::error::UpdateMultiplexProgramError {
-            meta: generic,
-            kind: crate::error::UpdateMultiplexProgramErrorKind::ConflictError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateMultiplexProgramError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ForbiddenException" => crate::error::UpdateMultiplexProgramError {
-            meta: generic,
-            kind: crate::error::UpdateMultiplexProgramErrorKind::ForbiddenError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::forbidden_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateMultiplexProgramError::unhandled)?;
-                output.build()
-            }),
-        },
-        "GatewayTimeoutException" => crate::error::UpdateMultiplexProgramError {
-            meta: generic,
-            kind: crate::error::UpdateMultiplexProgramErrorKind::GatewayTimeoutError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::gateway_timeout_error::Builder::default();
-                let _ = response;
-                output =
-                    crate::json_deser::gateway_timeout_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::UpdateMultiplexProgramError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalServerErrorException" => crate::error::UpdateMultiplexProgramError {
-            meta: generic,
-            kind: crate::error::UpdateMultiplexProgramErrorKind::InternalServerErrorError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_error_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::internal_server_error_exception(
+                output = crate::json_deser::deser_structure_bad_gateway_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -6600,24 +7347,98 @@ pub fn parse_update_multiplex_program_error(
                 output.build()
             }),
         },
+        "BadRequestException" => crate::error::UpdateMultiplexProgramError {
+            meta: generic,
+            kind: crate::error::UpdateMultiplexProgramErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::bad_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateMultiplexProgramError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ConflictException" => crate::error::UpdateMultiplexProgramError {
+            meta: generic,
+            kind: crate::error::UpdateMultiplexProgramErrorKind::ConflictException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::conflict_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateMultiplexProgramError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ForbiddenException" => crate::error::UpdateMultiplexProgramError {
+            meta: generic,
+            kind: crate::error::UpdateMultiplexProgramErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::forbidden_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateMultiplexProgramError::unhandled)?;
+                output.build()
+            }),
+        },
+        "GatewayTimeoutException" => crate::error::UpdateMultiplexProgramError {
+            meta: generic,
+            kind: crate::error::UpdateMultiplexProgramErrorKind::GatewayTimeoutException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::gateway_timeout_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_gateway_timeout_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateMultiplexProgramError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InternalServerErrorException" => {
+            crate::error::UpdateMultiplexProgramError {
+                meta: generic,
+                kind: crate::error::UpdateMultiplexProgramErrorKind::InternalServerErrorException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::internal_server_error_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_internal_server_error_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateMultiplexProgramError::unhandled)?;
+                        output.build()
+                    },
+                ),
+            }
+        }
         "NotFoundException" => crate::error::UpdateMultiplexProgramError {
             meta: generic,
-            kind: crate::error::UpdateMultiplexProgramErrorKind::NotFoundError({
+            kind: crate::error::UpdateMultiplexProgramErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateMultiplexProgramError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateMultiplexProgramError::unhandled)?;
                 output.build()
             }),
         },
         "UnprocessableEntityException" => crate::error::UpdateMultiplexProgramError {
             meta: generic,
-            kind: crate::error::UpdateMultiplexProgramErrorKind::UnprocessableEntityError({
+            kind: crate::error::UpdateMultiplexProgramErrorKind::UnprocessableEntityException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unprocessable_entity_error::Builder::default();
+                let mut output = crate::error::unprocessable_entity_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::unprocessable_entity_exception(
+                output = crate::json_deser::deser_structure_unprocessable_entity_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -6640,7 +7461,7 @@ pub fn parse_update_multiplex_program_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_multiplex_program_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::update_multiplex_program_deser_operation(
+        output = crate::json_deser::deser_operation_update_multiplex_program(
             response.body().as_ref(),
             output,
         )
@@ -6663,67 +7484,11 @@ pub fn parse_update_reservation_error(
     Err(match error_code {
         "BadGatewayException" => crate::error::UpdateReservationError {
             meta: generic,
-            kind: crate::error::UpdateReservationErrorKind::BadGatewayError({
+            kind: crate::error::UpdateReservationErrorKind::BadGatewayException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_gateway_error::Builder::default();
+                let mut output = crate::error::bad_gateway_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_gateway_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateReservationError::unhandled)?;
-                output.build()
-            }),
-        },
-        "BadRequestException" => crate::error::UpdateReservationError {
-            meta: generic,
-            kind: crate::error::UpdateReservationErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateReservationError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ConflictException" => crate::error::UpdateReservationError {
-            meta: generic,
-            kind: crate::error::UpdateReservationErrorKind::ConflictError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateReservationError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ForbiddenException" => crate::error::UpdateReservationError {
-            meta: generic,
-            kind: crate::error::UpdateReservationErrorKind::ForbiddenError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::forbidden_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateReservationError::unhandled)?;
-                output.build()
-            }),
-        },
-        "GatewayTimeoutException" => crate::error::UpdateReservationError {
-            meta: generic,
-            kind: crate::error::UpdateReservationErrorKind::GatewayTimeoutError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::gateway_timeout_error::Builder::default();
-                let _ = response;
-                output =
-                    crate::json_deser::gateway_timeout_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::UpdateReservationError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalServerErrorException" => crate::error::UpdateReservationError {
-            meta: generic,
-            kind: crate::error::UpdateReservationErrorKind::InternalServerErrorError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_error_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::internal_server_error_exception(
+                output = crate::json_deser::deser_structure_bad_gateway_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -6731,24 +7496,98 @@ pub fn parse_update_reservation_error(
                 output.build()
             }),
         },
+        "BadRequestException" => crate::error::UpdateReservationError {
+            meta: generic,
+            kind: crate::error::UpdateReservationErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::bad_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateReservationError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ConflictException" => crate::error::UpdateReservationError {
+            meta: generic,
+            kind: crate::error::UpdateReservationErrorKind::ConflictException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::conflict_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateReservationError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ForbiddenException" => crate::error::UpdateReservationError {
+            meta: generic,
+            kind: crate::error::UpdateReservationErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::forbidden_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateReservationError::unhandled)?;
+                output.build()
+            }),
+        },
+        "GatewayTimeoutException" => crate::error::UpdateReservationError {
+            meta: generic,
+            kind: crate::error::UpdateReservationErrorKind::GatewayTimeoutException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::gateway_timeout_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_gateway_timeout_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateReservationError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InternalServerErrorException" => crate::error::UpdateReservationError {
+            meta: generic,
+            kind: crate::error::UpdateReservationErrorKind::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::internal_server_error_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_internal_server_error_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UpdateReservationError::unhandled)?;
+                output.build()
+            }),
+        },
         "NotFoundException" => crate::error::UpdateReservationError {
             meta: generic,
-            kind: crate::error::UpdateReservationErrorKind::NotFoundError({
+            kind: crate::error::UpdateReservationErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateReservationError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateReservationError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::UpdateReservationError {
             meta: generic,
-            kind: crate::error::UpdateReservationErrorKind::TooManyRequestsError({
+            kind: crate::error::UpdateReservationErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -6770,7 +7609,7 @@ pub fn parse_update_reservation_response(
         let mut output = crate::output::update_reservation_output::Builder::default();
         let _ = response;
         output =
-            crate::json_deser::update_reservation_deser_operation(response.body().as_ref(), output)
+            crate::json_deser::deser_operation_update_reservation(response.body().as_ref(), output)
                 .map_err(crate::error::UpdateReservationError::unhandled)?;
         output.build()
     })

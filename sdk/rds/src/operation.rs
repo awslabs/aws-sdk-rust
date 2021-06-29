@@ -10,7 +10,7 @@ pub struct AddRoleToDBCluster {
     _private: (),
 }
 impl AddRoleToDBCluster {
-    /// Creates a new builder-style object to manufacture [`AddRoleToDBClusterInput`](crate::input::AddRoleToDBClusterInput)
+    /// Creates a new builder-style object to manufacture [`AddRoleToDbClusterInput`](crate::input::AddRoleToDbClusterInput)
     pub fn builder() -> crate::input::add_role_to_db_cluster_input::Builder {
         crate::input::add_role_to_db_cluster_input::Builder::default()
     }
@@ -20,7 +20,7 @@ impl AddRoleToDBCluster {
 }
 impl smithy_http::response::ParseStrictResponse for AddRoleToDBCluster {
     type Output = std::result::Result<
-        crate::output::AddRoleToDBClusterOutput,
+        crate::output::AddRoleToDbClusterOutput,
         crate::error::AddRoleToDBClusterError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -41,7 +41,7 @@ pub struct AddRoleToDBInstance {
     _private: (),
 }
 impl AddRoleToDBInstance {
-    /// Creates a new builder-style object to manufacture [`AddRoleToDBInstanceInput`](crate::input::AddRoleToDBInstanceInput)
+    /// Creates a new builder-style object to manufacture [`AddRoleToDbInstanceInput`](crate::input::AddRoleToDbInstanceInput)
     pub fn builder() -> crate::input::add_role_to_db_instance_input::Builder {
         crate::input::add_role_to_db_instance_input::Builder::default()
     }
@@ -51,7 +51,7 @@ impl AddRoleToDBInstance {
 }
 impl smithy_http::response::ParseStrictResponse for AddRoleToDBInstance {
     type Output = std::result::Result<
-        crate::output::AddRoleToDBInstanceOutput,
+        crate::output::AddRoleToDbInstanceOutput,
         crate::error::AddRoleToDBInstanceError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -166,7 +166,7 @@ pub struct AuthorizeDBSecurityGroupIngress {
     _private: (),
 }
 impl AuthorizeDBSecurityGroupIngress {
-    /// Creates a new builder-style object to manufacture [`AuthorizeDBSecurityGroupIngressInput`](crate::input::AuthorizeDBSecurityGroupIngressInput)
+    /// Creates a new builder-style object to manufacture [`AuthorizeDbSecurityGroupIngressInput`](crate::input::AuthorizeDbSecurityGroupIngressInput)
     pub fn builder() -> crate::input::authorize_db_security_group_ingress_input::Builder {
         crate::input::authorize_db_security_group_ingress_input::Builder::default()
     }
@@ -176,7 +176,7 @@ impl AuthorizeDBSecurityGroupIngress {
 }
 impl smithy_http::response::ParseStrictResponse for AuthorizeDBSecurityGroupIngress {
     type Output = std::result::Result<
-        crate::output::AuthorizeDBSecurityGroupIngressOutput,
+        crate::output::AuthorizeDbSecurityGroupIngressOutput,
         crate::error::AuthorizeDBSecurityGroupIngressError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -202,7 +202,7 @@ pub struct BacktrackDBCluster {
     _private: (),
 }
 impl BacktrackDBCluster {
-    /// Creates a new builder-style object to manufacture [`BacktrackDBClusterInput`](crate::input::BacktrackDBClusterInput)
+    /// Creates a new builder-style object to manufacture [`BacktrackDbClusterInput`](crate::input::BacktrackDbClusterInput)
     pub fn builder() -> crate::input::backtrack_db_cluster_input::Builder {
         crate::input::backtrack_db_cluster_input::Builder::default()
     }
@@ -212,7 +212,7 @@ impl BacktrackDBCluster {
 }
 impl smithy_http::response::ParseStrictResponse for BacktrackDBCluster {
     type Output = std::result::Result<
-        crate::output::BacktrackDBClusterOutput,
+        crate::output::BacktrackDbClusterOutput,
         crate::error::BacktrackDBClusterError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -263,7 +263,7 @@ pub struct CopyDBClusterParameterGroup {
     _private: (),
 }
 impl CopyDBClusterParameterGroup {
-    /// Creates a new builder-style object to manufacture [`CopyDBClusterParameterGroupInput`](crate::input::CopyDBClusterParameterGroupInput)
+    /// Creates a new builder-style object to manufacture [`CopyDbClusterParameterGroupInput`](crate::input::CopyDbClusterParameterGroupInput)
     pub fn builder() -> crate::input::copy_db_cluster_parameter_group_input::Builder {
         crate::input::copy_db_cluster_parameter_group_input::Builder::default()
     }
@@ -273,7 +273,7 @@ impl CopyDBClusterParameterGroup {
 }
 impl smithy_http::response::ParseStrictResponse for CopyDBClusterParameterGroup {
     type Output = std::result::Result<
-        crate::output::CopyDBClusterParameterGroupOutput,
+        crate::output::CopyDbClusterParameterGroupOutput,
         crate::error::CopyDBClusterParameterGroupError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -362,7 +362,7 @@ pub struct CopyDBClusterSnapshot {
     _private: (),
 }
 impl CopyDBClusterSnapshot {
-    /// Creates a new builder-style object to manufacture [`CopyDBClusterSnapshotInput`](crate::input::CopyDBClusterSnapshotInput)
+    /// Creates a new builder-style object to manufacture [`CopyDbClusterSnapshotInput`](crate::input::CopyDbClusterSnapshotInput)
     pub fn builder() -> crate::input::copy_db_cluster_snapshot_input::Builder {
         crate::input::copy_db_cluster_snapshot_input::Builder::default()
     }
@@ -372,7 +372,7 @@ impl CopyDBClusterSnapshot {
 }
 impl smithy_http::response::ParseStrictResponse for CopyDBClusterSnapshot {
     type Output = std::result::Result<
-        crate::output::CopyDBClusterSnapshotOutput,
+        crate::output::CopyDbClusterSnapshotOutput,
         crate::error::CopyDBClusterSnapshotError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -390,7 +390,7 @@ pub struct CopyDBParameterGroup {
     _private: (),
 }
 impl CopyDBParameterGroup {
-    /// Creates a new builder-style object to manufacture [`CopyDBParameterGroupInput`](crate::input::CopyDBParameterGroupInput)
+    /// Creates a new builder-style object to manufacture [`CopyDbParameterGroupInput`](crate::input::CopyDbParameterGroupInput)
     pub fn builder() -> crate::input::copy_db_parameter_group_input::Builder {
         crate::input::copy_db_parameter_group_input::Builder::default()
     }
@@ -400,7 +400,7 @@ impl CopyDBParameterGroup {
 }
 impl smithy_http::response::ParseStrictResponse for CopyDBParameterGroup {
     type Output = std::result::Result<
-        crate::output::CopyDBParameterGroupOutput,
+        crate::output::CopyDbParameterGroupOutput,
         crate::error::CopyDBParameterGroupError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -424,7 +424,7 @@ pub struct CopyDBSnapshot {
     _private: (),
 }
 impl CopyDBSnapshot {
-    /// Creates a new builder-style object to manufacture [`CopyDBSnapshotInput`](crate::input::CopyDBSnapshotInput)
+    /// Creates a new builder-style object to manufacture [`CopyDbSnapshotInput`](crate::input::CopyDbSnapshotInput)
     pub fn builder() -> crate::input::copy_db_snapshot_input::Builder {
         crate::input::copy_db_snapshot_input::Builder::default()
     }
@@ -434,7 +434,7 @@ impl CopyDBSnapshot {
 }
 impl smithy_http::response::ParseStrictResponse for CopyDBSnapshot {
     type Output =
-        std::result::Result<crate::output::CopyDBSnapshotOutput, crate::error::CopyDBSnapshotError>;
+        std::result::Result<crate::output::CopyDbSnapshotOutput, crate::error::CopyDBSnapshotError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_copy_db_snapshot_error(response)
@@ -523,7 +523,7 @@ pub struct CreateDBCluster {
     _private: (),
 }
 impl CreateDBCluster {
-    /// Creates a new builder-style object to manufacture [`CreateDBClusterInput`](crate::input::CreateDBClusterInput)
+    /// Creates a new builder-style object to manufacture [`CreateDbClusterInput`](crate::input::CreateDbClusterInput)
     pub fn builder() -> crate::input::create_db_cluster_input::Builder {
         crate::input::create_db_cluster_input::Builder::default()
     }
@@ -533,7 +533,7 @@ impl CreateDBCluster {
 }
 impl smithy_http::response::ParseStrictResponse for CreateDBCluster {
     type Output = std::result::Result<
-        crate::output::CreateDBClusterOutput,
+        crate::output::CreateDbClusterOutput,
         crate::error::CreateDBClusterError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -554,7 +554,7 @@ pub struct CreateDBClusterEndpoint {
     _private: (),
 }
 impl CreateDBClusterEndpoint {
-    /// Creates a new builder-style object to manufacture [`CreateDBClusterEndpointInput`](crate::input::CreateDBClusterEndpointInput)
+    /// Creates a new builder-style object to manufacture [`CreateDbClusterEndpointInput`](crate::input::CreateDbClusterEndpointInput)
     pub fn builder() -> crate::input::create_db_cluster_endpoint_input::Builder {
         crate::input::create_db_cluster_endpoint_input::Builder::default()
     }
@@ -564,7 +564,7 @@ impl CreateDBClusterEndpoint {
 }
 impl smithy_http::response::ParseStrictResponse for CreateDBClusterEndpoint {
     type Output = std::result::Result<
-        crate::output::CreateDBClusterEndpointOutput,
+        crate::output::CreateDbClusterEndpointOutput,
         crate::error::CreateDBClusterEndpointError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -612,7 +612,7 @@ pub struct CreateDBClusterParameterGroup {
     _private: (),
 }
 impl CreateDBClusterParameterGroup {
-    /// Creates a new builder-style object to manufacture [`CreateDBClusterParameterGroupInput`](crate::input::CreateDBClusterParameterGroupInput)
+    /// Creates a new builder-style object to manufacture [`CreateDbClusterParameterGroupInput`](crate::input::CreateDbClusterParameterGroupInput)
     pub fn builder() -> crate::input::create_db_cluster_parameter_group_input::Builder {
         crate::input::create_db_cluster_parameter_group_input::Builder::default()
     }
@@ -622,7 +622,7 @@ impl CreateDBClusterParameterGroup {
 }
 impl smithy_http::response::ParseStrictResponse for CreateDBClusterParameterGroup {
     type Output = std::result::Result<
-        crate::output::CreateDBClusterParameterGroupOutput,
+        crate::output::CreateDbClusterParameterGroupOutput,
         crate::error::CreateDBClusterParameterGroupError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -646,7 +646,7 @@ pub struct CreateDBClusterSnapshot {
     _private: (),
 }
 impl CreateDBClusterSnapshot {
-    /// Creates a new builder-style object to manufacture [`CreateDBClusterSnapshotInput`](crate::input::CreateDBClusterSnapshotInput)
+    /// Creates a new builder-style object to manufacture [`CreateDbClusterSnapshotInput`](crate::input::CreateDbClusterSnapshotInput)
     pub fn builder() -> crate::input::create_db_cluster_snapshot_input::Builder {
         crate::input::create_db_cluster_snapshot_input::Builder::default()
     }
@@ -656,7 +656,7 @@ impl CreateDBClusterSnapshot {
 }
 impl smithy_http::response::ParseStrictResponse for CreateDBClusterSnapshot {
     type Output = std::result::Result<
-        crate::output::CreateDBClusterSnapshotOutput,
+        crate::output::CreateDbClusterSnapshotOutput,
         crate::error::CreateDBClusterSnapshotError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -674,7 +674,7 @@ pub struct CreateDBInstance {
     _private: (),
 }
 impl CreateDBInstance {
-    /// Creates a new builder-style object to manufacture [`CreateDBInstanceInput`](crate::input::CreateDBInstanceInput)
+    /// Creates a new builder-style object to manufacture [`CreateDbInstanceInput`](crate::input::CreateDbInstanceInput)
     pub fn builder() -> crate::input::create_db_instance_input::Builder {
         crate::input::create_db_instance_input::Builder::default()
     }
@@ -684,7 +684,7 @@ impl CreateDBInstance {
 }
 impl smithy_http::response::ParseStrictResponse for CreateDBInstance {
     type Output = std::result::Result<
-        crate::output::CreateDBInstanceOutput,
+        crate::output::CreateDbInstanceOutput,
         crate::error::CreateDBInstanceError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -714,7 +714,7 @@ pub struct CreateDBInstanceReadReplica {
     _private: (),
 }
 impl CreateDBInstanceReadReplica {
-    /// Creates a new builder-style object to manufacture [`CreateDBInstanceReadReplicaInput`](crate::input::CreateDBInstanceReadReplicaInput)
+    /// Creates a new builder-style object to manufacture [`CreateDbInstanceReadReplicaInput`](crate::input::CreateDbInstanceReadReplicaInput)
     pub fn builder() -> crate::input::create_db_instance_read_replica_input::Builder {
         crate::input::create_db_instance_read_replica_input::Builder::default()
     }
@@ -724,7 +724,7 @@ impl CreateDBInstanceReadReplica {
 }
 impl smithy_http::response::ParseStrictResponse for CreateDBInstanceReadReplica {
     type Output = std::result::Result<
-        crate::output::CreateDBInstanceReadReplicaOutput,
+        crate::output::CreateDbInstanceReadReplicaOutput,
         crate::error::CreateDBInstanceReadReplicaError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -762,7 +762,7 @@ pub struct CreateDBParameterGroup {
     _private: (),
 }
 impl CreateDBParameterGroup {
-    /// Creates a new builder-style object to manufacture [`CreateDBParameterGroupInput`](crate::input::CreateDBParameterGroupInput)
+    /// Creates a new builder-style object to manufacture [`CreateDbParameterGroupInput`](crate::input::CreateDbParameterGroupInput)
     pub fn builder() -> crate::input::create_db_parameter_group_input::Builder {
         crate::input::create_db_parameter_group_input::Builder::default()
     }
@@ -772,7 +772,7 @@ impl CreateDBParameterGroup {
 }
 impl smithy_http::response::ParseStrictResponse for CreateDBParameterGroup {
     type Output = std::result::Result<
-        crate::output::CreateDBParameterGroupOutput,
+        crate::output::CreateDbParameterGroupOutput,
         crate::error::CreateDBParameterGroupError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -790,7 +790,7 @@ pub struct CreateDBProxy {
     _private: (),
 }
 impl CreateDBProxy {
-    /// Creates a new builder-style object to manufacture [`CreateDBProxyInput`](crate::input::CreateDBProxyInput)
+    /// Creates a new builder-style object to manufacture [`CreateDbProxyInput`](crate::input::CreateDbProxyInput)
     pub fn builder() -> crate::input::create_db_proxy_input::Builder {
         crate::input::create_db_proxy_input::Builder::default()
     }
@@ -800,7 +800,7 @@ impl CreateDBProxy {
 }
 impl smithy_http::response::ParseStrictResponse for CreateDBProxy {
     type Output =
-        std::result::Result<crate::output::CreateDBProxyOutput, crate::error::CreateDBProxyError>;
+        std::result::Result<crate::output::CreateDbProxyOutput, crate::error::CreateDBProxyError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_db_proxy_error(response)
@@ -820,7 +820,7 @@ pub struct CreateDBProxyEndpoint {
     _private: (),
 }
 impl CreateDBProxyEndpoint {
-    /// Creates a new builder-style object to manufacture [`CreateDBProxyEndpointInput`](crate::input::CreateDBProxyEndpointInput)
+    /// Creates a new builder-style object to manufacture [`CreateDbProxyEndpointInput`](crate::input::CreateDbProxyEndpointInput)
     pub fn builder() -> crate::input::create_db_proxy_endpoint_input::Builder {
         crate::input::create_db_proxy_endpoint_input::Builder::default()
     }
@@ -830,7 +830,7 @@ impl CreateDBProxyEndpoint {
 }
 impl smithy_http::response::ParseStrictResponse for CreateDBProxyEndpoint {
     type Output = std::result::Result<
-        crate::output::CreateDBProxyEndpointOutput,
+        crate::output::CreateDbProxyEndpointOutput,
         crate::error::CreateDBProxyEndpointError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -851,7 +851,7 @@ pub struct CreateDBSecurityGroup {
     _private: (),
 }
 impl CreateDBSecurityGroup {
-    /// Creates a new builder-style object to manufacture [`CreateDBSecurityGroupInput`](crate::input::CreateDBSecurityGroupInput)
+    /// Creates a new builder-style object to manufacture [`CreateDbSecurityGroupInput`](crate::input::CreateDbSecurityGroupInput)
     pub fn builder() -> crate::input::create_db_security_group_input::Builder {
         crate::input::create_db_security_group_input::Builder::default()
     }
@@ -861,7 +861,7 @@ impl CreateDBSecurityGroup {
 }
 impl smithy_http::response::ParseStrictResponse for CreateDBSecurityGroup {
     type Output = std::result::Result<
-        crate::output::CreateDBSecurityGroupOutput,
+        crate::output::CreateDbSecurityGroupOutput,
         crate::error::CreateDBSecurityGroupError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -880,7 +880,7 @@ pub struct CreateDBSnapshot {
     _private: (),
 }
 impl CreateDBSnapshot {
-    /// Creates a new builder-style object to manufacture [`CreateDBSnapshotInput`](crate::input::CreateDBSnapshotInput)
+    /// Creates a new builder-style object to manufacture [`CreateDbSnapshotInput`](crate::input::CreateDbSnapshotInput)
     pub fn builder() -> crate::input::create_db_snapshot_input::Builder {
         crate::input::create_db_snapshot_input::Builder::default()
     }
@@ -890,7 +890,7 @@ impl CreateDBSnapshot {
 }
 impl smithy_http::response::ParseStrictResponse for CreateDBSnapshot {
     type Output = std::result::Result<
-        crate::output::CreateDBSnapshotOutput,
+        crate::output::CreateDbSnapshotOutput,
         crate::error::CreateDBSnapshotError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -908,7 +908,7 @@ pub struct CreateDBSubnetGroup {
     _private: (),
 }
 impl CreateDBSubnetGroup {
-    /// Creates a new builder-style object to manufacture [`CreateDBSubnetGroupInput`](crate::input::CreateDBSubnetGroupInput)
+    /// Creates a new builder-style object to manufacture [`CreateDbSubnetGroupInput`](crate::input::CreateDbSubnetGroupInput)
     pub fn builder() -> crate::input::create_db_subnet_group_input::Builder {
         crate::input::create_db_subnet_group_input::Builder::default()
     }
@@ -918,7 +918,7 @@ impl CreateDBSubnetGroup {
 }
 impl smithy_http::response::ParseStrictResponse for CreateDBSubnetGroup {
     type Output = std::result::Result<
-        crate::output::CreateDBSubnetGroupOutput,
+        crate::output::CreateDbSubnetGroupOutput,
         crate::error::CreateDBSubnetGroupError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -1100,7 +1100,7 @@ pub struct DeleteDBCluster {
     _private: (),
 }
 impl DeleteDBCluster {
-    /// Creates a new builder-style object to manufacture [`DeleteDBClusterInput`](crate::input::DeleteDBClusterInput)
+    /// Creates a new builder-style object to manufacture [`DeleteDbClusterInput`](crate::input::DeleteDbClusterInput)
     pub fn builder() -> crate::input::delete_db_cluster_input::Builder {
         crate::input::delete_db_cluster_input::Builder::default()
     }
@@ -1110,7 +1110,7 @@ impl DeleteDBCluster {
 }
 impl smithy_http::response::ParseStrictResponse for DeleteDBCluster {
     type Output = std::result::Result<
-        crate::output::DeleteDBClusterOutput,
+        crate::output::DeleteDbClusterOutput,
         crate::error::DeleteDBClusterError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -1131,7 +1131,7 @@ pub struct DeleteDBClusterEndpoint {
     _private: (),
 }
 impl DeleteDBClusterEndpoint {
-    /// Creates a new builder-style object to manufacture [`DeleteDBClusterEndpointInput`](crate::input::DeleteDBClusterEndpointInput)
+    /// Creates a new builder-style object to manufacture [`DeleteDbClusterEndpointInput`](crate::input::DeleteDbClusterEndpointInput)
     pub fn builder() -> crate::input::delete_db_cluster_endpoint_input::Builder {
         crate::input::delete_db_cluster_endpoint_input::Builder::default()
     }
@@ -1141,7 +1141,7 @@ impl DeleteDBClusterEndpoint {
 }
 impl smithy_http::response::ParseStrictResponse for DeleteDBClusterEndpoint {
     type Output = std::result::Result<
-        crate::output::DeleteDBClusterEndpointOutput,
+        crate::output::DeleteDbClusterEndpointOutput,
         crate::error::DeleteDBClusterEndpointError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -1166,7 +1166,7 @@ pub struct DeleteDBClusterParameterGroup {
     _private: (),
 }
 impl DeleteDBClusterParameterGroup {
-    /// Creates a new builder-style object to manufacture [`DeleteDBClusterParameterGroupInput`](crate::input::DeleteDBClusterParameterGroupInput)
+    /// Creates a new builder-style object to manufacture [`DeleteDbClusterParameterGroupInput`](crate::input::DeleteDbClusterParameterGroupInput)
     pub fn builder() -> crate::input::delete_db_cluster_parameter_group_input::Builder {
         crate::input::delete_db_cluster_parameter_group_input::Builder::default()
     }
@@ -1176,7 +1176,7 @@ impl DeleteDBClusterParameterGroup {
 }
 impl smithy_http::response::ParseStrictResponse for DeleteDBClusterParameterGroup {
     type Output = std::result::Result<
-        crate::output::DeleteDBClusterParameterGroupOutput,
+        crate::output::DeleteDbClusterParameterGroupOutput,
         crate::error::DeleteDBClusterParameterGroupError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -1205,7 +1205,7 @@ pub struct DeleteDBClusterSnapshot {
     _private: (),
 }
 impl DeleteDBClusterSnapshot {
-    /// Creates a new builder-style object to manufacture [`DeleteDBClusterSnapshotInput`](crate::input::DeleteDBClusterSnapshotInput)
+    /// Creates a new builder-style object to manufacture [`DeleteDbClusterSnapshotInput`](crate::input::DeleteDbClusterSnapshotInput)
     pub fn builder() -> crate::input::delete_db_cluster_snapshot_input::Builder {
         crate::input::delete_db_cluster_snapshot_input::Builder::default()
     }
@@ -1215,7 +1215,7 @@ impl DeleteDBClusterSnapshot {
 }
 impl smithy_http::response::ParseStrictResponse for DeleteDBClusterSnapshot {
     type Output = std::result::Result<
-        crate::output::DeleteDBClusterSnapshotOutput,
+        crate::output::DeleteDbClusterSnapshotOutput,
         crate::error::DeleteDBClusterSnapshotError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -1257,7 +1257,7 @@ pub struct DeleteDBInstance {
     _private: (),
 }
 impl DeleteDBInstance {
-    /// Creates a new builder-style object to manufacture [`DeleteDBInstanceInput`](crate::input::DeleteDBInstanceInput)
+    /// Creates a new builder-style object to manufacture [`DeleteDbInstanceInput`](crate::input::DeleteDbInstanceInput)
     pub fn builder() -> crate::input::delete_db_instance_input::Builder {
         crate::input::delete_db_instance_input::Builder::default()
     }
@@ -1267,7 +1267,7 @@ impl DeleteDBInstance {
 }
 impl smithy_http::response::ParseStrictResponse for DeleteDBInstance {
     type Output = std::result::Result<
-        crate::output::DeleteDBInstanceOutput,
+        crate::output::DeleteDbInstanceOutput,
         crate::error::DeleteDBInstanceError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -1285,7 +1285,7 @@ pub struct DeleteDBInstanceAutomatedBackup {
     _private: (),
 }
 impl DeleteDBInstanceAutomatedBackup {
-    /// Creates a new builder-style object to manufacture [`DeleteDBInstanceAutomatedBackupInput`](crate::input::DeleteDBInstanceAutomatedBackupInput)
+    /// Creates a new builder-style object to manufacture [`DeleteDbInstanceAutomatedBackupInput`](crate::input::DeleteDbInstanceAutomatedBackupInput)
     pub fn builder() -> crate::input::delete_db_instance_automated_backup_input::Builder {
         crate::input::delete_db_instance_automated_backup_input::Builder::default()
     }
@@ -1295,7 +1295,7 @@ impl DeleteDBInstanceAutomatedBackup {
 }
 impl smithy_http::response::ParseStrictResponse for DeleteDBInstanceAutomatedBackup {
     type Output = std::result::Result<
-        crate::output::DeleteDBInstanceAutomatedBackupOutput,
+        crate::output::DeleteDbInstanceAutomatedBackupOutput,
         crate::error::DeleteDBInstanceAutomatedBackupError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -1313,7 +1313,7 @@ pub struct DeleteDBParameterGroup {
     _private: (),
 }
 impl DeleteDBParameterGroup {
-    /// Creates a new builder-style object to manufacture [`DeleteDBParameterGroupInput`](crate::input::DeleteDBParameterGroupInput)
+    /// Creates a new builder-style object to manufacture [`DeleteDbParameterGroupInput`](crate::input::DeleteDbParameterGroupInput)
     pub fn builder() -> crate::input::delete_db_parameter_group_input::Builder {
         crate::input::delete_db_parameter_group_input::Builder::default()
     }
@@ -1323,7 +1323,7 @@ impl DeleteDBParameterGroup {
 }
 impl smithy_http::response::ParseStrictResponse for DeleteDBParameterGroup {
     type Output = std::result::Result<
-        crate::output::DeleteDBParameterGroupOutput,
+        crate::output::DeleteDbParameterGroupOutput,
         crate::error::DeleteDBParameterGroupError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -1341,7 +1341,7 @@ pub struct DeleteDBProxy {
     _private: (),
 }
 impl DeleteDBProxy {
-    /// Creates a new builder-style object to manufacture [`DeleteDBProxyInput`](crate::input::DeleteDBProxyInput)
+    /// Creates a new builder-style object to manufacture [`DeleteDbProxyInput`](crate::input::DeleteDbProxyInput)
     pub fn builder() -> crate::input::delete_db_proxy_input::Builder {
         crate::input::delete_db_proxy_input::Builder::default()
     }
@@ -1351,7 +1351,7 @@ impl DeleteDBProxy {
 }
 impl smithy_http::response::ParseStrictResponse for DeleteDBProxy {
     type Output =
-        std::result::Result<crate::output::DeleteDBProxyOutput, crate::error::DeleteDBProxyError>;
+        std::result::Result<crate::output::DeleteDbProxyOutput, crate::error::DeleteDBProxyError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_db_proxy_error(response)
@@ -1369,7 +1369,7 @@ pub struct DeleteDBProxyEndpoint {
     _private: (),
 }
 impl DeleteDBProxyEndpoint {
-    /// Creates a new builder-style object to manufacture [`DeleteDBProxyEndpointInput`](crate::input::DeleteDBProxyEndpointInput)
+    /// Creates a new builder-style object to manufacture [`DeleteDbProxyEndpointInput`](crate::input::DeleteDbProxyEndpointInput)
     pub fn builder() -> crate::input::delete_db_proxy_endpoint_input::Builder {
         crate::input::delete_db_proxy_endpoint_input::Builder::default()
     }
@@ -1379,7 +1379,7 @@ impl DeleteDBProxyEndpoint {
 }
 impl smithy_http::response::ParseStrictResponse for DeleteDBProxyEndpoint {
     type Output = std::result::Result<
-        crate::output::DeleteDBProxyEndpointOutput,
+        crate::output::DeleteDbProxyEndpointOutput,
         crate::error::DeleteDBProxyEndpointError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -1400,7 +1400,7 @@ pub struct DeleteDBSecurityGroup {
     _private: (),
 }
 impl DeleteDBSecurityGroup {
-    /// Creates a new builder-style object to manufacture [`DeleteDBSecurityGroupInput`](crate::input::DeleteDBSecurityGroupInput)
+    /// Creates a new builder-style object to manufacture [`DeleteDbSecurityGroupInput`](crate::input::DeleteDbSecurityGroupInput)
     pub fn builder() -> crate::input::delete_db_security_group_input::Builder {
         crate::input::delete_db_security_group_input::Builder::default()
     }
@@ -1410,7 +1410,7 @@ impl DeleteDBSecurityGroup {
 }
 impl smithy_http::response::ParseStrictResponse for DeleteDBSecurityGroup {
     type Output = std::result::Result<
-        crate::output::DeleteDBSecurityGroupOutput,
+        crate::output::DeleteDbSecurityGroupOutput,
         crate::error::DeleteDBSecurityGroupError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -1432,7 +1432,7 @@ pub struct DeleteDBSnapshot {
     _private: (),
 }
 impl DeleteDBSnapshot {
-    /// Creates a new builder-style object to manufacture [`DeleteDBSnapshotInput`](crate::input::DeleteDBSnapshotInput)
+    /// Creates a new builder-style object to manufacture [`DeleteDbSnapshotInput`](crate::input::DeleteDbSnapshotInput)
     pub fn builder() -> crate::input::delete_db_snapshot_input::Builder {
         crate::input::delete_db_snapshot_input::Builder::default()
     }
@@ -1442,7 +1442,7 @@ impl DeleteDBSnapshot {
 }
 impl smithy_http::response::ParseStrictResponse for DeleteDBSnapshot {
     type Output = std::result::Result<
-        crate::output::DeleteDBSnapshotOutput,
+        crate::output::DeleteDbSnapshotOutput,
         crate::error::DeleteDBSnapshotError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -1463,7 +1463,7 @@ pub struct DeleteDBSubnetGroup {
     _private: (),
 }
 impl DeleteDBSubnetGroup {
-    /// Creates a new builder-style object to manufacture [`DeleteDBSubnetGroupInput`](crate::input::DeleteDBSubnetGroupInput)
+    /// Creates a new builder-style object to manufacture [`DeleteDbSubnetGroupInput`](crate::input::DeleteDbSubnetGroupInput)
     pub fn builder() -> crate::input::delete_db_subnet_group_input::Builder {
         crate::input::delete_db_subnet_group_input::Builder::default()
     }
@@ -1473,7 +1473,7 @@ impl DeleteDBSubnetGroup {
 }
 impl smithy_http::response::ParseStrictResponse for DeleteDBSubnetGroup {
     type Output = std::result::Result<
-        crate::output::DeleteDBSubnetGroupOutput,
+        crate::output::DeleteDbSubnetGroupOutput,
         crate::error::DeleteDBSubnetGroupError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -1610,7 +1610,7 @@ pub struct DeregisterDBProxyTargets {
     _private: (),
 }
 impl DeregisterDBProxyTargets {
-    /// Creates a new builder-style object to manufacture [`DeregisterDBProxyTargetsInput`](crate::input::DeregisterDBProxyTargetsInput)
+    /// Creates a new builder-style object to manufacture [`DeregisterDbProxyTargetsInput`](crate::input::DeregisterDbProxyTargetsInput)
     pub fn builder() -> crate::input::deregister_db_proxy_targets_input::Builder {
         crate::input::deregister_db_proxy_targets_input::Builder::default()
     }
@@ -1620,7 +1620,7 @@ impl DeregisterDBProxyTargets {
 }
 impl smithy_http::response::ParseStrictResponse for DeregisterDBProxyTargets {
     type Output = std::result::Result<
-        crate::output::DeregisterDBProxyTargetsOutput,
+        crate::output::DeregisterDbProxyTargetsOutput,
         crate::error::DeregisterDBProxyTargetsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -1735,7 +1735,7 @@ pub struct DescribeDBClusterBacktracks {
     _private: (),
 }
 impl DescribeDBClusterBacktracks {
-    /// Creates a new builder-style object to manufacture [`DescribeDBClusterBacktracksInput`](crate::input::DescribeDBClusterBacktracksInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDbClusterBacktracksInput`](crate::input::DescribeDbClusterBacktracksInput)
     pub fn builder() -> crate::input::describe_db_cluster_backtracks_input::Builder {
         crate::input::describe_db_cluster_backtracks_input::Builder::default()
     }
@@ -1745,7 +1745,7 @@ impl DescribeDBClusterBacktracks {
 }
 impl smithy_http::response::ParseStrictResponse for DescribeDBClusterBacktracks {
     type Output = std::result::Result<
-        crate::output::DescribeDBClusterBacktracksOutput,
+        crate::output::DescribeDbClusterBacktracksOutput,
         crate::error::DescribeDBClusterBacktracksError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -1766,7 +1766,7 @@ pub struct DescribeDBClusterEndpoints {
     _private: (),
 }
 impl DescribeDBClusterEndpoints {
-    /// Creates a new builder-style object to manufacture [`DescribeDBClusterEndpointsInput`](crate::input::DescribeDBClusterEndpointsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDbClusterEndpointsInput`](crate::input::DescribeDbClusterEndpointsInput)
     pub fn builder() -> crate::input::describe_db_cluster_endpoints_input::Builder {
         crate::input::describe_db_cluster_endpoints_input::Builder::default()
     }
@@ -1776,7 +1776,7 @@ impl DescribeDBClusterEndpoints {
 }
 impl smithy_http::response::ParseStrictResponse for DescribeDBClusterEndpoints {
     type Output = std::result::Result<
-        crate::output::DescribeDBClusterEndpointsOutput,
+        crate::output::DescribeDbClusterEndpointsOutput,
         crate::error::DescribeDBClusterEndpointsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -1805,7 +1805,7 @@ pub struct DescribeDBClusterParameterGroups {
     _private: (),
 }
 impl DescribeDBClusterParameterGroups {
-    /// Creates a new builder-style object to manufacture [`DescribeDBClusterParameterGroupsInput`](crate::input::DescribeDBClusterParameterGroupsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDbClusterParameterGroupsInput`](crate::input::DescribeDbClusterParameterGroupsInput)
     pub fn builder() -> crate::input::describe_db_cluster_parameter_groups_input::Builder {
         crate::input::describe_db_cluster_parameter_groups_input::Builder::default()
     }
@@ -1815,7 +1815,7 @@ impl DescribeDBClusterParameterGroups {
 }
 impl smithy_http::response::ParseStrictResponse for DescribeDBClusterParameterGroups {
     type Output = std::result::Result<
-        crate::output::DescribeDBClusterParameterGroupsOutput,
+        crate::output::DescribeDbClusterParameterGroupsOutput,
         crate::error::DescribeDBClusterParameterGroupsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -1840,7 +1840,7 @@ pub struct DescribeDBClusterParameters {
     _private: (),
 }
 impl DescribeDBClusterParameters {
-    /// Creates a new builder-style object to manufacture [`DescribeDBClusterParametersInput`](crate::input::DescribeDBClusterParametersInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDbClusterParametersInput`](crate::input::DescribeDbClusterParametersInput)
     pub fn builder() -> crate::input::describe_db_cluster_parameters_input::Builder {
         crate::input::describe_db_cluster_parameters_input::Builder::default()
     }
@@ -1850,7 +1850,7 @@ impl DescribeDBClusterParameters {
 }
 impl smithy_http::response::ParseStrictResponse for DescribeDBClusterParameters {
     type Output = std::result::Result<
-        crate::output::DescribeDBClusterParametersOutput,
+        crate::output::DescribeDbClusterParametersOutput,
         crate::error::DescribeDBClusterParametersError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -1875,7 +1875,7 @@ pub struct DescribeDBClusters {
     _private: (),
 }
 impl DescribeDBClusters {
-    /// Creates a new builder-style object to manufacture [`DescribeDBClustersInput`](crate::input::DescribeDBClustersInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDbClustersInput`](crate::input::DescribeDbClustersInput)
     pub fn builder() -> crate::input::describe_db_clusters_input::Builder {
         crate::input::describe_db_clusters_input::Builder::default()
     }
@@ -1885,7 +1885,7 @@ impl DescribeDBClusters {
 }
 impl smithy_http::response::ParseStrictResponse for DescribeDBClusters {
     type Output = std::result::Result<
-        crate::output::DescribeDBClustersOutput,
+        crate::output::DescribeDbClustersOutput,
         crate::error::DescribeDBClustersError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -1913,7 +1913,7 @@ pub struct DescribeDBClusterSnapshotAttributes {
     _private: (),
 }
 impl DescribeDBClusterSnapshotAttributes {
-    /// Creates a new builder-style object to manufacture [`DescribeDBClusterSnapshotAttributesInput`](crate::input::DescribeDBClusterSnapshotAttributesInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDbClusterSnapshotAttributesInput`](crate::input::DescribeDbClusterSnapshotAttributesInput)
     pub fn builder() -> crate::input::describe_db_cluster_snapshot_attributes_input::Builder {
         crate::input::describe_db_cluster_snapshot_attributes_input::Builder::default()
     }
@@ -1923,7 +1923,7 @@ impl DescribeDBClusterSnapshotAttributes {
 }
 impl smithy_http::response::ParseStrictResponse for DescribeDBClusterSnapshotAttributes {
     type Output = std::result::Result<
-        crate::output::DescribeDBClusterSnapshotAttributesOutput,
+        crate::output::DescribeDbClusterSnapshotAttributesOutput,
         crate::error::DescribeDBClusterSnapshotAttributesError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -1948,7 +1948,7 @@ pub struct DescribeDBClusterSnapshots {
     _private: (),
 }
 impl DescribeDBClusterSnapshots {
-    /// Creates a new builder-style object to manufacture [`DescribeDBClusterSnapshotsInput`](crate::input::DescribeDBClusterSnapshotsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDbClusterSnapshotsInput`](crate::input::DescribeDbClusterSnapshotsInput)
     pub fn builder() -> crate::input::describe_db_cluster_snapshots_input::Builder {
         crate::input::describe_db_cluster_snapshots_input::Builder::default()
     }
@@ -1958,7 +1958,7 @@ impl DescribeDBClusterSnapshots {
 }
 impl smithy_http::response::ParseStrictResponse for DescribeDBClusterSnapshots {
     type Output = std::result::Result<
-        crate::output::DescribeDBClusterSnapshotsOutput,
+        crate::output::DescribeDbClusterSnapshotsOutput,
         crate::error::DescribeDBClusterSnapshotsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -1976,7 +1976,7 @@ pub struct DescribeDBEngineVersions {
     _private: (),
 }
 impl DescribeDBEngineVersions {
-    /// Creates a new builder-style object to manufacture [`DescribeDBEngineVersionsInput`](crate::input::DescribeDBEngineVersionsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDbEngineVersionsInput`](crate::input::DescribeDbEngineVersionsInput)
     pub fn builder() -> crate::input::describe_db_engine_versions_input::Builder {
         crate::input::describe_db_engine_versions_input::Builder::default()
     }
@@ -1986,7 +1986,7 @@ impl DescribeDBEngineVersions {
 }
 impl smithy_http::response::ParseStrictResponse for DescribeDBEngineVersions {
     type Output = std::result::Result<
-        crate::output::DescribeDBEngineVersionsOutput,
+        crate::output::DescribeDbEngineVersionsOutput,
         crate::error::DescribeDBEngineVersionsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -2010,7 +2010,7 @@ pub struct DescribeDBInstanceAutomatedBackups {
     _private: (),
 }
 impl DescribeDBInstanceAutomatedBackups {
-    /// Creates a new builder-style object to manufacture [`DescribeDBInstanceAutomatedBackupsInput`](crate::input::DescribeDBInstanceAutomatedBackupsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDbInstanceAutomatedBackupsInput`](crate::input::DescribeDbInstanceAutomatedBackupsInput)
     pub fn builder() -> crate::input::describe_db_instance_automated_backups_input::Builder {
         crate::input::describe_db_instance_automated_backups_input::Builder::default()
     }
@@ -2020,7 +2020,7 @@ impl DescribeDBInstanceAutomatedBackups {
 }
 impl smithy_http::response::ParseStrictResponse for DescribeDBInstanceAutomatedBackups {
     type Output = std::result::Result<
-        crate::output::DescribeDBInstanceAutomatedBackupsOutput,
+        crate::output::DescribeDbInstanceAutomatedBackupsOutput,
         crate::error::DescribeDBInstanceAutomatedBackupsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -2041,7 +2041,7 @@ pub struct DescribeDBInstances {
     _private: (),
 }
 impl DescribeDBInstances {
-    /// Creates a new builder-style object to manufacture [`DescribeDBInstancesInput`](crate::input::DescribeDBInstancesInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDbInstancesInput`](crate::input::DescribeDbInstancesInput)
     pub fn builder() -> crate::input::describe_db_instances_input::Builder {
         crate::input::describe_db_instances_input::Builder::default()
     }
@@ -2051,7 +2051,7 @@ impl DescribeDBInstances {
 }
 impl smithy_http::response::ParseStrictResponse for DescribeDBInstances {
     type Output = std::result::Result<
-        crate::output::DescribeDBInstancesOutput,
+        crate::output::DescribeDbInstancesOutput,
         crate::error::DescribeDBInstancesError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -2069,7 +2069,7 @@ pub struct DescribeDBLogFiles {
     _private: (),
 }
 impl DescribeDBLogFiles {
-    /// Creates a new builder-style object to manufacture [`DescribeDBLogFilesInput`](crate::input::DescribeDBLogFilesInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDbLogFilesInput`](crate::input::DescribeDbLogFilesInput)
     pub fn builder() -> crate::input::describe_db_log_files_input::Builder {
         crate::input::describe_db_log_files_input::Builder::default()
     }
@@ -2079,7 +2079,7 @@ impl DescribeDBLogFiles {
 }
 impl smithy_http::response::ParseStrictResponse for DescribeDBLogFiles {
     type Output = std::result::Result<
-        crate::output::DescribeDBLogFilesOutput,
+        crate::output::DescribeDbLogFilesOutput,
         crate::error::DescribeDBLogFilesError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -2100,7 +2100,7 @@ pub struct DescribeDBParameterGroups {
     _private: (),
 }
 impl DescribeDBParameterGroups {
-    /// Creates a new builder-style object to manufacture [`DescribeDBParameterGroupsInput`](crate::input::DescribeDBParameterGroupsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDbParameterGroupsInput`](crate::input::DescribeDbParameterGroupsInput)
     pub fn builder() -> crate::input::describe_db_parameter_groups_input::Builder {
         crate::input::describe_db_parameter_groups_input::Builder::default()
     }
@@ -2110,7 +2110,7 @@ impl DescribeDBParameterGroups {
 }
 impl smithy_http::response::ParseStrictResponse for DescribeDBParameterGroups {
     type Output = std::result::Result<
-        crate::output::DescribeDBParameterGroupsOutput,
+        crate::output::DescribeDbParameterGroupsOutput,
         crate::error::DescribeDBParameterGroupsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -2128,7 +2128,7 @@ pub struct DescribeDBParameters {
     _private: (),
 }
 impl DescribeDBParameters {
-    /// Creates a new builder-style object to manufacture [`DescribeDBParametersInput`](crate::input::DescribeDBParametersInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDbParametersInput`](crate::input::DescribeDbParametersInput)
     pub fn builder() -> crate::input::describe_db_parameters_input::Builder {
         crate::input::describe_db_parameters_input::Builder::default()
     }
@@ -2138,7 +2138,7 @@ impl DescribeDBParameters {
 }
 impl smithy_http::response::ParseStrictResponse for DescribeDBParameters {
     type Output = std::result::Result<
-        crate::output::DescribeDBParametersOutput,
+        crate::output::DescribeDbParametersOutput,
         crate::error::DescribeDBParametersError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -2156,7 +2156,7 @@ pub struct DescribeDBProxies {
     _private: (),
 }
 impl DescribeDBProxies {
-    /// Creates a new builder-style object to manufacture [`DescribeDBProxiesInput`](crate::input::DescribeDBProxiesInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDbProxiesInput`](crate::input::DescribeDbProxiesInput)
     pub fn builder() -> crate::input::describe_db_proxies_input::Builder {
         crate::input::describe_db_proxies_input::Builder::default()
     }
@@ -2166,7 +2166,7 @@ impl DescribeDBProxies {
 }
 impl smithy_http::response::ParseStrictResponse for DescribeDBProxies {
     type Output = std::result::Result<
-        crate::output::DescribeDBProxiesOutput,
+        crate::output::DescribeDbProxiesOutput,
         crate::error::DescribeDBProxiesError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -2184,7 +2184,7 @@ pub struct DescribeDBProxyEndpoints {
     _private: (),
 }
 impl DescribeDBProxyEndpoints {
-    /// Creates a new builder-style object to manufacture [`DescribeDBProxyEndpointsInput`](crate::input::DescribeDBProxyEndpointsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDbProxyEndpointsInput`](crate::input::DescribeDbProxyEndpointsInput)
     pub fn builder() -> crate::input::describe_db_proxy_endpoints_input::Builder {
         crate::input::describe_db_proxy_endpoints_input::Builder::default()
     }
@@ -2194,7 +2194,7 @@ impl DescribeDBProxyEndpoints {
 }
 impl smithy_http::response::ParseStrictResponse for DescribeDBProxyEndpoints {
     type Output = std::result::Result<
-        crate::output::DescribeDBProxyEndpointsOutput,
+        crate::output::DescribeDbProxyEndpointsOutput,
         crate::error::DescribeDBProxyEndpointsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -2212,7 +2212,7 @@ pub struct DescribeDBProxyTargetGroups {
     _private: (),
 }
 impl DescribeDBProxyTargetGroups {
-    /// Creates a new builder-style object to manufacture [`DescribeDBProxyTargetGroupsInput`](crate::input::DescribeDBProxyTargetGroupsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDbProxyTargetGroupsInput`](crate::input::DescribeDbProxyTargetGroupsInput)
     pub fn builder() -> crate::input::describe_db_proxy_target_groups_input::Builder {
         crate::input::describe_db_proxy_target_groups_input::Builder::default()
     }
@@ -2222,7 +2222,7 @@ impl DescribeDBProxyTargetGroups {
 }
 impl smithy_http::response::ParseStrictResponse for DescribeDBProxyTargetGroups {
     type Output = std::result::Result<
-        crate::output::DescribeDBProxyTargetGroupsOutput,
+        crate::output::DescribeDbProxyTargetGroupsOutput,
         crate::error::DescribeDBProxyTargetGroupsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -2240,7 +2240,7 @@ pub struct DescribeDBProxyTargets {
     _private: (),
 }
 impl DescribeDBProxyTargets {
-    /// Creates a new builder-style object to manufacture [`DescribeDBProxyTargetsInput`](crate::input::DescribeDBProxyTargetsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDbProxyTargetsInput`](crate::input::DescribeDbProxyTargetsInput)
     pub fn builder() -> crate::input::describe_db_proxy_targets_input::Builder {
         crate::input::describe_db_proxy_targets_input::Builder::default()
     }
@@ -2250,7 +2250,7 @@ impl DescribeDBProxyTargets {
 }
 impl smithy_http::response::ParseStrictResponse for DescribeDBProxyTargets {
     type Output = std::result::Result<
-        crate::output::DescribeDBProxyTargetsOutput,
+        crate::output::DescribeDbProxyTargetsOutput,
         crate::error::DescribeDBProxyTargetsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -2271,7 +2271,7 @@ pub struct DescribeDBSecurityGroups {
     _private: (),
 }
 impl DescribeDBSecurityGroups {
-    /// Creates a new builder-style object to manufacture [`DescribeDBSecurityGroupsInput`](crate::input::DescribeDBSecurityGroupsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDbSecurityGroupsInput`](crate::input::DescribeDbSecurityGroupsInput)
     pub fn builder() -> crate::input::describe_db_security_groups_input::Builder {
         crate::input::describe_db_security_groups_input::Builder::default()
     }
@@ -2281,7 +2281,7 @@ impl DescribeDBSecurityGroups {
 }
 impl smithy_http::response::ParseStrictResponse for DescribeDBSecurityGroups {
     type Output = std::result::Result<
-        crate::output::DescribeDBSecurityGroupsOutput,
+        crate::output::DescribeDbSecurityGroupsOutput,
         crate::error::DescribeDBSecurityGroupsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -2306,7 +2306,7 @@ pub struct DescribeDBSnapshotAttributes {
     _private: (),
 }
 impl DescribeDBSnapshotAttributes {
-    /// Creates a new builder-style object to manufacture [`DescribeDBSnapshotAttributesInput`](crate::input::DescribeDBSnapshotAttributesInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDbSnapshotAttributesInput`](crate::input::DescribeDbSnapshotAttributesInput)
     pub fn builder() -> crate::input::describe_db_snapshot_attributes_input::Builder {
         crate::input::describe_db_snapshot_attributes_input::Builder::default()
     }
@@ -2316,7 +2316,7 @@ impl DescribeDBSnapshotAttributes {
 }
 impl smithy_http::response::ParseStrictResponse for DescribeDBSnapshotAttributes {
     type Output = std::result::Result<
-        crate::output::DescribeDBSnapshotAttributesOutput,
+        crate::output::DescribeDbSnapshotAttributesOutput,
         crate::error::DescribeDBSnapshotAttributesError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -2334,7 +2334,7 @@ pub struct DescribeDBSnapshots {
     _private: (),
 }
 impl DescribeDBSnapshots {
-    /// Creates a new builder-style object to manufacture [`DescribeDBSnapshotsInput`](crate::input::DescribeDBSnapshotsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDbSnapshotsInput`](crate::input::DescribeDbSnapshotsInput)
     pub fn builder() -> crate::input::describe_db_snapshots_input::Builder {
         crate::input::describe_db_snapshots_input::Builder::default()
     }
@@ -2344,7 +2344,7 @@ impl DescribeDBSnapshots {
 }
 impl smithy_http::response::ParseStrictResponse for DescribeDBSnapshots {
     type Output = std::result::Result<
-        crate::output::DescribeDBSnapshotsOutput,
+        crate::output::DescribeDbSnapshotsOutput,
         crate::error::DescribeDBSnapshotsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -2365,7 +2365,7 @@ pub struct DescribeDBSubnetGroups {
     _private: (),
 }
 impl DescribeDBSubnetGroups {
-    /// Creates a new builder-style object to manufacture [`DescribeDBSubnetGroupsInput`](crate::input::DescribeDBSubnetGroupsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDbSubnetGroupsInput`](crate::input::DescribeDbSubnetGroupsInput)
     pub fn builder() -> crate::input::describe_db_subnet_groups_input::Builder {
         crate::input::describe_db_subnet_groups_input::Builder::default()
     }
@@ -2375,7 +2375,7 @@ impl DescribeDBSubnetGroups {
 }
 impl smithy_http::response::ParseStrictResponse for DescribeDBSubnetGroups {
     type Output = std::result::Result<
-        crate::output::DescribeDBSubnetGroupsOutput,
+        crate::output::DescribeDbSubnetGroupsOutput,
         crate::error::DescribeDBSubnetGroupsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -2699,7 +2699,7 @@ pub struct DescribeOrderableDBInstanceOptions {
     _private: (),
 }
 impl DescribeOrderableDBInstanceOptions {
-    /// Creates a new builder-style object to manufacture [`DescribeOrderableDBInstanceOptionsInput`](crate::input::DescribeOrderableDBInstanceOptionsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeOrderableDbInstanceOptionsInput`](crate::input::DescribeOrderableDbInstanceOptionsInput)
     pub fn builder() -> crate::input::describe_orderable_db_instance_options_input::Builder {
         crate::input::describe_orderable_db_instance_options_input::Builder::default()
     }
@@ -2709,7 +2709,7 @@ impl DescribeOrderableDBInstanceOptions {
 }
 impl smithy_http::response::ParseStrictResponse for DescribeOrderableDBInstanceOptions {
     type Output = std::result::Result<
-        crate::output::DescribeOrderableDBInstanceOptionsOutput,
+        crate::output::DescribeOrderableDbInstanceOptionsOutput,
         crate::error::DescribeOrderableDBInstanceOptionsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -2755,7 +2755,7 @@ pub struct DescribeReservedDBInstances {
     _private: (),
 }
 impl DescribeReservedDBInstances {
-    /// Creates a new builder-style object to manufacture [`DescribeReservedDBInstancesInput`](crate::input::DescribeReservedDBInstancesInput)
+    /// Creates a new builder-style object to manufacture [`DescribeReservedDbInstancesInput`](crate::input::DescribeReservedDbInstancesInput)
     pub fn builder() -> crate::input::describe_reserved_db_instances_input::Builder {
         crate::input::describe_reserved_db_instances_input::Builder::default()
     }
@@ -2765,7 +2765,7 @@ impl DescribeReservedDBInstances {
 }
 impl smithy_http::response::ParseStrictResponse for DescribeReservedDBInstances {
     type Output = std::result::Result<
-        crate::output::DescribeReservedDBInstancesOutput,
+        crate::output::DescribeReservedDbInstancesOutput,
         crate::error::DescribeReservedDBInstancesError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -2783,7 +2783,7 @@ pub struct DescribeReservedDBInstancesOfferings {
     _private: (),
 }
 impl DescribeReservedDBInstancesOfferings {
-    /// Creates a new builder-style object to manufacture [`DescribeReservedDBInstancesOfferingsInput`](crate::input::DescribeReservedDBInstancesOfferingsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeReservedDbInstancesOfferingsInput`](crate::input::DescribeReservedDbInstancesOfferingsInput)
     pub fn builder() -> crate::input::describe_reserved_db_instances_offerings_input::Builder {
         crate::input::describe_reserved_db_instances_offerings_input::Builder::default()
     }
@@ -2793,7 +2793,7 @@ impl DescribeReservedDBInstancesOfferings {
 }
 impl smithy_http::response::ParseStrictResponse for DescribeReservedDBInstancesOfferings {
     type Output = std::result::Result<
-        crate::output::DescribeReservedDBInstancesOfferingsOutput,
+        crate::output::DescribeReservedDbInstancesOfferingsOutput,
         crate::error::DescribeReservedDBInstancesOfferingsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -2846,7 +2846,7 @@ pub struct DescribeValidDBInstanceModifications {
     _private: (),
 }
 impl DescribeValidDBInstanceModifications {
-    /// Creates a new builder-style object to manufacture [`DescribeValidDBInstanceModificationsInput`](crate::input::DescribeValidDBInstanceModificationsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeValidDbInstanceModificationsInput`](crate::input::DescribeValidDbInstanceModificationsInput)
     pub fn builder() -> crate::input::describe_valid_db_instance_modifications_input::Builder {
         crate::input::describe_valid_db_instance_modifications_input::Builder::default()
     }
@@ -2856,7 +2856,7 @@ impl DescribeValidDBInstanceModifications {
 }
 impl smithy_http::response::ParseStrictResponse for DescribeValidDBInstanceModifications {
     type Output = std::result::Result<
-        crate::output::DescribeValidDBInstanceModificationsOutput,
+        crate::output::DescribeValidDbInstanceModificationsOutput,
         crate::error::DescribeValidDBInstanceModificationsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -2876,7 +2876,7 @@ pub struct DownloadDBLogFilePortion {
     _private: (),
 }
 impl DownloadDBLogFilePortion {
-    /// Creates a new builder-style object to manufacture [`DownloadDBLogFilePortionInput`](crate::input::DownloadDBLogFilePortionInput)
+    /// Creates a new builder-style object to manufacture [`DownloadDbLogFilePortionInput`](crate::input::DownloadDbLogFilePortionInput)
     pub fn builder() -> crate::input::download_db_log_file_portion_input::Builder {
         crate::input::download_db_log_file_portion_input::Builder::default()
     }
@@ -2886,7 +2886,7 @@ impl DownloadDBLogFilePortion {
 }
 impl smithy_http::response::ParseStrictResponse for DownloadDBLogFilePortion {
     type Output = std::result::Result<
-        crate::output::DownloadDBLogFilePortionOutput,
+        crate::output::DownloadDbLogFilePortionOutput,
         crate::error::DownloadDBLogFilePortionError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -2917,7 +2917,7 @@ pub struct FailoverDBCluster {
     _private: (),
 }
 impl FailoverDBCluster {
-    /// Creates a new builder-style object to manufacture [`FailoverDBClusterInput`](crate::input::FailoverDBClusterInput)
+    /// Creates a new builder-style object to manufacture [`FailoverDbClusterInput`](crate::input::FailoverDbClusterInput)
     pub fn builder() -> crate::input::failover_db_cluster_input::Builder {
         crate::input::failover_db_cluster_input::Builder::default()
     }
@@ -2927,7 +2927,7 @@ impl FailoverDBCluster {
 }
 impl smithy_http::response::ParseStrictResponse for FailoverDBCluster {
     type Output = std::result::Result<
-        crate::output::FailoverDBClusterOutput,
+        crate::output::FailoverDbClusterOutput,
         crate::error::FailoverDBClusterError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -3116,7 +3116,7 @@ pub struct ModifyCurrentDBClusterCapacity {
     _private: (),
 }
 impl ModifyCurrentDBClusterCapacity {
-    /// Creates a new builder-style object to manufacture [`ModifyCurrentDBClusterCapacityInput`](crate::input::ModifyCurrentDBClusterCapacityInput)
+    /// Creates a new builder-style object to manufacture [`ModifyCurrentDbClusterCapacityInput`](crate::input::ModifyCurrentDbClusterCapacityInput)
     pub fn builder() -> crate::input::modify_current_db_cluster_capacity_input::Builder {
         crate::input::modify_current_db_cluster_capacity_input::Builder::default()
     }
@@ -3126,7 +3126,7 @@ impl ModifyCurrentDBClusterCapacity {
 }
 impl smithy_http::response::ParseStrictResponse for ModifyCurrentDBClusterCapacity {
     type Output = std::result::Result<
-        crate::output::ModifyCurrentDBClusterCapacityOutput,
+        crate::output::ModifyCurrentDbClusterCapacityOutput,
         crate::error::ModifyCurrentDBClusterCapacityError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -3153,7 +3153,7 @@ pub struct ModifyDBCluster {
     _private: (),
 }
 impl ModifyDBCluster {
-    /// Creates a new builder-style object to manufacture [`ModifyDBClusterInput`](crate::input::ModifyDBClusterInput)
+    /// Creates a new builder-style object to manufacture [`ModifyDbClusterInput`](crate::input::ModifyDbClusterInput)
     pub fn builder() -> crate::input::modify_db_cluster_input::Builder {
         crate::input::modify_db_cluster_input::Builder::default()
     }
@@ -3163,7 +3163,7 @@ impl ModifyDBCluster {
 }
 impl smithy_http::response::ParseStrictResponse for ModifyDBCluster {
     type Output = std::result::Result<
-        crate::output::ModifyDBClusterOutput,
+        crate::output::ModifyDbClusterOutput,
         crate::error::ModifyDBClusterError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -3184,7 +3184,7 @@ pub struct ModifyDBClusterEndpoint {
     _private: (),
 }
 impl ModifyDBClusterEndpoint {
-    /// Creates a new builder-style object to manufacture [`ModifyDBClusterEndpointInput`](crate::input::ModifyDBClusterEndpointInput)
+    /// Creates a new builder-style object to manufacture [`ModifyDbClusterEndpointInput`](crate::input::ModifyDbClusterEndpointInput)
     pub fn builder() -> crate::input::modify_db_cluster_endpoint_input::Builder {
         crate::input::modify_db_cluster_endpoint_input::Builder::default()
     }
@@ -3194,7 +3194,7 @@ impl ModifyDBClusterEndpoint {
 }
 impl smithy_http::response::ParseStrictResponse for ModifyDBClusterEndpoint {
     type Output = std::result::Result<
-        crate::output::ModifyDBClusterEndpointOutput,
+        crate::output::ModifyDbClusterEndpointOutput,
         crate::error::ModifyDBClusterEndpointError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -3239,7 +3239,7 @@ pub struct ModifyDBClusterParameterGroup {
     _private: (),
 }
 impl ModifyDBClusterParameterGroup {
-    /// Creates a new builder-style object to manufacture [`ModifyDBClusterParameterGroupInput`](crate::input::ModifyDBClusterParameterGroupInput)
+    /// Creates a new builder-style object to manufacture [`ModifyDbClusterParameterGroupInput`](crate::input::ModifyDbClusterParameterGroupInput)
     pub fn builder() -> crate::input::modify_db_cluster_parameter_group_input::Builder {
         crate::input::modify_db_cluster_parameter_group_input::Builder::default()
     }
@@ -3249,7 +3249,7 @@ impl ModifyDBClusterParameterGroup {
 }
 impl smithy_http::response::ParseStrictResponse for ModifyDBClusterParameterGroup {
     type Output = std::result::Result<
-        crate::output::ModifyDBClusterParameterGroupOutput,
+        crate::output::ModifyDbClusterParameterGroupOutput,
         crate::error::ModifyDBClusterParameterGroupError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -3288,7 +3288,7 @@ pub struct ModifyDBClusterSnapshotAttribute {
     _private: (),
 }
 impl ModifyDBClusterSnapshotAttribute {
-    /// Creates a new builder-style object to manufacture [`ModifyDBClusterSnapshotAttributeInput`](crate::input::ModifyDBClusterSnapshotAttributeInput)
+    /// Creates a new builder-style object to manufacture [`ModifyDbClusterSnapshotAttributeInput`](crate::input::ModifyDbClusterSnapshotAttributeInput)
     pub fn builder() -> crate::input::modify_db_cluster_snapshot_attribute_input::Builder {
         crate::input::modify_db_cluster_snapshot_attribute_input::Builder::default()
     }
@@ -3298,7 +3298,7 @@ impl ModifyDBClusterSnapshotAttribute {
 }
 impl smithy_http::response::ParseStrictResponse for ModifyDBClusterSnapshotAttribute {
     type Output = std::result::Result<
-        crate::output::ModifyDBClusterSnapshotAttributeOutput,
+        crate::output::ModifyDbClusterSnapshotAttributeOutput,
         crate::error::ModifyDBClusterSnapshotAttributeError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -3321,7 +3321,7 @@ pub struct ModifyDBInstance {
     _private: (),
 }
 impl ModifyDBInstance {
-    /// Creates a new builder-style object to manufacture [`ModifyDBInstanceInput`](crate::input::ModifyDBInstanceInput)
+    /// Creates a new builder-style object to manufacture [`ModifyDbInstanceInput`](crate::input::ModifyDbInstanceInput)
     pub fn builder() -> crate::input::modify_db_instance_input::Builder {
         crate::input::modify_db_instance_input::Builder::default()
     }
@@ -3331,7 +3331,7 @@ impl ModifyDBInstance {
 }
 impl smithy_http::response::ParseStrictResponse for ModifyDBInstance {
     type Output = std::result::Result<
-        crate::output::ModifyDBInstanceOutput,
+        crate::output::ModifyDbInstanceOutput,
         crate::error::ModifyDBInstanceError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -3364,7 +3364,7 @@ pub struct ModifyDBParameterGroup {
     _private: (),
 }
 impl ModifyDBParameterGroup {
-    /// Creates a new builder-style object to manufacture [`ModifyDBParameterGroupInput`](crate::input::ModifyDBParameterGroupInput)
+    /// Creates a new builder-style object to manufacture [`ModifyDbParameterGroupInput`](crate::input::ModifyDbParameterGroupInput)
     pub fn builder() -> crate::input::modify_db_parameter_group_input::Builder {
         crate::input::modify_db_parameter_group_input::Builder::default()
     }
@@ -3374,7 +3374,7 @@ impl ModifyDBParameterGroup {
 }
 impl smithy_http::response::ParseStrictResponse for ModifyDBParameterGroup {
     type Output = std::result::Result<
-        crate::output::ModifyDBParameterGroupOutput,
+        crate::output::ModifyDbParameterGroupOutput,
         crate::error::ModifyDBParameterGroupError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -3392,7 +3392,7 @@ pub struct ModifyDBProxy {
     _private: (),
 }
 impl ModifyDBProxy {
-    /// Creates a new builder-style object to manufacture [`ModifyDBProxyInput`](crate::input::ModifyDBProxyInput)
+    /// Creates a new builder-style object to manufacture [`ModifyDbProxyInput`](crate::input::ModifyDbProxyInput)
     pub fn builder() -> crate::input::modify_db_proxy_input::Builder {
         crate::input::modify_db_proxy_input::Builder::default()
     }
@@ -3402,7 +3402,7 @@ impl ModifyDBProxy {
 }
 impl smithy_http::response::ParseStrictResponse for ModifyDBProxy {
     type Output =
-        std::result::Result<crate::output::ModifyDBProxyOutput, crate::error::ModifyDBProxyError>;
+        std::result::Result<crate::output::ModifyDbProxyOutput, crate::error::ModifyDBProxyError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_modify_db_proxy_error(response)
@@ -3418,7 +3418,7 @@ pub struct ModifyDBProxyEndpoint {
     _private: (),
 }
 impl ModifyDBProxyEndpoint {
-    /// Creates a new builder-style object to manufacture [`ModifyDBProxyEndpointInput`](crate::input::ModifyDBProxyEndpointInput)
+    /// Creates a new builder-style object to manufacture [`ModifyDbProxyEndpointInput`](crate::input::ModifyDbProxyEndpointInput)
     pub fn builder() -> crate::input::modify_db_proxy_endpoint_input::Builder {
         crate::input::modify_db_proxy_endpoint_input::Builder::default()
     }
@@ -3428,7 +3428,7 @@ impl ModifyDBProxyEndpoint {
 }
 impl smithy_http::response::ParseStrictResponse for ModifyDBProxyEndpoint {
     type Output = std::result::Result<
-        crate::output::ModifyDBProxyEndpointOutput,
+        crate::output::ModifyDbProxyEndpointOutput,
         crate::error::ModifyDBProxyEndpointError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -3446,7 +3446,7 @@ pub struct ModifyDBProxyTargetGroup {
     _private: (),
 }
 impl ModifyDBProxyTargetGroup {
-    /// Creates a new builder-style object to manufacture [`ModifyDBProxyTargetGroupInput`](crate::input::ModifyDBProxyTargetGroupInput)
+    /// Creates a new builder-style object to manufacture [`ModifyDbProxyTargetGroupInput`](crate::input::ModifyDbProxyTargetGroupInput)
     pub fn builder() -> crate::input::modify_db_proxy_target_group_input::Builder {
         crate::input::modify_db_proxy_target_group_input::Builder::default()
     }
@@ -3456,7 +3456,7 @@ impl ModifyDBProxyTargetGroup {
 }
 impl smithy_http::response::ParseStrictResponse for ModifyDBProxyTargetGroup {
     type Output = std::result::Result<
-        crate::output::ModifyDBProxyTargetGroupOutput,
+        crate::output::ModifyDbProxyTargetGroupOutput,
         crate::error::ModifyDBProxyTargetGroupError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -3478,7 +3478,7 @@ pub struct ModifyDBSnapshot {
     _private: (),
 }
 impl ModifyDBSnapshot {
-    /// Creates a new builder-style object to manufacture [`ModifyDBSnapshotInput`](crate::input::ModifyDBSnapshotInput)
+    /// Creates a new builder-style object to manufacture [`ModifyDbSnapshotInput`](crate::input::ModifyDbSnapshotInput)
     pub fn builder() -> crate::input::modify_db_snapshot_input::Builder {
         crate::input::modify_db_snapshot_input::Builder::default()
     }
@@ -3488,7 +3488,7 @@ impl ModifyDBSnapshot {
 }
 impl smithy_http::response::ParseStrictResponse for ModifyDBSnapshot {
     type Output = std::result::Result<
-        crate::output::ModifyDBSnapshotOutput,
+        crate::output::ModifyDbSnapshotOutput,
         crate::error::ModifyDBSnapshotError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -3522,7 +3522,7 @@ pub struct ModifyDBSnapshotAttribute {
     _private: (),
 }
 impl ModifyDBSnapshotAttribute {
-    /// Creates a new builder-style object to manufacture [`ModifyDBSnapshotAttributeInput`](crate::input::ModifyDBSnapshotAttributeInput)
+    /// Creates a new builder-style object to manufacture [`ModifyDbSnapshotAttributeInput`](crate::input::ModifyDbSnapshotAttributeInput)
     pub fn builder() -> crate::input::modify_db_snapshot_attribute_input::Builder {
         crate::input::modify_db_snapshot_attribute_input::Builder::default()
     }
@@ -3532,7 +3532,7 @@ impl ModifyDBSnapshotAttribute {
 }
 impl smithy_http::response::ParseStrictResponse for ModifyDBSnapshotAttribute {
     type Output = std::result::Result<
-        crate::output::ModifyDBSnapshotAttributeOutput,
+        crate::output::ModifyDbSnapshotAttributeOutput,
         crate::error::ModifyDBSnapshotAttributeError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -3550,7 +3550,7 @@ pub struct ModifyDBSubnetGroup {
     _private: (),
 }
 impl ModifyDBSubnetGroup {
-    /// Creates a new builder-style object to manufacture [`ModifyDBSubnetGroupInput`](crate::input::ModifyDBSubnetGroupInput)
+    /// Creates a new builder-style object to manufacture [`ModifyDbSubnetGroupInput`](crate::input::ModifyDbSubnetGroupInput)
     pub fn builder() -> crate::input::modify_db_subnet_group_input::Builder {
         crate::input::modify_db_subnet_group_input::Builder::default()
     }
@@ -3560,7 +3560,7 @@ impl ModifyDBSubnetGroup {
 }
 impl smithy_http::response::ParseStrictResponse for ModifyDBSubnetGroup {
     type Output = std::result::Result<
-        crate::output::ModifyDBSubnetGroupOutput,
+        crate::output::ModifyDbSubnetGroupOutput,
         crate::error::ModifyDBSubnetGroupError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -3722,7 +3722,7 @@ pub struct PromoteReadReplicaDBCluster {
     _private: (),
 }
 impl PromoteReadReplicaDBCluster {
-    /// Creates a new builder-style object to manufacture [`PromoteReadReplicaDBClusterInput`](crate::input::PromoteReadReplicaDBClusterInput)
+    /// Creates a new builder-style object to manufacture [`PromoteReadReplicaDbClusterInput`](crate::input::PromoteReadReplicaDbClusterInput)
     pub fn builder() -> crate::input::promote_read_replica_db_cluster_input::Builder {
         crate::input::promote_read_replica_db_cluster_input::Builder::default()
     }
@@ -3732,7 +3732,7 @@ impl PromoteReadReplicaDBCluster {
 }
 impl smithy_http::response::ParseStrictResponse for PromoteReadReplicaDBCluster {
     type Output = std::result::Result<
-        crate::output::PromoteReadReplicaDBClusterOutput,
+        crate::output::PromoteReadReplicaDbClusterOutput,
         crate::error::PromoteReadReplicaDBClusterError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -3750,7 +3750,7 @@ pub struct PurchaseReservedDBInstancesOffering {
     _private: (),
 }
 impl PurchaseReservedDBInstancesOffering {
-    /// Creates a new builder-style object to manufacture [`PurchaseReservedDBInstancesOfferingInput`](crate::input::PurchaseReservedDBInstancesOfferingInput)
+    /// Creates a new builder-style object to manufacture [`PurchaseReservedDbInstancesOfferingInput`](crate::input::PurchaseReservedDbInstancesOfferingInput)
     pub fn builder() -> crate::input::purchase_reserved_db_instances_offering_input::Builder {
         crate::input::purchase_reserved_db_instances_offering_input::Builder::default()
     }
@@ -3760,7 +3760,7 @@ impl PurchaseReservedDBInstancesOffering {
 }
 impl smithy_http::response::ParseStrictResponse for PurchaseReservedDBInstancesOffering {
     type Output = std::result::Result<
-        crate::output::PurchaseReservedDBInstancesOfferingOutput,
+        crate::output::PurchaseReservedDbInstancesOfferingOutput,
         crate::error::PurchaseReservedDBInstancesOfferingError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -3787,7 +3787,7 @@ pub struct RebootDBInstance {
     _private: (),
 }
 impl RebootDBInstance {
-    /// Creates a new builder-style object to manufacture [`RebootDBInstanceInput`](crate::input::RebootDBInstanceInput)
+    /// Creates a new builder-style object to manufacture [`RebootDbInstanceInput`](crate::input::RebootDbInstanceInput)
     pub fn builder() -> crate::input::reboot_db_instance_input::Builder {
         crate::input::reboot_db_instance_input::Builder::default()
     }
@@ -3797,7 +3797,7 @@ impl RebootDBInstance {
 }
 impl smithy_http::response::ParseStrictResponse for RebootDBInstance {
     type Output = std::result::Result<
-        crate::output::RebootDBInstanceOutput,
+        crate::output::RebootDbInstanceOutput,
         crate::error::RebootDBInstanceError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -3815,7 +3815,7 @@ pub struct RegisterDBProxyTargets {
     _private: (),
 }
 impl RegisterDBProxyTargets {
-    /// Creates a new builder-style object to manufacture [`RegisterDBProxyTargetsInput`](crate::input::RegisterDBProxyTargetsInput)
+    /// Creates a new builder-style object to manufacture [`RegisterDbProxyTargetsInput`](crate::input::RegisterDbProxyTargetsInput)
     pub fn builder() -> crate::input::register_db_proxy_targets_input::Builder {
         crate::input::register_db_proxy_targets_input::Builder::default()
     }
@@ -3825,7 +3825,7 @@ impl RegisterDBProxyTargets {
 }
 impl smithy_http::response::ParseStrictResponse for RegisterDBProxyTargets {
     type Output = std::result::Result<
-        crate::output::RegisterDBProxyTargetsOutput,
+        crate::output::RegisterDbProxyTargetsOutput,
         crate::error::RegisterDBProxyTargetsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -3883,7 +3883,7 @@ pub struct RemoveRoleFromDBCluster {
     _private: (),
 }
 impl RemoveRoleFromDBCluster {
-    /// Creates a new builder-style object to manufacture [`RemoveRoleFromDBClusterInput`](crate::input::RemoveRoleFromDBClusterInput)
+    /// Creates a new builder-style object to manufacture [`RemoveRoleFromDbClusterInput`](crate::input::RemoveRoleFromDbClusterInput)
     pub fn builder() -> crate::input::remove_role_from_db_cluster_input::Builder {
         crate::input::remove_role_from_db_cluster_input::Builder::default()
     }
@@ -3893,7 +3893,7 @@ impl RemoveRoleFromDBCluster {
 }
 impl smithy_http::response::ParseStrictResponse for RemoveRoleFromDBCluster {
     type Output = std::result::Result<
-        crate::output::RemoveRoleFromDBClusterOutput,
+        crate::output::RemoveRoleFromDbClusterOutput,
         crate::error::RemoveRoleFromDBClusterError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -3911,7 +3911,7 @@ pub struct RemoveRoleFromDBInstance {
     _private: (),
 }
 impl RemoveRoleFromDBInstance {
-    /// Creates a new builder-style object to manufacture [`RemoveRoleFromDBInstanceInput`](crate::input::RemoveRoleFromDBInstanceInput)
+    /// Creates a new builder-style object to manufacture [`RemoveRoleFromDbInstanceInput`](crate::input::RemoveRoleFromDbInstanceInput)
     pub fn builder() -> crate::input::remove_role_from_db_instance_input::Builder {
         crate::input::remove_role_from_db_instance_input::Builder::default()
     }
@@ -3921,7 +3921,7 @@ impl RemoveRoleFromDBInstance {
 }
 impl smithy_http::response::ParseStrictResponse for RemoveRoleFromDBInstance {
     type Output = std::result::Result<
-        crate::output::RemoveRoleFromDBInstanceOutput,
+        crate::output::RemoveRoleFromDbInstanceOutput,
         crate::error::RemoveRoleFromDBInstanceError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -4019,7 +4019,7 @@ pub struct ResetDBClusterParameterGroup {
     _private: (),
 }
 impl ResetDBClusterParameterGroup {
-    /// Creates a new builder-style object to manufacture [`ResetDBClusterParameterGroupInput`](crate::input::ResetDBClusterParameterGroupInput)
+    /// Creates a new builder-style object to manufacture [`ResetDbClusterParameterGroupInput`](crate::input::ResetDbClusterParameterGroupInput)
     pub fn builder() -> crate::input::reset_db_cluster_parameter_group_input::Builder {
         crate::input::reset_db_cluster_parameter_group_input::Builder::default()
     }
@@ -4029,7 +4029,7 @@ impl ResetDBClusterParameterGroup {
 }
 impl smithy_http::response::ParseStrictResponse for ResetDBClusterParameterGroup {
     type Output = std::result::Result<
-        crate::output::ResetDBClusterParameterGroupOutput,
+        crate::output::ResetDbClusterParameterGroupOutput,
         crate::error::ResetDBClusterParameterGroupError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -4054,7 +4054,7 @@ pub struct ResetDBParameterGroup {
     _private: (),
 }
 impl ResetDBParameterGroup {
-    /// Creates a new builder-style object to manufacture [`ResetDBParameterGroupInput`](crate::input::ResetDBParameterGroupInput)
+    /// Creates a new builder-style object to manufacture [`ResetDbParameterGroupInput`](crate::input::ResetDbParameterGroupInput)
     pub fn builder() -> crate::input::reset_db_parameter_group_input::Builder {
         crate::input::reset_db_parameter_group_input::Builder::default()
     }
@@ -4064,7 +4064,7 @@ impl ResetDBParameterGroup {
 }
 impl smithy_http::response::ParseStrictResponse for ResetDBParameterGroup {
     type Output = std::result::Result<
-        crate::output::ResetDBParameterGroupOutput,
+        crate::output::ResetDbParameterGroupOutput,
         crate::error::ResetDBParameterGroupError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -4101,7 +4101,7 @@ pub struct RestoreDBClusterFromS3 {
     _private: (),
 }
 impl RestoreDBClusterFromS3 {
-    /// Creates a new builder-style object to manufacture [`RestoreDBClusterFromS3Input`](crate::input::RestoreDBClusterFromS3Input)
+    /// Creates a new builder-style object to manufacture [`RestoreDbClusterFromS3Input`](crate::input::RestoreDbClusterFromS3Input)
     pub fn builder() -> crate::input::restore_db_cluster_from_s3_input::Builder {
         crate::input::restore_db_cluster_from_s3_input::Builder::default()
     }
@@ -4111,7 +4111,7 @@ impl RestoreDBClusterFromS3 {
 }
 impl smithy_http::response::ParseStrictResponse for RestoreDBClusterFromS3 {
     type Output = std::result::Result<
-        crate::output::RestoreDBClusterFromS3Output,
+        crate::output::RestoreDbClusterFromS3Output,
         crate::error::RestoreDBClusterFromS3Error,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -4148,7 +4148,7 @@ pub struct RestoreDBClusterFromSnapshot {
     _private: (),
 }
 impl RestoreDBClusterFromSnapshot {
-    /// Creates a new builder-style object to manufacture [`RestoreDBClusterFromSnapshotInput`](crate::input::RestoreDBClusterFromSnapshotInput)
+    /// Creates a new builder-style object to manufacture [`RestoreDbClusterFromSnapshotInput`](crate::input::RestoreDbClusterFromSnapshotInput)
     pub fn builder() -> crate::input::restore_db_cluster_from_snapshot_input::Builder {
         crate::input::restore_db_cluster_from_snapshot_input::Builder::default()
     }
@@ -4158,7 +4158,7 @@ impl RestoreDBClusterFromSnapshot {
 }
 impl smithy_http::response::ParseStrictResponse for RestoreDBClusterFromSnapshot {
     type Output = std::result::Result<
-        crate::output::RestoreDBClusterFromSnapshotOutput,
+        crate::output::RestoreDbClusterFromSnapshotOutput,
         crate::error::RestoreDBClusterFromSnapshotError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -4195,7 +4195,7 @@ pub struct RestoreDBClusterToPointInTime {
     _private: (),
 }
 impl RestoreDBClusterToPointInTime {
-    /// Creates a new builder-style object to manufacture [`RestoreDBClusterToPointInTimeInput`](crate::input::RestoreDBClusterToPointInTimeInput)
+    /// Creates a new builder-style object to manufacture [`RestoreDbClusterToPointInTimeInput`](crate::input::RestoreDbClusterToPointInTimeInput)
     pub fn builder() -> crate::input::restore_db_cluster_to_point_in_time_input::Builder {
         crate::input::restore_db_cluster_to_point_in_time_input::Builder::default()
     }
@@ -4205,7 +4205,7 @@ impl RestoreDBClusterToPointInTime {
 }
 impl smithy_http::response::ParseStrictResponse for RestoreDBClusterToPointInTime {
     type Output = std::result::Result<
-        crate::output::RestoreDBClusterToPointInTimeOutput,
+        crate::output::RestoreDbClusterToPointInTimeOutput,
         crate::error::RestoreDBClusterToPointInTimeError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -4236,7 +4236,7 @@ pub struct RestoreDBInstanceFromDBSnapshot {
     _private: (),
 }
 impl RestoreDBInstanceFromDBSnapshot {
-    /// Creates a new builder-style object to manufacture [`RestoreDBInstanceFromDBSnapshotInput`](crate::input::RestoreDBInstanceFromDBSnapshotInput)
+    /// Creates a new builder-style object to manufacture [`RestoreDbInstanceFromDbSnapshotInput`](crate::input::RestoreDbInstanceFromDbSnapshotInput)
     pub fn builder() -> crate::input::restore_db_instance_from_db_snapshot_input::Builder {
         crate::input::restore_db_instance_from_db_snapshot_input::Builder::default()
     }
@@ -4246,7 +4246,7 @@ impl RestoreDBInstanceFromDBSnapshot {
 }
 impl smithy_http::response::ParseStrictResponse for RestoreDBInstanceFromDBSnapshot {
     type Output = std::result::Result<
-        crate::output::RestoreDBInstanceFromDBSnapshotOutput,
+        crate::output::RestoreDbInstanceFromDbSnapshotOutput,
         crate::error::RestoreDBInstanceFromDBSnapshotError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -4271,7 +4271,7 @@ pub struct RestoreDBInstanceFromS3 {
     _private: (),
 }
 impl RestoreDBInstanceFromS3 {
-    /// Creates a new builder-style object to manufacture [`RestoreDBInstanceFromS3Input`](crate::input::RestoreDBInstanceFromS3Input)
+    /// Creates a new builder-style object to manufacture [`RestoreDbInstanceFromS3Input`](crate::input::RestoreDbInstanceFromS3Input)
     pub fn builder() -> crate::input::restore_db_instance_from_s3_input::Builder {
         crate::input::restore_db_instance_from_s3_input::Builder::default()
     }
@@ -4281,7 +4281,7 @@ impl RestoreDBInstanceFromS3 {
 }
 impl smithy_http::response::ParseStrictResponse for RestoreDBInstanceFromS3 {
     type Output = std::result::Result<
-        crate::output::RestoreDBInstanceFromS3Output,
+        crate::output::RestoreDbInstanceFromS3Output,
         crate::error::RestoreDBInstanceFromS3Error,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -4308,7 +4308,7 @@ pub struct RestoreDBInstanceToPointInTime {
     _private: (),
 }
 impl RestoreDBInstanceToPointInTime {
-    /// Creates a new builder-style object to manufacture [`RestoreDBInstanceToPointInTimeInput`](crate::input::RestoreDBInstanceToPointInTimeInput)
+    /// Creates a new builder-style object to manufacture [`RestoreDbInstanceToPointInTimeInput`](crate::input::RestoreDbInstanceToPointInTimeInput)
     pub fn builder() -> crate::input::restore_db_instance_to_point_in_time_input::Builder {
         crate::input::restore_db_instance_to_point_in_time_input::Builder::default()
     }
@@ -4318,7 +4318,7 @@ impl RestoreDBInstanceToPointInTime {
 }
 impl smithy_http::response::ParseStrictResponse for RestoreDBInstanceToPointInTime {
     type Output = std::result::Result<
-        crate::output::RestoreDBInstanceToPointInTimeOutput,
+        crate::output::RestoreDbInstanceToPointInTimeOutput,
         crate::error::RestoreDBInstanceToPointInTimeError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -4336,7 +4336,7 @@ pub struct RevokeDBSecurityGroupIngress {
     _private: (),
 }
 impl RevokeDBSecurityGroupIngress {
-    /// Creates a new builder-style object to manufacture [`RevokeDBSecurityGroupIngressInput`](crate::input::RevokeDBSecurityGroupIngressInput)
+    /// Creates a new builder-style object to manufacture [`RevokeDbSecurityGroupIngressInput`](crate::input::RevokeDbSecurityGroupIngressInput)
     pub fn builder() -> crate::input::revoke_db_security_group_ingress_input::Builder {
         crate::input::revoke_db_security_group_ingress_input::Builder::default()
     }
@@ -4346,7 +4346,7 @@ impl RevokeDBSecurityGroupIngress {
 }
 impl smithy_http::response::ParseStrictResponse for RevokeDBSecurityGroupIngress {
     type Output = std::result::Result<
-        crate::output::RevokeDBSecurityGroupIngressOutput,
+        crate::output::RevokeDbSecurityGroupIngressOutput,
         crate::error::RevokeDBSecurityGroupIngressError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -4402,7 +4402,7 @@ pub struct StartDBCluster {
     _private: (),
 }
 impl StartDBCluster {
-    /// Creates a new builder-style object to manufacture [`StartDBClusterInput`](crate::input::StartDBClusterInput)
+    /// Creates a new builder-style object to manufacture [`StartDbClusterInput`](crate::input::StartDbClusterInput)
     pub fn builder() -> crate::input::start_db_cluster_input::Builder {
         crate::input::start_db_cluster_input::Builder::default()
     }
@@ -4412,7 +4412,7 @@ impl StartDBCluster {
 }
 impl smithy_http::response::ParseStrictResponse for StartDBCluster {
     type Output =
-        std::result::Result<crate::output::StartDBClusterOutput, crate::error::StartDBClusterError>;
+        std::result::Result<crate::output::StartDbClusterOutput, crate::error::StartDBClusterError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_start_db_cluster_error(response)
@@ -4441,7 +4441,7 @@ pub struct StartDBInstance {
     _private: (),
 }
 impl StartDBInstance {
-    /// Creates a new builder-style object to manufacture [`StartDBInstanceInput`](crate::input::StartDBInstanceInput)
+    /// Creates a new builder-style object to manufacture [`StartDbInstanceInput`](crate::input::StartDbInstanceInput)
     pub fn builder() -> crate::input::start_db_instance_input::Builder {
         crate::input::start_db_instance_input::Builder::default()
     }
@@ -4451,7 +4451,7 @@ impl StartDBInstance {
 }
 impl smithy_http::response::ParseStrictResponse for StartDBInstance {
     type Output = std::result::Result<
-        crate::output::StartDBInstanceOutput,
+        crate::output::StartDbInstanceOutput,
         crate::error::StartDBInstanceError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -4472,7 +4472,7 @@ pub struct StartDBInstanceAutomatedBackupsReplication {
     _private: (),
 }
 impl StartDBInstanceAutomatedBackupsReplication {
-    /// Creates a new builder-style object to manufacture [`StartDBInstanceAutomatedBackupsReplicationInput`](crate::input::StartDBInstanceAutomatedBackupsReplicationInput)
+    /// Creates a new builder-style object to manufacture [`StartDbInstanceAutomatedBackupsReplicationInput`](crate::input::StartDbInstanceAutomatedBackupsReplicationInput)
     pub fn builder() -> crate::input::start_db_instance_automated_backups_replication_input::Builder
     {
         crate::input::start_db_instance_automated_backups_replication_input::Builder::default()
@@ -4483,7 +4483,7 @@ impl StartDBInstanceAutomatedBackupsReplication {
 }
 impl smithy_http::response::ParseStrictResponse for StartDBInstanceAutomatedBackupsReplication {
     type Output = std::result::Result<
-        crate::output::StartDBInstanceAutomatedBackupsReplicationOutput,
+        crate::output::StartDbInstanceAutomatedBackupsReplicationOutput,
         crate::error::StartDBInstanceAutomatedBackupsReplicationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -4578,7 +4578,7 @@ pub struct StopDBCluster {
     _private: (),
 }
 impl StopDBCluster {
-    /// Creates a new builder-style object to manufacture [`StopDBClusterInput`](crate::input::StopDBClusterInput)
+    /// Creates a new builder-style object to manufacture [`StopDbClusterInput`](crate::input::StopDbClusterInput)
     pub fn builder() -> crate::input::stop_db_cluster_input::Builder {
         crate::input::stop_db_cluster_input::Builder::default()
     }
@@ -4588,7 +4588,7 @@ impl StopDBCluster {
 }
 impl smithy_http::response::ParseStrictResponse for StopDBCluster {
     type Output =
-        std::result::Result<crate::output::StopDBClusterOutput, crate::error::StopDBClusterError>;
+        std::result::Result<crate::output::StopDbClusterOutput, crate::error::StopDBClusterError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_stop_db_cluster_error(response)
@@ -4619,7 +4619,7 @@ pub struct StopDBInstance {
     _private: (),
 }
 impl StopDBInstance {
-    /// Creates a new builder-style object to manufacture [`StopDBInstanceInput`](crate::input::StopDBInstanceInput)
+    /// Creates a new builder-style object to manufacture [`StopDbInstanceInput`](crate::input::StopDbInstanceInput)
     pub fn builder() -> crate::input::stop_db_instance_input::Builder {
         crate::input::stop_db_instance_input::Builder::default()
     }
@@ -4629,7 +4629,7 @@ impl StopDBInstance {
 }
 impl smithy_http::response::ParseStrictResponse for StopDBInstance {
     type Output =
-        std::result::Result<crate::output::StopDBInstanceOutput, crate::error::StopDBInstanceError>;
+        std::result::Result<crate::output::StopDbInstanceOutput, crate::error::StopDBInstanceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_stop_db_instance_error(response)
@@ -4648,7 +4648,7 @@ pub struct StopDBInstanceAutomatedBackupsReplication {
     _private: (),
 }
 impl StopDBInstanceAutomatedBackupsReplication {
-    /// Creates a new builder-style object to manufacture [`StopDBInstanceAutomatedBackupsReplicationInput`](crate::input::StopDBInstanceAutomatedBackupsReplicationInput)
+    /// Creates a new builder-style object to manufacture [`StopDbInstanceAutomatedBackupsReplicationInput`](crate::input::StopDbInstanceAutomatedBackupsReplicationInput)
     pub fn builder() -> crate::input::stop_db_instance_automated_backups_replication_input::Builder
     {
         crate::input::stop_db_instance_automated_backups_replication_input::Builder::default()
@@ -4659,7 +4659,7 @@ impl StopDBInstanceAutomatedBackupsReplication {
 }
 impl smithy_http::response::ParseStrictResponse for StopDBInstanceAutomatedBackupsReplication {
     type Output = std::result::Result<
-        crate::output::StopDBInstanceAutomatedBackupsReplicationOutput,
+        crate::output::StopDbInstanceAutomatedBackupsReplicationOutput,
         crate::error::StopDBInstanceAutomatedBackupsReplicationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {

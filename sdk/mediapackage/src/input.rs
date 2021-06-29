@@ -51,7 +51,7 @@ pub mod configure_logs_input {
         {
             Ok(crate::input::ConfigureLogsInput {
                 egress_access_logs: self.egress_access_logs,
-                id: self.id.unwrap_or_default(),
+                id: self.id,
                 ingress_access_logs: self.ingress_access_logs,
             })
         }
@@ -120,13 +120,27 @@ impl ConfigureLogsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/channels/{Id}/configure_logs",
-            Id = smithy_http::label::fmt_string(&self.id, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let id = {
+            let input = &self.id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/channels/{Id}/configure_logs", Id = id)
+            .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -134,7 +148,7 @@ impl ConfigureLogsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PUT").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -287,8 +301,9 @@ impl CreateChannelInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/channels").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/channels").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -296,7 +311,7 @@ impl CreateChannelInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -468,8 +483,9 @@ impl CreateHarvestJobInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/harvest_jobs").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/harvest_jobs").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -477,7 +493,7 @@ impl CreateHarvestJobInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -787,8 +803,9 @@ impl CreateOriginEndpointInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/origin_endpoints").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/origin_endpoints").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -796,7 +813,7 @@ impl CreateOriginEndpointInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -845,9 +862,7 @@ pub mod delete_channel_input {
             self,
         ) -> std::result::Result<crate::input::DeleteChannelInput, smithy_http::operation::BuildError>
         {
-            Ok(crate::input::DeleteChannelInput {
-                id: self.id.unwrap_or_default(),
-            })
+            Ok(crate::input::DeleteChannelInput { id: self.id })
         }
     }
 }
@@ -911,13 +926,26 @@ impl DeleteChannelInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/channels/{Id}",
-            Id = smithy_http::label::fmt_string(&self.id, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let id = {
+            let input = &self.id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/channels/{Id}", Id = id).expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -925,7 +953,7 @@ impl DeleteChannelInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("DELETE").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -976,9 +1004,7 @@ pub mod delete_origin_endpoint_input {
             crate::input::DeleteOriginEndpointInput,
             smithy_http::operation::BuildError,
         > {
-            Ok(crate::input::DeleteOriginEndpointInput {
-                id: self.id.unwrap_or_default(),
-            })
+            Ok(crate::input::DeleteOriginEndpointInput { id: self.id })
         }
     }
 }
@@ -1042,13 +1068,26 @@ impl DeleteOriginEndpointInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/origin_endpoints/{Id}",
-            Id = smithy_http::label::fmt_string(&self.id, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let id = {
+            let input = &self.id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/origin_endpoints/{Id}", Id = id).expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -1056,7 +1095,7 @@ impl DeleteOriginEndpointInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("DELETE").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1107,9 +1146,7 @@ pub mod describe_channel_input {
             crate::input::DescribeChannelInput,
             smithy_http::operation::BuildError,
         > {
-            Ok(crate::input::DescribeChannelInput {
-                id: self.id.unwrap_or_default(),
-            })
+            Ok(crate::input::DescribeChannelInput { id: self.id })
         }
     }
 }
@@ -1173,13 +1210,26 @@ impl DescribeChannelInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/channels/{Id}",
-            Id = smithy_http::label::fmt_string(&self.id, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let id = {
+            let input = &self.id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/channels/{Id}", Id = id).expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -1187,7 +1237,7 @@ impl DescribeChannelInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1238,9 +1288,7 @@ pub mod describe_harvest_job_input {
             crate::input::DescribeHarvestJobInput,
             smithy_http::operation::BuildError,
         > {
-            Ok(crate::input::DescribeHarvestJobInput {
-                id: self.id.unwrap_or_default(),
-            })
+            Ok(crate::input::DescribeHarvestJobInput { id: self.id })
         }
     }
 }
@@ -1304,13 +1352,26 @@ impl DescribeHarvestJobInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/harvest_jobs/{Id}",
-            Id = smithy_http::label::fmt_string(&self.id, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let id = {
+            let input = &self.id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/harvest_jobs/{Id}", Id = id).expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -1318,7 +1379,7 @@ impl DescribeHarvestJobInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1369,9 +1430,7 @@ pub mod describe_origin_endpoint_input {
             crate::input::DescribeOriginEndpointInput,
             smithy_http::operation::BuildError,
         > {
-            Ok(crate::input::DescribeOriginEndpointInput {
-                id: self.id.unwrap_or_default(),
-            })
+            Ok(crate::input::DescribeOriginEndpointInput { id: self.id })
         }
     }
 }
@@ -1435,13 +1494,26 @@ impl DescribeOriginEndpointInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/origin_endpoints/{Id}",
-            Id = smithy_http::label::fmt_string(&self.id, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let id = {
+            let input = &self.id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/origin_endpoints/{Id}", Id = id).expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -1449,7 +1521,7 @@ impl DescribeOriginEndpointInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1575,8 +1647,9 @@ impl ListChannelsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/channels").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/channels").expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -1596,7 +1669,7 @@ impl ListChannelsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -1753,8 +1826,9 @@ impl ListHarvestJobsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/harvest_jobs").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/harvest_jobs").expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -1783,7 +1857,7 @@ impl ListHarvestJobsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -1923,8 +1997,9 @@ impl ListOriginEndpointsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/origin_endpoints").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/origin_endpoints").expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -1947,7 +2022,7 @@ impl ListOriginEndpointsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -1999,7 +2074,7 @@ pub mod list_tags_for_resource_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListTagsForResourceInput {
-                resource_arn: self.resource_arn.unwrap_or_default(),
+                resource_arn: self.resource_arn,
             })
         }
     }
@@ -2064,13 +2139,27 @@ impl ListTagsForResourceInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/tags/{ResourceArn}",
-            ResourceArn = smithy_http::label::fmt_string(&self.resource_arn, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let resource_arn = {
+            let input = &self.resource_arn;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_arn",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_arn",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn)
+            .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -2078,7 +2167,7 @@ impl ListTagsForResourceInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2129,9 +2218,7 @@ pub mod rotate_channel_credentials_input {
             crate::input::RotateChannelCredentialsInput,
             smithy_http::operation::BuildError,
         > {
-            Ok(crate::input::RotateChannelCredentialsInput {
-                id: self.id.unwrap_or_default(),
-            })
+            Ok(crate::input::RotateChannelCredentialsInput { id: self.id })
         }
     }
 }
@@ -2196,13 +2283,26 @@ impl RotateChannelCredentialsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/channels/{Id}/credentials",
-            Id = smithy_http::label::fmt_string(&self.id, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let id = {
+            let input = &self.id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/channels/{Id}/credentials", Id = id).expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -2210,7 +2310,7 @@ impl RotateChannelCredentialsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PUT").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2275,8 +2375,8 @@ pub mod rotate_ingest_endpoint_credentials_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::RotateIngestEndpointCredentialsInput {
-                id: self.id.unwrap_or_default(),
-                ingest_endpoint_id: self.ingest_endpoint_id.unwrap_or_default(),
+                id: self.id,
+                ingest_endpoint_id: self.ingest_endpoint_id,
             })
         }
     }
@@ -2342,14 +2442,49 @@ impl RotateIngestEndpointCredentialsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let id = {
+            let input = &self.id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let ingest_endpoint_id = {
+            let input = &self.ingest_endpoint_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "ingest_endpoint_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "ingest_endpoint_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/channels/{Id}/ingest_endpoints/{IngestEndpointId}/credentials",
-            Id = smithy_http::label::fmt_string(&self.id, false),
-            IngestEndpointId = smithy_http::label::fmt_string(&self.ingest_endpoint_id, false)
+            Id = id,
+            IngestEndpointId = ingest_endpoint_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -2357,7 +2492,7 @@ impl RotateIngestEndpointCredentialsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PUT").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2428,7 +2563,7 @@ pub mod tag_resource_input {
         ) -> std::result::Result<crate::input::TagResourceInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::TagResourceInput {
-                resource_arn: self.resource_arn.unwrap_or_default(),
+                resource_arn: self.resource_arn,
                 tags: self.tags,
             })
         }
@@ -2497,13 +2632,27 @@ impl TagResourceInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/tags/{ResourceArn}",
-            ResourceArn = smithy_http::label::fmt_string(&self.resource_arn, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let resource_arn = {
+            let input = &self.resource_arn;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_arn",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_arn",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn)
+            .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -2511,7 +2660,7 @@ impl TagResourceInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2574,7 +2723,7 @@ pub mod untag_resource_input {
         ) -> std::result::Result<crate::input::UntagResourceInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::UntagResourceInput {
-                resource_arn: self.resource_arn.unwrap_or_default(),
+                resource_arn: self.resource_arn,
                 tag_keys: self.tag_keys,
             })
         }
@@ -2640,13 +2789,27 @@ impl UntagResourceInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/tags/{ResourceArn}",
-            ResourceArn = smithy_http::label::fmt_string(&self.resource_arn, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let resource_arn = {
+            let input = &self.resource_arn;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_arn",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_arn",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn)
+            .expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -2662,7 +2825,7 @@ impl UntagResourceInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
     }
@@ -2724,7 +2887,7 @@ pub mod update_channel_input {
         {
             Ok(crate::input::UpdateChannelInput {
                 description: self.description,
-                id: self.id.unwrap_or_default(),
+                id: self.id,
             })
         }
     }
@@ -2792,13 +2955,26 @@ impl UpdateChannelInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/channels/{Id}",
-            Id = smithy_http::label::fmt_string(&self.id, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let id = {
+            let input = &self.id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/channels/{Id}", Id = id).expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -2806,7 +2982,7 @@ impl UpdateChannelInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PUT").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3006,7 +3182,7 @@ pub mod update_origin_endpoint_input {
                 dash_package: self.dash_package,
                 description: self.description,
                 hls_package: self.hls_package,
-                id: self.id.unwrap_or_default(),
+                id: self.id,
                 manifest_name: self.manifest_name,
                 mss_package: self.mss_package,
                 origination: self.origination,
@@ -3080,13 +3256,26 @@ impl UpdateOriginEndpointInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/origin_endpoints/{Id}",
-            Id = smithy_http::label::fmt_string(&self.id, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let id = {
+            let input = &self.id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/origin_endpoints/{Id}", Id = id).expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -3094,7 +3283,7 @@ impl UpdateOriginEndpointInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PUT").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3135,7 +3324,7 @@ pub struct UpdateOriginEndpointInput {
     /// An HTTP Live Streaming (HLS) packaging configuration.
     pub hls_package: std::option::Option<crate::model::HlsPackage>,
     /// The ID of the OriginEndpoint to update.
-    pub id: std::string::String,
+    pub id: std::option::Option<std::string::String>,
     /// A short string that will be appended to the end of the Endpoint URL.
     pub manifest_name: std::option::Option<std::string::String>,
     /// A Microsoft Smooth Streaming (MSS) packaging configuration.
@@ -3179,7 +3368,7 @@ pub struct UpdateChannelInput {
     /// A short text description of the Channel.
     pub description: std::option::Option<std::string::String>,
     /// The ID of the Channel to update.
-    pub id: std::string::String,
+    pub id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UpdateChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3193,7 +3382,7 @@ impl std::fmt::Debug for UpdateChannelInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
-    pub resource_arn: std::string::String,
+    pub resource_arn: std::option::Option<std::string::String>,
     /// The key(s) of tag to be deleted
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
@@ -3209,7 +3398,7 @@ impl std::fmt::Debug for UntagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
-    pub resource_arn: std::string::String,
+    pub resource_arn: std::option::Option<std::string::String>,
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3226,9 +3415,9 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RotateIngestEndpointCredentialsInput {
     /// The ID of the channel the IngestEndpoint is on.
-    pub id: std::string::String,
+    pub id: std::option::Option<std::string::String>,
     /// The id of the IngestEndpoint whose credentials should be rotated
-    pub ingest_endpoint_id: std::string::String,
+    pub ingest_endpoint_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for RotateIngestEndpointCredentialsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3243,7 +3432,7 @@ impl std::fmt::Debug for RotateIngestEndpointCredentialsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RotateChannelCredentialsInput {
     /// The ID of the channel to update.
-    pub id: std::string::String,
+    pub id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for RotateChannelCredentialsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3256,7 +3445,7 @@ impl std::fmt::Debug for RotateChannelCredentialsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
-    pub resource_arn: std::string::String,
+    pub resource_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3330,7 +3519,7 @@ impl std::fmt::Debug for ListChannelsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOriginEndpointInput {
     /// The ID of the OriginEndpoint.
-    pub id: std::string::String,
+    pub id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeOriginEndpointInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3344,7 +3533,7 @@ impl std::fmt::Debug for DescribeOriginEndpointInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeHarvestJobInput {
     /// The ID of the HarvestJob.
-    pub id: std::string::String,
+    pub id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeHarvestJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3358,7 +3547,7 @@ impl std::fmt::Debug for DescribeHarvestJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeChannelInput {
     /// The ID of a Channel.
-    pub id: std::string::String,
+    pub id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3372,7 +3561,7 @@ impl std::fmt::Debug for DescribeChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteOriginEndpointInput {
     /// The ID of the OriginEndpoint to delete.
-    pub id: std::string::String,
+    pub id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteOriginEndpointInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3386,7 +3575,7 @@ impl std::fmt::Debug for DeleteOriginEndpointInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteChannelInput {
     /// The ID of the Channel to delete.
-    pub id: std::string::String,
+    pub id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3516,7 +3705,7 @@ pub struct ConfigureLogsInput {
     /// Configure egress access logging.
     pub egress_access_logs: std::option::Option<crate::model::EgressAccessLogs>,
     /// The ID of the channel to log subscription.
-    pub id: std::string::String,
+    pub id: std::option::Option<std::string::String>,
     /// Configure ingress access logging.
     pub ingress_access_logs: std::option::Option<crate::model::IngressAccessLogs>,
 }

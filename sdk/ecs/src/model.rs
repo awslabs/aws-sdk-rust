@@ -3,30 +3,20 @@
 /// deployment. An Amazon ECS task set includes details such as the desired number of tasks, how
 /// many tasks are running, and whether the task set serves production traffic.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TaskSet {
     /// <p>The ID of the task set.</p>
-    #[serde(rename = "id")]
-    #[serde(default)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the task set.</p>
-    #[serde(rename = "taskSetArn")]
-    #[serde(default)]
     pub task_set_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the service the task set exists in.</p>
-    #[serde(rename = "serviceArn")]
-    #[serde(default)]
     pub service_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the cluster that the service that hosts the task set exists
     /// in.</p>
-    #[serde(rename = "clusterArn")]
-    #[serde(default)]
     pub cluster_arn: std::option::Option<std::string::String>,
     /// <p>The tag specified when a task set is started. If the task set is created by an AWS CodeDeploy
     /// deployment, the <code>startedBy</code> parameter is <code>CODE_DEPLOY</code>. For a task
     /// set created for an external deployment, the startedBy field isn't used.</p>
-    #[serde(rename = "startedBy")]
-    #[serde(default)]
     pub started_by: std::option::Option<std::string::String>,
     /// <p>The external ID associated with the task set.</p>
     /// <p>If a task set is created by an AWS CodeDeploy deployment, the <code>externalId</code> parameter
@@ -34,8 +24,6 @@ pub struct TaskSet {
     /// <p>If a task set is created for an external deployment and is associated with a service
     /// discovery registry, the <code>externalId</code> parameter contains the
     /// <code>ECS_TASK_SET_EXTERNAL_ID</code> AWS Cloud Map attribute.</p>
-    #[serde(rename = "externalId")]
-    #[serde(default)]
     pub external_id: std::option::Option<std::string::String>,
     /// <p>The status of the task set. The following describes each state:</p>
     /// <dl>
@@ -53,83 +41,49 @@ pub struct TaskSet {
     /// targets are being deregistered from their target group.</p>
     /// </dd>
     /// </dl>
-    #[serde(rename = "status")]
-    #[serde(default)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The task definition the task set is using.</p>
-    #[serde(rename = "taskDefinition")]
-    #[serde(default)]
     pub task_definition: std::option::Option<std::string::String>,
     /// <p>The computed desired count for the task set. This is calculated by multiplying the
     /// service's <code>desiredCount</code> by the task set's <code>scale</code> percentage. The
     /// result is always rounded up. For example, if the computed desired count is 1.2, it
     /// rounds up to 2 tasks.</p>
-    #[serde(rename = "computedDesiredCount")]
-    #[serde(default)]
     pub computed_desired_count: i32,
     /// <p>The number of tasks in the task set that are in the <code>PENDING</code> status during
     /// a deployment. A task in the <code>PENDING</code> state is preparing to enter the
     /// <code>RUNNING</code> state. A task set enters the <code>PENDING</code> status when
     /// it launches for the first time or when it is restarted after being in the
     /// <code>STOPPED</code> state.</p>
-    #[serde(rename = "pendingCount")]
-    #[serde(default)]
     pub pending_count: i32,
     /// <p>The number of tasks in the task set that are in the <code>RUNNING</code> status during
     /// a deployment. A task in the <code>RUNNING</code> state is running and ready for
     /// use.</p>
-    #[serde(rename = "runningCount")]
-    #[serde(default)]
     pub running_count: i32,
     /// <p>The Unix timestamp for when the task set was created.</p>
-    #[serde(rename = "createdAt")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub created_at: std::option::Option<smithy_types::Instant>,
     /// <p>The Unix timestamp for when the task set was last updated.</p>
-    #[serde(rename = "updatedAt")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub updated_at: std::option::Option<smithy_types::Instant>,
     /// <p>The launch type the tasks in the task set are using. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS
     /// launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[serde(rename = "launchType")]
-    #[serde(default)]
     pub launch_type: std::option::Option<crate::model::LaunchType>,
     /// <p>The capacity provider strategy associated with the task set.</p>
-    #[serde(rename = "capacityProviderStrategy")]
-    #[serde(default)]
     pub capacity_provider_strategy:
         std::option::Option<std::vec::Vec<crate::model::CapacityProviderStrategyItem>>,
     /// <p>The AWS Fargate platform version on which the tasks in the task set are running. A
     /// platform version is only specified for tasks run on AWS Fargate. For more information, see
     /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate platform
     /// versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[serde(rename = "platformVersion")]
-    #[serde(default)]
     pub platform_version: std::option::Option<std::string::String>,
     /// <p>The network configuration for the task set.</p>
-    #[serde(rename = "networkConfiguration")]
-    #[serde(default)]
     pub network_configuration: std::option::Option<crate::model::NetworkConfiguration>,
     /// <p>Details on a load balancer that is used with a task set.</p>
-    #[serde(rename = "loadBalancers")]
-    #[serde(default)]
     pub load_balancers: std::option::Option<std::vec::Vec<crate::model::LoadBalancer>>,
     /// <p>The details of the service discovery registries to assign to this task set. For more
     /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
     /// discovery</a>.</p>
-    #[serde(rename = "serviceRegistries")]
-    #[serde(default)]
     pub service_registries: std::option::Option<std::vec::Vec<crate::model::ServiceRegistry>>,
     /// <p>A floating-point percentage of the desired number of tasks to place and keep running
     /// in the task set.</p>
-    #[serde(rename = "scale")]
-    #[serde(default)]
     pub scale: std::option::Option<crate::model::Scale>,
     /// <p>The stability status, which indicates whether the task set has reached a steady state.
     /// If the following conditions are met, the task set will be in
@@ -153,15 +107,8 @@ pub struct TaskSet {
     /// </ul>
     /// <p>If any of those conditions are not met, the stability status returns
     /// <code>STABILIZING</code>.</p>
-    #[serde(rename = "stabilityStatus")]
-    #[serde(default)]
     pub stability_status: std::option::Option<crate::model::StabilityStatus>,
     /// <p>The Unix timestamp for when the task set stability status was retrieved.</p>
-    #[serde(rename = "stabilityStatusAt")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub stability_status_at: std::option::Option<smithy_types::Instant>,
     /// <p>The metadata that you apply to the task set to help you categorize and organize them.
     /// Each tag consists of a key and an optional value, both of which you define.</p>
@@ -196,8 +143,6 @@ pub struct TaskSet {
     /// this prefix do not count against your tags per resource limit.</p>
     /// </li>
     /// </ul>
-    #[serde(rename = "tags")]
-    #[serde(default)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl std::fmt::Debug for TaskSet {
@@ -641,17 +586,13 @@ impl TaskSet {
 /// </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>One part of a key-value pair that make up a tag. A <code>key</code> is a general label
     /// that acts like a category for more specific tag values.</p>
-    #[serde(rename = "key")]
-    #[serde(default)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The optional part of a key-value pair that make up a tag. A <code>value</code> acts as
     /// a descriptor within a tag category (key).</p>
-    #[serde(rename = "value")]
-    #[serde(default)]
     pub value: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for Tag {
@@ -736,7 +677,7 @@ impl std::convert::From<&str> for StabilityStatus {
 impl std::str::FromStr for StabilityStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(StabilityStatus::from(s))
     }
 }
@@ -754,29 +695,16 @@ impl AsRef<str> for StabilityStatus {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for StabilityStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>A floating-point percentage of the desired number of tasks to place and keep running
 /// in the task set.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Scale {
     /// <p>The value, specified as a percent total of a service's <code>desiredCount</code>, to
     /// scale the task set. Accepted values are numbers between 0 and 100.</p>
-    #[serde(rename = "value")]
-    #[serde(default)]
     pub value: f64,
     /// <p>The unit of measure for the scale value.</p>
-    #[serde(rename = "unit")]
-    #[serde(default)]
     pub unit: std::option::Option<crate::model::ScaleUnit>,
 }
 impl std::fmt::Debug for Scale {
@@ -858,7 +786,7 @@ impl std::convert::From<&str> for ScaleUnit {
 impl std::str::FromStr for ScaleUnit {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ScaleUnit::from(s))
     }
 }
@@ -875,30 +803,17 @@ impl AsRef<str> for ScaleUnit {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for ScaleUnit {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>Details of the service registry.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceRegistry {
     /// <p>The Amazon Resource Name (ARN) of the service registry. The currently supported service registry is
     /// AWS Cloud Map. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateService.html">CreateService</a>.</p>
-    #[serde(rename = "registryArn")]
-    #[serde(default)]
     pub registry_arn: std::option::Option<std::string::String>,
     /// <p>The port value used if your service discovery service specified an SRV record. This
     /// field may be used if both the <code>awsvpc</code> network mode and SRV records are
     /// used.</p>
-    #[serde(rename = "port")]
-    #[serde(default)]
     pub port: std::option::Option<i32>,
     /// <p>The container name value, already specified in the task definition, to be used for
     /// your service discovery service. If the task definition that your service task specifies
@@ -908,8 +823,6 @@ pub struct ServiceRegistry {
     /// <code>awsvpc</code> network mode and a type SRV DNS record is used, you must specify
     /// either a <code>containerName</code> and <code>containerPort</code> combination or a
     /// <code>port</code> value, but not both.</p>
-    #[serde(rename = "containerName")]
-    #[serde(default)]
     pub container_name: std::option::Option<std::string::String>,
     /// <p>The port value, already specified in the task definition, to be used for your service
     /// discovery service. If the task definition your service task specifies uses the
@@ -919,8 +832,6 @@ pub struct ServiceRegistry {
     /// <code>awsvpc</code> network mode and a type SRV DNS record is used, you must specify
     /// either a <code>containerName</code> and <code>containerPort</code> combination or a
     /// <code>port</code> value, but not both.</p>
-    #[serde(rename = "containerPort")]
-    #[serde(default)]
     pub container_port: std::option::Option<i32>,
 }
 impl std::fmt::Debug for ServiceRegistry {
@@ -1023,7 +934,7 @@ impl ServiceRegistry {
 /// <p>For specific notes and restrictions regarding the use of load balancers with services
 /// and task sets, see the CreateService and CreateTaskSet actions.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoadBalancer {
     /// <p>The full Amazon Resource Name (ARN) of the Elastic Load Balancing target group or groups associated with a service or
     /// task set.</p>
@@ -1043,27 +954,19 @@ pub struct LoadBalancer {
     /// your target groups because tasks that use the <code>awsvpc</code> network mode are
     /// associated with an elastic network interface, not an Amazon EC2 instance.</p>
     /// </important>
-    #[serde(rename = "targetGroupArn")]
-    #[serde(default)]
     pub target_group_arn: std::option::Option<std::string::String>,
     /// <p>The name of the load balancer to associate with the Amazon ECS service or task set.</p>
     /// <p>A load balancer name is only specified when using a Classic Load Balancer. If you are using an Application Load Balancer
     /// or a Network Load Balancer the load balancer name parameter should be omitted.</p>
-    #[serde(rename = "loadBalancerName")]
-    #[serde(default)]
     pub load_balancer_name: std::option::Option<std::string::String>,
     /// <p>The name of the container (as it appears in a container definition) to associate with
     /// the load balancer.</p>
-    #[serde(rename = "containerName")]
-    #[serde(default)]
     pub container_name: std::option::Option<std::string::String>,
     /// <p>The port on the container to associate with the load balancer. This port must
     /// correspond to a <code>containerPort</code> in the task definition the tasks in the
     /// service are using. For tasks that use the EC2 launch type, the container
     /// instance they are launched on must allow ingress traffic on the <code>hostPort</code> of
     /// the port mapping.</p>
-    #[serde(rename = "containerPort")]
-    #[serde(default)]
     pub container_port: std::option::Option<i32>,
 }
 impl std::fmt::Debug for LoadBalancer {
@@ -1177,14 +1080,12 @@ impl LoadBalancer {
 
 /// <p>An object representing the network configuration for a task or service.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NetworkConfiguration {
     /// <p>The VPC subnets and security groups associated with a task.</p>
     /// <note>
     /// <p>All specified subnets and security groups must be from the same VPC.</p>
     /// </note>
-    #[serde(rename = "awsvpcConfiguration")]
-    #[serde(default)]
     pub awsvpc_configuration: std::option::Option<crate::model::AwsVpcConfiguration>,
 }
 impl std::fmt::Debug for NetworkConfiguration {
@@ -1235,15 +1136,13 @@ impl NetworkConfiguration {
 
 /// <p>An object representing the networking details for a task or service.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsVpcConfiguration {
     /// <p>The IDs of the subnets associated with the task or service. There is a limit of 16
     /// subnets that can be specified per <code>AwsVpcConfiguration</code>.</p>
     /// <note>
     /// <p>All specified subnets must be from the same VPC.</p>
     /// </note>
-    #[serde(rename = "subnets")]
-    #[serde(default)]
     pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The IDs of the security groups associated with the task or service. If you do not
     /// specify a security group, the default security group for the VPC is used. There is a
@@ -1252,13 +1151,9 @@ pub struct AwsVpcConfiguration {
     /// <note>
     /// <p>All specified security groups must be from the same VPC.</p>
     /// </note>
-    #[serde(rename = "securityGroups")]
-    #[serde(default)]
     pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Whether the task's elastic network interface receives a public IP address. The default
     /// value is <code>DISABLED</code>.</p>
-    #[serde(rename = "assignPublicIp")]
-    #[serde(default)]
     pub assign_public_ip: std::option::Option<crate::model::AssignPublicIp>,
 }
 impl std::fmt::Debug for AwsVpcConfiguration {
@@ -1365,7 +1260,7 @@ impl std::convert::From<&str> for AssignPublicIp {
 impl std::str::FromStr for AssignPublicIp {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(AssignPublicIp::from(s))
     }
 }
@@ -1381,15 +1276,6 @@ impl AssignPublicIp {
 impl AsRef<str> for AssignPublicIp {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for AssignPublicIp {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -1408,11 +1294,9 @@ impl<'de> serde::Deserialize<'de> for AssignPublicIp {
 /// available to all accounts and only need to be associated with a cluster to be used in a
 /// capacity provider strategy.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CapacityProviderStrategyItem {
     /// <p>The short name of the capacity provider.</p>
-    #[serde(rename = "capacityProvider")]
-    #[serde(default)]
     pub capacity_provider: std::option::Option<std::string::String>,
     /// <p>The <i>weight</i> value designates the relative percentage of the total
     /// number of tasks launched that should use the specified capacity provider. The
@@ -1433,15 +1317,11 @@ pub struct CapacityProviderStrategyItem {
     /// <i>capacityProviderB</i>, then for every one task that is run using
     /// <i>capacityProviderA</i>, four tasks would use
     /// <i>capacityProviderB</i>.</p>
-    #[serde(rename = "weight")]
-    #[serde(default)]
     pub weight: i32,
     /// <p>The <i>base</i> value designates how many tasks, at a minimum, to run on
     /// the specified capacity provider. Only one capacity provider in a capacity provider
     /// strategy can have a <i>base</i> defined. If no value is specified, the
     /// default value of <code>0</code> is used.</p>
-    #[serde(rename = "base")]
-    #[serde(default)]
     pub base: i32,
 }
 impl std::fmt::Debug for CapacityProviderStrategyItem {
@@ -1562,7 +1442,7 @@ impl std::convert::From<&str> for LaunchType {
 impl std::str::FromStr for LaunchType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(LaunchType::from(s))
     }
 }
@@ -1581,72 +1461,41 @@ impl AsRef<str> for LaunchType {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for LaunchType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>Details on a service within a cluster</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Service {
     /// <p>The ARN that identifies the service. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the Region of the service, the AWS account ID of the service owner, the <code>service</code> namespace, and then the service name. For example, <code>arn:aws:ecs:region:012345678910:service/my-service</code>.</p>
-    #[serde(rename = "serviceArn")]
-    #[serde(default)]
     pub service_arn: std::option::Option<std::string::String>,
     /// <p>The name of your service. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed. Service names must be unique within
     /// a cluster, but you can have similarly named services in multiple clusters within a
     /// Region or across multiple Regions.</p>
-    #[serde(rename = "serviceName")]
-    #[serde(default)]
     pub service_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the cluster that hosts the service.</p>
-    #[serde(rename = "clusterArn")]
-    #[serde(default)]
     pub cluster_arn: std::option::Option<std::string::String>,
     /// <p>A list of Elastic Load Balancing load balancer objects, containing the load balancer name, the
     /// container name (as it appears in a container definition), and the container port to
     /// access from the load balancer.</p>
-    #[serde(rename = "loadBalancers")]
-    #[serde(default)]
     pub load_balancers: std::option::Option<std::vec::Vec<crate::model::LoadBalancer>>,
     /// <p>The details of the service discovery registries to assign to this service. For more
     /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
     /// Discovery</a>.</p>
-    #[serde(rename = "serviceRegistries")]
-    #[serde(default)]
     pub service_registries: std::option::Option<std::vec::Vec<crate::model::ServiceRegistry>>,
     /// <p>The status of the service. The valid values are <code>ACTIVE</code>,
     /// <code>DRAINING</code>, or <code>INACTIVE</code>.</p>
-    #[serde(rename = "status")]
-    #[serde(default)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The desired number of instantiations of the task definition to keep running on the
     /// service. This value is specified when the service is created with <a>CreateService</a>, and it can be modified with <a>UpdateService</a>.</p>
-    #[serde(rename = "desiredCount")]
-    #[serde(default)]
     pub desired_count: i32,
     /// <p>The number of tasks in the cluster that are in the <code>RUNNING</code> state.</p>
-    #[serde(rename = "runningCount")]
-    #[serde(default)]
     pub running_count: i32,
     /// <p>The number of tasks in the cluster that are in the <code>PENDING</code> state.</p>
-    #[serde(rename = "pendingCount")]
-    #[serde(default)]
     pub pending_count: i32,
     /// <p>The infrastructure on which your service is running. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS
     /// launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[serde(rename = "launchType")]
-    #[serde(default)]
     pub launch_type: std::option::Option<crate::model::LaunchType>,
     /// <p>The capacity provider strategy associated with the service.</p>
-    #[serde(rename = "capacityProviderStrategy")]
-    #[serde(default)]
     pub capacity_provider_strategy:
         std::option::Option<std::vec::Vec<crate::model::CapacityProviderStrategyItem>>,
     /// <p>The platform version on which to run your service. A platform version is only
@@ -1654,65 +1503,38 @@ pub struct Service {
     /// specified, the <code>LATEST</code> platform version is used by default. For more
     /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
     /// Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[serde(rename = "platformVersion")]
-    #[serde(default)]
     pub platform_version: std::option::Option<std::string::String>,
     /// <p>The task definition to use for tasks in the service. This value is specified when the
     /// service is created with <a>CreateService</a>, and it can be modified with
     /// <a>UpdateService</a>.</p>
-    #[serde(rename = "taskDefinition")]
-    #[serde(default)]
     pub task_definition: std::option::Option<std::string::String>,
     /// <p>Optional deployment parameters that control how many tasks run during the deployment
     /// and the ordering of stopping and starting tasks.</p>
-    #[serde(rename = "deploymentConfiguration")]
-    #[serde(default)]
     pub deployment_configuration: std::option::Option<crate::model::DeploymentConfiguration>,
     /// <p>Information about a set of Amazon ECS tasks in either an AWS CodeDeploy or an <code>EXTERNAL</code>
     /// deployment. An Amazon ECS task set includes details such as the desired number of tasks, how
     /// many tasks are running, and whether the task set serves production traffic.</p>
-    #[serde(rename = "taskSets")]
-    #[serde(default)]
     pub task_sets: std::option::Option<std::vec::Vec<crate::model::TaskSet>>,
     /// <p>The current state of deployments for the service.</p>
-    #[serde(rename = "deployments")]
-    #[serde(default)]
     pub deployments: std::option::Option<std::vec::Vec<crate::model::Deployment>>,
     /// <p>The ARN of the IAM role associated with the service that allows the Amazon ECS container
     /// agent to register container instances with an Elastic Load Balancing load balancer.</p>
-    #[serde(rename = "roleArn")]
-    #[serde(default)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The event stream for your service. A maximum of 100 of the latest events are
     /// displayed.</p>
-    #[serde(rename = "events")]
-    #[serde(default)]
     pub events: std::option::Option<std::vec::Vec<crate::model::ServiceEvent>>,
     /// <p>The Unix timestamp for when the service was created.</p>
-    #[serde(rename = "createdAt")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub created_at: std::option::Option<smithy_types::Instant>,
     /// <p>The placement constraints for the tasks in the service.</p>
-    #[serde(rename = "placementConstraints")]
-    #[serde(default)]
     pub placement_constraints:
         std::option::Option<std::vec::Vec<crate::model::PlacementConstraint>>,
     /// <p>The placement strategy that determines how tasks for the service are placed.</p>
-    #[serde(rename = "placementStrategy")]
-    #[serde(default)]
     pub placement_strategy: std::option::Option<std::vec::Vec<crate::model::PlacementStrategy>>,
     /// <p>The VPC subnet and security group configuration for tasks that receive their own
     /// elastic network interface by using the <code>awsvpc</code> networking mode.</p>
-    #[serde(rename = "networkConfiguration")]
-    #[serde(default)]
     pub network_configuration: std::option::Option<crate::model::NetworkConfiguration>,
     /// <p>The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy
     /// Elastic Load Balancing target health checks after a task has first started.</p>
-    #[serde(rename = "healthCheckGracePeriodSeconds")]
-    #[serde(default)]
     pub health_check_grace_period_seconds: std::option::Option<i32>,
     /// <p>The scheduling strategy to use for the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
     /// <p>There are two service scheduler strategies available:</p>
@@ -1738,14 +1560,10 @@ pub struct Service {
     /// </note>
     /// </li>
     /// </ul>
-    #[serde(rename = "schedulingStrategy")]
-    #[serde(default)]
     pub scheduling_strategy: std::option::Option<crate::model::SchedulingStrategy>,
     /// <p>The deployment controller type the service is using. When using the DescribeServices
     /// API, this field is omitted if the service is using the <code>ECS</code> deployment
     /// controller type.</p>
-    #[serde(rename = "deploymentController")]
-    #[serde(default)]
     pub deployment_controller: std::option::Option<crate::model::DeploymentController>,
     /// <p>The metadata that you apply to the service to help you categorize and organize them.
     /// Each tag consists of a key and an optional value, both of which you define.</p>
@@ -1780,29 +1598,19 @@ pub struct Service {
     /// this prefix do not count against your tags per resource limit.</p>
     /// </li>
     /// </ul>
-    #[serde(rename = "tags")]
-    #[serde(default)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The principal that created the service.</p>
-    #[serde(rename = "createdBy")]
-    #[serde(default)]
     pub created_by: std::option::Option<std::string::String>,
     /// <p>Specifies whether to enable Amazon ECS managed tags for the tasks in the service. For more
     /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS
     /// Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[serde(rename = "enableECSManagedTags")]
-    #[serde(default)]
     pub enable_ecs_managed_tags: bool,
     /// <p>Specifies whether to propagate the tags from the task definition or the service to the
     /// task. If no value is specified, the tags are not propagated.</p>
-    #[serde(rename = "propagateTags")]
-    #[serde(default)]
     pub propagate_tags: std::option::Option<crate::model::PropagateTags>,
     /// <p>Whether or not the execute command functionality is enabled for the service. If
     /// <code>true</code>, the execute command functionality is enabled for all containers
     /// in tasks as part of the service.</p>
-    #[serde(rename = "enableExecuteCommand")]
-    #[serde(default)]
     pub enable_execute_command: bool,
 }
 impl std::fmt::Debug for Service {
@@ -2355,7 +2163,7 @@ impl std::convert::From<&str> for PropagateTags {
 impl std::str::FromStr for PropagateTags {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(PropagateTags::from(s))
     }
 }
@@ -2373,19 +2181,10 @@ impl AsRef<str> for PropagateTags {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for PropagateTags {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>The deployment controller to use for the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentController {
     /// <p>The deployment controller type to use.</p>
     /// <p>There are three deployment controller types available:</p>
@@ -2411,8 +2210,6 @@ pub struct DeploymentController {
     /// process for an Amazon ECS service.</p>
     /// </dd>
     /// </dl>
-    #[serde(rename = "type")]
-    #[serde(default)]
     pub r#type: std::option::Option<crate::model::DeploymentControllerType>,
 }
 impl std::fmt::Debug for DeploymentController {
@@ -2511,7 +2308,7 @@ impl std::convert::From<&str> for DeploymentControllerType {
 impl std::str::FromStr for DeploymentControllerType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(DeploymentControllerType::from(s))
     }
 }
@@ -2528,15 +2325,6 @@ impl DeploymentControllerType {
 impl AsRef<str> for DeploymentControllerType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for DeploymentControllerType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -2568,7 +2356,7 @@ impl std::convert::From<&str> for SchedulingStrategy {
 impl std::str::FromStr for SchedulingStrategy {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(SchedulingStrategy::from(s))
     }
 }
@@ -2586,20 +2374,11 @@ impl AsRef<str> for SchedulingStrategy {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for SchedulingStrategy {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>The task placement strategy for a task or service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-strategies.html">Task Placement Strategies</a> in the
 /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PlacementStrategy {
     /// <p>The type of placement strategy. The <code>random</code> placement strategy randomly
     /// places tasks on available candidates. The <code>spread</code> placement strategy spreads
@@ -2608,8 +2387,6 @@ pub struct PlacementStrategy {
     /// least available amount of the resource that is specified with the <code>field</code>
     /// parameter. For example, if you binpack on memory, a task is placed on the instance with
     /// the least amount of remaining memory (but still enough to run the task).</p>
-    #[serde(rename = "type")]
-    #[serde(default)]
     pub r#type: std::option::Option<crate::model::PlacementStrategyType>,
     /// <p>The field to apply the placement strategy against. For the <code>spread</code>
     /// placement strategy, valid values are <code>instanceId</code> (or <code>host</code>,
@@ -2618,8 +2395,6 @@ pub struct PlacementStrategy {
     /// <code>binpack</code> placement strategy, valid values are <code>cpu</code> and
     /// <code>memory</code>. For the <code>random</code> placement strategy, this field is
     /// not used.</p>
-    #[serde(rename = "field")]
-    #[serde(default)]
     pub field: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PlacementStrategy {
@@ -2719,7 +2494,7 @@ impl std::convert::From<&str> for PlacementStrategyType {
 impl std::str::FromStr for PlacementStrategyType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(PlacementStrategyType::from(s))
     }
 }
@@ -2738,15 +2513,6 @@ impl AsRef<str> for PlacementStrategyType {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for PlacementStrategyType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>An object representing a constraint on task placement. For more information, see
 /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html">Task Placement Constraints</a> in the
@@ -2756,21 +2522,17 @@ impl<'de> serde::Deserialize<'de> for PlacementStrategyType {
 /// are not supported.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PlacementConstraint {
     /// <p>The type of constraint. Use <code>distinctInstance</code> to ensure that each task in
     /// a particular group is running on a different container instance. Use
     /// <code>memberOf</code> to restrict the selection to a group of valid
     /// candidates.</p>
-    #[serde(rename = "type")]
-    #[serde(default)]
     pub r#type: std::option::Option<crate::model::PlacementConstraintType>,
     /// <p>A cluster query language expression to apply to the constraint. You cannot specify an
     /// expression if the constraint type is <code>distinctInstance</code>. For more
     /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query Language</a> in the
     /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[serde(rename = "expression")]
-    #[serde(default)]
     pub expression: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PlacementConstraint {
@@ -2862,7 +2624,7 @@ impl std::convert::From<&str> for PlacementConstraintType {
 impl std::str::FromStr for PlacementConstraintType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(PlacementConstraintType::from(s))
     }
 }
@@ -2880,34 +2642,16 @@ impl AsRef<str> for PlacementConstraintType {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for PlacementConstraintType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>Details on an event associated with a service.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceEvent {
     /// <p>The ID string of the event.</p>
-    #[serde(rename = "id")]
-    #[serde(default)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Unix timestamp for when the event was triggered.</p>
-    #[serde(rename = "createdAt")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub created_at: std::option::Option<smithy_types::Instant>,
     /// <p>The event message.</p>
-    #[serde(rename = "message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ServiceEvent {
@@ -2977,11 +2721,9 @@ impl ServiceEvent {
 /// <p>The details of an Amazon ECS service deployment. This is used only when a service uses the
 /// <code>ECS</code> deployment controller type.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Deployment {
     /// <p>The ID of the deployment.</p>
-    #[serde(rename = "id")]
-    #[serde(default)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The status of the deployment. The following describes each state:</p>
     /// <dl>
@@ -2999,28 +2741,18 @@ pub struct Deployment {
     /// <p>A deployment that has been completely replaced.</p>
     /// </dd>
     /// </dl>
-    #[serde(rename = "status")]
-    #[serde(default)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The most recent task definition that was specified for the tasks in the service to
     /// use.</p>
-    #[serde(rename = "taskDefinition")]
-    #[serde(default)]
     pub task_definition: std::option::Option<std::string::String>,
     /// <p>The most recent desired count of tasks that was specified for the service to deploy or
     /// maintain.</p>
-    #[serde(rename = "desiredCount")]
-    #[serde(default)]
     pub desired_count: i32,
     /// <p>The number of tasks in the deployment that are in the <code>PENDING</code>
     /// status.</p>
-    #[serde(rename = "pendingCount")]
-    #[serde(default)]
     pub pending_count: i32,
     /// <p>The number of tasks in the deployment that are in the <code>RUNNING</code>
     /// status.</p>
-    #[serde(rename = "runningCount")]
-    #[serde(default)]
     pub running_count: i32,
     /// <p>The number of consecutively failed tasks in the deployment. A task is considered a
     /// failure if the service scheduler can't launch the task, the task doesn't transition to a
@@ -3030,45 +2762,25 @@ pub struct Deployment {
     /// <p>Once a service deployment has one or more successfully running tasks, the failed
     /// task count resets to zero and stops being evaluated.</p>
     /// </note>
-    #[serde(rename = "failedTasks")]
-    #[serde(default)]
     pub failed_tasks: i32,
     /// <p>The Unix timestamp for when the service deployment was created.</p>
-    #[serde(rename = "createdAt")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub created_at: std::option::Option<smithy_types::Instant>,
     /// <p>The Unix timestamp for when the service deployment was last updated.</p>
-    #[serde(rename = "updatedAt")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub updated_at: std::option::Option<smithy_types::Instant>,
     /// <p>The capacity provider strategy that the deployment is using.</p>
-    #[serde(rename = "capacityProviderStrategy")]
-    #[serde(default)]
     pub capacity_provider_strategy:
         std::option::Option<std::vec::Vec<crate::model::CapacityProviderStrategyItem>>,
     /// <p>The launch type the tasks in the service are using. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS
     /// Launch Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[serde(rename = "launchType")]
-    #[serde(default)]
     pub launch_type: std::option::Option<crate::model::LaunchType>,
     /// <p>The platform version on which your tasks in the service are running. A platform
     /// version is only specified for tasks using the Fargate launch type. If one
     /// is not specified, the <code>LATEST</code> platform version is used by default. For more
     /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
     /// Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[serde(rename = "platformVersion")]
-    #[serde(default)]
     pub platform_version: std::option::Option<std::string::String>,
     /// <p>The VPC subnet and security group configuration for tasks that receive their own
     /// elastic network interface by using the <code>awsvpc</code> networking mode.</p>
-    #[serde(rename = "networkConfiguration")]
-    #[serde(default)]
     pub network_configuration: std::option::Option<crate::model::NetworkConfiguration>,
     /// <note>
     /// <p>The <code>rolloutState</code> of a service is only returned for services that use
@@ -3081,12 +2793,8 @@ pub struct Deployment {
     /// reach a steady state and circuit breaker is enabled, the deployment will transition to a
     /// <code>FAILED</code> state. A deployment in <code>FAILED</code> state will launch no
     /// new tasks. For more information, see <a>DeploymentCircuitBreaker</a>.</p>
-    #[serde(rename = "rolloutState")]
-    #[serde(default)]
     pub rollout_state: std::option::Option<crate::model::DeploymentRolloutState>,
     /// <p>A description of the rollout state of a deployment.</p>
-    #[serde(rename = "rolloutStateReason")]
-    #[serde(default)]
     pub rollout_state_reason: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for Deployment {
@@ -3398,7 +3106,7 @@ impl std::convert::From<&str> for DeploymentRolloutState {
 impl std::str::FromStr for DeploymentRolloutState {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(DeploymentRolloutState::from(s))
     }
 }
@@ -3417,20 +3125,11 @@ impl AsRef<str> for DeploymentRolloutState {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for DeploymentRolloutState {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>Optional deployment parameters that control how many tasks run during a deployment and
 /// the ordering of stopping and starting tasks.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentConfiguration {
     /// <note>
     /// <p>The deployment circuit breaker can only be used for services using the rolling
@@ -3441,8 +3140,6 @@ pub struct DeploymentConfiguration {
     /// circuit breaker is enabled, a service deployment will transition to a failed state and
     /// stop launching new tasks. If rollback is enabled, when a service deployment fails, the
     /// service is rolled back to the last deployment that completed successfully.</p>
-    #[serde(rename = "deploymentCircuitBreaker")]
-    #[serde(default)]
     pub deployment_circuit_breaker: std::option::Option<crate::model::DeploymentCircuitBreaker>,
     /// <p>If a service is using the rolling update (<code>ECS</code>) deployment type, the
     /// <b>maximum percent</b> parameter represents an upper limit
@@ -3463,8 +3160,6 @@ pub struct DeploymentConfiguration {
     /// in the <code>DRAINING</code> state. If the tasks in the service use the
     /// Fargate launch type, the maximum percent value is not used, although it is
     /// returned when describing your service.</p>
-    #[serde(rename = "maximumPercent")]
-    #[serde(default)]
     pub maximum_percent: std::option::Option<i32>,
     /// <p>If a service is using the rolling update (<code>ECS</code>) deployment type, the
     /// <b>minimum healthy percent</b> represents a lower limit on
@@ -3488,8 +3183,6 @@ pub struct DeploymentConfiguration {
     /// are in the <code>DRAINING</code> state. If the tasks in the service use the
     /// Fargate launch type, the minimum healthy percent value is not used,
     /// although it is returned when describing your service.</p>
-    #[serde(rename = "minimumHealthyPercent")]
-    #[serde(default)]
     pub minimum_healthy_percent: std::option::Option<i32>,
 }
 impl std::fmt::Debug for DeploymentConfiguration {
@@ -3624,17 +3317,13 @@ impl DeploymentConfiguration {
 /// failure. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-ecs.html">Rolling
 /// update</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentCircuitBreaker {
     /// <p>Whether to enable the deployment circuit breaker logic for the service.</p>
-    #[serde(rename = "enable")]
-    #[serde(default)]
     pub enable: bool,
     /// <p>Whether to enable Amazon ECS to roll back the service if a service deployment fails. If
     /// rollback is enabled, when a service deployment fails, the service is rolled back to the
     /// last deployment that completed successfully.</p>
-    #[serde(rename = "rollback")]
-    #[serde(default)]
     pub rollback: bool,
 }
 impl std::fmt::Debug for DeploymentCircuitBreaker {
@@ -3694,19 +3383,13 @@ impl DeploymentCircuitBreaker {
 /// <p>A failed resource. For a list of common causes, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/api_failures_messages.html">API failure
 /// reasons</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Failure {
     /// <p>The Amazon Resource Name (ARN) of the failed resource.</p>
-    #[serde(rename = "arn")]
-    #[serde(default)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The reason for the failure.</p>
-    #[serde(rename = "reason")]
-    #[serde(default)]
     pub reason: std::option::Option<std::string::String>,
     /// <p>The details of the failure.</p>
-    #[serde(rename = "detail")]
-    #[serde(default)]
     pub detail: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for Failure {
@@ -3776,20 +3459,14 @@ impl Failure {
 /// <p>An EC2 instance that is running the Amazon ECS agent and has been registered with a
 /// cluster.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContainerInstance {
     /// <p>The Amazon Resource Name (ARN) of the container instance. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the Region of the container instance, the AWS account ID of the container instance owner, the <code>container-instance</code> namespace, and then the container instance ID. For example, <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
-    #[serde(rename = "containerInstanceArn")]
-    #[serde(default)]
     pub container_instance_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the container instance. For Amazon EC2 instances, this value is the Amazon EC2
     /// instance ID. For external instances, this value is the AWS Systems Manager managed instance ID.</p>
-    #[serde(rename = "ec2InstanceId")]
-    #[serde(default)]
     pub ec2_instance_id: std::option::Option<std::string::String>,
     /// <p>The capacity provider associated with the container instance.</p>
-    #[serde(rename = "capacityProviderName")]
-    #[serde(default)]
     pub capacity_provider_name: std::option::Option<std::string::String>,
     /// <p>The version counter for the container instance. Every time a container instance
     /// experiences a change that triggers a CloudWatch event, the version counter is
@@ -3798,13 +3475,9 @@ pub struct ContainerInstance {
     /// with the version reported in CloudWatch Events for the container instance (inside the
     /// <code>detail</code> object) to verify that the version in your event stream is
     /// current.</p>
-    #[serde(rename = "version")]
-    #[serde(default)]
     pub version: i64,
     /// <p>The version information for the Amazon ECS container agent and Docker daemon running on the
     /// container instance.</p>
-    #[serde(rename = "versionInfo")]
-    #[serde(default)]
     pub version_info: std::option::Option<crate::model::VersionInfo>,
     /// <p>For CPU and memory resource types, this parameter describes the remaining CPU and
     /// memory that has not already been allocated to tasks and is therefore available for new
@@ -3813,8 +3486,6 @@ pub struct ContainerInstance {
     /// have reserved port mappings on the host (with the <code>host</code> or
     /// <code>bridge</code> network mode). Any port that is not specified here is available
     /// for new tasks.</p>
-    #[serde(rename = "remainingResources")]
-    #[serde(default)]
     pub remaining_resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
     /// <p>For CPU and memory resource types, this parameter describes the amount of each
     /// resource that was available on the container instance when the container agent
@@ -3822,8 +3493,6 @@ pub struct ContainerInstance {
     /// can be allocated on this container instance to tasks. For port resource types, this
     /// parameter describes the ports that were reserved by the Amazon ECS container agent when it
     /// registered the container instance with Amazon ECS.</p>
-    #[serde(rename = "registeredResources")]
-    #[serde(default)]
     pub registered_resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
     /// <p>The status of the container instance. The valid values are <code>REGISTERING</code>,
     /// <code>REGISTRATION_FAILED</code>, <code>ACTIVE</code>, <code>INACTIVE</code>,
@@ -3842,52 +3511,31 @@ pub struct ContainerInstance {
     /// instance and any service tasks running on the container instance are removed if
     /// possible. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container Instance Draining</a> in the
     /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[serde(rename = "status")]
-    #[serde(default)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The reason that the container instance reached its current status.</p>
-    #[serde(rename = "statusReason")]
-    #[serde(default)]
     pub status_reason: std::option::Option<std::string::String>,
     /// <p>This parameter returns <code>true</code> if the agent is connected to Amazon ECS.
     /// Registered instances with an agent that may be unhealthy or stopped return
     /// <code>false</code>. Only instances connected to an agent can accept placement
     /// requests.</p>
-    #[serde(rename = "agentConnected")]
-    #[serde(default)]
     pub agent_connected: bool,
     /// <p>The number of tasks on the container instance that are in the <code>RUNNING</code>
     /// status.</p>
-    #[serde(rename = "runningTasksCount")]
-    #[serde(default)]
     pub running_tasks_count: i32,
     /// <p>The number of tasks on the container instance that are in the <code>PENDING</code>
     /// status.</p>
-    #[serde(rename = "pendingTasksCount")]
-    #[serde(default)]
     pub pending_tasks_count: i32,
     /// <p>The status of the most recent agent update. If an update has never been requested,
     /// this value is <code>NULL</code>.</p>
-    #[serde(rename = "agentUpdateStatus")]
-    #[serde(default)]
     pub agent_update_status: std::option::Option<crate::model::AgentUpdateStatus>,
     /// <p>The attributes set for the container instance, either by the Amazon ECS container agent at
     /// instance registration or manually with the <a>PutAttributes</a>
     /// operation.</p>
-    #[serde(rename = "attributes")]
-    #[serde(default)]
     pub attributes: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
     /// <p>The Unix timestamp for when the container instance was registered.</p>
-    #[serde(rename = "registeredAt")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub registered_at: std::option::Option<smithy_types::Instant>,
     /// <p>The resources attached to a container instance, such as elastic network
     /// interfaces.</p>
-    #[serde(rename = "attachments")]
-    #[serde(default)]
     pub attachments: std::option::Option<std::vec::Vec<crate::model::Attachment>>,
     /// <p>The metadata that you apply to the container instance to help you categorize and
     /// organize them. Each tag consists of a key and an optional value, both of which you
@@ -3923,8 +3571,6 @@ pub struct ContainerInstance {
     /// this prefix do not count against your tags per resource limit.</p>
     /// </li>
     /// </ul>
-    #[serde(rename = "tags")]
-    #[serde(default)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl std::fmt::Debug for ContainerInstance {
@@ -4232,26 +3878,18 @@ impl ContainerInstance {
 
 /// <p>An object representing a container instance or task attachment.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Attachment {
     /// <p>The unique identifier for the attachment.</p>
-    #[serde(rename = "id")]
-    #[serde(default)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The type of the attachment, such as <code>ElasticNetworkInterface</code>.</p>
-    #[serde(rename = "type")]
-    #[serde(default)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p> The status of the attachment. Valid values are <code>PRECREATED</code>,
     /// <code>CREATED</code>, <code>ATTACHING</code>, <code>ATTACHED</code>,
     /// <code>DETACHING</code>, <code>DETACHED</code>, and <code>DELETED</code>.</p>
-    #[serde(rename = "status")]
-    #[serde(default)]
     pub status: std::option::Option<std::string::String>,
     /// <p>Details of the attachment. For elastic network interfaces, this includes the network
     /// interface ID, the MAC address, the subnet ID, and the private IPv4 address.</p>
-    #[serde(rename = "details")]
-    #[serde(default)]
     pub details: std::option::Option<std::vec::Vec<crate::model::KeyValuePair>>,
 }
 impl std::fmt::Debug for Attachment {
@@ -4338,17 +3976,13 @@ impl Attachment {
 
 /// <p>A key-value pair object.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KeyValuePair {
     /// <p>The name of the key-value pair. For environment variables, this is the name of the
     /// environment variable.</p>
-    #[serde(rename = "name")]
-    #[serde(default)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The value of the key-value pair. For environment variables, this is the value of the
     /// environment variable.</p>
-    #[serde(rename = "value")]
-    #[serde(default)]
     pub value: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for KeyValuePair {
@@ -4409,30 +4043,22 @@ impl KeyValuePair {
 /// you to extend the Amazon ECS data model by adding custom metadata to your resources. For more
 /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Attribute {
     /// <p>The name of the attribute. The <code>name</code> must contain between 1 and 128
     /// characters and name may contain letters (uppercase and lowercase), numbers, hyphens,
     /// underscores, forward slashes, back slashes, or periods.</p>
-    #[serde(rename = "name")]
-    #[serde(default)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The value of the attribute. The <code>value</code> must contain between 1 and 128
     /// characters and may contain letters (uppercase and lowercase), numbers, hyphens,
     /// underscores, periods, at signs (@), forward slashes, back slashes, colons, or spaces.
     /// The value cannot contain any leading or trailing whitespace.</p>
-    #[serde(rename = "value")]
-    #[serde(default)]
     pub value: std::option::Option<std::string::String>,
     /// <p>The type of the target with which to attach the attribute. This parameter is required
     /// if you use the short form ID for a resource instead of the full ARN.</p>
-    #[serde(rename = "targetType")]
-    #[serde(default)]
     pub target_type: std::option::Option<crate::model::TargetType>,
     /// <p>The ID of the target. You can specify the short form ID for a resource or the full
     /// Amazon Resource Name (ARN).</p>
-    #[serde(rename = "targetId")]
-    #[serde(default)]
     pub target_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for Attribute {
@@ -4547,7 +4173,7 @@ impl std::convert::From<&str> for TargetType {
 impl std::str::FromStr for TargetType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(TargetType::from(s))
     }
 }
@@ -4562,15 +4188,6 @@ impl TargetType {
 impl AsRef<str> for TargetType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for TargetType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -4610,7 +4227,7 @@ impl std::convert::From<&str> for AgentUpdateStatus {
 impl std::str::FromStr for AgentUpdateStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(AgentUpdateStatus::from(s))
     }
 }
@@ -4632,49 +4249,28 @@ impl AsRef<str> for AgentUpdateStatus {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for AgentUpdateStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>Describes the resources available for a container instance.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Resource {
     /// <p>The name of the resource, such as <code>CPU</code>, <code>MEMORY</code>,
     /// <code>PORTS</code>, <code>PORTS_UDP</code>, or a user-defined resource.</p>
-    #[serde(rename = "name")]
-    #[serde(default)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of the resource, such as <code>INTEGER</code>, <code>DOUBLE</code>,
     /// <code>LONG</code>, or <code>STRINGSET</code>.</p>
-    #[serde(rename = "type")]
-    #[serde(default)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>When the <code>doubleValue</code> type is set, the value of the resource must be a
     /// double precision floating-point type.</p>
-    #[serde(rename = "doubleValue")]
-    #[serde(default)]
     pub double_value: f64,
     /// <p>When the <code>longValue</code> type is set, the value of the resource must be an
     /// extended precision floating-point type.</p>
-    #[serde(rename = "longValue")]
-    #[serde(default)]
     pub long_value: i64,
     /// <p>When the <code>integerValue</code> type is set, the value of the resource must be an
     /// integer.</p>
-    #[serde(rename = "integerValue")]
-    #[serde(default)]
     pub integer_value: i32,
     /// <p>When the <code>stringSetValue</code> type is set, the value of the resource must be a
     /// string type.</p>
-    #[serde(rename = "stringSetValue")]
-    #[serde(default)]
     pub string_set_value: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl std::fmt::Debug for Resource {
@@ -4789,20 +4385,14 @@ impl Resource {
 /// <p>The Docker and Amazon ECS container agent version information about a container
 /// instance.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VersionInfo {
     /// <p>The version number of the Amazon ECS container agent.</p>
-    #[serde(rename = "agentVersion")]
-    #[serde(default)]
     pub agent_version: std::option::Option<std::string::String>,
     /// <p>The Git commit hash for the Amazon ECS container agent build on the <a href="https://github.com/aws/amazon-ecs-agent/commits/master">amazon-ecs-agent
     /// </a> GitHub repository.</p>
-    #[serde(rename = "agentHash")]
-    #[serde(default)]
     pub agent_hash: std::option::Option<std::string::String>,
     /// <p>The Docker version running on the container instance.</p>
-    #[serde(rename = "dockerVersion")]
-    #[serde(default)]
     pub docker_version: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for VersionInfo {
@@ -4910,7 +4500,7 @@ impl std::convert::From<&str> for ContainerInstanceStatus {
 impl std::str::FromStr for ContainerInstanceStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ContainerInstanceStatus::from(s))
     }
 }
@@ -4931,34 +4521,19 @@ impl AsRef<str> for ContainerInstanceStatus {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for ContainerInstanceStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>A regional grouping of one or more container instances on which you can run task
 /// requests. Each account receives a default cluster the first time you use the Amazon ECS
 /// service, but you may also create other clusters. Clusters may contain more than one
 /// instance type simultaneously.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Cluster {
     /// <p>The Amazon Resource Name (ARN) that identifies the cluster. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the Region of the cluster, the AWS account ID of the cluster owner, the <code>cluster</code> namespace, and then the cluster name. For example, <code>arn:aws:ecs:region:012345678910:cluster/test</code>.</p>
-    #[serde(rename = "clusterArn")]
-    #[serde(default)]
     pub cluster_arn: std::option::Option<std::string::String>,
     /// <p>A user-generated string that you use to identify your cluster.</p>
-    #[serde(rename = "clusterName")]
-    #[serde(default)]
     pub cluster_name: std::option::Option<std::string::String>,
     /// <p>The execute command configuration for the cluster.</p>
-    #[serde(rename = "configuration")]
-    #[serde(default)]
     pub configuration: std::option::Option<crate::model::ClusterConfiguration>,
     /// <p>The status of the cluster. The following are the possible states that will be
     /// returned.</p>
@@ -4991,26 +4566,16 @@ pub struct Cluster {
     /// rely on <code>INACTIVE</code> clusters persisting.</p>
     /// </dd>
     /// </dl>
-    #[serde(rename = "status")]
-    #[serde(default)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The number of container instances registered into the cluster. This includes container
     /// instances in both <code>ACTIVE</code> and <code>DRAINING</code> status.</p>
-    #[serde(rename = "registeredContainerInstancesCount")]
-    #[serde(default)]
     pub registered_container_instances_count: i32,
     /// <p>The number of tasks in the cluster that are in the <code>RUNNING</code> state.</p>
-    #[serde(rename = "runningTasksCount")]
-    #[serde(default)]
     pub running_tasks_count: i32,
     /// <p>The number of tasks in the cluster that are in the <code>PENDING</code> state.</p>
-    #[serde(rename = "pendingTasksCount")]
-    #[serde(default)]
     pub pending_tasks_count: i32,
     /// <p>The number of services that are running on the cluster in an <code>ACTIVE</code>
     /// state. You can view these services with <a>ListServices</a>.</p>
-    #[serde(rename = "activeServicesCount")]
-    #[serde(default)]
     pub active_services_count: i32,
     /// <p>Additional information about your clusters that are separated by launch type,
     /// including:</p>
@@ -5040,8 +4605,6 @@ pub struct Cluster {
     /// <p>drainingFargateServiceCount</p>
     /// </li>
     /// </ul>
-    #[serde(rename = "statistics")]
-    #[serde(default)]
     pub statistics: std::option::Option<std::vec::Vec<crate::model::KeyValuePair>>,
     /// <p>The metadata that you apply to the cluster to help you categorize and organize them.
     /// Each tag consists of a key and an optional value, both of which you define.</p>
@@ -5076,29 +4639,19 @@ pub struct Cluster {
     /// this prefix do not count against your tags per resource limit.</p>
     /// </li>
     /// </ul>
-    #[serde(rename = "tags")]
-    #[serde(default)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The settings for the cluster. This parameter indicates whether CloudWatch Container Insights
     /// is enabled or disabled for a cluster.</p>
-    #[serde(rename = "settings")]
-    #[serde(default)]
     pub settings: std::option::Option<std::vec::Vec<crate::model::ClusterSetting>>,
     /// <p>The capacity providers associated with the cluster.</p>
-    #[serde(rename = "capacityProviders")]
-    #[serde(default)]
     pub capacity_providers: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The default capacity provider strategy for the cluster. When services or tasks are run
     /// in the cluster with no launch type or capacity provider strategy specified, the default
     /// capacity provider strategy is used.</p>
-    #[serde(rename = "defaultCapacityProviderStrategy")]
-    #[serde(default)]
     pub default_capacity_provider_strategy:
         std::option::Option<std::vec::Vec<crate::model::CapacityProviderStrategyItem>>,
     /// <p>The resources attached to a cluster. When using a capacity provider with a cluster,
     /// the Auto Scaling plan that is created will be returned as a cluster attachment.</p>
-    #[serde(rename = "attachments")]
-    #[serde(default)]
     pub attachments: std::option::Option<std::vec::Vec<crate::model::Attachment>>,
     /// <p>The status of the capacity providers associated with the cluster. The following are
     /// the states that will be returned:</p>
@@ -5117,8 +4670,6 @@ pub struct Cluster {
     /// <p>The capacity provider updates failed.</p>
     /// </dd>
     /// </dl>
-    #[serde(rename = "attachmentsStatus")]
-    #[serde(default)]
     pub attachments_status: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for Cluster {
@@ -5425,12 +4976,10 @@ impl Cluster {
 /// <p>The settings to use when creating a cluster. This parameter is used to enable CloudWatch
 /// Container Insights for a cluster.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClusterSetting {
     /// <p>The name of the cluster setting. The only supported value is
     /// <code>containerInsights</code>.</p>
-    #[serde(rename = "name")]
-    #[serde(default)]
     pub name: std::option::Option<crate::model::ClusterSettingName>,
     /// <p>The value to set for the cluster setting. The supported values are
     /// <code>enabled</code> and <code>disabled</code>. If <code>enabled</code> is
@@ -5438,8 +4987,6 @@ pub struct ClusterSetting {
     /// disabled unless the <code>containerInsights</code> account setting is enabled. If a
     /// cluster value is specified, it will override the <code>containerInsights</code> value
     /// set with <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.</p>
-    #[serde(rename = "value")]
-    #[serde(default)]
     pub value: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ClusterSetting {
@@ -5529,7 +5076,7 @@ impl std::convert::From<&str> for ClusterSettingName {
 impl std::str::FromStr for ClusterSettingName {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ClusterSettingName::from(s))
     }
 }
@@ -5546,23 +5093,12 @@ impl AsRef<str> for ClusterSettingName {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for ClusterSettingName {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>The execute command configuration for the cluster.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClusterConfiguration {
     /// <p>The details of the execute command configuration.</p>
-    #[serde(rename = "executeCommandConfiguration")]
-    #[serde(default)]
     pub execute_command_configuration:
         std::option::Option<crate::model::ExecuteCommandConfiguration>,
 }
@@ -5618,12 +5154,10 @@ impl ClusterConfiguration {
 
 /// <p>The details of the execute command configuration.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExecuteCommandConfiguration {
     /// <p>Specify an AWS Key Management Service key ID to encrypt the data between the local
     /// client and the container.</p>
-    #[serde(rename = "kmsKeyId")]
-    #[serde(default)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The log setting to use for redirecting logs for your execute command results. The
     /// following log settings are available.</p>
@@ -5646,14 +5180,10 @@ pub struct ExecuteCommandConfiguration {
     /// is specified, the <code>logConfiguration</code> is required.</p>
     /// </li>
     /// </ul>
-    #[serde(rename = "logging")]
-    #[serde(default)]
     pub logging: std::option::Option<crate::model::ExecuteCommandLogging>,
     /// <p>The log configuration for the results of the execute command actions. The logs can be
     /// sent to CloudWatch Logs or an Amazon S3 bucket. When <code>logging=OVERRIDE</code> is
     /// specified, a <code>logConfiguration</code> must be provided.</p>
-    #[serde(rename = "logConfiguration")]
-    #[serde(default)]
     pub log_configuration: std::option::Option<crate::model::ExecuteCommandLogConfiguration>,
 }
 impl std::fmt::Debug for ExecuteCommandConfiguration {
@@ -5756,35 +5286,25 @@ impl ExecuteCommandConfiguration {
 /// <p>The log configuration for the results of the execute command actions. The logs can be
 /// sent to CloudWatch Logs or an Amazon S3 bucket.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExecuteCommandLogConfiguration {
     /// <p>The name of the CloudWatch log group to send logs to.</p>
     /// <note>
     /// <p>The CloudWatch log group must already be created.</p>
     /// </note>
-    #[serde(rename = "cloudWatchLogGroupName")]
-    #[serde(default)]
     pub cloud_watch_log_group_name: std::option::Option<std::string::String>,
     /// <p>Whether or not to enable encryption on the CloudWatch logs. If not specified,
     /// encryption will be disabled.</p>
-    #[serde(rename = "cloudWatchEncryptionEnabled")]
-    #[serde(default)]
     pub cloud_watch_encryption_enabled: bool,
     /// <p>The name of the S3 bucket to send logs to.</p>
     /// <note>
     /// <p>The S3 bucket must already be created.</p>
     /// </note>
-    #[serde(rename = "s3BucketName")]
-    #[serde(default)]
     pub s3_bucket_name: std::option::Option<std::string::String>,
     /// <p>Whether or not to enable encryption on the CloudWatch logs. If not specified,
     /// encryption will be disabled.</p>
-    #[serde(rename = "s3EncryptionEnabled")]
-    #[serde(default)]
     pub s3_encryption_enabled: bool,
     /// <p>An optional folder in the S3 bucket to place logs in.</p>
-    #[serde(rename = "s3KeyPrefix")]
-    #[serde(default)]
     pub s3_key_prefix: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ExecuteCommandLogConfiguration {
@@ -5933,7 +5453,7 @@ impl std::convert::From<&str> for ExecuteCommandLogging {
 impl std::str::FromStr for ExecuteCommandLogging {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ExecuteCommandLogging::from(s))
     }
 }
@@ -5952,37 +5472,20 @@ impl AsRef<str> for ExecuteCommandLogging {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for ExecuteCommandLogging {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>The details of a capacity provider.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CapacityProvider {
     /// <p>The Amazon Resource Name (ARN) that identifies the capacity provider.</p>
-    #[serde(rename = "capacityProviderArn")]
-    #[serde(default)]
     pub capacity_provider_arn: std::option::Option<std::string::String>,
     /// <p>The name of the capacity provider.</p>
-    #[serde(rename = "name")]
-    #[serde(default)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The current status of the capacity provider. Only capacity providers in an
     /// <code>ACTIVE</code> state can be used in a cluster. When a capacity provider is
     /// successfully deleted, it will have an <code>INACTIVE</code> status.</p>
-    #[serde(rename = "status")]
-    #[serde(default)]
     pub status: std::option::Option<crate::model::CapacityProviderStatus>,
     /// <p>The Auto Scaling group settings for the capacity provider.</p>
-    #[serde(rename = "autoScalingGroupProvider")]
-    #[serde(default)]
     pub auto_scaling_group_provider: std::option::Option<crate::model::AutoScalingGroupProvider>,
     /// <p>The update status of the capacity provider. The following are the possible states that
     /// will be returned.</p>
@@ -6002,13 +5505,9 @@ pub struct CapacityProvider {
     /// will provide further details about why the delete failed.</p>
     /// </dd>
     /// </dl>
-    #[serde(rename = "updateStatus")]
-    #[serde(default)]
     pub update_status: std::option::Option<crate::model::CapacityProviderUpdateStatus>,
     /// <p>The update status reason. This provides further details about the update status for
     /// the capacity provider.</p>
-    #[serde(rename = "updateStatusReason")]
-    #[serde(default)]
     pub update_status_reason: std::option::Option<std::string::String>,
     /// <p>The metadata that you apply to the capacity provider to help you categorize and
     /// organize it. Each tag consists of a key and an optional value, both of which you
@@ -6044,8 +5543,6 @@ pub struct CapacityProvider {
     /// this prefix do not count against your tags per resource limit.</p>
     /// </li>
     /// </ul>
-    #[serde(rename = "tags")]
-    #[serde(default)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl std::fmt::Debug for CapacityProvider {
@@ -6242,7 +5739,7 @@ impl std::convert::From<&str> for CapacityProviderUpdateStatus {
 impl std::str::FromStr for CapacityProviderUpdateStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(CapacityProviderUpdateStatus::from(s))
     }
 }
@@ -6264,27 +5761,14 @@ impl AsRef<str> for CapacityProviderUpdateStatus {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for CapacityProviderUpdateStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>The details of the Auto Scaling group for the capacity provider.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoScalingGroupProvider {
     /// <p>The Amazon Resource Name (ARN) that identifies the Auto Scaling group.</p>
-    #[serde(rename = "autoScalingGroupArn")]
-    #[serde(default)]
     pub auto_scaling_group_arn: std::option::Option<std::string::String>,
     /// <p>The managed scaling settings for the Auto Scaling group capacity provider.</p>
-    #[serde(rename = "managedScaling")]
-    #[serde(default)]
     pub managed_scaling: std::option::Option<crate::model::ManagedScaling>,
     /// <p>The managed termination protection setting to use for the Auto Scaling group capacity
     /// provider. This determines whether the Auto Scaling group has managed termination
@@ -6299,8 +5783,6 @@ pub struct AutoScalingGroupProvider {
     /// protection from scale-in actions enabled as well. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance Protection</a> in the <i>AWS Auto Scaling User Guide</i>.</p>
     /// <p>When managed termination protection is disabled, your Amazon EC2 instances are not
     /// protected from termination when the Auto Scaling group scales in.</p>
-    #[serde(rename = "managedTerminationProtection")]
-    #[serde(default)]
     pub managed_termination_protection:
         std::option::Option<crate::model::ManagedTerminationProtection>,
 }
@@ -6424,7 +5906,7 @@ impl std::convert::From<&str> for ManagedTerminationProtection {
 impl std::str::FromStr for ManagedTerminationProtection {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ManagedTerminationProtection::from(s))
     }
 }
@@ -6442,15 +5924,6 @@ impl AsRef<str> for ManagedTerminationProtection {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for ManagedTerminationProtection {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>The managed scaling settings for the Auto Scaling group capacity provider.</p>
 /// <p>When managed scaling is enabled, Amazon ECS manages the scale-in and scale-out actions of
@@ -6460,35 +5933,25 @@ impl<'de> serde::Deserialize<'de> for ManagedTerminationProtection {
 /// <p>If managed scaling is disabled, the user must manage the scaling of the Auto Scaling
 /// group.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ManagedScaling {
     /// <p>Whether or not to enable managed scaling for the capacity provider.</p>
-    #[serde(rename = "status")]
-    #[serde(default)]
     pub status: std::option::Option<crate::model::ManagedScalingStatus>,
     /// <p>The target capacity value for the capacity provider. The specified value must be
     /// greater than <code>0</code> and less than or equal to <code>100</code>. A value of
     /// <code>100</code> will result in the Amazon EC2 instances in your Auto Scaling group being
     /// completely utilized.</p>
-    #[serde(rename = "targetCapacity")]
-    #[serde(default)]
     pub target_capacity: std::option::Option<i32>,
     /// <p>The minimum number of container instances that Amazon ECS will scale in or scale out at one
     /// time. If this parameter is omitted, the default value of <code>1</code> is used.</p>
-    #[serde(rename = "minimumScalingStepSize")]
-    #[serde(default)]
     pub minimum_scaling_step_size: std::option::Option<i32>,
     /// <p>The maximum number of container instances that Amazon ECS will scale in or scale out at one
     /// time. If this parameter is omitted, the default value of <code>10000</code> is
     /// used.</p>
-    #[serde(rename = "maximumScalingStepSize")]
-    #[serde(default)]
     pub maximum_scaling_step_size: std::option::Option<i32>,
     /// <p>The period of time, in seconds, after a newly launched Amazon EC2 instance can contribute
     /// to CloudWatch metrics for Auto Scaling group. If this parameter is omitted, the default value
     /// of <code>300</code> seconds is used.</p>
-    #[serde(rename = "instanceWarmupPeriod")]
-    #[serde(default)]
     pub instance_warmup_period: std::option::Option<i32>,
 }
 impl std::fmt::Debug for ManagedScaling {
@@ -6618,7 +6081,7 @@ impl std::convert::From<&str> for ManagedScalingStatus {
 impl std::str::FromStr for ManagedScalingStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ManagedScalingStatus::from(s))
     }
 }
@@ -6634,15 +6097,6 @@ impl ManagedScalingStatus {
 impl AsRef<str> for ManagedScalingStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ManagedScalingStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -6674,7 +6128,7 @@ impl std::convert::From<&str> for CapacityProviderStatus {
 impl std::str::FromStr for CapacityProviderStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(CapacityProviderStatus::from(s))
     }
 }
@@ -6692,23 +6146,12 @@ impl AsRef<str> for CapacityProviderStatus {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for CapacityProviderStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>The details of the Auto Scaling group capacity provider to update.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoScalingGroupProviderUpdate {
     /// <p>The managed scaling settings for the Auto Scaling group capacity provider.</p>
-    #[serde(rename = "managedScaling")]
-    #[serde(default)]
     pub managed_scaling: std::option::Option<crate::model::ManagedScaling>,
     /// <p>The managed termination protection setting to use for the Auto Scaling group capacity
     /// provider. This determines whether the Auto Scaling group has managed termination
@@ -6723,8 +6166,6 @@ pub struct AutoScalingGroupProviderUpdate {
     /// protection from scale-in actions enabled as well. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance Protection</a> in the <i>AWS Auto Scaling User Guide</i>.</p>
     /// <p>When managed termination protection is disabled, your Amazon EC2 instances are not
     /// protected from termination when the Auto Scaling group scales in.</p>
-    #[serde(rename = "managedTerminationProtection")]
-    #[serde(default)]
     pub managed_termination_protection:
         std::option::Option<crate::model::ManagedTerminationProtection>,
 }
@@ -6807,23 +6248,15 @@ impl AutoScalingGroupProviderUpdate {
 
 /// <p>An object representing a change in state for a managed agent.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ManagedAgentStateChange {
     /// <p>The name of the container associated with the managed agent.</p>
-    #[serde(rename = "containerName")]
-    #[serde(default)]
     pub container_name: std::option::Option<std::string::String>,
     /// <p>The name of the managed agent.</p>
-    #[serde(rename = "managedAgentName")]
-    #[serde(default)]
     pub managed_agent_name: std::option::Option<crate::model::ManagedAgentName>,
     /// <p>The status of the managed agent.</p>
-    #[serde(rename = "status")]
-    #[serde(default)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The reason for the status of the managed agent.</p>
-    #[serde(rename = "reason")]
-    #[serde(default)]
     pub reason: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ManagedAgentStateChange {
@@ -6934,7 +6367,7 @@ impl std::convert::From<&str> for ManagedAgentName {
 impl std::str::FromStr for ManagedAgentName {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ManagedAgentName::from(s))
     }
 }
@@ -6951,27 +6384,14 @@ impl AsRef<str> for ManagedAgentName {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for ManagedAgentName {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>An object representing a change in state for a task attachment.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttachmentStateChange {
     /// <p>The Amazon Resource Name (ARN) of the attachment.</p>
-    #[serde(rename = "attachmentArn")]
-    #[serde(default)]
     pub attachment_arn: std::option::Option<std::string::String>,
     /// <p>The status of the attachment.</p>
-    #[serde(rename = "status")]
-    #[serde(default)]
     pub status: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AttachmentStateChange {
@@ -7031,36 +6451,22 @@ impl AttachmentStateChange {
 
 /// <p>An object representing a change in state for a container.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContainerStateChange {
     /// <p>The name of the container.</p>
-    #[serde(rename = "containerName")]
-    #[serde(default)]
     pub container_name: std::option::Option<std::string::String>,
     /// <p>The container image SHA 256 digest.</p>
-    #[serde(rename = "imageDigest")]
-    #[serde(default)]
     pub image_digest: std::option::Option<std::string::String>,
     /// <p>The ID of the Docker container.</p>
-    #[serde(rename = "runtimeId")]
-    #[serde(default)]
     pub runtime_id: std::option::Option<std::string::String>,
     /// <p>The exit code for the container, if the state change is a result of the container
     /// exiting.</p>
-    #[serde(rename = "exitCode")]
-    #[serde(default)]
     pub exit_code: std::option::Option<i32>,
     /// <p>Any network bindings associated with the container.</p>
-    #[serde(rename = "networkBindings")]
-    #[serde(default)]
     pub network_bindings: std::option::Option<std::vec::Vec<crate::model::NetworkBinding>>,
     /// <p>The reason for the state change.</p>
-    #[serde(rename = "reason")]
-    #[serde(default)]
     pub reason: std::option::Option<std::string::String>,
     /// <p>The status of the container.</p>
-    #[serde(rename = "status")]
-    #[serde(default)]
     pub status: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ContainerStateChange {
@@ -7189,23 +6595,15 @@ impl ContainerStateChange {
 /// container port assignments are visible in the <code>networkBindings</code> section of
 /// <a>DescribeTasks</a> API responses.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NetworkBinding {
     /// <p>The IP address that the container is bound to on the container instance.</p>
-    #[serde(rename = "bindIP")]
-    #[serde(default)]
     pub bind_ip: std::option::Option<std::string::String>,
     /// <p>The port number on the container that is used with the network binding.</p>
-    #[serde(rename = "containerPort")]
-    #[serde(default)]
     pub container_port: std::option::Option<i32>,
     /// <p>The port number on the host that is used with the network binding.</p>
-    #[serde(rename = "hostPort")]
-    #[serde(default)]
     pub host_port: std::option::Option<i32>,
     /// <p>The protocol used for the network binding.</p>
-    #[serde(rename = "protocol")]
-    #[serde(default)]
     pub protocol: std::option::Option<crate::model::TransportProtocol>,
 }
 impl std::fmt::Debug for NetworkBinding {
@@ -7315,7 +6713,7 @@ impl std::convert::From<&str> for TransportProtocol {
 impl std::str::FromStr for TransportProtocol {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(TransportProtocol::from(s))
     }
 }
@@ -7333,60 +6731,30 @@ impl AsRef<str> for TransportProtocol {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for TransportProtocol {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>Details on a task in a cluster.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Task {
     /// <p>The Elastic Network Adapter associated with the task if the task uses the
     /// <code>awsvpc</code> network mode.</p>
-    #[serde(rename = "attachments")]
-    #[serde(default)]
     pub attachments: std::option::Option<std::vec::Vec<crate::model::Attachment>>,
     /// <p>The attributes of the task</p>
-    #[serde(rename = "attributes")]
-    #[serde(default)]
     pub attributes: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
     /// <p>The availability zone of the task.</p>
-    #[serde(rename = "availabilityZone")]
-    #[serde(default)]
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>The capacity provider associated with the task.</p>
-    #[serde(rename = "capacityProviderName")]
-    #[serde(default)]
     pub capacity_provider_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the cluster that hosts the task.</p>
-    #[serde(rename = "clusterArn")]
-    #[serde(default)]
     pub cluster_arn: std::option::Option<std::string::String>,
     /// <p>The connectivity status of a task.</p>
-    #[serde(rename = "connectivity")]
-    #[serde(default)]
     pub connectivity: std::option::Option<crate::model::Connectivity>,
     /// <p>The Unix timestamp for when the task last went into <code>CONNECTED</code>
     /// status.</p>
-    #[serde(rename = "connectivityAt")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub connectivity_at: std::option::Option<smithy_types::Instant>,
     /// <p>The ARN of the container instances that host the task.</p>
-    #[serde(rename = "containerInstanceArn")]
-    #[serde(default)]
     pub container_instance_arn: std::option::Option<std::string::String>,
     /// <p>The containers associated with the task.</p>
-    #[serde(rename = "containers")]
-    #[serde(default)]
     pub containers: std::option::Option<std::vec::Vec<crate::model::Container>>,
     /// <p>The number of CPU units used by the task as expressed in a task definition. It can be
     /// expressed as an integer using CPU units, for example <code>1024</code>. It can also be
@@ -7416,38 +6784,20 @@ pub struct Task {
     /// <p>4096 (4 vCPU) - Available <code>memory</code> values: Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB)</p>
     /// </li>
     /// </ul>
-    #[serde(rename = "cpu")]
-    #[serde(default)]
     pub cpu: std::option::Option<std::string::String>,
     /// <p>The Unix timestamp for when the task was created (the task entered the
     /// <code>PENDING</code> state).</p>
-    #[serde(rename = "createdAt")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub created_at: std::option::Option<smithy_types::Instant>,
     /// <p>The desired status of the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-lifecycle.html">Task
     /// Lifecycle</a>.</p>
-    #[serde(rename = "desiredStatus")]
-    #[serde(default)]
     pub desired_status: std::option::Option<std::string::String>,
     /// <p>Whether or not execute command functionality is enabled for this task. If
     /// <code>true</code>, this enables execute command functionality on all containers in
     /// the task.</p>
-    #[serde(rename = "enableExecuteCommand")]
-    #[serde(default)]
     pub enable_execute_command: bool,
     /// <p>The Unix timestamp for when the task execution stopped.</p>
-    #[serde(rename = "executionStoppedAt")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub execution_stopped_at: std::option::Option<smithy_types::Instant>,
     /// <p>The name of the task group associated with the task.</p>
-    #[serde(rename = "group")]
-    #[serde(default)]
     pub group: std::option::Option<std::string::String>,
     /// <p>The health status for the task, which is determined by the health of the essential
     /// containers in the task. If all essential containers in the task are reporting as
@@ -7462,23 +6812,15 @@ pub struct Task {
     /// parameters that are specified in a container definition override any Docker health
     /// checks that exist in the container image.</p>
     /// </note>
-    #[serde(rename = "healthStatus")]
-    #[serde(default)]
     pub health_status: std::option::Option<crate::model::HealthStatus>,
     /// <p>The Elastic Inference accelerator associated with the task.</p>
-    #[serde(rename = "inferenceAccelerators")]
-    #[serde(default)]
     pub inference_accelerators:
         std::option::Option<std::vec::Vec<crate::model::InferenceAccelerator>>,
     /// <p>The last known status of the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-lifecycle.html">Task
     /// Lifecycle</a>.</p>
-    #[serde(rename = "lastStatus")]
-    #[serde(default)]
     pub last_status: std::option::Option<std::string::String>,
     /// <p>The infrastructure on which your task is running. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS
     /// launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[serde(rename = "launchType")]
-    #[serde(default)]
     pub launch_type: std::option::Option<crate::model::LaunchType>,
     /// <p>The amount of memory (in MiB) used by the task as expressed in a task definition. It
     /// can be expressed as an integer using MiB, for example <code>1024</code>. It can also be
@@ -7506,73 +6848,36 @@ pub struct Task {
     /// <p>Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values: 4096 (4 vCPU)</p>
     /// </li>
     /// </ul>
-    #[serde(rename = "memory")]
-    #[serde(default)]
     pub memory: std::option::Option<std::string::String>,
     /// <p>One or more container overrides.</p>
-    #[serde(rename = "overrides")]
-    #[serde(default)]
     pub overrides: std::option::Option<crate::model::TaskOverride>,
     /// <p>The platform version on which your task is running. A platform version is only
     /// specified for tasks using the Fargate launch type. If one is not
     /// specified, the <code>LATEST</code> platform version is used by default. For more
     /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
     /// Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[serde(rename = "platformVersion")]
-    #[serde(default)]
     pub platform_version: std::option::Option<std::string::String>,
     /// <p>The Unix timestamp for when the container image pull began.</p>
-    #[serde(rename = "pullStartedAt")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub pull_started_at: std::option::Option<smithy_types::Instant>,
     /// <p>The Unix timestamp for when the container image pull completed.</p>
-    #[serde(rename = "pullStoppedAt")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub pull_stopped_at: std::option::Option<smithy_types::Instant>,
     /// <p>The Unix timestamp for when the task started (the task transitioned from the
     /// <code>PENDING</code> state to the <code>RUNNING</code> state).</p>
-    #[serde(rename = "startedAt")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub started_at: std::option::Option<smithy_types::Instant>,
     /// <p>The tag specified when a task is started. If the task is started by an Amazon ECS service,
     /// then the <code>startedBy</code> parameter contains the deployment ID of the service that
     /// starts it.</p>
-    #[serde(rename = "startedBy")]
-    #[serde(default)]
     pub started_by: std::option::Option<std::string::String>,
     /// <p>The stop code indicating why a task was stopped. The <code>stoppedReason</code> may
     /// contain additional details.</p>
-    #[serde(rename = "stopCode")]
-    #[serde(default)]
     pub stop_code: std::option::Option<crate::model::TaskStopCode>,
     /// <p>The Unix timestamp for when the task was stopped (the task transitioned from the
     /// <code>RUNNING</code> state to the <code>STOPPED</code> state).</p>
-    #[serde(rename = "stoppedAt")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub stopped_at: std::option::Option<smithy_types::Instant>,
     /// <p>The reason that the task was stopped.</p>
-    #[serde(rename = "stoppedReason")]
-    #[serde(default)]
     pub stopped_reason: std::option::Option<std::string::String>,
     /// <p>The Unix timestamp for when the task stops (transitions from the <code>RUNNING</code>
     /// state to <code>STOPPED</code>).</p>
-    #[serde(rename = "stoppingAt")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub stopping_at: std::option::Option<smithy_types::Instant>,
     /// <p>The metadata that you apply to the task to help you categorize and organize them. Each
     /// tag consists of a key and an optional value, both of which you define.</p>
@@ -7607,16 +6912,10 @@ pub struct Task {
     /// this prefix do not count against your tags per resource limit.</p>
     /// </li>
     /// </ul>
-    #[serde(rename = "tags")]
-    #[serde(default)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The Amazon Resource Name (ARN) of the task.</p>
-    #[serde(rename = "taskArn")]
-    #[serde(default)]
     pub task_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the task definition that creates the task.</p>
-    #[serde(rename = "taskDefinitionArn")]
-    #[serde(default)]
     pub task_definition_arn: std::option::Option<std::string::String>,
     /// <p>The version counter for the task. Every time a task experiences a change that triggers
     /// a CloudWatch event, the version counter is incremented. If you are replicating your Amazon ECS task
@@ -7624,12 +6923,8 @@ pub struct Task {
     /// actions with the version reported in CloudWatch Events for the task (inside the
     /// <code>detail</code> object) to verify that the version in your event stream is
     /// current.</p>
-    #[serde(rename = "version")]
-    #[serde(default)]
     pub version: i64,
     /// <p>The ephemeral storage settings for the task.</p>
-    #[serde(rename = "ephemeralStorage")]
-    #[serde(default)]
     pub ephemeral_storage: std::option::Option<crate::model::EphemeralStorage>,
 }
 impl std::fmt::Debug for Task {
@@ -8253,13 +7548,11 @@ impl Task {
 /// version <code>1.4.0</code> or later.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EphemeralStorage {
     /// <p>The total amount, in GiB, of ephemeral storage to set for the task. The minimum
     /// supported value is <code>21</code> GiB and the maximum supported value is
     /// <code>200</code> GiB.</p>
-    #[serde(rename = "sizeInGiB")]
-    #[serde(default)]
     pub size_in_gi_b: i32,
 }
 impl std::fmt::Debug for EphemeralStorage {
@@ -8334,7 +7627,7 @@ impl std::convert::From<&str> for TaskStopCode {
 impl std::str::FromStr for TaskStopCode {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(TaskStopCode::from(s))
     }
 }
@@ -8353,53 +7646,30 @@ impl AsRef<str> for TaskStopCode {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for TaskStopCode {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>The overrides associated with a task.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TaskOverride {
     /// <p>One or more container overrides sent to a task.</p>
-    #[serde(rename = "containerOverrides")]
-    #[serde(default)]
     pub container_overrides: std::option::Option<std::vec::Vec<crate::model::ContainerOverride>>,
     /// <p>The cpu override for the task.</p>
-    #[serde(rename = "cpu")]
-    #[serde(default)]
     pub cpu: std::option::Option<std::string::String>,
     /// <p>The Elastic Inference accelerator override for the task.</p>
-    #[serde(rename = "inferenceAcceleratorOverrides")]
-    #[serde(default)]
     pub inference_accelerator_overrides:
         std::option::Option<std::vec::Vec<crate::model::InferenceAcceleratorOverride>>,
     /// <p>The Amazon Resource Name (ARN) of the task execution IAM role override for the task.</p>
-    #[serde(rename = "executionRoleArn")]
-    #[serde(default)]
     pub execution_role_arn: std::option::Option<std::string::String>,
     /// <p>The memory override for the task.</p>
-    #[serde(rename = "memory")]
-    #[serde(default)]
     pub memory: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that containers in this task can assume. All containers
     /// in this task are granted the permissions that are specified in this role.</p>
-    #[serde(rename = "taskRoleArn")]
-    #[serde(default)]
     pub task_role_arn: std::option::Option<std::string::String>,
     /// <p>The ephemeral storage setting override for the task.</p>
     /// <note>
     /// <p>This parameter is only supported for tasks hosted on AWS Fargate using platform
     /// version <code>1.4.0</code> or later.</p>
     /// </note>
-    #[serde(rename = "ephemeralStorage")]
-    #[serde(default)]
     pub ephemeral_storage: std::option::Option<crate::model::EphemeralStorage>,
 }
 impl std::fmt::Debug for TaskOverride {
@@ -8552,16 +7822,12 @@ impl TaskOverride {
 /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-eia.html">Working with Amazon Elastic Inference on Amazon ECS</a> in the
 /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InferenceAcceleratorOverride {
     /// <p>The Elastic Inference accelerator device name to override for the task. This parameter
     /// must match a <code>deviceName</code> specified in the task definition.</p>
-    #[serde(rename = "deviceName")]
-    #[serde(default)]
     pub device_name: std::option::Option<std::string::String>,
     /// <p>The Elastic Inference accelerator type to use.</p>
-    #[serde(rename = "deviceType")]
-    #[serde(default)]
     pub device_type: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InferenceAcceleratorOverride {
@@ -8622,50 +7888,34 @@ impl InferenceAcceleratorOverride {
 /// <code>{"containerOverrides": [ ] }</code>. If a non-empty container override is
 /// specified, the <code>name</code> parameter must be included.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContainerOverride {
     /// <p>The name of the container that receives the override. This parameter is required if
     /// any override is specified.</p>
-    #[serde(rename = "name")]
-    #[serde(default)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The command to send to the container that overrides the default command from the
     /// Docker image or the task definition. You must also specify a container name.</p>
-    #[serde(rename = "command")]
-    #[serde(default)]
     pub command: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The environment variables to send to the container. You can add new environment
     /// variables, which are added to the container at launch, or you can override the existing
     /// environment variables from the Docker image or the task definition. You must also
     /// specify a container name.</p>
-    #[serde(rename = "environment")]
-    #[serde(default)]
     pub environment: std::option::Option<std::vec::Vec<crate::model::KeyValuePair>>,
     /// <p>A list of files containing the environment variables to pass to a container, instead
     /// of the value from the container definition.</p>
-    #[serde(rename = "environmentFiles")]
-    #[serde(default)]
     pub environment_files: std::option::Option<std::vec::Vec<crate::model::EnvironmentFile>>,
     /// <p>The number of <code>cpu</code> units reserved for the container, instead of the
     /// default value from the task definition. You must also specify a container name.</p>
-    #[serde(rename = "cpu")]
-    #[serde(default)]
     pub cpu: std::option::Option<i32>,
     /// <p>The hard limit (in MiB) of memory to present to the container, instead of the default
     /// value from the task definition. If your container attempts to exceed the memory
     /// specified here, the container is killed. You must also specify a container name.</p>
-    #[serde(rename = "memory")]
-    #[serde(default)]
     pub memory: std::option::Option<i32>,
     /// <p>The soft limit (in MiB) of memory to reserve for the container, instead of the default
     /// value from the task definition. You must also specify a container name.</p>
-    #[serde(rename = "memoryReservation")]
-    #[serde(default)]
     pub memory_reservation: std::option::Option<i32>,
     /// <p>The type and amount of a resource to assign to a container, instead of the default
     /// value from the task definition. The only supported resource is a GPU.</p>
-    #[serde(rename = "resourceRequirements")]
-    #[serde(default)]
     pub resource_requirements:
         std::option::Option<std::vec::Vec<crate::model::ResourceRequirement>>,
 }
@@ -8828,7 +8078,7 @@ impl ContainerOverride {
 /// <i>Amazon Elastic Container Service Developer Guide</i>
 /// </p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceRequirement {
     /// <p>The value for the specified resource type.</p>
     /// <p>If the <code>GPU</code> type is used, the value is the number of physical
@@ -8838,13 +8088,9 @@ pub struct ResourceRequirement {
     /// <p>If the <code>InferenceAccelerator</code> type is used, the <code>value</code> should
     /// match the <code>deviceName</code> for an <a>InferenceAccelerator</a>
     /// specified in a task definition.</p>
-    #[serde(rename = "value")]
-    #[serde(default)]
     pub value: std::option::Option<std::string::String>,
     /// <p>The type of resource to assign to a container. The supported values are
     /// <code>GPU</code> or <code>InferenceAccelerator</code>.</p>
-    #[serde(rename = "type")]
-    #[serde(default)]
     pub r#type: std::option::Option<crate::model::ResourceType>,
 }
 impl std::fmt::Debug for ResourceRequirement {
@@ -8935,7 +8181,7 @@ impl std::convert::From<&str> for ResourceType {
 impl std::str::FromStr for ResourceType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ResourceType::from(s))
     }
 }
@@ -8951,15 +8197,6 @@ impl ResourceType {
 impl AsRef<str> for ResourceType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ResourceType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -8979,16 +8216,12 @@ impl<'de> serde::Deserialize<'de> for ResourceType {
 /// <p>This field is only valid for containers in Fargate tasks that use
 /// platform version <code>1.4.0</code> or later.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnvironmentFile {
     /// <p>The Amazon Resource Name (ARN) of the Amazon S3 object containing the environment
     /// variable file.</p>
-    #[serde(rename = "value")]
-    #[serde(default)]
     pub value: std::option::Option<std::string::String>,
     /// <p>The file type to use. The only supported value is <code>s3</code>.</p>
-    #[serde(rename = "type")]
-    #[serde(default)]
     pub r#type: std::option::Option<crate::model::EnvironmentFileType>,
 }
 impl std::fmt::Debug for EnvironmentFile {
@@ -9073,7 +8306,7 @@ impl std::convert::From<&str> for EnvironmentFileType {
 impl std::str::FromStr for EnvironmentFileType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(EnvironmentFileType::from(s))
     }
 }
@@ -9090,30 +8323,17 @@ impl AsRef<str> for EnvironmentFileType {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for EnvironmentFileType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>Details on a Elastic Inference accelerator. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-eia.html">Working with
 /// Amazon Elastic Inference on Amazon ECS</a> in the
 /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InferenceAccelerator {
     /// <p>The Elastic Inference accelerator device name. The <code>deviceName</code> must also
     /// be referenced in a container definition as a <a>ResourceRequirement</a>.</p>
-    #[serde(rename = "deviceName")]
-    #[serde(default)]
     pub device_name: std::option::Option<std::string::String>,
     /// <p>The Elastic Inference accelerator type to use.</p>
-    #[serde(rename = "deviceType")]
-    #[serde(default)]
     pub device_type: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InferenceAccelerator {
@@ -9201,7 +8421,7 @@ impl std::convert::From<&str> for HealthStatus {
 impl std::str::FromStr for HealthStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(HealthStatus::from(s))
     }
 }
@@ -9220,96 +8440,53 @@ impl AsRef<str> for HealthStatus {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for HealthStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>A Docker container that is part of a task.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Container {
     /// <p>The Amazon Resource Name (ARN) of the container.</p>
-    #[serde(rename = "containerArn")]
-    #[serde(default)]
     pub container_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the task.</p>
-    #[serde(rename = "taskArn")]
-    #[serde(default)]
     pub task_arn: std::option::Option<std::string::String>,
     /// <p>The name of the container.</p>
-    #[serde(rename = "name")]
-    #[serde(default)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The image used for the container.</p>
-    #[serde(rename = "image")]
-    #[serde(default)]
     pub image: std::option::Option<std::string::String>,
     /// <p>The container image manifest digest.</p>
     /// <note>
     /// <p>The <code>imageDigest</code> is only returned if the container is using an image
     /// hosted in Amazon ECR, otherwise it is omitted.</p>
     /// </note>
-    #[serde(rename = "imageDigest")]
-    #[serde(default)]
     pub image_digest: std::option::Option<std::string::String>,
     /// <p>The ID of the Docker container.</p>
-    #[serde(rename = "runtimeId")]
-    #[serde(default)]
     pub runtime_id: std::option::Option<std::string::String>,
     /// <p>The last known status of the container.</p>
-    #[serde(rename = "lastStatus")]
-    #[serde(default)]
     pub last_status: std::option::Option<std::string::String>,
     /// <p>The exit code returned from the container.</p>
-    #[serde(rename = "exitCode")]
-    #[serde(default)]
     pub exit_code: std::option::Option<i32>,
     /// <p>A short (255 max characters) human-readable string to provide additional details about
     /// a running or stopped container.</p>
-    #[serde(rename = "reason")]
-    #[serde(default)]
     pub reason: std::option::Option<std::string::String>,
     /// <p>The network bindings associated with the container.</p>
-    #[serde(rename = "networkBindings")]
-    #[serde(default)]
     pub network_bindings: std::option::Option<std::vec::Vec<crate::model::NetworkBinding>>,
     /// <p>The network interfaces associated with the container.</p>
-    #[serde(rename = "networkInterfaces")]
-    #[serde(default)]
     pub network_interfaces: std::option::Option<std::vec::Vec<crate::model::NetworkInterface>>,
     /// <p>The health status of the container. If health checks are not configured for this
     /// container in its task definition, then it reports the health status as
     /// <code>UNKNOWN</code>.</p>
-    #[serde(rename = "healthStatus")]
-    #[serde(default)]
     pub health_status: std::option::Option<crate::model::HealthStatus>,
     /// <p>The details of any Amazon ECS managed agents associated with the container.</p>
-    #[serde(rename = "managedAgents")]
-    #[serde(default)]
     pub managed_agents: std::option::Option<std::vec::Vec<crate::model::ManagedAgent>>,
     /// <p>The number of CPU units set for the container. The value will be <code>0</code> if no
     /// value was specified in the container definition when the task definition was
     /// registered.</p>
-    #[serde(rename = "cpu")]
-    #[serde(default)]
     pub cpu: std::option::Option<std::string::String>,
     /// <p>The hard limit (in MiB) of memory set for the container.</p>
-    #[serde(rename = "memory")]
-    #[serde(default)]
     pub memory: std::option::Option<std::string::String>,
     /// <p>The soft limit (in MiB) of memory set for the container.</p>
-    #[serde(rename = "memoryReservation")]
-    #[serde(default)]
     pub memory_reservation: std::option::Option<std::string::String>,
     /// <p>The IDs of each GPU assigned to the container.</p>
-    #[serde(rename = "gpuIds")]
-    #[serde(default)]
     pub gpu_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl std::fmt::Debug for Container {
@@ -9585,27 +8762,16 @@ impl Container {
 
 /// <p>Details about the managed agent status for the container.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ManagedAgent {
     /// <p>The Unix timestamp for when the managed agent was last started.</p>
-    #[serde(rename = "lastStartedAt")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub last_started_at: std::option::Option<smithy_types::Instant>,
     /// <p>The name of the managed agent. When the execute command feature is enabled, the
     /// managed agent name is <code>ExecuteCommandAgent</code>.</p>
-    #[serde(rename = "name")]
-    #[serde(default)]
     pub name: std::option::Option<crate::model::ManagedAgentName>,
     /// <p>The reason for why the managed agent is in the state it is in.</p>
-    #[serde(rename = "reason")]
-    #[serde(default)]
     pub reason: std::option::Option<std::string::String>,
     /// <p>The last known status of the managed agent.</p>
-    #[serde(rename = "lastStatus")]
-    #[serde(default)]
     pub last_status: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ManagedAgent {
@@ -9694,19 +8860,13 @@ impl ManagedAgent {
 /// <p>An object representing the elastic network interface for tasks that use the
 /// <code>awsvpc</code> network mode.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NetworkInterface {
     /// <p>The attachment ID for the network interface.</p>
-    #[serde(rename = "attachmentId")]
-    #[serde(default)]
     pub attachment_id: std::option::Option<std::string::String>,
     /// <p>The private IPv4 address for the network interface.</p>
-    #[serde(rename = "privateIpv4Address")]
-    #[serde(default)]
     pub private_ipv4_address: std::option::Option<std::string::String>,
     /// <p>The private IPv6 address for the network interface.</p>
-    #[serde(rename = "ipv6Address")]
-    #[serde(default)]
     pub ipv6_address: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NetworkInterface {
@@ -9807,7 +8967,7 @@ impl std::convert::From<&str> for Connectivity {
 impl std::str::FromStr for Connectivity {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(Connectivity::from(s))
     }
 }
@@ -9825,33 +8985,20 @@ impl AsRef<str> for Connectivity {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for Connectivity {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>The details of a task definition which describes the container and volume definitions
 /// of an Amazon Elastic Container Service task. You can specify which Docker images to use, the required
 /// resources, and other configurations related to launching the task definition through an
 /// Amazon ECS service or task.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TaskDefinition {
     /// <p>The full Amazon Resource Name (ARN) of the task definition.</p>
-    #[serde(rename = "taskDefinitionArn")]
-    #[serde(default)]
     pub task_definition_arn: std::option::Option<std::string::String>,
     /// <p>A list of container definitions in JSON format that describe the different containers
     /// that make up your task. For more information about container definition parameters and
     /// defaults, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task
     /// Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[serde(rename = "containerDefinitions")]
-    #[serde(default)]
     pub container_definitions:
         std::option::Option<std::vec::Vec<crate::model::ContainerDefinition>>,
     /// <p>The name of a family that this task definition is registered to. Up to 255 letters
@@ -9859,8 +9006,6 @@ pub struct TaskDefinition {
     /// <p>A family groups multiple versions of a task definition. Amazon ECS gives the first task
     /// definition that you registered to a family a revision number of 1. Amazon ECS gives
     /// sequential revision numbers to each task definition that you add.</p>
-    #[serde(rename = "family")]
-    #[serde(default)]
     pub family: std::option::Option<std::string::String>,
     /// <p>The short name or full Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants containers in the
     /// task permission to call AWS APIs on your behalf. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">Amazon ECS
@@ -9870,15 +9015,11 @@ pub struct TaskDefinition {
     /// configuration code in order to take advantage of the feature. For more information, see
     /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html">Windows IAM roles
     /// for tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[serde(rename = "taskRoleArn")]
-    #[serde(default)]
     pub task_role_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the task execution role that grants the Amazon ECS container agent
     /// permission to make AWS API calls on your behalf. The task execution IAM role is required
     /// depending on the requirements of your task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS task
     /// execution IAM role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[serde(rename = "executionRoleArn")]
-    #[serde(default)]
     pub execution_role_arn: std::option::Option<std::string::String>,
     /// <p>The Docker networking mode to use for the containers in the task. The valid values are
     /// <code>none</code>, <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>.
@@ -9917,16 +9058,12 @@ pub struct TaskDefinition {
     /// choose the <code><default></code> network mode object. </p>
     /// <p>For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network
     /// settings</a> in the <i>Docker run reference</i>.</p>
-    #[serde(rename = "networkMode")]
-    #[serde(default)]
     pub network_mode: std::option::Option<crate::model::NetworkMode>,
     /// <p>The revision of the task in a particular family. The revision is a version number of a
     /// task definition in a family. When you register a task definition for the first time, the
     /// revision is <code>1</code>. Each time that you register a new revision of a task
     /// definition in the same family, the revision value always increases by one, even if you
     /// have deregistered previous revisions in this family.</p>
-    #[serde(rename = "revision")]
-    #[serde(default)]
     pub revision: i32,
     /// <p>The list of data volume definitions for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using data volumes in tasks</a> in the
     /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
@@ -9934,12 +9071,8 @@ pub struct TaskDefinition {
     /// <p>The <code>host</code> and <code>sourcePath</code> parameters are not supported for
     /// tasks run on AWS Fargate.</p>
     /// </note>
-    #[serde(rename = "volumes")]
-    #[serde(default)]
     pub volumes: std::option::Option<std::vec::Vec<crate::model::Volume>>,
     /// <p>The status of the task definition.</p>
-    #[serde(rename = "status")]
-    #[serde(default)]
     pub status: std::option::Option<crate::model::TaskDefinitionStatus>,
     /// <p>The container instance attributes required by your task. When an Amazon EC2 instance is
     /// registered to your cluster, the Amazon ECS container agent assigns some standard attributes
@@ -9950,27 +9083,19 @@ pub struct TaskDefinition {
     /// <note>
     /// <p>This parameter is not supported for tasks run on AWS Fargate.</p>
     /// </note>
-    #[serde(rename = "requiresAttributes")]
-    #[serde(default)]
     pub requires_attributes: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
     /// <p>An array of placement constraint objects to use for tasks.</p>
     /// <note>
     /// <p>This parameter is not supported for tasks run on AWS Fargate.</p>
     /// </note>
-    #[serde(rename = "placementConstraints")]
-    #[serde(default)]
     pub placement_constraints:
         std::option::Option<std::vec::Vec<crate::model::TaskDefinitionPlacementConstraint>>,
     /// <p>The task launch types the task definition validated against during task definition
     /// registration. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a>
     /// in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[serde(rename = "compatibilities")]
-    #[serde(default)]
     pub compatibilities: std::option::Option<std::vec::Vec<crate::model::Compatibility>>,
     /// <p>The task launch types the task definition was validated against. To determine which
     /// task launch types the task definition is validated for, see the <a>TaskDefinition$compatibilities</a> parameter.</p>
-    #[serde(rename = "requiresCompatibilities")]
-    #[serde(default)]
     pub requires_compatibilities: std::option::Option<std::vec::Vec<crate::model::Compatibility>>,
     /// <p>The number of <code>cpu</code> units used by the task. If you are using the EC2 launch
     /// type, this field is optional and any value can be used. If you are using the Fargate
@@ -9993,8 +9118,6 @@ pub struct TaskDefinition {
     /// <p>4096 (4 vCPU) - Available <code>memory</code> values: Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB)</p>
     /// </li>
     /// </ul>
-    #[serde(rename = "cpu")]
-    #[serde(default)]
     pub cpu: std::option::Option<std::string::String>,
     /// <p>The amount (in MiB) of memory used by the task.</p>
     /// <p>If your tasks will be run on Amazon EC2 instances, you must specify either a task-level
@@ -10022,12 +9145,8 @@ pub struct TaskDefinition {
     /// <p>Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values: 4096 (4 vCPU)</p>
     /// </li>
     /// </ul>
-    #[serde(rename = "memory")]
-    #[serde(default)]
     pub memory: std::option::Option<std::string::String>,
     /// <p>The Elastic Inference accelerator associated with the task.</p>
-    #[serde(rename = "inferenceAccelerators")]
-    #[serde(default)]
     pub inference_accelerators:
         std::option::Option<std::vec::Vec<crate::model::InferenceAccelerator>>,
     /// <p>The process namespace to use for the containers in the task. The valid
@@ -10046,8 +9165,6 @@ pub struct TaskDefinition {
     /// <note>
     /// <p>This parameter is not supported for Windows containers or tasks run on AWS Fargate.</p>
     /// </note>
-    #[serde(rename = "pidMode")]
-    #[serde(default)]
     pub pid_mode: std::option::Option<crate::model::PidMode>,
     /// <p>The IPC resource namespace to use for the containers in the task. The valid values are
     /// <code>host</code>, <code>task</code>, or <code>none</code>. If <code>host</code> is
@@ -10081,8 +9198,6 @@ pub struct TaskDefinition {
     /// <note>
     /// <p>This parameter is not supported for Windows containers or tasks run on AWS Fargate.</p>
     /// </note>
-    #[serde(rename = "ipcMode")]
-    #[serde(default)]
     pub ipc_mode: std::option::Option<crate::model::IpcMode>,
     /// <p>The configuration details for the App Mesh proxy.</p>
     /// <p>Your Amazon ECS container instances require at least version 1.26.0 of the container agent
@@ -10090,30 +9205,14 @@ pub struct TaskDefinition {
     /// configuration. If your container instances are launched from the Amazon ECS-optimized AMI
     /// version <code>20190301</code> or later, then they contain the required versions of the
     /// container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[serde(rename = "proxyConfiguration")]
-    #[serde(default)]
     pub proxy_configuration: std::option::Option<crate::model::ProxyConfiguration>,
     /// <p>The Unix timestamp for when the task definition was registered.</p>
-    #[serde(rename = "registeredAt")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub registered_at: std::option::Option<smithy_types::Instant>,
     /// <p>The Unix timestamp for when the task definition was deregistered.</p>
-    #[serde(rename = "deregisteredAt")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub deregistered_at: std::option::Option<smithy_types::Instant>,
     /// <p>The principal that registered the task definition.</p>
-    #[serde(rename = "registeredBy")]
-    #[serde(default)]
     pub registered_by: std::option::Option<std::string::String>,
     /// <p>The ephemeral storage settings to use for tasks run with the task definition.</p>
-    #[serde(rename = "ephemeralStorage")]
-    #[serde(default)]
     pub ephemeral_storage: std::option::Option<crate::model::EphemeralStorage>,
 }
 impl std::fmt::Debug for TaskDefinition {
@@ -10655,15 +9754,11 @@ impl TaskDefinition {
 /// <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a>
 /// </p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProxyConfiguration {
     /// <p>The proxy type. The only supported value is <code>APPMESH</code>.</p>
-    #[serde(rename = "type")]
-    #[serde(default)]
     pub r#type: std::option::Option<crate::model::ProxyConfigurationType>,
     /// <p>The name of the container that will serve as the App Mesh proxy.</p>
-    #[serde(rename = "containerName")]
-    #[serde(default)]
     pub container_name: std::option::Option<std::string::String>,
     /// <p>The set of network configuration parameters to provide the Container Network Interface
     /// (CNI) plugin, specified as key-value pairs.</p>
@@ -10711,8 +9806,6 @@ pub struct ProxyConfiguration {
     /// <code>ProxyEgressPort</code>. It can be an empty list.</p>
     /// </li>
     /// </ul>
-    #[serde(rename = "properties")]
-    #[serde(default)]
     pub properties: std::option::Option<std::vec::Vec<crate::model::KeyValuePair>>,
 }
 impl std::fmt::Debug for ProxyConfiguration {
@@ -10815,7 +9908,7 @@ impl std::convert::From<&str> for ProxyConfigurationType {
 impl std::str::FromStr for ProxyConfigurationType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ProxyConfigurationType::from(s))
     }
 }
@@ -10830,15 +9923,6 @@ impl ProxyConfigurationType {
 impl AsRef<str> for ProxyConfigurationType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ProxyConfigurationType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -10872,7 +9956,7 @@ impl std::convert::From<&str> for IpcMode {
 impl std::str::FromStr for IpcMode {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(IpcMode::from(s))
     }
 }
@@ -10889,15 +9973,6 @@ impl IpcMode {
 impl AsRef<str> for IpcMode {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for IpcMode {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -10929,7 +10004,7 @@ impl std::convert::From<&str> for PidMode {
 impl std::str::FromStr for PidMode {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(PidMode::from(s))
     }
 }
@@ -10945,15 +10020,6 @@ impl PidMode {
 impl AsRef<str> for PidMode {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for PidMode {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -10987,7 +10053,7 @@ impl std::convert::From<&str> for Compatibility {
 impl std::str::FromStr for Compatibility {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(Compatibility::from(s))
     }
 }
@@ -11006,15 +10072,6 @@ impl AsRef<str> for Compatibility {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for Compatibility {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>An object representing a constraint on task placement in the task definition. For more
 /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html">Task placement constraints</a> in the
@@ -11023,18 +10080,14 @@ impl<'de> serde::Deserialize<'de> for Compatibility {
 /// <p>Task placement constraints are not supported for tasks run on AWS Fargate.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TaskDefinitionPlacementConstraint {
     /// <p>The type of constraint. The <code>MemberOf</code> constraint restricts selection to be
     /// from a group of valid candidates.</p>
-    #[serde(rename = "type")]
-    #[serde(default)]
     pub r#type: std::option::Option<crate::model::TaskDefinitionPlacementConstraintType>,
     /// <p>A cluster query language expression to apply to the constraint. For more information,
     /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster query language</a> in the
     /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[serde(rename = "expression")]
-    #[serde(default)]
     pub expression: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TaskDefinitionPlacementConstraint {
@@ -11124,7 +10177,7 @@ impl std::convert::From<&str> for TaskDefinitionPlacementConstraintType {
 impl std::str::FromStr for TaskDefinitionPlacementConstraintType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(TaskDefinitionPlacementConstraintType::from(s))
     }
 }
@@ -11139,15 +10192,6 @@ impl TaskDefinitionPlacementConstraintType {
 impl AsRef<str> for TaskDefinitionPlacementConstraintType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for TaskDefinitionPlacementConstraintType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -11179,7 +10223,7 @@ impl std::convert::From<&str> for TaskDefinitionStatus {
 impl std::str::FromStr for TaskDefinitionStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(TaskDefinitionStatus::from(s))
     }
 }
@@ -11197,15 +10241,6 @@ impl AsRef<str> for TaskDefinitionStatus {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for TaskDefinitionStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>A data volume used in a task definition. For tasks that use the Amazon Elastic File
 /// System (Amazon EFS), specify an <code>efsVolumeConfiguration</code>. For Windows tasks
@@ -11216,13 +10251,11 @@ impl<'de> serde::Deserialize<'de> for TaskDefinitionStatus {
 /// more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using Data Volumes in
 /// Tasks</a>.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Volume {
     /// <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed. This name is referenced in the
     /// <code>sourceVolume</code> parameter of container definition
     /// <code>mountPoints</code>.</p>
-    #[serde(rename = "name")]
-    #[serde(default)]
     pub name: std::option::Option<std::string::String>,
     /// <p>This parameter is specified when you are using bind mount host volumes. The contents
     /// of the <code>host</code> parameter determine whether your bind mount host volume
@@ -11235,8 +10268,6 @@ pub struct Volume {
     /// different drive, and mount point cannot be across drives. For example, you can mount
     /// <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not
     /// <code>D:\my\path:C:\my\path</code> or <code>D:\:C:\my\path</code>.</p>
-    #[serde(rename = "host")]
-    #[serde(default)]
     pub host: std::option::Option<crate::model::HostVolumeProperties>,
     /// <p>This parameter is specified when you are using Docker volumes.</p>
     /// <p>Windows containers only support the use of the <code>local</code> driver. To use bind
@@ -11244,18 +10275,12 @@ pub struct Volume {
     /// <note>
     /// <p>Docker volumes are not supported by tasks run on AWS Fargate.</p>
     /// </note>
-    #[serde(rename = "dockerVolumeConfiguration")]
-    #[serde(default)]
     pub docker_volume_configuration: std::option::Option<crate::model::DockerVolumeConfiguration>,
     /// <p>This parameter is specified when you are using an Amazon Elastic File System file system for task
     /// storage.</p>
-    #[serde(rename = "efsVolumeConfiguration")]
-    #[serde(default)]
-    pub efs_volume_configuration: std::option::Option<crate::model::EFSVolumeConfiguration>,
+    pub efs_volume_configuration: std::option::Option<crate::model::EfsVolumeConfiguration>,
     /// <p>This parameter is specified when you are using Amazon FSx for Windows File Server file system for task
     /// storage.</p>
-    #[serde(rename = "fsxWindowsFileServerVolumeConfiguration")]
-    #[serde(default)]
     pub fsx_windows_file_server_volume_configuration:
         std::option::Option<crate::model::FSxWindowsFileServerVolumeConfiguration>,
 }
@@ -11287,7 +10312,7 @@ pub mod volume {
         pub(crate) docker_volume_configuration:
             std::option::Option<crate::model::DockerVolumeConfiguration>,
         pub(crate) efs_volume_configuration:
-            std::option::Option<crate::model::EFSVolumeConfiguration>,
+            std::option::Option<crate::model::EfsVolumeConfiguration>,
         pub(crate) fsx_windows_file_server_volume_configuration:
             std::option::Option<crate::model::FSxWindowsFileServerVolumeConfiguration>,
     }
@@ -11349,14 +10374,14 @@ pub mod volume {
         /// storage.</p>
         pub fn efs_volume_configuration(
             mut self,
-            input: crate::model::EFSVolumeConfiguration,
+            input: crate::model::EfsVolumeConfiguration,
         ) -> Self {
             self.efs_volume_configuration = Some(input);
             self
         }
         pub fn set_efs_volume_configuration(
             mut self,
-            input: std::option::Option<crate::model::EFSVolumeConfiguration>,
+            input: std::option::Option<crate::model::EfsVolumeConfiguration>,
         ) -> Self {
             self.efs_volume_configuration = input;
             self
@@ -11402,20 +10427,14 @@ impl Volume {
 /// <p>For more information and the input format, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/wfsx-volumes.html">Amazon FSx for Windows File Server Volumes</a>
 /// in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FSxWindowsFileServerVolumeConfiguration {
     /// <p>The Amazon FSx for Windows File Server file system ID to use.</p>
-    #[serde(rename = "fileSystemId")]
-    #[serde(default)]
     pub file_system_id: std::option::Option<std::string::String>,
     /// <p>The directory within the Amazon FSx for Windows File Server file system to mount as the root directory
     /// inside the host.</p>
-    #[serde(rename = "rootDirectory")]
-    #[serde(default)]
     pub root_directory: std::option::Option<std::string::String>,
     /// <p>The authorization configuration details for the Amazon FSx for Windows File Server file system.</p>
-    #[serde(rename = "authorizationConfig")]
-    #[serde(default)]
     pub authorization_config:
         std::option::Option<crate::model::FSxWindowsFileServerAuthorizationConfig>,
 }
@@ -11502,18 +10521,14 @@ impl FSxWindowsFileServerVolumeConfiguration {
 /// <p>For more information and the input format, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/wfsx-volumes.html">Amazon FSx for Windows File Server Volumes</a>
 /// in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FSxWindowsFileServerAuthorizationConfig {
     /// <p>The authorization credential option to use. The authorization credential options can
     /// be provided using either the Amazon Resource Name (ARN) of an AWS Secrets Manager secret or AWS Systems Manager
     /// Parameter Store parameter. The ARNs refer to the stored credentials.</p>
-    #[serde(rename = "credentialsParameter")]
-    #[serde(default)]
     pub credentials_parameter: std::option::Option<std::string::String>,
     /// <p>A fully qualified domain name hosted by an <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html">AWS Directory Service</a> Managed Microsoft AD (Active Directory) or self-hosted AD on
     /// Amazon EC2.</p>
-    #[serde(rename = "domain")]
-    #[serde(default)]
     pub domain: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for FSxWindowsFileServerAuthorizationConfig {
@@ -11578,11 +10593,9 @@ impl FSxWindowsFileServerAuthorizationConfig {
 /// storage. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html">Amazon EFS Volumes</a> in the
 /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct EFSVolumeConfiguration {
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EfsVolumeConfiguration {
     /// <p>The Amazon EFS file system ID to use.</p>
-    #[serde(rename = "fileSystemId")]
-    #[serde(default)]
     pub file_system_id: std::option::Option<std::string::String>,
     /// <p>The directory within the Amazon EFS file system to mount as the root directory inside the
     /// host. If this parameter is omitted, the root of the Amazon EFS volume will be used.
@@ -11592,32 +10605,24 @@ pub struct EFSVolumeConfiguration {
     /// root directory parameter must either be omitted or set to <code>/</code> which will
     /// enforce the path set on the EFS access point.</p>
     /// </important>
-    #[serde(rename = "rootDirectory")]
-    #[serde(default)]
     pub root_directory: std::option::Option<std::string::String>,
     /// <p>Whether or not to enable encryption for Amazon EFS data in transit between the Amazon ECS host
     /// and the Amazon EFS server. Transit encryption must be enabled if Amazon EFS IAM authorization is
     /// used. If this parameter is omitted, the default value of <code>DISABLED</code> is used.
     /// For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting Data in Transit</a> in
     /// the <i>Amazon Elastic File System User Guide</i>.</p>
-    #[serde(rename = "transitEncryption")]
-    #[serde(default)]
     pub transit_encryption: std::option::Option<crate::model::EfsTransitEncryption>,
     /// <p>The port to use when sending encrypted data between the Amazon ECS host and the Amazon EFS
     /// server. If you do not specify a transit encryption port, it will use the port selection
     /// strategy that the Amazon EFS mount helper uses. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS Mount
     /// Helper</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
-    #[serde(rename = "transitEncryptionPort")]
-    #[serde(default)]
     pub transit_encryption_port: std::option::Option<i32>,
     /// <p>The authorization configuration details for the Amazon EFS file system.</p>
-    #[serde(rename = "authorizationConfig")]
-    #[serde(default)]
-    pub authorization_config: std::option::Option<crate::model::EFSAuthorizationConfig>,
+    pub authorization_config: std::option::Option<crate::model::EfsAuthorizationConfig>,
 }
-impl std::fmt::Debug for EFSVolumeConfiguration {
+impl std::fmt::Debug for EfsVolumeConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EFSVolumeConfiguration");
+        let mut formatter = f.debug_struct("EfsVolumeConfiguration");
         formatter.field("file_system_id", &self.file_system_id);
         formatter.field("root_directory", &self.root_directory);
         formatter.field("transit_encryption", &self.transit_encryption);
@@ -11626,9 +10631,9 @@ impl std::fmt::Debug for EFSVolumeConfiguration {
         formatter.finish()
     }
 }
-/// See [`EFSVolumeConfiguration`](crate::model::EFSVolumeConfiguration)
+/// See [`EfsVolumeConfiguration`](crate::model::EfsVolumeConfiguration)
 pub mod efs_volume_configuration {
-    /// A builder for [`EFSVolumeConfiguration`](crate::model::EFSVolumeConfiguration)
+    /// A builder for [`EfsVolumeConfiguration`](crate::model::EfsVolumeConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -11636,7 +10641,7 @@ pub mod efs_volume_configuration {
         pub(crate) root_directory: std::option::Option<std::string::String>,
         pub(crate) transit_encryption: std::option::Option<crate::model::EfsTransitEncryption>,
         pub(crate) transit_encryption_port: std::option::Option<i32>,
-        pub(crate) authorization_config: std::option::Option<crate::model::EFSAuthorizationConfig>,
+        pub(crate) authorization_config: std::option::Option<crate::model::EfsAuthorizationConfig>,
     }
     impl Builder {
         /// <p>The Amazon EFS file system ID to use.</p>
@@ -11699,20 +10704,20 @@ pub mod efs_volume_configuration {
             self
         }
         /// <p>The authorization configuration details for the Amazon EFS file system.</p>
-        pub fn authorization_config(mut self, input: crate::model::EFSAuthorizationConfig) -> Self {
+        pub fn authorization_config(mut self, input: crate::model::EfsAuthorizationConfig) -> Self {
             self.authorization_config = Some(input);
             self
         }
         pub fn set_authorization_config(
             mut self,
-            input: std::option::Option<crate::model::EFSAuthorizationConfig>,
+            input: std::option::Option<crate::model::EfsAuthorizationConfig>,
         ) -> Self {
             self.authorization_config = input;
             self
         }
-        /// Consumes the builder and constructs a [`EFSVolumeConfiguration`](crate::model::EFSVolumeConfiguration)
-        pub fn build(self) -> crate::model::EFSVolumeConfiguration {
-            crate::model::EFSVolumeConfiguration {
+        /// Consumes the builder and constructs a [`EfsVolumeConfiguration`](crate::model::EfsVolumeConfiguration)
+        pub fn build(self) -> crate::model::EfsVolumeConfiguration {
+            crate::model::EfsVolumeConfiguration {
                 file_system_id: self.file_system_id,
                 root_directory: self.root_directory,
                 transit_encryption: self.transit_encryption,
@@ -11722,8 +10727,8 @@ pub mod efs_volume_configuration {
         }
     }
 }
-impl EFSVolumeConfiguration {
-    /// Creates a new builder-style object to manufacture [`EFSVolumeConfiguration`](crate::model::EFSVolumeConfiguration)
+impl EfsVolumeConfiguration {
+    /// Creates a new builder-style object to manufacture [`EfsVolumeConfiguration`](crate::model::EfsVolumeConfiguration)
     pub fn builder() -> crate::model::efs_volume_configuration::Builder {
         crate::model::efs_volume_configuration::Builder::default()
     }
@@ -11731,37 +10736,33 @@ impl EFSVolumeConfiguration {
 
 /// <p>The authorization configuration details for the Amazon EFS file system.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct EFSAuthorizationConfig {
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EfsAuthorizationConfig {
     /// <p>The Amazon EFS access point ID to use. If an access point is specified, the root directory
     /// value specified in the <code>EFSVolumeConfiguration</code> must either be omitted or set
     /// to <code>/</code> which will enforce the path set on the EFS access point. If an access
     /// point is used, transit encryption must be enabled in the
     /// <code>EFSVolumeConfiguration</code>. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Working with Amazon
     /// EFS Access Points</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
-    #[serde(rename = "accessPointId")]
-    #[serde(default)]
     pub access_point_id: std::option::Option<std::string::String>,
     /// <p>Whether or not to use the Amazon ECS task IAM role defined in a task definition when
     /// mounting the Amazon EFS file system. If enabled, transit encryption must be enabled in the
     /// <code>EFSVolumeConfiguration</code>. If this parameter is omitted, the default value
     /// of <code>DISABLED</code> is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html#efs-volume-accesspoints">Using
     /// Amazon EFS Access Points</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[serde(rename = "iam")]
-    #[serde(default)]
     pub iam: std::option::Option<crate::model::EfsAuthorizationConfigIam>,
 }
-impl std::fmt::Debug for EFSAuthorizationConfig {
+impl std::fmt::Debug for EfsAuthorizationConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EFSAuthorizationConfig");
+        let mut formatter = f.debug_struct("EfsAuthorizationConfig");
         formatter.field("access_point_id", &self.access_point_id);
         formatter.field("iam", &self.iam);
         formatter.finish()
     }
 }
-/// See [`EFSAuthorizationConfig`](crate::model::EFSAuthorizationConfig)
+/// See [`EfsAuthorizationConfig`](crate::model::EfsAuthorizationConfig)
 pub mod efs_authorization_config {
-    /// A builder for [`EFSAuthorizationConfig`](crate::model::EFSAuthorizationConfig)
+    /// A builder for [`EfsAuthorizationConfig`](crate::model::EfsAuthorizationConfig)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -11802,17 +10803,17 @@ pub mod efs_authorization_config {
             self.iam = input;
             self
         }
-        /// Consumes the builder and constructs a [`EFSAuthorizationConfig`](crate::model::EFSAuthorizationConfig)
-        pub fn build(self) -> crate::model::EFSAuthorizationConfig {
-            crate::model::EFSAuthorizationConfig {
+        /// Consumes the builder and constructs a [`EfsAuthorizationConfig`](crate::model::EfsAuthorizationConfig)
+        pub fn build(self) -> crate::model::EfsAuthorizationConfig {
+            crate::model::EfsAuthorizationConfig {
                 access_point_id: self.access_point_id,
                 iam: self.iam,
             }
         }
     }
 }
-impl EFSAuthorizationConfig {
-    /// Creates a new builder-style object to manufacture [`EFSAuthorizationConfig`](crate::model::EFSAuthorizationConfig)
+impl EfsAuthorizationConfig {
+    /// Creates a new builder-style object to manufacture [`EfsAuthorizationConfig`](crate::model::EfsAuthorizationConfig)
     pub fn builder() -> crate::model::efs_authorization_config::Builder {
         crate::model::efs_authorization_config::Builder::default()
     }
@@ -11846,7 +10847,7 @@ impl std::convert::From<&str> for EfsAuthorizationConfigIam {
 impl std::str::FromStr for EfsAuthorizationConfigIam {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(EfsAuthorizationConfigIam::from(s))
     }
 }
@@ -11862,15 +10863,6 @@ impl EfsAuthorizationConfigIam {
 impl AsRef<str> for EfsAuthorizationConfigIam {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for EfsAuthorizationConfigIam {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -11902,7 +10894,7 @@ impl std::convert::From<&str> for EfsTransitEncryption {
 impl std::str::FromStr for EfsTransitEncryption {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(EfsTransitEncryption::from(s))
     }
 }
@@ -11920,37 +10912,24 @@ impl AsRef<str> for EfsTransitEncryption {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for EfsTransitEncryption {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>This parameter is specified when you are using Docker volumes. Docker volumes are only
 /// supported when you are using the EC2 launch type. Windows containers only
 /// support the use of the <code>local</code> driver. To use bind mounts, specify a
 /// <code>host</code> instead.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DockerVolumeConfiguration {
     /// <p>The scope for the Docker volume that determines its lifecycle. Docker volumes that are
     /// scoped to a <code>task</code> are automatically provisioned when the task starts and
     /// destroyed when the task stops. Docker volumes that are scoped as <code>shared</code>
     /// persist after the task stops.</p>
-    #[serde(rename = "scope")]
-    #[serde(default)]
     pub scope: std::option::Option<crate::model::Scope>,
     /// <p>If this value is <code>true</code>, the Docker volume is created if it does not
     /// already exist.</p>
     /// <note>
     /// <p>This field is only used if the <code>scope</code> is <code>shared</code>.</p>
     /// </note>
-    #[serde(rename = "autoprovision")]
-    #[serde(default)]
     pub autoprovision: std::option::Option<bool>,
     /// <p>The Docker volume driver to use. The driver value must match the driver name provided
     /// by Docker because it is used for task placement. If the driver was installed using the
@@ -11961,23 +10940,17 @@ pub struct DockerVolumeConfiguration {
     /// <a href="https://docs.docker.com/engine/api/v1.35/#operation/VolumeCreate">Create a volume</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
     /// <code>xxdriver</code> option to <a href="https://docs.docker.com/engine/reference/commandline/volume_create/">docker
     /// volume create</a>.</p>
-    #[serde(rename = "driver")]
-    #[serde(default)]
     pub driver: std::option::Option<std::string::String>,
     /// <p>A map of Docker driver-specific options passed through. This parameter maps to
     /// <code>DriverOpts</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/VolumeCreate">Create a volume</a> section of the
     /// <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>xxopt</code> option to <a href="https://docs.docker.com/engine/reference/commandline/volume_create/">docker
     /// volume create</a>.</p>
-    #[serde(rename = "driverOpts")]
-    #[serde(default)]
     pub driver_opts:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Custom metadata to add to your Docker volume. This parameter maps to
     /// <code>Labels</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/VolumeCreate">Create a volume</a> section of the
     /// <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>xxlabel</code> option to <a href="https://docs.docker.com/engine/reference/commandline/volume_create/">docker
     /// volume create</a>.</p>
-    #[serde(rename = "labels")]
-    #[serde(default)]
     pub labels:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -12136,7 +11109,7 @@ impl std::convert::From<&str> for Scope {
 impl std::str::FromStr for Scope {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(Scope::from(s))
     }
 }
@@ -12154,19 +11127,10 @@ impl AsRef<str> for Scope {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for Scope {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>Details on a container instance bind mount host volume.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HostVolumeProperties {
     /// <p>When the <code>host</code> parameter is used, specify a <code>sourcePath</code> to
     /// declare the path on the host container instance that is presented to the container. If
@@ -12178,8 +11142,6 @@ pub struct HostVolumeProperties {
     /// contents of the source path folder are exported.</p>
     /// <p>If you are using the Fargate launch type, the <code>sourcePath</code>
     /// parameter is not supported.</p>
-    #[serde(rename = "sourcePath")]
-    #[serde(default)]
     pub source_path: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for HostVolumeProperties {
@@ -12263,7 +11225,7 @@ impl std::convert::From<&str> for NetworkMode {
 impl std::str::FromStr for NetworkMode {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(NetworkMode::from(s))
     }
 }
@@ -12283,20 +11245,11 @@ impl AsRef<str> for NetworkMode {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for NetworkMode {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>Container definitions are used in task definitions to describe the different
 /// containers that are launched as part of a task.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContainerDefinition {
     /// <p>The name of a container. If you are linking multiple containers together in a task
     /// definition, the <code>name</code> of one container can be entered in the
@@ -12305,8 +11258,6 @@ pub struct ContainerDefinition {
     /// <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
     /// <code>--name</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
     /// run</a>. </p>
-    #[serde(rename = "name")]
-    #[serde(default)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The image used to start a container. This string is passed directly to the Docker
     /// daemon. Images in the Docker Hub registry are available by default. Other repositories
@@ -12347,12 +11298,8 @@ pub struct ContainerDefinition {
     /// (for example, <code>quay.io/assemblyline/ubuntu</code>).</p>
     /// </li>
     /// </ul>
-    #[serde(rename = "image")]
-    #[serde(default)]
     pub image: std::option::Option<std::string::String>,
     /// <p>The private repository authentication credentials to use.</p>
-    #[serde(rename = "repositoryCredentials")]
-    #[serde(default)]
     pub repository_credentials: std::option::Option<crate::model::RepositoryCredentials>,
     /// <p>The number of <code>cpu</code> units reserved for the container. This parameter maps
     /// to <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
@@ -12400,8 +11347,6 @@ pub struct ContainerDefinition {
     /// quota. Windows containers only have access to the specified amount of CPU that is
     /// described in the task definition. A null or zero CPU value is passed to Docker as
     /// <code>0</code>, which Windows interprets as 1% of one CPU.</p>
-    #[serde(rename = "cpu")]
-    #[serde(default)]
     pub cpu: i32,
     /// <p>The amount (in MiB) of memory to present to the container. If your container attempts
     /// to exceed the memory specified here, the container is killed. The total amount of memory
@@ -12419,8 +11364,6 @@ pub struct ContainerDefinition {
     /// the value of <code>memory</code> is used.</p>
     /// <p>The Docker daemon reserves a minimum of 4 MiB of memory for a container, so you should
     /// not specify fewer than 4 MiB of memory for your containers.</p>
-    #[serde(rename = "memory")]
-    #[serde(default)]
     pub memory: std::option::Option<i32>,
     /// <p>The soft limit (in MiB) of memory to reserve for the container. When system memory is
     /// under heavy contention, Docker attempts to keep the container memory to this soft limit.
@@ -12444,8 +11387,6 @@ pub struct ContainerDefinition {
     /// consume more memory resources when needed.</p>
     /// <p>The Docker daemon reserves a minimum of 4 MiB of memory for a container, so you should
     /// not specify fewer than 4 MiB of memory for your containers. </p>
-    #[serde(rename = "memoryReservation")]
-    #[serde(default)]
     pub memory_reservation: std::option::Option<i32>,
     /// <p>The <code>links</code> parameter allows containers to communicate with each other
     /// without the need for port mappings. This parameter is only supported if the network mode
@@ -12466,8 +11407,6 @@ pub struct ContainerDefinition {
     /// isolation is achieved on the container instance using security groups and VPC
     /// settings.</p>
     /// </important>
-    #[serde(rename = "links")]
-    #[serde(default)]
     pub links: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The list of port mappings for the container. Port mappings allow containers to access
     /// ports on the host container instance to send or receive traffic.</p>
@@ -12492,8 +11431,6 @@ pub struct ContainerDefinition {
     /// <code>networkBindings</code> section <a>DescribeTasks</a>
     /// responses.</p>
     /// </note>
-    #[serde(rename = "portMappings")]
-    #[serde(default)]
     pub port_mappings: std::option::Option<std::vec::Vec<crate::model::PortMapping>>,
     /// <p>If the <code>essential</code> parameter of a container is marked as <code>true</code>,
     /// and that container fails or stops for any reason, all other containers that are part of
@@ -12505,8 +11442,6 @@ pub struct ContainerDefinition {
     /// common purpose into components, and separate the different components into multiple task
     /// definitions. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/application_architecture.html">Application
     /// Architecture</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[serde(rename = "essential")]
-    #[serde(default)]
     pub essential: std::option::Option<bool>,
     /// <important>
     /// <p>Early versions of the Amazon ECS container agent do not properly handle
@@ -12517,16 +11452,12 @@ pub struct ContainerDefinition {
     /// <p>The entry point that is passed to the container. This parameter maps to
     /// <code>Entrypoint</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
     /// <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--entrypoint</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#entrypoint">https://docs.docker.com/engine/reference/builder/#entrypoint</a>.</p>
-    #[serde(rename = "entryPoint")]
-    #[serde(default)]
     pub entry_point: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The command that is passed to the container. This parameter maps to <code>Cmd</code>
     /// in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
     /// <code>COMMAND</code> parameter to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
     /// run</a>. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">https://docs.docker.com/engine/reference/builder/#cmd</a>. If there are multiple arguments, each
     /// argument should be a separated string in the array.</p>
-    #[serde(rename = "command")]
-    #[serde(default)]
     pub command: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The environment variables to pass to a container. This parameter maps to
     /// <code>Env</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
@@ -12535,8 +11466,6 @@ pub struct ContainerDefinition {
     /// <p>We do not recommend using plaintext environment variables for sensitive
     /// information, such as credential data.</p>
     /// </important>
-    #[serde(rename = "environment")]
-    #[serde(default)]
     pub environment: std::option::Option<std::vec::Vec<crate::model::KeyValuePair>>,
     /// <p>A list of files containing the environment variables to pass to a container. This
     /// parameter maps to the <code>--env-file</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
@@ -12552,8 +11481,6 @@ pub struct ContainerDefinition {
     /// same variable, they are processed from the top down. It is recommended to use unique
     /// variable names. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html">Specifying Environment
     /// Variables</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[serde(rename = "environmentFiles")]
-    #[serde(default)]
     pub environment_files: std::option::Option<std::vec::Vec<crate::model::EnvironmentFile>>,
     /// <p>The mount points for data volumes in your container.</p>
     /// <p>This parameter maps to <code>Volumes</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a>
@@ -12561,27 +11488,19 @@ pub struct ContainerDefinition {
     /// <p>Windows containers can mount whole directories on the same drive as
     /// <code>$env:ProgramData</code>. Windows containers cannot mount directories on a
     /// different drive, and mount point cannot be across drives.</p>
-    #[serde(rename = "mountPoints")]
-    #[serde(default)]
     pub mount_points: std::option::Option<std::vec::Vec<crate::model::MountPoint>>,
     /// <p>Data volumes to mount from another container. This parameter maps to
     /// <code>VolumesFrom</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
     /// <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--volumes-from</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
-    #[serde(rename = "volumesFrom")]
-    #[serde(default)]
     pub volumes_from: std::option::Option<std::vec::Vec<crate::model::VolumeFrom>>,
     /// <p>Linux-specific modifications that are applied to the container, such as Linux kernel
     /// capabilities. For more information see <a>KernelCapabilities</a>.</p>
     /// <note>
     /// <p>This parameter is not supported for Windows containers.</p>
     /// </note>
-    #[serde(rename = "linuxParameters")]
-    #[serde(default)]
     pub linux_parameters: std::option::Option<crate::model::LinuxParameters>,
     /// <p>The secrets to pass to the container. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
     /// Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[serde(rename = "secrets")]
-    #[serde(default)]
     pub secrets: std::option::Option<std::vec::Vec<crate::model::Secret>>,
     /// <p>The dependencies defined for container startup and shutdown. A container can contain
     /// multiple dependencies. When a dependency is defined for container startup, for container
@@ -12597,8 +11516,6 @@ pub struct ContainerDefinition {
     /// container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// <p>For tasks using the Fargate launch type, the task or service requires
     /// platform version <code>1.3.0</code> or later.</p>
-    #[serde(rename = "dependsOn")]
-    #[serde(default)]
     pub depends_on: std::option::Option<std::vec::Vec<crate::model::ContainerDependency>>,
     /// <p>Time duration (in seconds) to wait before giving up on resolving dependencies for a
     /// container. For example, you specify two containers in a task definition with containerA
@@ -12623,8 +11540,6 @@ pub struct ContainerDefinition {
     /// the <code>ecs-init</code> package. If your container instances are launched from version
     /// <code>20190301</code> or later, then they contain the required versions of the
     /// container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[serde(rename = "startTimeout")]
-    #[serde(default)]
     pub start_timeout: std::option::Option<i32>,
     /// <p>Time duration (in seconds) to wait before the container is forcefully killed if it
     /// doesn't exit normally on its own.</p>
@@ -12646,8 +11561,6 @@ pub struct ContainerDefinition {
     /// <code>ecs-init</code> package. If your container instances are launched from version
     /// <code>20190301</code> or later, then they contain the required versions of the
     /// container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[serde(rename = "stopTimeout")]
-    #[serde(default)]
     pub stop_timeout: std::option::Option<i32>,
     /// <p>The hostname to use for your container. This parameter maps to <code>Hostname</code>
     /// in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
@@ -12657,8 +11570,6 @@ pub struct ContainerDefinition {
     /// <p>The <code>hostname</code> parameter is not supported if you are using the
     /// <code>awsvpc</code> network mode.</p>
     /// </note>
-    #[serde(rename = "hostname")]
-    #[serde(default)]
     pub hostname: std::option::Option<std::string::String>,
     /// <p>The user to use inside the container. This parameter maps to <code>User</code> in the
     /// <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
@@ -12706,14 +11617,10 @@ pub struct ContainerDefinition {
     /// <note>
     /// <p>This parameter is not supported for Windows containers.</p>
     /// </note>
-    #[serde(rename = "user")]
-    #[serde(default)]
     pub user: std::option::Option<std::string::String>,
     /// <p>The working directory in which to run commands inside the container. This parameter
     /// maps to <code>WorkingDir</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
     /// <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--workdir</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
-    #[serde(rename = "workingDirectory")]
-    #[serde(default)]
     pub working_directory: std::option::Option<std::string::String>,
     /// <p>When this parameter is true, networking is disabled within the container. This
     /// parameter maps to <code>NetworkDisabled</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a>
@@ -12721,8 +11628,6 @@ pub struct ContainerDefinition {
     /// <note>
     /// <p>This parameter is not supported for Windows containers.</p>
     /// </note>
-    #[serde(rename = "disableNetworking")]
-    #[serde(default)]
     pub disable_networking: std::option::Option<bool>,
     /// <p>When this parameter is true, the container is given elevated privileges on the host
     /// container instance (similar to the <code>root</code> user). This parameter maps to
@@ -12731,8 +11636,6 @@ pub struct ContainerDefinition {
     /// <note>
     /// <p>This parameter is not supported for Windows containers or tasks run on AWS Fargate.</p>
     /// </note>
-    #[serde(rename = "privileged")]
-    #[serde(default)]
     pub privileged: std::option::Option<bool>,
     /// <p>When this parameter is true, the container is given read-only access to its root file
     /// system. This parameter maps to <code>ReadonlyRootfs</code> in the
@@ -12742,8 +11645,6 @@ pub struct ContainerDefinition {
     /// <note>
     /// <p>This parameter is not supported for Windows containers.</p>
     /// </note>
-    #[serde(rename = "readonlyRootFilesystem")]
-    #[serde(default)]
     pub readonly_root_filesystem: std::option::Option<bool>,
     /// <p>A list of DNS servers that are presented to the container. This parameter maps to
     /// <code>Dns</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
@@ -12751,8 +11652,6 @@ pub struct ContainerDefinition {
     /// <note>
     /// <p>This parameter is not supported for Windows containers.</p>
     /// </note>
-    #[serde(rename = "dnsServers")]
-    #[serde(default)]
     pub dns_servers: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of DNS search domains that are presented to the container. This parameter maps
     /// to <code>DnsSearch</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
@@ -12760,8 +11659,6 @@ pub struct ContainerDefinition {
     /// <note>
     /// <p>This parameter is not supported for Windows containers.</p>
     /// </note>
-    #[serde(rename = "dnsSearchDomains")]
-    #[serde(default)]
     pub dns_search_domains: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of hostnames and IP address mappings to append to the <code>/etc/hosts</code>
     /// file on the container. This parameter maps to <code>ExtraHosts</code> in the
@@ -12772,8 +11669,6 @@ pub struct ContainerDefinition {
     /// <p>This parameter is not supported for Windows containers or tasks that use the
     /// <code>awsvpc</code> network mode.</p>
     /// </note>
-    #[serde(rename = "extraHosts")]
-    #[serde(default)]
     pub extra_hosts: std::option::Option<std::vec::Vec<crate::model::HostEntry>>,
     /// <p>A list of strings to provide custom labels for SELinux and AppArmor multi-level
     /// security systems. This field is not valid for containers in tasks using the
@@ -12797,28 +11692,20 @@ pub struct ContainerDefinition {
     /// Run Security Configuration</a>. </p>
     /// <p>Valid values: "no-new-privileges" | "apparmor:PROFILE" | "label:value" |
     /// "credentialspec:CredentialSpecFilePath"</p>
-    #[serde(rename = "dockerSecurityOptions")]
-    #[serde(default)]
     pub docker_security_options: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>When this parameter is <code>true</code>, this allows you to deploy containerized
     /// applications that require <code>stdin</code> or a <code>tty</code> to be allocated. This
     /// parameter maps to <code>OpenStdin</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a>
     /// section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--interactive</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
-    #[serde(rename = "interactive")]
-    #[serde(default)]
     pub interactive: std::option::Option<bool>,
     /// <p>When this parameter is <code>true</code>, a TTY is allocated. This parameter maps to
     /// <code>Tty</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
     /// <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--tty</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
-    #[serde(rename = "pseudoTerminal")]
-    #[serde(default)]
     pub pseudo_terminal: std::option::Option<bool>,
     /// <p>A key/value map of labels to add to the container. This parameter maps to
     /// <code>Labels</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
     /// <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--label</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
     /// </p>
-    #[serde(rename = "dockerLabels")]
-    #[serde(default)]
     pub docker_labels:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A list of <code>ulimits</code> to set in the container. If a ulimit value is specified
@@ -12838,8 +11725,6 @@ pub struct ContainerDefinition {
     /// <note>
     /// <p>This parameter is not supported for Windows containers.</p>
     /// </note>
-    #[serde(rename = "ulimits")]
-    #[serde(default)]
     pub ulimits: std::option::Option<std::vec::Vec<crate::model::Ulimit>>,
     /// <p>The log configuration specification for the container.</p>
     /// <p>This parameter maps to <code>LogConfig</code> in the
@@ -12868,16 +11753,12 @@ pub struct ContainerDefinition {
     /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS Container
     /// Agent Configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// </note>
-    #[serde(rename = "logConfiguration")]
-    #[serde(default)]
     pub log_configuration: std::option::Option<crate::model::LogConfiguration>,
     /// <p>The container health check command and associated configuration parameters for the
     /// container. This parameter maps to <code>HealthCheck</code> in the
     /// <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
     /// <code>HEALTHCHECK</code> parameter of <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
     /// run</a>.</p>
-    #[serde(rename = "healthCheck")]
-    #[serde(default)]
     pub health_check: std::option::Option<crate::model::HealthCheck>,
     /// <p>A list of namespaced kernel parameters to set in the container. This parameter maps to
     /// <code>Sysctls</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
@@ -12891,20 +11772,14 @@ pub struct ContainerDefinition {
     /// <code>host</code> network mode, it changes the container instance's namespaced
     /// kernel parameters as well as the containers.</p>
     /// </note>
-    #[serde(rename = "systemControls")]
-    #[serde(default)]
     pub system_controls: std::option::Option<std::vec::Vec<crate::model::SystemControl>>,
     /// <p>The type and amount of a resource to assign to a container. The only supported
     /// resource is a GPU.</p>
-    #[serde(rename = "resourceRequirements")]
-    #[serde(default)]
     pub resource_requirements:
         std::option::Option<std::vec::Vec<crate::model::ResourceRequirement>>,
     /// <p>The FireLens configuration for the container. This is used to specify and configure a
     /// log router for container logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom Log Routing</a>
     /// in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[serde(rename = "firelensConfiguration")]
-    #[serde(default)]
     pub firelens_configuration: std::option::Option<crate::model::FirelensConfiguration>,
 }
 impl std::fmt::Debug for ContainerDefinition {
@@ -13808,12 +12683,10 @@ impl ContainerDefinition {
 /// log router for container logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom Log Routing</a>
 /// in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FirelensConfiguration {
     /// <p>The log router to use. The valid values are <code>fluentd</code> or
     /// <code>fluentbit</code>.</p>
-    #[serde(rename = "type")]
-    #[serde(default)]
     pub r#type: std::option::Option<crate::model::FirelensConfigurationType>,
     /// <p>The options to use when configuring the log router. This field is optional and can be
     /// used to specify a custom configuration file or to add additional metadata, such as the
@@ -13827,8 +12700,6 @@ pub struct FirelensConfiguration {
     /// <p>Tasks hosted on AWS Fargate only support the <code>file</code> configuration file
     /// type.</p>
     /// </note>
-    #[serde(rename = "options")]
-    #[serde(default)]
     pub options:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -13928,7 +12799,7 @@ impl std::convert::From<&str> for FirelensConfigurationType {
 impl std::str::FromStr for FirelensConfigurationType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(FirelensConfigurationType::from(s))
     }
 }
@@ -13944,15 +12815,6 @@ impl FirelensConfigurationType {
 impl AsRef<str> for FirelensConfigurationType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for FirelensConfigurationType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -13979,16 +12841,12 @@ impl<'de> serde::Deserialize<'de> for FirelensConfigurationType {
 /// </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SystemControl {
     /// <p>The namespaced kernel parameter for which to set a <code>value</code>.</p>
-    #[serde(rename = "namespace")]
-    #[serde(default)]
     pub namespace: std::option::Option<std::string::String>,
     /// <p>The value for the namespaced kernel parameter specified in
     /// <code>namespace</code>.</p>
-    #[serde(rename = "value")]
-    #[serde(default)]
     pub value: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SystemControl {
@@ -14111,7 +12969,7 @@ impl SystemControl {
 /// </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HealthCheck {
     /// <p>A string array representing the command that the container runs to determine if it is
     /// healthy. The string array must start with <code>CMD</code> to execute the command
@@ -14123,24 +12981,16 @@ pub struct HealthCheck {
     /// <p>An exit code of 0 indicates success, and non-zero exit code indicates failure. For
     /// more information, see <code>HealthCheck</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a>
     /// section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p>
-    #[serde(rename = "command")]
-    #[serde(default)]
     pub command: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The time period in seconds between each health check execution. You may specify
     /// between 5 and 300 seconds. The default value is 30 seconds.</p>
-    #[serde(rename = "interval")]
-    #[serde(default)]
     pub interval: std::option::Option<i32>,
     /// <p>The time period in seconds to wait for a health check to succeed before it is
     /// considered a failure. You may specify between 2 and 60 seconds. The default value is
     /// 5.</p>
-    #[serde(rename = "timeout")]
-    #[serde(default)]
     pub timeout: std::option::Option<i32>,
     /// <p>The number of times to retry a failed health check before the container is considered
     /// unhealthy. You may specify between 1 and 10 retries. The default value is 3.</p>
-    #[serde(rename = "retries")]
-    #[serde(default)]
     pub retries: std::option::Option<i32>,
     /// <p>The optional grace period within which to provide containers time to bootstrap before
     /// failed health checks count towards the maximum number of retries. You may specify
@@ -14150,8 +13000,6 @@ pub struct HealthCheck {
     /// is considered healthy and any subsequent failures count toward the maximum number of
     /// retries.</p>
     /// </note>
-    #[serde(rename = "startPeriod")]
-    #[serde(default)]
     pub start_period: std::option::Option<i32>,
 }
 impl std::fmt::Debug for HealthCheck {
@@ -14296,7 +13144,7 @@ impl HealthCheck {
 /// </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LogConfiguration {
     /// <p>The log driver to use for the container.</p>
     /// <p>For tasks on AWS Fargate, the supported log drivers are <code>awslogs</code>,
@@ -14317,19 +13165,13 @@ pub struct LogConfiguration {
     /// do not currently provide support for running modified copies of this
     /// software.</p>
     /// </note>
-    #[serde(rename = "logDriver")]
-    #[serde(default)]
     pub log_driver: std::option::Option<crate::model::LogDriver>,
     /// <p>The configuration options to send to the log driver. This parameter requires version 1.19 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
     /// </p>
-    #[serde(rename = "options")]
-    #[serde(default)]
     pub options:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The secrets to pass to the log configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
     /// Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[serde(rename = "secretOptions")]
-    #[serde(default)]
     pub secret_options: std::option::Option<std::vec::Vec<crate::model::Secret>>,
 }
 impl std::fmt::Debug for LogConfiguration {
@@ -14448,11 +13290,9 @@ impl LogConfiguration {
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
 /// Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Secret {
     /// <p>The name of the secret.</p>
-    #[serde(rename = "name")]
-    #[serde(default)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The secret to expose to the container. The supported values are either the full ARN of
     /// the AWS Secrets Manager secret or the full ARN of the parameter in the AWS Systems Manager Parameter Store.</p>
@@ -14461,8 +13301,6 @@ pub struct Secret {
     /// are launching, then you can use either the full ARN or name of the parameter. If the
     /// parameter exists in a different Region, then the full ARN must be specified.</p>
     /// </note>
-    #[serde(rename = "valueFrom")]
-    #[serde(default)]
     pub value_from: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for Secret {
@@ -14563,7 +13401,7 @@ impl std::convert::From<&str> for LogDriver {
 impl std::str::FromStr for LogDriver {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(LogDriver::from(s))
     }
 }
@@ -14587,15 +13425,6 @@ impl AsRef<str> for LogDriver {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for LogDriver {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>The <code>ulimit</code> settings to pass to the container.</p>
 /// <p>Amazon ECS tasks hosted on Fargate use the default
@@ -14606,19 +13435,13 @@ impl<'de> serde::Deserialize<'de> for LogDriver {
 /// <code>nofile</code> soft limit is <code>1024</code> and hard limit
 /// is <code>4096</code>.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Ulimit {
     /// <p>The <code>type</code> of the <code>ulimit</code>.</p>
-    #[serde(rename = "name")]
-    #[serde(default)]
     pub name: std::option::Option<crate::model::UlimitName>,
     /// <p>The soft limit for the ulimit type.</p>
-    #[serde(rename = "softLimit")]
-    #[serde(default)]
     pub soft_limit: i32,
     /// <p>The hard limit for the ulimit type.</p>
-    #[serde(rename = "hardLimit")]
-    #[serde(default)]
     pub hard_limit: i32,
 }
 impl std::fmt::Debug for Ulimit {
@@ -14739,7 +13562,7 @@ impl std::convert::From<&str> for UlimitName {
 impl std::str::FromStr for UlimitName {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(UlimitName::from(s))
     }
 }
@@ -14770,28 +13593,15 @@ impl AsRef<str> for UlimitName {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for UlimitName {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>Hostnames and IP address entries that are added to the <code>/etc/hosts</code> file of
 /// a container via the <code>extraHosts</code> parameter of its <a>ContainerDefinition</a>. </p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HostEntry {
     /// <p>The hostname to use in the <code>/etc/hosts</code> entry.</p>
-    #[serde(rename = "hostname")]
-    #[serde(default)]
     pub hostname: std::option::Option<std::string::String>,
     /// <p>The IP address to use in the <code>/etc/hosts</code> entry.</p>
-    #[serde(rename = "ipAddress")]
-    #[serde(default)]
     pub ip_address: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for HostEntry {
@@ -14863,11 +13673,9 @@ impl HostEntry {
 /// that the task or service uses platform version 1.3.0 or later.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContainerDependency {
     /// <p>The name of a container.</p>
-    #[serde(rename = "containerName")]
-    #[serde(default)]
     pub container_name: std::option::Option<std::string::String>,
     /// <p>The dependency condition of the container. The following are the available conditions
     /// and their behavior:</p>
@@ -14900,8 +13708,6 @@ pub struct ContainerDependency {
     /// This condition is confirmed only at task startup.</p>
     /// </li>
     /// </ul>
-    #[serde(rename = "condition")]
-    #[serde(default)]
     pub condition: std::option::Option<crate::model::ContainerCondition>,
 }
 impl std::fmt::Debug for ContainerDependency {
@@ -15024,7 +13830,7 @@ impl std::convert::From<&str> for ContainerCondition {
 impl std::str::FromStr for ContainerCondition {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ContainerCondition::from(s))
     }
 }
@@ -15044,19 +13850,10 @@ impl AsRef<str> for ContainerCondition {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for ContainerCondition {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>Linux-specific options that are applied to the container, such as Linux <a>KernelCapabilities</a>.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LinuxParameters {
     /// <p>The Linux capabilities for the container that are added to or dropped from the default
     /// configuration provided by Docker.</p>
@@ -15066,8 +13863,6 @@ pub struct LinuxParameters {
     /// <code>add</code> parameter is only supported if using platform version 1.4.0 or
     /// later.</p>
     /// </note>
-    #[serde(rename = "capabilities")]
-    #[serde(default)]
     pub capabilities: std::option::Option<crate::model::KernelCapabilities>,
     /// <p>Any host devices to expose to the container. This parameter maps to
     /// <code>Devices</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
@@ -15076,14 +13871,10 @@ pub struct LinuxParameters {
     /// <p>If you are using tasks that use the Fargate launch type, the
     /// <code>devices</code> parameter is not supported.</p>
     /// </note>
-    #[serde(rename = "devices")]
-    #[serde(default)]
     pub devices: std::option::Option<std::vec::Vec<crate::model::Device>>,
     /// <p>Run an <code>init</code> process inside the container that forwards signals and reaps
     /// processes. This parameter maps to the <code>--init</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. This parameter requires version 1.25 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
     /// </p>
-    #[serde(rename = "initProcessEnabled")]
-    #[serde(default)]
     pub init_process_enabled: std::option::Option<bool>,
     /// <p>The value for the size (in MiB) of the <code>/dev/shm</code> volume. This parameter
     /// maps to the <code>--shm-size</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
@@ -15092,8 +13883,6 @@ pub struct LinuxParameters {
     /// <p>If you are using tasks that use the Fargate launch type, the
     /// <code>sharedMemorySize</code> parameter is not supported.</p>
     /// </note>
-    #[serde(rename = "sharedMemorySize")]
-    #[serde(default)]
     pub shared_memory_size: std::option::Option<i32>,
     /// <p>The container path, mount options, and size (in MiB) of the tmpfs mount. This
     /// parameter maps to the <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
@@ -15101,8 +13890,6 @@ pub struct LinuxParameters {
     /// <p>If you are using tasks that use the Fargate launch type, the
     /// <code>tmpfs</code> parameter is not supported.</p>
     /// </note>
-    #[serde(rename = "tmpfs")]
-    #[serde(default)]
     pub tmpfs: std::option::Option<std::vec::Vec<crate::model::Tmpfs>>,
     /// <p>The total amount of swap memory (in MiB) a container can use. This parameter will be
     /// translated to the <code>--memory-swap</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a> where the value would be the sum of
@@ -15116,8 +13903,6 @@ pub struct LinuxParameters {
     /// <p>If you are using tasks that use the Fargate launch type, the
     /// <code>maxSwap</code> parameter is not supported.</p>
     /// </note>
-    #[serde(rename = "maxSwap")]
-    #[serde(default)]
     pub max_swap: std::option::Option<i32>,
     /// <p>This allows you to tune a container's memory swappiness behavior. A
     /// <code>swappiness</code> value of <code>0</code> will cause swapping to not happen
@@ -15131,8 +13916,6 @@ pub struct LinuxParameters {
     /// <p>If you are using tasks that use the Fargate launch type, the
     /// <code>swappiness</code> parameter is not supported.</p>
     /// </note>
-    #[serde(rename = "swappiness")]
-    #[serde(default)]
     pub swappiness: std::option::Option<i32>,
 }
 impl std::fmt::Debug for LinuxParameters {
@@ -15297,15 +14080,11 @@ impl LinuxParameters {
 
 /// <p>The container path, mount options, and size of the tmpfs mount.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tmpfs {
     /// <p>The absolute file path where the tmpfs volume is to be mounted.</p>
-    #[serde(rename = "containerPath")]
-    #[serde(default)]
     pub container_path: std::option::Option<std::string::String>,
     /// <p>The maximum size (in MiB) of the tmpfs volume.</p>
-    #[serde(rename = "size")]
-    #[serde(default)]
     pub size: i32,
     /// <p>The list of tmpfs volume mount options.</p>
     /// <p>Valid values: <code>"defaults" | "ro" | "rw" | "suid" | "nosuid" | "dev" | "nodev" |
@@ -15315,8 +14094,6 @@ pub struct Tmpfs {
     /// "relatime" | "norelatime" | "strictatime" | "nostrictatime" | "mode" | "uid" | "gid"
     /// | "nr_inodes" | "nr_blocks" | "mpol"</code>
     /// </p>
-    #[serde(rename = "mountOptions")]
-    #[serde(default)]
     pub mount_options: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl std::fmt::Debug for Tmpfs {
@@ -15392,21 +14169,15 @@ impl Tmpfs {
 
 /// <p>An object representing a container instance host device.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Device {
     /// <p>The path for the device on the host container instance.</p>
-    #[serde(rename = "hostPath")]
-    #[serde(default)]
     pub host_path: std::option::Option<std::string::String>,
     /// <p>The path inside the container at which to expose the host device.</p>
-    #[serde(rename = "containerPath")]
-    #[serde(default)]
     pub container_path: std::option::Option<std::string::String>,
     /// <p>The explicit permissions to provide to the container for the device. By default, the
     /// container has permissions for <code>read</code>, <code>write</code>, and
     /// <code>mknod</code> for the device.</p>
-    #[serde(rename = "permissions")]
-    #[serde(default)]
     pub permissions: std::option::Option<std::vec::Vec<crate::model::DeviceCgroupPermission>>,
 }
 impl std::fmt::Debug for Device {
@@ -15514,7 +14285,7 @@ impl std::convert::From<&str> for DeviceCgroupPermission {
 impl std::str::FromStr for DeviceCgroupPermission {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(DeviceCgroupPermission::from(s))
     }
 }
@@ -15533,15 +14304,6 @@ impl AsRef<str> for DeviceCgroupPermission {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for DeviceCgroupPermission {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>The Linux capabilities for the container that are added to or dropped from the default
 /// configuration provided by Docker. For more information on the default capabilities and
@@ -15549,7 +14311,7 @@ impl<'de> serde::Deserialize<'de> for DeviceCgroupPermission {
 /// reference</i>. For more detailed information on these Linux capabilities, see
 /// the <a href="http://man7.org/linux/man-pages/man7/capabilities.7.html">capabilities(7)</a> Linux manual page.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KernelCapabilities {
     /// <p>The Linux capabilities for the container that have been added to the default
     /// configuration provided by Docker. This parameter maps to <code>CapAdd</code> in the
@@ -15569,8 +14331,6 @@ pub struct KernelCapabilities {
     /// "SYS_RESOURCE" | "SYS_TIME" | "SYS_TTY_CONFIG" | "SYSLOG" |
     /// "WAKE_ALARM"</code>
     /// </p>
-    #[serde(rename = "add")]
-    #[serde(default)]
     pub add: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Linux capabilities for the container that have been removed from the default
     /// configuration provided by Docker. This parameter maps to <code>CapDrop</code> in the
@@ -15586,8 +14346,6 @@ pub struct KernelCapabilities {
     /// "SYS_RESOURCE" | "SYS_TIME" | "SYS_TTY_CONFIG" | "SYSLOG" |
     /// "WAKE_ALARM"</code>
     /// </p>
-    #[serde(rename = "drop")]
-    #[serde(default)]
     pub drop: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl std::fmt::Debug for KernelCapabilities {
@@ -15652,18 +14410,14 @@ impl KernelCapabilities {
 
 /// <p>Details on a data volume from another container in the same task definition.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VolumeFrom {
     /// <p>The name of another container within the same task definition from which to mount
     /// volumes.</p>
-    #[serde(rename = "sourceContainer")]
-    #[serde(default)]
     pub source_container: std::option::Option<std::string::String>,
     /// <p>If this value is <code>true</code>, the container has read-only access to the volume.
     /// If this value is <code>false</code>, then the container can write to the volume. The
     /// default value is <code>false</code>.</p>
-    #[serde(rename = "readOnly")]
-    #[serde(default)]
     pub read_only: std::option::Option<bool>,
 }
 impl std::fmt::Debug for VolumeFrom {
@@ -15726,22 +14480,16 @@ impl VolumeFrom {
 
 /// <p>Details on a volume mount point that is used in a container definition.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MountPoint {
     /// <p>The name of the volume to mount. Must be a volume name referenced in the
     /// <code>name</code> parameter of task definition <code>volume</code>.</p>
-    #[serde(rename = "sourceVolume")]
-    #[serde(default)]
     pub source_volume: std::option::Option<std::string::String>,
     /// <p>The path on the container to mount the host volume at.</p>
-    #[serde(rename = "containerPath")]
-    #[serde(default)]
     pub container_path: std::option::Option<std::string::String>,
     /// <p>If this value is <code>true</code>, the container has read-only access to the volume.
     /// If this value is <code>false</code>, then the container can write to the volume. The
     /// default value is <code>false</code>.</p>
-    #[serde(rename = "readOnly")]
-    #[serde(default)]
     pub read_only: std::option::Option<bool>,
 }
 impl std::fmt::Debug for MountPoint {
@@ -15832,7 +14580,7 @@ impl MountPoint {
 /// container port assignments are visible in the <code>networkBindings</code> section of
 /// <a>DescribeTasks</a> API responses.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PortMapping {
     /// <p>The port number on the container that is bound to the user-specified or automatically
     /// assigned host port.</p>
@@ -15844,8 +14592,6 @@ pub struct PortMapping {
     /// a host port in the ephemeral port range. For more information, see
     /// <code>hostPort</code>. Port mappings that are automatically assigned in this way do not
     /// count toward the 100 reserved ports limit of a container instance.</p>
-    #[serde(rename = "containerPort")]
-    #[serde(default)]
     pub container_port: std::option::Option<i32>,
     /// <p>The port number on the container instance to reserve for your container.</p>
     /// <p>If you are using containers in a task with the <code>awsvpc</code> or
@@ -15875,13 +14621,9 @@ pub struct PortMapping {
     /// output. A container instance can have up to 100 reserved ports at a time, including the
     /// default reserved ports. Automatically assigned ports don't count toward the 100 reserved
     /// ports limit.</p>
-    #[serde(rename = "hostPort")]
-    #[serde(default)]
     pub host_port: std::option::Option<i32>,
     /// <p>The protocol used for the port mapping. Valid values are <code>tcp</code> and
     /// <code>udp</code>. The default is <code>tcp</code>.</p>
-    #[serde(rename = "protocol")]
-    #[serde(default)]
     pub protocol: std::option::Option<crate::model::TransportProtocol>,
 }
 impl std::fmt::Debug for PortMapping {
@@ -15990,7 +14732,7 @@ impl PortMapping {
 
 /// <p>The repository credentials for private registry authentication.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RepositoryCredentials {
     /// <p>The Amazon Resource Name (ARN) of the secret containing the private repository
     /// credentials.</p>
@@ -16000,8 +14742,6 @@ pub struct RepositoryCredentials {
     /// or the name of the secret. When you are using the AWS Management Console, you must specify the
     /// full ARN of the secret.</p>
     /// </note>
-    #[serde(rename = "credentialsParameter")]
-    #[serde(default)]
     pub credentials_parameter: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for RepositoryCredentials {
@@ -16057,18 +14797,14 @@ impl RepositoryCredentials {
 /// <p>The devices that are available on the container instance. The only supported device
 /// type is a GPU.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PlatformDevice {
     /// <p>The ID for the GPU(s) on the container instance. The available GPU IDs can also be
     /// obtained on the container instance in the
     /// <code>/var/lib/ecs/gpu/nvidia_gpu_info.json</code> file.</p>
-    #[serde(rename = "id")]
-    #[serde(default)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The type of device that is available on the container instance. The only supported
     /// value is <code>GPU</code>.</p>
-    #[serde(rename = "type")]
-    #[serde(default)]
     pub r#type: std::option::Option<crate::model::PlatformDeviceType>,
 }
 impl std::fmt::Debug for PlatformDevice {
@@ -16155,7 +14891,7 @@ impl std::convert::From<&str> for PlatformDeviceType {
 impl std::str::FromStr for PlatformDeviceType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(PlatformDeviceType::from(s))
     }
 }
@@ -16172,32 +14908,17 @@ impl AsRef<str> for PlatformDeviceType {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for PlatformDeviceType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>The current account setting for a resource.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Setting {
     /// <p>The Amazon ECS resource name.</p>
-    #[serde(rename = "name")]
-    #[serde(default)]
     pub name: std::option::Option<crate::model::SettingName>,
     /// <p>Whether the account setting is enabled or disabled for the specified resource.</p>
-    #[serde(rename = "value")]
-    #[serde(default)]
     pub value: std::option::Option<std::string::String>,
     /// <p>The ARN of the principal, which can be an IAM user, IAM role, or the root user. If
     /// this field is omitted, the authenticated user is assumed.</p>
-    #[serde(rename = "principalArn")]
-    #[serde(default)]
     pub principal_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for Setting {
@@ -16302,7 +15023,7 @@ impl std::convert::From<&str> for SettingName {
 impl std::str::FromStr for SettingName {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(SettingName::from(s))
     }
 }
@@ -16321,15 +15042,6 @@ impl SettingName {
 impl AsRef<str> for SettingName {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for SettingName {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -16363,7 +15075,7 @@ impl std::convert::From<&str> for DesiredStatus {
 impl std::str::FromStr for DesiredStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(DesiredStatus::from(s))
     }
 }
@@ -16380,15 +15092,6 @@ impl DesiredStatus {
 impl AsRef<str> for DesiredStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for DesiredStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -16420,7 +15123,7 @@ impl std::convert::From<&str> for SortOrder {
 impl std::str::FromStr for SortOrder {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(SortOrder::from(s))
     }
 }
@@ -16436,15 +15139,6 @@ impl SortOrder {
 impl AsRef<str> for SortOrder {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for SortOrder {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -16478,7 +15172,7 @@ impl std::convert::From<&str> for TaskDefinitionFamilyStatus {
 impl std::str::FromStr for TaskDefinitionFamilyStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(TaskDefinitionFamilyStatus::from(s))
     }
 }
@@ -16497,33 +15191,18 @@ impl AsRef<str> for TaskDefinitionFamilyStatus {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for TaskDefinitionFamilyStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>The details of the execute command session.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Session {
     /// <p>The ID of the execute command session.</p>
-    #[serde(rename = "sessionId")]
-    #[serde(default)]
     pub session_id: std::option::Option<std::string::String>,
     /// <p>A URL back to managed agent on the container that the SSM Session Manager client uses
     /// to send commands and receive output from the container.</p>
-    #[serde(rename = "streamUrl")]
-    #[serde(default)]
     pub stream_url: std::option::Option<std::string::String>,
     /// <p>An encrypted token value containing session and caller information. Used to
     /// authenticate the connection to the container.</p>
-    #[serde(rename = "tokenValue")]
-    #[serde(default)]
     pub token_value: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for Session {
@@ -16618,7 +15297,7 @@ impl std::convert::From<&str> for TaskSetField {
 impl std::str::FromStr for TaskSetField {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(TaskSetField::from(s))
     }
 }
@@ -16633,15 +15312,6 @@ impl TaskSetField {
 impl AsRef<str> for TaskSetField {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for TaskSetField {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -16671,7 +15341,7 @@ impl std::convert::From<&str> for TaskField {
 impl std::str::FromStr for TaskField {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(TaskField::from(s))
     }
 }
@@ -16686,15 +15356,6 @@ impl TaskField {
 impl AsRef<str> for TaskField {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for TaskField {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -16724,7 +15385,7 @@ impl std::convert::From<&str> for TaskDefinitionField {
 impl std::str::FromStr for TaskDefinitionField {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(TaskDefinitionField::from(s))
     }
 }
@@ -16739,15 +15400,6 @@ impl TaskDefinitionField {
 impl AsRef<str> for TaskDefinitionField {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for TaskDefinitionField {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -16777,7 +15429,7 @@ impl std::convert::From<&str> for ServiceField {
 impl std::str::FromStr for ServiceField {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ServiceField::from(s))
     }
 }
@@ -16792,15 +15444,6 @@ impl ServiceField {
 impl AsRef<str> for ServiceField {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ServiceField {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -16830,7 +15473,7 @@ impl std::convert::From<&str> for ContainerInstanceField {
 impl std::str::FromStr for ContainerInstanceField {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ContainerInstanceField::from(s))
     }
 }
@@ -16845,15 +15488,6 @@ impl ContainerInstanceField {
 impl AsRef<str> for ContainerInstanceField {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ContainerInstanceField {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -16891,7 +15525,7 @@ impl std::convert::From<&str> for ClusterField {
 impl std::str::FromStr for ClusterField {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ClusterField::from(s))
     }
 }
@@ -16910,15 +15544,6 @@ impl ClusterField {
 impl AsRef<str> for ClusterField {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ClusterField {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -16948,7 +15573,7 @@ impl std::convert::From<&str> for CapacityProviderField {
 impl std::str::FromStr for CapacityProviderField {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(CapacityProviderField::from(s))
     }
 }
@@ -16963,14 +15588,5 @@ impl CapacityProviderField {
 impl AsRef<str> for CapacityProviderField {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for CapacityProviderField {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }

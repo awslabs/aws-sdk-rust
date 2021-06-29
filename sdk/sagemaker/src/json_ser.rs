@@ -243,7 +243,7 @@ pub fn serialize_structure_create_artifact_input(
 
 pub fn serialize_structure_create_auto_ml_job_input(
     object: &mut smithy_json::serialize::JsonObjectWriter,
-    input: &crate::input::CreateAutoMLJobInput,
+    input: &crate::input::CreateAutoMlJobInput,
 ) {
     if let Some(var_70) = &input.auto_ml_job_name {
         object.key("AutoMLJobName").string(var_70);
@@ -2549,7 +2549,7 @@ pub fn serialize_structure_describe_artifact_input(
 
 pub fn serialize_structure_describe_auto_ml_job_input(
     object: &mut smithy_json::serialize::JsonObjectWriter,
-    input: &crate::input::DescribeAutoMLJobInput,
+    input: &crate::input::DescribeAutoMlJobInput,
 ) {
     if let Some(var_681) = &input.auto_ml_job_name {
         object.key("AutoMLJobName").string(var_681);
@@ -3207,7 +3207,7 @@ pub fn serialize_structure_list_associations_input(
 
 pub fn serialize_structure_list_auto_ml_jobs_input(
     object: &mut smithy_json::serialize::JsonObjectWriter,
-    input: &crate::input::ListAutoMLJobsInput,
+    input: &crate::input::ListAutoMlJobsInput,
 ) {
     if let Some(var_783) = &input.creation_time_after {
         object
@@ -3254,7 +3254,7 @@ pub fn serialize_structure_list_auto_ml_jobs_input(
 
 pub fn serialize_structure_list_candidates_for_auto_ml_job_input(
     object: &mut smithy_json::serialize::JsonObjectWriter,
-    input: &crate::input::ListCandidatesForAutoMLJobInput,
+    input: &crate::input::ListCandidatesForAutoMlJobInput,
 ) {
     if let Some(var_793) = &input.auto_ml_job_name {
         object.key("AutoMLJobName").string(var_793);
@@ -5139,7 +5139,7 @@ pub fn serialize_structure_start_pipeline_execution_input(
 
 pub fn serialize_structure_stop_auto_ml_job_input(
     object: &mut smithy_json::serialize::JsonObjectWriter,
-    input: &crate::input::StopAutoMLJobInput,
+    input: &crate::input::StopAutoMlJobInput,
 ) {
     if let Some(var_1194) = &input.auto_ml_job_name {
         object.key("AutoMLJobName").string(var_1194);
@@ -6159,7 +6159,7 @@ pub fn serialize_structure_artifact_source(
 
 pub fn serialize_structure_auto_ml_channel(
     object: &mut smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::AutoMLChannel,
+    input: &crate::model::AutoMlChannel,
 ) {
     if let Some(var_1434) = &input.data_source {
         let mut object_1435 = object.key("DataSource").start_object();
@@ -6176,7 +6176,7 @@ pub fn serialize_structure_auto_ml_channel(
 
 pub fn serialize_structure_auto_ml_output_data_config(
     object: &mut smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::AutoMLOutputDataConfig,
+    input: &crate::model::AutoMlOutputDataConfig,
 ) {
     if let Some(var_1438) = &input.kms_key_id {
         object.key("KmsKeyId").string(var_1438);
@@ -6188,7 +6188,7 @@ pub fn serialize_structure_auto_ml_output_data_config(
 
 pub fn serialize_structure_auto_ml_job_objective(
     object: &mut smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::AutoMLJobObjective,
+    input: &crate::model::AutoMlJobObjective,
 ) {
     if let Some(var_1440) = &input.metric_name {
         object.key("MetricName").string(var_1440.as_str());
@@ -6197,7 +6197,7 @@ pub fn serialize_structure_auto_ml_job_objective(
 
 pub fn serialize_structure_auto_ml_job_config(
     object: &mut smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::AutoMLJobConfig,
+    input: &crate::model::AutoMlJobConfig,
 ) {
     if let Some(var_1441) = &input.completion_criteria {
         let mut object_1442 = object.key("CompletionCriteria").start_object();
@@ -8432,7 +8432,7 @@ pub fn serialize_structure_artifact_source_type(
 
 pub fn serialize_structure_auto_ml_data_source(
     object: &mut smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::AutoMLDataSource,
+    input: &crate::model::AutoMlDataSource,
 ) {
     if let Some(var_1918) = &input.s3_data_source {
         let mut object_1919 = object.key("S3DataSource").start_object();
@@ -8443,7 +8443,7 @@ pub fn serialize_structure_auto_ml_data_source(
 
 pub fn serialize_structure_auto_ml_job_completion_criteria(
     object: &mut smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::AutoMLJobCompletionCriteria,
+    input: &crate::model::AutoMlJobCompletionCriteria,
 ) {
     if let Some(var_1920) = &input.max_candidates {
         object.key("MaxCandidates").number(
@@ -8467,7 +8467,7 @@ pub fn serialize_structure_auto_ml_job_completion_criteria(
 
 pub fn serialize_structure_auto_ml_security_config(
     object: &mut smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::AutoMLSecurityConfig,
+    input: &crate::model::AutoMlSecurityConfig,
 ) {
     if let Some(var_1923) = &input.volume_kms_key_id {
         object.key("VolumeKmsKeyId").string(var_1923);
@@ -9537,7 +9537,7 @@ pub fn serialize_structure_transform_job_definition(
 
 pub fn serialize_structure_auto_mls3_data_source(
     object: &mut smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::AutoMLS3DataSource,
+    input: &crate::model::AutoMls3DataSource,
 ) {
     if let Some(var_2147) = &input.s3_data_type {
         object.key("S3DataType").string(var_2147.as_str());
@@ -9582,7 +9582,7 @@ pub fn serialize_structure_custom_image(
 
 pub fn serialize_structure_usd(
     object: &mut smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::USD,
+    input: &crate::model::Usd,
 ) {
     if input.dollars != 0 {
         object.key("Dollars").number(

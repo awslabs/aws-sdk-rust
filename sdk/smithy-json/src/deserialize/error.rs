@@ -17,7 +17,7 @@ pub enum ErrorReason {
     InvalidUtf8,
     UnescapeFailed(EscapeError),
     UnexpectedControlCharacter(u8),
-    UnexpectedEOS,
+    UnexpectedEos,
     UnexpectedToken(char, &'static str),
 }
 use ErrorReason::*;
@@ -63,7 +63,7 @@ impl fmt::Display for Error {
                 "unexpected token '{}'. Expected one of {}",
                 token, expected
             ),
-            UnexpectedEOS => write!(f, "unexpected end of stream"),
+            UnexpectedEos => write!(f, "unexpected end of stream"),
         }
     }
 }

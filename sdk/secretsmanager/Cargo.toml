@@ -22,22 +22,16 @@ path = "..//aws-types"
 path = "..//aws-auth"
 [dependencies.smithy-types]
 path = "..//smithy-types"
-[dependencies.serde]
-version = "1"
-features = ["derive"]
 [dependencies.aws-http]
 path = "..//aws-http"
 [dependencies.aws-sig-auth]
 path = "..//aws-sig-auth"
 [dependencies.http]
 version = "0.2"
-[dependencies.serde_json]
-version = "1"
-features = ["float_roundtrip"]
-[dependencies.smithy-json]
-path = "..//smithy-json"
 [dependencies.bytes]
 version = "1"
+[dependencies.smithy-json]
+path = "..//smithy-json"
 [features]
 client = ["aws-hyper"]
 rustls = ["aws-hyper/rustls"]

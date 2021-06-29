@@ -53,12 +53,13 @@ impl<'a> Writer<'a> {
     pub fn push_v(&mut self, v: &str) {
         self.out.push(self.prefix);
         self.out.push_str(v);
+        self.prefix = '&';
     }
 }
 
 #[cfg(test)]
 mod test {
-    use crate::query::fmt_string;
+    use crate::query::{fmt_string, Writer};
 
     #[test]
     fn url_encode() {
@@ -69,5 +70,14 @@ mod test {
         assert_eq!(fmt_string("🐱").as_str(), "%F0%9F%90%B1");
         // `:` needs to be encoded, but only for AWS services
         assert_eq!(fmt_string("a:b"), "a%3Ab")
+    }
+
+    #[test]
+    fn writer_sets_prefix_properly() {
+        let mut out = String::new();
+        let mut writer = Writer::new(&mut out);
+        writer.push_v("a");
+        writer.push_kv("b", "c");
+        assert_eq!(out, "?a&b=c");
     }
 }

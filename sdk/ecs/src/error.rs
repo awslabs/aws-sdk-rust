@@ -8,22 +8,22 @@ pub struct CreateCapacityProviderError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateCapacityProviderErrorKind {
-    ClientError(crate::error::ClientError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    LimitExceededError(crate::error::LimitExceededError),
-    ServerError(crate::error::ServerError),
-    UpdateInProgressError(crate::error::UpdateInProgressError),
+    ClientException(crate::error::ClientException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    LimitExceededException(crate::error::LimitExceededException),
+    ServerException(crate::error::ServerException),
+    UpdateInProgressException(crate::error::UpdateInProgressException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateCapacityProviderError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateCapacityProviderErrorKind::ClientError(_inner) => _inner.fmt(f),
-            CreateCapacityProviderErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            CreateCapacityProviderErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            CreateCapacityProviderErrorKind::ServerError(_inner) => _inner.fmt(f),
-            CreateCapacityProviderErrorKind::UpdateInProgressError(_inner) => _inner.fmt(f),
+            CreateCapacityProviderErrorKind::ClientException(_inner) => _inner.fmt(f),
+            CreateCapacityProviderErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            CreateCapacityProviderErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateCapacityProviderErrorKind::ServerException(_inner) => _inner.fmt(f),
+            CreateCapacityProviderErrorKind::UpdateInProgressException(_inner) => _inner.fmt(f),
             CreateCapacityProviderErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -72,39 +72,45 @@ impl CreateCapacityProviderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_client_error(&self) -> bool {
-        matches!(&self.kind, CreateCapacityProviderErrorKind::ClientError(_))
-    }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateCapacityProviderErrorKind::InvalidParameterError(_)
+            CreateCapacityProviderErrorKind::ClientException(_)
         )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateCapacityProviderErrorKind::LimitExceededError(_)
+            CreateCapacityProviderErrorKind::InvalidParameterException(_)
         )
     }
-    pub fn is_server_error(&self) -> bool {
-        matches!(&self.kind, CreateCapacityProviderErrorKind::ServerError(_))
-    }
-    pub fn is_update_in_progress_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateCapacityProviderErrorKind::UpdateInProgressError(_)
+            CreateCapacityProviderErrorKind::LimitExceededException(_)
+        )
+    }
+    pub fn is_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateCapacityProviderErrorKind::ServerException(_)
+        )
+    }
+    pub fn is_update_in_progress_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateCapacityProviderErrorKind::UpdateInProgressException(_)
         )
     }
 }
 impl std::error::Error for CreateCapacityProviderError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateCapacityProviderErrorKind::ClientError(_inner) => Some(_inner),
-            CreateCapacityProviderErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            CreateCapacityProviderErrorKind::LimitExceededError(_inner) => Some(_inner),
-            CreateCapacityProviderErrorKind::ServerError(_inner) => Some(_inner),
-            CreateCapacityProviderErrorKind::UpdateInProgressError(_inner) => Some(_inner),
+            CreateCapacityProviderErrorKind::ClientException(_inner) => Some(_inner),
+            CreateCapacityProviderErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            CreateCapacityProviderErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateCapacityProviderErrorKind::ServerException(_inner) => Some(_inner),
+            CreateCapacityProviderErrorKind::UpdateInProgressException(_inner) => Some(_inner),
             CreateCapacityProviderErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -119,18 +125,18 @@ pub struct CreateClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateClusterErrorKind {
-    ClientError(crate::error::ClientError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ServerError(crate::error::ServerError),
+    ClientException(crate::error::ClientException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ServerException(crate::error::ServerException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateClusterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateClusterErrorKind::ClientError(_inner) => _inner.fmt(f),
-            CreateClusterErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            CreateClusterErrorKind::ServerError(_inner) => _inner.fmt(f),
+            CreateClusterErrorKind::ClientException(_inner) => _inner.fmt(f),
+            CreateClusterErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            CreateClusterErrorKind::ServerException(_inner) => _inner.fmt(f),
             CreateClusterErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -179,22 +185,25 @@ impl CreateClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_client_error(&self) -> bool {
-        matches!(&self.kind, CreateClusterErrorKind::ClientError(_))
+    pub fn is_client_exception(&self) -> bool {
+        matches!(&self.kind, CreateClusterErrorKind::ClientException(_))
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
-        matches!(&self.kind, CreateClusterErrorKind::InvalidParameterError(_))
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateClusterErrorKind::InvalidParameterException(_)
+        )
     }
-    pub fn is_server_error(&self) -> bool {
-        matches!(&self.kind, CreateClusterErrorKind::ServerError(_))
+    pub fn is_server_exception(&self) -> bool {
+        matches!(&self.kind, CreateClusterErrorKind::ServerException(_))
     }
 }
 impl std::error::Error for CreateClusterError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateClusterErrorKind::ClientError(_inner) => Some(_inner),
-            CreateClusterErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            CreateClusterErrorKind::ServerError(_inner) => Some(_inner),
+            CreateClusterErrorKind::ClientException(_inner) => Some(_inner),
+            CreateClusterErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            CreateClusterErrorKind::ServerException(_inner) => Some(_inner),
             CreateClusterErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -209,32 +218,32 @@ pub struct CreateServiceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateServiceErrorKind {
-    AccessDeniedError(crate::error::AccessDeniedError),
-    ClientError(crate::error::ClientError),
-    ClusterNotFoundError(crate::error::ClusterNotFoundError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    PlatformTaskDefinitionIncompatibilityError(
-        crate::error::PlatformTaskDefinitionIncompatibilityError,
+    AccessDeniedException(crate::error::AccessDeniedException),
+    ClientException(crate::error::ClientException),
+    ClusterNotFoundException(crate::error::ClusterNotFoundException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    PlatformTaskDefinitionIncompatibilityException(
+        crate::error::PlatformTaskDefinitionIncompatibilityException,
     ),
-    PlatformUnknownError(crate::error::PlatformUnknownError),
-    ServerError(crate::error::ServerError),
-    UnsupportedFeatureError(crate::error::UnsupportedFeatureError),
+    PlatformUnknownException(crate::error::PlatformUnknownException),
+    ServerException(crate::error::ServerException),
+    UnsupportedFeatureException(crate::error::UnsupportedFeatureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateServiceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateServiceErrorKind::AccessDeniedError(_inner) => _inner.fmt(f),
-            CreateServiceErrorKind::ClientError(_inner) => _inner.fmt(f),
-            CreateServiceErrorKind::ClusterNotFoundError(_inner) => _inner.fmt(f),
-            CreateServiceErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            CreateServiceErrorKind::PlatformTaskDefinitionIncompatibilityError(_inner) => {
+            CreateServiceErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            CreateServiceErrorKind::ClientException(_inner) => _inner.fmt(f),
+            CreateServiceErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
+            CreateServiceErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            CreateServiceErrorKind::PlatformTaskDefinitionIncompatibilityException(_inner) => {
                 _inner.fmt(f)
             }
-            CreateServiceErrorKind::PlatformUnknownError(_inner) => _inner.fmt(f),
-            CreateServiceErrorKind::ServerError(_inner) => _inner.fmt(f),
-            CreateServiceErrorKind::UnsupportedFeatureError(_inner) => _inner.fmt(f),
+            CreateServiceErrorKind::PlatformUnknownException(_inner) => _inner.fmt(f),
+            CreateServiceErrorKind::ServerException(_inner) => _inner.fmt(f),
+            CreateServiceErrorKind::UnsupportedFeatureException(_inner) => _inner.fmt(f),
             CreateServiceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -283,50 +292,59 @@ impl CreateServiceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_access_denied_error(&self) -> bool {
-        matches!(&self.kind, CreateServiceErrorKind::AccessDeniedError(_))
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, CreateServiceErrorKind::AccessDeniedException(_))
     }
-    pub fn is_client_error(&self) -> bool {
-        matches!(&self.kind, CreateServiceErrorKind::ClientError(_))
+    pub fn is_client_exception(&self) -> bool {
+        matches!(&self.kind, CreateServiceErrorKind::ClientException(_))
     }
-    pub fn is_cluster_not_found_error(&self) -> bool {
-        matches!(&self.kind, CreateServiceErrorKind::ClusterNotFoundError(_))
-    }
-    pub fn is_invalid_parameter_error(&self) -> bool {
-        matches!(&self.kind, CreateServiceErrorKind::InvalidParameterError(_))
-    }
-    pub fn is_platform_task_definition_incompatibility_error(&self) -> bool {
+    pub fn is_cluster_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateServiceErrorKind::PlatformTaskDefinitionIncompatibilityError(_)
+            CreateServiceErrorKind::ClusterNotFoundException(_)
         )
     }
-    pub fn is_platform_unknown_error(&self) -> bool {
-        matches!(&self.kind, CreateServiceErrorKind::PlatformUnknownError(_))
-    }
-    pub fn is_server_error(&self) -> bool {
-        matches!(&self.kind, CreateServiceErrorKind::ServerError(_))
-    }
-    pub fn is_unsupported_feature_error(&self) -> bool {
+    pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateServiceErrorKind::UnsupportedFeatureError(_)
+            CreateServiceErrorKind::InvalidParameterException(_)
+        )
+    }
+    pub fn is_platform_task_definition_incompatibility_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateServiceErrorKind::PlatformTaskDefinitionIncompatibilityException(_)
+        )
+    }
+    pub fn is_platform_unknown_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateServiceErrorKind::PlatformUnknownException(_)
+        )
+    }
+    pub fn is_server_exception(&self) -> bool {
+        matches!(&self.kind, CreateServiceErrorKind::ServerException(_))
+    }
+    pub fn is_unsupported_feature_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateServiceErrorKind::UnsupportedFeatureException(_)
         )
     }
 }
 impl std::error::Error for CreateServiceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateServiceErrorKind::AccessDeniedError(_inner) => Some(_inner),
-            CreateServiceErrorKind::ClientError(_inner) => Some(_inner),
-            CreateServiceErrorKind::ClusterNotFoundError(_inner) => Some(_inner),
-            CreateServiceErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            CreateServiceErrorKind::PlatformTaskDefinitionIncompatibilityError(_inner) => {
+            CreateServiceErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            CreateServiceErrorKind::ClientException(_inner) => Some(_inner),
+            CreateServiceErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
+            CreateServiceErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            CreateServiceErrorKind::PlatformTaskDefinitionIncompatibilityException(_inner) => {
                 Some(_inner)
             }
-            CreateServiceErrorKind::PlatformUnknownError(_inner) => Some(_inner),
-            CreateServiceErrorKind::ServerError(_inner) => Some(_inner),
-            CreateServiceErrorKind::UnsupportedFeatureError(_inner) => Some(_inner),
+            CreateServiceErrorKind::PlatformUnknownException(_inner) => Some(_inner),
+            CreateServiceErrorKind::ServerException(_inner) => Some(_inner),
+            CreateServiceErrorKind::UnsupportedFeatureException(_inner) => Some(_inner),
             CreateServiceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -341,36 +359,36 @@ pub struct CreateTaskSetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateTaskSetErrorKind {
-    AccessDeniedError(crate::error::AccessDeniedError),
-    ClientError(crate::error::ClientError),
-    ClusterNotFoundError(crate::error::ClusterNotFoundError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    PlatformTaskDefinitionIncompatibilityError(
-        crate::error::PlatformTaskDefinitionIncompatibilityError,
+    AccessDeniedException(crate::error::AccessDeniedException),
+    ClientException(crate::error::ClientException),
+    ClusterNotFoundException(crate::error::ClusterNotFoundException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    PlatformTaskDefinitionIncompatibilityException(
+        crate::error::PlatformTaskDefinitionIncompatibilityException,
     ),
-    PlatformUnknownError(crate::error::PlatformUnknownError),
-    ServerError(crate::error::ServerError),
-    ServiceNotActiveError(crate::error::ServiceNotActiveError),
-    ServiceNotFoundError(crate::error::ServiceNotFoundError),
-    UnsupportedFeatureError(crate::error::UnsupportedFeatureError),
+    PlatformUnknownException(crate::error::PlatformUnknownException),
+    ServerException(crate::error::ServerException),
+    ServiceNotActiveException(crate::error::ServiceNotActiveException),
+    ServiceNotFoundException(crate::error::ServiceNotFoundException),
+    UnsupportedFeatureException(crate::error::UnsupportedFeatureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateTaskSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateTaskSetErrorKind::AccessDeniedError(_inner) => _inner.fmt(f),
-            CreateTaskSetErrorKind::ClientError(_inner) => _inner.fmt(f),
-            CreateTaskSetErrorKind::ClusterNotFoundError(_inner) => _inner.fmt(f),
-            CreateTaskSetErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            CreateTaskSetErrorKind::PlatformTaskDefinitionIncompatibilityError(_inner) => {
+            CreateTaskSetErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            CreateTaskSetErrorKind::ClientException(_inner) => _inner.fmt(f),
+            CreateTaskSetErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
+            CreateTaskSetErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            CreateTaskSetErrorKind::PlatformTaskDefinitionIncompatibilityException(_inner) => {
                 _inner.fmt(f)
             }
-            CreateTaskSetErrorKind::PlatformUnknownError(_inner) => _inner.fmt(f),
-            CreateTaskSetErrorKind::ServerError(_inner) => _inner.fmt(f),
-            CreateTaskSetErrorKind::ServiceNotActiveError(_inner) => _inner.fmt(f),
-            CreateTaskSetErrorKind::ServiceNotFoundError(_inner) => _inner.fmt(f),
-            CreateTaskSetErrorKind::UnsupportedFeatureError(_inner) => _inner.fmt(f),
+            CreateTaskSetErrorKind::PlatformUnknownException(_inner) => _inner.fmt(f),
+            CreateTaskSetErrorKind::ServerException(_inner) => _inner.fmt(f),
+            CreateTaskSetErrorKind::ServiceNotActiveException(_inner) => _inner.fmt(f),
+            CreateTaskSetErrorKind::ServiceNotFoundException(_inner) => _inner.fmt(f),
+            CreateTaskSetErrorKind::UnsupportedFeatureException(_inner) => _inner.fmt(f),
             CreateTaskSetErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -419,58 +437,73 @@ impl CreateTaskSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_access_denied_error(&self) -> bool {
-        matches!(&self.kind, CreateTaskSetErrorKind::AccessDeniedError(_))
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, CreateTaskSetErrorKind::AccessDeniedException(_))
     }
-    pub fn is_client_error(&self) -> bool {
-        matches!(&self.kind, CreateTaskSetErrorKind::ClientError(_))
+    pub fn is_client_exception(&self) -> bool {
+        matches!(&self.kind, CreateTaskSetErrorKind::ClientException(_))
     }
-    pub fn is_cluster_not_found_error(&self) -> bool {
-        matches!(&self.kind, CreateTaskSetErrorKind::ClusterNotFoundError(_))
-    }
-    pub fn is_invalid_parameter_error(&self) -> bool {
-        matches!(&self.kind, CreateTaskSetErrorKind::InvalidParameterError(_))
-    }
-    pub fn is_platform_task_definition_incompatibility_error(&self) -> bool {
+    pub fn is_cluster_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateTaskSetErrorKind::PlatformTaskDefinitionIncompatibilityError(_)
+            CreateTaskSetErrorKind::ClusterNotFoundException(_)
         )
     }
-    pub fn is_platform_unknown_error(&self) -> bool {
-        matches!(&self.kind, CreateTaskSetErrorKind::PlatformUnknownError(_))
-    }
-    pub fn is_server_error(&self) -> bool {
-        matches!(&self.kind, CreateTaskSetErrorKind::ServerError(_))
-    }
-    pub fn is_service_not_active_error(&self) -> bool {
-        matches!(&self.kind, CreateTaskSetErrorKind::ServiceNotActiveError(_))
-    }
-    pub fn is_service_not_found_error(&self) -> bool {
-        matches!(&self.kind, CreateTaskSetErrorKind::ServiceNotFoundError(_))
-    }
-    pub fn is_unsupported_feature_error(&self) -> bool {
+    pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateTaskSetErrorKind::UnsupportedFeatureError(_)
+            CreateTaskSetErrorKind::InvalidParameterException(_)
+        )
+    }
+    pub fn is_platform_task_definition_incompatibility_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateTaskSetErrorKind::PlatformTaskDefinitionIncompatibilityException(_)
+        )
+    }
+    pub fn is_platform_unknown_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateTaskSetErrorKind::PlatformUnknownException(_)
+        )
+    }
+    pub fn is_server_exception(&self) -> bool {
+        matches!(&self.kind, CreateTaskSetErrorKind::ServerException(_))
+    }
+    pub fn is_service_not_active_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateTaskSetErrorKind::ServiceNotActiveException(_)
+        )
+    }
+    pub fn is_service_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateTaskSetErrorKind::ServiceNotFoundException(_)
+        )
+    }
+    pub fn is_unsupported_feature_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateTaskSetErrorKind::UnsupportedFeatureException(_)
         )
     }
 }
 impl std::error::Error for CreateTaskSetError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateTaskSetErrorKind::AccessDeniedError(_inner) => Some(_inner),
-            CreateTaskSetErrorKind::ClientError(_inner) => Some(_inner),
-            CreateTaskSetErrorKind::ClusterNotFoundError(_inner) => Some(_inner),
-            CreateTaskSetErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            CreateTaskSetErrorKind::PlatformTaskDefinitionIncompatibilityError(_inner) => {
+            CreateTaskSetErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            CreateTaskSetErrorKind::ClientException(_inner) => Some(_inner),
+            CreateTaskSetErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
+            CreateTaskSetErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            CreateTaskSetErrorKind::PlatformTaskDefinitionIncompatibilityException(_inner) => {
                 Some(_inner)
             }
-            CreateTaskSetErrorKind::PlatformUnknownError(_inner) => Some(_inner),
-            CreateTaskSetErrorKind::ServerError(_inner) => Some(_inner),
-            CreateTaskSetErrorKind::ServiceNotActiveError(_inner) => Some(_inner),
-            CreateTaskSetErrorKind::ServiceNotFoundError(_inner) => Some(_inner),
-            CreateTaskSetErrorKind::UnsupportedFeatureError(_inner) => Some(_inner),
+            CreateTaskSetErrorKind::PlatformUnknownException(_inner) => Some(_inner),
+            CreateTaskSetErrorKind::ServerException(_inner) => Some(_inner),
+            CreateTaskSetErrorKind::ServiceNotActiveException(_inner) => Some(_inner),
+            CreateTaskSetErrorKind::ServiceNotFoundException(_inner) => Some(_inner),
+            CreateTaskSetErrorKind::UnsupportedFeatureException(_inner) => Some(_inner),
             CreateTaskSetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -485,18 +518,18 @@ pub struct DeleteAccountSettingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteAccountSettingErrorKind {
-    ClientError(crate::error::ClientError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ServerError(crate::error::ServerError),
+    ClientException(crate::error::ClientException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ServerException(crate::error::ServerException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAccountSettingError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteAccountSettingErrorKind::ClientError(_inner) => _inner.fmt(f),
-            DeleteAccountSettingErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            DeleteAccountSettingErrorKind::ServerError(_inner) => _inner.fmt(f),
+            DeleteAccountSettingErrorKind::ClientException(_inner) => _inner.fmt(f),
+            DeleteAccountSettingErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            DeleteAccountSettingErrorKind::ServerException(_inner) => _inner.fmt(f),
             DeleteAccountSettingErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -545,25 +578,31 @@ impl DeleteAccountSettingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_client_error(&self) -> bool {
-        matches!(&self.kind, DeleteAccountSettingErrorKind::ClientError(_))
-    }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteAccountSettingErrorKind::InvalidParameterError(_)
+            DeleteAccountSettingErrorKind::ClientException(_)
         )
     }
-    pub fn is_server_error(&self) -> bool {
-        matches!(&self.kind, DeleteAccountSettingErrorKind::ServerError(_))
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteAccountSettingErrorKind::InvalidParameterException(_)
+        )
+    }
+    pub fn is_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteAccountSettingErrorKind::ServerException(_)
+        )
     }
 }
 impl std::error::Error for DeleteAccountSettingError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteAccountSettingErrorKind::ClientError(_inner) => Some(_inner),
-            DeleteAccountSettingErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            DeleteAccountSettingErrorKind::ServerError(_inner) => Some(_inner),
+            DeleteAccountSettingErrorKind::ClientException(_inner) => Some(_inner),
+            DeleteAccountSettingErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            DeleteAccountSettingErrorKind::ServerException(_inner) => Some(_inner),
             DeleteAccountSettingErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -578,18 +617,18 @@ pub struct DeleteAttributesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteAttributesErrorKind {
-    ClusterNotFoundError(crate::error::ClusterNotFoundError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    TargetNotFoundError(crate::error::TargetNotFoundError),
+    ClusterNotFoundException(crate::error::ClusterNotFoundException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    TargetNotFoundException(crate::error::TargetNotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteAttributesErrorKind::ClusterNotFoundError(_inner) => _inner.fmt(f),
-            DeleteAttributesErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            DeleteAttributesErrorKind::TargetNotFoundError(_inner) => _inner.fmt(f),
+            DeleteAttributesErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
+            DeleteAttributesErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            DeleteAttributesErrorKind::TargetNotFoundException(_inner) => _inner.fmt(f),
             DeleteAttributesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -638,31 +677,31 @@ impl DeleteAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_cluster_not_found_error(&self) -> bool {
+    pub fn is_cluster_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteAttributesErrorKind::ClusterNotFoundError(_)
+            DeleteAttributesErrorKind::ClusterNotFoundException(_)
         )
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteAttributesErrorKind::InvalidParameterError(_)
+            DeleteAttributesErrorKind::InvalidParameterException(_)
         )
     }
-    pub fn is_target_not_found_error(&self) -> bool {
+    pub fn is_target_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteAttributesErrorKind::TargetNotFoundError(_)
+            DeleteAttributesErrorKind::TargetNotFoundException(_)
         )
     }
 }
 impl std::error::Error for DeleteAttributesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteAttributesErrorKind::ClusterNotFoundError(_inner) => Some(_inner),
-            DeleteAttributesErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            DeleteAttributesErrorKind::TargetNotFoundError(_inner) => Some(_inner),
+            DeleteAttributesErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
+            DeleteAttributesErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            DeleteAttributesErrorKind::TargetNotFoundException(_inner) => Some(_inner),
             DeleteAttributesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -677,18 +716,18 @@ pub struct DeleteCapacityProviderError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteCapacityProviderErrorKind {
-    ClientError(crate::error::ClientError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ServerError(crate::error::ServerError),
+    ClientException(crate::error::ClientException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ServerException(crate::error::ServerException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteCapacityProviderError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteCapacityProviderErrorKind::ClientError(_inner) => _inner.fmt(f),
-            DeleteCapacityProviderErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            DeleteCapacityProviderErrorKind::ServerError(_inner) => _inner.fmt(f),
+            DeleteCapacityProviderErrorKind::ClientException(_inner) => _inner.fmt(f),
+            DeleteCapacityProviderErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            DeleteCapacityProviderErrorKind::ServerException(_inner) => _inner.fmt(f),
             DeleteCapacityProviderErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -737,25 +776,31 @@ impl DeleteCapacityProviderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_client_error(&self) -> bool {
-        matches!(&self.kind, DeleteCapacityProviderErrorKind::ClientError(_))
-    }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteCapacityProviderErrorKind::InvalidParameterError(_)
+            DeleteCapacityProviderErrorKind::ClientException(_)
         )
     }
-    pub fn is_server_error(&self) -> bool {
-        matches!(&self.kind, DeleteCapacityProviderErrorKind::ServerError(_))
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteCapacityProviderErrorKind::InvalidParameterException(_)
+        )
+    }
+    pub fn is_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteCapacityProviderErrorKind::ServerException(_)
+        )
     }
 }
 impl std::error::Error for DeleteCapacityProviderError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteCapacityProviderErrorKind::ClientError(_inner) => Some(_inner),
-            DeleteCapacityProviderErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            DeleteCapacityProviderErrorKind::ServerError(_inner) => Some(_inner),
+            DeleteCapacityProviderErrorKind::ClientException(_inner) => Some(_inner),
+            DeleteCapacityProviderErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            DeleteCapacityProviderErrorKind::ServerException(_inner) => Some(_inner),
             DeleteCapacityProviderErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -770,28 +815,32 @@ pub struct DeleteClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteClusterErrorKind {
-    ClientError(crate::error::ClientError),
-    ClusterContainsContainerInstancesError(crate::error::ClusterContainsContainerInstancesError),
-    ClusterContainsServicesError(crate::error::ClusterContainsServicesError),
-    ClusterContainsTasksError(crate::error::ClusterContainsTasksError),
-    ClusterNotFoundError(crate::error::ClusterNotFoundError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ServerError(crate::error::ServerError),
-    UpdateInProgressError(crate::error::UpdateInProgressError),
+    ClientException(crate::error::ClientException),
+    ClusterContainsContainerInstancesException(
+        crate::error::ClusterContainsContainerInstancesException,
+    ),
+    ClusterContainsServicesException(crate::error::ClusterContainsServicesException),
+    ClusterContainsTasksException(crate::error::ClusterContainsTasksException),
+    ClusterNotFoundException(crate::error::ClusterNotFoundException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ServerException(crate::error::ServerException),
+    UpdateInProgressException(crate::error::UpdateInProgressException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteClusterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteClusterErrorKind::ClientError(_inner) => _inner.fmt(f),
-            DeleteClusterErrorKind::ClusterContainsContainerInstancesError(_inner) => _inner.fmt(f),
-            DeleteClusterErrorKind::ClusterContainsServicesError(_inner) => _inner.fmt(f),
-            DeleteClusterErrorKind::ClusterContainsTasksError(_inner) => _inner.fmt(f),
-            DeleteClusterErrorKind::ClusterNotFoundError(_inner) => _inner.fmt(f),
-            DeleteClusterErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            DeleteClusterErrorKind::ServerError(_inner) => _inner.fmt(f),
-            DeleteClusterErrorKind::UpdateInProgressError(_inner) => _inner.fmt(f),
+            DeleteClusterErrorKind::ClientException(_inner) => _inner.fmt(f),
+            DeleteClusterErrorKind::ClusterContainsContainerInstancesException(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteClusterErrorKind::ClusterContainsServicesException(_inner) => _inner.fmt(f),
+            DeleteClusterErrorKind::ClusterContainsTasksException(_inner) => _inner.fmt(f),
+            DeleteClusterErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
+            DeleteClusterErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            DeleteClusterErrorKind::ServerException(_inner) => _inner.fmt(f),
+            DeleteClusterErrorKind::UpdateInProgressException(_inner) => _inner.fmt(f),
             DeleteClusterErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -840,51 +889,62 @@ impl DeleteClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_client_error(&self) -> bool {
-        matches!(&self.kind, DeleteClusterErrorKind::ClientError(_))
+    pub fn is_client_exception(&self) -> bool {
+        matches!(&self.kind, DeleteClusterErrorKind::ClientException(_))
     }
-    pub fn is_cluster_contains_container_instances_error(&self) -> bool {
+    pub fn is_cluster_contains_container_instances_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteClusterErrorKind::ClusterContainsContainerInstancesError(_)
+            DeleteClusterErrorKind::ClusterContainsContainerInstancesException(_)
         )
     }
-    pub fn is_cluster_contains_services_error(&self) -> bool {
+    pub fn is_cluster_contains_services_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteClusterErrorKind::ClusterContainsServicesError(_)
+            DeleteClusterErrorKind::ClusterContainsServicesException(_)
         )
     }
-    pub fn is_cluster_contains_tasks_error(&self) -> bool {
+    pub fn is_cluster_contains_tasks_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteClusterErrorKind::ClusterContainsTasksError(_)
+            DeleteClusterErrorKind::ClusterContainsTasksException(_)
         )
     }
-    pub fn is_cluster_not_found_error(&self) -> bool {
-        matches!(&self.kind, DeleteClusterErrorKind::ClusterNotFoundError(_))
+    pub fn is_cluster_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteClusterErrorKind::ClusterNotFoundException(_)
+        )
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
-        matches!(&self.kind, DeleteClusterErrorKind::InvalidParameterError(_))
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteClusterErrorKind::InvalidParameterException(_)
+        )
     }
-    pub fn is_server_error(&self) -> bool {
-        matches!(&self.kind, DeleteClusterErrorKind::ServerError(_))
+    pub fn is_server_exception(&self) -> bool {
+        matches!(&self.kind, DeleteClusterErrorKind::ServerException(_))
     }
-    pub fn is_update_in_progress_error(&self) -> bool {
-        matches!(&self.kind, DeleteClusterErrorKind::UpdateInProgressError(_))
+    pub fn is_update_in_progress_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteClusterErrorKind::UpdateInProgressException(_)
+        )
     }
 }
 impl std::error::Error for DeleteClusterError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteClusterErrorKind::ClientError(_inner) => Some(_inner),
-            DeleteClusterErrorKind::ClusterContainsContainerInstancesError(_inner) => Some(_inner),
-            DeleteClusterErrorKind::ClusterContainsServicesError(_inner) => Some(_inner),
-            DeleteClusterErrorKind::ClusterContainsTasksError(_inner) => Some(_inner),
-            DeleteClusterErrorKind::ClusterNotFoundError(_inner) => Some(_inner),
-            DeleteClusterErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            DeleteClusterErrorKind::ServerError(_inner) => Some(_inner),
-            DeleteClusterErrorKind::UpdateInProgressError(_inner) => Some(_inner),
+            DeleteClusterErrorKind::ClientException(_inner) => Some(_inner),
+            DeleteClusterErrorKind::ClusterContainsContainerInstancesException(_inner) => {
+                Some(_inner)
+            }
+            DeleteClusterErrorKind::ClusterContainsServicesException(_inner) => Some(_inner),
+            DeleteClusterErrorKind::ClusterContainsTasksException(_inner) => Some(_inner),
+            DeleteClusterErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
+            DeleteClusterErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            DeleteClusterErrorKind::ServerException(_inner) => Some(_inner),
+            DeleteClusterErrorKind::UpdateInProgressException(_inner) => Some(_inner),
             DeleteClusterErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -899,22 +959,22 @@ pub struct DeleteServiceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteServiceErrorKind {
-    ClientError(crate::error::ClientError),
-    ClusterNotFoundError(crate::error::ClusterNotFoundError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ServerError(crate::error::ServerError),
-    ServiceNotFoundError(crate::error::ServiceNotFoundError),
+    ClientException(crate::error::ClientException),
+    ClusterNotFoundException(crate::error::ClusterNotFoundException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ServerException(crate::error::ServerException),
+    ServiceNotFoundException(crate::error::ServiceNotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteServiceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteServiceErrorKind::ClientError(_inner) => _inner.fmt(f),
-            DeleteServiceErrorKind::ClusterNotFoundError(_inner) => _inner.fmt(f),
-            DeleteServiceErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            DeleteServiceErrorKind::ServerError(_inner) => _inner.fmt(f),
-            DeleteServiceErrorKind::ServiceNotFoundError(_inner) => _inner.fmt(f),
+            DeleteServiceErrorKind::ClientException(_inner) => _inner.fmt(f),
+            DeleteServiceErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
+            DeleteServiceErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            DeleteServiceErrorKind::ServerException(_inner) => _inner.fmt(f),
+            DeleteServiceErrorKind::ServiceNotFoundException(_inner) => _inner.fmt(f),
             DeleteServiceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -963,30 +1023,39 @@ impl DeleteServiceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_client_error(&self) -> bool {
-        matches!(&self.kind, DeleteServiceErrorKind::ClientError(_))
+    pub fn is_client_exception(&self) -> bool {
+        matches!(&self.kind, DeleteServiceErrorKind::ClientException(_))
     }
-    pub fn is_cluster_not_found_error(&self) -> bool {
-        matches!(&self.kind, DeleteServiceErrorKind::ClusterNotFoundError(_))
+    pub fn is_cluster_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteServiceErrorKind::ClusterNotFoundException(_)
+        )
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
-        matches!(&self.kind, DeleteServiceErrorKind::InvalidParameterError(_))
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteServiceErrorKind::InvalidParameterException(_)
+        )
     }
-    pub fn is_server_error(&self) -> bool {
-        matches!(&self.kind, DeleteServiceErrorKind::ServerError(_))
+    pub fn is_server_exception(&self) -> bool {
+        matches!(&self.kind, DeleteServiceErrorKind::ServerException(_))
     }
-    pub fn is_service_not_found_error(&self) -> bool {
-        matches!(&self.kind, DeleteServiceErrorKind::ServiceNotFoundError(_))
+    pub fn is_service_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteServiceErrorKind::ServiceNotFoundException(_)
+        )
     }
 }
 impl std::error::Error for DeleteServiceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteServiceErrorKind::ClientError(_inner) => Some(_inner),
-            DeleteServiceErrorKind::ClusterNotFoundError(_inner) => Some(_inner),
-            DeleteServiceErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            DeleteServiceErrorKind::ServerError(_inner) => Some(_inner),
-            DeleteServiceErrorKind::ServiceNotFoundError(_inner) => Some(_inner),
+            DeleteServiceErrorKind::ClientException(_inner) => Some(_inner),
+            DeleteServiceErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
+            DeleteServiceErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            DeleteServiceErrorKind::ServerException(_inner) => Some(_inner),
+            DeleteServiceErrorKind::ServiceNotFoundException(_inner) => Some(_inner),
             DeleteServiceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1001,30 +1070,30 @@ pub struct DeleteTaskSetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteTaskSetErrorKind {
-    AccessDeniedError(crate::error::AccessDeniedError),
-    ClientError(crate::error::ClientError),
-    ClusterNotFoundError(crate::error::ClusterNotFoundError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ServerError(crate::error::ServerError),
-    ServiceNotActiveError(crate::error::ServiceNotActiveError),
-    ServiceNotFoundError(crate::error::ServiceNotFoundError),
-    TaskSetNotFoundError(crate::error::TaskSetNotFoundError),
-    UnsupportedFeatureError(crate::error::UnsupportedFeatureError),
+    AccessDeniedException(crate::error::AccessDeniedException),
+    ClientException(crate::error::ClientException),
+    ClusterNotFoundException(crate::error::ClusterNotFoundException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ServerException(crate::error::ServerException),
+    ServiceNotActiveException(crate::error::ServiceNotActiveException),
+    ServiceNotFoundException(crate::error::ServiceNotFoundException),
+    TaskSetNotFoundException(crate::error::TaskSetNotFoundException),
+    UnsupportedFeatureException(crate::error::UnsupportedFeatureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteTaskSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteTaskSetErrorKind::AccessDeniedError(_inner) => _inner.fmt(f),
-            DeleteTaskSetErrorKind::ClientError(_inner) => _inner.fmt(f),
-            DeleteTaskSetErrorKind::ClusterNotFoundError(_inner) => _inner.fmt(f),
-            DeleteTaskSetErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            DeleteTaskSetErrorKind::ServerError(_inner) => _inner.fmt(f),
-            DeleteTaskSetErrorKind::ServiceNotActiveError(_inner) => _inner.fmt(f),
-            DeleteTaskSetErrorKind::ServiceNotFoundError(_inner) => _inner.fmt(f),
-            DeleteTaskSetErrorKind::TaskSetNotFoundError(_inner) => _inner.fmt(f),
-            DeleteTaskSetErrorKind::UnsupportedFeatureError(_inner) => _inner.fmt(f),
+            DeleteTaskSetErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DeleteTaskSetErrorKind::ClientException(_inner) => _inner.fmt(f),
+            DeleteTaskSetErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
+            DeleteTaskSetErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            DeleteTaskSetErrorKind::ServerException(_inner) => _inner.fmt(f),
+            DeleteTaskSetErrorKind::ServiceNotActiveException(_inner) => _inner.fmt(f),
+            DeleteTaskSetErrorKind::ServiceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteTaskSetErrorKind::TaskSetNotFoundException(_inner) => _inner.fmt(f),
+            DeleteTaskSetErrorKind::UnsupportedFeatureException(_inner) => _inner.fmt(f),
             DeleteTaskSetErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1073,49 +1142,64 @@ impl DeleteTaskSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_access_denied_error(&self) -> bool {
-        matches!(&self.kind, DeleteTaskSetErrorKind::AccessDeniedError(_))
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, DeleteTaskSetErrorKind::AccessDeniedException(_))
     }
-    pub fn is_client_error(&self) -> bool {
-        matches!(&self.kind, DeleteTaskSetErrorKind::ClientError(_))
+    pub fn is_client_exception(&self) -> bool {
+        matches!(&self.kind, DeleteTaskSetErrorKind::ClientException(_))
     }
-    pub fn is_cluster_not_found_error(&self) -> bool {
-        matches!(&self.kind, DeleteTaskSetErrorKind::ClusterNotFoundError(_))
-    }
-    pub fn is_invalid_parameter_error(&self) -> bool {
-        matches!(&self.kind, DeleteTaskSetErrorKind::InvalidParameterError(_))
-    }
-    pub fn is_server_error(&self) -> bool {
-        matches!(&self.kind, DeleteTaskSetErrorKind::ServerError(_))
-    }
-    pub fn is_service_not_active_error(&self) -> bool {
-        matches!(&self.kind, DeleteTaskSetErrorKind::ServiceNotActiveError(_))
-    }
-    pub fn is_service_not_found_error(&self) -> bool {
-        matches!(&self.kind, DeleteTaskSetErrorKind::ServiceNotFoundError(_))
-    }
-    pub fn is_task_set_not_found_error(&self) -> bool {
-        matches!(&self.kind, DeleteTaskSetErrorKind::TaskSetNotFoundError(_))
-    }
-    pub fn is_unsupported_feature_error(&self) -> bool {
+    pub fn is_cluster_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteTaskSetErrorKind::UnsupportedFeatureError(_)
+            DeleteTaskSetErrorKind::ClusterNotFoundException(_)
+        )
+    }
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteTaskSetErrorKind::InvalidParameterException(_)
+        )
+    }
+    pub fn is_server_exception(&self) -> bool {
+        matches!(&self.kind, DeleteTaskSetErrorKind::ServerException(_))
+    }
+    pub fn is_service_not_active_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteTaskSetErrorKind::ServiceNotActiveException(_)
+        )
+    }
+    pub fn is_service_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteTaskSetErrorKind::ServiceNotFoundException(_)
+        )
+    }
+    pub fn is_task_set_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteTaskSetErrorKind::TaskSetNotFoundException(_)
+        )
+    }
+    pub fn is_unsupported_feature_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteTaskSetErrorKind::UnsupportedFeatureException(_)
         )
     }
 }
 impl std::error::Error for DeleteTaskSetError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteTaskSetErrorKind::AccessDeniedError(_inner) => Some(_inner),
-            DeleteTaskSetErrorKind::ClientError(_inner) => Some(_inner),
-            DeleteTaskSetErrorKind::ClusterNotFoundError(_inner) => Some(_inner),
-            DeleteTaskSetErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            DeleteTaskSetErrorKind::ServerError(_inner) => Some(_inner),
-            DeleteTaskSetErrorKind::ServiceNotActiveError(_inner) => Some(_inner),
-            DeleteTaskSetErrorKind::ServiceNotFoundError(_inner) => Some(_inner),
-            DeleteTaskSetErrorKind::TaskSetNotFoundError(_inner) => Some(_inner),
-            DeleteTaskSetErrorKind::UnsupportedFeatureError(_inner) => Some(_inner),
+            DeleteTaskSetErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DeleteTaskSetErrorKind::ClientException(_inner) => Some(_inner),
+            DeleteTaskSetErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
+            DeleteTaskSetErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            DeleteTaskSetErrorKind::ServerException(_inner) => Some(_inner),
+            DeleteTaskSetErrorKind::ServiceNotActiveException(_inner) => Some(_inner),
+            DeleteTaskSetErrorKind::ServiceNotFoundException(_inner) => Some(_inner),
+            DeleteTaskSetErrorKind::TaskSetNotFoundException(_inner) => Some(_inner),
+            DeleteTaskSetErrorKind::UnsupportedFeatureException(_inner) => Some(_inner),
             DeleteTaskSetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1130,20 +1214,22 @@ pub struct DeregisterContainerInstanceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeregisterContainerInstanceErrorKind {
-    ClientError(crate::error::ClientError),
-    ClusterNotFoundError(crate::error::ClusterNotFoundError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ServerError(crate::error::ServerError),
+    ClientException(crate::error::ClientException),
+    ClusterNotFoundException(crate::error::ClusterNotFoundException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ServerException(crate::error::ServerException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeregisterContainerInstanceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeregisterContainerInstanceErrorKind::ClientError(_inner) => _inner.fmt(f),
-            DeregisterContainerInstanceErrorKind::ClusterNotFoundError(_inner) => _inner.fmt(f),
-            DeregisterContainerInstanceErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            DeregisterContainerInstanceErrorKind::ServerError(_inner) => _inner.fmt(f),
+            DeregisterContainerInstanceErrorKind::ClientException(_inner) => _inner.fmt(f),
+            DeregisterContainerInstanceErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
+            DeregisterContainerInstanceErrorKind::InvalidParameterException(_inner) => {
+                _inner.fmt(f)
+            }
+            DeregisterContainerInstanceErrorKind::ServerException(_inner) => _inner.fmt(f),
             DeregisterContainerInstanceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1192,38 +1278,38 @@ impl DeregisterContainerInstanceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_client_error(&self) -> bool {
+    pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeregisterContainerInstanceErrorKind::ClientError(_)
+            DeregisterContainerInstanceErrorKind::ClientException(_)
         )
     }
-    pub fn is_cluster_not_found_error(&self) -> bool {
+    pub fn is_cluster_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeregisterContainerInstanceErrorKind::ClusterNotFoundError(_)
+            DeregisterContainerInstanceErrorKind::ClusterNotFoundException(_)
         )
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeregisterContainerInstanceErrorKind::InvalidParameterError(_)
+            DeregisterContainerInstanceErrorKind::InvalidParameterException(_)
         )
     }
-    pub fn is_server_error(&self) -> bool {
+    pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeregisterContainerInstanceErrorKind::ServerError(_)
+            DeregisterContainerInstanceErrorKind::ServerException(_)
         )
     }
 }
 impl std::error::Error for DeregisterContainerInstanceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeregisterContainerInstanceErrorKind::ClientError(_inner) => Some(_inner),
-            DeregisterContainerInstanceErrorKind::ClusterNotFoundError(_inner) => Some(_inner),
-            DeregisterContainerInstanceErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            DeregisterContainerInstanceErrorKind::ServerError(_inner) => Some(_inner),
+            DeregisterContainerInstanceErrorKind::ClientException(_inner) => Some(_inner),
+            DeregisterContainerInstanceErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
+            DeregisterContainerInstanceErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            DeregisterContainerInstanceErrorKind::ServerException(_inner) => Some(_inner),
             DeregisterContainerInstanceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1238,18 +1324,18 @@ pub struct DeregisterTaskDefinitionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeregisterTaskDefinitionErrorKind {
-    ClientError(crate::error::ClientError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ServerError(crate::error::ServerError),
+    ClientException(crate::error::ClientException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ServerException(crate::error::ServerException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeregisterTaskDefinitionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeregisterTaskDefinitionErrorKind::ClientError(_inner) => _inner.fmt(f),
-            DeregisterTaskDefinitionErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            DeregisterTaskDefinitionErrorKind::ServerError(_inner) => _inner.fmt(f),
+            DeregisterTaskDefinitionErrorKind::ClientException(_inner) => _inner.fmt(f),
+            DeregisterTaskDefinitionErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            DeregisterTaskDefinitionErrorKind::ServerException(_inner) => _inner.fmt(f),
             DeregisterTaskDefinitionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1298,31 +1384,31 @@ impl DeregisterTaskDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_client_error(&self) -> bool {
+    pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeregisterTaskDefinitionErrorKind::ClientError(_)
+            DeregisterTaskDefinitionErrorKind::ClientException(_)
         )
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeregisterTaskDefinitionErrorKind::InvalidParameterError(_)
+            DeregisterTaskDefinitionErrorKind::InvalidParameterException(_)
         )
     }
-    pub fn is_server_error(&self) -> bool {
+    pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeregisterTaskDefinitionErrorKind::ServerError(_)
+            DeregisterTaskDefinitionErrorKind::ServerException(_)
         )
     }
 }
 impl std::error::Error for DeregisterTaskDefinitionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeregisterTaskDefinitionErrorKind::ClientError(_inner) => Some(_inner),
-            DeregisterTaskDefinitionErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            DeregisterTaskDefinitionErrorKind::ServerError(_inner) => Some(_inner),
+            DeregisterTaskDefinitionErrorKind::ClientException(_inner) => Some(_inner),
+            DeregisterTaskDefinitionErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            DeregisterTaskDefinitionErrorKind::ServerException(_inner) => Some(_inner),
             DeregisterTaskDefinitionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1337,18 +1423,18 @@ pub struct DescribeCapacityProvidersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeCapacityProvidersErrorKind {
-    ClientError(crate::error::ClientError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ServerError(crate::error::ServerError),
+    ClientException(crate::error::ClientException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ServerException(crate::error::ServerException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeCapacityProvidersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeCapacityProvidersErrorKind::ClientError(_inner) => _inner.fmt(f),
-            DescribeCapacityProvidersErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            DescribeCapacityProvidersErrorKind::ServerError(_inner) => _inner.fmt(f),
+            DescribeCapacityProvidersErrorKind::ClientException(_inner) => _inner.fmt(f),
+            DescribeCapacityProvidersErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            DescribeCapacityProvidersErrorKind::ServerException(_inner) => _inner.fmt(f),
             DescribeCapacityProvidersErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1397,31 +1483,31 @@ impl DescribeCapacityProvidersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_client_error(&self) -> bool {
+    pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeCapacityProvidersErrorKind::ClientError(_)
+            DescribeCapacityProvidersErrorKind::ClientException(_)
         )
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeCapacityProvidersErrorKind::InvalidParameterError(_)
+            DescribeCapacityProvidersErrorKind::InvalidParameterException(_)
         )
     }
-    pub fn is_server_error(&self) -> bool {
+    pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeCapacityProvidersErrorKind::ServerError(_)
+            DescribeCapacityProvidersErrorKind::ServerException(_)
         )
     }
 }
 impl std::error::Error for DescribeCapacityProvidersError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeCapacityProvidersErrorKind::ClientError(_inner) => Some(_inner),
-            DescribeCapacityProvidersErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            DescribeCapacityProvidersErrorKind::ServerError(_inner) => Some(_inner),
+            DescribeCapacityProvidersErrorKind::ClientException(_inner) => Some(_inner),
+            DescribeCapacityProvidersErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            DescribeCapacityProvidersErrorKind::ServerException(_inner) => Some(_inner),
             DescribeCapacityProvidersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1436,18 +1522,18 @@ pub struct DescribeClustersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeClustersErrorKind {
-    ClientError(crate::error::ClientError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ServerError(crate::error::ServerError),
+    ClientException(crate::error::ClientException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ServerException(crate::error::ServerException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeClustersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeClustersErrorKind::ClientError(_inner) => _inner.fmt(f),
-            DescribeClustersErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            DescribeClustersErrorKind::ServerError(_inner) => _inner.fmt(f),
+            DescribeClustersErrorKind::ClientException(_inner) => _inner.fmt(f),
+            DescribeClustersErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            DescribeClustersErrorKind::ServerException(_inner) => _inner.fmt(f),
             DescribeClustersErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1496,25 +1582,25 @@ impl DescribeClustersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_client_error(&self) -> bool {
-        matches!(&self.kind, DescribeClustersErrorKind::ClientError(_))
+    pub fn is_client_exception(&self) -> bool {
+        matches!(&self.kind, DescribeClustersErrorKind::ClientException(_))
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeClustersErrorKind::InvalidParameterError(_)
+            DescribeClustersErrorKind::InvalidParameterException(_)
         )
     }
-    pub fn is_server_error(&self) -> bool {
-        matches!(&self.kind, DescribeClustersErrorKind::ServerError(_))
+    pub fn is_server_exception(&self) -> bool {
+        matches!(&self.kind, DescribeClustersErrorKind::ServerException(_))
     }
 }
 impl std::error::Error for DescribeClustersError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeClustersErrorKind::ClientError(_inner) => Some(_inner),
-            DescribeClustersErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            DescribeClustersErrorKind::ServerError(_inner) => Some(_inner),
+            DescribeClustersErrorKind::ClientException(_inner) => Some(_inner),
+            DescribeClustersErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            DescribeClustersErrorKind::ServerException(_inner) => Some(_inner),
             DescribeClustersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1529,20 +1615,20 @@ pub struct DescribeContainerInstancesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeContainerInstancesErrorKind {
-    ClientError(crate::error::ClientError),
-    ClusterNotFoundError(crate::error::ClusterNotFoundError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ServerError(crate::error::ServerError),
+    ClientException(crate::error::ClientException),
+    ClusterNotFoundException(crate::error::ClusterNotFoundException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ServerException(crate::error::ServerException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeContainerInstancesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeContainerInstancesErrorKind::ClientError(_inner) => _inner.fmt(f),
-            DescribeContainerInstancesErrorKind::ClusterNotFoundError(_inner) => _inner.fmt(f),
-            DescribeContainerInstancesErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            DescribeContainerInstancesErrorKind::ServerError(_inner) => _inner.fmt(f),
+            DescribeContainerInstancesErrorKind::ClientException(_inner) => _inner.fmt(f),
+            DescribeContainerInstancesErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
+            DescribeContainerInstancesErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            DescribeContainerInstancesErrorKind::ServerException(_inner) => _inner.fmt(f),
             DescribeContainerInstancesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1591,38 +1677,38 @@ impl DescribeContainerInstancesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_client_error(&self) -> bool {
+    pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeContainerInstancesErrorKind::ClientError(_)
+            DescribeContainerInstancesErrorKind::ClientException(_)
         )
     }
-    pub fn is_cluster_not_found_error(&self) -> bool {
+    pub fn is_cluster_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeContainerInstancesErrorKind::ClusterNotFoundError(_)
+            DescribeContainerInstancesErrorKind::ClusterNotFoundException(_)
         )
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeContainerInstancesErrorKind::InvalidParameterError(_)
+            DescribeContainerInstancesErrorKind::InvalidParameterException(_)
         )
     }
-    pub fn is_server_error(&self) -> bool {
+    pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeContainerInstancesErrorKind::ServerError(_)
+            DescribeContainerInstancesErrorKind::ServerException(_)
         )
     }
 }
 impl std::error::Error for DescribeContainerInstancesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeContainerInstancesErrorKind::ClientError(_inner) => Some(_inner),
-            DescribeContainerInstancesErrorKind::ClusterNotFoundError(_inner) => Some(_inner),
-            DescribeContainerInstancesErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            DescribeContainerInstancesErrorKind::ServerError(_inner) => Some(_inner),
+            DescribeContainerInstancesErrorKind::ClientException(_inner) => Some(_inner),
+            DescribeContainerInstancesErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
+            DescribeContainerInstancesErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            DescribeContainerInstancesErrorKind::ServerException(_inner) => Some(_inner),
             DescribeContainerInstancesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1637,20 +1723,20 @@ pub struct DescribeServicesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeServicesErrorKind {
-    ClientError(crate::error::ClientError),
-    ClusterNotFoundError(crate::error::ClusterNotFoundError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ServerError(crate::error::ServerError),
+    ClientException(crate::error::ClientException),
+    ClusterNotFoundException(crate::error::ClusterNotFoundException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ServerException(crate::error::ServerException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeServicesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeServicesErrorKind::ClientError(_inner) => _inner.fmt(f),
-            DescribeServicesErrorKind::ClusterNotFoundError(_inner) => _inner.fmt(f),
-            DescribeServicesErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            DescribeServicesErrorKind::ServerError(_inner) => _inner.fmt(f),
+            DescribeServicesErrorKind::ClientException(_inner) => _inner.fmt(f),
+            DescribeServicesErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
+            DescribeServicesErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            DescribeServicesErrorKind::ServerException(_inner) => _inner.fmt(f),
             DescribeServicesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1699,32 +1785,32 @@ impl DescribeServicesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_client_error(&self) -> bool {
-        matches!(&self.kind, DescribeServicesErrorKind::ClientError(_))
+    pub fn is_client_exception(&self) -> bool {
+        matches!(&self.kind, DescribeServicesErrorKind::ClientException(_))
     }
-    pub fn is_cluster_not_found_error(&self) -> bool {
+    pub fn is_cluster_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeServicesErrorKind::ClusterNotFoundError(_)
+            DescribeServicesErrorKind::ClusterNotFoundException(_)
         )
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeServicesErrorKind::InvalidParameterError(_)
+            DescribeServicesErrorKind::InvalidParameterException(_)
         )
     }
-    pub fn is_server_error(&self) -> bool {
-        matches!(&self.kind, DescribeServicesErrorKind::ServerError(_))
+    pub fn is_server_exception(&self) -> bool {
+        matches!(&self.kind, DescribeServicesErrorKind::ServerException(_))
     }
 }
 impl std::error::Error for DescribeServicesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeServicesErrorKind::ClientError(_inner) => Some(_inner),
-            DescribeServicesErrorKind::ClusterNotFoundError(_inner) => Some(_inner),
-            DescribeServicesErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            DescribeServicesErrorKind::ServerError(_inner) => Some(_inner),
+            DescribeServicesErrorKind::ClientException(_inner) => Some(_inner),
+            DescribeServicesErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
+            DescribeServicesErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            DescribeServicesErrorKind::ServerException(_inner) => Some(_inner),
             DescribeServicesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1739,18 +1825,18 @@ pub struct DescribeTaskDefinitionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeTaskDefinitionErrorKind {
-    ClientError(crate::error::ClientError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ServerError(crate::error::ServerError),
+    ClientException(crate::error::ClientException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ServerException(crate::error::ServerException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeTaskDefinitionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeTaskDefinitionErrorKind::ClientError(_inner) => _inner.fmt(f),
-            DescribeTaskDefinitionErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            DescribeTaskDefinitionErrorKind::ServerError(_inner) => _inner.fmt(f),
+            DescribeTaskDefinitionErrorKind::ClientException(_inner) => _inner.fmt(f),
+            DescribeTaskDefinitionErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            DescribeTaskDefinitionErrorKind::ServerException(_inner) => _inner.fmt(f),
             DescribeTaskDefinitionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1799,25 +1885,31 @@ impl DescribeTaskDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_client_error(&self) -> bool {
-        matches!(&self.kind, DescribeTaskDefinitionErrorKind::ClientError(_))
-    }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeTaskDefinitionErrorKind::InvalidParameterError(_)
+            DescribeTaskDefinitionErrorKind::ClientException(_)
         )
     }
-    pub fn is_server_error(&self) -> bool {
-        matches!(&self.kind, DescribeTaskDefinitionErrorKind::ServerError(_))
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeTaskDefinitionErrorKind::InvalidParameterException(_)
+        )
+    }
+    pub fn is_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeTaskDefinitionErrorKind::ServerException(_)
+        )
     }
 }
 impl std::error::Error for DescribeTaskDefinitionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeTaskDefinitionErrorKind::ClientError(_inner) => Some(_inner),
-            DescribeTaskDefinitionErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            DescribeTaskDefinitionErrorKind::ServerError(_inner) => Some(_inner),
+            DescribeTaskDefinitionErrorKind::ClientException(_inner) => Some(_inner),
+            DescribeTaskDefinitionErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            DescribeTaskDefinitionErrorKind::ServerException(_inner) => Some(_inner),
             DescribeTaskDefinitionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1832,20 +1924,20 @@ pub struct DescribeTasksError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeTasksErrorKind {
-    ClientError(crate::error::ClientError),
-    ClusterNotFoundError(crate::error::ClusterNotFoundError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ServerError(crate::error::ServerError),
+    ClientException(crate::error::ClientException),
+    ClusterNotFoundException(crate::error::ClusterNotFoundException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ServerException(crate::error::ServerException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeTasksError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeTasksErrorKind::ClientError(_inner) => _inner.fmt(f),
-            DescribeTasksErrorKind::ClusterNotFoundError(_inner) => _inner.fmt(f),
-            DescribeTasksErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            DescribeTasksErrorKind::ServerError(_inner) => _inner.fmt(f),
+            DescribeTasksErrorKind::ClientException(_inner) => _inner.fmt(f),
+            DescribeTasksErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
+            DescribeTasksErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            DescribeTasksErrorKind::ServerException(_inner) => _inner.fmt(f),
             DescribeTasksErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1894,26 +1986,32 @@ impl DescribeTasksError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_client_error(&self) -> bool {
-        matches!(&self.kind, DescribeTasksErrorKind::ClientError(_))
+    pub fn is_client_exception(&self) -> bool {
+        matches!(&self.kind, DescribeTasksErrorKind::ClientException(_))
     }
-    pub fn is_cluster_not_found_error(&self) -> bool {
-        matches!(&self.kind, DescribeTasksErrorKind::ClusterNotFoundError(_))
+    pub fn is_cluster_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeTasksErrorKind::ClusterNotFoundException(_)
+        )
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
-        matches!(&self.kind, DescribeTasksErrorKind::InvalidParameterError(_))
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeTasksErrorKind::InvalidParameterException(_)
+        )
     }
-    pub fn is_server_error(&self) -> bool {
-        matches!(&self.kind, DescribeTasksErrorKind::ServerError(_))
+    pub fn is_server_exception(&self) -> bool {
+        matches!(&self.kind, DescribeTasksErrorKind::ServerException(_))
     }
 }
 impl std::error::Error for DescribeTasksError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeTasksErrorKind::ClientError(_inner) => Some(_inner),
-            DescribeTasksErrorKind::ClusterNotFoundError(_inner) => Some(_inner),
-            DescribeTasksErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            DescribeTasksErrorKind::ServerError(_inner) => Some(_inner),
+            DescribeTasksErrorKind::ClientException(_inner) => Some(_inner),
+            DescribeTasksErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
+            DescribeTasksErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            DescribeTasksErrorKind::ServerException(_inner) => Some(_inner),
             DescribeTasksErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1928,28 +2026,28 @@ pub struct DescribeTaskSetsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeTaskSetsErrorKind {
-    AccessDeniedError(crate::error::AccessDeniedError),
-    ClientError(crate::error::ClientError),
-    ClusterNotFoundError(crate::error::ClusterNotFoundError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ServerError(crate::error::ServerError),
-    ServiceNotActiveError(crate::error::ServiceNotActiveError),
-    ServiceNotFoundError(crate::error::ServiceNotFoundError),
-    UnsupportedFeatureError(crate::error::UnsupportedFeatureError),
+    AccessDeniedException(crate::error::AccessDeniedException),
+    ClientException(crate::error::ClientException),
+    ClusterNotFoundException(crate::error::ClusterNotFoundException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ServerException(crate::error::ServerException),
+    ServiceNotActiveException(crate::error::ServiceNotActiveException),
+    ServiceNotFoundException(crate::error::ServiceNotFoundException),
+    UnsupportedFeatureException(crate::error::UnsupportedFeatureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeTaskSetsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeTaskSetsErrorKind::AccessDeniedError(_inner) => _inner.fmt(f),
-            DescribeTaskSetsErrorKind::ClientError(_inner) => _inner.fmt(f),
-            DescribeTaskSetsErrorKind::ClusterNotFoundError(_inner) => _inner.fmt(f),
-            DescribeTaskSetsErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            DescribeTaskSetsErrorKind::ServerError(_inner) => _inner.fmt(f),
-            DescribeTaskSetsErrorKind::ServiceNotActiveError(_inner) => _inner.fmt(f),
-            DescribeTaskSetsErrorKind::ServiceNotFoundError(_inner) => _inner.fmt(f),
-            DescribeTaskSetsErrorKind::UnsupportedFeatureError(_inner) => _inner.fmt(f),
+            DescribeTaskSetsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DescribeTaskSetsErrorKind::ClientException(_inner) => _inner.fmt(f),
+            DescribeTaskSetsErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
+            DescribeTaskSetsErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            DescribeTaskSetsErrorKind::ServerException(_inner) => _inner.fmt(f),
+            DescribeTaskSetsErrorKind::ServiceNotActiveException(_inner) => _inner.fmt(f),
+            DescribeTaskSetsErrorKind::ServiceNotFoundException(_inner) => _inner.fmt(f),
+            DescribeTaskSetsErrorKind::UnsupportedFeatureException(_inner) => _inner.fmt(f),
             DescribeTaskSetsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1998,57 +2096,60 @@ impl DescribeTaskSetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_access_denied_error(&self) -> bool {
-        matches!(&self.kind, DescribeTaskSetsErrorKind::AccessDeniedError(_))
-    }
-    pub fn is_client_error(&self) -> bool {
-        matches!(&self.kind, DescribeTaskSetsErrorKind::ClientError(_))
-    }
-    pub fn is_cluster_not_found_error(&self) -> bool {
+    pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeTaskSetsErrorKind::ClusterNotFoundError(_)
+            DescribeTaskSetsErrorKind::AccessDeniedException(_)
         )
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_client_exception(&self) -> bool {
+        matches!(&self.kind, DescribeTaskSetsErrorKind::ClientException(_))
+    }
+    pub fn is_cluster_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeTaskSetsErrorKind::InvalidParameterError(_)
+            DescribeTaskSetsErrorKind::ClusterNotFoundException(_)
         )
     }
-    pub fn is_server_error(&self) -> bool {
-        matches!(&self.kind, DescribeTaskSetsErrorKind::ServerError(_))
-    }
-    pub fn is_service_not_active_error(&self) -> bool {
+    pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeTaskSetsErrorKind::ServiceNotActiveError(_)
+            DescribeTaskSetsErrorKind::InvalidParameterException(_)
         )
     }
-    pub fn is_service_not_found_error(&self) -> bool {
+    pub fn is_server_exception(&self) -> bool {
+        matches!(&self.kind, DescribeTaskSetsErrorKind::ServerException(_))
+    }
+    pub fn is_service_not_active_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeTaskSetsErrorKind::ServiceNotFoundError(_)
+            DescribeTaskSetsErrorKind::ServiceNotActiveException(_)
         )
     }
-    pub fn is_unsupported_feature_error(&self) -> bool {
+    pub fn is_service_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeTaskSetsErrorKind::UnsupportedFeatureError(_)
+            DescribeTaskSetsErrorKind::ServiceNotFoundException(_)
+        )
+    }
+    pub fn is_unsupported_feature_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeTaskSetsErrorKind::UnsupportedFeatureException(_)
         )
     }
 }
 impl std::error::Error for DescribeTaskSetsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeTaskSetsErrorKind::AccessDeniedError(_inner) => Some(_inner),
-            DescribeTaskSetsErrorKind::ClientError(_inner) => Some(_inner),
-            DescribeTaskSetsErrorKind::ClusterNotFoundError(_inner) => Some(_inner),
-            DescribeTaskSetsErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            DescribeTaskSetsErrorKind::ServerError(_inner) => Some(_inner),
-            DescribeTaskSetsErrorKind::ServiceNotActiveError(_inner) => Some(_inner),
-            DescribeTaskSetsErrorKind::ServiceNotFoundError(_inner) => Some(_inner),
-            DescribeTaskSetsErrorKind::UnsupportedFeatureError(_inner) => Some(_inner),
+            DescribeTaskSetsErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DescribeTaskSetsErrorKind::ClientException(_inner) => Some(_inner),
+            DescribeTaskSetsErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
+            DescribeTaskSetsErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            DescribeTaskSetsErrorKind::ServerException(_inner) => Some(_inner),
+            DescribeTaskSetsErrorKind::ServiceNotActiveException(_inner) => Some(_inner),
+            DescribeTaskSetsErrorKind::ServiceNotFoundException(_inner) => Some(_inner),
+            DescribeTaskSetsErrorKind::UnsupportedFeatureException(_inner) => Some(_inner),
             DescribeTaskSetsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2063,16 +2164,16 @@ pub struct DiscoverPollEndpointError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DiscoverPollEndpointErrorKind {
-    ClientError(crate::error::ClientError),
-    ServerError(crate::error::ServerError),
+    ClientException(crate::error::ClientException),
+    ServerException(crate::error::ServerException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DiscoverPollEndpointError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DiscoverPollEndpointErrorKind::ClientError(_inner) => _inner.fmt(f),
-            DiscoverPollEndpointErrorKind::ServerError(_inner) => _inner.fmt(f),
+            DiscoverPollEndpointErrorKind::ClientException(_inner) => _inner.fmt(f),
+            DiscoverPollEndpointErrorKind::ServerException(_inner) => _inner.fmt(f),
             DiscoverPollEndpointErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2121,18 +2222,24 @@ impl DiscoverPollEndpointError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_client_error(&self) -> bool {
-        matches!(&self.kind, DiscoverPollEndpointErrorKind::ClientError(_))
+    pub fn is_client_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DiscoverPollEndpointErrorKind::ClientException(_)
+        )
     }
-    pub fn is_server_error(&self) -> bool {
-        matches!(&self.kind, DiscoverPollEndpointErrorKind::ServerError(_))
+    pub fn is_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DiscoverPollEndpointErrorKind::ServerException(_)
+        )
     }
 }
 impl std::error::Error for DiscoverPollEndpointError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DiscoverPollEndpointErrorKind::ClientError(_inner) => Some(_inner),
-            DiscoverPollEndpointErrorKind::ServerError(_inner) => Some(_inner),
+            DiscoverPollEndpointErrorKind::ClientException(_inner) => Some(_inner),
+            DiscoverPollEndpointErrorKind::ServerException(_inner) => Some(_inner),
             DiscoverPollEndpointErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2147,24 +2254,24 @@ pub struct ExecuteCommandError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ExecuteCommandErrorKind {
-    AccessDeniedError(crate::error::AccessDeniedError),
-    ClientError(crate::error::ClientError),
-    ClusterNotFoundError(crate::error::ClusterNotFoundError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ServerError(crate::error::ServerError),
-    TargetNotConnectedError(crate::error::TargetNotConnectedError),
+    AccessDeniedException(crate::error::AccessDeniedException),
+    ClientException(crate::error::ClientException),
+    ClusterNotFoundException(crate::error::ClusterNotFoundException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ServerException(crate::error::ServerException),
+    TargetNotConnectedException(crate::error::TargetNotConnectedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ExecuteCommandError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ExecuteCommandErrorKind::AccessDeniedError(_inner) => _inner.fmt(f),
-            ExecuteCommandErrorKind::ClientError(_inner) => _inner.fmt(f),
-            ExecuteCommandErrorKind::ClusterNotFoundError(_inner) => _inner.fmt(f),
-            ExecuteCommandErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            ExecuteCommandErrorKind::ServerError(_inner) => _inner.fmt(f),
-            ExecuteCommandErrorKind::TargetNotConnectedError(_inner) => _inner.fmt(f),
+            ExecuteCommandErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            ExecuteCommandErrorKind::ClientException(_inner) => _inner.fmt(f),
+            ExecuteCommandErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
+            ExecuteCommandErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            ExecuteCommandErrorKind::ServerException(_inner) => _inner.fmt(f),
+            ExecuteCommandErrorKind::TargetNotConnectedException(_inner) => _inner.fmt(f),
             ExecuteCommandErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2213,40 +2320,46 @@ impl ExecuteCommandError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_access_denied_error(&self) -> bool {
-        matches!(&self.kind, ExecuteCommandErrorKind::AccessDeniedError(_))
-    }
-    pub fn is_client_error(&self) -> bool {
-        matches!(&self.kind, ExecuteCommandErrorKind::ClientError(_))
-    }
-    pub fn is_cluster_not_found_error(&self) -> bool {
-        matches!(&self.kind, ExecuteCommandErrorKind::ClusterNotFoundError(_))
-    }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ExecuteCommandErrorKind::InvalidParameterError(_)
+            ExecuteCommandErrorKind::AccessDeniedException(_)
         )
     }
-    pub fn is_server_error(&self) -> bool {
-        matches!(&self.kind, ExecuteCommandErrorKind::ServerError(_))
+    pub fn is_client_exception(&self) -> bool {
+        matches!(&self.kind, ExecuteCommandErrorKind::ClientException(_))
     }
-    pub fn is_target_not_connected_error(&self) -> bool {
+    pub fn is_cluster_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ExecuteCommandErrorKind::TargetNotConnectedError(_)
+            ExecuteCommandErrorKind::ClusterNotFoundException(_)
+        )
+    }
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ExecuteCommandErrorKind::InvalidParameterException(_)
+        )
+    }
+    pub fn is_server_exception(&self) -> bool {
+        matches!(&self.kind, ExecuteCommandErrorKind::ServerException(_))
+    }
+    pub fn is_target_not_connected_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ExecuteCommandErrorKind::TargetNotConnectedException(_)
         )
     }
 }
 impl std::error::Error for ExecuteCommandError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ExecuteCommandErrorKind::AccessDeniedError(_inner) => Some(_inner),
-            ExecuteCommandErrorKind::ClientError(_inner) => Some(_inner),
-            ExecuteCommandErrorKind::ClusterNotFoundError(_inner) => Some(_inner),
-            ExecuteCommandErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            ExecuteCommandErrorKind::ServerError(_inner) => Some(_inner),
-            ExecuteCommandErrorKind::TargetNotConnectedError(_inner) => Some(_inner),
+            ExecuteCommandErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            ExecuteCommandErrorKind::ClientException(_inner) => Some(_inner),
+            ExecuteCommandErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
+            ExecuteCommandErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            ExecuteCommandErrorKind::ServerException(_inner) => Some(_inner),
+            ExecuteCommandErrorKind::TargetNotConnectedException(_inner) => Some(_inner),
             ExecuteCommandErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2261,18 +2374,18 @@ pub struct ListAccountSettingsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAccountSettingsErrorKind {
-    ClientError(crate::error::ClientError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ServerError(crate::error::ServerError),
+    ClientException(crate::error::ClientException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ServerException(crate::error::ServerException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAccountSettingsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListAccountSettingsErrorKind::ClientError(_inner) => _inner.fmt(f),
-            ListAccountSettingsErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            ListAccountSettingsErrorKind::ServerError(_inner) => _inner.fmt(f),
+            ListAccountSettingsErrorKind::ClientException(_inner) => _inner.fmt(f),
+            ListAccountSettingsErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            ListAccountSettingsErrorKind::ServerException(_inner) => _inner.fmt(f),
             ListAccountSettingsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2321,25 +2434,25 @@ impl ListAccountSettingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_client_error(&self) -> bool {
-        matches!(&self.kind, ListAccountSettingsErrorKind::ClientError(_))
+    pub fn is_client_exception(&self) -> bool {
+        matches!(&self.kind, ListAccountSettingsErrorKind::ClientException(_))
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListAccountSettingsErrorKind::InvalidParameterError(_)
+            ListAccountSettingsErrorKind::InvalidParameterException(_)
         )
     }
-    pub fn is_server_error(&self) -> bool {
-        matches!(&self.kind, ListAccountSettingsErrorKind::ServerError(_))
+    pub fn is_server_exception(&self) -> bool {
+        matches!(&self.kind, ListAccountSettingsErrorKind::ServerException(_))
     }
 }
 impl std::error::Error for ListAccountSettingsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListAccountSettingsErrorKind::ClientError(_inner) => Some(_inner),
-            ListAccountSettingsErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            ListAccountSettingsErrorKind::ServerError(_inner) => Some(_inner),
+            ListAccountSettingsErrorKind::ClientException(_inner) => Some(_inner),
+            ListAccountSettingsErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            ListAccountSettingsErrorKind::ServerException(_inner) => Some(_inner),
             ListAccountSettingsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2354,16 +2467,16 @@ pub struct ListAttributesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAttributesErrorKind {
-    ClusterNotFoundError(crate::error::ClusterNotFoundError),
-    InvalidParameterError(crate::error::InvalidParameterError),
+    ClusterNotFoundException(crate::error::ClusterNotFoundException),
+    InvalidParameterException(crate::error::InvalidParameterException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListAttributesErrorKind::ClusterNotFoundError(_inner) => _inner.fmt(f),
-            ListAttributesErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
+            ListAttributesErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
+            ListAttributesErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
             ListAttributesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2412,21 +2525,24 @@ impl ListAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_cluster_not_found_error(&self) -> bool {
-        matches!(&self.kind, ListAttributesErrorKind::ClusterNotFoundError(_))
-    }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_cluster_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListAttributesErrorKind::InvalidParameterError(_)
+            ListAttributesErrorKind::ClusterNotFoundException(_)
+        )
+    }
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAttributesErrorKind::InvalidParameterException(_)
         )
     }
 }
 impl std::error::Error for ListAttributesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListAttributesErrorKind::ClusterNotFoundError(_inner) => Some(_inner),
-            ListAttributesErrorKind::InvalidParameterError(_inner) => Some(_inner),
+            ListAttributesErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
+            ListAttributesErrorKind::InvalidParameterException(_inner) => Some(_inner),
             ListAttributesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2441,18 +2557,18 @@ pub struct ListClustersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListClustersErrorKind {
-    ClientError(crate::error::ClientError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ServerError(crate::error::ServerError),
+    ClientException(crate::error::ClientException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ServerException(crate::error::ServerException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListClustersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListClustersErrorKind::ClientError(_inner) => _inner.fmt(f),
-            ListClustersErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            ListClustersErrorKind::ServerError(_inner) => _inner.fmt(f),
+            ListClustersErrorKind::ClientException(_inner) => _inner.fmt(f),
+            ListClustersErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            ListClustersErrorKind::ServerException(_inner) => _inner.fmt(f),
             ListClustersErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2501,22 +2617,25 @@ impl ListClustersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_client_error(&self) -> bool {
-        matches!(&self.kind, ListClustersErrorKind::ClientError(_))
+    pub fn is_client_exception(&self) -> bool {
+        matches!(&self.kind, ListClustersErrorKind::ClientException(_))
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
-        matches!(&self.kind, ListClustersErrorKind::InvalidParameterError(_))
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListClustersErrorKind::InvalidParameterException(_)
+        )
     }
-    pub fn is_server_error(&self) -> bool {
-        matches!(&self.kind, ListClustersErrorKind::ServerError(_))
+    pub fn is_server_exception(&self) -> bool {
+        matches!(&self.kind, ListClustersErrorKind::ServerException(_))
     }
 }
 impl std::error::Error for ListClustersError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListClustersErrorKind::ClientError(_inner) => Some(_inner),
-            ListClustersErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            ListClustersErrorKind::ServerError(_inner) => Some(_inner),
+            ListClustersErrorKind::ClientException(_inner) => Some(_inner),
+            ListClustersErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            ListClustersErrorKind::ServerException(_inner) => Some(_inner),
             ListClustersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2531,20 +2650,20 @@ pub struct ListContainerInstancesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListContainerInstancesErrorKind {
-    ClientError(crate::error::ClientError),
-    ClusterNotFoundError(crate::error::ClusterNotFoundError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ServerError(crate::error::ServerError),
+    ClientException(crate::error::ClientException),
+    ClusterNotFoundException(crate::error::ClusterNotFoundException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ServerException(crate::error::ServerException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListContainerInstancesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListContainerInstancesErrorKind::ClientError(_inner) => _inner.fmt(f),
-            ListContainerInstancesErrorKind::ClusterNotFoundError(_inner) => _inner.fmt(f),
-            ListContainerInstancesErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            ListContainerInstancesErrorKind::ServerError(_inner) => _inner.fmt(f),
+            ListContainerInstancesErrorKind::ClientException(_inner) => _inner.fmt(f),
+            ListContainerInstancesErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
+            ListContainerInstancesErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            ListContainerInstancesErrorKind::ServerException(_inner) => _inner.fmt(f),
             ListContainerInstancesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2593,32 +2712,38 @@ impl ListContainerInstancesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_client_error(&self) -> bool {
-        matches!(&self.kind, ListContainerInstancesErrorKind::ClientError(_))
-    }
-    pub fn is_cluster_not_found_error(&self) -> bool {
+    pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListContainerInstancesErrorKind::ClusterNotFoundError(_)
+            ListContainerInstancesErrorKind::ClientException(_)
         )
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_cluster_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListContainerInstancesErrorKind::InvalidParameterError(_)
+            ListContainerInstancesErrorKind::ClusterNotFoundException(_)
         )
     }
-    pub fn is_server_error(&self) -> bool {
-        matches!(&self.kind, ListContainerInstancesErrorKind::ServerError(_))
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListContainerInstancesErrorKind::InvalidParameterException(_)
+        )
+    }
+    pub fn is_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListContainerInstancesErrorKind::ServerException(_)
+        )
     }
 }
 impl std::error::Error for ListContainerInstancesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListContainerInstancesErrorKind::ClientError(_inner) => Some(_inner),
-            ListContainerInstancesErrorKind::ClusterNotFoundError(_inner) => Some(_inner),
-            ListContainerInstancesErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            ListContainerInstancesErrorKind::ServerError(_inner) => Some(_inner),
+            ListContainerInstancesErrorKind::ClientException(_inner) => Some(_inner),
+            ListContainerInstancesErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
+            ListContainerInstancesErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            ListContainerInstancesErrorKind::ServerException(_inner) => Some(_inner),
             ListContainerInstancesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2633,20 +2758,20 @@ pub struct ListServicesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListServicesErrorKind {
-    ClientError(crate::error::ClientError),
-    ClusterNotFoundError(crate::error::ClusterNotFoundError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ServerError(crate::error::ServerError),
+    ClientException(crate::error::ClientException),
+    ClusterNotFoundException(crate::error::ClusterNotFoundException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ServerException(crate::error::ServerException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListServicesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListServicesErrorKind::ClientError(_inner) => _inner.fmt(f),
-            ListServicesErrorKind::ClusterNotFoundError(_inner) => _inner.fmt(f),
-            ListServicesErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            ListServicesErrorKind::ServerError(_inner) => _inner.fmt(f),
+            ListServicesErrorKind::ClientException(_inner) => _inner.fmt(f),
+            ListServicesErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
+            ListServicesErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            ListServicesErrorKind::ServerException(_inner) => _inner.fmt(f),
             ListServicesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2695,26 +2820,32 @@ impl ListServicesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_client_error(&self) -> bool {
-        matches!(&self.kind, ListServicesErrorKind::ClientError(_))
+    pub fn is_client_exception(&self) -> bool {
+        matches!(&self.kind, ListServicesErrorKind::ClientException(_))
     }
-    pub fn is_cluster_not_found_error(&self) -> bool {
-        matches!(&self.kind, ListServicesErrorKind::ClusterNotFoundError(_))
+    pub fn is_cluster_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListServicesErrorKind::ClusterNotFoundException(_)
+        )
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
-        matches!(&self.kind, ListServicesErrorKind::InvalidParameterError(_))
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListServicesErrorKind::InvalidParameterException(_)
+        )
     }
-    pub fn is_server_error(&self) -> bool {
-        matches!(&self.kind, ListServicesErrorKind::ServerError(_))
+    pub fn is_server_exception(&self) -> bool {
+        matches!(&self.kind, ListServicesErrorKind::ServerException(_))
     }
 }
 impl std::error::Error for ListServicesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListServicesErrorKind::ClientError(_inner) => Some(_inner),
-            ListServicesErrorKind::ClusterNotFoundError(_inner) => Some(_inner),
-            ListServicesErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            ListServicesErrorKind::ServerError(_inner) => Some(_inner),
+            ListServicesErrorKind::ClientException(_inner) => Some(_inner),
+            ListServicesErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
+            ListServicesErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            ListServicesErrorKind::ServerException(_inner) => Some(_inner),
             ListServicesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2729,20 +2860,20 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    ClientError(crate::error::ClientError),
-    ClusterNotFoundError(crate::error::ClusterNotFoundError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ServerError(crate::error::ServerError),
+    ClientException(crate::error::ClientException),
+    ClusterNotFoundException(crate::error::ClusterNotFoundException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ServerException(crate::error::ServerException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListTagsForResourceErrorKind::ClientError(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::ClusterNotFoundError(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::ServerError(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::ClientException(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::ServerException(_inner) => _inner.fmt(f),
             ListTagsForResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2791,32 +2922,32 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_client_error(&self) -> bool {
-        matches!(&self.kind, ListTagsForResourceErrorKind::ClientError(_))
+    pub fn is_client_exception(&self) -> bool {
+        matches!(&self.kind, ListTagsForResourceErrorKind::ClientException(_))
     }
-    pub fn is_cluster_not_found_error(&self) -> bool {
+    pub fn is_cluster_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListTagsForResourceErrorKind::ClusterNotFoundError(_)
+            ListTagsForResourceErrorKind::ClusterNotFoundException(_)
         )
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListTagsForResourceErrorKind::InvalidParameterError(_)
+            ListTagsForResourceErrorKind::InvalidParameterException(_)
         )
     }
-    pub fn is_server_error(&self) -> bool {
-        matches!(&self.kind, ListTagsForResourceErrorKind::ServerError(_))
+    pub fn is_server_exception(&self) -> bool {
+        matches!(&self.kind, ListTagsForResourceErrorKind::ServerException(_))
     }
 }
 impl std::error::Error for ListTagsForResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListTagsForResourceErrorKind::ClientError(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::ClusterNotFoundError(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::ServerError(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::ClientException(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::ServerException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2831,18 +2962,18 @@ pub struct ListTaskDefinitionFamiliesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTaskDefinitionFamiliesErrorKind {
-    ClientError(crate::error::ClientError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ServerError(crate::error::ServerError),
+    ClientException(crate::error::ClientException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ServerException(crate::error::ServerException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTaskDefinitionFamiliesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListTaskDefinitionFamiliesErrorKind::ClientError(_inner) => _inner.fmt(f),
-            ListTaskDefinitionFamiliesErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            ListTaskDefinitionFamiliesErrorKind::ServerError(_inner) => _inner.fmt(f),
+            ListTaskDefinitionFamiliesErrorKind::ClientException(_inner) => _inner.fmt(f),
+            ListTaskDefinitionFamiliesErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            ListTaskDefinitionFamiliesErrorKind::ServerException(_inner) => _inner.fmt(f),
             ListTaskDefinitionFamiliesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2891,31 +3022,31 @@ impl ListTaskDefinitionFamiliesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_client_error(&self) -> bool {
+    pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListTaskDefinitionFamiliesErrorKind::ClientError(_)
+            ListTaskDefinitionFamiliesErrorKind::ClientException(_)
         )
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListTaskDefinitionFamiliesErrorKind::InvalidParameterError(_)
+            ListTaskDefinitionFamiliesErrorKind::InvalidParameterException(_)
         )
     }
-    pub fn is_server_error(&self) -> bool {
+    pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListTaskDefinitionFamiliesErrorKind::ServerError(_)
+            ListTaskDefinitionFamiliesErrorKind::ServerException(_)
         )
     }
 }
 impl std::error::Error for ListTaskDefinitionFamiliesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListTaskDefinitionFamiliesErrorKind::ClientError(_inner) => Some(_inner),
-            ListTaskDefinitionFamiliesErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            ListTaskDefinitionFamiliesErrorKind::ServerError(_inner) => Some(_inner),
+            ListTaskDefinitionFamiliesErrorKind::ClientException(_inner) => Some(_inner),
+            ListTaskDefinitionFamiliesErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            ListTaskDefinitionFamiliesErrorKind::ServerException(_inner) => Some(_inner),
             ListTaskDefinitionFamiliesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2930,18 +3061,18 @@ pub struct ListTaskDefinitionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTaskDefinitionsErrorKind {
-    ClientError(crate::error::ClientError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ServerError(crate::error::ServerError),
+    ClientException(crate::error::ClientException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ServerException(crate::error::ServerException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTaskDefinitionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListTaskDefinitionsErrorKind::ClientError(_inner) => _inner.fmt(f),
-            ListTaskDefinitionsErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            ListTaskDefinitionsErrorKind::ServerError(_inner) => _inner.fmt(f),
+            ListTaskDefinitionsErrorKind::ClientException(_inner) => _inner.fmt(f),
+            ListTaskDefinitionsErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            ListTaskDefinitionsErrorKind::ServerException(_inner) => _inner.fmt(f),
             ListTaskDefinitionsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2990,25 +3121,25 @@ impl ListTaskDefinitionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_client_error(&self) -> bool {
-        matches!(&self.kind, ListTaskDefinitionsErrorKind::ClientError(_))
+    pub fn is_client_exception(&self) -> bool {
+        matches!(&self.kind, ListTaskDefinitionsErrorKind::ClientException(_))
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListTaskDefinitionsErrorKind::InvalidParameterError(_)
+            ListTaskDefinitionsErrorKind::InvalidParameterException(_)
         )
     }
-    pub fn is_server_error(&self) -> bool {
-        matches!(&self.kind, ListTaskDefinitionsErrorKind::ServerError(_))
+    pub fn is_server_exception(&self) -> bool {
+        matches!(&self.kind, ListTaskDefinitionsErrorKind::ServerException(_))
     }
 }
 impl std::error::Error for ListTaskDefinitionsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListTaskDefinitionsErrorKind::ClientError(_inner) => Some(_inner),
-            ListTaskDefinitionsErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            ListTaskDefinitionsErrorKind::ServerError(_inner) => Some(_inner),
+            ListTaskDefinitionsErrorKind::ClientException(_inner) => Some(_inner),
+            ListTaskDefinitionsErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            ListTaskDefinitionsErrorKind::ServerException(_inner) => Some(_inner),
             ListTaskDefinitionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3023,22 +3154,22 @@ pub struct ListTasksError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTasksErrorKind {
-    ClientError(crate::error::ClientError),
-    ClusterNotFoundError(crate::error::ClusterNotFoundError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ServerError(crate::error::ServerError),
-    ServiceNotFoundError(crate::error::ServiceNotFoundError),
+    ClientException(crate::error::ClientException),
+    ClusterNotFoundException(crate::error::ClusterNotFoundException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ServerException(crate::error::ServerException),
+    ServiceNotFoundException(crate::error::ServiceNotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTasksError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListTasksErrorKind::ClientError(_inner) => _inner.fmt(f),
-            ListTasksErrorKind::ClusterNotFoundError(_inner) => _inner.fmt(f),
-            ListTasksErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            ListTasksErrorKind::ServerError(_inner) => _inner.fmt(f),
-            ListTasksErrorKind::ServiceNotFoundError(_inner) => _inner.fmt(f),
+            ListTasksErrorKind::ClientException(_inner) => _inner.fmt(f),
+            ListTasksErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
+            ListTasksErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            ListTasksErrorKind::ServerException(_inner) => _inner.fmt(f),
+            ListTasksErrorKind::ServiceNotFoundException(_inner) => _inner.fmt(f),
             ListTasksErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3087,30 +3218,30 @@ impl ListTasksError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_client_error(&self) -> bool {
-        matches!(&self.kind, ListTasksErrorKind::ClientError(_))
+    pub fn is_client_exception(&self) -> bool {
+        matches!(&self.kind, ListTasksErrorKind::ClientException(_))
     }
-    pub fn is_cluster_not_found_error(&self) -> bool {
-        matches!(&self.kind, ListTasksErrorKind::ClusterNotFoundError(_))
+    pub fn is_cluster_not_found_exception(&self) -> bool {
+        matches!(&self.kind, ListTasksErrorKind::ClusterNotFoundException(_))
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
-        matches!(&self.kind, ListTasksErrorKind::InvalidParameterError(_))
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(&self.kind, ListTasksErrorKind::InvalidParameterException(_))
     }
-    pub fn is_server_error(&self) -> bool {
-        matches!(&self.kind, ListTasksErrorKind::ServerError(_))
+    pub fn is_server_exception(&self) -> bool {
+        matches!(&self.kind, ListTasksErrorKind::ServerException(_))
     }
-    pub fn is_service_not_found_error(&self) -> bool {
-        matches!(&self.kind, ListTasksErrorKind::ServiceNotFoundError(_))
+    pub fn is_service_not_found_exception(&self) -> bool {
+        matches!(&self.kind, ListTasksErrorKind::ServiceNotFoundException(_))
     }
 }
 impl std::error::Error for ListTasksError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListTasksErrorKind::ClientError(_inner) => Some(_inner),
-            ListTasksErrorKind::ClusterNotFoundError(_inner) => Some(_inner),
-            ListTasksErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            ListTasksErrorKind::ServerError(_inner) => Some(_inner),
-            ListTasksErrorKind::ServiceNotFoundError(_inner) => Some(_inner),
+            ListTasksErrorKind::ClientException(_inner) => Some(_inner),
+            ListTasksErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
+            ListTasksErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            ListTasksErrorKind::ServerException(_inner) => Some(_inner),
+            ListTasksErrorKind::ServiceNotFoundException(_inner) => Some(_inner),
             ListTasksErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3125,18 +3256,18 @@ pub struct PutAccountSettingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutAccountSettingErrorKind {
-    ClientError(crate::error::ClientError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ServerError(crate::error::ServerError),
+    ClientException(crate::error::ClientException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ServerException(crate::error::ServerException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutAccountSettingError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutAccountSettingErrorKind::ClientError(_inner) => _inner.fmt(f),
-            PutAccountSettingErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            PutAccountSettingErrorKind::ServerError(_inner) => _inner.fmt(f),
+            PutAccountSettingErrorKind::ClientException(_inner) => _inner.fmt(f),
+            PutAccountSettingErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            PutAccountSettingErrorKind::ServerException(_inner) => _inner.fmt(f),
             PutAccountSettingErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3185,25 +3316,25 @@ impl PutAccountSettingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_client_error(&self) -> bool {
-        matches!(&self.kind, PutAccountSettingErrorKind::ClientError(_))
+    pub fn is_client_exception(&self) -> bool {
+        matches!(&self.kind, PutAccountSettingErrorKind::ClientException(_))
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutAccountSettingErrorKind::InvalidParameterError(_)
+            PutAccountSettingErrorKind::InvalidParameterException(_)
         )
     }
-    pub fn is_server_error(&self) -> bool {
-        matches!(&self.kind, PutAccountSettingErrorKind::ServerError(_))
+    pub fn is_server_exception(&self) -> bool {
+        matches!(&self.kind, PutAccountSettingErrorKind::ServerException(_))
     }
 }
 impl std::error::Error for PutAccountSettingError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutAccountSettingErrorKind::ClientError(_inner) => Some(_inner),
-            PutAccountSettingErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            PutAccountSettingErrorKind::ServerError(_inner) => Some(_inner),
+            PutAccountSettingErrorKind::ClientException(_inner) => Some(_inner),
+            PutAccountSettingErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            PutAccountSettingErrorKind::ServerException(_inner) => Some(_inner),
             PutAccountSettingErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3218,18 +3349,18 @@ pub struct PutAccountSettingDefaultError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutAccountSettingDefaultErrorKind {
-    ClientError(crate::error::ClientError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ServerError(crate::error::ServerError),
+    ClientException(crate::error::ClientException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ServerException(crate::error::ServerException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutAccountSettingDefaultError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutAccountSettingDefaultErrorKind::ClientError(_inner) => _inner.fmt(f),
-            PutAccountSettingDefaultErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            PutAccountSettingDefaultErrorKind::ServerError(_inner) => _inner.fmt(f),
+            PutAccountSettingDefaultErrorKind::ClientException(_inner) => _inner.fmt(f),
+            PutAccountSettingDefaultErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            PutAccountSettingDefaultErrorKind::ServerException(_inner) => _inner.fmt(f),
             PutAccountSettingDefaultErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3278,31 +3409,31 @@ impl PutAccountSettingDefaultError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_client_error(&self) -> bool {
+    pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutAccountSettingDefaultErrorKind::ClientError(_)
+            PutAccountSettingDefaultErrorKind::ClientException(_)
         )
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutAccountSettingDefaultErrorKind::InvalidParameterError(_)
+            PutAccountSettingDefaultErrorKind::InvalidParameterException(_)
         )
     }
-    pub fn is_server_error(&self) -> bool {
+    pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutAccountSettingDefaultErrorKind::ServerError(_)
+            PutAccountSettingDefaultErrorKind::ServerException(_)
         )
     }
 }
 impl std::error::Error for PutAccountSettingDefaultError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutAccountSettingDefaultErrorKind::ClientError(_inner) => Some(_inner),
-            PutAccountSettingDefaultErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            PutAccountSettingDefaultErrorKind::ServerError(_inner) => Some(_inner),
+            PutAccountSettingDefaultErrorKind::ClientException(_inner) => Some(_inner),
+            PutAccountSettingDefaultErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            PutAccountSettingDefaultErrorKind::ServerException(_inner) => Some(_inner),
             PutAccountSettingDefaultErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3317,20 +3448,20 @@ pub struct PutAttributesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutAttributesErrorKind {
-    AttributeLimitExceededError(crate::error::AttributeLimitExceededError),
-    ClusterNotFoundError(crate::error::ClusterNotFoundError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    TargetNotFoundError(crate::error::TargetNotFoundError),
+    AttributeLimitExceededException(crate::error::AttributeLimitExceededException),
+    ClusterNotFoundException(crate::error::ClusterNotFoundException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    TargetNotFoundException(crate::error::TargetNotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutAttributesErrorKind::AttributeLimitExceededError(_inner) => _inner.fmt(f),
-            PutAttributesErrorKind::ClusterNotFoundError(_inner) => _inner.fmt(f),
-            PutAttributesErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            PutAttributesErrorKind::TargetNotFoundError(_inner) => _inner.fmt(f),
+            PutAttributesErrorKind::AttributeLimitExceededException(_inner) => _inner.fmt(f),
+            PutAttributesErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
+            PutAttributesErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            PutAttributesErrorKind::TargetNotFoundException(_inner) => _inner.fmt(f),
             PutAttributesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3379,29 +3510,38 @@ impl PutAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_attribute_limit_exceeded_error(&self) -> bool {
+    pub fn is_attribute_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutAttributesErrorKind::AttributeLimitExceededError(_)
+            PutAttributesErrorKind::AttributeLimitExceededException(_)
         )
     }
-    pub fn is_cluster_not_found_error(&self) -> bool {
-        matches!(&self.kind, PutAttributesErrorKind::ClusterNotFoundError(_))
+    pub fn is_cluster_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutAttributesErrorKind::ClusterNotFoundException(_)
+        )
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
-        matches!(&self.kind, PutAttributesErrorKind::InvalidParameterError(_))
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutAttributesErrorKind::InvalidParameterException(_)
+        )
     }
-    pub fn is_target_not_found_error(&self) -> bool {
-        matches!(&self.kind, PutAttributesErrorKind::TargetNotFoundError(_))
+    pub fn is_target_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutAttributesErrorKind::TargetNotFoundException(_)
+        )
     }
 }
 impl std::error::Error for PutAttributesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutAttributesErrorKind::AttributeLimitExceededError(_inner) => Some(_inner),
-            PutAttributesErrorKind::ClusterNotFoundError(_inner) => Some(_inner),
-            PutAttributesErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            PutAttributesErrorKind::TargetNotFoundError(_inner) => Some(_inner),
+            PutAttributesErrorKind::AttributeLimitExceededException(_inner) => Some(_inner),
+            PutAttributesErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
+            PutAttributesErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            PutAttributesErrorKind::TargetNotFoundException(_inner) => Some(_inner),
             PutAttributesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3416,24 +3556,28 @@ pub struct PutClusterCapacityProvidersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutClusterCapacityProvidersErrorKind {
-    ClientError(crate::error::ClientError),
-    ClusterNotFoundError(crate::error::ClusterNotFoundError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ResourceInUseError(crate::error::ResourceInUseError),
-    ServerError(crate::error::ServerError),
-    UpdateInProgressError(crate::error::UpdateInProgressError),
+    ClientException(crate::error::ClientException),
+    ClusterNotFoundException(crate::error::ClusterNotFoundException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ResourceInUseException(crate::error::ResourceInUseException),
+    ServerException(crate::error::ServerException),
+    UpdateInProgressException(crate::error::UpdateInProgressException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutClusterCapacityProvidersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutClusterCapacityProvidersErrorKind::ClientError(_inner) => _inner.fmt(f),
-            PutClusterCapacityProvidersErrorKind::ClusterNotFoundError(_inner) => _inner.fmt(f),
-            PutClusterCapacityProvidersErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            PutClusterCapacityProvidersErrorKind::ResourceInUseError(_inner) => _inner.fmt(f),
-            PutClusterCapacityProvidersErrorKind::ServerError(_inner) => _inner.fmt(f),
-            PutClusterCapacityProvidersErrorKind::UpdateInProgressError(_inner) => _inner.fmt(f),
+            PutClusterCapacityProvidersErrorKind::ClientException(_inner) => _inner.fmt(f),
+            PutClusterCapacityProvidersErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
+            PutClusterCapacityProvidersErrorKind::InvalidParameterException(_inner) => {
+                _inner.fmt(f)
+            }
+            PutClusterCapacityProvidersErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
+            PutClusterCapacityProvidersErrorKind::ServerException(_inner) => _inner.fmt(f),
+            PutClusterCapacityProvidersErrorKind::UpdateInProgressException(_inner) => {
+                _inner.fmt(f)
+            }
             PutClusterCapacityProvidersErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3482,52 +3626,52 @@ impl PutClusterCapacityProvidersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_client_error(&self) -> bool {
+    pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutClusterCapacityProvidersErrorKind::ClientError(_)
+            PutClusterCapacityProvidersErrorKind::ClientException(_)
         )
     }
-    pub fn is_cluster_not_found_error(&self) -> bool {
+    pub fn is_cluster_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutClusterCapacityProvidersErrorKind::ClusterNotFoundError(_)
+            PutClusterCapacityProvidersErrorKind::ClusterNotFoundException(_)
         )
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutClusterCapacityProvidersErrorKind::InvalidParameterError(_)
+            PutClusterCapacityProvidersErrorKind::InvalidParameterException(_)
         )
     }
-    pub fn is_resource_in_use_error(&self) -> bool {
+    pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutClusterCapacityProvidersErrorKind::ResourceInUseError(_)
+            PutClusterCapacityProvidersErrorKind::ResourceInUseException(_)
         )
     }
-    pub fn is_server_error(&self) -> bool {
+    pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutClusterCapacityProvidersErrorKind::ServerError(_)
+            PutClusterCapacityProvidersErrorKind::ServerException(_)
         )
     }
-    pub fn is_update_in_progress_error(&self) -> bool {
+    pub fn is_update_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutClusterCapacityProvidersErrorKind::UpdateInProgressError(_)
+            PutClusterCapacityProvidersErrorKind::UpdateInProgressException(_)
         )
     }
 }
 impl std::error::Error for PutClusterCapacityProvidersError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutClusterCapacityProvidersErrorKind::ClientError(_inner) => Some(_inner),
-            PutClusterCapacityProvidersErrorKind::ClusterNotFoundError(_inner) => Some(_inner),
-            PutClusterCapacityProvidersErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            PutClusterCapacityProvidersErrorKind::ResourceInUseError(_inner) => Some(_inner),
-            PutClusterCapacityProvidersErrorKind::ServerError(_inner) => Some(_inner),
-            PutClusterCapacityProvidersErrorKind::UpdateInProgressError(_inner) => Some(_inner),
+            PutClusterCapacityProvidersErrorKind::ClientException(_inner) => Some(_inner),
+            PutClusterCapacityProvidersErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
+            PutClusterCapacityProvidersErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            PutClusterCapacityProvidersErrorKind::ResourceInUseException(_inner) => Some(_inner),
+            PutClusterCapacityProvidersErrorKind::ServerException(_inner) => Some(_inner),
+            PutClusterCapacityProvidersErrorKind::UpdateInProgressException(_inner) => Some(_inner),
             PutClusterCapacityProvidersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3542,18 +3686,18 @@ pub struct RegisterContainerInstanceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RegisterContainerInstanceErrorKind {
-    ClientError(crate::error::ClientError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ServerError(crate::error::ServerError),
+    ClientException(crate::error::ClientException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ServerException(crate::error::ServerException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RegisterContainerInstanceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            RegisterContainerInstanceErrorKind::ClientError(_inner) => _inner.fmt(f),
-            RegisterContainerInstanceErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            RegisterContainerInstanceErrorKind::ServerError(_inner) => _inner.fmt(f),
+            RegisterContainerInstanceErrorKind::ClientException(_inner) => _inner.fmt(f),
+            RegisterContainerInstanceErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            RegisterContainerInstanceErrorKind::ServerException(_inner) => _inner.fmt(f),
             RegisterContainerInstanceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3602,31 +3746,31 @@ impl RegisterContainerInstanceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_client_error(&self) -> bool {
+    pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
-            RegisterContainerInstanceErrorKind::ClientError(_)
+            RegisterContainerInstanceErrorKind::ClientException(_)
         )
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
-            RegisterContainerInstanceErrorKind::InvalidParameterError(_)
+            RegisterContainerInstanceErrorKind::InvalidParameterException(_)
         )
     }
-    pub fn is_server_error(&self) -> bool {
+    pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
-            RegisterContainerInstanceErrorKind::ServerError(_)
+            RegisterContainerInstanceErrorKind::ServerException(_)
         )
     }
 }
 impl std::error::Error for RegisterContainerInstanceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            RegisterContainerInstanceErrorKind::ClientError(_inner) => Some(_inner),
-            RegisterContainerInstanceErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            RegisterContainerInstanceErrorKind::ServerError(_inner) => Some(_inner),
+            RegisterContainerInstanceErrorKind::ClientException(_inner) => Some(_inner),
+            RegisterContainerInstanceErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            RegisterContainerInstanceErrorKind::ServerException(_inner) => Some(_inner),
             RegisterContainerInstanceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3641,18 +3785,18 @@ pub struct RegisterTaskDefinitionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RegisterTaskDefinitionErrorKind {
-    ClientError(crate::error::ClientError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ServerError(crate::error::ServerError),
+    ClientException(crate::error::ClientException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ServerException(crate::error::ServerException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RegisterTaskDefinitionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            RegisterTaskDefinitionErrorKind::ClientError(_inner) => _inner.fmt(f),
-            RegisterTaskDefinitionErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            RegisterTaskDefinitionErrorKind::ServerError(_inner) => _inner.fmt(f),
+            RegisterTaskDefinitionErrorKind::ClientException(_inner) => _inner.fmt(f),
+            RegisterTaskDefinitionErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            RegisterTaskDefinitionErrorKind::ServerException(_inner) => _inner.fmt(f),
             RegisterTaskDefinitionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3701,25 +3845,31 @@ impl RegisterTaskDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_client_error(&self) -> bool {
-        matches!(&self.kind, RegisterTaskDefinitionErrorKind::ClientError(_))
-    }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
-            RegisterTaskDefinitionErrorKind::InvalidParameterError(_)
+            RegisterTaskDefinitionErrorKind::ClientException(_)
         )
     }
-    pub fn is_server_error(&self) -> bool {
-        matches!(&self.kind, RegisterTaskDefinitionErrorKind::ServerError(_))
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterTaskDefinitionErrorKind::InvalidParameterException(_)
+        )
+    }
+    pub fn is_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterTaskDefinitionErrorKind::ServerException(_)
+        )
     }
 }
 impl std::error::Error for RegisterTaskDefinitionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            RegisterTaskDefinitionErrorKind::ClientError(_inner) => Some(_inner),
-            RegisterTaskDefinitionErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            RegisterTaskDefinitionErrorKind::ServerError(_inner) => Some(_inner),
+            RegisterTaskDefinitionErrorKind::ClientException(_inner) => Some(_inner),
+            RegisterTaskDefinitionErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            RegisterTaskDefinitionErrorKind::ServerException(_inner) => Some(_inner),
             RegisterTaskDefinitionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3734,32 +3884,34 @@ pub struct RunTaskError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RunTaskErrorKind {
-    AccessDeniedError(crate::error::AccessDeniedError),
-    BlockedError(crate::error::BlockedError),
-    ClientError(crate::error::ClientError),
-    ClusterNotFoundError(crate::error::ClusterNotFoundError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    PlatformTaskDefinitionIncompatibilityError(
-        crate::error::PlatformTaskDefinitionIncompatibilityError,
+    AccessDeniedException(crate::error::AccessDeniedException),
+    BlockedException(crate::error::BlockedException),
+    ClientException(crate::error::ClientException),
+    ClusterNotFoundException(crate::error::ClusterNotFoundException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    PlatformTaskDefinitionIncompatibilityException(
+        crate::error::PlatformTaskDefinitionIncompatibilityException,
     ),
-    PlatformUnknownError(crate::error::PlatformUnknownError),
-    ServerError(crate::error::ServerError),
-    UnsupportedFeatureError(crate::error::UnsupportedFeatureError),
+    PlatformUnknownException(crate::error::PlatformUnknownException),
+    ServerException(crate::error::ServerException),
+    UnsupportedFeatureException(crate::error::UnsupportedFeatureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RunTaskError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            RunTaskErrorKind::AccessDeniedError(_inner) => _inner.fmt(f),
-            RunTaskErrorKind::BlockedError(_inner) => _inner.fmt(f),
-            RunTaskErrorKind::ClientError(_inner) => _inner.fmt(f),
-            RunTaskErrorKind::ClusterNotFoundError(_inner) => _inner.fmt(f),
-            RunTaskErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            RunTaskErrorKind::PlatformTaskDefinitionIncompatibilityError(_inner) => _inner.fmt(f),
-            RunTaskErrorKind::PlatformUnknownError(_inner) => _inner.fmt(f),
-            RunTaskErrorKind::ServerError(_inner) => _inner.fmt(f),
-            RunTaskErrorKind::UnsupportedFeatureError(_inner) => _inner.fmt(f),
+            RunTaskErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            RunTaskErrorKind::BlockedException(_inner) => _inner.fmt(f),
+            RunTaskErrorKind::ClientException(_inner) => _inner.fmt(f),
+            RunTaskErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
+            RunTaskErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            RunTaskErrorKind::PlatformTaskDefinitionIncompatibilityException(_inner) => {
+                _inner.fmt(f)
+            }
+            RunTaskErrorKind::PlatformUnknownException(_inner) => _inner.fmt(f),
+            RunTaskErrorKind::ServerException(_inner) => _inner.fmt(f),
+            RunTaskErrorKind::UnsupportedFeatureException(_inner) => _inner.fmt(f),
             RunTaskErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3808,49 +3960,51 @@ impl RunTaskError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_access_denied_error(&self) -> bool {
-        matches!(&self.kind, RunTaskErrorKind::AccessDeniedError(_))
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, RunTaskErrorKind::AccessDeniedException(_))
     }
-    pub fn is_blocked_error(&self) -> bool {
-        matches!(&self.kind, RunTaskErrorKind::BlockedError(_))
+    pub fn is_blocked_exception(&self) -> bool {
+        matches!(&self.kind, RunTaskErrorKind::BlockedException(_))
     }
-    pub fn is_client_error(&self) -> bool {
-        matches!(&self.kind, RunTaskErrorKind::ClientError(_))
+    pub fn is_client_exception(&self) -> bool {
+        matches!(&self.kind, RunTaskErrorKind::ClientException(_))
     }
-    pub fn is_cluster_not_found_error(&self) -> bool {
-        matches!(&self.kind, RunTaskErrorKind::ClusterNotFoundError(_))
+    pub fn is_cluster_not_found_exception(&self) -> bool {
+        matches!(&self.kind, RunTaskErrorKind::ClusterNotFoundException(_))
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
-        matches!(&self.kind, RunTaskErrorKind::InvalidParameterError(_))
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(&self.kind, RunTaskErrorKind::InvalidParameterException(_))
     }
-    pub fn is_platform_task_definition_incompatibility_error(&self) -> bool {
+    pub fn is_platform_task_definition_incompatibility_exception(&self) -> bool {
         matches!(
             &self.kind,
-            RunTaskErrorKind::PlatformTaskDefinitionIncompatibilityError(_)
+            RunTaskErrorKind::PlatformTaskDefinitionIncompatibilityException(_)
         )
     }
-    pub fn is_platform_unknown_error(&self) -> bool {
-        matches!(&self.kind, RunTaskErrorKind::PlatformUnknownError(_))
+    pub fn is_platform_unknown_exception(&self) -> bool {
+        matches!(&self.kind, RunTaskErrorKind::PlatformUnknownException(_))
     }
-    pub fn is_server_error(&self) -> bool {
-        matches!(&self.kind, RunTaskErrorKind::ServerError(_))
+    pub fn is_server_exception(&self) -> bool {
+        matches!(&self.kind, RunTaskErrorKind::ServerException(_))
     }
-    pub fn is_unsupported_feature_error(&self) -> bool {
-        matches!(&self.kind, RunTaskErrorKind::UnsupportedFeatureError(_))
+    pub fn is_unsupported_feature_exception(&self) -> bool {
+        matches!(&self.kind, RunTaskErrorKind::UnsupportedFeatureException(_))
     }
 }
 impl std::error::Error for RunTaskError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            RunTaskErrorKind::AccessDeniedError(_inner) => Some(_inner),
-            RunTaskErrorKind::BlockedError(_inner) => Some(_inner),
-            RunTaskErrorKind::ClientError(_inner) => Some(_inner),
-            RunTaskErrorKind::ClusterNotFoundError(_inner) => Some(_inner),
-            RunTaskErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            RunTaskErrorKind::PlatformTaskDefinitionIncompatibilityError(_inner) => Some(_inner),
-            RunTaskErrorKind::PlatformUnknownError(_inner) => Some(_inner),
-            RunTaskErrorKind::ServerError(_inner) => Some(_inner),
-            RunTaskErrorKind::UnsupportedFeatureError(_inner) => Some(_inner),
+            RunTaskErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            RunTaskErrorKind::BlockedException(_inner) => Some(_inner),
+            RunTaskErrorKind::ClientException(_inner) => Some(_inner),
+            RunTaskErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
+            RunTaskErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            RunTaskErrorKind::PlatformTaskDefinitionIncompatibilityException(_inner) => {
+                Some(_inner)
+            }
+            RunTaskErrorKind::PlatformUnknownException(_inner) => Some(_inner),
+            RunTaskErrorKind::ServerException(_inner) => Some(_inner),
+            RunTaskErrorKind::UnsupportedFeatureException(_inner) => Some(_inner),
             RunTaskErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3865,20 +4019,20 @@ pub struct StartTaskError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartTaskErrorKind {
-    ClientError(crate::error::ClientError),
-    ClusterNotFoundError(crate::error::ClusterNotFoundError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ServerError(crate::error::ServerError),
+    ClientException(crate::error::ClientException),
+    ClusterNotFoundException(crate::error::ClusterNotFoundException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ServerException(crate::error::ServerException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartTaskError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            StartTaskErrorKind::ClientError(_inner) => _inner.fmt(f),
-            StartTaskErrorKind::ClusterNotFoundError(_inner) => _inner.fmt(f),
-            StartTaskErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            StartTaskErrorKind::ServerError(_inner) => _inner.fmt(f),
+            StartTaskErrorKind::ClientException(_inner) => _inner.fmt(f),
+            StartTaskErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
+            StartTaskErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            StartTaskErrorKind::ServerException(_inner) => _inner.fmt(f),
             StartTaskErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3927,26 +4081,26 @@ impl StartTaskError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_client_error(&self) -> bool {
-        matches!(&self.kind, StartTaskErrorKind::ClientError(_))
+    pub fn is_client_exception(&self) -> bool {
+        matches!(&self.kind, StartTaskErrorKind::ClientException(_))
     }
-    pub fn is_cluster_not_found_error(&self) -> bool {
-        matches!(&self.kind, StartTaskErrorKind::ClusterNotFoundError(_))
+    pub fn is_cluster_not_found_exception(&self) -> bool {
+        matches!(&self.kind, StartTaskErrorKind::ClusterNotFoundException(_))
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
-        matches!(&self.kind, StartTaskErrorKind::InvalidParameterError(_))
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(&self.kind, StartTaskErrorKind::InvalidParameterException(_))
     }
-    pub fn is_server_error(&self) -> bool {
-        matches!(&self.kind, StartTaskErrorKind::ServerError(_))
+    pub fn is_server_exception(&self) -> bool {
+        matches!(&self.kind, StartTaskErrorKind::ServerException(_))
     }
 }
 impl std::error::Error for StartTaskError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            StartTaskErrorKind::ClientError(_inner) => Some(_inner),
-            StartTaskErrorKind::ClusterNotFoundError(_inner) => Some(_inner),
-            StartTaskErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            StartTaskErrorKind::ServerError(_inner) => Some(_inner),
+            StartTaskErrorKind::ClientException(_inner) => Some(_inner),
+            StartTaskErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
+            StartTaskErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            StartTaskErrorKind::ServerException(_inner) => Some(_inner),
             StartTaskErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3961,20 +4115,20 @@ pub struct StopTaskError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StopTaskErrorKind {
-    ClientError(crate::error::ClientError),
-    ClusterNotFoundError(crate::error::ClusterNotFoundError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ServerError(crate::error::ServerError),
+    ClientException(crate::error::ClientException),
+    ClusterNotFoundException(crate::error::ClusterNotFoundException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ServerException(crate::error::ServerException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopTaskError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            StopTaskErrorKind::ClientError(_inner) => _inner.fmt(f),
-            StopTaskErrorKind::ClusterNotFoundError(_inner) => _inner.fmt(f),
-            StopTaskErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            StopTaskErrorKind::ServerError(_inner) => _inner.fmt(f),
+            StopTaskErrorKind::ClientException(_inner) => _inner.fmt(f),
+            StopTaskErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
+            StopTaskErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            StopTaskErrorKind::ServerException(_inner) => _inner.fmt(f),
             StopTaskErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4023,26 +4177,26 @@ impl StopTaskError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_client_error(&self) -> bool {
-        matches!(&self.kind, StopTaskErrorKind::ClientError(_))
+    pub fn is_client_exception(&self) -> bool {
+        matches!(&self.kind, StopTaskErrorKind::ClientException(_))
     }
-    pub fn is_cluster_not_found_error(&self) -> bool {
-        matches!(&self.kind, StopTaskErrorKind::ClusterNotFoundError(_))
+    pub fn is_cluster_not_found_exception(&self) -> bool {
+        matches!(&self.kind, StopTaskErrorKind::ClusterNotFoundException(_))
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
-        matches!(&self.kind, StopTaskErrorKind::InvalidParameterError(_))
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(&self.kind, StopTaskErrorKind::InvalidParameterException(_))
     }
-    pub fn is_server_error(&self) -> bool {
-        matches!(&self.kind, StopTaskErrorKind::ServerError(_))
+    pub fn is_server_exception(&self) -> bool {
+        matches!(&self.kind, StopTaskErrorKind::ServerException(_))
     }
 }
 impl std::error::Error for StopTaskError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            StopTaskErrorKind::ClientError(_inner) => Some(_inner),
-            StopTaskErrorKind::ClusterNotFoundError(_inner) => Some(_inner),
-            StopTaskErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            StopTaskErrorKind::ServerError(_inner) => Some(_inner),
+            StopTaskErrorKind::ClientException(_inner) => Some(_inner),
+            StopTaskErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
+            StopTaskErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            StopTaskErrorKind::ServerException(_inner) => Some(_inner),
             StopTaskErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4057,20 +4211,22 @@ pub struct SubmitAttachmentStateChangesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SubmitAttachmentStateChangesErrorKind {
-    AccessDeniedError(crate::error::AccessDeniedError),
-    ClientError(crate::error::ClientError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ServerError(crate::error::ServerError),
+    AccessDeniedException(crate::error::AccessDeniedException),
+    ClientException(crate::error::ClientException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ServerException(crate::error::ServerException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SubmitAttachmentStateChangesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            SubmitAttachmentStateChangesErrorKind::AccessDeniedError(_inner) => _inner.fmt(f),
-            SubmitAttachmentStateChangesErrorKind::ClientError(_inner) => _inner.fmt(f),
-            SubmitAttachmentStateChangesErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            SubmitAttachmentStateChangesErrorKind::ServerError(_inner) => _inner.fmt(f),
+            SubmitAttachmentStateChangesErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            SubmitAttachmentStateChangesErrorKind::ClientException(_inner) => _inner.fmt(f),
+            SubmitAttachmentStateChangesErrorKind::InvalidParameterException(_inner) => {
+                _inner.fmt(f)
+            }
+            SubmitAttachmentStateChangesErrorKind::ServerException(_inner) => _inner.fmt(f),
             SubmitAttachmentStateChangesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4119,38 +4275,40 @@ impl SubmitAttachmentStateChangesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_access_denied_error(&self) -> bool {
+    pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
-            SubmitAttachmentStateChangesErrorKind::AccessDeniedError(_)
+            SubmitAttachmentStateChangesErrorKind::AccessDeniedException(_)
         )
     }
-    pub fn is_client_error(&self) -> bool {
+    pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
-            SubmitAttachmentStateChangesErrorKind::ClientError(_)
+            SubmitAttachmentStateChangesErrorKind::ClientException(_)
         )
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
-            SubmitAttachmentStateChangesErrorKind::InvalidParameterError(_)
+            SubmitAttachmentStateChangesErrorKind::InvalidParameterException(_)
         )
     }
-    pub fn is_server_error(&self) -> bool {
+    pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
-            SubmitAttachmentStateChangesErrorKind::ServerError(_)
+            SubmitAttachmentStateChangesErrorKind::ServerException(_)
         )
     }
 }
 impl std::error::Error for SubmitAttachmentStateChangesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            SubmitAttachmentStateChangesErrorKind::AccessDeniedError(_inner) => Some(_inner),
-            SubmitAttachmentStateChangesErrorKind::ClientError(_inner) => Some(_inner),
-            SubmitAttachmentStateChangesErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            SubmitAttachmentStateChangesErrorKind::ServerError(_inner) => Some(_inner),
+            SubmitAttachmentStateChangesErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            SubmitAttachmentStateChangesErrorKind::ClientException(_inner) => Some(_inner),
+            SubmitAttachmentStateChangesErrorKind::InvalidParameterException(_inner) => {
+                Some(_inner)
+            }
+            SubmitAttachmentStateChangesErrorKind::ServerException(_inner) => Some(_inner),
             SubmitAttachmentStateChangesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4165,18 +4323,18 @@ pub struct SubmitContainerStateChangeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SubmitContainerStateChangeErrorKind {
-    AccessDeniedError(crate::error::AccessDeniedError),
-    ClientError(crate::error::ClientError),
-    ServerError(crate::error::ServerError),
+    AccessDeniedException(crate::error::AccessDeniedException),
+    ClientException(crate::error::ClientException),
+    ServerException(crate::error::ServerException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SubmitContainerStateChangeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            SubmitContainerStateChangeErrorKind::AccessDeniedError(_inner) => _inner.fmt(f),
-            SubmitContainerStateChangeErrorKind::ClientError(_inner) => _inner.fmt(f),
-            SubmitContainerStateChangeErrorKind::ServerError(_inner) => _inner.fmt(f),
+            SubmitContainerStateChangeErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            SubmitContainerStateChangeErrorKind::ClientException(_inner) => _inner.fmt(f),
+            SubmitContainerStateChangeErrorKind::ServerException(_inner) => _inner.fmt(f),
             SubmitContainerStateChangeErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4225,31 +4383,31 @@ impl SubmitContainerStateChangeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_access_denied_error(&self) -> bool {
+    pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
-            SubmitContainerStateChangeErrorKind::AccessDeniedError(_)
+            SubmitContainerStateChangeErrorKind::AccessDeniedException(_)
         )
     }
-    pub fn is_client_error(&self) -> bool {
+    pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
-            SubmitContainerStateChangeErrorKind::ClientError(_)
+            SubmitContainerStateChangeErrorKind::ClientException(_)
         )
     }
-    pub fn is_server_error(&self) -> bool {
+    pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
-            SubmitContainerStateChangeErrorKind::ServerError(_)
+            SubmitContainerStateChangeErrorKind::ServerException(_)
         )
     }
 }
 impl std::error::Error for SubmitContainerStateChangeError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            SubmitContainerStateChangeErrorKind::AccessDeniedError(_inner) => Some(_inner),
-            SubmitContainerStateChangeErrorKind::ClientError(_inner) => Some(_inner),
-            SubmitContainerStateChangeErrorKind::ServerError(_inner) => Some(_inner),
+            SubmitContainerStateChangeErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            SubmitContainerStateChangeErrorKind::ClientException(_inner) => Some(_inner),
+            SubmitContainerStateChangeErrorKind::ServerException(_inner) => Some(_inner),
             SubmitContainerStateChangeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4264,20 +4422,20 @@ pub struct SubmitTaskStateChangeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SubmitTaskStateChangeErrorKind {
-    AccessDeniedError(crate::error::AccessDeniedError),
-    ClientError(crate::error::ClientError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ServerError(crate::error::ServerError),
+    AccessDeniedException(crate::error::AccessDeniedException),
+    ClientException(crate::error::ClientException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ServerException(crate::error::ServerException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SubmitTaskStateChangeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            SubmitTaskStateChangeErrorKind::AccessDeniedError(_inner) => _inner.fmt(f),
-            SubmitTaskStateChangeErrorKind::ClientError(_inner) => _inner.fmt(f),
-            SubmitTaskStateChangeErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            SubmitTaskStateChangeErrorKind::ServerError(_inner) => _inner.fmt(f),
+            SubmitTaskStateChangeErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            SubmitTaskStateChangeErrorKind::ClientException(_inner) => _inner.fmt(f),
+            SubmitTaskStateChangeErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            SubmitTaskStateChangeErrorKind::ServerException(_inner) => _inner.fmt(f),
             SubmitTaskStateChangeErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4326,32 +4484,38 @@ impl SubmitTaskStateChangeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_access_denied_error(&self) -> bool {
+    pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
-            SubmitTaskStateChangeErrorKind::AccessDeniedError(_)
+            SubmitTaskStateChangeErrorKind::AccessDeniedException(_)
         )
     }
-    pub fn is_client_error(&self) -> bool {
-        matches!(&self.kind, SubmitTaskStateChangeErrorKind::ClientError(_))
-    }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
-            SubmitTaskStateChangeErrorKind::InvalidParameterError(_)
+            SubmitTaskStateChangeErrorKind::ClientException(_)
         )
     }
-    pub fn is_server_error(&self) -> bool {
-        matches!(&self.kind, SubmitTaskStateChangeErrorKind::ServerError(_))
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SubmitTaskStateChangeErrorKind::InvalidParameterException(_)
+        )
+    }
+    pub fn is_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SubmitTaskStateChangeErrorKind::ServerException(_)
+        )
     }
 }
 impl std::error::Error for SubmitTaskStateChangeError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            SubmitTaskStateChangeErrorKind::AccessDeniedError(_inner) => Some(_inner),
-            SubmitTaskStateChangeErrorKind::ClientError(_inner) => Some(_inner),
-            SubmitTaskStateChangeErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            SubmitTaskStateChangeErrorKind::ServerError(_inner) => Some(_inner),
+            SubmitTaskStateChangeErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            SubmitTaskStateChangeErrorKind::ClientException(_inner) => Some(_inner),
+            SubmitTaskStateChangeErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            SubmitTaskStateChangeErrorKind::ServerException(_inner) => Some(_inner),
             SubmitTaskStateChangeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4366,22 +4530,22 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    ClientError(crate::error::ClientError),
-    ClusterNotFoundError(crate::error::ClusterNotFoundError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ServerError(crate::error::ServerError),
+    ClientException(crate::error::ClientException),
+    ClusterNotFoundException(crate::error::ClusterNotFoundException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServerException(crate::error::ServerException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            TagResourceErrorKind::ClientError(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::ClusterNotFoundError(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::ServerError(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::ClientException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::ServerException(_inner) => _inner.fmt(f),
             TagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4430,30 +4594,39 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_client_error(&self) -> bool {
-        matches!(&self.kind, TagResourceErrorKind::ClientError(_))
+    pub fn is_client_exception(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::ClientException(_))
     }
-    pub fn is_cluster_not_found_error(&self) -> bool {
-        matches!(&self.kind, TagResourceErrorKind::ClusterNotFoundError(_))
+    pub fn is_cluster_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            TagResourceErrorKind::ClusterNotFoundException(_)
+        )
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
-        matches!(&self.kind, TagResourceErrorKind::InvalidParameterError(_))
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            TagResourceErrorKind::InvalidParameterException(_)
+        )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
-        matches!(&self.kind, TagResourceErrorKind::ResourceNotFoundError(_))
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            TagResourceErrorKind::ResourceNotFoundException(_)
+        )
     }
-    pub fn is_server_error(&self) -> bool {
-        matches!(&self.kind, TagResourceErrorKind::ServerError(_))
+    pub fn is_server_exception(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::ServerException(_))
     }
 }
 impl std::error::Error for TagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            TagResourceErrorKind::ClientError(_inner) => Some(_inner),
-            TagResourceErrorKind::ClusterNotFoundError(_inner) => Some(_inner),
-            TagResourceErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            TagResourceErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            TagResourceErrorKind::ServerError(_inner) => Some(_inner),
+            TagResourceErrorKind::ClientException(_inner) => Some(_inner),
+            TagResourceErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
+            TagResourceErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            TagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            TagResourceErrorKind::ServerException(_inner) => Some(_inner),
             TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4468,22 +4641,22 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    ClientError(crate::error::ClientError),
-    ClusterNotFoundError(crate::error::ClusterNotFoundError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ServerError(crate::error::ServerError),
+    ClientException(crate::error::ClientException),
+    ClusterNotFoundException(crate::error::ClusterNotFoundException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServerException(crate::error::ServerException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UntagResourceErrorKind::ClientError(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::ClusterNotFoundError(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::ServerError(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::ClientException(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::ServerException(_inner) => _inner.fmt(f),
             UntagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4532,30 +4705,39 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_client_error(&self) -> bool {
-        matches!(&self.kind, UntagResourceErrorKind::ClientError(_))
+    pub fn is_client_exception(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::ClientException(_))
     }
-    pub fn is_cluster_not_found_error(&self) -> bool {
-        matches!(&self.kind, UntagResourceErrorKind::ClusterNotFoundError(_))
+    pub fn is_cluster_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UntagResourceErrorKind::ClusterNotFoundException(_)
+        )
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
-        matches!(&self.kind, UntagResourceErrorKind::InvalidParameterError(_))
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UntagResourceErrorKind::InvalidParameterException(_)
+        )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
-        matches!(&self.kind, UntagResourceErrorKind::ResourceNotFoundError(_))
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UntagResourceErrorKind::ResourceNotFoundException(_)
+        )
     }
-    pub fn is_server_error(&self) -> bool {
-        matches!(&self.kind, UntagResourceErrorKind::ServerError(_))
+    pub fn is_server_exception(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::ServerException(_))
     }
 }
 impl std::error::Error for UntagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UntagResourceErrorKind::ClientError(_inner) => Some(_inner),
-            UntagResourceErrorKind::ClusterNotFoundError(_inner) => Some(_inner),
-            UntagResourceErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            UntagResourceErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            UntagResourceErrorKind::ServerError(_inner) => Some(_inner),
+            UntagResourceErrorKind::ClientException(_inner) => Some(_inner),
+            UntagResourceErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
+            UntagResourceErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            UntagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UntagResourceErrorKind::ServerException(_inner) => Some(_inner),
             UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4570,18 +4752,18 @@ pub struct UpdateCapacityProviderError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateCapacityProviderErrorKind {
-    ClientError(crate::error::ClientError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ServerError(crate::error::ServerError),
+    ClientException(crate::error::ClientException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ServerException(crate::error::ServerException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateCapacityProviderError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateCapacityProviderErrorKind::ClientError(_inner) => _inner.fmt(f),
-            UpdateCapacityProviderErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            UpdateCapacityProviderErrorKind::ServerError(_inner) => _inner.fmt(f),
+            UpdateCapacityProviderErrorKind::ClientException(_inner) => _inner.fmt(f),
+            UpdateCapacityProviderErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            UpdateCapacityProviderErrorKind::ServerException(_inner) => _inner.fmt(f),
             UpdateCapacityProviderErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4630,25 +4812,31 @@ impl UpdateCapacityProviderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_client_error(&self) -> bool {
-        matches!(&self.kind, UpdateCapacityProviderErrorKind::ClientError(_))
-    }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateCapacityProviderErrorKind::InvalidParameterError(_)
+            UpdateCapacityProviderErrorKind::ClientException(_)
         )
     }
-    pub fn is_server_error(&self) -> bool {
-        matches!(&self.kind, UpdateCapacityProviderErrorKind::ServerError(_))
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateCapacityProviderErrorKind::InvalidParameterException(_)
+        )
+    }
+    pub fn is_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateCapacityProviderErrorKind::ServerException(_)
+        )
     }
 }
 impl std::error::Error for UpdateCapacityProviderError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateCapacityProviderErrorKind::ClientError(_inner) => Some(_inner),
-            UpdateCapacityProviderErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            UpdateCapacityProviderErrorKind::ServerError(_inner) => Some(_inner),
+            UpdateCapacityProviderErrorKind::ClientException(_inner) => Some(_inner),
+            UpdateCapacityProviderErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            UpdateCapacityProviderErrorKind::ServerException(_inner) => Some(_inner),
             UpdateCapacityProviderErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4663,20 +4851,20 @@ pub struct UpdateClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateClusterErrorKind {
-    ClientError(crate::error::ClientError),
-    ClusterNotFoundError(crate::error::ClusterNotFoundError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ServerError(crate::error::ServerError),
+    ClientException(crate::error::ClientException),
+    ClusterNotFoundException(crate::error::ClusterNotFoundException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ServerException(crate::error::ServerException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateClusterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateClusterErrorKind::ClientError(_inner) => _inner.fmt(f),
-            UpdateClusterErrorKind::ClusterNotFoundError(_inner) => _inner.fmt(f),
-            UpdateClusterErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            UpdateClusterErrorKind::ServerError(_inner) => _inner.fmt(f),
+            UpdateClusterErrorKind::ClientException(_inner) => _inner.fmt(f),
+            UpdateClusterErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
+            UpdateClusterErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            UpdateClusterErrorKind::ServerException(_inner) => _inner.fmt(f),
             UpdateClusterErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4725,26 +4913,32 @@ impl UpdateClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_client_error(&self) -> bool {
-        matches!(&self.kind, UpdateClusterErrorKind::ClientError(_))
+    pub fn is_client_exception(&self) -> bool {
+        matches!(&self.kind, UpdateClusterErrorKind::ClientException(_))
     }
-    pub fn is_cluster_not_found_error(&self) -> bool {
-        matches!(&self.kind, UpdateClusterErrorKind::ClusterNotFoundError(_))
+    pub fn is_cluster_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateClusterErrorKind::ClusterNotFoundException(_)
+        )
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
-        matches!(&self.kind, UpdateClusterErrorKind::InvalidParameterError(_))
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateClusterErrorKind::InvalidParameterException(_)
+        )
     }
-    pub fn is_server_error(&self) -> bool {
-        matches!(&self.kind, UpdateClusterErrorKind::ServerError(_))
+    pub fn is_server_exception(&self) -> bool {
+        matches!(&self.kind, UpdateClusterErrorKind::ServerException(_))
     }
 }
 impl std::error::Error for UpdateClusterError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateClusterErrorKind::ClientError(_inner) => Some(_inner),
-            UpdateClusterErrorKind::ClusterNotFoundError(_inner) => Some(_inner),
-            UpdateClusterErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            UpdateClusterErrorKind::ServerError(_inner) => Some(_inner),
+            UpdateClusterErrorKind::ClientException(_inner) => Some(_inner),
+            UpdateClusterErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
+            UpdateClusterErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            UpdateClusterErrorKind::ServerException(_inner) => Some(_inner),
             UpdateClusterErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4759,20 +4953,20 @@ pub struct UpdateClusterSettingsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateClusterSettingsErrorKind {
-    ClientError(crate::error::ClientError),
-    ClusterNotFoundError(crate::error::ClusterNotFoundError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ServerError(crate::error::ServerError),
+    ClientException(crate::error::ClientException),
+    ClusterNotFoundException(crate::error::ClusterNotFoundException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ServerException(crate::error::ServerException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateClusterSettingsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateClusterSettingsErrorKind::ClientError(_inner) => _inner.fmt(f),
-            UpdateClusterSettingsErrorKind::ClusterNotFoundError(_inner) => _inner.fmt(f),
-            UpdateClusterSettingsErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            UpdateClusterSettingsErrorKind::ServerError(_inner) => _inner.fmt(f),
+            UpdateClusterSettingsErrorKind::ClientException(_inner) => _inner.fmt(f),
+            UpdateClusterSettingsErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
+            UpdateClusterSettingsErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            UpdateClusterSettingsErrorKind::ServerException(_inner) => _inner.fmt(f),
             UpdateClusterSettingsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4821,32 +5015,38 @@ impl UpdateClusterSettingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_client_error(&self) -> bool {
-        matches!(&self.kind, UpdateClusterSettingsErrorKind::ClientError(_))
-    }
-    pub fn is_cluster_not_found_error(&self) -> bool {
+    pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateClusterSettingsErrorKind::ClusterNotFoundError(_)
+            UpdateClusterSettingsErrorKind::ClientException(_)
         )
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_cluster_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateClusterSettingsErrorKind::InvalidParameterError(_)
+            UpdateClusterSettingsErrorKind::ClusterNotFoundException(_)
         )
     }
-    pub fn is_server_error(&self) -> bool {
-        matches!(&self.kind, UpdateClusterSettingsErrorKind::ServerError(_))
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateClusterSettingsErrorKind::InvalidParameterException(_)
+        )
+    }
+    pub fn is_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateClusterSettingsErrorKind::ServerException(_)
+        )
     }
 }
 impl std::error::Error for UpdateClusterSettingsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateClusterSettingsErrorKind::ClientError(_inner) => Some(_inner),
-            UpdateClusterSettingsErrorKind::ClusterNotFoundError(_inner) => Some(_inner),
-            UpdateClusterSettingsErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            UpdateClusterSettingsErrorKind::ServerError(_inner) => Some(_inner),
+            UpdateClusterSettingsErrorKind::ClientException(_inner) => Some(_inner),
+            UpdateClusterSettingsErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
+            UpdateClusterSettingsErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            UpdateClusterSettingsErrorKind::ServerException(_inner) => Some(_inner),
             UpdateClusterSettingsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4861,26 +5061,26 @@ pub struct UpdateContainerAgentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateContainerAgentErrorKind {
-    ClientError(crate::error::ClientError),
-    ClusterNotFoundError(crate::error::ClusterNotFoundError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    MissingVersionError(crate::error::MissingVersionError),
-    NoUpdateAvailableError(crate::error::NoUpdateAvailableError),
-    ServerError(crate::error::ServerError),
-    UpdateInProgressError(crate::error::UpdateInProgressError),
+    ClientException(crate::error::ClientException),
+    ClusterNotFoundException(crate::error::ClusterNotFoundException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    MissingVersionException(crate::error::MissingVersionException),
+    NoUpdateAvailableException(crate::error::NoUpdateAvailableException),
+    ServerException(crate::error::ServerException),
+    UpdateInProgressException(crate::error::UpdateInProgressException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateContainerAgentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateContainerAgentErrorKind::ClientError(_inner) => _inner.fmt(f),
-            UpdateContainerAgentErrorKind::ClusterNotFoundError(_inner) => _inner.fmt(f),
-            UpdateContainerAgentErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            UpdateContainerAgentErrorKind::MissingVersionError(_inner) => _inner.fmt(f),
-            UpdateContainerAgentErrorKind::NoUpdateAvailableError(_inner) => _inner.fmt(f),
-            UpdateContainerAgentErrorKind::ServerError(_inner) => _inner.fmt(f),
-            UpdateContainerAgentErrorKind::UpdateInProgressError(_inner) => _inner.fmt(f),
+            UpdateContainerAgentErrorKind::ClientException(_inner) => _inner.fmt(f),
+            UpdateContainerAgentErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
+            UpdateContainerAgentErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            UpdateContainerAgentErrorKind::MissingVersionException(_inner) => _inner.fmt(f),
+            UpdateContainerAgentErrorKind::NoUpdateAvailableException(_inner) => _inner.fmt(f),
+            UpdateContainerAgentErrorKind::ServerException(_inner) => _inner.fmt(f),
+            UpdateContainerAgentErrorKind::UpdateInProgressException(_inner) => _inner.fmt(f),
             UpdateContainerAgentErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4929,53 +5129,59 @@ impl UpdateContainerAgentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_client_error(&self) -> bool {
-        matches!(&self.kind, UpdateContainerAgentErrorKind::ClientError(_))
-    }
-    pub fn is_cluster_not_found_error(&self) -> bool {
+    pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateContainerAgentErrorKind::ClusterNotFoundError(_)
+            UpdateContainerAgentErrorKind::ClientException(_)
         )
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_cluster_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateContainerAgentErrorKind::InvalidParameterError(_)
+            UpdateContainerAgentErrorKind::ClusterNotFoundException(_)
         )
     }
-    pub fn is_missing_version_error(&self) -> bool {
+    pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateContainerAgentErrorKind::MissingVersionError(_)
+            UpdateContainerAgentErrorKind::InvalidParameterException(_)
         )
     }
-    pub fn is_no_update_available_error(&self) -> bool {
+    pub fn is_missing_version_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateContainerAgentErrorKind::NoUpdateAvailableError(_)
+            UpdateContainerAgentErrorKind::MissingVersionException(_)
         )
     }
-    pub fn is_server_error(&self) -> bool {
-        matches!(&self.kind, UpdateContainerAgentErrorKind::ServerError(_))
-    }
-    pub fn is_update_in_progress_error(&self) -> bool {
+    pub fn is_no_update_available_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateContainerAgentErrorKind::UpdateInProgressError(_)
+            UpdateContainerAgentErrorKind::NoUpdateAvailableException(_)
+        )
+    }
+    pub fn is_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateContainerAgentErrorKind::ServerException(_)
+        )
+    }
+    pub fn is_update_in_progress_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateContainerAgentErrorKind::UpdateInProgressException(_)
         )
     }
 }
 impl std::error::Error for UpdateContainerAgentError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateContainerAgentErrorKind::ClientError(_inner) => Some(_inner),
-            UpdateContainerAgentErrorKind::ClusterNotFoundError(_inner) => Some(_inner),
-            UpdateContainerAgentErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            UpdateContainerAgentErrorKind::MissingVersionError(_inner) => Some(_inner),
-            UpdateContainerAgentErrorKind::NoUpdateAvailableError(_inner) => Some(_inner),
-            UpdateContainerAgentErrorKind::ServerError(_inner) => Some(_inner),
-            UpdateContainerAgentErrorKind::UpdateInProgressError(_inner) => Some(_inner),
+            UpdateContainerAgentErrorKind::ClientException(_inner) => Some(_inner),
+            UpdateContainerAgentErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
+            UpdateContainerAgentErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            UpdateContainerAgentErrorKind::MissingVersionException(_inner) => Some(_inner),
+            UpdateContainerAgentErrorKind::NoUpdateAvailableException(_inner) => Some(_inner),
+            UpdateContainerAgentErrorKind::ServerException(_inner) => Some(_inner),
+            UpdateContainerAgentErrorKind::UpdateInProgressException(_inner) => Some(_inner),
             UpdateContainerAgentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4990,20 +5196,24 @@ pub struct UpdateContainerInstancesStateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateContainerInstancesStateErrorKind {
-    ClientError(crate::error::ClientError),
-    ClusterNotFoundError(crate::error::ClusterNotFoundError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ServerError(crate::error::ServerError),
+    ClientException(crate::error::ClientException),
+    ClusterNotFoundException(crate::error::ClusterNotFoundException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ServerException(crate::error::ServerException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateContainerInstancesStateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateContainerInstancesStateErrorKind::ClientError(_inner) => _inner.fmt(f),
-            UpdateContainerInstancesStateErrorKind::ClusterNotFoundError(_inner) => _inner.fmt(f),
-            UpdateContainerInstancesStateErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            UpdateContainerInstancesStateErrorKind::ServerError(_inner) => _inner.fmt(f),
+            UpdateContainerInstancesStateErrorKind::ClientException(_inner) => _inner.fmt(f),
+            UpdateContainerInstancesStateErrorKind::ClusterNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateContainerInstancesStateErrorKind::InvalidParameterException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateContainerInstancesStateErrorKind::ServerException(_inner) => _inner.fmt(f),
             UpdateContainerInstancesStateErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5052,38 +5262,42 @@ impl UpdateContainerInstancesStateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_client_error(&self) -> bool {
+    pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateContainerInstancesStateErrorKind::ClientError(_)
+            UpdateContainerInstancesStateErrorKind::ClientException(_)
         )
     }
-    pub fn is_cluster_not_found_error(&self) -> bool {
+    pub fn is_cluster_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateContainerInstancesStateErrorKind::ClusterNotFoundError(_)
+            UpdateContainerInstancesStateErrorKind::ClusterNotFoundException(_)
         )
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateContainerInstancesStateErrorKind::InvalidParameterError(_)
+            UpdateContainerInstancesStateErrorKind::InvalidParameterException(_)
         )
     }
-    pub fn is_server_error(&self) -> bool {
+    pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateContainerInstancesStateErrorKind::ServerError(_)
+            UpdateContainerInstancesStateErrorKind::ServerException(_)
         )
     }
 }
 impl std::error::Error for UpdateContainerInstancesStateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateContainerInstancesStateErrorKind::ClientError(_inner) => Some(_inner),
-            UpdateContainerInstancesStateErrorKind::ClusterNotFoundError(_inner) => Some(_inner),
-            UpdateContainerInstancesStateErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            UpdateContainerInstancesStateErrorKind::ServerError(_inner) => Some(_inner),
+            UpdateContainerInstancesStateErrorKind::ClientException(_inner) => Some(_inner),
+            UpdateContainerInstancesStateErrorKind::ClusterNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            UpdateContainerInstancesStateErrorKind::InvalidParameterException(_inner) => {
+                Some(_inner)
+            }
+            UpdateContainerInstancesStateErrorKind::ServerException(_inner) => Some(_inner),
             UpdateContainerInstancesStateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5098,34 +5312,34 @@ pub struct UpdateServiceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateServiceErrorKind {
-    AccessDeniedError(crate::error::AccessDeniedError),
-    ClientError(crate::error::ClientError),
-    ClusterNotFoundError(crate::error::ClusterNotFoundError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    PlatformTaskDefinitionIncompatibilityError(
-        crate::error::PlatformTaskDefinitionIncompatibilityError,
+    AccessDeniedException(crate::error::AccessDeniedException),
+    ClientException(crate::error::ClientException),
+    ClusterNotFoundException(crate::error::ClusterNotFoundException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    PlatformTaskDefinitionIncompatibilityException(
+        crate::error::PlatformTaskDefinitionIncompatibilityException,
     ),
-    PlatformUnknownError(crate::error::PlatformUnknownError),
-    ServerError(crate::error::ServerError),
-    ServiceNotActiveError(crate::error::ServiceNotActiveError),
-    ServiceNotFoundError(crate::error::ServiceNotFoundError),
+    PlatformUnknownException(crate::error::PlatformUnknownException),
+    ServerException(crate::error::ServerException),
+    ServiceNotActiveException(crate::error::ServiceNotActiveException),
+    ServiceNotFoundException(crate::error::ServiceNotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateServiceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateServiceErrorKind::AccessDeniedError(_inner) => _inner.fmt(f),
-            UpdateServiceErrorKind::ClientError(_inner) => _inner.fmt(f),
-            UpdateServiceErrorKind::ClusterNotFoundError(_inner) => _inner.fmt(f),
-            UpdateServiceErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            UpdateServiceErrorKind::PlatformTaskDefinitionIncompatibilityError(_inner) => {
+            UpdateServiceErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            UpdateServiceErrorKind::ClientException(_inner) => _inner.fmt(f),
+            UpdateServiceErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
+            UpdateServiceErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            UpdateServiceErrorKind::PlatformTaskDefinitionIncompatibilityException(_inner) => {
                 _inner.fmt(f)
             }
-            UpdateServiceErrorKind::PlatformUnknownError(_inner) => _inner.fmt(f),
-            UpdateServiceErrorKind::ServerError(_inner) => _inner.fmt(f),
-            UpdateServiceErrorKind::ServiceNotActiveError(_inner) => _inner.fmt(f),
-            UpdateServiceErrorKind::ServiceNotFoundError(_inner) => _inner.fmt(f),
+            UpdateServiceErrorKind::PlatformUnknownException(_inner) => _inner.fmt(f),
+            UpdateServiceErrorKind::ServerException(_inner) => _inner.fmt(f),
+            UpdateServiceErrorKind::ServiceNotActiveException(_inner) => _inner.fmt(f),
+            UpdateServiceErrorKind::ServiceNotFoundException(_inner) => _inner.fmt(f),
             UpdateServiceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5174,51 +5388,66 @@ impl UpdateServiceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_access_denied_error(&self) -> bool {
-        matches!(&self.kind, UpdateServiceErrorKind::AccessDeniedError(_))
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, UpdateServiceErrorKind::AccessDeniedException(_))
     }
-    pub fn is_client_error(&self) -> bool {
-        matches!(&self.kind, UpdateServiceErrorKind::ClientError(_))
+    pub fn is_client_exception(&self) -> bool {
+        matches!(&self.kind, UpdateServiceErrorKind::ClientException(_))
     }
-    pub fn is_cluster_not_found_error(&self) -> bool {
-        matches!(&self.kind, UpdateServiceErrorKind::ClusterNotFoundError(_))
-    }
-    pub fn is_invalid_parameter_error(&self) -> bool {
-        matches!(&self.kind, UpdateServiceErrorKind::InvalidParameterError(_))
-    }
-    pub fn is_platform_task_definition_incompatibility_error(&self) -> bool {
+    pub fn is_cluster_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateServiceErrorKind::PlatformTaskDefinitionIncompatibilityError(_)
+            UpdateServiceErrorKind::ClusterNotFoundException(_)
         )
     }
-    pub fn is_platform_unknown_error(&self) -> bool {
-        matches!(&self.kind, UpdateServiceErrorKind::PlatformUnknownError(_))
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateServiceErrorKind::InvalidParameterException(_)
+        )
     }
-    pub fn is_server_error(&self) -> bool {
-        matches!(&self.kind, UpdateServiceErrorKind::ServerError(_))
+    pub fn is_platform_task_definition_incompatibility_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateServiceErrorKind::PlatformTaskDefinitionIncompatibilityException(_)
+        )
     }
-    pub fn is_service_not_active_error(&self) -> bool {
-        matches!(&self.kind, UpdateServiceErrorKind::ServiceNotActiveError(_))
+    pub fn is_platform_unknown_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateServiceErrorKind::PlatformUnknownException(_)
+        )
     }
-    pub fn is_service_not_found_error(&self) -> bool {
-        matches!(&self.kind, UpdateServiceErrorKind::ServiceNotFoundError(_))
+    pub fn is_server_exception(&self) -> bool {
+        matches!(&self.kind, UpdateServiceErrorKind::ServerException(_))
+    }
+    pub fn is_service_not_active_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateServiceErrorKind::ServiceNotActiveException(_)
+        )
+    }
+    pub fn is_service_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateServiceErrorKind::ServiceNotFoundException(_)
+        )
     }
 }
 impl std::error::Error for UpdateServiceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateServiceErrorKind::AccessDeniedError(_inner) => Some(_inner),
-            UpdateServiceErrorKind::ClientError(_inner) => Some(_inner),
-            UpdateServiceErrorKind::ClusterNotFoundError(_inner) => Some(_inner),
-            UpdateServiceErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            UpdateServiceErrorKind::PlatformTaskDefinitionIncompatibilityError(_inner) => {
+            UpdateServiceErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            UpdateServiceErrorKind::ClientException(_inner) => Some(_inner),
+            UpdateServiceErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
+            UpdateServiceErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            UpdateServiceErrorKind::PlatformTaskDefinitionIncompatibilityException(_inner) => {
                 Some(_inner)
             }
-            UpdateServiceErrorKind::PlatformUnknownError(_inner) => Some(_inner),
-            UpdateServiceErrorKind::ServerError(_inner) => Some(_inner),
-            UpdateServiceErrorKind::ServiceNotActiveError(_inner) => Some(_inner),
-            UpdateServiceErrorKind::ServiceNotFoundError(_inner) => Some(_inner),
+            UpdateServiceErrorKind::PlatformUnknownException(_inner) => Some(_inner),
+            UpdateServiceErrorKind::ServerException(_inner) => Some(_inner),
+            UpdateServiceErrorKind::ServiceNotActiveException(_inner) => Some(_inner),
+            UpdateServiceErrorKind::ServiceNotFoundException(_inner) => Some(_inner),
             UpdateServiceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5233,30 +5462,36 @@ pub struct UpdateServicePrimaryTaskSetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateServicePrimaryTaskSetErrorKind {
-    AccessDeniedError(crate::error::AccessDeniedError),
-    ClientError(crate::error::ClientError),
-    ClusterNotFoundError(crate::error::ClusterNotFoundError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ServerError(crate::error::ServerError),
-    ServiceNotActiveError(crate::error::ServiceNotActiveError),
-    ServiceNotFoundError(crate::error::ServiceNotFoundError),
-    TaskSetNotFoundError(crate::error::TaskSetNotFoundError),
-    UnsupportedFeatureError(crate::error::UnsupportedFeatureError),
+    AccessDeniedException(crate::error::AccessDeniedException),
+    ClientException(crate::error::ClientException),
+    ClusterNotFoundException(crate::error::ClusterNotFoundException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ServerException(crate::error::ServerException),
+    ServiceNotActiveException(crate::error::ServiceNotActiveException),
+    ServiceNotFoundException(crate::error::ServiceNotFoundException),
+    TaskSetNotFoundException(crate::error::TaskSetNotFoundException),
+    UnsupportedFeatureException(crate::error::UnsupportedFeatureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateServicePrimaryTaskSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateServicePrimaryTaskSetErrorKind::AccessDeniedError(_inner) => _inner.fmt(f),
-            UpdateServicePrimaryTaskSetErrorKind::ClientError(_inner) => _inner.fmt(f),
-            UpdateServicePrimaryTaskSetErrorKind::ClusterNotFoundError(_inner) => _inner.fmt(f),
-            UpdateServicePrimaryTaskSetErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            UpdateServicePrimaryTaskSetErrorKind::ServerError(_inner) => _inner.fmt(f),
-            UpdateServicePrimaryTaskSetErrorKind::ServiceNotActiveError(_inner) => _inner.fmt(f),
-            UpdateServicePrimaryTaskSetErrorKind::ServiceNotFoundError(_inner) => _inner.fmt(f),
-            UpdateServicePrimaryTaskSetErrorKind::TaskSetNotFoundError(_inner) => _inner.fmt(f),
-            UpdateServicePrimaryTaskSetErrorKind::UnsupportedFeatureError(_inner) => _inner.fmt(f),
+            UpdateServicePrimaryTaskSetErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            UpdateServicePrimaryTaskSetErrorKind::ClientException(_inner) => _inner.fmt(f),
+            UpdateServicePrimaryTaskSetErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
+            UpdateServicePrimaryTaskSetErrorKind::InvalidParameterException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateServicePrimaryTaskSetErrorKind::ServerException(_inner) => _inner.fmt(f),
+            UpdateServicePrimaryTaskSetErrorKind::ServiceNotActiveException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateServicePrimaryTaskSetErrorKind::ServiceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateServicePrimaryTaskSetErrorKind::TaskSetNotFoundException(_inner) => _inner.fmt(f),
+            UpdateServicePrimaryTaskSetErrorKind::UnsupportedFeatureException(_inner) => {
+                _inner.fmt(f)
+            }
             UpdateServicePrimaryTaskSetErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5305,73 +5540,75 @@ impl UpdateServicePrimaryTaskSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_access_denied_error(&self) -> bool {
+    pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateServicePrimaryTaskSetErrorKind::AccessDeniedError(_)
+            UpdateServicePrimaryTaskSetErrorKind::AccessDeniedException(_)
         )
     }
-    pub fn is_client_error(&self) -> bool {
+    pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateServicePrimaryTaskSetErrorKind::ClientError(_)
+            UpdateServicePrimaryTaskSetErrorKind::ClientException(_)
         )
     }
-    pub fn is_cluster_not_found_error(&self) -> bool {
+    pub fn is_cluster_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateServicePrimaryTaskSetErrorKind::ClusterNotFoundError(_)
+            UpdateServicePrimaryTaskSetErrorKind::ClusterNotFoundException(_)
         )
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateServicePrimaryTaskSetErrorKind::InvalidParameterError(_)
+            UpdateServicePrimaryTaskSetErrorKind::InvalidParameterException(_)
         )
     }
-    pub fn is_server_error(&self) -> bool {
+    pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateServicePrimaryTaskSetErrorKind::ServerError(_)
+            UpdateServicePrimaryTaskSetErrorKind::ServerException(_)
         )
     }
-    pub fn is_service_not_active_error(&self) -> bool {
+    pub fn is_service_not_active_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateServicePrimaryTaskSetErrorKind::ServiceNotActiveError(_)
+            UpdateServicePrimaryTaskSetErrorKind::ServiceNotActiveException(_)
         )
     }
-    pub fn is_service_not_found_error(&self) -> bool {
+    pub fn is_service_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateServicePrimaryTaskSetErrorKind::ServiceNotFoundError(_)
+            UpdateServicePrimaryTaskSetErrorKind::ServiceNotFoundException(_)
         )
     }
-    pub fn is_task_set_not_found_error(&self) -> bool {
+    pub fn is_task_set_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateServicePrimaryTaskSetErrorKind::TaskSetNotFoundError(_)
+            UpdateServicePrimaryTaskSetErrorKind::TaskSetNotFoundException(_)
         )
     }
-    pub fn is_unsupported_feature_error(&self) -> bool {
+    pub fn is_unsupported_feature_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateServicePrimaryTaskSetErrorKind::UnsupportedFeatureError(_)
+            UpdateServicePrimaryTaskSetErrorKind::UnsupportedFeatureException(_)
         )
     }
 }
 impl std::error::Error for UpdateServicePrimaryTaskSetError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateServicePrimaryTaskSetErrorKind::AccessDeniedError(_inner) => Some(_inner),
-            UpdateServicePrimaryTaskSetErrorKind::ClientError(_inner) => Some(_inner),
-            UpdateServicePrimaryTaskSetErrorKind::ClusterNotFoundError(_inner) => Some(_inner),
-            UpdateServicePrimaryTaskSetErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            UpdateServicePrimaryTaskSetErrorKind::ServerError(_inner) => Some(_inner),
-            UpdateServicePrimaryTaskSetErrorKind::ServiceNotActiveError(_inner) => Some(_inner),
-            UpdateServicePrimaryTaskSetErrorKind::ServiceNotFoundError(_inner) => Some(_inner),
-            UpdateServicePrimaryTaskSetErrorKind::TaskSetNotFoundError(_inner) => Some(_inner),
-            UpdateServicePrimaryTaskSetErrorKind::UnsupportedFeatureError(_inner) => Some(_inner),
+            UpdateServicePrimaryTaskSetErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            UpdateServicePrimaryTaskSetErrorKind::ClientException(_inner) => Some(_inner),
+            UpdateServicePrimaryTaskSetErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
+            UpdateServicePrimaryTaskSetErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            UpdateServicePrimaryTaskSetErrorKind::ServerException(_inner) => Some(_inner),
+            UpdateServicePrimaryTaskSetErrorKind::ServiceNotActiveException(_inner) => Some(_inner),
+            UpdateServicePrimaryTaskSetErrorKind::ServiceNotFoundException(_inner) => Some(_inner),
+            UpdateServicePrimaryTaskSetErrorKind::TaskSetNotFoundException(_inner) => Some(_inner),
+            UpdateServicePrimaryTaskSetErrorKind::UnsupportedFeatureException(_inner) => {
+                Some(_inner)
+            }
             UpdateServicePrimaryTaskSetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5386,30 +5623,30 @@ pub struct UpdateTaskSetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateTaskSetErrorKind {
-    AccessDeniedError(crate::error::AccessDeniedError),
-    ClientError(crate::error::ClientError),
-    ClusterNotFoundError(crate::error::ClusterNotFoundError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ServerError(crate::error::ServerError),
-    ServiceNotActiveError(crate::error::ServiceNotActiveError),
-    ServiceNotFoundError(crate::error::ServiceNotFoundError),
-    TaskSetNotFoundError(crate::error::TaskSetNotFoundError),
-    UnsupportedFeatureError(crate::error::UnsupportedFeatureError),
+    AccessDeniedException(crate::error::AccessDeniedException),
+    ClientException(crate::error::ClientException),
+    ClusterNotFoundException(crate::error::ClusterNotFoundException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ServerException(crate::error::ServerException),
+    ServiceNotActiveException(crate::error::ServiceNotActiveException),
+    ServiceNotFoundException(crate::error::ServiceNotFoundException),
+    TaskSetNotFoundException(crate::error::TaskSetNotFoundException),
+    UnsupportedFeatureException(crate::error::UnsupportedFeatureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateTaskSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateTaskSetErrorKind::AccessDeniedError(_inner) => _inner.fmt(f),
-            UpdateTaskSetErrorKind::ClientError(_inner) => _inner.fmt(f),
-            UpdateTaskSetErrorKind::ClusterNotFoundError(_inner) => _inner.fmt(f),
-            UpdateTaskSetErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            UpdateTaskSetErrorKind::ServerError(_inner) => _inner.fmt(f),
-            UpdateTaskSetErrorKind::ServiceNotActiveError(_inner) => _inner.fmt(f),
-            UpdateTaskSetErrorKind::ServiceNotFoundError(_inner) => _inner.fmt(f),
-            UpdateTaskSetErrorKind::TaskSetNotFoundError(_inner) => _inner.fmt(f),
-            UpdateTaskSetErrorKind::UnsupportedFeatureError(_inner) => _inner.fmt(f),
+            UpdateTaskSetErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            UpdateTaskSetErrorKind::ClientException(_inner) => _inner.fmt(f),
+            UpdateTaskSetErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
+            UpdateTaskSetErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            UpdateTaskSetErrorKind::ServerException(_inner) => _inner.fmt(f),
+            UpdateTaskSetErrorKind::ServiceNotActiveException(_inner) => _inner.fmt(f),
+            UpdateTaskSetErrorKind::ServiceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateTaskSetErrorKind::TaskSetNotFoundException(_inner) => _inner.fmt(f),
+            UpdateTaskSetErrorKind::UnsupportedFeatureException(_inner) => _inner.fmt(f),
             UpdateTaskSetErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5458,49 +5695,64 @@ impl UpdateTaskSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_access_denied_error(&self) -> bool {
-        matches!(&self.kind, UpdateTaskSetErrorKind::AccessDeniedError(_))
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, UpdateTaskSetErrorKind::AccessDeniedException(_))
     }
-    pub fn is_client_error(&self) -> bool {
-        matches!(&self.kind, UpdateTaskSetErrorKind::ClientError(_))
+    pub fn is_client_exception(&self) -> bool {
+        matches!(&self.kind, UpdateTaskSetErrorKind::ClientException(_))
     }
-    pub fn is_cluster_not_found_error(&self) -> bool {
-        matches!(&self.kind, UpdateTaskSetErrorKind::ClusterNotFoundError(_))
-    }
-    pub fn is_invalid_parameter_error(&self) -> bool {
-        matches!(&self.kind, UpdateTaskSetErrorKind::InvalidParameterError(_))
-    }
-    pub fn is_server_error(&self) -> bool {
-        matches!(&self.kind, UpdateTaskSetErrorKind::ServerError(_))
-    }
-    pub fn is_service_not_active_error(&self) -> bool {
-        matches!(&self.kind, UpdateTaskSetErrorKind::ServiceNotActiveError(_))
-    }
-    pub fn is_service_not_found_error(&self) -> bool {
-        matches!(&self.kind, UpdateTaskSetErrorKind::ServiceNotFoundError(_))
-    }
-    pub fn is_task_set_not_found_error(&self) -> bool {
-        matches!(&self.kind, UpdateTaskSetErrorKind::TaskSetNotFoundError(_))
-    }
-    pub fn is_unsupported_feature_error(&self) -> bool {
+    pub fn is_cluster_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateTaskSetErrorKind::UnsupportedFeatureError(_)
+            UpdateTaskSetErrorKind::ClusterNotFoundException(_)
+        )
+    }
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateTaskSetErrorKind::InvalidParameterException(_)
+        )
+    }
+    pub fn is_server_exception(&self) -> bool {
+        matches!(&self.kind, UpdateTaskSetErrorKind::ServerException(_))
+    }
+    pub fn is_service_not_active_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateTaskSetErrorKind::ServiceNotActiveException(_)
+        )
+    }
+    pub fn is_service_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateTaskSetErrorKind::ServiceNotFoundException(_)
+        )
+    }
+    pub fn is_task_set_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateTaskSetErrorKind::TaskSetNotFoundException(_)
+        )
+    }
+    pub fn is_unsupported_feature_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateTaskSetErrorKind::UnsupportedFeatureException(_)
         )
     }
 }
 impl std::error::Error for UpdateTaskSetError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateTaskSetErrorKind::AccessDeniedError(_inner) => Some(_inner),
-            UpdateTaskSetErrorKind::ClientError(_inner) => Some(_inner),
-            UpdateTaskSetErrorKind::ClusterNotFoundError(_inner) => Some(_inner),
-            UpdateTaskSetErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            UpdateTaskSetErrorKind::ServerError(_inner) => Some(_inner),
-            UpdateTaskSetErrorKind::ServiceNotActiveError(_inner) => Some(_inner),
-            UpdateTaskSetErrorKind::ServiceNotFoundError(_inner) => Some(_inner),
-            UpdateTaskSetErrorKind::TaskSetNotFoundError(_inner) => Some(_inner),
-            UpdateTaskSetErrorKind::UnsupportedFeatureError(_inner) => Some(_inner),
+            UpdateTaskSetErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            UpdateTaskSetErrorKind::ClientException(_inner) => Some(_inner),
+            UpdateTaskSetErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
+            UpdateTaskSetErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            UpdateTaskSetErrorKind::ServerException(_inner) => Some(_inner),
+            UpdateTaskSetErrorKind::ServiceNotActiveException(_inner) => Some(_inner),
+            UpdateTaskSetErrorKind::ServiceNotFoundException(_inner) => Some(_inner),
+            UpdateTaskSetErrorKind::TaskSetNotFoundException(_inner) => Some(_inner),
+            UpdateTaskSetErrorKind::UnsupportedFeatureException(_inner) => Some(_inner),
             UpdateTaskSetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5508,37 +5760,35 @@ impl std::error::Error for UpdateTaskSetError {
 
 /// <p>The specified task is not supported in this Region.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct UnsupportedFeatureError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UnsupportedFeatureException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for UnsupportedFeatureError {
+impl std::fmt::Debug for UnsupportedFeatureException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnsupportedFeatureError");
+        let mut formatter = f.debug_struct("UnsupportedFeatureException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl UnsupportedFeatureError {
+impl UnsupportedFeatureException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for UnsupportedFeatureError {
+impl std::fmt::Display for UnsupportedFeatureException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "UnsupportedFeatureError [UnsupportedFeatureException]")?;
+        write!(f, "UnsupportedFeatureException")?;
         if let Some(inner_1) = &self.message {
             write!(f, ": {}", inner_1)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for UnsupportedFeatureError {}
-/// See [`UnsupportedFeatureError`](crate::error::UnsupportedFeatureError)
-pub mod unsupported_feature_error {
-    /// A builder for [`UnsupportedFeatureError`](crate::error::UnsupportedFeatureError)
+impl std::error::Error for UnsupportedFeatureException {}
+/// See [`UnsupportedFeatureException`](crate::error::UnsupportedFeatureException)
+pub mod unsupported_feature_exception {
+    /// A builder for [`UnsupportedFeatureException`](crate::error::UnsupportedFeatureException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -5553,18 +5803,18 @@ pub mod unsupported_feature_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`UnsupportedFeatureError`](crate::error::UnsupportedFeatureError)
-        pub fn build(self) -> crate::error::UnsupportedFeatureError {
-            crate::error::UnsupportedFeatureError {
+        /// Consumes the builder and constructs a [`UnsupportedFeatureException`](crate::error::UnsupportedFeatureException)
+        pub fn build(self) -> crate::error::UnsupportedFeatureException {
+            crate::error::UnsupportedFeatureException {
                 message: self.message,
             }
         }
     }
 }
-impl UnsupportedFeatureError {
-    /// Creates a new builder-style object to manufacture [`UnsupportedFeatureError`](crate::error::UnsupportedFeatureError)
-    pub fn builder() -> crate::error::unsupported_feature_error::Builder {
-        crate::error::unsupported_feature_error::Builder::default()
+impl UnsupportedFeatureException {
+    /// Creates a new builder-style object to manufacture [`UnsupportedFeatureException`](crate::error::UnsupportedFeatureException)
+    pub fn builder() -> crate::error::unsupported_feature_exception::Builder {
+        crate::error::unsupported_feature_exception::Builder::default()
     }
 }
 
@@ -5572,37 +5822,35 @@ impl UnsupportedFeatureError {
 /// <a>DescribeTaskSets</a>. Task sets are specific to each cluster, service
 /// and Region.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct TaskSetNotFoundError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TaskSetNotFoundException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for TaskSetNotFoundError {
+impl std::fmt::Debug for TaskSetNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TaskSetNotFoundError");
+        let mut formatter = f.debug_struct("TaskSetNotFoundException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl TaskSetNotFoundError {
+impl TaskSetNotFoundException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for TaskSetNotFoundError {
+impl std::fmt::Display for TaskSetNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TaskSetNotFoundError [TaskSetNotFoundException]")?;
+        write!(f, "TaskSetNotFoundException")?;
         if let Some(inner_2) = &self.message {
             write!(f, ": {}", inner_2)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for TaskSetNotFoundError {}
-/// See [`TaskSetNotFoundError`](crate::error::TaskSetNotFoundError)
-pub mod task_set_not_found_error {
-    /// A builder for [`TaskSetNotFoundError`](crate::error::TaskSetNotFoundError)
+impl std::error::Error for TaskSetNotFoundException {}
+/// See [`TaskSetNotFoundException`](crate::error::TaskSetNotFoundException)
+pub mod task_set_not_found_exception {
+    /// A builder for [`TaskSetNotFoundException`](crate::error::TaskSetNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -5617,18 +5865,18 @@ pub mod task_set_not_found_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TaskSetNotFoundError`](crate::error::TaskSetNotFoundError)
-        pub fn build(self) -> crate::error::TaskSetNotFoundError {
-            crate::error::TaskSetNotFoundError {
+        /// Consumes the builder and constructs a [`TaskSetNotFoundException`](crate::error::TaskSetNotFoundException)
+        pub fn build(self) -> crate::error::TaskSetNotFoundException {
+            crate::error::TaskSetNotFoundException {
                 message: self.message,
             }
         }
     }
 }
-impl TaskSetNotFoundError {
-    /// Creates a new builder-style object to manufacture [`TaskSetNotFoundError`](crate::error::TaskSetNotFoundError)
-    pub fn builder() -> crate::error::task_set_not_found_error::Builder {
-        crate::error::task_set_not_found_error::Builder::default()
+impl TaskSetNotFoundException {
+    /// Creates a new builder-style object to manufacture [`TaskSetNotFoundException`](crate::error::TaskSetNotFoundException)
+    pub fn builder() -> crate::error::task_set_not_found_exception::Builder {
+        crate::error::task_set_not_found_exception::Builder::default()
     }
 }
 
@@ -5636,37 +5884,35 @@ impl TaskSetNotFoundError {
 /// <a>ListServices</a>. Amazon ECS services are cluster-specific and
 /// Region-specific.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct ServiceNotFoundError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ServiceNotFoundException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ServiceNotFoundError {
+impl std::fmt::Debug for ServiceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceNotFoundError");
+        let mut formatter = f.debug_struct("ServiceNotFoundException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl ServiceNotFoundError {
+impl ServiceNotFoundException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ServiceNotFoundError {
+impl std::fmt::Display for ServiceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ServiceNotFoundError [ServiceNotFoundException]")?;
+        write!(f, "ServiceNotFoundException")?;
         if let Some(inner_3) = &self.message {
             write!(f, ": {}", inner_3)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ServiceNotFoundError {}
-/// See [`ServiceNotFoundError`](crate::error::ServiceNotFoundError)
-pub mod service_not_found_error {
-    /// A builder for [`ServiceNotFoundError`](crate::error::ServiceNotFoundError)
+impl std::error::Error for ServiceNotFoundException {}
+/// See [`ServiceNotFoundException`](crate::error::ServiceNotFoundException)
+pub mod service_not_found_exception {
+    /// A builder for [`ServiceNotFoundException`](crate::error::ServiceNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -5681,55 +5927,53 @@ pub mod service_not_found_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ServiceNotFoundError`](crate::error::ServiceNotFoundError)
-        pub fn build(self) -> crate::error::ServiceNotFoundError {
-            crate::error::ServiceNotFoundError {
+        /// Consumes the builder and constructs a [`ServiceNotFoundException`](crate::error::ServiceNotFoundException)
+        pub fn build(self) -> crate::error::ServiceNotFoundException {
+            crate::error::ServiceNotFoundException {
                 message: self.message,
             }
         }
     }
 }
-impl ServiceNotFoundError {
-    /// Creates a new builder-style object to manufacture [`ServiceNotFoundError`](crate::error::ServiceNotFoundError)
-    pub fn builder() -> crate::error::service_not_found_error::Builder {
-        crate::error::service_not_found_error::Builder::default()
+impl ServiceNotFoundException {
+    /// Creates a new builder-style object to manufacture [`ServiceNotFoundException`](crate::error::ServiceNotFoundException)
+    pub fn builder() -> crate::error::service_not_found_exception::Builder {
+        crate::error::service_not_found_exception::Builder::default()
     }
 }
 
 /// <p>The specified service is not active. You can't update a service that is inactive. If
 /// you have previously deleted a service, you can re-create it with <a>CreateService</a>.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct ServiceNotActiveError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ServiceNotActiveException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ServiceNotActiveError {
+impl std::fmt::Debug for ServiceNotActiveException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceNotActiveError");
+        let mut formatter = f.debug_struct("ServiceNotActiveException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl ServiceNotActiveError {
+impl ServiceNotActiveException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ServiceNotActiveError {
+impl std::fmt::Display for ServiceNotActiveException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ServiceNotActiveError [ServiceNotActiveException]")?;
+        write!(f, "ServiceNotActiveException")?;
         if let Some(inner_4) = &self.message {
             write!(f, ": {}", inner_4)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ServiceNotActiveError {}
-/// See [`ServiceNotActiveError`](crate::error::ServiceNotActiveError)
-pub mod service_not_active_error {
-    /// A builder for [`ServiceNotActiveError`](crate::error::ServiceNotActiveError)
+impl std::error::Error for ServiceNotActiveException {}
+/// See [`ServiceNotActiveException`](crate::error::ServiceNotActiveException)
+pub mod service_not_active_exception {
+    /// A builder for [`ServiceNotActiveException`](crate::error::ServiceNotActiveException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -5744,54 +5988,52 @@ pub mod service_not_active_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ServiceNotActiveError`](crate::error::ServiceNotActiveError)
-        pub fn build(self) -> crate::error::ServiceNotActiveError {
-            crate::error::ServiceNotActiveError {
+        /// Consumes the builder and constructs a [`ServiceNotActiveException`](crate::error::ServiceNotActiveException)
+        pub fn build(self) -> crate::error::ServiceNotActiveException {
+            crate::error::ServiceNotActiveException {
                 message: self.message,
             }
         }
     }
 }
-impl ServiceNotActiveError {
-    /// Creates a new builder-style object to manufacture [`ServiceNotActiveError`](crate::error::ServiceNotActiveError)
-    pub fn builder() -> crate::error::service_not_active_error::Builder {
-        crate::error::service_not_active_error::Builder::default()
+impl ServiceNotActiveException {
+    /// Creates a new builder-style object to manufacture [`ServiceNotActiveException`](crate::error::ServiceNotActiveException)
+    pub fn builder() -> crate::error::service_not_active_exception::Builder {
+        crate::error::service_not_active_exception::Builder::default()
     }
 }
 
 /// <p>These errors are usually caused by a server issue.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct ServerError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ServerException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ServerError {
+impl std::fmt::Debug for ServerException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServerError");
+        let mut formatter = f.debug_struct("ServerException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl ServerError {
+impl ServerException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ServerError {
+impl std::fmt::Display for ServerException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ServerError [ServerException]")?;
+        write!(f, "ServerException")?;
         if let Some(inner_5) = &self.message {
             write!(f, ": {}", inner_5)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ServerError {}
-/// See [`ServerError`](crate::error::ServerError)
-pub mod server_error {
-    /// A builder for [`ServerError`](crate::error::ServerError)
+impl std::error::Error for ServerException {}
+/// See [`ServerException`](crate::error::ServerException)
+pub mod server_exception {
+    /// A builder for [`ServerException`](crate::error::ServerException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -5806,55 +6048,53 @@ pub mod server_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ServerError`](crate::error::ServerError)
-        pub fn build(self) -> crate::error::ServerError {
-            crate::error::ServerError {
+        /// Consumes the builder and constructs a [`ServerException`](crate::error::ServerException)
+        pub fn build(self) -> crate::error::ServerException {
+            crate::error::ServerException {
                 message: self.message,
             }
         }
     }
 }
-impl ServerError {
-    /// Creates a new builder-style object to manufacture [`ServerError`](crate::error::ServerError)
-    pub fn builder() -> crate::error::server_error::Builder {
-        crate::error::server_error::Builder::default()
+impl ServerException {
+    /// Creates a new builder-style object to manufacture [`ServerException`](crate::error::ServerException)
+    pub fn builder() -> crate::error::server_exception::Builder {
+        crate::error::server_exception::Builder::default()
     }
 }
 
 /// <p>The specified parameter is invalid. Review the available parameters for the API
 /// request.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidParameterError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InvalidParameterException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidParameterError {
+impl std::fmt::Debug for InvalidParameterException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidParameterError");
+        let mut formatter = f.debug_struct("InvalidParameterException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl InvalidParameterError {
+impl InvalidParameterException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InvalidParameterError {
+impl std::fmt::Display for InvalidParameterException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidParameterError [InvalidParameterException]")?;
+        write!(f, "InvalidParameterException")?;
         if let Some(inner_6) = &self.message {
             write!(f, ": {}", inner_6)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InvalidParameterError {}
-/// See [`InvalidParameterError`](crate::error::InvalidParameterError)
-pub mod invalid_parameter_error {
-    /// A builder for [`InvalidParameterError`](crate::error::InvalidParameterError)
+impl std::error::Error for InvalidParameterException {}
+/// See [`InvalidParameterException`](crate::error::InvalidParameterException)
+pub mod invalid_parameter_exception {
+    /// A builder for [`InvalidParameterException`](crate::error::InvalidParameterException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -5869,55 +6109,53 @@ pub mod invalid_parameter_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidParameterError`](crate::error::InvalidParameterError)
-        pub fn build(self) -> crate::error::InvalidParameterError {
-            crate::error::InvalidParameterError {
+        /// Consumes the builder and constructs a [`InvalidParameterException`](crate::error::InvalidParameterException)
+        pub fn build(self) -> crate::error::InvalidParameterException {
+            crate::error::InvalidParameterException {
                 message: self.message,
             }
         }
     }
 }
-impl InvalidParameterError {
-    /// Creates a new builder-style object to manufacture [`InvalidParameterError`](crate::error::InvalidParameterError)
-    pub fn builder() -> crate::error::invalid_parameter_error::Builder {
-        crate::error::invalid_parameter_error::Builder::default()
+impl InvalidParameterException {
+    /// Creates a new builder-style object to manufacture [`InvalidParameterException`](crate::error::InvalidParameterException)
+    pub fn builder() -> crate::error::invalid_parameter_exception::Builder {
+        crate::error::invalid_parameter_exception::Builder::default()
     }
 }
 
 /// <p>The specified cluster could not be found. You can view your available clusters with
 /// <a>ListClusters</a>. Amazon ECS clusters are Region-specific.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct ClusterNotFoundError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ClusterNotFoundException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ClusterNotFoundError {
+impl std::fmt::Debug for ClusterNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClusterNotFoundError");
+        let mut formatter = f.debug_struct("ClusterNotFoundException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl ClusterNotFoundError {
+impl ClusterNotFoundException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ClusterNotFoundError {
+impl std::fmt::Display for ClusterNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ClusterNotFoundError [ClusterNotFoundException]")?;
+        write!(f, "ClusterNotFoundException")?;
         if let Some(inner_7) = &self.message {
             write!(f, ": {}", inner_7)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ClusterNotFoundError {}
-/// See [`ClusterNotFoundError`](crate::error::ClusterNotFoundError)
-pub mod cluster_not_found_error {
-    /// A builder for [`ClusterNotFoundError`](crate::error::ClusterNotFoundError)
+impl std::error::Error for ClusterNotFoundException {}
+/// See [`ClusterNotFoundException`](crate::error::ClusterNotFoundException)
+pub mod cluster_not_found_exception {
+    /// A builder for [`ClusterNotFoundException`](crate::error::ClusterNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -5932,18 +6170,18 @@ pub mod cluster_not_found_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ClusterNotFoundError`](crate::error::ClusterNotFoundError)
-        pub fn build(self) -> crate::error::ClusterNotFoundError {
-            crate::error::ClusterNotFoundError {
+        /// Consumes the builder and constructs a [`ClusterNotFoundException`](crate::error::ClusterNotFoundException)
+        pub fn build(self) -> crate::error::ClusterNotFoundException {
+            crate::error::ClusterNotFoundException {
                 message: self.message,
             }
         }
     }
 }
-impl ClusterNotFoundError {
-    /// Creates a new builder-style object to manufacture [`ClusterNotFoundError`](crate::error::ClusterNotFoundError)
-    pub fn builder() -> crate::error::cluster_not_found_error::Builder {
-        crate::error::cluster_not_found_error::Builder::default()
+impl ClusterNotFoundException {
+    /// Creates a new builder-style object to manufacture [`ClusterNotFoundException`](crate::error::ClusterNotFoundException)
+    pub fn builder() -> crate::error::cluster_not_found_exception::Builder {
+        crate::error::cluster_not_found_exception::Builder::default()
     }
 }
 
@@ -5951,37 +6189,35 @@ impl ClusterNotFoundError {
 /// resource on behalf of a user that doesn't have permissions to use the action or
 /// resource, or specifying an identifier that is not valid.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct ClientError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ClientException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ClientError {
+impl std::fmt::Debug for ClientException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClientError");
+        let mut formatter = f.debug_struct("ClientException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl ClientError {
+impl ClientException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ClientError {
+impl std::fmt::Display for ClientException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ClientError [ClientException]")?;
+        write!(f, "ClientException")?;
         if let Some(inner_8) = &self.message {
             write!(f, ": {}", inner_8)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ClientError {}
-/// See [`ClientError`](crate::error::ClientError)
-pub mod client_error {
-    /// A builder for [`ClientError`](crate::error::ClientError)
+impl std::error::Error for ClientException {}
+/// See [`ClientException`](crate::error::ClientException)
+pub mod client_exception {
+    /// A builder for [`ClientException`](crate::error::ClientException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -5996,54 +6232,52 @@ pub mod client_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ClientError`](crate::error::ClientError)
-        pub fn build(self) -> crate::error::ClientError {
-            crate::error::ClientError {
+        /// Consumes the builder and constructs a [`ClientException`](crate::error::ClientException)
+        pub fn build(self) -> crate::error::ClientException {
+            crate::error::ClientException {
                 message: self.message,
             }
         }
     }
 }
-impl ClientError {
-    /// Creates a new builder-style object to manufacture [`ClientError`](crate::error::ClientError)
-    pub fn builder() -> crate::error::client_error::Builder {
-        crate::error::client_error::Builder::default()
+impl ClientException {
+    /// Creates a new builder-style object to manufacture [`ClientException`](crate::error::ClientException)
+    pub fn builder() -> crate::error::client_exception::Builder {
+        crate::error::client_exception::Builder::default()
     }
 }
 
 /// <p>You do not have authorization to perform the requested action.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct AccessDeniedError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AccessDeniedException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for AccessDeniedError {
+impl std::fmt::Debug for AccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccessDeniedError");
+        let mut formatter = f.debug_struct("AccessDeniedException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl AccessDeniedError {
+impl AccessDeniedException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for AccessDeniedError {
+impl std::fmt::Display for AccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "AccessDeniedError [AccessDeniedException]")?;
+        write!(f, "AccessDeniedException")?;
         if let Some(inner_9) = &self.message {
             write!(f, ": {}", inner_9)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for AccessDeniedError {}
-/// See [`AccessDeniedError`](crate::error::AccessDeniedError)
-pub mod access_denied_error {
-    /// A builder for [`AccessDeniedError`](crate::error::AccessDeniedError)
+impl std::error::Error for AccessDeniedException {}
+/// See [`AccessDeniedException`](crate::error::AccessDeniedException)
+pub mod access_denied_exception {
+    /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -6058,54 +6292,52 @@ pub mod access_denied_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`AccessDeniedError`](crate::error::AccessDeniedError)
-        pub fn build(self) -> crate::error::AccessDeniedError {
-            crate::error::AccessDeniedError {
+        /// Consumes the builder and constructs a [`AccessDeniedException`](crate::error::AccessDeniedException)
+        pub fn build(self) -> crate::error::AccessDeniedException {
+            crate::error::AccessDeniedException {
                 message: self.message,
             }
         }
     }
 }
-impl AccessDeniedError {
-    /// Creates a new builder-style object to manufacture [`AccessDeniedError`](crate::error::AccessDeniedError)
-    pub fn builder() -> crate::error::access_denied_error::Builder {
-        crate::error::access_denied_error::Builder::default()
+impl AccessDeniedException {
+    /// Creates a new builder-style object to manufacture [`AccessDeniedException`](crate::error::AccessDeniedException)
+    pub fn builder() -> crate::error::access_denied_exception::Builder {
+        crate::error::access_denied_exception::Builder::default()
     }
 }
 
 /// <p>The specified platform version does not exist.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct PlatformUnknownError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PlatformUnknownException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for PlatformUnknownError {
+impl std::fmt::Debug for PlatformUnknownException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PlatformUnknownError");
+        let mut formatter = f.debug_struct("PlatformUnknownException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl PlatformUnknownError {
+impl PlatformUnknownException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for PlatformUnknownError {
+impl std::fmt::Display for PlatformUnknownException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "PlatformUnknownError [PlatformUnknownException]")?;
+        write!(f, "PlatformUnknownException")?;
         if let Some(inner_10) = &self.message {
             write!(f, ": {}", inner_10)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for PlatformUnknownError {}
-/// See [`PlatformUnknownError`](crate::error::PlatformUnknownError)
-pub mod platform_unknown_error {
-    /// A builder for [`PlatformUnknownError`](crate::error::PlatformUnknownError)
+impl std::error::Error for PlatformUnknownException {}
+/// See [`PlatformUnknownException`](crate::error::PlatformUnknownException)
+pub mod platform_unknown_exception {
+    /// A builder for [`PlatformUnknownException`](crate::error::PlatformUnknownException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -6120,55 +6352,53 @@ pub mod platform_unknown_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`PlatformUnknownError`](crate::error::PlatformUnknownError)
-        pub fn build(self) -> crate::error::PlatformUnknownError {
-            crate::error::PlatformUnknownError {
+        /// Consumes the builder and constructs a [`PlatformUnknownException`](crate::error::PlatformUnknownException)
+        pub fn build(self) -> crate::error::PlatformUnknownException {
+            crate::error::PlatformUnknownException {
                 message: self.message,
             }
         }
     }
 }
-impl PlatformUnknownError {
-    /// Creates a new builder-style object to manufacture [`PlatformUnknownError`](crate::error::PlatformUnknownError)
-    pub fn builder() -> crate::error::platform_unknown_error::Builder {
-        crate::error::platform_unknown_error::Builder::default()
+impl PlatformUnknownException {
+    /// Creates a new builder-style object to manufacture [`PlatformUnknownException`](crate::error::PlatformUnknownException)
+    pub fn builder() -> crate::error::platform_unknown_exception::Builder {
+        crate::error::platform_unknown_exception::Builder::default()
     }
 }
 
 /// <p>The specified platform version does not satisfy the task definition's required
 /// capabilities.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct PlatformTaskDefinitionIncompatibilityError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PlatformTaskDefinitionIncompatibilityException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for PlatformTaskDefinitionIncompatibilityError {
+impl std::fmt::Debug for PlatformTaskDefinitionIncompatibilityException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PlatformTaskDefinitionIncompatibilityError");
+        let mut formatter = f.debug_struct("PlatformTaskDefinitionIncompatibilityException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl PlatformTaskDefinitionIncompatibilityError {
+impl PlatformTaskDefinitionIncompatibilityException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for PlatformTaskDefinitionIncompatibilityError {
+impl std::fmt::Display for PlatformTaskDefinitionIncompatibilityException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "PlatformTaskDefinitionIncompatibilityError [PlatformTaskDefinitionIncompatibilityException]")?;
+        write!(f, "PlatformTaskDefinitionIncompatibilityException")?;
         if let Some(inner_11) = &self.message {
             write!(f, ": {}", inner_11)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for PlatformTaskDefinitionIncompatibilityError {}
-/// See [`PlatformTaskDefinitionIncompatibilityError`](crate::error::PlatformTaskDefinitionIncompatibilityError)
-pub mod platform_task_definition_incompatibility_error {
-    /// A builder for [`PlatformTaskDefinitionIncompatibilityError`](crate::error::PlatformTaskDefinitionIncompatibilityError)
+impl std::error::Error for PlatformTaskDefinitionIncompatibilityException {}
+/// See [`PlatformTaskDefinitionIncompatibilityException`](crate::error::PlatformTaskDefinitionIncompatibilityException)
+pub mod platform_task_definition_incompatibility_exception {
+    /// A builder for [`PlatformTaskDefinitionIncompatibilityException`](crate::error::PlatformTaskDefinitionIncompatibilityException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -6183,18 +6413,18 @@ pub mod platform_task_definition_incompatibility_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`PlatformTaskDefinitionIncompatibilityError`](crate::error::PlatformTaskDefinitionIncompatibilityError)
-        pub fn build(self) -> crate::error::PlatformTaskDefinitionIncompatibilityError {
-            crate::error::PlatformTaskDefinitionIncompatibilityError {
+        /// Consumes the builder and constructs a [`PlatformTaskDefinitionIncompatibilityException`](crate::error::PlatformTaskDefinitionIncompatibilityException)
+        pub fn build(self) -> crate::error::PlatformTaskDefinitionIncompatibilityException {
+            crate::error::PlatformTaskDefinitionIncompatibilityException {
                 message: self.message,
             }
         }
     }
 }
-impl PlatformTaskDefinitionIncompatibilityError {
-    /// Creates a new builder-style object to manufacture [`PlatformTaskDefinitionIncompatibilityError`](crate::error::PlatformTaskDefinitionIncompatibilityError)
-    pub fn builder() -> crate::error::platform_task_definition_incompatibility_error::Builder {
-        crate::error::platform_task_definition_incompatibility_error::Builder::default()
+impl PlatformTaskDefinitionIncompatibilityException {
+    /// Creates a new builder-style object to manufacture [`PlatformTaskDefinitionIncompatibilityException`](crate::error::PlatformTaskDefinitionIncompatibilityException)
+    pub fn builder() -> crate::error::platform_task_definition_incompatibility_exception::Builder {
+        crate::error::platform_task_definition_incompatibility_exception::Builder::default()
     }
 }
 
@@ -6204,37 +6434,35 @@ impl PlatformTaskDefinitionIncompatibilityError {
 /// process can get stuck in that state. However, when the agent reconnects, it resumes
 /// where it stopped previously.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateInProgressError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateInProgressException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for UpdateInProgressError {
+impl std::fmt::Debug for UpdateInProgressException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateInProgressError");
+        let mut formatter = f.debug_struct("UpdateInProgressException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl UpdateInProgressError {
+impl UpdateInProgressException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for UpdateInProgressError {
+impl std::fmt::Display for UpdateInProgressException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "UpdateInProgressError [UpdateInProgressException]")?;
+        write!(f, "UpdateInProgressException")?;
         if let Some(inner_12) = &self.message {
             write!(f, ": {}", inner_12)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for UpdateInProgressError {}
-/// See [`UpdateInProgressError`](crate::error::UpdateInProgressError)
-pub mod update_in_progress_error {
-    /// A builder for [`UpdateInProgressError`](crate::error::UpdateInProgressError)
+impl std::error::Error for UpdateInProgressException {}
+/// See [`UpdateInProgressException`](crate::error::UpdateInProgressException)
+pub mod update_in_progress_exception {
+    /// A builder for [`UpdateInProgressException`](crate::error::UpdateInProgressException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -6249,18 +6477,18 @@ pub mod update_in_progress_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateInProgressError`](crate::error::UpdateInProgressError)
-        pub fn build(self) -> crate::error::UpdateInProgressError {
-            crate::error::UpdateInProgressError {
+        /// Consumes the builder and constructs a [`UpdateInProgressException`](crate::error::UpdateInProgressException)
+        pub fn build(self) -> crate::error::UpdateInProgressException {
+            crate::error::UpdateInProgressException {
                 message: self.message,
             }
         }
     }
 }
-impl UpdateInProgressError {
-    /// Creates a new builder-style object to manufacture [`UpdateInProgressError`](crate::error::UpdateInProgressError)
-    pub fn builder() -> crate::error::update_in_progress_error::Builder {
-        crate::error::update_in_progress_error::Builder::default()
+impl UpdateInProgressException {
+    /// Creates a new builder-style object to manufacture [`UpdateInProgressException`](crate::error::UpdateInProgressException)
+    pub fn builder() -> crate::error::update_in_progress_exception::Builder {
+        crate::error::update_in_progress_exception::Builder::default()
     }
 }
 
@@ -6268,37 +6496,35 @@ impl UpdateInProgressError {
 /// agent is already running the latest version, or it is so old that there is no update
 /// path to the current version.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct NoUpdateAvailableError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct NoUpdateAvailableException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for NoUpdateAvailableError {
+impl std::fmt::Debug for NoUpdateAvailableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NoUpdateAvailableError");
+        let mut formatter = f.debug_struct("NoUpdateAvailableException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl NoUpdateAvailableError {
+impl NoUpdateAvailableException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for NoUpdateAvailableError {
+impl std::fmt::Display for NoUpdateAvailableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "NoUpdateAvailableError [NoUpdateAvailableException]")?;
+        write!(f, "NoUpdateAvailableException")?;
         if let Some(inner_13) = &self.message {
             write!(f, ": {}", inner_13)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for NoUpdateAvailableError {}
-/// See [`NoUpdateAvailableError`](crate::error::NoUpdateAvailableError)
-pub mod no_update_available_error {
-    /// A builder for [`NoUpdateAvailableError`](crate::error::NoUpdateAvailableError)
+impl std::error::Error for NoUpdateAvailableException {}
+/// See [`NoUpdateAvailableException`](crate::error::NoUpdateAvailableException)
+pub mod no_update_available_exception {
+    /// A builder for [`NoUpdateAvailableException`](crate::error::NoUpdateAvailableException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -6313,18 +6539,18 @@ pub mod no_update_available_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`NoUpdateAvailableError`](crate::error::NoUpdateAvailableError)
-        pub fn build(self) -> crate::error::NoUpdateAvailableError {
-            crate::error::NoUpdateAvailableError {
+        /// Consumes the builder and constructs a [`NoUpdateAvailableException`](crate::error::NoUpdateAvailableException)
+        pub fn build(self) -> crate::error::NoUpdateAvailableException {
+            crate::error::NoUpdateAvailableException {
                 message: self.message,
             }
         }
     }
 }
-impl NoUpdateAvailableError {
-    /// Creates a new builder-style object to manufacture [`NoUpdateAvailableError`](crate::error::NoUpdateAvailableError)
-    pub fn builder() -> crate::error::no_update_available_error::Builder {
-        crate::error::no_update_available_error::Builder::default()
+impl NoUpdateAvailableException {
+    /// Creates a new builder-style object to manufacture [`NoUpdateAvailableException`](crate::error::NoUpdateAvailableException)
+    pub fn builder() -> crate::error::no_update_available_exception::Builder {
+        crate::error::no_update_available_exception::Builder::default()
     }
 }
 
@@ -6333,37 +6559,35 @@ impl NoUpdateAvailableError {
 /// could be because the agent running on the container instance is an older or custom
 /// version that does not use our version information.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct MissingVersionError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MissingVersionException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for MissingVersionError {
+impl std::fmt::Debug for MissingVersionException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MissingVersionError");
+        let mut formatter = f.debug_struct("MissingVersionException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl MissingVersionError {
+impl MissingVersionException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for MissingVersionError {
+impl std::fmt::Display for MissingVersionException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "MissingVersionError [MissingVersionException]")?;
+        write!(f, "MissingVersionException")?;
         if let Some(inner_14) = &self.message {
             write!(f, ": {}", inner_14)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for MissingVersionError {}
-/// See [`MissingVersionError`](crate::error::MissingVersionError)
-pub mod missing_version_error {
-    /// A builder for [`MissingVersionError`](crate::error::MissingVersionError)
+impl std::error::Error for MissingVersionException {}
+/// See [`MissingVersionException`](crate::error::MissingVersionException)
+pub mod missing_version_exception {
+    /// A builder for [`MissingVersionException`](crate::error::MissingVersionException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -6378,54 +6602,52 @@ pub mod missing_version_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`MissingVersionError`](crate::error::MissingVersionError)
-        pub fn build(self) -> crate::error::MissingVersionError {
-            crate::error::MissingVersionError {
+        /// Consumes the builder and constructs a [`MissingVersionException`](crate::error::MissingVersionException)
+        pub fn build(self) -> crate::error::MissingVersionException {
+            crate::error::MissingVersionException {
                 message: self.message,
             }
         }
     }
 }
-impl MissingVersionError {
-    /// Creates a new builder-style object to manufacture [`MissingVersionError`](crate::error::MissingVersionError)
-    pub fn builder() -> crate::error::missing_version_error::Builder {
-        crate::error::missing_version_error::Builder::default()
+impl MissingVersionException {
+    /// Creates a new builder-style object to manufacture [`MissingVersionException`](crate::error::MissingVersionException)
+    pub fn builder() -> crate::error::missing_version_exception::Builder {
+        crate::error::missing_version_exception::Builder::default()
     }
 }
 
 /// <p>The specified resource could not be found.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct ResourceNotFoundError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ResourceNotFoundException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ResourceNotFoundError {
+impl std::fmt::Debug for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceNotFoundError");
+        let mut formatter = f.debug_struct("ResourceNotFoundException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl ResourceNotFoundError {
+impl ResourceNotFoundException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ResourceNotFoundError {
+impl std::fmt::Display for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ResourceNotFoundError [ResourceNotFoundException]")?;
+        write!(f, "ResourceNotFoundException")?;
         if let Some(inner_15) = &self.message {
             write!(f, ": {}", inner_15)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ResourceNotFoundError {}
-/// See [`ResourceNotFoundError`](crate::error::ResourceNotFoundError)
-pub mod resource_not_found_error {
-    /// A builder for [`ResourceNotFoundError`](crate::error::ResourceNotFoundError)
+impl std::error::Error for ResourceNotFoundException {}
+/// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
+pub mod resource_not_found_exception {
+    /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -6440,54 +6662,52 @@ pub mod resource_not_found_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResourceNotFoundError`](crate::error::ResourceNotFoundError)
-        pub fn build(self) -> crate::error::ResourceNotFoundError {
-            crate::error::ResourceNotFoundError {
+        /// Consumes the builder and constructs a [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
+        pub fn build(self) -> crate::error::ResourceNotFoundException {
+            crate::error::ResourceNotFoundException {
                 message: self.message,
             }
         }
     }
 }
-impl ResourceNotFoundError {
-    /// Creates a new builder-style object to manufacture [`ResourceNotFoundError`](crate::error::ResourceNotFoundError)
-    pub fn builder() -> crate::error::resource_not_found_error::Builder {
-        crate::error::resource_not_found_error::Builder::default()
+impl ResourceNotFoundException {
+    /// Creates a new builder-style object to manufacture [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
+    pub fn builder() -> crate::error::resource_not_found_exception::Builder {
+        crate::error::resource_not_found_exception::Builder::default()
     }
 }
 
 /// <p>Your AWS account has been blocked. For more information, contact <a href="http://aws.amazon.com/contact-us/">AWS Support</a>.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct BlockedError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BlockedException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for BlockedError {
+impl std::fmt::Debug for BlockedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BlockedError");
+        let mut formatter = f.debug_struct("BlockedException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl BlockedError {
+impl BlockedException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for BlockedError {
+impl std::fmt::Display for BlockedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "BlockedError [BlockedException]")?;
+        write!(f, "BlockedException")?;
         if let Some(inner_16) = &self.message {
             write!(f, ": {}", inner_16)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for BlockedError {}
-/// See [`BlockedError`](crate::error::BlockedError)
-pub mod blocked_error {
-    /// A builder for [`BlockedError`](crate::error::BlockedError)
+impl std::error::Error for BlockedException {}
+/// See [`BlockedException`](crate::error::BlockedException)
+pub mod blocked_exception {
+    /// A builder for [`BlockedException`](crate::error::BlockedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -6502,54 +6722,52 @@ pub mod blocked_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`BlockedError`](crate::error::BlockedError)
-        pub fn build(self) -> crate::error::BlockedError {
-            crate::error::BlockedError {
+        /// Consumes the builder and constructs a [`BlockedException`](crate::error::BlockedException)
+        pub fn build(self) -> crate::error::BlockedException {
+            crate::error::BlockedException {
                 message: self.message,
             }
         }
     }
 }
-impl BlockedError {
-    /// Creates a new builder-style object to manufacture [`BlockedError`](crate::error::BlockedError)
-    pub fn builder() -> crate::error::blocked_error::Builder {
-        crate::error::blocked_error::Builder::default()
+impl BlockedException {
+    /// Creates a new builder-style object to manufacture [`BlockedException`](crate::error::BlockedException)
+    pub fn builder() -> crate::error::blocked_exception::Builder {
+        crate::error::blocked_exception::Builder::default()
     }
 }
 
 /// <p>The specified resource is in-use and cannot be removed.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct ResourceInUseError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ResourceInUseException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ResourceInUseError {
+impl std::fmt::Debug for ResourceInUseException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceInUseError");
+        let mut formatter = f.debug_struct("ResourceInUseException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl ResourceInUseError {
+impl ResourceInUseException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ResourceInUseError {
+impl std::fmt::Display for ResourceInUseException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ResourceInUseError [ResourceInUseException]")?;
+        write!(f, "ResourceInUseException")?;
         if let Some(inner_17) = &self.message {
             write!(f, ": {}", inner_17)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ResourceInUseError {}
-/// See [`ResourceInUseError`](crate::error::ResourceInUseError)
-pub mod resource_in_use_error {
-    /// A builder for [`ResourceInUseError`](crate::error::ResourceInUseError)
+impl std::error::Error for ResourceInUseException {}
+/// See [`ResourceInUseException`](crate::error::ResourceInUseException)
+pub mod resource_in_use_exception {
+    /// A builder for [`ResourceInUseException`](crate::error::ResourceInUseException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -6564,18 +6782,18 @@ pub mod resource_in_use_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResourceInUseError`](crate::error::ResourceInUseError)
-        pub fn build(self) -> crate::error::ResourceInUseError {
-            crate::error::ResourceInUseError {
+        /// Consumes the builder and constructs a [`ResourceInUseException`](crate::error::ResourceInUseException)
+        pub fn build(self) -> crate::error::ResourceInUseException {
+            crate::error::ResourceInUseException {
                 message: self.message,
             }
         }
     }
 }
-impl ResourceInUseError {
-    /// Creates a new builder-style object to manufacture [`ResourceInUseError`](crate::error::ResourceInUseError)
-    pub fn builder() -> crate::error::resource_in_use_error::Builder {
-        crate::error::resource_in_use_error::Builder::default()
+impl ResourceInUseException {
+    /// Creates a new builder-style object to manufacture [`ResourceInUseException`](crate::error::ResourceInUseException)
+    pub fn builder() -> crate::error::resource_in_use_exception::Builder {
+        crate::error::resource_in_use_exception::Builder::default()
     }
 }
 
@@ -6583,37 +6801,35 @@ impl ResourceInUseError {
 /// instances with <a>ListContainerInstances</a>. Amazon ECS container instances are
 /// cluster-specific and Region-specific.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct TargetNotFoundError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TargetNotFoundException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for TargetNotFoundError {
+impl std::fmt::Debug for TargetNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TargetNotFoundError");
+        let mut formatter = f.debug_struct("TargetNotFoundException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl TargetNotFoundError {
+impl TargetNotFoundException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for TargetNotFoundError {
+impl std::fmt::Display for TargetNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TargetNotFoundError [TargetNotFoundException]")?;
+        write!(f, "TargetNotFoundException")?;
         if let Some(inner_18) = &self.message {
             write!(f, ": {}", inner_18)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for TargetNotFoundError {}
-/// See [`TargetNotFoundError`](crate::error::TargetNotFoundError)
-pub mod target_not_found_error {
-    /// A builder for [`TargetNotFoundError`](crate::error::TargetNotFoundError)
+impl std::error::Error for TargetNotFoundException {}
+/// See [`TargetNotFoundException`](crate::error::TargetNotFoundException)
+pub mod target_not_found_exception {
+    /// A builder for [`TargetNotFoundException`](crate::error::TargetNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -6628,18 +6844,18 @@ pub mod target_not_found_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TargetNotFoundError`](crate::error::TargetNotFoundError)
-        pub fn build(self) -> crate::error::TargetNotFoundError {
-            crate::error::TargetNotFoundError {
+        /// Consumes the builder and constructs a [`TargetNotFoundException`](crate::error::TargetNotFoundException)
+        pub fn build(self) -> crate::error::TargetNotFoundException {
+            crate::error::TargetNotFoundException {
                 message: self.message,
             }
         }
     }
 }
-impl TargetNotFoundError {
-    /// Creates a new builder-style object to manufacture [`TargetNotFoundError`](crate::error::TargetNotFoundError)
-    pub fn builder() -> crate::error::target_not_found_error::Builder {
-        crate::error::target_not_found_error::Builder::default()
+impl TargetNotFoundException {
+    /// Creates a new builder-style object to manufacture [`TargetNotFoundException`](crate::error::TargetNotFoundException)
+    pub fn builder() -> crate::error::target_not_found_exception::Builder {
+        crate::error::target_not_found_exception::Builder::default()
     }
 }
 
@@ -6647,40 +6863,35 @@ impl TargetNotFoundError {
 /// a resource with <a>ListAttributes</a>. You can remove existing attributes on
 /// a resource with <a>DeleteAttributes</a>.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct AttributeLimitExceededError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AttributeLimitExceededException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for AttributeLimitExceededError {
+impl std::fmt::Debug for AttributeLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttributeLimitExceededError");
+        let mut formatter = f.debug_struct("AttributeLimitExceededException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl AttributeLimitExceededError {
+impl AttributeLimitExceededException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for AttributeLimitExceededError {
+impl std::fmt::Display for AttributeLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "AttributeLimitExceededError [AttributeLimitExceededException]"
-        )?;
+        write!(f, "AttributeLimitExceededException")?;
         if let Some(inner_19) = &self.message {
             write!(f, ": {}", inner_19)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for AttributeLimitExceededError {}
-/// See [`AttributeLimitExceededError`](crate::error::AttributeLimitExceededError)
-pub mod attribute_limit_exceeded_error {
-    /// A builder for [`AttributeLimitExceededError`](crate::error::AttributeLimitExceededError)
+impl std::error::Error for AttributeLimitExceededException {}
+/// See [`AttributeLimitExceededException`](crate::error::AttributeLimitExceededException)
+pub mod attribute_limit_exceeded_exception {
+    /// A builder for [`AttributeLimitExceededException`](crate::error::AttributeLimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -6695,55 +6906,53 @@ pub mod attribute_limit_exceeded_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`AttributeLimitExceededError`](crate::error::AttributeLimitExceededError)
-        pub fn build(self) -> crate::error::AttributeLimitExceededError {
-            crate::error::AttributeLimitExceededError {
+        /// Consumes the builder and constructs a [`AttributeLimitExceededException`](crate::error::AttributeLimitExceededException)
+        pub fn build(self) -> crate::error::AttributeLimitExceededException {
+            crate::error::AttributeLimitExceededException {
                 message: self.message,
             }
         }
     }
 }
-impl AttributeLimitExceededError {
-    /// Creates a new builder-style object to manufacture [`AttributeLimitExceededError`](crate::error::AttributeLimitExceededError)
-    pub fn builder() -> crate::error::attribute_limit_exceeded_error::Builder {
-        crate::error::attribute_limit_exceeded_error::Builder::default()
+impl AttributeLimitExceededException {
+    /// Creates a new builder-style object to manufacture [`AttributeLimitExceededException`](crate::error::AttributeLimitExceededException)
+    pub fn builder() -> crate::error::attribute_limit_exceeded_exception::Builder {
+        crate::error::attribute_limit_exceeded_exception::Builder::default()
     }
 }
 
 /// <p>The target container is not properly configured with the execute command agent or the
 /// container is no longer active or running.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct TargetNotConnectedError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TargetNotConnectedException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for TargetNotConnectedError {
+impl std::fmt::Debug for TargetNotConnectedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TargetNotConnectedError");
+        let mut formatter = f.debug_struct("TargetNotConnectedException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl TargetNotConnectedError {
+impl TargetNotConnectedException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for TargetNotConnectedError {
+impl std::fmt::Display for TargetNotConnectedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TargetNotConnectedError [TargetNotConnectedException]")?;
+        write!(f, "TargetNotConnectedException")?;
         if let Some(inner_20) = &self.message {
             write!(f, ": {}", inner_20)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for TargetNotConnectedError {}
-/// See [`TargetNotConnectedError`](crate::error::TargetNotConnectedError)
-pub mod target_not_connected_error {
-    /// A builder for [`TargetNotConnectedError`](crate::error::TargetNotConnectedError)
+impl std::error::Error for TargetNotConnectedException {}
+/// See [`TargetNotConnectedException`](crate::error::TargetNotConnectedException)
+pub mod target_not_connected_exception {
+    /// A builder for [`TargetNotConnectedException`](crate::error::TargetNotConnectedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -6758,57 +6967,52 @@ pub mod target_not_connected_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TargetNotConnectedError`](crate::error::TargetNotConnectedError)
-        pub fn build(self) -> crate::error::TargetNotConnectedError {
-            crate::error::TargetNotConnectedError {
+        /// Consumes the builder and constructs a [`TargetNotConnectedException`](crate::error::TargetNotConnectedException)
+        pub fn build(self) -> crate::error::TargetNotConnectedException {
+            crate::error::TargetNotConnectedException {
                 message: self.message,
             }
         }
     }
 }
-impl TargetNotConnectedError {
-    /// Creates a new builder-style object to manufacture [`TargetNotConnectedError`](crate::error::TargetNotConnectedError)
-    pub fn builder() -> crate::error::target_not_connected_error::Builder {
-        crate::error::target_not_connected_error::Builder::default()
+impl TargetNotConnectedException {
+    /// Creates a new builder-style object to manufacture [`TargetNotConnectedException`](crate::error::TargetNotConnectedException)
+    pub fn builder() -> crate::error::target_not_connected_exception::Builder {
+        crate::error::target_not_connected_exception::Builder::default()
     }
 }
 
 /// <p>You cannot delete a cluster that has active tasks.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct ClusterContainsTasksError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ClusterContainsTasksException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ClusterContainsTasksError {
+impl std::fmt::Debug for ClusterContainsTasksException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClusterContainsTasksError");
+        let mut formatter = f.debug_struct("ClusterContainsTasksException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl ClusterContainsTasksError {
+impl ClusterContainsTasksException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ClusterContainsTasksError {
+impl std::fmt::Display for ClusterContainsTasksException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "ClusterContainsTasksError [ClusterContainsTasksException]"
-        )?;
+        write!(f, "ClusterContainsTasksException")?;
         if let Some(inner_21) = &self.message {
             write!(f, ": {}", inner_21)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ClusterContainsTasksError {}
-/// See [`ClusterContainsTasksError`](crate::error::ClusterContainsTasksError)
-pub mod cluster_contains_tasks_error {
-    /// A builder for [`ClusterContainsTasksError`](crate::error::ClusterContainsTasksError)
+impl std::error::Error for ClusterContainsTasksException {}
+/// See [`ClusterContainsTasksException`](crate::error::ClusterContainsTasksException)
+pub mod cluster_contains_tasks_exception {
+    /// A builder for [`ClusterContainsTasksException`](crate::error::ClusterContainsTasksException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -6823,18 +7027,18 @@ pub mod cluster_contains_tasks_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ClusterContainsTasksError`](crate::error::ClusterContainsTasksError)
-        pub fn build(self) -> crate::error::ClusterContainsTasksError {
-            crate::error::ClusterContainsTasksError {
+        /// Consumes the builder and constructs a [`ClusterContainsTasksException`](crate::error::ClusterContainsTasksException)
+        pub fn build(self) -> crate::error::ClusterContainsTasksException {
+            crate::error::ClusterContainsTasksException {
                 message: self.message,
             }
         }
     }
 }
-impl ClusterContainsTasksError {
-    /// Creates a new builder-style object to manufacture [`ClusterContainsTasksError`](crate::error::ClusterContainsTasksError)
-    pub fn builder() -> crate::error::cluster_contains_tasks_error::Builder {
-        crate::error::cluster_contains_tasks_error::Builder::default()
+impl ClusterContainsTasksException {
+    /// Creates a new builder-style object to manufacture [`ClusterContainsTasksException`](crate::error::ClusterContainsTasksException)
+    pub fn builder() -> crate::error::cluster_contains_tasks_exception::Builder {
+        crate::error::cluster_contains_tasks_exception::Builder::default()
     }
 }
 
@@ -6842,40 +7046,35 @@ impl ClusterContainsTasksError {
 /// reduce its desired task count to 0 and then delete the service. For more information,
 /// see <a>UpdateService</a> and <a>DeleteService</a>.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct ClusterContainsServicesError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ClusterContainsServicesException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ClusterContainsServicesError {
+impl std::fmt::Debug for ClusterContainsServicesException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClusterContainsServicesError");
+        let mut formatter = f.debug_struct("ClusterContainsServicesException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl ClusterContainsServicesError {
+impl ClusterContainsServicesException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ClusterContainsServicesError {
+impl std::fmt::Display for ClusterContainsServicesException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "ClusterContainsServicesError [ClusterContainsServicesException]"
-        )?;
+        write!(f, "ClusterContainsServicesException")?;
         if let Some(inner_22) = &self.message {
             write!(f, ": {}", inner_22)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ClusterContainsServicesError {}
-/// See [`ClusterContainsServicesError`](crate::error::ClusterContainsServicesError)
-pub mod cluster_contains_services_error {
-    /// A builder for [`ClusterContainsServicesError`](crate::error::ClusterContainsServicesError)
+impl std::error::Error for ClusterContainsServicesException {}
+/// See [`ClusterContainsServicesException`](crate::error::ClusterContainsServicesException)
+pub mod cluster_contains_services_exception {
+    /// A builder for [`ClusterContainsServicesException`](crate::error::ClusterContainsServicesException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -6890,18 +7089,18 @@ pub mod cluster_contains_services_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ClusterContainsServicesError`](crate::error::ClusterContainsServicesError)
-        pub fn build(self) -> crate::error::ClusterContainsServicesError {
-            crate::error::ClusterContainsServicesError {
+        /// Consumes the builder and constructs a [`ClusterContainsServicesException`](crate::error::ClusterContainsServicesException)
+        pub fn build(self) -> crate::error::ClusterContainsServicesException {
+            crate::error::ClusterContainsServicesException {
                 message: self.message,
             }
         }
     }
 }
-impl ClusterContainsServicesError {
-    /// Creates a new builder-style object to manufacture [`ClusterContainsServicesError`](crate::error::ClusterContainsServicesError)
-    pub fn builder() -> crate::error::cluster_contains_services_error::Builder {
-        crate::error::cluster_contains_services_error::Builder::default()
+impl ClusterContainsServicesException {
+    /// Creates a new builder-style object to manufacture [`ClusterContainsServicesException`](crate::error::ClusterContainsServicesException)
+    pub fn builder() -> crate::error::cluster_contains_services_exception::Builder {
+        crate::error::cluster_contains_services_exception::Builder::default()
     }
 }
 
@@ -6909,40 +7108,35 @@ impl ClusterContainsServicesError {
 /// the container instances before you can delete the cluster. For more information, see
 /// <a>DeregisterContainerInstance</a>.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct ClusterContainsContainerInstancesError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ClusterContainsContainerInstancesException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ClusterContainsContainerInstancesError {
+impl std::fmt::Debug for ClusterContainsContainerInstancesException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClusterContainsContainerInstancesError");
+        let mut formatter = f.debug_struct("ClusterContainsContainerInstancesException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl ClusterContainsContainerInstancesError {
+impl ClusterContainsContainerInstancesException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ClusterContainsContainerInstancesError {
+impl std::fmt::Display for ClusterContainsContainerInstancesException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "ClusterContainsContainerInstancesError [ClusterContainsContainerInstancesException]"
-        )?;
+        write!(f, "ClusterContainsContainerInstancesException")?;
         if let Some(inner_23) = &self.message {
             write!(f, ": {}", inner_23)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ClusterContainsContainerInstancesError {}
-/// See [`ClusterContainsContainerInstancesError`](crate::error::ClusterContainsContainerInstancesError)
-pub mod cluster_contains_container_instances_error {
-    /// A builder for [`ClusterContainsContainerInstancesError`](crate::error::ClusterContainsContainerInstancesError)
+impl std::error::Error for ClusterContainsContainerInstancesException {}
+/// See [`ClusterContainsContainerInstancesException`](crate::error::ClusterContainsContainerInstancesException)
+pub mod cluster_contains_container_instances_exception {
+    /// A builder for [`ClusterContainsContainerInstancesException`](crate::error::ClusterContainsContainerInstancesException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -6957,54 +7151,52 @@ pub mod cluster_contains_container_instances_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ClusterContainsContainerInstancesError`](crate::error::ClusterContainsContainerInstancesError)
-        pub fn build(self) -> crate::error::ClusterContainsContainerInstancesError {
-            crate::error::ClusterContainsContainerInstancesError {
+        /// Consumes the builder and constructs a [`ClusterContainsContainerInstancesException`](crate::error::ClusterContainsContainerInstancesException)
+        pub fn build(self) -> crate::error::ClusterContainsContainerInstancesException {
+            crate::error::ClusterContainsContainerInstancesException {
                 message: self.message,
             }
         }
     }
 }
-impl ClusterContainsContainerInstancesError {
-    /// Creates a new builder-style object to manufacture [`ClusterContainsContainerInstancesError`](crate::error::ClusterContainsContainerInstancesError)
-    pub fn builder() -> crate::error::cluster_contains_container_instances_error::Builder {
-        crate::error::cluster_contains_container_instances_error::Builder::default()
+impl ClusterContainsContainerInstancesException {
+    /// Creates a new builder-style object to manufacture [`ClusterContainsContainerInstancesException`](crate::error::ClusterContainsContainerInstancesException)
+    pub fn builder() -> crate::error::cluster_contains_container_instances_exception::Builder {
+        crate::error::cluster_contains_container_instances_exception::Builder::default()
     }
 }
 
 /// <p>The limit for the resource has been exceeded.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct LimitExceededError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct LimitExceededException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for LimitExceededError {
+impl std::fmt::Debug for LimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LimitExceededError");
+        let mut formatter = f.debug_struct("LimitExceededException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl LimitExceededError {
+impl LimitExceededException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for LimitExceededError {
+impl std::fmt::Display for LimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "LimitExceededError [LimitExceededException]")?;
+        write!(f, "LimitExceededException")?;
         if let Some(inner_24) = &self.message {
             write!(f, ": {}", inner_24)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for LimitExceededError {}
-/// See [`LimitExceededError`](crate::error::LimitExceededError)
-pub mod limit_exceeded_error {
-    /// A builder for [`LimitExceededError`](crate::error::LimitExceededError)
+impl std::error::Error for LimitExceededException {}
+/// See [`LimitExceededException`](crate::error::LimitExceededException)
+pub mod limit_exceeded_exception {
+    /// A builder for [`LimitExceededException`](crate::error::LimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -7019,17 +7211,17 @@ pub mod limit_exceeded_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`LimitExceededError`](crate::error::LimitExceededError)
-        pub fn build(self) -> crate::error::LimitExceededError {
-            crate::error::LimitExceededError {
+        /// Consumes the builder and constructs a [`LimitExceededException`](crate::error::LimitExceededException)
+        pub fn build(self) -> crate::error::LimitExceededException {
+            crate::error::LimitExceededException {
                 message: self.message,
             }
         }
     }
 }
-impl LimitExceededError {
-    /// Creates a new builder-style object to manufacture [`LimitExceededError`](crate::error::LimitExceededError)
-    pub fn builder() -> crate::error::limit_exceeded_error::Builder {
-        crate::error::limit_exceeded_error::Builder::default()
+impl LimitExceededException {
+    /// Creates a new builder-style object to manufacture [`LimitExceededException`](crate::error::LimitExceededException)
+    pub fn builder() -> crate::error::limit_exceeded_exception::Builder {
+        crate::error::limit_exceeded_exception::Builder::default()
     }
 }

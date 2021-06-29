@@ -189,8 +189,9 @@ impl CreateApiKeyInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/apikeys").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/apikeys").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -198,7 +199,7 @@ impl CreateApiKeyInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -365,7 +366,7 @@ pub mod create_authorizer_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateAuthorizerInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
                 name: self.name,
                 r#type: self.r#type,
                 provider_ar_ns: self.provider_ar_ns,
@@ -445,13 +446,31 @@ impl CreateAuthorizerInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/restapis/{restApiId}/authorizers",
-            restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false)
+            restApiId = rest_api_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -459,7 +478,7 @@ impl CreateAuthorizerInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -541,7 +560,7 @@ pub mod create_base_path_mapping_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateBasePathMappingInput {
-                domain_name: self.domain_name.unwrap_or_default(),
+                domain_name: self.domain_name,
                 base_path: self.base_path,
                 rest_api_id: self.rest_api_id,
                 stage: self.stage,
@@ -616,13 +635,31 @@ impl CreateBasePathMappingInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let domain_name = {
+            let input = &self.domain_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "domain_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "domain_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/domainnames/{domainName}/basepathmappings",
-            domainName = smithy_http::label::fmt_string(&self.domain_name, false)
+            domainName = domain_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -630,7 +667,7 @@ impl CreateBasePathMappingInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -783,7 +820,7 @@ pub mod create_deployment_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateDeploymentInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
                 stage_name: self.stage_name,
                 stage_description: self.stage_description,
                 description: self.description,
@@ -862,13 +899,31 @@ impl CreateDeploymentInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/restapis/{restApiId}/deployments",
-            restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false)
+            restApiId = rest_api_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -876,7 +931,7 @@ impl CreateDeploymentInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -951,7 +1006,7 @@ pub mod create_documentation_part_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateDocumentationPartInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
                 location: self.location,
                 properties: self.properties,
             })
@@ -1026,13 +1081,31 @@ impl CreateDocumentationPartInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/restapis/{restApiId}/documentation/parts",
-            restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false)
+            restApiId = rest_api_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -1040,7 +1113,7 @@ impl CreateDocumentationPartInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1125,7 +1198,7 @@ pub mod create_documentation_version_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateDocumentationVersionInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
                 documentation_version: self.documentation_version,
                 stage_name: self.stage_name,
                 description: self.description,
@@ -1202,13 +1275,31 @@ impl CreateDocumentationVersionInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/restapis/{restApiId}/documentation/versions",
-            restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false)
+            restApiId = rest_api_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -1216,7 +1307,7 @@ impl CreateDocumentationVersionInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1510,8 +1601,9 @@ impl CreateDomainNameInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/domainnames").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/domainnames").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -1519,7 +1611,7 @@ impl CreateDomainNameInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1609,7 +1701,7 @@ pub mod create_model_input {
         ) -> std::result::Result<crate::input::CreateModelInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::CreateModelInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
                 name: self.name,
                 description: self.description,
                 schema: self.schema,
@@ -1685,13 +1777,31 @@ impl CreateModelInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/restapis/{restApiId}/models",
-            restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false)
+            restApiId = rest_api_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -1699,7 +1809,7 @@ impl CreateModelInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1781,7 +1891,7 @@ pub mod create_request_validator_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateRequestValidatorInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
                 name: self.name,
                 validate_request_body: self.validate_request_body.unwrap_or_default(),
                 validate_request_parameters: self.validate_request_parameters.unwrap_or_default(),
@@ -1856,13 +1966,31 @@ impl CreateRequestValidatorInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/restapis/{restApiId}/requestvalidators",
-            restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false)
+            restApiId = rest_api_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -1870,7 +1998,7 @@ impl CreateRequestValidatorInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1942,8 +2070,8 @@ pub mod create_resource_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateResourceInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
-                parent_id: self.parent_id.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
+                parent_id: self.parent_id,
                 path_part: self.path_part,
             })
         }
@@ -2015,14 +2143,49 @@ impl CreateResourceInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let parent_id = {
+            let input = &self.parent_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "parent_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "parent_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/restapis/{restApiId}/resources/{parentId}",
-            restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false),
-            parentId = smithy_http::label::fmt_string(&self.parent_id, false)
+            restApiId = rest_api_id,
+            parentId = parent_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -2030,7 +2193,7 @@ impl CreateResourceInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2289,8 +2452,9 @@ impl CreateRestApiInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/restapis").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/restapis").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -2298,7 +2462,7 @@ impl CreateRestApiInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2484,7 +2648,7 @@ pub mod create_stage_input {
         ) -> std::result::Result<crate::input::CreateStageInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::CreateStageInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
                 stage_name: self.stage_name,
                 deployment_id: self.deployment_id,
                 description: self.description,
@@ -2566,13 +2730,31 @@ impl CreateStageInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/restapis/{restApiId}/stages",
-            restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false)
+            restApiId = rest_api_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -2580,7 +2762,7 @@ impl CreateStageInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2780,8 +2962,9 @@ impl CreateUsagePlanInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/usageplans").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/usageplans").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -2789,7 +2972,7 @@ impl CreateUsagePlanInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2864,7 +3047,7 @@ pub mod create_usage_plan_key_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateUsagePlanKeyInput {
-                usage_plan_id: self.usage_plan_id.unwrap_or_default(),
+                usage_plan_id: self.usage_plan_id,
                 key_id: self.key_id,
                 key_type: self.key_type,
             })
@@ -2938,13 +3121,31 @@ impl CreateUsagePlanKeyInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let usage_plan_id = {
+            let input = &self.usage_plan_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "usage_plan_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "usage_plan_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/usageplans/{usagePlanId}/keys",
-            usagePlanId = smithy_http::label::fmt_string(&self.usage_plan_id, false)
+            usagePlanId = usage_plan_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -2952,7 +3153,7 @@ impl CreateUsagePlanKeyInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3122,8 +3323,9 @@ impl CreateVpcLinkInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/vpclinks").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/vpclinks").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -3131,7 +3333,7 @@ impl CreateVpcLinkInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3181,7 +3383,7 @@ pub mod delete_api_key_input {
         ) -> std::result::Result<crate::input::DeleteApiKeyInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::DeleteApiKeyInput {
-                api_key: self.api_key.unwrap_or_default(),
+                api_key: self.api_key,
             })
         }
     }
@@ -3250,13 +3452,26 @@ impl DeleteApiKeyInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/apikeys/{apiKey}",
-            apiKey = smithy_http::label::fmt_string(&self.api_key, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let api_key = {
+            let input = &self.api_key;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "api_key",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "api_key",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/apikeys/{apiKey}", apiKey = api_key).expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -3264,7 +3479,7 @@ impl DeleteApiKeyInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("DELETE").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3329,8 +3544,8 @@ pub mod delete_authorizer_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteAuthorizerInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
-                authorizer_id: self.authorizer_id.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
+                authorizer_id: self.authorizer_id,
             })
         }
     }
@@ -3399,14 +3614,49 @@ impl DeleteAuthorizerInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let authorizer_id = {
+            let input = &self.authorizer_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "authorizer_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "authorizer_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/restapis/{restApiId}/authorizers/{authorizerId}",
-            restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false),
-            authorizerId = smithy_http::label::fmt_string(&self.authorizer_id, false)
+            restApiId = rest_api_id,
+            authorizerId = authorizer_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -3414,7 +3664,7 @@ impl DeleteAuthorizerInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("DELETE").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3477,8 +3727,8 @@ pub mod delete_base_path_mapping_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteBasePathMappingInput {
-                domain_name: self.domain_name.unwrap_or_default(),
-                base_path: self.base_path.unwrap_or_default(),
+                domain_name: self.domain_name,
+                base_path: self.base_path,
             })
         }
     }
@@ -3547,14 +3797,49 @@ impl DeleteBasePathMappingInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let domain_name = {
+            let input = &self.domain_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "domain_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "domain_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let base_path = {
+            let input = &self.base_path;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "base_path",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "base_path",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/domainnames/{domainName}/basepathmappings/{basePath}",
-            domainName = smithy_http::label::fmt_string(&self.domain_name, false),
-            basePath = smithy_http::label::fmt_string(&self.base_path, false)
+            domainName = domain_name,
+            basePath = base_path
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -3562,7 +3847,7 @@ impl DeleteBasePathMappingInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("DELETE").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3617,7 +3902,7 @@ pub mod delete_client_certificate_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteClientCertificateInput {
-                client_certificate_id: self.client_certificate_id.unwrap_or_default(),
+                client_certificate_id: self.client_certificate_id,
             })
         }
     }
@@ -3687,14 +3972,31 @@ impl DeleteClientCertificateInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let client_certificate_id = {
+            let input = &self.client_certificate_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "client_certificate_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "client_certificate_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/clientcertificates/{clientCertificateId}",
-            clientCertificateId =
-                smithy_http::label::fmt_string(&self.client_certificate_id, false)
+            clientCertificateId = client_certificate_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -3702,7 +4004,7 @@ impl DeleteClientCertificateInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("DELETE").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3767,8 +4069,8 @@ pub mod delete_deployment_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteDeploymentInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
-                deployment_id: self.deployment_id.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
+                deployment_id: self.deployment_id,
             })
         }
     }
@@ -3837,14 +4139,49 @@ impl DeleteDeploymentInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let deployment_id = {
+            let input = &self.deployment_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "deployment_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "deployment_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/restapis/{restApiId}/deployments/{deploymentId}",
-            restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false),
-            deploymentId = smithy_http::label::fmt_string(&self.deployment_id, false)
+            restApiId = rest_api_id,
+            deploymentId = deployment_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -3852,7 +4189,7 @@ impl DeleteDeploymentInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("DELETE").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3917,8 +4254,8 @@ pub mod delete_documentation_part_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteDocumentationPartInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
-                documentation_part_id: self.documentation_part_id.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
+                documentation_part_id: self.documentation_part_id,
             })
         }
     }
@@ -3988,15 +4325,49 @@ impl DeleteDocumentationPartInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let documentation_part_id = {
+            let input = &self.documentation_part_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "documentation_part_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "documentation_part_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/restapis/{restApiId}/documentation/parts/{documentationPartId}",
-            restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false),
-            documentationPartId =
-                smithy_http::label::fmt_string(&self.documentation_part_id, false)
+            restApiId = rest_api_id,
+            documentationPartId = documentation_part_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -4004,7 +4375,7 @@ impl DeleteDocumentationPartInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("DELETE").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4069,8 +4440,8 @@ pub mod delete_documentation_version_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteDocumentationVersionInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
-                documentation_version: self.documentation_version.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
+                documentation_version: self.documentation_version,
             })
         }
     }
@@ -4140,15 +4511,49 @@ impl DeleteDocumentationVersionInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let documentation_version = {
+            let input = &self.documentation_version;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "documentation_version",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "documentation_version",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/restapis/{restApiId}/documentation/versions/{documentationVersion}",
-            restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false),
-            documentationVersion =
-                smithy_http::label::fmt_string(&self.documentation_version, false)
+            restApiId = rest_api_id,
+            documentationVersion = documentation_version
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -4156,7 +4561,7 @@ impl DeleteDocumentationVersionInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("DELETE").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4208,7 +4613,7 @@ pub mod delete_domain_name_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteDomainNameInput {
-                domain_name: self.domain_name.unwrap_or_default(),
+                domain_name: self.domain_name,
             })
         }
     }
@@ -4277,13 +4682,31 @@ impl DeleteDomainNameInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let domain_name = {
+            let input = &self.domain_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "domain_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "domain_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/domainnames/{domainName}",
-            domainName = smithy_http::label::fmt_string(&self.domain_name, false)
+            domainName = domain_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -4291,7 +4714,7 @@ impl DeleteDomainNameInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("DELETE").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4355,18 +4778,10 @@ pub mod delete_gateway_response_input {
             crate::input::DeleteGatewayResponseInput,
             smithy_http::operation::BuildError,
         > {
-            Ok(
-                crate::input::DeleteGatewayResponseInput {
-                    rest_api_id: self.rest_api_id
-                        .unwrap_or_default()
-                    ,
-                    response_type: self.response_type
-                        .ok_or(
-                            smithy_http::operation::BuildError::MissingField { field: "response_type", details: "response_type was not specified but it is required when building DeleteGatewayResponseInput"}
-                        )?
-                    ,
-                }
-            )
+            Ok(crate::input::DeleteGatewayResponseInput {
+                rest_api_id: self.rest_api_id,
+                response_type: self.response_type,
+            })
         }
     }
 }
@@ -4434,14 +4849,49 @@ impl DeleteGatewayResponseInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let response_type = {
+            let input = &self.response_type;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "response_type",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "response_type",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/restapis/{restApiId}/gatewayresponses/{responseType}",
-            restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false),
-            responseType = smithy_http::label::fmt_string(&self.response_type, false)
+            restApiId = rest_api_id,
+            responseType = response_type
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -4449,7 +4899,7 @@ impl DeleteGatewayResponseInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("DELETE").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4521,9 +4971,9 @@ pub mod delete_integration_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteIntegrationInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
-                resource_id: self.resource_id.unwrap_or_default(),
-                http_method: self.http_method.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
+                resource_id: self.resource_id,
+                http_method: self.http_method,
             })
         }
     }
@@ -4592,15 +5042,67 @@ impl DeleteIntegrationInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let resource_id = {
+            let input = &self.resource_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let http_method = {
+            let input = &self.http_method;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "http_method",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "http_method",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/restapis/{restApiId}/resources/{resourceId}/methods/{httpMethod}/integration",
-            restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false),
-            resourceId = smithy_http::label::fmt_string(&self.resource_id, false),
-            httpMethod = smithy_http::label::fmt_string(&self.http_method, false)
+            restApiId = rest_api_id,
+            resourceId = resource_id,
+            httpMethod = http_method
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -4608,7 +5110,7 @@ impl DeleteIntegrationInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("DELETE").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4690,10 +5192,10 @@ pub mod delete_integration_response_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteIntegrationResponseInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
-                resource_id: self.resource_id.unwrap_or_default(),
-                http_method: self.http_method.unwrap_or_default(),
-                status_code: self.status_code.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
+                resource_id: self.resource_id,
+                http_method: self.http_method,
+                status_code: self.status_code,
             })
         }
     }
@@ -4763,8 +5265,77 @@ impl DeleteIntegrationResponseInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/restapis/{restApiId}/resources/{resourceId}/methods/{httpMethod}/integration/responses/{statusCode}", restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false), resourceId = smithy_http::label::fmt_string(&self.resource_id, false), httpMethod = smithy_http::label::fmt_string(&self.http_method, false), statusCode = smithy_http::label::fmt_string(&self.status_code, false)).expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let resource_id = {
+            let input = &self.resource_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let http_method = {
+            let input = &self.http_method;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "http_method",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "http_method",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let status_code = {
+            let input = &self.status_code;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "status_code",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "status_code",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/restapis/{restApiId}/resources/{resourceId}/methods/{httpMethod}/integration/responses/{statusCode}", restApiId = rest_api_id, resourceId = resource_id, httpMethod = http_method, statusCode = status_code).expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -4772,7 +5343,7 @@ impl DeleteIntegrationResponseInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("DELETE").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4842,9 +5413,9 @@ pub mod delete_method_input {
         ) -> std::result::Result<crate::input::DeleteMethodInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::DeleteMethodInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
-                resource_id: self.resource_id.unwrap_or_default(),
-                http_method: self.http_method.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
+                resource_id: self.resource_id,
+                http_method: self.http_method,
             })
         }
     }
@@ -4913,15 +5484,67 @@ impl DeleteMethodInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let resource_id = {
+            let input = &self.resource_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let http_method = {
+            let input = &self.http_method;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "http_method",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "http_method",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/restapis/{restApiId}/resources/{resourceId}/methods/{httpMethod}",
-            restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false),
-            resourceId = smithy_http::label::fmt_string(&self.resource_id, false),
-            httpMethod = smithy_http::label::fmt_string(&self.http_method, false)
+            restApiId = rest_api_id,
+            resourceId = resource_id,
+            httpMethod = http_method
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -4929,7 +5552,7 @@ impl DeleteMethodInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("DELETE").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -5011,10 +5634,10 @@ pub mod delete_method_response_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteMethodResponseInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
-                resource_id: self.resource_id.unwrap_or_default(),
-                http_method: self.http_method.unwrap_or_default(),
-                status_code: self.status_code.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
+                resource_id: self.resource_id,
+                http_method: self.http_method,
+                status_code: self.status_code,
             })
         }
     }
@@ -5083,8 +5706,77 @@ impl DeleteMethodResponseInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/restapis/{restApiId}/resources/{resourceId}/methods/{httpMethod}/responses/{statusCode}", restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false), resourceId = smithy_http::label::fmt_string(&self.resource_id, false), httpMethod = smithy_http::label::fmt_string(&self.http_method, false), statusCode = smithy_http::label::fmt_string(&self.status_code, false)).expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let resource_id = {
+            let input = &self.resource_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let http_method = {
+            let input = &self.http_method;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "http_method",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "http_method",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let status_code = {
+            let input = &self.status_code;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "status_code",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "status_code",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/restapis/{restApiId}/resources/{resourceId}/methods/{httpMethod}/responses/{statusCode}", restApiId = rest_api_id, resourceId = resource_id, httpMethod = http_method, statusCode = status_code).expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -5092,7 +5784,7 @@ impl DeleteMethodResponseInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("DELETE").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -5152,8 +5844,8 @@ pub mod delete_model_input {
         ) -> std::result::Result<crate::input::DeleteModelInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::DeleteModelInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
-                model_name: self.model_name.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
+                model_name: self.model_name,
             })
         }
     }
@@ -5222,14 +5914,49 @@ impl DeleteModelInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let model_name = {
+            let input = &self.model_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "model_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "model_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/restapis/{restApiId}/models/{modelName}",
-            restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false),
-            modelName = smithy_http::label::fmt_string(&self.model_name, false)
+            restApiId = rest_api_id,
+            modelName = model_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -5237,7 +5964,7 @@ impl DeleteModelInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("DELETE").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -5302,8 +6029,8 @@ pub mod delete_request_validator_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteRequestValidatorInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
-                request_validator_id: self.request_validator_id.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
+                request_validator_id: self.request_validator_id,
             })
         }
     }
@@ -5372,14 +6099,49 @@ impl DeleteRequestValidatorInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let request_validator_id = {
+            let input = &self.request_validator_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "request_validator_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "request_validator_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/restapis/{restApiId}/requestvalidators/{requestValidatorId}",
-            restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false),
-            requestValidatorId = smithy_http::label::fmt_string(&self.request_validator_id, false)
+            restApiId = rest_api_id,
+            requestValidatorId = request_validator_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -5387,7 +6149,7 @@ impl DeleteRequestValidatorInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("DELETE").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -5449,8 +6211,8 @@ pub mod delete_resource_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteResourceInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
-                resource_id: self.resource_id.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
+                resource_id: self.resource_id,
             })
         }
     }
@@ -5519,14 +6281,49 @@ impl DeleteResourceInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let resource_id = {
+            let input = &self.resource_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/restapis/{restApiId}/resources/{resourceId}",
-            restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false),
-            resourceId = smithy_http::label::fmt_string(&self.resource_id, false)
+            restApiId = rest_api_id,
+            resourceId = resource_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -5534,7 +6331,7 @@ impl DeleteResourceInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("DELETE").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -5584,7 +6381,7 @@ pub mod delete_rest_api_input {
         ) -> std::result::Result<crate::input::DeleteRestApiInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::DeleteRestApiInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
             })
         }
     }
@@ -5653,13 +6450,27 @@ impl DeleteRestApiInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/restapis/{restApiId}",
-            restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/restapis/{restApiId}", restApiId = rest_api_id)
+            .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -5667,7 +6478,7 @@ impl DeleteRestApiInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("DELETE").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -5727,8 +6538,8 @@ pub mod delete_stage_input {
         ) -> std::result::Result<crate::input::DeleteStageInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::DeleteStageInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
-                stage_name: self.stage_name.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
+                stage_name: self.stage_name,
             })
         }
     }
@@ -5797,14 +6608,49 @@ impl DeleteStageInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let stage_name = {
+            let input = &self.stage_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "stage_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "stage_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/restapis/{restApiId}/stages/{stageName}",
-            restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false),
-            stageName = smithy_http::label::fmt_string(&self.stage_name, false)
+            restApiId = rest_api_id,
+            stageName = stage_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -5812,7 +6658,7 @@ impl DeleteStageInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("DELETE").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -5867,7 +6713,7 @@ pub mod delete_usage_plan_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteUsagePlanInput {
-                usage_plan_id: self.usage_plan_id.unwrap_or_default(),
+                usage_plan_id: self.usage_plan_id,
             })
         }
     }
@@ -5936,13 +6782,31 @@ impl DeleteUsagePlanInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let usage_plan_id = {
+            let input = &self.usage_plan_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "usage_plan_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "usage_plan_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/usageplans/{usagePlanId}",
-            usagePlanId = smithy_http::label::fmt_string(&self.usage_plan_id, false)
+            usagePlanId = usage_plan_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -5950,7 +6814,7 @@ impl DeleteUsagePlanInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("DELETE").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -6015,8 +6879,8 @@ pub mod delete_usage_plan_key_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteUsagePlanKeyInput {
-                usage_plan_id: self.usage_plan_id.unwrap_or_default(),
-                key_id: self.key_id.unwrap_or_default(),
+                usage_plan_id: self.usage_plan_id,
+                key_id: self.key_id,
             })
         }
     }
@@ -6085,14 +6949,49 @@ impl DeleteUsagePlanKeyInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let usage_plan_id = {
+            let input = &self.usage_plan_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "usage_plan_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "usage_plan_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let key_id = {
+            let input = &self.key_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "key_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "key_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/usageplans/{usagePlanId}/keys/{keyId}",
-            usagePlanId = smithy_http::label::fmt_string(&self.usage_plan_id, false),
-            keyId = smithy_http::label::fmt_string(&self.key_id, false)
+            usagePlanId = usage_plan_id,
+            keyId = key_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -6100,7 +6999,7 @@ impl DeleteUsagePlanKeyInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("DELETE").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -6150,7 +7049,7 @@ pub mod delete_vpc_link_input {
         ) -> std::result::Result<crate::input::DeleteVpcLinkInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::DeleteVpcLinkInput {
-                vpc_link_id: self.vpc_link_id.unwrap_or_default(),
+                vpc_link_id: self.vpc_link_id,
             })
         }
     }
@@ -6219,13 +7118,27 @@ impl DeleteVpcLinkInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/vpclinks/{vpcLinkId}",
-            vpcLinkId = smithy_http::label::fmt_string(&self.vpc_link_id, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let vpc_link_id = {
+            let input = &self.vpc_link_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "vpc_link_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "vpc_link_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/vpclinks/{vpcLinkId}", vpcLinkId = vpc_link_id)
+            .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -6233,7 +7146,7 @@ impl DeleteVpcLinkInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("DELETE").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -6295,8 +7208,8 @@ pub mod flush_stage_authorizers_cache_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::FlushStageAuthorizersCacheInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
-                stage_name: self.stage_name.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
+                stage_name: self.stage_name,
             })
         }
     }
@@ -6366,14 +7279,49 @@ impl FlushStageAuthorizersCacheInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let stage_name = {
+            let input = &self.stage_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "stage_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "stage_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/restapis/{restApiId}/stages/{stageName}/cache/authorizers",
-            restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false),
-            stageName = smithy_http::label::fmt_string(&self.stage_name, false)
+            restApiId = rest_api_id,
+            stageName = stage_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -6381,7 +7329,7 @@ impl FlushStageAuthorizersCacheInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("DELETE").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -6443,8 +7391,8 @@ pub mod flush_stage_cache_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::FlushStageCacheInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
-                stage_name: self.stage_name.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
+                stage_name: self.stage_name,
             })
         }
     }
@@ -6513,14 +7461,49 @@ impl FlushStageCacheInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let stage_name = {
+            let input = &self.stage_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "stage_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "stage_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/restapis/{restApiId}/stages/{stageName}/cache/data",
-            restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false),
-            stageName = smithy_http::label::fmt_string(&self.stage_name, false)
+            restApiId = rest_api_id,
+            stageName = stage_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -6528,7 +7511,7 @@ impl FlushStageCacheInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("DELETE").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -6676,8 +7659,9 @@ impl GenerateClientCertificateInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/clientcertificates").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/clientcertificates").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -6685,7 +7669,7 @@ impl GenerateClientCertificateInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -6791,8 +7775,9 @@ impl GetAccountInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/account").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/account").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -6800,7 +7785,7 @@ impl GetAccountInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -6860,7 +7845,7 @@ pub mod get_api_key_input {
         ) -> std::result::Result<crate::input::GetApiKeyInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::GetApiKeyInput {
-                api_key: self.api_key.unwrap_or_default(),
+                api_key: self.api_key,
                 include_value: self.include_value,
             })
         }
@@ -6928,13 +7913,26 @@ impl GetApiKeyInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/apikeys/{apiKey}",
-            apiKey = smithy_http::label::fmt_string(&self.api_key, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let api_key = {
+            let input = &self.api_key;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "api_key",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "api_key",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/apikeys/{apiKey}", apiKey = api_key).expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -6948,7 +7946,7 @@ impl GetApiKeyInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -7112,8 +8110,9 @@ impl GetApiKeysInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/apikeys").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/apikeys").expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -7139,7 +8138,7 @@ impl GetApiKeysInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -7203,8 +8202,8 @@ pub mod get_authorizer_input {
         ) -> std::result::Result<crate::input::GetAuthorizerInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::GetAuthorizerInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
-                authorizer_id: self.authorizer_id.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
+                authorizer_id: self.authorizer_id,
             })
         }
     }
@@ -7273,14 +8272,49 @@ impl GetAuthorizerInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let authorizer_id = {
+            let input = &self.authorizer_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "authorizer_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "authorizer_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/restapis/{restApiId}/authorizers/{authorizerId}",
-            restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false),
-            authorizerId = smithy_http::label::fmt_string(&self.authorizer_id, false)
+            restApiId = rest_api_id,
+            authorizerId = authorizer_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -7288,7 +8322,7 @@ impl GetAuthorizerInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -7360,7 +8394,7 @@ pub mod get_authorizers_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetAuthorizersInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
                 position: self.position,
                 limit: self.limit,
             })
@@ -7431,13 +8465,31 @@ impl GetAuthorizersInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/restapis/{restApiId}/authorizers",
-            restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false)
+            restApiId = rest_api_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -7454,7 +8506,7 @@ impl GetAuthorizersInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -7517,8 +8569,8 @@ pub mod get_base_path_mapping_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetBasePathMappingInput {
-                domain_name: self.domain_name.unwrap_or_default(),
-                base_path: self.base_path.unwrap_or_default(),
+                domain_name: self.domain_name,
+                base_path: self.base_path,
             })
         }
     }
@@ -7587,14 +8639,49 @@ impl GetBasePathMappingInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let domain_name = {
+            let input = &self.domain_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "domain_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "domain_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let base_path = {
+            let input = &self.base_path;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "base_path",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "base_path",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/domainnames/{domainName}/basepathmappings/{basePath}",
-            domainName = smithy_http::label::fmt_string(&self.domain_name, false),
-            basePath = smithy_http::label::fmt_string(&self.base_path, false)
+            domainName = domain_name,
+            basePath = base_path
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -7602,7 +8689,7 @@ impl GetBasePathMappingInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -7674,7 +8761,7 @@ pub mod get_base_path_mappings_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetBasePathMappingsInput {
-                domain_name: self.domain_name.unwrap_or_default(),
+                domain_name: self.domain_name,
                 position: self.position,
                 limit: self.limit,
             })
@@ -7745,13 +8832,31 @@ impl GetBasePathMappingsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let domain_name = {
+            let input = &self.domain_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "domain_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "domain_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/domainnames/{domainName}/basepathmappings",
-            domainName = smithy_http::label::fmt_string(&self.domain_name, false)
+            domainName = domain_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -7768,7 +8873,7 @@ impl GetBasePathMappingsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -7824,7 +8929,7 @@ pub mod get_client_certificate_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetClientCertificateInput {
-                client_certificate_id: self.client_certificate_id.unwrap_or_default(),
+                client_certificate_id: self.client_certificate_id,
             })
         }
     }
@@ -7893,14 +8998,31 @@ impl GetClientCertificateInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let client_certificate_id = {
+            let input = &self.client_certificate_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "client_certificate_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "client_certificate_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/clientcertificates/{clientCertificateId}",
-            clientCertificateId =
-                smithy_http::label::fmt_string(&self.client_certificate_id, false)
+            clientCertificateId = client_certificate_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -7908,7 +9030,7 @@ impl GetClientCertificateInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -8040,8 +9162,9 @@ impl GetClientCertificatesInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/clientcertificates").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/clientcertificates").expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -8058,7 +9181,7 @@ impl GetClientCertificatesInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -8136,8 +9259,8 @@ pub mod get_deployment_input {
         ) -> std::result::Result<crate::input::GetDeploymentInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::GetDeploymentInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
-                deployment_id: self.deployment_id.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
+                deployment_id: self.deployment_id,
                 embed: self.embed,
             })
         }
@@ -8207,14 +9330,49 @@ impl GetDeploymentInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let deployment_id = {
+            let input = &self.deployment_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "deployment_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "deployment_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/restapis/{restApiId}/deployments/{deploymentId}",
-            restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false),
-            deploymentId = smithy_http::label::fmt_string(&self.deployment_id, false)
+            restApiId = rest_api_id,
+            deploymentId = deployment_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -8230,7 +9388,7 @@ impl GetDeploymentInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -8303,7 +9461,7 @@ pub mod get_deployments_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetDeploymentsInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
                 position: self.position,
                 limit: self.limit,
             })
@@ -8374,13 +9532,31 @@ impl GetDeploymentsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/restapis/{restApiId}/deployments",
-            restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false)
+            restApiId = rest_api_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -8397,7 +9573,7 @@ impl GetDeploymentsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -8463,8 +9639,8 @@ pub mod get_documentation_part_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetDocumentationPartInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
-                documentation_part_id: self.documentation_part_id.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
+                documentation_part_id: self.documentation_part_id,
             })
         }
     }
@@ -8533,15 +9709,49 @@ impl GetDocumentationPartInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let documentation_part_id = {
+            let input = &self.documentation_part_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "documentation_part_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "documentation_part_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/restapis/{restApiId}/documentation/parts/{documentationPartId}",
-            restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false),
-            documentationPartId =
-                smithy_http::label::fmt_string(&self.documentation_part_id, false)
+            restApiId = rest_api_id,
+            documentationPartId = documentation_part_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -8549,7 +9759,7 @@ impl GetDocumentationPartInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -8667,7 +9877,7 @@ pub mod get_documentation_parts_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetDocumentationPartsInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
                 r#type: self.r#type,
                 name_query: self.name_query,
                 path: self.path,
@@ -8742,13 +9952,31 @@ impl GetDocumentationPartsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/restapis/{restApiId}/documentation/parts",
-            restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false)
+            restApiId = rest_api_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -8777,7 +10005,7 @@ impl GetDocumentationPartsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -8843,8 +10071,8 @@ pub mod get_documentation_version_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetDocumentationVersionInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
-                documentation_version: self.documentation_version.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
+                documentation_version: self.documentation_version,
             })
         }
     }
@@ -8914,15 +10142,49 @@ impl GetDocumentationVersionInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let documentation_version = {
+            let input = &self.documentation_version;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "documentation_version",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "documentation_version",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/restapis/{restApiId}/documentation/versions/{documentationVersion}",
-            restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false),
-            documentationVersion =
-                smithy_http::label::fmt_string(&self.documentation_version, false)
+            restApiId = rest_api_id,
+            documentationVersion = documentation_version
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -8930,7 +10192,7 @@ impl GetDocumentationVersionInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -9002,7 +10264,7 @@ pub mod get_documentation_versions_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetDocumentationVersionsInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
                 position: self.position,
                 limit: self.limit,
             })
@@ -9074,13 +10336,31 @@ impl GetDocumentationVersionsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/restapis/{restApiId}/documentation/versions",
-            restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false)
+            restApiId = rest_api_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -9097,7 +10377,7 @@ impl GetDocumentationVersionsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -9148,7 +10428,7 @@ pub mod get_domain_name_input {
         ) -> std::result::Result<crate::input::GetDomainNameInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::GetDomainNameInput {
-                domain_name: self.domain_name.unwrap_or_default(),
+                domain_name: self.domain_name,
             })
         }
     }
@@ -9217,13 +10497,31 @@ impl GetDomainNameInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let domain_name = {
+            let input = &self.domain_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "domain_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "domain_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/domainnames/{domainName}",
-            domainName = smithy_http::label::fmt_string(&self.domain_name, false)
+            domainName = domain_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -9231,7 +10529,7 @@ impl GetDomainNameInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -9363,8 +10661,9 @@ impl GetDomainNamesInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/domainnames").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/domainnames").expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -9381,7 +10680,7 @@ impl GetDomainNamesInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -9484,9 +10783,9 @@ pub mod get_export_input {
         ) -> std::result::Result<crate::input::GetExportInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::GetExportInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
-                stage_name: self.stage_name.unwrap_or_default(),
-                export_type: self.export_type.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
+                stage_name: self.stage_name,
+                export_type: self.export_type,
                 parameters: self.parameters,
                 accepts: self.accepts,
             })
@@ -9555,15 +10854,67 @@ impl GetExportInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let stage_name = {
+            let input = &self.stage_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "stage_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "stage_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let export_type = {
+            let input = &self.export_type;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "export_type",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "export_type",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/restapis/{restApiId}/stages/{stageName}/exports/{exportType}",
-            restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false),
-            stageName = smithy_http::label::fmt_string(&self.stage_name, false),
-            exportType = smithy_http::label::fmt_string(&self.export_type, false)
+            restApiId = rest_api_id,
+            stageName = stage_name,
+            exportType = export_type
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -9595,7 +10946,7 @@ impl GetExportInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         let builder = self.add_headers(builder)?;
         Ok(builder.method("GET").uri(uri))
     }
@@ -9660,18 +11011,10 @@ pub mod get_gateway_response_input {
             crate::input::GetGatewayResponseInput,
             smithy_http::operation::BuildError,
         > {
-            Ok(
-                crate::input::GetGatewayResponseInput {
-                    rest_api_id: self.rest_api_id
-                        .unwrap_or_default()
-                    ,
-                    response_type: self.response_type
-                        .ok_or(
-                            smithy_http::operation::BuildError::MissingField { field: "response_type", details: "response_type was not specified but it is required when building GetGatewayResponseInput"}
-                        )?
-                    ,
-                }
-            )
+            Ok(crate::input::GetGatewayResponseInput {
+                rest_api_id: self.rest_api_id,
+                response_type: self.response_type,
+            })
         }
     }
 }
@@ -9739,14 +11082,49 @@ impl GetGatewayResponseInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let response_type = {
+            let input = &self.response_type;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "response_type",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "response_type",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/restapis/{restApiId}/gatewayresponses/{responseType}",
-            restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false),
-            responseType = smithy_http::label::fmt_string(&self.response_type, false)
+            restApiId = rest_api_id,
+            responseType = response_type
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -9754,7 +11132,7 @@ impl GetGatewayResponseInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -9826,7 +11204,7 @@ pub mod get_gateway_responses_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetGatewayResponsesInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
                 position: self.position,
                 limit: self.limit,
             })
@@ -9897,13 +11275,31 @@ impl GetGatewayResponsesInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/restapis/{restApiId}/gatewayresponses",
-            restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false)
+            restApiId = rest_api_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -9920,7 +11316,7 @@ impl GetGatewayResponsesInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -9993,9 +11389,9 @@ pub mod get_integration_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetIntegrationInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
-                resource_id: self.resource_id.unwrap_or_default(),
-                http_method: self.http_method.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
+                resource_id: self.resource_id,
+                http_method: self.http_method,
             })
         }
     }
@@ -10064,15 +11460,67 @@ impl GetIntegrationInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let resource_id = {
+            let input = &self.resource_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let http_method = {
+            let input = &self.http_method;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "http_method",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "http_method",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/restapis/{restApiId}/resources/{resourceId}/methods/{httpMethod}/integration",
-            restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false),
-            resourceId = smithy_http::label::fmt_string(&self.resource_id, false),
-            httpMethod = smithy_http::label::fmt_string(&self.http_method, false)
+            restApiId = rest_api_id,
+            resourceId = resource_id,
+            httpMethod = http_method
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -10080,7 +11528,7 @@ impl GetIntegrationInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -10162,10 +11610,10 @@ pub mod get_integration_response_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetIntegrationResponseInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
-                resource_id: self.resource_id.unwrap_or_default(),
-                http_method: self.http_method.unwrap_or_default(),
-                status_code: self.status_code.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
+                resource_id: self.resource_id,
+                http_method: self.http_method,
+                status_code: self.status_code,
             })
         }
     }
@@ -10234,8 +11682,77 @@ impl GetIntegrationResponseInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/restapis/{restApiId}/resources/{resourceId}/methods/{httpMethod}/integration/responses/{statusCode}", restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false), resourceId = smithy_http::label::fmt_string(&self.resource_id, false), httpMethod = smithy_http::label::fmt_string(&self.http_method, false), statusCode = smithy_http::label::fmt_string(&self.status_code, false)).expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let resource_id = {
+            let input = &self.resource_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let http_method = {
+            let input = &self.http_method;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "http_method",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "http_method",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let status_code = {
+            let input = &self.status_code;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "status_code",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "status_code",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/restapis/{restApiId}/resources/{resourceId}/methods/{httpMethod}/integration/responses/{statusCode}", restApiId = rest_api_id, resourceId = resource_id, httpMethod = http_method, statusCode = status_code).expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -10243,7 +11760,7 @@ impl GetIntegrationResponseInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -10313,9 +11830,9 @@ pub mod get_method_input {
         ) -> std::result::Result<crate::input::GetMethodInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::GetMethodInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
-                resource_id: self.resource_id.unwrap_or_default(),
-                http_method: self.http_method.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
+                resource_id: self.resource_id,
+                http_method: self.http_method,
             })
         }
     }
@@ -10382,15 +11899,67 @@ impl GetMethodInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let resource_id = {
+            let input = &self.resource_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let http_method = {
+            let input = &self.http_method;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "http_method",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "http_method",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/restapis/{restApiId}/resources/{resourceId}/methods/{httpMethod}",
-            restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false),
-            resourceId = smithy_http::label::fmt_string(&self.resource_id, false),
-            httpMethod = smithy_http::label::fmt_string(&self.http_method, false)
+            restApiId = rest_api_id,
+            resourceId = resource_id,
+            httpMethod = http_method
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -10398,7 +11967,7 @@ impl GetMethodInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -10480,10 +12049,10 @@ pub mod get_method_response_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetMethodResponseInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
-                resource_id: self.resource_id.unwrap_or_default(),
-                http_method: self.http_method.unwrap_or_default(),
-                status_code: self.status_code.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
+                resource_id: self.resource_id,
+                http_method: self.http_method,
+                status_code: self.status_code,
             })
         }
     }
@@ -10552,8 +12121,77 @@ impl GetMethodResponseInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/restapis/{restApiId}/resources/{resourceId}/methods/{httpMethod}/responses/{statusCode}", restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false), resourceId = smithy_http::label::fmt_string(&self.resource_id, false), httpMethod = smithy_http::label::fmt_string(&self.http_method, false), statusCode = smithy_http::label::fmt_string(&self.status_code, false)).expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let resource_id = {
+            let input = &self.resource_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let http_method = {
+            let input = &self.http_method;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "http_method",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "http_method",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let status_code = {
+            let input = &self.status_code;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "status_code",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "status_code",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/restapis/{restApiId}/resources/{resourceId}/methods/{httpMethod}/responses/{statusCode}", restApiId = rest_api_id, resourceId = resource_id, httpMethod = http_method, statusCode = status_code).expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -10561,7 +12199,7 @@ impl GetMethodResponseInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -10631,8 +12269,8 @@ pub mod get_model_input {
         ) -> std::result::Result<crate::input::GetModelInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::GetModelInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
-                model_name: self.model_name.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
+                model_name: self.model_name,
                 flatten: self.flatten.unwrap_or_default(),
             })
         }
@@ -10700,14 +12338,49 @@ impl GetModelInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let model_name = {
+            let input = &self.model_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "model_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "model_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/restapis/{restApiId}/models/{modelName}",
-            restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false),
-            modelName = smithy_http::label::fmt_string(&self.model_name, false)
+            restApiId = rest_api_id,
+            modelName = model_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -10721,7 +12394,7 @@ impl GetModelInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -10792,7 +12465,7 @@ pub mod get_models_input {
         ) -> std::result::Result<crate::input::GetModelsInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::GetModelsInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
                 position: self.position,
                 limit: self.limit,
             })
@@ -10861,13 +12534,31 @@ impl GetModelsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/restapis/{restApiId}/models",
-            restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false)
+            restApiId = rest_api_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -10884,7 +12575,7 @@ impl GetModelsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -10947,8 +12638,8 @@ pub mod get_model_template_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetModelTemplateInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
-                model_name: self.model_name.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
+                model_name: self.model_name,
             })
         }
     }
@@ -11017,14 +12708,49 @@ impl GetModelTemplateInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let model_name = {
+            let input = &self.model_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "model_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "model_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/restapis/{restApiId}/models/{modelName}/default_template",
-            restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false),
-            modelName = smithy_http::label::fmt_string(&self.model_name, false)
+            restApiId = rest_api_id,
+            modelName = model_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -11032,7 +12758,7 @@ impl GetModelTemplateInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -11097,8 +12823,8 @@ pub mod get_request_validator_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetRequestValidatorInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
-                request_validator_id: self.request_validator_id.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
+                request_validator_id: self.request_validator_id,
             })
         }
     }
@@ -11167,14 +12893,49 @@ impl GetRequestValidatorInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let request_validator_id = {
+            let input = &self.request_validator_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "request_validator_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "request_validator_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/restapis/{restApiId}/requestvalidators/{requestValidatorId}",
-            restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false),
-            requestValidatorId = smithy_http::label::fmt_string(&self.request_validator_id, false)
+            restApiId = rest_api_id,
+            requestValidatorId = request_validator_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -11182,7 +12943,7 @@ impl GetRequestValidatorInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -11254,7 +13015,7 @@ pub mod get_request_validators_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetRequestValidatorsInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
                 position: self.position,
                 limit: self.limit,
             })
@@ -11325,13 +13086,31 @@ impl GetRequestValidatorsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/restapis/{restApiId}/requestvalidators",
-            restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false)
+            restApiId = rest_api_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -11348,7 +13127,7 @@ impl GetRequestValidatorsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -11423,8 +13202,8 @@ pub mod get_resource_input {
         ) -> std::result::Result<crate::input::GetResourceInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::GetResourceInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
-                resource_id: self.resource_id.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
+                resource_id: self.resource_id,
                 embed: self.embed,
             })
         }
@@ -11494,14 +13273,49 @@ impl GetResourceInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let resource_id = {
+            let input = &self.resource_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/restapis/{restApiId}/resources/{resourceId}",
-            restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false),
-            resourceId = smithy_http::label::fmt_string(&self.resource_id, false)
+            restApiId = rest_api_id,
+            resourceId = resource_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -11517,7 +13331,7 @@ impl GetResourceInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -11602,7 +13416,7 @@ pub mod get_resources_input {
         ) -> std::result::Result<crate::input::GetResourcesInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::GetResourcesInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
                 position: self.position,
                 limit: self.limit,
                 embed: self.embed,
@@ -11674,13 +13488,31 @@ impl GetResourcesInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/restapis/{restApiId}/resources",
-            restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false)
+            restApiId = rest_api_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -11702,7 +13534,7 @@ impl GetResourcesInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -11753,7 +13585,7 @@ pub mod get_rest_api_input {
         ) -> std::result::Result<crate::input::GetRestApiInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::GetRestApiInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
             })
         }
     }
@@ -11822,13 +13654,27 @@ impl GetRestApiInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/restapis/{restApiId}",
-            restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/restapis/{restApiId}", restApiId = rest_api_id)
+            .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -11836,7 +13682,7 @@ impl GetRestApiInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -11966,8 +13812,9 @@ impl GetRestApisInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/restapis").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/restapis").expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -11984,7 +13831,7 @@ impl GetRestApisInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -12077,9 +13924,9 @@ pub mod get_sdk_input {
         ) -> std::result::Result<crate::input::GetSdkInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::GetSdkInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
-                stage_name: self.stage_name.unwrap_or_default(),
-                sdk_type: self.sdk_type.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
+                stage_name: self.stage_name,
+                sdk_type: self.sdk_type,
                 parameters: self.parameters,
             })
         }
@@ -12144,15 +13991,67 @@ impl GetSdkInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let stage_name = {
+            let input = &self.stage_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "stage_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "stage_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let sdk_type = {
+            let input = &self.sdk_type;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "sdk_type",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "sdk_type",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/restapis/{restApiId}/stages/{stageName}/sdks/{sdkType}",
-            restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false),
-            stageName = smithy_http::label::fmt_string(&self.stage_name, false),
-            sdkType = smithy_http::label::fmt_string(&self.sdk_type, false)
+            restApiId = rest_api_id,
+            stageName = stage_name,
+            sdkType = sdk_type
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -12160,7 +14059,7 @@ impl GetSdkInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -12209,9 +14108,7 @@ pub mod get_sdk_type_input {
             self,
         ) -> std::result::Result<crate::input::GetSdkTypeInput, smithy_http::operation::BuildError>
         {
-            Ok(crate::input::GetSdkTypeInput {
-                id: self.id.unwrap_or_default(),
-            })
+            Ok(crate::input::GetSdkTypeInput { id: self.id })
         }
     }
 }
@@ -12279,13 +14176,26 @@ impl GetSdkTypeInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/sdktypes/{id}",
-            id = smithy_http::label::fmt_string(&self.id, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let id = {
+            let input = &self.id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/sdktypes/{id}", id = id).expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -12293,7 +14203,7 @@ impl GetSdkTypeInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -12423,8 +14333,9 @@ impl GetSdkTypesInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/sdktypes").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/sdktypes").expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -12441,7 +14352,7 @@ impl GetSdkTypesInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -12502,8 +14413,8 @@ pub mod get_stage_input {
         ) -> std::result::Result<crate::input::GetStageInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::GetStageInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
-                stage_name: self.stage_name.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
+                stage_name: self.stage_name,
             })
         }
     }
@@ -12570,14 +14481,49 @@ impl GetStageInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let stage_name = {
+            let input = &self.stage_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "stage_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "stage_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/restapis/{restApiId}/stages/{stageName}",
-            restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false),
-            stageName = smithy_http::label::fmt_string(&self.stage_name, false)
+            restApiId = rest_api_id,
+            stageName = stage_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -12585,7 +14531,7 @@ impl GetStageInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -12648,7 +14594,7 @@ pub mod get_stages_input {
         ) -> std::result::Result<crate::input::GetStagesInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::GetStagesInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
                 deployment_id: self.deployment_id,
             })
         }
@@ -12716,13 +14662,31 @@ impl GetStagesInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/restapis/{restApiId}/stages",
-            restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false)
+            restApiId = rest_api_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -12736,7 +14700,7 @@ impl GetStagesInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -12807,7 +14771,7 @@ pub mod get_tags_input {
         ) -> std::result::Result<crate::input::GetTagsInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::GetTagsInput {
-                resource_arn: self.resource_arn.unwrap_or_default(),
+                resource_arn: self.resource_arn,
                 position: self.position,
                 limit: self.limit,
             })
@@ -12873,13 +14837,27 @@ impl GetTagsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/tags/{resourceArn}",
-            resourceArn = smithy_http::label::fmt_string(&self.resource_arn, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let resource_arn = {
+            let input = &self.resource_arn;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_arn",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_arn",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
+            .expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -12896,7 +14874,7 @@ impl GetTagsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -13000,7 +14978,7 @@ pub mod get_usage_input {
         ) -> std::result::Result<crate::input::GetUsageInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::GetUsageInput {
-                usage_plan_id: self.usage_plan_id.unwrap_or_default(),
+                usage_plan_id: self.usage_plan_id,
                 key_id: self.key_id,
                 start_date: self.start_date,
                 end_date: self.end_date,
@@ -13072,13 +15050,31 @@ impl GetUsageInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let usage_plan_id = {
+            let input = &self.usage_plan_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "usage_plan_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "usage_plan_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/usageplans/{usagePlanId}/usage",
-            usagePlanId = smithy_http::label::fmt_string(&self.usage_plan_id, false)
+            usagePlanId = usage_plan_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -13104,7 +15100,7 @@ impl GetUsageInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -13158,7 +15154,7 @@ pub mod get_usage_plan_input {
         ) -> std::result::Result<crate::input::GetUsagePlanInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::GetUsagePlanInput {
-                usage_plan_id: self.usage_plan_id.unwrap_or_default(),
+                usage_plan_id: self.usage_plan_id,
             })
         }
     }
@@ -13227,13 +15223,31 @@ impl GetUsagePlanInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let usage_plan_id = {
+            let input = &self.usage_plan_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "usage_plan_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "usage_plan_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/usageplans/{usagePlanId}",
-            usagePlanId = smithy_http::label::fmt_string(&self.usage_plan_id, false)
+            usagePlanId = usage_plan_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -13241,7 +15255,7 @@ impl GetUsagePlanInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -13306,8 +15320,8 @@ pub mod get_usage_plan_key_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetUsagePlanKeyInput {
-                usage_plan_id: self.usage_plan_id.unwrap_or_default(),
-                key_id: self.key_id.unwrap_or_default(),
+                usage_plan_id: self.usage_plan_id,
+                key_id: self.key_id,
             })
         }
     }
@@ -13376,14 +15390,49 @@ impl GetUsagePlanKeyInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let usage_plan_id = {
+            let input = &self.usage_plan_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "usage_plan_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "usage_plan_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let key_id = {
+            let input = &self.key_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "key_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "key_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/usageplans/{usagePlanId}/keys/{keyId}",
-            usagePlanId = smithy_http::label::fmt_string(&self.usage_plan_id, false),
-            keyId = smithy_http::label::fmt_string(&self.key_id, false)
+            usagePlanId = usage_plan_id,
+            keyId = key_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -13391,7 +15440,7 @@ impl GetUsagePlanKeyInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -13476,7 +15525,7 @@ pub mod get_usage_plan_keys_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetUsagePlanKeysInput {
-                usage_plan_id: self.usage_plan_id.unwrap_or_default(),
+                usage_plan_id: self.usage_plan_id,
                 position: self.position,
                 limit: self.limit,
                 name_query: self.name_query,
@@ -13548,13 +15597,31 @@ impl GetUsagePlanKeysInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let usage_plan_id = {
+            let input = &self.usage_plan_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "usage_plan_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "usage_plan_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/usageplans/{usagePlanId}/keys",
-            usagePlanId = smithy_http::label::fmt_string(&self.usage_plan_id, false)
+            usagePlanId = usage_plan_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -13574,7 +15641,7 @@ impl GetUsagePlanKeysInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -13716,8 +15783,9 @@ impl GetUsagePlansInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/usageplans").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/usageplans").expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -13737,7 +15805,7 @@ impl GetUsagePlansInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -13788,7 +15856,7 @@ pub mod get_vpc_link_input {
         ) -> std::result::Result<crate::input::GetVpcLinkInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::GetVpcLinkInput {
-                vpc_link_id: self.vpc_link_id.unwrap_or_default(),
+                vpc_link_id: self.vpc_link_id,
             })
         }
     }
@@ -13857,13 +15925,27 @@ impl GetVpcLinkInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/vpclinks/{vpcLinkId}",
-            vpcLinkId = smithy_http::label::fmt_string(&self.vpc_link_id, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let vpc_link_id = {
+            let input = &self.vpc_link_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "vpc_link_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "vpc_link_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/vpclinks/{vpcLinkId}", vpcLinkId = vpc_link_id)
+            .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -13871,7 +15953,7 @@ impl GetVpcLinkInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -14001,8 +16083,9 @@ impl GetVpcLinksInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/vpclinks").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/vpclinks").expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -14019,7 +16102,7 @@ impl GetVpcLinksInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -14164,8 +16247,9 @@ impl ImportApiKeysInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/apikeys").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/apikeys").expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -14186,7 +16270,7 @@ impl ImportApiKeysInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("POST").uri(uri))
     }
@@ -14269,7 +16353,7 @@ pub mod import_documentation_parts_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ImportDocumentationPartsInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
                 mode: self.mode,
                 fail_on_warnings: self.fail_on_warnings.unwrap_or_default(),
                 body: self.body,
@@ -14343,13 +16427,31 @@ impl ImportDocumentationPartsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/restapis/{restApiId}/documentation/parts",
-            restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false)
+            restApiId = rest_api_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -14369,7 +16471,7 @@ impl ImportDocumentationPartsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("PUT").uri(uri))
     }
@@ -14524,8 +16626,9 @@ impl ImportRestApiInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/restapis").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/restapis").expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -14554,7 +16657,7 @@ impl ImportRestApiInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("POST").uri(uri))
     }
@@ -14673,24 +16776,13 @@ pub mod put_gateway_response_input {
             crate::input::PutGatewayResponseInput,
             smithy_http::operation::BuildError,
         > {
-            Ok(
-                crate::input::PutGatewayResponseInput {
-                    rest_api_id: self.rest_api_id
-                        .unwrap_or_default()
-                    ,
-                    response_type: self.response_type
-                        .ok_or(
-                            smithy_http::operation::BuildError::MissingField { field: "response_type", details: "response_type was not specified but it is required when building PutGatewayResponseInput"}
-                        )?
-                    ,
-                    status_code: self.status_code
-                    ,
-                    response_parameters: self.response_parameters
-                    ,
-                    response_templates: self.response_templates
-                    ,
-                }
-            )
+            Ok(crate::input::PutGatewayResponseInput {
+                rest_api_id: self.rest_api_id,
+                response_type: self.response_type,
+                status_code: self.status_code,
+                response_parameters: self.response_parameters,
+                response_templates: self.response_templates,
+            })
         }
     }
 }
@@ -14761,14 +16853,49 @@ impl PutGatewayResponseInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let response_type = {
+            let input = &self.response_type;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "response_type",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "response_type",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/restapis/{restApiId}/gatewayresponses/{responseType}",
-            restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false),
-            responseType = smithy_http::label::fmt_string(&self.response_type, false)
+            restApiId = rest_api_id,
+            responseType = response_type
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -14776,7 +16903,7 @@ impl PutGatewayResponseInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PUT").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -15055,9 +17182,9 @@ pub mod put_integration_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutIntegrationInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
-                resource_id: self.resource_id.unwrap_or_default(),
-                http_method: self.http_method.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
+                resource_id: self.resource_id,
+                http_method: self.http_method,
                 r#type: self.r#type,
                 integration_http_method: self.integration_http_method,
                 uri: self.uri,
@@ -15142,15 +17269,67 @@ impl PutIntegrationInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let resource_id = {
+            let input = &self.resource_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let http_method = {
+            let input = &self.http_method;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "http_method",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "http_method",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/restapis/{restApiId}/resources/{resourceId}/methods/{httpMethod}/integration",
-            restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false),
-            resourceId = smithy_http::label::fmt_string(&self.resource_id, false),
-            httpMethod = smithy_http::label::fmt_string(&self.http_method, false)
+            restApiId = rest_api_id,
+            resourceId = resource_id,
+            httpMethod = http_method
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -15158,7 +17337,7 @@ impl PutIntegrationInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PUT").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -15315,10 +17494,10 @@ pub mod put_integration_response_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutIntegrationResponseInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
-                resource_id: self.resource_id.unwrap_or_default(),
-                http_method: self.http_method.unwrap_or_default(),
-                status_code: self.status_code.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
+                resource_id: self.resource_id,
+                http_method: self.http_method,
+                status_code: self.status_code,
                 selection_pattern: self.selection_pattern,
                 response_parameters: self.response_parameters,
                 response_templates: self.response_templates,
@@ -15394,8 +17573,77 @@ impl PutIntegrationResponseInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/restapis/{restApiId}/resources/{resourceId}/methods/{httpMethod}/integration/responses/{statusCode}", restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false), resourceId = smithy_http::label::fmt_string(&self.resource_id, false), httpMethod = smithy_http::label::fmt_string(&self.http_method, false), statusCode = smithy_http::label::fmt_string(&self.status_code, false)).expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let resource_id = {
+            let input = &self.resource_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let http_method = {
+            let input = &self.http_method;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "http_method",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "http_method",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let status_code = {
+            let input = &self.status_code;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "status_code",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "status_code",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/restapis/{restApiId}/resources/{resourceId}/methods/{httpMethod}/integration/responses/{statusCode}", restApiId = rest_api_id, resourceId = resource_id, httpMethod = http_method, statusCode = status_code).expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -15403,7 +17651,7 @@ impl PutIntegrationResponseInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PUT").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -15590,9 +17838,9 @@ pub mod put_method_input {
         ) -> std::result::Result<crate::input::PutMethodInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::PutMethodInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
-                resource_id: self.resource_id.unwrap_or_default(),
-                http_method: self.http_method.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
+                resource_id: self.resource_id,
+                http_method: self.http_method,
                 authorization_type: self.authorization_type,
                 authorizer_id: self.authorizer_id,
                 api_key_required: self.api_key_required.unwrap_or_default(),
@@ -15670,15 +17918,67 @@ impl PutMethodInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let resource_id = {
+            let input = &self.resource_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let http_method = {
+            let input = &self.http_method;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "http_method",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "http_method",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/restapis/{restApiId}/resources/{resourceId}/methods/{httpMethod}",
-            restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false),
-            resourceId = smithy_http::label::fmt_string(&self.resource_id, false),
-            httpMethod = smithy_http::label::fmt_string(&self.http_method, false)
+            restApiId = rest_api_id,
+            resourceId = resource_id,
+            httpMethod = http_method
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -15686,7 +17986,7 @@ impl PutMethodInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PUT").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -15809,10 +18109,10 @@ pub mod put_method_response_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutMethodResponseInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
-                resource_id: self.resource_id.unwrap_or_default(),
-                http_method: self.http_method.unwrap_or_default(),
-                status_code: self.status_code.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
+                resource_id: self.resource_id,
+                http_method: self.http_method,
+                status_code: self.status_code,
                 response_parameters: self.response_parameters,
                 response_models: self.response_models,
             })
@@ -15886,8 +18186,77 @@ impl PutMethodResponseInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/restapis/{restApiId}/resources/{resourceId}/methods/{httpMethod}/responses/{statusCode}", restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false), resourceId = smithy_http::label::fmt_string(&self.resource_id, false), httpMethod = smithy_http::label::fmt_string(&self.http_method, false), statusCode = smithy_http::label::fmt_string(&self.status_code, false)).expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let resource_id = {
+            let input = &self.resource_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let http_method = {
+            let input = &self.http_method;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "http_method",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "http_method",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let status_code = {
+            let input = &self.status_code;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "status_code",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "status_code",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/restapis/{restApiId}/resources/{resourceId}/methods/{httpMethod}/responses/{statusCode}", restApiId = rest_api_id, resourceId = resource_id, httpMethod = http_method, statusCode = status_code).expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -15895,7 +18264,7 @@ impl PutMethodResponseInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PUT").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -15999,7 +18368,7 @@ pub mod put_rest_api_input {
         ) -> std::result::Result<crate::input::PutRestApiInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::PutRestApiInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
                 mode: self.mode,
                 fail_on_warnings: self.fail_on_warnings.unwrap_or_default(),
                 parameters: self.parameters,
@@ -16072,13 +18441,27 @@ impl PutRestApiInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/restapis/{restApiId}",
-            restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/restapis/{restApiId}", restApiId = rest_api_id)
+            .expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -16109,7 +18492,7 @@ impl PutRestApiInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("PUT").uri(uri))
     }
@@ -16182,7 +18565,7 @@ pub mod tag_resource_input {
         ) -> std::result::Result<crate::input::TagResourceInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::TagResourceInput {
-                resource_arn: self.resource_arn.unwrap_or_default(),
+                resource_arn: self.resource_arn,
                 tags: self.tags,
             })
         }
@@ -16255,13 +18638,27 @@ impl TagResourceInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/tags/{resourceArn}",
-            resourceArn = smithy_http::label::fmt_string(&self.resource_arn, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let resource_arn = {
+            let input = &self.resource_arn;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_arn",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_arn",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
+            .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -16269,7 +18666,7 @@ impl TagResourceInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PUT").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -16445,8 +18842,8 @@ pub mod test_invoke_authorizer_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::TestInvokeAuthorizerInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
-                authorizer_id: self.authorizer_id.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
+                authorizer_id: self.authorizer_id,
                 headers: self.headers,
                 multi_value_headers: self.multi_value_headers,
                 path_with_query_string: self.path_with_query_string,
@@ -16524,14 +18921,49 @@ impl TestInvokeAuthorizerInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let authorizer_id = {
+            let input = &self.authorizer_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "authorizer_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "authorizer_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/restapis/{restApiId}/authorizers/{authorizerId}",
-            restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false),
-            authorizerId = smithy_http::label::fmt_string(&self.authorizer_id, false)
+            restApiId = rest_api_id,
+            authorizerId = authorizer_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -16539,7 +18971,7 @@ impl TestInvokeAuthorizerInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -16713,9 +19145,9 @@ pub mod test_invoke_method_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::TestInvokeMethodInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
-                resource_id: self.resource_id.unwrap_or_default(),
-                http_method: self.http_method.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
+                resource_id: self.resource_id,
+                http_method: self.http_method,
                 path_with_query_string: self.path_with_query_string,
                 body: self.body,
                 headers: self.headers,
@@ -16793,15 +19225,67 @@ impl TestInvokeMethodInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let resource_id = {
+            let input = &self.resource_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let http_method = {
+            let input = &self.http_method;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "http_method",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "http_method",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/restapis/{restApiId}/resources/{resourceId}/methods/{httpMethod}",
-            restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false),
-            resourceId = smithy_http::label::fmt_string(&self.resource_id, false),
-            httpMethod = smithy_http::label::fmt_string(&self.http_method, false)
+            restApiId = rest_api_id,
+            resourceId = resource_id,
+            httpMethod = http_method
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -16809,7 +19293,7 @@ impl TestInvokeMethodInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -16873,7 +19357,7 @@ pub mod untag_resource_input {
         ) -> std::result::Result<crate::input::UntagResourceInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::UntagResourceInput {
-                resource_arn: self.resource_arn.unwrap_or_default(),
+                resource_arn: self.resource_arn,
                 tag_keys: self.tag_keys,
             })
         }
@@ -16943,13 +19427,27 @@ impl UntagResourceInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/tags/{resourceArn}",
-            resourceArn = smithy_http::label::fmt_string(&self.resource_arn, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let resource_arn = {
+            let input = &self.resource_arn;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_arn",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_arn",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
+            .expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -16965,7 +19463,7 @@ impl UntagResourceInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
     }
@@ -17093,8 +19591,9 @@ impl UpdateAccountInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/account").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/account").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -17102,7 +19601,7 @@ impl UpdateAccountInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PATCH").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -17167,7 +19666,7 @@ pub mod update_api_key_input {
         ) -> std::result::Result<crate::input::UpdateApiKeyInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::UpdateApiKeyInput {
-                api_key: self.api_key.unwrap_or_default(),
+                api_key: self.api_key,
                 patch_operations: self.patch_operations,
             })
         }
@@ -17240,13 +19739,26 @@ impl UpdateApiKeyInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/apikeys/{apiKey}",
-            apiKey = smithy_http::label::fmt_string(&self.api_key, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let api_key = {
+            let input = &self.api_key;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "api_key",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "api_key",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/apikeys/{apiKey}", apiKey = api_key).expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -17254,7 +19766,7 @@ impl UpdateApiKeyInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PATCH").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -17334,8 +19846,8 @@ pub mod update_authorizer_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateAuthorizerInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
-                authorizer_id: self.authorizer_id.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
+                authorizer_id: self.authorizer_id,
                 patch_operations: self.patch_operations,
             })
         }
@@ -17407,14 +19919,49 @@ impl UpdateAuthorizerInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let authorizer_id = {
+            let input = &self.authorizer_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "authorizer_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "authorizer_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/restapis/{restApiId}/authorizers/{authorizerId}",
-            restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false),
-            authorizerId = smithy_http::label::fmt_string(&self.authorizer_id, false)
+            restApiId = rest_api_id,
+            authorizerId = authorizer_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -17422,7 +19969,7 @@ impl UpdateAuthorizerInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PATCH").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -17500,8 +20047,8 @@ pub mod update_base_path_mapping_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateBasePathMappingInput {
-                domain_name: self.domain_name.unwrap_or_default(),
-                base_path: self.base_path.unwrap_or_default(),
+                domain_name: self.domain_name,
+                base_path: self.base_path,
                 patch_operations: self.patch_operations,
             })
         }
@@ -17574,14 +20121,49 @@ impl UpdateBasePathMappingInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let domain_name = {
+            let input = &self.domain_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "domain_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "domain_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let base_path = {
+            let input = &self.base_path;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "base_path",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "base_path",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/domainnames/{domainName}/basepathmappings/{basePath}",
-            domainName = smithy_http::label::fmt_string(&self.domain_name, false),
-            basePath = smithy_http::label::fmt_string(&self.base_path, false)
+            domainName = domain_name,
+            basePath = base_path
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -17589,7 +20171,7 @@ impl UpdateBasePathMappingInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PATCH").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -17659,7 +20241,7 @@ pub mod update_client_certificate_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateClientCertificateInput {
-                client_certificate_id: self.client_certificate_id.unwrap_or_default(),
+                client_certificate_id: self.client_certificate_id,
                 patch_operations: self.patch_operations,
             })
         }
@@ -17733,14 +20315,31 @@ impl UpdateClientCertificateInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let client_certificate_id = {
+            let input = &self.client_certificate_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "client_certificate_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "client_certificate_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/clientcertificates/{clientCertificateId}",
-            clientCertificateId =
-                smithy_http::label::fmt_string(&self.client_certificate_id, false)
+            clientCertificateId = client_certificate_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -17748,7 +20347,7 @@ impl UpdateClientCertificateInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PATCH").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -17828,8 +20427,8 @@ pub mod update_deployment_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateDeploymentInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
-                deployment_id: self.deployment_id.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
+                deployment_id: self.deployment_id,
                 patch_operations: self.patch_operations,
             })
         }
@@ -17901,14 +20500,49 @@ impl UpdateDeploymentInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let deployment_id = {
+            let input = &self.deployment_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "deployment_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "deployment_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/restapis/{restApiId}/deployments/{deploymentId}",
-            restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false),
-            deploymentId = smithy_http::label::fmt_string(&self.deployment_id, false)
+            restApiId = rest_api_id,
+            deploymentId = deployment_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -17916,7 +20550,7 @@ impl UpdateDeploymentInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PATCH").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -17996,8 +20630,8 @@ pub mod update_documentation_part_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateDocumentationPartInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
-                documentation_part_id: self.documentation_part_id.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
+                documentation_part_id: self.documentation_part_id,
                 patch_operations: self.patch_operations,
             })
         }
@@ -18071,15 +20705,49 @@ impl UpdateDocumentationPartInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let documentation_part_id = {
+            let input = &self.documentation_part_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "documentation_part_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "documentation_part_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/restapis/{restApiId}/documentation/parts/{documentationPartId}",
-            restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false),
-            documentationPartId =
-                smithy_http::label::fmt_string(&self.documentation_part_id, false)
+            restApiId = rest_api_id,
+            documentationPartId = documentation_part_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -18087,7 +20755,7 @@ impl UpdateDocumentationPartInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PATCH").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -18167,8 +20835,8 @@ pub mod update_documentation_version_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateDocumentationVersionInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
-                documentation_version: self.documentation_version.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
+                documentation_version: self.documentation_version,
                 patch_operations: self.patch_operations,
             })
         }
@@ -18243,15 +20911,49 @@ impl UpdateDocumentationVersionInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let documentation_version = {
+            let input = &self.documentation_version;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "documentation_version",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "documentation_version",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/restapis/{restApiId}/documentation/versions/{documentationVersion}",
-            restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false),
-            documentationVersion =
-                smithy_http::label::fmt_string(&self.documentation_version, false)
+            restApiId = rest_api_id,
+            documentationVersion = documentation_version
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -18259,7 +20961,7 @@ impl UpdateDocumentationVersionInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PATCH").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -18326,7 +21028,7 @@ pub mod update_domain_name_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateDomainNameInput {
-                domain_name: self.domain_name.unwrap_or_default(),
+                domain_name: self.domain_name,
                 patch_operations: self.patch_operations,
             })
         }
@@ -18399,13 +21101,31 @@ impl UpdateDomainNameInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let domain_name = {
+            let input = &self.domain_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "domain_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "domain_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/domainnames/{domainName}",
-            domainName = smithy_http::label::fmt_string(&self.domain_name, false)
+            domainName = domain_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -18413,7 +21133,7 @@ impl UpdateDomainNameInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PATCH").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -18492,20 +21212,11 @@ pub mod update_gateway_response_input {
             crate::input::UpdateGatewayResponseInput,
             smithy_http::operation::BuildError,
         > {
-            Ok(
-                crate::input::UpdateGatewayResponseInput {
-                    rest_api_id: self.rest_api_id
-                        .unwrap_or_default()
-                    ,
-                    response_type: self.response_type
-                        .ok_or(
-                            smithy_http::operation::BuildError::MissingField { field: "response_type", details: "response_type was not specified but it is required when building UpdateGatewayResponseInput"}
-                        )?
-                    ,
-                    patch_operations: self.patch_operations
-                    ,
-                }
-            )
+            Ok(crate::input::UpdateGatewayResponseInput {
+                rest_api_id: self.rest_api_id,
+                response_type: self.response_type,
+                patch_operations: self.patch_operations,
+            })
         }
     }
 }
@@ -18576,14 +21287,49 @@ impl UpdateGatewayResponseInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let response_type = {
+            let input = &self.response_type;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "response_type",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "response_type",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/restapis/{restApiId}/gatewayresponses/{responseType}",
-            restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false),
-            responseType = smithy_http::label::fmt_string(&self.response_type, false)
+            restApiId = rest_api_id,
+            responseType = response_type
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -18591,7 +21337,7 @@ impl UpdateGatewayResponseInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PATCH").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -18678,9 +21424,9 @@ pub mod update_integration_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateIntegrationInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
-                resource_id: self.resource_id.unwrap_or_default(),
-                http_method: self.http_method.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
+                resource_id: self.resource_id,
+                http_method: self.http_method,
                 patch_operations: self.patch_operations,
             })
         }
@@ -18753,15 +21499,67 @@ impl UpdateIntegrationInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let resource_id = {
+            let input = &self.resource_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let http_method = {
+            let input = &self.http_method;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "http_method",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "http_method",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/restapis/{restApiId}/resources/{resourceId}/methods/{httpMethod}/integration",
-            restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false),
-            resourceId = smithy_http::label::fmt_string(&self.resource_id, false),
-            httpMethod = smithy_http::label::fmt_string(&self.http_method, false)
+            restApiId = rest_api_id,
+            resourceId = resource_id,
+            httpMethod = http_method
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -18769,7 +21567,7 @@ impl UpdateIntegrationInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PATCH").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -18866,10 +21664,10 @@ pub mod update_integration_response_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateIntegrationResponseInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
-                resource_id: self.resource_id.unwrap_or_default(),
-                http_method: self.http_method.unwrap_or_default(),
-                status_code: self.status_code.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
+                resource_id: self.resource_id,
+                http_method: self.http_method,
+                status_code: self.status_code,
                 patch_operations: self.patch_operations,
             })
         }
@@ -18943,8 +21741,77 @@ impl UpdateIntegrationResponseInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/restapis/{restApiId}/resources/{resourceId}/methods/{httpMethod}/integration/responses/{statusCode}", restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false), resourceId = smithy_http::label::fmt_string(&self.resource_id, false), httpMethod = smithy_http::label::fmt_string(&self.http_method, false), statusCode = smithy_http::label::fmt_string(&self.status_code, false)).expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let resource_id = {
+            let input = &self.resource_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let http_method = {
+            let input = &self.http_method;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "http_method",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "http_method",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let status_code = {
+            let input = &self.status_code;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "status_code",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "status_code",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/restapis/{restApiId}/resources/{resourceId}/methods/{httpMethod}/integration/responses/{statusCode}", restApiId = rest_api_id, resourceId = resource_id, httpMethod = http_method, statusCode = status_code).expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -18952,7 +21819,7 @@ impl UpdateIntegrationResponseInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PATCH").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -19037,9 +21904,9 @@ pub mod update_method_input {
         ) -> std::result::Result<crate::input::UpdateMethodInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::UpdateMethodInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
-                resource_id: self.resource_id.unwrap_or_default(),
-                http_method: self.http_method.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
+                resource_id: self.resource_id,
+                http_method: self.http_method,
                 patch_operations: self.patch_operations,
             })
         }
@@ -19112,15 +21979,67 @@ impl UpdateMethodInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let resource_id = {
+            let input = &self.resource_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let http_method = {
+            let input = &self.http_method;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "http_method",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "http_method",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/restapis/{restApiId}/resources/{resourceId}/methods/{httpMethod}",
-            restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false),
-            resourceId = smithy_http::label::fmt_string(&self.resource_id, false),
-            httpMethod = smithy_http::label::fmt_string(&self.http_method, false)
+            restApiId = rest_api_id,
+            resourceId = resource_id,
+            httpMethod = http_method
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -19128,7 +22047,7 @@ impl UpdateMethodInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PATCH").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -19225,10 +22144,10 @@ pub mod update_method_response_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateMethodResponseInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
-                resource_id: self.resource_id.unwrap_or_default(),
-                http_method: self.http_method.unwrap_or_default(),
-                status_code: self.status_code.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
+                resource_id: self.resource_id,
+                http_method: self.http_method,
+                status_code: self.status_code,
                 patch_operations: self.patch_operations,
             })
         }
@@ -19301,8 +22220,77 @@ impl UpdateMethodResponseInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/restapis/{restApiId}/resources/{resourceId}/methods/{httpMethod}/responses/{statusCode}", restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false), resourceId = smithy_http::label::fmt_string(&self.resource_id, false), httpMethod = smithy_http::label::fmt_string(&self.http_method, false), statusCode = smithy_http::label::fmt_string(&self.status_code, false)).expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let resource_id = {
+            let input = &self.resource_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let http_method = {
+            let input = &self.http_method;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "http_method",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "http_method",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let status_code = {
+            let input = &self.status_code;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "status_code",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "status_code",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/restapis/{restApiId}/resources/{resourceId}/methods/{httpMethod}/responses/{statusCode}", restApiId = rest_api_id, resourceId = resource_id, httpMethod = http_method, statusCode = status_code).expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -19310,7 +22298,7 @@ impl UpdateMethodResponseInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PATCH").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -19385,8 +22373,8 @@ pub mod update_model_input {
         ) -> std::result::Result<crate::input::UpdateModelInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::UpdateModelInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
-                model_name: self.model_name.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
+                model_name: self.model_name,
                 patch_operations: self.patch_operations,
             })
         }
@@ -19459,14 +22447,49 @@ impl UpdateModelInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let model_name = {
+            let input = &self.model_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "model_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "model_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/restapis/{restApiId}/models/{modelName}",
-            restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false),
-            modelName = smithy_http::label::fmt_string(&self.model_name, false)
+            restApiId = rest_api_id,
+            modelName = model_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -19474,7 +22497,7 @@ impl UpdateModelInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PATCH").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -19554,8 +22577,8 @@ pub mod update_request_validator_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateRequestValidatorInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
-                request_validator_id: self.request_validator_id.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
+                request_validator_id: self.request_validator_id,
                 patch_operations: self.patch_operations,
             })
         }
@@ -19628,14 +22651,49 @@ impl UpdateRequestValidatorInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let request_validator_id = {
+            let input = &self.request_validator_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "request_validator_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "request_validator_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/restapis/{restApiId}/requestvalidators/{requestValidatorId}",
-            restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false),
-            requestValidatorId = smithy_http::label::fmt_string(&self.request_validator_id, false)
+            restApiId = rest_api_id,
+            requestValidatorId = request_validator_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -19643,7 +22701,7 @@ impl UpdateRequestValidatorInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PATCH").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -19720,8 +22778,8 @@ pub mod update_resource_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateResourceInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
-                resource_id: self.resource_id.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
+                resource_id: self.resource_id,
                 patch_operations: self.patch_operations,
             })
         }
@@ -19793,14 +22851,49 @@ impl UpdateResourceInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let resource_id = {
+            let input = &self.resource_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/restapis/{restApiId}/resources/{resourceId}",
-            restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false),
-            resourceId = smithy_http::label::fmt_string(&self.resource_id, false)
+            restApiId = rest_api_id,
+            resourceId = resource_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -19808,7 +22901,7 @@ impl UpdateResourceInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PATCH").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -19873,7 +22966,7 @@ pub mod update_rest_api_input {
         ) -> std::result::Result<crate::input::UpdateRestApiInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::UpdateRestApiInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
                 patch_operations: self.patch_operations,
             })
         }
@@ -19945,13 +23038,27 @@ impl UpdateRestApiInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/restapis/{restApiId}",
-            restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/restapis/{restApiId}", restApiId = rest_api_id)
+            .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -19959,7 +23066,7 @@ impl UpdateRestApiInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PATCH").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -20034,8 +23141,8 @@ pub mod update_stage_input {
         ) -> std::result::Result<crate::input::UpdateStageInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::UpdateStageInput {
-                rest_api_id: self.rest_api_id.unwrap_or_default(),
-                stage_name: self.stage_name.unwrap_or_default(),
+                rest_api_id: self.rest_api_id,
+                stage_name: self.stage_name,
                 patch_operations: self.patch_operations,
             })
         }
@@ -20108,14 +23215,49 @@ impl UpdateStageInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let rest_api_id = {
+            let input = &self.rest_api_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "rest_api_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let stage_name = {
+            let input = &self.stage_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "stage_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "stage_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/restapis/{restApiId}/stages/{stageName}",
-            restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false),
-            stageName = smithy_http::label::fmt_string(&self.stage_name, false)
+            restApiId = rest_api_id,
+            stageName = stage_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -20123,7 +23265,7 @@ impl UpdateStageInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PATCH").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -20201,8 +23343,8 @@ pub mod update_usage_input {
         ) -> std::result::Result<crate::input::UpdateUsageInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::UpdateUsageInput {
-                usage_plan_id: self.usage_plan_id.unwrap_or_default(),
-                key_id: self.key_id.unwrap_or_default(),
+                usage_plan_id: self.usage_plan_id,
+                key_id: self.key_id,
                 patch_operations: self.patch_operations,
             })
         }
@@ -20275,14 +23417,49 @@ impl UpdateUsageInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let usage_plan_id = {
+            let input = &self.usage_plan_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "usage_plan_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "usage_plan_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let key_id = {
+            let input = &self.key_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "key_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "key_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/usageplans/{usagePlanId}/keys/{keyId}/usage",
-            usagePlanId = smithy_http::label::fmt_string(&self.usage_plan_id, false),
-            keyId = smithy_http::label::fmt_string(&self.key_id, false)
+            usagePlanId = usage_plan_id,
+            keyId = key_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -20290,7 +23467,7 @@ impl UpdateUsageInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PATCH").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -20360,7 +23537,7 @@ pub mod update_usage_plan_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateUsagePlanInput {
-                usage_plan_id: self.usage_plan_id.unwrap_or_default(),
+                usage_plan_id: self.usage_plan_id,
                 patch_operations: self.patch_operations,
             })
         }
@@ -20432,13 +23609,31 @@ impl UpdateUsagePlanInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let usage_plan_id = {
+            let input = &self.usage_plan_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "usage_plan_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "usage_plan_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/usageplans/{usagePlanId}",
-            usagePlanId = smithy_http::label::fmt_string(&self.usage_plan_id, false)
+            usagePlanId = usage_plan_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -20446,7 +23641,7 @@ impl UpdateUsagePlanInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PATCH").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -20511,7 +23706,7 @@ pub mod update_vpc_link_input {
         ) -> std::result::Result<crate::input::UpdateVpcLinkInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::UpdateVpcLinkInput {
-                vpc_link_id: self.vpc_link_id.unwrap_or_default(),
+                vpc_link_id: self.vpc_link_id,
                 patch_operations: self.patch_operations,
             })
         }
@@ -20583,13 +23778,27 @@ impl UpdateVpcLinkInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/vpclinks/{vpcLinkId}",
-            vpcLinkId = smithy_http::label::fmt_string(&self.vpc_link_id, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let vpc_link_id = {
+            let input = &self.vpc_link_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "vpc_link_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "vpc_link_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/vpclinks/{vpcLinkId}", vpcLinkId = vpc_link_id)
+            .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -20597,7 +23806,7 @@ impl UpdateVpcLinkInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PATCH").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -20628,7 +23837,7 @@ impl UpdateVpcLinkInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateVpcLinkInput {
     /// <p>[Required] The identifier of the  <a>VpcLink</a>. It is used in an <a>Integration</a> to reference this <a>VpcLink</a>.</p>
-    pub vpc_link_id: std::string::String,
+    pub vpc_link_id: std::option::Option<std::string::String>,
     /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
@@ -20646,7 +23855,7 @@ impl std::fmt::Debug for UpdateVpcLinkInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateUsagePlanInput {
     /// <p>[Required] The Id of the to-be-updated usage plan.</p>
-    pub usage_plan_id: std::string::String,
+    pub usage_plan_id: std::option::Option<std::string::String>,
     /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
@@ -20664,9 +23873,9 @@ impl std::fmt::Debug for UpdateUsagePlanInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateUsageInput {
     /// <p>[Required] The Id of the usage plan associated with the usage data.</p>
-    pub usage_plan_id: std::string::String,
+    pub usage_plan_id: std::option::Option<std::string::String>,
     /// <p>[Required] The identifier of the API key associated with the usage plan in which a temporary extension is granted to the remaining quota.</p>
-    pub key_id: std::string::String,
+    pub key_id: std::option::Option<std::string::String>,
     /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
@@ -20685,9 +23894,9 @@ impl std::fmt::Debug for UpdateUsageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateStageInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>[Required] The name of the <a>Stage</a> resource to change information about.</p>
-    pub stage_name: std::string::String,
+    pub stage_name: std::option::Option<std::string::String>,
     /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
@@ -20706,7 +23915,7 @@ impl std::fmt::Debug for UpdateStageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRestApiInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
@@ -20724,9 +23933,9 @@ impl std::fmt::Debug for UpdateRestApiInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateResourceInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>[Required] The identifier of the <a>Resource</a> resource.</p>
-    pub resource_id: std::string::String,
+    pub resource_id: std::option::Option<std::string::String>,
     /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
@@ -20745,9 +23954,9 @@ impl std::fmt::Debug for UpdateResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRequestValidatorInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>[Required] The identifier of <a>RequestValidator</a> to be updated.</p>
-    pub request_validator_id: std::string::String,
+    pub request_validator_id: std::option::Option<std::string::String>,
     /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
@@ -20766,9 +23975,9 @@ impl std::fmt::Debug for UpdateRequestValidatorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateModelInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>[Required] The name of the model to update.</p>
-    pub model_name: std::string::String,
+    pub model_name: std::option::Option<std::string::String>,
     /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
@@ -20787,13 +23996,13 @@ impl std::fmt::Debug for UpdateModelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMethodResponseInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>[Required] The <a>Resource</a> identifier for the <a>MethodResponse</a> resource.</p>
-    pub resource_id: std::string::String,
+    pub resource_id: std::option::Option<std::string::String>,
     /// <p>[Required] The HTTP verb of the <a>Method</a> resource.</p>
-    pub http_method: std::string::String,
+    pub http_method: std::option::Option<std::string::String>,
     /// <p>[Required] The status code for the <a>MethodResponse</a> resource.</p>
-    pub status_code: std::string::String,
+    pub status_code: std::option::Option<std::string::String>,
     /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
@@ -20814,11 +24023,11 @@ impl std::fmt::Debug for UpdateMethodResponseInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMethodInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>[Required] The <a>Resource</a> identifier for the <a>Method</a> resource.</p>
-    pub resource_id: std::string::String,
+    pub resource_id: std::option::Option<std::string::String>,
     /// <p>[Required] The HTTP verb of the <a>Method</a> resource.</p>
-    pub http_method: std::string::String,
+    pub http_method: std::option::Option<std::string::String>,
     /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
@@ -20838,13 +24047,13 @@ impl std::fmt::Debug for UpdateMethodInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateIntegrationResponseInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>[Required] Specifies an update integration response request's resource identifier.</p>
-    pub resource_id: std::string::String,
+    pub resource_id: std::option::Option<std::string::String>,
     /// <p>[Required] Specifies an update integration response request's HTTP method.</p>
-    pub http_method: std::string::String,
+    pub http_method: std::option::Option<std::string::String>,
     /// <p>[Required] Specifies an update integration response request's status code.</p>
-    pub status_code: std::string::String,
+    pub status_code: std::option::Option<std::string::String>,
     /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
@@ -20865,11 +24074,11 @@ impl std::fmt::Debug for UpdateIntegrationResponseInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateIntegrationInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>[Required] Represents an update integration request's resource identifier.</p>
-    pub resource_id: std::string::String,
+    pub resource_id: std::option::Option<std::string::String>,
     /// <p>[Required] Represents an update integration request's HTTP method.</p>
-    pub http_method: std::string::String,
+    pub http_method: std::option::Option<std::string::String>,
     /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
@@ -20889,9 +24098,9 @@ impl std::fmt::Debug for UpdateIntegrationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGatewayResponseInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>[Required] <p>The response type of the associated <a>GatewayResponse</a>. Valid values are <ul><li>ACCESS_DENIED</li><li>API_CONFIGURATION_ERROR</li><li>AUTHORIZER_FAILURE</li><li> AUTHORIZER_CONFIGURATION_ERROR</li><li>BAD_REQUEST_PARAMETERS</li><li>BAD_REQUEST_BODY</li><li>DEFAULT_4XX</li><li>DEFAULT_5XX</li><li>EXPIRED_TOKEN</li><li>INVALID_SIGNATURE</li><li>INTEGRATION_FAILURE</li><li>INTEGRATION_TIMEOUT</li><li>INVALID_API_KEY</li><li>MISSING_AUTHENTICATION_TOKEN</li><li> QUOTA_EXCEEDED</li><li>REQUEST_TOO_LARGE</li><li>RESOURCE_NOT_FOUND</li><li>THROTTLED</li><li>UNAUTHORIZED</li><li>UNSUPPORTED_MEDIA_TYPE</li></ul> </p></p>
-    pub response_type: crate::model::GatewayResponseType,
+    pub response_type: std::option::Option<crate::model::GatewayResponseType>,
     /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
@@ -20910,7 +24119,7 @@ impl std::fmt::Debug for UpdateGatewayResponseInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDomainNameInput {
     /// <p>[Required] The name of the <a>DomainName</a> resource to be changed.</p>
-    pub domain_name: std::string::String,
+    pub domain_name: std::option::Option<std::string::String>,
     /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
@@ -20928,9 +24137,9 @@ impl std::fmt::Debug for UpdateDomainNameInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDocumentationVersionInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>..</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>[Required] The version identifier of the to-be-updated documentation version.</p>
-    pub documentation_version: std::string::String,
+    pub documentation_version: std::option::Option<std::string::String>,
     /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
@@ -20949,9 +24158,9 @@ impl std::fmt::Debug for UpdateDocumentationVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDocumentationPartInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>[Required] The identifier of the to-be-updated documentation part.</p>
-    pub documentation_part_id: std::string::String,
+    pub documentation_part_id: std::option::Option<std::string::String>,
     /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
@@ -20970,9 +24179,9 @@ impl std::fmt::Debug for UpdateDocumentationPartInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDeploymentInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The replacement identifier for the <a>Deployment</a> resource to change information about.</p>
-    pub deployment_id: std::string::String,
+    pub deployment_id: std::option::Option<std::string::String>,
     /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
@@ -20991,7 +24200,7 @@ impl std::fmt::Debug for UpdateDeploymentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateClientCertificateInput {
     /// <p>[Required] The identifier of the <a>ClientCertificate</a> resource to be updated.</p>
-    pub client_certificate_id: std::string::String,
+    pub client_certificate_id: std::option::Option<std::string::String>,
     /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
@@ -21009,10 +24218,10 @@ impl std::fmt::Debug for UpdateClientCertificateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBasePathMappingInput {
     /// <p>[Required] The domain name of the <a>BasePathMapping</a> resource to change.</p>
-    pub domain_name: std::string::String,
+    pub domain_name: std::option::Option<std::string::String>,
     /// <p>[Required] The base path of the <a>BasePathMapping</a> resource to change.</p>
     /// <p>To specify an empty base path, set this parameter to <code>'(none)'</code>.</p>
-    pub base_path: std::string::String,
+    pub base_path: std::option::Option<std::string::String>,
     /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
@@ -21031,9 +24240,9 @@ impl std::fmt::Debug for UpdateBasePathMappingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAuthorizerInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>[Required] The identifier of the <a>Authorizer</a> resource.</p>
-    pub authorizer_id: std::string::String,
+    pub authorizer_id: std::option::Option<std::string::String>,
     /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
@@ -21052,7 +24261,7 @@ impl std::fmt::Debug for UpdateAuthorizerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateApiKeyInput {
     /// <p>[Required] The identifier of the <a>ApiKey</a> resource to be updated.</p>
-    pub api_key: std::string::String,
+    pub api_key: std::option::Option<std::string::String>,
     /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
@@ -21085,7 +24294,7 @@ impl std::fmt::Debug for UpdateAccountInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>[Required] The ARN of a resource that can be tagged.</p>
-    pub resource_arn: std::string::String,
+    pub resource_arn: std::option::Option<std::string::String>,
     /// <p>[Required] The Tag keys to delete.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
@@ -21103,11 +24312,11 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestInvokeMethodInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>[Required] Specifies a test invoke method request's resource ID.</p>
-    pub resource_id: std::string::String,
+    pub resource_id: std::option::Option<std::string::String>,
     /// <p>[Required] Specifies a test invoke method request's HTTP method.</p>
-    pub http_method: std::string::String,
+    pub http_method: std::option::Option<std::string::String>,
     /// <p>The URI path, including query string, of the simulated invocation request. Use this to specify path parameters and query string parameters.</p>
     pub path_with_query_string: std::option::Option<std::string::String>,
     /// <p>The simulated request body of an incoming invocation request.</p>
@@ -21146,9 +24355,9 @@ impl std::fmt::Debug for TestInvokeMethodInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestInvokeAuthorizerInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>[Required] Specifies a test invoke authorizer request's <a>Authorizer</a> ID.</p>
-    pub authorizer_id: std::string::String,
+    pub authorizer_id: std::option::Option<std::string::String>,
     /// <p>[Required] A key-value map of headers to simulate an incoming invocation request. This is where the incoming authorization token, or identity source, should be specified.</p>
     pub headers:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -21187,7 +24396,7 @@ impl std::fmt::Debug for TestInvokeAuthorizerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>[Required] The ARN of a resource that can be tagged.</p>
-    pub resource_arn: std::string::String,
+    pub resource_arn: std::option::Option<std::string::String>,
     /// <p>[Required] The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -21206,7 +24415,7 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutRestApiInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The <code>mode</code> query parameter to specify the update mode. Valid values are "merge" and "overwrite". By default,
     /// the update mode is "merge".</p>
     pub mode: std::option::Option<crate::model::PutMode>,
@@ -21236,13 +24445,13 @@ impl std::fmt::Debug for PutRestApiInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutMethodResponseInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>[Required] The <a>Resource</a> identifier for the <a>Method</a> resource.</p>
-    pub resource_id: std::string::String,
+    pub resource_id: std::option::Option<std::string::String>,
     /// <p>[Required] The HTTP verb of the <a>Method</a> resource.</p>
-    pub http_method: std::string::String,
+    pub http_method: std::option::Option<std::string::String>,
     /// <p>[Required] The method response's status code.</p>
-    pub status_code: std::string::String,
+    pub status_code: std::option::Option<std::string::String>,
     /// <p>A key-value map specifying required or optional response parameters that API Gateway can send back to the caller. A key defines a method response header name and the associated value is a Boolean flag indicating whether the method response parameter is required or not. The method response header names must match the pattern of <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. The response parameter names defined here are available in the integration response to be mapped from an integration response header expressed in <code>integration.response.header.{name}</code>, a static value enclosed within a pair of single quotes (e.g., <code>'application/json'</code>), or a JSON expression from the back-end response payload in the form of <code>integration.response.body.{JSON-expression}</code>, where <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.)</p>
     pub response_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, bool>>,
@@ -21268,11 +24477,11 @@ impl std::fmt::Debug for PutMethodResponseInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutMethodInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>[Required] The <a>Resource</a> identifier for the new <a>Method</a> resource.</p>
-    pub resource_id: std::string::String,
+    pub resource_id: std::option::Option<std::string::String>,
     /// <p>[Required] Specifies the method request's HTTP method type.</p>
-    pub http_method: std::string::String,
+    pub http_method: std::option::Option<std::string::String>,
     /// <p>[Required] The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a Cognito user pool.</p>
     pub authorization_type: std::option::Option<std::string::String>,
     /// <p>Specifies the identifier of an <a>Authorizer</a> to use on this Method, if the type is CUSTOM or COGNITO_USER_POOLS. The authorizer identifier is generated by API Gateway when you created the authorizer.</p>
@@ -21315,13 +24524,13 @@ impl std::fmt::Debug for PutMethodInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutIntegrationResponseInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>[Required] Specifies a put integration response request's resource identifier.</p>
-    pub resource_id: std::string::String,
+    pub resource_id: std::option::Option<std::string::String>,
     /// <p>[Required] Specifies a put integration response request's HTTP method.</p>
-    pub http_method: std::string::String,
+    pub http_method: std::option::Option<std::string::String>,
     /// <p>[Required] Specifies the status code that is used to map the integration response to an existing <a>MethodResponse</a>.</p>
-    pub status_code: std::string::String,
+    pub status_code: std::option::Option<std::string::String>,
     /// <p>Specifies the selection pattern of a put integration response.</p>
     pub selection_pattern: std::option::Option<std::string::String>,
     /// <p>A key-value map specifying response parameters that are passed to the method response from the back end.
@@ -21359,11 +24568,11 @@ impl std::fmt::Debug for PutIntegrationResponseInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutIntegrationInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>[Required] Specifies a put integration request's resource ID.</p>
-    pub resource_id: std::string::String,
+    pub resource_id: std::option::Option<std::string::String>,
     /// <p>[Required] Specifies a put integration request's HTTP method.</p>
-    pub http_method: std::string::String,
+    pub http_method: std::option::Option<std::string::String>,
     /// <p>[Required] Specifies a put integration input's type.</p>
     pub r#type: std::option::Option<crate::model::IntegrationType>,
     /// <p>Specifies a put integration HTTP method. When the integration type is HTTP or AWS, this field is required.</p>
@@ -21439,9 +24648,9 @@ impl std::fmt::Debug for PutIntegrationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutGatewayResponseInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>[Required] <p>The response type of the associated <a>GatewayResponse</a>. Valid values are <ul><li>ACCESS_DENIED</li><li>API_CONFIGURATION_ERROR</li><li>AUTHORIZER_FAILURE</li><li> AUTHORIZER_CONFIGURATION_ERROR</li><li>BAD_REQUEST_PARAMETERS</li><li>BAD_REQUEST_BODY</li><li>DEFAULT_4XX</li><li>DEFAULT_5XX</li><li>EXPIRED_TOKEN</li><li>INVALID_SIGNATURE</li><li>INTEGRATION_FAILURE</li><li>INTEGRATION_TIMEOUT</li><li>INVALID_API_KEY</li><li>MISSING_AUTHENTICATION_TOKEN</li><li> QUOTA_EXCEEDED</li><li>REQUEST_TOO_LARGE</li><li>RESOURCE_NOT_FOUND</li><li>THROTTLED</li><li>UNAUTHORIZED</li><li>UNSUPPORTED_MEDIA_TYPE</li></ul> </p></p>
-    pub response_type: crate::model::GatewayResponseType,
+    pub response_type: std::option::Option<crate::model::GatewayResponseType>,
     /// The HTTP status code of the <a>GatewayResponse</a>.
     pub status_code: std::option::Option<std::string::String>,
     /// <p><p>Response parameters (paths, query strings and headers) of the <a>GatewayResponse</a> as a string-to-string map of key-value  pairs.</p></p>
@@ -21498,7 +24707,7 @@ impl std::fmt::Debug for ImportRestApiInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportDocumentationPartsInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>A query parameter to indicate whether to overwrite (<code>OVERWRITE</code>) any existing <a>DocumentationParts</a> definition or to merge (<code>MERGE</code>) the new definition into the existing one. The default value is <code>MERGE</code>.</p>
     pub mode: std::option::Option<crate::model::PutMode>,
     /// <p>A query parameter to specify whether to rollback the documentation importation (<code>true</code>) or not (<code>false</code>) when a warning is encountered. The default value is <code>false</code>.</p>
@@ -21561,7 +24770,7 @@ impl std::fmt::Debug for GetVpcLinksInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetVpcLinkInput {
     /// <p>[Required] The identifier of the  <a>VpcLink</a>. It is used in an <a>Integration</a> to reference this <a>VpcLink</a>.</p>
-    pub vpc_link_id: std::string::String,
+    pub vpc_link_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetVpcLinkInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21597,7 +24806,7 @@ impl std::fmt::Debug for GetUsagePlansInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUsagePlanKeysInput {
     /// <p>[Required] The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-retrieved <a>UsagePlanKey</a> resource representing a plan customer.</p>
-    pub usage_plan_id: std::string::String,
+    pub usage_plan_id: std::option::Option<std::string::String>,
     /// <p>The current pagination position in the paged result set.</p>
     pub position: std::option::Option<std::string::String>,
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
@@ -21621,9 +24830,9 @@ impl std::fmt::Debug for GetUsagePlanKeysInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUsagePlanKeyInput {
     /// <p>[Required] The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-retrieved <a>UsagePlanKey</a> resource representing a plan customer.</p>
-    pub usage_plan_id: std::string::String,
+    pub usage_plan_id: std::option::Option<std::string::String>,
     /// <p>[Required] The key Id of the to-be-retrieved <a>UsagePlanKey</a> resource representing a plan customer.</p>
-    pub key_id: std::string::String,
+    pub key_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetUsagePlanKeyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21639,7 +24848,7 @@ impl std::fmt::Debug for GetUsagePlanKeyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUsagePlanInput {
     /// <p>[Required] The identifier of the <a>UsagePlan</a> resource to be retrieved.</p>
-    pub usage_plan_id: std::string::String,
+    pub usage_plan_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetUsagePlanInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21654,7 +24863,7 @@ impl std::fmt::Debug for GetUsagePlanInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUsageInput {
     /// <p>[Required] The Id of the usage plan associated with the usage data.</p>
-    pub usage_plan_id: std::string::String,
+    pub usage_plan_id: std::option::Option<std::string::String>,
     /// <p>The Id of the API key associated with the resultant usage data.</p>
     pub key_id: std::option::Option<std::string::String>,
     /// <p>[Required] The starting date (e.g., 2016-01-01) of the usage data.</p>
@@ -21684,7 +24893,7 @@ impl std::fmt::Debug for GetUsageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTagsInput {
     /// <p>[Required] The ARN of a resource that can be tagged.</p>
-    pub resource_arn: std::string::String,
+    pub resource_arn: std::option::Option<std::string::String>,
     /// <p>(Not currently supported) The current pagination position in the paged result set.</p>
     pub position: std::option::Option<std::string::String>,
     /// <p>(Not currently supported) The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
@@ -21705,7 +24914,7 @@ impl std::fmt::Debug for GetTagsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetStagesInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The stages' deployment identifiers.</p>
     pub deployment_id: std::option::Option<std::string::String>,
 }
@@ -21723,9 +24932,9 @@ impl std::fmt::Debug for GetStagesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetStageInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>[Required] The name of the <a>Stage</a> resource to get information about.</p>
-    pub stage_name: std::string::String,
+    pub stage_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetStageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21759,7 +24968,7 @@ impl std::fmt::Debug for GetSdkTypesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSdkTypeInput {
     /// <p>[Required] The identifier of the queried <a>SdkType</a> instance.</p>
-    pub id: std::string::String,
+    pub id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetSdkTypeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21774,11 +24983,11 @@ impl std::fmt::Debug for GetSdkTypeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSdkInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>[Required] The name of the <a>Stage</a> that the SDK will use.</p>
-    pub stage_name: std::string::String,
+    pub stage_name: std::option::Option<std::string::String>,
     /// <p>[Required] The language for the generated SDK. Currently <code>java</code>, <code>javascript</code>, <code>android</code>, <code>objectivec</code> (for iOS), <code>swift</code> (for iOS), and <code>ruby</code>  are supported.</p>
-    pub sdk_type: std::string::String,
+    pub sdk_type: std::option::Option<std::string::String>,
     /// <p>A string-to-string key-value map of query parameters <code>sdkType</code>-dependent properties of the SDK. For <code>sdkType</code> of <code>objectivec</code> or <code>swift</code>,  a parameter named <code>classPrefix</code> is required. For <code>sdkType</code> of <code>android</code>, parameters named <code>groupId</code>, <code>artifactId</code>, <code>artifactVersion</code>, and <code>invokerPackage</code> are required. For <code>sdkType</code> of <code>java</code>, parameters named <code>serviceName</code> and <code>javaPackageName</code> are required. </p>
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -21817,7 +25026,7 @@ impl std::fmt::Debug for GetRestApisInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRestApiInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetRestApiInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21832,7 +25041,7 @@ impl std::fmt::Debug for GetRestApiInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourcesInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The current pagination position in the paged result set.</p>
     pub position: std::option::Option<std::string::String>,
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
@@ -21856,9 +25065,9 @@ impl std::fmt::Debug for GetResourcesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourceInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>[Required] The identifier for the <a>Resource</a> resource.</p>
-    pub resource_id: std::string::String,
+    pub resource_id: std::option::Option<std::string::String>,
     /// <p>A query parameter to retrieve the specified resources embedded in the returned <a>Resource</a> representation in the response. This <code>embed</code> parameter value is a list of comma-separated strings. Currently, the request supports only retrieval of the embedded <a>Method</a> resources this way. The query parameter value must be a single-valued list and contain the <code>"methods"</code> string. For example, <code>GET /restapis/{restapi_id}/resources/{resource_id}?embed=methods</code>.</p>
     pub embed: std::option::Option<std::vec::Vec<std::string::String>>,
 }
@@ -21877,7 +25086,7 @@ impl std::fmt::Debug for GetResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRequestValidatorsInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The current pagination position in the paged result set.</p>
     pub position: std::option::Option<std::string::String>,
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
@@ -21898,9 +25107,9 @@ impl std::fmt::Debug for GetRequestValidatorsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRequestValidatorInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>[Required] The identifier of the <a>RequestValidator</a> to be retrieved.</p>
-    pub request_validator_id: std::string::String,
+    pub request_validator_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetRequestValidatorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21916,9 +25125,9 @@ impl std::fmt::Debug for GetRequestValidatorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetModelTemplateInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>[Required] The name of the model for which to generate a template.</p>
-    pub model_name: std::string::String,
+    pub model_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetModelTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21934,7 +25143,7 @@ impl std::fmt::Debug for GetModelTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetModelsInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The current pagination position in the paged result set.</p>
     pub position: std::option::Option<std::string::String>,
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
@@ -21955,9 +25164,9 @@ impl std::fmt::Debug for GetModelsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetModelInput {
     /// <p>[Required] The <a>RestApi</a> identifier under which the <a>Model</a> exists.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>[Required] The name of the model as an identifier.</p>
-    pub model_name: std::string::String,
+    pub model_name: std::option::Option<std::string::String>,
     /// <p>A query parameter of a Boolean value to resolve (<code>true</code>) all external model references and returns a flattened model schema or not (<code>false</code>) The default is <code>false</code>.</p>
     pub flatten: bool,
 }
@@ -21976,13 +25185,13 @@ impl std::fmt::Debug for GetModelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMethodResponseInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>[Required] The <a>Resource</a> identifier for the <a>MethodResponse</a> resource.</p>
-    pub resource_id: std::string::String,
+    pub resource_id: std::option::Option<std::string::String>,
     /// <p>[Required] The HTTP verb of the <a>Method</a> resource.</p>
-    pub http_method: std::string::String,
+    pub http_method: std::option::Option<std::string::String>,
     /// <p>[Required] The status code for the <a>MethodResponse</a> resource.</p>
-    pub status_code: std::string::String,
+    pub status_code: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetMethodResponseInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22000,11 +25209,11 @@ impl std::fmt::Debug for GetMethodResponseInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMethodInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>[Required] The <a>Resource</a> identifier for the <a>Method</a> resource.</p>
-    pub resource_id: std::string::String,
+    pub resource_id: std::option::Option<std::string::String>,
     /// <p>[Required] Specifies the method request's HTTP method type.</p>
-    pub http_method: std::string::String,
+    pub http_method: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetMethodInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22021,13 +25230,13 @@ impl std::fmt::Debug for GetMethodInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIntegrationResponseInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>[Required] Specifies a get integration response request's resource identifier.</p>
-    pub resource_id: std::string::String,
+    pub resource_id: std::option::Option<std::string::String>,
     /// <p>[Required] Specifies a get integration response request's HTTP method.</p>
-    pub http_method: std::string::String,
+    pub http_method: std::option::Option<std::string::String>,
     /// <p>[Required] Specifies a get integration response request's status code.</p>
-    pub status_code: std::string::String,
+    pub status_code: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetIntegrationResponseInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22045,11 +25254,11 @@ impl std::fmt::Debug for GetIntegrationResponseInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIntegrationInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>[Required] Specifies a get integration request's resource identifier</p>
-    pub resource_id: std::string::String,
+    pub resource_id: std::option::Option<std::string::String>,
     /// <p>[Required] Specifies a get integration request's HTTP method.</p>
-    pub http_method: std::string::String,
+    pub http_method: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetIntegrationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22066,7 +25275,7 @@ impl std::fmt::Debug for GetIntegrationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGatewayResponsesInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The current pagination position in the paged result set. The <a>GatewayResponse</a> collection does not support pagination and the position does not apply here.</p>
     pub position: std::option::Option<std::string::String>,
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500. The <a>GatewayResponses</a> collection does not support pagination and the limit does not apply here.</p>
@@ -22087,9 +25296,9 @@ impl std::fmt::Debug for GetGatewayResponsesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGatewayResponseInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>[Required] <p>The response type of the associated <a>GatewayResponse</a>. Valid values are <ul><li>ACCESS_DENIED</li><li>API_CONFIGURATION_ERROR</li><li>AUTHORIZER_FAILURE</li><li> AUTHORIZER_CONFIGURATION_ERROR</li><li>BAD_REQUEST_PARAMETERS</li><li>BAD_REQUEST_BODY</li><li>DEFAULT_4XX</li><li>DEFAULT_5XX</li><li>EXPIRED_TOKEN</li><li>INVALID_SIGNATURE</li><li>INTEGRATION_FAILURE</li><li>INTEGRATION_TIMEOUT</li><li>INVALID_API_KEY</li><li>MISSING_AUTHENTICATION_TOKEN</li><li> QUOTA_EXCEEDED</li><li>REQUEST_TOO_LARGE</li><li>RESOURCE_NOT_FOUND</li><li>THROTTLED</li><li>UNAUTHORIZED</li><li>UNSUPPORTED_MEDIA_TYPE</li></ul> </p></p>
-    pub response_type: crate::model::GatewayResponseType,
+    pub response_type: std::option::Option<crate::model::GatewayResponseType>,
 }
 impl std::fmt::Debug for GetGatewayResponseInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22105,11 +25314,11 @@ impl std::fmt::Debug for GetGatewayResponseInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetExportInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>[Required] The name of the <a>Stage</a> that will be exported.</p>
-    pub stage_name: std::string::String,
+    pub stage_name: std::option::Option<std::string::String>,
     /// <p>[Required] The type of export. Acceptable values are 'oas30' for OpenAPI 3.0.x and 'swagger' for Swagger/OpenAPI 2.0.</p>
-    pub export_type: std::string::String,
+    pub export_type: std::option::Option<std::string::String>,
     /// <p>A key-value map of query string parameters that specify properties of the export, depending on the requested <code>exportType</code>. For <code>exportType</code> <code>oas30</code> and <code>swagger</code>, any combination of the following parameters are supported: <code>extensions='integrations'</code> or <code>extensions='apigateway'</code> will export the API with x-amazon-apigateway-integration extensions. <code>extensions='authorizers'</code> will export the API with  x-amazon-apigateway-authorizer extensions. <code>postman</code> will export the API with Postman extensions, allowing for import to the Postman tool</p>
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -22151,7 +25360,7 @@ impl std::fmt::Debug for GetDomainNamesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDomainNameInput {
     /// <p>[Required] The name of the <a>DomainName</a> resource.</p>
-    pub domain_name: std::string::String,
+    pub domain_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetDomainNameInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22166,7 +25375,7 @@ impl std::fmt::Debug for GetDomainNameInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDocumentationVersionsInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The current pagination position in the paged result set.</p>
     pub position: std::option::Option<std::string::String>,
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
@@ -22187,9 +25396,9 @@ impl std::fmt::Debug for GetDocumentationVersionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDocumentationVersionInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>[Required] The version identifier of the to-be-retrieved documentation snapshot.</p>
-    pub documentation_version: std::string::String,
+    pub documentation_version: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetDocumentationVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22205,7 +25414,7 @@ impl std::fmt::Debug for GetDocumentationVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDocumentationPartsInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The type of API entities of the to-be-retrieved documentation parts. </p>
     pub r#type: std::option::Option<crate::model::DocumentationPartType>,
     /// <p>The name of API entities of the to-be-retrieved documentation parts.</p>
@@ -22238,9 +25447,9 @@ impl std::fmt::Debug for GetDocumentationPartsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDocumentationPartInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub documentation_part_id: std::string::String,
+    pub documentation_part_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetDocumentationPartInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22256,7 +25465,7 @@ impl std::fmt::Debug for GetDocumentationPartInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeploymentsInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The current pagination position in the paged result set.</p>
     pub position: std::option::Option<std::string::String>,
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
@@ -22277,9 +25486,9 @@ impl std::fmt::Debug for GetDeploymentsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeploymentInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>[Required] The identifier of the <a>Deployment</a> resource to get information about.</p>
-    pub deployment_id: std::string::String,
+    pub deployment_id: std::option::Option<std::string::String>,
     /// <p>A query parameter to retrieve the specified embedded resources of the returned <a>Deployment</a> resource in the response. In a REST API call, this <code>embed</code> parameter value is a list of comma-separated strings, as in  <code>GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=var1,var2</code>. The SDK and other platform-dependent libraries might use a different format for the list. Currently, this request supports only retrieval of the embedded API summary this way. Hence, the parameter value must be a single-valued list containing only the <code>"apisummary"</code> string.  For example, <code>GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=apisummary</code>.</p>
     pub embed: std::option::Option<std::vec::Vec<std::string::String>>,
 }
@@ -22316,7 +25525,7 @@ impl std::fmt::Debug for GetClientCertificatesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetClientCertificateInput {
     /// <p>[Required] The identifier of the <a>ClientCertificate</a> resource to be described.</p>
-    pub client_certificate_id: std::string::String,
+    pub client_certificate_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetClientCertificateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22331,7 +25540,7 @@ impl std::fmt::Debug for GetClientCertificateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBasePathMappingsInput {
     /// <p>[Required] The domain name of a <a>BasePathMapping</a> resource.</p>
-    pub domain_name: std::string::String,
+    pub domain_name: std::option::Option<std::string::String>,
     /// <p>The current pagination position in the paged result set.</p>
     pub position: std::option::Option<std::string::String>,
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
@@ -22352,9 +25561,9 @@ impl std::fmt::Debug for GetBasePathMappingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBasePathMappingInput {
     /// <p>[Required] The domain name of the <a>BasePathMapping</a> resource to be described.</p>
-    pub domain_name: std::string::String,
+    pub domain_name: std::option::Option<std::string::String>,
     /// <p>[Required] The base path name that callers of the API must provide as part of the URL after the domain name. This value must be unique for all of the mappings across a single API. Specify '(none)' if you do not want callers to specify any base path name after the domain name.</p>
-    pub base_path: std::string::String,
+    pub base_path: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetBasePathMappingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22370,7 +25579,7 @@ impl std::fmt::Debug for GetBasePathMappingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAuthorizersInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The current pagination position in the paged result set.</p>
     pub position: std::option::Option<std::string::String>,
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
@@ -22391,9 +25600,9 @@ impl std::fmt::Debug for GetAuthorizersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAuthorizerInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>[Required] The identifier of the <a>Authorizer</a> resource.</p>
-    pub authorizer_id: std::string::String,
+    pub authorizer_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetAuthorizerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22436,7 +25645,7 @@ impl std::fmt::Debug for GetApiKeysInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetApiKeyInput {
     /// <p>[Required] The identifier of the <a>ApiKey</a> resource.</p>
-    pub api_key: std::string::String,
+    pub api_key: std::option::Option<std::string::String>,
     /// <p>A boolean flag to specify whether (<code>true</code>) or not (<code>false</code>) the result contains the key value.</p>
     pub include_value: std::option::Option<bool>,
 }
@@ -22484,9 +25693,9 @@ impl std::fmt::Debug for GenerateClientCertificateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FlushStageCacheInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>[Required] The name of the stage to flush its cache.</p>
-    pub stage_name: std::string::String,
+    pub stage_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for FlushStageCacheInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22502,9 +25711,9 @@ impl std::fmt::Debug for FlushStageCacheInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FlushStageAuthorizersCacheInput {
     /// <p>The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The name of the stage to flush.</p>
-    pub stage_name: std::string::String,
+    pub stage_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for FlushStageAuthorizersCacheInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22520,7 +25729,7 @@ impl std::fmt::Debug for FlushStageAuthorizersCacheInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVpcLinkInput {
     /// <p>[Required] The identifier of the  <a>VpcLink</a>. It is used in an <a>Integration</a> to reference this <a>VpcLink</a>.</p>
-    pub vpc_link_id: std::string::String,
+    pub vpc_link_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteVpcLinkInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22535,9 +25744,9 @@ impl std::fmt::Debug for DeleteVpcLinkInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteUsagePlanKeyInput {
     /// <p>[Required] The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-deleted <a>UsagePlanKey</a> resource representing a plan customer.</p>
-    pub usage_plan_id: std::string::String,
+    pub usage_plan_id: std::option::Option<std::string::String>,
     /// <p>[Required] The Id of the <a>UsagePlanKey</a> resource to be deleted.</p>
-    pub key_id: std::string::String,
+    pub key_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteUsagePlanKeyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22553,7 +25762,7 @@ impl std::fmt::Debug for DeleteUsagePlanKeyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteUsagePlanInput {
     /// <p>[Required] The Id of the to-be-deleted usage plan.</p>
-    pub usage_plan_id: std::string::String,
+    pub usage_plan_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteUsagePlanInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22568,9 +25777,9 @@ impl std::fmt::Debug for DeleteUsagePlanInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteStageInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>[Required] The name of the <a>Stage</a> resource to delete.</p>
-    pub stage_name: std::string::String,
+    pub stage_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteStageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22586,7 +25795,7 @@ impl std::fmt::Debug for DeleteStageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRestApiInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteRestApiInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22601,9 +25810,9 @@ impl std::fmt::Debug for DeleteRestApiInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteResourceInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>[Required] The identifier of the <a>Resource</a> resource.</p>
-    pub resource_id: std::string::String,
+    pub resource_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22619,9 +25828,9 @@ impl std::fmt::Debug for DeleteResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRequestValidatorInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>[Required] The identifier of the <a>RequestValidator</a> to be deleted.</p>
-    pub request_validator_id: std::string::String,
+    pub request_validator_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteRequestValidatorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22637,9 +25846,9 @@ impl std::fmt::Debug for DeleteRequestValidatorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteModelInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>[Required] The name of the model to delete.</p>
-    pub model_name: std::string::String,
+    pub model_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteModelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22655,13 +25864,13 @@ impl std::fmt::Debug for DeleteModelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMethodResponseInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>[Required] The <a>Resource</a> identifier for the <a>MethodResponse</a> resource.</p>
-    pub resource_id: std::string::String,
+    pub resource_id: std::option::Option<std::string::String>,
     /// <p>[Required] The HTTP verb of the <a>Method</a> resource.</p>
-    pub http_method: std::string::String,
+    pub http_method: std::option::Option<std::string::String>,
     /// <p>[Required] The status code identifier for the <a>MethodResponse</a> resource.</p>
-    pub status_code: std::string::String,
+    pub status_code: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteMethodResponseInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22679,11 +25888,11 @@ impl std::fmt::Debug for DeleteMethodResponseInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMethodInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>[Required] The <a>Resource</a> identifier for the <a>Method</a> resource.</p>
-    pub resource_id: std::string::String,
+    pub resource_id: std::option::Option<std::string::String>,
     /// <p>[Required] The HTTP verb of the <a>Method</a> resource.</p>
-    pub http_method: std::string::String,
+    pub http_method: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteMethodInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22700,13 +25909,13 @@ impl std::fmt::Debug for DeleteMethodInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteIntegrationResponseInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>[Required] Specifies a delete integration response request's resource identifier.</p>
-    pub resource_id: std::string::String,
+    pub resource_id: std::option::Option<std::string::String>,
     /// <p>[Required] Specifies a delete integration response request's HTTP method.</p>
-    pub http_method: std::string::String,
+    pub http_method: std::option::Option<std::string::String>,
     /// <p>[Required] Specifies a delete integration response request's status code.</p>
-    pub status_code: std::string::String,
+    pub status_code: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteIntegrationResponseInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22724,11 +25933,11 @@ impl std::fmt::Debug for DeleteIntegrationResponseInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteIntegrationInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>[Required] Specifies a delete integration request's resource identifier.</p>
-    pub resource_id: std::string::String,
+    pub resource_id: std::option::Option<std::string::String>,
     /// <p>[Required] Specifies a delete integration request's HTTP method.</p>
-    pub http_method: std::string::String,
+    pub http_method: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteIntegrationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22745,9 +25954,9 @@ impl std::fmt::Debug for DeleteIntegrationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteGatewayResponseInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>[Required] <p>The response type of the associated <a>GatewayResponse</a>. Valid values are <ul><li>ACCESS_DENIED</li><li>API_CONFIGURATION_ERROR</li><li>AUTHORIZER_FAILURE</li><li> AUTHORIZER_CONFIGURATION_ERROR</li><li>BAD_REQUEST_PARAMETERS</li><li>BAD_REQUEST_BODY</li><li>DEFAULT_4XX</li><li>DEFAULT_5XX</li><li>EXPIRED_TOKEN</li><li>INVALID_SIGNATURE</li><li>INTEGRATION_FAILURE</li><li>INTEGRATION_TIMEOUT</li><li>INVALID_API_KEY</li><li>MISSING_AUTHENTICATION_TOKEN</li><li> QUOTA_EXCEEDED</li><li>REQUEST_TOO_LARGE</li><li>RESOURCE_NOT_FOUND</li><li>THROTTLED</li><li>UNAUTHORIZED</li><li>UNSUPPORTED_MEDIA_TYPE</li></ul> </p></p>
-    pub response_type: crate::model::GatewayResponseType,
+    pub response_type: std::option::Option<crate::model::GatewayResponseType>,
 }
 impl std::fmt::Debug for DeleteGatewayResponseInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22763,7 +25972,7 @@ impl std::fmt::Debug for DeleteGatewayResponseInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDomainNameInput {
     /// <p>[Required] The name of the <a>DomainName</a> resource to be deleted.</p>
-    pub domain_name: std::string::String,
+    pub domain_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteDomainNameInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22778,9 +25987,9 @@ impl std::fmt::Debug for DeleteDomainNameInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDocumentationVersionInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>[Required] The version identifier of a to-be-deleted documentation snapshot.</p>
-    pub documentation_version: std::string::String,
+    pub documentation_version: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteDocumentationVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22796,9 +26005,9 @@ impl std::fmt::Debug for DeleteDocumentationVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDocumentationPartInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>[Required] The identifier of the to-be-deleted documentation part.</p>
-    pub documentation_part_id: std::string::String,
+    pub documentation_part_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteDocumentationPartInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22814,9 +26023,9 @@ impl std::fmt::Debug for DeleteDocumentationPartInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDeploymentInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>[Required] The identifier of the <a>Deployment</a> resource to delete.</p>
-    pub deployment_id: std::string::String,
+    pub deployment_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteDeploymentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22832,7 +26041,7 @@ impl std::fmt::Debug for DeleteDeploymentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteClientCertificateInput {
     /// <p>[Required] The identifier of the <a>ClientCertificate</a> resource to be deleted.</p>
-    pub client_certificate_id: std::string::String,
+    pub client_certificate_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteClientCertificateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22847,10 +26056,10 @@ impl std::fmt::Debug for DeleteClientCertificateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBasePathMappingInput {
     /// <p>[Required] The domain name of the <a>BasePathMapping</a> resource to delete.</p>
-    pub domain_name: std::string::String,
+    pub domain_name: std::option::Option<std::string::String>,
     /// <p>[Required] The base path name of the <a>BasePathMapping</a> resource to delete.</p>
     /// <p>To specify an empty base path, set this parameter to <code>'(none)'</code>.</p>
-    pub base_path: std::string::String,
+    pub base_path: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteBasePathMappingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22866,9 +26075,9 @@ impl std::fmt::Debug for DeleteBasePathMappingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAuthorizerInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>[Required] The identifier of the <a>Authorizer</a> resource.</p>
-    pub authorizer_id: std::string::String,
+    pub authorizer_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteAuthorizerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22884,7 +26093,7 @@ impl std::fmt::Debug for DeleteAuthorizerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteApiKeyInput {
     /// <p>[Required] The identifier of the <a>ApiKey</a> resource to be deleted.</p>
-    pub api_key: std::string::String,
+    pub api_key: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteApiKeyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22924,7 +26133,7 @@ impl std::fmt::Debug for CreateVpcLinkInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUsagePlanKeyInput {
     /// <p>[Required] The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-created <a>UsagePlanKey</a> resource representing a plan customer.</p>
-    pub usage_plan_id: std::string::String,
+    pub usage_plan_id: std::option::Option<std::string::String>,
     /// <p>[Required] The identifier of a <a>UsagePlanKey</a> resource for a plan customer.</p>
     pub key_id: std::option::Option<std::string::String>,
     /// <p>[Required] The type of a <a>UsagePlanKey</a> resource for a plan customer.</p>
@@ -22976,7 +26185,7 @@ impl std::fmt::Debug for CreateUsagePlanInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStageInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>[Required] The name for the <a>Stage</a> resource. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
     pub stage_name: std::option::Option<std::string::String>,
     /// <p>[Required] The identifier of the <a>Deployment</a> resource for the <a>Stage</a> resource.</p>
@@ -23074,9 +26283,9 @@ impl std::fmt::Debug for CreateRestApiInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateResourceInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>[Required] The parent resource's identifier.</p>
-    pub parent_id: std::string::String,
+    pub parent_id: std::option::Option<std::string::String>,
     /// <p>The last path segment for this resource.</p>
     pub path_part: std::option::Option<std::string::String>,
 }
@@ -23095,7 +26304,7 @@ impl std::fmt::Debug for CreateResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRequestValidatorInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The name of the to-be-created <a>RequestValidator</a>.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>A Boolean flag to indicate whether to validate request body according to the configured model schema for the method (<code>true</code>) or not (<code>false</code>).</p>
@@ -23122,7 +26331,7 @@ impl std::fmt::Debug for CreateRequestValidatorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateModelInput {
     /// <p>[Required] The <a>RestApi</a> identifier under which the <a>Model</a> will be created.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>[Required] The name of the model. Must be alphanumeric.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the model.</p>
@@ -23198,7 +26407,7 @@ impl std::fmt::Debug for CreateDomainNameInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDocumentationVersionInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>[Required] The version identifier of the new snapshot.</p>
     pub documentation_version: std::option::Option<std::string::String>,
     /// <p>The stage name to be associated with the new documentation snapshot.</p>
@@ -23222,7 +26431,7 @@ impl std::fmt::Debug for CreateDocumentationVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDocumentationPartInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>[Required] The location of the targeted API entity of the to-be-created documentation part.</p>
     pub location: std::option::Option<crate::model::DocumentationPartLocation>,
     /// <p>[Required] The new documentation content map of the targeted API entity. Enclosed key-value pairs are API-specific, but only OpenAPI-compliant key-value pairs can be exported and, hence, published.</p>
@@ -23243,7 +26452,7 @@ impl std::fmt::Debug for CreateDocumentationPartInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDeploymentInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The name of the <a>Stage</a> resource for the <a>Deployment</a> resource to create.</p>
     pub stage_name: std::option::Option<std::string::String>,
     /// <p>The description of the <a>Stage</a> resource for the <a>Deployment</a> resource to create.</p>
@@ -23285,7 +26494,7 @@ impl std::fmt::Debug for CreateDeploymentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBasePathMappingInput {
     /// <p>[Required] The domain name of the <a>BasePathMapping</a> resource to create.</p>
-    pub domain_name: std::string::String,
+    pub domain_name: std::option::Option<std::string::String>,
     /// <p>The base path name that callers of the API must provide as part of the URL after the domain name. This value must be unique for all of the mappings across a single API. Specify '(none)' if you do not want callers to specify a base path name after the domain name.</p>
     pub base_path: std::option::Option<std::string::String>,
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -23309,7 +26518,7 @@ impl std::fmt::Debug for CreateBasePathMappingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAuthorizerInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-    pub rest_api_id: std::string::String,
+    pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>[Required] The name of the authorizer.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>[Required] The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single authorization token submitted in a custom header, <code>REQUEST</code> for a Lambda function using incoming request parameters, and <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.</p>

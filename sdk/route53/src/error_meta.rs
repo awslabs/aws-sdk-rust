@@ -5,7 +5,7 @@ pub enum Error {
     ConcurrentModification(crate::error::ConcurrentModification),
     ConflictingDomainExists(crate::error::ConflictingDomainExists),
     ConflictingTypes(crate::error::ConflictingTypes),
-    DNSSECNotFound(crate::error::DNSSECNotFound),
+    DnssecNotFound(crate::error::DnssecNotFound),
     DelegationSetAlreadyCreated(crate::error::DelegationSetAlreadyCreated),
     DelegationSetAlreadyReusable(crate::error::DelegationSetAlreadyReusable),
     DelegationSetInUse(crate::error::DelegationSetInUse),
@@ -27,18 +27,18 @@ pub enum Error {
     InvalidChangeBatch(crate::error::InvalidChangeBatch),
     InvalidDomainName(crate::error::InvalidDomainName),
     InvalidInput(crate::error::InvalidInput),
-    InvalidKMSArn(crate::error::InvalidKMSArn),
+    InvalidKmsArn(crate::error::InvalidKmsArn),
     InvalidKeySigningKeyName(crate::error::InvalidKeySigningKeyName),
     InvalidKeySigningKeyStatus(crate::error::InvalidKeySigningKeyStatus),
     InvalidPaginationToken(crate::error::InvalidPaginationToken),
     InvalidSigningStatus(crate::error::InvalidSigningStatus),
     InvalidTrafficPolicyDocument(crate::error::InvalidTrafficPolicyDocument),
-    InvalidVPCId(crate::error::InvalidVPCId),
+    InvalidVpcId(crate::error::InvalidVpcId),
     KeySigningKeyAlreadyExists(crate::error::KeySigningKeyAlreadyExists),
-    KeySigningKeyInParentDSRecord(crate::error::KeySigningKeyInParentDSRecord),
+    KeySigningKeyInParentDsRecord(crate::error::KeySigningKeyInParentDsRecord),
     KeySigningKeyInUse(crate::error::KeySigningKeyInUse),
     KeySigningKeyWithActiveStatusNotFound(crate::error::KeySigningKeyWithActiveStatusNotFound),
-    LastVPCAssociation(crate::error::LastVPCAssociation),
+    LastVpcAssociation(crate::error::LastVpcAssociation),
     LimitsExceeded(crate::error::LimitsExceeded),
     NoSuchChange(crate::error::NoSuchChange),
     NoSuchCloudWatchLogsLogGroup(crate::error::NoSuchCloudWatchLogsLogGroup),
@@ -50,11 +50,11 @@ pub enum Error {
     NoSuchQueryLoggingConfig(crate::error::NoSuchQueryLoggingConfig),
     NoSuchTrafficPolicy(crate::error::NoSuchTrafficPolicy),
     NoSuchTrafficPolicyInstance(crate::error::NoSuchTrafficPolicyInstance),
-    NotAuthorizedError(crate::error::NotAuthorizedError),
+    NotAuthorizedException(crate::error::NotAuthorizedException),
     PriorRequestNotComplete(crate::error::PriorRequestNotComplete),
-    PublicZoneVPCAssociation(crate::error::PublicZoneVPCAssociation),
+    PublicZoneVpcAssociation(crate::error::PublicZoneVpcAssociation),
     QueryLoggingConfigAlreadyExists(crate::error::QueryLoggingConfigAlreadyExists),
-    ThrottlingError(crate::error::ThrottlingError),
+    ThrottlingException(crate::error::ThrottlingException),
     TooManyHealthChecks(crate::error::TooManyHealthChecks),
     TooManyHostedZones(crate::error::TooManyHostedZones),
     TooManyKeySigningKeys(crate::error::TooManyKeySigningKeys),
@@ -63,12 +63,12 @@ pub enum Error {
     TooManyTrafficPolicyVersionsForCurrentPolicy(
         crate::error::TooManyTrafficPolicyVersionsForCurrentPolicy,
     ),
-    TooManyVPCAssociationAuthorizations(crate::error::TooManyVPCAssociationAuthorizations),
+    TooManyVpcAssociationAuthorizations(crate::error::TooManyVpcAssociationAuthorizations),
     TrafficPolicyAlreadyExists(crate::error::TrafficPolicyAlreadyExists),
     TrafficPolicyInUse(crate::error::TrafficPolicyInUse),
     TrafficPolicyInstanceAlreadyExists(crate::error::TrafficPolicyInstanceAlreadyExists),
-    VPCAssociationAuthorizationNotFound(crate::error::VPCAssociationAuthorizationNotFound),
-    VPCAssociationNotFound(crate::error::VPCAssociationNotFound),
+    VpcAssociationAuthorizationNotFound(crate::error::VpcAssociationAuthorizationNotFound),
+    VpcAssociationNotFound(crate::error::VpcAssociationNotFound),
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for Error {
@@ -77,7 +77,7 @@ impl std::fmt::Display for Error {
             Error::ConcurrentModification(inner) => inner.fmt(f),
             Error::ConflictingDomainExists(inner) => inner.fmt(f),
             Error::ConflictingTypes(inner) => inner.fmt(f),
-            Error::DNSSECNotFound(inner) => inner.fmt(f),
+            Error::DnssecNotFound(inner) => inner.fmt(f),
             Error::DelegationSetAlreadyCreated(inner) => inner.fmt(f),
             Error::DelegationSetAlreadyReusable(inner) => inner.fmt(f),
             Error::DelegationSetInUse(inner) => inner.fmt(f),
@@ -97,18 +97,18 @@ impl std::fmt::Display for Error {
             Error::InvalidChangeBatch(inner) => inner.fmt(f),
             Error::InvalidDomainName(inner) => inner.fmt(f),
             Error::InvalidInput(inner) => inner.fmt(f),
-            Error::InvalidKMSArn(inner) => inner.fmt(f),
+            Error::InvalidKmsArn(inner) => inner.fmt(f),
             Error::InvalidKeySigningKeyName(inner) => inner.fmt(f),
             Error::InvalidKeySigningKeyStatus(inner) => inner.fmt(f),
             Error::InvalidPaginationToken(inner) => inner.fmt(f),
             Error::InvalidSigningStatus(inner) => inner.fmt(f),
             Error::InvalidTrafficPolicyDocument(inner) => inner.fmt(f),
-            Error::InvalidVPCId(inner) => inner.fmt(f),
+            Error::InvalidVpcId(inner) => inner.fmt(f),
             Error::KeySigningKeyAlreadyExists(inner) => inner.fmt(f),
-            Error::KeySigningKeyInParentDSRecord(inner) => inner.fmt(f),
+            Error::KeySigningKeyInParentDsRecord(inner) => inner.fmt(f),
             Error::KeySigningKeyInUse(inner) => inner.fmt(f),
             Error::KeySigningKeyWithActiveStatusNotFound(inner) => inner.fmt(f),
-            Error::LastVPCAssociation(inner) => inner.fmt(f),
+            Error::LastVpcAssociation(inner) => inner.fmt(f),
             Error::LimitsExceeded(inner) => inner.fmt(f),
             Error::NoSuchChange(inner) => inner.fmt(f),
             Error::NoSuchCloudWatchLogsLogGroup(inner) => inner.fmt(f),
@@ -120,23 +120,23 @@ impl std::fmt::Display for Error {
             Error::NoSuchQueryLoggingConfig(inner) => inner.fmt(f),
             Error::NoSuchTrafficPolicy(inner) => inner.fmt(f),
             Error::NoSuchTrafficPolicyInstance(inner) => inner.fmt(f),
-            Error::NotAuthorizedError(inner) => inner.fmt(f),
+            Error::NotAuthorizedException(inner) => inner.fmt(f),
             Error::PriorRequestNotComplete(inner) => inner.fmt(f),
-            Error::PublicZoneVPCAssociation(inner) => inner.fmt(f),
+            Error::PublicZoneVpcAssociation(inner) => inner.fmt(f),
             Error::QueryLoggingConfigAlreadyExists(inner) => inner.fmt(f),
-            Error::ThrottlingError(inner) => inner.fmt(f),
+            Error::ThrottlingException(inner) => inner.fmt(f),
             Error::TooManyHealthChecks(inner) => inner.fmt(f),
             Error::TooManyHostedZones(inner) => inner.fmt(f),
             Error::TooManyKeySigningKeys(inner) => inner.fmt(f),
             Error::TooManyTrafficPolicies(inner) => inner.fmt(f),
             Error::TooManyTrafficPolicyInstances(inner) => inner.fmt(f),
             Error::TooManyTrafficPolicyVersionsForCurrentPolicy(inner) => inner.fmt(f),
-            Error::TooManyVPCAssociationAuthorizations(inner) => inner.fmt(f),
+            Error::TooManyVpcAssociationAuthorizations(inner) => inner.fmt(f),
             Error::TrafficPolicyAlreadyExists(inner) => inner.fmt(f),
             Error::TrafficPolicyInUse(inner) => inner.fmt(f),
             Error::TrafficPolicyInstanceAlreadyExists(inner) => inner.fmt(f),
-            Error::VPCAssociationAuthorizationNotFound(inner) => inner.fmt(f),
-            Error::VPCAssociationNotFound(inner) => inner.fmt(f),
+            Error::VpcAssociationAuthorizationNotFound(inner) => inner.fmt(f),
+            Error::VpcAssociationNotFound(inner) => inner.fmt(f),
             Error::Unhandled(inner) => inner.fmt(f),
         }
     }
@@ -151,8 +151,8 @@ impl From<smithy_http::result::SdkError<crate::error::ActivateKeySigningKeyError
                 crate::error::ActivateKeySigningKeyErrorKind::InvalidKeySigningKeyStatus(inner) => {
                     Error::InvalidKeySigningKeyStatus(inner)
                 }
-                crate::error::ActivateKeySigningKeyErrorKind::InvalidKMSArn(inner) => {
-                    Error::InvalidKMSArn(inner)
+                crate::error::ActivateKeySigningKeyErrorKind::InvalidKmsArn(inner) => {
+                    Error::InvalidKmsArn(inner)
                 }
                 crate::error::ActivateKeySigningKeyErrorKind::InvalidSigningStatus(inner) => {
                     Error::InvalidSigningStatus(inner)
@@ -180,8 +180,8 @@ impl From<smithy_http::result::SdkError<crate::error::AssociateVPCWithHostedZone
                 crate::error::AssociateVPCWithHostedZoneErrorKind::InvalidInput(inner) => {
                     Error::InvalidInput(inner)
                 }
-                crate::error::AssociateVPCWithHostedZoneErrorKind::InvalidVPCId(inner) => {
-                    Error::InvalidVPCId(inner)
+                crate::error::AssociateVPCWithHostedZoneErrorKind::InvalidVpcId(inner) => {
+                    Error::InvalidVpcId(inner)
                 }
                 crate::error::AssociateVPCWithHostedZoneErrorKind::LimitsExceeded(inner) => {
                     Error::LimitsExceeded(inner)
@@ -189,15 +189,15 @@ impl From<smithy_http::result::SdkError<crate::error::AssociateVPCWithHostedZone
                 crate::error::AssociateVPCWithHostedZoneErrorKind::NoSuchHostedZone(inner) => {
                     Error::NoSuchHostedZone(inner)
                 }
-                crate::error::AssociateVPCWithHostedZoneErrorKind::NotAuthorizedError(inner) => {
-                    Error::NotAuthorizedError(inner)
-                }
+                crate::error::AssociateVPCWithHostedZoneErrorKind::NotAuthorizedException(
+                    inner,
+                ) => Error::NotAuthorizedException(inner),
                 crate::error::AssociateVPCWithHostedZoneErrorKind::PriorRequestNotComplete(
                     inner,
                 ) => Error::PriorRequestNotComplete(inner),
-                crate::error::AssociateVPCWithHostedZoneErrorKind::PublicZoneVPCAssociation(
+                crate::error::AssociateVPCWithHostedZoneErrorKind::PublicZoneVpcAssociation(
                     inner,
-                ) => Error::PublicZoneVPCAssociation(inner),
+                ) => Error::PublicZoneVpcAssociation(inner),
                 crate::error::AssociateVPCWithHostedZoneErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -251,8 +251,8 @@ impl From<smithy_http::result::SdkError<crate::error::ChangeTagsForResourceError
                 crate::error::ChangeTagsForResourceErrorKind::PriorRequestNotComplete(inner) => {
                     Error::PriorRequestNotComplete(inner)
                 }
-                crate::error::ChangeTagsForResourceErrorKind::ThrottlingError(inner) => {
-                    Error::ThrottlingError(inner)
+                crate::error::ChangeTagsForResourceErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
                 }
                 crate::error::ChangeTagsForResourceErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -305,8 +305,8 @@ impl From<smithy_http::result::SdkError<crate::error::CreateHostedZoneError>> fo
                 crate::error::CreateHostedZoneErrorKind::InvalidInput(inner) => {
                     Error::InvalidInput(inner)
                 }
-                crate::error::CreateHostedZoneErrorKind::InvalidVPCId(inner) => {
-                    Error::InvalidVPCId(inner)
+                crate::error::CreateHostedZoneErrorKind::InvalidVpcId(inner) => {
+                    Error::InvalidVpcId(inner)
                 }
                 crate::error::CreateHostedZoneErrorKind::NoSuchDelegationSet(inner) => {
                     Error::NoSuchDelegationSet(inner)
@@ -341,8 +341,8 @@ impl From<smithy_http::result::SdkError<crate::error::CreateKeySigningKeyError>>
                 crate::error::CreateKeySigningKeyErrorKind::InvalidKeySigningKeyStatus(inner) => {
                     Error::InvalidKeySigningKeyStatus(inner)
                 }
-                crate::error::CreateKeySigningKeyErrorKind::InvalidKMSArn(inner) => {
-                    Error::InvalidKMSArn(inner)
+                crate::error::CreateKeySigningKeyErrorKind::InvalidKmsArn(inner) => {
+                    Error::InvalidKmsArn(inner)
                 }
                 crate::error::CreateKeySigningKeyErrorKind::InvalidSigningStatus(inner) => {
                     Error::InvalidSigningStatus(inner)
@@ -469,9 +469,9 @@ impl From<smithy_http::result::SdkError<crate::error::CreateVPCAssociationAuthor
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::CreateVPCAssociationAuthorizationErrorKind::ConcurrentModification(inner) => Error::ConcurrentModification(inner),
                 crate::error::CreateVPCAssociationAuthorizationErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
-                crate::error::CreateVPCAssociationAuthorizationErrorKind::InvalidVPCId(inner) => Error::InvalidVPCId(inner),
+                crate::error::CreateVPCAssociationAuthorizationErrorKind::InvalidVpcId(inner) => Error::InvalidVpcId(inner),
                 crate::error::CreateVPCAssociationAuthorizationErrorKind::NoSuchHostedZone(inner) => Error::NoSuchHostedZone(inner),
-                crate::error::CreateVPCAssociationAuthorizationErrorKind::TooManyVPCAssociationAuthorizations(inner) => Error::TooManyVPCAssociationAuthorizations(inner),
+                crate::error::CreateVPCAssociationAuthorizationErrorKind::TooManyVpcAssociationAuthorizations(inner) => Error::TooManyVpcAssociationAuthorizations(inner),
                 crate::error::CreateVPCAssociationAuthorizationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
@@ -493,9 +493,9 @@ impl From<smithy_http::result::SdkError<crate::error::DeactivateKeySigningKeyErr
                 crate::error::DeactivateKeySigningKeyErrorKind::InvalidSigningStatus(inner) => {
                     Error::InvalidSigningStatus(inner)
                 }
-                crate::error::DeactivateKeySigningKeyErrorKind::KeySigningKeyInParentDSRecord(
+                crate::error::DeactivateKeySigningKeyErrorKind::KeySigningKeyInParentDsRecord(
                     inner,
-                ) => Error::KeySigningKeyInParentDSRecord(inner),
+                ) => Error::KeySigningKeyInParentDsRecord(inner),
                 crate::error::DeactivateKeySigningKeyErrorKind::KeySigningKeyInUse(inner) => {
                     Error::KeySigningKeyInUse(inner)
                 }
@@ -568,8 +568,8 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteKeySigningKeyError>>
                 crate::error::DeleteKeySigningKeyErrorKind::InvalidKeySigningKeyStatus(inner) => {
                     Error::InvalidKeySigningKeyStatus(inner)
                 }
-                crate::error::DeleteKeySigningKeyErrorKind::InvalidKMSArn(inner) => {
-                    Error::InvalidKMSArn(inner)
+                crate::error::DeleteKeySigningKeyErrorKind::InvalidKmsArn(inner) => {
+                    Error::InvalidKmsArn(inner)
                 }
                 crate::error::DeleteKeySigningKeyErrorKind::InvalidSigningStatus(inner) => {
                     Error::InvalidSigningStatus(inner)
@@ -691,9 +691,9 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteVPCAssociationAuthor
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DeleteVPCAssociationAuthorizationErrorKind::ConcurrentModification(inner) => Error::ConcurrentModification(inner),
                 crate::error::DeleteVPCAssociationAuthorizationErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
-                crate::error::DeleteVPCAssociationAuthorizationErrorKind::InvalidVPCId(inner) => Error::InvalidVPCId(inner),
+                crate::error::DeleteVPCAssociationAuthorizationErrorKind::InvalidVpcId(inner) => Error::InvalidVpcId(inner),
                 crate::error::DeleteVPCAssociationAuthorizationErrorKind::NoSuchHostedZone(inner) => Error::NoSuchHostedZone(inner),
-                crate::error::DeleteVPCAssociationAuthorizationErrorKind::VPCAssociationAuthorizationNotFound(inner) => Error::VPCAssociationAuthorizationNotFound(inner),
+                crate::error::DeleteVPCAssociationAuthorizationErrorKind::VpcAssociationAuthorizationNotFound(inner) => Error::VpcAssociationAuthorizationNotFound(inner),
                 crate::error::DeleteVPCAssociationAuthorizationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
@@ -709,8 +709,8 @@ impl From<smithy_http::result::SdkError<crate::error::DisableHostedZoneDNSSECErr
                 crate::error::DisableHostedZoneDNSSECErrorKind::ConcurrentModification(inner) => {
                     Error::ConcurrentModification(inner)
                 }
-                crate::error::DisableHostedZoneDNSSECErrorKind::DNSSECNotFound(inner) => {
-                    Error::DNSSECNotFound(inner)
+                crate::error::DisableHostedZoneDNSSECErrorKind::DnssecNotFound(inner) => {
+                    Error::DnssecNotFound(inner)
                 }
                 crate::error::DisableHostedZoneDNSSECErrorKind::InvalidArgument(inner) => {
                     Error::InvalidArgument(inner)
@@ -718,12 +718,12 @@ impl From<smithy_http::result::SdkError<crate::error::DisableHostedZoneDNSSECErr
                 crate::error::DisableHostedZoneDNSSECErrorKind::InvalidKeySigningKeyStatus(
                     inner,
                 ) => Error::InvalidKeySigningKeyStatus(inner),
-                crate::error::DisableHostedZoneDNSSECErrorKind::InvalidKMSArn(inner) => {
-                    Error::InvalidKMSArn(inner)
+                crate::error::DisableHostedZoneDNSSECErrorKind::InvalidKmsArn(inner) => {
+                    Error::InvalidKmsArn(inner)
                 }
-                crate::error::DisableHostedZoneDNSSECErrorKind::KeySigningKeyInParentDSRecord(
+                crate::error::DisableHostedZoneDNSSECErrorKind::KeySigningKeyInParentDsRecord(
                     inner,
-                ) => Error::KeySigningKeyInParentDSRecord(inner),
+                ) => Error::KeySigningKeyInParentDsRecord(inner),
                 crate::error::DisableHostedZoneDNSSECErrorKind::NoSuchHostedZone(inner) => {
                     Error::NoSuchHostedZone(inner)
                 }
@@ -746,18 +746,18 @@ impl From<smithy_http::result::SdkError<crate::error::DisassociateVPCFromHostedZ
                 crate::error::DisassociateVPCFromHostedZoneErrorKind::InvalidInput(inner) => {
                     Error::InvalidInput(inner)
                 }
-                crate::error::DisassociateVPCFromHostedZoneErrorKind::InvalidVPCId(inner) => {
-                    Error::InvalidVPCId(inner)
+                crate::error::DisassociateVPCFromHostedZoneErrorKind::InvalidVpcId(inner) => {
+                    Error::InvalidVpcId(inner)
                 }
-                crate::error::DisassociateVPCFromHostedZoneErrorKind::LastVPCAssociation(inner) => {
-                    Error::LastVPCAssociation(inner)
+                crate::error::DisassociateVPCFromHostedZoneErrorKind::LastVpcAssociation(inner) => {
+                    Error::LastVpcAssociation(inner)
                 }
                 crate::error::DisassociateVPCFromHostedZoneErrorKind::NoSuchHostedZone(inner) => {
                     Error::NoSuchHostedZone(inner)
                 }
-                crate::error::DisassociateVPCFromHostedZoneErrorKind::VPCAssociationNotFound(
+                crate::error::DisassociateVPCFromHostedZoneErrorKind::VpcAssociationNotFound(
                     inner,
-                ) => Error::VPCAssociationNotFound(inner),
+                ) => Error::VpcAssociationNotFound(inner),
                 crate::error::DisassociateVPCFromHostedZoneErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -771,11 +771,11 @@ impl From<smithy_http::result::SdkError<crate::error::EnableHostedZoneDNSSECErro
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::EnableHostedZoneDNSSECErrorKind::ConcurrentModification(inner) => Error::ConcurrentModification(inner),
-                crate::error::EnableHostedZoneDNSSECErrorKind::DNSSECNotFound(inner) => Error::DNSSECNotFound(inner),
+                crate::error::EnableHostedZoneDNSSECErrorKind::DnssecNotFound(inner) => Error::DnssecNotFound(inner),
                 crate::error::EnableHostedZoneDNSSECErrorKind::HostedZonePartiallyDelegated(inner) => Error::HostedZonePartiallyDelegated(inner),
                 crate::error::EnableHostedZoneDNSSECErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
                 crate::error::EnableHostedZoneDNSSECErrorKind::InvalidKeySigningKeyStatus(inner) => Error::InvalidKeySigningKeyStatus(inner),
-                crate::error::EnableHostedZoneDNSSECErrorKind::InvalidKMSArn(inner) => Error::InvalidKMSArn(inner),
+                crate::error::EnableHostedZoneDNSSECErrorKind::InvalidKmsArn(inner) => Error::InvalidKmsArn(inner),
                 crate::error::EnableHostedZoneDNSSECErrorKind::KeySigningKeyWithActiveStatusNotFound(inner) => Error::KeySigningKeyWithActiveStatusNotFound(inner),
                 crate::error::EnableHostedZoneDNSSECErrorKind::NoSuchHostedZone(inner) => Error::NoSuchHostedZone(inner),
                 crate::error::EnableHostedZoneDNSSECErrorKind::Unhandled(inner) => Error::Unhandled(inner),
@@ -1255,8 +1255,8 @@ impl From<smithy_http::result::SdkError<crate::error::ListTagsForResourceError>>
                 crate::error::ListTagsForResourceErrorKind::PriorRequestNotComplete(inner) => {
                     Error::PriorRequestNotComplete(inner)
                 }
-                crate::error::ListTagsForResourceErrorKind::ThrottlingError(inner) => {
-                    Error::ThrottlingError(inner)
+                crate::error::ListTagsForResourceErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
                 }
                 crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -1282,8 +1282,8 @@ impl From<smithy_http::result::SdkError<crate::error::ListTagsForResourcesError>
                 crate::error::ListTagsForResourcesErrorKind::PriorRequestNotComplete(inner) => {
                     Error::PriorRequestNotComplete(inner)
                 }
-                crate::error::ListTagsForResourcesErrorKind::ThrottlingError(inner) => {
-                    Error::ThrottlingError(inner)
+                crate::error::ListTagsForResourcesErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
                 }
                 crate::error::ListTagsForResourcesErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)

@@ -16,13 +16,11 @@ pub fn run_data(data: &[u8]) {
         // Exercise string unescaping since the later comparison against Serde
         // reserializes, and thus, loses UTF-16 surrogate pairs.
         for token in tokens {
-            if let Token::ValueString(escaped) = token {
-                if let Ok(unescaped) = escaped.to_unescaped() {
-                    let serde_equiv = serde_json::from_str::<String>(&format!(
-                        "\"{}\"",
-                        escaped.as_escaped_str()
-                    ))
-                    .unwrap();
+            if let Token::ValueString { value, .. } = token {
+                if let Ok(unescaped) = value.to_unescaped() {
+                    let serde_equiv =
+                        serde_json::from_str::<String>(&format!("\"{}\"", value.as_escaped_str()))
+                            .unwrap();
                     assert_eq!(serde_equiv, unescaped);
                 }
             }
@@ -48,12 +46,12 @@ pub fn run_data(data: &[u8]) {
 /// Converts a token stream into a Serde [Value]
 fn convert_tokens<'a, I: Iterator<Item = Token<'a>>>(tokens: &mut Peekable<I>) -> Value {
     match tokens.next().unwrap() {
-        Token::StartObject => {
+        Token::StartObject { .. } => {
             let mut map = Map::new();
             loop {
                 match tokens.next() {
-                    Some(Token::EndObject) => break,
-                    Some(Token::ObjectKey(key)) => {
+                    Some(Token::EndObject { .. }) => break,
+                    Some(Token::ObjectKey { key, .. }) => {
                         let key = key.to_unescaped().unwrap().to_string();
                         let value = convert_tokens(tokens);
                         map.insert(key, value);
@@ -64,11 +62,11 @@ fn convert_tokens<'a, I: Iterator<Item = Token<'a>>>(tokens: &mut Peekable<I>) -
             }
             Value::Object(map)
         }
-        Token::StartArray => {
+        Token::StartArray { .. } => {
             let mut list = Vec::new();
             loop {
                 match tokens.peek() {
-                    Some(Token::EndArray) => {
+                    Some(Token::EndArray { .. }) => {
                         tokens.next();
                         break;
                     }
@@ -80,14 +78,14 @@ fn convert_tokens<'a, I: Iterator<Item = Token<'a>>>(tokens: &mut Peekable<I>) -
             }
             Value::Array(list)
         }
-        Token::ValueNull => Value::Null,
-        Token::ValueNumber(num) => Value::Number(match num {
+        Token::ValueNull { .. } => Value::Null,
+        Token::ValueNumber { value, .. } => Value::Number(match value {
             Number::NegInt(value) => serde_json::Number::from(value),
             Number::PosInt(value) => serde_json::Number::from(value),
             Number::Float(value) => serde_json::Number::from_f64(value).unwrap(),
         }),
-        Token::ValueString(string) => Value::String(string.to_unescaped().unwrap().into()),
-        Token::ValueBool(bool) => Value::Bool(bool),
+        Token::ValueString { value, .. } => Value::String(value.to_unescaped().unwrap().into()),
+        Token::ValueBool { value, .. } => Value::Bool(value),
         _ => unreachable!(),
     }
 }

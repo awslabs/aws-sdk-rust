@@ -55370,7 +55370,7 @@ pub fn deser_list_phase2_integrity_algorithms_list(
 
 pub fn deser_list_phase1_dh_group_numbers_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<std::vec::Vec<crate::model::Phase1DHGroupNumbersListValue>, smithy_xml::decode::XmlError>
+) -> Result<std::vec::Vec<crate::model::Phase1DhGroupNumbersListValue>, smithy_xml::decode::XmlError>
 {
     let mut out = std::vec::Vec::new();
     while let Some(mut tag) = decoder.next_tag() {
@@ -55390,7 +55390,7 @@ pub fn deser_list_phase1_dh_group_numbers_list(
 
 pub fn deser_list_phase2_dh_group_numbers_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<std::vec::Vec<crate::model::Phase2DHGroupNumbersListValue>, smithy_xml::decode::XmlError>
+) -> Result<std::vec::Vec<crate::model::Phase2DhGroupNumbersListValue>, smithy_xml::decode::XmlError>
 {
     let mut out = std::vec::Vec::new();
     while let Some(mut tag) = decoder.next_tag() {
@@ -55410,7 +55410,7 @@ pub fn deser_list_phase2_dh_group_numbers_list(
 
 pub fn deser_list_ike_versions_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<std::vec::Vec<crate::model::IKEVersionsListValue>, smithy_xml::decode::XmlError> {
+) -> Result<std::vec::Vec<crate::model::IkeVersionsListValue>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -57200,9 +57200,9 @@ pub fn deser_structure_phase2_integrity_algorithms_list_value(
 
 pub fn deser_structure_phase1_dh_group_numbers_list_value(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::Phase1DHGroupNumbersListValue, smithy_xml::decode::XmlError> {
+) -> Result<crate::model::Phase1DhGroupNumbersListValue, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::Phase1DHGroupNumbersListValue::builder();
+    let mut builder = crate::model::Phase1DhGroupNumbersListValue::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("value") /* Value com.amazonaws.ec2#Phase1DHGroupNumbersListValue$Value */ =>  {
@@ -57229,9 +57229,9 @@ pub fn deser_structure_phase1_dh_group_numbers_list_value(
 
 pub fn deser_structure_phase2_dh_group_numbers_list_value(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::Phase2DHGroupNumbersListValue, smithy_xml::decode::XmlError> {
+) -> Result<crate::model::Phase2DhGroupNumbersListValue, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::Phase2DHGroupNumbersListValue::builder();
+    let mut builder = crate::model::Phase2DhGroupNumbersListValue::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("value") /* Value com.amazonaws.ec2#Phase2DHGroupNumbersListValue$Value */ =>  {
@@ -57258,9 +57258,9 @@ pub fn deser_structure_phase2_dh_group_numbers_list_value(
 
 pub fn deser_structure_ike_versions_list_value(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::IKEVersionsListValue, smithy_xml::decode::XmlError> {
+) -> Result<crate::model::IkeVersionsListValue, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::IKEVersionsListValue::builder();
+    let mut builder = crate::model::IkeVersionsListValue::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("value") /* Value com.amazonaws.ec2#IKEVersionsListValue$Value */ =>  {

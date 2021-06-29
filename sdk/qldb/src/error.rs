@@ -8,18 +8,18 @@ pub struct CancelJournalKinesisStreamError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CancelJournalKinesisStreamErrorKind {
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ResourcePreconditionNotMetError(crate::error::ResourcePreconditionNotMetError),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ResourcePreconditionNotMetException(crate::error::ResourcePreconditionNotMetException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CancelJournalKinesisStreamError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CancelJournalKinesisStreamErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            CancelJournalKinesisStreamErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            CancelJournalKinesisStreamErrorKind::ResourcePreconditionNotMetError(_inner) => {
+            CancelJournalKinesisStreamErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            CancelJournalKinesisStreamErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            CancelJournalKinesisStreamErrorKind::ResourcePreconditionNotMetException(_inner) => {
                 _inner.fmt(f)
             }
             CancelJournalKinesisStreamErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -70,31 +70,31 @@ impl CancelJournalKinesisStreamError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CancelJournalKinesisStreamErrorKind::InvalidParameterError(_)
+            CancelJournalKinesisStreamErrorKind::InvalidParameterException(_)
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CancelJournalKinesisStreamErrorKind::ResourceNotFoundError(_)
+            CancelJournalKinesisStreamErrorKind::ResourceNotFoundException(_)
         )
     }
-    pub fn is_resource_precondition_not_met_error(&self) -> bool {
+    pub fn is_resource_precondition_not_met_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CancelJournalKinesisStreamErrorKind::ResourcePreconditionNotMetError(_)
+            CancelJournalKinesisStreamErrorKind::ResourcePreconditionNotMetException(_)
         )
     }
 }
 impl std::error::Error for CancelJournalKinesisStreamError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CancelJournalKinesisStreamErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            CancelJournalKinesisStreamErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            CancelJournalKinesisStreamErrorKind::ResourcePreconditionNotMetError(_inner) => {
+            CancelJournalKinesisStreamErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            CancelJournalKinesisStreamErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CancelJournalKinesisStreamErrorKind::ResourcePreconditionNotMetException(_inner) => {
                 Some(_inner)
             }
             CancelJournalKinesisStreamErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -111,20 +111,20 @@ pub struct CreateLedgerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateLedgerErrorKind {
-    InvalidParameterError(crate::error::InvalidParameterError),
-    LimitExceededError(crate::error::LimitExceededError),
-    ResourceAlreadyExistsError(crate::error::ResourceAlreadyExistsError),
-    ResourceInUseError(crate::error::ResourceInUseError),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    LimitExceededException(crate::error::LimitExceededException),
+    ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
+    ResourceInUseException(crate::error::ResourceInUseException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateLedgerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateLedgerErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            CreateLedgerErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            CreateLedgerErrorKind::ResourceAlreadyExistsError(_inner) => _inner.fmt(f),
-            CreateLedgerErrorKind::ResourceInUseError(_inner) => _inner.fmt(f),
+            CreateLedgerErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            CreateLedgerErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateLedgerErrorKind::ResourceAlreadyExistsException(_inner) => _inner.fmt(f),
+            CreateLedgerErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
             CreateLedgerErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -173,29 +173,32 @@ impl CreateLedgerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
-        matches!(&self.kind, CreateLedgerErrorKind::InvalidParameterError(_))
-    }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, CreateLedgerErrorKind::LimitExceededError(_))
-    }
-    pub fn is_resource_already_exists_error(&self) -> bool {
+    pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateLedgerErrorKind::ResourceAlreadyExistsError(_)
+            CreateLedgerErrorKind::InvalidParameterException(_)
         )
     }
-    pub fn is_resource_in_use_error(&self) -> bool {
-        matches!(&self.kind, CreateLedgerErrorKind::ResourceInUseError(_))
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(&self.kind, CreateLedgerErrorKind::LimitExceededException(_))
+    }
+    pub fn is_resource_already_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateLedgerErrorKind::ResourceAlreadyExistsException(_)
+        )
+    }
+    pub fn is_resource_in_use_exception(&self) -> bool {
+        matches!(&self.kind, CreateLedgerErrorKind::ResourceInUseException(_))
     }
 }
 impl std::error::Error for CreateLedgerError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateLedgerErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            CreateLedgerErrorKind::LimitExceededError(_inner) => Some(_inner),
-            CreateLedgerErrorKind::ResourceAlreadyExistsError(_inner) => Some(_inner),
-            CreateLedgerErrorKind::ResourceInUseError(_inner) => Some(_inner),
+            CreateLedgerErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            CreateLedgerErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateLedgerErrorKind::ResourceAlreadyExistsException(_inner) => Some(_inner),
+            CreateLedgerErrorKind::ResourceInUseException(_inner) => Some(_inner),
             CreateLedgerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -210,20 +213,20 @@ pub struct DeleteLedgerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteLedgerErrorKind {
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ResourceInUseError(crate::error::ResourceInUseError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ResourcePreconditionNotMetError(crate::error::ResourcePreconditionNotMetError),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ResourceInUseException(crate::error::ResourceInUseException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ResourcePreconditionNotMetException(crate::error::ResourcePreconditionNotMetException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteLedgerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteLedgerErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            DeleteLedgerErrorKind::ResourceInUseError(_inner) => _inner.fmt(f),
-            DeleteLedgerErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            DeleteLedgerErrorKind::ResourcePreconditionNotMetError(_inner) => _inner.fmt(f),
+            DeleteLedgerErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            DeleteLedgerErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
+            DeleteLedgerErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteLedgerErrorKind::ResourcePreconditionNotMetException(_inner) => _inner.fmt(f),
             DeleteLedgerErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -272,29 +275,35 @@ impl DeleteLedgerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
-        matches!(&self.kind, DeleteLedgerErrorKind::InvalidParameterError(_))
-    }
-    pub fn is_resource_in_use_error(&self) -> bool {
-        matches!(&self.kind, DeleteLedgerErrorKind::ResourceInUseError(_))
-    }
-    pub fn is_resource_not_found_error(&self) -> bool {
-        matches!(&self.kind, DeleteLedgerErrorKind::ResourceNotFoundError(_))
-    }
-    pub fn is_resource_precondition_not_met_error(&self) -> bool {
+    pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteLedgerErrorKind::ResourcePreconditionNotMetError(_)
+            DeleteLedgerErrorKind::InvalidParameterException(_)
+        )
+    }
+    pub fn is_resource_in_use_exception(&self) -> bool {
+        matches!(&self.kind, DeleteLedgerErrorKind::ResourceInUseException(_))
+    }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteLedgerErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    pub fn is_resource_precondition_not_met_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteLedgerErrorKind::ResourcePreconditionNotMetException(_)
         )
     }
 }
 impl std::error::Error for DeleteLedgerError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteLedgerErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            DeleteLedgerErrorKind::ResourceInUseError(_inner) => Some(_inner),
-            DeleteLedgerErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            DeleteLedgerErrorKind::ResourcePreconditionNotMetError(_inner) => Some(_inner),
+            DeleteLedgerErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            DeleteLedgerErrorKind::ResourceInUseException(_inner) => Some(_inner),
+            DeleteLedgerErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteLedgerErrorKind::ResourcePreconditionNotMetException(_inner) => Some(_inner),
             DeleteLedgerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -309,18 +318,22 @@ pub struct DescribeJournalKinesisStreamError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeJournalKinesisStreamErrorKind {
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ResourcePreconditionNotMetError(crate::error::ResourcePreconditionNotMetError),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ResourcePreconditionNotMetException(crate::error::ResourcePreconditionNotMetException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeJournalKinesisStreamError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeJournalKinesisStreamErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            DescribeJournalKinesisStreamErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            DescribeJournalKinesisStreamErrorKind::ResourcePreconditionNotMetError(_inner) => {
+            DescribeJournalKinesisStreamErrorKind::InvalidParameterException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeJournalKinesisStreamErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeJournalKinesisStreamErrorKind::ResourcePreconditionNotMetException(_inner) => {
                 _inner.fmt(f)
             }
             DescribeJournalKinesisStreamErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -371,31 +384,35 @@ impl DescribeJournalKinesisStreamError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeJournalKinesisStreamErrorKind::InvalidParameterError(_)
+            DescribeJournalKinesisStreamErrorKind::InvalidParameterException(_)
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeJournalKinesisStreamErrorKind::ResourceNotFoundError(_)
+            DescribeJournalKinesisStreamErrorKind::ResourceNotFoundException(_)
         )
     }
-    pub fn is_resource_precondition_not_met_error(&self) -> bool {
+    pub fn is_resource_precondition_not_met_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeJournalKinesisStreamErrorKind::ResourcePreconditionNotMetError(_)
+            DescribeJournalKinesisStreamErrorKind::ResourcePreconditionNotMetException(_)
         )
     }
 }
 impl std::error::Error for DescribeJournalKinesisStreamError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeJournalKinesisStreamErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            DescribeJournalKinesisStreamErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            DescribeJournalKinesisStreamErrorKind::ResourcePreconditionNotMetError(_inner) => {
+            DescribeJournalKinesisStreamErrorKind::InvalidParameterException(_inner) => {
+                Some(_inner)
+            }
+            DescribeJournalKinesisStreamErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            DescribeJournalKinesisStreamErrorKind::ResourcePreconditionNotMetException(_inner) => {
                 Some(_inner)
             }
             DescribeJournalKinesisStreamErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -412,14 +429,14 @@ pub struct DescribeJournalS3ExportError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeJournalS3ExportErrorKind {
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeJournalS3ExportError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeJournalS3ExportErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
+            DescribeJournalS3ExportErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             DescribeJournalS3ExportErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -468,17 +485,17 @@ impl DescribeJournalS3ExportError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeJournalS3ExportErrorKind::ResourceNotFoundError(_)
+            DescribeJournalS3ExportErrorKind::ResourceNotFoundException(_)
         )
     }
 }
 impl std::error::Error for DescribeJournalS3ExportError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeJournalS3ExportErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
+            DescribeJournalS3ExportErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeJournalS3ExportErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -493,16 +510,16 @@ pub struct DescribeLedgerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeLedgerErrorKind {
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeLedgerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeLedgerErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            DescribeLedgerErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
+            DescribeLedgerErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            DescribeLedgerErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             DescribeLedgerErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -551,24 +568,24 @@ impl DescribeLedgerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeLedgerErrorKind::InvalidParameterError(_)
+            DescribeLedgerErrorKind::InvalidParameterException(_)
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeLedgerErrorKind::ResourceNotFoundError(_)
+            DescribeLedgerErrorKind::ResourceNotFoundException(_)
         )
     }
 }
 impl std::error::Error for DescribeLedgerError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeLedgerErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            DescribeLedgerErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
+            DescribeLedgerErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            DescribeLedgerErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeLedgerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -583,16 +600,18 @@ pub struct ExportJournalToS3Error {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ExportJournalToS3ErrorKind {
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ResourcePreconditionNotMetError(crate::error::ResourcePreconditionNotMetError),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ResourcePreconditionNotMetException(crate::error::ResourcePreconditionNotMetException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ExportJournalToS3Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ExportJournalToS3ErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            ExportJournalToS3ErrorKind::ResourcePreconditionNotMetError(_inner) => _inner.fmt(f),
+            ExportJournalToS3ErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ExportJournalToS3ErrorKind::ResourcePreconditionNotMetException(_inner) => {
+                _inner.fmt(f)
+            }
             ExportJournalToS3ErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -641,24 +660,24 @@ impl ExportJournalToS3Error {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ExportJournalToS3ErrorKind::ResourceNotFoundError(_)
+            ExportJournalToS3ErrorKind::ResourceNotFoundException(_)
         )
     }
-    pub fn is_resource_precondition_not_met_error(&self) -> bool {
+    pub fn is_resource_precondition_not_met_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ExportJournalToS3ErrorKind::ResourcePreconditionNotMetError(_)
+            ExportJournalToS3ErrorKind::ResourcePreconditionNotMetException(_)
         )
     }
 }
 impl std::error::Error for ExportJournalToS3Error {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ExportJournalToS3ErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            ExportJournalToS3ErrorKind::ResourcePreconditionNotMetError(_inner) => Some(_inner),
+            ExportJournalToS3ErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ExportJournalToS3ErrorKind::ResourcePreconditionNotMetException(_inner) => Some(_inner),
             ExportJournalToS3ErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -673,18 +692,18 @@ pub struct GetBlockError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetBlockErrorKind {
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ResourcePreconditionNotMetError(crate::error::ResourcePreconditionNotMetError),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ResourcePreconditionNotMetException(crate::error::ResourcePreconditionNotMetException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBlockError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetBlockErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            GetBlockErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            GetBlockErrorKind::ResourcePreconditionNotMetError(_inner) => _inner.fmt(f),
+            GetBlockErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            GetBlockErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetBlockErrorKind::ResourcePreconditionNotMetException(_inner) => _inner.fmt(f),
             GetBlockErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -733,25 +752,25 @@ impl GetBlockError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
-        matches!(&self.kind, GetBlockErrorKind::InvalidParameterError(_))
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(&self.kind, GetBlockErrorKind::InvalidParameterException(_))
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
-        matches!(&self.kind, GetBlockErrorKind::ResourceNotFoundError(_))
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(&self.kind, GetBlockErrorKind::ResourceNotFoundException(_))
     }
-    pub fn is_resource_precondition_not_met_error(&self) -> bool {
+    pub fn is_resource_precondition_not_met_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetBlockErrorKind::ResourcePreconditionNotMetError(_)
+            GetBlockErrorKind::ResourcePreconditionNotMetException(_)
         )
     }
 }
 impl std::error::Error for GetBlockError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetBlockErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            GetBlockErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            GetBlockErrorKind::ResourcePreconditionNotMetError(_inner) => Some(_inner),
+            GetBlockErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            GetBlockErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetBlockErrorKind::ResourcePreconditionNotMetException(_inner) => Some(_inner),
             GetBlockErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -766,18 +785,18 @@ pub struct GetDigestError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDigestErrorKind {
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ResourcePreconditionNotMetError(crate::error::ResourcePreconditionNotMetError),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ResourcePreconditionNotMetException(crate::error::ResourcePreconditionNotMetException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDigestError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetDigestErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            GetDigestErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            GetDigestErrorKind::ResourcePreconditionNotMetError(_inner) => _inner.fmt(f),
+            GetDigestErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            GetDigestErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetDigestErrorKind::ResourcePreconditionNotMetException(_inner) => _inner.fmt(f),
             GetDigestErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -826,25 +845,25 @@ impl GetDigestError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
-        matches!(&self.kind, GetDigestErrorKind::InvalidParameterError(_))
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(&self.kind, GetDigestErrorKind::InvalidParameterException(_))
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
-        matches!(&self.kind, GetDigestErrorKind::ResourceNotFoundError(_))
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(&self.kind, GetDigestErrorKind::ResourceNotFoundException(_))
     }
-    pub fn is_resource_precondition_not_met_error(&self) -> bool {
+    pub fn is_resource_precondition_not_met_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetDigestErrorKind::ResourcePreconditionNotMetError(_)
+            GetDigestErrorKind::ResourcePreconditionNotMetException(_)
         )
     }
 }
 impl std::error::Error for GetDigestError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetDigestErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            GetDigestErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            GetDigestErrorKind::ResourcePreconditionNotMetError(_inner) => Some(_inner),
+            GetDigestErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            GetDigestErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetDigestErrorKind::ResourcePreconditionNotMetException(_inner) => Some(_inner),
             GetDigestErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -859,18 +878,18 @@ pub struct GetRevisionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetRevisionErrorKind {
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ResourcePreconditionNotMetError(crate::error::ResourcePreconditionNotMetError),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ResourcePreconditionNotMetException(crate::error::ResourcePreconditionNotMetException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetRevisionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetRevisionErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            GetRevisionErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            GetRevisionErrorKind::ResourcePreconditionNotMetError(_inner) => _inner.fmt(f),
+            GetRevisionErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            GetRevisionErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetRevisionErrorKind::ResourcePreconditionNotMetException(_inner) => _inner.fmt(f),
             GetRevisionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -919,25 +938,31 @@ impl GetRevisionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
-        matches!(&self.kind, GetRevisionErrorKind::InvalidParameterError(_))
-    }
-    pub fn is_resource_not_found_error(&self) -> bool {
-        matches!(&self.kind, GetRevisionErrorKind::ResourceNotFoundError(_))
-    }
-    pub fn is_resource_precondition_not_met_error(&self) -> bool {
+    pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetRevisionErrorKind::ResourcePreconditionNotMetError(_)
+            GetRevisionErrorKind::InvalidParameterException(_)
+        )
+    }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetRevisionErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    pub fn is_resource_precondition_not_met_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetRevisionErrorKind::ResourcePreconditionNotMetException(_)
         )
     }
 }
 impl std::error::Error for GetRevisionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetRevisionErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            GetRevisionErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            GetRevisionErrorKind::ResourcePreconditionNotMetError(_inner) => Some(_inner),
+            GetRevisionErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            GetRevisionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetRevisionErrorKind::ResourcePreconditionNotMetException(_inner) => Some(_inner),
             GetRevisionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -952,22 +977,22 @@ pub struct ListJournalKinesisStreamsForLedgerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListJournalKinesisStreamsForLedgerErrorKind {
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ResourcePreconditionNotMetError(crate::error::ResourcePreconditionNotMetError),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ResourcePreconditionNotMetException(crate::error::ResourcePreconditionNotMetException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListJournalKinesisStreamsForLedgerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListJournalKinesisStreamsForLedgerErrorKind::InvalidParameterError(_inner) => {
+            ListJournalKinesisStreamsForLedgerErrorKind::InvalidParameterException(_inner) => {
                 _inner.fmt(f)
             }
-            ListJournalKinesisStreamsForLedgerErrorKind::ResourceNotFoundError(_inner) => {
+            ListJournalKinesisStreamsForLedgerErrorKind::ResourceNotFoundException(_inner) => {
                 _inner.fmt(f)
             }
-            ListJournalKinesisStreamsForLedgerErrorKind::ResourcePreconditionNotMetError(
+            ListJournalKinesisStreamsForLedgerErrorKind::ResourcePreconditionNotMetException(
                 _inner,
             ) => _inner.fmt(f),
             ListJournalKinesisStreamsForLedgerErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -1021,35 +1046,35 @@ impl ListJournalKinesisStreamsForLedgerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListJournalKinesisStreamsForLedgerErrorKind::InvalidParameterError(_)
+            ListJournalKinesisStreamsForLedgerErrorKind::InvalidParameterException(_)
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListJournalKinesisStreamsForLedgerErrorKind::ResourceNotFoundError(_)
+            ListJournalKinesisStreamsForLedgerErrorKind::ResourceNotFoundException(_)
         )
     }
-    pub fn is_resource_precondition_not_met_error(&self) -> bool {
+    pub fn is_resource_precondition_not_met_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListJournalKinesisStreamsForLedgerErrorKind::ResourcePreconditionNotMetError(_)
+            ListJournalKinesisStreamsForLedgerErrorKind::ResourcePreconditionNotMetException(_)
         )
     }
 }
 impl std::error::Error for ListJournalKinesisStreamsForLedgerError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListJournalKinesisStreamsForLedgerErrorKind::InvalidParameterError(_inner) => {
+            ListJournalKinesisStreamsForLedgerErrorKind::InvalidParameterException(_inner) => {
                 Some(_inner)
             }
-            ListJournalKinesisStreamsForLedgerErrorKind::ResourceNotFoundError(_inner) => {
+            ListJournalKinesisStreamsForLedgerErrorKind::ResourceNotFoundException(_inner) => {
                 Some(_inner)
             }
-            ListJournalKinesisStreamsForLedgerErrorKind::ResourcePreconditionNotMetError(
+            ListJournalKinesisStreamsForLedgerErrorKind::ResourcePreconditionNotMetException(
                 _inner,
             ) => Some(_inner),
             ListJournalKinesisStreamsForLedgerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -1282,16 +1307,16 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListTagsForResourceErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             ListTagsForResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1340,24 +1365,24 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListTagsForResourceErrorKind::InvalidParameterError(_)
+            ListTagsForResourceErrorKind::InvalidParameterException(_)
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListTagsForResourceErrorKind::ResourceNotFoundError(_)
+            ListTagsForResourceErrorKind::ResourceNotFoundException(_)
         )
     }
 }
 impl std::error::Error for ListTagsForResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListTagsForResourceErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1372,18 +1397,18 @@ pub struct StreamJournalToKinesisError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StreamJournalToKinesisErrorKind {
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ResourcePreconditionNotMetError(crate::error::ResourcePreconditionNotMetError),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ResourcePreconditionNotMetException(crate::error::ResourcePreconditionNotMetException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StreamJournalToKinesisError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            StreamJournalToKinesisErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            StreamJournalToKinesisErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            StreamJournalToKinesisErrorKind::ResourcePreconditionNotMetError(_inner) => {
+            StreamJournalToKinesisErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            StreamJournalToKinesisErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            StreamJournalToKinesisErrorKind::ResourcePreconditionNotMetException(_inner) => {
                 _inner.fmt(f)
             }
             StreamJournalToKinesisErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -1434,31 +1459,31 @@ impl StreamJournalToKinesisError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
-            StreamJournalToKinesisErrorKind::InvalidParameterError(_)
+            StreamJournalToKinesisErrorKind::InvalidParameterException(_)
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            StreamJournalToKinesisErrorKind::ResourceNotFoundError(_)
+            StreamJournalToKinesisErrorKind::ResourceNotFoundException(_)
         )
     }
-    pub fn is_resource_precondition_not_met_error(&self) -> bool {
+    pub fn is_resource_precondition_not_met_exception(&self) -> bool {
         matches!(
             &self.kind,
-            StreamJournalToKinesisErrorKind::ResourcePreconditionNotMetError(_)
+            StreamJournalToKinesisErrorKind::ResourcePreconditionNotMetException(_)
         )
     }
 }
 impl std::error::Error for StreamJournalToKinesisError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            StreamJournalToKinesisErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            StreamJournalToKinesisErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            StreamJournalToKinesisErrorKind::ResourcePreconditionNotMetError(_inner) => {
+            StreamJournalToKinesisErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            StreamJournalToKinesisErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            StreamJournalToKinesisErrorKind::ResourcePreconditionNotMetException(_inner) => {
                 Some(_inner)
             }
             StreamJournalToKinesisErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -1475,16 +1500,16 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            TagResourceErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             TagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1533,18 +1558,24 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
-        matches!(&self.kind, TagResourceErrorKind::InvalidParameterError(_))
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            TagResourceErrorKind::InvalidParameterException(_)
+        )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
-        matches!(&self.kind, TagResourceErrorKind::ResourceNotFoundError(_))
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            TagResourceErrorKind::ResourceNotFoundException(_)
+        )
     }
 }
 impl std::error::Error for TagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            TagResourceErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            TagResourceErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
+            TagResourceErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            TagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1559,16 +1590,16 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UntagResourceErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             UntagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1617,18 +1648,24 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
-        matches!(&self.kind, UntagResourceErrorKind::InvalidParameterError(_))
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UntagResourceErrorKind::InvalidParameterException(_)
+        )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
-        matches!(&self.kind, UntagResourceErrorKind::ResourceNotFoundError(_))
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UntagResourceErrorKind::ResourceNotFoundException(_)
+        )
     }
 }
 impl std::error::Error for UntagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UntagResourceErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            UntagResourceErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
+            UntagResourceErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            UntagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1643,16 +1680,16 @@ pub struct UpdateLedgerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateLedgerErrorKind {
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateLedgerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateLedgerErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            UpdateLedgerErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
+            UpdateLedgerErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            UpdateLedgerErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             UpdateLedgerErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1701,18 +1738,24 @@ impl UpdateLedgerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
-        matches!(&self.kind, UpdateLedgerErrorKind::InvalidParameterError(_))
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateLedgerErrorKind::InvalidParameterException(_)
+        )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
-        matches!(&self.kind, UpdateLedgerErrorKind::ResourceNotFoundError(_))
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateLedgerErrorKind::ResourceNotFoundException(_)
+        )
     }
 }
 impl std::error::Error for UpdateLedgerError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateLedgerErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            UpdateLedgerErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
+            UpdateLedgerErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            UpdateLedgerErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateLedgerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1727,16 +1770,20 @@ pub struct UpdateLedgerPermissionsModeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateLedgerPermissionsModeErrorKind {
-    InvalidParameterError(crate::error::InvalidParameterError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateLedgerPermissionsModeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateLedgerPermissionsModeErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
-            UpdateLedgerPermissionsModeErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
+            UpdateLedgerPermissionsModeErrorKind::InvalidParameterException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateLedgerPermissionsModeErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
             UpdateLedgerPermissionsModeErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1785,24 +1832,24 @@ impl UpdateLedgerPermissionsModeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_parameter_error(&self) -> bool {
+    pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateLedgerPermissionsModeErrorKind::InvalidParameterError(_)
+            UpdateLedgerPermissionsModeErrorKind::InvalidParameterException(_)
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateLedgerPermissionsModeErrorKind::ResourceNotFoundError(_)
+            UpdateLedgerPermissionsModeErrorKind::ResourceNotFoundException(_)
         )
     }
 }
 impl std::error::Error for UpdateLedgerPermissionsModeError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateLedgerPermissionsModeErrorKind::InvalidParameterError(_inner) => Some(_inner),
-            UpdateLedgerPermissionsModeErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
+            UpdateLedgerPermissionsModeErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            UpdateLedgerPermissionsModeErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateLedgerPermissionsModeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1810,47 +1857,41 @@ impl std::error::Error for UpdateLedgerPermissionsModeError {
 
 /// <p>The specified resource doesn't exist.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct ResourceNotFoundError {
-    #[serde(rename = "Message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ResourceNotFoundException {
     pub message: std::option::Option<std::string::String>,
     /// <p>The type of resource.</p>
-    #[serde(rename = "ResourceType")]
-    #[serde(default)]
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The name of the resource.</p>
-    #[serde(rename = "ResourceName")]
-    #[serde(default)]
     pub resource_name: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ResourceNotFoundError {
+impl std::fmt::Debug for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceNotFoundError");
+        let mut formatter = f.debug_struct("ResourceNotFoundException");
         formatter.field("message", &self.message);
         formatter.field("resource_type", &self.resource_type);
         formatter.field("resource_name", &self.resource_name);
         formatter.finish()
     }
 }
-impl ResourceNotFoundError {
+impl ResourceNotFoundException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ResourceNotFoundError {
+impl std::fmt::Display for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ResourceNotFoundError [ResourceNotFoundException]")?;
+        write!(f, "ResourceNotFoundException")?;
         if let Some(inner_1) = &self.message {
             write!(f, ": {}", inner_1)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ResourceNotFoundError {}
-/// See [`ResourceNotFoundError`](crate::error::ResourceNotFoundError)
-pub mod resource_not_found_error {
-    /// A builder for [`ResourceNotFoundError`](crate::error::ResourceNotFoundError)
+impl std::error::Error for ResourceNotFoundException {}
+/// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
+pub mod resource_not_found_exception {
+    /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -1891,9 +1932,9 @@ pub mod resource_not_found_error {
             self.resource_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResourceNotFoundError`](crate::error::ResourceNotFoundError)
-        pub fn build(self) -> crate::error::ResourceNotFoundError {
-            crate::error::ResourceNotFoundError {
+        /// Consumes the builder and constructs a [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
+        pub fn build(self) -> crate::error::ResourceNotFoundException {
+            crate::error::ResourceNotFoundException {
                 message: self.message,
                 resource_type: self.resource_type,
                 resource_name: self.resource_name,
@@ -1901,51 +1942,47 @@ pub mod resource_not_found_error {
         }
     }
 }
-impl ResourceNotFoundError {
-    /// Creates a new builder-style object to manufacture [`ResourceNotFoundError`](crate::error::ResourceNotFoundError)
-    pub fn builder() -> crate::error::resource_not_found_error::Builder {
-        crate::error::resource_not_found_error::Builder::default()
+impl ResourceNotFoundException {
+    /// Creates a new builder-style object to manufacture [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
+    pub fn builder() -> crate::error::resource_not_found_exception::Builder {
+        crate::error::resource_not_found_exception::Builder::default()
     }
 }
 
 /// <p>One or more parameters in the request aren't valid.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidParameterError {
-    #[serde(rename = "Message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InvalidParameterException {
     pub message: std::option::Option<std::string::String>,
     /// <p>The name of the invalid parameter.</p>
-    #[serde(rename = "ParameterName")]
-    #[serde(default)]
     pub parameter_name: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidParameterError {
+impl std::fmt::Debug for InvalidParameterException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidParameterError");
+        let mut formatter = f.debug_struct("InvalidParameterException");
         formatter.field("message", &self.message);
         formatter.field("parameter_name", &self.parameter_name);
         formatter.finish()
     }
 }
-impl InvalidParameterError {
+impl InvalidParameterException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InvalidParameterError {
+impl std::fmt::Display for InvalidParameterException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidParameterError [InvalidParameterException]")?;
+        write!(f, "InvalidParameterException")?;
         if let Some(inner_2) = &self.message {
             write!(f, ": {}", inner_2)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InvalidParameterError {}
-/// See [`InvalidParameterError`](crate::error::InvalidParameterError)
-pub mod invalid_parameter_error {
-    /// A builder for [`InvalidParameterError`](crate::error::InvalidParameterError)
+impl std::error::Error for InvalidParameterException {}
+/// See [`InvalidParameterException`](crate::error::InvalidParameterException)
+pub mod invalid_parameter_exception {
+    /// A builder for [`InvalidParameterException`](crate::error::InvalidParameterException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -1973,68 +2010,59 @@ pub mod invalid_parameter_error {
             self.parameter_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidParameterError`](crate::error::InvalidParameterError)
-        pub fn build(self) -> crate::error::InvalidParameterError {
-            crate::error::InvalidParameterError {
+        /// Consumes the builder and constructs a [`InvalidParameterException`](crate::error::InvalidParameterException)
+        pub fn build(self) -> crate::error::InvalidParameterException {
+            crate::error::InvalidParameterException {
                 message: self.message,
                 parameter_name: self.parameter_name,
             }
         }
     }
 }
-impl InvalidParameterError {
-    /// Creates a new builder-style object to manufacture [`InvalidParameterError`](crate::error::InvalidParameterError)
-    pub fn builder() -> crate::error::invalid_parameter_error::Builder {
-        crate::error::invalid_parameter_error::Builder::default()
+impl InvalidParameterException {
+    /// Creates a new builder-style object to manufacture [`InvalidParameterException`](crate::error::InvalidParameterException)
+    pub fn builder() -> crate::error::invalid_parameter_exception::Builder {
+        crate::error::invalid_parameter_exception::Builder::default()
     }
 }
 
 /// <p>The operation failed because a condition wasn't satisfied in advance.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct ResourcePreconditionNotMetError {
-    #[serde(rename = "Message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ResourcePreconditionNotMetException {
     pub message: std::option::Option<std::string::String>,
     /// <p>The type of resource.</p>
-    #[serde(rename = "ResourceType")]
-    #[serde(default)]
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The name of the resource.</p>
-    #[serde(rename = "ResourceName")]
-    #[serde(default)]
     pub resource_name: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ResourcePreconditionNotMetError {
+impl std::fmt::Debug for ResourcePreconditionNotMetException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourcePreconditionNotMetError");
+        let mut formatter = f.debug_struct("ResourcePreconditionNotMetException");
         formatter.field("message", &self.message);
         formatter.field("resource_type", &self.resource_type);
         formatter.field("resource_name", &self.resource_name);
         formatter.finish()
     }
 }
-impl ResourcePreconditionNotMetError {
+impl ResourcePreconditionNotMetException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ResourcePreconditionNotMetError {
+impl std::fmt::Display for ResourcePreconditionNotMetException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "ResourcePreconditionNotMetError [ResourcePreconditionNotMetException]"
-        )?;
+        write!(f, "ResourcePreconditionNotMetException")?;
         if let Some(inner_3) = &self.message {
             write!(f, ": {}", inner_3)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ResourcePreconditionNotMetError {}
-/// See [`ResourcePreconditionNotMetError`](crate::error::ResourcePreconditionNotMetError)
-pub mod resource_precondition_not_met_error {
-    /// A builder for [`ResourcePreconditionNotMetError`](crate::error::ResourcePreconditionNotMetError)
+impl std::error::Error for ResourcePreconditionNotMetException {}
+/// See [`ResourcePreconditionNotMetException`](crate::error::ResourcePreconditionNotMetException)
+pub mod resource_precondition_not_met_exception {
+    /// A builder for [`ResourcePreconditionNotMetException`](crate::error::ResourcePreconditionNotMetException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -2075,9 +2103,9 @@ pub mod resource_precondition_not_met_error {
             self.resource_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResourcePreconditionNotMetError`](crate::error::ResourcePreconditionNotMetError)
-        pub fn build(self) -> crate::error::ResourcePreconditionNotMetError {
-            crate::error::ResourcePreconditionNotMetError {
+        /// Consumes the builder and constructs a [`ResourcePreconditionNotMetException`](crate::error::ResourcePreconditionNotMetException)
+        pub fn build(self) -> crate::error::ResourcePreconditionNotMetException {
+            crate::error::ResourcePreconditionNotMetException {
                 message: self.message,
                 resource_type: self.resource_type,
                 resource_name: self.resource_name,
@@ -2085,56 +2113,50 @@ pub mod resource_precondition_not_met_error {
         }
     }
 }
-impl ResourcePreconditionNotMetError {
-    /// Creates a new builder-style object to manufacture [`ResourcePreconditionNotMetError`](crate::error::ResourcePreconditionNotMetError)
-    pub fn builder() -> crate::error::resource_precondition_not_met_error::Builder {
-        crate::error::resource_precondition_not_met_error::Builder::default()
+impl ResourcePreconditionNotMetException {
+    /// Creates a new builder-style object to manufacture [`ResourcePreconditionNotMetException`](crate::error::ResourcePreconditionNotMetException)
+    pub fn builder() -> crate::error::resource_precondition_not_met_exception::Builder {
+        crate::error::resource_precondition_not_met_exception::Builder::default()
     }
 }
 
 /// <p>The specified resource can't be modified at this time.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct ResourceInUseError {
-    #[serde(rename = "Message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ResourceInUseException {
     pub message: std::option::Option<std::string::String>,
     /// <p>The type of resource.</p>
-    #[serde(rename = "ResourceType")]
-    #[serde(default)]
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The name of the resource.</p>
-    #[serde(rename = "ResourceName")]
-    #[serde(default)]
     pub resource_name: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ResourceInUseError {
+impl std::fmt::Debug for ResourceInUseException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceInUseError");
+        let mut formatter = f.debug_struct("ResourceInUseException");
         formatter.field("message", &self.message);
         formatter.field("resource_type", &self.resource_type);
         formatter.field("resource_name", &self.resource_name);
         formatter.finish()
     }
 }
-impl ResourceInUseError {
+impl ResourceInUseException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ResourceInUseError {
+impl std::fmt::Display for ResourceInUseException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ResourceInUseError [ResourceInUseException]")?;
+        write!(f, "ResourceInUseException")?;
         if let Some(inner_4) = &self.message {
             write!(f, ": {}", inner_4)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ResourceInUseError {}
-/// See [`ResourceInUseError`](crate::error::ResourceInUseError)
-pub mod resource_in_use_error {
-    /// A builder for [`ResourceInUseError`](crate::error::ResourceInUseError)
+impl std::error::Error for ResourceInUseException {}
+/// See [`ResourceInUseException`](crate::error::ResourceInUseException)
+pub mod resource_in_use_exception {
+    /// A builder for [`ResourceInUseException`](crate::error::ResourceInUseException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -2175,9 +2197,9 @@ pub mod resource_in_use_error {
             self.resource_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResourceInUseError`](crate::error::ResourceInUseError)
-        pub fn build(self) -> crate::error::ResourceInUseError {
-            crate::error::ResourceInUseError {
+        /// Consumes the builder and constructs a [`ResourceInUseException`](crate::error::ResourceInUseException)
+        pub fn build(self) -> crate::error::ResourceInUseException {
+            crate::error::ResourceInUseException {
                 message: self.message,
                 resource_type: self.resource_type,
                 resource_name: self.resource_name,
@@ -2185,59 +2207,50 @@ pub mod resource_in_use_error {
         }
     }
 }
-impl ResourceInUseError {
-    /// Creates a new builder-style object to manufacture [`ResourceInUseError`](crate::error::ResourceInUseError)
-    pub fn builder() -> crate::error::resource_in_use_error::Builder {
-        crate::error::resource_in_use_error::Builder::default()
+impl ResourceInUseException {
+    /// Creates a new builder-style object to manufacture [`ResourceInUseException`](crate::error::ResourceInUseException)
+    pub fn builder() -> crate::error::resource_in_use_exception::Builder {
+        crate::error::resource_in_use_exception::Builder::default()
     }
 }
 
 /// <p>The specified resource already exists.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct ResourceAlreadyExistsError {
-    #[serde(rename = "Message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ResourceAlreadyExistsException {
     pub message: std::option::Option<std::string::String>,
     /// <p>The type of resource.</p>
-    #[serde(rename = "ResourceType")]
-    #[serde(default)]
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The name of the resource.</p>
-    #[serde(rename = "ResourceName")]
-    #[serde(default)]
     pub resource_name: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ResourceAlreadyExistsError {
+impl std::fmt::Debug for ResourceAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceAlreadyExistsError");
+        let mut formatter = f.debug_struct("ResourceAlreadyExistsException");
         formatter.field("message", &self.message);
         formatter.field("resource_type", &self.resource_type);
         formatter.field("resource_name", &self.resource_name);
         formatter.finish()
     }
 }
-impl ResourceAlreadyExistsError {
+impl ResourceAlreadyExistsException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ResourceAlreadyExistsError {
+impl std::fmt::Display for ResourceAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "ResourceAlreadyExistsError [ResourceAlreadyExistsException]"
-        )?;
+        write!(f, "ResourceAlreadyExistsException")?;
         if let Some(inner_5) = &self.message {
             write!(f, ": {}", inner_5)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ResourceAlreadyExistsError {}
-/// See [`ResourceAlreadyExistsError`](crate::error::ResourceAlreadyExistsError)
-pub mod resource_already_exists_error {
-    /// A builder for [`ResourceAlreadyExistsError`](crate::error::ResourceAlreadyExistsError)
+impl std::error::Error for ResourceAlreadyExistsException {}
+/// See [`ResourceAlreadyExistsException`](crate::error::ResourceAlreadyExistsException)
+pub mod resource_already_exists_exception {
+    /// A builder for [`ResourceAlreadyExistsException`](crate::error::ResourceAlreadyExistsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -2278,9 +2291,9 @@ pub mod resource_already_exists_error {
             self.resource_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResourceAlreadyExistsError`](crate::error::ResourceAlreadyExistsError)
-        pub fn build(self) -> crate::error::ResourceAlreadyExistsError {
-            crate::error::ResourceAlreadyExistsError {
+        /// Consumes the builder and constructs a [`ResourceAlreadyExistsException`](crate::error::ResourceAlreadyExistsException)
+        pub fn build(self) -> crate::error::ResourceAlreadyExistsException {
+            crate::error::ResourceAlreadyExistsException {
                 message: self.message,
                 resource_type: self.resource_type,
                 resource_name: self.resource_name,
@@ -2288,51 +2301,47 @@ pub mod resource_already_exists_error {
         }
     }
 }
-impl ResourceAlreadyExistsError {
-    /// Creates a new builder-style object to manufacture [`ResourceAlreadyExistsError`](crate::error::ResourceAlreadyExistsError)
-    pub fn builder() -> crate::error::resource_already_exists_error::Builder {
-        crate::error::resource_already_exists_error::Builder::default()
+impl ResourceAlreadyExistsException {
+    /// Creates a new builder-style object to manufacture [`ResourceAlreadyExistsException`](crate::error::ResourceAlreadyExistsException)
+    pub fn builder() -> crate::error::resource_already_exists_exception::Builder {
+        crate::error::resource_already_exists_exception::Builder::default()
     }
 }
 
 /// <p>You have reached the limit on the maximum number of resources allowed.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct LimitExceededError {
-    #[serde(rename = "Message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct LimitExceededException {
     pub message: std::option::Option<std::string::String>,
     /// <p>The type of resource.</p>
-    #[serde(rename = "ResourceType")]
-    #[serde(default)]
     pub resource_type: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for LimitExceededError {
+impl std::fmt::Debug for LimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LimitExceededError");
+        let mut formatter = f.debug_struct("LimitExceededException");
         formatter.field("message", &self.message);
         formatter.field("resource_type", &self.resource_type);
         formatter.finish()
     }
 }
-impl LimitExceededError {
+impl LimitExceededException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for LimitExceededError {
+impl std::fmt::Display for LimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "LimitExceededError [LimitExceededException]")?;
+        write!(f, "LimitExceededException")?;
         if let Some(inner_6) = &self.message {
             write!(f, ": {}", inner_6)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for LimitExceededError {}
-/// See [`LimitExceededError`](crate::error::LimitExceededError)
-pub mod limit_exceeded_error {
-    /// A builder for [`LimitExceededError`](crate::error::LimitExceededError)
+impl std::error::Error for LimitExceededException {}
+/// See [`LimitExceededException`](crate::error::LimitExceededException)
+pub mod limit_exceeded_exception {
+    /// A builder for [`LimitExceededException`](crate::error::LimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -2360,18 +2369,18 @@ pub mod limit_exceeded_error {
             self.resource_type = input;
             self
         }
-        /// Consumes the builder and constructs a [`LimitExceededError`](crate::error::LimitExceededError)
-        pub fn build(self) -> crate::error::LimitExceededError {
-            crate::error::LimitExceededError {
+        /// Consumes the builder and constructs a [`LimitExceededException`](crate::error::LimitExceededException)
+        pub fn build(self) -> crate::error::LimitExceededException {
+            crate::error::LimitExceededException {
                 message: self.message,
                 resource_type: self.resource_type,
             }
         }
     }
 }
-impl LimitExceededError {
-    /// Creates a new builder-style object to manufacture [`LimitExceededError`](crate::error::LimitExceededError)
-    pub fn builder() -> crate::error::limit_exceeded_error::Builder {
-        crate::error::limit_exceeded_error::Builder::default()
+impl LimitExceededException {
+    /// Creates a new builder-style object to manufacture [`LimitExceededException`](crate::error::LimitExceededException)
+    pub fn builder() -> crate::error::limit_exceeded_exception::Builder {
+        crate::error::limit_exceeded_exception::Builder::default()
     }
 }

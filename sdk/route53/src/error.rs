@@ -10,7 +10,7 @@ pub struct ActivateKeySigningKeyError {
 pub enum ActivateKeySigningKeyErrorKind {
     ConcurrentModification(crate::error::ConcurrentModification),
     InvalidKeySigningKeyStatus(crate::error::InvalidKeySigningKeyStatus),
-    InvalidKMSArn(crate::error::InvalidKMSArn),
+    InvalidKmsArn(crate::error::InvalidKmsArn),
     InvalidSigningStatus(crate::error::InvalidSigningStatus),
     NoSuchKeySigningKey(crate::error::NoSuchKeySigningKey),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
@@ -21,7 +21,7 @@ impl std::fmt::Display for ActivateKeySigningKeyError {
         match &self.kind {
             ActivateKeySigningKeyErrorKind::ConcurrentModification(_inner) => _inner.fmt(f),
             ActivateKeySigningKeyErrorKind::InvalidKeySigningKeyStatus(_inner) => _inner.fmt(f),
-            ActivateKeySigningKeyErrorKind::InvalidKMSArn(_inner) => _inner.fmt(f),
+            ActivateKeySigningKeyErrorKind::InvalidKmsArn(_inner) => _inner.fmt(f),
             ActivateKeySigningKeyErrorKind::InvalidSigningStatus(_inner) => _inner.fmt(f),
             ActivateKeySigningKeyErrorKind::NoSuchKeySigningKey(_inner) => _inner.fmt(f),
             ActivateKeySigningKeyErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -85,7 +85,7 @@ impl ActivateKeySigningKeyError {
         )
     }
     pub fn is_invalid_kms_arn(&self) -> bool {
-        matches!(&self.kind, ActivateKeySigningKeyErrorKind::InvalidKMSArn(_))
+        matches!(&self.kind, ActivateKeySigningKeyErrorKind::InvalidKmsArn(_))
     }
     pub fn is_invalid_signing_status(&self) -> bool {
         matches!(
@@ -105,7 +105,7 @@ impl std::error::Error for ActivateKeySigningKeyError {
         match &self.kind {
             ActivateKeySigningKeyErrorKind::ConcurrentModification(_inner) => Some(_inner),
             ActivateKeySigningKeyErrorKind::InvalidKeySigningKeyStatus(_inner) => Some(_inner),
-            ActivateKeySigningKeyErrorKind::InvalidKMSArn(_inner) => Some(_inner),
+            ActivateKeySigningKeyErrorKind::InvalidKmsArn(_inner) => Some(_inner),
             ActivateKeySigningKeyErrorKind::InvalidSigningStatus(_inner) => Some(_inner),
             ActivateKeySigningKeyErrorKind::NoSuchKeySigningKey(_inner) => Some(_inner),
             ActivateKeySigningKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -124,12 +124,12 @@ pub struct AssociateVPCWithHostedZoneError {
 pub enum AssociateVPCWithHostedZoneErrorKind {
     ConflictingDomainExists(crate::error::ConflictingDomainExists),
     InvalidInput(crate::error::InvalidInput),
-    InvalidVPCId(crate::error::InvalidVPCId),
+    InvalidVpcId(crate::error::InvalidVpcId),
     LimitsExceeded(crate::error::LimitsExceeded),
     NoSuchHostedZone(crate::error::NoSuchHostedZone),
-    NotAuthorizedError(crate::error::NotAuthorizedError),
+    NotAuthorizedException(crate::error::NotAuthorizedException),
     PriorRequestNotComplete(crate::error::PriorRequestNotComplete),
-    PublicZoneVPCAssociation(crate::error::PublicZoneVPCAssociation),
+    PublicZoneVpcAssociation(crate::error::PublicZoneVpcAssociation),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -138,12 +138,12 @@ impl std::fmt::Display for AssociateVPCWithHostedZoneError {
         match &self.kind {
             AssociateVPCWithHostedZoneErrorKind::ConflictingDomainExists(_inner) => _inner.fmt(f),
             AssociateVPCWithHostedZoneErrorKind::InvalidInput(_inner) => _inner.fmt(f),
-            AssociateVPCWithHostedZoneErrorKind::InvalidVPCId(_inner) => _inner.fmt(f),
+            AssociateVPCWithHostedZoneErrorKind::InvalidVpcId(_inner) => _inner.fmt(f),
             AssociateVPCWithHostedZoneErrorKind::LimitsExceeded(_inner) => _inner.fmt(f),
             AssociateVPCWithHostedZoneErrorKind::NoSuchHostedZone(_inner) => _inner.fmt(f),
-            AssociateVPCWithHostedZoneErrorKind::NotAuthorizedError(_inner) => _inner.fmt(f),
+            AssociateVPCWithHostedZoneErrorKind::NotAuthorizedException(_inner) => _inner.fmt(f),
             AssociateVPCWithHostedZoneErrorKind::PriorRequestNotComplete(_inner) => _inner.fmt(f),
-            AssociateVPCWithHostedZoneErrorKind::PublicZoneVPCAssociation(_inner) => _inner.fmt(f),
+            AssociateVPCWithHostedZoneErrorKind::PublicZoneVpcAssociation(_inner) => _inner.fmt(f),
             AssociateVPCWithHostedZoneErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -207,7 +207,7 @@ impl AssociateVPCWithHostedZoneError {
     pub fn is_invalid_vpc_id(&self) -> bool {
         matches!(
             &self.kind,
-            AssociateVPCWithHostedZoneErrorKind::InvalidVPCId(_)
+            AssociateVPCWithHostedZoneErrorKind::InvalidVpcId(_)
         )
     }
     pub fn is_limits_exceeded(&self) -> bool {
@@ -222,10 +222,10 @@ impl AssociateVPCWithHostedZoneError {
             AssociateVPCWithHostedZoneErrorKind::NoSuchHostedZone(_)
         )
     }
-    pub fn is_not_authorized_error(&self) -> bool {
+    pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
-            AssociateVPCWithHostedZoneErrorKind::NotAuthorizedError(_)
+            AssociateVPCWithHostedZoneErrorKind::NotAuthorizedException(_)
         )
     }
     pub fn is_prior_request_not_complete(&self) -> bool {
@@ -237,7 +237,7 @@ impl AssociateVPCWithHostedZoneError {
     pub fn is_public_zone_vpc_association(&self) -> bool {
         matches!(
             &self.kind,
-            AssociateVPCWithHostedZoneErrorKind::PublicZoneVPCAssociation(_)
+            AssociateVPCWithHostedZoneErrorKind::PublicZoneVpcAssociation(_)
         )
     }
 }
@@ -246,12 +246,12 @@ impl std::error::Error for AssociateVPCWithHostedZoneError {
         match &self.kind {
             AssociateVPCWithHostedZoneErrorKind::ConflictingDomainExists(_inner) => Some(_inner),
             AssociateVPCWithHostedZoneErrorKind::InvalidInput(_inner) => Some(_inner),
-            AssociateVPCWithHostedZoneErrorKind::InvalidVPCId(_inner) => Some(_inner),
+            AssociateVPCWithHostedZoneErrorKind::InvalidVpcId(_inner) => Some(_inner),
             AssociateVPCWithHostedZoneErrorKind::LimitsExceeded(_inner) => Some(_inner),
             AssociateVPCWithHostedZoneErrorKind::NoSuchHostedZone(_inner) => Some(_inner),
-            AssociateVPCWithHostedZoneErrorKind::NotAuthorizedError(_inner) => Some(_inner),
+            AssociateVPCWithHostedZoneErrorKind::NotAuthorizedException(_inner) => Some(_inner),
             AssociateVPCWithHostedZoneErrorKind::PriorRequestNotComplete(_inner) => Some(_inner),
-            AssociateVPCWithHostedZoneErrorKind::PublicZoneVPCAssociation(_inner) => Some(_inner),
+            AssociateVPCWithHostedZoneErrorKind::PublicZoneVpcAssociation(_inner) => Some(_inner),
             AssociateVPCWithHostedZoneErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -387,7 +387,7 @@ pub enum ChangeTagsForResourceErrorKind {
     NoSuchHealthCheck(crate::error::NoSuchHealthCheck),
     NoSuchHostedZone(crate::error::NoSuchHostedZone),
     PriorRequestNotComplete(crate::error::PriorRequestNotComplete),
-    ThrottlingError(crate::error::ThrottlingError),
+    ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -398,7 +398,7 @@ impl std::fmt::Display for ChangeTagsForResourceError {
             ChangeTagsForResourceErrorKind::NoSuchHealthCheck(_inner) => _inner.fmt(f),
             ChangeTagsForResourceErrorKind::NoSuchHostedZone(_inner) => _inner.fmt(f),
             ChangeTagsForResourceErrorKind::PriorRequestNotComplete(_inner) => _inner.fmt(f),
-            ChangeTagsForResourceErrorKind::ThrottlingError(_inner) => _inner.fmt(f),
+            ChangeTagsForResourceErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             ChangeTagsForResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -468,10 +468,10 @@ impl ChangeTagsForResourceError {
             ChangeTagsForResourceErrorKind::PriorRequestNotComplete(_)
         )
     }
-    pub fn is_throttling_error(&self) -> bool {
+    pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ChangeTagsForResourceErrorKind::ThrottlingError(_)
+            ChangeTagsForResourceErrorKind::ThrottlingException(_)
         )
     }
 }
@@ -482,7 +482,7 @@ impl std::error::Error for ChangeTagsForResourceError {
             ChangeTagsForResourceErrorKind::NoSuchHealthCheck(_inner) => Some(_inner),
             ChangeTagsForResourceErrorKind::NoSuchHostedZone(_inner) => Some(_inner),
             ChangeTagsForResourceErrorKind::PriorRequestNotComplete(_inner) => Some(_inner),
-            ChangeTagsForResourceErrorKind::ThrottlingError(_inner) => Some(_inner),
+            ChangeTagsForResourceErrorKind::ThrottlingException(_inner) => Some(_inner),
             ChangeTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -599,7 +599,7 @@ pub enum CreateHostedZoneErrorKind {
     HostedZoneAlreadyExists(crate::error::HostedZoneAlreadyExists),
     InvalidDomainName(crate::error::InvalidDomainName),
     InvalidInput(crate::error::InvalidInput),
-    InvalidVPCId(crate::error::InvalidVPCId),
+    InvalidVpcId(crate::error::InvalidVpcId),
     NoSuchDelegationSet(crate::error::NoSuchDelegationSet),
     TooManyHostedZones(crate::error::TooManyHostedZones),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
@@ -614,7 +614,7 @@ impl std::fmt::Display for CreateHostedZoneError {
             CreateHostedZoneErrorKind::HostedZoneAlreadyExists(_inner) => _inner.fmt(f),
             CreateHostedZoneErrorKind::InvalidDomainName(_inner) => _inner.fmt(f),
             CreateHostedZoneErrorKind::InvalidInput(_inner) => _inner.fmt(f),
-            CreateHostedZoneErrorKind::InvalidVPCId(_inner) => _inner.fmt(f),
+            CreateHostedZoneErrorKind::InvalidVpcId(_inner) => _inner.fmt(f),
             CreateHostedZoneErrorKind::NoSuchDelegationSet(_inner) => _inner.fmt(f),
             CreateHostedZoneErrorKind::TooManyHostedZones(_inner) => _inner.fmt(f),
             CreateHostedZoneErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -696,7 +696,7 @@ impl CreateHostedZoneError {
         matches!(&self.kind, CreateHostedZoneErrorKind::InvalidInput(_))
     }
     pub fn is_invalid_vpc_id(&self) -> bool {
-        matches!(&self.kind, CreateHostedZoneErrorKind::InvalidVPCId(_))
+        matches!(&self.kind, CreateHostedZoneErrorKind::InvalidVpcId(_))
     }
     pub fn is_no_such_delegation_set(&self) -> bool {
         matches!(
@@ -717,7 +717,7 @@ impl std::error::Error for CreateHostedZoneError {
             CreateHostedZoneErrorKind::HostedZoneAlreadyExists(_inner) => Some(_inner),
             CreateHostedZoneErrorKind::InvalidDomainName(_inner) => Some(_inner),
             CreateHostedZoneErrorKind::InvalidInput(_inner) => Some(_inner),
-            CreateHostedZoneErrorKind::InvalidVPCId(_inner) => Some(_inner),
+            CreateHostedZoneErrorKind::InvalidVpcId(_inner) => Some(_inner),
             CreateHostedZoneErrorKind::NoSuchDelegationSet(_inner) => Some(_inner),
             CreateHostedZoneErrorKind::TooManyHostedZones(_inner) => Some(_inner),
             CreateHostedZoneErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -739,7 +739,7 @@ pub enum CreateKeySigningKeyErrorKind {
     InvalidInput(crate::error::InvalidInput),
     InvalidKeySigningKeyName(crate::error::InvalidKeySigningKeyName),
     InvalidKeySigningKeyStatus(crate::error::InvalidKeySigningKeyStatus),
-    InvalidKMSArn(crate::error::InvalidKMSArn),
+    InvalidKmsArn(crate::error::InvalidKmsArn),
     InvalidSigningStatus(crate::error::InvalidSigningStatus),
     KeySigningKeyAlreadyExists(crate::error::KeySigningKeyAlreadyExists),
     NoSuchHostedZone(crate::error::NoSuchHostedZone),
@@ -755,7 +755,7 @@ impl std::fmt::Display for CreateKeySigningKeyError {
             CreateKeySigningKeyErrorKind::InvalidInput(_inner) => _inner.fmt(f),
             CreateKeySigningKeyErrorKind::InvalidKeySigningKeyName(_inner) => _inner.fmt(f),
             CreateKeySigningKeyErrorKind::InvalidKeySigningKeyStatus(_inner) => _inner.fmt(f),
-            CreateKeySigningKeyErrorKind::InvalidKMSArn(_inner) => _inner.fmt(f),
+            CreateKeySigningKeyErrorKind::InvalidKmsArn(_inner) => _inner.fmt(f),
             CreateKeySigningKeyErrorKind::InvalidSigningStatus(_inner) => _inner.fmt(f),
             CreateKeySigningKeyErrorKind::KeySigningKeyAlreadyExists(_inner) => _inner.fmt(f),
             CreateKeySigningKeyErrorKind::NoSuchHostedZone(_inner) => _inner.fmt(f),
@@ -833,7 +833,7 @@ impl CreateKeySigningKeyError {
         )
     }
     pub fn is_invalid_kms_arn(&self) -> bool {
-        matches!(&self.kind, CreateKeySigningKeyErrorKind::InvalidKMSArn(_))
+        matches!(&self.kind, CreateKeySigningKeyErrorKind::InvalidKmsArn(_))
     }
     pub fn is_invalid_signing_status(&self) -> bool {
         matches!(
@@ -868,7 +868,7 @@ impl std::error::Error for CreateKeySigningKeyError {
             CreateKeySigningKeyErrorKind::InvalidInput(_inner) => Some(_inner),
             CreateKeySigningKeyErrorKind::InvalidKeySigningKeyName(_inner) => Some(_inner),
             CreateKeySigningKeyErrorKind::InvalidKeySigningKeyStatus(_inner) => Some(_inner),
-            CreateKeySigningKeyErrorKind::InvalidKMSArn(_inner) => Some(_inner),
+            CreateKeySigningKeyErrorKind::InvalidKmsArn(_inner) => Some(_inner),
             CreateKeySigningKeyErrorKind::InvalidSigningStatus(_inner) => Some(_inner),
             CreateKeySigningKeyErrorKind::KeySigningKeyAlreadyExists(_inner) => Some(_inner),
             CreateKeySigningKeyErrorKind::NoSuchHostedZone(_inner) => Some(_inner),
@@ -1529,9 +1529,9 @@ pub struct CreateVPCAssociationAuthorizationError {
 pub enum CreateVPCAssociationAuthorizationErrorKind {
     ConcurrentModification(crate::error::ConcurrentModification),
     InvalidInput(crate::error::InvalidInput),
-    InvalidVPCId(crate::error::InvalidVPCId),
+    InvalidVpcId(crate::error::InvalidVpcId),
     NoSuchHostedZone(crate::error::NoSuchHostedZone),
-    TooManyVPCAssociationAuthorizations(crate::error::TooManyVPCAssociationAuthorizations),
+    TooManyVpcAssociationAuthorizations(crate::error::TooManyVpcAssociationAuthorizations),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -1542,9 +1542,9 @@ impl std::fmt::Display for CreateVPCAssociationAuthorizationError {
                 _inner.fmt(f)
             }
             CreateVPCAssociationAuthorizationErrorKind::InvalidInput(_inner) => _inner.fmt(f),
-            CreateVPCAssociationAuthorizationErrorKind::InvalidVPCId(_inner) => _inner.fmt(f),
+            CreateVPCAssociationAuthorizationErrorKind::InvalidVpcId(_inner) => _inner.fmt(f),
             CreateVPCAssociationAuthorizationErrorKind::NoSuchHostedZone(_inner) => _inner.fmt(f),
-            CreateVPCAssociationAuthorizationErrorKind::TooManyVPCAssociationAuthorizations(
+            CreateVPCAssociationAuthorizationErrorKind::TooManyVpcAssociationAuthorizations(
                 _inner,
             ) => _inner.fmt(f),
             CreateVPCAssociationAuthorizationErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -1613,7 +1613,7 @@ impl CreateVPCAssociationAuthorizationError {
     pub fn is_invalid_vpc_id(&self) -> bool {
         matches!(
             &self.kind,
-            CreateVPCAssociationAuthorizationErrorKind::InvalidVPCId(_)
+            CreateVPCAssociationAuthorizationErrorKind::InvalidVpcId(_)
         )
     }
     pub fn is_no_such_hosted_zone(&self) -> bool {
@@ -1625,7 +1625,7 @@ impl CreateVPCAssociationAuthorizationError {
     pub fn is_too_many_vpc_association_authorizations(&self) -> bool {
         matches!(
             &self.kind,
-            CreateVPCAssociationAuthorizationErrorKind::TooManyVPCAssociationAuthorizations(_)
+            CreateVPCAssociationAuthorizationErrorKind::TooManyVpcAssociationAuthorizations(_)
         )
     }
 }
@@ -1636,9 +1636,9 @@ impl std::error::Error for CreateVPCAssociationAuthorizationError {
                 Some(_inner)
             }
             CreateVPCAssociationAuthorizationErrorKind::InvalidInput(_inner) => Some(_inner),
-            CreateVPCAssociationAuthorizationErrorKind::InvalidVPCId(_inner) => Some(_inner),
+            CreateVPCAssociationAuthorizationErrorKind::InvalidVpcId(_inner) => Some(_inner),
             CreateVPCAssociationAuthorizationErrorKind::NoSuchHostedZone(_inner) => Some(_inner),
-            CreateVPCAssociationAuthorizationErrorKind::TooManyVPCAssociationAuthorizations(
+            CreateVPCAssociationAuthorizationErrorKind::TooManyVpcAssociationAuthorizations(
                 _inner,
             ) => Some(_inner),
             CreateVPCAssociationAuthorizationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -1658,7 +1658,7 @@ pub enum DeactivateKeySigningKeyErrorKind {
     ConcurrentModification(crate::error::ConcurrentModification),
     InvalidKeySigningKeyStatus(crate::error::InvalidKeySigningKeyStatus),
     InvalidSigningStatus(crate::error::InvalidSigningStatus),
-    KeySigningKeyInParentDSRecord(crate::error::KeySigningKeyInParentDSRecord),
+    KeySigningKeyInParentDsRecord(crate::error::KeySigningKeyInParentDsRecord),
     KeySigningKeyInUse(crate::error::KeySigningKeyInUse),
     NoSuchKeySigningKey(crate::error::NoSuchKeySigningKey),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
@@ -1670,7 +1670,7 @@ impl std::fmt::Display for DeactivateKeySigningKeyError {
             DeactivateKeySigningKeyErrorKind::ConcurrentModification(_inner) => _inner.fmt(f),
             DeactivateKeySigningKeyErrorKind::InvalidKeySigningKeyStatus(_inner) => _inner.fmt(f),
             DeactivateKeySigningKeyErrorKind::InvalidSigningStatus(_inner) => _inner.fmt(f),
-            DeactivateKeySigningKeyErrorKind::KeySigningKeyInParentDSRecord(_inner) => {
+            DeactivateKeySigningKeyErrorKind::KeySigningKeyInParentDsRecord(_inner) => {
                 _inner.fmt(f)
             }
             DeactivateKeySigningKeyErrorKind::KeySigningKeyInUse(_inner) => _inner.fmt(f),
@@ -1744,7 +1744,7 @@ impl DeactivateKeySigningKeyError {
     pub fn is_key_signing_key_in_parent_ds_record(&self) -> bool {
         matches!(
             &self.kind,
-            DeactivateKeySigningKeyErrorKind::KeySigningKeyInParentDSRecord(_)
+            DeactivateKeySigningKeyErrorKind::KeySigningKeyInParentDsRecord(_)
         )
     }
     pub fn is_key_signing_key_in_use(&self) -> bool {
@@ -1766,7 +1766,7 @@ impl std::error::Error for DeactivateKeySigningKeyError {
             DeactivateKeySigningKeyErrorKind::ConcurrentModification(_inner) => Some(_inner),
             DeactivateKeySigningKeyErrorKind::InvalidKeySigningKeyStatus(_inner) => Some(_inner),
             DeactivateKeySigningKeyErrorKind::InvalidSigningStatus(_inner) => Some(_inner),
-            DeactivateKeySigningKeyErrorKind::KeySigningKeyInParentDSRecord(_inner) => Some(_inner),
+            DeactivateKeySigningKeyErrorKind::KeySigningKeyInParentDsRecord(_inner) => Some(_inner),
             DeactivateKeySigningKeyErrorKind::KeySigningKeyInUse(_inner) => Some(_inner),
             DeactivateKeySigningKeyErrorKind::NoSuchKeySigningKey(_inner) => Some(_inner),
             DeactivateKeySigningKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -1980,7 +1980,7 @@ pub struct DeleteKeySigningKeyError {
 pub enum DeleteKeySigningKeyErrorKind {
     ConcurrentModification(crate::error::ConcurrentModification),
     InvalidKeySigningKeyStatus(crate::error::InvalidKeySigningKeyStatus),
-    InvalidKMSArn(crate::error::InvalidKMSArn),
+    InvalidKmsArn(crate::error::InvalidKmsArn),
     InvalidSigningStatus(crate::error::InvalidSigningStatus),
     NoSuchKeySigningKey(crate::error::NoSuchKeySigningKey),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
@@ -1991,7 +1991,7 @@ impl std::fmt::Display for DeleteKeySigningKeyError {
         match &self.kind {
             DeleteKeySigningKeyErrorKind::ConcurrentModification(_inner) => _inner.fmt(f),
             DeleteKeySigningKeyErrorKind::InvalidKeySigningKeyStatus(_inner) => _inner.fmt(f),
-            DeleteKeySigningKeyErrorKind::InvalidKMSArn(_inner) => _inner.fmt(f),
+            DeleteKeySigningKeyErrorKind::InvalidKmsArn(_inner) => _inner.fmt(f),
             DeleteKeySigningKeyErrorKind::InvalidSigningStatus(_inner) => _inner.fmt(f),
             DeleteKeySigningKeyErrorKind::NoSuchKeySigningKey(_inner) => _inner.fmt(f),
             DeleteKeySigningKeyErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -2055,7 +2055,7 @@ impl DeleteKeySigningKeyError {
         )
     }
     pub fn is_invalid_kms_arn(&self) -> bool {
-        matches!(&self.kind, DeleteKeySigningKeyErrorKind::InvalidKMSArn(_))
+        matches!(&self.kind, DeleteKeySigningKeyErrorKind::InvalidKmsArn(_))
     }
     pub fn is_invalid_signing_status(&self) -> bool {
         matches!(
@@ -2075,7 +2075,7 @@ impl std::error::Error for DeleteKeySigningKeyError {
         match &self.kind {
             DeleteKeySigningKeyErrorKind::ConcurrentModification(_inner) => Some(_inner),
             DeleteKeySigningKeyErrorKind::InvalidKeySigningKeyStatus(_inner) => Some(_inner),
-            DeleteKeySigningKeyErrorKind::InvalidKMSArn(_inner) => Some(_inner),
+            DeleteKeySigningKeyErrorKind::InvalidKmsArn(_inner) => Some(_inner),
             DeleteKeySigningKeyErrorKind::InvalidSigningStatus(_inner) => Some(_inner),
             DeleteKeySigningKeyErrorKind::NoSuchKeySigningKey(_inner) => Some(_inner),
             DeleteKeySigningKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -2509,9 +2509,9 @@ pub struct DeleteVPCAssociationAuthorizationError {
 pub enum DeleteVPCAssociationAuthorizationErrorKind {
     ConcurrentModification(crate::error::ConcurrentModification),
     InvalidInput(crate::error::InvalidInput),
-    InvalidVPCId(crate::error::InvalidVPCId),
+    InvalidVpcId(crate::error::InvalidVpcId),
     NoSuchHostedZone(crate::error::NoSuchHostedZone),
-    VPCAssociationAuthorizationNotFound(crate::error::VPCAssociationAuthorizationNotFound),
+    VpcAssociationAuthorizationNotFound(crate::error::VpcAssociationAuthorizationNotFound),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -2522,9 +2522,9 @@ impl std::fmt::Display for DeleteVPCAssociationAuthorizationError {
                 _inner.fmt(f)
             }
             DeleteVPCAssociationAuthorizationErrorKind::InvalidInput(_inner) => _inner.fmt(f),
-            DeleteVPCAssociationAuthorizationErrorKind::InvalidVPCId(_inner) => _inner.fmt(f),
+            DeleteVPCAssociationAuthorizationErrorKind::InvalidVpcId(_inner) => _inner.fmt(f),
             DeleteVPCAssociationAuthorizationErrorKind::NoSuchHostedZone(_inner) => _inner.fmt(f),
-            DeleteVPCAssociationAuthorizationErrorKind::VPCAssociationAuthorizationNotFound(
+            DeleteVPCAssociationAuthorizationErrorKind::VpcAssociationAuthorizationNotFound(
                 _inner,
             ) => _inner.fmt(f),
             DeleteVPCAssociationAuthorizationErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -2593,7 +2593,7 @@ impl DeleteVPCAssociationAuthorizationError {
     pub fn is_invalid_vpc_id(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteVPCAssociationAuthorizationErrorKind::InvalidVPCId(_)
+            DeleteVPCAssociationAuthorizationErrorKind::InvalidVpcId(_)
         )
     }
     pub fn is_no_such_hosted_zone(&self) -> bool {
@@ -2605,7 +2605,7 @@ impl DeleteVPCAssociationAuthorizationError {
     pub fn is_vpc_association_authorization_not_found(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteVPCAssociationAuthorizationErrorKind::VPCAssociationAuthorizationNotFound(_)
+            DeleteVPCAssociationAuthorizationErrorKind::VpcAssociationAuthorizationNotFound(_)
         )
     }
 }
@@ -2616,9 +2616,9 @@ impl std::error::Error for DeleteVPCAssociationAuthorizationError {
                 Some(_inner)
             }
             DeleteVPCAssociationAuthorizationErrorKind::InvalidInput(_inner) => Some(_inner),
-            DeleteVPCAssociationAuthorizationErrorKind::InvalidVPCId(_inner) => Some(_inner),
+            DeleteVPCAssociationAuthorizationErrorKind::InvalidVpcId(_inner) => Some(_inner),
             DeleteVPCAssociationAuthorizationErrorKind::NoSuchHostedZone(_inner) => Some(_inner),
-            DeleteVPCAssociationAuthorizationErrorKind::VPCAssociationAuthorizationNotFound(
+            DeleteVPCAssociationAuthorizationErrorKind::VpcAssociationAuthorizationNotFound(
                 _inner,
             ) => Some(_inner),
             DeleteVPCAssociationAuthorizationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -2636,11 +2636,11 @@ pub struct DisableHostedZoneDNSSECError {
 #[derive(std::fmt::Debug)]
 pub enum DisableHostedZoneDNSSECErrorKind {
     ConcurrentModification(crate::error::ConcurrentModification),
-    DNSSECNotFound(crate::error::DNSSECNotFound),
+    DnssecNotFound(crate::error::DnssecNotFound),
     InvalidArgument(crate::error::InvalidArgument),
     InvalidKeySigningKeyStatus(crate::error::InvalidKeySigningKeyStatus),
-    InvalidKMSArn(crate::error::InvalidKMSArn),
-    KeySigningKeyInParentDSRecord(crate::error::KeySigningKeyInParentDSRecord),
+    InvalidKmsArn(crate::error::InvalidKmsArn),
+    KeySigningKeyInParentDsRecord(crate::error::KeySigningKeyInParentDsRecord),
     NoSuchHostedZone(crate::error::NoSuchHostedZone),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2649,11 +2649,11 @@ impl std::fmt::Display for DisableHostedZoneDNSSECError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             DisableHostedZoneDNSSECErrorKind::ConcurrentModification(_inner) => _inner.fmt(f),
-            DisableHostedZoneDNSSECErrorKind::DNSSECNotFound(_inner) => _inner.fmt(f),
+            DisableHostedZoneDNSSECErrorKind::DnssecNotFound(_inner) => _inner.fmt(f),
             DisableHostedZoneDNSSECErrorKind::InvalidArgument(_inner) => _inner.fmt(f),
             DisableHostedZoneDNSSECErrorKind::InvalidKeySigningKeyStatus(_inner) => _inner.fmt(f),
-            DisableHostedZoneDNSSECErrorKind::InvalidKMSArn(_inner) => _inner.fmt(f),
-            DisableHostedZoneDNSSECErrorKind::KeySigningKeyInParentDSRecord(_inner) => {
+            DisableHostedZoneDNSSECErrorKind::InvalidKmsArn(_inner) => _inner.fmt(f),
+            DisableHostedZoneDNSSECErrorKind::KeySigningKeyInParentDsRecord(_inner) => {
                 _inner.fmt(f)
             }
             DisableHostedZoneDNSSECErrorKind::NoSuchHostedZone(_inner) => _inner.fmt(f),
@@ -2714,7 +2714,7 @@ impl DisableHostedZoneDNSSECError {
     pub fn is_dnssec_not_found(&self) -> bool {
         matches!(
             &self.kind,
-            DisableHostedZoneDNSSECErrorKind::DNSSECNotFound(_)
+            DisableHostedZoneDNSSECErrorKind::DnssecNotFound(_)
         )
     }
     pub fn is_invalid_argument(&self) -> bool {
@@ -2732,13 +2732,13 @@ impl DisableHostedZoneDNSSECError {
     pub fn is_invalid_kms_arn(&self) -> bool {
         matches!(
             &self.kind,
-            DisableHostedZoneDNSSECErrorKind::InvalidKMSArn(_)
+            DisableHostedZoneDNSSECErrorKind::InvalidKmsArn(_)
         )
     }
     pub fn is_key_signing_key_in_parent_ds_record(&self) -> bool {
         matches!(
             &self.kind,
-            DisableHostedZoneDNSSECErrorKind::KeySigningKeyInParentDSRecord(_)
+            DisableHostedZoneDNSSECErrorKind::KeySigningKeyInParentDsRecord(_)
         )
     }
     pub fn is_no_such_hosted_zone(&self) -> bool {
@@ -2752,11 +2752,11 @@ impl std::error::Error for DisableHostedZoneDNSSECError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DisableHostedZoneDNSSECErrorKind::ConcurrentModification(_inner) => Some(_inner),
-            DisableHostedZoneDNSSECErrorKind::DNSSECNotFound(_inner) => Some(_inner),
+            DisableHostedZoneDNSSECErrorKind::DnssecNotFound(_inner) => Some(_inner),
             DisableHostedZoneDNSSECErrorKind::InvalidArgument(_inner) => Some(_inner),
             DisableHostedZoneDNSSECErrorKind::InvalidKeySigningKeyStatus(_inner) => Some(_inner),
-            DisableHostedZoneDNSSECErrorKind::InvalidKMSArn(_inner) => Some(_inner),
-            DisableHostedZoneDNSSECErrorKind::KeySigningKeyInParentDSRecord(_inner) => Some(_inner),
+            DisableHostedZoneDNSSECErrorKind::InvalidKmsArn(_inner) => Some(_inner),
+            DisableHostedZoneDNSSECErrorKind::KeySigningKeyInParentDsRecord(_inner) => Some(_inner),
             DisableHostedZoneDNSSECErrorKind::NoSuchHostedZone(_inner) => Some(_inner),
             DisableHostedZoneDNSSECErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -2773,10 +2773,10 @@ pub struct DisassociateVPCFromHostedZoneError {
 #[derive(std::fmt::Debug)]
 pub enum DisassociateVPCFromHostedZoneErrorKind {
     InvalidInput(crate::error::InvalidInput),
-    InvalidVPCId(crate::error::InvalidVPCId),
-    LastVPCAssociation(crate::error::LastVPCAssociation),
+    InvalidVpcId(crate::error::InvalidVpcId),
+    LastVpcAssociation(crate::error::LastVpcAssociation),
     NoSuchHostedZone(crate::error::NoSuchHostedZone),
-    VPCAssociationNotFound(crate::error::VPCAssociationNotFound),
+    VpcAssociationNotFound(crate::error::VpcAssociationNotFound),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -2784,10 +2784,10 @@ impl std::fmt::Display for DisassociateVPCFromHostedZoneError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             DisassociateVPCFromHostedZoneErrorKind::InvalidInput(_inner) => _inner.fmt(f),
-            DisassociateVPCFromHostedZoneErrorKind::InvalidVPCId(_inner) => _inner.fmt(f),
-            DisassociateVPCFromHostedZoneErrorKind::LastVPCAssociation(_inner) => _inner.fmt(f),
+            DisassociateVPCFromHostedZoneErrorKind::InvalidVpcId(_inner) => _inner.fmt(f),
+            DisassociateVPCFromHostedZoneErrorKind::LastVpcAssociation(_inner) => _inner.fmt(f),
             DisassociateVPCFromHostedZoneErrorKind::NoSuchHostedZone(_inner) => _inner.fmt(f),
-            DisassociateVPCFromHostedZoneErrorKind::VPCAssociationNotFound(_inner) => _inner.fmt(f),
+            DisassociateVPCFromHostedZoneErrorKind::VpcAssociationNotFound(_inner) => _inner.fmt(f),
             DisassociateVPCFromHostedZoneErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2845,13 +2845,13 @@ impl DisassociateVPCFromHostedZoneError {
     pub fn is_invalid_vpc_id(&self) -> bool {
         matches!(
             &self.kind,
-            DisassociateVPCFromHostedZoneErrorKind::InvalidVPCId(_)
+            DisassociateVPCFromHostedZoneErrorKind::InvalidVpcId(_)
         )
     }
     pub fn is_last_vpc_association(&self) -> bool {
         matches!(
             &self.kind,
-            DisassociateVPCFromHostedZoneErrorKind::LastVPCAssociation(_)
+            DisassociateVPCFromHostedZoneErrorKind::LastVpcAssociation(_)
         )
     }
     pub fn is_no_such_hosted_zone(&self) -> bool {
@@ -2863,7 +2863,7 @@ impl DisassociateVPCFromHostedZoneError {
     pub fn is_vpc_association_not_found(&self) -> bool {
         matches!(
             &self.kind,
-            DisassociateVPCFromHostedZoneErrorKind::VPCAssociationNotFound(_)
+            DisassociateVPCFromHostedZoneErrorKind::VpcAssociationNotFound(_)
         )
     }
 }
@@ -2871,10 +2871,10 @@ impl std::error::Error for DisassociateVPCFromHostedZoneError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DisassociateVPCFromHostedZoneErrorKind::InvalidInput(_inner) => Some(_inner),
-            DisassociateVPCFromHostedZoneErrorKind::InvalidVPCId(_inner) => Some(_inner),
-            DisassociateVPCFromHostedZoneErrorKind::LastVPCAssociation(_inner) => Some(_inner),
+            DisassociateVPCFromHostedZoneErrorKind::InvalidVpcId(_inner) => Some(_inner),
+            DisassociateVPCFromHostedZoneErrorKind::LastVpcAssociation(_inner) => Some(_inner),
             DisassociateVPCFromHostedZoneErrorKind::NoSuchHostedZone(_inner) => Some(_inner),
-            DisassociateVPCFromHostedZoneErrorKind::VPCAssociationNotFound(_inner) => Some(_inner),
+            DisassociateVPCFromHostedZoneErrorKind::VpcAssociationNotFound(_inner) => Some(_inner),
             DisassociateVPCFromHostedZoneErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2890,11 +2890,11 @@ pub struct EnableHostedZoneDNSSECError {
 #[derive(std::fmt::Debug)]
 pub enum EnableHostedZoneDNSSECErrorKind {
     ConcurrentModification(crate::error::ConcurrentModification),
-    DNSSECNotFound(crate::error::DNSSECNotFound),
+    DnssecNotFound(crate::error::DnssecNotFound),
     HostedZonePartiallyDelegated(crate::error::HostedZonePartiallyDelegated),
     InvalidArgument(crate::error::InvalidArgument),
     InvalidKeySigningKeyStatus(crate::error::InvalidKeySigningKeyStatus),
-    InvalidKMSArn(crate::error::InvalidKMSArn),
+    InvalidKmsArn(crate::error::InvalidKmsArn),
     KeySigningKeyWithActiveStatusNotFound(crate::error::KeySigningKeyWithActiveStatusNotFound),
     NoSuchHostedZone(crate::error::NoSuchHostedZone),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
@@ -2904,11 +2904,11 @@ impl std::fmt::Display for EnableHostedZoneDNSSECError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             EnableHostedZoneDNSSECErrorKind::ConcurrentModification(_inner) => _inner.fmt(f),
-            EnableHostedZoneDNSSECErrorKind::DNSSECNotFound(_inner) => _inner.fmt(f),
+            EnableHostedZoneDNSSECErrorKind::DnssecNotFound(_inner) => _inner.fmt(f),
             EnableHostedZoneDNSSECErrorKind::HostedZonePartiallyDelegated(_inner) => _inner.fmt(f),
             EnableHostedZoneDNSSECErrorKind::InvalidArgument(_inner) => _inner.fmt(f),
             EnableHostedZoneDNSSECErrorKind::InvalidKeySigningKeyStatus(_inner) => _inner.fmt(f),
-            EnableHostedZoneDNSSECErrorKind::InvalidKMSArn(_inner) => _inner.fmt(f),
+            EnableHostedZoneDNSSECErrorKind::InvalidKmsArn(_inner) => _inner.fmt(f),
             EnableHostedZoneDNSSECErrorKind::KeySigningKeyWithActiveStatusNotFound(_inner) => {
                 _inner.fmt(f)
             }
@@ -2970,7 +2970,7 @@ impl EnableHostedZoneDNSSECError {
     pub fn is_dnssec_not_found(&self) -> bool {
         matches!(
             &self.kind,
-            EnableHostedZoneDNSSECErrorKind::DNSSECNotFound(_)
+            EnableHostedZoneDNSSECErrorKind::DnssecNotFound(_)
         )
     }
     pub fn is_hosted_zone_partially_delegated(&self) -> bool {
@@ -2994,7 +2994,7 @@ impl EnableHostedZoneDNSSECError {
     pub fn is_invalid_kms_arn(&self) -> bool {
         matches!(
             &self.kind,
-            EnableHostedZoneDNSSECErrorKind::InvalidKMSArn(_)
+            EnableHostedZoneDNSSECErrorKind::InvalidKmsArn(_)
         )
     }
     pub fn is_key_signing_key_with_active_status_not_found(&self) -> bool {
@@ -3014,11 +3014,11 @@ impl std::error::Error for EnableHostedZoneDNSSECError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             EnableHostedZoneDNSSECErrorKind::ConcurrentModification(_inner) => Some(_inner),
-            EnableHostedZoneDNSSECErrorKind::DNSSECNotFound(_inner) => Some(_inner),
+            EnableHostedZoneDNSSECErrorKind::DnssecNotFound(_inner) => Some(_inner),
             EnableHostedZoneDNSSECErrorKind::HostedZonePartiallyDelegated(_inner) => Some(_inner),
             EnableHostedZoneDNSSECErrorKind::InvalidArgument(_inner) => Some(_inner),
             EnableHostedZoneDNSSECErrorKind::InvalidKeySigningKeyStatus(_inner) => Some(_inner),
-            EnableHostedZoneDNSSECErrorKind::InvalidKMSArn(_inner) => Some(_inner),
+            EnableHostedZoneDNSSECErrorKind::InvalidKmsArn(_inner) => Some(_inner),
             EnableHostedZoneDNSSECErrorKind::KeySigningKeyWithActiveStatusNotFound(_inner) => {
                 Some(_inner)
             }
@@ -5261,7 +5261,7 @@ pub enum ListTagsForResourceErrorKind {
     NoSuchHealthCheck(crate::error::NoSuchHealthCheck),
     NoSuchHostedZone(crate::error::NoSuchHostedZone),
     PriorRequestNotComplete(crate::error::PriorRequestNotComplete),
-    ThrottlingError(crate::error::ThrottlingError),
+    ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -5272,7 +5272,7 @@ impl std::fmt::Display for ListTagsForResourceError {
             ListTagsForResourceErrorKind::NoSuchHealthCheck(_inner) => _inner.fmt(f),
             ListTagsForResourceErrorKind::NoSuchHostedZone(_inner) => _inner.fmt(f),
             ListTagsForResourceErrorKind::PriorRequestNotComplete(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::ThrottlingError(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             ListTagsForResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5342,8 +5342,11 @@ impl ListTagsForResourceError {
             ListTagsForResourceErrorKind::PriorRequestNotComplete(_)
         )
     }
-    pub fn is_throttling_error(&self) -> bool {
-        matches!(&self.kind, ListTagsForResourceErrorKind::ThrottlingError(_))
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForResourceErrorKind::ThrottlingException(_)
+        )
     }
 }
 impl std::error::Error for ListTagsForResourceError {
@@ -5353,7 +5356,7 @@ impl std::error::Error for ListTagsForResourceError {
             ListTagsForResourceErrorKind::NoSuchHealthCheck(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::NoSuchHostedZone(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::PriorRequestNotComplete(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::ThrottlingError(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5372,7 +5375,7 @@ pub enum ListTagsForResourcesErrorKind {
     NoSuchHealthCheck(crate::error::NoSuchHealthCheck),
     NoSuchHostedZone(crate::error::NoSuchHostedZone),
     PriorRequestNotComplete(crate::error::PriorRequestNotComplete),
-    ThrottlingError(crate::error::ThrottlingError),
+    ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -5383,7 +5386,7 @@ impl std::fmt::Display for ListTagsForResourcesError {
             ListTagsForResourcesErrorKind::NoSuchHealthCheck(_inner) => _inner.fmt(f),
             ListTagsForResourcesErrorKind::NoSuchHostedZone(_inner) => _inner.fmt(f),
             ListTagsForResourcesErrorKind::PriorRequestNotComplete(_inner) => _inner.fmt(f),
-            ListTagsForResourcesErrorKind::ThrottlingError(_inner) => _inner.fmt(f),
+            ListTagsForResourcesErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             ListTagsForResourcesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5453,10 +5456,10 @@ impl ListTagsForResourcesError {
             ListTagsForResourcesErrorKind::PriorRequestNotComplete(_)
         )
     }
-    pub fn is_throttling_error(&self) -> bool {
+    pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListTagsForResourcesErrorKind::ThrottlingError(_)
+            ListTagsForResourcesErrorKind::ThrottlingException(_)
         )
     }
 }
@@ -5467,7 +5470,7 @@ impl std::error::Error for ListTagsForResourcesError {
             ListTagsForResourcesErrorKind::NoSuchHealthCheck(_inner) => Some(_inner),
             ListTagsForResourcesErrorKind::NoSuchHostedZone(_inner) => Some(_inner),
             ListTagsForResourcesErrorKind::PriorRequestNotComplete(_inner) => Some(_inner),
-            ListTagsForResourcesErrorKind::ThrottlingError(_inner) => Some(_inner),
+            ListTagsForResourcesErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListTagsForResourcesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -7171,34 +7174,34 @@ impl InvalidPaginationToken {
 /// <p>The limit on the number of requests per second was exceeded.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ThrottlingError {
+pub struct ThrottlingException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ThrottlingError {
+impl std::fmt::Debug for ThrottlingException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ThrottlingError");
+        let mut formatter = f.debug_struct("ThrottlingException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl ThrottlingError {
+impl ThrottlingException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ThrottlingError {
+impl std::fmt::Display for ThrottlingException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ThrottlingError [ThrottlingException]")?;
+        write!(f, "ThrottlingException")?;
         if let Some(inner_11) = &self.message {
             write!(f, ": {}", inner_11)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ThrottlingError {}
-/// See [`ThrottlingError`](crate::error::ThrottlingError)
-pub mod throttling_error {
-    /// A builder for [`ThrottlingError`](crate::error::ThrottlingError)
+impl std::error::Error for ThrottlingException {}
+/// See [`ThrottlingException`](crate::error::ThrottlingException)
+pub mod throttling_exception {
+    /// A builder for [`ThrottlingException`](crate::error::ThrottlingException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -7213,18 +7216,18 @@ pub mod throttling_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ThrottlingError`](crate::error::ThrottlingError)
-        pub fn build(self) -> crate::error::ThrottlingError {
-            crate::error::ThrottlingError {
+        /// Consumes the builder and constructs a [`ThrottlingException`](crate::error::ThrottlingException)
+        pub fn build(self) -> crate::error::ThrottlingException {
+            crate::error::ThrottlingException {
                 message: self.message,
             }
         }
     }
 }
-impl ThrottlingError {
-    /// Creates a new builder-style object to manufacture [`ThrottlingError`](crate::error::ThrottlingError)
-    pub fn builder() -> crate::error::throttling_error::Builder {
-        crate::error::throttling_error::Builder::default()
+impl ThrottlingException {
+    /// Creates a new builder-style object to manufacture [`ThrottlingException`](crate::error::ThrottlingException)
+    pub fn builder() -> crate::error::throttling_exception::Builder {
+        crate::error::throttling_exception::Builder::default()
     }
 }
 
@@ -7844,34 +7847,34 @@ impl KeySigningKeyWithActiveStatusNotFound {
 /// <p>The KeyManagementServiceArn that you specified isn't valid to use with DNSSEC signing.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidKMSArn {
+pub struct InvalidKmsArn {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidKMSArn {
+impl std::fmt::Debug for InvalidKmsArn {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidKMSArn");
+        let mut formatter = f.debug_struct("InvalidKmsArn");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl InvalidKMSArn {
+impl InvalidKmsArn {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InvalidKMSArn {
+impl std::fmt::Display for InvalidKmsArn {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidKMSArn")?;
+        write!(f, "InvalidKmsArn [InvalidKMSArn]")?;
         if let Some(inner_22) = &self.message {
             write!(f, ": {}", inner_22)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InvalidKMSArn {}
-/// See [`InvalidKMSArn`](crate::error::InvalidKMSArn)
+impl std::error::Error for InvalidKmsArn {}
+/// See [`InvalidKmsArn`](crate::error::InvalidKmsArn)
 pub mod invalid_kms_arn {
-    /// A builder for [`InvalidKMSArn`](crate::error::InvalidKMSArn)
+    /// A builder for [`InvalidKmsArn`](crate::error::InvalidKmsArn)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -7886,16 +7889,16 @@ pub mod invalid_kms_arn {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidKMSArn`](crate::error::InvalidKMSArn)
-        pub fn build(self) -> crate::error::InvalidKMSArn {
-            crate::error::InvalidKMSArn {
+        /// Consumes the builder and constructs a [`InvalidKmsArn`](crate::error::InvalidKmsArn)
+        pub fn build(self) -> crate::error::InvalidKmsArn {
+            crate::error::InvalidKmsArn {
                 message: self.message,
             }
         }
     }
 }
-impl InvalidKMSArn {
-    /// Creates a new builder-style object to manufacture [`InvalidKMSArn`](crate::error::InvalidKMSArn)
+impl InvalidKmsArn {
+    /// Creates a new builder-style object to manufacture [`InvalidKmsArn`](crate::error::InvalidKmsArn)
     pub fn builder() -> crate::error::invalid_kms_arn::Builder {
         crate::error::invalid_kms_arn::Builder::default()
     }
@@ -8024,34 +8027,34 @@ impl HostedZonePartiallyDelegated {
 /// <p>The hosted zone doesn't have any DNSSEC resources.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DNSSECNotFound {
+pub struct DnssecNotFound {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DNSSECNotFound {
+impl std::fmt::Debug for DnssecNotFound {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DNSSECNotFound");
+        let mut formatter = f.debug_struct("DnssecNotFound");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl DNSSECNotFound {
+impl DnssecNotFound {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for DNSSECNotFound {
+impl std::fmt::Display for DnssecNotFound {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "DNSSECNotFound")?;
+        write!(f, "DnssecNotFound [DNSSECNotFound]")?;
         if let Some(inner_25) = &self.message {
             write!(f, ": {}", inner_25)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for DNSSECNotFound {}
-/// See [`DNSSECNotFound`](crate::error::DNSSECNotFound)
+impl std::error::Error for DnssecNotFound {}
+/// See [`DnssecNotFound`](crate::error::DnssecNotFound)
 pub mod dnssec_not_found {
-    /// A builder for [`DNSSECNotFound`](crate::error::DNSSECNotFound)
+    /// A builder for [`DnssecNotFound`](crate::error::DnssecNotFound)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -8066,16 +8069,16 @@ pub mod dnssec_not_found {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DNSSECNotFound`](crate::error::DNSSECNotFound)
-        pub fn build(self) -> crate::error::DNSSECNotFound {
-            crate::error::DNSSECNotFound {
+        /// Consumes the builder and constructs a [`DnssecNotFound`](crate::error::DnssecNotFound)
+        pub fn build(self) -> crate::error::DnssecNotFound {
+            crate::error::DnssecNotFound {
                 message: self.message,
             }
         }
     }
 }
-impl DNSSECNotFound {
-    /// Creates a new builder-style object to manufacture [`DNSSECNotFound`](crate::error::DNSSECNotFound)
+impl DnssecNotFound {
+    /// Creates a new builder-style object to manufacture [`DnssecNotFound`](crate::error::DnssecNotFound)
     pub fn builder() -> crate::error::dnssec_not_found::Builder {
         crate::error::dnssec_not_found::Builder::default()
     }
@@ -8084,35 +8087,35 @@ impl DNSSECNotFound {
 /// <p>The specified VPC and hosted zone are not currently associated.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct VPCAssociationNotFound {
+pub struct VpcAssociationNotFound {
     /// <p>The specified VPC or hosted zone weren't found.</p>
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for VPCAssociationNotFound {
+impl std::fmt::Debug for VpcAssociationNotFound {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VPCAssociationNotFound");
+        let mut formatter = f.debug_struct("VpcAssociationNotFound");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl VPCAssociationNotFound {
+impl VpcAssociationNotFound {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for VPCAssociationNotFound {
+impl std::fmt::Display for VpcAssociationNotFound {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "VPCAssociationNotFound")?;
+        write!(f, "VpcAssociationNotFound [VPCAssociationNotFound]")?;
         if let Some(inner_26) = &self.message {
             write!(f, ": {}", inner_26)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for VPCAssociationNotFound {}
-/// See [`VPCAssociationNotFound`](crate::error::VPCAssociationNotFound)
+impl std::error::Error for VpcAssociationNotFound {}
+/// See [`VpcAssociationNotFound`](crate::error::VpcAssociationNotFound)
 pub mod vpc_association_not_found {
-    /// A builder for [`VPCAssociationNotFound`](crate::error::VPCAssociationNotFound)
+    /// A builder for [`VpcAssociationNotFound`](crate::error::VpcAssociationNotFound)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -8128,16 +8131,16 @@ pub mod vpc_association_not_found {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`VPCAssociationNotFound`](crate::error::VPCAssociationNotFound)
-        pub fn build(self) -> crate::error::VPCAssociationNotFound {
-            crate::error::VPCAssociationNotFound {
+        /// Consumes the builder and constructs a [`VpcAssociationNotFound`](crate::error::VpcAssociationNotFound)
+        pub fn build(self) -> crate::error::VpcAssociationNotFound {
+            crate::error::VpcAssociationNotFound {
                 message: self.message,
             }
         }
     }
 }
-impl VPCAssociationNotFound {
-    /// Creates a new builder-style object to manufacture [`VPCAssociationNotFound`](crate::error::VPCAssociationNotFound)
+impl VpcAssociationNotFound {
+    /// Creates a new builder-style object to manufacture [`VpcAssociationNotFound`](crate::error::VpcAssociationNotFound)
     pub fn builder() -> crate::error::vpc_association_not_found::Builder {
         crate::error::vpc_association_not_found::Builder::default()
     }
@@ -8147,35 +8150,35 @@ impl VPCAssociationNotFound {
 /// the hosted zone. Amazon Route 53 doesn't support disassociating the last VPC from a hosted zone.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct LastVPCAssociation {
+pub struct LastVpcAssociation {
     /// <p></p>
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for LastVPCAssociation {
+impl std::fmt::Debug for LastVpcAssociation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LastVPCAssociation");
+        let mut formatter = f.debug_struct("LastVpcAssociation");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl LastVPCAssociation {
+impl LastVpcAssociation {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for LastVPCAssociation {
+impl std::fmt::Display for LastVpcAssociation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "LastVPCAssociation")?;
+        write!(f, "LastVpcAssociation [LastVPCAssociation]")?;
         if let Some(inner_27) = &self.message {
             write!(f, ": {}", inner_27)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for LastVPCAssociation {}
-/// See [`LastVPCAssociation`](crate::error::LastVPCAssociation)
+impl std::error::Error for LastVpcAssociation {}
+/// See [`LastVpcAssociation`](crate::error::LastVpcAssociation)
 pub mod last_vpc_association {
-    /// A builder for [`LastVPCAssociation`](crate::error::LastVPCAssociation)
+    /// A builder for [`LastVpcAssociation`](crate::error::LastVpcAssociation)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -8191,16 +8194,16 @@ pub mod last_vpc_association {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`LastVPCAssociation`](crate::error::LastVPCAssociation)
-        pub fn build(self) -> crate::error::LastVPCAssociation {
-            crate::error::LastVPCAssociation {
+        /// Consumes the builder and constructs a [`LastVpcAssociation`](crate::error::LastVpcAssociation)
+        pub fn build(self) -> crate::error::LastVpcAssociation {
+            crate::error::LastVpcAssociation {
                 message: self.message,
             }
         }
     }
 }
-impl LastVPCAssociation {
-    /// Creates a new builder-style object to manufacture [`LastVPCAssociation`](crate::error::LastVPCAssociation)
+impl LastVpcAssociation {
+    /// Creates a new builder-style object to manufacture [`LastVpcAssociation`](crate::error::LastVpcAssociation)
     pub fn builder() -> crate::error::last_vpc_association::Builder {
         crate::error::last_vpc_association::Builder::default()
     }
@@ -8209,35 +8212,35 @@ impl LastVPCAssociation {
 /// <p>The VPC ID that you specified either isn't a valid ID or the current account is not authorized to access this VPC.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidVPCId {
+pub struct InvalidVpcId {
     /// <p></p>
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidVPCId {
+impl std::fmt::Debug for InvalidVpcId {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidVPCId");
+        let mut formatter = f.debug_struct("InvalidVpcId");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl InvalidVPCId {
+impl InvalidVpcId {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InvalidVPCId {
+impl std::fmt::Display for InvalidVpcId {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidVPCId")?;
+        write!(f, "InvalidVpcId [InvalidVPCId]")?;
         if let Some(inner_28) = &self.message {
             write!(f, ": {}", inner_28)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InvalidVPCId {}
-/// See [`InvalidVPCId`](crate::error::InvalidVPCId)
+impl std::error::Error for InvalidVpcId {}
+/// See [`InvalidVpcId`](crate::error::InvalidVpcId)
 pub mod invalid_vpc_id {
-    /// A builder for [`InvalidVPCId`](crate::error::InvalidVPCId)
+    /// A builder for [`InvalidVpcId`](crate::error::InvalidVpcId)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -8253,16 +8256,16 @@ pub mod invalid_vpc_id {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidVPCId`](crate::error::InvalidVPCId)
-        pub fn build(self) -> crate::error::InvalidVPCId {
-            crate::error::InvalidVPCId {
+        /// Consumes the builder and constructs a [`InvalidVpcId`](crate::error::InvalidVpcId)
+        pub fn build(self) -> crate::error::InvalidVpcId {
+            crate::error::InvalidVpcId {
                 message: self.message,
             }
         }
     }
 }
-impl InvalidVPCId {
-    /// Creates a new builder-style object to manufacture [`InvalidVPCId`](crate::error::InvalidVPCId)
+impl InvalidVpcId {
+    /// Creates a new builder-style object to manufacture [`InvalidVpcId`](crate::error::InvalidVpcId)
     pub fn builder() -> crate::error::invalid_vpc_id::Builder {
         crate::error::invalid_vpc_id::Builder::default()
     }
@@ -8271,34 +8274,37 @@ impl InvalidVPCId {
 /// <p>The key-signing key (KSK) is specified in a parent DS record.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct KeySigningKeyInParentDSRecord {
+pub struct KeySigningKeyInParentDsRecord {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for KeySigningKeyInParentDSRecord {
+impl std::fmt::Debug for KeySigningKeyInParentDsRecord {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KeySigningKeyInParentDSRecord");
+        let mut formatter = f.debug_struct("KeySigningKeyInParentDsRecord");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl KeySigningKeyInParentDSRecord {
+impl KeySigningKeyInParentDsRecord {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for KeySigningKeyInParentDSRecord {
+impl std::fmt::Display for KeySigningKeyInParentDsRecord {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "KeySigningKeyInParentDSRecord")?;
+        write!(
+            f,
+            "KeySigningKeyInParentDsRecord [KeySigningKeyInParentDSRecord]"
+        )?;
         if let Some(inner_29) = &self.message {
             write!(f, ": {}", inner_29)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for KeySigningKeyInParentDSRecord {}
-/// See [`KeySigningKeyInParentDSRecord`](crate::error::KeySigningKeyInParentDSRecord)
+impl std::error::Error for KeySigningKeyInParentDsRecord {}
+/// See [`KeySigningKeyInParentDsRecord`](crate::error::KeySigningKeyInParentDsRecord)
 pub mod key_signing_key_in_parent_ds_record {
-    /// A builder for [`KeySigningKeyInParentDSRecord`](crate::error::KeySigningKeyInParentDSRecord)
+    /// A builder for [`KeySigningKeyInParentDsRecord`](crate::error::KeySigningKeyInParentDsRecord)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -8313,16 +8319,16 @@ pub mod key_signing_key_in_parent_ds_record {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`KeySigningKeyInParentDSRecord`](crate::error::KeySigningKeyInParentDSRecord)
-        pub fn build(self) -> crate::error::KeySigningKeyInParentDSRecord {
-            crate::error::KeySigningKeyInParentDSRecord {
+        /// Consumes the builder and constructs a [`KeySigningKeyInParentDsRecord`](crate::error::KeySigningKeyInParentDsRecord)
+        pub fn build(self) -> crate::error::KeySigningKeyInParentDsRecord {
+            crate::error::KeySigningKeyInParentDsRecord {
                 message: self.message,
             }
         }
     }
 }
-impl KeySigningKeyInParentDSRecord {
-    /// Creates a new builder-style object to manufacture [`KeySigningKeyInParentDSRecord`](crate::error::KeySigningKeyInParentDSRecord)
+impl KeySigningKeyInParentDsRecord {
+    /// Creates a new builder-style object to manufacture [`KeySigningKeyInParentDsRecord`](crate::error::KeySigningKeyInParentDsRecord)
     pub fn builder() -> crate::error::key_signing_key_in_parent_ds_record::Builder {
         crate::error::key_signing_key_in_parent_ds_record::Builder::default()
     }
@@ -8331,35 +8337,38 @@ impl KeySigningKeyInParentDSRecord {
 /// <p>The VPC that you specified is not authorized to be associated with the hosted zone.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct VPCAssociationAuthorizationNotFound {
+pub struct VpcAssociationAuthorizationNotFound {
     /// <p></p>
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for VPCAssociationAuthorizationNotFound {
+impl std::fmt::Debug for VpcAssociationAuthorizationNotFound {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VPCAssociationAuthorizationNotFound");
+        let mut formatter = f.debug_struct("VpcAssociationAuthorizationNotFound");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl VPCAssociationAuthorizationNotFound {
+impl VpcAssociationAuthorizationNotFound {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for VPCAssociationAuthorizationNotFound {
+impl std::fmt::Display for VpcAssociationAuthorizationNotFound {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "VPCAssociationAuthorizationNotFound")?;
+        write!(
+            f,
+            "VpcAssociationAuthorizationNotFound [VPCAssociationAuthorizationNotFound]"
+        )?;
         if let Some(inner_30) = &self.message {
             write!(f, ": {}", inner_30)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for VPCAssociationAuthorizationNotFound {}
-/// See [`VPCAssociationAuthorizationNotFound`](crate::error::VPCAssociationAuthorizationNotFound)
+impl std::error::Error for VpcAssociationAuthorizationNotFound {}
+/// See [`VpcAssociationAuthorizationNotFound`](crate::error::VpcAssociationAuthorizationNotFound)
 pub mod vpc_association_authorization_not_found {
-    /// A builder for [`VPCAssociationAuthorizationNotFound`](crate::error::VPCAssociationAuthorizationNotFound)
+    /// A builder for [`VpcAssociationAuthorizationNotFound`](crate::error::VpcAssociationAuthorizationNotFound)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -8375,16 +8384,16 @@ pub mod vpc_association_authorization_not_found {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`VPCAssociationAuthorizationNotFound`](crate::error::VPCAssociationAuthorizationNotFound)
-        pub fn build(self) -> crate::error::VPCAssociationAuthorizationNotFound {
-            crate::error::VPCAssociationAuthorizationNotFound {
+        /// Consumes the builder and constructs a [`VpcAssociationAuthorizationNotFound`](crate::error::VpcAssociationAuthorizationNotFound)
+        pub fn build(self) -> crate::error::VpcAssociationAuthorizationNotFound {
+            crate::error::VpcAssociationAuthorizationNotFound {
                 message: self.message,
             }
         }
     }
 }
-impl VPCAssociationAuthorizationNotFound {
-    /// Creates a new builder-style object to manufacture [`VPCAssociationAuthorizationNotFound`](crate::error::VPCAssociationAuthorizationNotFound)
+impl VpcAssociationAuthorizationNotFound {
+    /// Creates a new builder-style object to manufacture [`VpcAssociationAuthorizationNotFound`](crate::error::VpcAssociationAuthorizationNotFound)
     pub fn builder() -> crate::error::vpc_association_authorization_not_found::Builder {
         crate::error::vpc_association_authorization_not_found::Builder::default()
     }
@@ -8827,35 +8836,38 @@ impl KeySigningKeyInUse {
 /// <code>ListVPCAssociationAuthorizations</code> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct TooManyVPCAssociationAuthorizations {
+pub struct TooManyVpcAssociationAuthorizations {
     /// <p></p>
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for TooManyVPCAssociationAuthorizations {
+impl std::fmt::Debug for TooManyVpcAssociationAuthorizations {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyVPCAssociationAuthorizations");
+        let mut formatter = f.debug_struct("TooManyVpcAssociationAuthorizations");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl TooManyVPCAssociationAuthorizations {
+impl TooManyVpcAssociationAuthorizations {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for TooManyVPCAssociationAuthorizations {
+impl std::fmt::Display for TooManyVpcAssociationAuthorizations {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TooManyVPCAssociationAuthorizations")?;
+        write!(
+            f,
+            "TooManyVpcAssociationAuthorizations [TooManyVPCAssociationAuthorizations]"
+        )?;
         if let Some(inner_38) = &self.message {
             write!(f, ": {}", inner_38)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for TooManyVPCAssociationAuthorizations {}
-/// See [`TooManyVPCAssociationAuthorizations`](crate::error::TooManyVPCAssociationAuthorizations)
+impl std::error::Error for TooManyVpcAssociationAuthorizations {}
+/// See [`TooManyVpcAssociationAuthorizations`](crate::error::TooManyVpcAssociationAuthorizations)
 pub mod too_many_vpc_association_authorizations {
-    /// A builder for [`TooManyVPCAssociationAuthorizations`](crate::error::TooManyVPCAssociationAuthorizations)
+    /// A builder for [`TooManyVpcAssociationAuthorizations`](crate::error::TooManyVpcAssociationAuthorizations)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -8871,16 +8883,16 @@ pub mod too_many_vpc_association_authorizations {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TooManyVPCAssociationAuthorizations`](crate::error::TooManyVPCAssociationAuthorizations)
-        pub fn build(self) -> crate::error::TooManyVPCAssociationAuthorizations {
-            crate::error::TooManyVPCAssociationAuthorizations {
+        /// Consumes the builder and constructs a [`TooManyVpcAssociationAuthorizations`](crate::error::TooManyVpcAssociationAuthorizations)
+        pub fn build(self) -> crate::error::TooManyVpcAssociationAuthorizations {
+            crate::error::TooManyVpcAssociationAuthorizations {
                 message: self.message,
             }
         }
     }
 }
-impl TooManyVPCAssociationAuthorizations {
-    /// Creates a new builder-style object to manufacture [`TooManyVPCAssociationAuthorizations`](crate::error::TooManyVPCAssociationAuthorizations)
+impl TooManyVpcAssociationAuthorizations {
+    /// Creates a new builder-style object to manufacture [`TooManyVpcAssociationAuthorizations`](crate::error::TooManyVpcAssociationAuthorizations)
     pub fn builder() -> crate::error::too_many_vpc_association_authorizations::Builder {
         crate::error::too_many_vpc_association_authorizations::Builder::default()
     }
@@ -10405,35 +10417,35 @@ impl InvalidChangeBatch {
 /// VPC with a public hosted zone.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct PublicZoneVPCAssociation {
+pub struct PublicZoneVpcAssociation {
     /// <p></p>
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for PublicZoneVPCAssociation {
+impl std::fmt::Debug for PublicZoneVpcAssociation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PublicZoneVPCAssociation");
+        let mut formatter = f.debug_struct("PublicZoneVpcAssociation");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl PublicZoneVPCAssociation {
+impl PublicZoneVpcAssociation {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for PublicZoneVPCAssociation {
+impl std::fmt::Display for PublicZoneVpcAssociation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "PublicZoneVPCAssociation")?;
+        write!(f, "PublicZoneVpcAssociation [PublicZoneVPCAssociation]")?;
         if let Some(inner_62) = &self.message {
             write!(f, ": {}", inner_62)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for PublicZoneVPCAssociation {}
-/// See [`PublicZoneVPCAssociation`](crate::error::PublicZoneVPCAssociation)
+impl std::error::Error for PublicZoneVpcAssociation {}
+/// See [`PublicZoneVpcAssociation`](crate::error::PublicZoneVpcAssociation)
 pub mod public_zone_vpc_association {
-    /// A builder for [`PublicZoneVPCAssociation`](crate::error::PublicZoneVPCAssociation)
+    /// A builder for [`PublicZoneVpcAssociation`](crate::error::PublicZoneVpcAssociation)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -10449,16 +10461,16 @@ pub mod public_zone_vpc_association {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`PublicZoneVPCAssociation`](crate::error::PublicZoneVPCAssociation)
-        pub fn build(self) -> crate::error::PublicZoneVPCAssociation {
-            crate::error::PublicZoneVPCAssociation {
+        /// Consumes the builder and constructs a [`PublicZoneVpcAssociation`](crate::error::PublicZoneVpcAssociation)
+        pub fn build(self) -> crate::error::PublicZoneVpcAssociation {
+            crate::error::PublicZoneVpcAssociation {
                 message: self.message,
             }
         }
     }
 }
-impl PublicZoneVPCAssociation {
-    /// Creates a new builder-style object to manufacture [`PublicZoneVPCAssociation`](crate::error::PublicZoneVPCAssociation)
+impl PublicZoneVpcAssociation {
+    /// Creates a new builder-style object to manufacture [`PublicZoneVpcAssociation`](crate::error::PublicZoneVpcAssociation)
     pub fn builder() -> crate::error::public_zone_vpc_association::Builder {
         crate::error::public_zone_vpc_association::Builder::default()
     }
@@ -10467,35 +10479,35 @@ impl PublicZoneVPCAssociation {
 /// <p>Associating the specified VPC with the specified hosted zone has not been authorized.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct NotAuthorizedError {
+pub struct NotAuthorizedException {
     /// <p></p>
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for NotAuthorizedError {
+impl std::fmt::Debug for NotAuthorizedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotAuthorizedError");
+        let mut formatter = f.debug_struct("NotAuthorizedException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl NotAuthorizedError {
+impl NotAuthorizedException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for NotAuthorizedError {
+impl std::fmt::Display for NotAuthorizedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "NotAuthorizedError [NotAuthorizedException]")?;
+        write!(f, "NotAuthorizedException")?;
         if let Some(inner_63) = &self.message {
             write!(f, ": {}", inner_63)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for NotAuthorizedError {}
-/// See [`NotAuthorizedError`](crate::error::NotAuthorizedError)
-pub mod not_authorized_error {
-    /// A builder for [`NotAuthorizedError`](crate::error::NotAuthorizedError)
+impl std::error::Error for NotAuthorizedException {}
+/// See [`NotAuthorizedException`](crate::error::NotAuthorizedException)
+pub mod not_authorized_exception {
+    /// A builder for [`NotAuthorizedException`](crate::error::NotAuthorizedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -10511,17 +10523,17 @@ pub mod not_authorized_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`NotAuthorizedError`](crate::error::NotAuthorizedError)
-        pub fn build(self) -> crate::error::NotAuthorizedError {
-            crate::error::NotAuthorizedError {
+        /// Consumes the builder and constructs a [`NotAuthorizedException`](crate::error::NotAuthorizedException)
+        pub fn build(self) -> crate::error::NotAuthorizedException {
+            crate::error::NotAuthorizedException {
                 message: self.message,
             }
         }
     }
 }
-impl NotAuthorizedError {
-    /// Creates a new builder-style object to manufacture [`NotAuthorizedError`](crate::error::NotAuthorizedError)
-    pub fn builder() -> crate::error::not_authorized_error::Builder {
-        crate::error::not_authorized_error::Builder::default()
+impl NotAuthorizedException {
+    /// Creates a new builder-style object to manufacture [`NotAuthorizedException`](crate::error::NotAuthorizedException)
+    pub fn builder() -> crate::error::not_authorized_exception::Builder {
+        crate::error::not_authorized_exception::Builder::default()
     }
 }

@@ -2,71 +2,73 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    BackupInUseError(crate::error::BackupInUseError),
-    BackupNotFoundError(crate::error::BackupNotFoundError),
-    ConditionalCheckFailedError(crate::error::ConditionalCheckFailedError),
-    ContinuousBackupsUnavailableError(crate::error::ContinuousBackupsUnavailableError),
-    DuplicateItemError(crate::error::DuplicateItemError),
-    ExportConflictError(crate::error::ExportConflictError),
-    ExportNotFoundError(crate::error::ExportNotFoundError),
-    GlobalTableAlreadyExistsError(crate::error::GlobalTableAlreadyExistsError),
-    GlobalTableNotFoundError(crate::error::GlobalTableNotFoundError),
-    IdempotentParameterMismatchError(crate::error::IdempotentParameterMismatchError),
-    IndexNotFoundError(crate::error::IndexNotFoundError),
+    BackupInUseException(crate::error::BackupInUseException),
+    BackupNotFoundException(crate::error::BackupNotFoundException),
+    ConditionalCheckFailedException(crate::error::ConditionalCheckFailedException),
+    ContinuousBackupsUnavailableException(crate::error::ContinuousBackupsUnavailableException),
+    DuplicateItemException(crate::error::DuplicateItemException),
+    ExportConflictException(crate::error::ExportConflictException),
+    ExportNotFoundException(crate::error::ExportNotFoundException),
+    GlobalTableAlreadyExistsException(crate::error::GlobalTableAlreadyExistsException),
+    GlobalTableNotFoundException(crate::error::GlobalTableNotFoundException),
+    IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
+    IndexNotFoundException(crate::error::IndexNotFoundException),
     InternalServerError(crate::error::InternalServerError),
-    InvalidEndpointError(crate::error::InvalidEndpointError),
-    InvalidExportTimeError(crate::error::InvalidExportTimeError),
-    InvalidRestoreTimeError(crate::error::InvalidRestoreTimeError),
-    ItemCollectionSizeLimitExceededError(crate::error::ItemCollectionSizeLimitExceededError),
-    LimitExceededError(crate::error::LimitExceededError),
-    PointInTimeRecoveryUnavailableError(crate::error::PointInTimeRecoveryUnavailableError),
-    ProvisionedThroughputExceededError(crate::error::ProvisionedThroughputExceededError),
-    ReplicaAlreadyExistsError(crate::error::ReplicaAlreadyExistsError),
-    ReplicaNotFoundError(crate::error::ReplicaNotFoundError),
+    InvalidEndpointException(crate::error::InvalidEndpointException),
+    InvalidExportTimeException(crate::error::InvalidExportTimeException),
+    InvalidRestoreTimeException(crate::error::InvalidRestoreTimeException),
+    ItemCollectionSizeLimitExceededException(
+        crate::error::ItemCollectionSizeLimitExceededException,
+    ),
+    LimitExceededException(crate::error::LimitExceededException),
+    PointInTimeRecoveryUnavailableException(crate::error::PointInTimeRecoveryUnavailableException),
+    ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
+    ReplicaAlreadyExistsException(crate::error::ReplicaAlreadyExistsException),
+    ReplicaNotFoundException(crate::error::ReplicaNotFoundException),
     RequestLimitExceeded(crate::error::RequestLimitExceeded),
-    ResourceInUseError(crate::error::ResourceInUseError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    TableAlreadyExistsError(crate::error::TableAlreadyExistsError),
-    TableInUseError(crate::error::TableInUseError),
-    TableNotFoundError(crate::error::TableNotFoundError),
-    TransactionCanceledError(crate::error::TransactionCanceledError),
-    TransactionConflictError(crate::error::TransactionConflictError),
-    TransactionInProgressError(crate::error::TransactionInProgressError),
+    ResourceInUseException(crate::error::ResourceInUseException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    TableAlreadyExistsException(crate::error::TableAlreadyExistsException),
+    TableInUseException(crate::error::TableInUseException),
+    TableNotFoundException(crate::error::TableNotFoundException),
+    TransactionCanceledException(crate::error::TransactionCanceledException),
+    TransactionConflictException(crate::error::TransactionConflictException),
+    TransactionInProgressException(crate::error::TransactionInProgressException),
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
-            Error::BackupInUseError(inner) => inner.fmt(f),
-            Error::BackupNotFoundError(inner) => inner.fmt(f),
-            Error::ConditionalCheckFailedError(inner) => inner.fmt(f),
-            Error::ContinuousBackupsUnavailableError(inner) => inner.fmt(f),
-            Error::DuplicateItemError(inner) => inner.fmt(f),
-            Error::ExportConflictError(inner) => inner.fmt(f),
-            Error::ExportNotFoundError(inner) => inner.fmt(f),
-            Error::GlobalTableAlreadyExistsError(inner) => inner.fmt(f),
-            Error::GlobalTableNotFoundError(inner) => inner.fmt(f),
-            Error::IdempotentParameterMismatchError(inner) => inner.fmt(f),
-            Error::IndexNotFoundError(inner) => inner.fmt(f),
+            Error::BackupInUseException(inner) => inner.fmt(f),
+            Error::BackupNotFoundException(inner) => inner.fmt(f),
+            Error::ConditionalCheckFailedException(inner) => inner.fmt(f),
+            Error::ContinuousBackupsUnavailableException(inner) => inner.fmt(f),
+            Error::DuplicateItemException(inner) => inner.fmt(f),
+            Error::ExportConflictException(inner) => inner.fmt(f),
+            Error::ExportNotFoundException(inner) => inner.fmt(f),
+            Error::GlobalTableAlreadyExistsException(inner) => inner.fmt(f),
+            Error::GlobalTableNotFoundException(inner) => inner.fmt(f),
+            Error::IdempotentParameterMismatchException(inner) => inner.fmt(f),
+            Error::IndexNotFoundException(inner) => inner.fmt(f),
             Error::InternalServerError(inner) => inner.fmt(f),
-            Error::InvalidEndpointError(inner) => inner.fmt(f),
-            Error::InvalidExportTimeError(inner) => inner.fmt(f),
-            Error::InvalidRestoreTimeError(inner) => inner.fmt(f),
-            Error::ItemCollectionSizeLimitExceededError(inner) => inner.fmt(f),
-            Error::LimitExceededError(inner) => inner.fmt(f),
-            Error::PointInTimeRecoveryUnavailableError(inner) => inner.fmt(f),
-            Error::ProvisionedThroughputExceededError(inner) => inner.fmt(f),
-            Error::ReplicaAlreadyExistsError(inner) => inner.fmt(f),
-            Error::ReplicaNotFoundError(inner) => inner.fmt(f),
+            Error::InvalidEndpointException(inner) => inner.fmt(f),
+            Error::InvalidExportTimeException(inner) => inner.fmt(f),
+            Error::InvalidRestoreTimeException(inner) => inner.fmt(f),
+            Error::ItemCollectionSizeLimitExceededException(inner) => inner.fmt(f),
+            Error::LimitExceededException(inner) => inner.fmt(f),
+            Error::PointInTimeRecoveryUnavailableException(inner) => inner.fmt(f),
+            Error::ProvisionedThroughputExceededException(inner) => inner.fmt(f),
+            Error::ReplicaAlreadyExistsException(inner) => inner.fmt(f),
+            Error::ReplicaNotFoundException(inner) => inner.fmt(f),
             Error::RequestLimitExceeded(inner) => inner.fmt(f),
-            Error::ResourceInUseError(inner) => inner.fmt(f),
-            Error::ResourceNotFoundError(inner) => inner.fmt(f),
-            Error::TableAlreadyExistsError(inner) => inner.fmt(f),
-            Error::TableInUseError(inner) => inner.fmt(f),
-            Error::TableNotFoundError(inner) => inner.fmt(f),
-            Error::TransactionCanceledError(inner) => inner.fmt(f),
-            Error::TransactionConflictError(inner) => inner.fmt(f),
-            Error::TransactionInProgressError(inner) => inner.fmt(f),
+            Error::ResourceInUseException(inner) => inner.fmt(f),
+            Error::ResourceNotFoundException(inner) => inner.fmt(f),
+            Error::TableAlreadyExistsException(inner) => inner.fmt(f),
+            Error::TableInUseException(inner) => inner.fmt(f),
+            Error::TableNotFoundException(inner) => inner.fmt(f),
+            Error::TransactionCanceledException(inner) => inner.fmt(f),
+            Error::TransactionConflictException(inner) => inner.fmt(f),
+            Error::TransactionInProgressException(inner) => inner.fmt(f),
             Error::Unhandled(inner) => inner.fmt(f),
         }
     }
@@ -96,17 +98,17 @@ impl From<smithy_http::result::SdkError<crate::error::BatchGetItemError>> for Er
                 crate::error::BatchGetItemErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
-                crate::error::BatchGetItemErrorKind::InvalidEndpointError(inner) => {
-                    Error::InvalidEndpointError(inner)
+                crate::error::BatchGetItemErrorKind::InvalidEndpointException(inner) => {
+                    Error::InvalidEndpointException(inner)
                 }
-                crate::error::BatchGetItemErrorKind::ProvisionedThroughputExceededError(inner) => {
-                    Error::ProvisionedThroughputExceededError(inner)
-                }
+                crate::error::BatchGetItemErrorKind::ProvisionedThroughputExceededException(
+                    inner,
+                ) => Error::ProvisionedThroughputExceededException(inner),
                 crate::error::BatchGetItemErrorKind::RequestLimitExceeded(inner) => {
                     Error::RequestLimitExceeded(inner)
                 }
-                crate::error::BatchGetItemErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::BatchGetItemErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
                 crate::error::BatchGetItemErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -121,20 +123,20 @@ impl From<smithy_http::result::SdkError<crate::error::BatchWriteItemError>> for 
                 crate::error::BatchWriteItemErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
-                crate::error::BatchWriteItemErrorKind::InvalidEndpointError(inner) => {
-                    Error::InvalidEndpointError(inner)
+                crate::error::BatchWriteItemErrorKind::InvalidEndpointException(inner) => {
+                    Error::InvalidEndpointException(inner)
                 }
-                crate::error::BatchWriteItemErrorKind::ItemCollectionSizeLimitExceededError(
+                crate::error::BatchWriteItemErrorKind::ItemCollectionSizeLimitExceededException(
                     inner,
-                ) => Error::ItemCollectionSizeLimitExceededError(inner),
-                crate::error::BatchWriteItemErrorKind::ProvisionedThroughputExceededError(
+                ) => Error::ItemCollectionSizeLimitExceededException(inner),
+                crate::error::BatchWriteItemErrorKind::ProvisionedThroughputExceededException(
                     inner,
-                ) => Error::ProvisionedThroughputExceededError(inner),
+                ) => Error::ProvisionedThroughputExceededException(inner),
                 crate::error::BatchWriteItemErrorKind::RequestLimitExceeded(inner) => {
                     Error::RequestLimitExceeded(inner)
                 }
-                crate::error::BatchWriteItemErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::BatchWriteItemErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
                 crate::error::BatchWriteItemErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -146,26 +148,26 @@ impl From<smithy_http::result::SdkError<crate::error::CreateBackupError>> for Er
     fn from(err: smithy_http::result::SdkError<crate::error::CreateBackupError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateBackupErrorKind::BackupInUseError(inner) => {
-                    Error::BackupInUseError(inner)
+                crate::error::CreateBackupErrorKind::BackupInUseException(inner) => {
+                    Error::BackupInUseException(inner)
                 }
-                crate::error::CreateBackupErrorKind::ContinuousBackupsUnavailableError(inner) => {
-                    Error::ContinuousBackupsUnavailableError(inner)
-                }
+                crate::error::CreateBackupErrorKind::ContinuousBackupsUnavailableException(
+                    inner,
+                ) => Error::ContinuousBackupsUnavailableException(inner),
                 crate::error::CreateBackupErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
-                crate::error::CreateBackupErrorKind::InvalidEndpointError(inner) => {
-                    Error::InvalidEndpointError(inner)
+                crate::error::CreateBackupErrorKind::InvalidEndpointException(inner) => {
+                    Error::InvalidEndpointException(inner)
                 }
-                crate::error::CreateBackupErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
+                crate::error::CreateBackupErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
                 }
-                crate::error::CreateBackupErrorKind::TableInUseError(inner) => {
-                    Error::TableInUseError(inner)
+                crate::error::CreateBackupErrorKind::TableInUseException(inner) => {
+                    Error::TableInUseException(inner)
                 }
-                crate::error::CreateBackupErrorKind::TableNotFoundError(inner) => {
-                    Error::TableNotFoundError(inner)
+                crate::error::CreateBackupErrorKind::TableNotFoundException(inner) => {
+                    Error::TableNotFoundException(inner)
                 }
                 crate::error::CreateBackupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -177,20 +179,20 @@ impl From<smithy_http::result::SdkError<crate::error::CreateGlobalTableError>> f
     fn from(err: smithy_http::result::SdkError<crate::error::CreateGlobalTableError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateGlobalTableErrorKind::GlobalTableAlreadyExistsError(inner) => {
-                    Error::GlobalTableAlreadyExistsError(inner)
-                }
+                crate::error::CreateGlobalTableErrorKind::GlobalTableAlreadyExistsException(
+                    inner,
+                ) => Error::GlobalTableAlreadyExistsException(inner),
                 crate::error::CreateGlobalTableErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
-                crate::error::CreateGlobalTableErrorKind::InvalidEndpointError(inner) => {
-                    Error::InvalidEndpointError(inner)
+                crate::error::CreateGlobalTableErrorKind::InvalidEndpointException(inner) => {
+                    Error::InvalidEndpointException(inner)
                 }
-                crate::error::CreateGlobalTableErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
+                crate::error::CreateGlobalTableErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
                 }
-                crate::error::CreateGlobalTableErrorKind::TableNotFoundError(inner) => {
-                    Error::TableNotFoundError(inner)
+                crate::error::CreateGlobalTableErrorKind::TableNotFoundException(inner) => {
+                    Error::TableNotFoundException(inner)
                 }
                 crate::error::CreateGlobalTableErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -207,14 +209,14 @@ impl From<smithy_http::result::SdkError<crate::error::CreateTableError>> for Err
                 crate::error::CreateTableErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
-                crate::error::CreateTableErrorKind::InvalidEndpointError(inner) => {
-                    Error::InvalidEndpointError(inner)
+                crate::error::CreateTableErrorKind::InvalidEndpointException(inner) => {
+                    Error::InvalidEndpointException(inner)
                 }
-                crate::error::CreateTableErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
+                crate::error::CreateTableErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
                 }
-                crate::error::CreateTableErrorKind::ResourceInUseError(inner) => {
-                    Error::ResourceInUseError(inner)
+                crate::error::CreateTableErrorKind::ResourceInUseException(inner) => {
+                    Error::ResourceInUseException(inner)
                 }
                 crate::error::CreateTableErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -226,20 +228,20 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteBackupError>> for Er
     fn from(err: smithy_http::result::SdkError<crate::error::DeleteBackupError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteBackupErrorKind::BackupInUseError(inner) => {
-                    Error::BackupInUseError(inner)
+                crate::error::DeleteBackupErrorKind::BackupInUseException(inner) => {
+                    Error::BackupInUseException(inner)
                 }
-                crate::error::DeleteBackupErrorKind::BackupNotFoundError(inner) => {
-                    Error::BackupNotFoundError(inner)
+                crate::error::DeleteBackupErrorKind::BackupNotFoundException(inner) => {
+                    Error::BackupNotFoundException(inner)
                 }
                 crate::error::DeleteBackupErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
-                crate::error::DeleteBackupErrorKind::InvalidEndpointError(inner) => {
-                    Error::InvalidEndpointError(inner)
+                crate::error::DeleteBackupErrorKind::InvalidEndpointException(inner) => {
+                    Error::InvalidEndpointException(inner)
                 }
-                crate::error::DeleteBackupErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
+                crate::error::DeleteBackupErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
                 }
                 crate::error::DeleteBackupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -251,29 +253,29 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteItemError>> for Erro
     fn from(err: smithy_http::result::SdkError<crate::error::DeleteItemError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteItemErrorKind::ConditionalCheckFailedError(inner) => {
-                    Error::ConditionalCheckFailedError(inner)
+                crate::error::DeleteItemErrorKind::ConditionalCheckFailedException(inner) => {
+                    Error::ConditionalCheckFailedException(inner)
                 }
                 crate::error::DeleteItemErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
-                crate::error::DeleteItemErrorKind::InvalidEndpointError(inner) => {
-                    Error::InvalidEndpointError(inner)
+                crate::error::DeleteItemErrorKind::InvalidEndpointException(inner) => {
+                    Error::InvalidEndpointException(inner)
                 }
-                crate::error::DeleteItemErrorKind::ItemCollectionSizeLimitExceededError(inner) => {
-                    Error::ItemCollectionSizeLimitExceededError(inner)
-                }
-                crate::error::DeleteItemErrorKind::ProvisionedThroughputExceededError(inner) => {
-                    Error::ProvisionedThroughputExceededError(inner)
-                }
+                crate::error::DeleteItemErrorKind::ItemCollectionSizeLimitExceededException(
+                    inner,
+                ) => Error::ItemCollectionSizeLimitExceededException(inner),
+                crate::error::DeleteItemErrorKind::ProvisionedThroughputExceededException(
+                    inner,
+                ) => Error::ProvisionedThroughputExceededException(inner),
                 crate::error::DeleteItemErrorKind::RequestLimitExceeded(inner) => {
                     Error::RequestLimitExceeded(inner)
                 }
-                crate::error::DeleteItemErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::DeleteItemErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
-                crate::error::DeleteItemErrorKind::TransactionConflictError(inner) => {
-                    Error::TransactionConflictError(inner)
+                crate::error::DeleteItemErrorKind::TransactionConflictException(inner) => {
+                    Error::TransactionConflictException(inner)
                 }
                 crate::error::DeleteItemErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -288,17 +290,17 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteTableError>> for Err
                 crate::error::DeleteTableErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
-                crate::error::DeleteTableErrorKind::InvalidEndpointError(inner) => {
-                    Error::InvalidEndpointError(inner)
+                crate::error::DeleteTableErrorKind::InvalidEndpointException(inner) => {
+                    Error::InvalidEndpointException(inner)
                 }
-                crate::error::DeleteTableErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
+                crate::error::DeleteTableErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
                 }
-                crate::error::DeleteTableErrorKind::ResourceInUseError(inner) => {
-                    Error::ResourceInUseError(inner)
+                crate::error::DeleteTableErrorKind::ResourceInUseException(inner) => {
+                    Error::ResourceInUseException(inner)
                 }
-                crate::error::DeleteTableErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::DeleteTableErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
                 crate::error::DeleteTableErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -310,14 +312,14 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeBackupError>> for 
     fn from(err: smithy_http::result::SdkError<crate::error::DescribeBackupError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeBackupErrorKind::BackupNotFoundError(inner) => {
-                    Error::BackupNotFoundError(inner)
+                crate::error::DescribeBackupErrorKind::BackupNotFoundException(inner) => {
+                    Error::BackupNotFoundException(inner)
                 }
                 crate::error::DescribeBackupErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
-                crate::error::DescribeBackupErrorKind::InvalidEndpointError(inner) => {
-                    Error::InvalidEndpointError(inner)
+                crate::error::DescribeBackupErrorKind::InvalidEndpointException(inner) => {
+                    Error::InvalidEndpointException(inner)
                 }
                 crate::error::DescribeBackupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -334,11 +336,11 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeContinuousBackupsE
                 crate::error::DescribeContinuousBackupsErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
-                crate::error::DescribeContinuousBackupsErrorKind::InvalidEndpointError(inner) => {
-                    Error::InvalidEndpointError(inner)
-                }
-                crate::error::DescribeContinuousBackupsErrorKind::TableNotFoundError(inner) => {
-                    Error::TableNotFoundError(inner)
+                crate::error::DescribeContinuousBackupsErrorKind::InvalidEndpointException(
+                    inner,
+                ) => Error::InvalidEndpointException(inner),
+                crate::error::DescribeContinuousBackupsErrorKind::TableNotFoundException(inner) => {
+                    Error::TableNotFoundException(inner)
                 }
                 crate::error::DescribeContinuousBackupsErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -357,9 +359,9 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeContributorInsight
                 crate::error::DescribeContributorInsightsErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
-                crate::error::DescribeContributorInsightsErrorKind::ResourceNotFoundError(
+                crate::error::DescribeContributorInsightsErrorKind::ResourceNotFoundException(
                     inner,
-                ) => Error::ResourceNotFoundError(inner),
+                ) => Error::ResourceNotFoundException(inner),
                 crate::error::DescribeContributorInsightsErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -384,14 +386,14 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeExportError>> for 
     fn from(err: smithy_http::result::SdkError<crate::error::DescribeExportError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeExportErrorKind::ExportNotFoundError(inner) => {
-                    Error::ExportNotFoundError(inner)
+                crate::error::DescribeExportErrorKind::ExportNotFoundException(inner) => {
+                    Error::ExportNotFoundException(inner)
                 }
                 crate::error::DescribeExportErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
-                crate::error::DescribeExportErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
+                crate::error::DescribeExportErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
                 }
                 crate::error::DescribeExportErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -403,14 +405,14 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeGlobalTableError>>
     fn from(err: smithy_http::result::SdkError<crate::error::DescribeGlobalTableError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeGlobalTableErrorKind::GlobalTableNotFoundError(inner) => {
-                    Error::GlobalTableNotFoundError(inner)
+                crate::error::DescribeGlobalTableErrorKind::GlobalTableNotFoundException(inner) => {
+                    Error::GlobalTableNotFoundException(inner)
                 }
                 crate::error::DescribeGlobalTableErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
-                crate::error::DescribeGlobalTableErrorKind::InvalidEndpointError(inner) => {
-                    Error::InvalidEndpointError(inner)
+                crate::error::DescribeGlobalTableErrorKind::InvalidEndpointException(inner) => {
+                    Error::InvalidEndpointException(inner)
                 }
                 crate::error::DescribeGlobalTableErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -425,20 +427,12 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeGlobalTableSetting
         err: smithy_http::result::SdkError<crate::error::DescribeGlobalTableSettingsError>,
     ) -> Self {
         match err {
-            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeGlobalTableSettingsErrorKind::GlobalTableNotFoundError(
-                    inner,
-                ) => Error::GlobalTableNotFoundError(inner),
-                crate::error::DescribeGlobalTableSettingsErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
-                }
-                crate::error::DescribeGlobalTableSettingsErrorKind::InvalidEndpointError(inner) => {
-                    Error::InvalidEndpointError(inner)
-                }
-                crate::error::DescribeGlobalTableSettingsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
+            smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::DescribeGlobalTableSettingsErrorKind::GlobalTableNotFoundException(inner) => Error::GlobalTableNotFoundException(inner),
+                crate::error::DescribeGlobalTableSettingsErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+                crate::error::DescribeGlobalTableSettingsErrorKind::InvalidEndpointException(inner) => Error::InvalidEndpointException(inner),
+                crate::error::DescribeGlobalTableSettingsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -452,8 +446,8 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeKinesisStreamingDe
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DescribeKinesisStreamingDestinationErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
-                crate::error::DescribeKinesisStreamingDestinationErrorKind::InvalidEndpointError(inner) => Error::InvalidEndpointError(inner),
-                crate::error::DescribeKinesisStreamingDestinationErrorKind::ResourceNotFoundError(inner) => Error::ResourceNotFoundError(inner),
+                crate::error::DescribeKinesisStreamingDestinationErrorKind::InvalidEndpointException(inner) => Error::InvalidEndpointException(inner),
+                crate::error::DescribeKinesisStreamingDestinationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DescribeKinesisStreamingDestinationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
@@ -467,8 +461,8 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeLimitsError>> for 
                 crate::error::DescribeLimitsErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
-                crate::error::DescribeLimitsErrorKind::InvalidEndpointError(inner) => {
-                    Error::InvalidEndpointError(inner)
+                crate::error::DescribeLimitsErrorKind::InvalidEndpointException(inner) => {
+                    Error::InvalidEndpointException(inner)
                 }
                 crate::error::DescribeLimitsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -483,11 +477,11 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeTableError>> for E
                 crate::error::DescribeTableErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
-                crate::error::DescribeTableErrorKind::InvalidEndpointError(inner) => {
-                    Error::InvalidEndpointError(inner)
+                crate::error::DescribeTableErrorKind::InvalidEndpointException(inner) => {
+                    Error::InvalidEndpointException(inner)
                 }
-                crate::error::DescribeTableErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::DescribeTableErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
                 crate::error::DescribeTableErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -502,17 +496,11 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeTableReplicaAutoSc
         err: smithy_http::result::SdkError<crate::error::DescribeTableReplicaAutoScalingError>,
     ) -> Self {
         match err {
-            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeTableReplicaAutoScalingErrorKind::InternalServerError(
-                    inner,
-                ) => Error::InternalServerError(inner),
-                crate::error::DescribeTableReplicaAutoScalingErrorKind::ResourceNotFoundError(
-                    inner,
-                ) => Error::ResourceNotFoundError(inner),
-                crate::error::DescribeTableReplicaAutoScalingErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
+            smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::DescribeTableReplicaAutoScalingErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+                crate::error::DescribeTableReplicaAutoScalingErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::DescribeTableReplicaAutoScalingErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -524,11 +512,11 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeTimeToLiveError>> 
                 crate::error::DescribeTimeToLiveErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
-                crate::error::DescribeTimeToLiveErrorKind::InvalidEndpointError(inner) => {
-                    Error::InvalidEndpointError(inner)
+                crate::error::DescribeTimeToLiveErrorKind::InvalidEndpointException(inner) => {
+                    Error::InvalidEndpointException(inner)
                 }
-                crate::error::DescribeTimeToLiveErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::DescribeTimeToLiveErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
                 crate::error::DescribeTimeToLiveErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -547,10 +535,10 @@ impl From<smithy_http::result::SdkError<crate::error::DisableKinesisStreamingDes
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DisableKinesisStreamingDestinationErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
-                crate::error::DisableKinesisStreamingDestinationErrorKind::InvalidEndpointError(inner) => Error::InvalidEndpointError(inner),
-                crate::error::DisableKinesisStreamingDestinationErrorKind::LimitExceededError(inner) => Error::LimitExceededError(inner),
-                crate::error::DisableKinesisStreamingDestinationErrorKind::ResourceInUseError(inner) => Error::ResourceInUseError(inner),
-                crate::error::DisableKinesisStreamingDestinationErrorKind::ResourceNotFoundError(inner) => Error::ResourceNotFoundError(inner),
+                crate::error::DisableKinesisStreamingDestinationErrorKind::InvalidEndpointException(inner) => Error::InvalidEndpointException(inner),
+                crate::error::DisableKinesisStreamingDestinationErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
+                crate::error::DisableKinesisStreamingDestinationErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+                crate::error::DisableKinesisStreamingDestinationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DisableKinesisStreamingDestinationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
@@ -564,26 +552,14 @@ impl From<smithy_http::result::SdkError<crate::error::EnableKinesisStreamingDest
         err: smithy_http::result::SdkError<crate::error::EnableKinesisStreamingDestinationError>,
     ) -> Self {
         match err {
-            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::EnableKinesisStreamingDestinationErrorKind::InternalServerError(
-                    inner,
-                ) => Error::InternalServerError(inner),
-                crate::error::EnableKinesisStreamingDestinationErrorKind::InvalidEndpointError(
-                    inner,
-                ) => Error::InvalidEndpointError(inner),
-                crate::error::EnableKinesisStreamingDestinationErrorKind::LimitExceededError(
-                    inner,
-                ) => Error::LimitExceededError(inner),
-                crate::error::EnableKinesisStreamingDestinationErrorKind::ResourceInUseError(
-                    inner,
-                ) => Error::ResourceInUseError(inner),
-                crate::error::EnableKinesisStreamingDestinationErrorKind::ResourceNotFoundError(
-                    inner,
-                ) => Error::ResourceNotFoundError(inner),
-                crate::error::EnableKinesisStreamingDestinationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
+            smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::EnableKinesisStreamingDestinationErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+                crate::error::EnableKinesisStreamingDestinationErrorKind::InvalidEndpointException(inner) => Error::InvalidEndpointException(inner),
+                crate::error::EnableKinesisStreamingDestinationErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
+                crate::error::EnableKinesisStreamingDestinationErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+                crate::error::EnableKinesisStreamingDestinationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::EnableKinesisStreamingDestinationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -591,35 +567,17 @@ impl From<smithy_http::result::SdkError<crate::error::EnableKinesisStreamingDest
 impl From<smithy_http::result::SdkError<crate::error::ExecuteStatementError>> for Error {
     fn from(err: smithy_http::result::SdkError<crate::error::ExecuteStatementError>) -> Self {
         match err {
-            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ExecuteStatementErrorKind::ConditionalCheckFailedError(inner) => {
-                    Error::ConditionalCheckFailedError(inner)
-                }
-                crate::error::ExecuteStatementErrorKind::DuplicateItemError(inner) => {
-                    Error::DuplicateItemError(inner)
-                }
-                crate::error::ExecuteStatementErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
-                }
-                crate::error::ExecuteStatementErrorKind::ItemCollectionSizeLimitExceededError(
-                    inner,
-                ) => Error::ItemCollectionSizeLimitExceededError(inner),
-                crate::error::ExecuteStatementErrorKind::ProvisionedThroughputExceededError(
-                    inner,
-                ) => Error::ProvisionedThroughputExceededError(inner),
-                crate::error::ExecuteStatementErrorKind::RequestLimitExceeded(inner) => {
-                    Error::RequestLimitExceeded(inner)
-                }
-                crate::error::ExecuteStatementErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
-                }
-                crate::error::ExecuteStatementErrorKind::TransactionConflictError(inner) => {
-                    Error::TransactionConflictError(inner)
-                }
-                crate::error::ExecuteStatementErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
+            smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::ExecuteStatementErrorKind::ConditionalCheckFailedException(inner) => Error::ConditionalCheckFailedException(inner),
+                crate::error::ExecuteStatementErrorKind::DuplicateItemException(inner) => Error::DuplicateItemException(inner),
+                crate::error::ExecuteStatementErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+                crate::error::ExecuteStatementErrorKind::ItemCollectionSizeLimitExceededException(inner) => Error::ItemCollectionSizeLimitExceededException(inner),
+                crate::error::ExecuteStatementErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+                crate::error::ExecuteStatementErrorKind::RequestLimitExceeded(inner) => Error::RequestLimitExceeded(inner),
+                crate::error::ExecuteStatementErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::ExecuteStatementErrorKind::TransactionConflictException(inner) => Error::TransactionConflictException(inner),
+                crate::error::ExecuteStatementErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -627,32 +585,16 @@ impl From<smithy_http::result::SdkError<crate::error::ExecuteStatementError>> fo
 impl From<smithy_http::result::SdkError<crate::error::ExecuteTransactionError>> for Error {
     fn from(err: smithy_http::result::SdkError<crate::error::ExecuteTransactionError>) -> Self {
         match err {
-            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ExecuteTransactionErrorKind::IdempotentParameterMismatchError(
-                    inner,
-                ) => Error::IdempotentParameterMismatchError(inner),
-                crate::error::ExecuteTransactionErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
-                }
-                crate::error::ExecuteTransactionErrorKind::ProvisionedThroughputExceededError(
-                    inner,
-                ) => Error::ProvisionedThroughputExceededError(inner),
-                crate::error::ExecuteTransactionErrorKind::RequestLimitExceeded(inner) => {
-                    Error::RequestLimitExceeded(inner)
-                }
-                crate::error::ExecuteTransactionErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
-                }
-                crate::error::ExecuteTransactionErrorKind::TransactionCanceledError(inner) => {
-                    Error::TransactionCanceledError(inner)
-                }
-                crate::error::ExecuteTransactionErrorKind::TransactionInProgressError(inner) => {
-                    Error::TransactionInProgressError(inner)
-                }
-                crate::error::ExecuteTransactionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
+            smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::ExecuteTransactionErrorKind::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
+                crate::error::ExecuteTransactionErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+                crate::error::ExecuteTransactionErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+                crate::error::ExecuteTransactionErrorKind::RequestLimitExceeded(inner) => Error::RequestLimitExceeded(inner),
+                crate::error::ExecuteTransactionErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::ExecuteTransactionErrorKind::TransactionCanceledException(inner) => Error::TransactionCanceledException(inner),
+                crate::error::ExecuteTransactionErrorKind::TransactionInProgressException(inner) => Error::TransactionInProgressException(inner),
+                crate::error::ExecuteTransactionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -663,12 +605,12 @@ impl From<smithy_http::result::SdkError<crate::error::ExportTableToPointInTimeEr
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
-                crate::error::ExportTableToPointInTimeErrorKind::ExportConflictError(inner) => Error::ExportConflictError(inner),
+                crate::error::ExportTableToPointInTimeErrorKind::ExportConflictException(inner) => Error::ExportConflictException(inner),
                 crate::error::ExportTableToPointInTimeErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
-                crate::error::ExportTableToPointInTimeErrorKind::InvalidExportTimeError(inner) => Error::InvalidExportTimeError(inner),
-                crate::error::ExportTableToPointInTimeErrorKind::LimitExceededError(inner) => Error::LimitExceededError(inner),
-                crate::error::ExportTableToPointInTimeErrorKind::PointInTimeRecoveryUnavailableError(inner) => Error::PointInTimeRecoveryUnavailableError(inner),
-                crate::error::ExportTableToPointInTimeErrorKind::TableNotFoundError(inner) => Error::TableNotFoundError(inner),
+                crate::error::ExportTableToPointInTimeErrorKind::InvalidExportTimeException(inner) => Error::InvalidExportTimeException(inner),
+                crate::error::ExportTableToPointInTimeErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
+                crate::error::ExportTableToPointInTimeErrorKind::PointInTimeRecoveryUnavailableException(inner) => Error::PointInTimeRecoveryUnavailableException(inner),
+                crate::error::ExportTableToPointInTimeErrorKind::TableNotFoundException(inner) => Error::TableNotFoundException(inner),
                 crate::error::ExportTableToPointInTimeErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
@@ -682,17 +624,17 @@ impl From<smithy_http::result::SdkError<crate::error::GetItemError>> for Error {
                 crate::error::GetItemErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
-                crate::error::GetItemErrorKind::InvalidEndpointError(inner) => {
-                    Error::InvalidEndpointError(inner)
+                crate::error::GetItemErrorKind::InvalidEndpointException(inner) => {
+                    Error::InvalidEndpointException(inner)
                 }
-                crate::error::GetItemErrorKind::ProvisionedThroughputExceededError(inner) => {
-                    Error::ProvisionedThroughputExceededError(inner)
+                crate::error::GetItemErrorKind::ProvisionedThroughputExceededException(inner) => {
+                    Error::ProvisionedThroughputExceededException(inner)
                 }
                 crate::error::GetItemErrorKind::RequestLimitExceeded(inner) => {
                     Error::RequestLimitExceeded(inner)
                 }
-                crate::error::GetItemErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::GetItemErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
                 crate::error::GetItemErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -707,8 +649,8 @@ impl From<smithy_http::result::SdkError<crate::error::ListBackupsError>> for Err
                 crate::error::ListBackupsErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
-                crate::error::ListBackupsErrorKind::InvalidEndpointError(inner) => {
-                    Error::InvalidEndpointError(inner)
+                crate::error::ListBackupsErrorKind::InvalidEndpointException(inner) => {
+                    Error::InvalidEndpointException(inner)
                 }
                 crate::error::ListBackupsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -725,9 +667,9 @@ impl From<smithy_http::result::SdkError<crate::error::ListContributorInsightsErr
                 crate::error::ListContributorInsightsErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
-                crate::error::ListContributorInsightsErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
-                }
+                crate::error::ListContributorInsightsErrorKind::ResourceNotFoundException(
+                    inner,
+                ) => Error::ResourceNotFoundException(inner),
                 crate::error::ListContributorInsightsErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -743,8 +685,8 @@ impl From<smithy_http::result::SdkError<crate::error::ListExportsError>> for Err
                 crate::error::ListExportsErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
-                crate::error::ListExportsErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
+                crate::error::ListExportsErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
                 }
                 crate::error::ListExportsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -759,8 +701,8 @@ impl From<smithy_http::result::SdkError<crate::error::ListGlobalTablesError>> fo
                 crate::error::ListGlobalTablesErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
-                crate::error::ListGlobalTablesErrorKind::InvalidEndpointError(inner) => {
-                    Error::InvalidEndpointError(inner)
+                crate::error::ListGlobalTablesErrorKind::InvalidEndpointException(inner) => {
+                    Error::InvalidEndpointException(inner)
                 }
                 crate::error::ListGlobalTablesErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -777,8 +719,8 @@ impl From<smithy_http::result::SdkError<crate::error::ListTablesError>> for Erro
                 crate::error::ListTablesErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
-                crate::error::ListTablesErrorKind::InvalidEndpointError(inner) => {
-                    Error::InvalidEndpointError(inner)
+                crate::error::ListTablesErrorKind::InvalidEndpointException(inner) => {
+                    Error::InvalidEndpointException(inner)
                 }
                 crate::error::ListTablesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -793,11 +735,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListTagsOfResourceError>> 
                 crate::error::ListTagsOfResourceErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
-                crate::error::ListTagsOfResourceErrorKind::InvalidEndpointError(inner) => {
-                    Error::InvalidEndpointError(inner)
+                crate::error::ListTagsOfResourceErrorKind::InvalidEndpointException(inner) => {
+                    Error::InvalidEndpointException(inner)
                 }
-                crate::error::ListTagsOfResourceErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::ListTagsOfResourceErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
                 crate::error::ListTagsOfResourceErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -811,29 +753,29 @@ impl From<smithy_http::result::SdkError<crate::error::PutItemError>> for Error {
     fn from(err: smithy_http::result::SdkError<crate::error::PutItemError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::PutItemErrorKind::ConditionalCheckFailedError(inner) => {
-                    Error::ConditionalCheckFailedError(inner)
+                crate::error::PutItemErrorKind::ConditionalCheckFailedException(inner) => {
+                    Error::ConditionalCheckFailedException(inner)
                 }
                 crate::error::PutItemErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
-                crate::error::PutItemErrorKind::InvalidEndpointError(inner) => {
-                    Error::InvalidEndpointError(inner)
+                crate::error::PutItemErrorKind::InvalidEndpointException(inner) => {
+                    Error::InvalidEndpointException(inner)
                 }
-                crate::error::PutItemErrorKind::ItemCollectionSizeLimitExceededError(inner) => {
-                    Error::ItemCollectionSizeLimitExceededError(inner)
+                crate::error::PutItemErrorKind::ItemCollectionSizeLimitExceededException(inner) => {
+                    Error::ItemCollectionSizeLimitExceededException(inner)
                 }
-                crate::error::PutItemErrorKind::ProvisionedThroughputExceededError(inner) => {
-                    Error::ProvisionedThroughputExceededError(inner)
+                crate::error::PutItemErrorKind::ProvisionedThroughputExceededException(inner) => {
+                    Error::ProvisionedThroughputExceededException(inner)
                 }
                 crate::error::PutItemErrorKind::RequestLimitExceeded(inner) => {
                     Error::RequestLimitExceeded(inner)
                 }
-                crate::error::PutItemErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::PutItemErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
-                crate::error::PutItemErrorKind::TransactionConflictError(inner) => {
-                    Error::TransactionConflictError(inner)
+                crate::error::PutItemErrorKind::TransactionConflictException(inner) => {
+                    Error::TransactionConflictException(inner)
                 }
                 crate::error::PutItemErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -848,17 +790,17 @@ impl From<smithy_http::result::SdkError<crate::error::QueryError>> for Error {
                 crate::error::QueryErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
-                crate::error::QueryErrorKind::InvalidEndpointError(inner) => {
-                    Error::InvalidEndpointError(inner)
+                crate::error::QueryErrorKind::InvalidEndpointException(inner) => {
+                    Error::InvalidEndpointException(inner)
                 }
-                crate::error::QueryErrorKind::ProvisionedThroughputExceededError(inner) => {
-                    Error::ProvisionedThroughputExceededError(inner)
+                crate::error::QueryErrorKind::ProvisionedThroughputExceededException(inner) => {
+                    Error::ProvisionedThroughputExceededException(inner)
                 }
                 crate::error::QueryErrorKind::RequestLimitExceeded(inner) => {
                     Error::RequestLimitExceeded(inner)
                 }
-                crate::error::QueryErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::QueryErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
                 crate::error::QueryErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -870,26 +812,26 @@ impl From<smithy_http::result::SdkError<crate::error::RestoreTableFromBackupErro
     fn from(err: smithy_http::result::SdkError<crate::error::RestoreTableFromBackupError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::RestoreTableFromBackupErrorKind::BackupInUseError(inner) => {
-                    Error::BackupInUseError(inner)
+                crate::error::RestoreTableFromBackupErrorKind::BackupInUseException(inner) => {
+                    Error::BackupInUseException(inner)
                 }
-                crate::error::RestoreTableFromBackupErrorKind::BackupNotFoundError(inner) => {
-                    Error::BackupNotFoundError(inner)
+                crate::error::RestoreTableFromBackupErrorKind::BackupNotFoundException(inner) => {
+                    Error::BackupNotFoundException(inner)
                 }
                 crate::error::RestoreTableFromBackupErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
-                crate::error::RestoreTableFromBackupErrorKind::InvalidEndpointError(inner) => {
-                    Error::InvalidEndpointError(inner)
+                crate::error::RestoreTableFromBackupErrorKind::InvalidEndpointException(inner) => {
+                    Error::InvalidEndpointException(inner)
                 }
-                crate::error::RestoreTableFromBackupErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
+                crate::error::RestoreTableFromBackupErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
                 }
-                crate::error::RestoreTableFromBackupErrorKind::TableAlreadyExistsError(inner) => {
-                    Error::TableAlreadyExistsError(inner)
-                }
-                crate::error::RestoreTableFromBackupErrorKind::TableInUseError(inner) => {
-                    Error::TableInUseError(inner)
+                crate::error::RestoreTableFromBackupErrorKind::TableAlreadyExistsException(
+                    inner,
+                ) => Error::TableAlreadyExistsException(inner),
+                crate::error::RestoreTableFromBackupErrorKind::TableInUseException(inner) => {
+                    Error::TableInUseException(inner)
                 }
                 crate::error::RestoreTableFromBackupErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -906,13 +848,13 @@ impl From<smithy_http::result::SdkError<crate::error::RestoreTableToPointInTimeE
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::RestoreTableToPointInTimeErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
-                crate::error::RestoreTableToPointInTimeErrorKind::InvalidEndpointError(inner) => Error::InvalidEndpointError(inner),
-                crate::error::RestoreTableToPointInTimeErrorKind::InvalidRestoreTimeError(inner) => Error::InvalidRestoreTimeError(inner),
-                crate::error::RestoreTableToPointInTimeErrorKind::LimitExceededError(inner) => Error::LimitExceededError(inner),
-                crate::error::RestoreTableToPointInTimeErrorKind::PointInTimeRecoveryUnavailableError(inner) => Error::PointInTimeRecoveryUnavailableError(inner),
-                crate::error::RestoreTableToPointInTimeErrorKind::TableAlreadyExistsError(inner) => Error::TableAlreadyExistsError(inner),
-                crate::error::RestoreTableToPointInTimeErrorKind::TableInUseError(inner) => Error::TableInUseError(inner),
-                crate::error::RestoreTableToPointInTimeErrorKind::TableNotFoundError(inner) => Error::TableNotFoundError(inner),
+                crate::error::RestoreTableToPointInTimeErrorKind::InvalidEndpointException(inner) => Error::InvalidEndpointException(inner),
+                crate::error::RestoreTableToPointInTimeErrorKind::InvalidRestoreTimeException(inner) => Error::InvalidRestoreTimeException(inner),
+                crate::error::RestoreTableToPointInTimeErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
+                crate::error::RestoreTableToPointInTimeErrorKind::PointInTimeRecoveryUnavailableException(inner) => Error::PointInTimeRecoveryUnavailableException(inner),
+                crate::error::RestoreTableToPointInTimeErrorKind::TableAlreadyExistsException(inner) => Error::TableAlreadyExistsException(inner),
+                crate::error::RestoreTableToPointInTimeErrorKind::TableInUseException(inner) => Error::TableInUseException(inner),
+                crate::error::RestoreTableToPointInTimeErrorKind::TableNotFoundException(inner) => Error::TableNotFoundException(inner),
                 crate::error::RestoreTableToPointInTimeErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
@@ -926,17 +868,17 @@ impl From<smithy_http::result::SdkError<crate::error::ScanError>> for Error {
                 crate::error::ScanErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
-                crate::error::ScanErrorKind::InvalidEndpointError(inner) => {
-                    Error::InvalidEndpointError(inner)
+                crate::error::ScanErrorKind::InvalidEndpointException(inner) => {
+                    Error::InvalidEndpointException(inner)
                 }
-                crate::error::ScanErrorKind::ProvisionedThroughputExceededError(inner) => {
-                    Error::ProvisionedThroughputExceededError(inner)
+                crate::error::ScanErrorKind::ProvisionedThroughputExceededException(inner) => {
+                    Error::ProvisionedThroughputExceededException(inner)
                 }
                 crate::error::ScanErrorKind::RequestLimitExceeded(inner) => {
                     Error::RequestLimitExceeded(inner)
                 }
-                crate::error::ScanErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::ScanErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
                 crate::error::ScanErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -951,17 +893,17 @@ impl From<smithy_http::result::SdkError<crate::error::TagResourceError>> for Err
                 crate::error::TagResourceErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
-                crate::error::TagResourceErrorKind::InvalidEndpointError(inner) => {
-                    Error::InvalidEndpointError(inner)
+                crate::error::TagResourceErrorKind::InvalidEndpointException(inner) => {
+                    Error::InvalidEndpointException(inner)
                 }
-                crate::error::TagResourceErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
+                crate::error::TagResourceErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
                 }
-                crate::error::TagResourceErrorKind::ResourceInUseError(inner) => {
-                    Error::ResourceInUseError(inner)
+                crate::error::TagResourceErrorKind::ResourceInUseException(inner) => {
+                    Error::ResourceInUseException(inner)
                 }
-                crate::error::TagResourceErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::TagResourceErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
                 crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -976,20 +918,20 @@ impl From<smithy_http::result::SdkError<crate::error::TransactGetItemsError>> fo
                 crate::error::TransactGetItemsErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
-                crate::error::TransactGetItemsErrorKind::InvalidEndpointError(inner) => {
-                    Error::InvalidEndpointError(inner)
+                crate::error::TransactGetItemsErrorKind::InvalidEndpointException(inner) => {
+                    Error::InvalidEndpointException(inner)
                 }
-                crate::error::TransactGetItemsErrorKind::ProvisionedThroughputExceededError(
+                crate::error::TransactGetItemsErrorKind::ProvisionedThroughputExceededException(
                     inner,
-                ) => Error::ProvisionedThroughputExceededError(inner),
+                ) => Error::ProvisionedThroughputExceededException(inner),
                 crate::error::TransactGetItemsErrorKind::RequestLimitExceeded(inner) => {
                     Error::RequestLimitExceeded(inner)
                 }
-                crate::error::TransactGetItemsErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::TransactGetItemsErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
-                crate::error::TransactGetItemsErrorKind::TransactionCanceledError(inner) => {
-                    Error::TransactionCanceledError(inner)
+                crate::error::TransactGetItemsErrorKind::TransactionCanceledException(inner) => {
+                    Error::TransactionCanceledException(inner)
                 }
                 crate::error::TransactGetItemsErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -1002,35 +944,17 @@ impl From<smithy_http::result::SdkError<crate::error::TransactGetItemsError>> fo
 impl From<smithy_http::result::SdkError<crate::error::TransactWriteItemsError>> for Error {
     fn from(err: smithy_http::result::SdkError<crate::error::TransactWriteItemsError>) -> Self {
         match err {
-            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::TransactWriteItemsErrorKind::IdempotentParameterMismatchError(
-                    inner,
-                ) => Error::IdempotentParameterMismatchError(inner),
-                crate::error::TransactWriteItemsErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
-                }
-                crate::error::TransactWriteItemsErrorKind::InvalidEndpointError(inner) => {
-                    Error::InvalidEndpointError(inner)
-                }
-                crate::error::TransactWriteItemsErrorKind::ProvisionedThroughputExceededError(
-                    inner,
-                ) => Error::ProvisionedThroughputExceededError(inner),
-                crate::error::TransactWriteItemsErrorKind::RequestLimitExceeded(inner) => {
-                    Error::RequestLimitExceeded(inner)
-                }
-                crate::error::TransactWriteItemsErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
-                }
-                crate::error::TransactWriteItemsErrorKind::TransactionCanceledError(inner) => {
-                    Error::TransactionCanceledError(inner)
-                }
-                crate::error::TransactWriteItemsErrorKind::TransactionInProgressError(inner) => {
-                    Error::TransactionInProgressError(inner)
-                }
-                crate::error::TransactWriteItemsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
+            smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::TransactWriteItemsErrorKind::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
+                crate::error::TransactWriteItemsErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+                crate::error::TransactWriteItemsErrorKind::InvalidEndpointException(inner) => Error::InvalidEndpointException(inner),
+                crate::error::TransactWriteItemsErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+                crate::error::TransactWriteItemsErrorKind::RequestLimitExceeded(inner) => Error::RequestLimitExceeded(inner),
+                crate::error::TransactWriteItemsErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::TransactWriteItemsErrorKind::TransactionCanceledException(inner) => Error::TransactionCanceledException(inner),
+                crate::error::TransactWriteItemsErrorKind::TransactionInProgressException(inner) => Error::TransactionInProgressException(inner),
+                crate::error::TransactWriteItemsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -1042,17 +966,17 @@ impl From<smithy_http::result::SdkError<crate::error::UntagResourceError>> for E
                 crate::error::UntagResourceErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
-                crate::error::UntagResourceErrorKind::InvalidEndpointError(inner) => {
-                    Error::InvalidEndpointError(inner)
+                crate::error::UntagResourceErrorKind::InvalidEndpointException(inner) => {
+                    Error::InvalidEndpointException(inner)
                 }
-                crate::error::UntagResourceErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
+                crate::error::UntagResourceErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
                 }
-                crate::error::UntagResourceErrorKind::ResourceInUseError(inner) => {
-                    Error::ResourceInUseError(inner)
+                crate::error::UntagResourceErrorKind::ResourceInUseException(inner) => {
+                    Error::ResourceInUseException(inner)
                 }
-                crate::error::UntagResourceErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::UntagResourceErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
                 crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -1066,10 +990,10 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateContinuousBackupsErr
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
-                crate::error::UpdateContinuousBackupsErrorKind::ContinuousBackupsUnavailableError(inner) => Error::ContinuousBackupsUnavailableError(inner),
+                crate::error::UpdateContinuousBackupsErrorKind::ContinuousBackupsUnavailableException(inner) => Error::ContinuousBackupsUnavailableException(inner),
                 crate::error::UpdateContinuousBackupsErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
-                crate::error::UpdateContinuousBackupsErrorKind::InvalidEndpointError(inner) => Error::InvalidEndpointError(inner),
-                crate::error::UpdateContinuousBackupsErrorKind::TableNotFoundError(inner) => Error::TableNotFoundError(inner),
+                crate::error::UpdateContinuousBackupsErrorKind::InvalidEndpointException(inner) => Error::InvalidEndpointException(inner),
+                crate::error::UpdateContinuousBackupsErrorKind::TableNotFoundException(inner) => Error::TableNotFoundException(inner),
                 crate::error::UpdateContinuousBackupsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
@@ -1085,9 +1009,9 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateContributorInsightsE
                 crate::error::UpdateContributorInsightsErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
-                crate::error::UpdateContributorInsightsErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
-                }
+                crate::error::UpdateContributorInsightsErrorKind::ResourceNotFoundException(
+                    inner,
+                ) => Error::ResourceNotFoundException(inner),
                 crate::error::UpdateContributorInsightsErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -1100,23 +1024,23 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateGlobalTableError>> f
     fn from(err: smithy_http::result::SdkError<crate::error::UpdateGlobalTableError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateGlobalTableErrorKind::GlobalTableNotFoundError(inner) => {
-                    Error::GlobalTableNotFoundError(inner)
+                crate::error::UpdateGlobalTableErrorKind::GlobalTableNotFoundException(inner) => {
+                    Error::GlobalTableNotFoundException(inner)
                 }
                 crate::error::UpdateGlobalTableErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
-                crate::error::UpdateGlobalTableErrorKind::InvalidEndpointError(inner) => {
-                    Error::InvalidEndpointError(inner)
+                crate::error::UpdateGlobalTableErrorKind::InvalidEndpointException(inner) => {
+                    Error::InvalidEndpointException(inner)
                 }
-                crate::error::UpdateGlobalTableErrorKind::ReplicaAlreadyExistsError(inner) => {
-                    Error::ReplicaAlreadyExistsError(inner)
+                crate::error::UpdateGlobalTableErrorKind::ReplicaAlreadyExistsException(inner) => {
+                    Error::ReplicaAlreadyExistsException(inner)
                 }
-                crate::error::UpdateGlobalTableErrorKind::ReplicaNotFoundError(inner) => {
-                    Error::ReplicaNotFoundError(inner)
+                crate::error::UpdateGlobalTableErrorKind::ReplicaNotFoundException(inner) => {
+                    Error::ReplicaNotFoundException(inner)
                 }
-                crate::error::UpdateGlobalTableErrorKind::TableNotFoundError(inner) => {
-                    Error::TableNotFoundError(inner)
+                crate::error::UpdateGlobalTableErrorKind::TableNotFoundException(inner) => {
+                    Error::TableNotFoundException(inner)
                 }
                 crate::error::UpdateGlobalTableErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -1132,26 +1056,26 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateGlobalTableSettingsE
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateGlobalTableSettingsErrorKind::GlobalTableNotFoundError(
+                crate::error::UpdateGlobalTableSettingsErrorKind::GlobalTableNotFoundException(
                     inner,
-                ) => Error::GlobalTableNotFoundError(inner),
-                crate::error::UpdateGlobalTableSettingsErrorKind::IndexNotFoundError(inner) => {
-                    Error::IndexNotFoundError(inner)
+                ) => Error::GlobalTableNotFoundException(inner),
+                crate::error::UpdateGlobalTableSettingsErrorKind::IndexNotFoundException(inner) => {
+                    Error::IndexNotFoundException(inner)
                 }
                 crate::error::UpdateGlobalTableSettingsErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
-                crate::error::UpdateGlobalTableSettingsErrorKind::InvalidEndpointError(inner) => {
-                    Error::InvalidEndpointError(inner)
+                crate::error::UpdateGlobalTableSettingsErrorKind::InvalidEndpointException(
+                    inner,
+                ) => Error::InvalidEndpointException(inner),
+                crate::error::UpdateGlobalTableSettingsErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
                 }
-                crate::error::UpdateGlobalTableSettingsErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
-                }
-                crate::error::UpdateGlobalTableSettingsErrorKind::ReplicaNotFoundError(inner) => {
-                    Error::ReplicaNotFoundError(inner)
-                }
-                crate::error::UpdateGlobalTableSettingsErrorKind::ResourceInUseError(inner) => {
-                    Error::ResourceInUseError(inner)
+                crate::error::UpdateGlobalTableSettingsErrorKind::ReplicaNotFoundException(
+                    inner,
+                ) => Error::ReplicaNotFoundException(inner),
+                crate::error::UpdateGlobalTableSettingsErrorKind::ResourceInUseException(inner) => {
+                    Error::ResourceInUseException(inner)
                 }
                 crate::error::UpdateGlobalTableSettingsErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -1165,29 +1089,29 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateItemError>> for Erro
     fn from(err: smithy_http::result::SdkError<crate::error::UpdateItemError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateItemErrorKind::ConditionalCheckFailedError(inner) => {
-                    Error::ConditionalCheckFailedError(inner)
+                crate::error::UpdateItemErrorKind::ConditionalCheckFailedException(inner) => {
+                    Error::ConditionalCheckFailedException(inner)
                 }
                 crate::error::UpdateItemErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
-                crate::error::UpdateItemErrorKind::InvalidEndpointError(inner) => {
-                    Error::InvalidEndpointError(inner)
+                crate::error::UpdateItemErrorKind::InvalidEndpointException(inner) => {
+                    Error::InvalidEndpointException(inner)
                 }
-                crate::error::UpdateItemErrorKind::ItemCollectionSizeLimitExceededError(inner) => {
-                    Error::ItemCollectionSizeLimitExceededError(inner)
-                }
-                crate::error::UpdateItemErrorKind::ProvisionedThroughputExceededError(inner) => {
-                    Error::ProvisionedThroughputExceededError(inner)
-                }
+                crate::error::UpdateItemErrorKind::ItemCollectionSizeLimitExceededException(
+                    inner,
+                ) => Error::ItemCollectionSizeLimitExceededException(inner),
+                crate::error::UpdateItemErrorKind::ProvisionedThroughputExceededException(
+                    inner,
+                ) => Error::ProvisionedThroughputExceededException(inner),
                 crate::error::UpdateItemErrorKind::RequestLimitExceeded(inner) => {
                     Error::RequestLimitExceeded(inner)
                 }
-                crate::error::UpdateItemErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::UpdateItemErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
-                crate::error::UpdateItemErrorKind::TransactionConflictError(inner) => {
-                    Error::TransactionConflictError(inner)
+                crate::error::UpdateItemErrorKind::TransactionConflictException(inner) => {
+                    Error::TransactionConflictException(inner)
                 }
                 crate::error::UpdateItemErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -1202,17 +1126,17 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateTableError>> for Err
                 crate::error::UpdateTableErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
-                crate::error::UpdateTableErrorKind::InvalidEndpointError(inner) => {
-                    Error::InvalidEndpointError(inner)
+                crate::error::UpdateTableErrorKind::InvalidEndpointException(inner) => {
+                    Error::InvalidEndpointException(inner)
                 }
-                crate::error::UpdateTableErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
+                crate::error::UpdateTableErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
                 }
-                crate::error::UpdateTableErrorKind::ResourceInUseError(inner) => {
-                    Error::ResourceInUseError(inner)
+                crate::error::UpdateTableErrorKind::ResourceInUseException(inner) => {
+                    Error::ResourceInUseException(inner)
                 }
-                crate::error::UpdateTableErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::UpdateTableErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
                 crate::error::UpdateTableErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -1231,15 +1155,15 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateTableReplicaAutoScal
                 crate::error::UpdateTableReplicaAutoScalingErrorKind::InternalServerError(
                     inner,
                 ) => Error::InternalServerError(inner),
-                crate::error::UpdateTableReplicaAutoScalingErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
-                }
-                crate::error::UpdateTableReplicaAutoScalingErrorKind::ResourceInUseError(inner) => {
-                    Error::ResourceInUseError(inner)
-                }
-                crate::error::UpdateTableReplicaAutoScalingErrorKind::ResourceNotFoundError(
+                crate::error::UpdateTableReplicaAutoScalingErrorKind::LimitExceededException(
                     inner,
-                ) => Error::ResourceNotFoundError(inner),
+                ) => Error::LimitExceededException(inner),
+                crate::error::UpdateTableReplicaAutoScalingErrorKind::ResourceInUseException(
+                    inner,
+                ) => Error::ResourceInUseException(inner),
+                crate::error::UpdateTableReplicaAutoScalingErrorKind::ResourceNotFoundException(
+                    inner,
+                ) => Error::ResourceNotFoundException(inner),
                 crate::error::UpdateTableReplicaAutoScalingErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -1255,17 +1179,17 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateTimeToLiveError>> fo
                 crate::error::UpdateTimeToLiveErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
-                crate::error::UpdateTimeToLiveErrorKind::InvalidEndpointError(inner) => {
-                    Error::InvalidEndpointError(inner)
+                crate::error::UpdateTimeToLiveErrorKind::InvalidEndpointException(inner) => {
+                    Error::InvalidEndpointException(inner)
                 }
-                crate::error::UpdateTimeToLiveErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
+                crate::error::UpdateTimeToLiveErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
                 }
-                crate::error::UpdateTimeToLiveErrorKind::ResourceInUseError(inner) => {
-                    Error::ResourceInUseError(inner)
+                crate::error::UpdateTimeToLiveErrorKind::ResourceInUseException(inner) => {
+                    Error::ResourceInUseException(inner)
                 }
-                crate::error::UpdateTimeToLiveErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::UpdateTimeToLiveErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
                 crate::error::UpdateTimeToLiveErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)

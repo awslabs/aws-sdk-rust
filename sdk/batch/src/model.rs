@@ -10,17 +10,13 @@
 /// support mixing compute environment architecture types in a single job queue.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ComputeEnvironmentOrder {
     /// <p>The order of the compute environment. Compute environments are tried in ascending order. For example, if two
     /// compute environments are associated with a job queue, the compute environment with a lower <code>order</code> integer
     /// value is tried for job placement first.</p>
-    #[serde(rename = "order")]
-    #[serde(default)]
     pub order: i32,
     /// <p>The Amazon Resource Name (ARN) of the compute environment.</p>
-    #[serde(rename = "computeEnvironment")]
-    #[serde(default)]
     pub compute_environment: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ComputeEnvironmentOrder {
@@ -108,7 +104,7 @@ impl std::convert::From<&str> for JqState {
 impl std::str::FromStr for JqState {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(JqState::from(s))
     }
 }
@@ -126,28 +122,17 @@ impl AsRef<str> for JqState {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for JqState {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>An object representing the attributes of a compute environment that can be updated. For more information, see
 /// <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in the
 /// <i>AWS Batch User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ComputeResourceUpdate {
     /// <p>The minimum number of Amazon EC2 vCPUs that an environment should maintain.</p>
     /// <note>
     /// <p>This parameter isn't applicable to jobs running on Fargate resources, and shouldn't be specified.</p>
     /// </note>
-    #[serde(rename = "minvCpus")]
-    #[serde(default)]
     pub minv_cpus: i32,
     /// <p>The maximum number of Amazon EC2 vCPUs that an environment can reach.</p>
     /// <note>
@@ -156,29 +141,21 @@ pub struct ComputeResourceUpdate {
     /// exceeds <code>maxvCpus</code> by more than a single instance. That is, no more than a single instance from among
     /// those specified in your compute environment.</p>
     /// </note>
-    #[serde(rename = "maxvCpus")]
-    #[serde(default)]
     pub maxv_cpus: i32,
     /// <p>The desired number of Amazon EC2 vCPUS in the compute environment.</p>
     /// <note>
     /// <p>This parameter isn't applicable to jobs running on Fargate resources, and shouldn't be specified.</p>
     /// </note>
-    #[serde(rename = "desiredvCpus")]
-    #[serde(default)]
     pub desiredv_cpus: i32,
     /// <p>The VPC subnets that the compute resources are launched into. Fargate compute resources can contain up to 16
     /// subnets. Providing an empty list will be handled as if this parameter wasn't specified and no change is made. This
     /// can't be specified for EC2 compute resources. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and Subnets</a> in the <i>Amazon VPC User
     /// Guide</i>.</p>
-    #[serde(rename = "subnets")]
-    #[serde(default)]
     pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon EC2 security groups associated with instances launched in the compute environment. This parameter is
     /// required for Fargate compute resources, where it can contain up to 5 security groups. This can't be specified for
     /// EC2 compute resources. Providing an empty list is handled as if this parameter wasn't specified and no change is
     /// made.</p>
-    #[serde(rename = "securityGroupIds")]
-    #[serde(default)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl std::fmt::Debug for ComputeResourceUpdate {
@@ -317,7 +294,7 @@ impl std::convert::From<&str> for CeState {
 impl std::str::FromStr for CeState {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(CeState::from(s))
     }
 }
@@ -335,24 +312,13 @@ impl AsRef<str> for CeState {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for CeState {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>An object representing a job timeout configuration.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobTimeout {
     /// <p>The time duration in seconds (measured from the job attempt's <code>startedAt</code> timestamp) after which
     /// AWS Batch terminates your jobs if they have not finished. The minimum value for the timeout is 60 seconds.</p>
-    #[serde(rename = "attemptDurationSeconds")]
-    #[serde(default)]
     pub attempt_duration_seconds: i32,
 }
 impl std::fmt::Debug for JobTimeout {
@@ -398,18 +364,14 @@ impl JobTimeout {
 
 /// <p>The retry strategy associated with a job. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/job_retries.html">Automated job retries</a> in the <i>AWS Batch User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RetryStrategy {
     /// <p>The number of times to move a job to the <code>RUNNABLE</code> status. You can specify between 1 and 10
     /// attempts. If the value of <code>attempts</code> is greater than one, the job is retried on failure the same number of
     /// attempts as the value.</p>
-    #[serde(rename = "attempts")]
-    #[serde(default)]
     pub attempts: i32,
     /// <p>Array of up to 5 objects that specify conditions under which the job should be retried or failed. If this
     /// parameter is specified, then the <code>attempts</code> parameter must also be specified.</p>
-    #[serde(rename = "evaluateOnExit")]
-    #[serde(default)]
     pub evaluate_on_exit: std::option::Option<std::vec::Vec<crate::model::EvaluateOnExit>>,
 }
 impl std::fmt::Debug for RetryStrategy {
@@ -474,33 +436,25 @@ impl RetryStrategy {
 /// <p>Specifies a set of conditions to be met, and an action to take (<code>RETRY</code> or <code>EXIT</code>) if all
 /// conditions are met.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EvaluateOnExit {
     /// <p>Contains a glob pattern to match against the <code>StatusReason</code> returned for a job. The pattern can be up
     /// to 512 characters long, and can contain letters, numbers, periods (.), colons (:), and white space (including spaces
     /// or tabs).
     /// It can optionally end with an
     /// asterisk (*) so that only the start of the string needs to be an exact match.</p>
-    #[serde(rename = "onStatusReason")]
-    #[serde(default)]
     pub on_status_reason: std::option::Option<std::string::String>,
     /// <p>Contains a glob pattern to match against the <code>Reason</code> returned for a job. The pattern can be up to
     /// 512 characters long, and can contain letters, numbers, periods (.), colons (:), and white space (including spaces and
     /// tabs). It can optionally end with an asterisk (*) so that only the start of the string needs to be an exact
     /// match.</p>
-    #[serde(rename = "onReason")]
-    #[serde(default)]
     pub on_reason: std::option::Option<std::string::String>,
     /// <p>Contains a glob pattern to match against the decimal representation of the <code>ExitCode</code> returned for a
     /// job. The pattern can be up to 512 characters long, can contain only numbers, and can optionally end with an asterisk
     /// (*) so that only the start of the string needs to be an exact match.</p>
-    #[serde(rename = "onExitCode")]
-    #[serde(default)]
     pub on_exit_code: std::option::Option<std::string::String>,
     /// <p>Specifies the action to take if all of the specified conditions (<code>onStatusReason</code>,
     /// <code>onReason</code>, and <code>onExitCode</code>) are met. The values aren't case sensitive.</p>
-    #[serde(rename = "action")]
-    #[serde(default)]
     pub action: std::option::Option<crate::model::RetryAction>,
 }
 impl std::fmt::Debug for EvaluateOnExit {
@@ -620,7 +574,7 @@ impl std::convert::From<&str> for RetryAction {
 impl std::str::FromStr for RetryAction {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(RetryAction::from(s))
     }
 }
@@ -638,15 +592,6 @@ impl AsRef<str> for RetryAction {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for RetryAction {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>Object representing any node overrides to a job definition that's used in a <a>SubmitJob</a> API
 /// operation.</p>
@@ -655,7 +600,7 @@ impl<'de> serde::Deserialize<'de> for RetryAction {
 /// <code>containerOverrides</code> instead.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NodeOverrides {
     /// <p>The number of nodes to use with a multi-node parallel job. This value overrides the number of nodes that are
     /// specified in the job definition. To use this override:</p>
@@ -673,12 +618,8 @@ pub struct NodeOverrides {
     /// override.</p>
     /// </li>
     /// </ul>
-    #[serde(rename = "numNodes")]
-    #[serde(default)]
     pub num_nodes: i32,
     /// <p>The node property overrides for the job.</p>
-    #[serde(rename = "nodePropertyOverrides")]
-    #[serde(default)]
     pub node_property_overrides:
         std::option::Option<std::vec::Vec<crate::model::NodePropertyOverride>>,
 }
@@ -760,18 +701,14 @@ impl NodeOverrides {
 /// <p>Object representing any node overrides to a job definition that's used in a <a>SubmitJob</a> API
 /// operation.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NodePropertyOverride {
     /// <p>The range of nodes, using node index values, that's used to override. A range of <code>0:3</code> indicates
     /// nodes with index values of <code>0</code> through <code>3</code>. If the starting range value is omitted
     /// (<code>:n</code>), then <code>0</code> is used to start the range. If the ending range value is omitted
     /// (<code>n:</code>), then the highest possible node index is used to end the range.</p>
-    #[serde(rename = "targetNodes")]
-    #[serde(default)]
     pub target_nodes: std::option::Option<std::string::String>,
     /// <p>The overrides that should be sent to a node range.</p>
-    #[serde(rename = "containerOverrides")]
-    #[serde(default)]
     pub container_overrides: std::option::Option<crate::model::ContainerOverrides>,
 }
 impl std::fmt::Debug for NodePropertyOverride {
@@ -834,7 +771,7 @@ impl NodePropertyOverride {
 
 /// <p>The overrides that should be sent to a container.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContainerOverrides {
     /// <p>This parameter indicates the number of vCPUs reserved for the container.It overrides the <code>vcpus</code>
     /// parameter that's set in the job definition, but doesn't override any vCPU requirement specified in the
@@ -850,29 +787,21 @@ pub struct ContainerOverrides {
     /// that run on Fargate resources, you must specify the vCPU requirement for the job using
     /// <code>resourceRequirements</code>.</p>
     /// </note>
-    #[serde(rename = "vcpus")]
-    #[serde(default)]
     pub vcpus: i32,
     /// <p>This parameter indicates the amount of memory (in MiB) that's reserved for the job. It overrides the
     /// <code>memory</code> parameter set in the job definition, but doesn't override any memory requirement specified in
     /// the <code>ResourceRequirement</code> structure in the job definition.</p>
     /// <p>This parameter is supported for jobs that run on EC2 resources, but isn't supported for jobs that run on Fargate
     /// resources. For these resources, use <code>resourceRequirement</code> instead.</p>
-    #[serde(rename = "memory")]
-    #[serde(default)]
     pub memory: i32,
     /// <p>The command to send to the container that overrides the default command from the Docker image or the job
     /// definition.</p>
-    #[serde(rename = "command")]
-    #[serde(default)]
     pub command: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The instance type to use for a multi-node parallel job.</p>
     /// <note>
     /// <p>This parameter isn't applicable to single-node container jobs or for jobs running on Fargate resources and
     /// shouldn't be provided.</p>
     /// </note>
-    #[serde(rename = "instanceType")]
-    #[serde(default)]
     pub instance_type: std::option::Option<std::string::String>,
     /// <p>The environment variables to send to the container. You can add new environment variables, which are added to
     /// the container at launch, or you can override the existing environment variables from the Docker image or the job
@@ -881,13 +810,9 @@ pub struct ContainerOverrides {
     /// <p>Environment variables must not start with <code>AWS_BATCH</code>; this naming
     /// convention is reserved for variables that are set by the AWS Batch service.</p>
     /// </note>
-    #[serde(rename = "environment")]
-    #[serde(default)]
     pub environment: std::option::Option<std::vec::Vec<crate::model::KeyValuePair>>,
     /// <p>The type and amount of resources to assign to a container. This overrides the settings in the job definition.
     /// The supported resources include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.</p>
-    #[serde(rename = "resourceRequirements")]
-    #[serde(default)]
     pub resource_requirements:
         std::option::Option<std::vec::Vec<crate::model::ResourceRequirement>>,
 }
@@ -1034,7 +959,7 @@ impl ContainerOverrides {
 /// <p>The type and amount of a resource to assign to a container. The supported resources include <code>GPU</code>,
 /// <code>MEMORY</code>, and <code>VCPU</code>.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceRequirement {
     /// <p>The quantity of the specified resource to reserve for the container. The values vary based on the
     /// <code>type</code> specified.</p>
@@ -1152,13 +1077,9 @@ pub struct ResourceRequirement {
     /// </dl>
     /// </dd>
     /// </dl>
-    #[serde(rename = "value")]
-    #[serde(default)]
     pub value: std::option::Option<std::string::String>,
     /// <p>The type of resource to assign to a container. The supported resources include <code>GPU</code>,
     /// <code>MEMORY</code>, and <code>VCPU</code>.</p>
-    #[serde(rename = "type")]
-    #[serde(default)]
     pub r#type: std::option::Option<crate::model::ResourceType>,
 }
 impl std::fmt::Debug for ResourceRequirement {
@@ -1359,7 +1280,7 @@ impl std::convert::From<&str> for ResourceType {
 impl std::str::FromStr for ResourceType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ResourceType::from(s))
     }
 }
@@ -1378,28 +1299,15 @@ impl AsRef<str> for ResourceType {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for ResourceType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>A key-value pair object.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KeyValuePair {
     /// <p>The name of the key-value pair. For environment variables, this is the name of the environment variable.</p>
-    #[serde(rename = "name")]
-    #[serde(default)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The value of the key-value pair. For environment variables, this is the value of the environment
     /// variable.</p>
-    #[serde(rename = "value")]
-    #[serde(default)]
     pub value: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for KeyValuePair {
@@ -1457,15 +1365,11 @@ impl KeyValuePair {
 
 /// <p>An object representing an AWS Batch job dependency.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobDependency {
     /// <p>The job ID of the AWS Batch job associated with this dependency.</p>
-    #[serde(rename = "jobId")]
-    #[serde(default)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The type of the job dependency.</p>
-    #[serde(rename = "type")]
-    #[serde(default)]
     pub r#type: std::option::Option<crate::model::ArrayJobDependency>,
 }
 impl std::fmt::Debug for JobDependency {
@@ -1551,7 +1455,7 @@ impl std::convert::From<&str> for ArrayJobDependency {
 impl std::str::FromStr for ArrayJobDependency {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ArrayJobDependency::from(s))
     }
 }
@@ -1569,23 +1473,12 @@ impl AsRef<str> for ArrayJobDependency {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for ArrayJobDependency {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>An object representing an AWS Batch array job.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ArrayProperties {
     /// <p>The size of the array job.</p>
-    #[serde(rename = "size")]
-    #[serde(default)]
     pub size: i32,
 }
 impl std::fmt::Debug for ArrayProperties {
@@ -1656,7 +1549,7 @@ impl std::convert::From<&str> for PlatformCapability {
 impl std::str::FromStr for PlatformCapability {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(PlatformCapability::from(s))
     }
 }
@@ -1674,32 +1567,17 @@ impl AsRef<str> for PlatformCapability {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for PlatformCapability {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>An object representing the node properties of a multi-node parallel job.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NodeProperties {
     /// <p>The number of nodes associated with a multi-node parallel job.</p>
-    #[serde(rename = "numNodes")]
-    #[serde(default)]
     pub num_nodes: i32,
     /// <p>Specifies the node index for the main node of a multi-node parallel job. This node index value must be fewer
     /// than the number of nodes.</p>
-    #[serde(rename = "mainNode")]
-    #[serde(default)]
     pub main_node: i32,
     /// <p>A list of node ranges and their properties associated with a multi-node parallel job.</p>
-    #[serde(rename = "nodeRangeProperties")]
-    #[serde(default)]
     pub node_range_properties: std::option::Option<std::vec::Vec<crate::model::NodeRangeProperty>>,
 }
 impl std::fmt::Debug for NodeProperties {
@@ -1777,7 +1655,7 @@ impl NodeProperties {
 
 /// <p>An object representing the properties of the node range for a multi-node parallel job.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NodeRangeProperty {
     /// <p>The range of nodes, using node index values. A range of <code>0:3</code> indicates nodes with index values of
     /// <code>0</code> through <code>3</code>. If the starting range value is omitted (<code>:n</code>), then <code>0</code>
@@ -1785,12 +1663,8 @@ pub struct NodeRangeProperty {
     /// index is used to end the range. Your accumulative node ranges must account for all nodes (<code>0:n</code>). You can
     /// nest node ranges, for example <code>0:10</code> and <code>4:5</code>, in which case the <code>4:5</code> range
     /// properties override the <code>0:10</code> properties.</p>
-    #[serde(rename = "targetNodes")]
-    #[serde(default)]
     pub target_nodes: std::option::Option<std::string::String>,
     /// <p>The container details for the node range.</p>
-    #[serde(rename = "container")]
-    #[serde(default)]
     pub container: std::option::Option<crate::model::ContainerProperties>,
 }
 impl std::fmt::Debug for NodeRangeProperty {
@@ -1856,7 +1730,7 @@ impl NodeRangeProperty {
 /// <p>Container properties are used in job definitions to describe the container that's launched as part of a
 /// job.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContainerProperties {
     /// <p>The image used to start a container. This string is passed directly to the Docker daemon. Images in the Docker
     /// Hub registry are available by default. Other repositories are specified with
@@ -1889,8 +1763,6 @@ pub struct ContainerProperties {
     /// <code>quay.io/assemblyline/ubuntu</code>).</p>
     /// </li>
     /// </ul>
-    #[serde(rename = "image")]
-    #[serde(default)]
     pub image: std::option::Option<std::string::String>,
     /// <p>The number of vCPUs reserved for the job. Each vCPU is equivalent to 1,024 CPU shares. This parameter maps to
     /// <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
@@ -1904,8 +1776,6 @@ pub struct ContainerProperties {
     /// run on Fargate resources, you must specify the vCPU requirement for the job using
     /// <code>resourceRequirements</code>.</p>
     /// </note>
-    #[serde(rename = "vcpus")]
-    #[serde(default)]
     pub vcpus: i32,
     /// <p>This parameter indicates the memory hard limit (in MiB) for a container. If your container attempts to exceed
     /// the specified number, it is terminated. You must specify at least 4 MiB of memory for a job using this parameter. The
@@ -1921,29 +1791,19 @@ pub struct ContainerProperties {
     /// particular instance type, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory
     /// Management</a> in the <i>AWS Batch User Guide</i>.</p>
     /// </note>
-    #[serde(rename = "memory")]
-    #[serde(default)]
     pub memory: i32,
     /// <p>The command that's passed to the container. This parameter maps to <code>Cmd</code> in the
     /// <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>COMMAND</code> parameter to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">https://docs.docker.com/engine/reference/builder/#cmd</a>.</p>
-    #[serde(rename = "command")]
-    #[serde(default)]
     pub command: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that the container can assume for AWS permissions. For more information, see
     /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM Roles for Tasks</a>
     /// in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[serde(rename = "jobRoleArn")]
-    #[serde(default)]
     pub job_role_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. For jobs that run on Fargate resources, you must
     /// provide an execution role. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS Batch execution IAM role</a> in the
     /// <i>AWS Batch User Guide</i>.</p>
-    #[serde(rename = "executionRoleArn")]
-    #[serde(default)]
     pub execution_role_arn: std::option::Option<std::string::String>,
     /// <p>A list of data volumes used in a job.</p>
-    #[serde(rename = "volumes")]
-    #[serde(default)]
     pub volumes: std::option::Option<std::vec::Vec<crate::model::Volume>>,
     /// <p>The environment variables to pass to a container. This parameter maps to <code>Env</code> in the
     /// <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--env</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
@@ -1955,19 +1815,13 @@ pub struct ContainerProperties {
     /// <p>Environment variables must not start with <code>AWS_BATCH</code>; this naming
     /// convention is reserved for variables that are set by the AWS Batch service.</p>
     /// </note>
-    #[serde(rename = "environment")]
-    #[serde(default)]
     pub environment: std::option::Option<std::vec::Vec<crate::model::KeyValuePair>>,
     /// <p>The mount points for data volumes in your container. This parameter maps to <code>Volumes</code> in the
     /// <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--volume</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
-    #[serde(rename = "mountPoints")]
-    #[serde(default)]
     pub mount_points: std::option::Option<std::vec::Vec<crate::model::MountPoint>>,
     /// <p>When this parameter is true, the container is given read-only access to its root file system. This parameter
     /// maps to <code>ReadonlyRootfs</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and
     /// the <code>--read-only</code> option to <code>docker run</code>.</p>
-    #[serde(rename = "readonlyRootFilesystem")]
-    #[serde(default)]
     pub readonly_root_filesystem: bool,
     /// <p>When this parameter is true, the container is given elevated permissions on the host container instance (similar
     /// to the <code>root</code> user). This parameter maps to <code>Privileged</code> in the
@@ -1977,21 +1831,15 @@ pub struct ContainerProperties {
     /// <p>This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided, or specified
     /// as false.</p>
     /// </note>
-    #[serde(rename = "privileged")]
-    #[serde(default)]
     pub privileged: bool,
     /// <p>A list of <code>ulimits</code> to set in the container. This parameter maps to <code>Ulimits</code> in the
     /// <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
     /// <note>
     /// <p>This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.</p>
     /// </note>
-    #[serde(rename = "ulimits")]
-    #[serde(default)]
     pub ulimits: std::option::Option<std::vec::Vec<crate::model::Ulimit>>,
     /// <p>The user name to use inside the container. This parameter maps to <code>User</code> in the
     /// <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--user</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
-    #[serde(rename = "user")]
-    #[serde(default)]
     pub user: std::option::Option<std::string::String>,
     /// <p>The instance type to use for a multi-node parallel job. All node groups in a multi-node parallel job must use
     /// the same instance type.</p>
@@ -1999,18 +1847,12 @@ pub struct ContainerProperties {
     /// <p>This parameter isn't applicable to single-node container jobs or for jobs that run on Fargate resources and
     /// shouldn't be provided.</p>
     /// </note>
-    #[serde(rename = "instanceType")]
-    #[serde(default)]
     pub instance_type: std::option::Option<std::string::String>,
     /// <p>The type and amount of resources to assign to a container. The supported resources include <code>GPU</code>,
     /// <code>MEMORY</code>, and <code>VCPU</code>.</p>
-    #[serde(rename = "resourceRequirements")]
-    #[serde(default)]
     pub resource_requirements:
         std::option::Option<std::vec::Vec<crate::model::ResourceRequirement>>,
     /// <p>Linux-specific modifications that are applied to the container, such as details for device mappings.</p>
-    #[serde(rename = "linuxParameters")]
-    #[serde(default)]
     pub linux_parameters: std::option::Option<crate::model::LinuxParameters>,
     /// <p>The log configuration specification for the container.</p>
     /// <p>This parameter maps to <code>LogConfig</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
@@ -2034,23 +1876,15 @@ pub struct ContainerProperties {
     /// instance can use these log configuration options. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS Container Agent Configuration</a> in the
     /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// </note>
-    #[serde(rename = "logConfiguration")]
-    #[serde(default)]
     pub log_configuration: std::option::Option<crate::model::LogConfiguration>,
     /// <p>The secrets for the container. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying sensitive data</a> in the
     /// <i>AWS Batch User Guide</i>.</p>
-    #[serde(rename = "secrets")]
-    #[serde(default)]
     pub secrets: std::option::Option<std::vec::Vec<crate::model::Secret>>,
     /// <p>The network configuration for jobs running on Fargate resources. Jobs running on EC2 resources must not
     /// specify this parameter.</p>
-    #[serde(rename = "networkConfiguration")]
-    #[serde(default)]
     pub network_configuration: std::option::Option<crate::model::NetworkConfiguration>,
     /// <p>The platform configuration for jobs running on Fargate resources. Jobs running on EC2 resources must not
     /// specify this parameter.</p>
-    #[serde(rename = "fargatePlatformConfiguration")]
-    #[serde(default)]
     pub fargate_platform_configuration:
         std::option::Option<crate::model::FargatePlatformConfiguration>,
 }
@@ -2478,15 +2312,13 @@ impl ContainerProperties {
 /// <p>The platform configuration for jobs running on Fargate resources. For jobs that run on EC2 resources, you
 /// shouldn't specify this parameter.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FargatePlatformConfiguration {
     /// <p>The AWS Fargate platform version where the jobs are running. A platform version is specified only for jobs
     /// running on Fargate resources. If one isn't specified, the <code>LATEST</code> platform version is used by default.
     /// This uses a recent, approved version of the AWS Fargate platform for compute resources. For more information, see
     /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate platform
     /// versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[serde(rename = "platformVersion")]
-    #[serde(default)]
     pub platform_version: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for FargatePlatformConfiguration {
@@ -2539,14 +2371,12 @@ impl FargatePlatformConfiguration {
 /// <p>The network configuration for jobs running on Fargate resources. Jobs running on EC2 resources must not
 /// specify this parameter.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NetworkConfiguration {
     /// <p>Indicates whether the job should have a public IP address. For a job running on Fargate resources in a private
     /// subnet to send outbound traffic to the internet (for example, in order to pull container images), the private subnet
     /// requires a NAT gateway be attached to route requests to the internet. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Amazon ECS task networking</a>. The
     /// default value is "DISABLED".</p>
-    #[serde(rename = "assignPublicIp")]
-    #[serde(default)]
     pub assign_public_ip: std::option::Option<crate::model::AssignPublicIp>,
 }
 impl std::fmt::Debug for NetworkConfiguration {
@@ -2623,7 +2453,7 @@ impl std::convert::From<&str> for AssignPublicIp {
 impl std::str::FromStr for AssignPublicIp {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(AssignPublicIp::from(s))
     }
 }
@@ -2639,15 +2469,6 @@ impl AssignPublicIp {
 impl AsRef<str> for AssignPublicIp {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for AssignPublicIp {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -2666,11 +2487,9 @@ impl<'de> serde::Deserialize<'de> for AssignPublicIp {
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
 /// sensitive data</a> in the <i>AWS Batch User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Secret {
     /// <p>The name of the secret.</p>
-    #[serde(rename = "name")]
-    #[serde(default)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The secret to expose to the container. The supported values are either the full ARN of the AWS Secrets Manager secret or the
     /// full ARN of the parameter in the AWS Systems Manager Parameter Store.</p>
@@ -2679,8 +2498,6 @@ pub struct Secret {
     /// either the full ARN or name of the parameter. If the parameter exists in a different Region, then the full ARN must
     /// be specified.</p>
     /// </note>
-    #[serde(rename = "valueFrom")]
-    #[serde(default)]
     pub value_from: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for Secret {
@@ -2743,7 +2560,7 @@ impl Secret {
 
 /// <p>Log configuration options to send to a custom log driver for the container.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LogConfiguration {
     /// <p>The log driver to use for the container. The valid values listed for this parameter are log drivers that the
     /// Amazon ECS container agent can communicate with by default.</p>
@@ -2803,21 +2620,15 @@ pub struct LogConfiguration {
     /// container instance. To check the Docker Remote API version on your container instance, log into your
     /// container instance and run the following command: <code>sudo docker version | grep "Server API version"</code>
     /// </p>
-    #[serde(rename = "logDriver")]
-    #[serde(default)]
     pub log_driver: std::option::Option<crate::model::LogDriver>,
     /// <p>The configuration options to send to the log driver. This parameter requires version 1.19 of the Docker Remote API or greater on your
     /// container instance. To check the Docker Remote API version on your container instance, log into your
     /// container instance and run the following command: <code>sudo docker version | grep "Server API version"</code>
     /// </p>
-    #[serde(rename = "options")]
-    #[serde(default)]
     pub options:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The secrets to pass to the log configuration. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying Sensitive Data</a> in the
     /// <i>AWS Batch User Guide</i>.</p>
-    #[serde(rename = "secretOptions")]
-    #[serde(default)]
     pub secret_options: std::option::Option<std::vec::Vec<crate::model::Secret>>,
 }
 impl std::fmt::Debug for LogConfiguration {
@@ -2998,7 +2809,7 @@ impl std::convert::From<&str> for LogDriver {
 impl std::str::FromStr for LogDriver {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(LogDriver::from(s))
     }
 }
@@ -3021,27 +2832,16 @@ impl AsRef<str> for LogDriver {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for LogDriver {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>Linux-specific modifications that are applied to the container, such as details for device mappings.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LinuxParameters {
     /// <p>Any host devices to expose to the container. This parameter maps to <code>Devices</code> in the
     /// <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--device</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
     /// <note>
     /// <p>This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.</p>
     /// </note>
-    #[serde(rename = "devices")]
-    #[serde(default)]
     pub devices: std::option::Option<std::vec::Vec<crate::model::Device>>,
     /// <p>If true, run an <code>init</code> process inside the container that forwards signals and reaps processes. This
     /// parameter maps to the <code>--init</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
@@ -3049,24 +2849,18 @@ pub struct LinuxParameters {
     /// container instance. To check the Docker Remote API version on your container instance, log into your
     /// container instance and run the following command: <code>sudo docker version | grep "Server API version"</code>
     /// </p>
-    #[serde(rename = "initProcessEnabled")]
-    #[serde(default)]
     pub init_process_enabled: bool,
     /// <p>The value for the size (in MiB) of the <code>/dev/shm</code> volume. This parameter maps to the
     /// <code>--shm-size</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
     /// <note>
     /// <p>This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.</p>
     /// </note>
-    #[serde(rename = "sharedMemorySize")]
-    #[serde(default)]
     pub shared_memory_size: i32,
     /// <p>The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the
     /// <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
     /// <note>
     /// <p>This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.</p>
     /// </note>
-    #[serde(rename = "tmpfs")]
-    #[serde(default)]
     pub tmpfs: std::option::Option<std::vec::Vec<crate::model::Tmpfs>>,
     /// <p>The total amount of swap memory (in MiB) a container can use. This parameter is translated to the
     /// <code>--memory-swap</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a> where the value is the
@@ -3079,8 +2873,6 @@ pub struct LinuxParameters {
     /// <note>
     /// <p>This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.</p>
     /// </note>
-    #[serde(rename = "maxSwap")]
-    #[serde(default)]
     pub max_swap: i32,
     /// <p>This allows you to tune a container's memory swappiness behavior. A <code>swappiness</code> value of
     /// <code>0</code> causes swapping not to happen unless absolutely necessary. A <code>swappiness</code> value of
@@ -3113,8 +2905,6 @@ pub struct LinuxParameters {
     /// <note>
     /// <p>This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.</p>
     /// </note>
-    #[serde(rename = "swappiness")]
-    #[serde(default)]
     pub swappiness: i32,
 }
 impl std::fmt::Debug for LinuxParameters {
@@ -3279,15 +3069,11 @@ impl LinuxParameters {
 /// <p>This object isn't applicable to jobs running on Fargate resources.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tmpfs {
     /// <p>The absolute file path in the container where the tmpfs volume is mounted.</p>
-    #[serde(rename = "containerPath")]
-    #[serde(default)]
     pub container_path: std::option::Option<std::string::String>,
     /// <p>The size (in MiB) of the tmpfs volume.</p>
-    #[serde(rename = "size")]
-    #[serde(default)]
     pub size: i32,
     /// <p>The list of tmpfs volume mount options.</p>
     /// <p>Valid values: "<code>defaults</code>" | "<code>ro</code>" | "<code>rw</code>" | "<code>suid</code>" |
@@ -3298,8 +3084,6 @@ pub struct Tmpfs {
     /// "rprivate" | "shared" | "rshared" | "slave" | "rslave" | "relatime</code>" | "<code>norelatime</code>" |
     /// "<code>strictatime</code>" | "<code>nostrictatime</code>" | "<code>mode</code>" | "<code>uid</code>" |
     /// "<code>gid</code>" | "<code>nr_inodes</code>" | "<code>nr_blocks</code>" | "<code>mpol</code>"</p>
-    #[serde(rename = "mountOptions")]
-    #[serde(default)]
     pub mount_options: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl std::fmt::Debug for Tmpfs {
@@ -3378,21 +3162,15 @@ impl Tmpfs {
 /// <p>This object isn't applicable to jobs running on Fargate resources and shouldn't be provided.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Device {
     /// <p>The path for the device on the host container instance.</p>
-    #[serde(rename = "hostPath")]
-    #[serde(default)]
     pub host_path: std::option::Option<std::string::String>,
     /// <p>The path inside the container used to expose the host device. By default, the <code>hostPath</code> value is
     /// used.</p>
-    #[serde(rename = "containerPath")]
-    #[serde(default)]
     pub container_path: std::option::Option<std::string::String>,
     /// <p>The explicit permissions to provide to the container for the device. By default, the container has permissions
     /// for <code>read</code>, <code>write</code>, and <code>mknod</code> for the device.</p>
-    #[serde(rename = "permissions")]
-    #[serde(default)]
     pub permissions: std::option::Option<std::vec::Vec<crate::model::DeviceCgroupPermission>>,
 }
 impl std::fmt::Debug for Device {
@@ -3501,7 +3279,7 @@ impl std::convert::From<&str> for DeviceCgroupPermission {
 impl std::str::FromStr for DeviceCgroupPermission {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(DeviceCgroupPermission::from(s))
     }
 }
@@ -3520,34 +3298,19 @@ impl AsRef<str> for DeviceCgroupPermission {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for DeviceCgroupPermission {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>The <code>ulimit</code> settings to pass to the container.</p>
 /// <note>
 /// <p>This object isn't applicable to jobs running on Fargate resources.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Ulimit {
     /// <p>The hard limit for the <code>ulimit</code> type.</p>
-    #[serde(rename = "hardLimit")]
-    #[serde(default)]
     pub hard_limit: i32,
     /// <p>The <code>type</code> of the <code>ulimit</code>.</p>
-    #[serde(rename = "name")]
-    #[serde(default)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The soft limit for the <code>ulimit</code> type.</p>
-    #[serde(rename = "softLimit")]
-    #[serde(default)]
     pub soft_limit: i32,
 }
 impl std::fmt::Debug for Ulimit {
@@ -3618,20 +3381,14 @@ impl Ulimit {
 /// <code>Volumes</code> in the <a href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.19/#create-a-container">Create a
 /// container</a> section of the Docker Remote API and the <code>--volume</code> option to docker run.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MountPoint {
     /// <p>The path on the container where the host volume is mounted.</p>
-    #[serde(rename = "containerPath")]
-    #[serde(default)]
     pub container_path: std::option::Option<std::string::String>,
     /// <p>If this value is <code>true</code>, the container has read-only access to the volume. Otherwise, the container
     /// can write to the volume. The default value is <code>false</code>.</p>
-    #[serde(rename = "readOnly")]
-    #[serde(default)]
     pub read_only: bool,
     /// <p>The name of the volume to mount.</p>
-    #[serde(rename = "sourceVolume")]
-    #[serde(default)]
     pub source_volume: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for MountPoint {
@@ -3707,7 +3464,7 @@ impl MountPoint {
 
 /// <p>A data volume used in a job's container properties.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Volume {
     /// <p>The contents of the <code>host</code> parameter determine whether your data volume persists on the host
     /// container instance and where it is stored. If the host parameter is empty, then the Docker daemon assigns a host path
@@ -3716,20 +3473,14 @@ pub struct Volume {
     /// <note>
     /// <p>This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.</p>
     /// </note>
-    #[serde(rename = "host")]
-    #[serde(default)]
     pub host: std::option::Option<crate::model::Host>,
     /// <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are
     /// allowed. This name is referenced in the <code>sourceVolume</code>
     /// parameter of container definition <code>mountPoints</code>.</p>
-    #[serde(rename = "name")]
-    #[serde(default)]
     pub name: std::option::Option<std::string::String>,
     /// <p>This parameter is specified when you are using an Amazon Elastic File System file system for job storage. Jobs running on
     /// Fargate resources must specify a <code>platformVersion</code> of at least <code>1.4.0</code>.</p>
-    #[serde(rename = "efsVolumeConfiguration")]
-    #[serde(default)]
-    pub efs_volume_configuration: std::option::Option<crate::model::EFSVolumeConfiguration>,
+    pub efs_volume_configuration: std::option::Option<crate::model::EfsVolumeConfiguration>,
 }
 impl std::fmt::Debug for Volume {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3749,7 +3500,7 @@ pub mod volume {
         pub(crate) host: std::option::Option<crate::model::Host>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) efs_volume_configuration:
-            std::option::Option<crate::model::EFSVolumeConfiguration>,
+            std::option::Option<crate::model::EfsVolumeConfiguration>,
     }
     impl Builder {
         /// <p>The contents of the <code>host</code> parameter determine whether your data volume persists on the host
@@ -3782,14 +3533,14 @@ pub mod volume {
         /// Fargate resources must specify a <code>platformVersion</code> of at least <code>1.4.0</code>.</p>
         pub fn efs_volume_configuration(
             mut self,
-            input: crate::model::EFSVolumeConfiguration,
+            input: crate::model::EfsVolumeConfiguration,
         ) -> Self {
             self.efs_volume_configuration = Some(input);
             self
         }
         pub fn set_efs_volume_configuration(
             mut self,
-            input: std::option::Option<crate::model::EFSVolumeConfiguration>,
+            input: std::option::Option<crate::model::EfsVolumeConfiguration>,
         ) -> Self {
             self.efs_volume_configuration = input;
             self
@@ -3815,11 +3566,9 @@ impl Volume {
 /// see <a href="https://docs.aws.amazon.com/batch/latest/ug/efs-volumes.html">Amazon EFS Volumes</a> in the
 /// <i>AWS Batch User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct EFSVolumeConfiguration {
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EfsVolumeConfiguration {
     /// <p>The Amazon EFS file system ID to use.</p>
-    #[serde(rename = "fileSystemId")]
-    #[serde(default)]
     pub file_system_id: std::option::Option<std::string::String>,
     /// <p>The directory within the Amazon EFS file system to mount as the root directory inside the host. If this parameter is
     /// omitted, the root of the Amazon EFS volume will be used. Specifying <code>/</code> will have the same effect as omitting
@@ -3828,31 +3577,23 @@ pub struct EFSVolumeConfiguration {
     /// <p>If an EFS access point is specified in the <code>authorizationConfig</code>, the root directory parameter must
     /// either be omitted or set to <code>/</code> which will enforce the path set on the Amazon EFS access point.</p>
     /// </important>
-    #[serde(rename = "rootDirectory")]
-    #[serde(default)]
     pub root_directory: std::option::Option<std::string::String>,
     /// <p>Whether or not to enable encryption for Amazon EFS data in transit between the Amazon ECS host and the Amazon EFS server.
     /// Transit encryption must be enabled if Amazon EFS IAM authorization is used. If this parameter is omitted, the default
     /// value of <code>DISABLED</code> is used. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting data in transit</a> in the
     /// <i>Amazon Elastic File System User Guide</i>.</p>
-    #[serde(rename = "transitEncryption")]
-    #[serde(default)]
     pub transit_encryption: std::option::Option<crate::model::EfsTransitEncryption>,
     /// <p>The port to use when sending encrypted data between the Amazon ECS host and the Amazon EFS server. If you do not specify a
     /// transit encryption port, it will use the port selection strategy that the Amazon EFS mount helper uses. For more
     /// information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS Mount Helper</a> in
     /// the <i>Amazon Elastic File System User Guide</i>.</p>
-    #[serde(rename = "transitEncryptionPort")]
-    #[serde(default)]
     pub transit_encryption_port: i32,
     /// <p>The authorization configuration details for the Amazon EFS file system.</p>
-    #[serde(rename = "authorizationConfig")]
-    #[serde(default)]
-    pub authorization_config: std::option::Option<crate::model::EFSAuthorizationConfig>,
+    pub authorization_config: std::option::Option<crate::model::EfsAuthorizationConfig>,
 }
-impl std::fmt::Debug for EFSVolumeConfiguration {
+impl std::fmt::Debug for EfsVolumeConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EFSVolumeConfiguration");
+        let mut formatter = f.debug_struct("EfsVolumeConfiguration");
         formatter.field("file_system_id", &self.file_system_id);
         formatter.field("root_directory", &self.root_directory);
         formatter.field("transit_encryption", &self.transit_encryption);
@@ -3861,9 +3602,9 @@ impl std::fmt::Debug for EFSVolumeConfiguration {
         formatter.finish()
     }
 }
-/// See [`EFSVolumeConfiguration`](crate::model::EFSVolumeConfiguration)
+/// See [`EfsVolumeConfiguration`](crate::model::EfsVolumeConfiguration)
 pub mod efs_volume_configuration {
-    /// A builder for [`EFSVolumeConfiguration`](crate::model::EFSVolumeConfiguration)
+    /// A builder for [`EfsVolumeConfiguration`](crate::model::EfsVolumeConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -3871,7 +3612,7 @@ pub mod efs_volume_configuration {
         pub(crate) root_directory: std::option::Option<std::string::String>,
         pub(crate) transit_encryption: std::option::Option<crate::model::EfsTransitEncryption>,
         pub(crate) transit_encryption_port: std::option::Option<i32>,
-        pub(crate) authorization_config: std::option::Option<crate::model::EFSAuthorizationConfig>,
+        pub(crate) authorization_config: std::option::Option<crate::model::EfsAuthorizationConfig>,
     }
     impl Builder {
         /// <p>The Amazon EFS file system ID to use.</p>
@@ -3932,20 +3673,20 @@ pub mod efs_volume_configuration {
             self
         }
         /// <p>The authorization configuration details for the Amazon EFS file system.</p>
-        pub fn authorization_config(mut self, input: crate::model::EFSAuthorizationConfig) -> Self {
+        pub fn authorization_config(mut self, input: crate::model::EfsAuthorizationConfig) -> Self {
             self.authorization_config = Some(input);
             self
         }
         pub fn set_authorization_config(
             mut self,
-            input: std::option::Option<crate::model::EFSAuthorizationConfig>,
+            input: std::option::Option<crate::model::EfsAuthorizationConfig>,
         ) -> Self {
             self.authorization_config = input;
             self
         }
-        /// Consumes the builder and constructs a [`EFSVolumeConfiguration`](crate::model::EFSVolumeConfiguration)
-        pub fn build(self) -> crate::model::EFSVolumeConfiguration {
-            crate::model::EFSVolumeConfiguration {
+        /// Consumes the builder and constructs a [`EfsVolumeConfiguration`](crate::model::EfsVolumeConfiguration)
+        pub fn build(self) -> crate::model::EfsVolumeConfiguration {
+            crate::model::EfsVolumeConfiguration {
                 file_system_id: self.file_system_id,
                 root_directory: self.root_directory,
                 transit_encryption: self.transit_encryption,
@@ -3955,8 +3696,8 @@ pub mod efs_volume_configuration {
         }
     }
 }
-impl EFSVolumeConfiguration {
-    /// Creates a new builder-style object to manufacture [`EFSVolumeConfiguration`](crate::model::EFSVolumeConfiguration)
+impl EfsVolumeConfiguration {
+    /// Creates a new builder-style object to manufacture [`EfsVolumeConfiguration`](crate::model::EfsVolumeConfiguration)
     pub fn builder() -> crate::model::efs_volume_configuration::Builder {
         crate::model::efs_volume_configuration::Builder::default()
     }
@@ -3964,36 +3705,32 @@ impl EFSVolumeConfiguration {
 
 /// <p>The authorization configuration details for the Amazon EFS file system.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct EFSAuthorizationConfig {
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EfsAuthorizationConfig {
     /// <p>The Amazon EFS access point ID to use. If an access point is specified, the root directory value specified in the
     /// <code>EFSVolumeConfiguration</code> must either be omitted or set to <code>/</code> which will enforce the path set
     /// on the EFS access point. If an access point is used, transit encryption must be enabled in the
     /// <code>EFSVolumeConfiguration</code>. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Working with Amazon EFS Access Points</a> in the
     /// <i>Amazon Elastic File System User Guide</i>.</p>
-    #[serde(rename = "accessPointId")]
-    #[serde(default)]
     pub access_point_id: std::option::Option<std::string::String>,
     /// <p>Whether or not to use the AWS Batch execution IAM role defined in a job definition when mounting the Amazon EFS file
     /// system. If enabled, transit encryption must be enabled in the <code>EFSVolumeConfiguration</code>. If this parameter
     /// is omitted, the default value of <code>DISABLED</code> is used. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/ug/efs-volumes.html#efs-volume-accesspoints">Using Amazon EFS Access Points</a> in the
     /// <i>AWS Batch User Guide</i>. EFS IAM authorization requires that <code>TransitEncryption</code> be
     /// <code>ENABLED</code> and that a <code>JobRoleArn</code> is specified.</p>
-    #[serde(rename = "iam")]
-    #[serde(default)]
     pub iam: std::option::Option<crate::model::EfsAuthorizationConfigIam>,
 }
-impl std::fmt::Debug for EFSAuthorizationConfig {
+impl std::fmt::Debug for EfsAuthorizationConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EFSAuthorizationConfig");
+        let mut formatter = f.debug_struct("EfsAuthorizationConfig");
         formatter.field("access_point_id", &self.access_point_id);
         formatter.field("iam", &self.iam);
         formatter.finish()
     }
 }
-/// See [`EFSAuthorizationConfig`](crate::model::EFSAuthorizationConfig)
+/// See [`EfsAuthorizationConfig`](crate::model::EfsAuthorizationConfig)
 pub mod efs_authorization_config {
-    /// A builder for [`EFSAuthorizationConfig`](crate::model::EFSAuthorizationConfig)
+    /// A builder for [`EfsAuthorizationConfig`](crate::model::EfsAuthorizationConfig)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -4033,17 +3770,17 @@ pub mod efs_authorization_config {
             self.iam = input;
             self
         }
-        /// Consumes the builder and constructs a [`EFSAuthorizationConfig`](crate::model::EFSAuthorizationConfig)
-        pub fn build(self) -> crate::model::EFSAuthorizationConfig {
-            crate::model::EFSAuthorizationConfig {
+        /// Consumes the builder and constructs a [`EfsAuthorizationConfig`](crate::model::EfsAuthorizationConfig)
+        pub fn build(self) -> crate::model::EfsAuthorizationConfig {
+            crate::model::EfsAuthorizationConfig {
                 access_point_id: self.access_point_id,
                 iam: self.iam,
             }
         }
     }
 }
-impl EFSAuthorizationConfig {
-    /// Creates a new builder-style object to manufacture [`EFSAuthorizationConfig`](crate::model::EFSAuthorizationConfig)
+impl EfsAuthorizationConfig {
+    /// Creates a new builder-style object to manufacture [`EfsAuthorizationConfig`](crate::model::EfsAuthorizationConfig)
     pub fn builder() -> crate::model::efs_authorization_config::Builder {
         crate::model::efs_authorization_config::Builder::default()
     }
@@ -4077,7 +3814,7 @@ impl std::convert::From<&str> for EfsAuthorizationConfigIam {
 impl std::str::FromStr for EfsAuthorizationConfigIam {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(EfsAuthorizationConfigIam::from(s))
     }
 }
@@ -4093,15 +3830,6 @@ impl EfsAuthorizationConfigIam {
 impl AsRef<str> for EfsAuthorizationConfigIam {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for EfsAuthorizationConfigIam {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -4133,7 +3861,7 @@ impl std::convert::From<&str> for EfsTransitEncryption {
 impl std::str::FromStr for EfsTransitEncryption {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(EfsTransitEncryption::from(s))
     }
 }
@@ -4151,21 +3879,12 @@ impl AsRef<str> for EfsTransitEncryption {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for EfsTransitEncryption {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>Determine whether your data volume persists on the host container instance and where it is stored. If this
 /// parameter is empty, then the Docker daemon assigns a host path for your data volume, but the data isn't guaranteed to
 /// persist after the containers associated with it stop running.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Host {
     /// <p>The path on the host container instance that's presented to the container. If this parameter is empty, then the
     /// Docker daemon has assigned a host path for you. If this parameter contains a file location, then the data volume
@@ -4175,8 +3894,6 @@ pub struct Host {
     /// <note>
     /// <p>This parameter isn't applicable to jobs that run on Fargate resources and shouldn't be provided.</p>
     /// </note>
-    #[serde(rename = "sourcePath")]
-    #[serde(default)]
     pub source_path: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for Host {
@@ -4254,7 +3971,7 @@ impl std::convert::From<&str> for JobDefinitionType {
 impl std::str::FromStr for JobDefinitionType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(JobDefinitionType::from(s))
     }
 }
@@ -4272,70 +3989,39 @@ impl AsRef<str> for JobDefinitionType {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for JobDefinitionType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>An object representing summary details of a job.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobSummary {
     /// <p>The Amazon Resource Name (ARN) of the job.</p>
-    #[serde(rename = "jobArn")]
-    #[serde(default)]
     pub job_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the job.</p>
-    #[serde(rename = "jobId")]
-    #[serde(default)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The name of the job.</p>
-    #[serde(rename = "jobName")]
-    #[serde(default)]
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The Unix timestamp for when the job was created. For non-array jobs and parent array jobs, this is when the job
     /// entered the <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was called). For array child jobs,
     /// this is when the child job was spawned by its parent and entered the <code>PENDING</code> state.</p>
-    #[serde(rename = "createdAt")]
-    #[serde(default)]
     pub created_at: i64,
     /// <p>The current status for the job.</p>
-    #[serde(rename = "status")]
-    #[serde(default)]
     pub status: std::option::Option<crate::model::JobStatus>,
     /// <p>A short, human-readable string to provide additional details about the current status of the job.</p>
-    #[serde(rename = "statusReason")]
-    #[serde(default)]
     pub status_reason: std::option::Option<std::string::String>,
     /// <p>The Unix timestamp for when the job was started (when the job transitioned from the <code>STARTING</code> state
     /// to the <code>RUNNING</code> state).</p>
-    #[serde(rename = "startedAt")]
-    #[serde(default)]
     pub started_at: i64,
     /// <p>The Unix timestamp for when the job was stopped (when the job transitioned from the <code>RUNNING</code> state
     /// to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
-    #[serde(rename = "stoppedAt")]
-    #[serde(default)]
     pub stopped_at: i64,
     /// <p>An object representing the details of the container that's associated with the job.</p>
-    #[serde(rename = "container")]
-    #[serde(default)]
     pub container: std::option::Option<crate::model::ContainerSummary>,
     /// <p>The array properties of the job, if it is an array job.</p>
-    #[serde(rename = "arrayProperties")]
-    #[serde(default)]
     pub array_properties: std::option::Option<crate::model::ArrayPropertiesSummary>,
     /// <p>The node properties for a single node in a job summary list.</p>
     /// <note>
     /// <p>This isn't applicable to jobs running on Fargate resources.</p>
     /// </note>
-    #[serde(rename = "nodeProperties")]
-    #[serde(default)]
     pub node_properties: std::option::Option<crate::model::NodePropertiesSummary>,
 }
 impl std::fmt::Debug for JobSummary {
@@ -4519,20 +4205,14 @@ impl JobSummary {
 
 /// <p>An object representing the properties of a node that's associated with a multi-node parallel job.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NodePropertiesSummary {
     /// <p>Specifies whether the current node is the main node for a multi-node parallel job.</p>
-    #[serde(rename = "isMainNode")]
-    #[serde(default)]
     pub is_main_node: bool,
     /// <p>The number of nodes associated with a multi-node parallel job.</p>
-    #[serde(rename = "numNodes")]
-    #[serde(default)]
     pub num_nodes: i32,
     /// <p>The node index for the node. Node index numbering begins at zero. This index is also available on the node with
     /// the <code>AWS_BATCH_JOB_NODE_INDEX</code> environment variable.</p>
-    #[serde(rename = "nodeIndex")]
-    #[serde(default)]
     pub node_index: i32,
 }
 impl std::fmt::Debug for NodePropertiesSummary {
@@ -4602,16 +4282,12 @@ impl NodePropertiesSummary {
 
 /// <p>An object representing the array properties of a job.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ArrayPropertiesSummary {
     /// <p>The size of the array job. This parameter is returned for parent array jobs.</p>
-    #[serde(rename = "size")]
-    #[serde(default)]
     pub size: i32,
     /// <p>The job index within the array that's associated with this job. This parameter is returned for children of array
     /// jobs.</p>
-    #[serde(rename = "index")]
-    #[serde(default)]
     pub index: i32,
 }
 impl std::fmt::Debug for ArrayPropertiesSummary {
@@ -4669,16 +4345,12 @@ impl ArrayPropertiesSummary {
 
 /// <p>An object representing summary details of a container within a job.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContainerSummary {
     /// <p>The exit code to return upon completion.</p>
-    #[serde(rename = "exitCode")]
-    #[serde(default)]
     pub exit_code: i32,
     /// <p>A short (255 max characters) human-readable string to provide additional details about a running or stopped
     /// container.</p>
-    #[serde(rename = "reason")]
-    #[serde(default)]
     pub reason: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ContainerSummary {
@@ -4772,7 +4444,7 @@ impl std::convert::From<&str> for JobStatus {
 impl std::str::FromStr for JobStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(JobStatus::from(s))
     }
 }
@@ -4795,127 +4467,74 @@ impl AsRef<str> for JobStatus {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for JobStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>An object representing an AWS Batch job.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobDetail {
     /// <p>The Amazon Resource Name (ARN) of the job.</p>
-    #[serde(rename = "jobArn")]
-    #[serde(default)]
     pub job_arn: std::option::Option<std::string::String>,
     /// <p>The name of the job.</p>
-    #[serde(rename = "jobName")]
-    #[serde(default)]
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The ID for the job.</p>
-    #[serde(rename = "jobId")]
-    #[serde(default)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the job queue that the job is associated with.</p>
-    #[serde(rename = "jobQueue")]
-    #[serde(default)]
     pub job_queue: std::option::Option<std::string::String>,
     /// <p>The current status for the job.</p>
     /// <note>
     /// <p>If your jobs don't progress to <code>STARTING</code>, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs Stuck in RUNNABLE Status</a> in the
     /// troubleshooting section of the <i>AWS Batch User Guide</i>.</p>
     /// </note>
-    #[serde(rename = "status")]
-    #[serde(default)]
     pub status: std::option::Option<crate::model::JobStatus>,
     /// <p>A list of job attempts associated with this job.</p>
-    #[serde(rename = "attempts")]
-    #[serde(default)]
     pub attempts: std::option::Option<std::vec::Vec<crate::model::AttemptDetail>>,
     /// <p>A short, human-readable string to provide additional details about the current status of the job.</p>
-    #[serde(rename = "statusReason")]
-    #[serde(default)]
     pub status_reason: std::option::Option<std::string::String>,
     /// <p>The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs and parent array jobs,
     /// this is when the job entered the <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was called).
     /// For array child jobs, this is when the child job was spawned by its parent and entered the <code>PENDING</code>
     /// state.</p>
-    #[serde(rename = "createdAt")]
-    #[serde(default)]
     pub created_at: i64,
     /// <p>The retry strategy to use for this job if an attempt fails.</p>
-    #[serde(rename = "retryStrategy")]
-    #[serde(default)]
     pub retry_strategy: std::option::Option<crate::model::RetryStrategy>,
     /// <p>The Unix timestamp (in milliseconds) for when the job was started (when the job transitioned from the
     /// <code>STARTING</code> state to the <code>RUNNING</code> state). This parameter isn't provided for child jobs of
     /// array jobs or multi-node parallel jobs.</p>
-    #[serde(rename = "startedAt")]
-    #[serde(default)]
     pub started_at: i64,
     /// <p>The Unix timestamp (in milliseconds) for when the job was stopped (when the job transitioned from the
     /// <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
-    #[serde(rename = "stoppedAt")]
-    #[serde(default)]
     pub stopped_at: i64,
     /// <p>A list of job IDs that this job depends on.</p>
-    #[serde(rename = "dependsOn")]
-    #[serde(default)]
     pub depends_on: std::option::Option<std::vec::Vec<crate::model::JobDependency>>,
     /// <p>The job definition that's used by this job.</p>
-    #[serde(rename = "jobDefinition")]
-    #[serde(default)]
     pub job_definition: std::option::Option<std::string::String>,
     /// <p>Additional parameters passed to the job that replace parameter substitution placeholders or override any
     /// corresponding parameter defaults from the job definition.</p>
-    #[serde(rename = "parameters")]
-    #[serde(default)]
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>An object representing the details of the container that's associated with the job.</p>
-    #[serde(rename = "container")]
-    #[serde(default)]
     pub container: std::option::Option<crate::model::ContainerDetail>,
     /// <p>An object representing the details of a node that's associated with a multi-node parallel job.</p>
-    #[serde(rename = "nodeDetails")]
-    #[serde(default)]
     pub node_details: std::option::Option<crate::model::NodeDetails>,
     /// <p>An object representing the node properties of a multi-node parallel job.</p>
     /// <note>
     /// <p>This isn't applicable to jobs running on Fargate resources.</p>
     /// </note>
-    #[serde(rename = "nodeProperties")]
-    #[serde(default)]
     pub node_properties: std::option::Option<crate::model::NodeProperties>,
     /// <p>The array properties of the job, if it is an array job.</p>
-    #[serde(rename = "arrayProperties")]
-    #[serde(default)]
     pub array_properties: std::option::Option<crate::model::ArrayPropertiesDetail>,
     /// <p>The timeout configuration for the job.</p>
-    #[serde(rename = "timeout")]
-    #[serde(default)]
     pub timeout: std::option::Option<crate::model::JobTimeout>,
     /// <p>The tags applied to the job.</p>
-    #[serde(rename = "tags")]
-    #[serde(default)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If no
     /// value is specified, the tags aren't propagated. Tags can only be propagated to the tasks during task creation. For
     /// tags with the same name, job tags are given priority over job definitions tags. If the total number of combined tags
     /// from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.</p>
-    #[serde(rename = "propagateTags")]
-    #[serde(default)]
     pub propagate_tags: bool,
     /// <p>The platform capabilities required by the job definition. If no value is specified, it defaults to
     /// <code>EC2</code>. Jobs run on Fargate resources specify <code>FARGATE</code>.</p>
-    #[serde(rename = "platformCapabilities")]
-    #[serde(default)]
     pub platform_capabilities: std::option::Option<std::vec::Vec<crate::model::PlatformCapability>>,
 }
 impl std::fmt::Debug for JobDetail {
@@ -5289,21 +4908,15 @@ impl JobDetail {
 
 /// <p>An object representing the array properties of a job.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ArrayPropertiesDetail {
     /// <p>A summary of the number of array job children in each available job status. This parameter is returned for
     /// parent array jobs.</p>
-    #[serde(rename = "statusSummary")]
-    #[serde(default)]
     pub status_summary: std::option::Option<std::collections::HashMap<std::string::String, i32>>,
     /// <p>The size of the array job. This parameter is returned for parent array jobs.</p>
-    #[serde(rename = "size")]
-    #[serde(default)]
     pub size: i32,
     /// <p>The job index within the array that's associated with this job. This parameter is returned for array job
     /// children.</p>
-    #[serde(rename = "index")]
-    #[serde(default)]
     pub index: i32,
 }
 impl std::fmt::Debug for ArrayPropertiesDetail {
@@ -5382,16 +4995,12 @@ impl ArrayPropertiesDetail {
 
 /// <p>An object representing the details of a multi-node parallel job node.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NodeDetails {
     /// <p>The node index for the node. Node index numbering begins at zero. This index is also available on the node with
     /// the <code>AWS_BATCH_JOB_NODE_INDEX</code> environment variable.</p>
-    #[serde(rename = "nodeIndex")]
-    #[serde(default)]
     pub node_index: i32,
     /// <p>Specifies whether the current node is the main node for a multi-node parallel job.</p>
-    #[serde(rename = "isMainNode")]
-    #[serde(default)]
     pub is_main_node: bool,
 }
 impl std::fmt::Debug for NodeDetails {
@@ -5449,11 +5058,9 @@ impl NodeDetails {
 
 /// <p>An object representing the details of a container that's part of a job.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContainerDetail {
     /// <p>The image used to start the container.</p>
-    #[serde(rename = "image")]
-    #[serde(default)]
     pub image: std::option::Option<std::string::String>,
     /// <p>The number of vCPUs reserved for the container. For jobs that run on EC2 resources, you can specify the vCPU
     /// requirement for the job using <code>resourceRequirements</code>, but you can't specify the vCPU requirements in both
@@ -5466,61 +5073,41 @@ pub struct ContainerDetail {
     /// <p>This parameter isn't applicable to jobs that run on Fargate resources. For jobs that run on Fargate
     /// resources, you must specify the vCPU requirement for the job using <code>resourceRequirements</code>.</p>
     /// </note>
-    #[serde(rename = "vcpus")]
-    #[serde(default)]
     pub vcpus: i32,
     /// <p>For jobs run on EC2 resources that didn't specify memory requirements using <code>ResourceRequirement</code>,
     /// the number of MiB of memory reserved for the job. For other jobs, including all run on Fargate resources, see
     /// <code>resourceRequirements</code>.</p>
-    #[serde(rename = "memory")]
-    #[serde(default)]
     pub memory: i32,
     /// <p>The command that's passed to the container.</p>
-    #[serde(rename = "command")]
-    #[serde(default)]
     pub command: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) associated with the job upon execution.</p>
-    #[serde(rename = "jobRoleArn")]
-    #[serde(default)]
     pub job_role_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the
     /// execution
     /// role that AWS Batch can assume. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS Batch execution IAM role</a> in the
     /// <i>AWS Batch User Guide</i>.</p>
-    #[serde(rename = "executionRoleArn")]
-    #[serde(default)]
     pub execution_role_arn: std::option::Option<std::string::String>,
     /// <p>A list of volumes associated with the job.</p>
-    #[serde(rename = "volumes")]
-    #[serde(default)]
     pub volumes: std::option::Option<std::vec::Vec<crate::model::Volume>>,
     /// <p>The environment variables to pass to a container.</p>
     /// <note>
     /// <p>Environment variables must not start with <code>AWS_BATCH</code>; this naming
     /// convention is reserved for variables that are set by the AWS Batch service.</p>
     /// </note>
-    #[serde(rename = "environment")]
-    #[serde(default)]
     pub environment: std::option::Option<std::vec::Vec<crate::model::KeyValuePair>>,
     /// <p>The mount points for data volumes in your container.</p>
-    #[serde(rename = "mountPoints")]
-    #[serde(default)]
     pub mount_points: std::option::Option<std::vec::Vec<crate::model::MountPoint>>,
     /// <p>When this parameter is true, the container is given read-only access to its root file system. This parameter
     /// maps to <code>ReadonlyRootfs</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and
     /// the <code>--read-only</code> option to <a href="https://docs.docker.com/engine/reference/commandline/run/">
     /// <code>docker run</code>
     /// </a>.</p>
-    #[serde(rename = "readonlyRootFilesystem")]
-    #[serde(default)]
     pub readonly_root_filesystem: bool,
     /// <p>A list of <code>ulimit</code> values to set in the container. This parameter maps to <code>Ulimits</code> in the
     /// <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
     /// <note>
     /// <p>This parameter isn't applicable to jobs running on Fargate resources.</p>
     /// </note>
-    #[serde(rename = "ulimits")]
-    #[serde(default)]
     pub ulimits: std::option::Option<std::vec::Vec<crate::model::Ulimit>>,
     /// <p>When this parameter is true, the container is given elevated permissions on the host container instance (similar
     /// to the <code>root</code> user). The default value is false.</p>
@@ -5528,58 +5115,36 @@ pub struct ContainerDetail {
     /// <p>This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided, or specified
     /// as false.</p>
     /// </note>
-    #[serde(rename = "privileged")]
-    #[serde(default)]
     pub privileged: bool,
     /// <p>The user name to use inside the container. This parameter maps to <code>User</code> in the
     /// <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--user</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
-    #[serde(rename = "user")]
-    #[serde(default)]
     pub user: std::option::Option<std::string::String>,
     /// <p>The exit code to return upon completion.</p>
-    #[serde(rename = "exitCode")]
-    #[serde(default)]
     pub exit_code: i32,
     /// <p>A short (255 max characters) human-readable string to provide additional details about a running or stopped
     /// container.</p>
-    #[serde(rename = "reason")]
-    #[serde(default)]
     pub reason: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the container instance that the container is running on.</p>
-    #[serde(rename = "containerInstanceArn")]
-    #[serde(default)]
     pub container_instance_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon ECS task that's associated with the container job. Each container attempt receives a task
     /// ARN when they reach the <code>STARTING</code> status.</p>
-    #[serde(rename = "taskArn")]
-    #[serde(default)]
     pub task_arn: std::option::Option<std::string::String>,
     /// <p>The name of the CloudWatch Logs log stream associated with the container. The log group for AWS Batch jobs is
     /// <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the
     /// <code>RUNNING</code> status.</p>
-    #[serde(rename = "logStreamName")]
-    #[serde(default)]
     pub log_stream_name: std::option::Option<std::string::String>,
     /// <p>The instance type of the underlying host infrastructure of a multi-node parallel job.</p>
     /// <note>
     /// <p>This parameter isn't applicable to jobs running on Fargate resources.</p>
     /// </note>
-    #[serde(rename = "instanceType")]
-    #[serde(default)]
     pub instance_type: std::option::Option<std::string::String>,
     /// <p>The network interfaces associated with the job.</p>
-    #[serde(rename = "networkInterfaces")]
-    #[serde(default)]
     pub network_interfaces: std::option::Option<std::vec::Vec<crate::model::NetworkInterface>>,
     /// <p>The type and amount of resources to assign to a container. The supported resources include <code>GPU</code>,
     /// <code>MEMORY</code>, and <code>VCPU</code>.</p>
-    #[serde(rename = "resourceRequirements")]
-    #[serde(default)]
     pub resource_requirements:
         std::option::Option<std::vec::Vec<crate::model::ResourceRequirement>>,
     /// <p>Linux-specific modifications that are applied to the container, such as details for device mappings.</p>
-    #[serde(rename = "linuxParameters")]
-    #[serde(default)]
     pub linux_parameters: std::option::Option<crate::model::LinuxParameters>,
     /// <p>The log configuration specification for the container.</p>
     /// <p>This parameter maps to <code>LogConfig</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
@@ -5604,23 +5169,15 @@ pub struct ContainerDetail {
     /// instance can use these log configuration options. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS Container Agent Configuration</a> in the
     /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// </note>
-    #[serde(rename = "logConfiguration")]
-    #[serde(default)]
     pub log_configuration: std::option::Option<crate::model::LogConfiguration>,
     /// <p>The secrets to pass to the container. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying sensitive data</a> in the
     /// <i>AWS Batch User Guide</i>.</p>
-    #[serde(rename = "secrets")]
-    #[serde(default)]
     pub secrets: std::option::Option<std::vec::Vec<crate::model::Secret>>,
     /// <p>The network configuration for jobs running on Fargate resources. Jobs running on EC2 resources must not
     /// specify this parameter.</p>
-    #[serde(rename = "networkConfiguration")]
-    #[serde(default)]
     pub network_configuration: std::option::Option<crate::model::NetworkConfiguration>,
     /// <p>The platform configuration for jobs running on Fargate resources. Jobs running on EC2 resources must not
     /// specify this parameter.</p>
-    #[serde(rename = "fargatePlatformConfiguration")]
-    #[serde(default)]
     pub fargate_platform_configuration:
         std::option::Option<crate::model::FargatePlatformConfiguration>,
 }
@@ -6093,19 +5650,13 @@ impl ContainerDetail {
 
 /// <p>An object representing the elastic network interface for a multi-node parallel job node.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NetworkInterface {
     /// <p>The attachment ID for the network interface.</p>
-    #[serde(rename = "attachmentId")]
-    #[serde(default)]
     pub attachment_id: std::option::Option<std::string::String>,
     /// <p>The private IPv6 address for the network interface.</p>
-    #[serde(rename = "ipv6Address")]
-    #[serde(default)]
     pub ipv6_address: std::option::Option<std::string::String>,
     /// <p>The private IPv4 address for the network interface.</p>
-    #[serde(rename = "privateIpv4Address")]
-    #[serde(default)]
     pub private_ipv4_address: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NetworkInterface {
@@ -6180,25 +5731,17 @@ impl NetworkInterface {
 
 /// <p>An object representing a job attempt.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttemptDetail {
     /// <p>Details about the container in this job attempt.</p>
-    #[serde(rename = "container")]
-    #[serde(default)]
     pub container: std::option::Option<crate::model::AttemptContainerDetail>,
     /// <p>The Unix timestamp (in milliseconds) for when the attempt was started (when the attempt transitioned from the
     /// <code>STARTING</code> state to the <code>RUNNING</code> state).</p>
-    #[serde(rename = "startedAt")]
-    #[serde(default)]
     pub started_at: i64,
     /// <p>The Unix timestamp (in milliseconds) for when the attempt was stopped (when the attempt transitioned from the
     /// <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
-    #[serde(rename = "stoppedAt")]
-    #[serde(default)]
     pub stopped_at: i64,
     /// <p>A short, human-readable string to provide additional details about the current status of the job attempt.</p>
-    #[serde(rename = "statusReason")]
-    #[serde(default)]
     pub status_reason: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AttemptDetail {
@@ -6287,35 +5830,23 @@ impl AttemptDetail {
 
 /// <p>An object representing the details of a container that's part of a job attempt.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttemptContainerDetail {
     /// <p>The Amazon Resource Name (ARN) of the Amazon ECS container instance that hosts the job attempt.</p>
-    #[serde(rename = "containerInstanceArn")]
-    #[serde(default)]
     pub container_instance_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon ECS task that's associated with the job attempt. Each container attempt receives a task
     /// ARN when they reach the <code>STARTING</code> status.</p>
-    #[serde(rename = "taskArn")]
-    #[serde(default)]
     pub task_arn: std::option::Option<std::string::String>,
     /// <p>The exit code for the job attempt. A non-zero exit code is considered a failure.</p>
-    #[serde(rename = "exitCode")]
-    #[serde(default)]
     pub exit_code: i32,
     /// <p>A short (255 max characters) human-readable string to provide additional details about a running or stopped
     /// container.</p>
-    #[serde(rename = "reason")]
-    #[serde(default)]
     pub reason: std::option::Option<std::string::String>,
     /// <p>The name of the CloudWatch Logs log stream associated with the container. The log group for AWS Batch jobs is
     /// <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the
     /// <code>RUNNING</code> status.</p>
-    #[serde(rename = "logStreamName")]
-    #[serde(default)]
     pub log_stream_name: std::option::Option<std::string::String>,
     /// <p>The network interfaces associated with the job attempt.</p>
-    #[serde(rename = "networkInterfaces")]
-    #[serde(default)]
     pub network_interfaces: std::option::Option<std::vec::Vec<crate::model::NetworkInterface>>,
 }
 impl std::fmt::Debug for AttemptContainerDetail {
@@ -6438,29 +5969,19 @@ impl AttemptContainerDetail {
 
 /// <p>An object representing the details of an AWS Batch job queue.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobQueueDetail {
     /// <p>The name of the job queue.</p>
-    #[serde(rename = "jobQueueName")]
-    #[serde(default)]
     pub job_queue_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the job queue.</p>
-    #[serde(rename = "jobQueueArn")]
-    #[serde(default)]
     pub job_queue_arn: std::option::Option<std::string::String>,
     /// <p>Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>, it's able
     /// to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs
     /// already in the queue can finish.</p>
-    #[serde(rename = "state")]
-    #[serde(default)]
     pub state: std::option::Option<crate::model::JqState>,
     /// <p>The status of the job queue (for example, <code>CREATING</code> or <code>VALID</code>).</p>
-    #[serde(rename = "status")]
-    #[serde(default)]
     pub status: std::option::Option<crate::model::JqStatus>,
     /// <p>A short, human-readable string to provide additional details about the current status of the job queue.</p>
-    #[serde(rename = "statusReason")]
-    #[serde(default)]
     pub status_reason: std::option::Option<std::string::String>,
     /// <p>The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
     /// <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority is
@@ -6468,19 +5989,13 @@ pub struct JobQueueDetail {
     /// preference over a job queue with a priority value of <code>1</code>. All of the compute environments must be either
     /// EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and
     /// Fargate compute environments can't be mixed.</p>
-    #[serde(rename = "priority")]
-    #[serde(default)]
     pub priority: i32,
     /// <p>The compute environments that are attached to the job queue and the order that job placement is preferred.
     /// Compute environments are selected for job placement in ascending order.</p>
-    #[serde(rename = "computeEnvironmentOrder")]
-    #[serde(default)]
     pub compute_environment_order:
         std::option::Option<std::vec::Vec<crate::model::ComputeEnvironmentOrder>>,
     /// <p>The tags applied to the job queue. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your AWS Batch resources</a> in
     /// <i>AWS Batch User Guide</i>.</p>
-    #[serde(rename = "tags")]
-    #[serde(default)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -6680,7 +6195,7 @@ impl std::convert::From<&str> for JqStatus {
 impl std::str::FromStr for JqStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(JqStatus::from(s))
     }
 }
@@ -6702,87 +6217,52 @@ impl AsRef<str> for JqStatus {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for JqStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>An object representing an AWS Batch job definition.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobDefinition {
     /// <p>The name of the job definition.</p>
-    #[serde(rename = "jobDefinitionName")]
-    #[serde(default)]
     pub job_definition_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the job definition.</p>
-    #[serde(rename = "jobDefinitionArn")]
-    #[serde(default)]
     pub job_definition_arn: std::option::Option<std::string::String>,
     /// <p>The revision of the job definition.</p>
-    #[serde(rename = "revision")]
-    #[serde(default)]
     pub revision: i32,
     /// <p>The status of the job definition.</p>
-    #[serde(rename = "status")]
-    #[serde(default)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The type of job definition. If the job is run on Fargate resources, then <code>multinode</code> isn't
     /// supported. For more information about multi-node parallel jobs, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node parallel job definition</a> in the
     /// <i>AWS Batch User Guide</i>.</p>
-    #[serde(rename = "type")]
-    #[serde(default)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>Default parameters or parameter substitution placeholders that are set in the job definition. Parameters are
     /// specified as a key-value pair mapping. Parameters in a <code>SubmitJob</code> request override any corresponding
     /// parameter defaults from the job definition. For more information about specifying parameters, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/job_definition_parameters.html">Job Definition Parameters</a> in the
     /// <i>AWS Batch User Guide</i>.</p>
-    #[serde(rename = "parameters")]
-    #[serde(default)]
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The retry strategy to use for failed jobs that are submitted with this job definition.</p>
-    #[serde(rename = "retryStrategy")]
-    #[serde(default)]
     pub retry_strategy: std::option::Option<crate::model::RetryStrategy>,
     /// <p>An object with various properties specific to container-based jobs.</p>
-    #[serde(rename = "containerProperties")]
-    #[serde(default)]
     pub container_properties: std::option::Option<crate::model::ContainerProperties>,
     /// <p>The timeout configuration for jobs that are submitted with this job definition. You can specify a timeout
     /// duration after which AWS Batch terminates your jobs if they haven't finished.</p>
-    #[serde(rename = "timeout")]
-    #[serde(default)]
     pub timeout: std::option::Option<crate::model::JobTimeout>,
     /// <p>An object with various properties specific to multi-node parallel jobs.</p>
     /// <note>
     /// <p>If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use
     /// <code>containerProperties</code> instead.</p>
     /// </note>
-    #[serde(rename = "nodeProperties")]
-    #[serde(default)]
     pub node_properties: std::option::Option<crate::model::NodeProperties>,
     /// <p>The tags applied to the job definition.</p>
-    #[serde(rename = "tags")]
-    #[serde(default)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If no
     /// value is specified, the tags aren't propagated. Tags can only be propagated to the tasks during task creation. For
     /// tags with the same name, job tags are given priority over job definitions tags. If the total number of combined tags
     /// from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.</p>
-    #[serde(rename = "propagateTags")]
-    #[serde(default)]
     pub propagate_tags: bool,
     /// <p>The platform capabilities required by the job definition. If no value is specified, it defaults to
     /// <code>EC2</code>. Jobs run on Fargate resources specify <code>FARGATE</code>.</p>
-    #[serde(rename = "platformCapabilities")]
-    #[serde(default)]
     pub platform_capabilities: std::option::Option<std::vec::Vec<crate::model::PlatformCapability>>,
 }
 impl std::fmt::Debug for JobDefinition {
@@ -7028,31 +6508,21 @@ impl JobDefinition {
 
 /// <p>An object representing an AWS Batch compute environment.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ComputeEnvironmentDetail {
     /// <p>The name of the compute environment. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
     /// underscores are allowed.</p>
-    #[serde(rename = "computeEnvironmentName")]
-    #[serde(default)]
     pub compute_environment_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the compute environment.</p>
-    #[serde(rename = "computeEnvironmentArn")]
-    #[serde(default)]
     pub compute_environment_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the underlying Amazon ECS cluster used by the compute environment.</p>
-    #[serde(rename = "ecsClusterArn")]
-    #[serde(default)]
     pub ecs_cluster_arn: std::option::Option<std::string::String>,
     /// <p>The tags applied to the compute environment.</p>
-    #[serde(rename = "tags")]
-    #[serde(default)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The type of the compute environment: <code>MANAGED</code> or <code>UNMANAGED</code>. For more information, see
     /// <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in the
     /// <i>AWS Batch User Guide</i>.</p>
-    #[serde(rename = "type")]
-    #[serde(default)]
     pub r#type: std::option::Option<crate::model::CeType>,
     /// <p>The state of the compute environment. The valid values are <code>ENABLED</code> or <code>DISABLED</code>.</p>
     /// <p>If the state is <code>ENABLED</code>, then the AWS Batch scheduler can attempt to place jobs from an associated
@@ -7062,28 +6532,18 @@ pub struct ComputeEnvironmentDetail {
     /// environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally. Managed
     /// compute environments in the <code>DISABLED</code> state don't scale out. However, they scale in to
     /// <code>minvCpus</code> value after instances become idle.</p>
-    #[serde(rename = "state")]
-    #[serde(default)]
     pub state: std::option::Option<crate::model::CeState>,
     /// <p>The current status of the compute environment (for example, <code>CREATING</code> or <code>VALID</code>).</p>
-    #[serde(rename = "status")]
-    #[serde(default)]
     pub status: std::option::Option<crate::model::CeStatus>,
     /// <p>A short, human-readable string to provide additional details about the current status of the compute
     /// environment.</p>
-    #[serde(rename = "statusReason")]
-    #[serde(default)]
     pub status_reason: std::option::Option<std::string::String>,
     /// <p>The compute resources defined for the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in the
     /// <i>AWS Batch User Guide</i>.</p>
-    #[serde(rename = "computeResources")]
-    #[serde(default)]
     pub compute_resources: std::option::Option<crate::model::ComputeResource>,
     /// <p>The service role associated with the compute environment that allows AWS Batch to make calls to AWS API
     /// operations on your behalf. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">AWS Batch service IAM role</a> in the
     /// <i>AWS Batch User Guide</i>.</p>
-    #[serde(rename = "serviceRole")]
-    #[serde(default)]
     pub service_role: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ComputeEnvironmentDetail {
@@ -7278,7 +6738,7 @@ impl ComputeEnvironmentDetail {
 /// <p>An object representing an AWS Batch compute resource. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in the
 /// <i>AWS Batch User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ComputeResource {
     /// <p>The type of compute environment: <code>EC2</code>, <code>SPOT</code>, <code>FARGATE</code>, or
     /// <code>FARGATE_SPOT</code>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in the
@@ -7286,8 +6746,6 @@ pub struct ComputeResource {
     /// <p> If you choose <code>SPOT</code>, you must also specify an Amazon EC2 Spot Fleet role with the
     /// <code>spotIamFleetRole</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon EC2 Spot Fleet role</a> in the
     /// <i>AWS Batch User Guide</i>.</p>
-    #[serde(rename = "type")]
-    #[serde(default)]
     pub r#type: std::option::Option<crate::model::CrType>,
     /// <p>The allocation strategy to use for the compute resource if not enough instances of the best fitting instance
     /// type can be allocated. This might be because of availability of the instance type in the Region or <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon EC2 service limits</a>. For more
@@ -7322,16 +6780,12 @@ pub struct ComputeResource {
     /// <p>With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> strategies, AWS Batch might
     /// need to go above <code>maxvCpus</code> to meet your capacity requirements. In this event, AWS Batch never exceeds
     /// <code>maxvCpus</code> by more than a single instance.</p>
-    #[serde(rename = "allocationStrategy")]
-    #[serde(default)]
     pub allocation_strategy: std::option::Option<crate::model::CrAllocationStrategy>,
     /// <p>The minimum number of Amazon EC2 vCPUs that an environment should maintain (even if the compute environment is
     /// <code>DISABLED</code>).</p>
     /// <note>
     /// <p>This parameter isn't applicable to jobs running on Fargate resources, and shouldn't be specified.</p>
     /// </note>
-    #[serde(rename = "minvCpus")]
-    #[serde(default)]
     pub minv_cpus: i32,
     /// <p>The maximum number of Amazon EC2 vCPUs that a compute environment can reach.</p>
     /// <note>
@@ -7340,16 +6794,12 @@ pub struct ComputeResource {
     /// exceeds <code>maxvCpus</code> by more than a single instance. For example, no more than a single instance from among
     /// those specified in your compute environment is allocated.</p>
     /// </note>
-    #[serde(rename = "maxvCpus")]
-    #[serde(default)]
     pub maxv_cpus: i32,
     /// <p>The desired number of Amazon EC2 vCPUS in the compute environment. AWS Batch modifies this value between the minimum
     /// and maximum values, based on job queue demand.</p>
     /// <note>
     /// <p>This parameter isn't applicable to jobs running on Fargate resources, and shouldn't be specified.</p>
     /// </note>
-    #[serde(rename = "desiredvCpus")]
-    #[serde(default)]
     pub desiredv_cpus: i32,
     /// <p>The instances types that can be launched. You can specify instance families to launch any instance type within
     /// those families (for example, <code>c5</code> or <code>p3</code>), or you can specify specific sizes within a family
@@ -7368,8 +6818,6 @@ pub struct ComputeResource {
     /// don't have instance types from those instance families, instance types from the C5, M5. and R5 instance families are
     /// used.</p>
     /// </note>
-    #[serde(rename = "instanceTypes")]
-    #[serde(default)]
     pub instance_types: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Machine Image (AMI) ID used for instances launched in the compute environment. This parameter is
     /// overridden by the <code>imageIdOverride</code> member of the <code>Ec2Configuration</code> structure.</p>
@@ -7384,14 +6832,10 @@ pub struct ComputeResource {
     /// Amazon Linux 2 AMI</a>
     /// in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// </note>
-    #[serde(rename = "imageId")]
-    #[serde(default)]
     pub image_id: std::option::Option<std::string::String>,
     /// <p>The VPC subnets into which the compute resources are launched. These subnets must be within the same VPC.
     /// Fargate compute resources can contain up to 16 subnets. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and Subnets</a> in the <i>Amazon VPC User
     /// Guide</i>.</p>
-    #[serde(rename = "subnets")]
-    #[serde(default)]
     pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon EC2 security groups associated with instances launched in the compute environment. One or more security
     /// groups must be specified, either in <code>securityGroupIds</code> or using a launch template referenced in
@@ -7399,16 +6843,12 @@ pub struct ComputeResource {
     /// least one security group. Fargate doesn't support launch templates. If security groups are specified using both
     /// <code>securityGroupIds</code> and <code>launchTemplate</code>, the values in <code>securityGroupIds</code> is
     /// used.</p>
-    #[serde(rename = "securityGroupIds")]
-    #[serde(default)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon EC2 key pair that's used for instances launched in the compute environment. You can use this key pair to
     /// log in to your instances with SSH.</p>
     /// <note>
     /// <p>This parameter isn't applicable to jobs running on Fargate resources, and shouldn't be specified.</p>
     /// </note>
-    #[serde(rename = "ec2KeyPair")]
-    #[serde(default)]
     pub ec2_key_pair: std::option::Option<std::string::String>,
     /// <p>The Amazon ECS instance profile applied to Amazon EC2 instances in a compute environment. You can specify the short name
     /// or full Amazon Resource Name (ARN) of an instance profile. For example,
@@ -7422,8 +6862,6 @@ pub struct ComputeResource {
     /// <note>
     /// <p>This parameter isn't applicable to jobs running on Fargate resources, and shouldn't be specified.</p>
     /// </note>
-    #[serde(rename = "instanceRole")]
-    #[serde(default)]
     pub instance_role: std::option::Option<std::string::String>,
     /// <p>Key-value pair tags to be applied to EC2 resources that are launched in the compute environment. For AWS Batch,
     /// these take the form of "String1": "String2", where String1 is the tag key and String2 is the tag value−for
@@ -7434,8 +6872,6 @@ pub struct ComputeResource {
     /// <note>
     /// <p>This parameter isn't applicable to jobs running on Fargate resources, and shouldn't be specified.</p>
     /// </note>
-    #[serde(rename = "tags")]
-    #[serde(default)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The Amazon EC2 placement group to associate with your compute resources. If you intend to submit multi-node parallel
@@ -7446,8 +6882,6 @@ pub struct ComputeResource {
     /// <note>
     /// <p>This parameter isn't applicable to jobs running on Fargate resources, and shouldn't be specified.</p>
     /// </note>
-    #[serde(rename = "placementGroup")]
-    #[serde(default)]
     pub placement_group: std::option::Option<std::string::String>,
     /// <p>The maximum percentage that a Spot Instance price can be when compared with the On-Demand price for that
     /// instance type before instances are launched. For example, if your maximum percentage is 20%, then the Spot price must
@@ -7457,8 +6891,6 @@ pub struct ComputeResource {
     /// <note>
     /// <p>This parameter isn't applicable to jobs running on Fargate resources, and shouldn't be specified.</p>
     /// </note>
-    #[serde(rename = "bidPercentage")]
-    #[serde(default)]
     pub bid_percentage: i32,
     /// <p>The Amazon Resource Name (ARN) of the Amazon EC2 Spot Fleet IAM role applied to a <code>SPOT</code> compute environment. This role is
     /// required if the allocation strategy set to <code>BEST_FIT</code> or if the allocation strategy isn't specified. For
@@ -7472,8 +6904,6 @@ pub struct ComputeResource {
     /// Instances. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#spot-instance-no-tag">Spot Instances not tagged on creation</a> in the
     /// <i>AWS Batch User Guide</i>.</p>
     /// </important>
-    #[serde(rename = "spotIamFleetRole")]
-    #[serde(default)]
     pub spot_iam_fleet_role: std::option::Option<std::string::String>,
     /// <p>The launch template to use for your compute resources. Any other compute resource parameters that you specify in
     /// a <a>CreateComputeEnvironment</a> API operation override the same parameters in the launch template. You
@@ -7483,16 +6913,12 @@ pub struct ComputeResource {
     /// <note>
     /// <p>This parameter isn't applicable to jobs running on Fargate resources, and shouldn't be specified.</p>
     /// </note>
-    #[serde(rename = "launchTemplate")]
-    #[serde(default)]
     pub launch_template: std::option::Option<crate::model::LaunchTemplateSpecification>,
     /// <p>Provides information used to select Amazon Machine Images (AMIs) for EC2 instances in the compute environment.
     /// If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL1</code>.</p>
     /// <note>
     /// <p>This parameter isn't applicable to jobs running on Fargate resources, and shouldn't be specified.</p>
     /// </note>
-    #[serde(rename = "ec2Configuration")]
-    #[serde(default)]
     pub ec2_configuration: std::option::Option<std::vec::Vec<crate::model::Ec2Configuration>>,
 }
 impl std::fmt::Debug for ComputeResource {
@@ -7893,7 +7319,7 @@ impl ComputeResource {
 /// <p>This object isn't applicable to jobs running on Fargate resources.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Ec2Configuration {
     /// <p>The image type to match with the instance type to select an AMI. If the <code>imageIdOverride</code> parameter
     /// isn't specified, then a recent <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized AMI</a> (<code>ECS_AL1</code>) is
@@ -7922,13 +7348,9 @@ pub struct Ec2Configuration {
     /// Linux AMI</a>.</p>
     /// </dd>
     /// </dl>
-    #[serde(rename = "imageType")]
-    #[serde(default)]
     pub image_type: std::option::Option<std::string::String>,
     /// <p>The AMI ID used for instances launched in the compute environment that match the image type. This setting
     /// overrides the <code>imageId</code> set in the <code>computeResource</code> object.</p>
-    #[serde(rename = "imageIdOverride")]
-    #[serde(default)]
     pub image_id_override: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for Ec2Configuration {
@@ -8022,15 +7444,11 @@ impl Ec2Configuration {
 /// <p>This object isn't applicable to jobs running on Fargate resources.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LaunchTemplateSpecification {
     /// <p>The ID of the launch template.</p>
-    #[serde(rename = "launchTemplateId")]
-    #[serde(default)]
     pub launch_template_id: std::option::Option<std::string::String>,
     /// <p>The name of the launch template.</p>
-    #[serde(rename = "launchTemplateName")]
-    #[serde(default)]
     pub launch_template_name: std::option::Option<std::string::String>,
     /// <p>The version number of the launch template, <code>$Latest</code>, or <code>$Default</code>.</p>
     /// <p>If the value is <code>$Latest</code>, the latest version of the launch template is used. If the value is
@@ -8042,8 +7460,6 @@ pub struct LaunchTemplateSpecification {
     /// remove the old compute environment from the job queue, and delete the old compute environment.</p>
     /// </important>
     /// <p>Default: <code>$Default</code>.</p>
-    #[serde(rename = "version")]
-    #[serde(default)]
     pub version: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for LaunchTemplateSpecification {
@@ -8155,7 +7571,7 @@ impl std::convert::From<&str> for CrAllocationStrategy {
 impl std::str::FromStr for CrAllocationStrategy {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(CrAllocationStrategy::from(s))
     }
 }
@@ -8172,15 +7588,6 @@ impl CrAllocationStrategy {
 impl AsRef<str> for CrAllocationStrategy {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for CrAllocationStrategy {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -8216,7 +7623,7 @@ impl std::convert::From<&str> for CrType {
 impl std::str::FromStr for CrType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(CrType::from(s))
     }
 }
@@ -8234,15 +7641,6 @@ impl CrType {
 impl AsRef<str> for CrType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for CrType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -8282,7 +7680,7 @@ impl std::convert::From<&str> for CeStatus {
 impl std::str::FromStr for CeStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(CeStatus::from(s))
     }
 }
@@ -8302,15 +7700,6 @@ impl CeStatus {
 impl AsRef<str> for CeStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for CeStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -8342,7 +7731,7 @@ impl std::convert::From<&str> for CeType {
 impl std::str::FromStr for CeType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(CeType::from(s))
     }
 }
@@ -8358,14 +7747,5 @@ impl CeType {
 impl AsRef<str> for CeType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for CeType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }

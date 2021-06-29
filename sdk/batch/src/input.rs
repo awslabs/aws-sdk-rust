@@ -100,8 +100,9 @@ impl CancelJobInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/v1/canceljob").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/v1/canceljob").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -109,7 +110,7 @@ impl CancelJobInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -333,8 +334,9 @@ impl CreateComputeEnvironmentInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/v1/createcomputeenvironment").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/v1/createcomputeenvironment").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -342,7 +344,7 @@ impl CreateComputeEnvironmentInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -536,8 +538,9 @@ impl CreateJobQueueInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/v1/createjobqueue").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/v1/createjobqueue").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -545,7 +548,7 @@ impl CreateJobQueueInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -669,8 +672,9 @@ impl DeleteComputeEnvironmentInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/v1/deletecomputeenvironment").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/v1/deletecomputeenvironment").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -678,7 +682,7 @@ impl DeleteComputeEnvironmentInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -797,8 +801,9 @@ impl DeleteJobQueueInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/v1/deletejobqueue").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/v1/deletejobqueue").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -806,7 +811,7 @@ impl DeleteJobQueueInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -930,8 +935,9 @@ impl DeregisterJobDefinitionInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/v1/deregisterjobdefinition").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/v1/deregisterjobdefinition").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -939,7 +945,7 @@ impl DeregisterJobDefinitionInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1100,8 +1106,9 @@ impl DescribeComputeEnvironmentsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/v1/describecomputeenvironments").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/v1/describecomputeenvironments").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -1109,7 +1116,7 @@ impl DescribeComputeEnvironmentsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1293,8 +1300,9 @@ impl DescribeJobDefinitionsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/v1/describejobdefinitions").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/v1/describejobdefinitions").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -1302,7 +1310,7 @@ impl DescribeJobDefinitionsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1460,8 +1468,9 @@ impl DescribeJobQueuesInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/v1/describejobqueues").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/v1/describejobqueues").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -1469,7 +1478,7 @@ impl DescribeJobQueuesInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1589,8 +1598,9 @@ impl DescribeJobsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/v1/describejobs").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/v1/describejobs").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -1598,7 +1608,7 @@ impl DescribeJobsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1787,8 +1797,9 @@ impl ListJobsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/v1/listjobs").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/v1/listjobs").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -1796,7 +1807,7 @@ impl ListJobsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1849,7 +1860,7 @@ pub mod list_tags_for_resource_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListTagsForResourceInput {
-                resource_arn: self.resource_arn.unwrap_or_default(),
+                resource_arn: self.resource_arn,
             })
         }
     }
@@ -1914,13 +1925,27 @@ impl ListTagsForResourceInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/v1/tags/{resourceArn}",
-            resourceArn = smithy_http::label::fmt_string(&self.resource_arn, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let resource_arn = {
+            let input = &self.resource_arn;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_arn",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_arn",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/v1/tags/{resourceArn}", resourceArn = resource_arn)
+            .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -1928,7 +1953,7 @@ impl ListTagsForResourceInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2221,8 +2246,9 @@ impl RegisterJobDefinitionInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/v1/registerjobdefinition").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/v1/registerjobdefinition").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -2230,7 +2256,7 @@ impl RegisterJobDefinitionInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2531,8 +2557,9 @@ impl SubmitJobInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/v1/submitjob").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/v1/submitjob").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -2540,7 +2567,7 @@ impl SubmitJobInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2613,7 +2640,7 @@ pub mod tag_resource_input {
         ) -> std::result::Result<crate::input::TagResourceInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::TagResourceInput {
-                resource_arn: self.resource_arn.unwrap_or_default(),
+                resource_arn: self.resource_arn,
                 tags: self.tags,
             })
         }
@@ -2682,13 +2709,27 @@ impl TagResourceInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/v1/tags/{resourceArn}",
-            resourceArn = smithy_http::label::fmt_string(&self.resource_arn, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let resource_arn = {
+            let input = &self.resource_arn;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_arn",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_arn",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/v1/tags/{resourceArn}", resourceArn = resource_arn)
+            .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -2696,7 +2737,7 @@ impl TagResourceInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2827,8 +2868,9 @@ impl TerminateJobInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/v1/terminatejob").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/v1/terminatejob").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -2836,7 +2878,7 @@ impl TerminateJobInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2901,7 +2943,7 @@ pub mod untag_resource_input {
         ) -> std::result::Result<crate::input::UntagResourceInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::UntagResourceInput {
-                resource_arn: self.resource_arn.unwrap_or_default(),
+                resource_arn: self.resource_arn,
                 tag_keys: self.tag_keys,
             })
         }
@@ -2967,13 +3009,27 @@ impl UntagResourceInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/v1/tags/{resourceArn}",
-            resourceArn = smithy_http::label::fmt_string(&self.resource_arn, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let resource_arn = {
+            let input = &self.resource_arn;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_arn",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_arn",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/v1/tags/{resourceArn}", resourceArn = resource_arn)
+            .expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -2989,7 +3045,7 @@ impl UntagResourceInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
     }
@@ -3174,8 +3230,9 @@ impl UpdateComputeEnvironmentInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/v1/updatecomputeenvironment").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/v1/updatecomputeenvironment").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -3183,7 +3240,7 @@ impl UpdateComputeEnvironmentInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3350,8 +3407,9 @@ impl UpdateJobQueueInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/v1/updatejobqueue").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/v1/updatejobqueue").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -3359,7 +3417,7 @@ impl UpdateJobQueueInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3478,7 +3536,7 @@ impl std::fmt::Debug for UpdateComputeEnvironmentInput {
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource from which to delete tags. AWS Batch resources that support tags are compute environments, jobs, job definitions, and job
     /// queues. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
-    pub resource_arn: std::string::String,
+    pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The keys of the tags to be removed.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
@@ -3516,7 +3574,7 @@ impl std::fmt::Debug for TerminateJobInput {
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that tags are added to. AWS Batch resources that support tags are compute environments, jobs, job definitions, and job
     /// queues. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
-    pub resource_arn: std::string::String,
+    pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags that you apply to the resource to help you categorize and organize your resources. Each tag consists of
     /// a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> in <i>AWS General
     /// Reference</i>.</p>
@@ -3694,7 +3752,7 @@ impl std::fmt::Debug for RegisterJobDefinitionInput {
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) that identifies the resource that tags are listed for. AWS Batch resources that support tags are compute environments, jobs, job definitions, and job
     /// queues. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
-    pub resource_arn: std::string::String,
+    pub resource_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -8,16 +8,16 @@ pub struct DeleteLexiconError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteLexiconErrorKind {
-    LexiconNotFoundError(crate::error::LexiconNotFoundError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    LexiconNotFoundException(crate::error::LexiconNotFoundException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteLexiconError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteLexiconErrorKind::LexiconNotFoundError(_inner) => _inner.fmt(f),
-            DeleteLexiconErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            DeleteLexiconErrorKind::LexiconNotFoundException(_inner) => _inner.fmt(f),
+            DeleteLexiconErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             DeleteLexiconErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -66,18 +66,24 @@ impl DeleteLexiconError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_lexicon_not_found_error(&self) -> bool {
-        matches!(&self.kind, DeleteLexiconErrorKind::LexiconNotFoundError(_))
+    pub fn is_lexicon_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteLexiconErrorKind::LexiconNotFoundException(_)
+        )
     }
-    pub fn is_service_failure_error(&self) -> bool {
-        matches!(&self.kind, DeleteLexiconErrorKind::ServiceFailureError(_))
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteLexiconErrorKind::ServiceFailureException(_)
+        )
     }
 }
 impl std::error::Error for DeleteLexiconError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteLexiconErrorKind::LexiconNotFoundError(_inner) => Some(_inner),
-            DeleteLexiconErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            DeleteLexiconErrorKind::LexiconNotFoundException(_inner) => Some(_inner),
+            DeleteLexiconErrorKind::ServiceFailureException(_inner) => Some(_inner),
             DeleteLexiconErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -92,16 +98,16 @@ pub struct DescribeVoicesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeVoicesErrorKind {
-    InvalidNextTokenError(crate::error::InvalidNextTokenError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    InvalidNextTokenException(crate::error::InvalidNextTokenException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeVoicesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeVoicesErrorKind::InvalidNextTokenError(_inner) => _inner.fmt(f),
-            DescribeVoicesErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            DescribeVoicesErrorKind::InvalidNextTokenException(_inner) => _inner.fmt(f),
+            DescribeVoicesErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             DescribeVoicesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -150,21 +156,24 @@ impl DescribeVoicesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_next_token_error(&self) -> bool {
+    pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeVoicesErrorKind::InvalidNextTokenError(_)
+            DescribeVoicesErrorKind::InvalidNextTokenException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
-        matches!(&self.kind, DescribeVoicesErrorKind::ServiceFailureError(_))
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeVoicesErrorKind::ServiceFailureException(_)
+        )
     }
 }
 impl std::error::Error for DescribeVoicesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeVoicesErrorKind::InvalidNextTokenError(_inner) => Some(_inner),
-            DescribeVoicesErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            DescribeVoicesErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
+            DescribeVoicesErrorKind::ServiceFailureException(_inner) => Some(_inner),
             DescribeVoicesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -179,16 +188,16 @@ pub struct GetLexiconError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetLexiconErrorKind {
-    LexiconNotFoundError(crate::error::LexiconNotFoundError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    LexiconNotFoundException(crate::error::LexiconNotFoundException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetLexiconError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetLexiconErrorKind::LexiconNotFoundError(_inner) => _inner.fmt(f),
-            GetLexiconErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            GetLexiconErrorKind::LexiconNotFoundException(_inner) => _inner.fmt(f),
+            GetLexiconErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             GetLexiconErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -237,18 +246,18 @@ impl GetLexiconError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_lexicon_not_found_error(&self) -> bool {
-        matches!(&self.kind, GetLexiconErrorKind::LexiconNotFoundError(_))
+    pub fn is_lexicon_not_found_exception(&self) -> bool {
+        matches!(&self.kind, GetLexiconErrorKind::LexiconNotFoundException(_))
     }
-    pub fn is_service_failure_error(&self) -> bool {
-        matches!(&self.kind, GetLexiconErrorKind::ServiceFailureError(_))
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(&self.kind, GetLexiconErrorKind::ServiceFailureException(_))
     }
 }
 impl std::error::Error for GetLexiconError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetLexiconErrorKind::LexiconNotFoundError(_inner) => Some(_inner),
-            GetLexiconErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            GetLexiconErrorKind::LexiconNotFoundException(_inner) => Some(_inner),
+            GetLexiconErrorKind::ServiceFailureException(_inner) => Some(_inner),
             GetLexiconErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -263,18 +272,20 @@ pub struct GetSpeechSynthesisTaskError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetSpeechSynthesisTaskErrorKind {
-    InvalidTaskIdError(crate::error::InvalidTaskIdError),
-    ServiceFailureError(crate::error::ServiceFailureError),
-    SynthesisTaskNotFoundError(crate::error::SynthesisTaskNotFoundError),
+    InvalidTaskIdException(crate::error::InvalidTaskIdException),
+    ServiceFailureException(crate::error::ServiceFailureException),
+    SynthesisTaskNotFoundException(crate::error::SynthesisTaskNotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSpeechSynthesisTaskError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetSpeechSynthesisTaskErrorKind::InvalidTaskIdError(_inner) => _inner.fmt(f),
-            GetSpeechSynthesisTaskErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
-            GetSpeechSynthesisTaskErrorKind::SynthesisTaskNotFoundError(_inner) => _inner.fmt(f),
+            GetSpeechSynthesisTaskErrorKind::InvalidTaskIdException(_inner) => _inner.fmt(f),
+            GetSpeechSynthesisTaskErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
+            GetSpeechSynthesisTaskErrorKind::SynthesisTaskNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
             GetSpeechSynthesisTaskErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -323,31 +334,31 @@ impl GetSpeechSynthesisTaskError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_task_id_error(&self) -> bool {
+    pub fn is_invalid_task_id_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetSpeechSynthesisTaskErrorKind::InvalidTaskIdError(_)
+            GetSpeechSynthesisTaskErrorKind::InvalidTaskIdException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetSpeechSynthesisTaskErrorKind::ServiceFailureError(_)
+            GetSpeechSynthesisTaskErrorKind::ServiceFailureException(_)
         )
     }
-    pub fn is_synthesis_task_not_found_error(&self) -> bool {
+    pub fn is_synthesis_task_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetSpeechSynthesisTaskErrorKind::SynthesisTaskNotFoundError(_)
+            GetSpeechSynthesisTaskErrorKind::SynthesisTaskNotFoundException(_)
         )
     }
 }
 impl std::error::Error for GetSpeechSynthesisTaskError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetSpeechSynthesisTaskErrorKind::InvalidTaskIdError(_inner) => Some(_inner),
-            GetSpeechSynthesisTaskErrorKind::ServiceFailureError(_inner) => Some(_inner),
-            GetSpeechSynthesisTaskErrorKind::SynthesisTaskNotFoundError(_inner) => Some(_inner),
+            GetSpeechSynthesisTaskErrorKind::InvalidTaskIdException(_inner) => Some(_inner),
+            GetSpeechSynthesisTaskErrorKind::ServiceFailureException(_inner) => Some(_inner),
+            GetSpeechSynthesisTaskErrorKind::SynthesisTaskNotFoundException(_inner) => Some(_inner),
             GetSpeechSynthesisTaskErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -362,16 +373,16 @@ pub struct ListLexiconsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListLexiconsErrorKind {
-    InvalidNextTokenError(crate::error::InvalidNextTokenError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    InvalidNextTokenException(crate::error::InvalidNextTokenException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListLexiconsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListLexiconsErrorKind::InvalidNextTokenError(_inner) => _inner.fmt(f),
-            ListLexiconsErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            ListLexiconsErrorKind::InvalidNextTokenException(_inner) => _inner.fmt(f),
+            ListLexiconsErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             ListLexiconsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -420,18 +431,24 @@ impl ListLexiconsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_next_token_error(&self) -> bool {
-        matches!(&self.kind, ListLexiconsErrorKind::InvalidNextTokenError(_))
+    pub fn is_invalid_next_token_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListLexiconsErrorKind::InvalidNextTokenException(_)
+        )
     }
-    pub fn is_service_failure_error(&self) -> bool {
-        matches!(&self.kind, ListLexiconsErrorKind::ServiceFailureError(_))
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListLexiconsErrorKind::ServiceFailureException(_)
+        )
     }
 }
 impl std::error::Error for ListLexiconsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListLexiconsErrorKind::InvalidNextTokenError(_inner) => Some(_inner),
-            ListLexiconsErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            ListLexiconsErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
+            ListLexiconsErrorKind::ServiceFailureException(_inner) => Some(_inner),
             ListLexiconsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -446,16 +463,16 @@ pub struct ListSpeechSynthesisTasksError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListSpeechSynthesisTasksErrorKind {
-    InvalidNextTokenError(crate::error::InvalidNextTokenError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    InvalidNextTokenException(crate::error::InvalidNextTokenException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListSpeechSynthesisTasksError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListSpeechSynthesisTasksErrorKind::InvalidNextTokenError(_inner) => _inner.fmt(f),
-            ListSpeechSynthesisTasksErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            ListSpeechSynthesisTasksErrorKind::InvalidNextTokenException(_inner) => _inner.fmt(f),
+            ListSpeechSynthesisTasksErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             ListSpeechSynthesisTasksErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -504,24 +521,24 @@ impl ListSpeechSynthesisTasksError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_next_token_error(&self) -> bool {
+    pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListSpeechSynthesisTasksErrorKind::InvalidNextTokenError(_)
+            ListSpeechSynthesisTasksErrorKind::InvalidNextTokenException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListSpeechSynthesisTasksErrorKind::ServiceFailureError(_)
+            ListSpeechSynthesisTasksErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for ListSpeechSynthesisTasksError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListSpeechSynthesisTasksErrorKind::InvalidNextTokenError(_inner) => Some(_inner),
-            ListSpeechSynthesisTasksErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            ListSpeechSynthesisTasksErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
+            ListSpeechSynthesisTasksErrorKind::ServiceFailureException(_inner) => Some(_inner),
             ListSpeechSynthesisTasksErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -536,26 +553,26 @@ pub struct PutLexiconError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutLexiconErrorKind {
-    InvalidLexiconError(crate::error::InvalidLexiconError),
-    LexiconSizeExceededError(crate::error::LexiconSizeExceededError),
-    MaxLexemeLengthExceededError(crate::error::MaxLexemeLengthExceededError),
-    MaxLexiconsNumberExceededError(crate::error::MaxLexiconsNumberExceededError),
-    ServiceFailureError(crate::error::ServiceFailureError),
-    UnsupportedPlsAlphabetError(crate::error::UnsupportedPlsAlphabetError),
-    UnsupportedPlsLanguageError(crate::error::UnsupportedPlsLanguageError),
+    InvalidLexiconException(crate::error::InvalidLexiconException),
+    LexiconSizeExceededException(crate::error::LexiconSizeExceededException),
+    MaxLexemeLengthExceededException(crate::error::MaxLexemeLengthExceededException),
+    MaxLexiconsNumberExceededException(crate::error::MaxLexiconsNumberExceededException),
+    ServiceFailureException(crate::error::ServiceFailureException),
+    UnsupportedPlsAlphabetException(crate::error::UnsupportedPlsAlphabetException),
+    UnsupportedPlsLanguageException(crate::error::UnsupportedPlsLanguageException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutLexiconError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutLexiconErrorKind::InvalidLexiconError(_inner) => _inner.fmt(f),
-            PutLexiconErrorKind::LexiconSizeExceededError(_inner) => _inner.fmt(f),
-            PutLexiconErrorKind::MaxLexemeLengthExceededError(_inner) => _inner.fmt(f),
-            PutLexiconErrorKind::MaxLexiconsNumberExceededError(_inner) => _inner.fmt(f),
-            PutLexiconErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
-            PutLexiconErrorKind::UnsupportedPlsAlphabetError(_inner) => _inner.fmt(f),
-            PutLexiconErrorKind::UnsupportedPlsLanguageError(_inner) => _inner.fmt(f),
+            PutLexiconErrorKind::InvalidLexiconException(_inner) => _inner.fmt(f),
+            PutLexiconErrorKind::LexiconSizeExceededException(_inner) => _inner.fmt(f),
+            PutLexiconErrorKind::MaxLexemeLengthExceededException(_inner) => _inner.fmt(f),
+            PutLexiconErrorKind::MaxLexiconsNumberExceededException(_inner) => _inner.fmt(f),
+            PutLexiconErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
+            PutLexiconErrorKind::UnsupportedPlsAlphabetException(_inner) => _inner.fmt(f),
+            PutLexiconErrorKind::UnsupportedPlsLanguageException(_inner) => _inner.fmt(f),
             PutLexiconErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -604,50 +621,53 @@ impl PutLexiconError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_lexicon_error(&self) -> bool {
-        matches!(&self.kind, PutLexiconErrorKind::InvalidLexiconError(_))
+    pub fn is_invalid_lexicon_exception(&self) -> bool {
+        matches!(&self.kind, PutLexiconErrorKind::InvalidLexiconException(_))
     }
-    pub fn is_lexicon_size_exceeded_error(&self) -> bool {
-        matches!(&self.kind, PutLexiconErrorKind::LexiconSizeExceededError(_))
-    }
-    pub fn is_max_lexeme_length_exceeded_error(&self) -> bool {
+    pub fn is_lexicon_size_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutLexiconErrorKind::MaxLexemeLengthExceededError(_)
+            PutLexiconErrorKind::LexiconSizeExceededException(_)
         )
     }
-    pub fn is_max_lexicons_number_exceeded_error(&self) -> bool {
+    pub fn is_max_lexeme_length_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutLexiconErrorKind::MaxLexiconsNumberExceededError(_)
+            PutLexiconErrorKind::MaxLexemeLengthExceededException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
-        matches!(&self.kind, PutLexiconErrorKind::ServiceFailureError(_))
-    }
-    pub fn is_unsupported_pls_alphabet_error(&self) -> bool {
+    pub fn is_max_lexicons_number_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutLexiconErrorKind::UnsupportedPlsAlphabetError(_)
+            PutLexiconErrorKind::MaxLexiconsNumberExceededException(_)
         )
     }
-    pub fn is_unsupported_pls_language_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(&self.kind, PutLexiconErrorKind::ServiceFailureException(_))
+    }
+    pub fn is_unsupported_pls_alphabet_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutLexiconErrorKind::UnsupportedPlsLanguageError(_)
+            PutLexiconErrorKind::UnsupportedPlsAlphabetException(_)
+        )
+    }
+    pub fn is_unsupported_pls_language_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutLexiconErrorKind::UnsupportedPlsLanguageException(_)
         )
     }
 }
 impl std::error::Error for PutLexiconError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutLexiconErrorKind::InvalidLexiconError(_inner) => Some(_inner),
-            PutLexiconErrorKind::LexiconSizeExceededError(_inner) => Some(_inner),
-            PutLexiconErrorKind::MaxLexemeLengthExceededError(_inner) => Some(_inner),
-            PutLexiconErrorKind::MaxLexiconsNumberExceededError(_inner) => Some(_inner),
-            PutLexiconErrorKind::ServiceFailureError(_inner) => Some(_inner),
-            PutLexiconErrorKind::UnsupportedPlsAlphabetError(_inner) => Some(_inner),
-            PutLexiconErrorKind::UnsupportedPlsLanguageError(_inner) => Some(_inner),
+            PutLexiconErrorKind::InvalidLexiconException(_inner) => Some(_inner),
+            PutLexiconErrorKind::LexiconSizeExceededException(_inner) => Some(_inner),
+            PutLexiconErrorKind::MaxLexemeLengthExceededException(_inner) => Some(_inner),
+            PutLexiconErrorKind::MaxLexiconsNumberExceededException(_inner) => Some(_inner),
+            PutLexiconErrorKind::ServiceFailureException(_inner) => Some(_inner),
+            PutLexiconErrorKind::UnsupportedPlsAlphabetException(_inner) => Some(_inner),
+            PutLexiconErrorKind::UnsupportedPlsLanguageException(_inner) => Some(_inner),
             PutLexiconErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -662,40 +682,44 @@ pub struct StartSpeechSynthesisTaskError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartSpeechSynthesisTaskErrorKind {
-    EngineNotSupportedError(crate::error::EngineNotSupportedError),
-    InvalidS3BucketError(crate::error::InvalidS3BucketError),
-    InvalidS3KeyError(crate::error::InvalidS3KeyError),
-    InvalidSampleRateError(crate::error::InvalidSampleRateError),
-    InvalidSnsTopicArnError(crate::error::InvalidSnsTopicArnError),
-    InvalidSsmlError(crate::error::InvalidSsmlError),
-    LanguageNotSupportedError(crate::error::LanguageNotSupportedError),
-    LexiconNotFoundError(crate::error::LexiconNotFoundError),
-    MarksNotSupportedForFormatError(crate::error::MarksNotSupportedForFormatError),
-    ServiceFailureError(crate::error::ServiceFailureError),
-    SsmlMarksNotSupportedForTextTypeError(crate::error::SsmlMarksNotSupportedForTextTypeError),
-    TextLengthExceededError(crate::error::TextLengthExceededError),
+    EngineNotSupportedException(crate::error::EngineNotSupportedException),
+    InvalidS3BucketException(crate::error::InvalidS3BucketException),
+    InvalidS3KeyException(crate::error::InvalidS3KeyException),
+    InvalidSampleRateException(crate::error::InvalidSampleRateException),
+    InvalidSnsTopicArnException(crate::error::InvalidSnsTopicArnException),
+    InvalidSsmlException(crate::error::InvalidSsmlException),
+    LanguageNotSupportedException(crate::error::LanguageNotSupportedException),
+    LexiconNotFoundException(crate::error::LexiconNotFoundException),
+    MarksNotSupportedForFormatException(crate::error::MarksNotSupportedForFormatException),
+    ServiceFailureException(crate::error::ServiceFailureException),
+    SsmlMarksNotSupportedForTextTypeException(
+        crate::error::SsmlMarksNotSupportedForTextTypeException,
+    ),
+    TextLengthExceededException(crate::error::TextLengthExceededException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartSpeechSynthesisTaskError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            StartSpeechSynthesisTaskErrorKind::EngineNotSupportedError(_inner) => _inner.fmt(f),
-            StartSpeechSynthesisTaskErrorKind::InvalidS3BucketError(_inner) => _inner.fmt(f),
-            StartSpeechSynthesisTaskErrorKind::InvalidS3KeyError(_inner) => _inner.fmt(f),
-            StartSpeechSynthesisTaskErrorKind::InvalidSampleRateError(_inner) => _inner.fmt(f),
-            StartSpeechSynthesisTaskErrorKind::InvalidSnsTopicArnError(_inner) => _inner.fmt(f),
-            StartSpeechSynthesisTaskErrorKind::InvalidSsmlError(_inner) => _inner.fmt(f),
-            StartSpeechSynthesisTaskErrorKind::LanguageNotSupportedError(_inner) => _inner.fmt(f),
-            StartSpeechSynthesisTaskErrorKind::LexiconNotFoundError(_inner) => _inner.fmt(f),
-            StartSpeechSynthesisTaskErrorKind::MarksNotSupportedForFormatError(_inner) => {
+            StartSpeechSynthesisTaskErrorKind::EngineNotSupportedException(_inner) => _inner.fmt(f),
+            StartSpeechSynthesisTaskErrorKind::InvalidS3BucketException(_inner) => _inner.fmt(f),
+            StartSpeechSynthesisTaskErrorKind::InvalidS3KeyException(_inner) => _inner.fmt(f),
+            StartSpeechSynthesisTaskErrorKind::InvalidSampleRateException(_inner) => _inner.fmt(f),
+            StartSpeechSynthesisTaskErrorKind::InvalidSnsTopicArnException(_inner) => _inner.fmt(f),
+            StartSpeechSynthesisTaskErrorKind::InvalidSsmlException(_inner) => _inner.fmt(f),
+            StartSpeechSynthesisTaskErrorKind::LanguageNotSupportedException(_inner) => {
                 _inner.fmt(f)
             }
-            StartSpeechSynthesisTaskErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
-            StartSpeechSynthesisTaskErrorKind::SsmlMarksNotSupportedForTextTypeError(_inner) => {
+            StartSpeechSynthesisTaskErrorKind::LexiconNotFoundException(_inner) => _inner.fmt(f),
+            StartSpeechSynthesisTaskErrorKind::MarksNotSupportedForFormatException(_inner) => {
                 _inner.fmt(f)
             }
-            StartSpeechSynthesisTaskErrorKind::TextLengthExceededError(_inner) => _inner.fmt(f),
+            StartSpeechSynthesisTaskErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
+            StartSpeechSynthesisTaskErrorKind::SsmlMarksNotSupportedForTextTypeException(
+                _inner,
+            ) => _inner.fmt(f),
+            StartSpeechSynthesisTaskErrorKind::TextLengthExceededException(_inner) => _inner.fmt(f),
             StartSpeechSynthesisTaskErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -744,98 +768,100 @@ impl StartSpeechSynthesisTaskError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_engine_not_supported_error(&self) -> bool {
+    pub fn is_engine_not_supported_exception(&self) -> bool {
         matches!(
             &self.kind,
-            StartSpeechSynthesisTaskErrorKind::EngineNotSupportedError(_)
+            StartSpeechSynthesisTaskErrorKind::EngineNotSupportedException(_)
         )
     }
-    pub fn is_invalid_s3_bucket_error(&self) -> bool {
+    pub fn is_invalid_s3_bucket_exception(&self) -> bool {
         matches!(
             &self.kind,
-            StartSpeechSynthesisTaskErrorKind::InvalidS3BucketError(_)
+            StartSpeechSynthesisTaskErrorKind::InvalidS3BucketException(_)
         )
     }
-    pub fn is_invalid_s3_key_error(&self) -> bool {
+    pub fn is_invalid_s3_key_exception(&self) -> bool {
         matches!(
             &self.kind,
-            StartSpeechSynthesisTaskErrorKind::InvalidS3KeyError(_)
+            StartSpeechSynthesisTaskErrorKind::InvalidS3KeyException(_)
         )
     }
-    pub fn is_invalid_sample_rate_error(&self) -> bool {
+    pub fn is_invalid_sample_rate_exception(&self) -> bool {
         matches!(
             &self.kind,
-            StartSpeechSynthesisTaskErrorKind::InvalidSampleRateError(_)
+            StartSpeechSynthesisTaskErrorKind::InvalidSampleRateException(_)
         )
     }
-    pub fn is_invalid_sns_topic_arn_error(&self) -> bool {
+    pub fn is_invalid_sns_topic_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
-            StartSpeechSynthesisTaskErrorKind::InvalidSnsTopicArnError(_)
+            StartSpeechSynthesisTaskErrorKind::InvalidSnsTopicArnException(_)
         )
     }
-    pub fn is_invalid_ssml_error(&self) -> bool {
+    pub fn is_invalid_ssml_exception(&self) -> bool {
         matches!(
             &self.kind,
-            StartSpeechSynthesisTaskErrorKind::InvalidSsmlError(_)
+            StartSpeechSynthesisTaskErrorKind::InvalidSsmlException(_)
         )
     }
-    pub fn is_language_not_supported_error(&self) -> bool {
+    pub fn is_language_not_supported_exception(&self) -> bool {
         matches!(
             &self.kind,
-            StartSpeechSynthesisTaskErrorKind::LanguageNotSupportedError(_)
+            StartSpeechSynthesisTaskErrorKind::LanguageNotSupportedException(_)
         )
     }
-    pub fn is_lexicon_not_found_error(&self) -> bool {
+    pub fn is_lexicon_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            StartSpeechSynthesisTaskErrorKind::LexiconNotFoundError(_)
+            StartSpeechSynthesisTaskErrorKind::LexiconNotFoundException(_)
         )
     }
-    pub fn is_marks_not_supported_for_format_error(&self) -> bool {
+    pub fn is_marks_not_supported_for_format_exception(&self) -> bool {
         matches!(
             &self.kind,
-            StartSpeechSynthesisTaskErrorKind::MarksNotSupportedForFormatError(_)
+            StartSpeechSynthesisTaskErrorKind::MarksNotSupportedForFormatException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            StartSpeechSynthesisTaskErrorKind::ServiceFailureError(_)
+            StartSpeechSynthesisTaskErrorKind::ServiceFailureException(_)
         )
     }
-    pub fn is_ssml_marks_not_supported_for_text_type_error(&self) -> bool {
+    pub fn is_ssml_marks_not_supported_for_text_type_exception(&self) -> bool {
         matches!(
             &self.kind,
-            StartSpeechSynthesisTaskErrorKind::SsmlMarksNotSupportedForTextTypeError(_)
+            StartSpeechSynthesisTaskErrorKind::SsmlMarksNotSupportedForTextTypeException(_)
         )
     }
-    pub fn is_text_length_exceeded_error(&self) -> bool {
+    pub fn is_text_length_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            StartSpeechSynthesisTaskErrorKind::TextLengthExceededError(_)
+            StartSpeechSynthesisTaskErrorKind::TextLengthExceededException(_)
         )
     }
 }
 impl std::error::Error for StartSpeechSynthesisTaskError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            StartSpeechSynthesisTaskErrorKind::EngineNotSupportedError(_inner) => Some(_inner),
-            StartSpeechSynthesisTaskErrorKind::InvalidS3BucketError(_inner) => Some(_inner),
-            StartSpeechSynthesisTaskErrorKind::InvalidS3KeyError(_inner) => Some(_inner),
-            StartSpeechSynthesisTaskErrorKind::InvalidSampleRateError(_inner) => Some(_inner),
-            StartSpeechSynthesisTaskErrorKind::InvalidSnsTopicArnError(_inner) => Some(_inner),
-            StartSpeechSynthesisTaskErrorKind::InvalidSsmlError(_inner) => Some(_inner),
-            StartSpeechSynthesisTaskErrorKind::LanguageNotSupportedError(_inner) => Some(_inner),
-            StartSpeechSynthesisTaskErrorKind::LexiconNotFoundError(_inner) => Some(_inner),
-            StartSpeechSynthesisTaskErrorKind::MarksNotSupportedForFormatError(_inner) => {
+            StartSpeechSynthesisTaskErrorKind::EngineNotSupportedException(_inner) => Some(_inner),
+            StartSpeechSynthesisTaskErrorKind::InvalidS3BucketException(_inner) => Some(_inner),
+            StartSpeechSynthesisTaskErrorKind::InvalidS3KeyException(_inner) => Some(_inner),
+            StartSpeechSynthesisTaskErrorKind::InvalidSampleRateException(_inner) => Some(_inner),
+            StartSpeechSynthesisTaskErrorKind::InvalidSnsTopicArnException(_inner) => Some(_inner),
+            StartSpeechSynthesisTaskErrorKind::InvalidSsmlException(_inner) => Some(_inner),
+            StartSpeechSynthesisTaskErrorKind::LanguageNotSupportedException(_inner) => {
                 Some(_inner)
             }
-            StartSpeechSynthesisTaskErrorKind::ServiceFailureError(_inner) => Some(_inner),
-            StartSpeechSynthesisTaskErrorKind::SsmlMarksNotSupportedForTextTypeError(_inner) => {
+            StartSpeechSynthesisTaskErrorKind::LexiconNotFoundException(_inner) => Some(_inner),
+            StartSpeechSynthesisTaskErrorKind::MarksNotSupportedForFormatException(_inner) => {
                 Some(_inner)
             }
-            StartSpeechSynthesisTaskErrorKind::TextLengthExceededError(_inner) => Some(_inner),
+            StartSpeechSynthesisTaskErrorKind::ServiceFailureException(_inner) => Some(_inner),
+            StartSpeechSynthesisTaskErrorKind::SsmlMarksNotSupportedForTextTypeException(
+                _inner,
+            ) => Some(_inner),
+            StartSpeechSynthesisTaskErrorKind::TextLengthExceededException(_inner) => Some(_inner),
             StartSpeechSynthesisTaskErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -850,32 +876,34 @@ pub struct SynthesizeSpeechError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SynthesizeSpeechErrorKind {
-    EngineNotSupportedError(crate::error::EngineNotSupportedError),
-    InvalidSampleRateError(crate::error::InvalidSampleRateError),
-    InvalidSsmlError(crate::error::InvalidSsmlError),
-    LanguageNotSupportedError(crate::error::LanguageNotSupportedError),
-    LexiconNotFoundError(crate::error::LexiconNotFoundError),
-    MarksNotSupportedForFormatError(crate::error::MarksNotSupportedForFormatError),
-    ServiceFailureError(crate::error::ServiceFailureError),
-    SsmlMarksNotSupportedForTextTypeError(crate::error::SsmlMarksNotSupportedForTextTypeError),
-    TextLengthExceededError(crate::error::TextLengthExceededError),
+    EngineNotSupportedException(crate::error::EngineNotSupportedException),
+    InvalidSampleRateException(crate::error::InvalidSampleRateException),
+    InvalidSsmlException(crate::error::InvalidSsmlException),
+    LanguageNotSupportedException(crate::error::LanguageNotSupportedException),
+    LexiconNotFoundException(crate::error::LexiconNotFoundException),
+    MarksNotSupportedForFormatException(crate::error::MarksNotSupportedForFormatException),
+    ServiceFailureException(crate::error::ServiceFailureException),
+    SsmlMarksNotSupportedForTextTypeException(
+        crate::error::SsmlMarksNotSupportedForTextTypeException,
+    ),
+    TextLengthExceededException(crate::error::TextLengthExceededException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SynthesizeSpeechError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            SynthesizeSpeechErrorKind::EngineNotSupportedError(_inner) => _inner.fmt(f),
-            SynthesizeSpeechErrorKind::InvalidSampleRateError(_inner) => _inner.fmt(f),
-            SynthesizeSpeechErrorKind::InvalidSsmlError(_inner) => _inner.fmt(f),
-            SynthesizeSpeechErrorKind::LanguageNotSupportedError(_inner) => _inner.fmt(f),
-            SynthesizeSpeechErrorKind::LexiconNotFoundError(_inner) => _inner.fmt(f),
-            SynthesizeSpeechErrorKind::MarksNotSupportedForFormatError(_inner) => _inner.fmt(f),
-            SynthesizeSpeechErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
-            SynthesizeSpeechErrorKind::SsmlMarksNotSupportedForTextTypeError(_inner) => {
+            SynthesizeSpeechErrorKind::EngineNotSupportedException(_inner) => _inner.fmt(f),
+            SynthesizeSpeechErrorKind::InvalidSampleRateException(_inner) => _inner.fmt(f),
+            SynthesizeSpeechErrorKind::InvalidSsmlException(_inner) => _inner.fmt(f),
+            SynthesizeSpeechErrorKind::LanguageNotSupportedException(_inner) => _inner.fmt(f),
+            SynthesizeSpeechErrorKind::LexiconNotFoundException(_inner) => _inner.fmt(f),
+            SynthesizeSpeechErrorKind::MarksNotSupportedForFormatException(_inner) => _inner.fmt(f),
+            SynthesizeSpeechErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
+            SynthesizeSpeechErrorKind::SsmlMarksNotSupportedForTextTypeException(_inner) => {
                 _inner.fmt(f)
             }
-            SynthesizeSpeechErrorKind::TextLengthExceededError(_inner) => _inner.fmt(f),
+            SynthesizeSpeechErrorKind::TextLengthExceededException(_inner) => _inner.fmt(f),
             SynthesizeSpeechErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -924,72 +952,75 @@ impl SynthesizeSpeechError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_engine_not_supported_error(&self) -> bool {
+    pub fn is_engine_not_supported_exception(&self) -> bool {
         matches!(
             &self.kind,
-            SynthesizeSpeechErrorKind::EngineNotSupportedError(_)
+            SynthesizeSpeechErrorKind::EngineNotSupportedException(_)
         )
     }
-    pub fn is_invalid_sample_rate_error(&self) -> bool {
+    pub fn is_invalid_sample_rate_exception(&self) -> bool {
         matches!(
             &self.kind,
-            SynthesizeSpeechErrorKind::InvalidSampleRateError(_)
+            SynthesizeSpeechErrorKind::InvalidSampleRateException(_)
         )
     }
-    pub fn is_invalid_ssml_error(&self) -> bool {
-        matches!(&self.kind, SynthesizeSpeechErrorKind::InvalidSsmlError(_))
-    }
-    pub fn is_language_not_supported_error(&self) -> bool {
+    pub fn is_invalid_ssml_exception(&self) -> bool {
         matches!(
             &self.kind,
-            SynthesizeSpeechErrorKind::LanguageNotSupportedError(_)
+            SynthesizeSpeechErrorKind::InvalidSsmlException(_)
         )
     }
-    pub fn is_lexicon_not_found_error(&self) -> bool {
+    pub fn is_language_not_supported_exception(&self) -> bool {
         matches!(
             &self.kind,
-            SynthesizeSpeechErrorKind::LexiconNotFoundError(_)
+            SynthesizeSpeechErrorKind::LanguageNotSupportedException(_)
         )
     }
-    pub fn is_marks_not_supported_for_format_error(&self) -> bool {
+    pub fn is_lexicon_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            SynthesizeSpeechErrorKind::MarksNotSupportedForFormatError(_)
+            SynthesizeSpeechErrorKind::LexiconNotFoundException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_marks_not_supported_for_format_exception(&self) -> bool {
         matches!(
             &self.kind,
-            SynthesizeSpeechErrorKind::ServiceFailureError(_)
+            SynthesizeSpeechErrorKind::MarksNotSupportedForFormatException(_)
         )
     }
-    pub fn is_ssml_marks_not_supported_for_text_type_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            SynthesizeSpeechErrorKind::SsmlMarksNotSupportedForTextTypeError(_)
+            SynthesizeSpeechErrorKind::ServiceFailureException(_)
         )
     }
-    pub fn is_text_length_exceeded_error(&self) -> bool {
+    pub fn is_ssml_marks_not_supported_for_text_type_exception(&self) -> bool {
         matches!(
             &self.kind,
-            SynthesizeSpeechErrorKind::TextLengthExceededError(_)
+            SynthesizeSpeechErrorKind::SsmlMarksNotSupportedForTextTypeException(_)
+        )
+    }
+    pub fn is_text_length_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SynthesizeSpeechErrorKind::TextLengthExceededException(_)
         )
     }
 }
 impl std::error::Error for SynthesizeSpeechError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            SynthesizeSpeechErrorKind::EngineNotSupportedError(_inner) => Some(_inner),
-            SynthesizeSpeechErrorKind::InvalidSampleRateError(_inner) => Some(_inner),
-            SynthesizeSpeechErrorKind::InvalidSsmlError(_inner) => Some(_inner),
-            SynthesizeSpeechErrorKind::LanguageNotSupportedError(_inner) => Some(_inner),
-            SynthesizeSpeechErrorKind::LexiconNotFoundError(_inner) => Some(_inner),
-            SynthesizeSpeechErrorKind::MarksNotSupportedForFormatError(_inner) => Some(_inner),
-            SynthesizeSpeechErrorKind::ServiceFailureError(_inner) => Some(_inner),
-            SynthesizeSpeechErrorKind::SsmlMarksNotSupportedForTextTypeError(_inner) => {
+            SynthesizeSpeechErrorKind::EngineNotSupportedException(_inner) => Some(_inner),
+            SynthesizeSpeechErrorKind::InvalidSampleRateException(_inner) => Some(_inner),
+            SynthesizeSpeechErrorKind::InvalidSsmlException(_inner) => Some(_inner),
+            SynthesizeSpeechErrorKind::LanguageNotSupportedException(_inner) => Some(_inner),
+            SynthesizeSpeechErrorKind::LexiconNotFoundException(_inner) => Some(_inner),
+            SynthesizeSpeechErrorKind::MarksNotSupportedForFormatException(_inner) => Some(_inner),
+            SynthesizeSpeechErrorKind::ServiceFailureException(_inner) => Some(_inner),
+            SynthesizeSpeechErrorKind::SsmlMarksNotSupportedForTextTypeException(_inner) => {
                 Some(_inner)
             }
-            SynthesizeSpeechErrorKind::TextLengthExceededError(_inner) => Some(_inner),
+            SynthesizeSpeechErrorKind::TextLengthExceededException(_inner) => Some(_inner),
             SynthesizeSpeechErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1002,37 +1033,35 @@ impl std::error::Error for SynthesizeSpeechError {
 /// more than 100,000 can be billed characters. SSML tags are not counted as billed
 /// characters.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct TextLengthExceededError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TextLengthExceededException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for TextLengthExceededError {
+impl std::fmt::Debug for TextLengthExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TextLengthExceededError");
+        let mut formatter = f.debug_struct("TextLengthExceededException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl TextLengthExceededError {
+impl TextLengthExceededException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for TextLengthExceededError {
+impl std::fmt::Display for TextLengthExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TextLengthExceededError [TextLengthExceededException]")?;
+        write!(f, "TextLengthExceededException")?;
         if let Some(inner_1) = &self.message {
             write!(f, ": {}", inner_1)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for TextLengthExceededError {}
-/// See [`TextLengthExceededError`](crate::error::TextLengthExceededError)
-pub mod text_length_exceeded_error {
-    /// A builder for [`TextLengthExceededError`](crate::error::TextLengthExceededError)
+impl std::error::Error for TextLengthExceededException {}
+/// See [`TextLengthExceededException`](crate::error::TextLengthExceededException)
+pub mod text_length_exceeded_exception {
+    /// A builder for [`TextLengthExceededException`](crate::error::TextLengthExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -1047,57 +1076,52 @@ pub mod text_length_exceeded_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TextLengthExceededError`](crate::error::TextLengthExceededError)
-        pub fn build(self) -> crate::error::TextLengthExceededError {
-            crate::error::TextLengthExceededError {
+        /// Consumes the builder and constructs a [`TextLengthExceededException`](crate::error::TextLengthExceededException)
+        pub fn build(self) -> crate::error::TextLengthExceededException {
+            crate::error::TextLengthExceededException {
                 message: self.message,
             }
         }
     }
 }
-impl TextLengthExceededError {
-    /// Creates a new builder-style object to manufacture [`TextLengthExceededError`](crate::error::TextLengthExceededError)
-    pub fn builder() -> crate::error::text_length_exceeded_error::Builder {
-        crate::error::text_length_exceeded_error::Builder::default()
+impl TextLengthExceededException {
+    /// Creates a new builder-style object to manufacture [`TextLengthExceededException`](crate::error::TextLengthExceededException)
+    pub fn builder() -> crate::error::text_length_exceeded_exception::Builder {
+        crate::error::text_length_exceeded_exception::Builder::default()
     }
 }
 
 /// <p>SSML speech marks are not supported for plain text-type input.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct SsmlMarksNotSupportedForTextTypeError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SsmlMarksNotSupportedForTextTypeException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for SsmlMarksNotSupportedForTextTypeError {
+impl std::fmt::Debug for SsmlMarksNotSupportedForTextTypeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SsmlMarksNotSupportedForTextTypeError");
+        let mut formatter = f.debug_struct("SsmlMarksNotSupportedForTextTypeException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl SsmlMarksNotSupportedForTextTypeError {
+impl SsmlMarksNotSupportedForTextTypeException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for SsmlMarksNotSupportedForTextTypeError {
+impl std::fmt::Display for SsmlMarksNotSupportedForTextTypeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "SsmlMarksNotSupportedForTextTypeError [SsmlMarksNotSupportedForTextTypeException]"
-        )?;
+        write!(f, "SsmlMarksNotSupportedForTextTypeException")?;
         if let Some(inner_2) = &self.message {
             write!(f, ": {}", inner_2)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for SsmlMarksNotSupportedForTextTypeError {}
-/// See [`SsmlMarksNotSupportedForTextTypeError`](crate::error::SsmlMarksNotSupportedForTextTypeError)
-pub mod ssml_marks_not_supported_for_text_type_error {
-    /// A builder for [`SsmlMarksNotSupportedForTextTypeError`](crate::error::SsmlMarksNotSupportedForTextTypeError)
+impl std::error::Error for SsmlMarksNotSupportedForTextTypeException {}
+/// See [`SsmlMarksNotSupportedForTextTypeException`](crate::error::SsmlMarksNotSupportedForTextTypeException)
+pub mod ssml_marks_not_supported_for_text_type_exception {
+    /// A builder for [`SsmlMarksNotSupportedForTextTypeException`](crate::error::SsmlMarksNotSupportedForTextTypeException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -1112,54 +1136,52 @@ pub mod ssml_marks_not_supported_for_text_type_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`SsmlMarksNotSupportedForTextTypeError`](crate::error::SsmlMarksNotSupportedForTextTypeError)
-        pub fn build(self) -> crate::error::SsmlMarksNotSupportedForTextTypeError {
-            crate::error::SsmlMarksNotSupportedForTextTypeError {
+        /// Consumes the builder and constructs a [`SsmlMarksNotSupportedForTextTypeException`](crate::error::SsmlMarksNotSupportedForTextTypeException)
+        pub fn build(self) -> crate::error::SsmlMarksNotSupportedForTextTypeException {
+            crate::error::SsmlMarksNotSupportedForTextTypeException {
                 message: self.message,
             }
         }
     }
 }
-impl SsmlMarksNotSupportedForTextTypeError {
-    /// Creates a new builder-style object to manufacture [`SsmlMarksNotSupportedForTextTypeError`](crate::error::SsmlMarksNotSupportedForTextTypeError)
-    pub fn builder() -> crate::error::ssml_marks_not_supported_for_text_type_error::Builder {
-        crate::error::ssml_marks_not_supported_for_text_type_error::Builder::default()
+impl SsmlMarksNotSupportedForTextTypeException {
+    /// Creates a new builder-style object to manufacture [`SsmlMarksNotSupportedForTextTypeException`](crate::error::SsmlMarksNotSupportedForTextTypeException)
+    pub fn builder() -> crate::error::ssml_marks_not_supported_for_text_type_exception::Builder {
+        crate::error::ssml_marks_not_supported_for_text_type_exception::Builder::default()
     }
 }
 
 /// <p>An unknown condition has caused a service failure.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct ServiceFailureError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ServiceFailureException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ServiceFailureError {
+impl std::fmt::Debug for ServiceFailureException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceFailureError");
+        let mut formatter = f.debug_struct("ServiceFailureException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl ServiceFailureError {
+impl ServiceFailureException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ServiceFailureError {
+impl std::fmt::Display for ServiceFailureException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ServiceFailureError [ServiceFailureException]")?;
+        write!(f, "ServiceFailureException")?;
         if let Some(inner_3) = &self.message {
             write!(f, ": {}", inner_3)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ServiceFailureError {}
-/// See [`ServiceFailureError`](crate::error::ServiceFailureError)
-pub mod service_failure_error {
-    /// A builder for [`ServiceFailureError`](crate::error::ServiceFailureError)
+impl std::error::Error for ServiceFailureException {}
+/// See [`ServiceFailureException`](crate::error::ServiceFailureException)
+pub mod service_failure_exception {
+    /// A builder for [`ServiceFailureException`](crate::error::ServiceFailureException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -1174,58 +1196,53 @@ pub mod service_failure_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ServiceFailureError`](crate::error::ServiceFailureError)
-        pub fn build(self) -> crate::error::ServiceFailureError {
-            crate::error::ServiceFailureError {
+        /// Consumes the builder and constructs a [`ServiceFailureException`](crate::error::ServiceFailureException)
+        pub fn build(self) -> crate::error::ServiceFailureException {
+            crate::error::ServiceFailureException {
                 message: self.message,
             }
         }
     }
 }
-impl ServiceFailureError {
-    /// Creates a new builder-style object to manufacture [`ServiceFailureError`](crate::error::ServiceFailureError)
-    pub fn builder() -> crate::error::service_failure_error::Builder {
-        crate::error::service_failure_error::Builder::default()
+impl ServiceFailureException {
+    /// Creates a new builder-style object to manufacture [`ServiceFailureException`](crate::error::ServiceFailureException)
+    pub fn builder() -> crate::error::service_failure_exception::Builder {
+        crate::error::service_failure_exception::Builder::default()
     }
 }
 
 /// <p>Speech marks are not supported for the <code>OutputFormat</code> selected. Speech marks
 /// are only available for content in <code>json</code> format.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct MarksNotSupportedForFormatError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MarksNotSupportedForFormatException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for MarksNotSupportedForFormatError {
+impl std::fmt::Debug for MarksNotSupportedForFormatException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MarksNotSupportedForFormatError");
+        let mut formatter = f.debug_struct("MarksNotSupportedForFormatException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl MarksNotSupportedForFormatError {
+impl MarksNotSupportedForFormatException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for MarksNotSupportedForFormatError {
+impl std::fmt::Display for MarksNotSupportedForFormatException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "MarksNotSupportedForFormatError [MarksNotSupportedForFormatException]"
-        )?;
+        write!(f, "MarksNotSupportedForFormatException")?;
         if let Some(inner_4) = &self.message {
             write!(f, ": {}", inner_4)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for MarksNotSupportedForFormatError {}
-/// See [`MarksNotSupportedForFormatError`](crate::error::MarksNotSupportedForFormatError)
-pub mod marks_not_supported_for_format_error {
-    /// A builder for [`MarksNotSupportedForFormatError`](crate::error::MarksNotSupportedForFormatError)
+impl std::error::Error for MarksNotSupportedForFormatException {}
+/// See [`MarksNotSupportedForFormatException`](crate::error::MarksNotSupportedForFormatException)
+pub mod marks_not_supported_for_format_exception {
+    /// A builder for [`MarksNotSupportedForFormatException`](crate::error::MarksNotSupportedForFormatException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -1240,18 +1257,18 @@ pub mod marks_not_supported_for_format_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`MarksNotSupportedForFormatError`](crate::error::MarksNotSupportedForFormatError)
-        pub fn build(self) -> crate::error::MarksNotSupportedForFormatError {
-            crate::error::MarksNotSupportedForFormatError {
+        /// Consumes the builder and constructs a [`MarksNotSupportedForFormatException`](crate::error::MarksNotSupportedForFormatException)
+        pub fn build(self) -> crate::error::MarksNotSupportedForFormatException {
+            crate::error::MarksNotSupportedForFormatException {
                 message: self.message,
             }
         }
     }
 }
-impl MarksNotSupportedForFormatError {
-    /// Creates a new builder-style object to manufacture [`MarksNotSupportedForFormatError`](crate::error::MarksNotSupportedForFormatError)
-    pub fn builder() -> crate::error::marks_not_supported_for_format_error::Builder {
-        crate::error::marks_not_supported_for_format_error::Builder::default()
+impl MarksNotSupportedForFormatException {
+    /// Creates a new builder-style object to manufacture [`MarksNotSupportedForFormatException`](crate::error::MarksNotSupportedForFormatException)
+    pub fn builder() -> crate::error::marks_not_supported_for_format_exception::Builder {
+        crate::error::marks_not_supported_for_format_exception::Builder::default()
     }
 }
 
@@ -1261,37 +1278,35 @@ impl MarksNotSupportedForFormatError {
 /// <p>Verify that the lexicon exists, is in the region (see <a>ListLexicons</a>)
 /// and that you spelled its name is spelled correctly. Then try again.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct LexiconNotFoundError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct LexiconNotFoundException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for LexiconNotFoundError {
+impl std::fmt::Debug for LexiconNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LexiconNotFoundError");
+        let mut formatter = f.debug_struct("LexiconNotFoundException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl LexiconNotFoundError {
+impl LexiconNotFoundException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for LexiconNotFoundError {
+impl std::fmt::Display for LexiconNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "LexiconNotFoundError [LexiconNotFoundException]")?;
+        write!(f, "LexiconNotFoundException")?;
         if let Some(inner_5) = &self.message {
             write!(f, ": {}", inner_5)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for LexiconNotFoundError {}
-/// See [`LexiconNotFoundError`](crate::error::LexiconNotFoundError)
-pub mod lexicon_not_found_error {
-    /// A builder for [`LexiconNotFoundError`](crate::error::LexiconNotFoundError)
+impl std::error::Error for LexiconNotFoundException {}
+/// See [`LexiconNotFoundException`](crate::error::LexiconNotFoundException)
+pub mod lexicon_not_found_exception {
+    /// A builder for [`LexiconNotFoundException`](crate::error::LexiconNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -1306,57 +1321,52 @@ pub mod lexicon_not_found_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`LexiconNotFoundError`](crate::error::LexiconNotFoundError)
-        pub fn build(self) -> crate::error::LexiconNotFoundError {
-            crate::error::LexiconNotFoundError {
+        /// Consumes the builder and constructs a [`LexiconNotFoundException`](crate::error::LexiconNotFoundException)
+        pub fn build(self) -> crate::error::LexiconNotFoundException {
+            crate::error::LexiconNotFoundException {
                 message: self.message,
             }
         }
     }
 }
-impl LexiconNotFoundError {
-    /// Creates a new builder-style object to manufacture [`LexiconNotFoundError`](crate::error::LexiconNotFoundError)
-    pub fn builder() -> crate::error::lexicon_not_found_error::Builder {
-        crate::error::lexicon_not_found_error::Builder::default()
+impl LexiconNotFoundException {
+    /// Creates a new builder-style object to manufacture [`LexiconNotFoundException`](crate::error::LexiconNotFoundException)
+    pub fn builder() -> crate::error::lexicon_not_found_exception::Builder {
+        crate::error::lexicon_not_found_exception::Builder::default()
     }
 }
 
 /// <p>The language specified is not currently supported by Amazon Polly in this capacity.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct LanguageNotSupportedError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct LanguageNotSupportedException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for LanguageNotSupportedError {
+impl std::fmt::Debug for LanguageNotSupportedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LanguageNotSupportedError");
+        let mut formatter = f.debug_struct("LanguageNotSupportedException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl LanguageNotSupportedError {
+impl LanguageNotSupportedException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for LanguageNotSupportedError {
+impl std::fmt::Display for LanguageNotSupportedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "LanguageNotSupportedError [LanguageNotSupportedException]"
-        )?;
+        write!(f, "LanguageNotSupportedException")?;
         if let Some(inner_6) = &self.message {
             write!(f, ": {}", inner_6)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for LanguageNotSupportedError {}
-/// See [`LanguageNotSupportedError`](crate::error::LanguageNotSupportedError)
-pub mod language_not_supported_error {
-    /// A builder for [`LanguageNotSupportedError`](crate::error::LanguageNotSupportedError)
+impl std::error::Error for LanguageNotSupportedException {}
+/// See [`LanguageNotSupportedException`](crate::error::LanguageNotSupportedException)
+pub mod language_not_supported_exception {
+    /// A builder for [`LanguageNotSupportedException`](crate::error::LanguageNotSupportedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -1371,55 +1381,53 @@ pub mod language_not_supported_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`LanguageNotSupportedError`](crate::error::LanguageNotSupportedError)
-        pub fn build(self) -> crate::error::LanguageNotSupportedError {
-            crate::error::LanguageNotSupportedError {
+        /// Consumes the builder and constructs a [`LanguageNotSupportedException`](crate::error::LanguageNotSupportedException)
+        pub fn build(self) -> crate::error::LanguageNotSupportedException {
+            crate::error::LanguageNotSupportedException {
                 message: self.message,
             }
         }
     }
 }
-impl LanguageNotSupportedError {
-    /// Creates a new builder-style object to manufacture [`LanguageNotSupportedError`](crate::error::LanguageNotSupportedError)
-    pub fn builder() -> crate::error::language_not_supported_error::Builder {
-        crate::error::language_not_supported_error::Builder::default()
+impl LanguageNotSupportedException {
+    /// Creates a new builder-style object to manufacture [`LanguageNotSupportedException`](crate::error::LanguageNotSupportedException)
+    pub fn builder() -> crate::error::language_not_supported_exception::Builder {
+        crate::error::language_not_supported_exception::Builder::default()
     }
 }
 
 /// <p>The SSML you provided is invalid. Verify the SSML syntax, spelling of tags and values,
 /// and then try again.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidSsmlError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InvalidSsmlException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidSsmlError {
+impl std::fmt::Debug for InvalidSsmlException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidSsmlError");
+        let mut formatter = f.debug_struct("InvalidSsmlException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl InvalidSsmlError {
+impl InvalidSsmlException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InvalidSsmlError {
+impl std::fmt::Display for InvalidSsmlException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidSsmlError [InvalidSsmlException]")?;
+        write!(f, "InvalidSsmlException")?;
         if let Some(inner_7) = &self.message {
             write!(f, ": {}", inner_7)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InvalidSsmlError {}
-/// See [`InvalidSsmlError`](crate::error::InvalidSsmlError)
-pub mod invalid_ssml_error {
-    /// A builder for [`InvalidSsmlError`](crate::error::InvalidSsmlError)
+impl std::error::Error for InvalidSsmlException {}
+/// See [`InvalidSsmlException`](crate::error::InvalidSsmlException)
+pub mod invalid_ssml_exception {
+    /// A builder for [`InvalidSsmlException`](crate::error::InvalidSsmlException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -1434,54 +1442,52 @@ pub mod invalid_ssml_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidSsmlError`](crate::error::InvalidSsmlError)
-        pub fn build(self) -> crate::error::InvalidSsmlError {
-            crate::error::InvalidSsmlError {
+        /// Consumes the builder and constructs a [`InvalidSsmlException`](crate::error::InvalidSsmlException)
+        pub fn build(self) -> crate::error::InvalidSsmlException {
+            crate::error::InvalidSsmlException {
                 message: self.message,
             }
         }
     }
 }
-impl InvalidSsmlError {
-    /// Creates a new builder-style object to manufacture [`InvalidSsmlError`](crate::error::InvalidSsmlError)
-    pub fn builder() -> crate::error::invalid_ssml_error::Builder {
-        crate::error::invalid_ssml_error::Builder::default()
+impl InvalidSsmlException {
+    /// Creates a new builder-style object to manufacture [`InvalidSsmlException`](crate::error::InvalidSsmlException)
+    pub fn builder() -> crate::error::invalid_ssml_exception::Builder {
+        crate::error::invalid_ssml_exception::Builder::default()
     }
 }
 
 /// <p>The specified sample rate is not valid.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidSampleRateError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InvalidSampleRateException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidSampleRateError {
+impl std::fmt::Debug for InvalidSampleRateException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidSampleRateError");
+        let mut formatter = f.debug_struct("InvalidSampleRateException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl InvalidSampleRateError {
+impl InvalidSampleRateException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InvalidSampleRateError {
+impl std::fmt::Display for InvalidSampleRateException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidSampleRateError [InvalidSampleRateException]")?;
+        write!(f, "InvalidSampleRateException")?;
         if let Some(inner_8) = &self.message {
             write!(f, ": {}", inner_8)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InvalidSampleRateError {}
-/// See [`InvalidSampleRateError`](crate::error::InvalidSampleRateError)
-pub mod invalid_sample_rate_error {
-    /// A builder for [`InvalidSampleRateError`](crate::error::InvalidSampleRateError)
+impl std::error::Error for InvalidSampleRateException {}
+/// See [`InvalidSampleRateException`](crate::error::InvalidSampleRateException)
+pub mod invalid_sample_rate_exception {
+    /// A builder for [`InvalidSampleRateException`](crate::error::InvalidSampleRateException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -1496,55 +1502,53 @@ pub mod invalid_sample_rate_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidSampleRateError`](crate::error::InvalidSampleRateError)
-        pub fn build(self) -> crate::error::InvalidSampleRateError {
-            crate::error::InvalidSampleRateError {
+        /// Consumes the builder and constructs a [`InvalidSampleRateException`](crate::error::InvalidSampleRateException)
+        pub fn build(self) -> crate::error::InvalidSampleRateException {
+            crate::error::InvalidSampleRateException {
                 message: self.message,
             }
         }
     }
 }
-impl InvalidSampleRateError {
-    /// Creates a new builder-style object to manufacture [`InvalidSampleRateError`](crate::error::InvalidSampleRateError)
-    pub fn builder() -> crate::error::invalid_sample_rate_error::Builder {
-        crate::error::invalid_sample_rate_error::Builder::default()
+impl InvalidSampleRateException {
+    /// Creates a new builder-style object to manufacture [`InvalidSampleRateException`](crate::error::InvalidSampleRateException)
+    pub fn builder() -> crate::error::invalid_sample_rate_exception::Builder {
+        crate::error::invalid_sample_rate_exception::Builder::default()
     }
 }
 
 /// <p>This engine is not compatible with the voice that you have designated. Choose a new voice
 /// that is compatible with the engine or change the engine and restart the operation.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct EngineNotSupportedError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EngineNotSupportedException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for EngineNotSupportedError {
+impl std::fmt::Debug for EngineNotSupportedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EngineNotSupportedError");
+        let mut formatter = f.debug_struct("EngineNotSupportedException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl EngineNotSupportedError {
+impl EngineNotSupportedException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for EngineNotSupportedError {
+impl std::fmt::Display for EngineNotSupportedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "EngineNotSupportedError [EngineNotSupportedException]")?;
+        write!(f, "EngineNotSupportedException")?;
         if let Some(inner_9) = &self.message {
             write!(f, ": {}", inner_9)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for EngineNotSupportedError {}
-/// See [`EngineNotSupportedError`](crate::error::EngineNotSupportedError)
-pub mod engine_not_supported_error {
-    /// A builder for [`EngineNotSupportedError`](crate::error::EngineNotSupportedError)
+impl std::error::Error for EngineNotSupportedException {}
+/// See [`EngineNotSupportedException`](crate::error::EngineNotSupportedException)
+pub mod engine_not_supported_exception {
+    /// A builder for [`EngineNotSupportedException`](crate::error::EngineNotSupportedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -1559,55 +1563,53 @@ pub mod engine_not_supported_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`EngineNotSupportedError`](crate::error::EngineNotSupportedError)
-        pub fn build(self) -> crate::error::EngineNotSupportedError {
-            crate::error::EngineNotSupportedError {
+        /// Consumes the builder and constructs a [`EngineNotSupportedException`](crate::error::EngineNotSupportedException)
+        pub fn build(self) -> crate::error::EngineNotSupportedException {
+            crate::error::EngineNotSupportedException {
                 message: self.message,
             }
         }
     }
 }
-impl EngineNotSupportedError {
-    /// Creates a new builder-style object to manufacture [`EngineNotSupportedError`](crate::error::EngineNotSupportedError)
-    pub fn builder() -> crate::error::engine_not_supported_error::Builder {
-        crate::error::engine_not_supported_error::Builder::default()
+impl EngineNotSupportedException {
+    /// Creates a new builder-style object to manufacture [`EngineNotSupportedException`](crate::error::EngineNotSupportedException)
+    pub fn builder() -> crate::error::engine_not_supported_exception::Builder {
+        crate::error::engine_not_supported_exception::Builder::default()
     }
 }
 
 /// <p>The provided SNS topic ARN is invalid. Please provide a valid SNS topic ARN and try
 /// again.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidSnsTopicArnError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InvalidSnsTopicArnException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidSnsTopicArnError {
+impl std::fmt::Debug for InvalidSnsTopicArnException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidSnsTopicArnError");
+        let mut formatter = f.debug_struct("InvalidSnsTopicArnException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl InvalidSnsTopicArnError {
+impl InvalidSnsTopicArnException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InvalidSnsTopicArnError {
+impl std::fmt::Display for InvalidSnsTopicArnException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidSnsTopicArnError [InvalidSnsTopicArnException]")?;
+        write!(f, "InvalidSnsTopicArnException")?;
         if let Some(inner_10) = &self.message {
             write!(f, ": {}", inner_10)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InvalidSnsTopicArnError {}
-/// See [`InvalidSnsTopicArnError`](crate::error::InvalidSnsTopicArnError)
-pub mod invalid_sns_topic_arn_error {
-    /// A builder for [`InvalidSnsTopicArnError`](crate::error::InvalidSnsTopicArnError)
+impl std::error::Error for InvalidSnsTopicArnException {}
+/// See [`InvalidSnsTopicArnException`](crate::error::InvalidSnsTopicArnException)
+pub mod invalid_sns_topic_arn_exception {
+    /// A builder for [`InvalidSnsTopicArnException`](crate::error::InvalidSnsTopicArnException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -1622,55 +1624,53 @@ pub mod invalid_sns_topic_arn_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidSnsTopicArnError`](crate::error::InvalidSnsTopicArnError)
-        pub fn build(self) -> crate::error::InvalidSnsTopicArnError {
-            crate::error::InvalidSnsTopicArnError {
+        /// Consumes the builder and constructs a [`InvalidSnsTopicArnException`](crate::error::InvalidSnsTopicArnException)
+        pub fn build(self) -> crate::error::InvalidSnsTopicArnException {
+            crate::error::InvalidSnsTopicArnException {
                 message: self.message,
             }
         }
     }
 }
-impl InvalidSnsTopicArnError {
-    /// Creates a new builder-style object to manufacture [`InvalidSnsTopicArnError`](crate::error::InvalidSnsTopicArnError)
-    pub fn builder() -> crate::error::invalid_sns_topic_arn_error::Builder {
-        crate::error::invalid_sns_topic_arn_error::Builder::default()
+impl InvalidSnsTopicArnException {
+    /// Creates a new builder-style object to manufacture [`InvalidSnsTopicArnException`](crate::error::InvalidSnsTopicArnException)
+    pub fn builder() -> crate::error::invalid_sns_topic_arn_exception::Builder {
+        crate::error::invalid_sns_topic_arn_exception::Builder::default()
     }
 }
 
 /// <p>The provided Amazon S3 key prefix is invalid. Please provide a valid S3 object key
 /// name.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidS3KeyError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InvalidS3KeyException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidS3KeyError {
+impl std::fmt::Debug for InvalidS3KeyException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidS3KeyError");
+        let mut formatter = f.debug_struct("InvalidS3KeyException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl InvalidS3KeyError {
+impl InvalidS3KeyException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InvalidS3KeyError {
+impl std::fmt::Display for InvalidS3KeyException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidS3KeyError [InvalidS3KeyException]")?;
+        write!(f, "InvalidS3KeyException")?;
         if let Some(inner_11) = &self.message {
             write!(f, ": {}", inner_11)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InvalidS3KeyError {}
-/// See [`InvalidS3KeyError`](crate::error::InvalidS3KeyError)
-pub mod invalid_s3_key_error {
-    /// A builder for [`InvalidS3KeyError`](crate::error::InvalidS3KeyError)
+impl std::error::Error for InvalidS3KeyException {}
+/// See [`InvalidS3KeyException`](crate::error::InvalidS3KeyException)
+pub mod invalid_s3_key_exception {
+    /// A builder for [`InvalidS3KeyException`](crate::error::InvalidS3KeyException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -1685,55 +1685,53 @@ pub mod invalid_s3_key_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidS3KeyError`](crate::error::InvalidS3KeyError)
-        pub fn build(self) -> crate::error::InvalidS3KeyError {
-            crate::error::InvalidS3KeyError {
+        /// Consumes the builder and constructs a [`InvalidS3KeyException`](crate::error::InvalidS3KeyException)
+        pub fn build(self) -> crate::error::InvalidS3KeyException {
+            crate::error::InvalidS3KeyException {
                 message: self.message,
             }
         }
     }
 }
-impl InvalidS3KeyError {
-    /// Creates a new builder-style object to manufacture [`InvalidS3KeyError`](crate::error::InvalidS3KeyError)
-    pub fn builder() -> crate::error::invalid_s3_key_error::Builder {
-        crate::error::invalid_s3_key_error::Builder::default()
+impl InvalidS3KeyException {
+    /// Creates a new builder-style object to manufacture [`InvalidS3KeyException`](crate::error::InvalidS3KeyException)
+    pub fn builder() -> crate::error::invalid_s3_key_exception::Builder {
+        crate::error::invalid_s3_key_exception::Builder::default()
     }
 }
 
 /// <p>The provided Amazon S3 bucket name is invalid. Please check your input with S3 bucket
 /// naming requirements and try again.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidS3BucketError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InvalidS3BucketException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidS3BucketError {
+impl std::fmt::Debug for InvalidS3BucketException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidS3BucketError");
+        let mut formatter = f.debug_struct("InvalidS3BucketException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl InvalidS3BucketError {
+impl InvalidS3BucketException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InvalidS3BucketError {
+impl std::fmt::Display for InvalidS3BucketException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidS3BucketError [InvalidS3BucketException]")?;
+        write!(f, "InvalidS3BucketException")?;
         if let Some(inner_12) = &self.message {
             write!(f, ": {}", inner_12)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InvalidS3BucketError {}
-/// See [`InvalidS3BucketError`](crate::error::InvalidS3BucketError)
-pub mod invalid_s3_bucket_error {
-    /// A builder for [`InvalidS3BucketError`](crate::error::InvalidS3BucketError)
+impl std::error::Error for InvalidS3BucketException {}
+/// See [`InvalidS3BucketException`](crate::error::InvalidS3BucketException)
+pub mod invalid_s3_bucket_exception {
+    /// A builder for [`InvalidS3BucketException`](crate::error::InvalidS3BucketException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -1748,18 +1746,18 @@ pub mod invalid_s3_bucket_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidS3BucketError`](crate::error::InvalidS3BucketError)
-        pub fn build(self) -> crate::error::InvalidS3BucketError {
-            crate::error::InvalidS3BucketError {
+        /// Consumes the builder and constructs a [`InvalidS3BucketException`](crate::error::InvalidS3BucketException)
+        pub fn build(self) -> crate::error::InvalidS3BucketException {
+            crate::error::InvalidS3BucketException {
                 message: self.message,
             }
         }
     }
 }
-impl InvalidS3BucketError {
-    /// Creates a new builder-style object to manufacture [`InvalidS3BucketError`](crate::error::InvalidS3BucketError)
-    pub fn builder() -> crate::error::invalid_s3_bucket_error::Builder {
-        crate::error::invalid_s3_bucket_error::Builder::default()
+impl InvalidS3BucketException {
+    /// Creates a new builder-style object to manufacture [`InvalidS3BucketException`](crate::error::InvalidS3BucketException)
+    pub fn builder() -> crate::error::invalid_s3_bucket_exception::Builder {
+        crate::error::invalid_s3_bucket_exception::Builder::default()
     }
 }
 
@@ -1767,40 +1765,35 @@ impl InvalidS3BucketError {
 /// languages, see <a href="https://docs.aws.amazon.com/polly/latest/dg/API_LexiconAttributes.html">Lexicon
 /// Attributes</a>.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct UnsupportedPlsLanguageError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UnsupportedPlsLanguageException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for UnsupportedPlsLanguageError {
+impl std::fmt::Debug for UnsupportedPlsLanguageException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnsupportedPlsLanguageError");
+        let mut formatter = f.debug_struct("UnsupportedPlsLanguageException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl UnsupportedPlsLanguageError {
+impl UnsupportedPlsLanguageException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for UnsupportedPlsLanguageError {
+impl std::fmt::Display for UnsupportedPlsLanguageException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "UnsupportedPlsLanguageError [UnsupportedPlsLanguageException]"
-        )?;
+        write!(f, "UnsupportedPlsLanguageException")?;
         if let Some(inner_13) = &self.message {
             write!(f, ": {}", inner_13)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for UnsupportedPlsLanguageError {}
-/// See [`UnsupportedPlsLanguageError`](crate::error::UnsupportedPlsLanguageError)
-pub mod unsupported_pls_language_error {
-    /// A builder for [`UnsupportedPlsLanguageError`](crate::error::UnsupportedPlsLanguageError)
+impl std::error::Error for UnsupportedPlsLanguageException {}
+/// See [`UnsupportedPlsLanguageException`](crate::error::UnsupportedPlsLanguageException)
+pub mod unsupported_pls_language_exception {
+    /// A builder for [`UnsupportedPlsLanguageException`](crate::error::UnsupportedPlsLanguageException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -1815,58 +1808,53 @@ pub mod unsupported_pls_language_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`UnsupportedPlsLanguageError`](crate::error::UnsupportedPlsLanguageError)
-        pub fn build(self) -> crate::error::UnsupportedPlsLanguageError {
-            crate::error::UnsupportedPlsLanguageError {
+        /// Consumes the builder and constructs a [`UnsupportedPlsLanguageException`](crate::error::UnsupportedPlsLanguageException)
+        pub fn build(self) -> crate::error::UnsupportedPlsLanguageException {
+            crate::error::UnsupportedPlsLanguageException {
                 message: self.message,
             }
         }
     }
 }
-impl UnsupportedPlsLanguageError {
-    /// Creates a new builder-style object to manufacture [`UnsupportedPlsLanguageError`](crate::error::UnsupportedPlsLanguageError)
-    pub fn builder() -> crate::error::unsupported_pls_language_error::Builder {
-        crate::error::unsupported_pls_language_error::Builder::default()
+impl UnsupportedPlsLanguageException {
+    /// Creates a new builder-style object to manufacture [`UnsupportedPlsLanguageException`](crate::error::UnsupportedPlsLanguageException)
+    pub fn builder() -> crate::error::unsupported_pls_language_exception::Builder {
+        crate::error::unsupported_pls_language_exception::Builder::default()
     }
 }
 
 /// <p>The alphabet specified by the lexicon is not a supported alphabet. Valid values are
 /// <code>x-sampa</code> and <code>ipa</code>.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct UnsupportedPlsAlphabetError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UnsupportedPlsAlphabetException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for UnsupportedPlsAlphabetError {
+impl std::fmt::Debug for UnsupportedPlsAlphabetException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnsupportedPlsAlphabetError");
+        let mut formatter = f.debug_struct("UnsupportedPlsAlphabetException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl UnsupportedPlsAlphabetError {
+impl UnsupportedPlsAlphabetException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for UnsupportedPlsAlphabetError {
+impl std::fmt::Display for UnsupportedPlsAlphabetException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "UnsupportedPlsAlphabetError [UnsupportedPlsAlphabetException]"
-        )?;
+        write!(f, "UnsupportedPlsAlphabetException")?;
         if let Some(inner_14) = &self.message {
             write!(f, ": {}", inner_14)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for UnsupportedPlsAlphabetError {}
-/// See [`UnsupportedPlsAlphabetError`](crate::error::UnsupportedPlsAlphabetError)
-pub mod unsupported_pls_alphabet_error {
-    /// A builder for [`UnsupportedPlsAlphabetError`](crate::error::UnsupportedPlsAlphabetError)
+impl std::error::Error for UnsupportedPlsAlphabetException {}
+/// See [`UnsupportedPlsAlphabetException`](crate::error::UnsupportedPlsAlphabetException)
+pub mod unsupported_pls_alphabet_exception {
+    /// A builder for [`UnsupportedPlsAlphabetException`](crate::error::UnsupportedPlsAlphabetException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -1881,57 +1869,52 @@ pub mod unsupported_pls_alphabet_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`UnsupportedPlsAlphabetError`](crate::error::UnsupportedPlsAlphabetError)
-        pub fn build(self) -> crate::error::UnsupportedPlsAlphabetError {
-            crate::error::UnsupportedPlsAlphabetError {
+        /// Consumes the builder and constructs a [`UnsupportedPlsAlphabetException`](crate::error::UnsupportedPlsAlphabetException)
+        pub fn build(self) -> crate::error::UnsupportedPlsAlphabetException {
+            crate::error::UnsupportedPlsAlphabetException {
                 message: self.message,
             }
         }
     }
 }
-impl UnsupportedPlsAlphabetError {
-    /// Creates a new builder-style object to manufacture [`UnsupportedPlsAlphabetError`](crate::error::UnsupportedPlsAlphabetError)
-    pub fn builder() -> crate::error::unsupported_pls_alphabet_error::Builder {
-        crate::error::unsupported_pls_alphabet_error::Builder::default()
+impl UnsupportedPlsAlphabetException {
+    /// Creates a new builder-style object to manufacture [`UnsupportedPlsAlphabetException`](crate::error::UnsupportedPlsAlphabetException)
+    pub fn builder() -> crate::error::unsupported_pls_alphabet_exception::Builder {
+        crate::error::unsupported_pls_alphabet_exception::Builder::default()
     }
 }
 
 /// <p>The maximum number of lexicons would be exceeded by this operation.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct MaxLexiconsNumberExceededError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MaxLexiconsNumberExceededException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for MaxLexiconsNumberExceededError {
+impl std::fmt::Debug for MaxLexiconsNumberExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MaxLexiconsNumberExceededError");
+        let mut formatter = f.debug_struct("MaxLexiconsNumberExceededException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl MaxLexiconsNumberExceededError {
+impl MaxLexiconsNumberExceededException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for MaxLexiconsNumberExceededError {
+impl std::fmt::Display for MaxLexiconsNumberExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "MaxLexiconsNumberExceededError [MaxLexiconsNumberExceededException]"
-        )?;
+        write!(f, "MaxLexiconsNumberExceededException")?;
         if let Some(inner_15) = &self.message {
             write!(f, ": {}", inner_15)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for MaxLexiconsNumberExceededError {}
-/// See [`MaxLexiconsNumberExceededError`](crate::error::MaxLexiconsNumberExceededError)
-pub mod max_lexicons_number_exceeded_error {
-    /// A builder for [`MaxLexiconsNumberExceededError`](crate::error::MaxLexiconsNumberExceededError)
+impl std::error::Error for MaxLexiconsNumberExceededException {}
+/// See [`MaxLexiconsNumberExceededException`](crate::error::MaxLexiconsNumberExceededException)
+pub mod max_lexicons_number_exceeded_exception {
+    /// A builder for [`MaxLexiconsNumberExceededException`](crate::error::MaxLexiconsNumberExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -1946,57 +1929,52 @@ pub mod max_lexicons_number_exceeded_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`MaxLexiconsNumberExceededError`](crate::error::MaxLexiconsNumberExceededError)
-        pub fn build(self) -> crate::error::MaxLexiconsNumberExceededError {
-            crate::error::MaxLexiconsNumberExceededError {
+        /// Consumes the builder and constructs a [`MaxLexiconsNumberExceededException`](crate::error::MaxLexiconsNumberExceededException)
+        pub fn build(self) -> crate::error::MaxLexiconsNumberExceededException {
+            crate::error::MaxLexiconsNumberExceededException {
                 message: self.message,
             }
         }
     }
 }
-impl MaxLexiconsNumberExceededError {
-    /// Creates a new builder-style object to manufacture [`MaxLexiconsNumberExceededError`](crate::error::MaxLexiconsNumberExceededError)
-    pub fn builder() -> crate::error::max_lexicons_number_exceeded_error::Builder {
-        crate::error::max_lexicons_number_exceeded_error::Builder::default()
+impl MaxLexiconsNumberExceededException {
+    /// Creates a new builder-style object to manufacture [`MaxLexiconsNumberExceededException`](crate::error::MaxLexiconsNumberExceededException)
+    pub fn builder() -> crate::error::max_lexicons_number_exceeded_exception::Builder {
+        crate::error::max_lexicons_number_exceeded_exception::Builder::default()
     }
 }
 
 /// <p>The maximum size of the lexeme would be exceeded by this operation.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct MaxLexemeLengthExceededError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MaxLexemeLengthExceededException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for MaxLexemeLengthExceededError {
+impl std::fmt::Debug for MaxLexemeLengthExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MaxLexemeLengthExceededError");
+        let mut formatter = f.debug_struct("MaxLexemeLengthExceededException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl MaxLexemeLengthExceededError {
+impl MaxLexemeLengthExceededException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for MaxLexemeLengthExceededError {
+impl std::fmt::Display for MaxLexemeLengthExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "MaxLexemeLengthExceededError [MaxLexemeLengthExceededException]"
-        )?;
+        write!(f, "MaxLexemeLengthExceededException")?;
         if let Some(inner_16) = &self.message {
             write!(f, ": {}", inner_16)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for MaxLexemeLengthExceededError {}
-/// See [`MaxLexemeLengthExceededError`](crate::error::MaxLexemeLengthExceededError)
-pub mod max_lexeme_length_exceeded_error {
-    /// A builder for [`MaxLexemeLengthExceededError`](crate::error::MaxLexemeLengthExceededError)
+impl std::error::Error for MaxLexemeLengthExceededException {}
+/// See [`MaxLexemeLengthExceededException`](crate::error::MaxLexemeLengthExceededException)
+pub mod max_lexeme_length_exceeded_exception {
+    /// A builder for [`MaxLexemeLengthExceededException`](crate::error::MaxLexemeLengthExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -2011,55 +1989,53 @@ pub mod max_lexeme_length_exceeded_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`MaxLexemeLengthExceededError`](crate::error::MaxLexemeLengthExceededError)
-        pub fn build(self) -> crate::error::MaxLexemeLengthExceededError {
-            crate::error::MaxLexemeLengthExceededError {
+        /// Consumes the builder and constructs a [`MaxLexemeLengthExceededException`](crate::error::MaxLexemeLengthExceededException)
+        pub fn build(self) -> crate::error::MaxLexemeLengthExceededException {
+            crate::error::MaxLexemeLengthExceededException {
                 message: self.message,
             }
         }
     }
 }
-impl MaxLexemeLengthExceededError {
-    /// Creates a new builder-style object to manufacture [`MaxLexemeLengthExceededError`](crate::error::MaxLexemeLengthExceededError)
-    pub fn builder() -> crate::error::max_lexeme_length_exceeded_error::Builder {
-        crate::error::max_lexeme_length_exceeded_error::Builder::default()
+impl MaxLexemeLengthExceededException {
+    /// Creates a new builder-style object to manufacture [`MaxLexemeLengthExceededException`](crate::error::MaxLexemeLengthExceededException)
+    pub fn builder() -> crate::error::max_lexeme_length_exceeded_exception::Builder {
+        crate::error::max_lexeme_length_exceeded_exception::Builder::default()
     }
 }
 
 /// <p>The maximum size of the specified lexicon would be exceeded by this
 /// operation.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct LexiconSizeExceededError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct LexiconSizeExceededException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for LexiconSizeExceededError {
+impl std::fmt::Debug for LexiconSizeExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LexiconSizeExceededError");
+        let mut formatter = f.debug_struct("LexiconSizeExceededException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl LexiconSizeExceededError {
+impl LexiconSizeExceededException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for LexiconSizeExceededError {
+impl std::fmt::Display for LexiconSizeExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "LexiconSizeExceededError [LexiconSizeExceededException]")?;
+        write!(f, "LexiconSizeExceededException")?;
         if let Some(inner_17) = &self.message {
             write!(f, ": {}", inner_17)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for LexiconSizeExceededError {}
-/// See [`LexiconSizeExceededError`](crate::error::LexiconSizeExceededError)
-pub mod lexicon_size_exceeded_error {
-    /// A builder for [`LexiconSizeExceededError`](crate::error::LexiconSizeExceededError)
+impl std::error::Error for LexiconSizeExceededException {}
+/// See [`LexiconSizeExceededException`](crate::error::LexiconSizeExceededException)
+pub mod lexicon_size_exceeded_exception {
+    /// A builder for [`LexiconSizeExceededException`](crate::error::LexiconSizeExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -2074,55 +2050,53 @@ pub mod lexicon_size_exceeded_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`LexiconSizeExceededError`](crate::error::LexiconSizeExceededError)
-        pub fn build(self) -> crate::error::LexiconSizeExceededError {
-            crate::error::LexiconSizeExceededError {
+        /// Consumes the builder and constructs a [`LexiconSizeExceededException`](crate::error::LexiconSizeExceededException)
+        pub fn build(self) -> crate::error::LexiconSizeExceededException {
+            crate::error::LexiconSizeExceededException {
                 message: self.message,
             }
         }
     }
 }
-impl LexiconSizeExceededError {
-    /// Creates a new builder-style object to manufacture [`LexiconSizeExceededError`](crate::error::LexiconSizeExceededError)
-    pub fn builder() -> crate::error::lexicon_size_exceeded_error::Builder {
-        crate::error::lexicon_size_exceeded_error::Builder::default()
+impl LexiconSizeExceededException {
+    /// Creates a new builder-style object to manufacture [`LexiconSizeExceededException`](crate::error::LexiconSizeExceededException)
+    pub fn builder() -> crate::error::lexicon_size_exceeded_exception::Builder {
+        crate::error::lexicon_size_exceeded_exception::Builder::default()
     }
 }
 
 /// <p>Amazon Polly can't find the specified lexicon. Verify that the lexicon's name is
 /// spelled correctly, and then try again.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidLexiconError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InvalidLexiconException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidLexiconError {
+impl std::fmt::Debug for InvalidLexiconException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidLexiconError");
+        let mut formatter = f.debug_struct("InvalidLexiconException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl InvalidLexiconError {
+impl InvalidLexiconException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InvalidLexiconError {
+impl std::fmt::Display for InvalidLexiconException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidLexiconError [InvalidLexiconException]")?;
+        write!(f, "InvalidLexiconException")?;
         if let Some(inner_18) = &self.message {
             write!(f, ": {}", inner_18)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InvalidLexiconError {}
-/// See [`InvalidLexiconError`](crate::error::InvalidLexiconError)
-pub mod invalid_lexicon_error {
-    /// A builder for [`InvalidLexiconError`](crate::error::InvalidLexiconError)
+impl std::error::Error for InvalidLexiconException {}
+/// See [`InvalidLexiconException`](crate::error::InvalidLexiconException)
+pub mod invalid_lexicon_exception {
+    /// A builder for [`InvalidLexiconException`](crate::error::InvalidLexiconException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -2137,55 +2111,53 @@ pub mod invalid_lexicon_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidLexiconError`](crate::error::InvalidLexiconError)
-        pub fn build(self) -> crate::error::InvalidLexiconError {
-            crate::error::InvalidLexiconError {
+        /// Consumes the builder and constructs a [`InvalidLexiconException`](crate::error::InvalidLexiconException)
+        pub fn build(self) -> crate::error::InvalidLexiconException {
+            crate::error::InvalidLexiconException {
                 message: self.message,
             }
         }
     }
 }
-impl InvalidLexiconError {
-    /// Creates a new builder-style object to manufacture [`InvalidLexiconError`](crate::error::InvalidLexiconError)
-    pub fn builder() -> crate::error::invalid_lexicon_error::Builder {
-        crate::error::invalid_lexicon_error::Builder::default()
+impl InvalidLexiconException {
+    /// Creates a new builder-style object to manufacture [`InvalidLexiconException`](crate::error::InvalidLexiconException)
+    pub fn builder() -> crate::error::invalid_lexicon_exception::Builder {
+        crate::error::invalid_lexicon_exception::Builder::default()
     }
 }
 
 /// <p>The NextToken is invalid. Verify that it's spelled correctly, and then try
 /// again.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidNextTokenError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InvalidNextTokenException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidNextTokenError {
+impl std::fmt::Debug for InvalidNextTokenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidNextTokenError");
+        let mut formatter = f.debug_struct("InvalidNextTokenException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl InvalidNextTokenError {
+impl InvalidNextTokenException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InvalidNextTokenError {
+impl std::fmt::Display for InvalidNextTokenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidNextTokenError [InvalidNextTokenException]")?;
+        write!(f, "InvalidNextTokenException")?;
         if let Some(inner_19) = &self.message {
             write!(f, ": {}", inner_19)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InvalidNextTokenError {}
-/// See [`InvalidNextTokenError`](crate::error::InvalidNextTokenError)
-pub mod invalid_next_token_error {
-    /// A builder for [`InvalidNextTokenError`](crate::error::InvalidNextTokenError)
+impl std::error::Error for InvalidNextTokenException {}
+/// See [`InvalidNextTokenException`](crate::error::InvalidNextTokenException)
+pub mod invalid_next_token_exception {
+    /// A builder for [`InvalidNextTokenException`](crate::error::InvalidNextTokenException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -2200,57 +2172,52 @@ pub mod invalid_next_token_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidNextTokenError`](crate::error::InvalidNextTokenError)
-        pub fn build(self) -> crate::error::InvalidNextTokenError {
-            crate::error::InvalidNextTokenError {
+        /// Consumes the builder and constructs a [`InvalidNextTokenException`](crate::error::InvalidNextTokenException)
+        pub fn build(self) -> crate::error::InvalidNextTokenException {
+            crate::error::InvalidNextTokenException {
                 message: self.message,
             }
         }
     }
 }
-impl InvalidNextTokenError {
-    /// Creates a new builder-style object to manufacture [`InvalidNextTokenError`](crate::error::InvalidNextTokenError)
-    pub fn builder() -> crate::error::invalid_next_token_error::Builder {
-        crate::error::invalid_next_token_error::Builder::default()
+impl InvalidNextTokenException {
+    /// Creates a new builder-style object to manufacture [`InvalidNextTokenException`](crate::error::InvalidNextTokenException)
+    pub fn builder() -> crate::error::invalid_next_token_exception::Builder {
+        crate::error::invalid_next_token_exception::Builder::default()
     }
 }
 
 /// <p>The Speech Synthesis task with requested Task ID cannot be found.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct SynthesisTaskNotFoundError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SynthesisTaskNotFoundException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for SynthesisTaskNotFoundError {
+impl std::fmt::Debug for SynthesisTaskNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SynthesisTaskNotFoundError");
+        let mut formatter = f.debug_struct("SynthesisTaskNotFoundException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl SynthesisTaskNotFoundError {
+impl SynthesisTaskNotFoundException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for SynthesisTaskNotFoundError {
+impl std::fmt::Display for SynthesisTaskNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "SynthesisTaskNotFoundError [SynthesisTaskNotFoundException]"
-        )?;
+        write!(f, "SynthesisTaskNotFoundException")?;
         if let Some(inner_20) = &self.message {
             write!(f, ": {}", inner_20)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for SynthesisTaskNotFoundError {}
-/// See [`SynthesisTaskNotFoundError`](crate::error::SynthesisTaskNotFoundError)
-pub mod synthesis_task_not_found_error {
-    /// A builder for [`SynthesisTaskNotFoundError`](crate::error::SynthesisTaskNotFoundError)
+impl std::error::Error for SynthesisTaskNotFoundException {}
+/// See [`SynthesisTaskNotFoundException`](crate::error::SynthesisTaskNotFoundException)
+pub mod synthesis_task_not_found_exception {
+    /// A builder for [`SynthesisTaskNotFoundException`](crate::error::SynthesisTaskNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -2265,54 +2232,52 @@ pub mod synthesis_task_not_found_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`SynthesisTaskNotFoundError`](crate::error::SynthesisTaskNotFoundError)
-        pub fn build(self) -> crate::error::SynthesisTaskNotFoundError {
-            crate::error::SynthesisTaskNotFoundError {
+        /// Consumes the builder and constructs a [`SynthesisTaskNotFoundException`](crate::error::SynthesisTaskNotFoundException)
+        pub fn build(self) -> crate::error::SynthesisTaskNotFoundException {
+            crate::error::SynthesisTaskNotFoundException {
                 message: self.message,
             }
         }
     }
 }
-impl SynthesisTaskNotFoundError {
-    /// Creates a new builder-style object to manufacture [`SynthesisTaskNotFoundError`](crate::error::SynthesisTaskNotFoundError)
-    pub fn builder() -> crate::error::synthesis_task_not_found_error::Builder {
-        crate::error::synthesis_task_not_found_error::Builder::default()
+impl SynthesisTaskNotFoundException {
+    /// Creates a new builder-style object to manufacture [`SynthesisTaskNotFoundException`](crate::error::SynthesisTaskNotFoundException)
+    pub fn builder() -> crate::error::synthesis_task_not_found_exception::Builder {
+        crate::error::synthesis_task_not_found_exception::Builder::default()
     }
 }
 
 /// <p>The provided Task ID is not valid. Please provide a valid Task ID and try again.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidTaskIdError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InvalidTaskIdException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidTaskIdError {
+impl std::fmt::Debug for InvalidTaskIdException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidTaskIdError");
+        let mut formatter = f.debug_struct("InvalidTaskIdException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl InvalidTaskIdError {
+impl InvalidTaskIdException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InvalidTaskIdError {
+impl std::fmt::Display for InvalidTaskIdException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidTaskIdError [InvalidTaskIdException]")?;
+        write!(f, "InvalidTaskIdException")?;
         if let Some(inner_21) = &self.message {
             write!(f, ": {}", inner_21)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InvalidTaskIdError {}
-/// See [`InvalidTaskIdError`](crate::error::InvalidTaskIdError)
-pub mod invalid_task_id_error {
-    /// A builder for [`InvalidTaskIdError`](crate::error::InvalidTaskIdError)
+impl std::error::Error for InvalidTaskIdException {}
+/// See [`InvalidTaskIdException`](crate::error::InvalidTaskIdException)
+pub mod invalid_task_id_exception {
+    /// A builder for [`InvalidTaskIdException`](crate::error::InvalidTaskIdException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -2327,17 +2292,17 @@ pub mod invalid_task_id_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidTaskIdError`](crate::error::InvalidTaskIdError)
-        pub fn build(self) -> crate::error::InvalidTaskIdError {
-            crate::error::InvalidTaskIdError {
+        /// Consumes the builder and constructs a [`InvalidTaskIdException`](crate::error::InvalidTaskIdException)
+        pub fn build(self) -> crate::error::InvalidTaskIdException {
+            crate::error::InvalidTaskIdException {
                 message: self.message,
             }
         }
     }
 }
-impl InvalidTaskIdError {
-    /// Creates a new builder-style object to manufacture [`InvalidTaskIdError`](crate::error::InvalidTaskIdError)
-    pub fn builder() -> crate::error::invalid_task_id_error::Builder {
-        crate::error::invalid_task_id_error::Builder::default()
+impl InvalidTaskIdException {
+    /// Creates a new builder-style object to manufacture [`InvalidTaskIdException`](crate::error::InvalidTaskIdException)
+    pub fn builder() -> crate::error::invalid_task_id_exception::Builder {
+        crate::error::invalid_task_id_exception::Builder::default()
     }
 }

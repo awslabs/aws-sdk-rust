@@ -80,7 +80,7 @@ pub fn ser_payload_put_bucket_analytics_configuration_input(
 }
 
 pub fn ser_payload_put_bucket_cors_input(
-    payload: &std::option::Option<crate::model::CORSConfiguration>,
+    payload: &std::option::Option<crate::model::CorsConfiguration>,
 ) -> std::result::Result<smithy_http::body::SdkBody, smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,

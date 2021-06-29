@@ -6,10 +6,12 @@
 use crate::deserialize::error::{Error, ErrorReason};
 use crate::escape::unescape_string;
 use smithy_types::instant::Format;
-use smithy_types::{base64, Blob, Instant, Number};
+use smithy_types::{base64, Blob, Document, Instant, Number};
 use std::borrow::Cow;
 
 pub use crate::escape::Error as EscapeError;
+use std::collections::HashMap;
+use std::iter::Peekable;
 
 /// New-type around `&str` that indicates the string is an escaped JSON string.
 /// Provides functions for retrieving the string in either form.
@@ -28,7 +30,7 @@ impl<'a> EscapedStr<'a> {
 
     /// Unescapes the string and returns it.
     /// If the string doesn't need unescaping, it will be returned directly.
-    pub fn to_unescaped(&self) -> Result<Cow<'a, str>, EscapeError> {
+    pub fn to_unescaped(self) -> Result<Cow<'a, str>, EscapeError> {
         unescape_string(self.0)
     }
 }
@@ -152,16 +154,6 @@ expect_value_or_null_fn!(expect_bool_or_null, ValueBool, bool, "Expects a [Token
 expect_value_or_null_fn!(expect_number_or_null, ValueNumber, Number, "Expects a [Token::ValueNumber] or [Token::ValueNull], and returns the [Number] value if it's not null.");
 expect_value_or_null_fn!(expect_string_or_null, ValueString, EscapedStr, "Expects a [Token::ValueString] or [Token::ValueNull], and returns the [EscapedStr] value if it's not null.");
 
-/// Expects a [Token::ValueString] or [Token::ValueNull]. If the value is a string, its **unescaped** value will be returned.
-pub fn expect_unescaped_string_or_null(
-    token: Option<Result<Token<'_>, Error>>,
-) -> Result<Option<String>, Error> {
-    Ok(match expect_string_or_null(token)? {
-        Some(value) => Some(value.to_unescaped()?.to_string()),
-        None => None,
-    })
-}
-
 /// Expects a [Token::ValueString] or [Token::ValueNull]. If the value is a string, it interprets it as a base64 encoded [Blob] value.
 pub fn expect_blob_or_null(token: Option<Result<Token<'_>, Error>>) -> Result<Option<Blob>, Error> {
     Ok(match expect_string_or_null(token)? {
@@ -198,6 +190,68 @@ pub fn expect_timestamp_or_null(
                 )
             })?,
     })
+}
+
+/// Expects and parses a complete document value.
+pub fn expect_document<'a, I>(tokens: &mut Peekable<I>) -> Result<Document, Error>
+where
+    I: Iterator<Item = Result<Token<'a>, Error>>,
+{
+    expect_document_inner(tokens, 0)
+}
+
+const MAX_DOCUMENT_RECURSION: usize = 256;
+
+fn expect_document_inner<'a, I>(tokens: &mut Peekable<I>, depth: usize) -> Result<Document, Error>
+where
+    I: Iterator<Item = Result<Token<'a>, Error>>,
+{
+    if depth >= MAX_DOCUMENT_RECURSION {
+        return Err(Error::custom(
+            "exceeded max recursion depth while parsing document",
+        ));
+    }
+    match tokens.next().transpose()? {
+        Some(Token::ValueNull { .. }) => Ok(Document::Null),
+        Some(Token::ValueBool { value, .. }) => Ok(Document::Bool(value)),
+        Some(Token::ValueNumber { value, .. }) => Ok(Document::Number(value)),
+        Some(Token::ValueString { value, .. }) => {
+            Ok(Document::String(value.to_unescaped()?.into_owned()))
+        }
+        Some(Token::StartObject { .. }) => {
+            let mut object = HashMap::new();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(Token::EndObject { .. }) => break,
+                    Some(Token::ObjectKey { key, .. }) => {
+                        let key = key.to_unescaped()?.into_owned();
+                        let value = expect_document_inner(tokens, depth + 1)?;
+                        object.insert(key, value);
+                    }
+                    _ => return Err(Error::custom("expected object key or end object")),
+                }
+            }
+            Ok(Document::Object(object))
+        }
+        Some(Token::StartArray { .. }) => {
+            let mut array = Vec::new();
+            loop {
+                match tokens.peek() {
+                    Some(Ok(Token::EndArray { .. })) => {
+                        tokens.next().transpose().unwrap();
+                        break;
+                    }
+                    _ => array.push(expect_document_inner(tokens, depth + 1)?),
+                }
+            }
+            Ok(Document::Array(array))
+        }
+        Some(Token::EndObject { .. }) | Some(Token::ObjectKey { .. }) => {
+            unreachable!("end object and object key are handled in start object")
+        }
+        Some(Token::EndArray { .. }) => unreachable!("end array is handled in start array"),
+        None => Err(Error::custom("expected value")),
+    }
 }
 
 /// Skips an entire value in the token stream. Errors if it isn't a value.
@@ -405,19 +459,6 @@ pub mod test {
     }
 
     #[test]
-    fn test_expect_unescaped_string_or_null() {
-        assert_eq!(Ok(None), expect_unescaped_string_or_null(value_null(0)));
-        assert_eq!(
-            Ok(Some("test\n".to_string())),
-            expect_unescaped_string_or_null(value_string(0, "test\\n"))
-        );
-        assert_eq!(
-            Err(Error::custom("expected ValueString or ValueNull")),
-            expect_unescaped_string_or_null(value_bool(0, true))
-        );
-    }
-
-    #[test]
     fn test_expect_number_or_null() {
         assert_eq!(Ok(None), expect_number_or_null(value_null(0)));
         assert_eq!(
@@ -471,6 +512,96 @@ pub mod test {
         assert_eq!(
             Err(Error::custom("expected ValueString or ValueNull")),
             expect_timestamp_or_null(value_number(0, Number::Float(0.0)), Format::DateTime)
+        );
+    }
+
+    #[test]
+    fn test_expect_document() {
+        let test = |value| expect_document(&mut json_token_iter(value).peekable()).unwrap();
+        assert_eq!(Document::Null, test(b"null"));
+        assert_eq!(Document::Bool(true), test(b"true"));
+        assert_eq!(Document::Number(Number::Float(3.2)), test(b"3.2"));
+        assert_eq!(Document::String("Foo\nBar".into()), test(b"\"Foo\\nBar\""));
+        assert_eq!(Document::Array(Vec::new()), test(b"[]"));
+        assert_eq!(Document::Object(HashMap::new()), test(b"{}"));
+        assert_eq!(
+            Document::Array(vec![
+                Document::Number(Number::PosInt(1)),
+                Document::Bool(false),
+                Document::String("s".into()),
+                Document::Array(Vec::new()),
+                Document::Object(HashMap::new()),
+            ]),
+            test(b"[1,false,\"s\",[],{}]")
+        );
+        assert_eq!(
+            Document::Object(
+                vec![
+                    ("num".to_string(), Document::Number(Number::PosInt(1))),
+                    ("bool".to_string(), Document::Bool(true)),
+                    ("string".to_string(), Document::String("s".into())),
+                    (
+                        "array".to_string(),
+                        Document::Array(vec![
+                            Document::Object(
+                                vec![("foo".to_string(), Document::Bool(false))]
+                                    .into_iter()
+                                    .collect(),
+                            ),
+                            Document::Object(
+                                vec![("bar".to_string(), Document::Bool(true))]
+                                    .into_iter()
+                                    .collect(),
+                            ),
+                        ])
+                    ),
+                    (
+                        "nested".to_string(),
+                        Document::Object(
+                            vec![("test".to_string(), Document::Null),]
+                                .into_iter()
+                                .collect()
+                        )
+                    ),
+                ]
+                .into_iter()
+                .collect()
+            ),
+            test(
+                br#"
+                { "num": 1,
+                  "bool": true,
+                  "string": "s",
+                  "array":
+                      [{ "foo": false },
+                       { "bar": true }],
+                  "nested": { "test": null } }
+                "#
+            )
+        );
+    }
+
+    #[test]
+    fn test_document_recursion_limit() {
+        let mut value = String::new();
+        value.extend(std::iter::repeat('[').take(300));
+        value.extend(std::iter::repeat(']').take(300));
+        assert_eq!(
+            Err(Error::custom(
+                "exceeded max recursion depth while parsing document"
+            )),
+            expect_document(&mut json_token_iter(value.as_bytes()).peekable())
+        );
+
+        value = String::new();
+        value.extend(std::iter::repeat("{\"t\":").take(300));
+        value.push('1');
+        value.extend(std::iter::repeat('}').take(300));
+        assert_eq!(
+            Err(Error::custom(
+                "exceeded max recursion depth while parsing document"
+            )),
+            expect_document(&mut json_token_iter(value.as_bytes()).peekable())
         );
     }
 }

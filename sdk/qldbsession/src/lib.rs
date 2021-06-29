@@ -3,6 +3,7 @@
 #![allow(clippy::large_enum_variant)]
 #![allow(clippy::wrong_self_convention)]
 #![allow(clippy::should_implement_trait)]
+#![allow(clippy::blacklisted_name)]
 //! <p>The transactional data APIs for Amazon QLDB</p>
 //! <note>
 //! <p>Instead of interacting directly with this API, we recommend using the QLDB driver
@@ -31,8 +32,6 @@ pub use error_meta::Error;
 pub use config::Config;
 
 mod aws_endpoint;
-mod aws_json_errors;
-mod blob_serde;
 #[cfg(feature = "client")]
 pub mod client;
 pub mod config;
@@ -40,13 +39,13 @@ pub mod error;
 mod error_meta;
 pub mod input;
 mod json_deser;
+mod json_errors;
 mod json_ser;
 pub mod model;
 pub mod operation;
+mod operation_deser;
 mod operation_ser;
 pub mod output;
-mod serde_util;
-mod serializer;
 pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");
 pub use smithy_http::byte_stream::ByteStream;
 pub use smithy_http::result::SdkError;

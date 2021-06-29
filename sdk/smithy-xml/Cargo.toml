@@ -5,7 +5,7 @@ authors = ["AWS Rust SDK Team <aws-sdk-rust@amazon.com>", "Russell Cohen <rcoh@a
 edition = "2018"
 
 [dependencies]
-xmlparser = "0.13.3"
+xmlparser = "=0.13.3"
 thiserror = "1"
 
 [dev-dependencies]

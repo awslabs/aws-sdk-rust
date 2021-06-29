@@ -10088,7 +10088,7 @@ pub struct EnableVolumeIO {
     _private: (),
 }
 impl EnableVolumeIO {
-    /// Creates a new builder-style object to manufacture [`EnableVolumeIOInput`](crate::input::EnableVolumeIOInput)
+    /// Creates a new builder-style object to manufacture [`EnableVolumeIoInput`](crate::input::EnableVolumeIoInput)
     pub fn builder() -> crate::input::enable_volume_io_input::Builder {
         crate::input::enable_volume_io_input::Builder::default()
     }
@@ -10098,7 +10098,7 @@ impl EnableVolumeIO {
 }
 impl smithy_http::response::ParseStrictResponse for EnableVolumeIO {
     type Output =
-        std::result::Result<crate::output::EnableVolumeIOOutput, crate::error::EnableVolumeIOError>;
+        std::result::Result<crate::output::EnableVolumeIoOutput, crate::error::EnableVolumeIOError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_enable_volume_io_error(response)

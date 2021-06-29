@@ -137,7 +137,7 @@ impl std::convert::From<&str> for ByoipCidrState {
 impl std::str::FromStr for ByoipCidrState {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ByoipCidrState::from(s))
     }
 }
@@ -161,15 +161,6 @@ impl ByoipCidrState {
 impl AsRef<str> for ByoipCidrState {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ByoipCidrState {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -855,7 +846,7 @@ impl std::convert::From<&str> for MonitoringState {
 impl std::str::FromStr for MonitoringState {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(MonitoringState::from(s))
     }
 }
@@ -873,15 +864,6 @@ impl MonitoringState {
 impl AsRef<str> for MonitoringState {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for MonitoringState {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -1148,7 +1130,7 @@ impl std::convert::From<&str> for InstanceStateName {
 impl std::str::FromStr for InstanceStateName {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(InstanceStateName::from(s))
     }
 }
@@ -1168,15 +1150,6 @@ impl InstanceStateName {
 impl AsRef<str> for InstanceStateName {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for InstanceStateName {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -1360,7 +1333,7 @@ impl std::convert::From<&str> for ClientVpnConnectionStatusCode {
 impl std::str::FromStr for ClientVpnConnectionStatusCode {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ClientVpnConnectionStatusCode::from(s))
     }
 }
@@ -1378,15 +1351,6 @@ impl ClientVpnConnectionStatusCode {
 impl AsRef<str> for ClientVpnConnectionStatusCode {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ClientVpnConnectionStatusCode {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -3789,7 +3753,7 @@ impl std::convert::From<&str> for AnalysisStatus {
 impl std::str::FromStr for AnalysisStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(AnalysisStatus::from(s))
     }
 }
@@ -3806,15 +3770,6 @@ impl AnalysisStatus {
 impl AsRef<str> for AnalysisStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for AnalysisStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -4046,7 +4001,7 @@ impl std::convert::From<&str> for ResourceType {
 impl std::str::FromStr for ResourceType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ResourceType::from(s))
     }
 }
@@ -4109,15 +4064,6 @@ impl ResourceType {
 impl AsRef<str> for ResourceType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ResourceType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -4282,7 +4228,7 @@ impl std::convert::From<&str> for TransitGatewayRouteState {
 impl std::str::FromStr for TransitGatewayRouteState {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(TransitGatewayRouteState::from(s))
     }
 }
@@ -4301,15 +4247,6 @@ impl TransitGatewayRouteState {
 impl AsRef<str> for TransitGatewayRouteState {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for TransitGatewayRouteState {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -4341,7 +4278,7 @@ impl std::convert::From<&str> for TransitGatewayRouteType {
 impl std::str::FromStr for TransitGatewayRouteType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(TransitGatewayRouteType::from(s))
     }
 }
@@ -4357,15 +4294,6 @@ impl TransitGatewayRouteType {
 impl AsRef<str> for TransitGatewayRouteType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for TransitGatewayRouteType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -4496,7 +4424,7 @@ impl std::convert::From<&str> for TransitGatewayAttachmentResourceType {
 impl std::str::FromStr for TransitGatewayAttachmentResourceType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(TransitGatewayAttachmentResourceType::from(s))
     }
 }
@@ -4516,15 +4444,6 @@ impl TransitGatewayAttachmentResourceType {
 impl AsRef<str> for TransitGatewayAttachmentResourceType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for TransitGatewayAttachmentResourceType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -4840,7 +4759,7 @@ impl std::convert::From<&str> for MembershipType {
 impl std::str::FromStr for MembershipType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(MembershipType::from(s))
     }
 }
@@ -4856,15 +4775,6 @@ impl MembershipType {
 impl AsRef<str> for MembershipType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for MembershipType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -5071,7 +4981,7 @@ impl std::convert::From<&str> for LocalGatewayRouteState {
 impl std::str::FromStr for LocalGatewayRouteState {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(LocalGatewayRouteState::from(s))
     }
 }
@@ -5090,15 +5000,6 @@ impl LocalGatewayRouteState {
 impl AsRef<str> for LocalGatewayRouteState {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for LocalGatewayRouteState {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -5130,7 +5031,7 @@ impl std::convert::From<&str> for LocalGatewayRouteType {
 impl std::str::FromStr for LocalGatewayRouteType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(LocalGatewayRouteType::from(s))
     }
 }
@@ -5146,15 +5047,6 @@ impl LocalGatewayRouteType {
 impl AsRef<str> for LocalGatewayRouteType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for LocalGatewayRouteType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -7165,7 +7057,7 @@ impl std::convert::From<&str> for BootModeValues {
 impl std::str::FromStr for BootModeValues {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(BootModeValues::from(s))
     }
 }
@@ -7181,15 +7073,6 @@ impl BootModeValues {
 impl AsRef<str> for BootModeValues {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for BootModeValues {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -7419,7 +7302,7 @@ impl std::convert::From<&str> for InstanceMetadataEndpointState {
 impl std::str::FromStr for InstanceMetadataEndpointState {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(InstanceMetadataEndpointState::from(s))
     }
 }
@@ -7435,15 +7318,6 @@ impl InstanceMetadataEndpointState {
 impl AsRef<str> for InstanceMetadataEndpointState {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for InstanceMetadataEndpointState {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -7475,7 +7349,7 @@ impl std::convert::From<&str> for HttpTokensState {
 impl std::str::FromStr for HttpTokensState {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(HttpTokensState::from(s))
     }
 }
@@ -7491,15 +7365,6 @@ impl HttpTokensState {
 impl AsRef<str> for HttpTokensState {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for HttpTokensState {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -7531,7 +7396,7 @@ impl std::convert::From<&str> for InstanceMetadataOptionsState {
 impl std::str::FromStr for InstanceMetadataOptionsState {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(InstanceMetadataOptionsState::from(s))
     }
 }
@@ -7547,15 +7412,6 @@ impl InstanceMetadataOptionsState {
 impl AsRef<str> for InstanceMetadataOptionsState {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for InstanceMetadataOptionsState {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -7877,7 +7733,7 @@ impl std::convert::From<&str> for CapacityReservationPreference {
 impl std::str::FromStr for CapacityReservationPreference {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(CapacityReservationPreference::from(s))
     }
 }
@@ -7893,15 +7749,6 @@ impl CapacityReservationPreference {
 impl AsRef<str> for CapacityReservationPreference {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for CapacityReservationPreference {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -7994,7 +7841,7 @@ impl std::convert::From<&str> for VirtualizationType {
 impl std::str::FromStr for VirtualizationType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(VirtualizationType::from(s))
     }
 }
@@ -8010,15 +7857,6 @@ impl VirtualizationType {
 impl AsRef<str> for VirtualizationType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for VirtualizationType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -8306,7 +8144,7 @@ impl std::convert::From<&str> for DeviceType {
 impl std::str::FromStr for DeviceType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(DeviceType::from(s))
     }
 }
@@ -8322,15 +8160,6 @@ impl DeviceType {
 impl AsRef<str> for DeviceType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for DeviceType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -8681,7 +8510,7 @@ impl std::convert::From<&str> for NetworkInterfaceStatus {
 impl std::str::FromStr for NetworkInterfaceStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(NetworkInterfaceStatus::from(s))
     }
 }
@@ -8700,15 +8529,6 @@ impl NetworkInterfaceStatus {
 impl AsRef<str> for NetworkInterfaceStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for NetworkInterfaceStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -9111,7 +8931,7 @@ impl std::convert::From<&str> for AttachmentStatus {
 impl std::str::FromStr for AttachmentStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(AttachmentStatus::from(s))
     }
 }
@@ -9129,15 +8949,6 @@ impl AttachmentStatus {
 impl AsRef<str> for AttachmentStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for AttachmentStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -9436,7 +9247,7 @@ impl std::convert::From<&str> for InstanceLifecycleType {
 impl std::str::FromStr for InstanceLifecycleType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(InstanceLifecycleType::from(s))
     }
 }
@@ -9452,15 +9263,6 @@ impl InstanceLifecycleType {
 impl AsRef<str> for InstanceLifecycleType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for InstanceLifecycleType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -9553,7 +9355,7 @@ impl std::convert::From<&str> for HypervisorType {
 impl std::str::FromStr for HypervisorType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(HypervisorType::from(s))
     }
 }
@@ -9569,15 +9371,6 @@ impl HypervisorType {
 impl AsRef<str> for HypervisorType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for HypervisorType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -9772,7 +9565,7 @@ impl std::convert::From<&str> for ArchitectureValues {
 impl std::str::FromStr for ArchitectureValues {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ArchitectureValues::from(s))
     }
 }
@@ -9789,15 +9582,6 @@ impl ArchitectureValues {
 impl AsRef<str> for ArchitectureValues {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ArchitectureValues {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -9896,7 +9680,7 @@ impl std::convert::From<&str> for ProductCodeValues {
 impl std::str::FromStr for ProductCodeValues {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ProductCodeValues::from(s))
     }
 }
@@ -9912,15 +9696,6 @@ impl ProductCodeValues {
 impl AsRef<str> for ProductCodeValues {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ProductCodeValues {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -9950,7 +9725,7 @@ impl std::convert::From<&str> for PlatformValues {
 impl std::str::FromStr for PlatformValues {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(PlatformValues::from(s))
     }
 }
@@ -9965,15 +9740,6 @@ impl PlatformValues {
 impl AsRef<str> for PlatformValues {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for PlatformValues {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -10193,7 +9959,7 @@ impl std::convert::From<&str> for Tenancy {
 impl std::str::FromStr for Tenancy {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(Tenancy::from(s))
     }
 }
@@ -10210,15 +9976,6 @@ impl Tenancy {
 impl AsRef<str> for Tenancy {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for Tenancy {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -11050,7 +10807,7 @@ impl std::convert::From<&str> for InstanceType {
 impl std::str::FromStr for InstanceType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(InstanceType::from(s))
     }
 }
@@ -11466,15 +11223,6 @@ impl InstanceType {
 impl AsRef<str> for InstanceType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for InstanceType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -12326,7 +12074,7 @@ impl std::convert::From<&str> for InstanceInterruptionBehavior {
 impl std::str::FromStr for InstanceInterruptionBehavior {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(InstanceInterruptionBehavior::from(s))
     }
 }
@@ -12343,15 +12091,6 @@ impl InstanceInterruptionBehavior {
 impl AsRef<str> for InstanceInterruptionBehavior {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for InstanceInterruptionBehavior {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -12383,7 +12122,7 @@ impl std::convert::From<&str> for SpotInstanceType {
 impl std::str::FromStr for SpotInstanceType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(SpotInstanceType::from(s))
     }
 }
@@ -12399,15 +12138,6 @@ impl SpotInstanceType {
 impl AsRef<str> for SpotInstanceType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for SpotInstanceType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -12437,7 +12167,7 @@ impl std::convert::From<&str> for MarketType {
 impl std::str::FromStr for MarketType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(MarketType::from(s))
     }
 }
@@ -12452,15 +12182,6 @@ impl MarketType {
 impl AsRef<str> for MarketType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for MarketType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -13106,7 +12827,7 @@ impl std::convert::From<&str> for ShutdownBehavior {
 impl std::str::FromStr for ShutdownBehavior {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ShutdownBehavior::from(s))
     }
 }
@@ -13122,15 +12843,6 @@ impl ShutdownBehavior {
 impl AsRef<str> for ShutdownBehavior {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ShutdownBehavior {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -13681,7 +13393,7 @@ impl std::convert::From<&str> for VolumeType {
 impl std::str::FromStr for VolumeType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(VolumeType::from(s))
     }
 }
@@ -13702,15 +13414,6 @@ impl VolumeType {
 impl AsRef<str> for VolumeType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for VolumeType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -13810,7 +13513,7 @@ impl std::convert::From<&str> for ClientVpnAuthorizationRuleStatusCode {
 impl std::str::FromStr for ClientVpnAuthorizationRuleStatusCode {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ClientVpnAuthorizationRuleStatusCode::from(s))
     }
 }
@@ -13828,15 +13531,6 @@ impl ClientVpnAuthorizationRuleStatusCode {
 impl AsRef<str> for ClientVpnAuthorizationRuleStatusCode {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ClientVpnAuthorizationRuleStatusCode {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -14083,7 +13777,7 @@ impl std::convert::From<&str> for PrefixListState {
 impl std::str::FromStr for PrefixListState {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(PrefixListState::from(s))
     }
 }
@@ -14109,15 +13803,6 @@ impl PrefixListState {
 impl AsRef<str> for PrefixListState {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for PrefixListState {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -14151,7 +13836,7 @@ impl std::convert::From<&str> for Status {
 impl std::str::FromStr for Status {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(Status::from(s))
     }
 }
@@ -14168,15 +13853,6 @@ impl Status {
 impl AsRef<str> for Status {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for Status {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -14208,7 +13884,7 @@ impl std::convert::From<&str> for SnapshotAttributeName {
 impl std::str::FromStr for SnapshotAttributeName {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(SnapshotAttributeName::from(s))
     }
 }
@@ -14224,15 +13900,6 @@ impl SnapshotAttributeName {
 impl AsRef<str> for SnapshotAttributeName {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for SnapshotAttributeName {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -14292,7 +13959,7 @@ impl std::convert::From<&str> for InstanceAttributeName {
 impl std::str::FromStr for InstanceAttributeName {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(InstanceAttributeName::from(s))
     }
 }
@@ -14325,15 +13992,6 @@ impl AsRef<str> for InstanceAttributeName {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for InstanceAttributeName {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 #[non_exhaustive]
 #[derive(
@@ -14361,7 +14019,7 @@ impl std::convert::From<&str> for ResetImageAttributeName {
 impl std::str::FromStr for ResetImageAttributeName {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ResetImageAttributeName::from(s))
     }
 }
@@ -14376,15 +14034,6 @@ impl ResetImageAttributeName {
 impl AsRef<str> for ResetImageAttributeName {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ResetImageAttributeName {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -14414,7 +14063,7 @@ impl std::convert::From<&str> for ResetFpgaImageAttributeName {
 impl std::str::FromStr for ResetFpgaImageAttributeName {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ResetFpgaImageAttributeName::from(s))
     }
 }
@@ -14429,15 +14078,6 @@ impl ResetFpgaImageAttributeName {
 impl AsRef<str> for ResetFpgaImageAttributeName {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ResetFpgaImageAttributeName {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -14637,7 +14277,7 @@ impl std::convert::From<&str> for AddressAttributeName {
 impl std::str::FromStr for AddressAttributeName {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(AddressAttributeName::from(s))
     }
 }
@@ -14652,15 +14292,6 @@ impl AddressAttributeName {
 impl AsRef<str> for AddressAttributeName {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for AddressAttributeName {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -15163,7 +14794,7 @@ impl std::convert::From<&str> for SpotInstanceState {
 impl std::str::FromStr for SpotInstanceState {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(SpotInstanceState::from(s))
     }
 }
@@ -15182,15 +14813,6 @@ impl SpotInstanceState {
 impl AsRef<str> for SpotInstanceState {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for SpotInstanceState {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -15224,15 +14846,6 @@ where
 {
     fn from(s: T) -> Self {
         RiProductDescription(s.as_ref().to_owned())
-    }
-}
-impl<'de> serde::Deserialize<'de> for RiProductDescription {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -16914,7 +16527,7 @@ impl std::convert::From<&str> for FleetType {
 impl std::str::FromStr for FleetType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(FleetType::from(s))
     }
 }
@@ -16931,15 +16544,6 @@ impl FleetType {
 impl AsRef<str> for FleetType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for FleetType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -17772,7 +17376,7 @@ impl std::convert::From<&str> for ExcessCapacityTerminationPolicy {
 impl std::str::FromStr for ExcessCapacityTerminationPolicy {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ExcessCapacityTerminationPolicy::from(s))
     }
 }
@@ -17788,15 +17392,6 @@ impl ExcessCapacityTerminationPolicy {
 impl AsRef<str> for ExcessCapacityTerminationPolicy {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ExcessCapacityTerminationPolicy {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -17949,7 +17544,7 @@ impl std::convert::From<&str> for ReplacementStrategy {
 impl std::str::FromStr for ReplacementStrategy {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ReplacementStrategy::from(s))
     }
 }
@@ -17964,15 +17559,6 @@ impl ReplacementStrategy {
 impl AsRef<str> for ReplacementStrategy {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ReplacementStrategy {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -18004,7 +17590,7 @@ impl std::convert::From<&str> for OnDemandAllocationStrategy {
 impl std::str::FromStr for OnDemandAllocationStrategy {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(OnDemandAllocationStrategy::from(s))
     }
 }
@@ -18020,15 +17606,6 @@ impl OnDemandAllocationStrategy {
 impl AsRef<str> for OnDemandAllocationStrategy {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for OnDemandAllocationStrategy {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -18064,7 +17641,7 @@ impl std::convert::From<&str> for AllocationStrategy {
 impl std::str::FromStr for AllocationStrategy {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(AllocationStrategy::from(s))
     }
 }
@@ -18082,15 +17659,6 @@ impl AllocationStrategy {
 impl AsRef<str> for AllocationStrategy {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for AllocationStrategy {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -18122,7 +17690,7 @@ impl std::convert::From<&str> for ReportStatusType {
 impl std::str::FromStr for ReportStatusType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ReportStatusType::from(s))
     }
 }
@@ -18138,15 +17706,6 @@ impl ReportStatusType {
 impl AsRef<str> for ReportStatusType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ReportStatusType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -18192,7 +17751,7 @@ impl std::convert::From<&str> for ReportInstanceReasonCodes {
 impl std::str::FromStr for ReportInstanceReasonCodes {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ReportInstanceReasonCodes::from(s))
     }
 }
@@ -18215,15 +17774,6 @@ impl ReportInstanceReasonCodes {
 impl AsRef<str> for ReportInstanceReasonCodes {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ReportInstanceReasonCodes {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -18328,7 +17878,7 @@ impl std::convert::From<&str> for RouteTableAssociationStateCode {
 impl std::str::FromStr for RouteTableAssociationStateCode {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(RouteTableAssociationStateCode::from(s))
     }
 }
@@ -18347,15 +17897,6 @@ impl RouteTableAssociationStateCode {
 impl AsRef<str> for RouteTableAssociationStateCode {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for RouteTableAssociationStateCode {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -18387,7 +17928,7 @@ impl std::convert::From<&str> for RuleAction {
 impl std::str::FromStr for RuleAction {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(RuleAction::from(s))
     }
 }
@@ -18403,15 +17944,6 @@ impl RuleAction {
 impl AsRef<str> for RuleAction {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for RuleAction {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -18620,7 +18152,7 @@ impl std::convert::From<&str> for IamInstanceProfileAssociationState {
 impl std::str::FromStr for IamInstanceProfileAssociationState {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(IamInstanceProfileAssociationState::from(s))
     }
 }
@@ -18638,15 +18170,6 @@ impl IamInstanceProfileAssociationState {
 impl AsRef<str> for IamInstanceProfileAssociationState {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for IamInstanceProfileAssociationState {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -19079,7 +18602,7 @@ impl std::convert::From<&str> for ApplianceModeSupportValue {
 impl std::str::FromStr for ApplianceModeSupportValue {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ApplianceModeSupportValue::from(s))
     }
 }
@@ -19095,15 +18618,6 @@ impl ApplianceModeSupportValue {
 impl AsRef<str> for ApplianceModeSupportValue {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ApplianceModeSupportValue {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -19135,7 +18649,7 @@ impl std::convert::From<&str> for Ipv6SupportValue {
 impl std::str::FromStr for Ipv6SupportValue {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(Ipv6SupportValue::from(s))
     }
 }
@@ -19151,15 +18665,6 @@ impl Ipv6SupportValue {
 impl AsRef<str> for Ipv6SupportValue {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for Ipv6SupportValue {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -19191,7 +18696,7 @@ impl std::convert::From<&str> for DnsSupportValue {
 impl std::str::FromStr for DnsSupportValue {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(DnsSupportValue::from(s))
     }
 }
@@ -19207,15 +18712,6 @@ impl DnsSupportValue {
 impl AsRef<str> for DnsSupportValue {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for DnsSupportValue {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -19269,7 +18765,7 @@ impl std::convert::From<&str> for TransitGatewayAttachmentState {
 impl std::str::FromStr for TransitGatewayAttachmentState {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(TransitGatewayAttachmentState::from(s))
     }
 }
@@ -19296,15 +18792,6 @@ impl TransitGatewayAttachmentState {
 impl AsRef<str> for TransitGatewayAttachmentState {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for TransitGatewayAttachmentState {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -19861,7 +19348,7 @@ impl std::convert::From<&str> for TransitGatewayMulitcastDomainAssociationState 
 impl std::str::FromStr for TransitGatewayMulitcastDomainAssociationState {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(TransitGatewayMulitcastDomainAssociationState::from(s))
     }
 }
@@ -19882,15 +19369,6 @@ impl TransitGatewayMulitcastDomainAssociationState {
 impl AsRef<str> for TransitGatewayMulitcastDomainAssociationState {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for TransitGatewayMulitcastDomainAssociationState {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -20788,7 +20266,7 @@ impl std::convert::From<&str> for CurrencyCodeValues {
 impl std::str::FromStr for CurrencyCodeValues {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(CurrencyCodeValues::from(s))
     }
 }
@@ -20803,15 +20281,6 @@ impl CurrencyCodeValues {
 impl AsRef<str> for CurrencyCodeValues {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for CurrencyCodeValues {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -21015,7 +20484,7 @@ impl std::convert::From<&str> for PaymentOption {
 impl std::str::FromStr for PaymentOption {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(PaymentOption::from(s))
     }
 }
@@ -21032,15 +20501,6 @@ impl PaymentOption {
 impl AsRef<str> for PaymentOption {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for PaymentOption {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -21511,7 +20971,7 @@ impl std::convert::From<&str> for TelemetryStatus {
 impl std::str::FromStr for TelemetryStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(TelemetryStatus::from(s))
     }
 }
@@ -21527,15 +20987,6 @@ impl TelemetryStatus {
 impl AsRef<str> for TelemetryStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for TelemetryStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -21652,7 +21103,7 @@ impl std::convert::From<&str> for VpnState {
 impl std::str::FromStr for VpnState {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(VpnState::from(s))
     }
 }
@@ -21670,15 +21121,6 @@ impl VpnState {
 impl AsRef<str> for VpnState {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for VpnState {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -21708,7 +21150,7 @@ impl std::convert::From<&str> for VpnStaticRouteSource {
 impl std::str::FromStr for VpnStaticRouteSource {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(VpnStaticRouteSource::from(s))
     }
 }
@@ -21723,15 +21165,6 @@ impl VpnStaticRouteSource {
 impl AsRef<str> for VpnStaticRouteSource {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for VpnStaticRouteSource {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -21944,12 +21377,12 @@ pub struct TunnelOption {
         std::option::Option<std::vec::Vec<crate::model::Phase2IntegrityAlgorithmsListValue>>,
     /// <p>The permitted Diffie-Hellman group numbers for the VPN tunnel for phase 1 IKE negotiations.</p>
     pub phase1_dh_group_numbers:
-        std::option::Option<std::vec::Vec<crate::model::Phase1DHGroupNumbersListValue>>,
+        std::option::Option<std::vec::Vec<crate::model::Phase1DhGroupNumbersListValue>>,
     /// <p>The permitted Diffie-Hellman group numbers for the VPN tunnel for phase 2 IKE negotiations.</p>
     pub phase2_dh_group_numbers:
-        std::option::Option<std::vec::Vec<crate::model::Phase2DHGroupNumbersListValue>>,
+        std::option::Option<std::vec::Vec<crate::model::Phase2DhGroupNumbersListValue>>,
     /// <p>The IKE versions that are permitted for the VPN tunnel.</p>
-    pub ike_versions: std::option::Option<std::vec::Vec<crate::model::IKEVersionsListValue>>,
+    pub ike_versions: std::option::Option<std::vec::Vec<crate::model::IkeVersionsListValue>>,
     /// <p>The action to take when the establishing the VPN tunnels for a VPN connection.</p>
     pub startup_action: std::option::Option<std::string::String>,
 }
@@ -22016,11 +21449,11 @@ pub mod tunnel_option {
         pub(crate) phase2_integrity_algorithms:
             std::option::Option<std::vec::Vec<crate::model::Phase2IntegrityAlgorithmsListValue>>,
         pub(crate) phase1_dh_group_numbers:
-            std::option::Option<std::vec::Vec<crate::model::Phase1DHGroupNumbersListValue>>,
+            std::option::Option<std::vec::Vec<crate::model::Phase1DhGroupNumbersListValue>>,
         pub(crate) phase2_dh_group_numbers:
-            std::option::Option<std::vec::Vec<crate::model::Phase2DHGroupNumbersListValue>>,
+            std::option::Option<std::vec::Vec<crate::model::Phase2DhGroupNumbersListValue>>,
         pub(crate) ike_versions:
-            std::option::Option<std::vec::Vec<crate::model::IKEVersionsListValue>>,
+            std::option::Option<std::vec::Vec<crate::model::IkeVersionsListValue>>,
         pub(crate) startup_action: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -22213,7 +21646,7 @@ pub mod tunnel_option {
         }
         pub fn phase1_dh_group_numbers(
             mut self,
-            input: impl Into<crate::model::Phase1DHGroupNumbersListValue>,
+            input: impl Into<crate::model::Phase1DhGroupNumbersListValue>,
         ) -> Self {
             let mut v = self.phase1_dh_group_numbers.unwrap_or_default();
             v.push(input.into());
@@ -22222,14 +21655,14 @@ pub mod tunnel_option {
         }
         pub fn set_phase1_dh_group_numbers(
             mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Phase1DHGroupNumbersListValue>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Phase1DhGroupNumbersListValue>>,
         ) -> Self {
             self.phase1_dh_group_numbers = input;
             self
         }
         pub fn phase2_dh_group_numbers(
             mut self,
-            input: impl Into<crate::model::Phase2DHGroupNumbersListValue>,
+            input: impl Into<crate::model::Phase2DhGroupNumbersListValue>,
         ) -> Self {
             let mut v = self.phase2_dh_group_numbers.unwrap_or_default();
             v.push(input.into());
@@ -22238,14 +21671,14 @@ pub mod tunnel_option {
         }
         pub fn set_phase2_dh_group_numbers(
             mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Phase2DHGroupNumbersListValue>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Phase2DhGroupNumbersListValue>>,
         ) -> Self {
             self.phase2_dh_group_numbers = input;
             self
         }
         pub fn ike_versions(
             mut self,
-            input: impl Into<crate::model::IKEVersionsListValue>,
+            input: impl Into<crate::model::IkeVersionsListValue>,
         ) -> Self {
             let mut v = self.ike_versions.unwrap_or_default();
             v.push(input.into());
@@ -22254,7 +21687,7 @@ pub mod tunnel_option {
         }
         pub fn set_ike_versions(
             mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::IKEVersionsListValue>>,
+            input: std::option::Option<std::vec::Vec<crate::model::IkeVersionsListValue>>,
         ) -> Self {
             self.ike_versions = input;
             self
@@ -22307,20 +21740,20 @@ impl TunnelOption {
 /// <p>The internet key exchange (IKE) version permitted for the VPN tunnel.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct IKEVersionsListValue {
+pub struct IkeVersionsListValue {
     /// <p>The IKE version.</p>
     pub value: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for IKEVersionsListValue {
+impl std::fmt::Debug for IkeVersionsListValue {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IKEVersionsListValue");
+        let mut formatter = f.debug_struct("IkeVersionsListValue");
         formatter.field("value", &self.value);
         formatter.finish()
     }
 }
-/// See [`IKEVersionsListValue`](crate::model::IKEVersionsListValue)
+/// See [`IkeVersionsListValue`](crate::model::IkeVersionsListValue)
 pub mod ike_versions_list_value {
-    /// A builder for [`IKEVersionsListValue`](crate::model::IKEVersionsListValue)
+    /// A builder for [`IkeVersionsListValue`](crate::model::IkeVersionsListValue)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -22336,14 +21769,14 @@ pub mod ike_versions_list_value {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`IKEVersionsListValue`](crate::model::IKEVersionsListValue)
-        pub fn build(self) -> crate::model::IKEVersionsListValue {
-            crate::model::IKEVersionsListValue { value: self.value }
+        /// Consumes the builder and constructs a [`IkeVersionsListValue`](crate::model::IkeVersionsListValue)
+        pub fn build(self) -> crate::model::IkeVersionsListValue {
+            crate::model::IkeVersionsListValue { value: self.value }
         }
     }
 }
-impl IKEVersionsListValue {
-    /// Creates a new builder-style object to manufacture [`IKEVersionsListValue`](crate::model::IKEVersionsListValue)
+impl IkeVersionsListValue {
+    /// Creates a new builder-style object to manufacture [`IkeVersionsListValue`](crate::model::IkeVersionsListValue)
     pub fn builder() -> crate::model::ike_versions_list_value::Builder {
         crate::model::ike_versions_list_value::Builder::default()
     }
@@ -22352,20 +21785,20 @@ impl IKEVersionsListValue {
 /// <p>The Diffie-Hellmann group number for phase 2 IKE negotiations.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Phase2DHGroupNumbersListValue {
+pub struct Phase2DhGroupNumbersListValue {
     /// <p>The Diffie-Hellmann group number.</p>
     pub value: std::option::Option<i32>,
 }
-impl std::fmt::Debug for Phase2DHGroupNumbersListValue {
+impl std::fmt::Debug for Phase2DhGroupNumbersListValue {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Phase2DHGroupNumbersListValue");
+        let mut formatter = f.debug_struct("Phase2DhGroupNumbersListValue");
         formatter.field("value", &self.value);
         formatter.finish()
     }
 }
-/// See [`Phase2DHGroupNumbersListValue`](crate::model::Phase2DHGroupNumbersListValue)
+/// See [`Phase2DhGroupNumbersListValue`](crate::model::Phase2DhGroupNumbersListValue)
 pub mod phase2_dh_group_numbers_list_value {
-    /// A builder for [`Phase2DHGroupNumbersListValue`](crate::model::Phase2DHGroupNumbersListValue)
+    /// A builder for [`Phase2DhGroupNumbersListValue`](crate::model::Phase2DhGroupNumbersListValue)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -22381,14 +21814,14 @@ pub mod phase2_dh_group_numbers_list_value {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`Phase2DHGroupNumbersListValue`](crate::model::Phase2DHGroupNumbersListValue)
-        pub fn build(self) -> crate::model::Phase2DHGroupNumbersListValue {
-            crate::model::Phase2DHGroupNumbersListValue { value: self.value }
+        /// Consumes the builder and constructs a [`Phase2DhGroupNumbersListValue`](crate::model::Phase2DhGroupNumbersListValue)
+        pub fn build(self) -> crate::model::Phase2DhGroupNumbersListValue {
+            crate::model::Phase2DhGroupNumbersListValue { value: self.value }
         }
     }
 }
-impl Phase2DHGroupNumbersListValue {
-    /// Creates a new builder-style object to manufacture [`Phase2DHGroupNumbersListValue`](crate::model::Phase2DHGroupNumbersListValue)
+impl Phase2DhGroupNumbersListValue {
+    /// Creates a new builder-style object to manufacture [`Phase2DhGroupNumbersListValue`](crate::model::Phase2DhGroupNumbersListValue)
     pub fn builder() -> crate::model::phase2_dh_group_numbers_list_value::Builder {
         crate::model::phase2_dh_group_numbers_list_value::Builder::default()
     }
@@ -22397,20 +21830,20 @@ impl Phase2DHGroupNumbersListValue {
 /// <p>The Diffie-Hellmann group number for phase 1 IKE negotiations.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Phase1DHGroupNumbersListValue {
+pub struct Phase1DhGroupNumbersListValue {
     /// <p>The Diffie-Hellmann group number.</p>
     pub value: std::option::Option<i32>,
 }
-impl std::fmt::Debug for Phase1DHGroupNumbersListValue {
+impl std::fmt::Debug for Phase1DhGroupNumbersListValue {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Phase1DHGroupNumbersListValue");
+        let mut formatter = f.debug_struct("Phase1DhGroupNumbersListValue");
         formatter.field("value", &self.value);
         formatter.finish()
     }
 }
-/// See [`Phase1DHGroupNumbersListValue`](crate::model::Phase1DHGroupNumbersListValue)
+/// See [`Phase1DhGroupNumbersListValue`](crate::model::Phase1DhGroupNumbersListValue)
 pub mod phase1_dh_group_numbers_list_value {
-    /// A builder for [`Phase1DHGroupNumbersListValue`](crate::model::Phase1DHGroupNumbersListValue)
+    /// A builder for [`Phase1DhGroupNumbersListValue`](crate::model::Phase1DhGroupNumbersListValue)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -22426,14 +21859,14 @@ pub mod phase1_dh_group_numbers_list_value {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`Phase1DHGroupNumbersListValue`](crate::model::Phase1DHGroupNumbersListValue)
-        pub fn build(self) -> crate::model::Phase1DHGroupNumbersListValue {
-            crate::model::Phase1DHGroupNumbersListValue { value: self.value }
+        /// Consumes the builder and constructs a [`Phase1DhGroupNumbersListValue`](crate::model::Phase1DhGroupNumbersListValue)
+        pub fn build(self) -> crate::model::Phase1DhGroupNumbersListValue {
+            crate::model::Phase1DhGroupNumbersListValue { value: self.value }
         }
     }
 }
-impl Phase1DHGroupNumbersListValue {
-    /// Creates a new builder-style object to manufacture [`Phase1DHGroupNumbersListValue`](crate::model::Phase1DHGroupNumbersListValue)
+impl Phase1DhGroupNumbersListValue {
+    /// Creates a new builder-style object to manufacture [`Phase1DhGroupNumbersListValue`](crate::model::Phase1DhGroupNumbersListValue)
     pub fn builder() -> crate::model::phase1_dh_group_numbers_list_value::Builder {
         crate::model::phase1_dh_group_numbers_list_value::Builder::default()
     }
@@ -22647,7 +22080,7 @@ impl std::convert::From<&str> for TunnelInsideIpVersion {
 impl std::str::FromStr for TunnelInsideIpVersion {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(TunnelInsideIpVersion::from(s))
     }
 }
@@ -22663,15 +22096,6 @@ impl TunnelInsideIpVersion {
 impl AsRef<str> for TunnelInsideIpVersion {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for TunnelInsideIpVersion {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -22701,7 +22125,7 @@ impl std::convert::From<&str> for GatewayType {
 impl std::str::FromStr for GatewayType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(GatewayType::from(s))
     }
 }
@@ -22716,15 +22140,6 @@ impl GatewayType {
 impl AsRef<str> for GatewayType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for GatewayType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -22845,16 +22260,16 @@ pub struct ModifyVpnTunnelOptionsSpecification {
     /// <p>Valid values: <code>2</code> | <code>14</code> | <code>15</code> | <code>16</code> | <code>17</code> | <code>18</code> | <code>19</code> | <code>20</code> | <code>21</code> | <code>22</code> | <code>23</code> | <code>24</code>
     /// </p>
     pub phase1_dh_group_numbers:
-        std::option::Option<std::vec::Vec<crate::model::Phase1DHGroupNumbersRequestListValue>>,
+        std::option::Option<std::vec::Vec<crate::model::Phase1DhGroupNumbersRequestListValue>>,
     /// <p>One or more Diffie-Hellman group numbers that are permitted for the VPN tunnel for phase 2 IKE negotiations.</p>
     /// <p>Valid values: <code>2</code> | <code>5</code> | <code>14</code> | <code>15</code> | <code>16</code> | <code>17</code> | <code>18</code> | <code>19</code> | <code>20</code> | <code>21</code> | <code>22</code> | <code>23</code> | <code>24</code>
     /// </p>
     pub phase2_dh_group_numbers:
-        std::option::Option<std::vec::Vec<crate::model::Phase2DHGroupNumbersRequestListValue>>,
+        std::option::Option<std::vec::Vec<crate::model::Phase2DhGroupNumbersRequestListValue>>,
     /// <p>The IKE versions that are permitted for the VPN tunnel.</p>
     /// <p>Valid values: <code>ikev1</code> | <code>ikev2</code>
     /// </p>
-    pub ike_versions: std::option::Option<std::vec::Vec<crate::model::IKEVersionsRequestListValue>>,
+    pub ike_versions: std::option::Option<std::vec::Vec<crate::model::IkeVersionsRequestListValue>>,
     /// <p>The action to take when the establishing the tunnel for the VPN connection. By default, your customer gateway device must initiate the IKE negotiation and bring up the tunnel. Specify <code>start</code> for AWS to initiate the IKE negotiation.</p>
     /// <p>Valid Values: <code>add</code> | <code>start</code>
     /// </p>
@@ -22927,11 +22342,11 @@ pub mod modify_vpn_tunnel_options_specification {
             std::vec::Vec<crate::model::Phase2IntegrityAlgorithmsRequestListValue>,
         >,
         pub(crate) phase1_dh_group_numbers:
-            std::option::Option<std::vec::Vec<crate::model::Phase1DHGroupNumbersRequestListValue>>,
+            std::option::Option<std::vec::Vec<crate::model::Phase1DhGroupNumbersRequestListValue>>,
         pub(crate) phase2_dh_group_numbers:
-            std::option::Option<std::vec::Vec<crate::model::Phase2DHGroupNumbersRequestListValue>>,
+            std::option::Option<std::vec::Vec<crate::model::Phase2DhGroupNumbersRequestListValue>>,
         pub(crate) ike_versions:
-            std::option::Option<std::vec::Vec<crate::model::IKEVersionsRequestListValue>>,
+            std::option::Option<std::vec::Vec<crate::model::IkeVersionsRequestListValue>>,
         pub(crate) startup_action: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -23178,7 +22593,7 @@ pub mod modify_vpn_tunnel_options_specification {
         }
         pub fn phase1_dh_group_numbers(
             mut self,
-            input: impl Into<crate::model::Phase1DHGroupNumbersRequestListValue>,
+            input: impl Into<crate::model::Phase1DhGroupNumbersRequestListValue>,
         ) -> Self {
             let mut v = self.phase1_dh_group_numbers.unwrap_or_default();
             v.push(input.into());
@@ -23188,7 +22603,7 @@ pub mod modify_vpn_tunnel_options_specification {
         pub fn set_phase1_dh_group_numbers(
             mut self,
             input: std::option::Option<
-                std::vec::Vec<crate::model::Phase1DHGroupNumbersRequestListValue>,
+                std::vec::Vec<crate::model::Phase1DhGroupNumbersRequestListValue>,
             >,
         ) -> Self {
             self.phase1_dh_group_numbers = input;
@@ -23196,7 +22611,7 @@ pub mod modify_vpn_tunnel_options_specification {
         }
         pub fn phase2_dh_group_numbers(
             mut self,
-            input: impl Into<crate::model::Phase2DHGroupNumbersRequestListValue>,
+            input: impl Into<crate::model::Phase2DhGroupNumbersRequestListValue>,
         ) -> Self {
             let mut v = self.phase2_dh_group_numbers.unwrap_or_default();
             v.push(input.into());
@@ -23206,7 +22621,7 @@ pub mod modify_vpn_tunnel_options_specification {
         pub fn set_phase2_dh_group_numbers(
             mut self,
             input: std::option::Option<
-                std::vec::Vec<crate::model::Phase2DHGroupNumbersRequestListValue>,
+                std::vec::Vec<crate::model::Phase2DhGroupNumbersRequestListValue>,
             >,
         ) -> Self {
             self.phase2_dh_group_numbers = input;
@@ -23214,7 +22629,7 @@ pub mod modify_vpn_tunnel_options_specification {
         }
         pub fn ike_versions(
             mut self,
-            input: impl Into<crate::model::IKEVersionsRequestListValue>,
+            input: impl Into<crate::model::IkeVersionsRequestListValue>,
         ) -> Self {
             let mut v = self.ike_versions.unwrap_or_default();
             v.push(input.into());
@@ -23223,7 +22638,7 @@ pub mod modify_vpn_tunnel_options_specification {
         }
         pub fn set_ike_versions(
             mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::IKEVersionsRequestListValue>>,
+            input: std::option::Option<std::vec::Vec<crate::model::IkeVersionsRequestListValue>>,
         ) -> Self {
             self.ike_versions = input;
             self
@@ -23279,20 +22694,20 @@ impl ModifyVpnTunnelOptionsSpecification {
 /// <p>The IKE version that is permitted for the VPN tunnel.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct IKEVersionsRequestListValue {
+pub struct IkeVersionsRequestListValue {
     /// <p>The IKE version.</p>
     pub value: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for IKEVersionsRequestListValue {
+impl std::fmt::Debug for IkeVersionsRequestListValue {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IKEVersionsRequestListValue");
+        let mut formatter = f.debug_struct("IkeVersionsRequestListValue");
         formatter.field("value", &self.value);
         formatter.finish()
     }
 }
-/// See [`IKEVersionsRequestListValue`](crate::model::IKEVersionsRequestListValue)
+/// See [`IkeVersionsRequestListValue`](crate::model::IkeVersionsRequestListValue)
 pub mod ike_versions_request_list_value {
-    /// A builder for [`IKEVersionsRequestListValue`](crate::model::IKEVersionsRequestListValue)
+    /// A builder for [`IkeVersionsRequestListValue`](crate::model::IkeVersionsRequestListValue)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -23308,14 +22723,14 @@ pub mod ike_versions_request_list_value {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`IKEVersionsRequestListValue`](crate::model::IKEVersionsRequestListValue)
-        pub fn build(self) -> crate::model::IKEVersionsRequestListValue {
-            crate::model::IKEVersionsRequestListValue { value: self.value }
+        /// Consumes the builder and constructs a [`IkeVersionsRequestListValue`](crate::model::IkeVersionsRequestListValue)
+        pub fn build(self) -> crate::model::IkeVersionsRequestListValue {
+            crate::model::IkeVersionsRequestListValue { value: self.value }
         }
     }
 }
-impl IKEVersionsRequestListValue {
-    /// Creates a new builder-style object to manufacture [`IKEVersionsRequestListValue`](crate::model::IKEVersionsRequestListValue)
+impl IkeVersionsRequestListValue {
+    /// Creates a new builder-style object to manufacture [`IkeVersionsRequestListValue`](crate::model::IkeVersionsRequestListValue)
     pub fn builder() -> crate::model::ike_versions_request_list_value::Builder {
         crate::model::ike_versions_request_list_value::Builder::default()
     }
@@ -23324,20 +22739,20 @@ impl IKEVersionsRequestListValue {
 /// <p>Specifies a Diffie-Hellman group number for the VPN tunnel for phase 2 IKE negotiations.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Phase2DHGroupNumbersRequestListValue {
+pub struct Phase2DhGroupNumbersRequestListValue {
     /// <p>The Diffie-Hellmann group number.</p>
     pub value: std::option::Option<i32>,
 }
-impl std::fmt::Debug for Phase2DHGroupNumbersRequestListValue {
+impl std::fmt::Debug for Phase2DhGroupNumbersRequestListValue {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Phase2DHGroupNumbersRequestListValue");
+        let mut formatter = f.debug_struct("Phase2DhGroupNumbersRequestListValue");
         formatter.field("value", &self.value);
         formatter.finish()
     }
 }
-/// See [`Phase2DHGroupNumbersRequestListValue`](crate::model::Phase2DHGroupNumbersRequestListValue)
+/// See [`Phase2DhGroupNumbersRequestListValue`](crate::model::Phase2DhGroupNumbersRequestListValue)
 pub mod phase2_dh_group_numbers_request_list_value {
-    /// A builder for [`Phase2DHGroupNumbersRequestListValue`](crate::model::Phase2DHGroupNumbersRequestListValue)
+    /// A builder for [`Phase2DhGroupNumbersRequestListValue`](crate::model::Phase2DhGroupNumbersRequestListValue)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -23353,14 +22768,14 @@ pub mod phase2_dh_group_numbers_request_list_value {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`Phase2DHGroupNumbersRequestListValue`](crate::model::Phase2DHGroupNumbersRequestListValue)
-        pub fn build(self) -> crate::model::Phase2DHGroupNumbersRequestListValue {
-            crate::model::Phase2DHGroupNumbersRequestListValue { value: self.value }
+        /// Consumes the builder and constructs a [`Phase2DhGroupNumbersRequestListValue`](crate::model::Phase2DhGroupNumbersRequestListValue)
+        pub fn build(self) -> crate::model::Phase2DhGroupNumbersRequestListValue {
+            crate::model::Phase2DhGroupNumbersRequestListValue { value: self.value }
         }
     }
 }
-impl Phase2DHGroupNumbersRequestListValue {
-    /// Creates a new builder-style object to manufacture [`Phase2DHGroupNumbersRequestListValue`](crate::model::Phase2DHGroupNumbersRequestListValue)
+impl Phase2DhGroupNumbersRequestListValue {
+    /// Creates a new builder-style object to manufacture [`Phase2DhGroupNumbersRequestListValue`](crate::model::Phase2DhGroupNumbersRequestListValue)
     pub fn builder() -> crate::model::phase2_dh_group_numbers_request_list_value::Builder {
         crate::model::phase2_dh_group_numbers_request_list_value::Builder::default()
     }
@@ -23369,20 +22784,20 @@ impl Phase2DHGroupNumbersRequestListValue {
 /// <p>Specifies a Diffie-Hellman group number for the VPN tunnel for phase 1 IKE negotiations.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Phase1DHGroupNumbersRequestListValue {
+pub struct Phase1DhGroupNumbersRequestListValue {
     /// <p>The Diffie-Hellmann group number.</p>
     pub value: std::option::Option<i32>,
 }
-impl std::fmt::Debug for Phase1DHGroupNumbersRequestListValue {
+impl std::fmt::Debug for Phase1DhGroupNumbersRequestListValue {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Phase1DHGroupNumbersRequestListValue");
+        let mut formatter = f.debug_struct("Phase1DhGroupNumbersRequestListValue");
         formatter.field("value", &self.value);
         formatter.finish()
     }
 }
-/// See [`Phase1DHGroupNumbersRequestListValue`](crate::model::Phase1DHGroupNumbersRequestListValue)
+/// See [`Phase1DhGroupNumbersRequestListValue`](crate::model::Phase1DhGroupNumbersRequestListValue)
 pub mod phase1_dh_group_numbers_request_list_value {
-    /// A builder for [`Phase1DHGroupNumbersRequestListValue`](crate::model::Phase1DHGroupNumbersRequestListValue)
+    /// A builder for [`Phase1DhGroupNumbersRequestListValue`](crate::model::Phase1DhGroupNumbersRequestListValue)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -23398,14 +22813,14 @@ pub mod phase1_dh_group_numbers_request_list_value {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`Phase1DHGroupNumbersRequestListValue`](crate::model::Phase1DHGroupNumbersRequestListValue)
-        pub fn build(self) -> crate::model::Phase1DHGroupNumbersRequestListValue {
-            crate::model::Phase1DHGroupNumbersRequestListValue { value: self.value }
+        /// Consumes the builder and constructs a [`Phase1DhGroupNumbersRequestListValue`](crate::model::Phase1DhGroupNumbersRequestListValue)
+        pub fn build(self) -> crate::model::Phase1DhGroupNumbersRequestListValue {
+            crate::model::Phase1DhGroupNumbersRequestListValue { value: self.value }
         }
     }
 }
-impl Phase1DHGroupNumbersRequestListValue {
-    /// Creates a new builder-style object to manufacture [`Phase1DHGroupNumbersRequestListValue`](crate::model::Phase1DHGroupNumbersRequestListValue)
+impl Phase1DhGroupNumbersRequestListValue {
+    /// Creates a new builder-style object to manufacture [`Phase1DhGroupNumbersRequestListValue`](crate::model::Phase1DhGroupNumbersRequestListValue)
     pub fn builder() -> crate::model::phase1_dh_group_numbers_request_list_value::Builder {
         crate::model::phase1_dh_group_numbers_request_list_value::Builder::default()
     }
@@ -23617,7 +23032,7 @@ impl std::convert::From<&str> for VpcTenancy {
 impl std::str::FromStr for VpcTenancy {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(VpcTenancy::from(s))
     }
 }
@@ -23632,15 +23047,6 @@ impl VpcTenancy {
 impl AsRef<str> for VpcTenancy {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for VpcTenancy {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -24202,7 +23608,7 @@ impl std::convert::From<&str> for VolumeModificationState {
 impl std::str::FromStr for VolumeModificationState {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(VolumeModificationState::from(s))
     }
 }
@@ -24220,15 +23626,6 @@ impl VolumeModificationState {
 impl AsRef<str> for VolumeModificationState {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for VolumeModificationState {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -24593,7 +23990,7 @@ impl std::convert::From<&str> for TransitGatewayPrefixListReferenceState {
 impl std::str::FromStr for TransitGatewayPrefixListReferenceState {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(TransitGatewayPrefixListReferenceState::from(s))
     }
 }
@@ -24611,15 +24008,6 @@ impl TransitGatewayPrefixListReferenceState {
 impl AsRef<str> for TransitGatewayPrefixListReferenceState {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for TransitGatewayPrefixListReferenceState {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -25061,7 +24449,7 @@ impl std::convert::From<&str> for MulticastSupportValue {
 impl std::str::FromStr for MulticastSupportValue {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(MulticastSupportValue::from(s))
     }
 }
@@ -25077,15 +24465,6 @@ impl MulticastSupportValue {
 impl AsRef<str> for MulticastSupportValue {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for MulticastSupportValue {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -25117,7 +24496,7 @@ impl std::convert::From<&str> for VpnEcmpSupportValue {
 impl std::str::FromStr for VpnEcmpSupportValue {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(VpnEcmpSupportValue::from(s))
     }
 }
@@ -25133,15 +24512,6 @@ impl VpnEcmpSupportValue {
 impl AsRef<str> for VpnEcmpSupportValue {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for VpnEcmpSupportValue {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -25173,7 +24543,7 @@ impl std::convert::From<&str> for DefaultRouteTablePropagationValue {
 impl std::str::FromStr for DefaultRouteTablePropagationValue {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(DefaultRouteTablePropagationValue::from(s))
     }
 }
@@ -25189,15 +24559,6 @@ impl DefaultRouteTablePropagationValue {
 impl AsRef<str> for DefaultRouteTablePropagationValue {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for DefaultRouteTablePropagationValue {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -25229,7 +24590,7 @@ impl std::convert::From<&str> for DefaultRouteTableAssociationValue {
 impl std::str::FromStr for DefaultRouteTableAssociationValue {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(DefaultRouteTableAssociationValue::from(s))
     }
 }
@@ -25245,15 +24606,6 @@ impl DefaultRouteTableAssociationValue {
 impl AsRef<str> for DefaultRouteTableAssociationValue {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for DefaultRouteTableAssociationValue {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -25285,7 +24637,7 @@ impl std::convert::From<&str> for AutoAcceptSharedAttachmentsValue {
 impl std::str::FromStr for AutoAcceptSharedAttachmentsValue {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(AutoAcceptSharedAttachmentsValue::from(s))
     }
 }
@@ -25301,15 +24653,6 @@ impl AutoAcceptSharedAttachmentsValue {
 impl AsRef<str> for AutoAcceptSharedAttachmentsValue {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for AutoAcceptSharedAttachmentsValue {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -25347,7 +24690,7 @@ impl std::convert::From<&str> for TransitGatewayState {
 impl std::str::FromStr for TransitGatewayState {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(TransitGatewayState::from(s))
     }
 }
@@ -25366,15 +24709,6 @@ impl TransitGatewayState {
 impl AsRef<str> for TransitGatewayState {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for TransitGatewayState {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -25837,7 +25171,7 @@ impl std::convert::From<&str> for TrafficMirrorSessionField {
 impl std::str::FromStr for TrafficMirrorSessionField {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(TrafficMirrorSessionField::from(s))
     }
 }
@@ -25854,15 +25188,6 @@ impl TrafficMirrorSessionField {
 impl AsRef<str> for TrafficMirrorSessionField {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for TrafficMirrorSessionField {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -26176,7 +25501,7 @@ impl std::convert::From<&str> for TrafficMirrorRuleAction {
 impl std::str::FromStr for TrafficMirrorRuleAction {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(TrafficMirrorRuleAction::from(s))
     }
 }
@@ -26192,15 +25517,6 @@ impl TrafficMirrorRuleAction {
 impl AsRef<str> for TrafficMirrorRuleAction {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for TrafficMirrorRuleAction {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -26232,7 +25548,7 @@ impl std::convert::From<&str> for TrafficDirection {
 impl std::str::FromStr for TrafficDirection {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(TrafficDirection::from(s))
     }
 }
@@ -26248,15 +25564,6 @@ impl TrafficDirection {
 impl AsRef<str> for TrafficDirection {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for TrafficDirection {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -26292,7 +25599,7 @@ impl std::convert::From<&str> for TrafficMirrorFilterRuleField {
 impl std::str::FromStr for TrafficMirrorFilterRuleField {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(TrafficMirrorFilterRuleField::from(s))
     }
 }
@@ -26310,15 +25617,6 @@ impl TrafficMirrorFilterRuleField {
 impl AsRef<str> for TrafficMirrorFilterRuleField {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for TrafficMirrorFilterRuleField {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -26560,7 +25858,7 @@ impl std::convert::From<&str> for TrafficMirrorNetworkService {
 impl std::str::FromStr for TrafficMirrorNetworkService {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(TrafficMirrorNetworkService::from(s))
     }
 }
@@ -26575,15 +25873,6 @@ impl TrafficMirrorNetworkService {
 impl AsRef<str> for TrafficMirrorNetworkService {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for TrafficMirrorNetworkService {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -26615,7 +25904,7 @@ impl std::convert::From<&str> for OperationType {
 impl std::str::FromStr for OperationType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(OperationType::from(s))
     }
 }
@@ -26631,15 +25920,6 @@ impl OperationType {
 impl AsRef<str> for OperationType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for OperationType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -26803,7 +26083,7 @@ impl std::convert::From<&str> for PermissionGroup {
 impl std::str::FromStr for PermissionGroup {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(PermissionGroup::from(s))
     }
 }
@@ -26818,15 +26098,6 @@ impl PermissionGroup {
 impl AsRef<str> for PermissionGroup {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for PermissionGroup {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -26973,7 +26244,7 @@ impl std::convert::From<&str> for Scope {
 impl std::str::FromStr for Scope {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(Scope::from(s))
     }
 }
@@ -26989,15 +26260,6 @@ impl Scope {
 impl AsRef<str> for Scope {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for Scope {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -27390,7 +26652,7 @@ impl std::convert::From<&str> for HostTenancy {
 impl std::str::FromStr for HostTenancy {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(HostTenancy::from(s))
     }
 }
@@ -27406,15 +26668,6 @@ impl HostTenancy {
 impl AsRef<str> for HostTenancy {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for HostTenancy {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -27446,7 +26699,7 @@ impl std::convert::From<&str> for Affinity {
 impl std::str::FromStr for Affinity {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(Affinity::from(s))
     }
 }
@@ -27462,15 +26715,6 @@ impl Affinity {
 impl AsRef<str> for Affinity {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for Affinity {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -27637,7 +26881,7 @@ impl std::convert::From<&str> for EventCode {
 impl std::str::FromStr for EventCode {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(EventCode::from(s))
     }
 }
@@ -27656,15 +26900,6 @@ impl EventCode {
 impl AsRef<str> for EventCode {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for EventCode {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -27845,7 +27080,7 @@ impl std::convert::From<&str> for UnsuccessfulInstanceCreditSpecificationErrorCo
 impl std::str::FromStr for UnsuccessfulInstanceCreditSpecificationErrorCode {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(UnsuccessfulInstanceCreditSpecificationErrorCode::from(s))
     }
 }
@@ -27863,15 +27098,6 @@ impl UnsuccessfulInstanceCreditSpecificationErrorCode {
 impl AsRef<str> for UnsuccessfulInstanceCreditSpecificationErrorCode {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for UnsuccessfulInstanceCreditSpecificationErrorCode {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -28347,7 +27573,7 @@ impl std::convert::From<&str> for HostRecovery {
 impl std::str::FromStr for HostRecovery {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(HostRecovery::from(s))
     }
 }
@@ -28363,15 +27589,6 @@ impl HostRecovery {
 impl AsRef<str> for HostRecovery {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for HostRecovery {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -28403,7 +27620,7 @@ impl std::convert::From<&str> for AutoPlacement {
 impl std::str::FromStr for AutoPlacement {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(AutoPlacement::from(s))
     }
 }
@@ -28419,15 +27636,6 @@ impl AutoPlacement {
 impl AsRef<str> for AutoPlacement {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for AutoPlacement {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -28775,7 +27983,7 @@ impl std::convert::From<&str> for FpgaImageAttributeName {
 impl std::str::FromStr for FpgaImageAttributeName {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(FpgaImageAttributeName::from(s))
     }
 }
@@ -28793,15 +28001,6 @@ impl FpgaImageAttributeName {
 impl AsRef<str> for FpgaImageAttributeName {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for FpgaImageAttributeName {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -28947,7 +28146,7 @@ impl std::convert::From<&str> for DefaultTargetCapacityType {
 impl std::str::FromStr for DefaultTargetCapacityType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(DefaultTargetCapacityType::from(s))
     }
 }
@@ -28963,15 +28162,6 @@ impl DefaultTargetCapacityType {
 impl AsRef<str> for DefaultTargetCapacityType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for DefaultTargetCapacityType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -29341,7 +28531,7 @@ impl std::convert::From<&str> for FleetExcessCapacityTerminationPolicy {
 impl std::str::FromStr for FleetExcessCapacityTerminationPolicy {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(FleetExcessCapacityTerminationPolicy::from(s))
     }
 }
@@ -29357,15 +28547,6 @@ impl FleetExcessCapacityTerminationPolicy {
 impl AsRef<str> for FleetExcessCapacityTerminationPolicy {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for FleetExcessCapacityTerminationPolicy {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -29469,7 +28650,7 @@ impl std::convert::From<&str> for UnlimitedSupportedInstanceFamily {
 impl std::str::FromStr for UnlimitedSupportedInstanceFamily {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(UnlimitedSupportedInstanceFamily::from(s))
     }
 }
@@ -29487,15 +28668,6 @@ impl UnlimitedSupportedInstanceFamily {
 impl AsRef<str> for UnlimitedSupportedInstanceFamily {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for UnlimitedSupportedInstanceFamily {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -29591,7 +28763,7 @@ impl std::convert::From<&str> for SelfServicePortal {
 impl std::str::FromStr for SelfServicePortal {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(SelfServicePortal::from(s))
     }
 }
@@ -29607,15 +28779,6 @@ impl SelfServicePortal {
 impl AsRef<str> for SelfServicePortal {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for SelfServicePortal {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -29797,7 +28960,7 @@ impl std::convert::From<&str> for EndDateType {
 impl std::str::FromStr for EndDateType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(EndDateType::from(s))
     }
 }
@@ -29813,15 +28976,6 @@ impl EndDateType {
 impl AsRef<str> for EndDateType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for EndDateType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -29853,7 +29007,7 @@ impl std::convert::From<&str> for ModifyAvailabilityZoneOptInStatus {
 impl std::str::FromStr for ModifyAvailabilityZoneOptInStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ModifyAvailabilityZoneOptInStatus::from(s))
     }
 }
@@ -29869,15 +29023,6 @@ impl ModifyAvailabilityZoneOptInStatus {
 impl AsRef<str> for ModifyAvailabilityZoneOptInStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ModifyAvailabilityZoneOptInStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -30068,7 +29213,7 @@ impl std::convert::From<&str> for ConversionTaskState {
 impl std::str::FromStr for ConversionTaskState {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ConversionTaskState::from(s))
     }
 }
@@ -30086,15 +29231,6 @@ impl ConversionTaskState {
 impl AsRef<str> for ConversionTaskState {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ConversionTaskState {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -30402,7 +29538,7 @@ impl std::convert::From<&str> for DiskImageFormat {
 impl std::str::FromStr for DiskImageFormat {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(DiskImageFormat::from(s))
     }
 }
@@ -30419,15 +29555,6 @@ impl DiskImageFormat {
 impl AsRef<str> for DiskImageFormat {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for DiskImageFormat {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -32212,7 +31339,7 @@ impl std::convert::From<&str> for TransitGatewayPropagationState {
 impl std::str::FromStr for TransitGatewayPropagationState {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(TransitGatewayPropagationState::from(s))
     }
 }
@@ -32230,15 +31357,6 @@ impl TransitGatewayPropagationState {
 impl AsRef<str> for TransitGatewayPropagationState {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for TransitGatewayPropagationState {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -32382,7 +31500,7 @@ impl std::convert::From<&str> for TransitGatewayAssociationState {
 impl std::str::FromStr for TransitGatewayAssociationState {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(TransitGatewayAssociationState::from(s))
     }
 }
@@ -32400,15 +31518,6 @@ impl TransitGatewayAssociationState {
 impl AsRef<str> for TransitGatewayAssociationState {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for TransitGatewayAssociationState {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -33872,7 +32981,7 @@ impl std::convert::From<&str> for LaunchTemplateInstanceMetadataEndpointState {
 impl std::str::FromStr for LaunchTemplateInstanceMetadataEndpointState {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(LaunchTemplateInstanceMetadataEndpointState::from(s))
     }
 }
@@ -33888,15 +32997,6 @@ impl LaunchTemplateInstanceMetadataEndpointState {
 impl AsRef<str> for LaunchTemplateInstanceMetadataEndpointState {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for LaunchTemplateInstanceMetadataEndpointState {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -33928,7 +33028,7 @@ impl std::convert::From<&str> for LaunchTemplateHttpTokensState {
 impl std::str::FromStr for LaunchTemplateHttpTokensState {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(LaunchTemplateHttpTokensState::from(s))
     }
 }
@@ -33944,15 +33044,6 @@ impl LaunchTemplateHttpTokensState {
 impl AsRef<str> for LaunchTemplateHttpTokensState {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for LaunchTemplateHttpTokensState {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -33984,7 +33075,7 @@ impl std::convert::From<&str> for LaunchTemplateInstanceMetadataOptionsState {
 impl std::str::FromStr for LaunchTemplateInstanceMetadataOptionsState {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(LaunchTemplateInstanceMetadataOptionsState::from(s))
     }
 }
@@ -34000,15 +33091,6 @@ impl LaunchTemplateInstanceMetadataOptionsState {
 impl AsRef<str> for LaunchTemplateInstanceMetadataOptionsState {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for LaunchTemplateInstanceMetadataOptionsState {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -35770,7 +34852,7 @@ impl std::convert::From<&str> for PartitionLoadFrequency {
 impl std::str::FromStr for PartitionLoadFrequency {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(PartitionLoadFrequency::from(s))
     }
 }
@@ -35788,15 +34870,6 @@ impl PartitionLoadFrequency {
 impl AsRef<str> for PartitionLoadFrequency {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for PartitionLoadFrequency {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -35990,7 +35063,7 @@ impl std::convert::From<&str> for CapacityReservationState {
 impl std::str::FromStr for CapacityReservationState {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(CapacityReservationState::from(s))
     }
 }
@@ -36009,15 +35082,6 @@ impl CapacityReservationState {
 impl AsRef<str> for CapacityReservationState {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for CapacityReservationState {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -36411,7 +35475,7 @@ impl std::convert::From<&str> for ClientCertificateRevocationListStatusCode {
 impl std::str::FromStr for ClientCertificateRevocationListStatusCode {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ClientCertificateRevocationListStatusCode::from(s))
     }
 }
@@ -36427,15 +35491,6 @@ impl ClientCertificateRevocationListStatusCode {
 impl AsRef<str> for ClientCertificateRevocationListStatusCode {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ClientCertificateRevocationListStatusCode {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -37043,7 +36098,7 @@ impl std::convert::From<&str> for FastSnapshotRestoreStateCode {
 impl std::str::FromStr for FastSnapshotRestoreStateCode {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(FastSnapshotRestoreStateCode::from(s))
     }
 }
@@ -37062,15 +36117,6 @@ impl FastSnapshotRestoreStateCode {
 impl AsRef<str> for FastSnapshotRestoreStateCode {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for FastSnapshotRestoreStateCode {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -37258,7 +36304,7 @@ impl std::convert::From<&str> for VpcCidrBlockStateCode {
 impl std::str::FromStr for VpcCidrBlockStateCode {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(VpcCidrBlockStateCode::from(s))
     }
 }
@@ -37278,15 +36324,6 @@ impl VpcCidrBlockStateCode {
 impl AsRef<str> for VpcCidrBlockStateCode {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for VpcCidrBlockStateCode {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -37725,7 +36762,7 @@ impl std::convert::From<&str> for SubnetCidrBlockStateCode {
 impl std::str::FromStr for SubnetCidrBlockStateCode {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(SubnetCidrBlockStateCode::from(s))
     }
 }
@@ -37745,15 +36782,6 @@ impl SubnetCidrBlockStateCode {
 impl AsRef<str> for SubnetCidrBlockStateCode {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for SubnetCidrBlockStateCode {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -37855,7 +36883,7 @@ impl std::convert::From<&str> for AssociationStatusCode {
 impl std::str::FromStr for AssociationStatusCode {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(AssociationStatusCode::from(s))
     }
 }
@@ -37874,15 +36902,6 @@ impl AssociationStatusCode {
 impl AsRef<str> for AssociationStatusCode {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for AssociationStatusCode {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -38359,7 +37378,7 @@ impl std::convert::From<&str> for VolumeAttachmentState {
 impl std::str::FromStr for VolumeAttachmentState {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(VolumeAttachmentState::from(s))
     }
 }
@@ -38378,15 +37397,6 @@ impl VolumeAttachmentState {
 impl AsRef<str> for VolumeAttachmentState {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for VolumeAttachmentState {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -38834,7 +37844,7 @@ impl std::convert::From<&str> for VpcState {
 impl std::str::FromStr for VpcState {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(VpcState::from(s))
     }
 }
@@ -38850,15 +37860,6 @@ impl VpcState {
 impl AsRef<str> for VpcState {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for VpcState {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -39112,7 +38113,7 @@ impl std::convert::From<&str> for VpcPeeringConnectionStateReasonCode {
 impl std::str::FromStr for VpcPeeringConnectionStateReasonCode {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(VpcPeeringConnectionStateReasonCode::from(s))
     }
 }
@@ -39135,15 +38136,6 @@ impl VpcPeeringConnectionStateReasonCode {
 impl AsRef<str> for VpcPeeringConnectionStateReasonCode {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for VpcPeeringConnectionStateReasonCode {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -39782,7 +38774,7 @@ impl std::convert::From<&str> for DnsNameState {
 impl std::str::FromStr for DnsNameState {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(DnsNameState::from(s))
     }
 }
@@ -39799,15 +38791,6 @@ impl DnsNameState {
 impl AsRef<str> for DnsNameState {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for DnsNameState {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -39941,7 +38924,7 @@ impl std::convert::From<&str> for ServiceType {
 impl std::str::FromStr for ServiceType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ServiceType::from(s))
     }
 }
@@ -39958,15 +38941,6 @@ impl ServiceType {
 impl AsRef<str> for ServiceType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ServiceType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -40070,7 +39044,7 @@ impl std::convert::From<&str> for PrincipalType {
 impl std::str::FromStr for PrincipalType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(PrincipalType::from(s))
     }
 }
@@ -40090,15 +39064,6 @@ impl PrincipalType {
 impl AsRef<str> for PrincipalType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for PrincipalType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -40501,7 +39466,7 @@ impl std::convert::From<&str> for ServiceState {
 impl std::str::FromStr for ServiceState {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ServiceState::from(s))
     }
 }
@@ -40520,15 +39485,6 @@ impl ServiceState {
 impl AsRef<str> for ServiceState {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ServiceState {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -41070,7 +40026,7 @@ impl std::convert::From<&str> for State {
 impl std::str::FromStr for State {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(State::from(s))
     }
 }
@@ -41092,15 +40048,6 @@ impl State {
 impl AsRef<str> for State {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for State {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -41134,7 +40081,7 @@ impl std::convert::From<&str> for VpcEndpointType {
 impl std::str::FromStr for VpcEndpointType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(VpcEndpointType::from(s))
     }
 }
@@ -41151,15 +40098,6 @@ impl VpcEndpointType {
 impl AsRef<str> for VpcEndpointType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for VpcEndpointType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -41544,7 +40482,7 @@ impl std::convert::From<&str> for ConnectionNotificationState {
 impl std::str::FromStr for ConnectionNotificationState {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ConnectionNotificationState::from(s))
     }
 }
@@ -41560,15 +40498,6 @@ impl ConnectionNotificationState {
 impl AsRef<str> for ConnectionNotificationState {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ConnectionNotificationState {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -41598,7 +40527,7 @@ impl std::convert::From<&str> for ConnectionNotificationType {
 impl std::str::FromStr for ConnectionNotificationType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ConnectionNotificationType::from(s))
     }
 }
@@ -41613,15 +40542,6 @@ impl ConnectionNotificationType {
 impl AsRef<str> for ConnectionNotificationType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ConnectionNotificationType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -41796,7 +40716,7 @@ impl std::convert::From<&str> for VpcAttributeName {
 impl std::str::FromStr for VpcAttributeName {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(VpcAttributeName::from(s))
     }
 }
@@ -41812,15 +40732,6 @@ impl VpcAttributeName {
 impl AsRef<str> for VpcAttributeName {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for VpcAttributeName {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -42140,7 +41051,7 @@ impl std::convert::From<&str> for VolumeStatusInfoStatus {
 impl std::str::FromStr for VolumeStatusInfoStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(VolumeStatusInfoStatus::from(s))
     }
 }
@@ -42157,15 +41068,6 @@ impl VolumeStatusInfoStatus {
 impl AsRef<str> for VolumeStatusInfoStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for VolumeStatusInfoStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -42261,7 +41163,7 @@ impl std::convert::From<&str> for VolumeStatusName {
 impl std::str::FromStr for VolumeStatusName {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(VolumeStatusName::from(s))
     }
 }
@@ -42277,15 +41179,6 @@ impl VolumeStatusName {
 impl AsRef<str> for VolumeStatusName {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for VolumeStatusName {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -42811,7 +41704,7 @@ impl std::convert::From<&str> for VolumeState {
 impl std::str::FromStr for VolumeState {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(VolumeState::from(s))
     }
 }
@@ -42831,15 +41724,6 @@ impl VolumeState {
 impl AsRef<str> for VolumeState {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for VolumeState {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -42994,7 +41878,7 @@ impl std::convert::From<&str> for VolumeAttributeName {
 impl std::str::FromStr for VolumeAttributeName {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(VolumeAttributeName::from(s))
     }
 }
@@ -43010,15 +41894,6 @@ impl VolumeAttributeName {
 impl AsRef<str> for VolumeAttributeName {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for VolumeAttributeName {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -43219,7 +42094,7 @@ impl std::convert::From<&str> for TransitGatewayRouteTableState {
 impl std::str::FromStr for TransitGatewayRouteTableState {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(TransitGatewayRouteTableState::from(s))
     }
 }
@@ -43237,15 +42112,6 @@ impl TransitGatewayRouteTableState {
 impl AsRef<str> for TransitGatewayRouteTableState {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for TransitGatewayRouteTableState {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -43463,7 +42329,7 @@ impl std::convert::From<&str> for TransitGatewayMulticastDomainState {
 impl std::str::FromStr for TransitGatewayMulticastDomainState {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(TransitGatewayMulticastDomainState::from(s))
     }
 }
@@ -43481,15 +42347,6 @@ impl TransitGatewayMulticastDomainState {
 impl AsRef<str> for TransitGatewayMulticastDomainState {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for TransitGatewayMulticastDomainState {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -43617,7 +42474,7 @@ impl std::convert::From<&str> for AutoAcceptSharedAssociationsValue {
 impl std::str::FromStr for AutoAcceptSharedAssociationsValue {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(AutoAcceptSharedAssociationsValue::from(s))
     }
 }
@@ -43633,15 +42490,6 @@ impl AutoAcceptSharedAssociationsValue {
 impl AsRef<str> for AutoAcceptSharedAssociationsValue {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for AutoAcceptSharedAssociationsValue {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -43673,7 +42521,7 @@ impl std::convert::From<&str> for StaticSourcesSupportValue {
 impl std::str::FromStr for StaticSourcesSupportValue {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(StaticSourcesSupportValue::from(s))
     }
 }
@@ -43689,15 +42537,6 @@ impl StaticSourcesSupportValue {
 impl AsRef<str> for StaticSourcesSupportValue {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for StaticSourcesSupportValue {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -43729,7 +42568,7 @@ impl std::convert::From<&str> for Igmpv2SupportValue {
 impl std::str::FromStr for Igmpv2SupportValue {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(Igmpv2SupportValue::from(s))
     }
 }
@@ -43745,15 +42584,6 @@ impl Igmpv2SupportValue {
 impl AsRef<str> for Igmpv2SupportValue {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for Igmpv2SupportValue {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -44000,7 +42830,7 @@ impl std::convert::From<&str> for ProtocolValue {
 impl std::str::FromStr for ProtocolValue {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ProtocolValue::from(s))
     }
 }
@@ -44015,15 +42845,6 @@ impl ProtocolValue {
 impl AsRef<str> for ProtocolValue {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ProtocolValue {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -44445,7 +43266,7 @@ impl std::convert::From<&str> for BgpStatus {
 impl std::str::FromStr for BgpStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(BgpStatus::from(s))
     }
 }
@@ -44461,15 +43282,6 @@ impl BgpStatus {
 impl AsRef<str> for BgpStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for BgpStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -44505,7 +43317,7 @@ impl std::convert::From<&str> for TransitGatewayConnectPeerState {
 impl std::str::FromStr for TransitGatewayConnectPeerState {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(TransitGatewayConnectPeerState::from(s))
     }
 }
@@ -44523,15 +43335,6 @@ impl TransitGatewayConnectPeerState {
 impl AsRef<str> for TransitGatewayConnectPeerState {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for TransitGatewayConnectPeerState {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -44998,7 +43801,7 @@ impl std::convert::From<&str> for TrafficMirrorTargetType {
 impl std::str::FromStr for TrafficMirrorTargetType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(TrafficMirrorTargetType::from(s))
     }
 }
@@ -45014,15 +43817,6 @@ impl TrafficMirrorTargetType {
 impl AsRef<str> for TrafficMirrorTargetType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for TrafficMirrorTargetType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -45463,7 +44257,7 @@ impl std::convert::From<&str> for SubnetState {
 impl std::str::FromStr for SubnetState {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(SubnetState::from(s))
     }
 }
@@ -45479,15 +44273,6 @@ impl SubnetState {
 impl AsRef<str> for SubnetState {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for SubnetState {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -46209,7 +44994,7 @@ impl std::convert::From<&str> for BatchState {
 impl std::str::FromStr for BatchState {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(BatchState::from(s))
     }
 }
@@ -46230,15 +45015,6 @@ impl BatchState {
 impl AsRef<str> for BatchState {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for BatchState {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -46274,7 +45050,7 @@ impl std::convert::From<&str> for ActivityStatus {
 impl std::str::FromStr for ActivityStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ActivityStatus::from(s))
     }
 }
@@ -46292,15 +45068,6 @@ impl ActivityStatus {
 impl AsRef<str> for ActivityStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ActivityStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -46453,7 +45220,7 @@ impl std::convert::From<&str> for EventType {
 impl std::str::FromStr for EventType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(EventType::from(s))
     }
 }
@@ -46471,15 +45238,6 @@ impl EventType {
 impl AsRef<str> for EventType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for EventType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -46890,7 +45648,7 @@ impl std::convert::From<&str> for InstanceHealthStatus {
 impl std::str::FromStr for InstanceHealthStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(InstanceHealthStatus::from(s))
     }
 }
@@ -46906,15 +45664,6 @@ impl InstanceHealthStatus {
 impl AsRef<str> for InstanceHealthStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for InstanceHealthStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -47055,7 +45804,7 @@ impl std::convert::From<&str> for DatafeedSubscriptionState {
 impl std::str::FromStr for DatafeedSubscriptionState {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(DatafeedSubscriptionState::from(s))
     }
 }
@@ -47071,15 +45820,6 @@ impl DatafeedSubscriptionState {
 impl AsRef<str> for DatafeedSubscriptionState {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for DatafeedSubscriptionState {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -47393,7 +46133,7 @@ impl std::convert::From<&str> for SnapshotState {
 impl std::str::FromStr for SnapshotState {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(SnapshotState::from(s))
     }
 }
@@ -47410,15 +46150,6 @@ impl SnapshotState {
 impl AsRef<str> for SnapshotState {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for SnapshotState {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -48664,7 +47395,7 @@ impl std::convert::From<&str> for RouteState {
 impl std::str::FromStr for RouteState {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(RouteState::from(s))
     }
 }
@@ -48680,15 +47411,6 @@ impl RouteState {
 impl AsRef<str> for RouteState {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for RouteState {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -48722,7 +47444,7 @@ impl std::convert::From<&str> for RouteOrigin {
 impl std::str::FromStr for RouteOrigin {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(RouteOrigin::from(s))
     }
 }
@@ -48739,15 +47461,6 @@ impl RouteOrigin {
 impl AsRef<str> for RouteOrigin {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for RouteOrigin {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -49317,7 +48030,7 @@ impl std::convert::From<&str> for RecurringChargeFrequency {
 impl std::str::FromStr for RecurringChargeFrequency {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(RecurringChargeFrequency::from(s))
     }
 }
@@ -49332,15 +48045,6 @@ impl RecurringChargeFrequency {
 impl AsRef<str> for RecurringChargeFrequency {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for RecurringChargeFrequency {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -49441,7 +48145,7 @@ impl std::convert::From<&str> for OfferingTypeValues {
 impl std::str::FromStr for OfferingTypeValues {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(OfferingTypeValues::from(s))
     }
 }
@@ -49461,15 +48165,6 @@ impl OfferingTypeValues {
 impl AsRef<str> for OfferingTypeValues {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for OfferingTypeValues {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -49501,7 +48196,7 @@ impl std::convert::From<&str> for OfferingClassType {
 impl std::str::FromStr for OfferingClassType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(OfferingClassType::from(s))
     }
 }
@@ -49517,15 +48212,6 @@ impl OfferingClassType {
 impl AsRef<str> for OfferingClassType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for OfferingClassType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -50097,7 +48783,7 @@ impl std::convert::From<&str> for ListingStatus {
 impl std::str::FromStr for ListingStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ListingStatus::from(s))
     }
 }
@@ -50115,15 +48801,6 @@ impl ListingStatus {
 impl AsRef<str> for ListingStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ListingStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -50316,7 +48993,7 @@ impl std::convert::From<&str> for ListingState {
 impl std::str::FromStr for ListingState {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ListingState::from(s))
     }
 }
@@ -50334,15 +49011,6 @@ impl ListingState {
 impl AsRef<str> for ListingState {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ListingState {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -50708,7 +49376,7 @@ impl std::convert::From<&str> for ReservedInstanceState {
 impl std::str::FromStr for ReservedInstanceState {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ReservedInstanceState::from(s))
     }
 }
@@ -50728,15 +49396,6 @@ impl ReservedInstanceState {
 impl AsRef<str> for ReservedInstanceState {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ReservedInstanceState {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -50982,7 +49641,7 @@ impl std::convert::From<&str> for ReplaceRootVolumeTaskState {
 impl std::str::FromStr for ReplaceRootVolumeTaskState {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ReplaceRootVolumeTaskState::from(s))
     }
 }
@@ -51002,15 +49661,6 @@ impl ReplaceRootVolumeTaskState {
 impl AsRef<str> for ReplaceRootVolumeTaskState {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ReplaceRootVolumeTaskState {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -51722,7 +50372,7 @@ impl std::convert::From<&str> for PlacementStrategy {
 impl std::str::FromStr for PlacementStrategy {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(PlacementStrategy::from(s))
     }
 }
@@ -51739,15 +50389,6 @@ impl PlacementStrategy {
 impl AsRef<str> for PlacementStrategy {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for PlacementStrategy {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -51783,7 +50424,7 @@ impl std::convert::From<&str> for PlacementGroupState {
 impl std::str::FromStr for PlacementGroupState {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(PlacementGroupState::from(s))
     }
 }
@@ -51801,15 +50442,6 @@ impl PlacementGroupState {
 impl AsRef<str> for PlacementGroupState {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for PlacementGroupState {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -52516,7 +51148,7 @@ impl std::convert::From<&str> for NetworkInterfaceType {
 impl std::str::FromStr for NetworkInterfaceType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(NetworkInterfaceType::from(s))
     }
 }
@@ -52533,15 +51165,6 @@ impl NetworkInterfaceType {
 impl AsRef<str> for NetworkInterfaceType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for NetworkInterfaceType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -52943,7 +51566,7 @@ impl std::convert::From<&str> for NetworkInterfacePermissionStateCode {
 impl std::str::FromStr for NetworkInterfacePermissionStateCode {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(NetworkInterfacePermissionStateCode::from(s))
     }
 }
@@ -52961,15 +51584,6 @@ impl NetworkInterfacePermissionStateCode {
 impl AsRef<str> for NetworkInterfacePermissionStateCode {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for NetworkInterfacePermissionStateCode {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -53001,7 +51615,7 @@ impl std::convert::From<&str> for InterfacePermissionType {
 impl std::str::FromStr for InterfacePermissionType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(InterfacePermissionType::from(s))
     }
 }
@@ -53017,15 +51631,6 @@ impl InterfacePermissionType {
 impl AsRef<str> for InterfacePermissionType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for InterfacePermissionType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -53061,7 +51666,7 @@ impl std::convert::From<&str> for NetworkInterfaceAttribute {
 impl std::str::FromStr for NetworkInterfaceAttribute {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(NetworkInterfaceAttribute::from(s))
     }
 }
@@ -53079,15 +51684,6 @@ impl NetworkInterfaceAttribute {
 impl AsRef<str> for NetworkInterfaceAttribute {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for NetworkInterfaceAttribute {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -53308,7 +51904,7 @@ impl std::convert::From<&str> for Protocol {
 impl std::str::FromStr for Protocol {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(Protocol::from(s))
     }
 }
@@ -53324,15 +51920,6 @@ impl Protocol {
 impl AsRef<str> for Protocol {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for Protocol {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -54089,7 +52676,7 @@ impl std::convert::From<&str> for ConnectivityType {
 impl std::str::FromStr for ConnectivityType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ConnectivityType::from(s))
     }
 }
@@ -54105,15 +52692,6 @@ impl ConnectivityType {
 impl AsRef<str> for ConnectivityType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ConnectivityType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -54151,7 +52729,7 @@ impl std::convert::From<&str> for NatGatewayState {
 impl std::str::FromStr for NatGatewayState {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(NatGatewayState::from(s))
     }
 }
@@ -54170,15 +52748,6 @@ impl NatGatewayState {
 impl AsRef<str> for NatGatewayState {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for NatGatewayState {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -54478,7 +53047,7 @@ impl std::convert::From<&str> for MoveStatus {
 impl std::str::FromStr for MoveStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(MoveStatus::from(s))
     }
 }
@@ -54494,15 +53063,6 @@ impl MoveStatus {
 impl AsRef<str> for MoveStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for MoveStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -56519,7 +55079,7 @@ impl std::convert::From<&str> for BootModeType {
 impl std::str::FromStr for BootModeType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(BootModeType::from(s))
     }
 }
@@ -56535,15 +55095,6 @@ impl BootModeType {
 impl AsRef<str> for BootModeType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for BootModeType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -56760,7 +55311,7 @@ impl std::convert::From<&str> for PlacementGroupStrategy {
 impl std::str::FromStr for PlacementGroupStrategy {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(PlacementGroupStrategy::from(s))
     }
 }
@@ -56777,15 +55328,6 @@ impl PlacementGroupStrategy {
 impl AsRef<str> for PlacementGroupStrategy {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for PlacementGroupStrategy {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -57483,7 +56025,7 @@ impl std::convert::From<&str> for EnaSupport {
 impl std::str::FromStr for EnaSupport {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(EnaSupport::from(s))
     }
 }
@@ -57500,15 +56042,6 @@ impl EnaSupport {
 impl AsRef<str> for EnaSupport {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for EnaSupport {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -57726,7 +56259,7 @@ impl std::convert::From<&str> for EbsNvmeSupport {
 impl std::str::FromStr for EbsNvmeSupport {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(EbsNvmeSupport::from(s))
     }
 }
@@ -57743,15 +56276,6 @@ impl EbsNvmeSupport {
 impl AsRef<str> for EbsNvmeSupport {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for EbsNvmeSupport {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -57909,7 +56433,7 @@ impl std::convert::From<&str> for EbsEncryptionSupport {
 impl std::str::FromStr for EbsEncryptionSupport {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(EbsEncryptionSupport::from(s))
     }
 }
@@ -57925,15 +56449,6 @@ impl EbsEncryptionSupport {
 impl AsRef<str> for EbsEncryptionSupport {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for EbsEncryptionSupport {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -57967,7 +56482,7 @@ impl std::convert::From<&str> for EbsOptimizedSupport {
 impl std::str::FromStr for EbsOptimizedSupport {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(EbsOptimizedSupport::from(s))
     }
 }
@@ -57984,15 +56499,6 @@ impl EbsOptimizedSupport {
 impl AsRef<str> for EbsOptimizedSupport {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for EbsOptimizedSupport {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -58108,7 +56614,7 @@ impl std::convert::From<&str> for EphemeralNvmeSupport {
 impl std::str::FromStr for EphemeralNvmeSupport {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(EphemeralNvmeSupport::from(s))
     }
 }
@@ -58125,15 +56631,6 @@ impl EphemeralNvmeSupport {
 impl AsRef<str> for EphemeralNvmeSupport {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for EphemeralNvmeSupport {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -58240,7 +56737,7 @@ impl std::convert::From<&str> for DiskType {
 impl std::str::FromStr for DiskType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(DiskType::from(s))
     }
 }
@@ -58256,15 +56753,6 @@ impl DiskType {
 impl AsRef<str> for DiskType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for DiskType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -58525,7 +57013,7 @@ impl std::convert::From<&str> for ArchitectureType {
 impl std::str::FromStr for ArchitectureType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ArchitectureType::from(s))
     }
 }
@@ -58542,15 +57030,6 @@ impl ArchitectureType {
 impl AsRef<str> for ArchitectureType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ArchitectureType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -58582,7 +57061,7 @@ impl std::convert::From<&str> for InstanceTypeHypervisor {
 impl std::str::FromStr for InstanceTypeHypervisor {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(InstanceTypeHypervisor::from(s))
     }
 }
@@ -58598,15 +57077,6 @@ impl InstanceTypeHypervisor {
 impl AsRef<str> for InstanceTypeHypervisor {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for InstanceTypeHypervisor {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -58638,7 +57108,7 @@ impl std::convert::From<&str> for RootDeviceType {
 impl std::str::FromStr for RootDeviceType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(RootDeviceType::from(s))
     }
 }
@@ -58654,15 +57124,6 @@ impl RootDeviceType {
 impl AsRef<str> for RootDeviceType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for RootDeviceType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -58694,7 +57155,7 @@ impl std::convert::From<&str> for UsageClassType {
 impl std::str::FromStr for UsageClassType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(UsageClassType::from(s))
     }
 }
@@ -58710,15 +57171,6 @@ impl UsageClassType {
 impl AsRef<str> for UsageClassType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for UsageClassType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -58835,7 +57287,7 @@ impl std::convert::From<&str> for LocationType {
 impl std::str::FromStr for LocationType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(LocationType::from(s))
     }
 }
@@ -58852,15 +57304,6 @@ impl LocationType {
 impl AsRef<str> for LocationType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for LocationType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -59119,7 +57562,7 @@ impl std::convert::From<&str> for SummaryStatus {
 impl std::str::FromStr for SummaryStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(SummaryStatus::from(s))
     }
 }
@@ -59138,15 +57581,6 @@ impl SummaryStatus {
 impl AsRef<str> for SummaryStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for SummaryStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -59262,7 +57696,7 @@ impl std::convert::From<&str> for StatusType {
 impl std::str::FromStr for StatusType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(StatusType::from(s))
     }
 }
@@ -59280,15 +57714,6 @@ impl StatusType {
 impl AsRef<str> for StatusType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for StatusType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -59318,7 +57743,7 @@ impl std::convert::From<&str> for StatusName {
 impl std::str::FromStr for StatusName {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(StatusName::from(s))
     }
 }
@@ -59333,15 +57758,6 @@ impl StatusName {
 impl AsRef<str> for StatusName {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for StatusName {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -60433,7 +58849,7 @@ impl std::convert::From<&str> for ImageState {
 impl std::str::FromStr for ImageState {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ImageState::from(s))
     }
 }
@@ -60454,15 +58870,6 @@ impl ImageState {
 impl AsRef<str> for ImageState {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ImageState {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -60496,7 +58903,7 @@ impl std::convert::From<&str> for ImageTypeValues {
 impl std::str::FromStr for ImageTypeValues {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ImageTypeValues::from(s))
     }
 }
@@ -60513,15 +58920,6 @@ impl ImageTypeValues {
 impl AsRef<str> for ImageTypeValues {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ImageTypeValues {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -60565,7 +58963,7 @@ impl std::convert::From<&str> for ImageAttributeName {
 impl std::str::FromStr for ImageAttributeName {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ImageAttributeName::from(s))
     }
 }
@@ -60587,15 +58985,6 @@ impl ImageAttributeName {
 impl AsRef<str> for ImageAttributeName {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ImageAttributeName {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -60965,7 +59354,7 @@ impl std::convert::From<&str> for AllowsMultipleInstanceTypes {
 impl std::str::FromStr for AllowsMultipleInstanceTypes {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(AllowsMultipleInstanceTypes::from(s))
     }
 }
@@ -60981,15 +59370,6 @@ impl AllowsMultipleInstanceTypes {
 impl AsRef<str> for AllowsMultipleInstanceTypes {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for AllowsMultipleInstanceTypes {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -61029,7 +59409,7 @@ impl std::convert::From<&str> for AllocationState {
 impl std::str::FromStr for AllocationState {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(AllocationState::from(s))
     }
 }
@@ -61049,15 +59429,6 @@ impl AllocationState {
 impl AsRef<str> for AllocationState {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for AllocationState {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -61711,7 +60082,7 @@ impl std::convert::From<&str> for ReservationState {
 impl std::str::FromStr for ReservationState {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ReservationState::from(s))
     }
 }
@@ -61729,15 +60100,6 @@ impl ReservationState {
 impl AsRef<str> for ReservationState {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ReservationState {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -62287,7 +60649,7 @@ impl std::convert::From<&str> for FpgaImageStateCode {
 impl std::str::FromStr for FpgaImageStateCode {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(FpgaImageStateCode::from(s))
     }
 }
@@ -62305,15 +60667,6 @@ impl FpgaImageStateCode {
 impl AsRef<str> for FpgaImageStateCode {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for FpgaImageStateCode {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -62736,7 +61089,7 @@ impl std::convert::From<&str> for LogDestinationType {
 impl std::str::FromStr for LogDestinationType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(LogDestinationType::from(s))
     }
 }
@@ -62752,15 +61105,6 @@ impl LogDestinationType {
 impl AsRef<str> for LogDestinationType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for LogDestinationType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -62794,7 +61138,7 @@ impl std::convert::From<&str> for TrafficType {
 impl std::str::FromStr for TrafficType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(TrafficType::from(s))
     }
 }
@@ -62811,15 +61155,6 @@ impl TrafficType {
 impl AsRef<str> for TrafficType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for TrafficType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -63426,7 +61761,7 @@ impl std::convert::From<&str> for InstanceLifecycle {
 impl std::str::FromStr for InstanceLifecycle {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(InstanceLifecycle::from(s))
     }
 }
@@ -63442,15 +61777,6 @@ impl InstanceLifecycle {
 impl AsRef<str> for InstanceLifecycle {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for InstanceLifecycle {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -64114,7 +62440,7 @@ impl std::convert::From<&str> for FleetCapacityReservationUsageStrategy {
 impl std::str::FromStr for FleetCapacityReservationUsageStrategy {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(FleetCapacityReservationUsageStrategy::from(s))
     }
 }
@@ -64131,15 +62457,6 @@ impl FleetCapacityReservationUsageStrategy {
 impl AsRef<str> for FleetCapacityReservationUsageStrategy {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for FleetCapacityReservationUsageStrategy {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -64171,7 +62488,7 @@ impl std::convert::From<&str> for FleetOnDemandAllocationStrategy {
 impl std::str::FromStr for FleetOnDemandAllocationStrategy {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(FleetOnDemandAllocationStrategy::from(s))
     }
 }
@@ -64187,15 +62504,6 @@ impl FleetOnDemandAllocationStrategy {
 impl AsRef<str> for FleetOnDemandAllocationStrategy {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for FleetOnDemandAllocationStrategy {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -64447,7 +62755,7 @@ impl std::convert::From<&str> for SpotInstanceInterruptionBehavior {
 impl std::str::FromStr for SpotInstanceInterruptionBehavior {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(SpotInstanceInterruptionBehavior::from(s))
     }
 }
@@ -64464,15 +62772,6 @@ impl SpotInstanceInterruptionBehavior {
 impl AsRef<str> for SpotInstanceInterruptionBehavior {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for SpotInstanceInterruptionBehavior {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -64626,7 +62925,7 @@ impl std::convert::From<&str> for FleetReplacementStrategy {
 impl std::str::FromStr for FleetReplacementStrategy {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(FleetReplacementStrategy::from(s))
     }
 }
@@ -64641,15 +62940,6 @@ impl FleetReplacementStrategy {
 impl AsRef<str> for FleetReplacementStrategy {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for FleetReplacementStrategy {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -64687,7 +62977,7 @@ impl std::convert::From<&str> for SpotAllocationStrategy {
 impl std::str::FromStr for SpotAllocationStrategy {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(SpotAllocationStrategy::from(s))
     }
 }
@@ -64707,15 +62997,6 @@ impl SpotAllocationStrategy {
 impl AsRef<str> for SpotAllocationStrategy {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for SpotAllocationStrategy {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -64952,7 +63233,7 @@ impl std::convert::From<&str> for FleetStateCode {
 impl std::str::FromStr for FleetStateCode {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(FleetStateCode::from(s))
     }
 }
@@ -64973,15 +63254,6 @@ impl FleetStateCode {
 impl AsRef<str> for FleetStateCode {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for FleetStateCode {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -65017,7 +63289,7 @@ impl std::convert::From<&str> for FleetActivityStatus {
 impl std::str::FromStr for FleetActivityStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(FleetActivityStatus::from(s))
     }
 }
@@ -65035,15 +63307,6 @@ impl FleetActivityStatus {
 impl AsRef<str> for FleetActivityStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for FleetActivityStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -65160,7 +63423,7 @@ impl std::convert::From<&str> for FleetEventType {
 impl std::str::FromStr for FleetEventType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(FleetEventType::from(s))
     }
 }
@@ -65177,15 +63440,6 @@ impl FleetEventType {
 impl AsRef<str> for FleetEventType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for FleetEventType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -65610,7 +63864,7 @@ impl std::convert::From<&str> for ExportTaskState {
 impl std::str::FromStr for ExportTaskState {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ExportTaskState::from(s))
     }
 }
@@ -65628,15 +63882,6 @@ impl ExportTaskState {
 impl AsRef<str> for ExportTaskState {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ExportTaskState {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -65734,7 +63979,7 @@ impl std::convert::From<&str> for ExportEnvironment {
 impl std::str::FromStr for ExportEnvironment {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ExportEnvironment::from(s))
     }
 }
@@ -65751,15 +63996,6 @@ impl ExportEnvironment {
 impl AsRef<str> for ExportEnvironment {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ExportEnvironment {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -65890,7 +64126,7 @@ impl std::convert::From<&str> for ContainerFormat {
 impl std::str::FromStr for ContainerFormat {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ContainerFormat::from(s))
     }
 }
@@ -65905,15 +64141,6 @@ impl ContainerFormat {
 impl AsRef<str> for ContainerFormat {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ContainerFormat {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -66253,7 +64480,7 @@ impl std::convert::From<&str> for ElasticGpuState {
 impl std::str::FromStr for ElasticGpuState {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ElasticGpuState::from(s))
     }
 }
@@ -66268,15 +64495,6 @@ impl ElasticGpuState {
 impl AsRef<str> for ElasticGpuState {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ElasticGpuState {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -66358,7 +64576,7 @@ impl std::convert::From<&str> for ElasticGpuStatus {
 impl std::str::FromStr for ElasticGpuStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ElasticGpuStatus::from(s))
     }
 }
@@ -66374,15 +64592,6 @@ impl ElasticGpuStatus {
 impl AsRef<str> for ElasticGpuStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ElasticGpuStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -67306,7 +65515,7 @@ impl std::convert::From<&str> for ClientVpnRouteStatusCode {
 impl std::str::FromStr for ClientVpnRouteStatusCode {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ClientVpnRouteStatusCode::from(s))
     }
 }
@@ -67324,15 +65533,6 @@ impl ClientVpnRouteStatusCode {
 impl AsRef<str> for ClientVpnRouteStatusCode {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ClientVpnRouteStatusCode {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -67914,7 +66114,7 @@ impl std::convert::From<&str> for ClientVpnEndpointAttributeStatusCode {
 impl std::str::FromStr for ClientVpnEndpointAttributeStatusCode {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ClientVpnEndpointAttributeStatusCode::from(s))
     }
 }
@@ -67930,15 +66130,6 @@ impl ClientVpnEndpointAttributeStatusCode {
 impl AsRef<str> for ClientVpnEndpointAttributeStatusCode {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ClientVpnEndpointAttributeStatusCode {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -68345,7 +66536,7 @@ impl std::convert::From<&str> for ClientVpnAuthenticationType {
 impl std::str::FromStr for ClientVpnAuthenticationType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ClientVpnAuthenticationType::from(s))
     }
 }
@@ -68364,15 +66555,6 @@ impl ClientVpnAuthenticationType {
 impl AsRef<str> for ClientVpnAuthenticationType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ClientVpnAuthenticationType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -68466,7 +66648,7 @@ impl std::convert::From<&str> for AssociatedNetworkType {
 impl std::str::FromStr for AssociatedNetworkType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(AssociatedNetworkType::from(s))
     }
 }
@@ -68481,15 +66663,6 @@ impl AssociatedNetworkType {
 impl AsRef<str> for AssociatedNetworkType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for AssociatedNetworkType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -68521,7 +66694,7 @@ impl std::convert::From<&str> for TransportProtocol {
 impl std::str::FromStr for TransportProtocol {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(TransportProtocol::from(s))
     }
 }
@@ -68537,15 +66710,6 @@ impl TransportProtocol {
 impl AsRef<str> for TransportProtocol {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for TransportProtocol {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -68575,7 +66739,7 @@ impl std::convert::From<&str> for VpnProtocol {
 impl std::str::FromStr for VpnProtocol {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(VpnProtocol::from(s))
     }
 }
@@ -68590,15 +66754,6 @@ impl VpnProtocol {
 impl AsRef<str> for VpnProtocol {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for VpnProtocol {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -68742,7 +66897,7 @@ impl std::convert::From<&str> for ClientVpnEndpointStatusCode {
 impl std::str::FromStr for ClientVpnEndpointStatusCode {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ClientVpnEndpointStatusCode::from(s))
     }
 }
@@ -68760,15 +66915,6 @@ impl ClientVpnEndpointStatusCode {
 impl AsRef<str> for ClientVpnEndpointStatusCode {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ClientVpnEndpointStatusCode {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -69414,7 +67560,7 @@ impl std::convert::From<&str> for CarrierGatewayState {
 impl std::str::FromStr for CarrierGatewayState {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(CarrierGatewayState::from(s))
     }
 }
@@ -69432,15 +67578,6 @@ impl CarrierGatewayState {
 impl AsRef<str> for CarrierGatewayState {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for CarrierGatewayState {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -69970,7 +68107,7 @@ impl std::convert::From<&str> for InstanceMatchCriteria {
 impl std::str::FromStr for InstanceMatchCriteria {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(InstanceMatchCriteria::from(s))
     }
 }
@@ -69986,15 +68123,6 @@ impl InstanceMatchCriteria {
 impl AsRef<str> for InstanceMatchCriteria {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for InstanceMatchCriteria {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -70026,7 +68154,7 @@ impl std::convert::From<&str> for CapacityReservationTenancy {
 impl std::str::FromStr for CapacityReservationTenancy {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(CapacityReservationTenancy::from(s))
     }
 }
@@ -70042,15 +68170,6 @@ impl CapacityReservationTenancy {
 impl AsRef<str> for CapacityReservationTenancy {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for CapacityReservationTenancy {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -70114,7 +68233,7 @@ impl std::convert::From<&str> for CapacityReservationInstancePlatform {
 impl std::str::FromStr for CapacityReservationInstancePlatform {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(CapacityReservationInstancePlatform::from(s))
     }
 }
@@ -70153,15 +68272,6 @@ impl CapacityReservationInstancePlatform {
 impl AsRef<str> for CapacityReservationInstancePlatform {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for CapacityReservationInstancePlatform {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -70513,7 +68623,7 @@ impl std::convert::From<&str> for BundleTaskState {
 impl std::str::FromStr for BundleTaskState {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(BundleTaskState::from(s))
     }
 }
@@ -70534,15 +68644,6 @@ impl BundleTaskState {
 impl AsRef<str> for BundleTaskState {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for BundleTaskState {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -70911,7 +69012,7 @@ impl std::convert::From<&str> for AvailabilityZoneOptInStatus {
 impl std::str::FromStr for AvailabilityZoneOptInStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(AvailabilityZoneOptInStatus::from(s))
     }
 }
@@ -70928,15 +69029,6 @@ impl AvailabilityZoneOptInStatus {
 impl AsRef<str> for AvailabilityZoneOptInStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for AvailabilityZoneOptInStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -70972,7 +69064,7 @@ impl std::convert::From<&str> for AvailabilityZoneState {
 impl std::str::FromStr for AvailabilityZoneState {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(AvailabilityZoneState::from(s))
     }
 }
@@ -70990,15 +69082,6 @@ impl AvailabilityZoneState {
 impl AsRef<str> for AvailabilityZoneState {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for AvailabilityZoneState {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -71299,7 +69382,7 @@ impl std::convert::From<&str> for DomainType {
 impl std::str::FromStr for DomainType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(DomainType::from(s))
     }
 }
@@ -71315,15 +69398,6 @@ impl DomainType {
 impl AsRef<str> for DomainType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for DomainType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -71477,7 +69551,7 @@ impl std::convert::From<&str> for AccountAttributeName {
 impl std::str::FromStr for AccountAttributeName {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(AccountAttributeName::from(s))
     }
 }
@@ -71493,15 +69567,6 @@ impl AccountAttributeName {
 impl AsRef<str> for AccountAttributeName {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for AccountAttributeName {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -71943,7 +70008,7 @@ impl std::convert::From<&str> for DeleteQueuedReservedInstancesErrorCode {
 impl std::str::FromStr for DeleteQueuedReservedInstancesErrorCode {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(DeleteQueuedReservedInstancesErrorCode::from(s))
     }
 }
@@ -71964,15 +70029,6 @@ impl DeleteQueuedReservedInstancesErrorCode {
 impl AsRef<str> for DeleteQueuedReservedInstancesErrorCode {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for DeleteQueuedReservedInstancesErrorCode {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -72229,7 +70285,7 @@ impl std::convert::From<&str> for LaunchTemplateErrorCode {
 impl std::str::FromStr for LaunchTemplateErrorCode {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(LaunchTemplateErrorCode::from(s))
     }
 }
@@ -72253,15 +70309,6 @@ impl LaunchTemplateErrorCode {
 impl AsRef<str> for LaunchTemplateErrorCode {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for LaunchTemplateErrorCode {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -72507,7 +70554,7 @@ impl std::convert::From<&str> for DeleteFleetErrorCode {
 impl std::str::FromStr for DeleteFleetErrorCode {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(DeleteFleetErrorCode::from(s))
     }
 }
@@ -72525,15 +70572,6 @@ impl DeleteFleetErrorCode {
 impl AsRef<str> for DeleteFleetErrorCode {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for DeleteFleetErrorCode {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -72940,16 +70978,16 @@ pub struct VpnTunnelOptionsSpecification {
     /// <p>Valid values: <code>2</code> | <code>14</code> | <code>15</code> | <code>16</code> | <code>17</code> | <code>18</code> | <code>19</code> | <code>20</code> | <code>21</code> | <code>22</code> | <code>23</code> | <code>24</code>
     /// </p>
     pub phase1_dh_group_numbers:
-        std::option::Option<std::vec::Vec<crate::model::Phase1DHGroupNumbersRequestListValue>>,
+        std::option::Option<std::vec::Vec<crate::model::Phase1DhGroupNumbersRequestListValue>>,
     /// <p>One or more Diffie-Hellman group numbers that are permitted for the VPN tunnel for phase 2 IKE negotiations.</p>
     /// <p>Valid values: <code>2</code> | <code>5</code> | <code>14</code> | <code>15</code> | <code>16</code> | <code>17</code> | <code>18</code> | <code>19</code> | <code>20</code> | <code>21</code> | <code>22</code> | <code>23</code> | <code>24</code>
     /// </p>
     pub phase2_dh_group_numbers:
-        std::option::Option<std::vec::Vec<crate::model::Phase2DHGroupNumbersRequestListValue>>,
+        std::option::Option<std::vec::Vec<crate::model::Phase2DhGroupNumbersRequestListValue>>,
     /// <p>The IKE versions that are permitted for the VPN tunnel.</p>
     /// <p>Valid values: <code>ikev1</code> | <code>ikev2</code>
     /// </p>
-    pub ike_versions: std::option::Option<std::vec::Vec<crate::model::IKEVersionsRequestListValue>>,
+    pub ike_versions: std::option::Option<std::vec::Vec<crate::model::IkeVersionsRequestListValue>>,
     /// <p>The action to take when the establishing the tunnel for the VPN connection. By default, your customer gateway device must initiate the IKE negotiation and bring up the tunnel. Specify <code>start</code> for AWS to initiate the IKE negotiation.</p>
     /// <p>Valid Values: <code>add</code> | <code>start</code>
     /// </p>
@@ -73022,11 +71060,11 @@ pub mod vpn_tunnel_options_specification {
             std::vec::Vec<crate::model::Phase2IntegrityAlgorithmsRequestListValue>,
         >,
         pub(crate) phase1_dh_group_numbers:
-            std::option::Option<std::vec::Vec<crate::model::Phase1DHGroupNumbersRequestListValue>>,
+            std::option::Option<std::vec::Vec<crate::model::Phase1DhGroupNumbersRequestListValue>>,
         pub(crate) phase2_dh_group_numbers:
-            std::option::Option<std::vec::Vec<crate::model::Phase2DHGroupNumbersRequestListValue>>,
+            std::option::Option<std::vec::Vec<crate::model::Phase2DhGroupNumbersRequestListValue>>,
         pub(crate) ike_versions:
-            std::option::Option<std::vec::Vec<crate::model::IKEVersionsRequestListValue>>,
+            std::option::Option<std::vec::Vec<crate::model::IkeVersionsRequestListValue>>,
         pub(crate) startup_action: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -73273,7 +71311,7 @@ pub mod vpn_tunnel_options_specification {
         }
         pub fn phase1_dh_group_numbers(
             mut self,
-            input: impl Into<crate::model::Phase1DHGroupNumbersRequestListValue>,
+            input: impl Into<crate::model::Phase1DhGroupNumbersRequestListValue>,
         ) -> Self {
             let mut v = self.phase1_dh_group_numbers.unwrap_or_default();
             v.push(input.into());
@@ -73283,7 +71321,7 @@ pub mod vpn_tunnel_options_specification {
         pub fn set_phase1_dh_group_numbers(
             mut self,
             input: std::option::Option<
-                std::vec::Vec<crate::model::Phase1DHGroupNumbersRequestListValue>,
+                std::vec::Vec<crate::model::Phase1DhGroupNumbersRequestListValue>,
             >,
         ) -> Self {
             self.phase1_dh_group_numbers = input;
@@ -73291,7 +71329,7 @@ pub mod vpn_tunnel_options_specification {
         }
         pub fn phase2_dh_group_numbers(
             mut self,
-            input: impl Into<crate::model::Phase2DHGroupNumbersRequestListValue>,
+            input: impl Into<crate::model::Phase2DhGroupNumbersRequestListValue>,
         ) -> Self {
             let mut v = self.phase2_dh_group_numbers.unwrap_or_default();
             v.push(input.into());
@@ -73301,7 +71339,7 @@ pub mod vpn_tunnel_options_specification {
         pub fn set_phase2_dh_group_numbers(
             mut self,
             input: std::option::Option<
-                std::vec::Vec<crate::model::Phase2DHGroupNumbersRequestListValue>,
+                std::vec::Vec<crate::model::Phase2DhGroupNumbersRequestListValue>,
             >,
         ) -> Self {
             self.phase2_dh_group_numbers = input;
@@ -73309,7 +71347,7 @@ pub mod vpn_tunnel_options_specification {
         }
         pub fn ike_versions(
             mut self,
-            input: impl Into<crate::model::IKEVersionsRequestListValue>,
+            input: impl Into<crate::model::IkeVersionsRequestListValue>,
         ) -> Self {
             let mut v = self.ike_versions.unwrap_or_default();
             v.push(input.into());
@@ -73318,7 +71356,7 @@ pub mod vpn_tunnel_options_specification {
         }
         pub fn set_ike_versions(
             mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::IKEVersionsRequestListValue>>,
+            input: std::option::Option<std::vec::Vec<crate::model::IkeVersionsRequestListValue>>,
         ) -> Self {
             self.ike_versions = input;
             self
@@ -74151,7 +72189,7 @@ impl std::convert::From<&str> for CopyTagsFromSource {
 impl std::str::FromStr for CopyTagsFromSource {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(CopyTagsFromSource::from(s))
     }
 }
@@ -74166,15 +72204,6 @@ impl CopyTagsFromSource {
 impl AsRef<str> for CopyTagsFromSource {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for CopyTagsFromSource {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -74345,7 +72374,7 @@ impl std::convert::From<&str> for NetworkInterfaceCreationType {
 impl std::str::FromStr for NetworkInterfaceCreationType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(NetworkInterfaceCreationType::from(s))
     }
 }
@@ -74360,15 +72389,6 @@ impl NetworkInterfaceCreationType {
 impl AsRef<str> for NetworkInterfaceCreationType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for NetworkInterfaceCreationType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -77101,7 +75121,7 @@ impl std::convert::From<&str> for FlowLogsResourceType {
 impl std::str::FromStr for FlowLogsResourceType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(FlowLogsResourceType::from(s))
     }
 }
@@ -77118,15 +75138,6 @@ impl FlowLogsResourceType {
 impl AsRef<str> for FlowLogsResourceType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for FlowLogsResourceType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -78412,7 +76423,7 @@ impl std::convert::From<&str> for CancelSpotInstanceRequestState {
 impl std::str::FromStr for CancelSpotInstanceRequestState {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(CancelSpotInstanceRequestState::from(s))
     }
 }
@@ -78431,15 +76442,6 @@ impl CancelSpotInstanceRequestState {
 impl AsRef<str> for CancelSpotInstanceRequestState {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for CancelSpotInstanceRequestState {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -78608,7 +76610,7 @@ impl std::convert::From<&str> for CancelBatchErrorCode {
 impl std::str::FromStr for CancelBatchErrorCode {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(CancelBatchErrorCode::from(s))
     }
 }
@@ -78628,15 +76630,6 @@ impl CancelBatchErrorCode {
 impl AsRef<str> for CancelBatchErrorCode {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for CancelBatchErrorCode {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 

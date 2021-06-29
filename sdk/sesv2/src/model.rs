@@ -2,20 +2,14 @@
 /// <p>The content of the email, composed of a subject line, an HTML part, and a text-only
 /// part.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EmailTemplateContent {
     /// <p>The subject line of the email.</p>
-    #[serde(rename = "Subject")]
-    #[serde(default)]
     pub subject: std::option::Option<std::string::String>,
     /// <p>The email body that will be visible to recipients whose email clients do not display
     /// HTML.</p>
-    #[serde(rename = "Text")]
-    #[serde(default)]
     pub text: std::option::Option<std::string::String>,
     /// <p>The HTML body of the email.</p>
-    #[serde(rename = "Html")]
-    #[serde(default)]
     pub html: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for EmailTemplateContent {
@@ -86,24 +80,16 @@ impl EmailTemplateContent {
 /// <p>An interest group, theme, or label within a list. Lists can have multiple
 /// topics.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Topic {
     /// <p>The name of the topic.</p>
-    #[serde(rename = "TopicName")]
-    #[serde(default)]
     pub topic_name: std::option::Option<std::string::String>,
     /// <p>The name of the topic the contact will see.</p>
-    #[serde(rename = "DisplayName")]
-    #[serde(default)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>A description of what the topic is about, which the contact will see.</p>
-    #[serde(rename = "Description")]
-    #[serde(default)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The default subscription status to be applied to a contact if the contact has not
     /// noted their preference for subscribing to a topic.</p>
-    #[serde(rename = "DefaultSubscriptionStatus")]
-    #[serde(default)]
     pub default_subscription_status: std::option::Option<crate::model::SubscriptionStatus>,
 }
 impl std::fmt::Debug for Topic {
@@ -221,7 +207,7 @@ impl std::convert::From<&str> for SubscriptionStatus {
 impl std::str::FromStr for SubscriptionStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(SubscriptionStatus::from(s))
     }
 }
@@ -239,28 +225,15 @@ impl AsRef<str> for SubscriptionStatus {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for SubscriptionStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>The contact's preference for being opted-in to or opted-out of a topic.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TopicPreference {
     /// <p>The name of the topic.</p>
-    #[serde(rename = "TopicName")]
-    #[serde(default)]
     pub topic_name: std::option::Option<std::string::String>,
     /// <p>The contact's subscription status to a topic which is either <code>OPT_IN</code> or
     /// <code>OPT_OUT</code>.</p>
-    #[serde(rename = "SubscriptionStatus")]
-    #[serde(default)]
     pub subscription_status: std::option::Option<crate::model::SubscriptionStatus>,
 }
 impl std::fmt::Debug for TopicPreference {
@@ -324,42 +297,30 @@ impl TopicPreference {
 /// is associated with. Also defines the types of events that are sent to the event
 /// destination.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventDestinationDefinition {
     /// <p>If <code>true</code>, the event destination is enabled. When the event destination is
     /// enabled, the specified event types are sent to the destinations in this
     /// <code>EventDestinationDefinition</code>.</p>
     /// <p>If <code>false</code>, the event destination is disabled. When the event destination
     /// is disabled, events aren't sent to the specified destinations.</p>
-    #[serde(rename = "Enabled")]
-    #[serde(default)]
     pub enabled: bool,
     /// <p>An array that specifies which events the Amazon SES API v2 should send to the destinations in
     /// this <code>EventDestinationDefinition</code>.</p>
-    #[serde(rename = "MatchingEventTypes")]
-    #[serde(default)]
     pub matching_event_types: std::option::Option<std::vec::Vec<crate::model::EventType>>,
     /// <p>An object that defines an Amazon Kinesis Data Firehose destination for email events. You can use Amazon Kinesis Data Firehose to
     /// stream data to other services, such as Amazon S3 and Amazon Redshift.</p>
-    #[serde(rename = "KinesisFirehoseDestination")]
-    #[serde(default)]
     pub kinesis_firehose_destination: std::option::Option<crate::model::KinesisFirehoseDestination>,
     /// <p>An object that defines an Amazon CloudWatch destination for email events. You can use Amazon CloudWatch to
     /// monitor and gain insights on your email sending metrics.</p>
-    #[serde(rename = "CloudWatchDestination")]
-    #[serde(default)]
     pub cloud_watch_destination: std::option::Option<crate::model::CloudWatchDestination>,
     /// <p>An object that defines an Amazon SNS destination for email events. You can use Amazon SNS to
     /// send notification when certain email events occur.</p>
-    #[serde(rename = "SnsDestination")]
-    #[serde(default)]
     pub sns_destination: std::option::Option<crate::model::SnsDestination>,
     /// <p>An object that defines an Amazon Pinpoint project destination for email events. You can send
     /// email event data to a Amazon Pinpoint project to view metrics using the Transactional Messaging
     /// dashboards that are built in to Amazon Pinpoint. For more information, see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/analytics-transactional-messages.html">Transactional
     /// Messaging Charts</a> in the <i>Amazon Pinpoint User Guide</i>.</p>
-    #[serde(rename = "PinpointDestination")]
-    #[serde(default)]
     pub pinpoint_destination: std::option::Option<crate::model::PinpointDestination>,
 }
 impl std::fmt::Debug for EventDestinationDefinition {
@@ -505,12 +466,10 @@ impl EventDestinationDefinition {
 /// dashboards that are built in to Amazon Pinpoint. For more information, see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/analytics-transactional-messages.html">Transactional
 /// Messaging Charts</a> in the <i>Amazon Pinpoint User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PinpointDestination {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Pinpoint project that you want to send email
     /// events to.</p>
-    #[serde(rename = "ApplicationArn")]
-    #[serde(default)]
     pub application_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PinpointDestination {
@@ -560,13 +519,11 @@ impl PinpointDestination {
 /// <p>An object that defines an Amazon SNS destination for email events. You can use Amazon SNS to
 /// send notification when certain email events occur.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SnsDestination {
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic that you want to publish email
     /// events to. For more information about Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer
     /// Guide</a>.</p>
-    #[serde(rename = "TopicArn")]
-    #[serde(default)]
     pub topic_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SnsDestination {
@@ -614,12 +571,10 @@ impl SnsDestination {
 /// <p>An object that defines an Amazon CloudWatch destination for email events. You can use Amazon CloudWatch to
 /// monitor and gain insights on your email sending metrics.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudWatchDestination {
     /// <p>An array of objects that define the dimensions to use when you send email events to
     /// Amazon CloudWatch.</p>
-    #[serde(rename = "DimensionConfigurations")]
-    #[serde(default)]
     pub dimension_configurations:
         std::option::Option<std::vec::Vec<crate::model::CloudWatchDimensionConfiguration>>,
 }
@@ -676,7 +631,7 @@ impl CloudWatchDestination {
 /// <p>An object that defines the dimension configuration to use when you send email events
 /// to Amazon CloudWatch.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudWatchDimensionConfiguration {
     /// <p>The name of an Amazon CloudWatch dimension associated with an email sending metric. The name has to
     /// meet the following criteria:</p>
@@ -689,8 +644,6 @@ pub struct CloudWatchDimensionConfiguration {
     /// <p>It can contain no more than 256 characters.</p>
     /// </li>
     /// </ul>
-    #[serde(rename = "DimensionName")]
-    #[serde(default)]
     pub dimension_name: std::option::Option<std::string::String>,
     /// <p>The location where the Amazon SES API v2 finds the value of a dimension to publish to Amazon CloudWatch. If
     /// you want to use the message tags that you specify using an
@@ -698,8 +651,6 @@ pub struct CloudWatchDimensionConfiguration {
     /// or <code>SendRawEmail</code> API, choose <code>messageTag</code>. If you want to use
     /// your own email headers, choose <code>emailHeader</code>. If you want to use link tags,
     /// choose <code>linkTags</code>.</p>
-    #[serde(rename = "DimensionValueSource")]
-    #[serde(default)]
     pub dimension_value_source: std::option::Option<crate::model::DimensionValueSource>,
     /// <p>The default value of the dimension that is published to Amazon CloudWatch if you don't provide the
     /// value of the dimension when you send an email. This value has to meet the following
@@ -713,8 +664,6 @@ pub struct CloudWatchDimensionConfiguration {
     /// <p>It can contain no more than 256 characters.</p>
     /// </li>
     /// </ul>
-    #[serde(rename = "DefaultDimensionValue")]
-    #[serde(default)]
     pub default_dimension_value: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CloudWatchDimensionConfiguration {
@@ -852,7 +801,7 @@ impl std::convert::From<&str> for DimensionValueSource {
 impl std::str::FromStr for DimensionValueSource {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(DimensionValueSource::from(s))
     }
 }
@@ -871,30 +820,17 @@ impl AsRef<str> for DimensionValueSource {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for DimensionValueSource {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>An object that defines an Amazon Kinesis Data Firehose destination for email events. You can use Amazon Kinesis Data Firehose to
 /// stream data to other services, such as Amazon S3 and Amazon Redshift.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KinesisFirehoseDestination {
     /// <p>The Amazon Resource Name (ARN) of the IAM role that the Amazon SES API v2 uses to send email
     /// events to the Amazon Kinesis Data Firehose stream.</p>
-    #[serde(rename = "IamRoleArn")]
-    #[serde(default)]
     pub iam_role_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon Kinesis Data Firehose stream that the Amazon SES API v2 sends email
     /// events to.</p>
-    #[serde(rename = "DeliveryStreamArn")]
-    #[serde(default)]
     pub delivery_stream_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for KinesisFirehoseDestination {
@@ -1000,7 +936,7 @@ impl std::convert::From<&str> for EventType {
 impl std::str::FromStr for EventType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(EventType::from(s))
     }
 }
@@ -1024,15 +960,6 @@ impl EventType {
 impl AsRef<str> for EventType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for EventType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -1070,19 +997,15 @@ impl<'de> serde::Deserialize<'de> for EventType {
 /// </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>One part of a key-value pair that defines a tag. The maximum length of a tag key is
     /// 128 characters. The minimum length is 1 character.</p>
-    #[serde(rename = "Key")]
-    #[serde(default)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The optional part of a key-value pair that defines a tag. The maximum length of a tag
     /// value is 256 characters. The minimum length is 0 characters. If you don't want a
     /// resource to have a specific tag value, don't specify a value for this parameter. If you
     /// don't specify a value, Amazon SES sets the value to an empty string.</p>
-    #[serde(rename = "Value")]
-    #[serde(default)]
     pub value: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for Tag {
@@ -1144,15 +1067,11 @@ impl Tag {
 /// <p>An object used to specify a list or topic to which an email belongs, which will be
 /// used when a contact chooses to unsubscribe.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListManagementOptions {
     /// <p>The name of the contact list.</p>
-    #[serde(rename = "ContactListName")]
-    #[serde(default)]
     pub contact_list_name: std::option::Option<std::string::String>,
     /// <p>The name of the topic.</p>
-    #[serde(rename = "TopicName")]
-    #[serde(default)]
     pub topic_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ListManagementOptions {
@@ -1214,7 +1133,7 @@ impl ListManagementOptions {
 /// tags when you publish email sending events.
 /// </p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MessageTag {
     /// <p>The name of the message tag. The message tag name has to meet the following
     /// criteria:</p>
@@ -1227,8 +1146,6 @@ pub struct MessageTag {
     /// <p>It can contain no more than 256 characters.</p>
     /// </li>
     /// </ul>
-    #[serde(rename = "Name")]
-    #[serde(default)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The value of the message tag. The message tag value has to meet the following
     /// criteria:</p>
@@ -1241,8 +1158,6 @@ pub struct MessageTag {
     /// <p>It can contain no more than 256 characters.</p>
     /// </li>
     /// </ul>
-    #[serde(rename = "Value")]
-    #[serde(default)]
     pub value: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for MessageTag {
@@ -1323,11 +1238,9 @@ impl MessageTag {
 /// messages, in which you specify a complete MIME-formatted message. Raw messages can
 /// include attachments and custom headers.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EmailContent {
     /// <p>The simple email message. The message consists of a subject and a message body.</p>
-    #[serde(rename = "Simple")]
-    #[serde(default)]
     pub simple: std::option::Option<crate::model::Message>,
     /// <p>The raw email message. The message has to meet the following criteria:</p>
     /// <ul>
@@ -1359,12 +1272,8 @@ pub struct EmailContent {
     /// characters. This restriction is defined in <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p>
     /// </li>
     /// </ul>
-    #[serde(rename = "Raw")]
-    #[serde(default)]
     pub raw: std::option::Option<crate::model::RawMessage>,
     /// <p>The template to use for the email message.</p>
-    #[serde(rename = "Template")]
-    #[serde(default)]
     pub template: std::option::Option<crate::model::Template>,
 }
 impl std::fmt::Debug for EmailContent {
@@ -1465,23 +1374,17 @@ impl EmailContent {
 /// template</i> is a type of message template that contains content that you
 /// want to define, save, and reuse in email messages that you send.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Template {
     /// <p>The name of the template. You will refer to this name when you send email using the
     /// <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code> operations.
     /// </p>
-    #[serde(rename = "TemplateName")]
-    #[serde(default)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the template.</p>
-    #[serde(rename = "TemplateArn")]
-    #[serde(default)]
     pub template_arn: std::option::Option<std::string::String>,
     /// <p>An object that defines the values to use for message variables in the template. This
     /// object is a set of key-value pairs. Each key defines a message variable in the template.
     /// The corresponding value defines the value to use for that variable.</p>
-    #[serde(rename = "TemplateData")]
-    #[serde(default)]
     pub template_data: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for Template {
@@ -1560,7 +1463,7 @@ impl Template {
 
 /// <p>Represents the raw content of an email message.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RawMessage {
     /// <p>The raw email message. The message has to meet the following criteria:</p>
     /// <ul>
@@ -1590,9 +1493,6 @@ pub struct RawMessage {
     /// characters. This restriction is defined in <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p>
     /// </li>
     /// </ul>
-    #[serde(rename = "Data")]
-    #[serde(deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesblob_deser")]
-    #[serde(default)]
     pub data: std::option::Option<smithy_types::Blob>,
 }
 impl std::fmt::Debug for RawMessage {
@@ -1663,18 +1563,14 @@ impl RawMessage {
 /// <p>Represents the email message that you're sending. The <code>Message</code> object
 /// consists of a subject line and a message body.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Message {
     /// <p>The subject line of the email. The subject line can only contain 7-bit ASCII
     /// characters. However, you can specify non-ASCII characters in the subject line by using
     /// encoded-word syntax, as described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>.</p>
-    #[serde(rename = "Subject")]
-    #[serde(default)]
     pub subject: std::option::Option<crate::model::Content>,
     /// <p>The body of the message. You can specify an HTML version of the message, a text-only
     /// version of the message, or both.</p>
-    #[serde(rename = "Body")]
-    #[serde(default)]
     pub body: std::option::Option<crate::model::Body>,
 }
 impl std::fmt::Debug for Message {
@@ -1734,19 +1630,15 @@ impl Message {
 
 /// <p>Represents the body of the email message.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Body {
     /// <p>An object that represents the version of the message that is displayed in email
     /// clients that don't support HTML, or clients where the recipient has disabled HTML
     /// rendering.</p>
-    #[serde(rename = "Text")]
-    #[serde(default)]
     pub text: std::option::Option<crate::model::Content>,
     /// <p>An object that represents the version of the message that is displayed in email
     /// clients that support HTML. HTML messages can include formatted text, hyperlinks, images,
     /// and more. </p>
-    #[serde(rename = "Html")]
-    #[serde(default)]
     pub html: std::option::Option<crate::model::Content>,
 }
 impl std::fmt::Debug for Body {
@@ -1808,18 +1700,14 @@ impl Body {
 /// <p>An object that represents the content of the email, and optionally a character set
 /// specification.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Content {
     /// <p>The content of the message itself.</p>
-    #[serde(rename = "Data")]
-    #[serde(default)]
     pub data: std::option::Option<std::string::String>,
     /// <p>The character set for the content. Because of the constraints of the SMTP protocol,
     /// Amazon SES uses 7-bit ASCII by default. If the text includes characters outside of the ASCII
     /// range, you have to specify a character set. For example, you could specify
     /// <code>UTF-8</code>, <code>ISO-8859-1</code>, or <code>Shift_JIS</code>.</p>
-    #[serde(rename = "Charset")]
-    #[serde(default)]
     pub charset: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for Content {
@@ -1879,22 +1767,16 @@ impl Content {
 
 /// <p>An object that describes the recipients for an email.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Destination {
     /// <p>An array that contains the email addresses of the "To" recipients for the
     /// email.</p>
-    #[serde(rename = "ToAddresses")]
-    #[serde(default)]
     pub to_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array that contains the email addresses of the "CC" (carbon copy) recipients for
     /// the email.</p>
-    #[serde(rename = "CcAddresses")]
-    #[serde(default)]
     pub cc_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array that contains the email addresses of the "BCC" (blind carbon copy) recipients
     /// for the email.</p>
-    #[serde(rename = "BccAddresses")]
-    #[serde(default)]
     pub bcc_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl std::fmt::Debug for Destination {
@@ -1976,7 +1858,7 @@ impl Destination {
 /// <p>The result of the <code>SendBulkEmail</code> operation of each specified
 /// <code>BulkEmailEntry</code>.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BulkEmailEntryResult {
     /// <p>The status of a message sent using the <code>SendBulkTemplatedEmail</code>
     /// operation.</p>
@@ -2039,18 +1921,12 @@ pub struct BulkEmailEntryResult {
     /// for additional information.</p>
     /// </li>
     /// </ul>
-    #[serde(rename = "Status")]
-    #[serde(default)]
     pub status: std::option::Option<crate::model::BulkEmailStatus>,
     /// <p>A description of an error that prevented a message being sent using the
     /// <code>SendBulkTemplatedEmail</code> operation.</p>
-    #[serde(rename = "Error")]
-    #[serde(default)]
     pub error: std::option::Option<std::string::String>,
     /// <p>The unique message identifier returned from the <code>SendBulkTemplatedEmail</code>
     /// operation.</p>
-    #[serde(rename = "MessageId")]
-    #[serde(default)]
     pub message_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for BulkEmailEntryResult {
@@ -2234,7 +2110,7 @@ impl std::convert::From<&str> for BulkEmailStatus {
 impl std::str::FromStr for BulkEmailStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(BulkEmailStatus::from(s))
     }
 }
@@ -2264,18 +2140,9 @@ impl AsRef<str> for BulkEmailStatus {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for BulkEmailStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BulkEmailEntry {
     /// <p>Represents the destination of the message, consisting of To:, CC:, and BCC:
     /// fields.</p>
@@ -2287,20 +2154,14 @@ pub struct BulkEmailEntry {
     /// contains non-ASCII characters, they must be encoded using Punycode, as described in
     /// <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>.</p>
     /// </note>
-    #[serde(rename = "Destination")]
-    #[serde(default)]
     pub destination: std::option::Option<crate::model::Destination>,
     /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send
     /// using the <code>SendBulkTemplatedEmail</code> operation. Tags correspond to
     /// characteristics of the email that you define, so that you can publish email sending
     /// events.</p>
-    #[serde(rename = "ReplacementTags")]
-    #[serde(default)]
     pub replacement_tags: std::option::Option<std::vec::Vec<crate::model::MessageTag>>,
     /// <p>The <code>ReplacementEmailContent</code> associated with a
     /// <code>BulkEmailEntry</code>.</p>
-    #[serde(rename = "ReplacementEmailContent")]
-    #[serde(default)]
     pub replacement_email_content: std::option::Option<crate::model::ReplacementEmailContent>,
 }
 impl std::fmt::Debug for BulkEmailEntry {
@@ -2395,12 +2256,10 @@ impl BulkEmailEntry {
 /// <code>BulkEmailEntry</code>. The <code>ReplacementTemplate</code> can be specified
 /// within this object.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplacementEmailContent {
     /// <p>The <code>ReplacementTemplate</code> associated with
     /// <code>ReplacementEmailContent</code>.</p>
-    #[serde(rename = "ReplacementTemplate")]
-    #[serde(default)]
     pub replacement_template: std::option::Option<crate::model::ReplacementTemplate>,
 }
 impl std::fmt::Debug for ReplacementEmailContent {
@@ -2450,13 +2309,11 @@ impl ReplacementEmailContent {
 /// <p>An object which contains <code>ReplacementTemplateData</code> to be used for a
 /// specific <code>BulkEmailEntry</code>.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplacementTemplate {
     /// <p>A list of replacement values to apply to the template. This parameter is a JSON
     /// object, typically consisting of key-value pairs in which the keys correspond to
     /// replacement tags in the email template.</p>
-    #[serde(rename = "ReplacementTemplateData")]
-    #[serde(default)]
     pub replacement_template_data: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ReplacementTemplate {
@@ -2507,11 +2364,9 @@ impl ReplacementTemplate {
 /// <p>An object that contains the body of the message. You can specify a template
 /// message.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BulkEmailContent {
     /// <p>The template to use for the bulk email message.</p>
-    #[serde(rename = "Template")]
-    #[serde(default)]
     pub template: std::option::Option<crate::model::Template>,
 }
 impl std::fmt::Debug for BulkEmailContent {
@@ -2598,7 +2453,7 @@ impl std::convert::From<&str> for SuppressionListReason {
 impl std::str::FromStr for SuppressionListReason {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(SuppressionListReason::from(s))
     }
 }
@@ -2614,15 +2469,6 @@ impl SuppressionListReason {
 impl AsRef<str> for SuppressionListReason {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for SuppressionListReason {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -2663,7 +2509,7 @@ impl std::convert::From<&str> for BehaviorOnMxFailure {
 impl std::str::FromStr for BehaviorOnMxFailure {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(BehaviorOnMxFailure::from(s))
     }
 }
@@ -2679,15 +2525,6 @@ impl BehaviorOnMxFailure {
 impl AsRef<str> for BehaviorOnMxFailure {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for BehaviorOnMxFailure {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -2756,7 +2593,7 @@ impl std::convert::From<&str> for DkimStatus {
 impl std::str::FromStr for DkimStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(DkimStatus::from(s))
     }
 }
@@ -2777,31 +2614,18 @@ impl AsRef<str> for DkimStatus {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for DkimStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>An object that contains information about the tokens used for setting up Bring Your
 /// Own DKIM (BYODKIM).</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DkimSigningAttributes {
     /// <p>A string that's used to identify a public key in the DNS configuration for a
     /// domain.</p>
-    #[serde(rename = "DomainSigningSelector")]
-    #[serde(default)]
     pub domain_signing_selector: std::option::Option<std::string::String>,
     /// <p>A private key that's used to generate a DKIM signature.</p>
     /// <p>The private key must use 1024-bit RSA encryption, and must be encoded using base64
     /// encoding.</p>
-    #[serde(rename = "DomainSigningPrivateKey")]
-    #[serde(default)]
     pub domain_signing_private_key: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DkimSigningAttributes {
@@ -2896,7 +2720,7 @@ impl std::convert::From<&str> for DkimSigningAttributesOrigin {
 impl std::str::FromStr for DkimSigningAttributesOrigin {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(DkimSigningAttributesOrigin::from(s))
     }
 }
@@ -2914,40 +2738,22 @@ impl AsRef<str> for DkimSigningAttributesOrigin {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for DkimSigningAttributesOrigin {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>An object that contains information about the Deliverability dashboard subscription for a
 /// verified domain that you use to send email and currently has an active Deliverability dashboard
 /// subscription. If a Deliverability dashboard subscription is active for a domain, you gain access
 /// to reputation, inbox placement, and other metrics for the domain.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DomainDeliverabilityTrackingOption {
     /// <p>A verified domain that’s associated with your AWS account and currently has an
     /// active Deliverability dashboard subscription.</p>
-    #[serde(rename = "Domain")]
-    #[serde(default)]
     pub domain: std::option::Option<std::string::String>,
     /// <p>The date, in Unix time format, when you enabled the Deliverability dashboard for the
     /// domain.</p>
-    #[serde(rename = "SubscriptionStartDate")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub subscription_start_date: std::option::Option<smithy_types::Instant>,
     /// <p>An object that contains information about the inbox placement data settings for the
     /// domain.</p>
-    #[serde(rename = "InboxPlacementTrackingOption")]
-    #[serde(default)]
     pub inbox_placement_tracking_option:
         std::option::Option<crate::model::InboxPlacementTrackingOption>,
 }
@@ -3035,16 +2841,12 @@ impl DomainDeliverabilityTrackingOption {
 /// verified domain that’s associated with your AWS account. This data is available only
 /// if you enabled the Deliverability dashboard for the domain.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InboxPlacementTrackingOption {
     /// <p>Specifies whether inbox placement data is being tracked for the domain.</p>
-    #[serde(rename = "Global")]
-    #[serde(default)]
     pub global: bool,
     /// <p>An array of strings, one for each major email provider that the inbox placement data
     /// applies to.</p>
-    #[serde(rename = "TrackedIsps")]
-    #[serde(default)]
     pub tracked_isps: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl std::fmt::Debug for InboxPlacementTrackingOption {
@@ -3135,7 +2937,7 @@ impl std::convert::From<&str> for TlsPolicy {
 impl std::str::FromStr for TlsPolicy {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(TlsPolicy::from(s))
     }
 }
@@ -3151,15 +2953,6 @@ impl TlsPolicy {
 impl AsRef<str> for TlsPolicy {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for TlsPolicy {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -3191,7 +2984,7 @@ impl std::convert::From<&str> for ContactLanguage {
 impl std::str::FromStr for ContactLanguage {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ContactLanguage::from(s))
     }
 }
@@ -3207,15 +3000,6 @@ impl ContactLanguage {
 impl AsRef<str> for ContactLanguage {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ContactLanguage {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -3247,7 +3031,7 @@ impl std::convert::From<&str> for MailType {
 impl std::str::FromStr for MailType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(MailType::from(s))
     }
 }
@@ -3265,35 +3049,17 @@ impl AsRef<str> for MailType {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for MailType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>A summary that describes the suppressed email address.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SuppressedDestinationSummary {
     /// <p>The email address that's on the suppression list for your account.</p>
-    #[serde(rename = "EmailAddress")]
-    #[serde(default)]
     pub email_address: std::option::Option<std::string::String>,
     /// <p>The reason that the address was added to the suppression list for your account.</p>
-    #[serde(rename = "Reason")]
-    #[serde(default)]
     pub reason: std::option::Option<crate::model::SuppressionListReason>,
     /// <p>The date and time when the suppressed destination was last updated, shown in Unix time
     /// format.</p>
-    #[serde(rename = "LastUpdateTime")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub last_update_time: std::option::Option<smithy_types::Instant>,
 }
 impl std::fmt::Debug for SuppressedDestinationSummary {
@@ -3372,27 +3138,16 @@ impl SuppressedDestinationSummary {
 
 /// <p>A summary of the import job.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportJobSummary {
     /// <p>A string that represents the import job ID.</p>
-    #[serde(rename = "JobId")]
-    #[serde(default)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>An object that contains details about the resource destination the import job is going
     /// to target.</p>
-    #[serde(rename = "ImportDestination")]
-    #[serde(default)]
     pub import_destination: std::option::Option<crate::model::ImportDestination>,
     /// <p>The status of the import job.</p>
-    #[serde(rename = "JobStatus")]
-    #[serde(default)]
     pub job_status: std::option::Option<crate::model::JobStatus>,
     /// <p>The date and time when the import job was created.</p>
-    #[serde(rename = "CreatedTimestamp")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub created_timestamp: std::option::Option<smithy_types::Instant>,
 }
 impl std::fmt::Debug for ImportJobSummary {
@@ -3514,7 +3269,7 @@ impl std::convert::From<&str> for JobStatus {
 impl std::str::FromStr for JobStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(JobStatus::from(s))
     }
 }
@@ -3534,28 +3289,15 @@ impl AsRef<str> for JobStatus {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for JobStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>An object that contains details about the resource destination the import job is going
 /// to target.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportDestination {
     /// <p>An object that contains the action of the import job towards suppression list.</p>
-    #[serde(rename = "SuppressionListDestination")]
-    #[serde(default)]
     pub suppression_list_destination: std::option::Option<crate::model::SuppressionListDestination>,
     /// <p>An object that contains the action of the import job towards a contact list.</p>
-    #[serde(rename = "ContactListDestination")]
-    #[serde(default)]
     pub contact_list_destination: std::option::Option<crate::model::ContactListDestination>,
 }
 impl std::fmt::Debug for ImportDestination {
@@ -3629,11 +3371,9 @@ impl ImportDestination {
 
 /// <p>An object that contains details about the action of a contact list.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContactListDestination {
     /// <p>The name of the contact list.</p>
-    #[serde(rename = "ContactListName")]
-    #[serde(default)]
     pub contact_list_name: std::option::Option<std::string::String>,
     /// <p>>The type of action that you want to perform on the addresses. Acceptable
     /// values:</p>
@@ -3646,8 +3386,6 @@ pub struct ContactListDestination {
     /// <p>DELETE: remove the addresses from the contact list.</p>
     /// </li>
     /// </ul>
-    #[serde(rename = "ContactListImportAction")]
-    #[serde(default)]
     pub contact_list_import_action: std::option::Option<crate::model::ContactListImportAction>,
 }
 impl std::fmt::Debug for ContactListDestination {
@@ -3753,7 +3491,7 @@ impl std::convert::From<&str> for ContactListImportAction {
 impl std::str::FromStr for ContactListImportAction {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ContactListImportAction::from(s))
     }
 }
@@ -3771,19 +3509,10 @@ impl AsRef<str> for ContactListImportAction {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for ContactListImportAction {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>An object that contains details about the action of suppression list.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SuppressionListDestination {
     /// <p>The type of action that you want to perform on the address. Acceptable values:</p>
     /// <ul>
@@ -3795,8 +3524,6 @@ pub struct SuppressionListDestination {
     /// <p>DELETE: remove the addresses from the suppression list.</p>
     /// </li>
     /// </ul>
-    #[serde(rename = "SuppressionListImportAction")]
-    #[serde(default)]
     pub suppression_list_import_action:
         std::option::Option<crate::model::SuppressionListImportAction>,
 }
@@ -3896,7 +3623,7 @@ impl std::convert::From<&str> for SuppressionListImportAction {
 impl std::str::FromStr for SuppressionListImportAction {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(SuppressionListImportAction::from(s))
     }
 }
@@ -3912,15 +3639,6 @@ impl SuppressionListImportAction {
 impl AsRef<str> for SuppressionListImportAction {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for SuppressionListImportAction {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -3954,7 +3672,7 @@ impl std::convert::From<&str> for ImportDestinationType {
 impl std::str::FromStr for ImportDestinationType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ImportDestinationType::from(s))
     }
 }
@@ -3972,30 +3690,14 @@ impl AsRef<str> for ImportDestinationType {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for ImportDestinationType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>Contains information about an email template.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EmailTemplateMetadata {
     /// <p>The name of the template.</p>
-    #[serde(rename = "TemplateName")]
-    #[serde(default)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The time and date the template was created.</p>
-    #[serde(rename = "CreatedTimestamp")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub created_timestamp: std::option::Option<smithy_types::Instant>,
 }
 impl std::fmt::Debug for EmailTemplateMetadata {
@@ -4058,7 +3760,7 @@ impl EmailTemplateMetadata {
 
 /// <p>Information about an email identity.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IdentityInfo {
     /// <p>The email identity type. The identity type can be one of the following:</p>
     /// <ul>
@@ -4076,19 +3778,13 @@ pub struct IdentityInfo {
     /// by AWS.</p>
     /// </li>
     /// </ul>
-    #[serde(rename = "IdentityType")]
-    #[serde(default)]
     pub identity_type: std::option::Option<crate::model::IdentityType>,
     /// <p>The address or domain of the identity.</p>
-    #[serde(rename = "IdentityName")]
-    #[serde(default)]
     pub identity_name: std::option::Option<std::string::String>,
     /// <p>Indicates whether or not you can send email from the identity.</p>
     /// <p>An <i>identity</i> is an email address or domain that you send email
     /// from. Before you can send email from an identity, you have to demostrate that you own
     /// the identity, and that you authorize Amazon SES to send email from that identity.</p>
-    #[serde(rename = "SendingEnabled")]
-    #[serde(default)]
     pub sending_enabled: bool,
 }
 impl std::fmt::Debug for IdentityInfo {
@@ -4220,7 +3916,7 @@ impl std::convert::From<&str> for IdentityType {
 impl std::str::FromStr for IdentityType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(IdentityType::from(s))
     }
 }
@@ -4239,97 +3935,54 @@ impl AsRef<str> for IdentityType {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for IdentityType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>An object that contains the deliverability data for a specific campaign. This data is
 /// available for a campaign only if the campaign sent email by using a domain that the
 /// Deliverability dashboard is enabled for (<code>PutDeliverabilityDashboardOption</code>
 /// operation).</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DomainDeliverabilityCampaign {
     /// <p>The unique identifier for the campaign. The Deliverability dashboard automatically generates
     /// and assigns this identifier to a campaign.</p>
-    #[serde(rename = "CampaignId")]
-    #[serde(default)]
     pub campaign_id: std::option::Option<std::string::String>,
     /// <p>The URL of an image that contains a snapshot of the email message that was
     /// sent.</p>
-    #[serde(rename = "ImageUrl")]
-    #[serde(default)]
     pub image_url: std::option::Option<std::string::String>,
     /// <p>The subject line, or title, of the email message.</p>
-    #[serde(rename = "Subject")]
-    #[serde(default)]
     pub subject: std::option::Option<std::string::String>,
     /// <p>The verified email address that the email message was sent from.</p>
-    #[serde(rename = "FromAddress")]
-    #[serde(default)]
     pub from_address: std::option::Option<std::string::String>,
     /// <p>The IP addresses that were used to send the email message.</p>
-    #[serde(rename = "SendingIps")]
-    #[serde(default)]
     pub sending_ips: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The first time, in Unix time format, when the email message was delivered to any
     /// recipient's inbox. This value can help you determine how long it took for a campaign to
     /// deliver an email message.</p>
-    #[serde(rename = "FirstSeenDateTime")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub first_seen_date_time: std::option::Option<smithy_types::Instant>,
     /// <p>The last time, in Unix time format, when the email message was delivered to any
     /// recipient's inbox. This value can help you determine how long it took for a campaign to
     /// deliver an email message.</p>
-    #[serde(rename = "LastSeenDateTime")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub last_seen_date_time: std::option::Option<smithy_types::Instant>,
     /// <p>The number of email messages that were delivered to recipients’ inboxes.</p>
-    #[serde(rename = "InboxCount")]
-    #[serde(default)]
     pub inbox_count: std::option::Option<i64>,
     /// <p>The number of email messages that were delivered to recipients' spam or junk mail
     /// folders.</p>
-    #[serde(rename = "SpamCount")]
-    #[serde(default)]
     pub spam_count: std::option::Option<i64>,
     /// <p>The percentage of email messages that were opened by recipients. Due to technical
     /// limitations, this value only includes recipients who opened the message by using an
     /// email client that supports images.</p>
-    #[serde(rename = "ReadRate")]
-    #[serde(default)]
     pub read_rate: std::option::Option<f64>,
     /// <p>The percentage of email messages that were deleted by recipients, without being opened
     /// first. Due to technical limitations, this value only includes recipients who opened the
     /// message by using an email client that supports images.</p>
-    #[serde(rename = "DeleteRate")]
-    #[serde(default)]
     pub delete_rate: std::option::Option<f64>,
     /// <p>The percentage of email messages that were opened and then deleted by recipients. Due
     /// to technical limitations, this value only includes recipients who opened the message by
     /// using an email client that supports images.</p>
-    #[serde(rename = "ReadDeleteRate")]
-    #[serde(default)]
     pub read_delete_rate: std::option::Option<f64>,
     /// <p>The projected number of recipients that the email message was sent to.</p>
-    #[serde(rename = "ProjectedVolume")]
-    #[serde(default)]
     pub projected_volume: std::option::Option<i64>,
     /// <p>The major email providers who handled the email message.</p>
-    #[serde(rename = "Esps")]
-    #[serde(default)]
     pub esps: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl std::fmt::Debug for DomainDeliverabilityCampaign {
@@ -4557,37 +4210,22 @@ impl DomainDeliverabilityCampaign {
 
 /// <p>An object that contains metadata related to a predictive inbox placement test.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeliverabilityTestReport {
     /// <p>A unique string that identifies the predictive inbox placement test.</p>
-    #[serde(rename = "ReportId")]
-    #[serde(default)]
     pub report_id: std::option::Option<std::string::String>,
     /// <p>A name that helps you identify a predictive inbox placement test report.</p>
-    #[serde(rename = "ReportName")]
-    #[serde(default)]
     pub report_name: std::option::Option<std::string::String>,
     /// <p>The subject line for an email that you submitted in a predictive inbox placement test.</p>
-    #[serde(rename = "Subject")]
-    #[serde(default)]
     pub subject: std::option::Option<std::string::String>,
     /// <p>The sender address that you specified for the predictive inbox placement test.</p>
-    #[serde(rename = "FromEmailAddress")]
-    #[serde(default)]
     pub from_email_address: std::option::Option<std::string::String>,
     /// <p>The date and time when the predictive inbox placement test was created, in Unix time format.</p>
-    #[serde(rename = "CreateDate")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub create_date: std::option::Option<smithy_types::Instant>,
     /// <p>The status of the predictive inbox placement test. If the status is <code>IN_PROGRESS</code>, then the predictive inbox placement test
     /// is currently running. Predictive inbox placement tests are usually complete within 24 hours of creating the
     /// test. If the status is <code>COMPLETE</code>, then the test is finished, and you can use
     /// the <code>GetDeliverabilityTestReport</code> to view the results of the test.</p>
-    #[serde(rename = "DeliverabilityTestStatus")]
-    #[serde(default)]
     pub deliverability_test_status: std::option::Option<crate::model::DeliverabilityTestStatus>,
 }
 impl std::fmt::Debug for DeliverabilityTestReport {
@@ -4742,7 +4380,7 @@ impl std::convert::From<&str> for DeliverabilityTestStatus {
 impl std::str::FromStr for DeliverabilityTestStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(DeliverabilityTestStatus::from(s))
     }
 }
@@ -4760,41 +4398,22 @@ impl AsRef<str> for DeliverabilityTestStatus {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for DeliverabilityTestStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>Contains information about a custom verification email template.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomVerificationEmailTemplateMetadata {
     /// <p>The name of the custom verification email template.</p>
-    #[serde(rename = "TemplateName")]
-    #[serde(default)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The email address that the custom verification email is sent from.</p>
-    #[serde(rename = "FromEmailAddress")]
-    #[serde(default)]
     pub from_email_address: std::option::Option<std::string::String>,
     /// <p>The subject line of the custom verification email.</p>
-    #[serde(rename = "TemplateSubject")]
-    #[serde(default)]
     pub template_subject: std::option::Option<std::string::String>,
     /// <p>The URL that the recipient of the verification email is sent to if his or her address
     /// is successfully verified.</p>
-    #[serde(rename = "SuccessRedirectionURL")]
-    #[serde(default)]
     pub success_redirection_url: std::option::Option<std::string::String>,
     /// <p>The URL that the recipient of the verification email is sent to if his or her address
     /// is not successfully verified.</p>
-    #[serde(rename = "FailureRedirectionURL")]
-    #[serde(default)]
     pub failure_redirection_url: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CustomVerificationEmailTemplateMetadata {
@@ -4904,32 +4523,19 @@ impl CustomVerificationEmailTemplateMetadata {
 
 /// <p>A contact is the end-user who is receiving the email.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Contact {
     /// <p>The contact's email address.</p>
-    #[serde(rename = "EmailAddress")]
-    #[serde(default)]
     pub email_address: std::option::Option<std::string::String>,
     /// <p>The contact's preference for being opted-in to or opted-out of a topic.</p>
-    #[serde(rename = "TopicPreferences")]
-    #[serde(default)]
     pub topic_preferences: std::option::Option<std::vec::Vec<crate::model::TopicPreference>>,
     /// <p>The default topic preferences applied to the contact.</p>
-    #[serde(rename = "TopicDefaultPreferences")]
-    #[serde(default)]
     pub topic_default_preferences:
         std::option::Option<std::vec::Vec<crate::model::TopicPreference>>,
     /// <p>A boolean value status noting if the contact is unsubscribed from all contact list
     /// topics.</p>
-    #[serde(rename = "UnsubscribeAll")]
-    #[serde(default)]
     pub unsubscribe_all: bool,
     /// <p>A timestamp noting the last time the contact's information was updated.</p>
-    #[serde(rename = "LastUpdatedTimestamp")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub last_updated_timestamp: std::option::Option<smithy_types::Instant>,
 }
 impl std::fmt::Debug for Contact {
@@ -5045,16 +4651,12 @@ impl Contact {
 
 /// <p>A filter that can be applied to a list of contacts.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListContactsFilter {
     /// <p>The status by which you are filtering: <code>OPT_IN</code> or
     /// <code>OPT_OUT</code>.</p>
-    #[serde(rename = "FilteredStatus")]
-    #[serde(default)]
     pub filtered_status: std::option::Option<crate::model::SubscriptionStatus>,
     /// <p>Used for filtering by a specific topic preference.</p>
-    #[serde(rename = "TopicFilter")]
-    #[serde(default)]
     pub topic_filter: std::option::Option<crate::model::TopicFilter>,
 }
 impl std::fmt::Debug for ListContactsFilter {
@@ -5118,16 +4720,12 @@ impl ListContactsFilter {
 
 /// <p>Used for filtering by a specific topic preference.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TopicFilter {
     /// <p>The name of a topic on which you wish to apply the filter.</p>
-    #[serde(rename = "TopicName")]
-    #[serde(default)]
     pub topic_name: std::option::Option<std::string::String>,
     /// <p>Notes that the default subscription status should be applied to a contact because the
     /// contact has not noted their preference for subscribing to a topic.</p>
-    #[serde(rename = "UseDefaultIfPreferenceUnavailable")]
-    #[serde(default)]
     pub use_default_if_preference_unavailable: bool,
 }
 impl std::fmt::Debug for TopicFilter {
@@ -5194,18 +4792,11 @@ impl TopicFilter {
 /// <p>A list that contains contacts that have subscribed to a particular topic or
 /// topics.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContactList {
     /// <p>The name of the contact list.</p>
-    #[serde(rename = "ContactListName")]
-    #[serde(default)]
     pub contact_list_name: std::option::Option<std::string::String>,
     /// <p>A timestamp noting the last time the contact list was updated.</p>
-    #[serde(rename = "LastUpdatedTimestamp")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub last_updated_timestamp: std::option::Option<smithy_types::Instant>,
 }
 impl std::fmt::Debug for ContactList {
@@ -5269,28 +4860,17 @@ impl ContactList {
 /// <p>An object that contains information about an email address that is on the suppression
 /// list for your account.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SuppressedDestination {
     /// <p>The email address that is on the suppression list for your account.</p>
-    #[serde(rename = "EmailAddress")]
-    #[serde(default)]
     pub email_address: std::option::Option<std::string::String>,
     /// <p>The reason that the address was added to the suppression list for your account.</p>
-    #[serde(rename = "Reason")]
-    #[serde(default)]
     pub reason: std::option::Option<crate::model::SuppressionListReason>,
     /// <p>The date and time when the suppressed destination was last updated, shown in Unix time
     /// format.</p>
-    #[serde(rename = "LastUpdateTime")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub last_update_time: std::option::Option<smithy_types::Instant>,
     /// <p>An optional value that can contain additional information about the reasons that the
     /// address was added to the suppression list for your account.</p>
-    #[serde(rename = "Attributes")]
-    #[serde(default)]
     pub attributes: std::option::Option<crate::model::SuppressedDestinationAttributes>,
 }
 impl std::fmt::Debug for SuppressedDestination {
@@ -5386,17 +4966,13 @@ impl SuppressedDestination {
 /// <p>An object that contains additional attributes that are related an email address that
 /// is on the suppression list for your account.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SuppressedDestinationAttributes {
     /// <p>The unique identifier of the email message that caused the email address to be added
     /// to the suppression list for your account.</p>
-    #[serde(rename = "MessageId")]
-    #[serde(default)]
     pub message_id: std::option::Option<std::string::String>,
     /// <p>A unique identifier that's generated when an email address is added to the suppression
     /// list for your account.</p>
-    #[serde(rename = "FeedbackId")]
-    #[serde(default)]
     pub feedback_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SuppressedDestinationAttributes {
@@ -5455,16 +5031,12 @@ impl SuppressedDestinationAttributes {
 
 /// <p>An object that contains the failure details about an import job.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FailureInfo {
     /// <p>An Amazon S3 presigned URL that contains all the failed records and related
     /// information.</p>
-    #[serde(rename = "FailedRecordsS3Url")]
-    #[serde(default)]
     pub failed_records_s3_url: std::option::Option<std::string::String>,
     /// <p>A message about why the import job failed.</p>
-    #[serde(rename = "ErrorMessage")]
-    #[serde(default)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for FailureInfo {
@@ -5528,16 +5100,12 @@ impl FailureInfo {
 
 /// <p>An object that contains details about the data source of the import job.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportDataSource {
     /// <p>An Amazon S3 URL in the format
     /// s3://<i><bucket_name></i>/<i><object></i>.</p>
-    #[serde(rename = "S3Url")]
-    #[serde(default)]
     pub s3_url: std::option::Option<std::string::String>,
     /// <p>The data format of the import job's data source.</p>
-    #[serde(rename = "DataFormat")]
-    #[serde(default)]
     pub data_format: std::option::Option<crate::model::DataFormat>,
 }
 impl std::fmt::Debug for ImportDataSource {
@@ -5625,7 +5193,7 @@ impl std::convert::From<&str> for DataFormat {
 impl std::str::FromStr for DataFormat {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(DataFormat::from(s))
     }
 }
@@ -5643,23 +5211,12 @@ impl AsRef<str> for DataFormat {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for DataFormat {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>A list of attributes that are associated with a MAIL FROM domain.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MailFromAttributes {
     /// <p>The name of a domain that an email identity uses as a custom MAIL FROM domain.</p>
-    #[serde(rename = "MailFromDomain")]
-    #[serde(default)]
     pub mail_from_domain: std::option::Option<std::string::String>,
     /// <p>The status of the MAIL FROM domain. This status can have the following values:</p>
     /// <ul>
@@ -5684,8 +5241,6 @@ pub struct MailFromAttributes {
     /// prevented Amazon SES from determining the status of the MAIL FROM domain.</p>
     /// </li>
     /// </ul>
-    #[serde(rename = "MailFromDomainStatus")]
-    #[serde(default)]
     pub mail_from_domain_status: std::option::Option<crate::model::MailFromDomainStatus>,
     /// <p>The action that you want to take if the required MX record can't be found when you
     /// send an email. When you set this value to <code>UseDefaultValue</code>, the mail is sent
@@ -5696,8 +5251,6 @@ pub struct MailFromAttributes {
     /// <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the
     /// <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code>
     /// states.</p>
-    #[serde(rename = "BehaviorOnMxFailure")]
-    #[serde(default)]
     pub behavior_on_mx_failure: std::option::Option<crate::model::BehaviorOnMxFailure>,
 }
 impl std::fmt::Debug for MailFromAttributes {
@@ -5861,7 +5414,7 @@ impl std::convert::From<&str> for MailFromDomainStatus {
 impl std::str::FromStr for MailFromDomainStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(MailFromDomainStatus::from(s))
     }
 }
@@ -5881,15 +5434,6 @@ impl AsRef<str> for MailFromDomainStatus {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for MailFromDomainStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>An object that contains information about the DKIM authentication status for an email
 /// identity.</p>
@@ -5901,13 +5445,11 @@ impl<'de> serde::Deserialize<'de> for MailFromDomainStatus {
 /// TXT record must be a public key that's paired with the private key that you specified in
 /// the process of creating the identity</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DkimAttributes {
     /// <p>If the value is <code>true</code>, then the messages that you send from the identity
     /// are signed using DKIM. If the value is <code>false</code>, then the messages that you
     /// send from the identity aren't DKIM-signed.</p>
-    #[serde(rename = "SigningEnabled")]
-    #[serde(default)]
     pub signing_enabled: bool,
     /// <p>Describes whether or not Amazon SES has successfully located the DKIM records in the DNS
     /// records for the domain. The status can be one of the following:</p>
@@ -5940,8 +5482,6 @@ pub struct DkimAttributes {
     /// initiated for the domain.</p>
     /// </li>
     /// </ul>
-    #[serde(rename = "Status")]
-    #[serde(default)]
     pub status: std::option::Option<crate::model::DkimStatus>,
     /// <p>If you used <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a> to configure DKIM authentication for the domain, then this object
     /// contains a set of unique strings that you use to create a set of CNAME records that you
@@ -5952,8 +5492,6 @@ pub struct DkimAttributes {
     /// key.</p>
     /// <p>Regardless of the DKIM authentication method you use, Amazon SES searches for the
     /// appropriate records in the DNS configuration of the domain for up to 72 hours.</p>
-    #[serde(rename = "Tokens")]
-    #[serde(default)]
     pub tokens: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A string that indicates how DKIM was configured for the identity. There are two
     /// possible values:</p>
@@ -5969,8 +5507,6 @@ pub struct DkimAttributes {
     /// identity by using Bring Your Own DKIM (BYODKIM).</p>
     /// </li>
     /// </ul>
-    #[serde(rename = "SigningAttributesOrigin")]
-    #[serde(default)]
     pub signing_attributes_origin: std::option::Option<crate::model::DkimSigningAttributesOrigin>,
 }
 impl std::fmt::Debug for DkimAttributes {
@@ -6108,24 +5644,15 @@ impl DkimAttributes {
 /// <p>An object that contains information about the volume of email sent on each day of the
 /// analysis period.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DailyVolume {
     /// <p>The date that the DailyVolume metrics apply to, in Unix time.</p>
-    #[serde(rename = "StartDate")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub start_date: std::option::Option<smithy_types::Instant>,
     /// <p>An object that contains inbox placement metrics for a specific day in the analysis
     /// period.</p>
-    #[serde(rename = "VolumeStatistics")]
-    #[serde(default)]
     pub volume_statistics: std::option::Option<crate::model::VolumeStatistics>,
     /// <p>An object that contains inbox placement metrics for a specified day in the analysis
     /// period, broken out by the recipient's email provider.</p>
-    #[serde(rename = "DomainIspPlacements")]
-    #[serde(default)]
     pub domain_isp_placements: std::option::Option<std::vec::Vec<crate::model::DomainIspPlacement>>,
 }
 impl std::fmt::Debug for DailyVolume {
@@ -6207,31 +5734,21 @@ impl DailyVolume {
 /// <p>An object that contains inbox placement data for email sent from one of your email
 /// domains to a specific email provider.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DomainIspPlacement {
     /// <p>The name of the email provider that the inbox placement data applies to.</p>
-    #[serde(rename = "IspName")]
-    #[serde(default)]
     pub isp_name: std::option::Option<std::string::String>,
     /// <p>The total number of messages that were sent from the selected domain to the specified
     /// email provider that arrived in recipients' inboxes.</p>
-    #[serde(rename = "InboxRawCount")]
-    #[serde(default)]
     pub inbox_raw_count: std::option::Option<i64>,
     /// <p>The total number of messages that were sent from the selected domain to the specified
     /// email provider that arrived in recipients' spam or junk mail folders.</p>
-    #[serde(rename = "SpamRawCount")]
-    #[serde(default)]
     pub spam_raw_count: std::option::Option<i64>,
     /// <p>The percentage of messages that were sent from the selected domain to the specified
     /// email provider that arrived in recipients' inboxes.</p>
-    #[serde(rename = "InboxPercentage")]
-    #[serde(default)]
     pub inbox_percentage: std::option::Option<f64>,
     /// <p>The percentage of messages that were sent from the selected domain to the specified
     /// email provider that arrived in recipients' spam or junk mail folders.</p>
-    #[serde(rename = "SpamPercentage")]
-    #[serde(default)]
     pub spam_percentage: std::option::Option<f64>,
 }
 impl std::fmt::Debug for DomainIspPlacement {
@@ -6329,26 +5846,18 @@ impl DomainIspPlacement {
 /// <p>An object that contains information about the amount of email that was delivered to
 /// recipients.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VolumeStatistics {
     /// <p>The total number of emails that arrived in recipients' inboxes.</p>
-    #[serde(rename = "InboxRawCount")]
-    #[serde(default)]
     pub inbox_raw_count: std::option::Option<i64>,
     /// <p>The total number of emails that arrived in recipients' spam or junk mail
     /// folders.</p>
-    #[serde(rename = "SpamRawCount")]
-    #[serde(default)]
     pub spam_raw_count: std::option::Option<i64>,
     /// <p>An estimate of the percentage of emails sent from the current domain that will arrive
     /// in recipients' inboxes.</p>
-    #[serde(rename = "ProjectedInbox")]
-    #[serde(default)]
     pub projected_inbox: std::option::Option<i64>,
     /// <p>An estimate of the percentage of emails sent from the current domain that will arrive
     /// in recipients' spam or junk mail folders.</p>
-    #[serde(rename = "ProjectedSpam")]
-    #[serde(default)]
     pub projected_spam: std::option::Option<i64>,
 }
 impl std::fmt::Debug for VolumeStatistics {
@@ -6433,22 +5942,16 @@ impl VolumeStatistics {
 /// <p>An object that contains information about email that was sent from the selected
 /// domain.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OverallVolume {
     /// <p>An object that contains information about the numbers of messages that arrived in
     /// recipients' inboxes and junk mail folders.</p>
-    #[serde(rename = "VolumeStatistics")]
-    #[serde(default)]
     pub volume_statistics: std::option::Option<crate::model::VolumeStatistics>,
     /// <p>The percentage of emails that were sent from the domain that were read by their
     /// recipients.</p>
-    #[serde(rename = "ReadRatePercent")]
-    #[serde(default)]
     pub read_rate_percent: std::option::Option<f64>,
     /// <p>An object that contains inbox and junk mail placement metrics for individual email
     /// providers.</p>
-    #[serde(rename = "DomainIspPlacements")]
-    #[serde(default)]
     pub domain_isp_placements: std::option::Option<std::vec::Vec<crate::model::DomainIspPlacement>>,
 }
 impl std::fmt::Debug for OverallVolume {
@@ -6531,15 +6034,11 @@ impl OverallVolume {
 /// <p>An object that describes how email sent during the predictive inbox placement test was handled by a certain
 /// email provider.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IspPlacement {
     /// <p>The name of the email provider that the inbox placement data applies to.</p>
-    #[serde(rename = "IspName")]
-    #[serde(default)]
     pub isp_name: std::option::Option<std::string::String>,
     /// <p>An object that contains inbox placement metrics for a specific email provider.</p>
-    #[serde(rename = "PlacementStatistics")]
-    #[serde(default)]
     pub placement_statistics: std::option::Option<crate::model::PlacementStatistics>,
 }
 impl std::fmt::Debug for IspPlacement {
@@ -6599,31 +6098,21 @@ impl IspPlacement {
 
 /// <p>An object that contains inbox placement data for an email provider.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PlacementStatistics {
     /// <p>The percentage of emails that arrived in recipients' inboxes during the predictive inbox placement test.</p>
-    #[serde(rename = "InboxPercentage")]
-    #[serde(default)]
     pub inbox_percentage: std::option::Option<f64>,
     /// <p>The percentage of emails that arrived in recipients' spam or junk mail folders during
     /// the predictive inbox placement test.</p>
-    #[serde(rename = "SpamPercentage")]
-    #[serde(default)]
     pub spam_percentage: std::option::Option<f64>,
     /// <p>The percentage of emails that didn't arrive in recipients' inboxes at all during the
     /// predictive inbox placement test.</p>
-    #[serde(rename = "MissingPercentage")]
-    #[serde(default)]
     pub missing_percentage: std::option::Option<f64>,
     /// <p>The percentage of emails that were authenticated by using Sender Policy Framework
     /// (SPF) during the predictive inbox placement test.</p>
-    #[serde(rename = "SpfPercentage")]
-    #[serde(default)]
     pub spf_percentage: std::option::Option<f64>,
     /// <p>The percentage of emails that were authenticated by using DomainKeys Identified Mail
     /// (DKIM) during the predictive inbox placement test.</p>
-    #[serde(rename = "DkimPercentage")]
-    #[serde(default)]
     pub dkim_percentage: std::option::Option<f64>,
 }
 impl std::fmt::Debug for PlacementStatistics {
@@ -6751,7 +6240,7 @@ impl std::convert::From<&str> for DeliverabilityDashboardAccountStatus {
 impl std::str::FromStr for DeliverabilityDashboardAccountStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(DeliverabilityDashboardAccountStatus::from(s))
     }
 }
@@ -6770,15 +6259,6 @@ impl AsRef<str> for DeliverabilityDashboardAccountStatus {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for DeliverabilityDashboardAccountStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>Contains information about a dedicated IP address that is associated with your Amazon SES
 /// account.</p>
@@ -6786,11 +6266,9 @@ impl<'de> serde::Deserialize<'de> for DeliverabilityDashboardAccountStatus {
 /// Dedicated IP Addresses</a> in the <i>Amazon SES Developer
 /// Guide</i>.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DedicatedIp {
     /// <p>An IPv4 address.</p>
-    #[serde(rename = "Ip")]
-    #[serde(default)]
     pub ip: std::option::Option<std::string::String>,
     /// <p>The warm-up status of a dedicated IP address. The status can have one of the following
     /// values:</p>
@@ -6806,17 +6284,11 @@ pub struct DedicatedIp {
     /// the IP address is ready to use.</p>
     /// </li>
     /// </ul>
-    #[serde(rename = "WarmupStatus")]
-    #[serde(default)]
     pub warmup_status: std::option::Option<crate::model::WarmupStatus>,
     /// <p>Indicates how complete the dedicated IP warm-up process is. When this value equals 1,
     /// the address has completed the warm-up process and is ready for use.</p>
-    #[serde(rename = "WarmupPercentage")]
-    #[serde(default)]
     pub warmup_percentage: std::option::Option<i32>,
     /// <p>The name of the dedicated IP pool that the IP address is associated with.</p>
-    #[serde(rename = "PoolName")]
-    #[serde(default)]
     pub pool_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DedicatedIp {
@@ -6941,7 +6413,7 @@ impl std::convert::From<&str> for WarmupStatus {
 impl std::str::FromStr for WarmupStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(WarmupStatus::from(s))
     }
 }
@@ -6959,15 +6431,6 @@ impl AsRef<str> for WarmupStatus {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for WarmupStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>In the Amazon SES API v2, <i>events</i> include message sends, deliveries, opens,
 /// clicks, bounces, complaints and delivery delays. <i>Event destinations</i> are places that
@@ -6975,45 +6438,31 @@ impl<'de> serde::Deserialize<'de> for WarmupStatus {
 /// Amazon SNS to receive notifications when you receive bounces or complaints, or you can use
 /// Amazon Kinesis Data Firehose to stream data to Amazon S3 for long-term storage.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventDestination {
     /// <p>A name that identifies the event destination.</p>
-    #[serde(rename = "Name")]
-    #[serde(default)]
     pub name: std::option::Option<std::string::String>,
     /// <p>If <code>true</code>, the event destination is enabled. When the event destination is
     /// enabled, the specified event types are sent to the destinations in this
     /// <code>EventDestinationDefinition</code>.</p>
     /// <p>If <code>false</code>, the event destination is disabled. When the event destination
     /// is disabled, events aren't sent to the specified destinations.</p>
-    #[serde(rename = "Enabled")]
-    #[serde(default)]
     pub enabled: bool,
     /// <p>The types of events that Amazon SES sends to the specified event destinations.</p>
-    #[serde(rename = "MatchingEventTypes")]
-    #[serde(default)]
     pub matching_event_types: std::option::Option<std::vec::Vec<crate::model::EventType>>,
     /// <p>An object that defines an Amazon Kinesis Data Firehose destination for email events. You can use Amazon Kinesis Data Firehose to
     /// stream data to other services, such as Amazon S3 and Amazon Redshift.</p>
-    #[serde(rename = "KinesisFirehoseDestination")]
-    #[serde(default)]
     pub kinesis_firehose_destination: std::option::Option<crate::model::KinesisFirehoseDestination>,
     /// <p>An object that defines an Amazon CloudWatch destination for email events. You can use Amazon CloudWatch to
     /// monitor and gain insights on your email sending metrics.</p>
-    #[serde(rename = "CloudWatchDestination")]
-    #[serde(default)]
     pub cloud_watch_destination: std::option::Option<crate::model::CloudWatchDestination>,
     /// <p>An object that defines an Amazon SNS destination for email events. You can use Amazon SNS to
     /// send notification when certain email events occur.</p>
-    #[serde(rename = "SnsDestination")]
-    #[serde(default)]
     pub sns_destination: std::option::Option<crate::model::SnsDestination>,
     /// <p>An object that defines an Amazon Pinpoint project destination for email events. You can send
     /// email event data to a Amazon Pinpoint project to view metrics using the Transactional Messaging
     /// dashboards that are built in to Amazon Pinpoint. For more information, see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/analytics-transactional-messages.html">Transactional
     /// Messaging Charts</a> in the <i>Amazon Pinpoint User Guide</i>.</p>
-    #[serde(rename = "PinpointDestination")]
-    #[serde(default)]
     pub pinpoint_destination: std::option::Option<crate::model::PinpointDestination>,
 }
 impl std::fmt::Debug for EventDestination {
@@ -7169,7 +6618,7 @@ impl EventDestination {
 /// <p>An object that contains information about the suppression list preferences for your
 /// account.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SuppressionOptions {
     /// <p>A list that contains the reasons that email addresses are automatically added to the
     /// suppression list for your account. This list can contain any or all of the
@@ -7188,8 +6637,6 @@ pub struct SuppressionOptions {
     /// bounce.</p>
     /// </li>
     /// </ul>
-    #[serde(rename = "SuppressedReasons")]
-    #[serde(default)]
     pub suppressed_reasons: std::option::Option<std::vec::Vec<crate::model::SuppressionListReason>>,
 }
 impl std::fmt::Debug for SuppressionOptions {
@@ -7243,12 +6690,10 @@ impl SuppressionOptions {
 /// <p>Used to enable or disable email sending for messages that use this configuration set
 /// in the current AWS Region.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendingOptions {
     /// <p>If <code>true</code>, email sending is enabled for the configuration set. If
     /// <code>false</code>, email sending is disabled for the configuration set.</p>
-    #[serde(rename = "SendingEnabled")]
-    #[serde(default)]
     pub sending_enabled: bool,
 }
 impl std::fmt::Debug for SendingOptions {
@@ -7295,22 +6740,15 @@ impl SendingOptions {
 /// <p>Enable or disable collection of reputation metrics for emails that you send using this
 /// configuration set in the current AWS Region. </p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReputationOptions {
     /// <p>If <code>true</code>, tracking of reputation metrics is enabled for the configuration
     /// set. If <code>false</code>, tracking of reputation metrics is disabled for the
     /// configuration set.</p>
-    #[serde(rename = "ReputationMetricsEnabled")]
-    #[serde(default)]
     pub reputation_metrics_enabled: bool,
     /// <p>The date and time (in Unix time) when the reputation metrics were last given a fresh
     /// start. When your account is given a fresh start, your reputation metrics are calculated
     /// starting from the date of the fresh start.</p>
-    #[serde(rename = "LastFreshStart")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub last_fresh_start: std::option::Option<smithy_types::Instant>,
 }
 impl std::fmt::Debug for ReputationOptions {
@@ -7377,19 +6815,15 @@ impl ReputationOptions {
 
 /// <p>Used to associate a configuration set with a dedicated IP pool.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeliveryOptions {
     /// <p>Specifies whether messages that use the configuration set are required to use
     /// Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only
     /// delivered if a TLS connection can be established. If the value is <code>Optional</code>,
     /// messages can be delivered in plain text if a TLS connection can't be established.</p>
-    #[serde(rename = "TlsPolicy")]
-    #[serde(default)]
     pub tls_policy: std::option::Option<crate::model::TlsPolicy>,
     /// <p>The name of the dedicated IP pool that you want to associate with the configuration
     /// set.</p>
-    #[serde(rename = "SendingPoolName")]
-    #[serde(default)]
     pub sending_pool_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeliveryOptions {
@@ -7462,11 +6896,9 @@ impl DeliveryOptions {
 /// optionally configure the Amazon SES to use a domain that you operate for these images and
 /// links.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TrackingOptions {
     /// <p>The domain that you want to use for tracking open and click events.</p>
-    #[serde(rename = "CustomRedirectDomain")]
-    #[serde(default)]
     pub custom_redirect_domain: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TrackingOptions {
@@ -7515,23 +6947,14 @@ impl TrackingOptions {
 /// <p>An object that contains information about a blacklisting event that impacts one of the
 /// dedicated IP addresses that is associated with your account.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BlacklistEntry {
     /// <p>The name of the blacklist that the IP address appears on.</p>
-    #[serde(rename = "RblName")]
-    #[serde(default)]
     pub rbl_name: std::option::Option<std::string::String>,
     /// <p>The time when the blacklisting event occurred, shown in Unix time format.</p>
-    #[serde(rename = "ListingTime")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub listing_time: std::option::Option<smithy_types::Instant>,
     /// <p>Additional information about the blacklisting event, as provided by the blacklist
     /// maintainer.</p>
-    #[serde(rename = "Description")]
-    #[serde(default)]
     pub description: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for BlacklistEntry {
@@ -7604,7 +7027,7 @@ impl BlacklistEntry {
 
 /// <p>An object that contains information about your account details.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountDetails {
     /// <p>The type of email your account is sending. The mail type can be one of the
     /// following:</p>
@@ -7620,31 +7043,19 @@ pub struct AccountDetails {
     /// communicate during a transaction with a customer.</p>
     /// </li>
     /// </ul>
-    #[serde(rename = "MailType")]
-    #[serde(default)]
     pub mail_type: std::option::Option<crate::model::MailType>,
     /// <p>The URL of your website. This information helps us better understand the type of
     /// content that you plan to send.</p>
-    #[serde(rename = "WebsiteURL")]
-    #[serde(default)]
     pub website_url: std::option::Option<std::string::String>,
     /// <p>The language you would prefer for the case. The contact language can be one of
     /// <code>ENGLISH</code> or <code>JAPANESE</code>.</p>
-    #[serde(rename = "ContactLanguage")]
-    #[serde(default)]
     pub contact_language: std::option::Option<crate::model::ContactLanguage>,
     /// <p>A description of the types of email that you plan to send.</p>
-    #[serde(rename = "UseCaseDescription")]
-    #[serde(default)]
     pub use_case_description: std::option::Option<std::string::String>,
     /// <p>Additional email addresses where updates are sent about your account review
     /// process.</p>
-    #[serde(rename = "AdditionalContactEmailAddresses")]
-    #[serde(default)]
     pub additional_contact_email_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Information about the review of the latest details you submitted.</p>
-    #[serde(rename = "ReviewDetails")]
-    #[serde(default)]
     pub review_details: std::option::Option<crate::model::ReviewDetails>,
 }
 impl std::fmt::Debug for AccountDetails {
@@ -7784,7 +7195,7 @@ impl AccountDetails {
 
 /// <p>An object that contains information about your account details review.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReviewDetails {
     /// <p>The status of the latest review of your account. The status can be one of the
     /// following:</p>
@@ -7810,12 +7221,8 @@ pub struct ReviewDetails {
     /// your appeal. You can submit your appeal again.</p>
     /// </li>
     /// </ul>
-    #[serde(rename = "Status")]
-    #[serde(default)]
     pub status: std::option::Option<crate::model::ReviewStatus>,
     /// <p>The associated support center case ID (if any).</p>
-    #[serde(rename = "CaseId")]
-    #[serde(default)]
     pub case_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ReviewDetails {
@@ -7928,7 +7335,7 @@ impl std::convert::From<&str> for ReviewStatus {
 impl std::str::FromStr for ReviewStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ReviewStatus::from(s))
     }
 }
@@ -7948,20 +7355,11 @@ impl AsRef<str> for ReviewStatus {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for ReviewStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>An object that contains information about the email address suppression preferences
 /// for your account in the current AWS Region.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SuppressionAttributes {
     /// <p>A list that contains the reasons that email addresses will be automatically added to
     /// the suppression list for your account. This list can contain any or all of the
@@ -7980,8 +7378,6 @@ pub struct SuppressionAttributes {
     /// bounce.</p>
     /// </li>
     /// </ul>
-    #[serde(rename = "SuppressedReasons")]
-    #[serde(default)]
     pub suppressed_reasons: std::option::Option<std::vec::Vec<crate::model::SuppressionListReason>>,
 }
 impl std::fmt::Debug for SuppressionAttributes {
@@ -8035,24 +7431,18 @@ impl SuppressionAttributes {
 /// <p>An object that contains information about the per-day and per-second sending limits
 /// for your Amazon SES account in the current AWS Region.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendQuota {
     /// <p>The maximum number of emails that you can send in the current AWS Region over a
     /// 24-hour period. This value is also called your <i>sending
     /// quota</i>.</p>
-    #[serde(rename = "Max24HourSend")]
-    #[serde(default)]
     pub max24_hour_send: f64,
     /// <p>The maximum number of emails that you can send per second in the current AWS Region.
     /// This value is also called your <i>maximum sending rate</i> or your
     /// <i>maximum TPS (transactions per second) rate</i>.</p>
-    #[serde(rename = "MaxSendRate")]
-    #[serde(default)]
     pub max_send_rate: f64,
     /// <p>The number of emails sent from your Amazon SES account in the current AWS Region over the
     /// past 24 hours.</p>
-    #[serde(rename = "SentLast24Hours")]
-    #[serde(default)]
     pub sent_last24_hours: f64,
 }
 impl std::fmt::Debug for SendQuota {

@@ -2,51 +2,51 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    AlreadyExistsError(crate::error::AlreadyExistsError),
-    CFNRegistryError(crate::error::CFNRegistryError),
-    ChangeSetNotFoundError(crate::error::ChangeSetNotFoundError),
-    CreatedButModifiedError(crate::error::CreatedButModifiedError),
-    InsufficientCapabilitiesError(crate::error::InsufficientCapabilitiesError),
-    InvalidChangeSetStatusError(crate::error::InvalidChangeSetStatusError),
-    InvalidOperationError(crate::error::InvalidOperationError),
-    InvalidStateTransitionError(crate::error::InvalidStateTransitionError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NameAlreadyExistsError(crate::error::NameAlreadyExistsError),
-    OperationIdAlreadyExistsError(crate::error::OperationIdAlreadyExistsError),
-    OperationInProgressError(crate::error::OperationInProgressError),
-    OperationNotFoundError(crate::error::OperationNotFoundError),
-    OperationStatusCheckFailedError(crate::error::OperationStatusCheckFailedError),
-    StackInstanceNotFoundError(crate::error::StackInstanceNotFoundError),
-    StackSetNotEmptyError(crate::error::StackSetNotEmptyError),
-    StackSetNotFoundError(crate::error::StackSetNotFoundError),
-    StaleRequestError(crate::error::StaleRequestError),
-    TokenAlreadyExistsError(crate::error::TokenAlreadyExistsError),
-    TypeNotFoundError(crate::error::TypeNotFoundError),
+    AlreadyExistsException(crate::error::AlreadyExistsException),
+    CfnRegistryException(crate::error::CfnRegistryException),
+    ChangeSetNotFoundException(crate::error::ChangeSetNotFoundException),
+    CreatedButModifiedException(crate::error::CreatedButModifiedException),
+    InsufficientCapabilitiesException(crate::error::InsufficientCapabilitiesException),
+    InvalidChangeSetStatusException(crate::error::InvalidChangeSetStatusException),
+    InvalidOperationException(crate::error::InvalidOperationException),
+    InvalidStateTransitionException(crate::error::InvalidStateTransitionException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NameAlreadyExistsException(crate::error::NameAlreadyExistsException),
+    OperationIdAlreadyExistsException(crate::error::OperationIdAlreadyExistsException),
+    OperationInProgressException(crate::error::OperationInProgressException),
+    OperationNotFoundException(crate::error::OperationNotFoundException),
+    OperationStatusCheckFailedException(crate::error::OperationStatusCheckFailedException),
+    StackInstanceNotFoundException(crate::error::StackInstanceNotFoundException),
+    StackSetNotEmptyException(crate::error::StackSetNotEmptyException),
+    StackSetNotFoundException(crate::error::StackSetNotFoundException),
+    StaleRequestException(crate::error::StaleRequestException),
+    TokenAlreadyExistsException(crate::error::TokenAlreadyExistsException),
+    TypeNotFoundException(crate::error::TypeNotFoundException),
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
-            Error::AlreadyExistsError(inner) => inner.fmt(f),
-            Error::CFNRegistryError(inner) => inner.fmt(f),
-            Error::ChangeSetNotFoundError(inner) => inner.fmt(f),
-            Error::CreatedButModifiedError(inner) => inner.fmt(f),
-            Error::InsufficientCapabilitiesError(inner) => inner.fmt(f),
-            Error::InvalidChangeSetStatusError(inner) => inner.fmt(f),
-            Error::InvalidOperationError(inner) => inner.fmt(f),
-            Error::InvalidStateTransitionError(inner) => inner.fmt(f),
-            Error::LimitExceededError(inner) => inner.fmt(f),
-            Error::NameAlreadyExistsError(inner) => inner.fmt(f),
-            Error::OperationIdAlreadyExistsError(inner) => inner.fmt(f),
-            Error::OperationInProgressError(inner) => inner.fmt(f),
-            Error::OperationNotFoundError(inner) => inner.fmt(f),
-            Error::OperationStatusCheckFailedError(inner) => inner.fmt(f),
-            Error::StackInstanceNotFoundError(inner) => inner.fmt(f),
-            Error::StackSetNotEmptyError(inner) => inner.fmt(f),
-            Error::StackSetNotFoundError(inner) => inner.fmt(f),
-            Error::StaleRequestError(inner) => inner.fmt(f),
-            Error::TokenAlreadyExistsError(inner) => inner.fmt(f),
-            Error::TypeNotFoundError(inner) => inner.fmt(f),
+            Error::AlreadyExistsException(inner) => inner.fmt(f),
+            Error::CfnRegistryException(inner) => inner.fmt(f),
+            Error::ChangeSetNotFoundException(inner) => inner.fmt(f),
+            Error::CreatedButModifiedException(inner) => inner.fmt(f),
+            Error::InsufficientCapabilitiesException(inner) => inner.fmt(f),
+            Error::InvalidChangeSetStatusException(inner) => inner.fmt(f),
+            Error::InvalidOperationException(inner) => inner.fmt(f),
+            Error::InvalidStateTransitionException(inner) => inner.fmt(f),
+            Error::LimitExceededException(inner) => inner.fmt(f),
+            Error::NameAlreadyExistsException(inner) => inner.fmt(f),
+            Error::OperationIdAlreadyExistsException(inner) => inner.fmt(f),
+            Error::OperationInProgressException(inner) => inner.fmt(f),
+            Error::OperationNotFoundException(inner) => inner.fmt(f),
+            Error::OperationStatusCheckFailedException(inner) => inner.fmt(f),
+            Error::StackInstanceNotFoundException(inner) => inner.fmt(f),
+            Error::StackSetNotEmptyException(inner) => inner.fmt(f),
+            Error::StackSetNotFoundException(inner) => inner.fmt(f),
+            Error::StaleRequestException(inner) => inner.fmt(f),
+            Error::TokenAlreadyExistsException(inner) => inner.fmt(f),
+            Error::TypeNotFoundException(inner) => inner.fmt(f),
             Error::Unhandled(inner) => inner.fmt(f),
         }
     }
@@ -55,8 +55,8 @@ impl From<smithy_http::result::SdkError<crate::error::CancelUpdateStackError>> f
     fn from(err: smithy_http::result::SdkError<crate::error::CancelUpdateStackError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CancelUpdateStackErrorKind::TokenAlreadyExistsError(inner) => {
-                    Error::TokenAlreadyExistsError(inner)
+                crate::error::CancelUpdateStackErrorKind::TokenAlreadyExistsException(inner) => {
+                    Error::TokenAlreadyExistsException(inner)
                 }
                 crate::error::CancelUpdateStackErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -70,9 +70,9 @@ impl From<smithy_http::result::SdkError<crate::error::ContinueUpdateRollbackErro
     fn from(err: smithy_http::result::SdkError<crate::error::ContinueUpdateRollbackError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ContinueUpdateRollbackErrorKind::TokenAlreadyExistsError(inner) => {
-                    Error::TokenAlreadyExistsError(inner)
-                }
+                crate::error::ContinueUpdateRollbackErrorKind::TokenAlreadyExistsException(
+                    inner,
+                ) => Error::TokenAlreadyExistsException(inner),
                 crate::error::ContinueUpdateRollbackErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -85,14 +85,14 @@ impl From<smithy_http::result::SdkError<crate::error::CreateChangeSetError>> for
     fn from(err: smithy_http::result::SdkError<crate::error::CreateChangeSetError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateChangeSetErrorKind::AlreadyExistsError(inner) => {
-                    Error::AlreadyExistsError(inner)
+                crate::error::CreateChangeSetErrorKind::AlreadyExistsException(inner) => {
+                    Error::AlreadyExistsException(inner)
                 }
-                crate::error::CreateChangeSetErrorKind::InsufficientCapabilitiesError(inner) => {
-                    Error::InsufficientCapabilitiesError(inner)
-                }
-                crate::error::CreateChangeSetErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
+                crate::error::CreateChangeSetErrorKind::InsufficientCapabilitiesException(
+                    inner,
+                ) => Error::InsufficientCapabilitiesException(inner),
+                crate::error::CreateChangeSetErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
                 }
                 crate::error::CreateChangeSetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -104,17 +104,17 @@ impl From<smithy_http::result::SdkError<crate::error::CreateStackError>> for Err
     fn from(err: smithy_http::result::SdkError<crate::error::CreateStackError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateStackErrorKind::AlreadyExistsError(inner) => {
-                    Error::AlreadyExistsError(inner)
+                crate::error::CreateStackErrorKind::AlreadyExistsException(inner) => {
+                    Error::AlreadyExistsException(inner)
                 }
-                crate::error::CreateStackErrorKind::InsufficientCapabilitiesError(inner) => {
-                    Error::InsufficientCapabilitiesError(inner)
+                crate::error::CreateStackErrorKind::InsufficientCapabilitiesException(inner) => {
+                    Error::InsufficientCapabilitiesException(inner)
                 }
-                crate::error::CreateStackErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
+                crate::error::CreateStackErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
                 }
-                crate::error::CreateStackErrorKind::TokenAlreadyExistsError(inner) => {
-                    Error::TokenAlreadyExistsError(inner)
+                crate::error::CreateStackErrorKind::TokenAlreadyExistsException(inner) => {
+                    Error::TokenAlreadyExistsException(inner)
                 }
                 crate::error::CreateStackErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -126,23 +126,23 @@ impl From<smithy_http::result::SdkError<crate::error::CreateStackInstancesError>
     fn from(err: smithy_http::result::SdkError<crate::error::CreateStackInstancesError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateStackInstancesErrorKind::InvalidOperationError(inner) => {
-                    Error::InvalidOperationError(inner)
+                crate::error::CreateStackInstancesErrorKind::InvalidOperationException(inner) => {
+                    Error::InvalidOperationException(inner)
                 }
-                crate::error::CreateStackInstancesErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
+                crate::error::CreateStackInstancesErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
                 }
-                crate::error::CreateStackInstancesErrorKind::OperationIdAlreadyExistsError(
+                crate::error::CreateStackInstancesErrorKind::OperationIdAlreadyExistsException(
                     inner,
-                ) => Error::OperationIdAlreadyExistsError(inner),
-                crate::error::CreateStackInstancesErrorKind::OperationInProgressError(inner) => {
-                    Error::OperationInProgressError(inner)
+                ) => Error::OperationIdAlreadyExistsException(inner),
+                crate::error::CreateStackInstancesErrorKind::OperationInProgressException(
+                    inner,
+                ) => Error::OperationInProgressException(inner),
+                crate::error::CreateStackInstancesErrorKind::StackSetNotFoundException(inner) => {
+                    Error::StackSetNotFoundException(inner)
                 }
-                crate::error::CreateStackInstancesErrorKind::StackSetNotFoundError(inner) => {
-                    Error::StackSetNotFoundError(inner)
-                }
-                crate::error::CreateStackInstancesErrorKind::StaleRequestError(inner) => {
-                    Error::StaleRequestError(inner)
+                crate::error::CreateStackInstancesErrorKind::StaleRequestException(inner) => {
+                    Error::StaleRequestException(inner)
                 }
                 crate::error::CreateStackInstancesErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -156,14 +156,14 @@ impl From<smithy_http::result::SdkError<crate::error::CreateStackSetError>> for 
     fn from(err: smithy_http::result::SdkError<crate::error::CreateStackSetError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateStackSetErrorKind::CreatedButModifiedError(inner) => {
-                    Error::CreatedButModifiedError(inner)
+                crate::error::CreateStackSetErrorKind::CreatedButModifiedException(inner) => {
+                    Error::CreatedButModifiedException(inner)
                 }
-                crate::error::CreateStackSetErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
+                crate::error::CreateStackSetErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
                 }
-                crate::error::CreateStackSetErrorKind::NameAlreadyExistsError(inner) => {
-                    Error::NameAlreadyExistsError(inner)
+                crate::error::CreateStackSetErrorKind::NameAlreadyExistsException(inner) => {
+                    Error::NameAlreadyExistsException(inner)
                 }
                 crate::error::CreateStackSetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -175,8 +175,8 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteChangeSetError>> for
     fn from(err: smithy_http::result::SdkError<crate::error::DeleteChangeSetError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteChangeSetErrorKind::InvalidChangeSetStatusError(inner) => {
-                    Error::InvalidChangeSetStatusError(inner)
+                crate::error::DeleteChangeSetErrorKind::InvalidChangeSetStatusException(inner) => {
+                    Error::InvalidChangeSetStatusException(inner)
                 }
                 crate::error::DeleteChangeSetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -188,8 +188,8 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteStackError>> for Err
     fn from(err: smithy_http::result::SdkError<crate::error::DeleteStackError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteStackErrorKind::TokenAlreadyExistsError(inner) => {
-                    Error::TokenAlreadyExistsError(inner)
+                crate::error::DeleteStackErrorKind::TokenAlreadyExistsException(inner) => {
+                    Error::TokenAlreadyExistsException(inner)
                 }
                 crate::error::DeleteStackErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -201,20 +201,20 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteStackInstancesError>
     fn from(err: smithy_http::result::SdkError<crate::error::DeleteStackInstancesError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteStackInstancesErrorKind::InvalidOperationError(inner) => {
-                    Error::InvalidOperationError(inner)
+                crate::error::DeleteStackInstancesErrorKind::InvalidOperationException(inner) => {
+                    Error::InvalidOperationException(inner)
                 }
-                crate::error::DeleteStackInstancesErrorKind::OperationIdAlreadyExistsError(
+                crate::error::DeleteStackInstancesErrorKind::OperationIdAlreadyExistsException(
                     inner,
-                ) => Error::OperationIdAlreadyExistsError(inner),
-                crate::error::DeleteStackInstancesErrorKind::OperationInProgressError(inner) => {
-                    Error::OperationInProgressError(inner)
+                ) => Error::OperationIdAlreadyExistsException(inner),
+                crate::error::DeleteStackInstancesErrorKind::OperationInProgressException(
+                    inner,
+                ) => Error::OperationInProgressException(inner),
+                crate::error::DeleteStackInstancesErrorKind::StackSetNotFoundException(inner) => {
+                    Error::StackSetNotFoundException(inner)
                 }
-                crate::error::DeleteStackInstancesErrorKind::StackSetNotFoundError(inner) => {
-                    Error::StackSetNotFoundError(inner)
-                }
-                crate::error::DeleteStackInstancesErrorKind::StaleRequestError(inner) => {
-                    Error::StaleRequestError(inner)
+                crate::error::DeleteStackInstancesErrorKind::StaleRequestException(inner) => {
+                    Error::StaleRequestException(inner)
                 }
                 crate::error::DeleteStackInstancesErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -228,11 +228,11 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteStackSetError>> for 
     fn from(err: smithy_http::result::SdkError<crate::error::DeleteStackSetError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteStackSetErrorKind::OperationInProgressError(inner) => {
-                    Error::OperationInProgressError(inner)
+                crate::error::DeleteStackSetErrorKind::OperationInProgressException(inner) => {
+                    Error::OperationInProgressException(inner)
                 }
-                crate::error::DeleteStackSetErrorKind::StackSetNotEmptyError(inner) => {
-                    Error::StackSetNotEmptyError(inner)
+                crate::error::DeleteStackSetErrorKind::StackSetNotEmptyException(inner) => {
+                    Error::StackSetNotEmptyException(inner)
                 }
                 crate::error::DeleteStackSetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -244,11 +244,11 @@ impl From<smithy_http::result::SdkError<crate::error::DeregisterTypeError>> for 
     fn from(err: smithy_http::result::SdkError<crate::error::DeregisterTypeError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeregisterTypeErrorKind::CFNRegistryError(inner) => {
-                    Error::CFNRegistryError(inner)
+                crate::error::DeregisterTypeErrorKind::CfnRegistryException(inner) => {
+                    Error::CfnRegistryException(inner)
                 }
-                crate::error::DeregisterTypeErrorKind::TypeNotFoundError(inner) => {
-                    Error::TypeNotFoundError(inner)
+                crate::error::DeregisterTypeErrorKind::TypeNotFoundException(inner) => {
+                    Error::TypeNotFoundException(inner)
                 }
                 crate::error::DeregisterTypeErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -272,8 +272,8 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeChangeSetError>> f
     fn from(err: smithy_http::result::SdkError<crate::error::DescribeChangeSetError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeChangeSetErrorKind::ChangeSetNotFoundError(inner) => {
-                    Error::ChangeSetNotFoundError(inner)
+                crate::error::DescribeChangeSetErrorKind::ChangeSetNotFoundException(inner) => {
+                    Error::ChangeSetNotFoundException(inner)
                 }
                 crate::error::DescribeChangeSetErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -315,11 +315,11 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeStackInstanceError
     fn from(err: smithy_http::result::SdkError<crate::error::DescribeStackInstanceError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeStackInstanceErrorKind::StackInstanceNotFoundError(inner) => {
-                    Error::StackInstanceNotFoundError(inner)
-                }
-                crate::error::DescribeStackInstanceErrorKind::StackSetNotFoundError(inner) => {
-                    Error::StackSetNotFoundError(inner)
+                crate::error::DescribeStackInstanceErrorKind::StackInstanceNotFoundException(
+                    inner,
+                ) => Error::StackInstanceNotFoundException(inner),
+                crate::error::DescribeStackInstanceErrorKind::StackSetNotFoundException(inner) => {
+                    Error::StackSetNotFoundException(inner)
                 }
                 crate::error::DescribeStackInstanceErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -381,8 +381,8 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeStackSetError>> fo
     fn from(err: smithy_http::result::SdkError<crate::error::DescribeStackSetError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeStackSetErrorKind::StackSetNotFoundError(inner) => {
-                    Error::StackSetNotFoundError(inner)
+                crate::error::DescribeStackSetErrorKind::StackSetNotFoundException(inner) => {
+                    Error::StackSetNotFoundException(inner)
                 }
                 crate::error::DescribeStackSetErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -398,12 +398,12 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeStackSetOperationE
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeStackSetOperationErrorKind::OperationNotFoundError(inner) => {
-                    Error::OperationNotFoundError(inner)
-                }
-                crate::error::DescribeStackSetOperationErrorKind::StackSetNotFoundError(inner) => {
-                    Error::StackSetNotFoundError(inner)
-                }
+                crate::error::DescribeStackSetOperationErrorKind::OperationNotFoundException(
+                    inner,
+                ) => Error::OperationNotFoundException(inner),
+                crate::error::DescribeStackSetOperationErrorKind::StackSetNotFoundException(
+                    inner,
+                ) => Error::StackSetNotFoundException(inner),
                 crate::error::DescribeStackSetOperationErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -416,11 +416,11 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeTypeError>> for Er
     fn from(err: smithy_http::result::SdkError<crate::error::DescribeTypeError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeTypeErrorKind::CFNRegistryError(inner) => {
-                    Error::CFNRegistryError(inner)
+                crate::error::DescribeTypeErrorKind::CfnRegistryException(inner) => {
+                    Error::CfnRegistryException(inner)
                 }
-                crate::error::DescribeTypeErrorKind::TypeNotFoundError(inner) => {
-                    Error::TypeNotFoundError(inner)
+                crate::error::DescribeTypeErrorKind::TypeNotFoundException(inner) => {
+                    Error::TypeNotFoundException(inner)
                 }
                 crate::error::DescribeTypeErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -434,8 +434,8 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeTypeRegistrationEr
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeTypeRegistrationErrorKind::CFNRegistryError(inner) => {
-                    Error::CFNRegistryError(inner)
+                crate::error::DescribeTypeRegistrationErrorKind::CfnRegistryException(inner) => {
+                    Error::CfnRegistryException(inner)
                 }
                 crate::error::DescribeTypeRegistrationErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -475,14 +475,14 @@ impl From<smithy_http::result::SdkError<crate::error::DetectStackSetDriftError>>
     fn from(err: smithy_http::result::SdkError<crate::error::DetectStackSetDriftError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DetectStackSetDriftErrorKind::InvalidOperationError(inner) => {
-                    Error::InvalidOperationError(inner)
+                crate::error::DetectStackSetDriftErrorKind::InvalidOperationException(inner) => {
+                    Error::InvalidOperationException(inner)
                 }
-                crate::error::DetectStackSetDriftErrorKind::OperationInProgressError(inner) => {
-                    Error::OperationInProgressError(inner)
+                crate::error::DetectStackSetDriftErrorKind::OperationInProgressException(inner) => {
+                    Error::OperationInProgressException(inner)
                 }
-                crate::error::DetectStackSetDriftErrorKind::StackSetNotFoundError(inner) => {
-                    Error::StackSetNotFoundError(inner)
+                crate::error::DetectStackSetDriftErrorKind::StackSetNotFoundException(inner) => {
+                    Error::StackSetNotFoundException(inner)
                 }
                 crate::error::DetectStackSetDriftErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -508,17 +508,17 @@ impl From<smithy_http::result::SdkError<crate::error::ExecuteChangeSetError>> fo
     fn from(err: smithy_http::result::SdkError<crate::error::ExecuteChangeSetError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ExecuteChangeSetErrorKind::ChangeSetNotFoundError(inner) => {
-                    Error::ChangeSetNotFoundError(inner)
+                crate::error::ExecuteChangeSetErrorKind::ChangeSetNotFoundException(inner) => {
+                    Error::ChangeSetNotFoundException(inner)
                 }
-                crate::error::ExecuteChangeSetErrorKind::InsufficientCapabilitiesError(inner) => {
-                    Error::InsufficientCapabilitiesError(inner)
+                crate::error::ExecuteChangeSetErrorKind::InsufficientCapabilitiesException(
+                    inner,
+                ) => Error::InsufficientCapabilitiesException(inner),
+                crate::error::ExecuteChangeSetErrorKind::InvalidChangeSetStatusException(inner) => {
+                    Error::InvalidChangeSetStatusException(inner)
                 }
-                crate::error::ExecuteChangeSetErrorKind::InvalidChangeSetStatusError(inner) => {
-                    Error::InvalidChangeSetStatusError(inner)
-                }
-                crate::error::ExecuteChangeSetErrorKind::TokenAlreadyExistsError(inner) => {
-                    Error::TokenAlreadyExistsError(inner)
+                crate::error::ExecuteChangeSetErrorKind::TokenAlreadyExistsException(inner) => {
+                    Error::TokenAlreadyExistsException(inner)
                 }
                 crate::error::ExecuteChangeSetErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -542,8 +542,8 @@ impl From<smithy_http::result::SdkError<crate::error::GetTemplateError>> for Err
     fn from(err: smithy_http::result::SdkError<crate::error::GetTemplateError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetTemplateErrorKind::ChangeSetNotFoundError(inner) => {
-                    Error::ChangeSetNotFoundError(inner)
+                crate::error::GetTemplateErrorKind::ChangeSetNotFoundException(inner) => {
+                    Error::ChangeSetNotFoundException(inner)
                 }
                 crate::error::GetTemplateErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -555,8 +555,8 @@ impl From<smithy_http::result::SdkError<crate::error::GetTemplateSummaryError>> 
     fn from(err: smithy_http::result::SdkError<crate::error::GetTemplateSummaryError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetTemplateSummaryErrorKind::StackSetNotFoundError(inner) => {
-                    Error::StackSetNotFoundError(inner)
+                crate::error::GetTemplateSummaryErrorKind::StackSetNotFoundException(inner) => {
+                    Error::StackSetNotFoundException(inner)
                 }
                 crate::error::GetTemplateSummaryErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -600,8 +600,8 @@ impl From<smithy_http::result::SdkError<crate::error::ListStackInstancesError>> 
     fn from(err: smithy_http::result::SdkError<crate::error::ListStackInstancesError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListStackInstancesErrorKind::StackSetNotFoundError(inner) => {
-                    Error::StackSetNotFoundError(inner)
+                crate::error::ListStackInstancesErrorKind::StackSetNotFoundException(inner) => {
+                    Error::StackSetNotFoundException(inner)
                 }
                 crate::error::ListStackInstancesErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -641,12 +641,12 @@ impl From<smithy_http::result::SdkError<crate::error::ListStackSetOperationResul
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListStackSetOperationResultsErrorKind::OperationNotFoundError(
+                crate::error::ListStackSetOperationResultsErrorKind::OperationNotFoundException(
                     inner,
-                ) => Error::OperationNotFoundError(inner),
-                crate::error::ListStackSetOperationResultsErrorKind::StackSetNotFoundError(
+                ) => Error::OperationNotFoundException(inner),
+                crate::error::ListStackSetOperationResultsErrorKind::StackSetNotFoundException(
                     inner,
-                ) => Error::StackSetNotFoundError(inner),
+                ) => Error::StackSetNotFoundException(inner),
                 crate::error::ListStackSetOperationResultsErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -659,8 +659,8 @@ impl From<smithy_http::result::SdkError<crate::error::ListStackSetOperationsErro
     fn from(err: smithy_http::result::SdkError<crate::error::ListStackSetOperationsError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListStackSetOperationsErrorKind::StackSetNotFoundError(inner) => {
-                    Error::StackSetNotFoundError(inner)
+                crate::error::ListStackSetOperationsErrorKind::StackSetNotFoundException(inner) => {
+                    Error::StackSetNotFoundException(inner)
                 }
                 crate::error::ListStackSetOperationsErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -684,8 +684,8 @@ impl From<smithy_http::result::SdkError<crate::error::ListTypeRegistrationsError
     fn from(err: smithy_http::result::SdkError<crate::error::ListTypeRegistrationsError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListTypeRegistrationsErrorKind::CFNRegistryError(inner) => {
-                    Error::CFNRegistryError(inner)
+                crate::error::ListTypeRegistrationsErrorKind::CfnRegistryException(inner) => {
+                    Error::CfnRegistryException(inner)
                 }
                 crate::error::ListTypeRegistrationsErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -699,8 +699,8 @@ impl From<smithy_http::result::SdkError<crate::error::ListTypesError>> for Error
     fn from(err: smithy_http::result::SdkError<crate::error::ListTypesError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListTypesErrorKind::CFNRegistryError(inner) => {
-                    Error::CFNRegistryError(inner)
+                crate::error::ListTypesErrorKind::CfnRegistryException(inner) => {
+                    Error::CfnRegistryException(inner)
                 }
                 crate::error::ListTypesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -712,8 +712,8 @@ impl From<smithy_http::result::SdkError<crate::error::ListTypeVersionsError>> fo
     fn from(err: smithy_http::result::SdkError<crate::error::ListTypeVersionsError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListTypeVersionsErrorKind::CFNRegistryError(inner) => {
-                    Error::CFNRegistryError(inner)
+                crate::error::ListTypeVersionsErrorKind::CfnRegistryException(inner) => {
+                    Error::CfnRegistryException(inner)
                 }
                 crate::error::ListTypeVersionsErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -726,17 +726,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListTypeVersionsError>> fo
 impl From<smithy_http::result::SdkError<crate::error::RecordHandlerProgressError>> for Error {
     fn from(err: smithy_http::result::SdkError<crate::error::RecordHandlerProgressError>) -> Self {
         match err {
-            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::RecordHandlerProgressErrorKind::InvalidStateTransitionError(
-                    inner,
-                ) => Error::InvalidStateTransitionError(inner),
-                crate::error::RecordHandlerProgressErrorKind::OperationStatusCheckFailedError(
-                    inner,
-                ) => Error::OperationStatusCheckFailedError(inner),
-                crate::error::RecordHandlerProgressErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
+            smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::RecordHandlerProgressErrorKind::InvalidStateTransitionException(inner) => Error::InvalidStateTransitionException(inner),
+                crate::error::RecordHandlerProgressErrorKind::OperationStatusCheckFailedException(inner) => Error::OperationStatusCheckFailedException(inner),
+                crate::error::RecordHandlerProgressErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -745,8 +739,8 @@ impl From<smithy_http::result::SdkError<crate::error::RegisterTypeError>> for Er
     fn from(err: smithy_http::result::SdkError<crate::error::RegisterTypeError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::RegisterTypeErrorKind::CFNRegistryError(inner) => {
-                    Error::CFNRegistryError(inner)
+                crate::error::RegisterTypeErrorKind::CfnRegistryException(inner) => {
+                    Error::CfnRegistryException(inner)
                 }
                 crate::error::RegisterTypeErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -768,11 +762,11 @@ impl From<smithy_http::result::SdkError<crate::error::SetTypeDefaultVersionError
     fn from(err: smithy_http::result::SdkError<crate::error::SetTypeDefaultVersionError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::SetTypeDefaultVersionErrorKind::CFNRegistryError(inner) => {
-                    Error::CFNRegistryError(inner)
+                crate::error::SetTypeDefaultVersionErrorKind::CfnRegistryException(inner) => {
+                    Error::CfnRegistryException(inner)
                 }
-                crate::error::SetTypeDefaultVersionErrorKind::TypeNotFoundError(inner) => {
-                    Error::TypeNotFoundError(inner)
+                crate::error::SetTypeDefaultVersionErrorKind::TypeNotFoundException(inner) => {
+                    Error::TypeNotFoundException(inner)
                 }
                 crate::error::SetTypeDefaultVersionErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -796,14 +790,14 @@ impl From<smithy_http::result::SdkError<crate::error::StopStackSetOperationError
     fn from(err: smithy_http::result::SdkError<crate::error::StopStackSetOperationError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::StopStackSetOperationErrorKind::InvalidOperationError(inner) => {
-                    Error::InvalidOperationError(inner)
+                crate::error::StopStackSetOperationErrorKind::InvalidOperationException(inner) => {
+                    Error::InvalidOperationException(inner)
                 }
-                crate::error::StopStackSetOperationErrorKind::OperationNotFoundError(inner) => {
-                    Error::OperationNotFoundError(inner)
+                crate::error::StopStackSetOperationErrorKind::OperationNotFoundException(inner) => {
+                    Error::OperationNotFoundException(inner)
                 }
-                crate::error::StopStackSetOperationErrorKind::StackSetNotFoundError(inner) => {
-                    Error::StackSetNotFoundError(inner)
+                crate::error::StopStackSetOperationErrorKind::StackSetNotFoundException(inner) => {
+                    Error::StackSetNotFoundException(inner)
                 }
                 crate::error::StopStackSetOperationErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -817,11 +811,11 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateStackError>> for Err
     fn from(err: smithy_http::result::SdkError<crate::error::UpdateStackError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateStackErrorKind::InsufficientCapabilitiesError(inner) => {
-                    Error::InsufficientCapabilitiesError(inner)
+                crate::error::UpdateStackErrorKind::InsufficientCapabilitiesException(inner) => {
+                    Error::InsufficientCapabilitiesException(inner)
                 }
-                crate::error::UpdateStackErrorKind::TokenAlreadyExistsError(inner) => {
-                    Error::TokenAlreadyExistsError(inner)
+                crate::error::UpdateStackErrorKind::TokenAlreadyExistsException(inner) => {
+                    Error::TokenAlreadyExistsException(inner)
                 }
                 crate::error::UpdateStackErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -833,23 +827,23 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateStackInstancesError>
     fn from(err: smithy_http::result::SdkError<crate::error::UpdateStackInstancesError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateStackInstancesErrorKind::InvalidOperationError(inner) => {
-                    Error::InvalidOperationError(inner)
+                crate::error::UpdateStackInstancesErrorKind::InvalidOperationException(inner) => {
+                    Error::InvalidOperationException(inner)
                 }
-                crate::error::UpdateStackInstancesErrorKind::OperationIdAlreadyExistsError(
+                crate::error::UpdateStackInstancesErrorKind::OperationIdAlreadyExistsException(
                     inner,
-                ) => Error::OperationIdAlreadyExistsError(inner),
-                crate::error::UpdateStackInstancesErrorKind::OperationInProgressError(inner) => {
-                    Error::OperationInProgressError(inner)
+                ) => Error::OperationIdAlreadyExistsException(inner),
+                crate::error::UpdateStackInstancesErrorKind::OperationInProgressException(
+                    inner,
+                ) => Error::OperationInProgressException(inner),
+                crate::error::UpdateStackInstancesErrorKind::StackInstanceNotFoundException(
+                    inner,
+                ) => Error::StackInstanceNotFoundException(inner),
+                crate::error::UpdateStackInstancesErrorKind::StackSetNotFoundException(inner) => {
+                    Error::StackSetNotFoundException(inner)
                 }
-                crate::error::UpdateStackInstancesErrorKind::StackInstanceNotFoundError(inner) => {
-                    Error::StackInstanceNotFoundError(inner)
-                }
-                crate::error::UpdateStackInstancesErrorKind::StackSetNotFoundError(inner) => {
-                    Error::StackSetNotFoundError(inner)
-                }
-                crate::error::UpdateStackInstancesErrorKind::StaleRequestError(inner) => {
-                    Error::StaleRequestError(inner)
+                crate::error::UpdateStackInstancesErrorKind::StaleRequestException(inner) => {
+                    Error::StaleRequestException(inner)
                 }
                 crate::error::UpdateStackInstancesErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -863,23 +857,23 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateStackSetError>> for 
     fn from(err: smithy_http::result::SdkError<crate::error::UpdateStackSetError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateStackSetErrorKind::InvalidOperationError(inner) => {
-                    Error::InvalidOperationError(inner)
+                crate::error::UpdateStackSetErrorKind::InvalidOperationException(inner) => {
+                    Error::InvalidOperationException(inner)
                 }
-                crate::error::UpdateStackSetErrorKind::OperationIdAlreadyExistsError(inner) => {
-                    Error::OperationIdAlreadyExistsError(inner)
+                crate::error::UpdateStackSetErrorKind::OperationIdAlreadyExistsException(inner) => {
+                    Error::OperationIdAlreadyExistsException(inner)
                 }
-                crate::error::UpdateStackSetErrorKind::OperationInProgressError(inner) => {
-                    Error::OperationInProgressError(inner)
+                crate::error::UpdateStackSetErrorKind::OperationInProgressException(inner) => {
+                    Error::OperationInProgressException(inner)
                 }
-                crate::error::UpdateStackSetErrorKind::StackInstanceNotFoundError(inner) => {
-                    Error::StackInstanceNotFoundError(inner)
+                crate::error::UpdateStackSetErrorKind::StackInstanceNotFoundException(inner) => {
+                    Error::StackInstanceNotFoundException(inner)
                 }
-                crate::error::UpdateStackSetErrorKind::StackSetNotFoundError(inner) => {
-                    Error::StackSetNotFoundError(inner)
+                crate::error::UpdateStackSetErrorKind::StackSetNotFoundException(inner) => {
+                    Error::StackSetNotFoundException(inner)
                 }
-                crate::error::UpdateStackSetErrorKind::StaleRequestError(inner) => {
-                    Error::StaleRequestError(inner)
+                crate::error::UpdateStackSetErrorKind::StaleRequestException(inner) => {
+                    Error::StaleRequestException(inner)
                 }
                 crate::error::UpdateStackSetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },

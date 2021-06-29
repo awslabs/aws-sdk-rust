@@ -3,6 +3,7 @@
 #![allow(clippy::large_enum_variant)]
 #![allow(clippy::wrong_self_convention)]
 #![allow(clippy::should_implement_trait)]
+#![allow(clippy::blacklisted_name)]
 //! <fullname>Amazon Simple Notification Service</fullname>
 //! <p>Amazon Simple Notification Service (Amazon SNS) is a web service that enables you to build
 //! distributed web-enabled applications. Applications can use Amazon SNS to easily push

@@ -90,7 +90,7 @@ pub fn serialize_member_put_bucket_analytics_configuration_input_analytics_confi
 }
 
 pub fn serialize_member_put_bucket_cors_input_cors_configuration(
-    input: &crate::model::CORSConfiguration,
+    input: &crate::model::CorsConfiguration,
 ) -> Result<smithy_http::body::SdkBody, String> {
     let mut out = String::new();
     {
@@ -539,7 +539,7 @@ pub fn serialize_structure_analytics_configuration(
 }
 
 pub fn serialize_structure_cors_configuration(
-    input: &crate::model::CORSConfiguration,
+    input: &crate::model::CorsConfiguration,
     writer: smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
@@ -1237,7 +1237,7 @@ pub fn serialize_structure_storage_class_analysis(
 }
 
 pub fn serialize_structure_cors_rule(
-    input: &crate::model::CORSRule,
+    input: &crate::model::CorsRule,
     writer: smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
@@ -2940,7 +2940,7 @@ pub fn serialize_structure_metrics(
 }
 
 pub fn serialize_structure_csv_input(
-    input: &crate::model::CSVInput,
+    input: &crate::model::CsvInput,
     writer: smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
@@ -3002,7 +3002,7 @@ pub fn serialize_structure_csv_input(
 }
 
 pub fn serialize_structure_json_input(
-    input: &crate::model::JSONInput,
+    input: &crate::model::JsonInput,
     writer: smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
@@ -3028,7 +3028,7 @@ pub fn serialize_structure_parquet_input(
 }
 
 pub fn serialize_structure_csv_output(
-    input: &crate::model::CSVOutput,
+    input: &crate::model::CsvOutput,
     writer: smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
@@ -3072,7 +3072,7 @@ pub fn serialize_structure_csv_output(
 }
 
 pub fn serialize_structure_json_output(
-    input: &crate::model::JSONOutput,
+    input: &crate::model::JsonOutput,
     writer: smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
@@ -3178,7 +3178,7 @@ pub fn serialize_structure_analytics_s3_bucket_destination(
 }
 
 pub fn serialize_structure_sses3(
-    input: &crate::model::SSES3,
+    input: &crate::model::Sses3,
     writer: smithy_xml::encode::ElWriter,
 ) {
     let _ = input;
@@ -3188,7 +3188,7 @@ pub fn serialize_structure_sses3(
 }
 
 pub fn serialize_structure_ssekms(
-    input: &crate::model::SSEKMS,
+    input: &crate::model::Ssekms,
     writer: smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]

@@ -8,24 +8,26 @@ pub struct CreateConfigurationSetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateConfigurationSetErrorKind {
-    AlreadyExistsError(crate::error::AlreadyExistsError),
-    BadRequestError(crate::error::BadRequestError),
-    ConcurrentModificationError(crate::error::ConcurrentModificationError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    AlreadyExistsException(crate::error::AlreadyExistsException),
+    BadRequestException(crate::error::BadRequestException),
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateConfigurationSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateConfigurationSetErrorKind::AlreadyExistsError(_inner) => _inner.fmt(f),
-            CreateConfigurationSetErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            CreateConfigurationSetErrorKind::ConcurrentModificationError(_inner) => _inner.fmt(f),
-            CreateConfigurationSetErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            CreateConfigurationSetErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            CreateConfigurationSetErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            CreateConfigurationSetErrorKind::AlreadyExistsException(_inner) => _inner.fmt(f),
+            CreateConfigurationSetErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            CreateConfigurationSetErrorKind::ConcurrentModificationException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateConfigurationSetErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateConfigurationSetErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            CreateConfigurationSetErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             CreateConfigurationSetErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -74,52 +76,54 @@ impl CreateConfigurationSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_already_exists_error(&self) -> bool {
+    pub fn is_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateConfigurationSetErrorKind::AlreadyExistsError(_)
+            CreateConfigurationSetErrorKind::AlreadyExistsException(_)
         )
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateConfigurationSetErrorKind::BadRequestError(_)
+            CreateConfigurationSetErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_concurrent_modification_error(&self) -> bool {
+    pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateConfigurationSetErrorKind::ConcurrentModificationError(_)
+            CreateConfigurationSetErrorKind::ConcurrentModificationException(_)
         )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateConfigurationSetErrorKind::LimitExceededError(_)
+            CreateConfigurationSetErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateConfigurationSetErrorKind::NotFoundError(_)
+            CreateConfigurationSetErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateConfigurationSetErrorKind::TooManyRequestsError(_)
+            CreateConfigurationSetErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for CreateConfigurationSetError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateConfigurationSetErrorKind::AlreadyExistsError(_inner) => Some(_inner),
-            CreateConfigurationSetErrorKind::BadRequestError(_inner) => Some(_inner),
-            CreateConfigurationSetErrorKind::ConcurrentModificationError(_inner) => Some(_inner),
-            CreateConfigurationSetErrorKind::LimitExceededError(_inner) => Some(_inner),
-            CreateConfigurationSetErrorKind::NotFoundError(_inner) => Some(_inner),
-            CreateConfigurationSetErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            CreateConfigurationSetErrorKind::AlreadyExistsException(_inner) => Some(_inner),
+            CreateConfigurationSetErrorKind::BadRequestException(_inner) => Some(_inner),
+            CreateConfigurationSetErrorKind::ConcurrentModificationException(_inner) => {
+                Some(_inner)
+            }
+            CreateConfigurationSetErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateConfigurationSetErrorKind::NotFoundException(_inner) => Some(_inner),
+            CreateConfigurationSetErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             CreateConfigurationSetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -134,28 +138,30 @@ pub struct CreateConfigurationSetEventDestinationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateConfigurationSetEventDestinationErrorKind {
-    AlreadyExistsError(crate::error::AlreadyExistsError),
-    BadRequestError(crate::error::BadRequestError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    AlreadyExistsException(crate::error::AlreadyExistsException),
+    BadRequestException(crate::error::BadRequestException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateConfigurationSetEventDestinationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateConfigurationSetEventDestinationErrorKind::AlreadyExistsError(_inner) => {
+            CreateConfigurationSetEventDestinationErrorKind::AlreadyExistsException(_inner) => {
                 _inner.fmt(f)
             }
-            CreateConfigurationSetEventDestinationErrorKind::BadRequestError(_inner) => {
+            CreateConfigurationSetEventDestinationErrorKind::BadRequestException(_inner) => {
                 _inner.fmt(f)
             }
-            CreateConfigurationSetEventDestinationErrorKind::LimitExceededError(_inner) => {
+            CreateConfigurationSetEventDestinationErrorKind::LimitExceededException(_inner) => {
                 _inner.fmt(f)
             }
-            CreateConfigurationSetEventDestinationErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            CreateConfigurationSetEventDestinationErrorKind::TooManyRequestsError(_inner) => {
+            CreateConfigurationSetEventDestinationErrorKind::NotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateConfigurationSetEventDestinationErrorKind::TooManyRequestsException(_inner) => {
                 _inner.fmt(f)
             }
             CreateConfigurationSetEventDestinationErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -209,51 +215,53 @@ impl CreateConfigurationSetEventDestinationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_already_exists_error(&self) -> bool {
+    pub fn is_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateConfigurationSetEventDestinationErrorKind::AlreadyExistsError(_)
+            CreateConfigurationSetEventDestinationErrorKind::AlreadyExistsException(_)
         )
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateConfigurationSetEventDestinationErrorKind::BadRequestError(_)
+            CreateConfigurationSetEventDestinationErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateConfigurationSetEventDestinationErrorKind::LimitExceededError(_)
+            CreateConfigurationSetEventDestinationErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateConfigurationSetEventDestinationErrorKind::NotFoundError(_)
+            CreateConfigurationSetEventDestinationErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateConfigurationSetEventDestinationErrorKind::TooManyRequestsError(_)
+            CreateConfigurationSetEventDestinationErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for CreateConfigurationSetEventDestinationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateConfigurationSetEventDestinationErrorKind::AlreadyExistsError(_inner) => {
+            CreateConfigurationSetEventDestinationErrorKind::AlreadyExistsException(_inner) => {
                 Some(_inner)
             }
-            CreateConfigurationSetEventDestinationErrorKind::BadRequestError(_inner) => {
+            CreateConfigurationSetEventDestinationErrorKind::BadRequestException(_inner) => {
                 Some(_inner)
             }
-            CreateConfigurationSetEventDestinationErrorKind::LimitExceededError(_inner) => {
+            CreateConfigurationSetEventDestinationErrorKind::LimitExceededException(_inner) => {
                 Some(_inner)
             }
-            CreateConfigurationSetEventDestinationErrorKind::NotFoundError(_inner) => Some(_inner),
-            CreateConfigurationSetEventDestinationErrorKind::TooManyRequestsError(_inner) => {
+            CreateConfigurationSetEventDestinationErrorKind::NotFoundException(_inner) => {
+                Some(_inner)
+            }
+            CreateConfigurationSetEventDestinationErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
             CreateConfigurationSetEventDestinationErrorKind::Unhandled(_inner) => {
@@ -272,20 +280,20 @@ pub struct CreateContactError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateContactErrorKind {
-    AlreadyExistsError(crate::error::AlreadyExistsError),
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    AlreadyExistsException(crate::error::AlreadyExistsException),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateContactError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateContactErrorKind::AlreadyExistsError(_inner) => _inner.fmt(f),
-            CreateContactErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            CreateContactErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            CreateContactErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            CreateContactErrorKind::AlreadyExistsException(_inner) => _inner.fmt(f),
+            CreateContactErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            CreateContactErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            CreateContactErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             CreateContactErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -334,26 +342,32 @@ impl CreateContactError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_already_exists_error(&self) -> bool {
-        matches!(&self.kind, CreateContactErrorKind::AlreadyExistsError(_))
+    pub fn is_already_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateContactErrorKind::AlreadyExistsException(_)
+        )
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, CreateContactErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, CreateContactErrorKind::BadRequestException(_))
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, CreateContactErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, CreateContactErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, CreateContactErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateContactErrorKind::TooManyRequestsException(_)
+        )
     }
 }
 impl std::error::Error for CreateContactError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateContactErrorKind::AlreadyExistsError(_inner) => Some(_inner),
-            CreateContactErrorKind::BadRequestError(_inner) => Some(_inner),
-            CreateContactErrorKind::NotFoundError(_inner) => Some(_inner),
-            CreateContactErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            CreateContactErrorKind::AlreadyExistsException(_inner) => Some(_inner),
+            CreateContactErrorKind::BadRequestException(_inner) => Some(_inner),
+            CreateContactErrorKind::NotFoundException(_inner) => Some(_inner),
+            CreateContactErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             CreateContactErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -368,20 +382,20 @@ pub struct CreateContactListError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateContactListErrorKind {
-    AlreadyExistsError(crate::error::AlreadyExistsError),
-    BadRequestError(crate::error::BadRequestError),
-    LimitExceededError(crate::error::LimitExceededError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    AlreadyExistsException(crate::error::AlreadyExistsException),
+    BadRequestException(crate::error::BadRequestException),
+    LimitExceededException(crate::error::LimitExceededException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateContactListError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateContactListErrorKind::AlreadyExistsError(_inner) => _inner.fmt(f),
-            CreateContactListErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            CreateContactListErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            CreateContactListErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            CreateContactListErrorKind::AlreadyExistsException(_inner) => _inner.fmt(f),
+            CreateContactListErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            CreateContactListErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateContactListErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             CreateContactListErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -430,35 +444,38 @@ impl CreateContactListError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_already_exists_error(&self) -> bool {
+    pub fn is_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateContactListErrorKind::AlreadyExistsError(_)
+            CreateContactListErrorKind::AlreadyExistsException(_)
         )
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, CreateContactListErrorKind::BadRequestError(_))
-    }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateContactListErrorKind::LimitExceededError(_)
+            CreateContactListErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateContactListErrorKind::TooManyRequestsError(_)
+            CreateContactListErrorKind::LimitExceededException(_)
+        )
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateContactListErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for CreateContactListError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateContactListErrorKind::AlreadyExistsError(_inner) => Some(_inner),
-            CreateContactListErrorKind::BadRequestError(_inner) => Some(_inner),
-            CreateContactListErrorKind::LimitExceededError(_inner) => Some(_inner),
-            CreateContactListErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            CreateContactListErrorKind::AlreadyExistsException(_inner) => Some(_inner),
+            CreateContactListErrorKind::BadRequestException(_inner) => Some(_inner),
+            CreateContactListErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateContactListErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             CreateContactListErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -473,28 +490,30 @@ pub struct CreateCustomVerificationEmailTemplateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateCustomVerificationEmailTemplateErrorKind {
-    AlreadyExistsError(crate::error::AlreadyExistsError),
-    BadRequestError(crate::error::BadRequestError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    AlreadyExistsException(crate::error::AlreadyExistsException),
+    BadRequestException(crate::error::BadRequestException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateCustomVerificationEmailTemplateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateCustomVerificationEmailTemplateErrorKind::AlreadyExistsError(_inner) => {
+            CreateCustomVerificationEmailTemplateErrorKind::AlreadyExistsException(_inner) => {
                 _inner.fmt(f)
             }
-            CreateCustomVerificationEmailTemplateErrorKind::BadRequestError(_inner) => {
+            CreateCustomVerificationEmailTemplateErrorKind::BadRequestException(_inner) => {
                 _inner.fmt(f)
             }
-            CreateCustomVerificationEmailTemplateErrorKind::LimitExceededError(_inner) => {
+            CreateCustomVerificationEmailTemplateErrorKind::LimitExceededException(_inner) => {
                 _inner.fmt(f)
             }
-            CreateCustomVerificationEmailTemplateErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            CreateCustomVerificationEmailTemplateErrorKind::TooManyRequestsError(_inner) => {
+            CreateCustomVerificationEmailTemplateErrorKind::NotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateCustomVerificationEmailTemplateErrorKind::TooManyRequestsException(_inner) => {
                 _inner.fmt(f)
             }
             CreateCustomVerificationEmailTemplateErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -548,49 +567,53 @@ impl CreateCustomVerificationEmailTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_already_exists_error(&self) -> bool {
+    pub fn is_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateCustomVerificationEmailTemplateErrorKind::AlreadyExistsError(_)
+            CreateCustomVerificationEmailTemplateErrorKind::AlreadyExistsException(_)
         )
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateCustomVerificationEmailTemplateErrorKind::BadRequestError(_)
+            CreateCustomVerificationEmailTemplateErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateCustomVerificationEmailTemplateErrorKind::LimitExceededError(_)
+            CreateCustomVerificationEmailTemplateErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateCustomVerificationEmailTemplateErrorKind::NotFoundError(_)
+            CreateCustomVerificationEmailTemplateErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateCustomVerificationEmailTemplateErrorKind::TooManyRequestsError(_)
+            CreateCustomVerificationEmailTemplateErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for CreateCustomVerificationEmailTemplateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateCustomVerificationEmailTemplateErrorKind::AlreadyExistsError(_inner) => {
+            CreateCustomVerificationEmailTemplateErrorKind::AlreadyExistsException(_inner) => {
                 Some(_inner)
             }
-            CreateCustomVerificationEmailTemplateErrorKind::BadRequestError(_inner) => Some(_inner),
-            CreateCustomVerificationEmailTemplateErrorKind::LimitExceededError(_inner) => {
+            CreateCustomVerificationEmailTemplateErrorKind::BadRequestException(_inner) => {
                 Some(_inner)
             }
-            CreateCustomVerificationEmailTemplateErrorKind::NotFoundError(_inner) => Some(_inner),
-            CreateCustomVerificationEmailTemplateErrorKind::TooManyRequestsError(_inner) => {
+            CreateCustomVerificationEmailTemplateErrorKind::LimitExceededException(_inner) => {
+                Some(_inner)
+            }
+            CreateCustomVerificationEmailTemplateErrorKind::NotFoundException(_inner) => {
+                Some(_inner)
+            }
+            CreateCustomVerificationEmailTemplateErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
             CreateCustomVerificationEmailTemplateErrorKind::Unhandled(_inner) => {
@@ -609,22 +632,24 @@ pub struct CreateDedicatedIpPoolError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateDedicatedIpPoolErrorKind {
-    AlreadyExistsError(crate::error::AlreadyExistsError),
-    BadRequestError(crate::error::BadRequestError),
-    ConcurrentModificationError(crate::error::ConcurrentModificationError),
-    LimitExceededError(crate::error::LimitExceededError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    AlreadyExistsException(crate::error::AlreadyExistsException),
+    BadRequestException(crate::error::BadRequestException),
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    LimitExceededException(crate::error::LimitExceededException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDedicatedIpPoolError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateDedicatedIpPoolErrorKind::AlreadyExistsError(_inner) => _inner.fmt(f),
-            CreateDedicatedIpPoolErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            CreateDedicatedIpPoolErrorKind::ConcurrentModificationError(_inner) => _inner.fmt(f),
-            CreateDedicatedIpPoolErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            CreateDedicatedIpPoolErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            CreateDedicatedIpPoolErrorKind::AlreadyExistsException(_inner) => _inner.fmt(f),
+            CreateDedicatedIpPoolErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            CreateDedicatedIpPoolErrorKind::ConcurrentModificationException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateDedicatedIpPoolErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateDedicatedIpPoolErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             CreateDedicatedIpPoolErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -673,45 +698,45 @@ impl CreateDedicatedIpPoolError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_already_exists_error(&self) -> bool {
+    pub fn is_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDedicatedIpPoolErrorKind::AlreadyExistsError(_)
+            CreateDedicatedIpPoolErrorKind::AlreadyExistsException(_)
         )
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDedicatedIpPoolErrorKind::BadRequestError(_)
+            CreateDedicatedIpPoolErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_concurrent_modification_error(&self) -> bool {
+    pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDedicatedIpPoolErrorKind::ConcurrentModificationError(_)
+            CreateDedicatedIpPoolErrorKind::ConcurrentModificationException(_)
         )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDedicatedIpPoolErrorKind::LimitExceededError(_)
+            CreateDedicatedIpPoolErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDedicatedIpPoolErrorKind::TooManyRequestsError(_)
+            CreateDedicatedIpPoolErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for CreateDedicatedIpPoolError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateDedicatedIpPoolErrorKind::AlreadyExistsError(_inner) => Some(_inner),
-            CreateDedicatedIpPoolErrorKind::BadRequestError(_inner) => Some(_inner),
-            CreateDedicatedIpPoolErrorKind::ConcurrentModificationError(_inner) => Some(_inner),
-            CreateDedicatedIpPoolErrorKind::LimitExceededError(_inner) => Some(_inner),
-            CreateDedicatedIpPoolErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            CreateDedicatedIpPoolErrorKind::AlreadyExistsException(_inner) => Some(_inner),
+            CreateDedicatedIpPoolErrorKind::BadRequestException(_inner) => Some(_inner),
+            CreateDedicatedIpPoolErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
+            CreateDedicatedIpPoolErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateDedicatedIpPoolErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             CreateDedicatedIpPoolErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -726,34 +751,42 @@ pub struct CreateDeliverabilityTestReportError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateDeliverabilityTestReportErrorKind {
-    AccountSuspendedError(crate::error::AccountSuspendedError),
-    BadRequestError(crate::error::BadRequestError),
-    ConcurrentModificationError(crate::error::ConcurrentModificationError),
-    LimitExceededError(crate::error::LimitExceededError),
-    MailFromDomainNotVerifiedError(crate::error::MailFromDomainNotVerifiedError),
+    AccountSuspendedException(crate::error::AccountSuspendedException),
+    BadRequestException(crate::error::BadRequestException),
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    LimitExceededException(crate::error::LimitExceededException),
+    MailFromDomainNotVerifiedException(crate::error::MailFromDomainNotVerifiedException),
     MessageRejected(crate::error::MessageRejected),
-    NotFoundError(crate::error::NotFoundError),
-    SendingPausedError(crate::error::SendingPausedError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    NotFoundException(crate::error::NotFoundException),
+    SendingPausedException(crate::error::SendingPausedException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDeliverabilityTestReportError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateDeliverabilityTestReportErrorKind::AccountSuspendedError(_inner) => _inner.fmt(f),
-            CreateDeliverabilityTestReportErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            CreateDeliverabilityTestReportErrorKind::ConcurrentModificationError(_inner) => {
+            CreateDeliverabilityTestReportErrorKind::AccountSuspendedException(_inner) => {
                 _inner.fmt(f)
             }
-            CreateDeliverabilityTestReportErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            CreateDeliverabilityTestReportErrorKind::MailFromDomainNotVerifiedError(_inner) => {
+            CreateDeliverabilityTestReportErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            CreateDeliverabilityTestReportErrorKind::ConcurrentModificationException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateDeliverabilityTestReportErrorKind::LimitExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateDeliverabilityTestReportErrorKind::MailFromDomainNotVerifiedException(_inner) => {
                 _inner.fmt(f)
             }
             CreateDeliverabilityTestReportErrorKind::MessageRejected(_inner) => _inner.fmt(f),
-            CreateDeliverabilityTestReportErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            CreateDeliverabilityTestReportErrorKind::SendingPausedError(_inner) => _inner.fmt(f),
-            CreateDeliverabilityTestReportErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            CreateDeliverabilityTestReportErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            CreateDeliverabilityTestReportErrorKind::SendingPausedException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateDeliverabilityTestReportErrorKind::TooManyRequestsException(_inner) => {
+                _inner.fmt(f)
+            }
             CreateDeliverabilityTestReportErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -802,34 +835,34 @@ impl CreateDeliverabilityTestReportError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_account_suspended_error(&self) -> bool {
+    pub fn is_account_suspended_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDeliverabilityTestReportErrorKind::AccountSuspendedError(_)
+            CreateDeliverabilityTestReportErrorKind::AccountSuspendedException(_)
         )
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDeliverabilityTestReportErrorKind::BadRequestError(_)
+            CreateDeliverabilityTestReportErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_concurrent_modification_error(&self) -> bool {
+    pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDeliverabilityTestReportErrorKind::ConcurrentModificationError(_)
+            CreateDeliverabilityTestReportErrorKind::ConcurrentModificationException(_)
         )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDeliverabilityTestReportErrorKind::LimitExceededError(_)
+            CreateDeliverabilityTestReportErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_mail_from_domain_not_verified_error(&self) -> bool {
+    pub fn is_mail_from_domain_not_verified_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDeliverabilityTestReportErrorKind::MailFromDomainNotVerifiedError(_)
+            CreateDeliverabilityTestReportErrorKind::MailFromDomainNotVerifiedException(_)
         )
     }
     pub fn is_message_rejected(&self) -> bool {
@@ -838,41 +871,45 @@ impl CreateDeliverabilityTestReportError {
             CreateDeliverabilityTestReportErrorKind::MessageRejected(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDeliverabilityTestReportErrorKind::NotFoundError(_)
+            CreateDeliverabilityTestReportErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_sending_paused_error(&self) -> bool {
+    pub fn is_sending_paused_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDeliverabilityTestReportErrorKind::SendingPausedError(_)
+            CreateDeliverabilityTestReportErrorKind::SendingPausedException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDeliverabilityTestReportErrorKind::TooManyRequestsError(_)
+            CreateDeliverabilityTestReportErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for CreateDeliverabilityTestReportError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateDeliverabilityTestReportErrorKind::AccountSuspendedError(_inner) => Some(_inner),
-            CreateDeliverabilityTestReportErrorKind::BadRequestError(_inner) => Some(_inner),
-            CreateDeliverabilityTestReportErrorKind::ConcurrentModificationError(_inner) => {
+            CreateDeliverabilityTestReportErrorKind::AccountSuspendedException(_inner) => {
                 Some(_inner)
             }
-            CreateDeliverabilityTestReportErrorKind::LimitExceededError(_inner) => Some(_inner),
-            CreateDeliverabilityTestReportErrorKind::MailFromDomainNotVerifiedError(_inner) => {
+            CreateDeliverabilityTestReportErrorKind::BadRequestException(_inner) => Some(_inner),
+            CreateDeliverabilityTestReportErrorKind::ConcurrentModificationException(_inner) => {
+                Some(_inner)
+            }
+            CreateDeliverabilityTestReportErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateDeliverabilityTestReportErrorKind::MailFromDomainNotVerifiedException(_inner) => {
                 Some(_inner)
             }
             CreateDeliverabilityTestReportErrorKind::MessageRejected(_inner) => Some(_inner),
-            CreateDeliverabilityTestReportErrorKind::NotFoundError(_inner) => Some(_inner),
-            CreateDeliverabilityTestReportErrorKind::SendingPausedError(_inner) => Some(_inner),
-            CreateDeliverabilityTestReportErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            CreateDeliverabilityTestReportErrorKind::NotFoundException(_inner) => Some(_inner),
+            CreateDeliverabilityTestReportErrorKind::SendingPausedException(_inner) => Some(_inner),
+            CreateDeliverabilityTestReportErrorKind::TooManyRequestsException(_inner) => {
+                Some(_inner)
+            }
             CreateDeliverabilityTestReportErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -887,24 +924,24 @@ pub struct CreateEmailIdentityError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateEmailIdentityErrorKind {
-    AlreadyExistsError(crate::error::AlreadyExistsError),
-    BadRequestError(crate::error::BadRequestError),
-    ConcurrentModificationError(crate::error::ConcurrentModificationError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    AlreadyExistsException(crate::error::AlreadyExistsException),
+    BadRequestException(crate::error::BadRequestException),
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateEmailIdentityError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateEmailIdentityErrorKind::AlreadyExistsError(_inner) => _inner.fmt(f),
-            CreateEmailIdentityErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            CreateEmailIdentityErrorKind::ConcurrentModificationError(_inner) => _inner.fmt(f),
-            CreateEmailIdentityErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            CreateEmailIdentityErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            CreateEmailIdentityErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            CreateEmailIdentityErrorKind::AlreadyExistsException(_inner) => _inner.fmt(f),
+            CreateEmailIdentityErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            CreateEmailIdentityErrorKind::ConcurrentModificationException(_inner) => _inner.fmt(f),
+            CreateEmailIdentityErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateEmailIdentityErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            CreateEmailIdentityErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             CreateEmailIdentityErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -953,46 +990,52 @@ impl CreateEmailIdentityError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_already_exists_error(&self) -> bool {
+    pub fn is_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateEmailIdentityErrorKind::AlreadyExistsError(_)
+            CreateEmailIdentityErrorKind::AlreadyExistsException(_)
         )
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, CreateEmailIdentityErrorKind::BadRequestError(_))
-    }
-    pub fn is_concurrent_modification_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateEmailIdentityErrorKind::ConcurrentModificationError(_)
+            CreateEmailIdentityErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateEmailIdentityErrorKind::LimitExceededError(_)
+            CreateEmailIdentityErrorKind::ConcurrentModificationException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, CreateEmailIdentityErrorKind::NotFoundError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateEmailIdentityErrorKind::TooManyRequestsError(_)
+            CreateEmailIdentityErrorKind::LimitExceededException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateEmailIdentityErrorKind::NotFoundException(_)
+        )
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateEmailIdentityErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for CreateEmailIdentityError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateEmailIdentityErrorKind::AlreadyExistsError(_inner) => Some(_inner),
-            CreateEmailIdentityErrorKind::BadRequestError(_inner) => Some(_inner),
-            CreateEmailIdentityErrorKind::ConcurrentModificationError(_inner) => Some(_inner),
-            CreateEmailIdentityErrorKind::LimitExceededError(_inner) => Some(_inner),
-            CreateEmailIdentityErrorKind::NotFoundError(_inner) => Some(_inner),
-            CreateEmailIdentityErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            CreateEmailIdentityErrorKind::AlreadyExistsException(_inner) => Some(_inner),
+            CreateEmailIdentityErrorKind::BadRequestException(_inner) => Some(_inner),
+            CreateEmailIdentityErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
+            CreateEmailIdentityErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateEmailIdentityErrorKind::NotFoundException(_inner) => Some(_inner),
+            CreateEmailIdentityErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             CreateEmailIdentityErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1007,22 +1050,22 @@ pub struct CreateEmailIdentityPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateEmailIdentityPolicyErrorKind {
-    AlreadyExistsError(crate::error::AlreadyExistsError),
-    BadRequestError(crate::error::BadRequestError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    AlreadyExistsException(crate::error::AlreadyExistsException),
+    BadRequestException(crate::error::BadRequestException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateEmailIdentityPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateEmailIdentityPolicyErrorKind::AlreadyExistsError(_inner) => _inner.fmt(f),
-            CreateEmailIdentityPolicyErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            CreateEmailIdentityPolicyErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            CreateEmailIdentityPolicyErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            CreateEmailIdentityPolicyErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            CreateEmailIdentityPolicyErrorKind::AlreadyExistsException(_inner) => _inner.fmt(f),
+            CreateEmailIdentityPolicyErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            CreateEmailIdentityPolicyErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateEmailIdentityPolicyErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            CreateEmailIdentityPolicyErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             CreateEmailIdentityPolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1071,45 +1114,45 @@ impl CreateEmailIdentityPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_already_exists_error(&self) -> bool {
+    pub fn is_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateEmailIdentityPolicyErrorKind::AlreadyExistsError(_)
+            CreateEmailIdentityPolicyErrorKind::AlreadyExistsException(_)
         )
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateEmailIdentityPolicyErrorKind::BadRequestError(_)
+            CreateEmailIdentityPolicyErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateEmailIdentityPolicyErrorKind::LimitExceededError(_)
+            CreateEmailIdentityPolicyErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateEmailIdentityPolicyErrorKind::NotFoundError(_)
+            CreateEmailIdentityPolicyErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateEmailIdentityPolicyErrorKind::TooManyRequestsError(_)
+            CreateEmailIdentityPolicyErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for CreateEmailIdentityPolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateEmailIdentityPolicyErrorKind::AlreadyExistsError(_inner) => Some(_inner),
-            CreateEmailIdentityPolicyErrorKind::BadRequestError(_inner) => Some(_inner),
-            CreateEmailIdentityPolicyErrorKind::LimitExceededError(_inner) => Some(_inner),
-            CreateEmailIdentityPolicyErrorKind::NotFoundError(_inner) => Some(_inner),
-            CreateEmailIdentityPolicyErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            CreateEmailIdentityPolicyErrorKind::AlreadyExistsException(_inner) => Some(_inner),
+            CreateEmailIdentityPolicyErrorKind::BadRequestException(_inner) => Some(_inner),
+            CreateEmailIdentityPolicyErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateEmailIdentityPolicyErrorKind::NotFoundException(_inner) => Some(_inner),
+            CreateEmailIdentityPolicyErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             CreateEmailIdentityPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1124,20 +1167,20 @@ pub struct CreateEmailTemplateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateEmailTemplateErrorKind {
-    AlreadyExistsError(crate::error::AlreadyExistsError),
-    BadRequestError(crate::error::BadRequestError),
-    LimitExceededError(crate::error::LimitExceededError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    AlreadyExistsException(crate::error::AlreadyExistsException),
+    BadRequestException(crate::error::BadRequestException),
+    LimitExceededException(crate::error::LimitExceededException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateEmailTemplateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateEmailTemplateErrorKind::AlreadyExistsError(_inner) => _inner.fmt(f),
-            CreateEmailTemplateErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            CreateEmailTemplateErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            CreateEmailTemplateErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            CreateEmailTemplateErrorKind::AlreadyExistsException(_inner) => _inner.fmt(f),
+            CreateEmailTemplateErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            CreateEmailTemplateErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateEmailTemplateErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             CreateEmailTemplateErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1186,35 +1229,38 @@ impl CreateEmailTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_already_exists_error(&self) -> bool {
+    pub fn is_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateEmailTemplateErrorKind::AlreadyExistsError(_)
+            CreateEmailTemplateErrorKind::AlreadyExistsException(_)
         )
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, CreateEmailTemplateErrorKind::BadRequestError(_))
-    }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateEmailTemplateErrorKind::LimitExceededError(_)
+            CreateEmailTemplateErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateEmailTemplateErrorKind::TooManyRequestsError(_)
+            CreateEmailTemplateErrorKind::LimitExceededException(_)
+        )
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateEmailTemplateErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for CreateEmailTemplateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateEmailTemplateErrorKind::AlreadyExistsError(_inner) => Some(_inner),
-            CreateEmailTemplateErrorKind::BadRequestError(_inner) => Some(_inner),
-            CreateEmailTemplateErrorKind::LimitExceededError(_inner) => Some(_inner),
-            CreateEmailTemplateErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            CreateEmailTemplateErrorKind::AlreadyExistsException(_inner) => Some(_inner),
+            CreateEmailTemplateErrorKind::BadRequestException(_inner) => Some(_inner),
+            CreateEmailTemplateErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateEmailTemplateErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             CreateEmailTemplateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1229,18 +1275,18 @@ pub struct CreateImportJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateImportJobErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    LimitExceededError(crate::error::LimitExceededError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    LimitExceededException(crate::error::LimitExceededException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateImportJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateImportJobErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            CreateImportJobErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            CreateImportJobErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            CreateImportJobErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            CreateImportJobErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateImportJobErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             CreateImportJobErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1289,25 +1335,28 @@ impl CreateImportJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, CreateImportJobErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, CreateImportJobErrorKind::BadRequestException(_))
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, CreateImportJobErrorKind::LimitExceededError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateImportJobErrorKind::TooManyRequestsError(_)
+            CreateImportJobErrorKind::LimitExceededException(_)
+        )
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateImportJobErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for CreateImportJobError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateImportJobErrorKind::BadRequestError(_inner) => Some(_inner),
-            CreateImportJobErrorKind::LimitExceededError(_inner) => Some(_inner),
-            CreateImportJobErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            CreateImportJobErrorKind::BadRequestException(_inner) => Some(_inner),
+            CreateImportJobErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateImportJobErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             CreateImportJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1322,20 +1371,22 @@ pub struct DeleteConfigurationSetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteConfigurationSetErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ConcurrentModificationError(crate::error::ConcurrentModificationError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteConfigurationSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteConfigurationSetErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            DeleteConfigurationSetErrorKind::ConcurrentModificationError(_inner) => _inner.fmt(f),
-            DeleteConfigurationSetErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            DeleteConfigurationSetErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            DeleteConfigurationSetErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            DeleteConfigurationSetErrorKind::ConcurrentModificationException(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteConfigurationSetErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DeleteConfigurationSetErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             DeleteConfigurationSetErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1384,38 +1435,40 @@ impl DeleteConfigurationSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteConfigurationSetErrorKind::BadRequestError(_)
+            DeleteConfigurationSetErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_concurrent_modification_error(&self) -> bool {
+    pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteConfigurationSetErrorKind::ConcurrentModificationError(_)
+            DeleteConfigurationSetErrorKind::ConcurrentModificationException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteConfigurationSetErrorKind::NotFoundError(_)
+            DeleteConfigurationSetErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteConfigurationSetErrorKind::TooManyRequestsError(_)
+            DeleteConfigurationSetErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for DeleteConfigurationSetError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteConfigurationSetErrorKind::BadRequestError(_inner) => Some(_inner),
-            DeleteConfigurationSetErrorKind::ConcurrentModificationError(_inner) => Some(_inner),
-            DeleteConfigurationSetErrorKind::NotFoundError(_inner) => Some(_inner),
-            DeleteConfigurationSetErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            DeleteConfigurationSetErrorKind::BadRequestException(_inner) => Some(_inner),
+            DeleteConfigurationSetErrorKind::ConcurrentModificationException(_inner) => {
+                Some(_inner)
+            }
+            DeleteConfigurationSetErrorKind::NotFoundException(_inner) => Some(_inner),
+            DeleteConfigurationSetErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DeleteConfigurationSetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1430,20 +1483,22 @@ pub struct DeleteConfigurationSetEventDestinationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteConfigurationSetEventDestinationErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteConfigurationSetEventDestinationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteConfigurationSetEventDestinationErrorKind::BadRequestError(_inner) => {
+            DeleteConfigurationSetEventDestinationErrorKind::BadRequestException(_inner) => {
                 _inner.fmt(f)
             }
-            DeleteConfigurationSetEventDestinationErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            DeleteConfigurationSetEventDestinationErrorKind::TooManyRequestsError(_inner) => {
+            DeleteConfigurationSetEventDestinationErrorKind::NotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteConfigurationSetEventDestinationErrorKind::TooManyRequestsException(_inner) => {
                 _inner.fmt(f)
             }
             DeleteConfigurationSetEventDestinationErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -1497,33 +1552,35 @@ impl DeleteConfigurationSetEventDestinationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteConfigurationSetEventDestinationErrorKind::BadRequestError(_)
+            DeleteConfigurationSetEventDestinationErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteConfigurationSetEventDestinationErrorKind::NotFoundError(_)
+            DeleteConfigurationSetEventDestinationErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteConfigurationSetEventDestinationErrorKind::TooManyRequestsError(_)
+            DeleteConfigurationSetEventDestinationErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for DeleteConfigurationSetEventDestinationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteConfigurationSetEventDestinationErrorKind::BadRequestError(_inner) => {
+            DeleteConfigurationSetEventDestinationErrorKind::BadRequestException(_inner) => {
                 Some(_inner)
             }
-            DeleteConfigurationSetEventDestinationErrorKind::NotFoundError(_inner) => Some(_inner),
-            DeleteConfigurationSetEventDestinationErrorKind::TooManyRequestsError(_inner) => {
+            DeleteConfigurationSetEventDestinationErrorKind::NotFoundException(_inner) => {
+                Some(_inner)
+            }
+            DeleteConfigurationSetEventDestinationErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
             DeleteConfigurationSetEventDestinationErrorKind::Unhandled(_inner) => {
@@ -1542,18 +1599,18 @@ pub struct DeleteContactError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteContactErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteContactError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteContactErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            DeleteContactErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            DeleteContactErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            DeleteContactErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            DeleteContactErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DeleteContactErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             DeleteContactErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1602,22 +1659,25 @@ impl DeleteContactError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, DeleteContactErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, DeleteContactErrorKind::BadRequestException(_))
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, DeleteContactErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, DeleteContactErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, DeleteContactErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteContactErrorKind::TooManyRequestsException(_)
+        )
     }
 }
 impl std::error::Error for DeleteContactError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteContactErrorKind::BadRequestError(_inner) => Some(_inner),
-            DeleteContactErrorKind::NotFoundError(_inner) => Some(_inner),
-            DeleteContactErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            DeleteContactErrorKind::BadRequestException(_inner) => Some(_inner),
+            DeleteContactErrorKind::NotFoundException(_inner) => Some(_inner),
+            DeleteContactErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DeleteContactErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1632,20 +1692,20 @@ pub struct DeleteContactListError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteContactListErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ConcurrentModificationError(crate::error::ConcurrentModificationError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteContactListError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteContactListErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            DeleteContactListErrorKind::ConcurrentModificationError(_inner) => _inner.fmt(f),
-            DeleteContactListErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            DeleteContactListErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            DeleteContactListErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            DeleteContactListErrorKind::ConcurrentModificationException(_inner) => _inner.fmt(f),
+            DeleteContactListErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DeleteContactListErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             DeleteContactListErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1694,32 +1754,35 @@ impl DeleteContactListError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, DeleteContactListErrorKind::BadRequestError(_))
-    }
-    pub fn is_concurrent_modification_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteContactListErrorKind::ConcurrentModificationError(_)
+            DeleteContactListErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, DeleteContactListErrorKind::NotFoundError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteContactListErrorKind::TooManyRequestsError(_)
+            DeleteContactListErrorKind::ConcurrentModificationException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, DeleteContactListErrorKind::NotFoundException(_))
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteContactListErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for DeleteContactListError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteContactListErrorKind::BadRequestError(_inner) => Some(_inner),
-            DeleteContactListErrorKind::ConcurrentModificationError(_inner) => Some(_inner),
-            DeleteContactListErrorKind::NotFoundError(_inner) => Some(_inner),
-            DeleteContactListErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            DeleteContactListErrorKind::BadRequestException(_inner) => Some(_inner),
+            DeleteContactListErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
+            DeleteContactListErrorKind::NotFoundException(_inner) => Some(_inner),
+            DeleteContactListErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DeleteContactListErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1734,20 +1797,22 @@ pub struct DeleteCustomVerificationEmailTemplateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteCustomVerificationEmailTemplateErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteCustomVerificationEmailTemplateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteCustomVerificationEmailTemplateErrorKind::BadRequestError(_inner) => {
+            DeleteCustomVerificationEmailTemplateErrorKind::BadRequestException(_inner) => {
                 _inner.fmt(f)
             }
-            DeleteCustomVerificationEmailTemplateErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            DeleteCustomVerificationEmailTemplateErrorKind::TooManyRequestsError(_inner) => {
+            DeleteCustomVerificationEmailTemplateErrorKind::NotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteCustomVerificationEmailTemplateErrorKind::TooManyRequestsException(_inner) => {
                 _inner.fmt(f)
             }
             DeleteCustomVerificationEmailTemplateErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -1801,31 +1866,35 @@ impl DeleteCustomVerificationEmailTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteCustomVerificationEmailTemplateErrorKind::BadRequestError(_)
+            DeleteCustomVerificationEmailTemplateErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteCustomVerificationEmailTemplateErrorKind::NotFoundError(_)
+            DeleteCustomVerificationEmailTemplateErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteCustomVerificationEmailTemplateErrorKind::TooManyRequestsError(_)
+            DeleteCustomVerificationEmailTemplateErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for DeleteCustomVerificationEmailTemplateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteCustomVerificationEmailTemplateErrorKind::BadRequestError(_inner) => Some(_inner),
-            DeleteCustomVerificationEmailTemplateErrorKind::NotFoundError(_inner) => Some(_inner),
-            DeleteCustomVerificationEmailTemplateErrorKind::TooManyRequestsError(_inner) => {
+            DeleteCustomVerificationEmailTemplateErrorKind::BadRequestException(_inner) => {
+                Some(_inner)
+            }
+            DeleteCustomVerificationEmailTemplateErrorKind::NotFoundException(_inner) => {
+                Some(_inner)
+            }
+            DeleteCustomVerificationEmailTemplateErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
             DeleteCustomVerificationEmailTemplateErrorKind::Unhandled(_inner) => {
@@ -1844,20 +1913,22 @@ pub struct DeleteDedicatedIpPoolError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteDedicatedIpPoolErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ConcurrentModificationError(crate::error::ConcurrentModificationError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDedicatedIpPoolError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteDedicatedIpPoolErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            DeleteDedicatedIpPoolErrorKind::ConcurrentModificationError(_inner) => _inner.fmt(f),
-            DeleteDedicatedIpPoolErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            DeleteDedicatedIpPoolErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            DeleteDedicatedIpPoolErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            DeleteDedicatedIpPoolErrorKind::ConcurrentModificationException(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteDedicatedIpPoolErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DeleteDedicatedIpPoolErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             DeleteDedicatedIpPoolErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1906,35 +1977,38 @@ impl DeleteDedicatedIpPoolError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteDedicatedIpPoolErrorKind::BadRequestError(_)
+            DeleteDedicatedIpPoolErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_concurrent_modification_error(&self) -> bool {
+    pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteDedicatedIpPoolErrorKind::ConcurrentModificationError(_)
+            DeleteDedicatedIpPoolErrorKind::ConcurrentModificationException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, DeleteDedicatedIpPoolErrorKind::NotFoundError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteDedicatedIpPoolErrorKind::TooManyRequestsError(_)
+            DeleteDedicatedIpPoolErrorKind::NotFoundException(_)
+        )
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDedicatedIpPoolErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for DeleteDedicatedIpPoolError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteDedicatedIpPoolErrorKind::BadRequestError(_inner) => Some(_inner),
-            DeleteDedicatedIpPoolErrorKind::ConcurrentModificationError(_inner) => Some(_inner),
-            DeleteDedicatedIpPoolErrorKind::NotFoundError(_inner) => Some(_inner),
-            DeleteDedicatedIpPoolErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            DeleteDedicatedIpPoolErrorKind::BadRequestException(_inner) => Some(_inner),
+            DeleteDedicatedIpPoolErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
+            DeleteDedicatedIpPoolErrorKind::NotFoundException(_inner) => Some(_inner),
+            DeleteDedicatedIpPoolErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DeleteDedicatedIpPoolErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1949,20 +2023,20 @@ pub struct DeleteEmailIdentityError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteEmailIdentityErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ConcurrentModificationError(crate::error::ConcurrentModificationError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteEmailIdentityError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteEmailIdentityErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            DeleteEmailIdentityErrorKind::ConcurrentModificationError(_inner) => _inner.fmt(f),
-            DeleteEmailIdentityErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            DeleteEmailIdentityErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            DeleteEmailIdentityErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            DeleteEmailIdentityErrorKind::ConcurrentModificationException(_inner) => _inner.fmt(f),
+            DeleteEmailIdentityErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DeleteEmailIdentityErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             DeleteEmailIdentityErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2011,32 +2085,38 @@ impl DeleteEmailIdentityError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, DeleteEmailIdentityErrorKind::BadRequestError(_))
-    }
-    pub fn is_concurrent_modification_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteEmailIdentityErrorKind::ConcurrentModificationError(_)
+            DeleteEmailIdentityErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, DeleteEmailIdentityErrorKind::NotFoundError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteEmailIdentityErrorKind::TooManyRequestsError(_)
+            DeleteEmailIdentityErrorKind::ConcurrentModificationException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteEmailIdentityErrorKind::NotFoundException(_)
+        )
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteEmailIdentityErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for DeleteEmailIdentityError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteEmailIdentityErrorKind::BadRequestError(_inner) => Some(_inner),
-            DeleteEmailIdentityErrorKind::ConcurrentModificationError(_inner) => Some(_inner),
-            DeleteEmailIdentityErrorKind::NotFoundError(_inner) => Some(_inner),
-            DeleteEmailIdentityErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            DeleteEmailIdentityErrorKind::BadRequestException(_inner) => Some(_inner),
+            DeleteEmailIdentityErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
+            DeleteEmailIdentityErrorKind::NotFoundException(_inner) => Some(_inner),
+            DeleteEmailIdentityErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DeleteEmailIdentityErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2051,18 +2131,18 @@ pub struct DeleteEmailIdentityPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteEmailIdentityPolicyErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteEmailIdentityPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteEmailIdentityPolicyErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            DeleteEmailIdentityPolicyErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            DeleteEmailIdentityPolicyErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            DeleteEmailIdentityPolicyErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            DeleteEmailIdentityPolicyErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DeleteEmailIdentityPolicyErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             DeleteEmailIdentityPolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2111,31 +2191,31 @@ impl DeleteEmailIdentityPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteEmailIdentityPolicyErrorKind::BadRequestError(_)
+            DeleteEmailIdentityPolicyErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteEmailIdentityPolicyErrorKind::NotFoundError(_)
+            DeleteEmailIdentityPolicyErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteEmailIdentityPolicyErrorKind::TooManyRequestsError(_)
+            DeleteEmailIdentityPolicyErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for DeleteEmailIdentityPolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteEmailIdentityPolicyErrorKind::BadRequestError(_inner) => Some(_inner),
-            DeleteEmailIdentityPolicyErrorKind::NotFoundError(_inner) => Some(_inner),
-            DeleteEmailIdentityPolicyErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            DeleteEmailIdentityPolicyErrorKind::BadRequestException(_inner) => Some(_inner),
+            DeleteEmailIdentityPolicyErrorKind::NotFoundException(_inner) => Some(_inner),
+            DeleteEmailIdentityPolicyErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DeleteEmailIdentityPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2150,18 +2230,18 @@ pub struct DeleteEmailTemplateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteEmailTemplateErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteEmailTemplateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteEmailTemplateErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            DeleteEmailTemplateErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            DeleteEmailTemplateErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            DeleteEmailTemplateErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            DeleteEmailTemplateErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DeleteEmailTemplateErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             DeleteEmailTemplateErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2210,25 +2290,31 @@ impl DeleteEmailTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, DeleteEmailTemplateErrorKind::BadRequestError(_))
-    }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, DeleteEmailTemplateErrorKind::NotFoundError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteEmailTemplateErrorKind::TooManyRequestsError(_)
+            DeleteEmailTemplateErrorKind::BadRequestException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteEmailTemplateErrorKind::NotFoundException(_)
+        )
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteEmailTemplateErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for DeleteEmailTemplateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteEmailTemplateErrorKind::BadRequestError(_inner) => Some(_inner),
-            DeleteEmailTemplateErrorKind::NotFoundError(_inner) => Some(_inner),
-            DeleteEmailTemplateErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            DeleteEmailTemplateErrorKind::BadRequestException(_inner) => Some(_inner),
+            DeleteEmailTemplateErrorKind::NotFoundException(_inner) => Some(_inner),
+            DeleteEmailTemplateErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DeleteEmailTemplateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2243,18 +2329,18 @@ pub struct DeleteSuppressedDestinationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteSuppressedDestinationErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteSuppressedDestinationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteSuppressedDestinationErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            DeleteSuppressedDestinationErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            DeleteSuppressedDestinationErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            DeleteSuppressedDestinationErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            DeleteSuppressedDestinationErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DeleteSuppressedDestinationErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             DeleteSuppressedDestinationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2303,31 +2389,31 @@ impl DeleteSuppressedDestinationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteSuppressedDestinationErrorKind::BadRequestError(_)
+            DeleteSuppressedDestinationErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteSuppressedDestinationErrorKind::NotFoundError(_)
+            DeleteSuppressedDestinationErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteSuppressedDestinationErrorKind::TooManyRequestsError(_)
+            DeleteSuppressedDestinationErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for DeleteSuppressedDestinationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteSuppressedDestinationErrorKind::BadRequestError(_inner) => Some(_inner),
-            DeleteSuppressedDestinationErrorKind::NotFoundError(_inner) => Some(_inner),
-            DeleteSuppressedDestinationErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            DeleteSuppressedDestinationErrorKind::BadRequestException(_inner) => Some(_inner),
+            DeleteSuppressedDestinationErrorKind::NotFoundException(_inner) => Some(_inner),
+            DeleteSuppressedDestinationErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DeleteSuppressedDestinationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2342,16 +2428,16 @@ pub struct GetAccountError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetAccountErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAccountError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetAccountErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            GetAccountErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            GetAccountErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            GetAccountErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             GetAccountErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2400,18 +2486,18 @@ impl GetAccountError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, GetAccountErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, GetAccountErrorKind::BadRequestException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, GetAccountErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(&self.kind, GetAccountErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for GetAccountError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetAccountErrorKind::BadRequestError(_inner) => Some(_inner),
-            GetAccountErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            GetAccountErrorKind::BadRequestException(_inner) => Some(_inner),
+            GetAccountErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetAccountErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2426,18 +2512,18 @@ pub struct GetBlacklistReportsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetBlacklistReportsErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBlacklistReportsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetBlacklistReportsErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            GetBlacklistReportsErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            GetBlacklistReportsErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            GetBlacklistReportsErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            GetBlacklistReportsErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetBlacklistReportsErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             GetBlacklistReportsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2486,25 +2572,31 @@ impl GetBlacklistReportsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, GetBlacklistReportsErrorKind::BadRequestError(_))
-    }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, GetBlacklistReportsErrorKind::NotFoundError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetBlacklistReportsErrorKind::TooManyRequestsError(_)
+            GetBlacklistReportsErrorKind::BadRequestException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetBlacklistReportsErrorKind::NotFoundException(_)
+        )
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetBlacklistReportsErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for GetBlacklistReportsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetBlacklistReportsErrorKind::BadRequestError(_inner) => Some(_inner),
-            GetBlacklistReportsErrorKind::NotFoundError(_inner) => Some(_inner),
-            GetBlacklistReportsErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            GetBlacklistReportsErrorKind::BadRequestException(_inner) => Some(_inner),
+            GetBlacklistReportsErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetBlacklistReportsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetBlacklistReportsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2519,18 +2611,18 @@ pub struct GetConfigurationSetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetConfigurationSetErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetConfigurationSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetConfigurationSetErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            GetConfigurationSetErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            GetConfigurationSetErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            GetConfigurationSetErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            GetConfigurationSetErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetConfigurationSetErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             GetConfigurationSetErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2579,25 +2671,31 @@ impl GetConfigurationSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, GetConfigurationSetErrorKind::BadRequestError(_))
-    }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, GetConfigurationSetErrorKind::NotFoundError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetConfigurationSetErrorKind::TooManyRequestsError(_)
+            GetConfigurationSetErrorKind::BadRequestException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetConfigurationSetErrorKind::NotFoundException(_)
+        )
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetConfigurationSetErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for GetConfigurationSetError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetConfigurationSetErrorKind::BadRequestError(_inner) => Some(_inner),
-            GetConfigurationSetErrorKind::NotFoundError(_inner) => Some(_inner),
-            GetConfigurationSetErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            GetConfigurationSetErrorKind::BadRequestException(_inner) => Some(_inner),
+            GetConfigurationSetErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetConfigurationSetErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetConfigurationSetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2612,18 +2710,22 @@ pub struct GetConfigurationSetEventDestinationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetConfigurationSetEventDestinationsErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetConfigurationSetEventDestinationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetConfigurationSetEventDestinationsErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            GetConfigurationSetEventDestinationsErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            GetConfigurationSetEventDestinationsErrorKind::TooManyRequestsError(_inner) => {
+            GetConfigurationSetEventDestinationsErrorKind::BadRequestException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetConfigurationSetEventDestinationsErrorKind::NotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetConfigurationSetEventDestinationsErrorKind::TooManyRequestsException(_inner) => {
                 _inner.fmt(f)
             }
             GetConfigurationSetEventDestinationsErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -2677,31 +2779,35 @@ impl GetConfigurationSetEventDestinationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetConfigurationSetEventDestinationsErrorKind::BadRequestError(_)
+            GetConfigurationSetEventDestinationsErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetConfigurationSetEventDestinationsErrorKind::NotFoundError(_)
+            GetConfigurationSetEventDestinationsErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetConfigurationSetEventDestinationsErrorKind::TooManyRequestsError(_)
+            GetConfigurationSetEventDestinationsErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for GetConfigurationSetEventDestinationsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetConfigurationSetEventDestinationsErrorKind::BadRequestError(_inner) => Some(_inner),
-            GetConfigurationSetEventDestinationsErrorKind::NotFoundError(_inner) => Some(_inner),
-            GetConfigurationSetEventDestinationsErrorKind::TooManyRequestsError(_inner) => {
+            GetConfigurationSetEventDestinationsErrorKind::BadRequestException(_inner) => {
+                Some(_inner)
+            }
+            GetConfigurationSetEventDestinationsErrorKind::NotFoundException(_inner) => {
+                Some(_inner)
+            }
+            GetConfigurationSetEventDestinationsErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
             GetConfigurationSetEventDestinationsErrorKind::Unhandled(_inner) => {
@@ -2720,18 +2826,18 @@ pub struct GetContactError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetContactErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetContactError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetContactErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            GetContactErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            GetContactErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            GetContactErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            GetContactErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetContactErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             GetContactErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2780,22 +2886,22 @@ impl GetContactError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, GetContactErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, GetContactErrorKind::BadRequestException(_))
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, GetContactErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, GetContactErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, GetContactErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(&self.kind, GetContactErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for GetContactError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetContactErrorKind::BadRequestError(_inner) => Some(_inner),
-            GetContactErrorKind::NotFoundError(_inner) => Some(_inner),
-            GetContactErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            GetContactErrorKind::BadRequestException(_inner) => Some(_inner),
+            GetContactErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetContactErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetContactErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2810,18 +2916,18 @@ pub struct GetContactListError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetContactListErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetContactListError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetContactListErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            GetContactListErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            GetContactListErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            GetContactListErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            GetContactListErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetContactListErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             GetContactListErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2870,22 +2976,25 @@ impl GetContactListError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, GetContactListErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, GetContactListErrorKind::BadRequestException(_))
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, GetContactListErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, GetContactListErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, GetContactListErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetContactListErrorKind::TooManyRequestsException(_)
+        )
     }
 }
 impl std::error::Error for GetContactListError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetContactListErrorKind::BadRequestError(_inner) => Some(_inner),
-            GetContactListErrorKind::NotFoundError(_inner) => Some(_inner),
-            GetContactListErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            GetContactListErrorKind::BadRequestException(_inner) => Some(_inner),
+            GetContactListErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetContactListErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetContactListErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2900,18 +3009,20 @@ pub struct GetCustomVerificationEmailTemplateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetCustomVerificationEmailTemplateErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetCustomVerificationEmailTemplateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetCustomVerificationEmailTemplateErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            GetCustomVerificationEmailTemplateErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            GetCustomVerificationEmailTemplateErrorKind::TooManyRequestsError(_inner) => {
+            GetCustomVerificationEmailTemplateErrorKind::BadRequestException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetCustomVerificationEmailTemplateErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetCustomVerificationEmailTemplateErrorKind::TooManyRequestsException(_inner) => {
                 _inner.fmt(f)
             }
             GetCustomVerificationEmailTemplateErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -2965,31 +3076,33 @@ impl GetCustomVerificationEmailTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetCustomVerificationEmailTemplateErrorKind::BadRequestError(_)
+            GetCustomVerificationEmailTemplateErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetCustomVerificationEmailTemplateErrorKind::NotFoundError(_)
+            GetCustomVerificationEmailTemplateErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetCustomVerificationEmailTemplateErrorKind::TooManyRequestsError(_)
+            GetCustomVerificationEmailTemplateErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for GetCustomVerificationEmailTemplateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetCustomVerificationEmailTemplateErrorKind::BadRequestError(_inner) => Some(_inner),
-            GetCustomVerificationEmailTemplateErrorKind::NotFoundError(_inner) => Some(_inner),
-            GetCustomVerificationEmailTemplateErrorKind::TooManyRequestsError(_inner) => {
+            GetCustomVerificationEmailTemplateErrorKind::BadRequestException(_inner) => {
+                Some(_inner)
+            }
+            GetCustomVerificationEmailTemplateErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetCustomVerificationEmailTemplateErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
             GetCustomVerificationEmailTemplateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -3006,18 +3119,18 @@ pub struct GetDedicatedIpError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDedicatedIpErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDedicatedIpError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetDedicatedIpErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            GetDedicatedIpErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            GetDedicatedIpErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            GetDedicatedIpErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            GetDedicatedIpErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetDedicatedIpErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             GetDedicatedIpErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3066,22 +3179,25 @@ impl GetDedicatedIpError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, GetDedicatedIpErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, GetDedicatedIpErrorKind::BadRequestException(_))
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, GetDedicatedIpErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, GetDedicatedIpErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, GetDedicatedIpErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDedicatedIpErrorKind::TooManyRequestsException(_)
+        )
     }
 }
 impl std::error::Error for GetDedicatedIpError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetDedicatedIpErrorKind::BadRequestError(_inner) => Some(_inner),
-            GetDedicatedIpErrorKind::NotFoundError(_inner) => Some(_inner),
-            GetDedicatedIpErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            GetDedicatedIpErrorKind::BadRequestException(_inner) => Some(_inner),
+            GetDedicatedIpErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetDedicatedIpErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetDedicatedIpErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3096,18 +3212,18 @@ pub struct GetDedicatedIpsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDedicatedIpsErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDedicatedIpsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetDedicatedIpsErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            GetDedicatedIpsErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            GetDedicatedIpsErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            GetDedicatedIpsErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            GetDedicatedIpsErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetDedicatedIpsErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             GetDedicatedIpsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3156,25 +3272,25 @@ impl GetDedicatedIpsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, GetDedicatedIpsErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, GetDedicatedIpsErrorKind::BadRequestException(_))
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, GetDedicatedIpsErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, GetDedicatedIpsErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetDedicatedIpsErrorKind::TooManyRequestsError(_)
+            GetDedicatedIpsErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for GetDedicatedIpsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetDedicatedIpsErrorKind::BadRequestError(_inner) => Some(_inner),
-            GetDedicatedIpsErrorKind::NotFoundError(_inner) => Some(_inner),
-            GetDedicatedIpsErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            GetDedicatedIpsErrorKind::BadRequestException(_inner) => Some(_inner),
+            GetDedicatedIpsErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetDedicatedIpsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetDedicatedIpsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3189,18 +3305,22 @@ pub struct GetDeliverabilityDashboardOptionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDeliverabilityDashboardOptionsErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    LimitExceededError(crate::error::LimitExceededError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    LimitExceededException(crate::error::LimitExceededException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDeliverabilityDashboardOptionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetDeliverabilityDashboardOptionsErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            GetDeliverabilityDashboardOptionsErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            GetDeliverabilityDashboardOptionsErrorKind::TooManyRequestsError(_inner) => {
+            GetDeliverabilityDashboardOptionsErrorKind::BadRequestException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetDeliverabilityDashboardOptionsErrorKind::LimitExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetDeliverabilityDashboardOptionsErrorKind::TooManyRequestsException(_inner) => {
                 _inner.fmt(f)
             }
             GetDeliverabilityDashboardOptionsErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -3254,31 +3374,33 @@ impl GetDeliverabilityDashboardOptionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetDeliverabilityDashboardOptionsErrorKind::BadRequestError(_)
+            GetDeliverabilityDashboardOptionsErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetDeliverabilityDashboardOptionsErrorKind::LimitExceededError(_)
+            GetDeliverabilityDashboardOptionsErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetDeliverabilityDashboardOptionsErrorKind::TooManyRequestsError(_)
+            GetDeliverabilityDashboardOptionsErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for GetDeliverabilityDashboardOptionsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetDeliverabilityDashboardOptionsErrorKind::BadRequestError(_inner) => Some(_inner),
-            GetDeliverabilityDashboardOptionsErrorKind::LimitExceededError(_inner) => Some(_inner),
-            GetDeliverabilityDashboardOptionsErrorKind::TooManyRequestsError(_inner) => {
+            GetDeliverabilityDashboardOptionsErrorKind::BadRequestException(_inner) => Some(_inner),
+            GetDeliverabilityDashboardOptionsErrorKind::LimitExceededException(_inner) => {
+                Some(_inner)
+            }
+            GetDeliverabilityDashboardOptionsErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
             GetDeliverabilityDashboardOptionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -3295,18 +3417,18 @@ pub struct GetDeliverabilityTestReportError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDeliverabilityTestReportErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDeliverabilityTestReportError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetDeliverabilityTestReportErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            GetDeliverabilityTestReportErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            GetDeliverabilityTestReportErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            GetDeliverabilityTestReportErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            GetDeliverabilityTestReportErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetDeliverabilityTestReportErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             GetDeliverabilityTestReportErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3355,31 +3477,31 @@ impl GetDeliverabilityTestReportError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetDeliverabilityTestReportErrorKind::BadRequestError(_)
+            GetDeliverabilityTestReportErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetDeliverabilityTestReportErrorKind::NotFoundError(_)
+            GetDeliverabilityTestReportErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetDeliverabilityTestReportErrorKind::TooManyRequestsError(_)
+            GetDeliverabilityTestReportErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for GetDeliverabilityTestReportError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetDeliverabilityTestReportErrorKind::BadRequestError(_inner) => Some(_inner),
-            GetDeliverabilityTestReportErrorKind::NotFoundError(_inner) => Some(_inner),
-            GetDeliverabilityTestReportErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            GetDeliverabilityTestReportErrorKind::BadRequestException(_inner) => Some(_inner),
+            GetDeliverabilityTestReportErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetDeliverabilityTestReportErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetDeliverabilityTestReportErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3394,18 +3516,20 @@ pub struct GetDomainDeliverabilityCampaignError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDomainDeliverabilityCampaignErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDomainDeliverabilityCampaignError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetDomainDeliverabilityCampaignErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            GetDomainDeliverabilityCampaignErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            GetDomainDeliverabilityCampaignErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            GetDomainDeliverabilityCampaignErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            GetDomainDeliverabilityCampaignErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetDomainDeliverabilityCampaignErrorKind::TooManyRequestsException(_inner) => {
+                _inner.fmt(f)
+            }
             GetDomainDeliverabilityCampaignErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3454,31 +3578,33 @@ impl GetDomainDeliverabilityCampaignError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetDomainDeliverabilityCampaignErrorKind::BadRequestError(_)
+            GetDomainDeliverabilityCampaignErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetDomainDeliverabilityCampaignErrorKind::NotFoundError(_)
+            GetDomainDeliverabilityCampaignErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetDomainDeliverabilityCampaignErrorKind::TooManyRequestsError(_)
+            GetDomainDeliverabilityCampaignErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for GetDomainDeliverabilityCampaignError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetDomainDeliverabilityCampaignErrorKind::BadRequestError(_inner) => Some(_inner),
-            GetDomainDeliverabilityCampaignErrorKind::NotFoundError(_inner) => Some(_inner),
-            GetDomainDeliverabilityCampaignErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            GetDomainDeliverabilityCampaignErrorKind::BadRequestException(_inner) => Some(_inner),
+            GetDomainDeliverabilityCampaignErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetDomainDeliverabilityCampaignErrorKind::TooManyRequestsException(_inner) => {
+                Some(_inner)
+            }
             GetDomainDeliverabilityCampaignErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3493,18 +3619,18 @@ pub struct GetDomainStatisticsReportError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDomainStatisticsReportErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDomainStatisticsReportError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetDomainStatisticsReportErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            GetDomainStatisticsReportErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            GetDomainStatisticsReportErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            GetDomainStatisticsReportErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            GetDomainStatisticsReportErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetDomainStatisticsReportErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             GetDomainStatisticsReportErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3553,31 +3679,31 @@ impl GetDomainStatisticsReportError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetDomainStatisticsReportErrorKind::BadRequestError(_)
+            GetDomainStatisticsReportErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetDomainStatisticsReportErrorKind::NotFoundError(_)
+            GetDomainStatisticsReportErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetDomainStatisticsReportErrorKind::TooManyRequestsError(_)
+            GetDomainStatisticsReportErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for GetDomainStatisticsReportError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetDomainStatisticsReportErrorKind::BadRequestError(_inner) => Some(_inner),
-            GetDomainStatisticsReportErrorKind::NotFoundError(_inner) => Some(_inner),
-            GetDomainStatisticsReportErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            GetDomainStatisticsReportErrorKind::BadRequestException(_inner) => Some(_inner),
+            GetDomainStatisticsReportErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetDomainStatisticsReportErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetDomainStatisticsReportErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3592,18 +3718,18 @@ pub struct GetEmailIdentityError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetEmailIdentityErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetEmailIdentityError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetEmailIdentityErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            GetEmailIdentityErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            GetEmailIdentityErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            GetEmailIdentityErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            GetEmailIdentityErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetEmailIdentityErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             GetEmailIdentityErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3652,25 +3778,28 @@ impl GetEmailIdentityError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, GetEmailIdentityErrorKind::BadRequestError(_))
-    }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, GetEmailIdentityErrorKind::NotFoundError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetEmailIdentityErrorKind::TooManyRequestsError(_)
+            GetEmailIdentityErrorKind::BadRequestException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, GetEmailIdentityErrorKind::NotFoundException(_))
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetEmailIdentityErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for GetEmailIdentityError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetEmailIdentityErrorKind::BadRequestError(_inner) => Some(_inner),
-            GetEmailIdentityErrorKind::NotFoundError(_inner) => Some(_inner),
-            GetEmailIdentityErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            GetEmailIdentityErrorKind::BadRequestException(_inner) => Some(_inner),
+            GetEmailIdentityErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetEmailIdentityErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetEmailIdentityErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3685,18 +3814,18 @@ pub struct GetEmailIdentityPoliciesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetEmailIdentityPoliciesErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetEmailIdentityPoliciesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetEmailIdentityPoliciesErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            GetEmailIdentityPoliciesErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            GetEmailIdentityPoliciesErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            GetEmailIdentityPoliciesErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            GetEmailIdentityPoliciesErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetEmailIdentityPoliciesErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             GetEmailIdentityPoliciesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3745,31 +3874,31 @@ impl GetEmailIdentityPoliciesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetEmailIdentityPoliciesErrorKind::BadRequestError(_)
+            GetEmailIdentityPoliciesErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetEmailIdentityPoliciesErrorKind::NotFoundError(_)
+            GetEmailIdentityPoliciesErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetEmailIdentityPoliciesErrorKind::TooManyRequestsError(_)
+            GetEmailIdentityPoliciesErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for GetEmailIdentityPoliciesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetEmailIdentityPoliciesErrorKind::BadRequestError(_inner) => Some(_inner),
-            GetEmailIdentityPoliciesErrorKind::NotFoundError(_inner) => Some(_inner),
-            GetEmailIdentityPoliciesErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            GetEmailIdentityPoliciesErrorKind::BadRequestException(_inner) => Some(_inner),
+            GetEmailIdentityPoliciesErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetEmailIdentityPoliciesErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetEmailIdentityPoliciesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3784,18 +3913,18 @@ pub struct GetEmailTemplateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetEmailTemplateErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetEmailTemplateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetEmailTemplateErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            GetEmailTemplateErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            GetEmailTemplateErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            GetEmailTemplateErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            GetEmailTemplateErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetEmailTemplateErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             GetEmailTemplateErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3844,25 +3973,28 @@ impl GetEmailTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, GetEmailTemplateErrorKind::BadRequestError(_))
-    }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, GetEmailTemplateErrorKind::NotFoundError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetEmailTemplateErrorKind::TooManyRequestsError(_)
+            GetEmailTemplateErrorKind::BadRequestException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, GetEmailTemplateErrorKind::NotFoundException(_))
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetEmailTemplateErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for GetEmailTemplateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetEmailTemplateErrorKind::BadRequestError(_inner) => Some(_inner),
-            GetEmailTemplateErrorKind::NotFoundError(_inner) => Some(_inner),
-            GetEmailTemplateErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            GetEmailTemplateErrorKind::BadRequestException(_inner) => Some(_inner),
+            GetEmailTemplateErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetEmailTemplateErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetEmailTemplateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3877,18 +4009,18 @@ pub struct GetImportJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetImportJobErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetImportJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetImportJobErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            GetImportJobErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            GetImportJobErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            GetImportJobErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            GetImportJobErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetImportJobErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             GetImportJobErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3937,22 +4069,25 @@ impl GetImportJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, GetImportJobErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, GetImportJobErrorKind::BadRequestException(_))
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, GetImportJobErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, GetImportJobErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, GetImportJobErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetImportJobErrorKind::TooManyRequestsException(_)
+        )
     }
 }
 impl std::error::Error for GetImportJobError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetImportJobErrorKind::BadRequestError(_inner) => Some(_inner),
-            GetImportJobErrorKind::NotFoundError(_inner) => Some(_inner),
-            GetImportJobErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            GetImportJobErrorKind::BadRequestException(_inner) => Some(_inner),
+            GetImportJobErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetImportJobErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetImportJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3967,18 +4102,18 @@ pub struct GetSuppressedDestinationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetSuppressedDestinationErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSuppressedDestinationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetSuppressedDestinationErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            GetSuppressedDestinationErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            GetSuppressedDestinationErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            GetSuppressedDestinationErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            GetSuppressedDestinationErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetSuppressedDestinationErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             GetSuppressedDestinationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4027,31 +4162,31 @@ impl GetSuppressedDestinationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetSuppressedDestinationErrorKind::BadRequestError(_)
+            GetSuppressedDestinationErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetSuppressedDestinationErrorKind::NotFoundError(_)
+            GetSuppressedDestinationErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetSuppressedDestinationErrorKind::TooManyRequestsError(_)
+            GetSuppressedDestinationErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for GetSuppressedDestinationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetSuppressedDestinationErrorKind::BadRequestError(_inner) => Some(_inner),
-            GetSuppressedDestinationErrorKind::NotFoundError(_inner) => Some(_inner),
-            GetSuppressedDestinationErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            GetSuppressedDestinationErrorKind::BadRequestException(_inner) => Some(_inner),
+            GetSuppressedDestinationErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetSuppressedDestinationErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetSuppressedDestinationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4066,16 +4201,16 @@ pub struct ListConfigurationSetsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListConfigurationSetsErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListConfigurationSetsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListConfigurationSetsErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            ListConfigurationSetsErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            ListConfigurationSetsErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            ListConfigurationSetsErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             ListConfigurationSetsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4124,24 +4259,24 @@ impl ListConfigurationSetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListConfigurationSetsErrorKind::BadRequestError(_)
+            ListConfigurationSetsErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListConfigurationSetsErrorKind::TooManyRequestsError(_)
+            ListConfigurationSetsErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for ListConfigurationSetsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListConfigurationSetsErrorKind::BadRequestError(_inner) => Some(_inner),
-            ListConfigurationSetsErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            ListConfigurationSetsErrorKind::BadRequestException(_inner) => Some(_inner),
+            ListConfigurationSetsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             ListConfigurationSetsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4156,16 +4291,16 @@ pub struct ListContactListsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListContactListsErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListContactListsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListContactListsErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            ListContactListsErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            ListContactListsErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            ListContactListsErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             ListContactListsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4214,21 +4349,24 @@ impl ListContactListsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, ListContactListsErrorKind::BadRequestError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListContactListsErrorKind::TooManyRequestsError(_)
+            ListContactListsErrorKind::BadRequestException(_)
+        )
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListContactListsErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for ListContactListsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListContactListsErrorKind::BadRequestError(_inner) => Some(_inner),
-            ListContactListsErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            ListContactListsErrorKind::BadRequestException(_inner) => Some(_inner),
+            ListContactListsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             ListContactListsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4243,18 +4381,18 @@ pub struct ListContactsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListContactsErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListContactsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListContactsErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            ListContactsErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            ListContactsErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            ListContactsErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            ListContactsErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            ListContactsErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             ListContactsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4303,22 +4441,25 @@ impl ListContactsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, ListContactsErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, ListContactsErrorKind::BadRequestException(_))
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, ListContactsErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, ListContactsErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, ListContactsErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListContactsErrorKind::TooManyRequestsException(_)
+        )
     }
 }
 impl std::error::Error for ListContactsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListContactsErrorKind::BadRequestError(_inner) => Some(_inner),
-            ListContactsErrorKind::NotFoundError(_inner) => Some(_inner),
-            ListContactsErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            ListContactsErrorKind::BadRequestException(_inner) => Some(_inner),
+            ListContactsErrorKind::NotFoundException(_inner) => Some(_inner),
+            ListContactsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             ListContactsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4333,16 +4474,18 @@ pub struct ListCustomVerificationEmailTemplatesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListCustomVerificationEmailTemplatesErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListCustomVerificationEmailTemplatesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListCustomVerificationEmailTemplatesErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            ListCustomVerificationEmailTemplatesErrorKind::TooManyRequestsError(_inner) => {
+            ListCustomVerificationEmailTemplatesErrorKind::BadRequestException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListCustomVerificationEmailTemplatesErrorKind::TooManyRequestsException(_inner) => {
                 _inner.fmt(f)
             }
             ListCustomVerificationEmailTemplatesErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -4396,24 +4539,26 @@ impl ListCustomVerificationEmailTemplatesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListCustomVerificationEmailTemplatesErrorKind::BadRequestError(_)
+            ListCustomVerificationEmailTemplatesErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListCustomVerificationEmailTemplatesErrorKind::TooManyRequestsError(_)
+            ListCustomVerificationEmailTemplatesErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for ListCustomVerificationEmailTemplatesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListCustomVerificationEmailTemplatesErrorKind::BadRequestError(_inner) => Some(_inner),
-            ListCustomVerificationEmailTemplatesErrorKind::TooManyRequestsError(_inner) => {
+            ListCustomVerificationEmailTemplatesErrorKind::BadRequestException(_inner) => {
+                Some(_inner)
+            }
+            ListCustomVerificationEmailTemplatesErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
             ListCustomVerificationEmailTemplatesErrorKind::Unhandled(_inner) => {
@@ -4432,16 +4577,16 @@ pub struct ListDedicatedIpPoolsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListDedicatedIpPoolsErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDedicatedIpPoolsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListDedicatedIpPoolsErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            ListDedicatedIpPoolsErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            ListDedicatedIpPoolsErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            ListDedicatedIpPoolsErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             ListDedicatedIpPoolsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4490,24 +4635,24 @@ impl ListDedicatedIpPoolsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListDedicatedIpPoolsErrorKind::BadRequestError(_)
+            ListDedicatedIpPoolsErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListDedicatedIpPoolsErrorKind::TooManyRequestsError(_)
+            ListDedicatedIpPoolsErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for ListDedicatedIpPoolsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListDedicatedIpPoolsErrorKind::BadRequestError(_inner) => Some(_inner),
-            ListDedicatedIpPoolsErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            ListDedicatedIpPoolsErrorKind::BadRequestException(_inner) => Some(_inner),
+            ListDedicatedIpPoolsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             ListDedicatedIpPoolsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4522,18 +4667,20 @@ pub struct ListDeliverabilityTestReportsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListDeliverabilityTestReportsErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDeliverabilityTestReportsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListDeliverabilityTestReportsErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            ListDeliverabilityTestReportsErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            ListDeliverabilityTestReportsErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            ListDeliverabilityTestReportsErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            ListDeliverabilityTestReportsErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            ListDeliverabilityTestReportsErrorKind::TooManyRequestsException(_inner) => {
+                _inner.fmt(f)
+            }
             ListDeliverabilityTestReportsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4582,31 +4729,33 @@ impl ListDeliverabilityTestReportsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListDeliverabilityTestReportsErrorKind::BadRequestError(_)
+            ListDeliverabilityTestReportsErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListDeliverabilityTestReportsErrorKind::NotFoundError(_)
+            ListDeliverabilityTestReportsErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListDeliverabilityTestReportsErrorKind::TooManyRequestsError(_)
+            ListDeliverabilityTestReportsErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for ListDeliverabilityTestReportsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListDeliverabilityTestReportsErrorKind::BadRequestError(_inner) => Some(_inner),
-            ListDeliverabilityTestReportsErrorKind::NotFoundError(_inner) => Some(_inner),
-            ListDeliverabilityTestReportsErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            ListDeliverabilityTestReportsErrorKind::BadRequestException(_inner) => Some(_inner),
+            ListDeliverabilityTestReportsErrorKind::NotFoundException(_inner) => Some(_inner),
+            ListDeliverabilityTestReportsErrorKind::TooManyRequestsException(_inner) => {
+                Some(_inner)
+            }
             ListDeliverabilityTestReportsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4621,18 +4770,20 @@ pub struct ListDomainDeliverabilityCampaignsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListDomainDeliverabilityCampaignsErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDomainDeliverabilityCampaignsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListDomainDeliverabilityCampaignsErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            ListDomainDeliverabilityCampaignsErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            ListDomainDeliverabilityCampaignsErrorKind::TooManyRequestsError(_inner) => {
+            ListDomainDeliverabilityCampaignsErrorKind::BadRequestException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListDomainDeliverabilityCampaignsErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            ListDomainDeliverabilityCampaignsErrorKind::TooManyRequestsException(_inner) => {
                 _inner.fmt(f)
             }
             ListDomainDeliverabilityCampaignsErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -4686,31 +4837,31 @@ impl ListDomainDeliverabilityCampaignsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListDomainDeliverabilityCampaignsErrorKind::BadRequestError(_)
+            ListDomainDeliverabilityCampaignsErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListDomainDeliverabilityCampaignsErrorKind::NotFoundError(_)
+            ListDomainDeliverabilityCampaignsErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListDomainDeliverabilityCampaignsErrorKind::TooManyRequestsError(_)
+            ListDomainDeliverabilityCampaignsErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for ListDomainDeliverabilityCampaignsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListDomainDeliverabilityCampaignsErrorKind::BadRequestError(_inner) => Some(_inner),
-            ListDomainDeliverabilityCampaignsErrorKind::NotFoundError(_inner) => Some(_inner),
-            ListDomainDeliverabilityCampaignsErrorKind::TooManyRequestsError(_inner) => {
+            ListDomainDeliverabilityCampaignsErrorKind::BadRequestException(_inner) => Some(_inner),
+            ListDomainDeliverabilityCampaignsErrorKind::NotFoundException(_inner) => Some(_inner),
+            ListDomainDeliverabilityCampaignsErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
             ListDomainDeliverabilityCampaignsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -4727,16 +4878,16 @@ pub struct ListEmailIdentitiesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListEmailIdentitiesErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListEmailIdentitiesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListEmailIdentitiesErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            ListEmailIdentitiesErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            ListEmailIdentitiesErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            ListEmailIdentitiesErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             ListEmailIdentitiesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4785,21 +4936,24 @@ impl ListEmailIdentitiesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, ListEmailIdentitiesErrorKind::BadRequestError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListEmailIdentitiesErrorKind::TooManyRequestsError(_)
+            ListEmailIdentitiesErrorKind::BadRequestException(_)
+        )
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListEmailIdentitiesErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for ListEmailIdentitiesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListEmailIdentitiesErrorKind::BadRequestError(_inner) => Some(_inner),
-            ListEmailIdentitiesErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            ListEmailIdentitiesErrorKind::BadRequestException(_inner) => Some(_inner),
+            ListEmailIdentitiesErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             ListEmailIdentitiesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4814,16 +4968,16 @@ pub struct ListEmailTemplatesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListEmailTemplatesErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListEmailTemplatesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListEmailTemplatesErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            ListEmailTemplatesErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            ListEmailTemplatesErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            ListEmailTemplatesErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             ListEmailTemplatesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4872,21 +5026,24 @@ impl ListEmailTemplatesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, ListEmailTemplatesErrorKind::BadRequestError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListEmailTemplatesErrorKind::TooManyRequestsError(_)
+            ListEmailTemplatesErrorKind::BadRequestException(_)
+        )
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListEmailTemplatesErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for ListEmailTemplatesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListEmailTemplatesErrorKind::BadRequestError(_inner) => Some(_inner),
-            ListEmailTemplatesErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            ListEmailTemplatesErrorKind::BadRequestException(_inner) => Some(_inner),
+            ListEmailTemplatesErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             ListEmailTemplatesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4901,16 +5058,16 @@ pub struct ListImportJobsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListImportJobsErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListImportJobsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListImportJobsErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            ListImportJobsErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            ListImportJobsErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            ListImportJobsErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             ListImportJobsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4959,18 +5116,21 @@ impl ListImportJobsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, ListImportJobsErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, ListImportJobsErrorKind::BadRequestException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, ListImportJobsErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListImportJobsErrorKind::TooManyRequestsException(_)
+        )
     }
 }
 impl std::error::Error for ListImportJobsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListImportJobsErrorKind::BadRequestError(_inner) => Some(_inner),
-            ListImportJobsErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            ListImportJobsErrorKind::BadRequestException(_inner) => Some(_inner),
+            ListImportJobsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             ListImportJobsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4985,18 +5145,18 @@ pub struct ListSuppressedDestinationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListSuppressedDestinationsErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    InvalidNextTokenError(crate::error::InvalidNextTokenError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    InvalidNextTokenException(crate::error::InvalidNextTokenException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListSuppressedDestinationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListSuppressedDestinationsErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            ListSuppressedDestinationsErrorKind::InvalidNextTokenError(_inner) => _inner.fmt(f),
-            ListSuppressedDestinationsErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            ListSuppressedDestinationsErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            ListSuppressedDestinationsErrorKind::InvalidNextTokenException(_inner) => _inner.fmt(f),
+            ListSuppressedDestinationsErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             ListSuppressedDestinationsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5045,31 +5205,31 @@ impl ListSuppressedDestinationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListSuppressedDestinationsErrorKind::BadRequestError(_)
+            ListSuppressedDestinationsErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_invalid_next_token_error(&self) -> bool {
+    pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListSuppressedDestinationsErrorKind::InvalidNextTokenError(_)
+            ListSuppressedDestinationsErrorKind::InvalidNextTokenException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListSuppressedDestinationsErrorKind::TooManyRequestsError(_)
+            ListSuppressedDestinationsErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for ListSuppressedDestinationsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListSuppressedDestinationsErrorKind::BadRequestError(_inner) => Some(_inner),
-            ListSuppressedDestinationsErrorKind::InvalidNextTokenError(_inner) => Some(_inner),
-            ListSuppressedDestinationsErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            ListSuppressedDestinationsErrorKind::BadRequestException(_inner) => Some(_inner),
+            ListSuppressedDestinationsErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
+            ListSuppressedDestinationsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             ListSuppressedDestinationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5084,18 +5244,18 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListTagsForResourceErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             ListTagsForResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5144,25 +5304,31 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, ListTagsForResourceErrorKind::BadRequestError(_))
-    }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, ListTagsForResourceErrorKind::NotFoundError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListTagsForResourceErrorKind::TooManyRequestsError(_)
+            ListTagsForResourceErrorKind::BadRequestException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForResourceErrorKind::NotFoundException(_)
+        )
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForResourceErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for ListTagsForResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListTagsForResourceErrorKind::BadRequestError(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::NotFoundError(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::BadRequestException(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::NotFoundException(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5177,18 +5343,18 @@ pub struct PutAccountDedicatedIpWarmupAttributesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutAccountDedicatedIpWarmupAttributesErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutAccountDedicatedIpWarmupAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutAccountDedicatedIpWarmupAttributesErrorKind::BadRequestError(_inner) => {
+            PutAccountDedicatedIpWarmupAttributesErrorKind::BadRequestException(_inner) => {
                 _inner.fmt(f)
             }
-            PutAccountDedicatedIpWarmupAttributesErrorKind::TooManyRequestsError(_inner) => {
+            PutAccountDedicatedIpWarmupAttributesErrorKind::TooManyRequestsException(_inner) => {
                 _inner.fmt(f)
             }
             PutAccountDedicatedIpWarmupAttributesErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -5242,24 +5408,26 @@ impl PutAccountDedicatedIpWarmupAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutAccountDedicatedIpWarmupAttributesErrorKind::BadRequestError(_)
+            PutAccountDedicatedIpWarmupAttributesErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutAccountDedicatedIpWarmupAttributesErrorKind::TooManyRequestsError(_)
+            PutAccountDedicatedIpWarmupAttributesErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for PutAccountDedicatedIpWarmupAttributesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutAccountDedicatedIpWarmupAttributesErrorKind::BadRequestError(_inner) => Some(_inner),
-            PutAccountDedicatedIpWarmupAttributesErrorKind::TooManyRequestsError(_inner) => {
+            PutAccountDedicatedIpWarmupAttributesErrorKind::BadRequestException(_inner) => {
+                Some(_inner)
+            }
+            PutAccountDedicatedIpWarmupAttributesErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
             PutAccountDedicatedIpWarmupAttributesErrorKind::Unhandled(_inner) => {
@@ -5278,18 +5446,18 @@ pub struct PutAccountDetailsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutAccountDetailsErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutAccountDetailsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutAccountDetailsErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            PutAccountDetailsErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            PutAccountDetailsErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            PutAccountDetailsErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            PutAccountDetailsErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            PutAccountDetailsErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             PutAccountDetailsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5338,25 +5506,28 @@ impl PutAccountDetailsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, PutAccountDetailsErrorKind::BadRequestError(_))
-    }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, PutAccountDetailsErrorKind::ConflictError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutAccountDetailsErrorKind::TooManyRequestsError(_)
+            PutAccountDetailsErrorKind::BadRequestException(_)
+        )
+    }
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, PutAccountDetailsErrorKind::ConflictException(_))
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutAccountDetailsErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for PutAccountDetailsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutAccountDetailsErrorKind::BadRequestError(_inner) => Some(_inner),
-            PutAccountDetailsErrorKind::ConflictError(_inner) => Some(_inner),
-            PutAccountDetailsErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            PutAccountDetailsErrorKind::BadRequestException(_inner) => Some(_inner),
+            PutAccountDetailsErrorKind::ConflictException(_inner) => Some(_inner),
+            PutAccountDetailsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             PutAccountDetailsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5371,16 +5542,16 @@ pub struct PutAccountSendingAttributesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutAccountSendingAttributesErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutAccountSendingAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutAccountSendingAttributesErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            PutAccountSendingAttributesErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            PutAccountSendingAttributesErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            PutAccountSendingAttributesErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             PutAccountSendingAttributesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5429,24 +5600,24 @@ impl PutAccountSendingAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutAccountSendingAttributesErrorKind::BadRequestError(_)
+            PutAccountSendingAttributesErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutAccountSendingAttributesErrorKind::TooManyRequestsError(_)
+            PutAccountSendingAttributesErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for PutAccountSendingAttributesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutAccountSendingAttributesErrorKind::BadRequestError(_inner) => Some(_inner),
-            PutAccountSendingAttributesErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            PutAccountSendingAttributesErrorKind::BadRequestException(_inner) => Some(_inner),
+            PutAccountSendingAttributesErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             PutAccountSendingAttributesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5461,16 +5632,18 @@ pub struct PutAccountSuppressionAttributesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutAccountSuppressionAttributesErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutAccountSuppressionAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutAccountSuppressionAttributesErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            PutAccountSuppressionAttributesErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            PutAccountSuppressionAttributesErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            PutAccountSuppressionAttributesErrorKind::TooManyRequestsException(_inner) => {
+                _inner.fmt(f)
+            }
             PutAccountSuppressionAttributesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5519,24 +5692,26 @@ impl PutAccountSuppressionAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutAccountSuppressionAttributesErrorKind::BadRequestError(_)
+            PutAccountSuppressionAttributesErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutAccountSuppressionAttributesErrorKind::TooManyRequestsError(_)
+            PutAccountSuppressionAttributesErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for PutAccountSuppressionAttributesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutAccountSuppressionAttributesErrorKind::BadRequestError(_inner) => Some(_inner),
-            PutAccountSuppressionAttributesErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            PutAccountSuppressionAttributesErrorKind::BadRequestException(_inner) => Some(_inner),
+            PutAccountSuppressionAttributesErrorKind::TooManyRequestsException(_inner) => {
+                Some(_inner)
+            }
             PutAccountSuppressionAttributesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5551,18 +5726,20 @@ pub struct PutConfigurationSetDeliveryOptionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutConfigurationSetDeliveryOptionsErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutConfigurationSetDeliveryOptionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutConfigurationSetDeliveryOptionsErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            PutConfigurationSetDeliveryOptionsErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            PutConfigurationSetDeliveryOptionsErrorKind::TooManyRequestsError(_inner) => {
+            PutConfigurationSetDeliveryOptionsErrorKind::BadRequestException(_inner) => {
+                _inner.fmt(f)
+            }
+            PutConfigurationSetDeliveryOptionsErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            PutConfigurationSetDeliveryOptionsErrorKind::TooManyRequestsException(_inner) => {
                 _inner.fmt(f)
             }
             PutConfigurationSetDeliveryOptionsErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -5616,31 +5793,33 @@ impl PutConfigurationSetDeliveryOptionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutConfigurationSetDeliveryOptionsErrorKind::BadRequestError(_)
+            PutConfigurationSetDeliveryOptionsErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutConfigurationSetDeliveryOptionsErrorKind::NotFoundError(_)
+            PutConfigurationSetDeliveryOptionsErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutConfigurationSetDeliveryOptionsErrorKind::TooManyRequestsError(_)
+            PutConfigurationSetDeliveryOptionsErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for PutConfigurationSetDeliveryOptionsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutConfigurationSetDeliveryOptionsErrorKind::BadRequestError(_inner) => Some(_inner),
-            PutConfigurationSetDeliveryOptionsErrorKind::NotFoundError(_inner) => Some(_inner),
-            PutConfigurationSetDeliveryOptionsErrorKind::TooManyRequestsError(_inner) => {
+            PutConfigurationSetDeliveryOptionsErrorKind::BadRequestException(_inner) => {
+                Some(_inner)
+            }
+            PutConfigurationSetDeliveryOptionsErrorKind::NotFoundException(_inner) => Some(_inner),
+            PutConfigurationSetDeliveryOptionsErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
             PutConfigurationSetDeliveryOptionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -5657,18 +5836,22 @@ pub struct PutConfigurationSetReputationOptionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutConfigurationSetReputationOptionsErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutConfigurationSetReputationOptionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutConfigurationSetReputationOptionsErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            PutConfigurationSetReputationOptionsErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            PutConfigurationSetReputationOptionsErrorKind::TooManyRequestsError(_inner) => {
+            PutConfigurationSetReputationOptionsErrorKind::BadRequestException(_inner) => {
+                _inner.fmt(f)
+            }
+            PutConfigurationSetReputationOptionsErrorKind::NotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            PutConfigurationSetReputationOptionsErrorKind::TooManyRequestsException(_inner) => {
                 _inner.fmt(f)
             }
             PutConfigurationSetReputationOptionsErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -5722,31 +5905,35 @@ impl PutConfigurationSetReputationOptionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutConfigurationSetReputationOptionsErrorKind::BadRequestError(_)
+            PutConfigurationSetReputationOptionsErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutConfigurationSetReputationOptionsErrorKind::NotFoundError(_)
+            PutConfigurationSetReputationOptionsErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutConfigurationSetReputationOptionsErrorKind::TooManyRequestsError(_)
+            PutConfigurationSetReputationOptionsErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for PutConfigurationSetReputationOptionsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutConfigurationSetReputationOptionsErrorKind::BadRequestError(_inner) => Some(_inner),
-            PutConfigurationSetReputationOptionsErrorKind::NotFoundError(_inner) => Some(_inner),
-            PutConfigurationSetReputationOptionsErrorKind::TooManyRequestsError(_inner) => {
+            PutConfigurationSetReputationOptionsErrorKind::BadRequestException(_inner) => {
+                Some(_inner)
+            }
+            PutConfigurationSetReputationOptionsErrorKind::NotFoundException(_inner) => {
+                Some(_inner)
+            }
+            PutConfigurationSetReputationOptionsErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
             PutConfigurationSetReputationOptionsErrorKind::Unhandled(_inner) => {
@@ -5765,18 +5952,20 @@ pub struct PutConfigurationSetSendingOptionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutConfigurationSetSendingOptionsErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutConfigurationSetSendingOptionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutConfigurationSetSendingOptionsErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            PutConfigurationSetSendingOptionsErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            PutConfigurationSetSendingOptionsErrorKind::TooManyRequestsError(_inner) => {
+            PutConfigurationSetSendingOptionsErrorKind::BadRequestException(_inner) => {
+                _inner.fmt(f)
+            }
+            PutConfigurationSetSendingOptionsErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            PutConfigurationSetSendingOptionsErrorKind::TooManyRequestsException(_inner) => {
                 _inner.fmt(f)
             }
             PutConfigurationSetSendingOptionsErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -5830,31 +6019,31 @@ impl PutConfigurationSetSendingOptionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutConfigurationSetSendingOptionsErrorKind::BadRequestError(_)
+            PutConfigurationSetSendingOptionsErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutConfigurationSetSendingOptionsErrorKind::NotFoundError(_)
+            PutConfigurationSetSendingOptionsErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutConfigurationSetSendingOptionsErrorKind::TooManyRequestsError(_)
+            PutConfigurationSetSendingOptionsErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for PutConfigurationSetSendingOptionsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutConfigurationSetSendingOptionsErrorKind::BadRequestError(_inner) => Some(_inner),
-            PutConfigurationSetSendingOptionsErrorKind::NotFoundError(_inner) => Some(_inner),
-            PutConfigurationSetSendingOptionsErrorKind::TooManyRequestsError(_inner) => {
+            PutConfigurationSetSendingOptionsErrorKind::BadRequestException(_inner) => Some(_inner),
+            PutConfigurationSetSendingOptionsErrorKind::NotFoundException(_inner) => Some(_inner),
+            PutConfigurationSetSendingOptionsErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
             PutConfigurationSetSendingOptionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -5871,20 +6060,22 @@ pub struct PutConfigurationSetSuppressionOptionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutConfigurationSetSuppressionOptionsErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutConfigurationSetSuppressionOptionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutConfigurationSetSuppressionOptionsErrorKind::BadRequestError(_inner) => {
+            PutConfigurationSetSuppressionOptionsErrorKind::BadRequestException(_inner) => {
                 _inner.fmt(f)
             }
-            PutConfigurationSetSuppressionOptionsErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            PutConfigurationSetSuppressionOptionsErrorKind::TooManyRequestsError(_inner) => {
+            PutConfigurationSetSuppressionOptionsErrorKind::NotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            PutConfigurationSetSuppressionOptionsErrorKind::TooManyRequestsException(_inner) => {
                 _inner.fmt(f)
             }
             PutConfigurationSetSuppressionOptionsErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -5938,31 +6129,35 @@ impl PutConfigurationSetSuppressionOptionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutConfigurationSetSuppressionOptionsErrorKind::BadRequestError(_)
+            PutConfigurationSetSuppressionOptionsErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutConfigurationSetSuppressionOptionsErrorKind::NotFoundError(_)
+            PutConfigurationSetSuppressionOptionsErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutConfigurationSetSuppressionOptionsErrorKind::TooManyRequestsError(_)
+            PutConfigurationSetSuppressionOptionsErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for PutConfigurationSetSuppressionOptionsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutConfigurationSetSuppressionOptionsErrorKind::BadRequestError(_inner) => Some(_inner),
-            PutConfigurationSetSuppressionOptionsErrorKind::NotFoundError(_inner) => Some(_inner),
-            PutConfigurationSetSuppressionOptionsErrorKind::TooManyRequestsError(_inner) => {
+            PutConfigurationSetSuppressionOptionsErrorKind::BadRequestException(_inner) => {
+                Some(_inner)
+            }
+            PutConfigurationSetSuppressionOptionsErrorKind::NotFoundException(_inner) => {
+                Some(_inner)
+            }
+            PutConfigurationSetSuppressionOptionsErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
             PutConfigurationSetSuppressionOptionsErrorKind::Unhandled(_inner) => {
@@ -5981,18 +6176,20 @@ pub struct PutConfigurationSetTrackingOptionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutConfigurationSetTrackingOptionsErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutConfigurationSetTrackingOptionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutConfigurationSetTrackingOptionsErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            PutConfigurationSetTrackingOptionsErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            PutConfigurationSetTrackingOptionsErrorKind::TooManyRequestsError(_inner) => {
+            PutConfigurationSetTrackingOptionsErrorKind::BadRequestException(_inner) => {
+                _inner.fmt(f)
+            }
+            PutConfigurationSetTrackingOptionsErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            PutConfigurationSetTrackingOptionsErrorKind::TooManyRequestsException(_inner) => {
                 _inner.fmt(f)
             }
             PutConfigurationSetTrackingOptionsErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -6046,31 +6243,33 @@ impl PutConfigurationSetTrackingOptionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutConfigurationSetTrackingOptionsErrorKind::BadRequestError(_)
+            PutConfigurationSetTrackingOptionsErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutConfigurationSetTrackingOptionsErrorKind::NotFoundError(_)
+            PutConfigurationSetTrackingOptionsErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutConfigurationSetTrackingOptionsErrorKind::TooManyRequestsError(_)
+            PutConfigurationSetTrackingOptionsErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for PutConfigurationSetTrackingOptionsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutConfigurationSetTrackingOptionsErrorKind::BadRequestError(_inner) => Some(_inner),
-            PutConfigurationSetTrackingOptionsErrorKind::NotFoundError(_inner) => Some(_inner),
-            PutConfigurationSetTrackingOptionsErrorKind::TooManyRequestsError(_inner) => {
+            PutConfigurationSetTrackingOptionsErrorKind::BadRequestException(_inner) => {
+                Some(_inner)
+            }
+            PutConfigurationSetTrackingOptionsErrorKind::NotFoundException(_inner) => Some(_inner),
+            PutConfigurationSetTrackingOptionsErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
             PutConfigurationSetTrackingOptionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -6087,18 +6286,18 @@ pub struct PutDedicatedIpInPoolError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutDedicatedIpInPoolErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutDedicatedIpInPoolError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutDedicatedIpInPoolErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            PutDedicatedIpInPoolErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            PutDedicatedIpInPoolErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            PutDedicatedIpInPoolErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            PutDedicatedIpInPoolErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            PutDedicatedIpInPoolErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             PutDedicatedIpInPoolErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -6147,28 +6346,31 @@ impl PutDedicatedIpInPoolError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutDedicatedIpInPoolErrorKind::BadRequestError(_)
+            PutDedicatedIpInPoolErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, PutDedicatedIpInPoolErrorKind::NotFoundError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutDedicatedIpInPoolErrorKind::TooManyRequestsError(_)
+            PutDedicatedIpInPoolErrorKind::NotFoundException(_)
+        )
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutDedicatedIpInPoolErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for PutDedicatedIpInPoolError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutDedicatedIpInPoolErrorKind::BadRequestError(_inner) => Some(_inner),
-            PutDedicatedIpInPoolErrorKind::NotFoundError(_inner) => Some(_inner),
-            PutDedicatedIpInPoolErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            PutDedicatedIpInPoolErrorKind::BadRequestException(_inner) => Some(_inner),
+            PutDedicatedIpInPoolErrorKind::NotFoundException(_inner) => Some(_inner),
+            PutDedicatedIpInPoolErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             PutDedicatedIpInPoolErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -6183,18 +6385,20 @@ pub struct PutDedicatedIpWarmupAttributesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutDedicatedIpWarmupAttributesErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutDedicatedIpWarmupAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutDedicatedIpWarmupAttributesErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            PutDedicatedIpWarmupAttributesErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            PutDedicatedIpWarmupAttributesErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            PutDedicatedIpWarmupAttributesErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            PutDedicatedIpWarmupAttributesErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            PutDedicatedIpWarmupAttributesErrorKind::TooManyRequestsException(_inner) => {
+                _inner.fmt(f)
+            }
             PutDedicatedIpWarmupAttributesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -6243,31 +6447,33 @@ impl PutDedicatedIpWarmupAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutDedicatedIpWarmupAttributesErrorKind::BadRequestError(_)
+            PutDedicatedIpWarmupAttributesErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutDedicatedIpWarmupAttributesErrorKind::NotFoundError(_)
+            PutDedicatedIpWarmupAttributesErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutDedicatedIpWarmupAttributesErrorKind::TooManyRequestsError(_)
+            PutDedicatedIpWarmupAttributesErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for PutDedicatedIpWarmupAttributesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutDedicatedIpWarmupAttributesErrorKind::BadRequestError(_inner) => Some(_inner),
-            PutDedicatedIpWarmupAttributesErrorKind::NotFoundError(_inner) => Some(_inner),
-            PutDedicatedIpWarmupAttributesErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            PutDedicatedIpWarmupAttributesErrorKind::BadRequestException(_inner) => Some(_inner),
+            PutDedicatedIpWarmupAttributesErrorKind::NotFoundException(_inner) => Some(_inner),
+            PutDedicatedIpWarmupAttributesErrorKind::TooManyRequestsException(_inner) => {
+                Some(_inner)
+            }
             PutDedicatedIpWarmupAttributesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -6282,22 +6488,26 @@ pub struct PutDeliverabilityDashboardOptionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutDeliverabilityDashboardOptionErrorKind {
-    AlreadyExistsError(crate::error::AlreadyExistsError),
-    BadRequestError(crate::error::BadRequestError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    AlreadyExistsException(crate::error::AlreadyExistsException),
+    BadRequestException(crate::error::BadRequestException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutDeliverabilityDashboardOptionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutDeliverabilityDashboardOptionErrorKind::AlreadyExistsError(_inner) => _inner.fmt(f),
-            PutDeliverabilityDashboardOptionErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            PutDeliverabilityDashboardOptionErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            PutDeliverabilityDashboardOptionErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            PutDeliverabilityDashboardOptionErrorKind::TooManyRequestsError(_inner) => {
+            PutDeliverabilityDashboardOptionErrorKind::AlreadyExistsException(_inner) => {
+                _inner.fmt(f)
+            }
+            PutDeliverabilityDashboardOptionErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            PutDeliverabilityDashboardOptionErrorKind::LimitExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            PutDeliverabilityDashboardOptionErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            PutDeliverabilityDashboardOptionErrorKind::TooManyRequestsException(_inner) => {
                 _inner.fmt(f)
             }
             PutDeliverabilityDashboardOptionErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -6348,45 +6558,51 @@ impl PutDeliverabilityDashboardOptionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_already_exists_error(&self) -> bool {
+    pub fn is_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutDeliverabilityDashboardOptionErrorKind::AlreadyExistsError(_)
+            PutDeliverabilityDashboardOptionErrorKind::AlreadyExistsException(_)
         )
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutDeliverabilityDashboardOptionErrorKind::BadRequestError(_)
+            PutDeliverabilityDashboardOptionErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutDeliverabilityDashboardOptionErrorKind::LimitExceededError(_)
+            PutDeliverabilityDashboardOptionErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutDeliverabilityDashboardOptionErrorKind::NotFoundError(_)
+            PutDeliverabilityDashboardOptionErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutDeliverabilityDashboardOptionErrorKind::TooManyRequestsError(_)
+            PutDeliverabilityDashboardOptionErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for PutDeliverabilityDashboardOptionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutDeliverabilityDashboardOptionErrorKind::AlreadyExistsError(_inner) => Some(_inner),
-            PutDeliverabilityDashboardOptionErrorKind::BadRequestError(_inner) => Some(_inner),
-            PutDeliverabilityDashboardOptionErrorKind::LimitExceededError(_inner) => Some(_inner),
-            PutDeliverabilityDashboardOptionErrorKind::NotFoundError(_inner) => Some(_inner),
-            PutDeliverabilityDashboardOptionErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            PutDeliverabilityDashboardOptionErrorKind::AlreadyExistsException(_inner) => {
+                Some(_inner)
+            }
+            PutDeliverabilityDashboardOptionErrorKind::BadRequestException(_inner) => Some(_inner),
+            PutDeliverabilityDashboardOptionErrorKind::LimitExceededException(_inner) => {
+                Some(_inner)
+            }
+            PutDeliverabilityDashboardOptionErrorKind::NotFoundException(_inner) => Some(_inner),
+            PutDeliverabilityDashboardOptionErrorKind::TooManyRequestsException(_inner) => {
+                Some(_inner)
+            }
             PutDeliverabilityDashboardOptionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -6401,24 +6617,24 @@ pub struct PutEmailIdentityConfigurationSetAttributesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutEmailIdentityConfigurationSetAttributesErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutEmailIdentityConfigurationSetAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutEmailIdentityConfigurationSetAttributesErrorKind::BadRequestError(_inner) => {
+            PutEmailIdentityConfigurationSetAttributesErrorKind::BadRequestException(_inner) => {
                 _inner.fmt(f)
             }
-            PutEmailIdentityConfigurationSetAttributesErrorKind::NotFoundError(_inner) => {
+            PutEmailIdentityConfigurationSetAttributesErrorKind::NotFoundException(_inner) => {
                 _inner.fmt(f)
             }
-            PutEmailIdentityConfigurationSetAttributesErrorKind::TooManyRequestsError(_inner) => {
-                _inner.fmt(f)
-            }
+            PutEmailIdentityConfigurationSetAttributesErrorKind::TooManyRequestsException(
+                _inner,
+            ) => _inner.fmt(f),
             PutEmailIdentityConfigurationSetAttributesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -6470,37 +6686,37 @@ impl PutEmailIdentityConfigurationSetAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutEmailIdentityConfigurationSetAttributesErrorKind::BadRequestError(_)
+            PutEmailIdentityConfigurationSetAttributesErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutEmailIdentityConfigurationSetAttributesErrorKind::NotFoundError(_)
+            PutEmailIdentityConfigurationSetAttributesErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutEmailIdentityConfigurationSetAttributesErrorKind::TooManyRequestsError(_)
+            PutEmailIdentityConfigurationSetAttributesErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for PutEmailIdentityConfigurationSetAttributesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutEmailIdentityConfigurationSetAttributesErrorKind::BadRequestError(_inner) => {
+            PutEmailIdentityConfigurationSetAttributesErrorKind::BadRequestException(_inner) => {
                 Some(_inner)
             }
-            PutEmailIdentityConfigurationSetAttributesErrorKind::NotFoundError(_inner) => {
+            PutEmailIdentityConfigurationSetAttributesErrorKind::NotFoundException(_inner) => {
                 Some(_inner)
             }
-            PutEmailIdentityConfigurationSetAttributesErrorKind::TooManyRequestsError(_inner) => {
-                Some(_inner)
-            }
+            PutEmailIdentityConfigurationSetAttributesErrorKind::TooManyRequestsException(
+                _inner,
+            ) => Some(_inner),
             PutEmailIdentityConfigurationSetAttributesErrorKind::Unhandled(_inner) => {
                 Some(_inner.as_ref())
             }
@@ -6517,18 +6733,20 @@ pub struct PutEmailIdentityDkimAttributesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutEmailIdentityDkimAttributesErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutEmailIdentityDkimAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutEmailIdentityDkimAttributesErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            PutEmailIdentityDkimAttributesErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            PutEmailIdentityDkimAttributesErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            PutEmailIdentityDkimAttributesErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            PutEmailIdentityDkimAttributesErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            PutEmailIdentityDkimAttributesErrorKind::TooManyRequestsException(_inner) => {
+                _inner.fmt(f)
+            }
             PutEmailIdentityDkimAttributesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -6577,31 +6795,33 @@ impl PutEmailIdentityDkimAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutEmailIdentityDkimAttributesErrorKind::BadRequestError(_)
+            PutEmailIdentityDkimAttributesErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutEmailIdentityDkimAttributesErrorKind::NotFoundError(_)
+            PutEmailIdentityDkimAttributesErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutEmailIdentityDkimAttributesErrorKind::TooManyRequestsError(_)
+            PutEmailIdentityDkimAttributesErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for PutEmailIdentityDkimAttributesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutEmailIdentityDkimAttributesErrorKind::BadRequestError(_inner) => Some(_inner),
-            PutEmailIdentityDkimAttributesErrorKind::NotFoundError(_inner) => Some(_inner),
-            PutEmailIdentityDkimAttributesErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            PutEmailIdentityDkimAttributesErrorKind::BadRequestException(_inner) => Some(_inner),
+            PutEmailIdentityDkimAttributesErrorKind::NotFoundException(_inner) => Some(_inner),
+            PutEmailIdentityDkimAttributesErrorKind::TooManyRequestsException(_inner) => {
+                Some(_inner)
+            }
             PutEmailIdentityDkimAttributesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -6616,20 +6836,22 @@ pub struct PutEmailIdentityDkimSigningAttributesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutEmailIdentityDkimSigningAttributesErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutEmailIdentityDkimSigningAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutEmailIdentityDkimSigningAttributesErrorKind::BadRequestError(_inner) => {
+            PutEmailIdentityDkimSigningAttributesErrorKind::BadRequestException(_inner) => {
                 _inner.fmt(f)
             }
-            PutEmailIdentityDkimSigningAttributesErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            PutEmailIdentityDkimSigningAttributesErrorKind::TooManyRequestsError(_inner) => {
+            PutEmailIdentityDkimSigningAttributesErrorKind::NotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            PutEmailIdentityDkimSigningAttributesErrorKind::TooManyRequestsException(_inner) => {
                 _inner.fmt(f)
             }
             PutEmailIdentityDkimSigningAttributesErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -6683,31 +6905,35 @@ impl PutEmailIdentityDkimSigningAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutEmailIdentityDkimSigningAttributesErrorKind::BadRequestError(_)
+            PutEmailIdentityDkimSigningAttributesErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutEmailIdentityDkimSigningAttributesErrorKind::NotFoundError(_)
+            PutEmailIdentityDkimSigningAttributesErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutEmailIdentityDkimSigningAttributesErrorKind::TooManyRequestsError(_)
+            PutEmailIdentityDkimSigningAttributesErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for PutEmailIdentityDkimSigningAttributesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutEmailIdentityDkimSigningAttributesErrorKind::BadRequestError(_inner) => Some(_inner),
-            PutEmailIdentityDkimSigningAttributesErrorKind::NotFoundError(_inner) => Some(_inner),
-            PutEmailIdentityDkimSigningAttributesErrorKind::TooManyRequestsError(_inner) => {
+            PutEmailIdentityDkimSigningAttributesErrorKind::BadRequestException(_inner) => {
+                Some(_inner)
+            }
+            PutEmailIdentityDkimSigningAttributesErrorKind::NotFoundException(_inner) => {
+                Some(_inner)
+            }
+            PutEmailIdentityDkimSigningAttributesErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
             PutEmailIdentityDkimSigningAttributesErrorKind::Unhandled(_inner) => {
@@ -6726,18 +6952,20 @@ pub struct PutEmailIdentityFeedbackAttributesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutEmailIdentityFeedbackAttributesErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutEmailIdentityFeedbackAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutEmailIdentityFeedbackAttributesErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            PutEmailIdentityFeedbackAttributesErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            PutEmailIdentityFeedbackAttributesErrorKind::TooManyRequestsError(_inner) => {
+            PutEmailIdentityFeedbackAttributesErrorKind::BadRequestException(_inner) => {
+                _inner.fmt(f)
+            }
+            PutEmailIdentityFeedbackAttributesErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            PutEmailIdentityFeedbackAttributesErrorKind::TooManyRequestsException(_inner) => {
                 _inner.fmt(f)
             }
             PutEmailIdentityFeedbackAttributesErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -6791,31 +7019,33 @@ impl PutEmailIdentityFeedbackAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutEmailIdentityFeedbackAttributesErrorKind::BadRequestError(_)
+            PutEmailIdentityFeedbackAttributesErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutEmailIdentityFeedbackAttributesErrorKind::NotFoundError(_)
+            PutEmailIdentityFeedbackAttributesErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutEmailIdentityFeedbackAttributesErrorKind::TooManyRequestsError(_)
+            PutEmailIdentityFeedbackAttributesErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for PutEmailIdentityFeedbackAttributesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutEmailIdentityFeedbackAttributesErrorKind::BadRequestError(_inner) => Some(_inner),
-            PutEmailIdentityFeedbackAttributesErrorKind::NotFoundError(_inner) => Some(_inner),
-            PutEmailIdentityFeedbackAttributesErrorKind::TooManyRequestsError(_inner) => {
+            PutEmailIdentityFeedbackAttributesErrorKind::BadRequestException(_inner) => {
+                Some(_inner)
+            }
+            PutEmailIdentityFeedbackAttributesErrorKind::NotFoundException(_inner) => Some(_inner),
+            PutEmailIdentityFeedbackAttributesErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
             PutEmailIdentityFeedbackAttributesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -6832,18 +7062,20 @@ pub struct PutEmailIdentityMailFromAttributesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutEmailIdentityMailFromAttributesErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutEmailIdentityMailFromAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutEmailIdentityMailFromAttributesErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            PutEmailIdentityMailFromAttributesErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            PutEmailIdentityMailFromAttributesErrorKind::TooManyRequestsError(_inner) => {
+            PutEmailIdentityMailFromAttributesErrorKind::BadRequestException(_inner) => {
+                _inner.fmt(f)
+            }
+            PutEmailIdentityMailFromAttributesErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            PutEmailIdentityMailFromAttributesErrorKind::TooManyRequestsException(_inner) => {
                 _inner.fmt(f)
             }
             PutEmailIdentityMailFromAttributesErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -6897,31 +7129,33 @@ impl PutEmailIdentityMailFromAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutEmailIdentityMailFromAttributesErrorKind::BadRequestError(_)
+            PutEmailIdentityMailFromAttributesErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutEmailIdentityMailFromAttributesErrorKind::NotFoundError(_)
+            PutEmailIdentityMailFromAttributesErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutEmailIdentityMailFromAttributesErrorKind::TooManyRequestsError(_)
+            PutEmailIdentityMailFromAttributesErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for PutEmailIdentityMailFromAttributesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutEmailIdentityMailFromAttributesErrorKind::BadRequestError(_inner) => Some(_inner),
-            PutEmailIdentityMailFromAttributesErrorKind::NotFoundError(_inner) => Some(_inner),
-            PutEmailIdentityMailFromAttributesErrorKind::TooManyRequestsError(_inner) => {
+            PutEmailIdentityMailFromAttributesErrorKind::BadRequestException(_inner) => {
+                Some(_inner)
+            }
+            PutEmailIdentityMailFromAttributesErrorKind::NotFoundException(_inner) => Some(_inner),
+            PutEmailIdentityMailFromAttributesErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
             PutEmailIdentityMailFromAttributesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -6938,16 +7172,16 @@ pub struct PutSuppressedDestinationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutSuppressedDestinationErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutSuppressedDestinationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutSuppressedDestinationErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            PutSuppressedDestinationErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            PutSuppressedDestinationErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            PutSuppressedDestinationErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             PutSuppressedDestinationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -6996,24 +7230,24 @@ impl PutSuppressedDestinationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutSuppressedDestinationErrorKind::BadRequestError(_)
+            PutSuppressedDestinationErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutSuppressedDestinationErrorKind::TooManyRequestsError(_)
+            PutSuppressedDestinationErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for PutSuppressedDestinationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutSuppressedDestinationErrorKind::BadRequestError(_inner) => Some(_inner),
-            PutSuppressedDestinationErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            PutSuppressedDestinationErrorKind::BadRequestException(_inner) => Some(_inner),
+            PutSuppressedDestinationErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             PutSuppressedDestinationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -7028,28 +7262,28 @@ pub struct SendBulkEmailError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SendBulkEmailErrorKind {
-    AccountSuspendedError(crate::error::AccountSuspendedError),
-    BadRequestError(crate::error::BadRequestError),
-    LimitExceededError(crate::error::LimitExceededError),
-    MailFromDomainNotVerifiedError(crate::error::MailFromDomainNotVerifiedError),
+    AccountSuspendedException(crate::error::AccountSuspendedException),
+    BadRequestException(crate::error::BadRequestException),
+    LimitExceededException(crate::error::LimitExceededException),
+    MailFromDomainNotVerifiedException(crate::error::MailFromDomainNotVerifiedException),
     MessageRejected(crate::error::MessageRejected),
-    NotFoundError(crate::error::NotFoundError),
-    SendingPausedError(crate::error::SendingPausedError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    NotFoundException(crate::error::NotFoundException),
+    SendingPausedException(crate::error::SendingPausedException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SendBulkEmailError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            SendBulkEmailErrorKind::AccountSuspendedError(_inner) => _inner.fmt(f),
-            SendBulkEmailErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            SendBulkEmailErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            SendBulkEmailErrorKind::MailFromDomainNotVerifiedError(_inner) => _inner.fmt(f),
+            SendBulkEmailErrorKind::AccountSuspendedException(_inner) => _inner.fmt(f),
+            SendBulkEmailErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            SendBulkEmailErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            SendBulkEmailErrorKind::MailFromDomainNotVerifiedException(_inner) => _inner.fmt(f),
             SendBulkEmailErrorKind::MessageRejected(_inner) => _inner.fmt(f),
-            SendBulkEmailErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            SendBulkEmailErrorKind::SendingPausedError(_inner) => _inner.fmt(f),
-            SendBulkEmailErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            SendBulkEmailErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            SendBulkEmailErrorKind::SendingPausedException(_inner) => _inner.fmt(f),
+            SendBulkEmailErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             SendBulkEmailErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -7098,45 +7332,57 @@ impl SendBulkEmailError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_account_suspended_error(&self) -> bool {
-        matches!(&self.kind, SendBulkEmailErrorKind::AccountSuspendedError(_))
-    }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, SendBulkEmailErrorKind::BadRequestError(_))
-    }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, SendBulkEmailErrorKind::LimitExceededError(_))
-    }
-    pub fn is_mail_from_domain_not_verified_error(&self) -> bool {
+    pub fn is_account_suspended_exception(&self) -> bool {
         matches!(
             &self.kind,
-            SendBulkEmailErrorKind::MailFromDomainNotVerifiedError(_)
+            SendBulkEmailErrorKind::AccountSuspendedException(_)
+        )
+    }
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, SendBulkEmailErrorKind::BadRequestException(_))
+    }
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SendBulkEmailErrorKind::LimitExceededException(_)
+        )
+    }
+    pub fn is_mail_from_domain_not_verified_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SendBulkEmailErrorKind::MailFromDomainNotVerifiedException(_)
         )
     }
     pub fn is_message_rejected(&self) -> bool {
         matches!(&self.kind, SendBulkEmailErrorKind::MessageRejected(_))
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, SendBulkEmailErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, SendBulkEmailErrorKind::NotFoundException(_))
     }
-    pub fn is_sending_paused_error(&self) -> bool {
-        matches!(&self.kind, SendBulkEmailErrorKind::SendingPausedError(_))
+    pub fn is_sending_paused_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SendBulkEmailErrorKind::SendingPausedException(_)
+        )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, SendBulkEmailErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SendBulkEmailErrorKind::TooManyRequestsException(_)
+        )
     }
 }
 impl std::error::Error for SendBulkEmailError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            SendBulkEmailErrorKind::AccountSuspendedError(_inner) => Some(_inner),
-            SendBulkEmailErrorKind::BadRequestError(_inner) => Some(_inner),
-            SendBulkEmailErrorKind::LimitExceededError(_inner) => Some(_inner),
-            SendBulkEmailErrorKind::MailFromDomainNotVerifiedError(_inner) => Some(_inner),
+            SendBulkEmailErrorKind::AccountSuspendedException(_inner) => Some(_inner),
+            SendBulkEmailErrorKind::BadRequestException(_inner) => Some(_inner),
+            SendBulkEmailErrorKind::LimitExceededException(_inner) => Some(_inner),
+            SendBulkEmailErrorKind::MailFromDomainNotVerifiedException(_inner) => Some(_inner),
             SendBulkEmailErrorKind::MessageRejected(_inner) => Some(_inner),
-            SendBulkEmailErrorKind::NotFoundError(_inner) => Some(_inner),
-            SendBulkEmailErrorKind::SendingPausedError(_inner) => Some(_inner),
-            SendBulkEmailErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            SendBulkEmailErrorKind::NotFoundException(_inner) => Some(_inner),
+            SendBulkEmailErrorKind::SendingPausedException(_inner) => Some(_inner),
+            SendBulkEmailErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             SendBulkEmailErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -7151,28 +7397,28 @@ pub struct SendCustomVerificationEmailError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SendCustomVerificationEmailErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    LimitExceededError(crate::error::LimitExceededError),
-    MailFromDomainNotVerifiedError(crate::error::MailFromDomainNotVerifiedError),
+    BadRequestException(crate::error::BadRequestException),
+    LimitExceededException(crate::error::LimitExceededException),
+    MailFromDomainNotVerifiedException(crate::error::MailFromDomainNotVerifiedException),
     MessageRejected(crate::error::MessageRejected),
-    NotFoundError(crate::error::NotFoundError),
-    SendingPausedError(crate::error::SendingPausedError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    NotFoundException(crate::error::NotFoundException),
+    SendingPausedException(crate::error::SendingPausedException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SendCustomVerificationEmailError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            SendCustomVerificationEmailErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            SendCustomVerificationEmailErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            SendCustomVerificationEmailErrorKind::MailFromDomainNotVerifiedError(_inner) => {
+            SendCustomVerificationEmailErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            SendCustomVerificationEmailErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            SendCustomVerificationEmailErrorKind::MailFromDomainNotVerifiedException(_inner) => {
                 _inner.fmt(f)
             }
             SendCustomVerificationEmailErrorKind::MessageRejected(_inner) => _inner.fmt(f),
-            SendCustomVerificationEmailErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            SendCustomVerificationEmailErrorKind::SendingPausedError(_inner) => _inner.fmt(f),
-            SendCustomVerificationEmailErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            SendCustomVerificationEmailErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            SendCustomVerificationEmailErrorKind::SendingPausedException(_inner) => _inner.fmt(f),
+            SendCustomVerificationEmailErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             SendCustomVerificationEmailErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -7221,22 +7467,22 @@ impl SendCustomVerificationEmailError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            SendCustomVerificationEmailErrorKind::BadRequestError(_)
+            SendCustomVerificationEmailErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            SendCustomVerificationEmailErrorKind::LimitExceededError(_)
+            SendCustomVerificationEmailErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_mail_from_domain_not_verified_error(&self) -> bool {
+    pub fn is_mail_from_domain_not_verified_exception(&self) -> bool {
         matches!(
             &self.kind,
-            SendCustomVerificationEmailErrorKind::MailFromDomainNotVerifiedError(_)
+            SendCustomVerificationEmailErrorKind::MailFromDomainNotVerifiedException(_)
         )
     }
     pub fn is_message_rejected(&self) -> bool {
@@ -7245,37 +7491,37 @@ impl SendCustomVerificationEmailError {
             SendCustomVerificationEmailErrorKind::MessageRejected(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            SendCustomVerificationEmailErrorKind::NotFoundError(_)
+            SendCustomVerificationEmailErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_sending_paused_error(&self) -> bool {
+    pub fn is_sending_paused_exception(&self) -> bool {
         matches!(
             &self.kind,
-            SendCustomVerificationEmailErrorKind::SendingPausedError(_)
+            SendCustomVerificationEmailErrorKind::SendingPausedException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            SendCustomVerificationEmailErrorKind::TooManyRequestsError(_)
+            SendCustomVerificationEmailErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for SendCustomVerificationEmailError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            SendCustomVerificationEmailErrorKind::BadRequestError(_inner) => Some(_inner),
-            SendCustomVerificationEmailErrorKind::LimitExceededError(_inner) => Some(_inner),
-            SendCustomVerificationEmailErrorKind::MailFromDomainNotVerifiedError(_inner) => {
+            SendCustomVerificationEmailErrorKind::BadRequestException(_inner) => Some(_inner),
+            SendCustomVerificationEmailErrorKind::LimitExceededException(_inner) => Some(_inner),
+            SendCustomVerificationEmailErrorKind::MailFromDomainNotVerifiedException(_inner) => {
                 Some(_inner)
             }
             SendCustomVerificationEmailErrorKind::MessageRejected(_inner) => Some(_inner),
-            SendCustomVerificationEmailErrorKind::NotFoundError(_inner) => Some(_inner),
-            SendCustomVerificationEmailErrorKind::SendingPausedError(_inner) => Some(_inner),
-            SendCustomVerificationEmailErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            SendCustomVerificationEmailErrorKind::NotFoundException(_inner) => Some(_inner),
+            SendCustomVerificationEmailErrorKind::SendingPausedException(_inner) => Some(_inner),
+            SendCustomVerificationEmailErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             SendCustomVerificationEmailErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -7290,28 +7536,28 @@ pub struct SendEmailError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SendEmailErrorKind {
-    AccountSuspendedError(crate::error::AccountSuspendedError),
-    BadRequestError(crate::error::BadRequestError),
-    LimitExceededError(crate::error::LimitExceededError),
-    MailFromDomainNotVerifiedError(crate::error::MailFromDomainNotVerifiedError),
+    AccountSuspendedException(crate::error::AccountSuspendedException),
+    BadRequestException(crate::error::BadRequestException),
+    LimitExceededException(crate::error::LimitExceededException),
+    MailFromDomainNotVerifiedException(crate::error::MailFromDomainNotVerifiedException),
     MessageRejected(crate::error::MessageRejected),
-    NotFoundError(crate::error::NotFoundError),
-    SendingPausedError(crate::error::SendingPausedError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    NotFoundException(crate::error::NotFoundException),
+    SendingPausedException(crate::error::SendingPausedException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SendEmailError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            SendEmailErrorKind::AccountSuspendedError(_inner) => _inner.fmt(f),
-            SendEmailErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            SendEmailErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            SendEmailErrorKind::MailFromDomainNotVerifiedError(_inner) => _inner.fmt(f),
+            SendEmailErrorKind::AccountSuspendedException(_inner) => _inner.fmt(f),
+            SendEmailErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            SendEmailErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            SendEmailErrorKind::MailFromDomainNotVerifiedException(_inner) => _inner.fmt(f),
             SendEmailErrorKind::MessageRejected(_inner) => _inner.fmt(f),
-            SendEmailErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            SendEmailErrorKind::SendingPausedError(_inner) => _inner.fmt(f),
-            SendEmailErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            SendEmailErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            SendEmailErrorKind::SendingPausedException(_inner) => _inner.fmt(f),
+            SendEmailErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             SendEmailErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -7360,45 +7606,45 @@ impl SendEmailError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_account_suspended_error(&self) -> bool {
-        matches!(&self.kind, SendEmailErrorKind::AccountSuspendedError(_))
+    pub fn is_account_suspended_exception(&self) -> bool {
+        matches!(&self.kind, SendEmailErrorKind::AccountSuspendedException(_))
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, SendEmailErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, SendEmailErrorKind::BadRequestException(_))
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, SendEmailErrorKind::LimitExceededError(_))
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(&self.kind, SendEmailErrorKind::LimitExceededException(_))
     }
-    pub fn is_mail_from_domain_not_verified_error(&self) -> bool {
+    pub fn is_mail_from_domain_not_verified_exception(&self) -> bool {
         matches!(
             &self.kind,
-            SendEmailErrorKind::MailFromDomainNotVerifiedError(_)
+            SendEmailErrorKind::MailFromDomainNotVerifiedException(_)
         )
     }
     pub fn is_message_rejected(&self) -> bool {
         matches!(&self.kind, SendEmailErrorKind::MessageRejected(_))
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, SendEmailErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, SendEmailErrorKind::NotFoundException(_))
     }
-    pub fn is_sending_paused_error(&self) -> bool {
-        matches!(&self.kind, SendEmailErrorKind::SendingPausedError(_))
+    pub fn is_sending_paused_exception(&self) -> bool {
+        matches!(&self.kind, SendEmailErrorKind::SendingPausedException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, SendEmailErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(&self.kind, SendEmailErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for SendEmailError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            SendEmailErrorKind::AccountSuspendedError(_inner) => Some(_inner),
-            SendEmailErrorKind::BadRequestError(_inner) => Some(_inner),
-            SendEmailErrorKind::LimitExceededError(_inner) => Some(_inner),
-            SendEmailErrorKind::MailFromDomainNotVerifiedError(_inner) => Some(_inner),
+            SendEmailErrorKind::AccountSuspendedException(_inner) => Some(_inner),
+            SendEmailErrorKind::BadRequestException(_inner) => Some(_inner),
+            SendEmailErrorKind::LimitExceededException(_inner) => Some(_inner),
+            SendEmailErrorKind::MailFromDomainNotVerifiedException(_inner) => Some(_inner),
             SendEmailErrorKind::MessageRejected(_inner) => Some(_inner),
-            SendEmailErrorKind::NotFoundError(_inner) => Some(_inner),
-            SendEmailErrorKind::SendingPausedError(_inner) => Some(_inner),
-            SendEmailErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            SendEmailErrorKind::NotFoundException(_inner) => Some(_inner),
+            SendEmailErrorKind::SendingPausedException(_inner) => Some(_inner),
+            SendEmailErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             SendEmailErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -7413,20 +7659,20 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ConcurrentModificationError(crate::error::ConcurrentModificationError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            TagResourceErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::ConcurrentModificationError(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::ConcurrentModificationException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             TagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -7475,29 +7721,32 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, TagResourceErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::BadRequestException(_))
     }
-    pub fn is_concurrent_modification_error(&self) -> bool {
+    pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
-            TagResourceErrorKind::ConcurrentModificationError(_)
+            TagResourceErrorKind::ConcurrentModificationException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, TagResourceErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, TagResourceErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            TagResourceErrorKind::TooManyRequestsException(_)
+        )
     }
 }
 impl std::error::Error for TagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            TagResourceErrorKind::BadRequestError(_inner) => Some(_inner),
-            TagResourceErrorKind::ConcurrentModificationError(_inner) => Some(_inner),
-            TagResourceErrorKind::NotFoundError(_inner) => Some(_inner),
-            TagResourceErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            TagResourceErrorKind::BadRequestException(_inner) => Some(_inner),
+            TagResourceErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
+            TagResourceErrorKind::NotFoundException(_inner) => Some(_inner),
+            TagResourceErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -7512,18 +7761,18 @@ pub struct TestRenderEmailTemplateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TestRenderEmailTemplateErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TestRenderEmailTemplateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            TestRenderEmailTemplateErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            TestRenderEmailTemplateErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            TestRenderEmailTemplateErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            TestRenderEmailTemplateErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            TestRenderEmailTemplateErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            TestRenderEmailTemplateErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             TestRenderEmailTemplateErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -7572,31 +7821,31 @@ impl TestRenderEmailTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            TestRenderEmailTemplateErrorKind::BadRequestError(_)
+            TestRenderEmailTemplateErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            TestRenderEmailTemplateErrorKind::NotFoundError(_)
+            TestRenderEmailTemplateErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            TestRenderEmailTemplateErrorKind::TooManyRequestsError(_)
+            TestRenderEmailTemplateErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for TestRenderEmailTemplateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            TestRenderEmailTemplateErrorKind::BadRequestError(_inner) => Some(_inner),
-            TestRenderEmailTemplateErrorKind::NotFoundError(_inner) => Some(_inner),
-            TestRenderEmailTemplateErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            TestRenderEmailTemplateErrorKind::BadRequestException(_inner) => Some(_inner),
+            TestRenderEmailTemplateErrorKind::NotFoundException(_inner) => Some(_inner),
+            TestRenderEmailTemplateErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             TestRenderEmailTemplateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -7611,20 +7860,20 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ConcurrentModificationError(crate::error::ConcurrentModificationError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UntagResourceErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::ConcurrentModificationError(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::ConcurrentModificationException(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             UntagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -7673,29 +7922,32 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, UntagResourceErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::BadRequestException(_))
     }
-    pub fn is_concurrent_modification_error(&self) -> bool {
+    pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UntagResourceErrorKind::ConcurrentModificationError(_)
+            UntagResourceErrorKind::ConcurrentModificationException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, UntagResourceErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, UntagResourceErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UntagResourceErrorKind::TooManyRequestsException(_)
+        )
     }
 }
 impl std::error::Error for UntagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UntagResourceErrorKind::BadRequestError(_inner) => Some(_inner),
-            UntagResourceErrorKind::ConcurrentModificationError(_inner) => Some(_inner),
-            UntagResourceErrorKind::NotFoundError(_inner) => Some(_inner),
-            UntagResourceErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            UntagResourceErrorKind::BadRequestException(_inner) => Some(_inner),
+            UntagResourceErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
+            UntagResourceErrorKind::NotFoundException(_inner) => Some(_inner),
+            UntagResourceErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -7710,20 +7962,22 @@ pub struct UpdateConfigurationSetEventDestinationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateConfigurationSetEventDestinationErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateConfigurationSetEventDestinationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateConfigurationSetEventDestinationErrorKind::BadRequestError(_inner) => {
+            UpdateConfigurationSetEventDestinationErrorKind::BadRequestException(_inner) => {
                 _inner.fmt(f)
             }
-            UpdateConfigurationSetEventDestinationErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            UpdateConfigurationSetEventDestinationErrorKind::TooManyRequestsError(_inner) => {
+            UpdateConfigurationSetEventDestinationErrorKind::NotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateConfigurationSetEventDestinationErrorKind::TooManyRequestsException(_inner) => {
                 _inner.fmt(f)
             }
             UpdateConfigurationSetEventDestinationErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -7777,33 +8031,35 @@ impl UpdateConfigurationSetEventDestinationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateConfigurationSetEventDestinationErrorKind::BadRequestError(_)
+            UpdateConfigurationSetEventDestinationErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateConfigurationSetEventDestinationErrorKind::NotFoundError(_)
+            UpdateConfigurationSetEventDestinationErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateConfigurationSetEventDestinationErrorKind::TooManyRequestsError(_)
+            UpdateConfigurationSetEventDestinationErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for UpdateConfigurationSetEventDestinationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateConfigurationSetEventDestinationErrorKind::BadRequestError(_inner) => {
+            UpdateConfigurationSetEventDestinationErrorKind::BadRequestException(_inner) => {
                 Some(_inner)
             }
-            UpdateConfigurationSetEventDestinationErrorKind::NotFoundError(_inner) => Some(_inner),
-            UpdateConfigurationSetEventDestinationErrorKind::TooManyRequestsError(_inner) => {
+            UpdateConfigurationSetEventDestinationErrorKind::NotFoundException(_inner) => {
+                Some(_inner)
+            }
+            UpdateConfigurationSetEventDestinationErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
             UpdateConfigurationSetEventDestinationErrorKind::Unhandled(_inner) => {
@@ -7822,20 +8078,20 @@ pub struct UpdateContactError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateContactErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ConcurrentModificationError(crate::error::ConcurrentModificationError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateContactError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateContactErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            UpdateContactErrorKind::ConcurrentModificationError(_inner) => _inner.fmt(f),
-            UpdateContactErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            UpdateContactErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            UpdateContactErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            UpdateContactErrorKind::ConcurrentModificationException(_inner) => _inner.fmt(f),
+            UpdateContactErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            UpdateContactErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             UpdateContactErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -7884,29 +8140,32 @@ impl UpdateContactError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, UpdateContactErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, UpdateContactErrorKind::BadRequestException(_))
     }
-    pub fn is_concurrent_modification_error(&self) -> bool {
+    pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateContactErrorKind::ConcurrentModificationError(_)
+            UpdateContactErrorKind::ConcurrentModificationException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, UpdateContactErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, UpdateContactErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, UpdateContactErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateContactErrorKind::TooManyRequestsException(_)
+        )
     }
 }
 impl std::error::Error for UpdateContactError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateContactErrorKind::BadRequestError(_inner) => Some(_inner),
-            UpdateContactErrorKind::ConcurrentModificationError(_inner) => Some(_inner),
-            UpdateContactErrorKind::NotFoundError(_inner) => Some(_inner),
-            UpdateContactErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            UpdateContactErrorKind::BadRequestException(_inner) => Some(_inner),
+            UpdateContactErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
+            UpdateContactErrorKind::NotFoundException(_inner) => Some(_inner),
+            UpdateContactErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             UpdateContactErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -7921,20 +8180,20 @@ pub struct UpdateContactListError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateContactListErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ConcurrentModificationError(crate::error::ConcurrentModificationError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateContactListError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateContactListErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            UpdateContactListErrorKind::ConcurrentModificationError(_inner) => _inner.fmt(f),
-            UpdateContactListErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            UpdateContactListErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            UpdateContactListErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            UpdateContactListErrorKind::ConcurrentModificationException(_inner) => _inner.fmt(f),
+            UpdateContactListErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            UpdateContactListErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             UpdateContactListErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -7983,32 +8242,35 @@ impl UpdateContactListError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, UpdateContactListErrorKind::BadRequestError(_))
-    }
-    pub fn is_concurrent_modification_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateContactListErrorKind::ConcurrentModificationError(_)
+            UpdateContactListErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, UpdateContactListErrorKind::NotFoundError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateContactListErrorKind::TooManyRequestsError(_)
+            UpdateContactListErrorKind::ConcurrentModificationException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, UpdateContactListErrorKind::NotFoundException(_))
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateContactListErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for UpdateContactListError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateContactListErrorKind::BadRequestError(_inner) => Some(_inner),
-            UpdateContactListErrorKind::ConcurrentModificationError(_inner) => Some(_inner),
-            UpdateContactListErrorKind::NotFoundError(_inner) => Some(_inner),
-            UpdateContactListErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            UpdateContactListErrorKind::BadRequestException(_inner) => Some(_inner),
+            UpdateContactListErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
+            UpdateContactListErrorKind::NotFoundException(_inner) => Some(_inner),
+            UpdateContactListErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             UpdateContactListErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -8023,20 +8285,22 @@ pub struct UpdateCustomVerificationEmailTemplateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateCustomVerificationEmailTemplateErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateCustomVerificationEmailTemplateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateCustomVerificationEmailTemplateErrorKind::BadRequestError(_inner) => {
+            UpdateCustomVerificationEmailTemplateErrorKind::BadRequestException(_inner) => {
                 _inner.fmt(f)
             }
-            UpdateCustomVerificationEmailTemplateErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            UpdateCustomVerificationEmailTemplateErrorKind::TooManyRequestsError(_inner) => {
+            UpdateCustomVerificationEmailTemplateErrorKind::NotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateCustomVerificationEmailTemplateErrorKind::TooManyRequestsException(_inner) => {
                 _inner.fmt(f)
             }
             UpdateCustomVerificationEmailTemplateErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -8090,31 +8354,35 @@ impl UpdateCustomVerificationEmailTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateCustomVerificationEmailTemplateErrorKind::BadRequestError(_)
+            UpdateCustomVerificationEmailTemplateErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateCustomVerificationEmailTemplateErrorKind::NotFoundError(_)
+            UpdateCustomVerificationEmailTemplateErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateCustomVerificationEmailTemplateErrorKind::TooManyRequestsError(_)
+            UpdateCustomVerificationEmailTemplateErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for UpdateCustomVerificationEmailTemplateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateCustomVerificationEmailTemplateErrorKind::BadRequestError(_inner) => Some(_inner),
-            UpdateCustomVerificationEmailTemplateErrorKind::NotFoundError(_inner) => Some(_inner),
-            UpdateCustomVerificationEmailTemplateErrorKind::TooManyRequestsError(_inner) => {
+            UpdateCustomVerificationEmailTemplateErrorKind::BadRequestException(_inner) => {
+                Some(_inner)
+            }
+            UpdateCustomVerificationEmailTemplateErrorKind::NotFoundException(_inner) => {
+                Some(_inner)
+            }
+            UpdateCustomVerificationEmailTemplateErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
             UpdateCustomVerificationEmailTemplateErrorKind::Unhandled(_inner) => {
@@ -8133,18 +8401,18 @@ pub struct UpdateEmailIdentityPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateEmailIdentityPolicyErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateEmailIdentityPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateEmailIdentityPolicyErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            UpdateEmailIdentityPolicyErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            UpdateEmailIdentityPolicyErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            UpdateEmailIdentityPolicyErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            UpdateEmailIdentityPolicyErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            UpdateEmailIdentityPolicyErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             UpdateEmailIdentityPolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -8193,31 +8461,31 @@ impl UpdateEmailIdentityPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateEmailIdentityPolicyErrorKind::BadRequestError(_)
+            UpdateEmailIdentityPolicyErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateEmailIdentityPolicyErrorKind::NotFoundError(_)
+            UpdateEmailIdentityPolicyErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateEmailIdentityPolicyErrorKind::TooManyRequestsError(_)
+            UpdateEmailIdentityPolicyErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for UpdateEmailIdentityPolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateEmailIdentityPolicyErrorKind::BadRequestError(_inner) => Some(_inner),
-            UpdateEmailIdentityPolicyErrorKind::NotFoundError(_inner) => Some(_inner),
-            UpdateEmailIdentityPolicyErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            UpdateEmailIdentityPolicyErrorKind::BadRequestException(_inner) => Some(_inner),
+            UpdateEmailIdentityPolicyErrorKind::NotFoundException(_inner) => Some(_inner),
+            UpdateEmailIdentityPolicyErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             UpdateEmailIdentityPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -8232,18 +8500,18 @@ pub struct UpdateEmailTemplateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateEmailTemplateErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateEmailTemplateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateEmailTemplateErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            UpdateEmailTemplateErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            UpdateEmailTemplateErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            UpdateEmailTemplateErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            UpdateEmailTemplateErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            UpdateEmailTemplateErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             UpdateEmailTemplateErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -8292,25 +8560,31 @@ impl UpdateEmailTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, UpdateEmailTemplateErrorKind::BadRequestError(_))
-    }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, UpdateEmailTemplateErrorKind::NotFoundError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateEmailTemplateErrorKind::TooManyRequestsError(_)
+            UpdateEmailTemplateErrorKind::BadRequestException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateEmailTemplateErrorKind::NotFoundException(_)
+        )
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateEmailTemplateErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for UpdateEmailTemplateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateEmailTemplateErrorKind::BadRequestError(_inner) => Some(_inner),
-            UpdateEmailTemplateErrorKind::NotFoundError(_inner) => Some(_inner),
-            UpdateEmailTemplateErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            UpdateEmailTemplateErrorKind::BadRequestException(_inner) => Some(_inner),
+            UpdateEmailTemplateErrorKind::NotFoundException(_inner) => Some(_inner),
+            UpdateEmailTemplateErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             UpdateEmailTemplateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -8318,37 +8592,35 @@ impl std::error::Error for UpdateEmailTemplateError {
 
 /// <p>Too many requests have been made to the operation.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct TooManyRequestsError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TooManyRequestsException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for TooManyRequestsError {
+impl std::fmt::Debug for TooManyRequestsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyRequestsError");
+        let mut formatter = f.debug_struct("TooManyRequestsException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl TooManyRequestsError {
+impl TooManyRequestsException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for TooManyRequestsError {
+impl std::fmt::Display for TooManyRequestsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TooManyRequestsError [TooManyRequestsException]")?;
+        write!(f, "TooManyRequestsException")?;
         if let Some(inner_1) = &self.message {
             write!(f, ": {}", inner_1)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for TooManyRequestsError {}
-/// See [`TooManyRequestsError`](crate::error::TooManyRequestsError)
-pub mod too_many_requests_error {
-    /// A builder for [`TooManyRequestsError`](crate::error::TooManyRequestsError)
+impl std::error::Error for TooManyRequestsException {}
+/// See [`TooManyRequestsException`](crate::error::TooManyRequestsException)
+pub mod too_many_requests_exception {
+    /// A builder for [`TooManyRequestsException`](crate::error::TooManyRequestsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -8363,54 +8635,52 @@ pub mod too_many_requests_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TooManyRequestsError`](crate::error::TooManyRequestsError)
-        pub fn build(self) -> crate::error::TooManyRequestsError {
-            crate::error::TooManyRequestsError {
+        /// Consumes the builder and constructs a [`TooManyRequestsException`](crate::error::TooManyRequestsException)
+        pub fn build(self) -> crate::error::TooManyRequestsException {
+            crate::error::TooManyRequestsException {
                 message: self.message,
             }
         }
     }
 }
-impl TooManyRequestsError {
-    /// Creates a new builder-style object to manufacture [`TooManyRequestsError`](crate::error::TooManyRequestsError)
-    pub fn builder() -> crate::error::too_many_requests_error::Builder {
-        crate::error::too_many_requests_error::Builder::default()
+impl TooManyRequestsException {
+    /// Creates a new builder-style object to manufacture [`TooManyRequestsException`](crate::error::TooManyRequestsException)
+    pub fn builder() -> crate::error::too_many_requests_exception::Builder {
+        crate::error::too_many_requests_exception::Builder::default()
     }
 }
 
 /// <p>The resource you attempted to access doesn't exist.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct NotFoundError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct NotFoundException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for NotFoundError {
+impl std::fmt::Debug for NotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotFoundError");
+        let mut formatter = f.debug_struct("NotFoundException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl NotFoundError {
+impl NotFoundException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for NotFoundError {
+impl std::fmt::Display for NotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "NotFoundError [NotFoundException]")?;
+        write!(f, "NotFoundException")?;
         if let Some(inner_2) = &self.message {
             write!(f, ": {}", inner_2)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for NotFoundError {}
-/// See [`NotFoundError`](crate::error::NotFoundError)
-pub mod not_found_error {
-    /// A builder for [`NotFoundError`](crate::error::NotFoundError)
+impl std::error::Error for NotFoundException {}
+/// See [`NotFoundException`](crate::error::NotFoundException)
+pub mod not_found_exception {
+    /// A builder for [`NotFoundException`](crate::error::NotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -8425,54 +8695,52 @@ pub mod not_found_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`NotFoundError`](crate::error::NotFoundError)
-        pub fn build(self) -> crate::error::NotFoundError {
-            crate::error::NotFoundError {
+        /// Consumes the builder and constructs a [`NotFoundException`](crate::error::NotFoundException)
+        pub fn build(self) -> crate::error::NotFoundException {
+            crate::error::NotFoundException {
                 message: self.message,
             }
         }
     }
 }
-impl NotFoundError {
-    /// Creates a new builder-style object to manufacture [`NotFoundError`](crate::error::NotFoundError)
-    pub fn builder() -> crate::error::not_found_error::Builder {
-        crate::error::not_found_error::Builder::default()
+impl NotFoundException {
+    /// Creates a new builder-style object to manufacture [`NotFoundException`](crate::error::NotFoundException)
+    pub fn builder() -> crate::error::not_found_exception::Builder {
+        crate::error::not_found_exception::Builder::default()
     }
 }
 
 /// <p>The input you provided is invalid.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct BadRequestError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BadRequestException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for BadRequestError {
+impl std::fmt::Debug for BadRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BadRequestError");
+        let mut formatter = f.debug_struct("BadRequestException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl BadRequestError {
+impl BadRequestException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for BadRequestError {
+impl std::fmt::Display for BadRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "BadRequestError [BadRequestException]")?;
+        write!(f, "BadRequestException")?;
         if let Some(inner_3) = &self.message {
             write!(f, ": {}", inner_3)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for BadRequestError {}
-/// See [`BadRequestError`](crate::error::BadRequestError)
-pub mod bad_request_error {
-    /// A builder for [`BadRequestError`](crate::error::BadRequestError)
+impl std::error::Error for BadRequestException {}
+/// See [`BadRequestException`](crate::error::BadRequestException)
+pub mod bad_request_exception {
+    /// A builder for [`BadRequestException`](crate::error::BadRequestException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -8487,57 +8755,52 @@ pub mod bad_request_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`BadRequestError`](crate::error::BadRequestError)
-        pub fn build(self) -> crate::error::BadRequestError {
-            crate::error::BadRequestError {
+        /// Consumes the builder and constructs a [`BadRequestException`](crate::error::BadRequestException)
+        pub fn build(self) -> crate::error::BadRequestException {
+            crate::error::BadRequestException {
                 message: self.message,
             }
         }
     }
 }
-impl BadRequestError {
-    /// Creates a new builder-style object to manufacture [`BadRequestError`](crate::error::BadRequestError)
-    pub fn builder() -> crate::error::bad_request_error::Builder {
-        crate::error::bad_request_error::Builder::default()
+impl BadRequestException {
+    /// Creates a new builder-style object to manufacture [`BadRequestException`](crate::error::BadRequestException)
+    pub fn builder() -> crate::error::bad_request_exception::Builder {
+        crate::error::bad_request_exception::Builder::default()
     }
 }
 
 /// <p>The resource is being modified by another operation or thread.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct ConcurrentModificationError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ConcurrentModificationException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ConcurrentModificationError {
+impl std::fmt::Debug for ConcurrentModificationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConcurrentModificationError");
+        let mut formatter = f.debug_struct("ConcurrentModificationException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl ConcurrentModificationError {
+impl ConcurrentModificationException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ConcurrentModificationError {
+impl std::fmt::Display for ConcurrentModificationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "ConcurrentModificationError [ConcurrentModificationException]"
-        )?;
+        write!(f, "ConcurrentModificationException")?;
         if let Some(inner_4) = &self.message {
             write!(f, ": {}", inner_4)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ConcurrentModificationError {}
-/// See [`ConcurrentModificationError`](crate::error::ConcurrentModificationError)
-pub mod concurrent_modification_error {
-    /// A builder for [`ConcurrentModificationError`](crate::error::ConcurrentModificationError)
+impl std::error::Error for ConcurrentModificationException {}
+/// See [`ConcurrentModificationException`](crate::error::ConcurrentModificationException)
+pub mod concurrent_modification_exception {
+    /// A builder for [`ConcurrentModificationException`](crate::error::ConcurrentModificationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -8552,55 +8815,53 @@ pub mod concurrent_modification_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ConcurrentModificationError`](crate::error::ConcurrentModificationError)
-        pub fn build(self) -> crate::error::ConcurrentModificationError {
-            crate::error::ConcurrentModificationError {
+        /// Consumes the builder and constructs a [`ConcurrentModificationException`](crate::error::ConcurrentModificationException)
+        pub fn build(self) -> crate::error::ConcurrentModificationException {
+            crate::error::ConcurrentModificationException {
                 message: self.message,
             }
         }
     }
 }
-impl ConcurrentModificationError {
-    /// Creates a new builder-style object to manufacture [`ConcurrentModificationError`](crate::error::ConcurrentModificationError)
-    pub fn builder() -> crate::error::concurrent_modification_error::Builder {
-        crate::error::concurrent_modification_error::Builder::default()
+impl ConcurrentModificationException {
+    /// Creates a new builder-style object to manufacture [`ConcurrentModificationException`](crate::error::ConcurrentModificationException)
+    pub fn builder() -> crate::error::concurrent_modification_exception::Builder {
+        crate::error::concurrent_modification_exception::Builder::default()
     }
 }
 
 /// <p>The message can't be sent because the account's ability to send email is currently
 /// paused.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct SendingPausedError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SendingPausedException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for SendingPausedError {
+impl std::fmt::Debug for SendingPausedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SendingPausedError");
+        let mut formatter = f.debug_struct("SendingPausedException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl SendingPausedError {
+impl SendingPausedException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for SendingPausedError {
+impl std::fmt::Display for SendingPausedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "SendingPausedError [SendingPausedException]")?;
+        write!(f, "SendingPausedException")?;
         if let Some(inner_5) = &self.message {
             write!(f, ": {}", inner_5)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for SendingPausedError {}
-/// See [`SendingPausedError`](crate::error::SendingPausedError)
-pub mod sending_paused_error {
-    /// A builder for [`SendingPausedError`](crate::error::SendingPausedError)
+impl std::error::Error for SendingPausedException {}
+/// See [`SendingPausedException`](crate::error::SendingPausedException)
+pub mod sending_paused_exception {
+    /// A builder for [`SendingPausedException`](crate::error::SendingPausedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -8615,27 +8876,25 @@ pub mod sending_paused_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`SendingPausedError`](crate::error::SendingPausedError)
-        pub fn build(self) -> crate::error::SendingPausedError {
-            crate::error::SendingPausedError {
+        /// Consumes the builder and constructs a [`SendingPausedException`](crate::error::SendingPausedException)
+        pub fn build(self) -> crate::error::SendingPausedException {
+            crate::error::SendingPausedException {
                 message: self.message,
             }
         }
     }
 }
-impl SendingPausedError {
-    /// Creates a new builder-style object to manufacture [`SendingPausedError`](crate::error::SendingPausedError)
-    pub fn builder() -> crate::error::sending_paused_error::Builder {
-        crate::error::sending_paused_error::Builder::default()
+impl SendingPausedException {
+    /// Creates a new builder-style object to manufacture [`SendingPausedException`](crate::error::SendingPausedException)
+    pub fn builder() -> crate::error::sending_paused_exception::Builder {
+        crate::error::sending_paused_exception::Builder::default()
     }
 }
 
 /// <p>The message can't be sent because it contains invalid content.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MessageRejected {
-    #[serde(rename = "message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for MessageRejected {
@@ -8694,40 +8953,35 @@ impl MessageRejected {
 
 /// <p>The message can't be sent because the sending domain isn't verified.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct MailFromDomainNotVerifiedError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MailFromDomainNotVerifiedException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for MailFromDomainNotVerifiedError {
+impl std::fmt::Debug for MailFromDomainNotVerifiedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MailFromDomainNotVerifiedError");
+        let mut formatter = f.debug_struct("MailFromDomainNotVerifiedException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl MailFromDomainNotVerifiedError {
+impl MailFromDomainNotVerifiedException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for MailFromDomainNotVerifiedError {
+impl std::fmt::Display for MailFromDomainNotVerifiedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "MailFromDomainNotVerifiedError [MailFromDomainNotVerifiedException]"
-        )?;
+        write!(f, "MailFromDomainNotVerifiedException")?;
         if let Some(inner_7) = &self.message {
             write!(f, ": {}", inner_7)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for MailFromDomainNotVerifiedError {}
-/// See [`MailFromDomainNotVerifiedError`](crate::error::MailFromDomainNotVerifiedError)
-pub mod mail_from_domain_not_verified_error {
-    /// A builder for [`MailFromDomainNotVerifiedError`](crate::error::MailFromDomainNotVerifiedError)
+impl std::error::Error for MailFromDomainNotVerifiedException {}
+/// See [`MailFromDomainNotVerifiedException`](crate::error::MailFromDomainNotVerifiedException)
+pub mod mail_from_domain_not_verified_exception {
+    /// A builder for [`MailFromDomainNotVerifiedException`](crate::error::MailFromDomainNotVerifiedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -8742,54 +8996,52 @@ pub mod mail_from_domain_not_verified_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`MailFromDomainNotVerifiedError`](crate::error::MailFromDomainNotVerifiedError)
-        pub fn build(self) -> crate::error::MailFromDomainNotVerifiedError {
-            crate::error::MailFromDomainNotVerifiedError {
+        /// Consumes the builder and constructs a [`MailFromDomainNotVerifiedException`](crate::error::MailFromDomainNotVerifiedException)
+        pub fn build(self) -> crate::error::MailFromDomainNotVerifiedException {
+            crate::error::MailFromDomainNotVerifiedException {
                 message: self.message,
             }
         }
     }
 }
-impl MailFromDomainNotVerifiedError {
-    /// Creates a new builder-style object to manufacture [`MailFromDomainNotVerifiedError`](crate::error::MailFromDomainNotVerifiedError)
-    pub fn builder() -> crate::error::mail_from_domain_not_verified_error::Builder {
-        crate::error::mail_from_domain_not_verified_error::Builder::default()
+impl MailFromDomainNotVerifiedException {
+    /// Creates a new builder-style object to manufacture [`MailFromDomainNotVerifiedException`](crate::error::MailFromDomainNotVerifiedException)
+    pub fn builder() -> crate::error::mail_from_domain_not_verified_exception::Builder {
+        crate::error::mail_from_domain_not_verified_exception::Builder::default()
     }
 }
 
 /// <p>There are too many instances of the specified resource type.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct LimitExceededError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct LimitExceededException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for LimitExceededError {
+impl std::fmt::Debug for LimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LimitExceededError");
+        let mut formatter = f.debug_struct("LimitExceededException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl LimitExceededError {
+impl LimitExceededException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for LimitExceededError {
+impl std::fmt::Display for LimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "LimitExceededError [LimitExceededException]")?;
+        write!(f, "LimitExceededException")?;
         if let Some(inner_8) = &self.message {
             write!(f, ": {}", inner_8)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for LimitExceededError {}
-/// See [`LimitExceededError`](crate::error::LimitExceededError)
-pub mod limit_exceeded_error {
-    /// A builder for [`LimitExceededError`](crate::error::LimitExceededError)
+impl std::error::Error for LimitExceededException {}
+/// See [`LimitExceededException`](crate::error::LimitExceededException)
+pub mod limit_exceeded_exception {
+    /// A builder for [`LimitExceededException`](crate::error::LimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -8804,55 +9056,53 @@ pub mod limit_exceeded_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`LimitExceededError`](crate::error::LimitExceededError)
-        pub fn build(self) -> crate::error::LimitExceededError {
-            crate::error::LimitExceededError {
+        /// Consumes the builder and constructs a [`LimitExceededException`](crate::error::LimitExceededException)
+        pub fn build(self) -> crate::error::LimitExceededException {
+            crate::error::LimitExceededException {
                 message: self.message,
             }
         }
     }
 }
-impl LimitExceededError {
-    /// Creates a new builder-style object to manufacture [`LimitExceededError`](crate::error::LimitExceededError)
-    pub fn builder() -> crate::error::limit_exceeded_error::Builder {
-        crate::error::limit_exceeded_error::Builder::default()
+impl LimitExceededException {
+    /// Creates a new builder-style object to manufacture [`LimitExceededException`](crate::error::LimitExceededException)
+    pub fn builder() -> crate::error::limit_exceeded_exception::Builder {
+        crate::error::limit_exceeded_exception::Builder::default()
     }
 }
 
 /// <p>The message can't be sent because the account's ability to send email has been
 /// permanently restricted.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct AccountSuspendedError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AccountSuspendedException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for AccountSuspendedError {
+impl std::fmt::Debug for AccountSuspendedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccountSuspendedError");
+        let mut formatter = f.debug_struct("AccountSuspendedException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl AccountSuspendedError {
+impl AccountSuspendedException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for AccountSuspendedError {
+impl std::fmt::Display for AccountSuspendedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "AccountSuspendedError [AccountSuspendedException]")?;
+        write!(f, "AccountSuspendedException")?;
         if let Some(inner_9) = &self.message {
             write!(f, ": {}", inner_9)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for AccountSuspendedError {}
-/// See [`AccountSuspendedError`](crate::error::AccountSuspendedError)
-pub mod account_suspended_error {
-    /// A builder for [`AccountSuspendedError`](crate::error::AccountSuspendedError)
+impl std::error::Error for AccountSuspendedException {}
+/// See [`AccountSuspendedException`](crate::error::AccountSuspendedException)
+pub mod account_suspended_exception {
+    /// A builder for [`AccountSuspendedException`](crate::error::AccountSuspendedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -8867,54 +9117,52 @@ pub mod account_suspended_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`AccountSuspendedError`](crate::error::AccountSuspendedError)
-        pub fn build(self) -> crate::error::AccountSuspendedError {
-            crate::error::AccountSuspendedError {
+        /// Consumes the builder and constructs a [`AccountSuspendedException`](crate::error::AccountSuspendedException)
+        pub fn build(self) -> crate::error::AccountSuspendedException {
+            crate::error::AccountSuspendedException {
                 message: self.message,
             }
         }
     }
 }
-impl AccountSuspendedError {
-    /// Creates a new builder-style object to manufacture [`AccountSuspendedError`](crate::error::AccountSuspendedError)
-    pub fn builder() -> crate::error::account_suspended_error::Builder {
-        crate::error::account_suspended_error::Builder::default()
+impl AccountSuspendedException {
+    /// Creates a new builder-style object to manufacture [`AccountSuspendedException`](crate::error::AccountSuspendedException)
+    pub fn builder() -> crate::error::account_suspended_exception::Builder {
+        crate::error::account_suspended_exception::Builder::default()
     }
 }
 
 /// <p>The resource specified in your request already exists.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct AlreadyExistsError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AlreadyExistsException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for AlreadyExistsError {
+impl std::fmt::Debug for AlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AlreadyExistsError");
+        let mut formatter = f.debug_struct("AlreadyExistsException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl AlreadyExistsError {
+impl AlreadyExistsException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for AlreadyExistsError {
+impl std::fmt::Display for AlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "AlreadyExistsError [AlreadyExistsException]")?;
+        write!(f, "AlreadyExistsException")?;
         if let Some(inner_10) = &self.message {
             write!(f, ": {}", inner_10)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for AlreadyExistsError {}
-/// See [`AlreadyExistsError`](crate::error::AlreadyExistsError)
-pub mod already_exists_error {
-    /// A builder for [`AlreadyExistsError`](crate::error::AlreadyExistsError)
+impl std::error::Error for AlreadyExistsException {}
+/// See [`AlreadyExistsException`](crate::error::AlreadyExistsException)
+pub mod already_exists_exception {
+    /// A builder for [`AlreadyExistsException`](crate::error::AlreadyExistsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -8929,54 +9177,52 @@ pub mod already_exists_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`AlreadyExistsError`](crate::error::AlreadyExistsError)
-        pub fn build(self) -> crate::error::AlreadyExistsError {
-            crate::error::AlreadyExistsError {
+        /// Consumes the builder and constructs a [`AlreadyExistsException`](crate::error::AlreadyExistsException)
+        pub fn build(self) -> crate::error::AlreadyExistsException {
+            crate::error::AlreadyExistsException {
                 message: self.message,
             }
         }
     }
 }
-impl AlreadyExistsError {
-    /// Creates a new builder-style object to manufacture [`AlreadyExistsError`](crate::error::AlreadyExistsError)
-    pub fn builder() -> crate::error::already_exists_error::Builder {
-        crate::error::already_exists_error::Builder::default()
+impl AlreadyExistsException {
+    /// Creates a new builder-style object to manufacture [`AlreadyExistsException`](crate::error::AlreadyExistsException)
+    pub fn builder() -> crate::error::already_exists_exception::Builder {
+        crate::error::already_exists_exception::Builder::default()
     }
 }
 
 /// <p>If there is already an ongoing account details update under review.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct ConflictError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ConflictException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ConflictError {
+impl std::fmt::Debug for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConflictError");
+        let mut formatter = f.debug_struct("ConflictException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl ConflictError {
+impl ConflictException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ConflictError {
+impl std::fmt::Display for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ConflictError [ConflictException]")?;
+        write!(f, "ConflictException")?;
         if let Some(inner_11) = &self.message {
             write!(f, ": {}", inner_11)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ConflictError {}
-/// See [`ConflictError`](crate::error::ConflictError)
-pub mod conflict_error {
-    /// A builder for [`ConflictError`](crate::error::ConflictError)
+impl std::error::Error for ConflictException {}
+/// See [`ConflictException`](crate::error::ConflictException)
+pub mod conflict_exception {
+    /// A builder for [`ConflictException`](crate::error::ConflictException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -8991,54 +9237,52 @@ pub mod conflict_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ConflictError`](crate::error::ConflictError)
-        pub fn build(self) -> crate::error::ConflictError {
-            crate::error::ConflictError {
+        /// Consumes the builder and constructs a [`ConflictException`](crate::error::ConflictException)
+        pub fn build(self) -> crate::error::ConflictException {
+            crate::error::ConflictException {
                 message: self.message,
             }
         }
     }
 }
-impl ConflictError {
-    /// Creates a new builder-style object to manufacture [`ConflictError`](crate::error::ConflictError)
-    pub fn builder() -> crate::error::conflict_error::Builder {
-        crate::error::conflict_error::Builder::default()
+impl ConflictException {
+    /// Creates a new builder-style object to manufacture [`ConflictException`](crate::error::ConflictException)
+    pub fn builder() -> crate::error::conflict_exception::Builder {
+        crate::error::conflict_exception::Builder::default()
     }
 }
 
 /// <p>The specified request includes an invalid or expired token.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidNextTokenError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InvalidNextTokenException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidNextTokenError {
+impl std::fmt::Debug for InvalidNextTokenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidNextTokenError");
+        let mut formatter = f.debug_struct("InvalidNextTokenException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl InvalidNextTokenError {
+impl InvalidNextTokenException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InvalidNextTokenError {
+impl std::fmt::Display for InvalidNextTokenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidNextTokenError [InvalidNextTokenException]")?;
+        write!(f, "InvalidNextTokenException")?;
         if let Some(inner_12) = &self.message {
             write!(f, ": {}", inner_12)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InvalidNextTokenError {}
-/// See [`InvalidNextTokenError`](crate::error::InvalidNextTokenError)
-pub mod invalid_next_token_error {
-    /// A builder for [`InvalidNextTokenError`](crate::error::InvalidNextTokenError)
+impl std::error::Error for InvalidNextTokenException {}
+/// See [`InvalidNextTokenException`](crate::error::InvalidNextTokenException)
+pub mod invalid_next_token_exception {
+    /// A builder for [`InvalidNextTokenException`](crate::error::InvalidNextTokenException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -9053,17 +9297,17 @@ pub mod invalid_next_token_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidNextTokenError`](crate::error::InvalidNextTokenError)
-        pub fn build(self) -> crate::error::InvalidNextTokenError {
-            crate::error::InvalidNextTokenError {
+        /// Consumes the builder and constructs a [`InvalidNextTokenException`](crate::error::InvalidNextTokenException)
+        pub fn build(self) -> crate::error::InvalidNextTokenException {
+            crate::error::InvalidNextTokenException {
                 message: self.message,
             }
         }
     }
 }
-impl InvalidNextTokenError {
-    /// Creates a new builder-style object to manufacture [`InvalidNextTokenError`](crate::error::InvalidNextTokenError)
-    pub fn builder() -> crate::error::invalid_next_token_error::Builder {
-        crate::error::invalid_next_token_error::Builder::default()
+impl InvalidNextTokenException {
+    /// Creates a new builder-style object to manufacture [`InvalidNextTokenException`](crate::error::InvalidNextTokenException)
+    pub fn builder() -> crate::error::invalid_next_token_exception::Builder {
+        crate::error::invalid_next_token_exception::Builder::default()
     }
 }

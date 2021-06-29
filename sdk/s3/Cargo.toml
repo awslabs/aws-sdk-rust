@@ -28,9 +28,8 @@ path = "..//aws-http"
 path = "..//aws-sig-auth"
 [dependencies.md5]
 version = "0.7"
-[dependencies.serde]
+[dependencies.serde_json]
 version = "1"
-features = ["derive"]
 [dependencies.bytes]
 version = "1"
 [dependencies.smithy-xml]

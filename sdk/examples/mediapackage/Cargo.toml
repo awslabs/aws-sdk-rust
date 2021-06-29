@@ -8,6 +8,7 @@ edition = "2018"
 
 [dependencies]
 mediapackage = { package = "aws-sdk-mediapackage", path = "../../mediapackage" }
+aws-types = { path = "../../aws-types" }
 tokio = { version = "1", features = ["full"] }
-# used only to enable basic logging:
-env_logger = "0.8.2"
+structopt = { version = "0.3", default-features = false }
+tracing-subscriber = { version = "0.2.16", features = ["fmt"] }

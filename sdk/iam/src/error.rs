@@ -8,22 +8,26 @@ pub struct AddClientIDToOpenIDConnectProviderError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AddClientIDToOpenIDConnectProviderErrorKind {
-    InvalidInputError(crate::error::InvalidInputError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    InvalidInputException(crate::error::InvalidInputException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AddClientIDToOpenIDConnectProviderError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            AddClientIDToOpenIDConnectProviderErrorKind::InvalidInputError(_inner) => _inner.fmt(f),
-            AddClientIDToOpenIDConnectProviderErrorKind::LimitExceededError(_inner) => {
+            AddClientIDToOpenIDConnectProviderErrorKind::InvalidInputException(_inner) => {
                 _inner.fmt(f)
             }
-            AddClientIDToOpenIDConnectProviderErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            AddClientIDToOpenIDConnectProviderErrorKind::ServiceFailureError(_inner) => {
+            AddClientIDToOpenIDConnectProviderErrorKind::LimitExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            AddClientIDToOpenIDConnectProviderErrorKind::NoSuchEntityException(_inner) => {
+                _inner.fmt(f)
+            }
+            AddClientIDToOpenIDConnectProviderErrorKind::ServiceFailureException(_inner) => {
                 _inner.fmt(f)
             }
             AddClientIDToOpenIDConnectProviderErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -77,38 +81,44 @@ impl AddClientIDToOpenIDConnectProviderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_input_error(&self) -> bool {
+    pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
-            AddClientIDToOpenIDConnectProviderErrorKind::InvalidInputError(_)
+            AddClientIDToOpenIDConnectProviderErrorKind::InvalidInputException(_)
         )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            AddClientIDToOpenIDConnectProviderErrorKind::LimitExceededError(_)
+            AddClientIDToOpenIDConnectProviderErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            AddClientIDToOpenIDConnectProviderErrorKind::NoSuchEntityError(_)
+            AddClientIDToOpenIDConnectProviderErrorKind::NoSuchEntityException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            AddClientIDToOpenIDConnectProviderErrorKind::ServiceFailureError(_)
+            AddClientIDToOpenIDConnectProviderErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for AddClientIDToOpenIDConnectProviderError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            AddClientIDToOpenIDConnectProviderErrorKind::InvalidInputError(_inner) => Some(_inner),
-            AddClientIDToOpenIDConnectProviderErrorKind::LimitExceededError(_inner) => Some(_inner),
-            AddClientIDToOpenIDConnectProviderErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            AddClientIDToOpenIDConnectProviderErrorKind::ServiceFailureError(_inner) => {
+            AddClientIDToOpenIDConnectProviderErrorKind::InvalidInputException(_inner) => {
+                Some(_inner)
+            }
+            AddClientIDToOpenIDConnectProviderErrorKind::LimitExceededException(_inner) => {
+                Some(_inner)
+            }
+            AddClientIDToOpenIDConnectProviderErrorKind::NoSuchEntityException(_inner) => {
+                Some(_inner)
+            }
+            AddClientIDToOpenIDConnectProviderErrorKind::ServiceFailureException(_inner) => {
                 Some(_inner)
             }
             AddClientIDToOpenIDConnectProviderErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -125,22 +135,24 @@ pub struct AddRoleToInstanceProfileError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AddRoleToInstanceProfileErrorKind {
-    EntityAlreadyExistsError(crate::error::EntityAlreadyExistsError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
-    UnmodifiableEntityError(crate::error::UnmodifiableEntityError),
+    EntityAlreadyExistsException(crate::error::EntityAlreadyExistsException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
+    UnmodifiableEntityException(crate::error::UnmodifiableEntityException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AddRoleToInstanceProfileError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            AddRoleToInstanceProfileErrorKind::EntityAlreadyExistsError(_inner) => _inner.fmt(f),
-            AddRoleToInstanceProfileErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            AddRoleToInstanceProfileErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            AddRoleToInstanceProfileErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
-            AddRoleToInstanceProfileErrorKind::UnmodifiableEntityError(_inner) => _inner.fmt(f),
+            AddRoleToInstanceProfileErrorKind::EntityAlreadyExistsException(_inner) => {
+                _inner.fmt(f)
+            }
+            AddRoleToInstanceProfileErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            AddRoleToInstanceProfileErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            AddRoleToInstanceProfileErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
+            AddRoleToInstanceProfileErrorKind::UnmodifiableEntityException(_inner) => _inner.fmt(f),
             AddRoleToInstanceProfileErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -189,45 +201,45 @@ impl AddRoleToInstanceProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_entity_already_exists_error(&self) -> bool {
+    pub fn is_entity_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
-            AddRoleToInstanceProfileErrorKind::EntityAlreadyExistsError(_)
+            AddRoleToInstanceProfileErrorKind::EntityAlreadyExistsException(_)
         )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            AddRoleToInstanceProfileErrorKind::LimitExceededError(_)
+            AddRoleToInstanceProfileErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            AddRoleToInstanceProfileErrorKind::NoSuchEntityError(_)
+            AddRoleToInstanceProfileErrorKind::NoSuchEntityException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            AddRoleToInstanceProfileErrorKind::ServiceFailureError(_)
+            AddRoleToInstanceProfileErrorKind::ServiceFailureException(_)
         )
     }
-    pub fn is_unmodifiable_entity_error(&self) -> bool {
+    pub fn is_unmodifiable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            AddRoleToInstanceProfileErrorKind::UnmodifiableEntityError(_)
+            AddRoleToInstanceProfileErrorKind::UnmodifiableEntityException(_)
         )
     }
 }
 impl std::error::Error for AddRoleToInstanceProfileError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            AddRoleToInstanceProfileErrorKind::EntityAlreadyExistsError(_inner) => Some(_inner),
-            AddRoleToInstanceProfileErrorKind::LimitExceededError(_inner) => Some(_inner),
-            AddRoleToInstanceProfileErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            AddRoleToInstanceProfileErrorKind::ServiceFailureError(_inner) => Some(_inner),
-            AddRoleToInstanceProfileErrorKind::UnmodifiableEntityError(_inner) => Some(_inner),
+            AddRoleToInstanceProfileErrorKind::EntityAlreadyExistsException(_inner) => Some(_inner),
+            AddRoleToInstanceProfileErrorKind::LimitExceededException(_inner) => Some(_inner),
+            AddRoleToInstanceProfileErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            AddRoleToInstanceProfileErrorKind::ServiceFailureException(_inner) => Some(_inner),
+            AddRoleToInstanceProfileErrorKind::UnmodifiableEntityException(_inner) => Some(_inner),
             AddRoleToInstanceProfileErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -242,18 +254,18 @@ pub struct AddUserToGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AddUserToGroupErrorKind {
-    LimitExceededError(crate::error::LimitExceededError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    LimitExceededException(crate::error::LimitExceededException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AddUserToGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            AddUserToGroupErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            AddUserToGroupErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            AddUserToGroupErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            AddUserToGroupErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            AddUserToGroupErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            AddUserToGroupErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             AddUserToGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -302,22 +314,31 @@ impl AddUserToGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, AddUserToGroupErrorKind::LimitExceededError(_))
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AddUserToGroupErrorKind::LimitExceededException(_)
+        )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
-        matches!(&self.kind, AddUserToGroupErrorKind::NoSuchEntityError(_))
+    pub fn is_no_such_entity_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AddUserToGroupErrorKind::NoSuchEntityException(_)
+        )
     }
-    pub fn is_service_failure_error(&self) -> bool {
-        matches!(&self.kind, AddUserToGroupErrorKind::ServiceFailureError(_))
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AddUserToGroupErrorKind::ServiceFailureException(_)
+        )
     }
 }
 impl std::error::Error for AddUserToGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            AddUserToGroupErrorKind::LimitExceededError(_inner) => Some(_inner),
-            AddUserToGroupErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            AddUserToGroupErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            AddUserToGroupErrorKind::LimitExceededException(_inner) => Some(_inner),
+            AddUserToGroupErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            AddUserToGroupErrorKind::ServiceFailureException(_inner) => Some(_inner),
             AddUserToGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -332,22 +353,22 @@ pub struct AttachGroupPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AttachGroupPolicyErrorKind {
-    InvalidInputError(crate::error::InvalidInputError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    PolicyNotAttachableError(crate::error::PolicyNotAttachableError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    InvalidInputException(crate::error::InvalidInputException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    PolicyNotAttachableException(crate::error::PolicyNotAttachableException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AttachGroupPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            AttachGroupPolicyErrorKind::InvalidInputError(_inner) => _inner.fmt(f),
-            AttachGroupPolicyErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            AttachGroupPolicyErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            AttachGroupPolicyErrorKind::PolicyNotAttachableError(_inner) => _inner.fmt(f),
-            AttachGroupPolicyErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            AttachGroupPolicyErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            AttachGroupPolicyErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            AttachGroupPolicyErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            AttachGroupPolicyErrorKind::PolicyNotAttachableException(_inner) => _inner.fmt(f),
+            AttachGroupPolicyErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             AttachGroupPolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -396,39 +417,45 @@ impl AttachGroupPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_input_error(&self) -> bool {
-        matches!(&self.kind, AttachGroupPolicyErrorKind::InvalidInputError(_))
-    }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
-            AttachGroupPolicyErrorKind::LimitExceededError(_)
+            AttachGroupPolicyErrorKind::InvalidInputException(_)
         )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
-        matches!(&self.kind, AttachGroupPolicyErrorKind::NoSuchEntityError(_))
-    }
-    pub fn is_policy_not_attachable_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            AttachGroupPolicyErrorKind::PolicyNotAttachableError(_)
+            AttachGroupPolicyErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            AttachGroupPolicyErrorKind::ServiceFailureError(_)
+            AttachGroupPolicyErrorKind::NoSuchEntityException(_)
+        )
+    }
+    pub fn is_policy_not_attachable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AttachGroupPolicyErrorKind::PolicyNotAttachableException(_)
+        )
+    }
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AttachGroupPolicyErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for AttachGroupPolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            AttachGroupPolicyErrorKind::InvalidInputError(_inner) => Some(_inner),
-            AttachGroupPolicyErrorKind::LimitExceededError(_inner) => Some(_inner),
-            AttachGroupPolicyErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            AttachGroupPolicyErrorKind::PolicyNotAttachableError(_inner) => Some(_inner),
-            AttachGroupPolicyErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            AttachGroupPolicyErrorKind::InvalidInputException(_inner) => Some(_inner),
+            AttachGroupPolicyErrorKind::LimitExceededException(_inner) => Some(_inner),
+            AttachGroupPolicyErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            AttachGroupPolicyErrorKind::PolicyNotAttachableException(_inner) => Some(_inner),
+            AttachGroupPolicyErrorKind::ServiceFailureException(_inner) => Some(_inner),
             AttachGroupPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -443,24 +470,24 @@ pub struct AttachRolePolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AttachRolePolicyErrorKind {
-    InvalidInputError(crate::error::InvalidInputError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    PolicyNotAttachableError(crate::error::PolicyNotAttachableError),
-    ServiceFailureError(crate::error::ServiceFailureError),
-    UnmodifiableEntityError(crate::error::UnmodifiableEntityError),
+    InvalidInputException(crate::error::InvalidInputException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    PolicyNotAttachableException(crate::error::PolicyNotAttachableException),
+    ServiceFailureException(crate::error::ServiceFailureException),
+    UnmodifiableEntityException(crate::error::UnmodifiableEntityException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AttachRolePolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            AttachRolePolicyErrorKind::InvalidInputError(_inner) => _inner.fmt(f),
-            AttachRolePolicyErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            AttachRolePolicyErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            AttachRolePolicyErrorKind::PolicyNotAttachableError(_inner) => _inner.fmt(f),
-            AttachRolePolicyErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
-            AttachRolePolicyErrorKind::UnmodifiableEntityError(_inner) => _inner.fmt(f),
+            AttachRolePolicyErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            AttachRolePolicyErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            AttachRolePolicyErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            AttachRolePolicyErrorKind::PolicyNotAttachableException(_inner) => _inner.fmt(f),
+            AttachRolePolicyErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
+            AttachRolePolicyErrorKind::UnmodifiableEntityException(_inner) => _inner.fmt(f),
             AttachRolePolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -509,43 +536,52 @@ impl AttachRolePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_input_error(&self) -> bool {
-        matches!(&self.kind, AttachRolePolicyErrorKind::InvalidInputError(_))
-    }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, AttachRolePolicyErrorKind::LimitExceededError(_))
-    }
-    pub fn is_no_such_entity_error(&self) -> bool {
-        matches!(&self.kind, AttachRolePolicyErrorKind::NoSuchEntityError(_))
-    }
-    pub fn is_policy_not_attachable_error(&self) -> bool {
+    pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
-            AttachRolePolicyErrorKind::PolicyNotAttachableError(_)
+            AttachRolePolicyErrorKind::InvalidInputException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            AttachRolePolicyErrorKind::ServiceFailureError(_)
+            AttachRolePolicyErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_unmodifiable_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            AttachRolePolicyErrorKind::UnmodifiableEntityError(_)
+            AttachRolePolicyErrorKind::NoSuchEntityException(_)
+        )
+    }
+    pub fn is_policy_not_attachable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AttachRolePolicyErrorKind::PolicyNotAttachableException(_)
+        )
+    }
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AttachRolePolicyErrorKind::ServiceFailureException(_)
+        )
+    }
+    pub fn is_unmodifiable_entity_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AttachRolePolicyErrorKind::UnmodifiableEntityException(_)
         )
     }
 }
 impl std::error::Error for AttachRolePolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            AttachRolePolicyErrorKind::InvalidInputError(_inner) => Some(_inner),
-            AttachRolePolicyErrorKind::LimitExceededError(_inner) => Some(_inner),
-            AttachRolePolicyErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            AttachRolePolicyErrorKind::PolicyNotAttachableError(_inner) => Some(_inner),
-            AttachRolePolicyErrorKind::ServiceFailureError(_inner) => Some(_inner),
-            AttachRolePolicyErrorKind::UnmodifiableEntityError(_inner) => Some(_inner),
+            AttachRolePolicyErrorKind::InvalidInputException(_inner) => Some(_inner),
+            AttachRolePolicyErrorKind::LimitExceededException(_inner) => Some(_inner),
+            AttachRolePolicyErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            AttachRolePolicyErrorKind::PolicyNotAttachableException(_inner) => Some(_inner),
+            AttachRolePolicyErrorKind::ServiceFailureException(_inner) => Some(_inner),
+            AttachRolePolicyErrorKind::UnmodifiableEntityException(_inner) => Some(_inner),
             AttachRolePolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -560,22 +596,22 @@ pub struct AttachUserPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AttachUserPolicyErrorKind {
-    InvalidInputError(crate::error::InvalidInputError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    PolicyNotAttachableError(crate::error::PolicyNotAttachableError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    InvalidInputException(crate::error::InvalidInputException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    PolicyNotAttachableException(crate::error::PolicyNotAttachableException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AttachUserPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            AttachUserPolicyErrorKind::InvalidInputError(_inner) => _inner.fmt(f),
-            AttachUserPolicyErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            AttachUserPolicyErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            AttachUserPolicyErrorKind::PolicyNotAttachableError(_inner) => _inner.fmt(f),
-            AttachUserPolicyErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            AttachUserPolicyErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            AttachUserPolicyErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            AttachUserPolicyErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            AttachUserPolicyErrorKind::PolicyNotAttachableException(_inner) => _inner.fmt(f),
+            AttachUserPolicyErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             AttachUserPolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -624,36 +660,45 @@ impl AttachUserPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_input_error(&self) -> bool {
-        matches!(&self.kind, AttachUserPolicyErrorKind::InvalidInputError(_))
-    }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, AttachUserPolicyErrorKind::LimitExceededError(_))
-    }
-    pub fn is_no_such_entity_error(&self) -> bool {
-        matches!(&self.kind, AttachUserPolicyErrorKind::NoSuchEntityError(_))
-    }
-    pub fn is_policy_not_attachable_error(&self) -> bool {
+    pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
-            AttachUserPolicyErrorKind::PolicyNotAttachableError(_)
+            AttachUserPolicyErrorKind::InvalidInputException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            AttachUserPolicyErrorKind::ServiceFailureError(_)
+            AttachUserPolicyErrorKind::LimitExceededException(_)
+        )
+    }
+    pub fn is_no_such_entity_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AttachUserPolicyErrorKind::NoSuchEntityException(_)
+        )
+    }
+    pub fn is_policy_not_attachable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AttachUserPolicyErrorKind::PolicyNotAttachableException(_)
+        )
+    }
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AttachUserPolicyErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for AttachUserPolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            AttachUserPolicyErrorKind::InvalidInputError(_inner) => Some(_inner),
-            AttachUserPolicyErrorKind::LimitExceededError(_inner) => Some(_inner),
-            AttachUserPolicyErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            AttachUserPolicyErrorKind::PolicyNotAttachableError(_inner) => Some(_inner),
-            AttachUserPolicyErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            AttachUserPolicyErrorKind::InvalidInputException(_inner) => Some(_inner),
+            AttachUserPolicyErrorKind::LimitExceededException(_inner) => Some(_inner),
+            AttachUserPolicyErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            AttachUserPolicyErrorKind::PolicyNotAttachableException(_inner) => Some(_inner),
+            AttachUserPolicyErrorKind::ServiceFailureException(_inner) => Some(_inner),
             AttachUserPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -668,24 +713,26 @@ pub struct ChangePasswordError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ChangePasswordErrorKind {
-    EntityTemporarilyUnmodifiableError(crate::error::EntityTemporarilyUnmodifiableError),
-    InvalidUserTypeError(crate::error::InvalidUserTypeError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    PasswordPolicyViolationError(crate::error::PasswordPolicyViolationError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    EntityTemporarilyUnmodifiableException(crate::error::EntityTemporarilyUnmodifiableException),
+    InvalidUserTypeException(crate::error::InvalidUserTypeException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    PasswordPolicyViolationException(crate::error::PasswordPolicyViolationException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ChangePasswordError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ChangePasswordErrorKind::EntityTemporarilyUnmodifiableError(_inner) => _inner.fmt(f),
-            ChangePasswordErrorKind::InvalidUserTypeError(_inner) => _inner.fmt(f),
-            ChangePasswordErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            ChangePasswordErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            ChangePasswordErrorKind::PasswordPolicyViolationError(_inner) => _inner.fmt(f),
-            ChangePasswordErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            ChangePasswordErrorKind::EntityTemporarilyUnmodifiableException(_inner) => {
+                _inner.fmt(f)
+            }
+            ChangePasswordErrorKind::InvalidUserTypeException(_inner) => _inner.fmt(f),
+            ChangePasswordErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            ChangePasswordErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            ChangePasswordErrorKind::PasswordPolicyViolationException(_inner) => _inner.fmt(f),
+            ChangePasswordErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             ChangePasswordErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -734,40 +781,52 @@ impl ChangePasswordError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_entity_temporarily_unmodifiable_error(&self) -> bool {
+    pub fn is_entity_temporarily_unmodifiable_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ChangePasswordErrorKind::EntityTemporarilyUnmodifiableError(_)
+            ChangePasswordErrorKind::EntityTemporarilyUnmodifiableException(_)
         )
     }
-    pub fn is_invalid_user_type_error(&self) -> bool {
-        matches!(&self.kind, ChangePasswordErrorKind::InvalidUserTypeError(_))
-    }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, ChangePasswordErrorKind::LimitExceededError(_))
-    }
-    pub fn is_no_such_entity_error(&self) -> bool {
-        matches!(&self.kind, ChangePasswordErrorKind::NoSuchEntityError(_))
-    }
-    pub fn is_password_policy_violation_error(&self) -> bool {
+    pub fn is_invalid_user_type_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ChangePasswordErrorKind::PasswordPolicyViolationError(_)
+            ChangePasswordErrorKind::InvalidUserTypeException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
-        matches!(&self.kind, ChangePasswordErrorKind::ServiceFailureError(_))
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ChangePasswordErrorKind::LimitExceededException(_)
+        )
+    }
+    pub fn is_no_such_entity_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ChangePasswordErrorKind::NoSuchEntityException(_)
+        )
+    }
+    pub fn is_password_policy_violation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ChangePasswordErrorKind::PasswordPolicyViolationException(_)
+        )
+    }
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ChangePasswordErrorKind::ServiceFailureException(_)
+        )
     }
 }
 impl std::error::Error for ChangePasswordError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ChangePasswordErrorKind::EntityTemporarilyUnmodifiableError(_inner) => Some(_inner),
-            ChangePasswordErrorKind::InvalidUserTypeError(_inner) => Some(_inner),
-            ChangePasswordErrorKind::LimitExceededError(_inner) => Some(_inner),
-            ChangePasswordErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            ChangePasswordErrorKind::PasswordPolicyViolationError(_inner) => Some(_inner),
-            ChangePasswordErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            ChangePasswordErrorKind::EntityTemporarilyUnmodifiableException(_inner) => Some(_inner),
+            ChangePasswordErrorKind::InvalidUserTypeException(_inner) => Some(_inner),
+            ChangePasswordErrorKind::LimitExceededException(_inner) => Some(_inner),
+            ChangePasswordErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            ChangePasswordErrorKind::PasswordPolicyViolationException(_inner) => Some(_inner),
+            ChangePasswordErrorKind::ServiceFailureException(_inner) => Some(_inner),
             ChangePasswordErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -782,18 +841,18 @@ pub struct CreateAccessKeyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateAccessKeyErrorKind {
-    LimitExceededError(crate::error::LimitExceededError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    LimitExceededException(crate::error::LimitExceededException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateAccessKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateAccessKeyErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            CreateAccessKeyErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            CreateAccessKeyErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            CreateAccessKeyErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateAccessKeyErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            CreateAccessKeyErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             CreateAccessKeyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -842,22 +901,31 @@ impl CreateAccessKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, CreateAccessKeyErrorKind::LimitExceededError(_))
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAccessKeyErrorKind::LimitExceededException(_)
+        )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
-        matches!(&self.kind, CreateAccessKeyErrorKind::NoSuchEntityError(_))
+    pub fn is_no_such_entity_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAccessKeyErrorKind::NoSuchEntityException(_)
+        )
     }
-    pub fn is_service_failure_error(&self) -> bool {
-        matches!(&self.kind, CreateAccessKeyErrorKind::ServiceFailureError(_))
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAccessKeyErrorKind::ServiceFailureException(_)
+        )
     }
 }
 impl std::error::Error for CreateAccessKeyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateAccessKeyErrorKind::LimitExceededError(_inner) => Some(_inner),
-            CreateAccessKeyErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            CreateAccessKeyErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            CreateAccessKeyErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateAccessKeyErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            CreateAccessKeyErrorKind::ServiceFailureException(_inner) => Some(_inner),
             CreateAccessKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -872,18 +940,18 @@ pub struct CreateAccountAliasError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateAccountAliasErrorKind {
-    EntityAlreadyExistsError(crate::error::EntityAlreadyExistsError),
-    LimitExceededError(crate::error::LimitExceededError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    EntityAlreadyExistsException(crate::error::EntityAlreadyExistsException),
+    LimitExceededException(crate::error::LimitExceededException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateAccountAliasError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateAccountAliasErrorKind::EntityAlreadyExistsError(_inner) => _inner.fmt(f),
-            CreateAccountAliasErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            CreateAccountAliasErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            CreateAccountAliasErrorKind::EntityAlreadyExistsException(_inner) => _inner.fmt(f),
+            CreateAccountAliasErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateAccountAliasErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             CreateAccountAliasErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -932,31 +1000,31 @@ impl CreateAccountAliasError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_entity_already_exists_error(&self) -> bool {
+    pub fn is_entity_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateAccountAliasErrorKind::EntityAlreadyExistsError(_)
+            CreateAccountAliasErrorKind::EntityAlreadyExistsException(_)
         )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateAccountAliasErrorKind::LimitExceededError(_)
+            CreateAccountAliasErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateAccountAliasErrorKind::ServiceFailureError(_)
+            CreateAccountAliasErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for CreateAccountAliasError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateAccountAliasErrorKind::EntityAlreadyExistsError(_inner) => Some(_inner),
-            CreateAccountAliasErrorKind::LimitExceededError(_inner) => Some(_inner),
-            CreateAccountAliasErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            CreateAccountAliasErrorKind::EntityAlreadyExistsException(_inner) => Some(_inner),
+            CreateAccountAliasErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateAccountAliasErrorKind::ServiceFailureException(_inner) => Some(_inner),
             CreateAccountAliasErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -971,20 +1039,20 @@ pub struct CreateGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateGroupErrorKind {
-    EntityAlreadyExistsError(crate::error::EntityAlreadyExistsError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    EntityAlreadyExistsException(crate::error::EntityAlreadyExistsException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateGroupErrorKind::EntityAlreadyExistsError(_inner) => _inner.fmt(f),
-            CreateGroupErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            CreateGroupErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            CreateGroupErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            CreateGroupErrorKind::EntityAlreadyExistsException(_inner) => _inner.fmt(f),
+            CreateGroupErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateGroupErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            CreateGroupErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             CreateGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1033,29 +1101,29 @@ impl CreateGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_entity_already_exists_error(&self) -> bool {
+    pub fn is_entity_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateGroupErrorKind::EntityAlreadyExistsError(_)
+            CreateGroupErrorKind::EntityAlreadyExistsException(_)
         )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, CreateGroupErrorKind::LimitExceededError(_))
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(&self.kind, CreateGroupErrorKind::LimitExceededException(_))
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
-        matches!(&self.kind, CreateGroupErrorKind::NoSuchEntityError(_))
+    pub fn is_no_such_entity_exception(&self) -> bool {
+        matches!(&self.kind, CreateGroupErrorKind::NoSuchEntityException(_))
     }
-    pub fn is_service_failure_error(&self) -> bool {
-        matches!(&self.kind, CreateGroupErrorKind::ServiceFailureError(_))
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(&self.kind, CreateGroupErrorKind::ServiceFailureException(_))
     }
 }
 impl std::error::Error for CreateGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateGroupErrorKind::EntityAlreadyExistsError(_inner) => Some(_inner),
-            CreateGroupErrorKind::LimitExceededError(_inner) => Some(_inner),
-            CreateGroupErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            CreateGroupErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            CreateGroupErrorKind::EntityAlreadyExistsException(_inner) => Some(_inner),
+            CreateGroupErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateGroupErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            CreateGroupErrorKind::ServiceFailureException(_inner) => Some(_inner),
             CreateGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1070,22 +1138,24 @@ pub struct CreateInstanceProfileError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateInstanceProfileErrorKind {
-    ConcurrentModificationError(crate::error::ConcurrentModificationError),
-    EntityAlreadyExistsError(crate::error::EntityAlreadyExistsError),
-    InvalidInputError(crate::error::InvalidInputError),
-    LimitExceededError(crate::error::LimitExceededError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    EntityAlreadyExistsException(crate::error::EntityAlreadyExistsException),
+    InvalidInputException(crate::error::InvalidInputException),
+    LimitExceededException(crate::error::LimitExceededException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateInstanceProfileError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateInstanceProfileErrorKind::ConcurrentModificationError(_inner) => _inner.fmt(f),
-            CreateInstanceProfileErrorKind::EntityAlreadyExistsError(_inner) => _inner.fmt(f),
-            CreateInstanceProfileErrorKind::InvalidInputError(_inner) => _inner.fmt(f),
-            CreateInstanceProfileErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            CreateInstanceProfileErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            CreateInstanceProfileErrorKind::ConcurrentModificationException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateInstanceProfileErrorKind::EntityAlreadyExistsException(_inner) => _inner.fmt(f),
+            CreateInstanceProfileErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            CreateInstanceProfileErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateInstanceProfileErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             CreateInstanceProfileErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1134,45 +1204,45 @@ impl CreateInstanceProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_concurrent_modification_error(&self) -> bool {
+    pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateInstanceProfileErrorKind::ConcurrentModificationError(_)
+            CreateInstanceProfileErrorKind::ConcurrentModificationException(_)
         )
     }
-    pub fn is_entity_already_exists_error(&self) -> bool {
+    pub fn is_entity_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateInstanceProfileErrorKind::EntityAlreadyExistsError(_)
+            CreateInstanceProfileErrorKind::EntityAlreadyExistsException(_)
         )
     }
-    pub fn is_invalid_input_error(&self) -> bool {
+    pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateInstanceProfileErrorKind::InvalidInputError(_)
+            CreateInstanceProfileErrorKind::InvalidInputException(_)
         )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateInstanceProfileErrorKind::LimitExceededError(_)
+            CreateInstanceProfileErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateInstanceProfileErrorKind::ServiceFailureError(_)
+            CreateInstanceProfileErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for CreateInstanceProfileError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateInstanceProfileErrorKind::ConcurrentModificationError(_inner) => Some(_inner),
-            CreateInstanceProfileErrorKind::EntityAlreadyExistsError(_inner) => Some(_inner),
-            CreateInstanceProfileErrorKind::InvalidInputError(_inner) => Some(_inner),
-            CreateInstanceProfileErrorKind::LimitExceededError(_inner) => Some(_inner),
-            CreateInstanceProfileErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            CreateInstanceProfileErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
+            CreateInstanceProfileErrorKind::EntityAlreadyExistsException(_inner) => Some(_inner),
+            CreateInstanceProfileErrorKind::InvalidInputException(_inner) => Some(_inner),
+            CreateInstanceProfileErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateInstanceProfileErrorKind::ServiceFailureException(_inner) => Some(_inner),
             CreateInstanceProfileErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1187,22 +1257,22 @@ pub struct CreateLoginProfileError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateLoginProfileErrorKind {
-    EntityAlreadyExistsError(crate::error::EntityAlreadyExistsError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    PasswordPolicyViolationError(crate::error::PasswordPolicyViolationError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    EntityAlreadyExistsException(crate::error::EntityAlreadyExistsException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    PasswordPolicyViolationException(crate::error::PasswordPolicyViolationException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateLoginProfileError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateLoginProfileErrorKind::EntityAlreadyExistsError(_inner) => _inner.fmt(f),
-            CreateLoginProfileErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            CreateLoginProfileErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            CreateLoginProfileErrorKind::PasswordPolicyViolationError(_inner) => _inner.fmt(f),
-            CreateLoginProfileErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            CreateLoginProfileErrorKind::EntityAlreadyExistsException(_inner) => _inner.fmt(f),
+            CreateLoginProfileErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateLoginProfileErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            CreateLoginProfileErrorKind::PasswordPolicyViolationException(_inner) => _inner.fmt(f),
+            CreateLoginProfileErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             CreateLoginProfileErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1251,45 +1321,45 @@ impl CreateLoginProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_entity_already_exists_error(&self) -> bool {
+    pub fn is_entity_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateLoginProfileErrorKind::EntityAlreadyExistsError(_)
+            CreateLoginProfileErrorKind::EntityAlreadyExistsException(_)
         )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateLoginProfileErrorKind::LimitExceededError(_)
+            CreateLoginProfileErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateLoginProfileErrorKind::NoSuchEntityError(_)
+            CreateLoginProfileErrorKind::NoSuchEntityException(_)
         )
     }
-    pub fn is_password_policy_violation_error(&self) -> bool {
+    pub fn is_password_policy_violation_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateLoginProfileErrorKind::PasswordPolicyViolationError(_)
+            CreateLoginProfileErrorKind::PasswordPolicyViolationException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateLoginProfileErrorKind::ServiceFailureError(_)
+            CreateLoginProfileErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for CreateLoginProfileError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateLoginProfileErrorKind::EntityAlreadyExistsError(_inner) => Some(_inner),
-            CreateLoginProfileErrorKind::LimitExceededError(_inner) => Some(_inner),
-            CreateLoginProfileErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            CreateLoginProfileErrorKind::PasswordPolicyViolationError(_inner) => Some(_inner),
-            CreateLoginProfileErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            CreateLoginProfileErrorKind::EntityAlreadyExistsException(_inner) => Some(_inner),
+            CreateLoginProfileErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateLoginProfileErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            CreateLoginProfileErrorKind::PasswordPolicyViolationException(_inner) => Some(_inner),
+            CreateLoginProfileErrorKind::ServiceFailureException(_inner) => Some(_inner),
             CreateLoginProfileErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1304,24 +1374,26 @@ pub struct CreateOpenIDConnectProviderError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateOpenIDConnectProviderErrorKind {
-    ConcurrentModificationError(crate::error::ConcurrentModificationError),
-    EntityAlreadyExistsError(crate::error::EntityAlreadyExistsError),
-    InvalidInputError(crate::error::InvalidInputError),
-    LimitExceededError(crate::error::LimitExceededError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    EntityAlreadyExistsException(crate::error::EntityAlreadyExistsException),
+    InvalidInputException(crate::error::InvalidInputException),
+    LimitExceededException(crate::error::LimitExceededException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateOpenIDConnectProviderError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateOpenIDConnectProviderErrorKind::ConcurrentModificationError(_inner) => {
+            CreateOpenIDConnectProviderErrorKind::ConcurrentModificationException(_inner) => {
                 _inner.fmt(f)
             }
-            CreateOpenIDConnectProviderErrorKind::EntityAlreadyExistsError(_inner) => _inner.fmt(f),
-            CreateOpenIDConnectProviderErrorKind::InvalidInputError(_inner) => _inner.fmt(f),
-            CreateOpenIDConnectProviderErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            CreateOpenIDConnectProviderErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            CreateOpenIDConnectProviderErrorKind::EntityAlreadyExistsException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateOpenIDConnectProviderErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            CreateOpenIDConnectProviderErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateOpenIDConnectProviderErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             CreateOpenIDConnectProviderErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1370,47 +1442,49 @@ impl CreateOpenIDConnectProviderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_concurrent_modification_error(&self) -> bool {
+    pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateOpenIDConnectProviderErrorKind::ConcurrentModificationError(_)
+            CreateOpenIDConnectProviderErrorKind::ConcurrentModificationException(_)
         )
     }
-    pub fn is_entity_already_exists_error(&self) -> bool {
+    pub fn is_entity_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateOpenIDConnectProviderErrorKind::EntityAlreadyExistsError(_)
+            CreateOpenIDConnectProviderErrorKind::EntityAlreadyExistsException(_)
         )
     }
-    pub fn is_invalid_input_error(&self) -> bool {
+    pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateOpenIDConnectProviderErrorKind::InvalidInputError(_)
+            CreateOpenIDConnectProviderErrorKind::InvalidInputException(_)
         )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateOpenIDConnectProviderErrorKind::LimitExceededError(_)
+            CreateOpenIDConnectProviderErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateOpenIDConnectProviderErrorKind::ServiceFailureError(_)
+            CreateOpenIDConnectProviderErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for CreateOpenIDConnectProviderError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateOpenIDConnectProviderErrorKind::ConcurrentModificationError(_inner) => {
+            CreateOpenIDConnectProviderErrorKind::ConcurrentModificationException(_inner) => {
                 Some(_inner)
             }
-            CreateOpenIDConnectProviderErrorKind::EntityAlreadyExistsError(_inner) => Some(_inner),
-            CreateOpenIDConnectProviderErrorKind::InvalidInputError(_inner) => Some(_inner),
-            CreateOpenIDConnectProviderErrorKind::LimitExceededError(_inner) => Some(_inner),
-            CreateOpenIDConnectProviderErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            CreateOpenIDConnectProviderErrorKind::EntityAlreadyExistsException(_inner) => {
+                Some(_inner)
+            }
+            CreateOpenIDConnectProviderErrorKind::InvalidInputException(_inner) => Some(_inner),
+            CreateOpenIDConnectProviderErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateOpenIDConnectProviderErrorKind::ServiceFailureException(_inner) => Some(_inner),
             CreateOpenIDConnectProviderErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1425,24 +1499,24 @@ pub struct CreatePolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreatePolicyErrorKind {
-    ConcurrentModificationError(crate::error::ConcurrentModificationError),
-    EntityAlreadyExistsError(crate::error::EntityAlreadyExistsError),
-    InvalidInputError(crate::error::InvalidInputError),
-    LimitExceededError(crate::error::LimitExceededError),
-    MalformedPolicyDocumentError(crate::error::MalformedPolicyDocumentError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    EntityAlreadyExistsException(crate::error::EntityAlreadyExistsException),
+    InvalidInputException(crate::error::InvalidInputException),
+    LimitExceededException(crate::error::LimitExceededException),
+    MalformedPolicyDocumentException(crate::error::MalformedPolicyDocumentException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreatePolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreatePolicyErrorKind::ConcurrentModificationError(_inner) => _inner.fmt(f),
-            CreatePolicyErrorKind::EntityAlreadyExistsError(_inner) => _inner.fmt(f),
-            CreatePolicyErrorKind::InvalidInputError(_inner) => _inner.fmt(f),
-            CreatePolicyErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            CreatePolicyErrorKind::MalformedPolicyDocumentError(_inner) => _inner.fmt(f),
-            CreatePolicyErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            CreatePolicyErrorKind::ConcurrentModificationException(_inner) => _inner.fmt(f),
+            CreatePolicyErrorKind::EntityAlreadyExistsException(_inner) => _inner.fmt(f),
+            CreatePolicyErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            CreatePolicyErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreatePolicyErrorKind::MalformedPolicyDocumentException(_inner) => _inner.fmt(f),
+            CreatePolicyErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             CreatePolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1491,43 +1565,46 @@ impl CreatePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_concurrent_modification_error(&self) -> bool {
+    pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreatePolicyErrorKind::ConcurrentModificationError(_)
+            CreatePolicyErrorKind::ConcurrentModificationException(_)
         )
     }
-    pub fn is_entity_already_exists_error(&self) -> bool {
+    pub fn is_entity_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreatePolicyErrorKind::EntityAlreadyExistsError(_)
+            CreatePolicyErrorKind::EntityAlreadyExistsException(_)
         )
     }
-    pub fn is_invalid_input_error(&self) -> bool {
-        matches!(&self.kind, CreatePolicyErrorKind::InvalidInputError(_))
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(&self.kind, CreatePolicyErrorKind::InvalidInputException(_))
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, CreatePolicyErrorKind::LimitExceededError(_))
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(&self.kind, CreatePolicyErrorKind::LimitExceededException(_))
     }
-    pub fn is_malformed_policy_document_error(&self) -> bool {
+    pub fn is_malformed_policy_document_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreatePolicyErrorKind::MalformedPolicyDocumentError(_)
+            CreatePolicyErrorKind::MalformedPolicyDocumentException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
-        matches!(&self.kind, CreatePolicyErrorKind::ServiceFailureError(_))
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreatePolicyErrorKind::ServiceFailureException(_)
+        )
     }
 }
 impl std::error::Error for CreatePolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreatePolicyErrorKind::ConcurrentModificationError(_inner) => Some(_inner),
-            CreatePolicyErrorKind::EntityAlreadyExistsError(_inner) => Some(_inner),
-            CreatePolicyErrorKind::InvalidInputError(_inner) => Some(_inner),
-            CreatePolicyErrorKind::LimitExceededError(_inner) => Some(_inner),
-            CreatePolicyErrorKind::MalformedPolicyDocumentError(_inner) => Some(_inner),
-            CreatePolicyErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            CreatePolicyErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
+            CreatePolicyErrorKind::EntityAlreadyExistsException(_inner) => Some(_inner),
+            CreatePolicyErrorKind::InvalidInputException(_inner) => Some(_inner),
+            CreatePolicyErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreatePolicyErrorKind::MalformedPolicyDocumentException(_inner) => Some(_inner),
+            CreatePolicyErrorKind::ServiceFailureException(_inner) => Some(_inner),
             CreatePolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1542,22 +1619,22 @@ pub struct CreatePolicyVersionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreatePolicyVersionErrorKind {
-    InvalidInputError(crate::error::InvalidInputError),
-    LimitExceededError(crate::error::LimitExceededError),
-    MalformedPolicyDocumentError(crate::error::MalformedPolicyDocumentError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    InvalidInputException(crate::error::InvalidInputException),
+    LimitExceededException(crate::error::LimitExceededException),
+    MalformedPolicyDocumentException(crate::error::MalformedPolicyDocumentException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreatePolicyVersionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreatePolicyVersionErrorKind::InvalidInputError(_inner) => _inner.fmt(f),
-            CreatePolicyVersionErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            CreatePolicyVersionErrorKind::MalformedPolicyDocumentError(_inner) => _inner.fmt(f),
-            CreatePolicyVersionErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            CreatePolicyVersionErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            CreatePolicyVersionErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            CreatePolicyVersionErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreatePolicyVersionErrorKind::MalformedPolicyDocumentException(_inner) => _inner.fmt(f),
+            CreatePolicyVersionErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            CreatePolicyVersionErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             CreatePolicyVersionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1606,45 +1683,45 @@ impl CreatePolicyVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_input_error(&self) -> bool {
+    pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreatePolicyVersionErrorKind::InvalidInputError(_)
+            CreatePolicyVersionErrorKind::InvalidInputException(_)
         )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreatePolicyVersionErrorKind::LimitExceededError(_)
+            CreatePolicyVersionErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_malformed_policy_document_error(&self) -> bool {
+    pub fn is_malformed_policy_document_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreatePolicyVersionErrorKind::MalformedPolicyDocumentError(_)
+            CreatePolicyVersionErrorKind::MalformedPolicyDocumentException(_)
         )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreatePolicyVersionErrorKind::NoSuchEntityError(_)
+            CreatePolicyVersionErrorKind::NoSuchEntityException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreatePolicyVersionErrorKind::ServiceFailureError(_)
+            CreatePolicyVersionErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for CreatePolicyVersionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreatePolicyVersionErrorKind::InvalidInputError(_inner) => Some(_inner),
-            CreatePolicyVersionErrorKind::LimitExceededError(_inner) => Some(_inner),
-            CreatePolicyVersionErrorKind::MalformedPolicyDocumentError(_inner) => Some(_inner),
-            CreatePolicyVersionErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            CreatePolicyVersionErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            CreatePolicyVersionErrorKind::InvalidInputException(_inner) => Some(_inner),
+            CreatePolicyVersionErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreatePolicyVersionErrorKind::MalformedPolicyDocumentException(_inner) => Some(_inner),
+            CreatePolicyVersionErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            CreatePolicyVersionErrorKind::ServiceFailureException(_inner) => Some(_inner),
             CreatePolicyVersionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1659,24 +1736,24 @@ pub struct CreateRoleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateRoleErrorKind {
-    ConcurrentModificationError(crate::error::ConcurrentModificationError),
-    EntityAlreadyExistsError(crate::error::EntityAlreadyExistsError),
-    InvalidInputError(crate::error::InvalidInputError),
-    LimitExceededError(crate::error::LimitExceededError),
-    MalformedPolicyDocumentError(crate::error::MalformedPolicyDocumentError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    EntityAlreadyExistsException(crate::error::EntityAlreadyExistsException),
+    InvalidInputException(crate::error::InvalidInputException),
+    LimitExceededException(crate::error::LimitExceededException),
+    MalformedPolicyDocumentException(crate::error::MalformedPolicyDocumentException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateRoleError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateRoleErrorKind::ConcurrentModificationError(_inner) => _inner.fmt(f),
-            CreateRoleErrorKind::EntityAlreadyExistsError(_inner) => _inner.fmt(f),
-            CreateRoleErrorKind::InvalidInputError(_inner) => _inner.fmt(f),
-            CreateRoleErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            CreateRoleErrorKind::MalformedPolicyDocumentError(_inner) => _inner.fmt(f),
-            CreateRoleErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            CreateRoleErrorKind::ConcurrentModificationException(_inner) => _inner.fmt(f),
+            CreateRoleErrorKind::EntityAlreadyExistsException(_inner) => _inner.fmt(f),
+            CreateRoleErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            CreateRoleErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateRoleErrorKind::MalformedPolicyDocumentException(_inner) => _inner.fmt(f),
+            CreateRoleErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             CreateRoleErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1725,40 +1802,43 @@ impl CreateRoleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_concurrent_modification_error(&self) -> bool {
+    pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateRoleErrorKind::ConcurrentModificationError(_)
+            CreateRoleErrorKind::ConcurrentModificationException(_)
         )
     }
-    pub fn is_entity_already_exists_error(&self) -> bool {
-        matches!(&self.kind, CreateRoleErrorKind::EntityAlreadyExistsError(_))
-    }
-    pub fn is_invalid_input_error(&self) -> bool {
-        matches!(&self.kind, CreateRoleErrorKind::InvalidInputError(_))
-    }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, CreateRoleErrorKind::LimitExceededError(_))
-    }
-    pub fn is_malformed_policy_document_error(&self) -> bool {
+    pub fn is_entity_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateRoleErrorKind::MalformedPolicyDocumentError(_)
+            CreateRoleErrorKind::EntityAlreadyExistsException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
-        matches!(&self.kind, CreateRoleErrorKind::ServiceFailureError(_))
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(&self.kind, CreateRoleErrorKind::InvalidInputException(_))
+    }
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(&self.kind, CreateRoleErrorKind::LimitExceededException(_))
+    }
+    pub fn is_malformed_policy_document_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateRoleErrorKind::MalformedPolicyDocumentException(_)
+        )
+    }
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(&self.kind, CreateRoleErrorKind::ServiceFailureException(_))
     }
 }
 impl std::error::Error for CreateRoleError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateRoleErrorKind::ConcurrentModificationError(_inner) => Some(_inner),
-            CreateRoleErrorKind::EntityAlreadyExistsError(_inner) => Some(_inner),
-            CreateRoleErrorKind::InvalidInputError(_inner) => Some(_inner),
-            CreateRoleErrorKind::LimitExceededError(_inner) => Some(_inner),
-            CreateRoleErrorKind::MalformedPolicyDocumentError(_inner) => Some(_inner),
-            CreateRoleErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            CreateRoleErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
+            CreateRoleErrorKind::EntityAlreadyExistsException(_inner) => Some(_inner),
+            CreateRoleErrorKind::InvalidInputException(_inner) => Some(_inner),
+            CreateRoleErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateRoleErrorKind::MalformedPolicyDocumentException(_inner) => Some(_inner),
+            CreateRoleErrorKind::ServiceFailureException(_inner) => Some(_inner),
             CreateRoleErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1773,22 +1853,22 @@ pub struct CreateSAMLProviderError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateSAMLProviderErrorKind {
-    ConcurrentModificationError(crate::error::ConcurrentModificationError),
-    EntityAlreadyExistsError(crate::error::EntityAlreadyExistsError),
-    InvalidInputError(crate::error::InvalidInputError),
-    LimitExceededError(crate::error::LimitExceededError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    EntityAlreadyExistsException(crate::error::EntityAlreadyExistsException),
+    InvalidInputException(crate::error::InvalidInputException),
+    LimitExceededException(crate::error::LimitExceededException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateSAMLProviderError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateSAMLProviderErrorKind::ConcurrentModificationError(_inner) => _inner.fmt(f),
-            CreateSAMLProviderErrorKind::EntityAlreadyExistsError(_inner) => _inner.fmt(f),
-            CreateSAMLProviderErrorKind::InvalidInputError(_inner) => _inner.fmt(f),
-            CreateSAMLProviderErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            CreateSAMLProviderErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            CreateSAMLProviderErrorKind::ConcurrentModificationException(_inner) => _inner.fmt(f),
+            CreateSAMLProviderErrorKind::EntityAlreadyExistsException(_inner) => _inner.fmt(f),
+            CreateSAMLProviderErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            CreateSAMLProviderErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateSAMLProviderErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             CreateSAMLProviderErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1837,45 +1917,45 @@ impl CreateSAMLProviderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_concurrent_modification_error(&self) -> bool {
+    pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateSAMLProviderErrorKind::ConcurrentModificationError(_)
+            CreateSAMLProviderErrorKind::ConcurrentModificationException(_)
         )
     }
-    pub fn is_entity_already_exists_error(&self) -> bool {
+    pub fn is_entity_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateSAMLProviderErrorKind::EntityAlreadyExistsError(_)
+            CreateSAMLProviderErrorKind::EntityAlreadyExistsException(_)
         )
     }
-    pub fn is_invalid_input_error(&self) -> bool {
+    pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateSAMLProviderErrorKind::InvalidInputError(_)
+            CreateSAMLProviderErrorKind::InvalidInputException(_)
         )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateSAMLProviderErrorKind::LimitExceededError(_)
+            CreateSAMLProviderErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateSAMLProviderErrorKind::ServiceFailureError(_)
+            CreateSAMLProviderErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for CreateSAMLProviderError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateSAMLProviderErrorKind::ConcurrentModificationError(_inner) => Some(_inner),
-            CreateSAMLProviderErrorKind::EntityAlreadyExistsError(_inner) => Some(_inner),
-            CreateSAMLProviderErrorKind::InvalidInputError(_inner) => Some(_inner),
-            CreateSAMLProviderErrorKind::LimitExceededError(_inner) => Some(_inner),
-            CreateSAMLProviderErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            CreateSAMLProviderErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
+            CreateSAMLProviderErrorKind::EntityAlreadyExistsException(_inner) => Some(_inner),
+            CreateSAMLProviderErrorKind::InvalidInputException(_inner) => Some(_inner),
+            CreateSAMLProviderErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateSAMLProviderErrorKind::ServiceFailureException(_inner) => Some(_inner),
             CreateSAMLProviderErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1890,20 +1970,20 @@ pub struct CreateServiceLinkedRoleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateServiceLinkedRoleErrorKind {
-    InvalidInputError(crate::error::InvalidInputError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    InvalidInputException(crate::error::InvalidInputException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateServiceLinkedRoleError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateServiceLinkedRoleErrorKind::InvalidInputError(_inner) => _inner.fmt(f),
-            CreateServiceLinkedRoleErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            CreateServiceLinkedRoleErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            CreateServiceLinkedRoleErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            CreateServiceLinkedRoleErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            CreateServiceLinkedRoleErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateServiceLinkedRoleErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            CreateServiceLinkedRoleErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             CreateServiceLinkedRoleErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1952,38 +2032,38 @@ impl CreateServiceLinkedRoleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_input_error(&self) -> bool {
+    pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateServiceLinkedRoleErrorKind::InvalidInputError(_)
+            CreateServiceLinkedRoleErrorKind::InvalidInputException(_)
         )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateServiceLinkedRoleErrorKind::LimitExceededError(_)
+            CreateServiceLinkedRoleErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateServiceLinkedRoleErrorKind::NoSuchEntityError(_)
+            CreateServiceLinkedRoleErrorKind::NoSuchEntityException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateServiceLinkedRoleErrorKind::ServiceFailureError(_)
+            CreateServiceLinkedRoleErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for CreateServiceLinkedRoleError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateServiceLinkedRoleErrorKind::InvalidInputError(_inner) => Some(_inner),
-            CreateServiceLinkedRoleErrorKind::LimitExceededError(_inner) => Some(_inner),
-            CreateServiceLinkedRoleErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            CreateServiceLinkedRoleErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            CreateServiceLinkedRoleErrorKind::InvalidInputException(_inner) => Some(_inner),
+            CreateServiceLinkedRoleErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateServiceLinkedRoleErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            CreateServiceLinkedRoleErrorKind::ServiceFailureException(_inner) => Some(_inner),
             CreateServiceLinkedRoleErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1998,18 +2078,22 @@ pub struct CreateServiceSpecificCredentialError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateServiceSpecificCredentialErrorKind {
-    LimitExceededError(crate::error::LimitExceededError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceNotSupportedError(crate::error::ServiceNotSupportedError),
+    LimitExceededException(crate::error::LimitExceededException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceNotSupportedException(crate::error::ServiceNotSupportedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateServiceSpecificCredentialError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateServiceSpecificCredentialErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            CreateServiceSpecificCredentialErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            CreateServiceSpecificCredentialErrorKind::ServiceNotSupportedError(_inner) => {
+            CreateServiceSpecificCredentialErrorKind::LimitExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateServiceSpecificCredentialErrorKind::NoSuchEntityException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateServiceSpecificCredentialErrorKind::ServiceNotSupportedException(_inner) => {
                 _inner.fmt(f)
             }
             CreateServiceSpecificCredentialErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -2060,31 +2144,33 @@ impl CreateServiceSpecificCredentialError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateServiceSpecificCredentialErrorKind::LimitExceededError(_)
+            CreateServiceSpecificCredentialErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateServiceSpecificCredentialErrorKind::NoSuchEntityError(_)
+            CreateServiceSpecificCredentialErrorKind::NoSuchEntityException(_)
         )
     }
-    pub fn is_service_not_supported_error(&self) -> bool {
+    pub fn is_service_not_supported_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateServiceSpecificCredentialErrorKind::ServiceNotSupportedError(_)
+            CreateServiceSpecificCredentialErrorKind::ServiceNotSupportedException(_)
         )
     }
 }
 impl std::error::Error for CreateServiceSpecificCredentialError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateServiceSpecificCredentialErrorKind::LimitExceededError(_inner) => Some(_inner),
-            CreateServiceSpecificCredentialErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            CreateServiceSpecificCredentialErrorKind::ServiceNotSupportedError(_inner) => {
+            CreateServiceSpecificCredentialErrorKind::LimitExceededException(_inner) => {
+                Some(_inner)
+            }
+            CreateServiceSpecificCredentialErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            CreateServiceSpecificCredentialErrorKind::ServiceNotSupportedException(_inner) => {
                 Some(_inner)
             }
             CreateServiceSpecificCredentialErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -2101,24 +2187,24 @@ pub struct CreateUserError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateUserErrorKind {
-    ConcurrentModificationError(crate::error::ConcurrentModificationError),
-    EntityAlreadyExistsError(crate::error::EntityAlreadyExistsError),
-    InvalidInputError(crate::error::InvalidInputError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    EntityAlreadyExistsException(crate::error::EntityAlreadyExistsException),
+    InvalidInputException(crate::error::InvalidInputException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateUserError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateUserErrorKind::ConcurrentModificationError(_inner) => _inner.fmt(f),
-            CreateUserErrorKind::EntityAlreadyExistsError(_inner) => _inner.fmt(f),
-            CreateUserErrorKind::InvalidInputError(_inner) => _inner.fmt(f),
-            CreateUserErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            CreateUserErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            CreateUserErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            CreateUserErrorKind::ConcurrentModificationException(_inner) => _inner.fmt(f),
+            CreateUserErrorKind::EntityAlreadyExistsException(_inner) => _inner.fmt(f),
+            CreateUserErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            CreateUserErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateUserErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            CreateUserErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             CreateUserErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2167,37 +2253,40 @@ impl CreateUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_concurrent_modification_error(&self) -> bool {
+    pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateUserErrorKind::ConcurrentModificationError(_)
+            CreateUserErrorKind::ConcurrentModificationException(_)
         )
     }
-    pub fn is_entity_already_exists_error(&self) -> bool {
-        matches!(&self.kind, CreateUserErrorKind::EntityAlreadyExistsError(_))
+    pub fn is_entity_already_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateUserErrorKind::EntityAlreadyExistsException(_)
+        )
     }
-    pub fn is_invalid_input_error(&self) -> bool {
-        matches!(&self.kind, CreateUserErrorKind::InvalidInputError(_))
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(&self.kind, CreateUserErrorKind::InvalidInputException(_))
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, CreateUserErrorKind::LimitExceededError(_))
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(&self.kind, CreateUserErrorKind::LimitExceededException(_))
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
-        matches!(&self.kind, CreateUserErrorKind::NoSuchEntityError(_))
+    pub fn is_no_such_entity_exception(&self) -> bool {
+        matches!(&self.kind, CreateUserErrorKind::NoSuchEntityException(_))
     }
-    pub fn is_service_failure_error(&self) -> bool {
-        matches!(&self.kind, CreateUserErrorKind::ServiceFailureError(_))
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(&self.kind, CreateUserErrorKind::ServiceFailureException(_))
     }
 }
 impl std::error::Error for CreateUserError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateUserErrorKind::ConcurrentModificationError(_inner) => Some(_inner),
-            CreateUserErrorKind::EntityAlreadyExistsError(_inner) => Some(_inner),
-            CreateUserErrorKind::InvalidInputError(_inner) => Some(_inner),
-            CreateUserErrorKind::LimitExceededError(_inner) => Some(_inner),
-            CreateUserErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            CreateUserErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            CreateUserErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
+            CreateUserErrorKind::EntityAlreadyExistsException(_inner) => Some(_inner),
+            CreateUserErrorKind::InvalidInputException(_inner) => Some(_inner),
+            CreateUserErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateUserErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            CreateUserErrorKind::ServiceFailureException(_inner) => Some(_inner),
             CreateUserErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2212,22 +2301,24 @@ pub struct CreateVirtualMFADeviceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateVirtualMFADeviceErrorKind {
-    ConcurrentModificationError(crate::error::ConcurrentModificationError),
-    EntityAlreadyExistsError(crate::error::EntityAlreadyExistsError),
-    InvalidInputError(crate::error::InvalidInputError),
-    LimitExceededError(crate::error::LimitExceededError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    EntityAlreadyExistsException(crate::error::EntityAlreadyExistsException),
+    InvalidInputException(crate::error::InvalidInputException),
+    LimitExceededException(crate::error::LimitExceededException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateVirtualMFADeviceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateVirtualMFADeviceErrorKind::ConcurrentModificationError(_inner) => _inner.fmt(f),
-            CreateVirtualMFADeviceErrorKind::EntityAlreadyExistsError(_inner) => _inner.fmt(f),
-            CreateVirtualMFADeviceErrorKind::InvalidInputError(_inner) => _inner.fmt(f),
-            CreateVirtualMFADeviceErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            CreateVirtualMFADeviceErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            CreateVirtualMFADeviceErrorKind::ConcurrentModificationException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateVirtualMFADeviceErrorKind::EntityAlreadyExistsException(_inner) => _inner.fmt(f),
+            CreateVirtualMFADeviceErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            CreateVirtualMFADeviceErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateVirtualMFADeviceErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             CreateVirtualMFADeviceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2276,45 +2367,47 @@ impl CreateVirtualMFADeviceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_concurrent_modification_error(&self) -> bool {
+    pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateVirtualMFADeviceErrorKind::ConcurrentModificationError(_)
+            CreateVirtualMFADeviceErrorKind::ConcurrentModificationException(_)
         )
     }
-    pub fn is_entity_already_exists_error(&self) -> bool {
+    pub fn is_entity_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateVirtualMFADeviceErrorKind::EntityAlreadyExistsError(_)
+            CreateVirtualMFADeviceErrorKind::EntityAlreadyExistsException(_)
         )
     }
-    pub fn is_invalid_input_error(&self) -> bool {
+    pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateVirtualMFADeviceErrorKind::InvalidInputError(_)
+            CreateVirtualMFADeviceErrorKind::InvalidInputException(_)
         )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateVirtualMFADeviceErrorKind::LimitExceededError(_)
+            CreateVirtualMFADeviceErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateVirtualMFADeviceErrorKind::ServiceFailureError(_)
+            CreateVirtualMFADeviceErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for CreateVirtualMFADeviceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateVirtualMFADeviceErrorKind::ConcurrentModificationError(_inner) => Some(_inner),
-            CreateVirtualMFADeviceErrorKind::EntityAlreadyExistsError(_inner) => Some(_inner),
-            CreateVirtualMFADeviceErrorKind::InvalidInputError(_inner) => Some(_inner),
-            CreateVirtualMFADeviceErrorKind::LimitExceededError(_inner) => Some(_inner),
-            CreateVirtualMFADeviceErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            CreateVirtualMFADeviceErrorKind::ConcurrentModificationException(_inner) => {
+                Some(_inner)
+            }
+            CreateVirtualMFADeviceErrorKind::EntityAlreadyExistsException(_inner) => Some(_inner),
+            CreateVirtualMFADeviceErrorKind::InvalidInputException(_inner) => Some(_inner),
+            CreateVirtualMFADeviceErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateVirtualMFADeviceErrorKind::ServiceFailureException(_inner) => Some(_inner),
             CreateVirtualMFADeviceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2329,22 +2422,22 @@ pub struct DeactivateMFADeviceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeactivateMFADeviceErrorKind {
-    EntityTemporarilyUnmodifiableError(crate::error::EntityTemporarilyUnmodifiableError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    EntityTemporarilyUnmodifiableException(crate::error::EntityTemporarilyUnmodifiableException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeactivateMFADeviceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeactivateMFADeviceErrorKind::EntityTemporarilyUnmodifiableError(_inner) => {
+            DeactivateMFADeviceErrorKind::EntityTemporarilyUnmodifiableException(_inner) => {
                 _inner.fmt(f)
             }
-            DeactivateMFADeviceErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            DeactivateMFADeviceErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            DeactivateMFADeviceErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            DeactivateMFADeviceErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            DeactivateMFADeviceErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            DeactivateMFADeviceErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             DeactivateMFADeviceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2393,40 +2486,40 @@ impl DeactivateMFADeviceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_entity_temporarily_unmodifiable_error(&self) -> bool {
+    pub fn is_entity_temporarily_unmodifiable_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeactivateMFADeviceErrorKind::EntityTemporarilyUnmodifiableError(_)
+            DeactivateMFADeviceErrorKind::EntityTemporarilyUnmodifiableException(_)
         )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeactivateMFADeviceErrorKind::LimitExceededError(_)
+            DeactivateMFADeviceErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeactivateMFADeviceErrorKind::NoSuchEntityError(_)
+            DeactivateMFADeviceErrorKind::NoSuchEntityException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeactivateMFADeviceErrorKind::ServiceFailureError(_)
+            DeactivateMFADeviceErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for DeactivateMFADeviceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeactivateMFADeviceErrorKind::EntityTemporarilyUnmodifiableError(_inner) => {
+            DeactivateMFADeviceErrorKind::EntityTemporarilyUnmodifiableException(_inner) => {
                 Some(_inner)
             }
-            DeactivateMFADeviceErrorKind::LimitExceededError(_inner) => Some(_inner),
-            DeactivateMFADeviceErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            DeactivateMFADeviceErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            DeactivateMFADeviceErrorKind::LimitExceededException(_inner) => Some(_inner),
+            DeactivateMFADeviceErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            DeactivateMFADeviceErrorKind::ServiceFailureException(_inner) => Some(_inner),
             DeactivateMFADeviceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2441,18 +2534,18 @@ pub struct DeleteAccessKeyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteAccessKeyErrorKind {
-    LimitExceededError(crate::error::LimitExceededError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    LimitExceededException(crate::error::LimitExceededException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAccessKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteAccessKeyErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            DeleteAccessKeyErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            DeleteAccessKeyErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            DeleteAccessKeyErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            DeleteAccessKeyErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            DeleteAccessKeyErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             DeleteAccessKeyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2501,22 +2594,31 @@ impl DeleteAccessKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, DeleteAccessKeyErrorKind::LimitExceededError(_))
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteAccessKeyErrorKind::LimitExceededException(_)
+        )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
-        matches!(&self.kind, DeleteAccessKeyErrorKind::NoSuchEntityError(_))
+    pub fn is_no_such_entity_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteAccessKeyErrorKind::NoSuchEntityException(_)
+        )
     }
-    pub fn is_service_failure_error(&self) -> bool {
-        matches!(&self.kind, DeleteAccessKeyErrorKind::ServiceFailureError(_))
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteAccessKeyErrorKind::ServiceFailureException(_)
+        )
     }
 }
 impl std::error::Error for DeleteAccessKeyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteAccessKeyErrorKind::LimitExceededError(_inner) => Some(_inner),
-            DeleteAccessKeyErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            DeleteAccessKeyErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            DeleteAccessKeyErrorKind::LimitExceededException(_inner) => Some(_inner),
+            DeleteAccessKeyErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            DeleteAccessKeyErrorKind::ServiceFailureException(_inner) => Some(_inner),
             DeleteAccessKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2531,18 +2633,18 @@ pub struct DeleteAccountAliasError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteAccountAliasErrorKind {
-    LimitExceededError(crate::error::LimitExceededError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    LimitExceededException(crate::error::LimitExceededException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAccountAliasError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteAccountAliasErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            DeleteAccountAliasErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            DeleteAccountAliasErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            DeleteAccountAliasErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            DeleteAccountAliasErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            DeleteAccountAliasErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             DeleteAccountAliasErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2591,31 +2693,31 @@ impl DeleteAccountAliasError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteAccountAliasErrorKind::LimitExceededError(_)
+            DeleteAccountAliasErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteAccountAliasErrorKind::NoSuchEntityError(_)
+            DeleteAccountAliasErrorKind::NoSuchEntityException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteAccountAliasErrorKind::ServiceFailureError(_)
+            DeleteAccountAliasErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for DeleteAccountAliasError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteAccountAliasErrorKind::LimitExceededError(_inner) => Some(_inner),
-            DeleteAccountAliasErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            DeleteAccountAliasErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            DeleteAccountAliasErrorKind::LimitExceededException(_inner) => Some(_inner),
+            DeleteAccountAliasErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            DeleteAccountAliasErrorKind::ServiceFailureException(_inner) => Some(_inner),
             DeleteAccountAliasErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2630,18 +2732,18 @@ pub struct DeleteAccountPasswordPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteAccountPasswordPolicyErrorKind {
-    LimitExceededError(crate::error::LimitExceededError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    LimitExceededException(crate::error::LimitExceededException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAccountPasswordPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteAccountPasswordPolicyErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            DeleteAccountPasswordPolicyErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            DeleteAccountPasswordPolicyErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            DeleteAccountPasswordPolicyErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            DeleteAccountPasswordPolicyErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            DeleteAccountPasswordPolicyErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             DeleteAccountPasswordPolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2690,31 +2792,31 @@ impl DeleteAccountPasswordPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteAccountPasswordPolicyErrorKind::LimitExceededError(_)
+            DeleteAccountPasswordPolicyErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteAccountPasswordPolicyErrorKind::NoSuchEntityError(_)
+            DeleteAccountPasswordPolicyErrorKind::NoSuchEntityException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteAccountPasswordPolicyErrorKind::ServiceFailureError(_)
+            DeleteAccountPasswordPolicyErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for DeleteAccountPasswordPolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteAccountPasswordPolicyErrorKind::LimitExceededError(_inner) => Some(_inner),
-            DeleteAccountPasswordPolicyErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            DeleteAccountPasswordPolicyErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            DeleteAccountPasswordPolicyErrorKind::LimitExceededException(_inner) => Some(_inner),
+            DeleteAccountPasswordPolicyErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            DeleteAccountPasswordPolicyErrorKind::ServiceFailureException(_inner) => Some(_inner),
             DeleteAccountPasswordPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2729,20 +2831,20 @@ pub struct DeleteGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteGroupErrorKind {
-    DeleteConflictError(crate::error::DeleteConflictError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    DeleteConflictException(crate::error::DeleteConflictException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteGroupErrorKind::DeleteConflictError(_inner) => _inner.fmt(f),
-            DeleteGroupErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            DeleteGroupErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            DeleteGroupErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            DeleteGroupErrorKind::DeleteConflictException(_inner) => _inner.fmt(f),
+            DeleteGroupErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            DeleteGroupErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            DeleteGroupErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             DeleteGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2791,26 +2893,26 @@ impl DeleteGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_delete_conflict_error(&self) -> bool {
-        matches!(&self.kind, DeleteGroupErrorKind::DeleteConflictError(_))
+    pub fn is_delete_conflict_exception(&self) -> bool {
+        matches!(&self.kind, DeleteGroupErrorKind::DeleteConflictException(_))
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, DeleteGroupErrorKind::LimitExceededError(_))
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(&self.kind, DeleteGroupErrorKind::LimitExceededException(_))
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
-        matches!(&self.kind, DeleteGroupErrorKind::NoSuchEntityError(_))
+    pub fn is_no_such_entity_exception(&self) -> bool {
+        matches!(&self.kind, DeleteGroupErrorKind::NoSuchEntityException(_))
     }
-    pub fn is_service_failure_error(&self) -> bool {
-        matches!(&self.kind, DeleteGroupErrorKind::ServiceFailureError(_))
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(&self.kind, DeleteGroupErrorKind::ServiceFailureException(_))
     }
 }
 impl std::error::Error for DeleteGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteGroupErrorKind::DeleteConflictError(_inner) => Some(_inner),
-            DeleteGroupErrorKind::LimitExceededError(_inner) => Some(_inner),
-            DeleteGroupErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            DeleteGroupErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            DeleteGroupErrorKind::DeleteConflictException(_inner) => Some(_inner),
+            DeleteGroupErrorKind::LimitExceededException(_inner) => Some(_inner),
+            DeleteGroupErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            DeleteGroupErrorKind::ServiceFailureException(_inner) => Some(_inner),
             DeleteGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2825,18 +2927,18 @@ pub struct DeleteGroupPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteGroupPolicyErrorKind {
-    LimitExceededError(crate::error::LimitExceededError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    LimitExceededException(crate::error::LimitExceededException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteGroupPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteGroupPolicyErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            DeleteGroupPolicyErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            DeleteGroupPolicyErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            DeleteGroupPolicyErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            DeleteGroupPolicyErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            DeleteGroupPolicyErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             DeleteGroupPolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2885,28 +2987,31 @@ impl DeleteGroupPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteGroupPolicyErrorKind::LimitExceededError(_)
+            DeleteGroupPolicyErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
-        matches!(&self.kind, DeleteGroupPolicyErrorKind::NoSuchEntityError(_))
-    }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteGroupPolicyErrorKind::ServiceFailureError(_)
+            DeleteGroupPolicyErrorKind::NoSuchEntityException(_)
+        )
+    }
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteGroupPolicyErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for DeleteGroupPolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteGroupPolicyErrorKind::LimitExceededError(_inner) => Some(_inner),
-            DeleteGroupPolicyErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            DeleteGroupPolicyErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            DeleteGroupPolicyErrorKind::LimitExceededException(_inner) => Some(_inner),
+            DeleteGroupPolicyErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            DeleteGroupPolicyErrorKind::ServiceFailureException(_inner) => Some(_inner),
             DeleteGroupPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2921,20 +3026,20 @@ pub struct DeleteInstanceProfileError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteInstanceProfileErrorKind {
-    DeleteConflictError(crate::error::DeleteConflictError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    DeleteConflictException(crate::error::DeleteConflictException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteInstanceProfileError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteInstanceProfileErrorKind::DeleteConflictError(_inner) => _inner.fmt(f),
-            DeleteInstanceProfileErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            DeleteInstanceProfileErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            DeleteInstanceProfileErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            DeleteInstanceProfileErrorKind::DeleteConflictException(_inner) => _inner.fmt(f),
+            DeleteInstanceProfileErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            DeleteInstanceProfileErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            DeleteInstanceProfileErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             DeleteInstanceProfileErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2983,38 +3088,38 @@ impl DeleteInstanceProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_delete_conflict_error(&self) -> bool {
+    pub fn is_delete_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteInstanceProfileErrorKind::DeleteConflictError(_)
+            DeleteInstanceProfileErrorKind::DeleteConflictException(_)
         )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteInstanceProfileErrorKind::LimitExceededError(_)
+            DeleteInstanceProfileErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteInstanceProfileErrorKind::NoSuchEntityError(_)
+            DeleteInstanceProfileErrorKind::NoSuchEntityException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteInstanceProfileErrorKind::ServiceFailureError(_)
+            DeleteInstanceProfileErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for DeleteInstanceProfileError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteInstanceProfileErrorKind::DeleteConflictError(_inner) => Some(_inner),
-            DeleteInstanceProfileErrorKind::LimitExceededError(_inner) => Some(_inner),
-            DeleteInstanceProfileErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            DeleteInstanceProfileErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            DeleteInstanceProfileErrorKind::DeleteConflictException(_inner) => Some(_inner),
+            DeleteInstanceProfileErrorKind::LimitExceededException(_inner) => Some(_inner),
+            DeleteInstanceProfileErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            DeleteInstanceProfileErrorKind::ServiceFailureException(_inner) => Some(_inner),
             DeleteInstanceProfileErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3029,22 +3134,22 @@ pub struct DeleteLoginProfileError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteLoginProfileErrorKind {
-    EntityTemporarilyUnmodifiableError(crate::error::EntityTemporarilyUnmodifiableError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    EntityTemporarilyUnmodifiableException(crate::error::EntityTemporarilyUnmodifiableException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteLoginProfileError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteLoginProfileErrorKind::EntityTemporarilyUnmodifiableError(_inner) => {
+            DeleteLoginProfileErrorKind::EntityTemporarilyUnmodifiableException(_inner) => {
                 _inner.fmt(f)
             }
-            DeleteLoginProfileErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            DeleteLoginProfileErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            DeleteLoginProfileErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            DeleteLoginProfileErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            DeleteLoginProfileErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            DeleteLoginProfileErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             DeleteLoginProfileErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3093,38 +3198,40 @@ impl DeleteLoginProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_entity_temporarily_unmodifiable_error(&self) -> bool {
+    pub fn is_entity_temporarily_unmodifiable_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteLoginProfileErrorKind::EntityTemporarilyUnmodifiableError(_)
+            DeleteLoginProfileErrorKind::EntityTemporarilyUnmodifiableException(_)
         )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteLoginProfileErrorKind::LimitExceededError(_)
+            DeleteLoginProfileErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteLoginProfileErrorKind::NoSuchEntityError(_)
+            DeleteLoginProfileErrorKind::NoSuchEntityException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteLoginProfileErrorKind::ServiceFailureError(_)
+            DeleteLoginProfileErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for DeleteLoginProfileError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteLoginProfileErrorKind::EntityTemporarilyUnmodifiableError(_inner) => Some(_inner),
-            DeleteLoginProfileErrorKind::LimitExceededError(_inner) => Some(_inner),
-            DeleteLoginProfileErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            DeleteLoginProfileErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            DeleteLoginProfileErrorKind::EntityTemporarilyUnmodifiableException(_inner) => {
+                Some(_inner)
+            }
+            DeleteLoginProfileErrorKind::LimitExceededException(_inner) => Some(_inner),
+            DeleteLoginProfileErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            DeleteLoginProfileErrorKind::ServiceFailureException(_inner) => Some(_inner),
             DeleteLoginProfileErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3139,18 +3246,18 @@ pub struct DeleteOpenIDConnectProviderError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteOpenIDConnectProviderErrorKind {
-    InvalidInputError(crate::error::InvalidInputError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    InvalidInputException(crate::error::InvalidInputException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteOpenIDConnectProviderError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteOpenIDConnectProviderErrorKind::InvalidInputError(_inner) => _inner.fmt(f),
-            DeleteOpenIDConnectProviderErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            DeleteOpenIDConnectProviderErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            DeleteOpenIDConnectProviderErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            DeleteOpenIDConnectProviderErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            DeleteOpenIDConnectProviderErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             DeleteOpenIDConnectProviderErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3199,31 +3306,31 @@ impl DeleteOpenIDConnectProviderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_input_error(&self) -> bool {
+    pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteOpenIDConnectProviderErrorKind::InvalidInputError(_)
+            DeleteOpenIDConnectProviderErrorKind::InvalidInputException(_)
         )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteOpenIDConnectProviderErrorKind::NoSuchEntityError(_)
+            DeleteOpenIDConnectProviderErrorKind::NoSuchEntityException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteOpenIDConnectProviderErrorKind::ServiceFailureError(_)
+            DeleteOpenIDConnectProviderErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for DeleteOpenIDConnectProviderError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteOpenIDConnectProviderErrorKind::InvalidInputError(_inner) => Some(_inner),
-            DeleteOpenIDConnectProviderErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            DeleteOpenIDConnectProviderErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            DeleteOpenIDConnectProviderErrorKind::InvalidInputException(_inner) => Some(_inner),
+            DeleteOpenIDConnectProviderErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            DeleteOpenIDConnectProviderErrorKind::ServiceFailureException(_inner) => Some(_inner),
             DeleteOpenIDConnectProviderErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3238,22 +3345,22 @@ pub struct DeletePolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeletePolicyErrorKind {
-    DeleteConflictError(crate::error::DeleteConflictError),
-    InvalidInputError(crate::error::InvalidInputError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    DeleteConflictException(crate::error::DeleteConflictException),
+    InvalidInputException(crate::error::InvalidInputException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeletePolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeletePolicyErrorKind::DeleteConflictError(_inner) => _inner.fmt(f),
-            DeletePolicyErrorKind::InvalidInputError(_inner) => _inner.fmt(f),
-            DeletePolicyErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            DeletePolicyErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            DeletePolicyErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            DeletePolicyErrorKind::DeleteConflictException(_inner) => _inner.fmt(f),
+            DeletePolicyErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            DeletePolicyErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            DeletePolicyErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            DeletePolicyErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             DeletePolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3302,30 +3409,36 @@ impl DeletePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_delete_conflict_error(&self) -> bool {
-        matches!(&self.kind, DeletePolicyErrorKind::DeleteConflictError(_))
+    pub fn is_delete_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeletePolicyErrorKind::DeleteConflictException(_)
+        )
     }
-    pub fn is_invalid_input_error(&self) -> bool {
-        matches!(&self.kind, DeletePolicyErrorKind::InvalidInputError(_))
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(&self.kind, DeletePolicyErrorKind::InvalidInputException(_))
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, DeletePolicyErrorKind::LimitExceededError(_))
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(&self.kind, DeletePolicyErrorKind::LimitExceededException(_))
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
-        matches!(&self.kind, DeletePolicyErrorKind::NoSuchEntityError(_))
+    pub fn is_no_such_entity_exception(&self) -> bool {
+        matches!(&self.kind, DeletePolicyErrorKind::NoSuchEntityException(_))
     }
-    pub fn is_service_failure_error(&self) -> bool {
-        matches!(&self.kind, DeletePolicyErrorKind::ServiceFailureError(_))
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeletePolicyErrorKind::ServiceFailureException(_)
+        )
     }
 }
 impl std::error::Error for DeletePolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeletePolicyErrorKind::DeleteConflictError(_inner) => Some(_inner),
-            DeletePolicyErrorKind::InvalidInputError(_inner) => Some(_inner),
-            DeletePolicyErrorKind::LimitExceededError(_inner) => Some(_inner),
-            DeletePolicyErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            DeletePolicyErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            DeletePolicyErrorKind::DeleteConflictException(_inner) => Some(_inner),
+            DeletePolicyErrorKind::InvalidInputException(_inner) => Some(_inner),
+            DeletePolicyErrorKind::LimitExceededException(_inner) => Some(_inner),
+            DeletePolicyErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            DeletePolicyErrorKind::ServiceFailureException(_inner) => Some(_inner),
             DeletePolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3340,22 +3453,22 @@ pub struct DeletePolicyVersionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeletePolicyVersionErrorKind {
-    DeleteConflictError(crate::error::DeleteConflictError),
-    InvalidInputError(crate::error::InvalidInputError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    DeleteConflictException(crate::error::DeleteConflictException),
+    InvalidInputException(crate::error::InvalidInputException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeletePolicyVersionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeletePolicyVersionErrorKind::DeleteConflictError(_inner) => _inner.fmt(f),
-            DeletePolicyVersionErrorKind::InvalidInputError(_inner) => _inner.fmt(f),
-            DeletePolicyVersionErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            DeletePolicyVersionErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            DeletePolicyVersionErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            DeletePolicyVersionErrorKind::DeleteConflictException(_inner) => _inner.fmt(f),
+            DeletePolicyVersionErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            DeletePolicyVersionErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            DeletePolicyVersionErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            DeletePolicyVersionErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             DeletePolicyVersionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3404,45 +3517,45 @@ impl DeletePolicyVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_delete_conflict_error(&self) -> bool {
+    pub fn is_delete_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeletePolicyVersionErrorKind::DeleteConflictError(_)
+            DeletePolicyVersionErrorKind::DeleteConflictException(_)
         )
     }
-    pub fn is_invalid_input_error(&self) -> bool {
+    pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeletePolicyVersionErrorKind::InvalidInputError(_)
+            DeletePolicyVersionErrorKind::InvalidInputException(_)
         )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeletePolicyVersionErrorKind::LimitExceededError(_)
+            DeletePolicyVersionErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeletePolicyVersionErrorKind::NoSuchEntityError(_)
+            DeletePolicyVersionErrorKind::NoSuchEntityException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeletePolicyVersionErrorKind::ServiceFailureError(_)
+            DeletePolicyVersionErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for DeletePolicyVersionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeletePolicyVersionErrorKind::DeleteConflictError(_inner) => Some(_inner),
-            DeletePolicyVersionErrorKind::InvalidInputError(_inner) => Some(_inner),
-            DeletePolicyVersionErrorKind::LimitExceededError(_inner) => Some(_inner),
-            DeletePolicyVersionErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            DeletePolicyVersionErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            DeletePolicyVersionErrorKind::DeleteConflictException(_inner) => Some(_inner),
+            DeletePolicyVersionErrorKind::InvalidInputException(_inner) => Some(_inner),
+            DeletePolicyVersionErrorKind::LimitExceededException(_inner) => Some(_inner),
+            DeletePolicyVersionErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            DeletePolicyVersionErrorKind::ServiceFailureException(_inner) => Some(_inner),
             DeletePolicyVersionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3457,24 +3570,24 @@ pub struct DeleteRoleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteRoleErrorKind {
-    ConcurrentModificationError(crate::error::ConcurrentModificationError),
-    DeleteConflictError(crate::error::DeleteConflictError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
-    UnmodifiableEntityError(crate::error::UnmodifiableEntityError),
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    DeleteConflictException(crate::error::DeleteConflictException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
+    UnmodifiableEntityException(crate::error::UnmodifiableEntityException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteRoleError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteRoleErrorKind::ConcurrentModificationError(_inner) => _inner.fmt(f),
-            DeleteRoleErrorKind::DeleteConflictError(_inner) => _inner.fmt(f),
-            DeleteRoleErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            DeleteRoleErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            DeleteRoleErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
-            DeleteRoleErrorKind::UnmodifiableEntityError(_inner) => _inner.fmt(f),
+            DeleteRoleErrorKind::ConcurrentModificationException(_inner) => _inner.fmt(f),
+            DeleteRoleErrorKind::DeleteConflictException(_inner) => _inner.fmt(f),
+            DeleteRoleErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            DeleteRoleErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            DeleteRoleErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
+            DeleteRoleErrorKind::UnmodifiableEntityException(_inner) => _inner.fmt(f),
             DeleteRoleErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3523,37 +3636,40 @@ impl DeleteRoleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_concurrent_modification_error(&self) -> bool {
+    pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteRoleErrorKind::ConcurrentModificationError(_)
+            DeleteRoleErrorKind::ConcurrentModificationException(_)
         )
     }
-    pub fn is_delete_conflict_error(&self) -> bool {
-        matches!(&self.kind, DeleteRoleErrorKind::DeleteConflictError(_))
+    pub fn is_delete_conflict_exception(&self) -> bool {
+        matches!(&self.kind, DeleteRoleErrorKind::DeleteConflictException(_))
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, DeleteRoleErrorKind::LimitExceededError(_))
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(&self.kind, DeleteRoleErrorKind::LimitExceededException(_))
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
-        matches!(&self.kind, DeleteRoleErrorKind::NoSuchEntityError(_))
+    pub fn is_no_such_entity_exception(&self) -> bool {
+        matches!(&self.kind, DeleteRoleErrorKind::NoSuchEntityException(_))
     }
-    pub fn is_service_failure_error(&self) -> bool {
-        matches!(&self.kind, DeleteRoleErrorKind::ServiceFailureError(_))
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(&self.kind, DeleteRoleErrorKind::ServiceFailureException(_))
     }
-    pub fn is_unmodifiable_entity_error(&self) -> bool {
-        matches!(&self.kind, DeleteRoleErrorKind::UnmodifiableEntityError(_))
+    pub fn is_unmodifiable_entity_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteRoleErrorKind::UnmodifiableEntityException(_)
+        )
     }
 }
 impl std::error::Error for DeleteRoleError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteRoleErrorKind::ConcurrentModificationError(_inner) => Some(_inner),
-            DeleteRoleErrorKind::DeleteConflictError(_inner) => Some(_inner),
-            DeleteRoleErrorKind::LimitExceededError(_inner) => Some(_inner),
-            DeleteRoleErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            DeleteRoleErrorKind::ServiceFailureError(_inner) => Some(_inner),
-            DeleteRoleErrorKind::UnmodifiableEntityError(_inner) => Some(_inner),
+            DeleteRoleErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
+            DeleteRoleErrorKind::DeleteConflictException(_inner) => Some(_inner),
+            DeleteRoleErrorKind::LimitExceededException(_inner) => Some(_inner),
+            DeleteRoleErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            DeleteRoleErrorKind::ServiceFailureException(_inner) => Some(_inner),
+            DeleteRoleErrorKind::UnmodifiableEntityException(_inner) => Some(_inner),
             DeleteRoleErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3568,18 +3684,20 @@ pub struct DeleteRolePermissionsBoundaryError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteRolePermissionsBoundaryErrorKind {
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
-    UnmodifiableEntityError(crate::error::UnmodifiableEntityError),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
+    UnmodifiableEntityException(crate::error::UnmodifiableEntityException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteRolePermissionsBoundaryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteRolePermissionsBoundaryErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            DeleteRolePermissionsBoundaryErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
-            DeleteRolePermissionsBoundaryErrorKind::UnmodifiableEntityError(_inner) => {
+            DeleteRolePermissionsBoundaryErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            DeleteRolePermissionsBoundaryErrorKind::ServiceFailureException(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteRolePermissionsBoundaryErrorKind::UnmodifiableEntityException(_inner) => {
                 _inner.fmt(f)
             }
             DeleteRolePermissionsBoundaryErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -3630,31 +3748,33 @@ impl DeleteRolePermissionsBoundaryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteRolePermissionsBoundaryErrorKind::NoSuchEntityError(_)
+            DeleteRolePermissionsBoundaryErrorKind::NoSuchEntityException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteRolePermissionsBoundaryErrorKind::ServiceFailureError(_)
+            DeleteRolePermissionsBoundaryErrorKind::ServiceFailureException(_)
         )
     }
-    pub fn is_unmodifiable_entity_error(&self) -> bool {
+    pub fn is_unmodifiable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteRolePermissionsBoundaryErrorKind::UnmodifiableEntityError(_)
+            DeleteRolePermissionsBoundaryErrorKind::UnmodifiableEntityException(_)
         )
     }
 }
 impl std::error::Error for DeleteRolePermissionsBoundaryError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteRolePermissionsBoundaryErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            DeleteRolePermissionsBoundaryErrorKind::ServiceFailureError(_inner) => Some(_inner),
-            DeleteRolePermissionsBoundaryErrorKind::UnmodifiableEntityError(_inner) => Some(_inner),
+            DeleteRolePermissionsBoundaryErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            DeleteRolePermissionsBoundaryErrorKind::ServiceFailureException(_inner) => Some(_inner),
+            DeleteRolePermissionsBoundaryErrorKind::UnmodifiableEntityException(_inner) => {
+                Some(_inner)
+            }
             DeleteRolePermissionsBoundaryErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3669,20 +3789,20 @@ pub struct DeleteRolePolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteRolePolicyErrorKind {
-    LimitExceededError(crate::error::LimitExceededError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
-    UnmodifiableEntityError(crate::error::UnmodifiableEntityError),
+    LimitExceededException(crate::error::LimitExceededException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
+    UnmodifiableEntityException(crate::error::UnmodifiableEntityException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteRolePolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteRolePolicyErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            DeleteRolePolicyErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            DeleteRolePolicyErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
-            DeleteRolePolicyErrorKind::UnmodifiableEntityError(_inner) => _inner.fmt(f),
+            DeleteRolePolicyErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            DeleteRolePolicyErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            DeleteRolePolicyErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
+            DeleteRolePolicyErrorKind::UnmodifiableEntityException(_inner) => _inner.fmt(f),
             DeleteRolePolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3731,32 +3851,38 @@ impl DeleteRolePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, DeleteRolePolicyErrorKind::LimitExceededError(_))
-    }
-    pub fn is_no_such_entity_error(&self) -> bool {
-        matches!(&self.kind, DeleteRolePolicyErrorKind::NoSuchEntityError(_))
-    }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteRolePolicyErrorKind::ServiceFailureError(_)
+            DeleteRolePolicyErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_unmodifiable_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteRolePolicyErrorKind::UnmodifiableEntityError(_)
+            DeleteRolePolicyErrorKind::NoSuchEntityException(_)
+        )
+    }
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteRolePolicyErrorKind::ServiceFailureException(_)
+        )
+    }
+    pub fn is_unmodifiable_entity_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteRolePolicyErrorKind::UnmodifiableEntityException(_)
         )
     }
 }
 impl std::error::Error for DeleteRolePolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteRolePolicyErrorKind::LimitExceededError(_inner) => Some(_inner),
-            DeleteRolePolicyErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            DeleteRolePolicyErrorKind::ServiceFailureError(_inner) => Some(_inner),
-            DeleteRolePolicyErrorKind::UnmodifiableEntityError(_inner) => Some(_inner),
+            DeleteRolePolicyErrorKind::LimitExceededException(_inner) => Some(_inner),
+            DeleteRolePolicyErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            DeleteRolePolicyErrorKind::ServiceFailureException(_inner) => Some(_inner),
+            DeleteRolePolicyErrorKind::UnmodifiableEntityException(_inner) => Some(_inner),
             DeleteRolePolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3771,20 +3897,20 @@ pub struct DeleteSAMLProviderError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteSAMLProviderErrorKind {
-    InvalidInputError(crate::error::InvalidInputError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    InvalidInputException(crate::error::InvalidInputException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteSAMLProviderError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteSAMLProviderErrorKind::InvalidInputError(_inner) => _inner.fmt(f),
-            DeleteSAMLProviderErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            DeleteSAMLProviderErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            DeleteSAMLProviderErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            DeleteSAMLProviderErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            DeleteSAMLProviderErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            DeleteSAMLProviderErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            DeleteSAMLProviderErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             DeleteSAMLProviderErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3833,38 +3959,38 @@ impl DeleteSAMLProviderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_input_error(&self) -> bool {
+    pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteSAMLProviderErrorKind::InvalidInputError(_)
+            DeleteSAMLProviderErrorKind::InvalidInputException(_)
         )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteSAMLProviderErrorKind::LimitExceededError(_)
+            DeleteSAMLProviderErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteSAMLProviderErrorKind::NoSuchEntityError(_)
+            DeleteSAMLProviderErrorKind::NoSuchEntityException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteSAMLProviderErrorKind::ServiceFailureError(_)
+            DeleteSAMLProviderErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for DeleteSAMLProviderError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteSAMLProviderErrorKind::InvalidInputError(_inner) => Some(_inner),
-            DeleteSAMLProviderErrorKind::LimitExceededError(_inner) => Some(_inner),
-            DeleteSAMLProviderErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            DeleteSAMLProviderErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            DeleteSAMLProviderErrorKind::InvalidInputException(_inner) => Some(_inner),
+            DeleteSAMLProviderErrorKind::LimitExceededException(_inner) => Some(_inner),
+            DeleteSAMLProviderErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            DeleteSAMLProviderErrorKind::ServiceFailureException(_inner) => Some(_inner),
             DeleteSAMLProviderErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3879,20 +4005,20 @@ pub struct DeleteServerCertificateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteServerCertificateErrorKind {
-    DeleteConflictError(crate::error::DeleteConflictError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    DeleteConflictException(crate::error::DeleteConflictException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteServerCertificateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteServerCertificateErrorKind::DeleteConflictError(_inner) => _inner.fmt(f),
-            DeleteServerCertificateErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            DeleteServerCertificateErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            DeleteServerCertificateErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            DeleteServerCertificateErrorKind::DeleteConflictException(_inner) => _inner.fmt(f),
+            DeleteServerCertificateErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            DeleteServerCertificateErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            DeleteServerCertificateErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             DeleteServerCertificateErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3941,38 +4067,38 @@ impl DeleteServerCertificateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_delete_conflict_error(&self) -> bool {
+    pub fn is_delete_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteServerCertificateErrorKind::DeleteConflictError(_)
+            DeleteServerCertificateErrorKind::DeleteConflictException(_)
         )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteServerCertificateErrorKind::LimitExceededError(_)
+            DeleteServerCertificateErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteServerCertificateErrorKind::NoSuchEntityError(_)
+            DeleteServerCertificateErrorKind::NoSuchEntityException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteServerCertificateErrorKind::ServiceFailureError(_)
+            DeleteServerCertificateErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for DeleteServerCertificateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteServerCertificateErrorKind::DeleteConflictError(_inner) => Some(_inner),
-            DeleteServerCertificateErrorKind::LimitExceededError(_inner) => Some(_inner),
-            DeleteServerCertificateErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            DeleteServerCertificateErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            DeleteServerCertificateErrorKind::DeleteConflictException(_inner) => Some(_inner),
+            DeleteServerCertificateErrorKind::LimitExceededException(_inner) => Some(_inner),
+            DeleteServerCertificateErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            DeleteServerCertificateErrorKind::ServiceFailureException(_inner) => Some(_inner),
             DeleteServerCertificateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3987,18 +4113,18 @@ pub struct DeleteServiceLinkedRoleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteServiceLinkedRoleErrorKind {
-    LimitExceededError(crate::error::LimitExceededError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    LimitExceededException(crate::error::LimitExceededException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteServiceLinkedRoleError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteServiceLinkedRoleErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            DeleteServiceLinkedRoleErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            DeleteServiceLinkedRoleErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            DeleteServiceLinkedRoleErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            DeleteServiceLinkedRoleErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            DeleteServiceLinkedRoleErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             DeleteServiceLinkedRoleErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4047,31 +4173,31 @@ impl DeleteServiceLinkedRoleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteServiceLinkedRoleErrorKind::LimitExceededError(_)
+            DeleteServiceLinkedRoleErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteServiceLinkedRoleErrorKind::NoSuchEntityError(_)
+            DeleteServiceLinkedRoleErrorKind::NoSuchEntityException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteServiceLinkedRoleErrorKind::ServiceFailureError(_)
+            DeleteServiceLinkedRoleErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for DeleteServiceLinkedRoleError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteServiceLinkedRoleErrorKind::LimitExceededError(_inner) => Some(_inner),
-            DeleteServiceLinkedRoleErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            DeleteServiceLinkedRoleErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            DeleteServiceLinkedRoleErrorKind::LimitExceededException(_inner) => Some(_inner),
+            DeleteServiceLinkedRoleErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            DeleteServiceLinkedRoleErrorKind::ServiceFailureException(_inner) => Some(_inner),
             DeleteServiceLinkedRoleErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4086,14 +4212,16 @@ pub struct DeleteServiceSpecificCredentialError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteServiceSpecificCredentialErrorKind {
-    NoSuchEntityError(crate::error::NoSuchEntityError),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteServiceSpecificCredentialError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteServiceSpecificCredentialErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
+            DeleteServiceSpecificCredentialErrorKind::NoSuchEntityException(_inner) => {
+                _inner.fmt(f)
+            }
             DeleteServiceSpecificCredentialErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4142,17 +4270,17 @@ impl DeleteServiceSpecificCredentialError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteServiceSpecificCredentialErrorKind::NoSuchEntityError(_)
+            DeleteServiceSpecificCredentialErrorKind::NoSuchEntityException(_)
         )
     }
 }
 impl std::error::Error for DeleteServiceSpecificCredentialError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteServiceSpecificCredentialErrorKind::NoSuchEntityError(_inner) => Some(_inner),
+            DeleteServiceSpecificCredentialErrorKind::NoSuchEntityException(_inner) => Some(_inner),
             DeleteServiceSpecificCredentialErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4167,18 +4295,18 @@ pub struct DeleteSigningCertificateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteSigningCertificateErrorKind {
-    LimitExceededError(crate::error::LimitExceededError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    LimitExceededException(crate::error::LimitExceededException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteSigningCertificateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteSigningCertificateErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            DeleteSigningCertificateErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            DeleteSigningCertificateErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            DeleteSigningCertificateErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            DeleteSigningCertificateErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            DeleteSigningCertificateErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             DeleteSigningCertificateErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4227,31 +4355,31 @@ impl DeleteSigningCertificateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteSigningCertificateErrorKind::LimitExceededError(_)
+            DeleteSigningCertificateErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteSigningCertificateErrorKind::NoSuchEntityError(_)
+            DeleteSigningCertificateErrorKind::NoSuchEntityException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteSigningCertificateErrorKind::ServiceFailureError(_)
+            DeleteSigningCertificateErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for DeleteSigningCertificateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteSigningCertificateErrorKind::LimitExceededError(_inner) => Some(_inner),
-            DeleteSigningCertificateErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            DeleteSigningCertificateErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            DeleteSigningCertificateErrorKind::LimitExceededException(_inner) => Some(_inner),
+            DeleteSigningCertificateErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            DeleteSigningCertificateErrorKind::ServiceFailureException(_inner) => Some(_inner),
             DeleteSigningCertificateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4266,14 +4394,14 @@ pub struct DeleteSSHPublicKeyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteSSHPublicKeyErrorKind {
-    NoSuchEntityError(crate::error::NoSuchEntityError),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteSSHPublicKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteSSHPublicKeyErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
+            DeleteSSHPublicKeyErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
             DeleteSSHPublicKeyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4322,17 +4450,17 @@ impl DeleteSSHPublicKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteSSHPublicKeyErrorKind::NoSuchEntityError(_)
+            DeleteSSHPublicKeyErrorKind::NoSuchEntityException(_)
         )
     }
 }
 impl std::error::Error for DeleteSSHPublicKeyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteSSHPublicKeyErrorKind::NoSuchEntityError(_inner) => Some(_inner),
+            DeleteSSHPublicKeyErrorKind::NoSuchEntityException(_inner) => Some(_inner),
             DeleteSSHPublicKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4347,22 +4475,22 @@ pub struct DeleteUserError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteUserErrorKind {
-    ConcurrentModificationError(crate::error::ConcurrentModificationError),
-    DeleteConflictError(crate::error::DeleteConflictError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    DeleteConflictException(crate::error::DeleteConflictException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteUserError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteUserErrorKind::ConcurrentModificationError(_inner) => _inner.fmt(f),
-            DeleteUserErrorKind::DeleteConflictError(_inner) => _inner.fmt(f),
-            DeleteUserErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            DeleteUserErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            DeleteUserErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            DeleteUserErrorKind::ConcurrentModificationException(_inner) => _inner.fmt(f),
+            DeleteUserErrorKind::DeleteConflictException(_inner) => _inner.fmt(f),
+            DeleteUserErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            DeleteUserErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            DeleteUserErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             DeleteUserErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4411,33 +4539,33 @@ impl DeleteUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_concurrent_modification_error(&self) -> bool {
+    pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteUserErrorKind::ConcurrentModificationError(_)
+            DeleteUserErrorKind::ConcurrentModificationException(_)
         )
     }
-    pub fn is_delete_conflict_error(&self) -> bool {
-        matches!(&self.kind, DeleteUserErrorKind::DeleteConflictError(_))
+    pub fn is_delete_conflict_exception(&self) -> bool {
+        matches!(&self.kind, DeleteUserErrorKind::DeleteConflictException(_))
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, DeleteUserErrorKind::LimitExceededError(_))
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(&self.kind, DeleteUserErrorKind::LimitExceededException(_))
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
-        matches!(&self.kind, DeleteUserErrorKind::NoSuchEntityError(_))
+    pub fn is_no_such_entity_exception(&self) -> bool {
+        matches!(&self.kind, DeleteUserErrorKind::NoSuchEntityException(_))
     }
-    pub fn is_service_failure_error(&self) -> bool {
-        matches!(&self.kind, DeleteUserErrorKind::ServiceFailureError(_))
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(&self.kind, DeleteUserErrorKind::ServiceFailureException(_))
     }
 }
 impl std::error::Error for DeleteUserError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteUserErrorKind::ConcurrentModificationError(_inner) => Some(_inner),
-            DeleteUserErrorKind::DeleteConflictError(_inner) => Some(_inner),
-            DeleteUserErrorKind::LimitExceededError(_inner) => Some(_inner),
-            DeleteUserErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            DeleteUserErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            DeleteUserErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
+            DeleteUserErrorKind::DeleteConflictException(_inner) => Some(_inner),
+            DeleteUserErrorKind::LimitExceededException(_inner) => Some(_inner),
+            DeleteUserErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            DeleteUserErrorKind::ServiceFailureException(_inner) => Some(_inner),
             DeleteUserErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4452,16 +4580,18 @@ pub struct DeleteUserPermissionsBoundaryError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteUserPermissionsBoundaryErrorKind {
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteUserPermissionsBoundaryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteUserPermissionsBoundaryErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            DeleteUserPermissionsBoundaryErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            DeleteUserPermissionsBoundaryErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            DeleteUserPermissionsBoundaryErrorKind::ServiceFailureException(_inner) => {
+                _inner.fmt(f)
+            }
             DeleteUserPermissionsBoundaryErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4510,24 +4640,24 @@ impl DeleteUserPermissionsBoundaryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteUserPermissionsBoundaryErrorKind::NoSuchEntityError(_)
+            DeleteUserPermissionsBoundaryErrorKind::NoSuchEntityException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteUserPermissionsBoundaryErrorKind::ServiceFailureError(_)
+            DeleteUserPermissionsBoundaryErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for DeleteUserPermissionsBoundaryError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteUserPermissionsBoundaryErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            DeleteUserPermissionsBoundaryErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            DeleteUserPermissionsBoundaryErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            DeleteUserPermissionsBoundaryErrorKind::ServiceFailureException(_inner) => Some(_inner),
             DeleteUserPermissionsBoundaryErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4542,18 +4672,18 @@ pub struct DeleteUserPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteUserPolicyErrorKind {
-    LimitExceededError(crate::error::LimitExceededError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    LimitExceededException(crate::error::LimitExceededException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteUserPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteUserPolicyErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            DeleteUserPolicyErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            DeleteUserPolicyErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            DeleteUserPolicyErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            DeleteUserPolicyErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            DeleteUserPolicyErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             DeleteUserPolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4602,25 +4732,31 @@ impl DeleteUserPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, DeleteUserPolicyErrorKind::LimitExceededError(_))
-    }
-    pub fn is_no_such_entity_error(&self) -> bool {
-        matches!(&self.kind, DeleteUserPolicyErrorKind::NoSuchEntityError(_))
-    }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteUserPolicyErrorKind::ServiceFailureError(_)
+            DeleteUserPolicyErrorKind::LimitExceededException(_)
+        )
+    }
+    pub fn is_no_such_entity_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteUserPolicyErrorKind::NoSuchEntityException(_)
+        )
+    }
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteUserPolicyErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for DeleteUserPolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteUserPolicyErrorKind::LimitExceededError(_inner) => Some(_inner),
-            DeleteUserPolicyErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            DeleteUserPolicyErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            DeleteUserPolicyErrorKind::LimitExceededException(_inner) => Some(_inner),
+            DeleteUserPolicyErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            DeleteUserPolicyErrorKind::ServiceFailureException(_inner) => Some(_inner),
             DeleteUserPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4635,20 +4771,20 @@ pub struct DeleteVirtualMFADeviceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteVirtualMFADeviceErrorKind {
-    DeleteConflictError(crate::error::DeleteConflictError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    DeleteConflictException(crate::error::DeleteConflictException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteVirtualMFADeviceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteVirtualMFADeviceErrorKind::DeleteConflictError(_inner) => _inner.fmt(f),
-            DeleteVirtualMFADeviceErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            DeleteVirtualMFADeviceErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            DeleteVirtualMFADeviceErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            DeleteVirtualMFADeviceErrorKind::DeleteConflictException(_inner) => _inner.fmt(f),
+            DeleteVirtualMFADeviceErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            DeleteVirtualMFADeviceErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            DeleteVirtualMFADeviceErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             DeleteVirtualMFADeviceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4697,38 +4833,38 @@ impl DeleteVirtualMFADeviceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_delete_conflict_error(&self) -> bool {
+    pub fn is_delete_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteVirtualMFADeviceErrorKind::DeleteConflictError(_)
+            DeleteVirtualMFADeviceErrorKind::DeleteConflictException(_)
         )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteVirtualMFADeviceErrorKind::LimitExceededError(_)
+            DeleteVirtualMFADeviceErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteVirtualMFADeviceErrorKind::NoSuchEntityError(_)
+            DeleteVirtualMFADeviceErrorKind::NoSuchEntityException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteVirtualMFADeviceErrorKind::ServiceFailureError(_)
+            DeleteVirtualMFADeviceErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for DeleteVirtualMFADeviceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteVirtualMFADeviceErrorKind::DeleteConflictError(_inner) => Some(_inner),
-            DeleteVirtualMFADeviceErrorKind::LimitExceededError(_inner) => Some(_inner),
-            DeleteVirtualMFADeviceErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            DeleteVirtualMFADeviceErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            DeleteVirtualMFADeviceErrorKind::DeleteConflictException(_inner) => Some(_inner),
+            DeleteVirtualMFADeviceErrorKind::LimitExceededException(_inner) => Some(_inner),
+            DeleteVirtualMFADeviceErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            DeleteVirtualMFADeviceErrorKind::ServiceFailureException(_inner) => Some(_inner),
             DeleteVirtualMFADeviceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4743,20 +4879,20 @@ pub struct DetachGroupPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DetachGroupPolicyErrorKind {
-    InvalidInputError(crate::error::InvalidInputError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    InvalidInputException(crate::error::InvalidInputException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DetachGroupPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DetachGroupPolicyErrorKind::InvalidInputError(_inner) => _inner.fmt(f),
-            DetachGroupPolicyErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            DetachGroupPolicyErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            DetachGroupPolicyErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            DetachGroupPolicyErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            DetachGroupPolicyErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            DetachGroupPolicyErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            DetachGroupPolicyErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             DetachGroupPolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4805,32 +4941,38 @@ impl DetachGroupPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_input_error(&self) -> bool {
-        matches!(&self.kind, DetachGroupPolicyErrorKind::InvalidInputError(_))
-    }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DetachGroupPolicyErrorKind::LimitExceededError(_)
+            DetachGroupPolicyErrorKind::InvalidInputException(_)
         )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
-        matches!(&self.kind, DetachGroupPolicyErrorKind::NoSuchEntityError(_))
-    }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DetachGroupPolicyErrorKind::ServiceFailureError(_)
+            DetachGroupPolicyErrorKind::LimitExceededException(_)
+        )
+    }
+    pub fn is_no_such_entity_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DetachGroupPolicyErrorKind::NoSuchEntityException(_)
+        )
+    }
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DetachGroupPolicyErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for DetachGroupPolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DetachGroupPolicyErrorKind::InvalidInputError(_inner) => Some(_inner),
-            DetachGroupPolicyErrorKind::LimitExceededError(_inner) => Some(_inner),
-            DetachGroupPolicyErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            DetachGroupPolicyErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            DetachGroupPolicyErrorKind::InvalidInputException(_inner) => Some(_inner),
+            DetachGroupPolicyErrorKind::LimitExceededException(_inner) => Some(_inner),
+            DetachGroupPolicyErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            DetachGroupPolicyErrorKind::ServiceFailureException(_inner) => Some(_inner),
             DetachGroupPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4845,22 +4987,22 @@ pub struct DetachRolePolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DetachRolePolicyErrorKind {
-    InvalidInputError(crate::error::InvalidInputError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
-    UnmodifiableEntityError(crate::error::UnmodifiableEntityError),
+    InvalidInputException(crate::error::InvalidInputException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
+    UnmodifiableEntityException(crate::error::UnmodifiableEntityException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DetachRolePolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DetachRolePolicyErrorKind::InvalidInputError(_inner) => _inner.fmt(f),
-            DetachRolePolicyErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            DetachRolePolicyErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            DetachRolePolicyErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
-            DetachRolePolicyErrorKind::UnmodifiableEntityError(_inner) => _inner.fmt(f),
+            DetachRolePolicyErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            DetachRolePolicyErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            DetachRolePolicyErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            DetachRolePolicyErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
+            DetachRolePolicyErrorKind::UnmodifiableEntityException(_inner) => _inner.fmt(f),
             DetachRolePolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4909,36 +5051,45 @@ impl DetachRolePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_input_error(&self) -> bool {
-        matches!(&self.kind, DetachRolePolicyErrorKind::InvalidInputError(_))
-    }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, DetachRolePolicyErrorKind::LimitExceededError(_))
-    }
-    pub fn is_no_such_entity_error(&self) -> bool {
-        matches!(&self.kind, DetachRolePolicyErrorKind::NoSuchEntityError(_))
-    }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DetachRolePolicyErrorKind::ServiceFailureError(_)
+            DetachRolePolicyErrorKind::InvalidInputException(_)
         )
     }
-    pub fn is_unmodifiable_entity_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DetachRolePolicyErrorKind::UnmodifiableEntityError(_)
+            DetachRolePolicyErrorKind::LimitExceededException(_)
+        )
+    }
+    pub fn is_no_such_entity_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DetachRolePolicyErrorKind::NoSuchEntityException(_)
+        )
+    }
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DetachRolePolicyErrorKind::ServiceFailureException(_)
+        )
+    }
+    pub fn is_unmodifiable_entity_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DetachRolePolicyErrorKind::UnmodifiableEntityException(_)
         )
     }
 }
 impl std::error::Error for DetachRolePolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DetachRolePolicyErrorKind::InvalidInputError(_inner) => Some(_inner),
-            DetachRolePolicyErrorKind::LimitExceededError(_inner) => Some(_inner),
-            DetachRolePolicyErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            DetachRolePolicyErrorKind::ServiceFailureError(_inner) => Some(_inner),
-            DetachRolePolicyErrorKind::UnmodifiableEntityError(_inner) => Some(_inner),
+            DetachRolePolicyErrorKind::InvalidInputException(_inner) => Some(_inner),
+            DetachRolePolicyErrorKind::LimitExceededException(_inner) => Some(_inner),
+            DetachRolePolicyErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            DetachRolePolicyErrorKind::ServiceFailureException(_inner) => Some(_inner),
+            DetachRolePolicyErrorKind::UnmodifiableEntityException(_inner) => Some(_inner),
             DetachRolePolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4953,20 +5104,20 @@ pub struct DetachUserPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DetachUserPolicyErrorKind {
-    InvalidInputError(crate::error::InvalidInputError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    InvalidInputException(crate::error::InvalidInputException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DetachUserPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DetachUserPolicyErrorKind::InvalidInputError(_inner) => _inner.fmt(f),
-            DetachUserPolicyErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            DetachUserPolicyErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            DetachUserPolicyErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            DetachUserPolicyErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            DetachUserPolicyErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            DetachUserPolicyErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            DetachUserPolicyErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             DetachUserPolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5015,29 +5166,38 @@ impl DetachUserPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_input_error(&self) -> bool {
-        matches!(&self.kind, DetachUserPolicyErrorKind::InvalidInputError(_))
-    }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, DetachUserPolicyErrorKind::LimitExceededError(_))
-    }
-    pub fn is_no_such_entity_error(&self) -> bool {
-        matches!(&self.kind, DetachUserPolicyErrorKind::NoSuchEntityError(_))
-    }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DetachUserPolicyErrorKind::ServiceFailureError(_)
+            DetachUserPolicyErrorKind::InvalidInputException(_)
+        )
+    }
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DetachUserPolicyErrorKind::LimitExceededException(_)
+        )
+    }
+    pub fn is_no_such_entity_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DetachUserPolicyErrorKind::NoSuchEntityException(_)
+        )
+    }
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DetachUserPolicyErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for DetachUserPolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DetachUserPolicyErrorKind::InvalidInputError(_inner) => Some(_inner),
-            DetachUserPolicyErrorKind::LimitExceededError(_inner) => Some(_inner),
-            DetachUserPolicyErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            DetachUserPolicyErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            DetachUserPolicyErrorKind::InvalidInputException(_inner) => Some(_inner),
+            DetachUserPolicyErrorKind::LimitExceededException(_inner) => Some(_inner),
+            DetachUserPolicyErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            DetachUserPolicyErrorKind::ServiceFailureException(_inner) => Some(_inner),
             DetachUserPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5052,24 +5212,26 @@ pub struct EnableMFADeviceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum EnableMFADeviceErrorKind {
-    EntityAlreadyExistsError(crate::error::EntityAlreadyExistsError),
-    EntityTemporarilyUnmodifiableError(crate::error::EntityTemporarilyUnmodifiableError),
-    InvalidAuthenticationCodeError(crate::error::InvalidAuthenticationCodeError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    EntityAlreadyExistsException(crate::error::EntityAlreadyExistsException),
+    EntityTemporarilyUnmodifiableException(crate::error::EntityTemporarilyUnmodifiableException),
+    InvalidAuthenticationCodeException(crate::error::InvalidAuthenticationCodeException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for EnableMFADeviceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            EnableMFADeviceErrorKind::EntityAlreadyExistsError(_inner) => _inner.fmt(f),
-            EnableMFADeviceErrorKind::EntityTemporarilyUnmodifiableError(_inner) => _inner.fmt(f),
-            EnableMFADeviceErrorKind::InvalidAuthenticationCodeError(_inner) => _inner.fmt(f),
-            EnableMFADeviceErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            EnableMFADeviceErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            EnableMFADeviceErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            EnableMFADeviceErrorKind::EntityAlreadyExistsException(_inner) => _inner.fmt(f),
+            EnableMFADeviceErrorKind::EntityTemporarilyUnmodifiableException(_inner) => {
+                _inner.fmt(f)
+            }
+            EnableMFADeviceErrorKind::InvalidAuthenticationCodeException(_inner) => _inner.fmt(f),
+            EnableMFADeviceErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            EnableMFADeviceErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            EnableMFADeviceErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             EnableMFADeviceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5118,43 +5280,54 @@ impl EnableMFADeviceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_entity_already_exists_error(&self) -> bool {
+    pub fn is_entity_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
-            EnableMFADeviceErrorKind::EntityAlreadyExistsError(_)
+            EnableMFADeviceErrorKind::EntityAlreadyExistsException(_)
         )
     }
-    pub fn is_entity_temporarily_unmodifiable_error(&self) -> bool {
+    pub fn is_entity_temporarily_unmodifiable_exception(&self) -> bool {
         matches!(
             &self.kind,
-            EnableMFADeviceErrorKind::EntityTemporarilyUnmodifiableError(_)
+            EnableMFADeviceErrorKind::EntityTemporarilyUnmodifiableException(_)
         )
     }
-    pub fn is_invalid_authentication_code_error(&self) -> bool {
+    pub fn is_invalid_authentication_code_exception(&self) -> bool {
         matches!(
             &self.kind,
-            EnableMFADeviceErrorKind::InvalidAuthenticationCodeError(_)
+            EnableMFADeviceErrorKind::InvalidAuthenticationCodeException(_)
         )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, EnableMFADeviceErrorKind::LimitExceededError(_))
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            EnableMFADeviceErrorKind::LimitExceededException(_)
+        )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
-        matches!(&self.kind, EnableMFADeviceErrorKind::NoSuchEntityError(_))
+    pub fn is_no_such_entity_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            EnableMFADeviceErrorKind::NoSuchEntityException(_)
+        )
     }
-    pub fn is_service_failure_error(&self) -> bool {
-        matches!(&self.kind, EnableMFADeviceErrorKind::ServiceFailureError(_))
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            EnableMFADeviceErrorKind::ServiceFailureException(_)
+        )
     }
 }
 impl std::error::Error for EnableMFADeviceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            EnableMFADeviceErrorKind::EntityAlreadyExistsError(_inner) => Some(_inner),
-            EnableMFADeviceErrorKind::EntityTemporarilyUnmodifiableError(_inner) => Some(_inner),
-            EnableMFADeviceErrorKind::InvalidAuthenticationCodeError(_inner) => Some(_inner),
-            EnableMFADeviceErrorKind::LimitExceededError(_inner) => Some(_inner),
-            EnableMFADeviceErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            EnableMFADeviceErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            EnableMFADeviceErrorKind::EntityAlreadyExistsException(_inner) => Some(_inner),
+            EnableMFADeviceErrorKind::EntityTemporarilyUnmodifiableException(_inner) => {
+                Some(_inner)
+            }
+            EnableMFADeviceErrorKind::InvalidAuthenticationCodeException(_inner) => Some(_inner),
+            EnableMFADeviceErrorKind::LimitExceededException(_inner) => Some(_inner),
+            EnableMFADeviceErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            EnableMFADeviceErrorKind::ServiceFailureException(_inner) => Some(_inner),
             EnableMFADeviceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5169,16 +5342,16 @@ pub struct GenerateCredentialReportError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GenerateCredentialReportErrorKind {
-    LimitExceededError(crate::error::LimitExceededError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    LimitExceededException(crate::error::LimitExceededException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GenerateCredentialReportError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GenerateCredentialReportErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            GenerateCredentialReportErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            GenerateCredentialReportErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            GenerateCredentialReportErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             GenerateCredentialReportErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5227,24 +5400,24 @@ impl GenerateCredentialReportError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GenerateCredentialReportErrorKind::LimitExceededError(_)
+            GenerateCredentialReportErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GenerateCredentialReportErrorKind::ServiceFailureError(_)
+            GenerateCredentialReportErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for GenerateCredentialReportError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GenerateCredentialReportErrorKind::LimitExceededError(_inner) => Some(_inner),
-            GenerateCredentialReportErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            GenerateCredentialReportErrorKind::LimitExceededException(_inner) => Some(_inner),
+            GenerateCredentialReportErrorKind::ServiceFailureException(_inner) => Some(_inner),
             GenerateCredentialReportErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5259,14 +5432,14 @@ pub struct GenerateOrganizationsAccessReportError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GenerateOrganizationsAccessReportErrorKind {
-    ReportGenerationLimitExceededError(crate::error::ReportGenerationLimitExceededError),
+    ReportGenerationLimitExceededException(crate::error::ReportGenerationLimitExceededException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GenerateOrganizationsAccessReportError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GenerateOrganizationsAccessReportErrorKind::ReportGenerationLimitExceededError(
+            GenerateOrganizationsAccessReportErrorKind::ReportGenerationLimitExceededException(
                 _inner,
             ) => _inner.fmt(f),
             GenerateOrganizationsAccessReportErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -5320,17 +5493,17 @@ impl GenerateOrganizationsAccessReportError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_report_generation_limit_exceeded_error(&self) -> bool {
+    pub fn is_report_generation_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GenerateOrganizationsAccessReportErrorKind::ReportGenerationLimitExceededError(_)
+            GenerateOrganizationsAccessReportErrorKind::ReportGenerationLimitExceededException(_)
         )
     }
 }
 impl std::error::Error for GenerateOrganizationsAccessReportError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GenerateOrganizationsAccessReportErrorKind::ReportGenerationLimitExceededError(
+            GenerateOrganizationsAccessReportErrorKind::ReportGenerationLimitExceededException(
                 _inner,
             ) => Some(_inner),
             GenerateOrganizationsAccessReportErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -5347,16 +5520,20 @@ pub struct GenerateServiceLastAccessedDetailsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GenerateServiceLastAccessedDetailsErrorKind {
-    InvalidInputError(crate::error::InvalidInputError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
+    InvalidInputException(crate::error::InvalidInputException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GenerateServiceLastAccessedDetailsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GenerateServiceLastAccessedDetailsErrorKind::InvalidInputError(_inner) => _inner.fmt(f),
-            GenerateServiceLastAccessedDetailsErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
+            GenerateServiceLastAccessedDetailsErrorKind::InvalidInputException(_inner) => {
+                _inner.fmt(f)
+            }
+            GenerateServiceLastAccessedDetailsErrorKind::NoSuchEntityException(_inner) => {
+                _inner.fmt(f)
+            }
             GenerateServiceLastAccessedDetailsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5408,24 +5585,28 @@ impl GenerateServiceLastAccessedDetailsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_input_error(&self) -> bool {
+    pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GenerateServiceLastAccessedDetailsErrorKind::InvalidInputError(_)
+            GenerateServiceLastAccessedDetailsErrorKind::InvalidInputException(_)
         )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GenerateServiceLastAccessedDetailsErrorKind::NoSuchEntityError(_)
+            GenerateServiceLastAccessedDetailsErrorKind::NoSuchEntityException(_)
         )
     }
 }
 impl std::error::Error for GenerateServiceLastAccessedDetailsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GenerateServiceLastAccessedDetailsErrorKind::InvalidInputError(_inner) => Some(_inner),
-            GenerateServiceLastAccessedDetailsErrorKind::NoSuchEntityError(_inner) => Some(_inner),
+            GenerateServiceLastAccessedDetailsErrorKind::InvalidInputException(_inner) => {
+                Some(_inner)
+            }
+            GenerateServiceLastAccessedDetailsErrorKind::NoSuchEntityException(_inner) => {
+                Some(_inner)
+            }
             GenerateServiceLastAccessedDetailsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5440,14 +5621,14 @@ pub struct GetAccessKeyLastUsedError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetAccessKeyLastUsedErrorKind {
-    NoSuchEntityError(crate::error::NoSuchEntityError),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAccessKeyLastUsedError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetAccessKeyLastUsedErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
+            GetAccessKeyLastUsedErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
             GetAccessKeyLastUsedErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5496,17 +5677,17 @@ impl GetAccessKeyLastUsedError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetAccessKeyLastUsedErrorKind::NoSuchEntityError(_)
+            GetAccessKeyLastUsedErrorKind::NoSuchEntityException(_)
         )
     }
 }
 impl std::error::Error for GetAccessKeyLastUsedError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetAccessKeyLastUsedErrorKind::NoSuchEntityError(_inner) => Some(_inner),
+            GetAccessKeyLastUsedErrorKind::NoSuchEntityException(_inner) => Some(_inner),
             GetAccessKeyLastUsedErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5521,14 +5702,16 @@ pub struct GetAccountAuthorizationDetailsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetAccountAuthorizationDetailsErrorKind {
-    ServiceFailureError(crate::error::ServiceFailureError),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAccountAuthorizationDetailsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetAccountAuthorizationDetailsErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            GetAccountAuthorizationDetailsErrorKind::ServiceFailureException(_inner) => {
+                _inner.fmt(f)
+            }
             GetAccountAuthorizationDetailsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5577,17 +5760,19 @@ impl GetAccountAuthorizationDetailsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetAccountAuthorizationDetailsErrorKind::ServiceFailureError(_)
+            GetAccountAuthorizationDetailsErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for GetAccountAuthorizationDetailsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetAccountAuthorizationDetailsErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            GetAccountAuthorizationDetailsErrorKind::ServiceFailureException(_inner) => {
+                Some(_inner)
+            }
             GetAccountAuthorizationDetailsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5602,16 +5787,16 @@ pub struct GetAccountPasswordPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetAccountPasswordPolicyErrorKind {
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAccountPasswordPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetAccountPasswordPolicyErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            GetAccountPasswordPolicyErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            GetAccountPasswordPolicyErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            GetAccountPasswordPolicyErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             GetAccountPasswordPolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5660,24 +5845,24 @@ impl GetAccountPasswordPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetAccountPasswordPolicyErrorKind::NoSuchEntityError(_)
+            GetAccountPasswordPolicyErrorKind::NoSuchEntityException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetAccountPasswordPolicyErrorKind::ServiceFailureError(_)
+            GetAccountPasswordPolicyErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for GetAccountPasswordPolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetAccountPasswordPolicyErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            GetAccountPasswordPolicyErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            GetAccountPasswordPolicyErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            GetAccountPasswordPolicyErrorKind::ServiceFailureException(_inner) => Some(_inner),
             GetAccountPasswordPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5692,14 +5877,14 @@ pub struct GetAccountSummaryError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetAccountSummaryErrorKind {
-    ServiceFailureError(crate::error::ServiceFailureError),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAccountSummaryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetAccountSummaryErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            GetAccountSummaryErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             GetAccountSummaryErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5748,17 +5933,17 @@ impl GetAccountSummaryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetAccountSummaryErrorKind::ServiceFailureError(_)
+            GetAccountSummaryErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for GetAccountSummaryError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetAccountSummaryErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            GetAccountSummaryErrorKind::ServiceFailureException(_inner) => Some(_inner),
             GetAccountSummaryErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5773,14 +5958,14 @@ pub struct GetContextKeysForCustomPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetContextKeysForCustomPolicyErrorKind {
-    InvalidInputError(crate::error::InvalidInputError),
+    InvalidInputException(crate::error::InvalidInputException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetContextKeysForCustomPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetContextKeysForCustomPolicyErrorKind::InvalidInputError(_inner) => _inner.fmt(f),
+            GetContextKeysForCustomPolicyErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
             GetContextKeysForCustomPolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5829,17 +6014,17 @@ impl GetContextKeysForCustomPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_input_error(&self) -> bool {
+    pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetContextKeysForCustomPolicyErrorKind::InvalidInputError(_)
+            GetContextKeysForCustomPolicyErrorKind::InvalidInputException(_)
         )
     }
 }
 impl std::error::Error for GetContextKeysForCustomPolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetContextKeysForCustomPolicyErrorKind::InvalidInputError(_inner) => Some(_inner),
+            GetContextKeysForCustomPolicyErrorKind::InvalidInputException(_inner) => Some(_inner),
             GetContextKeysForCustomPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5854,16 +6039,20 @@ pub struct GetContextKeysForPrincipalPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetContextKeysForPrincipalPolicyErrorKind {
-    InvalidInputError(crate::error::InvalidInputError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
+    InvalidInputException(crate::error::InvalidInputException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetContextKeysForPrincipalPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetContextKeysForPrincipalPolicyErrorKind::InvalidInputError(_inner) => _inner.fmt(f),
-            GetContextKeysForPrincipalPolicyErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
+            GetContextKeysForPrincipalPolicyErrorKind::InvalidInputException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetContextKeysForPrincipalPolicyErrorKind::NoSuchEntityException(_inner) => {
+                _inner.fmt(f)
+            }
             GetContextKeysForPrincipalPolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5912,24 +6101,28 @@ impl GetContextKeysForPrincipalPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_input_error(&self) -> bool {
+    pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetContextKeysForPrincipalPolicyErrorKind::InvalidInputError(_)
+            GetContextKeysForPrincipalPolicyErrorKind::InvalidInputException(_)
         )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetContextKeysForPrincipalPolicyErrorKind::NoSuchEntityError(_)
+            GetContextKeysForPrincipalPolicyErrorKind::NoSuchEntityException(_)
         )
     }
 }
 impl std::error::Error for GetContextKeysForPrincipalPolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetContextKeysForPrincipalPolicyErrorKind::InvalidInputError(_inner) => Some(_inner),
-            GetContextKeysForPrincipalPolicyErrorKind::NoSuchEntityError(_inner) => Some(_inner),
+            GetContextKeysForPrincipalPolicyErrorKind::InvalidInputException(_inner) => {
+                Some(_inner)
+            }
+            GetContextKeysForPrincipalPolicyErrorKind::NoSuchEntityException(_inner) => {
+                Some(_inner)
+            }
             GetContextKeysForPrincipalPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5944,20 +6137,24 @@ pub struct GetCredentialReportError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetCredentialReportErrorKind {
-    CredentialReportExpiredError(crate::error::CredentialReportExpiredError),
-    CredentialReportNotPresentError(crate::error::CredentialReportNotPresentError),
-    CredentialReportNotReadyError(crate::error::CredentialReportNotReadyError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    CredentialReportExpiredException(crate::error::CredentialReportExpiredException),
+    CredentialReportNotPresentException(crate::error::CredentialReportNotPresentException),
+    CredentialReportNotReadyException(crate::error::CredentialReportNotReadyException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetCredentialReportError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetCredentialReportErrorKind::CredentialReportExpiredError(_inner) => _inner.fmt(f),
-            GetCredentialReportErrorKind::CredentialReportNotPresentError(_inner) => _inner.fmt(f),
-            GetCredentialReportErrorKind::CredentialReportNotReadyError(_inner) => _inner.fmt(f),
-            GetCredentialReportErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            GetCredentialReportErrorKind::CredentialReportExpiredException(_inner) => _inner.fmt(f),
+            GetCredentialReportErrorKind::CredentialReportNotPresentException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetCredentialReportErrorKind::CredentialReportNotReadyException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetCredentialReportErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             GetCredentialReportErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -6006,38 +6203,40 @@ impl GetCredentialReportError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_credential_report_expired_error(&self) -> bool {
+    pub fn is_credential_report_expired_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetCredentialReportErrorKind::CredentialReportExpiredError(_)
+            GetCredentialReportErrorKind::CredentialReportExpiredException(_)
         )
     }
-    pub fn is_credential_report_not_present_error(&self) -> bool {
+    pub fn is_credential_report_not_present_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetCredentialReportErrorKind::CredentialReportNotPresentError(_)
+            GetCredentialReportErrorKind::CredentialReportNotPresentException(_)
         )
     }
-    pub fn is_credential_report_not_ready_error(&self) -> bool {
+    pub fn is_credential_report_not_ready_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetCredentialReportErrorKind::CredentialReportNotReadyError(_)
+            GetCredentialReportErrorKind::CredentialReportNotReadyException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetCredentialReportErrorKind::ServiceFailureError(_)
+            GetCredentialReportErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for GetCredentialReportError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetCredentialReportErrorKind::CredentialReportExpiredError(_inner) => Some(_inner),
-            GetCredentialReportErrorKind::CredentialReportNotPresentError(_inner) => Some(_inner),
-            GetCredentialReportErrorKind::CredentialReportNotReadyError(_inner) => Some(_inner),
-            GetCredentialReportErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            GetCredentialReportErrorKind::CredentialReportExpiredException(_inner) => Some(_inner),
+            GetCredentialReportErrorKind::CredentialReportNotPresentException(_inner) => {
+                Some(_inner)
+            }
+            GetCredentialReportErrorKind::CredentialReportNotReadyException(_inner) => Some(_inner),
+            GetCredentialReportErrorKind::ServiceFailureException(_inner) => Some(_inner),
             GetCredentialReportErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -6052,16 +6251,16 @@ pub struct GetGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetGroupErrorKind {
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetGroupErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            GetGroupErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            GetGroupErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            GetGroupErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             GetGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -6110,18 +6309,18 @@ impl GetGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
-        matches!(&self.kind, GetGroupErrorKind::NoSuchEntityError(_))
+    pub fn is_no_such_entity_exception(&self) -> bool {
+        matches!(&self.kind, GetGroupErrorKind::NoSuchEntityException(_))
     }
-    pub fn is_service_failure_error(&self) -> bool {
-        matches!(&self.kind, GetGroupErrorKind::ServiceFailureError(_))
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(&self.kind, GetGroupErrorKind::ServiceFailureException(_))
     }
 }
 impl std::error::Error for GetGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetGroupErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            GetGroupErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            GetGroupErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            GetGroupErrorKind::ServiceFailureException(_inner) => Some(_inner),
             GetGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -6136,16 +6335,16 @@ pub struct GetGroupPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetGroupPolicyErrorKind {
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetGroupPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetGroupPolicyErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            GetGroupPolicyErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            GetGroupPolicyErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            GetGroupPolicyErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             GetGroupPolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -6194,18 +6393,24 @@ impl GetGroupPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
-        matches!(&self.kind, GetGroupPolicyErrorKind::NoSuchEntityError(_))
+    pub fn is_no_such_entity_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetGroupPolicyErrorKind::NoSuchEntityException(_)
+        )
     }
-    pub fn is_service_failure_error(&self) -> bool {
-        matches!(&self.kind, GetGroupPolicyErrorKind::ServiceFailureError(_))
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetGroupPolicyErrorKind::ServiceFailureException(_)
+        )
     }
 }
 impl std::error::Error for GetGroupPolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetGroupPolicyErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            GetGroupPolicyErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            GetGroupPolicyErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            GetGroupPolicyErrorKind::ServiceFailureException(_inner) => Some(_inner),
             GetGroupPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -6220,16 +6425,16 @@ pub struct GetInstanceProfileError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetInstanceProfileErrorKind {
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetInstanceProfileError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetInstanceProfileErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            GetInstanceProfileErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            GetInstanceProfileErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            GetInstanceProfileErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             GetInstanceProfileErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -6278,24 +6483,24 @@ impl GetInstanceProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetInstanceProfileErrorKind::NoSuchEntityError(_)
+            GetInstanceProfileErrorKind::NoSuchEntityException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetInstanceProfileErrorKind::ServiceFailureError(_)
+            GetInstanceProfileErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for GetInstanceProfileError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetInstanceProfileErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            GetInstanceProfileErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            GetInstanceProfileErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            GetInstanceProfileErrorKind::ServiceFailureException(_inner) => Some(_inner),
             GetInstanceProfileErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -6310,16 +6515,16 @@ pub struct GetLoginProfileError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetLoginProfileErrorKind {
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetLoginProfileError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetLoginProfileErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            GetLoginProfileErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            GetLoginProfileErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            GetLoginProfileErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             GetLoginProfileErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -6368,18 +6573,24 @@ impl GetLoginProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
-        matches!(&self.kind, GetLoginProfileErrorKind::NoSuchEntityError(_))
+    pub fn is_no_such_entity_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetLoginProfileErrorKind::NoSuchEntityException(_)
+        )
     }
-    pub fn is_service_failure_error(&self) -> bool {
-        matches!(&self.kind, GetLoginProfileErrorKind::ServiceFailureError(_))
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetLoginProfileErrorKind::ServiceFailureException(_)
+        )
     }
 }
 impl std::error::Error for GetLoginProfileError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetLoginProfileErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            GetLoginProfileErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            GetLoginProfileErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            GetLoginProfileErrorKind::ServiceFailureException(_inner) => Some(_inner),
             GetLoginProfileErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -6394,18 +6605,18 @@ pub struct GetOpenIDConnectProviderError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetOpenIDConnectProviderErrorKind {
-    InvalidInputError(crate::error::InvalidInputError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    InvalidInputException(crate::error::InvalidInputException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetOpenIDConnectProviderError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetOpenIDConnectProviderErrorKind::InvalidInputError(_inner) => _inner.fmt(f),
-            GetOpenIDConnectProviderErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            GetOpenIDConnectProviderErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            GetOpenIDConnectProviderErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            GetOpenIDConnectProviderErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            GetOpenIDConnectProviderErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             GetOpenIDConnectProviderErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -6454,31 +6665,31 @@ impl GetOpenIDConnectProviderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_input_error(&self) -> bool {
+    pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetOpenIDConnectProviderErrorKind::InvalidInputError(_)
+            GetOpenIDConnectProviderErrorKind::InvalidInputException(_)
         )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetOpenIDConnectProviderErrorKind::NoSuchEntityError(_)
+            GetOpenIDConnectProviderErrorKind::NoSuchEntityException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetOpenIDConnectProviderErrorKind::ServiceFailureError(_)
+            GetOpenIDConnectProviderErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for GetOpenIDConnectProviderError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetOpenIDConnectProviderErrorKind::InvalidInputError(_inner) => Some(_inner),
-            GetOpenIDConnectProviderErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            GetOpenIDConnectProviderErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            GetOpenIDConnectProviderErrorKind::InvalidInputException(_inner) => Some(_inner),
+            GetOpenIDConnectProviderErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            GetOpenIDConnectProviderErrorKind::ServiceFailureException(_inner) => Some(_inner),
             GetOpenIDConnectProviderErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -6493,14 +6704,14 @@ pub struct GetOrganizationsAccessReportError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetOrganizationsAccessReportErrorKind {
-    NoSuchEntityError(crate::error::NoSuchEntityError),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetOrganizationsAccessReportError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetOrganizationsAccessReportErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
+            GetOrganizationsAccessReportErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
             GetOrganizationsAccessReportErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -6549,17 +6760,17 @@ impl GetOrganizationsAccessReportError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetOrganizationsAccessReportErrorKind::NoSuchEntityError(_)
+            GetOrganizationsAccessReportErrorKind::NoSuchEntityException(_)
         )
     }
 }
 impl std::error::Error for GetOrganizationsAccessReportError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetOrganizationsAccessReportErrorKind::NoSuchEntityError(_inner) => Some(_inner),
+            GetOrganizationsAccessReportErrorKind::NoSuchEntityException(_inner) => Some(_inner),
             GetOrganizationsAccessReportErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -6574,18 +6785,18 @@ pub struct GetPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetPolicyErrorKind {
-    InvalidInputError(crate::error::InvalidInputError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    InvalidInputException(crate::error::InvalidInputException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetPolicyErrorKind::InvalidInputError(_inner) => _inner.fmt(f),
-            GetPolicyErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            GetPolicyErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            GetPolicyErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            GetPolicyErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            GetPolicyErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             GetPolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -6634,22 +6845,22 @@ impl GetPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_input_error(&self) -> bool {
-        matches!(&self.kind, GetPolicyErrorKind::InvalidInputError(_))
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(&self.kind, GetPolicyErrorKind::InvalidInputException(_))
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
-        matches!(&self.kind, GetPolicyErrorKind::NoSuchEntityError(_))
+    pub fn is_no_such_entity_exception(&self) -> bool {
+        matches!(&self.kind, GetPolicyErrorKind::NoSuchEntityException(_))
     }
-    pub fn is_service_failure_error(&self) -> bool {
-        matches!(&self.kind, GetPolicyErrorKind::ServiceFailureError(_))
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(&self.kind, GetPolicyErrorKind::ServiceFailureException(_))
     }
 }
 impl std::error::Error for GetPolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetPolicyErrorKind::InvalidInputError(_inner) => Some(_inner),
-            GetPolicyErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            GetPolicyErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            GetPolicyErrorKind::InvalidInputException(_inner) => Some(_inner),
+            GetPolicyErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            GetPolicyErrorKind::ServiceFailureException(_inner) => Some(_inner),
             GetPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -6664,18 +6875,18 @@ pub struct GetPolicyVersionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetPolicyVersionErrorKind {
-    InvalidInputError(crate::error::InvalidInputError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    InvalidInputException(crate::error::InvalidInputException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetPolicyVersionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetPolicyVersionErrorKind::InvalidInputError(_inner) => _inner.fmt(f),
-            GetPolicyVersionErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            GetPolicyVersionErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            GetPolicyVersionErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            GetPolicyVersionErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            GetPolicyVersionErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             GetPolicyVersionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -6724,25 +6935,31 @@ impl GetPolicyVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_input_error(&self) -> bool {
-        matches!(&self.kind, GetPolicyVersionErrorKind::InvalidInputError(_))
-    }
-    pub fn is_no_such_entity_error(&self) -> bool {
-        matches!(&self.kind, GetPolicyVersionErrorKind::NoSuchEntityError(_))
-    }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetPolicyVersionErrorKind::ServiceFailureError(_)
+            GetPolicyVersionErrorKind::InvalidInputException(_)
+        )
+    }
+    pub fn is_no_such_entity_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetPolicyVersionErrorKind::NoSuchEntityException(_)
+        )
+    }
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetPolicyVersionErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for GetPolicyVersionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetPolicyVersionErrorKind::InvalidInputError(_inner) => Some(_inner),
-            GetPolicyVersionErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            GetPolicyVersionErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            GetPolicyVersionErrorKind::InvalidInputException(_inner) => Some(_inner),
+            GetPolicyVersionErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            GetPolicyVersionErrorKind::ServiceFailureException(_inner) => Some(_inner),
             GetPolicyVersionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -6757,16 +6974,16 @@ pub struct GetRoleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetRoleErrorKind {
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetRoleError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetRoleErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            GetRoleErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            GetRoleErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            GetRoleErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             GetRoleErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -6815,18 +7032,18 @@ impl GetRoleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
-        matches!(&self.kind, GetRoleErrorKind::NoSuchEntityError(_))
+    pub fn is_no_such_entity_exception(&self) -> bool {
+        matches!(&self.kind, GetRoleErrorKind::NoSuchEntityException(_))
     }
-    pub fn is_service_failure_error(&self) -> bool {
-        matches!(&self.kind, GetRoleErrorKind::ServiceFailureError(_))
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(&self.kind, GetRoleErrorKind::ServiceFailureException(_))
     }
 }
 impl std::error::Error for GetRoleError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetRoleErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            GetRoleErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            GetRoleErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            GetRoleErrorKind::ServiceFailureException(_inner) => Some(_inner),
             GetRoleErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -6841,16 +7058,16 @@ pub struct GetRolePolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetRolePolicyErrorKind {
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetRolePolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetRolePolicyErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            GetRolePolicyErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            GetRolePolicyErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            GetRolePolicyErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             GetRolePolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -6899,18 +7116,21 @@ impl GetRolePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
-        matches!(&self.kind, GetRolePolicyErrorKind::NoSuchEntityError(_))
+    pub fn is_no_such_entity_exception(&self) -> bool {
+        matches!(&self.kind, GetRolePolicyErrorKind::NoSuchEntityException(_))
     }
-    pub fn is_service_failure_error(&self) -> bool {
-        matches!(&self.kind, GetRolePolicyErrorKind::ServiceFailureError(_))
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetRolePolicyErrorKind::ServiceFailureException(_)
+        )
     }
 }
 impl std::error::Error for GetRolePolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetRolePolicyErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            GetRolePolicyErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            GetRolePolicyErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            GetRolePolicyErrorKind::ServiceFailureException(_inner) => Some(_inner),
             GetRolePolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -6925,18 +7145,18 @@ pub struct GetSAMLProviderError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetSAMLProviderErrorKind {
-    InvalidInputError(crate::error::InvalidInputError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    InvalidInputException(crate::error::InvalidInputException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSAMLProviderError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetSAMLProviderErrorKind::InvalidInputError(_inner) => _inner.fmt(f),
-            GetSAMLProviderErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            GetSAMLProviderErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            GetSAMLProviderErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            GetSAMLProviderErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            GetSAMLProviderErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             GetSAMLProviderErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -6985,22 +7205,31 @@ impl GetSAMLProviderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_input_error(&self) -> bool {
-        matches!(&self.kind, GetSAMLProviderErrorKind::InvalidInputError(_))
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetSAMLProviderErrorKind::InvalidInputException(_)
+        )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
-        matches!(&self.kind, GetSAMLProviderErrorKind::NoSuchEntityError(_))
+    pub fn is_no_such_entity_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetSAMLProviderErrorKind::NoSuchEntityException(_)
+        )
     }
-    pub fn is_service_failure_error(&self) -> bool {
-        matches!(&self.kind, GetSAMLProviderErrorKind::ServiceFailureError(_))
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetSAMLProviderErrorKind::ServiceFailureException(_)
+        )
     }
 }
 impl std::error::Error for GetSAMLProviderError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetSAMLProviderErrorKind::InvalidInputError(_inner) => Some(_inner),
-            GetSAMLProviderErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            GetSAMLProviderErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            GetSAMLProviderErrorKind::InvalidInputException(_inner) => Some(_inner),
+            GetSAMLProviderErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            GetSAMLProviderErrorKind::ServiceFailureException(_inner) => Some(_inner),
             GetSAMLProviderErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -7015,16 +7244,16 @@ pub struct GetServerCertificateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetServerCertificateErrorKind {
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetServerCertificateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetServerCertificateErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            GetServerCertificateErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            GetServerCertificateErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            GetServerCertificateErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             GetServerCertificateErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -7073,24 +7302,24 @@ impl GetServerCertificateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetServerCertificateErrorKind::NoSuchEntityError(_)
+            GetServerCertificateErrorKind::NoSuchEntityException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetServerCertificateErrorKind::ServiceFailureError(_)
+            GetServerCertificateErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for GetServerCertificateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetServerCertificateErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            GetServerCertificateErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            GetServerCertificateErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            GetServerCertificateErrorKind::ServiceFailureException(_inner) => Some(_inner),
             GetServerCertificateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -7105,16 +7334,16 @@ pub struct GetServiceLastAccessedDetailsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetServiceLastAccessedDetailsErrorKind {
-    InvalidInputError(crate::error::InvalidInputError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
+    InvalidInputException(crate::error::InvalidInputException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetServiceLastAccessedDetailsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetServiceLastAccessedDetailsErrorKind::InvalidInputError(_inner) => _inner.fmt(f),
-            GetServiceLastAccessedDetailsErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
+            GetServiceLastAccessedDetailsErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            GetServiceLastAccessedDetailsErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
             GetServiceLastAccessedDetailsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -7163,24 +7392,24 @@ impl GetServiceLastAccessedDetailsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_input_error(&self) -> bool {
+    pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetServiceLastAccessedDetailsErrorKind::InvalidInputError(_)
+            GetServiceLastAccessedDetailsErrorKind::InvalidInputException(_)
         )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetServiceLastAccessedDetailsErrorKind::NoSuchEntityError(_)
+            GetServiceLastAccessedDetailsErrorKind::NoSuchEntityException(_)
         )
     }
 }
 impl std::error::Error for GetServiceLastAccessedDetailsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetServiceLastAccessedDetailsErrorKind::InvalidInputError(_inner) => Some(_inner),
-            GetServiceLastAccessedDetailsErrorKind::NoSuchEntityError(_inner) => Some(_inner),
+            GetServiceLastAccessedDetailsErrorKind::InvalidInputException(_inner) => Some(_inner),
+            GetServiceLastAccessedDetailsErrorKind::NoSuchEntityException(_inner) => Some(_inner),
             GetServiceLastAccessedDetailsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -7195,18 +7424,18 @@ pub struct GetServiceLastAccessedDetailsWithEntitiesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetServiceLastAccessedDetailsWithEntitiesErrorKind {
-    InvalidInputError(crate::error::InvalidInputError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
+    InvalidInputException(crate::error::InvalidInputException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetServiceLastAccessedDetailsWithEntitiesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetServiceLastAccessedDetailsWithEntitiesErrorKind::InvalidInputError(_inner) => {
+            GetServiceLastAccessedDetailsWithEntitiesErrorKind::InvalidInputException(_inner) => {
                 _inner.fmt(f)
             }
-            GetServiceLastAccessedDetailsWithEntitiesErrorKind::NoSuchEntityError(_inner) => {
+            GetServiceLastAccessedDetailsWithEntitiesErrorKind::NoSuchEntityException(_inner) => {
                 _inner.fmt(f)
             }
             GetServiceLastAccessedDetailsWithEntitiesErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -7260,26 +7489,26 @@ impl GetServiceLastAccessedDetailsWithEntitiesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_input_error(&self) -> bool {
+    pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetServiceLastAccessedDetailsWithEntitiesErrorKind::InvalidInputError(_)
+            GetServiceLastAccessedDetailsWithEntitiesErrorKind::InvalidInputException(_)
         )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetServiceLastAccessedDetailsWithEntitiesErrorKind::NoSuchEntityError(_)
+            GetServiceLastAccessedDetailsWithEntitiesErrorKind::NoSuchEntityException(_)
         )
     }
 }
 impl std::error::Error for GetServiceLastAccessedDetailsWithEntitiesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetServiceLastAccessedDetailsWithEntitiesErrorKind::InvalidInputError(_inner) => {
+            GetServiceLastAccessedDetailsWithEntitiesErrorKind::InvalidInputException(_inner) => {
                 Some(_inner)
             }
-            GetServiceLastAccessedDetailsWithEntitiesErrorKind::NoSuchEntityError(_inner) => {
+            GetServiceLastAccessedDetailsWithEntitiesErrorKind::NoSuchEntityException(_inner) => {
                 Some(_inner)
             }
             GetServiceLastAccessedDetailsWithEntitiesErrorKind::Unhandled(_inner) => {
@@ -7298,18 +7527,22 @@ pub struct GetServiceLinkedRoleDeletionStatusError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetServiceLinkedRoleDeletionStatusErrorKind {
-    InvalidInputError(crate::error::InvalidInputError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    InvalidInputException(crate::error::InvalidInputException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetServiceLinkedRoleDeletionStatusError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetServiceLinkedRoleDeletionStatusErrorKind::InvalidInputError(_inner) => _inner.fmt(f),
-            GetServiceLinkedRoleDeletionStatusErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            GetServiceLinkedRoleDeletionStatusErrorKind::ServiceFailureError(_inner) => {
+            GetServiceLinkedRoleDeletionStatusErrorKind::InvalidInputException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetServiceLinkedRoleDeletionStatusErrorKind::NoSuchEntityException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetServiceLinkedRoleDeletionStatusErrorKind::ServiceFailureException(_inner) => {
                 _inner.fmt(f)
             }
             GetServiceLinkedRoleDeletionStatusErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -7363,31 +7596,35 @@ impl GetServiceLinkedRoleDeletionStatusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_input_error(&self) -> bool {
+    pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetServiceLinkedRoleDeletionStatusErrorKind::InvalidInputError(_)
+            GetServiceLinkedRoleDeletionStatusErrorKind::InvalidInputException(_)
         )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetServiceLinkedRoleDeletionStatusErrorKind::NoSuchEntityError(_)
+            GetServiceLinkedRoleDeletionStatusErrorKind::NoSuchEntityException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetServiceLinkedRoleDeletionStatusErrorKind::ServiceFailureError(_)
+            GetServiceLinkedRoleDeletionStatusErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for GetServiceLinkedRoleDeletionStatusError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetServiceLinkedRoleDeletionStatusErrorKind::InvalidInputError(_inner) => Some(_inner),
-            GetServiceLinkedRoleDeletionStatusErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            GetServiceLinkedRoleDeletionStatusErrorKind::ServiceFailureError(_inner) => {
+            GetServiceLinkedRoleDeletionStatusErrorKind::InvalidInputException(_inner) => {
+                Some(_inner)
+            }
+            GetServiceLinkedRoleDeletionStatusErrorKind::NoSuchEntityException(_inner) => {
+                Some(_inner)
+            }
+            GetServiceLinkedRoleDeletionStatusErrorKind::ServiceFailureException(_inner) => {
                 Some(_inner)
             }
             GetServiceLinkedRoleDeletionStatusErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -7404,16 +7641,18 @@ pub struct GetSSHPublicKeyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetSSHPublicKeyErrorKind {
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    UnrecognizedPublicKeyEncodingError(crate::error::UnrecognizedPublicKeyEncodingError),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    UnrecognizedPublicKeyEncodingException(crate::error::UnrecognizedPublicKeyEncodingException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSSHPublicKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetSSHPublicKeyErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            GetSSHPublicKeyErrorKind::UnrecognizedPublicKeyEncodingError(_inner) => _inner.fmt(f),
+            GetSSHPublicKeyErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            GetSSHPublicKeyErrorKind::UnrecognizedPublicKeyEncodingException(_inner) => {
+                _inner.fmt(f)
+            }
             GetSSHPublicKeyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -7462,21 +7701,26 @@ impl GetSSHPublicKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
-        matches!(&self.kind, GetSSHPublicKeyErrorKind::NoSuchEntityError(_))
-    }
-    pub fn is_unrecognized_public_key_encoding_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetSSHPublicKeyErrorKind::UnrecognizedPublicKeyEncodingError(_)
+            GetSSHPublicKeyErrorKind::NoSuchEntityException(_)
+        )
+    }
+    pub fn is_unrecognized_public_key_encoding_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetSSHPublicKeyErrorKind::UnrecognizedPublicKeyEncodingException(_)
         )
     }
 }
 impl std::error::Error for GetSSHPublicKeyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetSSHPublicKeyErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            GetSSHPublicKeyErrorKind::UnrecognizedPublicKeyEncodingError(_inner) => Some(_inner),
+            GetSSHPublicKeyErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            GetSSHPublicKeyErrorKind::UnrecognizedPublicKeyEncodingException(_inner) => {
+                Some(_inner)
+            }
             GetSSHPublicKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -7491,16 +7735,16 @@ pub struct GetUserError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetUserErrorKind {
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetUserError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetUserErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            GetUserErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            GetUserErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            GetUserErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             GetUserErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -7549,18 +7793,18 @@ impl GetUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
-        matches!(&self.kind, GetUserErrorKind::NoSuchEntityError(_))
+    pub fn is_no_such_entity_exception(&self) -> bool {
+        matches!(&self.kind, GetUserErrorKind::NoSuchEntityException(_))
     }
-    pub fn is_service_failure_error(&self) -> bool {
-        matches!(&self.kind, GetUserErrorKind::ServiceFailureError(_))
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(&self.kind, GetUserErrorKind::ServiceFailureException(_))
     }
 }
 impl std::error::Error for GetUserError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetUserErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            GetUserErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            GetUserErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            GetUserErrorKind::ServiceFailureException(_inner) => Some(_inner),
             GetUserErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -7575,16 +7819,16 @@ pub struct GetUserPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetUserPolicyErrorKind {
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetUserPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetUserPolicyErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            GetUserPolicyErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            GetUserPolicyErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            GetUserPolicyErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             GetUserPolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -7633,18 +7877,21 @@ impl GetUserPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
-        matches!(&self.kind, GetUserPolicyErrorKind::NoSuchEntityError(_))
+    pub fn is_no_such_entity_exception(&self) -> bool {
+        matches!(&self.kind, GetUserPolicyErrorKind::NoSuchEntityException(_))
     }
-    pub fn is_service_failure_error(&self) -> bool {
-        matches!(&self.kind, GetUserPolicyErrorKind::ServiceFailureError(_))
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetUserPolicyErrorKind::ServiceFailureException(_)
+        )
     }
 }
 impl std::error::Error for GetUserPolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetUserPolicyErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            GetUserPolicyErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            GetUserPolicyErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            GetUserPolicyErrorKind::ServiceFailureException(_inner) => Some(_inner),
             GetUserPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -7659,16 +7906,16 @@ pub struct ListAccessKeysError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAccessKeysErrorKind {
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAccessKeysError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListAccessKeysErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            ListAccessKeysErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            ListAccessKeysErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            ListAccessKeysErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             ListAccessKeysErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -7717,18 +7964,24 @@ impl ListAccessKeysError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
-        matches!(&self.kind, ListAccessKeysErrorKind::NoSuchEntityError(_))
+    pub fn is_no_such_entity_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAccessKeysErrorKind::NoSuchEntityException(_)
+        )
     }
-    pub fn is_service_failure_error(&self) -> bool {
-        matches!(&self.kind, ListAccessKeysErrorKind::ServiceFailureError(_))
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAccessKeysErrorKind::ServiceFailureException(_)
+        )
     }
 }
 impl std::error::Error for ListAccessKeysError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListAccessKeysErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            ListAccessKeysErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            ListAccessKeysErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            ListAccessKeysErrorKind::ServiceFailureException(_inner) => Some(_inner),
             ListAccessKeysErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -7743,14 +7996,14 @@ pub struct ListAccountAliasesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAccountAliasesErrorKind {
-    ServiceFailureError(crate::error::ServiceFailureError),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAccountAliasesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListAccountAliasesErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            ListAccountAliasesErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             ListAccountAliasesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -7799,17 +8052,17 @@ impl ListAccountAliasesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListAccountAliasesErrorKind::ServiceFailureError(_)
+            ListAccountAliasesErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for ListAccountAliasesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListAccountAliasesErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            ListAccountAliasesErrorKind::ServiceFailureException(_inner) => Some(_inner),
             ListAccountAliasesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -7824,18 +8077,18 @@ pub struct ListAttachedGroupPoliciesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAttachedGroupPoliciesErrorKind {
-    InvalidInputError(crate::error::InvalidInputError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    InvalidInputException(crate::error::InvalidInputException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAttachedGroupPoliciesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListAttachedGroupPoliciesErrorKind::InvalidInputError(_inner) => _inner.fmt(f),
-            ListAttachedGroupPoliciesErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            ListAttachedGroupPoliciesErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            ListAttachedGroupPoliciesErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            ListAttachedGroupPoliciesErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            ListAttachedGroupPoliciesErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             ListAttachedGroupPoliciesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -7884,31 +8137,31 @@ impl ListAttachedGroupPoliciesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_input_error(&self) -> bool {
+    pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListAttachedGroupPoliciesErrorKind::InvalidInputError(_)
+            ListAttachedGroupPoliciesErrorKind::InvalidInputException(_)
         )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListAttachedGroupPoliciesErrorKind::NoSuchEntityError(_)
+            ListAttachedGroupPoliciesErrorKind::NoSuchEntityException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListAttachedGroupPoliciesErrorKind::ServiceFailureError(_)
+            ListAttachedGroupPoliciesErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for ListAttachedGroupPoliciesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListAttachedGroupPoliciesErrorKind::InvalidInputError(_inner) => Some(_inner),
-            ListAttachedGroupPoliciesErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            ListAttachedGroupPoliciesErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            ListAttachedGroupPoliciesErrorKind::InvalidInputException(_inner) => Some(_inner),
+            ListAttachedGroupPoliciesErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            ListAttachedGroupPoliciesErrorKind::ServiceFailureException(_inner) => Some(_inner),
             ListAttachedGroupPoliciesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -7923,18 +8176,18 @@ pub struct ListAttachedRolePoliciesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAttachedRolePoliciesErrorKind {
-    InvalidInputError(crate::error::InvalidInputError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    InvalidInputException(crate::error::InvalidInputException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAttachedRolePoliciesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListAttachedRolePoliciesErrorKind::InvalidInputError(_inner) => _inner.fmt(f),
-            ListAttachedRolePoliciesErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            ListAttachedRolePoliciesErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            ListAttachedRolePoliciesErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            ListAttachedRolePoliciesErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            ListAttachedRolePoliciesErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             ListAttachedRolePoliciesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -7983,31 +8236,31 @@ impl ListAttachedRolePoliciesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_input_error(&self) -> bool {
+    pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListAttachedRolePoliciesErrorKind::InvalidInputError(_)
+            ListAttachedRolePoliciesErrorKind::InvalidInputException(_)
         )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListAttachedRolePoliciesErrorKind::NoSuchEntityError(_)
+            ListAttachedRolePoliciesErrorKind::NoSuchEntityException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListAttachedRolePoliciesErrorKind::ServiceFailureError(_)
+            ListAttachedRolePoliciesErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for ListAttachedRolePoliciesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListAttachedRolePoliciesErrorKind::InvalidInputError(_inner) => Some(_inner),
-            ListAttachedRolePoliciesErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            ListAttachedRolePoliciesErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            ListAttachedRolePoliciesErrorKind::InvalidInputException(_inner) => Some(_inner),
+            ListAttachedRolePoliciesErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            ListAttachedRolePoliciesErrorKind::ServiceFailureException(_inner) => Some(_inner),
             ListAttachedRolePoliciesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -8022,18 +8275,18 @@ pub struct ListAttachedUserPoliciesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAttachedUserPoliciesErrorKind {
-    InvalidInputError(crate::error::InvalidInputError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    InvalidInputException(crate::error::InvalidInputException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAttachedUserPoliciesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListAttachedUserPoliciesErrorKind::InvalidInputError(_inner) => _inner.fmt(f),
-            ListAttachedUserPoliciesErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            ListAttachedUserPoliciesErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            ListAttachedUserPoliciesErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            ListAttachedUserPoliciesErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            ListAttachedUserPoliciesErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             ListAttachedUserPoliciesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -8082,31 +8335,31 @@ impl ListAttachedUserPoliciesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_input_error(&self) -> bool {
+    pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListAttachedUserPoliciesErrorKind::InvalidInputError(_)
+            ListAttachedUserPoliciesErrorKind::InvalidInputException(_)
         )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListAttachedUserPoliciesErrorKind::NoSuchEntityError(_)
+            ListAttachedUserPoliciesErrorKind::NoSuchEntityException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListAttachedUserPoliciesErrorKind::ServiceFailureError(_)
+            ListAttachedUserPoliciesErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for ListAttachedUserPoliciesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListAttachedUserPoliciesErrorKind::InvalidInputError(_inner) => Some(_inner),
-            ListAttachedUserPoliciesErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            ListAttachedUserPoliciesErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            ListAttachedUserPoliciesErrorKind::InvalidInputException(_inner) => Some(_inner),
+            ListAttachedUserPoliciesErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            ListAttachedUserPoliciesErrorKind::ServiceFailureException(_inner) => Some(_inner),
             ListAttachedUserPoliciesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -8121,18 +8374,18 @@ pub struct ListEntitiesForPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListEntitiesForPolicyErrorKind {
-    InvalidInputError(crate::error::InvalidInputError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    InvalidInputException(crate::error::InvalidInputException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListEntitiesForPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListEntitiesForPolicyErrorKind::InvalidInputError(_inner) => _inner.fmt(f),
-            ListEntitiesForPolicyErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            ListEntitiesForPolicyErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            ListEntitiesForPolicyErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            ListEntitiesForPolicyErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            ListEntitiesForPolicyErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             ListEntitiesForPolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -8181,31 +8434,31 @@ impl ListEntitiesForPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_input_error(&self) -> bool {
+    pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListEntitiesForPolicyErrorKind::InvalidInputError(_)
+            ListEntitiesForPolicyErrorKind::InvalidInputException(_)
         )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListEntitiesForPolicyErrorKind::NoSuchEntityError(_)
+            ListEntitiesForPolicyErrorKind::NoSuchEntityException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListEntitiesForPolicyErrorKind::ServiceFailureError(_)
+            ListEntitiesForPolicyErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for ListEntitiesForPolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListEntitiesForPolicyErrorKind::InvalidInputError(_inner) => Some(_inner),
-            ListEntitiesForPolicyErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            ListEntitiesForPolicyErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            ListEntitiesForPolicyErrorKind::InvalidInputException(_inner) => Some(_inner),
+            ListEntitiesForPolicyErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            ListEntitiesForPolicyErrorKind::ServiceFailureException(_inner) => Some(_inner),
             ListEntitiesForPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -8220,16 +8473,16 @@ pub struct ListGroupPoliciesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListGroupPoliciesErrorKind {
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListGroupPoliciesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListGroupPoliciesErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            ListGroupPoliciesErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            ListGroupPoliciesErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            ListGroupPoliciesErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             ListGroupPoliciesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -8278,21 +8531,24 @@ impl ListGroupPoliciesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
-        matches!(&self.kind, ListGroupPoliciesErrorKind::NoSuchEntityError(_))
-    }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListGroupPoliciesErrorKind::ServiceFailureError(_)
+            ListGroupPoliciesErrorKind::NoSuchEntityException(_)
+        )
+    }
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListGroupPoliciesErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for ListGroupPoliciesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListGroupPoliciesErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            ListGroupPoliciesErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            ListGroupPoliciesErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            ListGroupPoliciesErrorKind::ServiceFailureException(_inner) => Some(_inner),
             ListGroupPoliciesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -8307,14 +8563,14 @@ pub struct ListGroupsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListGroupsErrorKind {
-    ServiceFailureError(crate::error::ServiceFailureError),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListGroupsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListGroupsErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            ListGroupsErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             ListGroupsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -8363,14 +8619,14 @@ impl ListGroupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_service_failure_error(&self) -> bool {
-        matches!(&self.kind, ListGroupsErrorKind::ServiceFailureError(_))
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(&self.kind, ListGroupsErrorKind::ServiceFailureException(_))
     }
 }
 impl std::error::Error for ListGroupsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListGroupsErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            ListGroupsErrorKind::ServiceFailureException(_inner) => Some(_inner),
             ListGroupsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -8385,16 +8641,16 @@ pub struct ListGroupsForUserError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListGroupsForUserErrorKind {
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListGroupsForUserError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListGroupsForUserErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            ListGroupsForUserErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            ListGroupsForUserErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            ListGroupsForUserErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             ListGroupsForUserErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -8443,21 +8699,24 @@ impl ListGroupsForUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
-        matches!(&self.kind, ListGroupsForUserErrorKind::NoSuchEntityError(_))
-    }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListGroupsForUserErrorKind::ServiceFailureError(_)
+            ListGroupsForUserErrorKind::NoSuchEntityException(_)
+        )
+    }
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListGroupsForUserErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for ListGroupsForUserError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListGroupsForUserErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            ListGroupsForUserErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            ListGroupsForUserErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            ListGroupsForUserErrorKind::ServiceFailureException(_inner) => Some(_inner),
             ListGroupsForUserErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -8472,14 +8731,14 @@ pub struct ListInstanceProfilesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListInstanceProfilesErrorKind {
-    ServiceFailureError(crate::error::ServiceFailureError),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListInstanceProfilesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListInstanceProfilesErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            ListInstanceProfilesErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             ListInstanceProfilesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -8528,17 +8787,17 @@ impl ListInstanceProfilesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListInstanceProfilesErrorKind::ServiceFailureError(_)
+            ListInstanceProfilesErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for ListInstanceProfilesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListInstanceProfilesErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            ListInstanceProfilesErrorKind::ServiceFailureException(_inner) => Some(_inner),
             ListInstanceProfilesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -8553,16 +8812,16 @@ pub struct ListInstanceProfilesForRoleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListInstanceProfilesForRoleErrorKind {
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListInstanceProfilesForRoleError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListInstanceProfilesForRoleErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            ListInstanceProfilesForRoleErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            ListInstanceProfilesForRoleErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            ListInstanceProfilesForRoleErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             ListInstanceProfilesForRoleErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -8611,24 +8870,24 @@ impl ListInstanceProfilesForRoleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListInstanceProfilesForRoleErrorKind::NoSuchEntityError(_)
+            ListInstanceProfilesForRoleErrorKind::NoSuchEntityException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListInstanceProfilesForRoleErrorKind::ServiceFailureError(_)
+            ListInstanceProfilesForRoleErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for ListInstanceProfilesForRoleError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListInstanceProfilesForRoleErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            ListInstanceProfilesForRoleErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            ListInstanceProfilesForRoleErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            ListInstanceProfilesForRoleErrorKind::ServiceFailureException(_inner) => Some(_inner),
             ListInstanceProfilesForRoleErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -8643,16 +8902,16 @@ pub struct ListInstanceProfileTagsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListInstanceProfileTagsErrorKind {
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListInstanceProfileTagsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListInstanceProfileTagsErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            ListInstanceProfileTagsErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            ListInstanceProfileTagsErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            ListInstanceProfileTagsErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             ListInstanceProfileTagsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -8701,24 +8960,24 @@ impl ListInstanceProfileTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListInstanceProfileTagsErrorKind::NoSuchEntityError(_)
+            ListInstanceProfileTagsErrorKind::NoSuchEntityException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListInstanceProfileTagsErrorKind::ServiceFailureError(_)
+            ListInstanceProfileTagsErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for ListInstanceProfileTagsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListInstanceProfileTagsErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            ListInstanceProfileTagsErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            ListInstanceProfileTagsErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            ListInstanceProfileTagsErrorKind::ServiceFailureException(_inner) => Some(_inner),
             ListInstanceProfileTagsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -8733,16 +8992,16 @@ pub struct ListMFADevicesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListMFADevicesErrorKind {
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListMFADevicesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListMFADevicesErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            ListMFADevicesErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            ListMFADevicesErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            ListMFADevicesErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             ListMFADevicesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -8791,18 +9050,24 @@ impl ListMFADevicesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
-        matches!(&self.kind, ListMFADevicesErrorKind::NoSuchEntityError(_))
+    pub fn is_no_such_entity_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListMFADevicesErrorKind::NoSuchEntityException(_)
+        )
     }
-    pub fn is_service_failure_error(&self) -> bool {
-        matches!(&self.kind, ListMFADevicesErrorKind::ServiceFailureError(_))
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListMFADevicesErrorKind::ServiceFailureException(_)
+        )
     }
 }
 impl std::error::Error for ListMFADevicesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListMFADevicesErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            ListMFADevicesErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            ListMFADevicesErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            ListMFADevicesErrorKind::ServiceFailureException(_inner) => Some(_inner),
             ListMFADevicesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -8817,18 +9082,18 @@ pub struct ListMFADeviceTagsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListMFADeviceTagsErrorKind {
-    InvalidInputError(crate::error::InvalidInputError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    InvalidInputException(crate::error::InvalidInputException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListMFADeviceTagsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListMFADeviceTagsErrorKind::InvalidInputError(_inner) => _inner.fmt(f),
-            ListMFADeviceTagsErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            ListMFADeviceTagsErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            ListMFADeviceTagsErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            ListMFADeviceTagsErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            ListMFADeviceTagsErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             ListMFADeviceTagsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -8877,25 +9142,31 @@ impl ListMFADeviceTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_input_error(&self) -> bool {
-        matches!(&self.kind, ListMFADeviceTagsErrorKind::InvalidInputError(_))
-    }
-    pub fn is_no_such_entity_error(&self) -> bool {
-        matches!(&self.kind, ListMFADeviceTagsErrorKind::NoSuchEntityError(_))
-    }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListMFADeviceTagsErrorKind::ServiceFailureError(_)
+            ListMFADeviceTagsErrorKind::InvalidInputException(_)
+        )
+    }
+    pub fn is_no_such_entity_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListMFADeviceTagsErrorKind::NoSuchEntityException(_)
+        )
+    }
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListMFADeviceTagsErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for ListMFADeviceTagsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListMFADeviceTagsErrorKind::InvalidInputError(_inner) => Some(_inner),
-            ListMFADeviceTagsErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            ListMFADeviceTagsErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            ListMFADeviceTagsErrorKind::InvalidInputException(_inner) => Some(_inner),
+            ListMFADeviceTagsErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            ListMFADeviceTagsErrorKind::ServiceFailureException(_inner) => Some(_inner),
             ListMFADeviceTagsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -8910,14 +9181,14 @@ pub struct ListOpenIDConnectProvidersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListOpenIDConnectProvidersErrorKind {
-    ServiceFailureError(crate::error::ServiceFailureError),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListOpenIDConnectProvidersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListOpenIDConnectProvidersErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            ListOpenIDConnectProvidersErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             ListOpenIDConnectProvidersErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -8966,17 +9237,17 @@ impl ListOpenIDConnectProvidersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListOpenIDConnectProvidersErrorKind::ServiceFailureError(_)
+            ListOpenIDConnectProvidersErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for ListOpenIDConnectProvidersError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListOpenIDConnectProvidersErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            ListOpenIDConnectProvidersErrorKind::ServiceFailureException(_inner) => Some(_inner),
             ListOpenIDConnectProvidersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -8991,18 +9262,20 @@ pub struct ListOpenIDConnectProviderTagsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListOpenIDConnectProviderTagsErrorKind {
-    InvalidInputError(crate::error::InvalidInputError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    InvalidInputException(crate::error::InvalidInputException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListOpenIDConnectProviderTagsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListOpenIDConnectProviderTagsErrorKind::InvalidInputError(_inner) => _inner.fmt(f),
-            ListOpenIDConnectProviderTagsErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            ListOpenIDConnectProviderTagsErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            ListOpenIDConnectProviderTagsErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            ListOpenIDConnectProviderTagsErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            ListOpenIDConnectProviderTagsErrorKind::ServiceFailureException(_inner) => {
+                _inner.fmt(f)
+            }
             ListOpenIDConnectProviderTagsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -9051,31 +9324,31 @@ impl ListOpenIDConnectProviderTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_input_error(&self) -> bool {
+    pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListOpenIDConnectProviderTagsErrorKind::InvalidInputError(_)
+            ListOpenIDConnectProviderTagsErrorKind::InvalidInputException(_)
         )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListOpenIDConnectProviderTagsErrorKind::NoSuchEntityError(_)
+            ListOpenIDConnectProviderTagsErrorKind::NoSuchEntityException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListOpenIDConnectProviderTagsErrorKind::ServiceFailureError(_)
+            ListOpenIDConnectProviderTagsErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for ListOpenIDConnectProviderTagsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListOpenIDConnectProviderTagsErrorKind::InvalidInputError(_inner) => Some(_inner),
-            ListOpenIDConnectProviderTagsErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            ListOpenIDConnectProviderTagsErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            ListOpenIDConnectProviderTagsErrorKind::InvalidInputException(_inner) => Some(_inner),
+            ListOpenIDConnectProviderTagsErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            ListOpenIDConnectProviderTagsErrorKind::ServiceFailureException(_inner) => Some(_inner),
             ListOpenIDConnectProviderTagsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -9090,14 +9363,14 @@ pub struct ListPoliciesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListPoliciesErrorKind {
-    ServiceFailureError(crate::error::ServiceFailureError),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListPoliciesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListPoliciesErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            ListPoliciesErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             ListPoliciesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -9146,14 +9419,17 @@ impl ListPoliciesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_service_failure_error(&self) -> bool {
-        matches!(&self.kind, ListPoliciesErrorKind::ServiceFailureError(_))
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListPoliciesErrorKind::ServiceFailureException(_)
+        )
     }
 }
 impl std::error::Error for ListPoliciesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListPoliciesErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            ListPoliciesErrorKind::ServiceFailureException(_inner) => Some(_inner),
             ListPoliciesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -9168,16 +9444,20 @@ pub struct ListPoliciesGrantingServiceAccessError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListPoliciesGrantingServiceAccessErrorKind {
-    InvalidInputError(crate::error::InvalidInputError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
+    InvalidInputException(crate::error::InvalidInputException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListPoliciesGrantingServiceAccessError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListPoliciesGrantingServiceAccessErrorKind::InvalidInputError(_inner) => _inner.fmt(f),
-            ListPoliciesGrantingServiceAccessErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
+            ListPoliciesGrantingServiceAccessErrorKind::InvalidInputException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListPoliciesGrantingServiceAccessErrorKind::NoSuchEntityException(_inner) => {
+                _inner.fmt(f)
+            }
             ListPoliciesGrantingServiceAccessErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -9229,24 +9509,28 @@ impl ListPoliciesGrantingServiceAccessError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_input_error(&self) -> bool {
+    pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListPoliciesGrantingServiceAccessErrorKind::InvalidInputError(_)
+            ListPoliciesGrantingServiceAccessErrorKind::InvalidInputException(_)
         )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListPoliciesGrantingServiceAccessErrorKind::NoSuchEntityError(_)
+            ListPoliciesGrantingServiceAccessErrorKind::NoSuchEntityException(_)
         )
     }
 }
 impl std::error::Error for ListPoliciesGrantingServiceAccessError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListPoliciesGrantingServiceAccessErrorKind::InvalidInputError(_inner) => Some(_inner),
-            ListPoliciesGrantingServiceAccessErrorKind::NoSuchEntityError(_inner) => Some(_inner),
+            ListPoliciesGrantingServiceAccessErrorKind::InvalidInputException(_inner) => {
+                Some(_inner)
+            }
+            ListPoliciesGrantingServiceAccessErrorKind::NoSuchEntityException(_inner) => {
+                Some(_inner)
+            }
             ListPoliciesGrantingServiceAccessErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -9261,18 +9545,18 @@ pub struct ListPolicyTagsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListPolicyTagsErrorKind {
-    InvalidInputError(crate::error::InvalidInputError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    InvalidInputException(crate::error::InvalidInputException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListPolicyTagsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListPolicyTagsErrorKind::InvalidInputError(_inner) => _inner.fmt(f),
-            ListPolicyTagsErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            ListPolicyTagsErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            ListPolicyTagsErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            ListPolicyTagsErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            ListPolicyTagsErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             ListPolicyTagsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -9321,22 +9605,31 @@ impl ListPolicyTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_input_error(&self) -> bool {
-        matches!(&self.kind, ListPolicyTagsErrorKind::InvalidInputError(_))
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListPolicyTagsErrorKind::InvalidInputException(_)
+        )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
-        matches!(&self.kind, ListPolicyTagsErrorKind::NoSuchEntityError(_))
+    pub fn is_no_such_entity_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListPolicyTagsErrorKind::NoSuchEntityException(_)
+        )
     }
-    pub fn is_service_failure_error(&self) -> bool {
-        matches!(&self.kind, ListPolicyTagsErrorKind::ServiceFailureError(_))
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListPolicyTagsErrorKind::ServiceFailureException(_)
+        )
     }
 }
 impl std::error::Error for ListPolicyTagsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListPolicyTagsErrorKind::InvalidInputError(_inner) => Some(_inner),
-            ListPolicyTagsErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            ListPolicyTagsErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            ListPolicyTagsErrorKind::InvalidInputException(_inner) => Some(_inner),
+            ListPolicyTagsErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            ListPolicyTagsErrorKind::ServiceFailureException(_inner) => Some(_inner),
             ListPolicyTagsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -9351,18 +9644,18 @@ pub struct ListPolicyVersionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListPolicyVersionsErrorKind {
-    InvalidInputError(crate::error::InvalidInputError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    InvalidInputException(crate::error::InvalidInputException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListPolicyVersionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListPolicyVersionsErrorKind::InvalidInputError(_inner) => _inner.fmt(f),
-            ListPolicyVersionsErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            ListPolicyVersionsErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            ListPolicyVersionsErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            ListPolicyVersionsErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            ListPolicyVersionsErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             ListPolicyVersionsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -9411,31 +9704,31 @@ impl ListPolicyVersionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_input_error(&self) -> bool {
+    pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListPolicyVersionsErrorKind::InvalidInputError(_)
+            ListPolicyVersionsErrorKind::InvalidInputException(_)
         )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListPolicyVersionsErrorKind::NoSuchEntityError(_)
+            ListPolicyVersionsErrorKind::NoSuchEntityException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListPolicyVersionsErrorKind::ServiceFailureError(_)
+            ListPolicyVersionsErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for ListPolicyVersionsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListPolicyVersionsErrorKind::InvalidInputError(_inner) => Some(_inner),
-            ListPolicyVersionsErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            ListPolicyVersionsErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            ListPolicyVersionsErrorKind::InvalidInputException(_inner) => Some(_inner),
+            ListPolicyVersionsErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            ListPolicyVersionsErrorKind::ServiceFailureException(_inner) => Some(_inner),
             ListPolicyVersionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -9450,16 +9743,16 @@ pub struct ListRolePoliciesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListRolePoliciesErrorKind {
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListRolePoliciesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListRolePoliciesErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            ListRolePoliciesErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            ListRolePoliciesErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            ListRolePoliciesErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             ListRolePoliciesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -9508,21 +9801,24 @@ impl ListRolePoliciesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
-        matches!(&self.kind, ListRolePoliciesErrorKind::NoSuchEntityError(_))
-    }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListRolePoliciesErrorKind::ServiceFailureError(_)
+            ListRolePoliciesErrorKind::NoSuchEntityException(_)
+        )
+    }
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListRolePoliciesErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for ListRolePoliciesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListRolePoliciesErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            ListRolePoliciesErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            ListRolePoliciesErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            ListRolePoliciesErrorKind::ServiceFailureException(_inner) => Some(_inner),
             ListRolePoliciesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -9537,14 +9833,14 @@ pub struct ListRolesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListRolesErrorKind {
-    ServiceFailureError(crate::error::ServiceFailureError),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListRolesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListRolesErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            ListRolesErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             ListRolesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -9593,14 +9889,14 @@ impl ListRolesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_service_failure_error(&self) -> bool {
-        matches!(&self.kind, ListRolesErrorKind::ServiceFailureError(_))
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(&self.kind, ListRolesErrorKind::ServiceFailureException(_))
     }
 }
 impl std::error::Error for ListRolesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListRolesErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            ListRolesErrorKind::ServiceFailureException(_inner) => Some(_inner),
             ListRolesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -9615,16 +9911,16 @@ pub struct ListRoleTagsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListRoleTagsErrorKind {
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListRoleTagsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListRoleTagsErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            ListRoleTagsErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            ListRoleTagsErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            ListRoleTagsErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             ListRoleTagsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -9673,18 +9969,21 @@ impl ListRoleTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
-        matches!(&self.kind, ListRoleTagsErrorKind::NoSuchEntityError(_))
+    pub fn is_no_such_entity_exception(&self) -> bool {
+        matches!(&self.kind, ListRoleTagsErrorKind::NoSuchEntityException(_))
     }
-    pub fn is_service_failure_error(&self) -> bool {
-        matches!(&self.kind, ListRoleTagsErrorKind::ServiceFailureError(_))
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListRoleTagsErrorKind::ServiceFailureException(_)
+        )
     }
 }
 impl std::error::Error for ListRoleTagsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListRoleTagsErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            ListRoleTagsErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            ListRoleTagsErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            ListRoleTagsErrorKind::ServiceFailureException(_inner) => Some(_inner),
             ListRoleTagsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -9699,14 +9998,14 @@ pub struct ListSAMLProvidersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListSAMLProvidersErrorKind {
-    ServiceFailureError(crate::error::ServiceFailureError),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListSAMLProvidersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListSAMLProvidersErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            ListSAMLProvidersErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             ListSAMLProvidersErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -9755,17 +10054,17 @@ impl ListSAMLProvidersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListSAMLProvidersErrorKind::ServiceFailureError(_)
+            ListSAMLProvidersErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for ListSAMLProvidersError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListSAMLProvidersErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            ListSAMLProvidersErrorKind::ServiceFailureException(_inner) => Some(_inner),
             ListSAMLProvidersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -9780,18 +10079,18 @@ pub struct ListSAMLProviderTagsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListSAMLProviderTagsErrorKind {
-    InvalidInputError(crate::error::InvalidInputError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    InvalidInputException(crate::error::InvalidInputException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListSAMLProviderTagsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListSAMLProviderTagsErrorKind::InvalidInputError(_inner) => _inner.fmt(f),
-            ListSAMLProviderTagsErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            ListSAMLProviderTagsErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            ListSAMLProviderTagsErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            ListSAMLProviderTagsErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            ListSAMLProviderTagsErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             ListSAMLProviderTagsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -9840,31 +10139,31 @@ impl ListSAMLProviderTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_input_error(&self) -> bool {
+    pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListSAMLProviderTagsErrorKind::InvalidInputError(_)
+            ListSAMLProviderTagsErrorKind::InvalidInputException(_)
         )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListSAMLProviderTagsErrorKind::NoSuchEntityError(_)
+            ListSAMLProviderTagsErrorKind::NoSuchEntityException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListSAMLProviderTagsErrorKind::ServiceFailureError(_)
+            ListSAMLProviderTagsErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for ListSAMLProviderTagsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListSAMLProviderTagsErrorKind::InvalidInputError(_inner) => Some(_inner),
-            ListSAMLProviderTagsErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            ListSAMLProviderTagsErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            ListSAMLProviderTagsErrorKind::InvalidInputException(_inner) => Some(_inner),
+            ListSAMLProviderTagsErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            ListSAMLProviderTagsErrorKind::ServiceFailureException(_inner) => Some(_inner),
             ListSAMLProviderTagsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -9879,14 +10178,14 @@ pub struct ListServerCertificatesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListServerCertificatesErrorKind {
-    ServiceFailureError(crate::error::ServiceFailureError),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListServerCertificatesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListServerCertificatesErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            ListServerCertificatesErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             ListServerCertificatesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -9935,17 +10234,17 @@ impl ListServerCertificatesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListServerCertificatesErrorKind::ServiceFailureError(_)
+            ListServerCertificatesErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for ListServerCertificatesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListServerCertificatesErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            ListServerCertificatesErrorKind::ServiceFailureException(_inner) => Some(_inner),
             ListServerCertificatesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -9960,16 +10259,16 @@ pub struct ListServerCertificateTagsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListServerCertificateTagsErrorKind {
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListServerCertificateTagsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListServerCertificateTagsErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            ListServerCertificateTagsErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            ListServerCertificateTagsErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            ListServerCertificateTagsErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             ListServerCertificateTagsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -10018,24 +10317,24 @@ impl ListServerCertificateTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListServerCertificateTagsErrorKind::NoSuchEntityError(_)
+            ListServerCertificateTagsErrorKind::NoSuchEntityException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListServerCertificateTagsErrorKind::ServiceFailureError(_)
+            ListServerCertificateTagsErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for ListServerCertificateTagsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListServerCertificateTagsErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            ListServerCertificateTagsErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            ListServerCertificateTagsErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            ListServerCertificateTagsErrorKind::ServiceFailureException(_inner) => Some(_inner),
             ListServerCertificateTagsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -10050,16 +10349,16 @@ pub struct ListServiceSpecificCredentialsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListServiceSpecificCredentialsErrorKind {
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceNotSupportedError(crate::error::ServiceNotSupportedError),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceNotSupportedException(crate::error::ServiceNotSupportedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListServiceSpecificCredentialsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListServiceSpecificCredentialsErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            ListServiceSpecificCredentialsErrorKind::ServiceNotSupportedError(_inner) => {
+            ListServiceSpecificCredentialsErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            ListServiceSpecificCredentialsErrorKind::ServiceNotSupportedException(_inner) => {
                 _inner.fmt(f)
             }
             ListServiceSpecificCredentialsErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -10110,24 +10409,24 @@ impl ListServiceSpecificCredentialsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListServiceSpecificCredentialsErrorKind::NoSuchEntityError(_)
+            ListServiceSpecificCredentialsErrorKind::NoSuchEntityException(_)
         )
     }
-    pub fn is_service_not_supported_error(&self) -> bool {
+    pub fn is_service_not_supported_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListServiceSpecificCredentialsErrorKind::ServiceNotSupportedError(_)
+            ListServiceSpecificCredentialsErrorKind::ServiceNotSupportedException(_)
         )
     }
 }
 impl std::error::Error for ListServiceSpecificCredentialsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListServiceSpecificCredentialsErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            ListServiceSpecificCredentialsErrorKind::ServiceNotSupportedError(_inner) => {
+            ListServiceSpecificCredentialsErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            ListServiceSpecificCredentialsErrorKind::ServiceNotSupportedException(_inner) => {
                 Some(_inner)
             }
             ListServiceSpecificCredentialsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -10144,16 +10443,16 @@ pub struct ListSigningCertificatesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListSigningCertificatesErrorKind {
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListSigningCertificatesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListSigningCertificatesErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            ListSigningCertificatesErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            ListSigningCertificatesErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            ListSigningCertificatesErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             ListSigningCertificatesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -10202,24 +10501,24 @@ impl ListSigningCertificatesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListSigningCertificatesErrorKind::NoSuchEntityError(_)
+            ListSigningCertificatesErrorKind::NoSuchEntityException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListSigningCertificatesErrorKind::ServiceFailureError(_)
+            ListSigningCertificatesErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for ListSigningCertificatesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListSigningCertificatesErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            ListSigningCertificatesErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            ListSigningCertificatesErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            ListSigningCertificatesErrorKind::ServiceFailureException(_inner) => Some(_inner),
             ListSigningCertificatesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -10234,14 +10533,14 @@ pub struct ListSSHPublicKeysError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListSSHPublicKeysErrorKind {
-    NoSuchEntityError(crate::error::NoSuchEntityError),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListSSHPublicKeysError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListSSHPublicKeysErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
+            ListSSHPublicKeysErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
             ListSSHPublicKeysErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -10290,14 +10589,17 @@ impl ListSSHPublicKeysError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
-        matches!(&self.kind, ListSSHPublicKeysErrorKind::NoSuchEntityError(_))
+    pub fn is_no_such_entity_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListSSHPublicKeysErrorKind::NoSuchEntityException(_)
+        )
     }
 }
 impl std::error::Error for ListSSHPublicKeysError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListSSHPublicKeysErrorKind::NoSuchEntityError(_inner) => Some(_inner),
+            ListSSHPublicKeysErrorKind::NoSuchEntityException(_inner) => Some(_inner),
             ListSSHPublicKeysErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -10312,16 +10614,16 @@ pub struct ListUserPoliciesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListUserPoliciesErrorKind {
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListUserPoliciesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListUserPoliciesErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            ListUserPoliciesErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            ListUserPoliciesErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            ListUserPoliciesErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             ListUserPoliciesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -10370,21 +10672,24 @@ impl ListUserPoliciesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
-        matches!(&self.kind, ListUserPoliciesErrorKind::NoSuchEntityError(_))
-    }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListUserPoliciesErrorKind::ServiceFailureError(_)
+            ListUserPoliciesErrorKind::NoSuchEntityException(_)
+        )
+    }
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListUserPoliciesErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for ListUserPoliciesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListUserPoliciesErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            ListUserPoliciesErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            ListUserPoliciesErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            ListUserPoliciesErrorKind::ServiceFailureException(_inner) => Some(_inner),
             ListUserPoliciesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -10399,14 +10704,14 @@ pub struct ListUsersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListUsersErrorKind {
-    ServiceFailureError(crate::error::ServiceFailureError),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListUsersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListUsersErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            ListUsersErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             ListUsersErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -10455,14 +10760,14 @@ impl ListUsersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_service_failure_error(&self) -> bool {
-        matches!(&self.kind, ListUsersErrorKind::ServiceFailureError(_))
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(&self.kind, ListUsersErrorKind::ServiceFailureException(_))
     }
 }
 impl std::error::Error for ListUsersError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListUsersErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            ListUsersErrorKind::ServiceFailureException(_inner) => Some(_inner),
             ListUsersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -10477,16 +10782,16 @@ pub struct ListUserTagsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListUserTagsErrorKind {
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListUserTagsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListUserTagsErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            ListUserTagsErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            ListUserTagsErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            ListUserTagsErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             ListUserTagsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -10535,18 +10840,21 @@ impl ListUserTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
-        matches!(&self.kind, ListUserTagsErrorKind::NoSuchEntityError(_))
+    pub fn is_no_such_entity_exception(&self) -> bool {
+        matches!(&self.kind, ListUserTagsErrorKind::NoSuchEntityException(_))
     }
-    pub fn is_service_failure_error(&self) -> bool {
-        matches!(&self.kind, ListUserTagsErrorKind::ServiceFailureError(_))
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListUserTagsErrorKind::ServiceFailureException(_)
+        )
     }
 }
 impl std::error::Error for ListUserTagsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListUserTagsErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            ListUserTagsErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            ListUserTagsErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            ListUserTagsErrorKind::ServiceFailureException(_inner) => Some(_inner),
             ListUserTagsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -10633,20 +10941,20 @@ pub struct PutGroupPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutGroupPolicyErrorKind {
-    LimitExceededError(crate::error::LimitExceededError),
-    MalformedPolicyDocumentError(crate::error::MalformedPolicyDocumentError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    LimitExceededException(crate::error::LimitExceededException),
+    MalformedPolicyDocumentException(crate::error::MalformedPolicyDocumentException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutGroupPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutGroupPolicyErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            PutGroupPolicyErrorKind::MalformedPolicyDocumentError(_inner) => _inner.fmt(f),
-            PutGroupPolicyErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            PutGroupPolicyErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            PutGroupPolicyErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            PutGroupPolicyErrorKind::MalformedPolicyDocumentException(_inner) => _inner.fmt(f),
+            PutGroupPolicyErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            PutGroupPolicyErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             PutGroupPolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -10695,29 +11003,38 @@ impl PutGroupPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, PutGroupPolicyErrorKind::LimitExceededError(_))
-    }
-    pub fn is_malformed_policy_document_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutGroupPolicyErrorKind::MalformedPolicyDocumentError(_)
+            PutGroupPolicyErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
-        matches!(&self.kind, PutGroupPolicyErrorKind::NoSuchEntityError(_))
+    pub fn is_malformed_policy_document_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutGroupPolicyErrorKind::MalformedPolicyDocumentException(_)
+        )
     }
-    pub fn is_service_failure_error(&self) -> bool {
-        matches!(&self.kind, PutGroupPolicyErrorKind::ServiceFailureError(_))
+    pub fn is_no_such_entity_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutGroupPolicyErrorKind::NoSuchEntityException(_)
+        )
+    }
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutGroupPolicyErrorKind::ServiceFailureException(_)
+        )
     }
 }
 impl std::error::Error for PutGroupPolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutGroupPolicyErrorKind::LimitExceededError(_inner) => Some(_inner),
-            PutGroupPolicyErrorKind::MalformedPolicyDocumentError(_inner) => Some(_inner),
-            PutGroupPolicyErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            PutGroupPolicyErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            PutGroupPolicyErrorKind::LimitExceededException(_inner) => Some(_inner),
+            PutGroupPolicyErrorKind::MalformedPolicyDocumentException(_inner) => Some(_inner),
+            PutGroupPolicyErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            PutGroupPolicyErrorKind::ServiceFailureException(_inner) => Some(_inner),
             PutGroupPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -10732,22 +11049,26 @@ pub struct PutRolePermissionsBoundaryError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutRolePermissionsBoundaryErrorKind {
-    InvalidInputError(crate::error::InvalidInputError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    PolicyNotAttachableError(crate::error::PolicyNotAttachableError),
-    ServiceFailureError(crate::error::ServiceFailureError),
-    UnmodifiableEntityError(crate::error::UnmodifiableEntityError),
+    InvalidInputException(crate::error::InvalidInputException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    PolicyNotAttachableException(crate::error::PolicyNotAttachableException),
+    ServiceFailureException(crate::error::ServiceFailureException),
+    UnmodifiableEntityException(crate::error::UnmodifiableEntityException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutRolePermissionsBoundaryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutRolePermissionsBoundaryErrorKind::InvalidInputError(_inner) => _inner.fmt(f),
-            PutRolePermissionsBoundaryErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            PutRolePermissionsBoundaryErrorKind::PolicyNotAttachableError(_inner) => _inner.fmt(f),
-            PutRolePermissionsBoundaryErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
-            PutRolePermissionsBoundaryErrorKind::UnmodifiableEntityError(_inner) => _inner.fmt(f),
+            PutRolePermissionsBoundaryErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            PutRolePermissionsBoundaryErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            PutRolePermissionsBoundaryErrorKind::PolicyNotAttachableException(_inner) => {
+                _inner.fmt(f)
+            }
+            PutRolePermissionsBoundaryErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
+            PutRolePermissionsBoundaryErrorKind::UnmodifiableEntityException(_inner) => {
+                _inner.fmt(f)
+            }
             PutRolePermissionsBoundaryErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -10796,45 +11117,49 @@ impl PutRolePermissionsBoundaryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_input_error(&self) -> bool {
+    pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutRolePermissionsBoundaryErrorKind::InvalidInputError(_)
+            PutRolePermissionsBoundaryErrorKind::InvalidInputException(_)
         )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutRolePermissionsBoundaryErrorKind::NoSuchEntityError(_)
+            PutRolePermissionsBoundaryErrorKind::NoSuchEntityException(_)
         )
     }
-    pub fn is_policy_not_attachable_error(&self) -> bool {
+    pub fn is_policy_not_attachable_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutRolePermissionsBoundaryErrorKind::PolicyNotAttachableError(_)
+            PutRolePermissionsBoundaryErrorKind::PolicyNotAttachableException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutRolePermissionsBoundaryErrorKind::ServiceFailureError(_)
+            PutRolePermissionsBoundaryErrorKind::ServiceFailureException(_)
         )
     }
-    pub fn is_unmodifiable_entity_error(&self) -> bool {
+    pub fn is_unmodifiable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutRolePermissionsBoundaryErrorKind::UnmodifiableEntityError(_)
+            PutRolePermissionsBoundaryErrorKind::UnmodifiableEntityException(_)
         )
     }
 }
 impl std::error::Error for PutRolePermissionsBoundaryError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutRolePermissionsBoundaryErrorKind::InvalidInputError(_inner) => Some(_inner),
-            PutRolePermissionsBoundaryErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            PutRolePermissionsBoundaryErrorKind::PolicyNotAttachableError(_inner) => Some(_inner),
-            PutRolePermissionsBoundaryErrorKind::ServiceFailureError(_inner) => Some(_inner),
-            PutRolePermissionsBoundaryErrorKind::UnmodifiableEntityError(_inner) => Some(_inner),
+            PutRolePermissionsBoundaryErrorKind::InvalidInputException(_inner) => Some(_inner),
+            PutRolePermissionsBoundaryErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            PutRolePermissionsBoundaryErrorKind::PolicyNotAttachableException(_inner) => {
+                Some(_inner)
+            }
+            PutRolePermissionsBoundaryErrorKind::ServiceFailureException(_inner) => Some(_inner),
+            PutRolePermissionsBoundaryErrorKind::UnmodifiableEntityException(_inner) => {
+                Some(_inner)
+            }
             PutRolePermissionsBoundaryErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -10849,22 +11174,22 @@ pub struct PutRolePolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutRolePolicyErrorKind {
-    LimitExceededError(crate::error::LimitExceededError),
-    MalformedPolicyDocumentError(crate::error::MalformedPolicyDocumentError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
-    UnmodifiableEntityError(crate::error::UnmodifiableEntityError),
+    LimitExceededException(crate::error::LimitExceededException),
+    MalformedPolicyDocumentException(crate::error::MalformedPolicyDocumentException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
+    UnmodifiableEntityException(crate::error::UnmodifiableEntityException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutRolePolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutRolePolicyErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            PutRolePolicyErrorKind::MalformedPolicyDocumentError(_inner) => _inner.fmt(f),
-            PutRolePolicyErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            PutRolePolicyErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
-            PutRolePolicyErrorKind::UnmodifiableEntityError(_inner) => _inner.fmt(f),
+            PutRolePolicyErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            PutRolePolicyErrorKind::MalformedPolicyDocumentException(_inner) => _inner.fmt(f),
+            PutRolePolicyErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            PutRolePolicyErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
+            PutRolePolicyErrorKind::UnmodifiableEntityException(_inner) => _inner.fmt(f),
             PutRolePolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -10913,36 +11238,42 @@ impl PutRolePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, PutRolePolicyErrorKind::LimitExceededError(_))
-    }
-    pub fn is_malformed_policy_document_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutRolePolicyErrorKind::MalformedPolicyDocumentError(_)
+            PutRolePolicyErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
-        matches!(&self.kind, PutRolePolicyErrorKind::NoSuchEntityError(_))
-    }
-    pub fn is_service_failure_error(&self) -> bool {
-        matches!(&self.kind, PutRolePolicyErrorKind::ServiceFailureError(_))
-    }
-    pub fn is_unmodifiable_entity_error(&self) -> bool {
+    pub fn is_malformed_policy_document_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutRolePolicyErrorKind::UnmodifiableEntityError(_)
+            PutRolePolicyErrorKind::MalformedPolicyDocumentException(_)
+        )
+    }
+    pub fn is_no_such_entity_exception(&self) -> bool {
+        matches!(&self.kind, PutRolePolicyErrorKind::NoSuchEntityException(_))
+    }
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutRolePolicyErrorKind::ServiceFailureException(_)
+        )
+    }
+    pub fn is_unmodifiable_entity_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutRolePolicyErrorKind::UnmodifiableEntityException(_)
         )
     }
 }
 impl std::error::Error for PutRolePolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutRolePolicyErrorKind::LimitExceededError(_inner) => Some(_inner),
-            PutRolePolicyErrorKind::MalformedPolicyDocumentError(_inner) => Some(_inner),
-            PutRolePolicyErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            PutRolePolicyErrorKind::ServiceFailureError(_inner) => Some(_inner),
-            PutRolePolicyErrorKind::UnmodifiableEntityError(_inner) => Some(_inner),
+            PutRolePolicyErrorKind::LimitExceededException(_inner) => Some(_inner),
+            PutRolePolicyErrorKind::MalformedPolicyDocumentException(_inner) => Some(_inner),
+            PutRolePolicyErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            PutRolePolicyErrorKind::ServiceFailureException(_inner) => Some(_inner),
+            PutRolePolicyErrorKind::UnmodifiableEntityException(_inner) => Some(_inner),
             PutRolePolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -10957,20 +11288,22 @@ pub struct PutUserPermissionsBoundaryError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutUserPermissionsBoundaryErrorKind {
-    InvalidInputError(crate::error::InvalidInputError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    PolicyNotAttachableError(crate::error::PolicyNotAttachableError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    InvalidInputException(crate::error::InvalidInputException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    PolicyNotAttachableException(crate::error::PolicyNotAttachableException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutUserPermissionsBoundaryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutUserPermissionsBoundaryErrorKind::InvalidInputError(_inner) => _inner.fmt(f),
-            PutUserPermissionsBoundaryErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            PutUserPermissionsBoundaryErrorKind::PolicyNotAttachableError(_inner) => _inner.fmt(f),
-            PutUserPermissionsBoundaryErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            PutUserPermissionsBoundaryErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            PutUserPermissionsBoundaryErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            PutUserPermissionsBoundaryErrorKind::PolicyNotAttachableException(_inner) => {
+                _inner.fmt(f)
+            }
+            PutUserPermissionsBoundaryErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             PutUserPermissionsBoundaryErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -11019,38 +11352,40 @@ impl PutUserPermissionsBoundaryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_input_error(&self) -> bool {
+    pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutUserPermissionsBoundaryErrorKind::InvalidInputError(_)
+            PutUserPermissionsBoundaryErrorKind::InvalidInputException(_)
         )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutUserPermissionsBoundaryErrorKind::NoSuchEntityError(_)
+            PutUserPermissionsBoundaryErrorKind::NoSuchEntityException(_)
         )
     }
-    pub fn is_policy_not_attachable_error(&self) -> bool {
+    pub fn is_policy_not_attachable_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutUserPermissionsBoundaryErrorKind::PolicyNotAttachableError(_)
+            PutUserPermissionsBoundaryErrorKind::PolicyNotAttachableException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutUserPermissionsBoundaryErrorKind::ServiceFailureError(_)
+            PutUserPermissionsBoundaryErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for PutUserPermissionsBoundaryError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutUserPermissionsBoundaryErrorKind::InvalidInputError(_inner) => Some(_inner),
-            PutUserPermissionsBoundaryErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            PutUserPermissionsBoundaryErrorKind::PolicyNotAttachableError(_inner) => Some(_inner),
-            PutUserPermissionsBoundaryErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            PutUserPermissionsBoundaryErrorKind::InvalidInputException(_inner) => Some(_inner),
+            PutUserPermissionsBoundaryErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            PutUserPermissionsBoundaryErrorKind::PolicyNotAttachableException(_inner) => {
+                Some(_inner)
+            }
+            PutUserPermissionsBoundaryErrorKind::ServiceFailureException(_inner) => Some(_inner),
             PutUserPermissionsBoundaryErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -11065,20 +11400,20 @@ pub struct PutUserPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutUserPolicyErrorKind {
-    LimitExceededError(crate::error::LimitExceededError),
-    MalformedPolicyDocumentError(crate::error::MalformedPolicyDocumentError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    LimitExceededException(crate::error::LimitExceededException),
+    MalformedPolicyDocumentException(crate::error::MalformedPolicyDocumentException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutUserPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutUserPolicyErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            PutUserPolicyErrorKind::MalformedPolicyDocumentError(_inner) => _inner.fmt(f),
-            PutUserPolicyErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            PutUserPolicyErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            PutUserPolicyErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            PutUserPolicyErrorKind::MalformedPolicyDocumentException(_inner) => _inner.fmt(f),
+            PutUserPolicyErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            PutUserPolicyErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             PutUserPolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -11127,29 +11462,35 @@ impl PutUserPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, PutUserPolicyErrorKind::LimitExceededError(_))
-    }
-    pub fn is_malformed_policy_document_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutUserPolicyErrorKind::MalformedPolicyDocumentError(_)
+            PutUserPolicyErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
-        matches!(&self.kind, PutUserPolicyErrorKind::NoSuchEntityError(_))
+    pub fn is_malformed_policy_document_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutUserPolicyErrorKind::MalformedPolicyDocumentException(_)
+        )
     }
-    pub fn is_service_failure_error(&self) -> bool {
-        matches!(&self.kind, PutUserPolicyErrorKind::ServiceFailureError(_))
+    pub fn is_no_such_entity_exception(&self) -> bool {
+        matches!(&self.kind, PutUserPolicyErrorKind::NoSuchEntityException(_))
+    }
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutUserPolicyErrorKind::ServiceFailureException(_)
+        )
     }
 }
 impl std::error::Error for PutUserPolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutUserPolicyErrorKind::LimitExceededError(_inner) => Some(_inner),
-            PutUserPolicyErrorKind::MalformedPolicyDocumentError(_inner) => Some(_inner),
-            PutUserPolicyErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            PutUserPolicyErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            PutUserPolicyErrorKind::LimitExceededException(_inner) => Some(_inner),
+            PutUserPolicyErrorKind::MalformedPolicyDocumentException(_inner) => Some(_inner),
+            PutUserPolicyErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            PutUserPolicyErrorKind::ServiceFailureException(_inner) => Some(_inner),
             PutUserPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -11164,22 +11505,22 @@ pub struct RemoveClientIDFromOpenIDConnectProviderError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RemoveClientIDFromOpenIDConnectProviderErrorKind {
-    InvalidInputError(crate::error::InvalidInputError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    InvalidInputException(crate::error::InvalidInputException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RemoveClientIDFromOpenIDConnectProviderError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            RemoveClientIDFromOpenIDConnectProviderErrorKind::InvalidInputError(_inner) => {
+            RemoveClientIDFromOpenIDConnectProviderErrorKind::InvalidInputException(_inner) => {
                 _inner.fmt(f)
             }
-            RemoveClientIDFromOpenIDConnectProviderErrorKind::NoSuchEntityError(_inner) => {
+            RemoveClientIDFromOpenIDConnectProviderErrorKind::NoSuchEntityException(_inner) => {
                 _inner.fmt(f)
             }
-            RemoveClientIDFromOpenIDConnectProviderErrorKind::ServiceFailureError(_inner) => {
+            RemoveClientIDFromOpenIDConnectProviderErrorKind::ServiceFailureException(_inner) => {
                 _inner.fmt(f)
             }
             RemoveClientIDFromOpenIDConnectProviderErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -11233,35 +11574,35 @@ impl RemoveClientIDFromOpenIDConnectProviderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_input_error(&self) -> bool {
+    pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
-            RemoveClientIDFromOpenIDConnectProviderErrorKind::InvalidInputError(_)
+            RemoveClientIDFromOpenIDConnectProviderErrorKind::InvalidInputException(_)
         )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            RemoveClientIDFromOpenIDConnectProviderErrorKind::NoSuchEntityError(_)
+            RemoveClientIDFromOpenIDConnectProviderErrorKind::NoSuchEntityException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            RemoveClientIDFromOpenIDConnectProviderErrorKind::ServiceFailureError(_)
+            RemoveClientIDFromOpenIDConnectProviderErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for RemoveClientIDFromOpenIDConnectProviderError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            RemoveClientIDFromOpenIDConnectProviderErrorKind::InvalidInputError(_inner) => {
+            RemoveClientIDFromOpenIDConnectProviderErrorKind::InvalidInputException(_inner) => {
                 Some(_inner)
             }
-            RemoveClientIDFromOpenIDConnectProviderErrorKind::NoSuchEntityError(_inner) => {
+            RemoveClientIDFromOpenIDConnectProviderErrorKind::NoSuchEntityException(_inner) => {
                 Some(_inner)
             }
-            RemoveClientIDFromOpenIDConnectProviderErrorKind::ServiceFailureError(_inner) => {
+            RemoveClientIDFromOpenIDConnectProviderErrorKind::ServiceFailureException(_inner) => {
                 Some(_inner)
             }
             RemoveClientIDFromOpenIDConnectProviderErrorKind::Unhandled(_inner) => {
@@ -11280,20 +11621,22 @@ pub struct RemoveRoleFromInstanceProfileError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RemoveRoleFromInstanceProfileErrorKind {
-    LimitExceededError(crate::error::LimitExceededError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
-    UnmodifiableEntityError(crate::error::UnmodifiableEntityError),
+    LimitExceededException(crate::error::LimitExceededException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
+    UnmodifiableEntityException(crate::error::UnmodifiableEntityException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RemoveRoleFromInstanceProfileError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            RemoveRoleFromInstanceProfileErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            RemoveRoleFromInstanceProfileErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            RemoveRoleFromInstanceProfileErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
-            RemoveRoleFromInstanceProfileErrorKind::UnmodifiableEntityError(_inner) => {
+            RemoveRoleFromInstanceProfileErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            RemoveRoleFromInstanceProfileErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            RemoveRoleFromInstanceProfileErrorKind::ServiceFailureException(_inner) => {
+                _inner.fmt(f)
+            }
+            RemoveRoleFromInstanceProfileErrorKind::UnmodifiableEntityException(_inner) => {
                 _inner.fmt(f)
             }
             RemoveRoleFromInstanceProfileErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -11344,38 +11687,40 @@ impl RemoveRoleFromInstanceProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            RemoveRoleFromInstanceProfileErrorKind::LimitExceededError(_)
+            RemoveRoleFromInstanceProfileErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            RemoveRoleFromInstanceProfileErrorKind::NoSuchEntityError(_)
+            RemoveRoleFromInstanceProfileErrorKind::NoSuchEntityException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            RemoveRoleFromInstanceProfileErrorKind::ServiceFailureError(_)
+            RemoveRoleFromInstanceProfileErrorKind::ServiceFailureException(_)
         )
     }
-    pub fn is_unmodifiable_entity_error(&self) -> bool {
+    pub fn is_unmodifiable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            RemoveRoleFromInstanceProfileErrorKind::UnmodifiableEntityError(_)
+            RemoveRoleFromInstanceProfileErrorKind::UnmodifiableEntityException(_)
         )
     }
 }
 impl std::error::Error for RemoveRoleFromInstanceProfileError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            RemoveRoleFromInstanceProfileErrorKind::LimitExceededError(_inner) => Some(_inner),
-            RemoveRoleFromInstanceProfileErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            RemoveRoleFromInstanceProfileErrorKind::ServiceFailureError(_inner) => Some(_inner),
-            RemoveRoleFromInstanceProfileErrorKind::UnmodifiableEntityError(_inner) => Some(_inner),
+            RemoveRoleFromInstanceProfileErrorKind::LimitExceededException(_inner) => Some(_inner),
+            RemoveRoleFromInstanceProfileErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            RemoveRoleFromInstanceProfileErrorKind::ServiceFailureException(_inner) => Some(_inner),
+            RemoveRoleFromInstanceProfileErrorKind::UnmodifiableEntityException(_inner) => {
+                Some(_inner)
+            }
             RemoveRoleFromInstanceProfileErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -11390,18 +11735,18 @@ pub struct RemoveUserFromGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RemoveUserFromGroupErrorKind {
-    LimitExceededError(crate::error::LimitExceededError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    LimitExceededException(crate::error::LimitExceededException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RemoveUserFromGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            RemoveUserFromGroupErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            RemoveUserFromGroupErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            RemoveUserFromGroupErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            RemoveUserFromGroupErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            RemoveUserFromGroupErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            RemoveUserFromGroupErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             RemoveUserFromGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -11450,31 +11795,31 @@ impl RemoveUserFromGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            RemoveUserFromGroupErrorKind::LimitExceededError(_)
+            RemoveUserFromGroupErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            RemoveUserFromGroupErrorKind::NoSuchEntityError(_)
+            RemoveUserFromGroupErrorKind::NoSuchEntityException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            RemoveUserFromGroupErrorKind::ServiceFailureError(_)
+            RemoveUserFromGroupErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for RemoveUserFromGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            RemoveUserFromGroupErrorKind::LimitExceededError(_inner) => Some(_inner),
-            RemoveUserFromGroupErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            RemoveUserFromGroupErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            RemoveUserFromGroupErrorKind::LimitExceededException(_inner) => Some(_inner),
+            RemoveUserFromGroupErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            RemoveUserFromGroupErrorKind::ServiceFailureException(_inner) => Some(_inner),
             RemoveUserFromGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -11489,14 +11834,14 @@ pub struct ResetServiceSpecificCredentialError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ResetServiceSpecificCredentialErrorKind {
-    NoSuchEntityError(crate::error::NoSuchEntityError),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ResetServiceSpecificCredentialError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ResetServiceSpecificCredentialErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
+            ResetServiceSpecificCredentialErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
             ResetServiceSpecificCredentialErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -11545,17 +11890,17 @@ impl ResetServiceSpecificCredentialError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ResetServiceSpecificCredentialErrorKind::NoSuchEntityError(_)
+            ResetServiceSpecificCredentialErrorKind::NoSuchEntityException(_)
         )
     }
 }
 impl std::error::Error for ResetServiceSpecificCredentialError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ResetServiceSpecificCredentialErrorKind::NoSuchEntityError(_inner) => Some(_inner),
+            ResetServiceSpecificCredentialErrorKind::NoSuchEntityException(_inner) => Some(_inner),
             ResetServiceSpecificCredentialErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -11570,20 +11915,20 @@ pub struct ResyncMFADeviceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ResyncMFADeviceErrorKind {
-    InvalidAuthenticationCodeError(crate::error::InvalidAuthenticationCodeError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    InvalidAuthenticationCodeException(crate::error::InvalidAuthenticationCodeException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ResyncMFADeviceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ResyncMFADeviceErrorKind::InvalidAuthenticationCodeError(_inner) => _inner.fmt(f),
-            ResyncMFADeviceErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            ResyncMFADeviceErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            ResyncMFADeviceErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            ResyncMFADeviceErrorKind::InvalidAuthenticationCodeException(_inner) => _inner.fmt(f),
+            ResyncMFADeviceErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            ResyncMFADeviceErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            ResyncMFADeviceErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             ResyncMFADeviceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -11632,29 +11977,38 @@ impl ResyncMFADeviceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_authentication_code_error(&self) -> bool {
+    pub fn is_invalid_authentication_code_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ResyncMFADeviceErrorKind::InvalidAuthenticationCodeError(_)
+            ResyncMFADeviceErrorKind::InvalidAuthenticationCodeException(_)
         )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, ResyncMFADeviceErrorKind::LimitExceededError(_))
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ResyncMFADeviceErrorKind::LimitExceededException(_)
+        )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
-        matches!(&self.kind, ResyncMFADeviceErrorKind::NoSuchEntityError(_))
+    pub fn is_no_such_entity_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ResyncMFADeviceErrorKind::NoSuchEntityException(_)
+        )
     }
-    pub fn is_service_failure_error(&self) -> bool {
-        matches!(&self.kind, ResyncMFADeviceErrorKind::ServiceFailureError(_))
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ResyncMFADeviceErrorKind::ServiceFailureException(_)
+        )
     }
 }
 impl std::error::Error for ResyncMFADeviceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ResyncMFADeviceErrorKind::InvalidAuthenticationCodeError(_inner) => Some(_inner),
-            ResyncMFADeviceErrorKind::LimitExceededError(_inner) => Some(_inner),
-            ResyncMFADeviceErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            ResyncMFADeviceErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            ResyncMFADeviceErrorKind::InvalidAuthenticationCodeException(_inner) => Some(_inner),
+            ResyncMFADeviceErrorKind::LimitExceededException(_inner) => Some(_inner),
+            ResyncMFADeviceErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            ResyncMFADeviceErrorKind::ServiceFailureException(_inner) => Some(_inner),
             ResyncMFADeviceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -11669,20 +12023,20 @@ pub struct SetDefaultPolicyVersionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SetDefaultPolicyVersionErrorKind {
-    InvalidInputError(crate::error::InvalidInputError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    InvalidInputException(crate::error::InvalidInputException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SetDefaultPolicyVersionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            SetDefaultPolicyVersionErrorKind::InvalidInputError(_inner) => _inner.fmt(f),
-            SetDefaultPolicyVersionErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            SetDefaultPolicyVersionErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            SetDefaultPolicyVersionErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            SetDefaultPolicyVersionErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            SetDefaultPolicyVersionErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            SetDefaultPolicyVersionErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            SetDefaultPolicyVersionErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             SetDefaultPolicyVersionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -11731,38 +12085,38 @@ impl SetDefaultPolicyVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_input_error(&self) -> bool {
+    pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
-            SetDefaultPolicyVersionErrorKind::InvalidInputError(_)
+            SetDefaultPolicyVersionErrorKind::InvalidInputException(_)
         )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            SetDefaultPolicyVersionErrorKind::LimitExceededError(_)
+            SetDefaultPolicyVersionErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            SetDefaultPolicyVersionErrorKind::NoSuchEntityError(_)
+            SetDefaultPolicyVersionErrorKind::NoSuchEntityException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            SetDefaultPolicyVersionErrorKind::ServiceFailureError(_)
+            SetDefaultPolicyVersionErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for SetDefaultPolicyVersionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            SetDefaultPolicyVersionErrorKind::InvalidInputError(_inner) => Some(_inner),
-            SetDefaultPolicyVersionErrorKind::LimitExceededError(_inner) => Some(_inner),
-            SetDefaultPolicyVersionErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            SetDefaultPolicyVersionErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            SetDefaultPolicyVersionErrorKind::InvalidInputException(_inner) => Some(_inner),
+            SetDefaultPolicyVersionErrorKind::LimitExceededException(_inner) => Some(_inner),
+            SetDefaultPolicyVersionErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            SetDefaultPolicyVersionErrorKind::ServiceFailureException(_inner) => Some(_inner),
             SetDefaultPolicyVersionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -11777,14 +12131,14 @@ pub struct SetSecurityTokenServicePreferencesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SetSecurityTokenServicePreferencesErrorKind {
-    ServiceFailureError(crate::error::ServiceFailureError),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SetSecurityTokenServicePreferencesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            SetSecurityTokenServicePreferencesErrorKind::ServiceFailureError(_inner) => {
+            SetSecurityTokenServicePreferencesErrorKind::ServiceFailureException(_inner) => {
                 _inner.fmt(f)
             }
             SetSecurityTokenServicePreferencesErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -11838,17 +12192,17 @@ impl SetSecurityTokenServicePreferencesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            SetSecurityTokenServicePreferencesErrorKind::ServiceFailureError(_)
+            SetSecurityTokenServicePreferencesErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for SetSecurityTokenServicePreferencesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            SetSecurityTokenServicePreferencesErrorKind::ServiceFailureError(_inner) => {
+            SetSecurityTokenServicePreferencesErrorKind::ServiceFailureException(_inner) => {
                 Some(_inner)
             }
             SetSecurityTokenServicePreferencesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -11865,16 +12219,16 @@ pub struct SimulateCustomPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SimulateCustomPolicyErrorKind {
-    InvalidInputError(crate::error::InvalidInputError),
-    PolicyEvaluationError(crate::error::PolicyEvaluationError),
+    InvalidInputException(crate::error::InvalidInputException),
+    PolicyEvaluationException(crate::error::PolicyEvaluationException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SimulateCustomPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            SimulateCustomPolicyErrorKind::InvalidInputError(_inner) => _inner.fmt(f),
-            SimulateCustomPolicyErrorKind::PolicyEvaluationError(_inner) => _inner.fmt(f),
+            SimulateCustomPolicyErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            SimulateCustomPolicyErrorKind::PolicyEvaluationException(_inner) => _inner.fmt(f),
             SimulateCustomPolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -11923,24 +12277,24 @@ impl SimulateCustomPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_input_error(&self) -> bool {
+    pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
-            SimulateCustomPolicyErrorKind::InvalidInputError(_)
+            SimulateCustomPolicyErrorKind::InvalidInputException(_)
         )
     }
-    pub fn is_policy_evaluation_error(&self) -> bool {
+    pub fn is_policy_evaluation_exception(&self) -> bool {
         matches!(
             &self.kind,
-            SimulateCustomPolicyErrorKind::PolicyEvaluationError(_)
+            SimulateCustomPolicyErrorKind::PolicyEvaluationException(_)
         )
     }
 }
 impl std::error::Error for SimulateCustomPolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            SimulateCustomPolicyErrorKind::InvalidInputError(_inner) => Some(_inner),
-            SimulateCustomPolicyErrorKind::PolicyEvaluationError(_inner) => Some(_inner),
+            SimulateCustomPolicyErrorKind::InvalidInputException(_inner) => Some(_inner),
+            SimulateCustomPolicyErrorKind::PolicyEvaluationException(_inner) => Some(_inner),
             SimulateCustomPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -11955,18 +12309,18 @@ pub struct SimulatePrincipalPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SimulatePrincipalPolicyErrorKind {
-    InvalidInputError(crate::error::InvalidInputError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    PolicyEvaluationError(crate::error::PolicyEvaluationError),
+    InvalidInputException(crate::error::InvalidInputException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    PolicyEvaluationException(crate::error::PolicyEvaluationException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SimulatePrincipalPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            SimulatePrincipalPolicyErrorKind::InvalidInputError(_inner) => _inner.fmt(f),
-            SimulatePrincipalPolicyErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            SimulatePrincipalPolicyErrorKind::PolicyEvaluationError(_inner) => _inner.fmt(f),
+            SimulatePrincipalPolicyErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            SimulatePrincipalPolicyErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            SimulatePrincipalPolicyErrorKind::PolicyEvaluationException(_inner) => _inner.fmt(f),
             SimulatePrincipalPolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -12015,31 +12369,31 @@ impl SimulatePrincipalPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_input_error(&self) -> bool {
+    pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
-            SimulatePrincipalPolicyErrorKind::InvalidInputError(_)
+            SimulatePrincipalPolicyErrorKind::InvalidInputException(_)
         )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            SimulatePrincipalPolicyErrorKind::NoSuchEntityError(_)
+            SimulatePrincipalPolicyErrorKind::NoSuchEntityException(_)
         )
     }
-    pub fn is_policy_evaluation_error(&self) -> bool {
+    pub fn is_policy_evaluation_exception(&self) -> bool {
         matches!(
             &self.kind,
-            SimulatePrincipalPolicyErrorKind::PolicyEvaluationError(_)
+            SimulatePrincipalPolicyErrorKind::PolicyEvaluationException(_)
         )
     }
 }
 impl std::error::Error for SimulatePrincipalPolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            SimulatePrincipalPolicyErrorKind::InvalidInputError(_inner) => Some(_inner),
-            SimulatePrincipalPolicyErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            SimulatePrincipalPolicyErrorKind::PolicyEvaluationError(_inner) => Some(_inner),
+            SimulatePrincipalPolicyErrorKind::InvalidInputException(_inner) => Some(_inner),
+            SimulatePrincipalPolicyErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            SimulatePrincipalPolicyErrorKind::PolicyEvaluationException(_inner) => Some(_inner),
             SimulatePrincipalPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -12054,22 +12408,22 @@ pub struct TagInstanceProfileError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagInstanceProfileErrorKind {
-    ConcurrentModificationError(crate::error::ConcurrentModificationError),
-    InvalidInputError(crate::error::InvalidInputError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    InvalidInputException(crate::error::InvalidInputException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagInstanceProfileError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            TagInstanceProfileErrorKind::ConcurrentModificationError(_inner) => _inner.fmt(f),
-            TagInstanceProfileErrorKind::InvalidInputError(_inner) => _inner.fmt(f),
-            TagInstanceProfileErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            TagInstanceProfileErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            TagInstanceProfileErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            TagInstanceProfileErrorKind::ConcurrentModificationException(_inner) => _inner.fmt(f),
+            TagInstanceProfileErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            TagInstanceProfileErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            TagInstanceProfileErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            TagInstanceProfileErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             TagInstanceProfileErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -12118,45 +12472,45 @@ impl TagInstanceProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_concurrent_modification_error(&self) -> bool {
+    pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
-            TagInstanceProfileErrorKind::ConcurrentModificationError(_)
+            TagInstanceProfileErrorKind::ConcurrentModificationException(_)
         )
     }
-    pub fn is_invalid_input_error(&self) -> bool {
+    pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
-            TagInstanceProfileErrorKind::InvalidInputError(_)
+            TagInstanceProfileErrorKind::InvalidInputException(_)
         )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            TagInstanceProfileErrorKind::LimitExceededError(_)
+            TagInstanceProfileErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            TagInstanceProfileErrorKind::NoSuchEntityError(_)
+            TagInstanceProfileErrorKind::NoSuchEntityException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            TagInstanceProfileErrorKind::ServiceFailureError(_)
+            TagInstanceProfileErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for TagInstanceProfileError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            TagInstanceProfileErrorKind::ConcurrentModificationError(_inner) => Some(_inner),
-            TagInstanceProfileErrorKind::InvalidInputError(_inner) => Some(_inner),
-            TagInstanceProfileErrorKind::LimitExceededError(_inner) => Some(_inner),
-            TagInstanceProfileErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            TagInstanceProfileErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            TagInstanceProfileErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
+            TagInstanceProfileErrorKind::InvalidInputException(_inner) => Some(_inner),
+            TagInstanceProfileErrorKind::LimitExceededException(_inner) => Some(_inner),
+            TagInstanceProfileErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            TagInstanceProfileErrorKind::ServiceFailureException(_inner) => Some(_inner),
             TagInstanceProfileErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -12171,22 +12525,22 @@ pub struct TagMFADeviceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagMFADeviceErrorKind {
-    ConcurrentModificationError(crate::error::ConcurrentModificationError),
-    InvalidInputError(crate::error::InvalidInputError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    InvalidInputException(crate::error::InvalidInputException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagMFADeviceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            TagMFADeviceErrorKind::ConcurrentModificationError(_inner) => _inner.fmt(f),
-            TagMFADeviceErrorKind::InvalidInputError(_inner) => _inner.fmt(f),
-            TagMFADeviceErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            TagMFADeviceErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            TagMFADeviceErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            TagMFADeviceErrorKind::ConcurrentModificationException(_inner) => _inner.fmt(f),
+            TagMFADeviceErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            TagMFADeviceErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            TagMFADeviceErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            TagMFADeviceErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             TagMFADeviceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -12235,33 +12589,36 @@ impl TagMFADeviceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_concurrent_modification_error(&self) -> bool {
+    pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
-            TagMFADeviceErrorKind::ConcurrentModificationError(_)
+            TagMFADeviceErrorKind::ConcurrentModificationException(_)
         )
     }
-    pub fn is_invalid_input_error(&self) -> bool {
-        matches!(&self.kind, TagMFADeviceErrorKind::InvalidInputError(_))
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(&self.kind, TagMFADeviceErrorKind::InvalidInputException(_))
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, TagMFADeviceErrorKind::LimitExceededError(_))
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(&self.kind, TagMFADeviceErrorKind::LimitExceededException(_))
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
-        matches!(&self.kind, TagMFADeviceErrorKind::NoSuchEntityError(_))
+    pub fn is_no_such_entity_exception(&self) -> bool {
+        matches!(&self.kind, TagMFADeviceErrorKind::NoSuchEntityException(_))
     }
-    pub fn is_service_failure_error(&self) -> bool {
-        matches!(&self.kind, TagMFADeviceErrorKind::ServiceFailureError(_))
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            TagMFADeviceErrorKind::ServiceFailureException(_)
+        )
     }
 }
 impl std::error::Error for TagMFADeviceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            TagMFADeviceErrorKind::ConcurrentModificationError(_inner) => Some(_inner),
-            TagMFADeviceErrorKind::InvalidInputError(_inner) => Some(_inner),
-            TagMFADeviceErrorKind::LimitExceededError(_inner) => Some(_inner),
-            TagMFADeviceErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            TagMFADeviceErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            TagMFADeviceErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
+            TagMFADeviceErrorKind::InvalidInputException(_inner) => Some(_inner),
+            TagMFADeviceErrorKind::LimitExceededException(_inner) => Some(_inner),
+            TagMFADeviceErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            TagMFADeviceErrorKind::ServiceFailureException(_inner) => Some(_inner),
             TagMFADeviceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -12276,22 +12633,24 @@ pub struct TagOpenIDConnectProviderError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagOpenIDConnectProviderErrorKind {
-    ConcurrentModificationError(crate::error::ConcurrentModificationError),
-    InvalidInputError(crate::error::InvalidInputError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    InvalidInputException(crate::error::InvalidInputException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagOpenIDConnectProviderError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            TagOpenIDConnectProviderErrorKind::ConcurrentModificationError(_inner) => _inner.fmt(f),
-            TagOpenIDConnectProviderErrorKind::InvalidInputError(_inner) => _inner.fmt(f),
-            TagOpenIDConnectProviderErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            TagOpenIDConnectProviderErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            TagOpenIDConnectProviderErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            TagOpenIDConnectProviderErrorKind::ConcurrentModificationException(_inner) => {
+                _inner.fmt(f)
+            }
+            TagOpenIDConnectProviderErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            TagOpenIDConnectProviderErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            TagOpenIDConnectProviderErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            TagOpenIDConnectProviderErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             TagOpenIDConnectProviderErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -12340,45 +12699,47 @@ impl TagOpenIDConnectProviderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_concurrent_modification_error(&self) -> bool {
+    pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
-            TagOpenIDConnectProviderErrorKind::ConcurrentModificationError(_)
+            TagOpenIDConnectProviderErrorKind::ConcurrentModificationException(_)
         )
     }
-    pub fn is_invalid_input_error(&self) -> bool {
+    pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
-            TagOpenIDConnectProviderErrorKind::InvalidInputError(_)
+            TagOpenIDConnectProviderErrorKind::InvalidInputException(_)
         )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            TagOpenIDConnectProviderErrorKind::LimitExceededError(_)
+            TagOpenIDConnectProviderErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            TagOpenIDConnectProviderErrorKind::NoSuchEntityError(_)
+            TagOpenIDConnectProviderErrorKind::NoSuchEntityException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            TagOpenIDConnectProviderErrorKind::ServiceFailureError(_)
+            TagOpenIDConnectProviderErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for TagOpenIDConnectProviderError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            TagOpenIDConnectProviderErrorKind::ConcurrentModificationError(_inner) => Some(_inner),
-            TagOpenIDConnectProviderErrorKind::InvalidInputError(_inner) => Some(_inner),
-            TagOpenIDConnectProviderErrorKind::LimitExceededError(_inner) => Some(_inner),
-            TagOpenIDConnectProviderErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            TagOpenIDConnectProviderErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            TagOpenIDConnectProviderErrorKind::ConcurrentModificationException(_inner) => {
+                Some(_inner)
+            }
+            TagOpenIDConnectProviderErrorKind::InvalidInputException(_inner) => Some(_inner),
+            TagOpenIDConnectProviderErrorKind::LimitExceededException(_inner) => Some(_inner),
+            TagOpenIDConnectProviderErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            TagOpenIDConnectProviderErrorKind::ServiceFailureException(_inner) => Some(_inner),
             TagOpenIDConnectProviderErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -12393,22 +12754,22 @@ pub struct TagPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagPolicyErrorKind {
-    ConcurrentModificationError(crate::error::ConcurrentModificationError),
-    InvalidInputError(crate::error::InvalidInputError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    InvalidInputException(crate::error::InvalidInputException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            TagPolicyErrorKind::ConcurrentModificationError(_inner) => _inner.fmt(f),
-            TagPolicyErrorKind::InvalidInputError(_inner) => _inner.fmt(f),
-            TagPolicyErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            TagPolicyErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            TagPolicyErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            TagPolicyErrorKind::ConcurrentModificationException(_inner) => _inner.fmt(f),
+            TagPolicyErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            TagPolicyErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            TagPolicyErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            TagPolicyErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             TagPolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -12457,33 +12818,33 @@ impl TagPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_concurrent_modification_error(&self) -> bool {
+    pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
-            TagPolicyErrorKind::ConcurrentModificationError(_)
+            TagPolicyErrorKind::ConcurrentModificationException(_)
         )
     }
-    pub fn is_invalid_input_error(&self) -> bool {
-        matches!(&self.kind, TagPolicyErrorKind::InvalidInputError(_))
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(&self.kind, TagPolicyErrorKind::InvalidInputException(_))
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, TagPolicyErrorKind::LimitExceededError(_))
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(&self.kind, TagPolicyErrorKind::LimitExceededException(_))
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
-        matches!(&self.kind, TagPolicyErrorKind::NoSuchEntityError(_))
+    pub fn is_no_such_entity_exception(&self) -> bool {
+        matches!(&self.kind, TagPolicyErrorKind::NoSuchEntityException(_))
     }
-    pub fn is_service_failure_error(&self) -> bool {
-        matches!(&self.kind, TagPolicyErrorKind::ServiceFailureError(_))
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(&self.kind, TagPolicyErrorKind::ServiceFailureException(_))
     }
 }
 impl std::error::Error for TagPolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            TagPolicyErrorKind::ConcurrentModificationError(_inner) => Some(_inner),
-            TagPolicyErrorKind::InvalidInputError(_inner) => Some(_inner),
-            TagPolicyErrorKind::LimitExceededError(_inner) => Some(_inner),
-            TagPolicyErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            TagPolicyErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            TagPolicyErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
+            TagPolicyErrorKind::InvalidInputException(_inner) => Some(_inner),
+            TagPolicyErrorKind::LimitExceededException(_inner) => Some(_inner),
+            TagPolicyErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            TagPolicyErrorKind::ServiceFailureException(_inner) => Some(_inner),
             TagPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -12498,22 +12859,22 @@ pub struct TagRoleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagRoleErrorKind {
-    ConcurrentModificationError(crate::error::ConcurrentModificationError),
-    InvalidInputError(crate::error::InvalidInputError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    InvalidInputException(crate::error::InvalidInputException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagRoleError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            TagRoleErrorKind::ConcurrentModificationError(_inner) => _inner.fmt(f),
-            TagRoleErrorKind::InvalidInputError(_inner) => _inner.fmt(f),
-            TagRoleErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            TagRoleErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            TagRoleErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            TagRoleErrorKind::ConcurrentModificationException(_inner) => _inner.fmt(f),
+            TagRoleErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            TagRoleErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            TagRoleErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            TagRoleErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             TagRoleErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -12562,30 +12923,33 @@ impl TagRoleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_concurrent_modification_error(&self) -> bool {
-        matches!(&self.kind, TagRoleErrorKind::ConcurrentModificationError(_))
+    pub fn is_concurrent_modification_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            TagRoleErrorKind::ConcurrentModificationException(_)
+        )
     }
-    pub fn is_invalid_input_error(&self) -> bool {
-        matches!(&self.kind, TagRoleErrorKind::InvalidInputError(_))
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(&self.kind, TagRoleErrorKind::InvalidInputException(_))
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, TagRoleErrorKind::LimitExceededError(_))
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(&self.kind, TagRoleErrorKind::LimitExceededException(_))
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
-        matches!(&self.kind, TagRoleErrorKind::NoSuchEntityError(_))
+    pub fn is_no_such_entity_exception(&self) -> bool {
+        matches!(&self.kind, TagRoleErrorKind::NoSuchEntityException(_))
     }
-    pub fn is_service_failure_error(&self) -> bool {
-        matches!(&self.kind, TagRoleErrorKind::ServiceFailureError(_))
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(&self.kind, TagRoleErrorKind::ServiceFailureException(_))
     }
 }
 impl std::error::Error for TagRoleError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            TagRoleErrorKind::ConcurrentModificationError(_inner) => Some(_inner),
-            TagRoleErrorKind::InvalidInputError(_inner) => Some(_inner),
-            TagRoleErrorKind::LimitExceededError(_inner) => Some(_inner),
-            TagRoleErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            TagRoleErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            TagRoleErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
+            TagRoleErrorKind::InvalidInputException(_inner) => Some(_inner),
+            TagRoleErrorKind::LimitExceededException(_inner) => Some(_inner),
+            TagRoleErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            TagRoleErrorKind::ServiceFailureException(_inner) => Some(_inner),
             TagRoleErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -12600,22 +12964,22 @@ pub struct TagSAMLProviderError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagSAMLProviderErrorKind {
-    ConcurrentModificationError(crate::error::ConcurrentModificationError),
-    InvalidInputError(crate::error::InvalidInputError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    InvalidInputException(crate::error::InvalidInputException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagSAMLProviderError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            TagSAMLProviderErrorKind::ConcurrentModificationError(_inner) => _inner.fmt(f),
-            TagSAMLProviderErrorKind::InvalidInputError(_inner) => _inner.fmt(f),
-            TagSAMLProviderErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            TagSAMLProviderErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            TagSAMLProviderErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            TagSAMLProviderErrorKind::ConcurrentModificationException(_inner) => _inner.fmt(f),
+            TagSAMLProviderErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            TagSAMLProviderErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            TagSAMLProviderErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            TagSAMLProviderErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             TagSAMLProviderErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -12664,33 +13028,45 @@ impl TagSAMLProviderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_concurrent_modification_error(&self) -> bool {
+    pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
-            TagSAMLProviderErrorKind::ConcurrentModificationError(_)
+            TagSAMLProviderErrorKind::ConcurrentModificationException(_)
         )
     }
-    pub fn is_invalid_input_error(&self) -> bool {
-        matches!(&self.kind, TagSAMLProviderErrorKind::InvalidInputError(_))
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            TagSAMLProviderErrorKind::InvalidInputException(_)
+        )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, TagSAMLProviderErrorKind::LimitExceededError(_))
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            TagSAMLProviderErrorKind::LimitExceededException(_)
+        )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
-        matches!(&self.kind, TagSAMLProviderErrorKind::NoSuchEntityError(_))
+    pub fn is_no_such_entity_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            TagSAMLProviderErrorKind::NoSuchEntityException(_)
+        )
     }
-    pub fn is_service_failure_error(&self) -> bool {
-        matches!(&self.kind, TagSAMLProviderErrorKind::ServiceFailureError(_))
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            TagSAMLProviderErrorKind::ServiceFailureException(_)
+        )
     }
 }
 impl std::error::Error for TagSAMLProviderError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            TagSAMLProviderErrorKind::ConcurrentModificationError(_inner) => Some(_inner),
-            TagSAMLProviderErrorKind::InvalidInputError(_inner) => Some(_inner),
-            TagSAMLProviderErrorKind::LimitExceededError(_inner) => Some(_inner),
-            TagSAMLProviderErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            TagSAMLProviderErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            TagSAMLProviderErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
+            TagSAMLProviderErrorKind::InvalidInputException(_inner) => Some(_inner),
+            TagSAMLProviderErrorKind::LimitExceededException(_inner) => Some(_inner),
+            TagSAMLProviderErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            TagSAMLProviderErrorKind::ServiceFailureException(_inner) => Some(_inner),
             TagSAMLProviderErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -12705,22 +13081,22 @@ pub struct TagServerCertificateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagServerCertificateErrorKind {
-    ConcurrentModificationError(crate::error::ConcurrentModificationError),
-    InvalidInputError(crate::error::InvalidInputError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    InvalidInputException(crate::error::InvalidInputException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagServerCertificateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            TagServerCertificateErrorKind::ConcurrentModificationError(_inner) => _inner.fmt(f),
-            TagServerCertificateErrorKind::InvalidInputError(_inner) => _inner.fmt(f),
-            TagServerCertificateErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            TagServerCertificateErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            TagServerCertificateErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            TagServerCertificateErrorKind::ConcurrentModificationException(_inner) => _inner.fmt(f),
+            TagServerCertificateErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            TagServerCertificateErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            TagServerCertificateErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            TagServerCertificateErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             TagServerCertificateErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -12769,45 +13145,45 @@ impl TagServerCertificateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_concurrent_modification_error(&self) -> bool {
+    pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
-            TagServerCertificateErrorKind::ConcurrentModificationError(_)
+            TagServerCertificateErrorKind::ConcurrentModificationException(_)
         )
     }
-    pub fn is_invalid_input_error(&self) -> bool {
+    pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
-            TagServerCertificateErrorKind::InvalidInputError(_)
+            TagServerCertificateErrorKind::InvalidInputException(_)
         )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            TagServerCertificateErrorKind::LimitExceededError(_)
+            TagServerCertificateErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            TagServerCertificateErrorKind::NoSuchEntityError(_)
+            TagServerCertificateErrorKind::NoSuchEntityException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            TagServerCertificateErrorKind::ServiceFailureError(_)
+            TagServerCertificateErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for TagServerCertificateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            TagServerCertificateErrorKind::ConcurrentModificationError(_inner) => Some(_inner),
-            TagServerCertificateErrorKind::InvalidInputError(_inner) => Some(_inner),
-            TagServerCertificateErrorKind::LimitExceededError(_inner) => Some(_inner),
-            TagServerCertificateErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            TagServerCertificateErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            TagServerCertificateErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
+            TagServerCertificateErrorKind::InvalidInputException(_inner) => Some(_inner),
+            TagServerCertificateErrorKind::LimitExceededException(_inner) => Some(_inner),
+            TagServerCertificateErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            TagServerCertificateErrorKind::ServiceFailureException(_inner) => Some(_inner),
             TagServerCertificateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -12822,22 +13198,22 @@ pub struct TagUserError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagUserErrorKind {
-    ConcurrentModificationError(crate::error::ConcurrentModificationError),
-    InvalidInputError(crate::error::InvalidInputError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    InvalidInputException(crate::error::InvalidInputException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagUserError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            TagUserErrorKind::ConcurrentModificationError(_inner) => _inner.fmt(f),
-            TagUserErrorKind::InvalidInputError(_inner) => _inner.fmt(f),
-            TagUserErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            TagUserErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            TagUserErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            TagUserErrorKind::ConcurrentModificationException(_inner) => _inner.fmt(f),
+            TagUserErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            TagUserErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            TagUserErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            TagUserErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             TagUserErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -12886,30 +13262,33 @@ impl TagUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_concurrent_modification_error(&self) -> bool {
-        matches!(&self.kind, TagUserErrorKind::ConcurrentModificationError(_))
+    pub fn is_concurrent_modification_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            TagUserErrorKind::ConcurrentModificationException(_)
+        )
     }
-    pub fn is_invalid_input_error(&self) -> bool {
-        matches!(&self.kind, TagUserErrorKind::InvalidInputError(_))
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(&self.kind, TagUserErrorKind::InvalidInputException(_))
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, TagUserErrorKind::LimitExceededError(_))
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(&self.kind, TagUserErrorKind::LimitExceededException(_))
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
-        matches!(&self.kind, TagUserErrorKind::NoSuchEntityError(_))
+    pub fn is_no_such_entity_exception(&self) -> bool {
+        matches!(&self.kind, TagUserErrorKind::NoSuchEntityException(_))
     }
-    pub fn is_service_failure_error(&self) -> bool {
-        matches!(&self.kind, TagUserErrorKind::ServiceFailureError(_))
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(&self.kind, TagUserErrorKind::ServiceFailureException(_))
     }
 }
 impl std::error::Error for TagUserError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            TagUserErrorKind::ConcurrentModificationError(_inner) => Some(_inner),
-            TagUserErrorKind::InvalidInputError(_inner) => Some(_inner),
-            TagUserErrorKind::LimitExceededError(_inner) => Some(_inner),
-            TagUserErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            TagUserErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            TagUserErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
+            TagUserErrorKind::InvalidInputException(_inner) => Some(_inner),
+            TagUserErrorKind::LimitExceededException(_inner) => Some(_inner),
+            TagUserErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            TagUserErrorKind::ServiceFailureException(_inner) => Some(_inner),
             TagUserErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -12924,20 +13303,20 @@ pub struct UntagInstanceProfileError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagInstanceProfileErrorKind {
-    ConcurrentModificationError(crate::error::ConcurrentModificationError),
-    InvalidInputError(crate::error::InvalidInputError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    InvalidInputException(crate::error::InvalidInputException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagInstanceProfileError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UntagInstanceProfileErrorKind::ConcurrentModificationError(_inner) => _inner.fmt(f),
-            UntagInstanceProfileErrorKind::InvalidInputError(_inner) => _inner.fmt(f),
-            UntagInstanceProfileErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            UntagInstanceProfileErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            UntagInstanceProfileErrorKind::ConcurrentModificationException(_inner) => _inner.fmt(f),
+            UntagInstanceProfileErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            UntagInstanceProfileErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            UntagInstanceProfileErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             UntagInstanceProfileErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -12986,38 +13365,38 @@ impl UntagInstanceProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_concurrent_modification_error(&self) -> bool {
+    pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UntagInstanceProfileErrorKind::ConcurrentModificationError(_)
+            UntagInstanceProfileErrorKind::ConcurrentModificationException(_)
         )
     }
-    pub fn is_invalid_input_error(&self) -> bool {
+    pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UntagInstanceProfileErrorKind::InvalidInputError(_)
+            UntagInstanceProfileErrorKind::InvalidInputException(_)
         )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UntagInstanceProfileErrorKind::NoSuchEntityError(_)
+            UntagInstanceProfileErrorKind::NoSuchEntityException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UntagInstanceProfileErrorKind::ServiceFailureError(_)
+            UntagInstanceProfileErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for UntagInstanceProfileError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UntagInstanceProfileErrorKind::ConcurrentModificationError(_inner) => Some(_inner),
-            UntagInstanceProfileErrorKind::InvalidInputError(_inner) => Some(_inner),
-            UntagInstanceProfileErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            UntagInstanceProfileErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            UntagInstanceProfileErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
+            UntagInstanceProfileErrorKind::InvalidInputException(_inner) => Some(_inner),
+            UntagInstanceProfileErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            UntagInstanceProfileErrorKind::ServiceFailureException(_inner) => Some(_inner),
             UntagInstanceProfileErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -13032,20 +13411,20 @@ pub struct UntagMFADeviceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagMFADeviceErrorKind {
-    ConcurrentModificationError(crate::error::ConcurrentModificationError),
-    InvalidInputError(crate::error::InvalidInputError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    InvalidInputException(crate::error::InvalidInputException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagMFADeviceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UntagMFADeviceErrorKind::ConcurrentModificationError(_inner) => _inner.fmt(f),
-            UntagMFADeviceErrorKind::InvalidInputError(_inner) => _inner.fmt(f),
-            UntagMFADeviceErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            UntagMFADeviceErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            UntagMFADeviceErrorKind::ConcurrentModificationException(_inner) => _inner.fmt(f),
+            UntagMFADeviceErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            UntagMFADeviceErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            UntagMFADeviceErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             UntagMFADeviceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -13094,29 +13473,38 @@ impl UntagMFADeviceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_concurrent_modification_error(&self) -> bool {
+    pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UntagMFADeviceErrorKind::ConcurrentModificationError(_)
+            UntagMFADeviceErrorKind::ConcurrentModificationException(_)
         )
     }
-    pub fn is_invalid_input_error(&self) -> bool {
-        matches!(&self.kind, UntagMFADeviceErrorKind::InvalidInputError(_))
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UntagMFADeviceErrorKind::InvalidInputException(_)
+        )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
-        matches!(&self.kind, UntagMFADeviceErrorKind::NoSuchEntityError(_))
+    pub fn is_no_such_entity_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UntagMFADeviceErrorKind::NoSuchEntityException(_)
+        )
     }
-    pub fn is_service_failure_error(&self) -> bool {
-        matches!(&self.kind, UntagMFADeviceErrorKind::ServiceFailureError(_))
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UntagMFADeviceErrorKind::ServiceFailureException(_)
+        )
     }
 }
 impl std::error::Error for UntagMFADeviceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UntagMFADeviceErrorKind::ConcurrentModificationError(_inner) => Some(_inner),
-            UntagMFADeviceErrorKind::InvalidInputError(_inner) => Some(_inner),
-            UntagMFADeviceErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            UntagMFADeviceErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            UntagMFADeviceErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
+            UntagMFADeviceErrorKind::InvalidInputException(_inner) => Some(_inner),
+            UntagMFADeviceErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            UntagMFADeviceErrorKind::ServiceFailureException(_inner) => Some(_inner),
             UntagMFADeviceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -13131,22 +13519,22 @@ pub struct UntagOpenIDConnectProviderError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagOpenIDConnectProviderErrorKind {
-    ConcurrentModificationError(crate::error::ConcurrentModificationError),
-    InvalidInputError(crate::error::InvalidInputError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    InvalidInputException(crate::error::InvalidInputException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagOpenIDConnectProviderError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UntagOpenIDConnectProviderErrorKind::ConcurrentModificationError(_inner) => {
+            UntagOpenIDConnectProviderErrorKind::ConcurrentModificationException(_inner) => {
                 _inner.fmt(f)
             }
-            UntagOpenIDConnectProviderErrorKind::InvalidInputError(_inner) => _inner.fmt(f),
-            UntagOpenIDConnectProviderErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            UntagOpenIDConnectProviderErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            UntagOpenIDConnectProviderErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            UntagOpenIDConnectProviderErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            UntagOpenIDConnectProviderErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             UntagOpenIDConnectProviderErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -13195,40 +13583,40 @@ impl UntagOpenIDConnectProviderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_concurrent_modification_error(&self) -> bool {
+    pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UntagOpenIDConnectProviderErrorKind::ConcurrentModificationError(_)
+            UntagOpenIDConnectProviderErrorKind::ConcurrentModificationException(_)
         )
     }
-    pub fn is_invalid_input_error(&self) -> bool {
+    pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UntagOpenIDConnectProviderErrorKind::InvalidInputError(_)
+            UntagOpenIDConnectProviderErrorKind::InvalidInputException(_)
         )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UntagOpenIDConnectProviderErrorKind::NoSuchEntityError(_)
+            UntagOpenIDConnectProviderErrorKind::NoSuchEntityException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UntagOpenIDConnectProviderErrorKind::ServiceFailureError(_)
+            UntagOpenIDConnectProviderErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for UntagOpenIDConnectProviderError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UntagOpenIDConnectProviderErrorKind::ConcurrentModificationError(_inner) => {
+            UntagOpenIDConnectProviderErrorKind::ConcurrentModificationException(_inner) => {
                 Some(_inner)
             }
-            UntagOpenIDConnectProviderErrorKind::InvalidInputError(_inner) => Some(_inner),
-            UntagOpenIDConnectProviderErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            UntagOpenIDConnectProviderErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            UntagOpenIDConnectProviderErrorKind::InvalidInputException(_inner) => Some(_inner),
+            UntagOpenIDConnectProviderErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            UntagOpenIDConnectProviderErrorKind::ServiceFailureException(_inner) => Some(_inner),
             UntagOpenIDConnectProviderErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -13243,20 +13631,20 @@ pub struct UntagPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagPolicyErrorKind {
-    ConcurrentModificationError(crate::error::ConcurrentModificationError),
-    InvalidInputError(crate::error::InvalidInputError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    InvalidInputException(crate::error::InvalidInputException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UntagPolicyErrorKind::ConcurrentModificationError(_inner) => _inner.fmt(f),
-            UntagPolicyErrorKind::InvalidInputError(_inner) => _inner.fmt(f),
-            UntagPolicyErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            UntagPolicyErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            UntagPolicyErrorKind::ConcurrentModificationException(_inner) => _inner.fmt(f),
+            UntagPolicyErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            UntagPolicyErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            UntagPolicyErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             UntagPolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -13305,29 +13693,29 @@ impl UntagPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_concurrent_modification_error(&self) -> bool {
+    pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UntagPolicyErrorKind::ConcurrentModificationError(_)
+            UntagPolicyErrorKind::ConcurrentModificationException(_)
         )
     }
-    pub fn is_invalid_input_error(&self) -> bool {
-        matches!(&self.kind, UntagPolicyErrorKind::InvalidInputError(_))
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(&self.kind, UntagPolicyErrorKind::InvalidInputException(_))
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
-        matches!(&self.kind, UntagPolicyErrorKind::NoSuchEntityError(_))
+    pub fn is_no_such_entity_exception(&self) -> bool {
+        matches!(&self.kind, UntagPolicyErrorKind::NoSuchEntityException(_))
     }
-    pub fn is_service_failure_error(&self) -> bool {
-        matches!(&self.kind, UntagPolicyErrorKind::ServiceFailureError(_))
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(&self.kind, UntagPolicyErrorKind::ServiceFailureException(_))
     }
 }
 impl std::error::Error for UntagPolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UntagPolicyErrorKind::ConcurrentModificationError(_inner) => Some(_inner),
-            UntagPolicyErrorKind::InvalidInputError(_inner) => Some(_inner),
-            UntagPolicyErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            UntagPolicyErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            UntagPolicyErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
+            UntagPolicyErrorKind::InvalidInputException(_inner) => Some(_inner),
+            UntagPolicyErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            UntagPolicyErrorKind::ServiceFailureException(_inner) => Some(_inner),
             UntagPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -13342,18 +13730,18 @@ pub struct UntagRoleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagRoleErrorKind {
-    ConcurrentModificationError(crate::error::ConcurrentModificationError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagRoleError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UntagRoleErrorKind::ConcurrentModificationError(_inner) => _inner.fmt(f),
-            UntagRoleErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            UntagRoleErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            UntagRoleErrorKind::ConcurrentModificationException(_inner) => _inner.fmt(f),
+            UntagRoleErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            UntagRoleErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             UntagRoleErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -13402,25 +13790,25 @@ impl UntagRoleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_concurrent_modification_error(&self) -> bool {
+    pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UntagRoleErrorKind::ConcurrentModificationError(_)
+            UntagRoleErrorKind::ConcurrentModificationException(_)
         )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
-        matches!(&self.kind, UntagRoleErrorKind::NoSuchEntityError(_))
+    pub fn is_no_such_entity_exception(&self) -> bool {
+        matches!(&self.kind, UntagRoleErrorKind::NoSuchEntityException(_))
     }
-    pub fn is_service_failure_error(&self) -> bool {
-        matches!(&self.kind, UntagRoleErrorKind::ServiceFailureError(_))
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(&self.kind, UntagRoleErrorKind::ServiceFailureException(_))
     }
 }
 impl std::error::Error for UntagRoleError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UntagRoleErrorKind::ConcurrentModificationError(_inner) => Some(_inner),
-            UntagRoleErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            UntagRoleErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            UntagRoleErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
+            UntagRoleErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            UntagRoleErrorKind::ServiceFailureException(_inner) => Some(_inner),
             UntagRoleErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -13435,20 +13823,20 @@ pub struct UntagSAMLProviderError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagSAMLProviderErrorKind {
-    ConcurrentModificationError(crate::error::ConcurrentModificationError),
-    InvalidInputError(crate::error::InvalidInputError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    InvalidInputException(crate::error::InvalidInputException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagSAMLProviderError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UntagSAMLProviderErrorKind::ConcurrentModificationError(_inner) => _inner.fmt(f),
-            UntagSAMLProviderErrorKind::InvalidInputError(_inner) => _inner.fmt(f),
-            UntagSAMLProviderErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            UntagSAMLProviderErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            UntagSAMLProviderErrorKind::ConcurrentModificationException(_inner) => _inner.fmt(f),
+            UntagSAMLProviderErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            UntagSAMLProviderErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            UntagSAMLProviderErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             UntagSAMLProviderErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -13497,32 +13885,38 @@ impl UntagSAMLProviderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_concurrent_modification_error(&self) -> bool {
+    pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UntagSAMLProviderErrorKind::ConcurrentModificationError(_)
+            UntagSAMLProviderErrorKind::ConcurrentModificationException(_)
         )
     }
-    pub fn is_invalid_input_error(&self) -> bool {
-        matches!(&self.kind, UntagSAMLProviderErrorKind::InvalidInputError(_))
-    }
-    pub fn is_no_such_entity_error(&self) -> bool {
-        matches!(&self.kind, UntagSAMLProviderErrorKind::NoSuchEntityError(_))
-    }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UntagSAMLProviderErrorKind::ServiceFailureError(_)
+            UntagSAMLProviderErrorKind::InvalidInputException(_)
+        )
+    }
+    pub fn is_no_such_entity_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UntagSAMLProviderErrorKind::NoSuchEntityException(_)
+        )
+    }
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UntagSAMLProviderErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for UntagSAMLProviderError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UntagSAMLProviderErrorKind::ConcurrentModificationError(_inner) => Some(_inner),
-            UntagSAMLProviderErrorKind::InvalidInputError(_inner) => Some(_inner),
-            UntagSAMLProviderErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            UntagSAMLProviderErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            UntagSAMLProviderErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
+            UntagSAMLProviderErrorKind::InvalidInputException(_inner) => Some(_inner),
+            UntagSAMLProviderErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            UntagSAMLProviderErrorKind::ServiceFailureException(_inner) => Some(_inner),
             UntagSAMLProviderErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -13537,20 +13931,22 @@ pub struct UntagServerCertificateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagServerCertificateErrorKind {
-    ConcurrentModificationError(crate::error::ConcurrentModificationError),
-    InvalidInputError(crate::error::InvalidInputError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    InvalidInputException(crate::error::InvalidInputException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagServerCertificateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UntagServerCertificateErrorKind::ConcurrentModificationError(_inner) => _inner.fmt(f),
-            UntagServerCertificateErrorKind::InvalidInputError(_inner) => _inner.fmt(f),
-            UntagServerCertificateErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            UntagServerCertificateErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            UntagServerCertificateErrorKind::ConcurrentModificationException(_inner) => {
+                _inner.fmt(f)
+            }
+            UntagServerCertificateErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            UntagServerCertificateErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            UntagServerCertificateErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             UntagServerCertificateErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -13599,38 +13995,40 @@ impl UntagServerCertificateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_concurrent_modification_error(&self) -> bool {
+    pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UntagServerCertificateErrorKind::ConcurrentModificationError(_)
+            UntagServerCertificateErrorKind::ConcurrentModificationException(_)
         )
     }
-    pub fn is_invalid_input_error(&self) -> bool {
+    pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UntagServerCertificateErrorKind::InvalidInputError(_)
+            UntagServerCertificateErrorKind::InvalidInputException(_)
         )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UntagServerCertificateErrorKind::NoSuchEntityError(_)
+            UntagServerCertificateErrorKind::NoSuchEntityException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UntagServerCertificateErrorKind::ServiceFailureError(_)
+            UntagServerCertificateErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for UntagServerCertificateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UntagServerCertificateErrorKind::ConcurrentModificationError(_inner) => Some(_inner),
-            UntagServerCertificateErrorKind::InvalidInputError(_inner) => Some(_inner),
-            UntagServerCertificateErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            UntagServerCertificateErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            UntagServerCertificateErrorKind::ConcurrentModificationException(_inner) => {
+                Some(_inner)
+            }
+            UntagServerCertificateErrorKind::InvalidInputException(_inner) => Some(_inner),
+            UntagServerCertificateErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            UntagServerCertificateErrorKind::ServiceFailureException(_inner) => Some(_inner),
             UntagServerCertificateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -13645,18 +14043,18 @@ pub struct UntagUserError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagUserErrorKind {
-    ConcurrentModificationError(crate::error::ConcurrentModificationError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagUserError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UntagUserErrorKind::ConcurrentModificationError(_inner) => _inner.fmt(f),
-            UntagUserErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            UntagUserErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            UntagUserErrorKind::ConcurrentModificationException(_inner) => _inner.fmt(f),
+            UntagUserErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            UntagUserErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             UntagUserErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -13705,25 +14103,25 @@ impl UntagUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_concurrent_modification_error(&self) -> bool {
+    pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UntagUserErrorKind::ConcurrentModificationError(_)
+            UntagUserErrorKind::ConcurrentModificationException(_)
         )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
-        matches!(&self.kind, UntagUserErrorKind::NoSuchEntityError(_))
+    pub fn is_no_such_entity_exception(&self) -> bool {
+        matches!(&self.kind, UntagUserErrorKind::NoSuchEntityException(_))
     }
-    pub fn is_service_failure_error(&self) -> bool {
-        matches!(&self.kind, UntagUserErrorKind::ServiceFailureError(_))
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(&self.kind, UntagUserErrorKind::ServiceFailureException(_))
     }
 }
 impl std::error::Error for UntagUserError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UntagUserErrorKind::ConcurrentModificationError(_inner) => Some(_inner),
-            UntagUserErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            UntagUserErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            UntagUserErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
+            UntagUserErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            UntagUserErrorKind::ServiceFailureException(_inner) => Some(_inner),
             UntagUserErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -13738,18 +14136,18 @@ pub struct UpdateAccessKeyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateAccessKeyErrorKind {
-    LimitExceededError(crate::error::LimitExceededError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    LimitExceededException(crate::error::LimitExceededException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateAccessKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateAccessKeyErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            UpdateAccessKeyErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            UpdateAccessKeyErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            UpdateAccessKeyErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            UpdateAccessKeyErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            UpdateAccessKeyErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             UpdateAccessKeyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -13798,22 +14196,31 @@ impl UpdateAccessKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, UpdateAccessKeyErrorKind::LimitExceededError(_))
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAccessKeyErrorKind::LimitExceededException(_)
+        )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
-        matches!(&self.kind, UpdateAccessKeyErrorKind::NoSuchEntityError(_))
+    pub fn is_no_such_entity_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAccessKeyErrorKind::NoSuchEntityException(_)
+        )
     }
-    pub fn is_service_failure_error(&self) -> bool {
-        matches!(&self.kind, UpdateAccessKeyErrorKind::ServiceFailureError(_))
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAccessKeyErrorKind::ServiceFailureException(_)
+        )
     }
 }
 impl std::error::Error for UpdateAccessKeyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateAccessKeyErrorKind::LimitExceededError(_inner) => Some(_inner),
-            UpdateAccessKeyErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            UpdateAccessKeyErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            UpdateAccessKeyErrorKind::LimitExceededException(_inner) => Some(_inner),
+            UpdateAccessKeyErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            UpdateAccessKeyErrorKind::ServiceFailureException(_inner) => Some(_inner),
             UpdateAccessKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -13828,22 +14235,22 @@ pub struct UpdateAccountPasswordPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateAccountPasswordPolicyErrorKind {
-    LimitExceededError(crate::error::LimitExceededError),
-    MalformedPolicyDocumentError(crate::error::MalformedPolicyDocumentError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    LimitExceededException(crate::error::LimitExceededException),
+    MalformedPolicyDocumentException(crate::error::MalformedPolicyDocumentException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateAccountPasswordPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateAccountPasswordPolicyErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            UpdateAccountPasswordPolicyErrorKind::MalformedPolicyDocumentError(_inner) => {
+            UpdateAccountPasswordPolicyErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            UpdateAccountPasswordPolicyErrorKind::MalformedPolicyDocumentException(_inner) => {
                 _inner.fmt(f)
             }
-            UpdateAccountPasswordPolicyErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            UpdateAccountPasswordPolicyErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            UpdateAccountPasswordPolicyErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            UpdateAccountPasswordPolicyErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             UpdateAccountPasswordPolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -13892,40 +14299,40 @@ impl UpdateAccountPasswordPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateAccountPasswordPolicyErrorKind::LimitExceededError(_)
+            UpdateAccountPasswordPolicyErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_malformed_policy_document_error(&self) -> bool {
+    pub fn is_malformed_policy_document_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateAccountPasswordPolicyErrorKind::MalformedPolicyDocumentError(_)
+            UpdateAccountPasswordPolicyErrorKind::MalformedPolicyDocumentException(_)
         )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateAccountPasswordPolicyErrorKind::NoSuchEntityError(_)
+            UpdateAccountPasswordPolicyErrorKind::NoSuchEntityException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateAccountPasswordPolicyErrorKind::ServiceFailureError(_)
+            UpdateAccountPasswordPolicyErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for UpdateAccountPasswordPolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateAccountPasswordPolicyErrorKind::LimitExceededError(_inner) => Some(_inner),
-            UpdateAccountPasswordPolicyErrorKind::MalformedPolicyDocumentError(_inner) => {
+            UpdateAccountPasswordPolicyErrorKind::LimitExceededException(_inner) => Some(_inner),
+            UpdateAccountPasswordPolicyErrorKind::MalformedPolicyDocumentException(_inner) => {
                 Some(_inner)
             }
-            UpdateAccountPasswordPolicyErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            UpdateAccountPasswordPolicyErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            UpdateAccountPasswordPolicyErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            UpdateAccountPasswordPolicyErrorKind::ServiceFailureException(_inner) => Some(_inner),
             UpdateAccountPasswordPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -13940,22 +14347,24 @@ pub struct UpdateAssumeRolePolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateAssumeRolePolicyErrorKind {
-    LimitExceededError(crate::error::LimitExceededError),
-    MalformedPolicyDocumentError(crate::error::MalformedPolicyDocumentError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
-    UnmodifiableEntityError(crate::error::UnmodifiableEntityError),
+    LimitExceededException(crate::error::LimitExceededException),
+    MalformedPolicyDocumentException(crate::error::MalformedPolicyDocumentException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
+    UnmodifiableEntityException(crate::error::UnmodifiableEntityException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateAssumeRolePolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateAssumeRolePolicyErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            UpdateAssumeRolePolicyErrorKind::MalformedPolicyDocumentError(_inner) => _inner.fmt(f),
-            UpdateAssumeRolePolicyErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            UpdateAssumeRolePolicyErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
-            UpdateAssumeRolePolicyErrorKind::UnmodifiableEntityError(_inner) => _inner.fmt(f),
+            UpdateAssumeRolePolicyErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            UpdateAssumeRolePolicyErrorKind::MalformedPolicyDocumentException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateAssumeRolePolicyErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            UpdateAssumeRolePolicyErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
+            UpdateAssumeRolePolicyErrorKind::UnmodifiableEntityException(_inner) => _inner.fmt(f),
             UpdateAssumeRolePolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -14004,45 +14413,47 @@ impl UpdateAssumeRolePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateAssumeRolePolicyErrorKind::LimitExceededError(_)
+            UpdateAssumeRolePolicyErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_malformed_policy_document_error(&self) -> bool {
+    pub fn is_malformed_policy_document_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateAssumeRolePolicyErrorKind::MalformedPolicyDocumentError(_)
+            UpdateAssumeRolePolicyErrorKind::MalformedPolicyDocumentException(_)
         )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateAssumeRolePolicyErrorKind::NoSuchEntityError(_)
+            UpdateAssumeRolePolicyErrorKind::NoSuchEntityException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateAssumeRolePolicyErrorKind::ServiceFailureError(_)
+            UpdateAssumeRolePolicyErrorKind::ServiceFailureException(_)
         )
     }
-    pub fn is_unmodifiable_entity_error(&self) -> bool {
+    pub fn is_unmodifiable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateAssumeRolePolicyErrorKind::UnmodifiableEntityError(_)
+            UpdateAssumeRolePolicyErrorKind::UnmodifiableEntityException(_)
         )
     }
 }
 impl std::error::Error for UpdateAssumeRolePolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateAssumeRolePolicyErrorKind::LimitExceededError(_inner) => Some(_inner),
-            UpdateAssumeRolePolicyErrorKind::MalformedPolicyDocumentError(_inner) => Some(_inner),
-            UpdateAssumeRolePolicyErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            UpdateAssumeRolePolicyErrorKind::ServiceFailureError(_inner) => Some(_inner),
-            UpdateAssumeRolePolicyErrorKind::UnmodifiableEntityError(_inner) => Some(_inner),
+            UpdateAssumeRolePolicyErrorKind::LimitExceededException(_inner) => Some(_inner),
+            UpdateAssumeRolePolicyErrorKind::MalformedPolicyDocumentException(_inner) => {
+                Some(_inner)
+            }
+            UpdateAssumeRolePolicyErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            UpdateAssumeRolePolicyErrorKind::ServiceFailureException(_inner) => Some(_inner),
+            UpdateAssumeRolePolicyErrorKind::UnmodifiableEntityException(_inner) => Some(_inner),
             UpdateAssumeRolePolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -14057,20 +14468,20 @@ pub struct UpdateGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateGroupErrorKind {
-    EntityAlreadyExistsError(crate::error::EntityAlreadyExistsError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    EntityAlreadyExistsException(crate::error::EntityAlreadyExistsException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateGroupErrorKind::EntityAlreadyExistsError(_inner) => _inner.fmt(f),
-            UpdateGroupErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            UpdateGroupErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            UpdateGroupErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            UpdateGroupErrorKind::EntityAlreadyExistsException(_inner) => _inner.fmt(f),
+            UpdateGroupErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            UpdateGroupErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            UpdateGroupErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             UpdateGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -14119,29 +14530,29 @@ impl UpdateGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_entity_already_exists_error(&self) -> bool {
+    pub fn is_entity_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateGroupErrorKind::EntityAlreadyExistsError(_)
+            UpdateGroupErrorKind::EntityAlreadyExistsException(_)
         )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, UpdateGroupErrorKind::LimitExceededError(_))
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(&self.kind, UpdateGroupErrorKind::LimitExceededException(_))
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
-        matches!(&self.kind, UpdateGroupErrorKind::NoSuchEntityError(_))
+    pub fn is_no_such_entity_exception(&self) -> bool {
+        matches!(&self.kind, UpdateGroupErrorKind::NoSuchEntityException(_))
     }
-    pub fn is_service_failure_error(&self) -> bool {
-        matches!(&self.kind, UpdateGroupErrorKind::ServiceFailureError(_))
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(&self.kind, UpdateGroupErrorKind::ServiceFailureException(_))
     }
 }
 impl std::error::Error for UpdateGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateGroupErrorKind::EntityAlreadyExistsError(_inner) => Some(_inner),
-            UpdateGroupErrorKind::LimitExceededError(_inner) => Some(_inner),
-            UpdateGroupErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            UpdateGroupErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            UpdateGroupErrorKind::EntityAlreadyExistsException(_inner) => Some(_inner),
+            UpdateGroupErrorKind::LimitExceededException(_inner) => Some(_inner),
+            UpdateGroupErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            UpdateGroupErrorKind::ServiceFailureException(_inner) => Some(_inner),
             UpdateGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -14156,24 +14567,24 @@ pub struct UpdateLoginProfileError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateLoginProfileErrorKind {
-    EntityTemporarilyUnmodifiableError(crate::error::EntityTemporarilyUnmodifiableError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    PasswordPolicyViolationError(crate::error::PasswordPolicyViolationError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    EntityTemporarilyUnmodifiableException(crate::error::EntityTemporarilyUnmodifiableException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    PasswordPolicyViolationException(crate::error::PasswordPolicyViolationException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateLoginProfileError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateLoginProfileErrorKind::EntityTemporarilyUnmodifiableError(_inner) => {
+            UpdateLoginProfileErrorKind::EntityTemporarilyUnmodifiableException(_inner) => {
                 _inner.fmt(f)
             }
-            UpdateLoginProfileErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            UpdateLoginProfileErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            UpdateLoginProfileErrorKind::PasswordPolicyViolationError(_inner) => _inner.fmt(f),
-            UpdateLoginProfileErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            UpdateLoginProfileErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            UpdateLoginProfileErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            UpdateLoginProfileErrorKind::PasswordPolicyViolationException(_inner) => _inner.fmt(f),
+            UpdateLoginProfileErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             UpdateLoginProfileErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -14222,45 +14633,47 @@ impl UpdateLoginProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_entity_temporarily_unmodifiable_error(&self) -> bool {
+    pub fn is_entity_temporarily_unmodifiable_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateLoginProfileErrorKind::EntityTemporarilyUnmodifiableError(_)
+            UpdateLoginProfileErrorKind::EntityTemporarilyUnmodifiableException(_)
         )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateLoginProfileErrorKind::LimitExceededError(_)
+            UpdateLoginProfileErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateLoginProfileErrorKind::NoSuchEntityError(_)
+            UpdateLoginProfileErrorKind::NoSuchEntityException(_)
         )
     }
-    pub fn is_password_policy_violation_error(&self) -> bool {
+    pub fn is_password_policy_violation_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateLoginProfileErrorKind::PasswordPolicyViolationError(_)
+            UpdateLoginProfileErrorKind::PasswordPolicyViolationException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateLoginProfileErrorKind::ServiceFailureError(_)
+            UpdateLoginProfileErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for UpdateLoginProfileError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateLoginProfileErrorKind::EntityTemporarilyUnmodifiableError(_inner) => Some(_inner),
-            UpdateLoginProfileErrorKind::LimitExceededError(_inner) => Some(_inner),
-            UpdateLoginProfileErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            UpdateLoginProfileErrorKind::PasswordPolicyViolationError(_inner) => Some(_inner),
-            UpdateLoginProfileErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            UpdateLoginProfileErrorKind::EntityTemporarilyUnmodifiableException(_inner) => {
+                Some(_inner)
+            }
+            UpdateLoginProfileErrorKind::LimitExceededException(_inner) => Some(_inner),
+            UpdateLoginProfileErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            UpdateLoginProfileErrorKind::PasswordPolicyViolationException(_inner) => Some(_inner),
+            UpdateLoginProfileErrorKind::ServiceFailureException(_inner) => Some(_inner),
             UpdateLoginProfileErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -14275,22 +14688,22 @@ pub struct UpdateOpenIDConnectProviderThumbprintError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateOpenIDConnectProviderThumbprintErrorKind {
-    InvalidInputError(crate::error::InvalidInputError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    InvalidInputException(crate::error::InvalidInputException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateOpenIDConnectProviderThumbprintError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateOpenIDConnectProviderThumbprintErrorKind::InvalidInputError(_inner) => {
+            UpdateOpenIDConnectProviderThumbprintErrorKind::InvalidInputException(_inner) => {
                 _inner.fmt(f)
             }
-            UpdateOpenIDConnectProviderThumbprintErrorKind::NoSuchEntityError(_inner) => {
+            UpdateOpenIDConnectProviderThumbprintErrorKind::NoSuchEntityException(_inner) => {
                 _inner.fmt(f)
             }
-            UpdateOpenIDConnectProviderThumbprintErrorKind::ServiceFailureError(_inner) => {
+            UpdateOpenIDConnectProviderThumbprintErrorKind::ServiceFailureException(_inner) => {
                 _inner.fmt(f)
             }
             UpdateOpenIDConnectProviderThumbprintErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -14344,35 +14757,35 @@ impl UpdateOpenIDConnectProviderThumbprintError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_input_error(&self) -> bool {
+    pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateOpenIDConnectProviderThumbprintErrorKind::InvalidInputError(_)
+            UpdateOpenIDConnectProviderThumbprintErrorKind::InvalidInputException(_)
         )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateOpenIDConnectProviderThumbprintErrorKind::NoSuchEntityError(_)
+            UpdateOpenIDConnectProviderThumbprintErrorKind::NoSuchEntityException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateOpenIDConnectProviderThumbprintErrorKind::ServiceFailureError(_)
+            UpdateOpenIDConnectProviderThumbprintErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for UpdateOpenIDConnectProviderThumbprintError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateOpenIDConnectProviderThumbprintErrorKind::InvalidInputError(_inner) => {
+            UpdateOpenIDConnectProviderThumbprintErrorKind::InvalidInputException(_inner) => {
                 Some(_inner)
             }
-            UpdateOpenIDConnectProviderThumbprintErrorKind::NoSuchEntityError(_inner) => {
+            UpdateOpenIDConnectProviderThumbprintErrorKind::NoSuchEntityException(_inner) => {
                 Some(_inner)
             }
-            UpdateOpenIDConnectProviderThumbprintErrorKind::ServiceFailureError(_inner) => {
+            UpdateOpenIDConnectProviderThumbprintErrorKind::ServiceFailureException(_inner) => {
                 Some(_inner)
             }
             UpdateOpenIDConnectProviderThumbprintErrorKind::Unhandled(_inner) => {
@@ -14391,18 +14804,18 @@ pub struct UpdateRoleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateRoleErrorKind {
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
-    UnmodifiableEntityError(crate::error::UnmodifiableEntityError),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
+    UnmodifiableEntityException(crate::error::UnmodifiableEntityException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateRoleError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateRoleErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            UpdateRoleErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
-            UpdateRoleErrorKind::UnmodifiableEntityError(_inner) => _inner.fmt(f),
+            UpdateRoleErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            UpdateRoleErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
+            UpdateRoleErrorKind::UnmodifiableEntityException(_inner) => _inner.fmt(f),
             UpdateRoleErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -14451,22 +14864,25 @@ impl UpdateRoleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
-        matches!(&self.kind, UpdateRoleErrorKind::NoSuchEntityError(_))
+    pub fn is_no_such_entity_exception(&self) -> bool {
+        matches!(&self.kind, UpdateRoleErrorKind::NoSuchEntityException(_))
     }
-    pub fn is_service_failure_error(&self) -> bool {
-        matches!(&self.kind, UpdateRoleErrorKind::ServiceFailureError(_))
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(&self.kind, UpdateRoleErrorKind::ServiceFailureException(_))
     }
-    pub fn is_unmodifiable_entity_error(&self) -> bool {
-        matches!(&self.kind, UpdateRoleErrorKind::UnmodifiableEntityError(_))
+    pub fn is_unmodifiable_entity_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateRoleErrorKind::UnmodifiableEntityException(_)
+        )
     }
 }
 impl std::error::Error for UpdateRoleError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateRoleErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            UpdateRoleErrorKind::ServiceFailureError(_inner) => Some(_inner),
-            UpdateRoleErrorKind::UnmodifiableEntityError(_inner) => Some(_inner),
+            UpdateRoleErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            UpdateRoleErrorKind::ServiceFailureException(_inner) => Some(_inner),
+            UpdateRoleErrorKind::UnmodifiableEntityException(_inner) => Some(_inner),
             UpdateRoleErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -14481,18 +14897,18 @@ pub struct UpdateRoleDescriptionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateRoleDescriptionErrorKind {
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
-    UnmodifiableEntityError(crate::error::UnmodifiableEntityError),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
+    UnmodifiableEntityException(crate::error::UnmodifiableEntityException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateRoleDescriptionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateRoleDescriptionErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            UpdateRoleDescriptionErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
-            UpdateRoleDescriptionErrorKind::UnmodifiableEntityError(_inner) => _inner.fmt(f),
+            UpdateRoleDescriptionErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            UpdateRoleDescriptionErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
+            UpdateRoleDescriptionErrorKind::UnmodifiableEntityException(_inner) => _inner.fmt(f),
             UpdateRoleDescriptionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -14541,31 +14957,31 @@ impl UpdateRoleDescriptionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateRoleDescriptionErrorKind::NoSuchEntityError(_)
+            UpdateRoleDescriptionErrorKind::NoSuchEntityException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateRoleDescriptionErrorKind::ServiceFailureError(_)
+            UpdateRoleDescriptionErrorKind::ServiceFailureException(_)
         )
     }
-    pub fn is_unmodifiable_entity_error(&self) -> bool {
+    pub fn is_unmodifiable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateRoleDescriptionErrorKind::UnmodifiableEntityError(_)
+            UpdateRoleDescriptionErrorKind::UnmodifiableEntityException(_)
         )
     }
 }
 impl std::error::Error for UpdateRoleDescriptionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateRoleDescriptionErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            UpdateRoleDescriptionErrorKind::ServiceFailureError(_inner) => Some(_inner),
-            UpdateRoleDescriptionErrorKind::UnmodifiableEntityError(_inner) => Some(_inner),
+            UpdateRoleDescriptionErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            UpdateRoleDescriptionErrorKind::ServiceFailureException(_inner) => Some(_inner),
+            UpdateRoleDescriptionErrorKind::UnmodifiableEntityException(_inner) => Some(_inner),
             UpdateRoleDescriptionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -14580,20 +14996,20 @@ pub struct UpdateSAMLProviderError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateSAMLProviderErrorKind {
-    InvalidInputError(crate::error::InvalidInputError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    InvalidInputException(crate::error::InvalidInputException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateSAMLProviderError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateSAMLProviderErrorKind::InvalidInputError(_inner) => _inner.fmt(f),
-            UpdateSAMLProviderErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            UpdateSAMLProviderErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            UpdateSAMLProviderErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            UpdateSAMLProviderErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            UpdateSAMLProviderErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            UpdateSAMLProviderErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            UpdateSAMLProviderErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             UpdateSAMLProviderErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -14642,38 +15058,38 @@ impl UpdateSAMLProviderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_input_error(&self) -> bool {
+    pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateSAMLProviderErrorKind::InvalidInputError(_)
+            UpdateSAMLProviderErrorKind::InvalidInputException(_)
         )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateSAMLProviderErrorKind::LimitExceededError(_)
+            UpdateSAMLProviderErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateSAMLProviderErrorKind::NoSuchEntityError(_)
+            UpdateSAMLProviderErrorKind::NoSuchEntityException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateSAMLProviderErrorKind::ServiceFailureError(_)
+            UpdateSAMLProviderErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for UpdateSAMLProviderError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateSAMLProviderErrorKind::InvalidInputError(_inner) => Some(_inner),
-            UpdateSAMLProviderErrorKind::LimitExceededError(_inner) => Some(_inner),
-            UpdateSAMLProviderErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            UpdateSAMLProviderErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            UpdateSAMLProviderErrorKind::InvalidInputException(_inner) => Some(_inner),
+            UpdateSAMLProviderErrorKind::LimitExceededException(_inner) => Some(_inner),
+            UpdateSAMLProviderErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            UpdateSAMLProviderErrorKind::ServiceFailureException(_inner) => Some(_inner),
             UpdateSAMLProviderErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -14688,20 +15104,20 @@ pub struct UpdateServerCertificateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateServerCertificateErrorKind {
-    EntityAlreadyExistsError(crate::error::EntityAlreadyExistsError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    EntityAlreadyExistsException(crate::error::EntityAlreadyExistsException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateServerCertificateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateServerCertificateErrorKind::EntityAlreadyExistsError(_inner) => _inner.fmt(f),
-            UpdateServerCertificateErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            UpdateServerCertificateErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            UpdateServerCertificateErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            UpdateServerCertificateErrorKind::EntityAlreadyExistsException(_inner) => _inner.fmt(f),
+            UpdateServerCertificateErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            UpdateServerCertificateErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            UpdateServerCertificateErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             UpdateServerCertificateErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -14750,38 +15166,38 @@ impl UpdateServerCertificateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_entity_already_exists_error(&self) -> bool {
+    pub fn is_entity_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateServerCertificateErrorKind::EntityAlreadyExistsError(_)
+            UpdateServerCertificateErrorKind::EntityAlreadyExistsException(_)
         )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateServerCertificateErrorKind::LimitExceededError(_)
+            UpdateServerCertificateErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateServerCertificateErrorKind::NoSuchEntityError(_)
+            UpdateServerCertificateErrorKind::NoSuchEntityException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateServerCertificateErrorKind::ServiceFailureError(_)
+            UpdateServerCertificateErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for UpdateServerCertificateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateServerCertificateErrorKind::EntityAlreadyExistsError(_inner) => Some(_inner),
-            UpdateServerCertificateErrorKind::LimitExceededError(_inner) => Some(_inner),
-            UpdateServerCertificateErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            UpdateServerCertificateErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            UpdateServerCertificateErrorKind::EntityAlreadyExistsException(_inner) => Some(_inner),
+            UpdateServerCertificateErrorKind::LimitExceededException(_inner) => Some(_inner),
+            UpdateServerCertificateErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            UpdateServerCertificateErrorKind::ServiceFailureException(_inner) => Some(_inner),
             UpdateServerCertificateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -14796,14 +15212,16 @@ pub struct UpdateServiceSpecificCredentialError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateServiceSpecificCredentialErrorKind {
-    NoSuchEntityError(crate::error::NoSuchEntityError),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateServiceSpecificCredentialError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateServiceSpecificCredentialErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
+            UpdateServiceSpecificCredentialErrorKind::NoSuchEntityException(_inner) => {
+                _inner.fmt(f)
+            }
             UpdateServiceSpecificCredentialErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -14852,17 +15270,17 @@ impl UpdateServiceSpecificCredentialError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateServiceSpecificCredentialErrorKind::NoSuchEntityError(_)
+            UpdateServiceSpecificCredentialErrorKind::NoSuchEntityException(_)
         )
     }
 }
 impl std::error::Error for UpdateServiceSpecificCredentialError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateServiceSpecificCredentialErrorKind::NoSuchEntityError(_inner) => Some(_inner),
+            UpdateServiceSpecificCredentialErrorKind::NoSuchEntityException(_inner) => Some(_inner),
             UpdateServiceSpecificCredentialErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -14877,18 +15295,18 @@ pub struct UpdateSigningCertificateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateSigningCertificateErrorKind {
-    LimitExceededError(crate::error::LimitExceededError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    LimitExceededException(crate::error::LimitExceededException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateSigningCertificateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateSigningCertificateErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            UpdateSigningCertificateErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            UpdateSigningCertificateErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            UpdateSigningCertificateErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            UpdateSigningCertificateErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            UpdateSigningCertificateErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             UpdateSigningCertificateErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -14937,31 +15355,31 @@ impl UpdateSigningCertificateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateSigningCertificateErrorKind::LimitExceededError(_)
+            UpdateSigningCertificateErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateSigningCertificateErrorKind::NoSuchEntityError(_)
+            UpdateSigningCertificateErrorKind::NoSuchEntityException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateSigningCertificateErrorKind::ServiceFailureError(_)
+            UpdateSigningCertificateErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for UpdateSigningCertificateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateSigningCertificateErrorKind::LimitExceededError(_inner) => Some(_inner),
-            UpdateSigningCertificateErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            UpdateSigningCertificateErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            UpdateSigningCertificateErrorKind::LimitExceededException(_inner) => Some(_inner),
+            UpdateSigningCertificateErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            UpdateSigningCertificateErrorKind::ServiceFailureException(_inner) => Some(_inner),
             UpdateSigningCertificateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -14976,14 +15394,14 @@ pub struct UpdateSSHPublicKeyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateSSHPublicKeyErrorKind {
-    NoSuchEntityError(crate::error::NoSuchEntityError),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateSSHPublicKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateSSHPublicKeyErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
+            UpdateSSHPublicKeyErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
             UpdateSSHPublicKeyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -15032,17 +15450,17 @@ impl UpdateSSHPublicKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateSSHPublicKeyErrorKind::NoSuchEntityError(_)
+            UpdateSSHPublicKeyErrorKind::NoSuchEntityException(_)
         )
     }
 }
 impl std::error::Error for UpdateSSHPublicKeyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateSSHPublicKeyErrorKind::NoSuchEntityError(_inner) => Some(_inner),
+            UpdateSSHPublicKeyErrorKind::NoSuchEntityException(_inner) => Some(_inner),
             UpdateSSHPublicKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -15057,24 +15475,24 @@ pub struct UpdateUserError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateUserErrorKind {
-    ConcurrentModificationError(crate::error::ConcurrentModificationError),
-    EntityAlreadyExistsError(crate::error::EntityAlreadyExistsError),
-    EntityTemporarilyUnmodifiableError(crate::error::EntityTemporarilyUnmodifiableError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    EntityAlreadyExistsException(crate::error::EntityAlreadyExistsException),
+    EntityTemporarilyUnmodifiableException(crate::error::EntityTemporarilyUnmodifiableException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateUserError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateUserErrorKind::ConcurrentModificationError(_inner) => _inner.fmt(f),
-            UpdateUserErrorKind::EntityAlreadyExistsError(_inner) => _inner.fmt(f),
-            UpdateUserErrorKind::EntityTemporarilyUnmodifiableError(_inner) => _inner.fmt(f),
-            UpdateUserErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            UpdateUserErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            UpdateUserErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            UpdateUserErrorKind::ConcurrentModificationException(_inner) => _inner.fmt(f),
+            UpdateUserErrorKind::EntityAlreadyExistsException(_inner) => _inner.fmt(f),
+            UpdateUserErrorKind::EntityTemporarilyUnmodifiableException(_inner) => _inner.fmt(f),
+            UpdateUserErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            UpdateUserErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            UpdateUserErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             UpdateUserErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -15123,40 +15541,43 @@ impl UpdateUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_concurrent_modification_error(&self) -> bool {
+    pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateUserErrorKind::ConcurrentModificationError(_)
+            UpdateUserErrorKind::ConcurrentModificationException(_)
         )
     }
-    pub fn is_entity_already_exists_error(&self) -> bool {
-        matches!(&self.kind, UpdateUserErrorKind::EntityAlreadyExistsError(_))
-    }
-    pub fn is_entity_temporarily_unmodifiable_error(&self) -> bool {
+    pub fn is_entity_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateUserErrorKind::EntityTemporarilyUnmodifiableError(_)
+            UpdateUserErrorKind::EntityAlreadyExistsException(_)
         )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, UpdateUserErrorKind::LimitExceededError(_))
+    pub fn is_entity_temporarily_unmodifiable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateUserErrorKind::EntityTemporarilyUnmodifiableException(_)
+        )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
-        matches!(&self.kind, UpdateUserErrorKind::NoSuchEntityError(_))
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(&self.kind, UpdateUserErrorKind::LimitExceededException(_))
     }
-    pub fn is_service_failure_error(&self) -> bool {
-        matches!(&self.kind, UpdateUserErrorKind::ServiceFailureError(_))
+    pub fn is_no_such_entity_exception(&self) -> bool {
+        matches!(&self.kind, UpdateUserErrorKind::NoSuchEntityException(_))
+    }
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(&self.kind, UpdateUserErrorKind::ServiceFailureException(_))
     }
 }
 impl std::error::Error for UpdateUserError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateUserErrorKind::ConcurrentModificationError(_inner) => Some(_inner),
-            UpdateUserErrorKind::EntityAlreadyExistsError(_inner) => Some(_inner),
-            UpdateUserErrorKind::EntityTemporarilyUnmodifiableError(_inner) => Some(_inner),
-            UpdateUserErrorKind::LimitExceededError(_inner) => Some(_inner),
-            UpdateUserErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            UpdateUserErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            UpdateUserErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
+            UpdateUserErrorKind::EntityAlreadyExistsException(_inner) => Some(_inner),
+            UpdateUserErrorKind::EntityTemporarilyUnmodifiableException(_inner) => Some(_inner),
+            UpdateUserErrorKind::LimitExceededException(_inner) => Some(_inner),
+            UpdateUserErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            UpdateUserErrorKind::ServiceFailureException(_inner) => Some(_inner),
             UpdateUserErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -15171,26 +15592,30 @@ pub struct UploadServerCertificateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UploadServerCertificateErrorKind {
-    ConcurrentModificationError(crate::error::ConcurrentModificationError),
-    EntityAlreadyExistsError(crate::error::EntityAlreadyExistsError),
-    InvalidInputError(crate::error::InvalidInputError),
-    KeyPairMismatchError(crate::error::KeyPairMismatchError),
-    LimitExceededError(crate::error::LimitExceededError),
-    MalformedCertificateError(crate::error::MalformedCertificateError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    EntityAlreadyExistsException(crate::error::EntityAlreadyExistsException),
+    InvalidInputException(crate::error::InvalidInputException),
+    KeyPairMismatchException(crate::error::KeyPairMismatchException),
+    LimitExceededException(crate::error::LimitExceededException),
+    MalformedCertificateException(crate::error::MalformedCertificateException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UploadServerCertificateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UploadServerCertificateErrorKind::ConcurrentModificationError(_inner) => _inner.fmt(f),
-            UploadServerCertificateErrorKind::EntityAlreadyExistsError(_inner) => _inner.fmt(f),
-            UploadServerCertificateErrorKind::InvalidInputError(_inner) => _inner.fmt(f),
-            UploadServerCertificateErrorKind::KeyPairMismatchError(_inner) => _inner.fmt(f),
-            UploadServerCertificateErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            UploadServerCertificateErrorKind::MalformedCertificateError(_inner) => _inner.fmt(f),
-            UploadServerCertificateErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            UploadServerCertificateErrorKind::ConcurrentModificationException(_inner) => {
+                _inner.fmt(f)
+            }
+            UploadServerCertificateErrorKind::EntityAlreadyExistsException(_inner) => _inner.fmt(f),
+            UploadServerCertificateErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            UploadServerCertificateErrorKind::KeyPairMismatchException(_inner) => _inner.fmt(f),
+            UploadServerCertificateErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            UploadServerCertificateErrorKind::MalformedCertificateException(_inner) => {
+                _inner.fmt(f)
+            }
+            UploadServerCertificateErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             UploadServerCertificateErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -15239,59 +15664,61 @@ impl UploadServerCertificateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_concurrent_modification_error(&self) -> bool {
+    pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UploadServerCertificateErrorKind::ConcurrentModificationError(_)
+            UploadServerCertificateErrorKind::ConcurrentModificationException(_)
         )
     }
-    pub fn is_entity_already_exists_error(&self) -> bool {
+    pub fn is_entity_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UploadServerCertificateErrorKind::EntityAlreadyExistsError(_)
+            UploadServerCertificateErrorKind::EntityAlreadyExistsException(_)
         )
     }
-    pub fn is_invalid_input_error(&self) -> bool {
+    pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UploadServerCertificateErrorKind::InvalidInputError(_)
+            UploadServerCertificateErrorKind::InvalidInputException(_)
         )
     }
-    pub fn is_key_pair_mismatch_error(&self) -> bool {
+    pub fn is_key_pair_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UploadServerCertificateErrorKind::KeyPairMismatchError(_)
+            UploadServerCertificateErrorKind::KeyPairMismatchException(_)
         )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UploadServerCertificateErrorKind::LimitExceededError(_)
+            UploadServerCertificateErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_malformed_certificate_error(&self) -> bool {
+    pub fn is_malformed_certificate_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UploadServerCertificateErrorKind::MalformedCertificateError(_)
+            UploadServerCertificateErrorKind::MalformedCertificateException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UploadServerCertificateErrorKind::ServiceFailureError(_)
+            UploadServerCertificateErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for UploadServerCertificateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UploadServerCertificateErrorKind::ConcurrentModificationError(_inner) => Some(_inner),
-            UploadServerCertificateErrorKind::EntityAlreadyExistsError(_inner) => Some(_inner),
-            UploadServerCertificateErrorKind::InvalidInputError(_inner) => Some(_inner),
-            UploadServerCertificateErrorKind::KeyPairMismatchError(_inner) => Some(_inner),
-            UploadServerCertificateErrorKind::LimitExceededError(_inner) => Some(_inner),
-            UploadServerCertificateErrorKind::MalformedCertificateError(_inner) => Some(_inner),
-            UploadServerCertificateErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            UploadServerCertificateErrorKind::ConcurrentModificationException(_inner) => {
+                Some(_inner)
+            }
+            UploadServerCertificateErrorKind::EntityAlreadyExistsException(_inner) => Some(_inner),
+            UploadServerCertificateErrorKind::InvalidInputException(_inner) => Some(_inner),
+            UploadServerCertificateErrorKind::KeyPairMismatchException(_inner) => Some(_inner),
+            UploadServerCertificateErrorKind::LimitExceededException(_inner) => Some(_inner),
+            UploadServerCertificateErrorKind::MalformedCertificateException(_inner) => Some(_inner),
+            UploadServerCertificateErrorKind::ServiceFailureException(_inner) => Some(_inner),
             UploadServerCertificateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -15306,26 +15733,32 @@ pub struct UploadSigningCertificateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UploadSigningCertificateErrorKind {
-    DuplicateCertificateError(crate::error::DuplicateCertificateError),
-    EntityAlreadyExistsError(crate::error::EntityAlreadyExistsError),
-    InvalidCertificateError(crate::error::InvalidCertificateError),
-    LimitExceededError(crate::error::LimitExceededError),
-    MalformedCertificateError(crate::error::MalformedCertificateError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    ServiceFailureError(crate::error::ServiceFailureError),
+    DuplicateCertificateException(crate::error::DuplicateCertificateException),
+    EntityAlreadyExistsException(crate::error::EntityAlreadyExistsException),
+    InvalidCertificateException(crate::error::InvalidCertificateException),
+    LimitExceededException(crate::error::LimitExceededException),
+    MalformedCertificateException(crate::error::MalformedCertificateException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UploadSigningCertificateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UploadSigningCertificateErrorKind::DuplicateCertificateError(_inner) => _inner.fmt(f),
-            UploadSigningCertificateErrorKind::EntityAlreadyExistsError(_inner) => _inner.fmt(f),
-            UploadSigningCertificateErrorKind::InvalidCertificateError(_inner) => _inner.fmt(f),
-            UploadSigningCertificateErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            UploadSigningCertificateErrorKind::MalformedCertificateError(_inner) => _inner.fmt(f),
-            UploadSigningCertificateErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            UploadSigningCertificateErrorKind::ServiceFailureError(_inner) => _inner.fmt(f),
+            UploadSigningCertificateErrorKind::DuplicateCertificateException(_inner) => {
+                _inner.fmt(f)
+            }
+            UploadSigningCertificateErrorKind::EntityAlreadyExistsException(_inner) => {
+                _inner.fmt(f)
+            }
+            UploadSigningCertificateErrorKind::InvalidCertificateException(_inner) => _inner.fmt(f),
+            UploadSigningCertificateErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            UploadSigningCertificateErrorKind::MalformedCertificateException(_inner) => {
+                _inner.fmt(f)
+            }
+            UploadSigningCertificateErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            UploadSigningCertificateErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             UploadSigningCertificateErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -15374,59 +15807,63 @@ impl UploadSigningCertificateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_duplicate_certificate_error(&self) -> bool {
+    pub fn is_duplicate_certificate_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UploadSigningCertificateErrorKind::DuplicateCertificateError(_)
+            UploadSigningCertificateErrorKind::DuplicateCertificateException(_)
         )
     }
-    pub fn is_entity_already_exists_error(&self) -> bool {
+    pub fn is_entity_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UploadSigningCertificateErrorKind::EntityAlreadyExistsError(_)
+            UploadSigningCertificateErrorKind::EntityAlreadyExistsException(_)
         )
     }
-    pub fn is_invalid_certificate_error(&self) -> bool {
+    pub fn is_invalid_certificate_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UploadSigningCertificateErrorKind::InvalidCertificateError(_)
+            UploadSigningCertificateErrorKind::InvalidCertificateException(_)
         )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UploadSigningCertificateErrorKind::LimitExceededError(_)
+            UploadSigningCertificateErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_malformed_certificate_error(&self) -> bool {
+    pub fn is_malformed_certificate_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UploadSigningCertificateErrorKind::MalformedCertificateError(_)
+            UploadSigningCertificateErrorKind::MalformedCertificateException(_)
         )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UploadSigningCertificateErrorKind::NoSuchEntityError(_)
+            UploadSigningCertificateErrorKind::NoSuchEntityException(_)
         )
     }
-    pub fn is_service_failure_error(&self) -> bool {
+    pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UploadSigningCertificateErrorKind::ServiceFailureError(_)
+            UploadSigningCertificateErrorKind::ServiceFailureException(_)
         )
     }
 }
 impl std::error::Error for UploadSigningCertificateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UploadSigningCertificateErrorKind::DuplicateCertificateError(_inner) => Some(_inner),
-            UploadSigningCertificateErrorKind::EntityAlreadyExistsError(_inner) => Some(_inner),
-            UploadSigningCertificateErrorKind::InvalidCertificateError(_inner) => Some(_inner),
-            UploadSigningCertificateErrorKind::LimitExceededError(_inner) => Some(_inner),
-            UploadSigningCertificateErrorKind::MalformedCertificateError(_inner) => Some(_inner),
-            UploadSigningCertificateErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            UploadSigningCertificateErrorKind::ServiceFailureError(_inner) => Some(_inner),
+            UploadSigningCertificateErrorKind::DuplicateCertificateException(_inner) => {
+                Some(_inner)
+            }
+            UploadSigningCertificateErrorKind::EntityAlreadyExistsException(_inner) => Some(_inner),
+            UploadSigningCertificateErrorKind::InvalidCertificateException(_inner) => Some(_inner),
+            UploadSigningCertificateErrorKind::LimitExceededException(_inner) => Some(_inner),
+            UploadSigningCertificateErrorKind::MalformedCertificateException(_inner) => {
+                Some(_inner)
+            }
+            UploadSigningCertificateErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            UploadSigningCertificateErrorKind::ServiceFailureException(_inner) => Some(_inner),
             UploadSigningCertificateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -15441,22 +15878,22 @@ pub struct UploadSSHPublicKeyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UploadSSHPublicKeyErrorKind {
-    DuplicateSSHPublicKeyError(crate::error::DuplicateSSHPublicKeyError),
-    InvalidPublicKeyError(crate::error::InvalidPublicKeyError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NoSuchEntityError(crate::error::NoSuchEntityError),
-    UnrecognizedPublicKeyEncodingError(crate::error::UnrecognizedPublicKeyEncodingError),
+    DuplicateSshPublicKeyException(crate::error::DuplicateSshPublicKeyException),
+    InvalidPublicKeyException(crate::error::InvalidPublicKeyException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NoSuchEntityException(crate::error::NoSuchEntityException),
+    UnrecognizedPublicKeyEncodingException(crate::error::UnrecognizedPublicKeyEncodingException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UploadSSHPublicKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UploadSSHPublicKeyErrorKind::DuplicateSSHPublicKeyError(_inner) => _inner.fmt(f),
-            UploadSSHPublicKeyErrorKind::InvalidPublicKeyError(_inner) => _inner.fmt(f),
-            UploadSSHPublicKeyErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            UploadSSHPublicKeyErrorKind::NoSuchEntityError(_inner) => _inner.fmt(f),
-            UploadSSHPublicKeyErrorKind::UnrecognizedPublicKeyEncodingError(_inner) => {
+            UploadSSHPublicKeyErrorKind::DuplicateSshPublicKeyException(_inner) => _inner.fmt(f),
+            UploadSSHPublicKeyErrorKind::InvalidPublicKeyException(_inner) => _inner.fmt(f),
+            UploadSSHPublicKeyErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            UploadSSHPublicKeyErrorKind::NoSuchEntityException(_inner) => _inner.fmt(f),
+            UploadSSHPublicKeyErrorKind::UnrecognizedPublicKeyEncodingException(_inner) => {
                 _inner.fmt(f)
             }
             UploadSSHPublicKeyErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -15507,45 +15944,47 @@ impl UploadSSHPublicKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_duplicate_ssh_public_key_error(&self) -> bool {
+    pub fn is_duplicate_ssh_public_key_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UploadSSHPublicKeyErrorKind::DuplicateSSHPublicKeyError(_)
+            UploadSSHPublicKeyErrorKind::DuplicateSshPublicKeyException(_)
         )
     }
-    pub fn is_invalid_public_key_error(&self) -> bool {
+    pub fn is_invalid_public_key_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UploadSSHPublicKeyErrorKind::InvalidPublicKeyError(_)
+            UploadSSHPublicKeyErrorKind::InvalidPublicKeyException(_)
         )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UploadSSHPublicKeyErrorKind::LimitExceededError(_)
+            UploadSSHPublicKeyErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_no_such_entity_error(&self) -> bool {
+    pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UploadSSHPublicKeyErrorKind::NoSuchEntityError(_)
+            UploadSSHPublicKeyErrorKind::NoSuchEntityException(_)
         )
     }
-    pub fn is_unrecognized_public_key_encoding_error(&self) -> bool {
+    pub fn is_unrecognized_public_key_encoding_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UploadSSHPublicKeyErrorKind::UnrecognizedPublicKeyEncodingError(_)
+            UploadSSHPublicKeyErrorKind::UnrecognizedPublicKeyEncodingException(_)
         )
     }
 }
 impl std::error::Error for UploadSSHPublicKeyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UploadSSHPublicKeyErrorKind::DuplicateSSHPublicKeyError(_inner) => Some(_inner),
-            UploadSSHPublicKeyErrorKind::InvalidPublicKeyError(_inner) => Some(_inner),
-            UploadSSHPublicKeyErrorKind::LimitExceededError(_inner) => Some(_inner),
-            UploadSSHPublicKeyErrorKind::NoSuchEntityError(_inner) => Some(_inner),
-            UploadSSHPublicKeyErrorKind::UnrecognizedPublicKeyEncodingError(_inner) => Some(_inner),
+            UploadSSHPublicKeyErrorKind::DuplicateSshPublicKeyException(_inner) => Some(_inner),
+            UploadSSHPublicKeyErrorKind::InvalidPublicKeyException(_inner) => Some(_inner),
+            UploadSSHPublicKeyErrorKind::LimitExceededException(_inner) => Some(_inner),
+            UploadSSHPublicKeyErrorKind::NoSuchEntityException(_inner) => Some(_inner),
+            UploadSSHPublicKeyErrorKind::UnrecognizedPublicKeyEncodingException(_inner) => {
+                Some(_inner)
+            }
             UploadSSHPublicKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -15555,37 +15994,34 @@ impl std::error::Error for UploadSSHPublicKeyError {
 /// unrecognized.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UnrecognizedPublicKeyEncodingError {
+pub struct UnrecognizedPublicKeyEncodingException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for UnrecognizedPublicKeyEncodingError {
+impl std::fmt::Debug for UnrecognizedPublicKeyEncodingException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnrecognizedPublicKeyEncodingError");
+        let mut formatter = f.debug_struct("UnrecognizedPublicKeyEncodingException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl UnrecognizedPublicKeyEncodingError {
+impl UnrecognizedPublicKeyEncodingException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for UnrecognizedPublicKeyEncodingError {
+impl std::fmt::Display for UnrecognizedPublicKeyEncodingException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "UnrecognizedPublicKeyEncodingError [UnrecognizedPublicKeyEncodingException]"
-        )?;
+        write!(f, "UnrecognizedPublicKeyEncodingException")?;
         if let Some(inner_1) = &self.message {
             write!(f, ": {}", inner_1)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for UnrecognizedPublicKeyEncodingError {}
-/// See [`UnrecognizedPublicKeyEncodingError`](crate::error::UnrecognizedPublicKeyEncodingError)
-pub mod unrecognized_public_key_encoding_error {
-    /// A builder for [`UnrecognizedPublicKeyEncodingError`](crate::error::UnrecognizedPublicKeyEncodingError)
+impl std::error::Error for UnrecognizedPublicKeyEncodingException {}
+/// See [`UnrecognizedPublicKeyEncodingException`](crate::error::UnrecognizedPublicKeyEncodingException)
+pub mod unrecognized_public_key_encoding_exception {
+    /// A builder for [`UnrecognizedPublicKeyEncodingException`](crate::error::UnrecognizedPublicKeyEncodingException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -15600,18 +16036,18 @@ pub mod unrecognized_public_key_encoding_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`UnrecognizedPublicKeyEncodingError`](crate::error::UnrecognizedPublicKeyEncodingError)
-        pub fn build(self) -> crate::error::UnrecognizedPublicKeyEncodingError {
-            crate::error::UnrecognizedPublicKeyEncodingError {
+        /// Consumes the builder and constructs a [`UnrecognizedPublicKeyEncodingException`](crate::error::UnrecognizedPublicKeyEncodingException)
+        pub fn build(self) -> crate::error::UnrecognizedPublicKeyEncodingException {
+            crate::error::UnrecognizedPublicKeyEncodingException {
                 message: self.message,
             }
         }
     }
 }
-impl UnrecognizedPublicKeyEncodingError {
-    /// Creates a new builder-style object to manufacture [`UnrecognizedPublicKeyEncodingError`](crate::error::UnrecognizedPublicKeyEncodingError)
-    pub fn builder() -> crate::error::unrecognized_public_key_encoding_error::Builder {
-        crate::error::unrecognized_public_key_encoding_error::Builder::default()
+impl UnrecognizedPublicKeyEncodingException {
+    /// Creates a new builder-style object to manufacture [`UnrecognizedPublicKeyEncodingException`](crate::error::UnrecognizedPublicKeyEncodingException)
+    pub fn builder() -> crate::error::unrecognized_public_key_encoding_exception::Builder {
+        crate::error::unrecognized_public_key_encoding_exception::Builder::default()
     }
 }
 
@@ -15619,34 +16055,34 @@ impl UnrecognizedPublicKeyEncodingError {
 /// error message describes the resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct NoSuchEntityError {
+pub struct NoSuchEntityException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for NoSuchEntityError {
+impl std::fmt::Debug for NoSuchEntityException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NoSuchEntityError");
+        let mut formatter = f.debug_struct("NoSuchEntityException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl NoSuchEntityError {
+impl NoSuchEntityException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for NoSuchEntityError {
+impl std::fmt::Display for NoSuchEntityException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "NoSuchEntityError [NoSuchEntityException]")?;
+        write!(f, "NoSuchEntityException")?;
         if let Some(inner_2) = &self.message {
             write!(f, ": {}", inner_2)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for NoSuchEntityError {}
-/// See [`NoSuchEntityError`](crate::error::NoSuchEntityError)
-pub mod no_such_entity_error {
-    /// A builder for [`NoSuchEntityError`](crate::error::NoSuchEntityError)
+impl std::error::Error for NoSuchEntityException {}
+/// See [`NoSuchEntityException`](crate::error::NoSuchEntityException)
+pub mod no_such_entity_exception {
+    /// A builder for [`NoSuchEntityException`](crate::error::NoSuchEntityException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -15661,18 +16097,18 @@ pub mod no_such_entity_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`NoSuchEntityError`](crate::error::NoSuchEntityError)
-        pub fn build(self) -> crate::error::NoSuchEntityError {
-            crate::error::NoSuchEntityError {
+        /// Consumes the builder and constructs a [`NoSuchEntityException`](crate::error::NoSuchEntityException)
+        pub fn build(self) -> crate::error::NoSuchEntityException {
+            crate::error::NoSuchEntityException {
                 message: self.message,
             }
         }
     }
 }
-impl NoSuchEntityError {
-    /// Creates a new builder-style object to manufacture [`NoSuchEntityError`](crate::error::NoSuchEntityError)
-    pub fn builder() -> crate::error::no_such_entity_error::Builder {
-        crate::error::no_such_entity_error::Builder::default()
+impl NoSuchEntityException {
+    /// Creates a new builder-style object to manufacture [`NoSuchEntityException`](crate::error::NoSuchEntityException)
+    pub fn builder() -> crate::error::no_such_entity_exception::Builder {
+        crate::error::no_such_entity_exception::Builder::default()
     }
 }
 
@@ -15680,34 +16116,34 @@ impl NoSuchEntityError {
 /// account limits. The error message describes the limit exceeded.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct LimitExceededError {
+pub struct LimitExceededException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for LimitExceededError {
+impl std::fmt::Debug for LimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LimitExceededError");
+        let mut formatter = f.debug_struct("LimitExceededException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl LimitExceededError {
+impl LimitExceededException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for LimitExceededError {
+impl std::fmt::Display for LimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "LimitExceededError [LimitExceededException]")?;
+        write!(f, "LimitExceededException")?;
         if let Some(inner_3) = &self.message {
             write!(f, ": {}", inner_3)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for LimitExceededError {}
-/// See [`LimitExceededError`](crate::error::LimitExceededError)
-pub mod limit_exceeded_error {
-    /// A builder for [`LimitExceededError`](crate::error::LimitExceededError)
+impl std::error::Error for LimitExceededException {}
+/// See [`LimitExceededException`](crate::error::LimitExceededException)
+pub mod limit_exceeded_exception {
+    /// A builder for [`LimitExceededException`](crate::error::LimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -15722,52 +16158,52 @@ pub mod limit_exceeded_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`LimitExceededError`](crate::error::LimitExceededError)
-        pub fn build(self) -> crate::error::LimitExceededError {
-            crate::error::LimitExceededError {
+        /// Consumes the builder and constructs a [`LimitExceededException`](crate::error::LimitExceededException)
+        pub fn build(self) -> crate::error::LimitExceededException {
+            crate::error::LimitExceededException {
                 message: self.message,
             }
         }
     }
 }
-impl LimitExceededError {
-    /// Creates a new builder-style object to manufacture [`LimitExceededError`](crate::error::LimitExceededError)
-    pub fn builder() -> crate::error::limit_exceeded_error::Builder {
-        crate::error::limit_exceeded_error::Builder::default()
+impl LimitExceededException {
+    /// Creates a new builder-style object to manufacture [`LimitExceededException`](crate::error::LimitExceededException)
+    pub fn builder() -> crate::error::limit_exceeded_exception::Builder {
+        crate::error::limit_exceeded_exception::Builder::default()
     }
 }
 
 /// <p>The request was rejected because the public key is malformed or otherwise invalid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidPublicKeyError {
+pub struct InvalidPublicKeyException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidPublicKeyError {
+impl std::fmt::Debug for InvalidPublicKeyException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidPublicKeyError");
+        let mut formatter = f.debug_struct("InvalidPublicKeyException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl InvalidPublicKeyError {
+impl InvalidPublicKeyException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InvalidPublicKeyError {
+impl std::fmt::Display for InvalidPublicKeyException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidPublicKeyError [InvalidPublicKeyException]")?;
+        write!(f, "InvalidPublicKeyException")?;
         if let Some(inner_4) = &self.message {
             write!(f, ": {}", inner_4)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InvalidPublicKeyError {}
-/// See [`InvalidPublicKeyError`](crate::error::InvalidPublicKeyError)
-pub mod invalid_public_key_error {
-    /// A builder for [`InvalidPublicKeyError`](crate::error::InvalidPublicKeyError)
+impl std::error::Error for InvalidPublicKeyException {}
+/// See [`InvalidPublicKeyException`](crate::error::InvalidPublicKeyException)
+pub mod invalid_public_key_exception {
+    /// A builder for [`InvalidPublicKeyException`](crate::error::InvalidPublicKeyException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -15782,18 +16218,18 @@ pub mod invalid_public_key_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidPublicKeyError`](crate::error::InvalidPublicKeyError)
-        pub fn build(self) -> crate::error::InvalidPublicKeyError {
-            crate::error::InvalidPublicKeyError {
+        /// Consumes the builder and constructs a [`InvalidPublicKeyException`](crate::error::InvalidPublicKeyException)
+        pub fn build(self) -> crate::error::InvalidPublicKeyException {
+            crate::error::InvalidPublicKeyException {
                 message: self.message,
             }
         }
     }
 }
-impl InvalidPublicKeyError {
-    /// Creates a new builder-style object to manufacture [`InvalidPublicKeyError`](crate::error::InvalidPublicKeyError)
-    pub fn builder() -> crate::error::invalid_public_key_error::Builder {
-        crate::error::invalid_public_key_error::Builder::default()
+impl InvalidPublicKeyException {
+    /// Creates a new builder-style object to manufacture [`InvalidPublicKeyException`](crate::error::InvalidPublicKeyException)
+    pub fn builder() -> crate::error::invalid_public_key_exception::Builder {
+        crate::error::invalid_public_key_exception::Builder::default()
     }
 }
 
@@ -15801,26 +16237,26 @@ impl InvalidPublicKeyError {
 /// specified IAM user.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DuplicateSSHPublicKeyError {
+pub struct DuplicateSshPublicKeyException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DuplicateSSHPublicKeyError {
+impl std::fmt::Debug for DuplicateSshPublicKeyException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DuplicateSSHPublicKeyError");
+        let mut formatter = f.debug_struct("DuplicateSshPublicKeyException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl DuplicateSSHPublicKeyError {
+impl DuplicateSshPublicKeyException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for DuplicateSSHPublicKeyError {
+impl std::fmt::Display for DuplicateSshPublicKeyException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(
             f,
-            "DuplicateSSHPublicKeyError [DuplicateSSHPublicKeyException]"
+            "DuplicateSshPublicKeyException [DuplicateSSHPublicKeyException]"
         )?;
         if let Some(inner_5) = &self.message {
             write!(f, ": {}", inner_5)?;
@@ -15828,10 +16264,10 @@ impl std::fmt::Display for DuplicateSSHPublicKeyError {
         Ok(())
     }
 }
-impl std::error::Error for DuplicateSSHPublicKeyError {}
-/// See [`DuplicateSSHPublicKeyError`](crate::error::DuplicateSSHPublicKeyError)
-pub mod duplicate_ssh_public_key_error {
-    /// A builder for [`DuplicateSSHPublicKeyError`](crate::error::DuplicateSSHPublicKeyError)
+impl std::error::Error for DuplicateSshPublicKeyException {}
+/// See [`DuplicateSshPublicKeyException`](crate::error::DuplicateSshPublicKeyException)
+pub mod duplicate_ssh_public_key_exception {
+    /// A builder for [`DuplicateSshPublicKeyException`](crate::error::DuplicateSshPublicKeyException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -15846,18 +16282,18 @@ pub mod duplicate_ssh_public_key_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DuplicateSSHPublicKeyError`](crate::error::DuplicateSSHPublicKeyError)
-        pub fn build(self) -> crate::error::DuplicateSSHPublicKeyError {
-            crate::error::DuplicateSSHPublicKeyError {
+        /// Consumes the builder and constructs a [`DuplicateSshPublicKeyException`](crate::error::DuplicateSshPublicKeyException)
+        pub fn build(self) -> crate::error::DuplicateSshPublicKeyException {
+            crate::error::DuplicateSshPublicKeyException {
                 message: self.message,
             }
         }
     }
 }
-impl DuplicateSSHPublicKeyError {
-    /// Creates a new builder-style object to manufacture [`DuplicateSSHPublicKeyError`](crate::error::DuplicateSSHPublicKeyError)
-    pub fn builder() -> crate::error::duplicate_ssh_public_key_error::Builder {
-        crate::error::duplicate_ssh_public_key_error::Builder::default()
+impl DuplicateSshPublicKeyException {
+    /// Creates a new builder-style object to manufacture [`DuplicateSshPublicKeyException`](crate::error::DuplicateSshPublicKeyException)
+    pub fn builder() -> crate::error::duplicate_ssh_public_key_exception::Builder {
+        crate::error::duplicate_ssh_public_key_exception::Builder::default()
     }
 }
 
@@ -15865,34 +16301,34 @@ impl DuplicateSSHPublicKeyError {
 /// failure.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ServiceFailureError {
+pub struct ServiceFailureException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ServiceFailureError {
+impl std::fmt::Debug for ServiceFailureException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceFailureError");
+        let mut formatter = f.debug_struct("ServiceFailureException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl ServiceFailureError {
+impl ServiceFailureException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ServiceFailureError {
+impl std::fmt::Display for ServiceFailureException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ServiceFailureError [ServiceFailureException]")?;
+        write!(f, "ServiceFailureException")?;
         if let Some(inner_6) = &self.message {
             write!(f, ": {}", inner_6)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ServiceFailureError {}
-/// See [`ServiceFailureError`](crate::error::ServiceFailureError)
-pub mod service_failure_error {
-    /// A builder for [`ServiceFailureError`](crate::error::ServiceFailureError)
+impl std::error::Error for ServiceFailureException {}
+/// See [`ServiceFailureException`](crate::error::ServiceFailureException)
+pub mod service_failure_exception {
+    /// A builder for [`ServiceFailureException`](crate::error::ServiceFailureException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -15907,18 +16343,18 @@ pub mod service_failure_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ServiceFailureError`](crate::error::ServiceFailureError)
-        pub fn build(self) -> crate::error::ServiceFailureError {
-            crate::error::ServiceFailureError {
+        /// Consumes the builder and constructs a [`ServiceFailureException`](crate::error::ServiceFailureException)
+        pub fn build(self) -> crate::error::ServiceFailureException {
+            crate::error::ServiceFailureException {
                 message: self.message,
             }
         }
     }
 }
-impl ServiceFailureError {
-    /// Creates a new builder-style object to manufacture [`ServiceFailureError`](crate::error::ServiceFailureError)
-    pub fn builder() -> crate::error::service_failure_error::Builder {
-        crate::error::service_failure_error::Builder::default()
+impl ServiceFailureException {
+    /// Creates a new builder-style object to manufacture [`ServiceFailureException`](crate::error::ServiceFailureException)
+    pub fn builder() -> crate::error::service_failure_exception::Builder {
+        crate::error::service_failure_exception::Builder::default()
     }
 }
 
@@ -15926,37 +16362,34 @@ impl ServiceFailureError {
 /// message describes the specific error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct MalformedCertificateError {
+pub struct MalformedCertificateException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for MalformedCertificateError {
+impl std::fmt::Debug for MalformedCertificateException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MalformedCertificateError");
+        let mut formatter = f.debug_struct("MalformedCertificateException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl MalformedCertificateError {
+impl MalformedCertificateException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for MalformedCertificateError {
+impl std::fmt::Display for MalformedCertificateException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "MalformedCertificateError [MalformedCertificateException]"
-        )?;
+        write!(f, "MalformedCertificateException")?;
         if let Some(inner_7) = &self.message {
             write!(f, ": {}", inner_7)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for MalformedCertificateError {}
-/// See [`MalformedCertificateError`](crate::error::MalformedCertificateError)
-pub mod malformed_certificate_error {
-    /// A builder for [`MalformedCertificateError`](crate::error::MalformedCertificateError)
+impl std::error::Error for MalformedCertificateException {}
+/// See [`MalformedCertificateException`](crate::error::MalformedCertificateException)
+pub mod malformed_certificate_exception {
+    /// A builder for [`MalformedCertificateException`](crate::error::MalformedCertificateException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -15971,52 +16404,52 @@ pub mod malformed_certificate_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`MalformedCertificateError`](crate::error::MalformedCertificateError)
-        pub fn build(self) -> crate::error::MalformedCertificateError {
-            crate::error::MalformedCertificateError {
+        /// Consumes the builder and constructs a [`MalformedCertificateException`](crate::error::MalformedCertificateException)
+        pub fn build(self) -> crate::error::MalformedCertificateException {
+            crate::error::MalformedCertificateException {
                 message: self.message,
             }
         }
     }
 }
-impl MalformedCertificateError {
-    /// Creates a new builder-style object to manufacture [`MalformedCertificateError`](crate::error::MalformedCertificateError)
-    pub fn builder() -> crate::error::malformed_certificate_error::Builder {
-        crate::error::malformed_certificate_error::Builder::default()
+impl MalformedCertificateException {
+    /// Creates a new builder-style object to manufacture [`MalformedCertificateException`](crate::error::MalformedCertificateException)
+    pub fn builder() -> crate::error::malformed_certificate_exception::Builder {
+        crate::error::malformed_certificate_exception::Builder::default()
     }
 }
 
 /// <p>The request was rejected because the certificate is invalid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidCertificateError {
+pub struct InvalidCertificateException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidCertificateError {
+impl std::fmt::Debug for InvalidCertificateException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidCertificateError");
+        let mut formatter = f.debug_struct("InvalidCertificateException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl InvalidCertificateError {
+impl InvalidCertificateException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InvalidCertificateError {
+impl std::fmt::Display for InvalidCertificateException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidCertificateError [InvalidCertificateException]")?;
+        write!(f, "InvalidCertificateException")?;
         if let Some(inner_8) = &self.message {
             write!(f, ": {}", inner_8)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InvalidCertificateError {}
-/// See [`InvalidCertificateError`](crate::error::InvalidCertificateError)
-pub mod invalid_certificate_error {
-    /// A builder for [`InvalidCertificateError`](crate::error::InvalidCertificateError)
+impl std::error::Error for InvalidCertificateException {}
+/// See [`InvalidCertificateException`](crate::error::InvalidCertificateException)
+pub mod invalid_certificate_exception {
+    /// A builder for [`InvalidCertificateException`](crate::error::InvalidCertificateException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -16031,18 +16464,18 @@ pub mod invalid_certificate_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidCertificateError`](crate::error::InvalidCertificateError)
-        pub fn build(self) -> crate::error::InvalidCertificateError {
-            crate::error::InvalidCertificateError {
+        /// Consumes the builder and constructs a [`InvalidCertificateException`](crate::error::InvalidCertificateException)
+        pub fn build(self) -> crate::error::InvalidCertificateException {
+            crate::error::InvalidCertificateException {
                 message: self.message,
             }
         }
     }
 }
-impl InvalidCertificateError {
-    /// Creates a new builder-style object to manufacture [`InvalidCertificateError`](crate::error::InvalidCertificateError)
-    pub fn builder() -> crate::error::invalid_certificate_error::Builder {
-        crate::error::invalid_certificate_error::Builder::default()
+impl InvalidCertificateException {
+    /// Creates a new builder-style object to manufacture [`InvalidCertificateException`](crate::error::InvalidCertificateException)
+    pub fn builder() -> crate::error::invalid_certificate_exception::Builder {
+        crate::error::invalid_certificate_exception::Builder::default()
     }
 }
 
@@ -16050,34 +16483,34 @@ impl InvalidCertificateError {
 /// exists.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct EntityAlreadyExistsError {
+pub struct EntityAlreadyExistsException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for EntityAlreadyExistsError {
+impl std::fmt::Debug for EntityAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EntityAlreadyExistsError");
+        let mut formatter = f.debug_struct("EntityAlreadyExistsException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl EntityAlreadyExistsError {
+impl EntityAlreadyExistsException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for EntityAlreadyExistsError {
+impl std::fmt::Display for EntityAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "EntityAlreadyExistsError [EntityAlreadyExistsException]")?;
+        write!(f, "EntityAlreadyExistsException")?;
         if let Some(inner_9) = &self.message {
             write!(f, ": {}", inner_9)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for EntityAlreadyExistsError {}
-/// See [`EntityAlreadyExistsError`](crate::error::EntityAlreadyExistsError)
-pub mod entity_already_exists_error {
-    /// A builder for [`EntityAlreadyExistsError`](crate::error::EntityAlreadyExistsError)
+impl std::error::Error for EntityAlreadyExistsException {}
+/// See [`EntityAlreadyExistsException`](crate::error::EntityAlreadyExistsException)
+pub mod entity_already_exists_exception {
+    /// A builder for [`EntityAlreadyExistsException`](crate::error::EntityAlreadyExistsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -16092,18 +16525,18 @@ pub mod entity_already_exists_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`EntityAlreadyExistsError`](crate::error::EntityAlreadyExistsError)
-        pub fn build(self) -> crate::error::EntityAlreadyExistsError {
-            crate::error::EntityAlreadyExistsError {
+        /// Consumes the builder and constructs a [`EntityAlreadyExistsException`](crate::error::EntityAlreadyExistsException)
+        pub fn build(self) -> crate::error::EntityAlreadyExistsException {
+            crate::error::EntityAlreadyExistsException {
                 message: self.message,
             }
         }
     }
 }
-impl EntityAlreadyExistsError {
-    /// Creates a new builder-style object to manufacture [`EntityAlreadyExistsError`](crate::error::EntityAlreadyExistsError)
-    pub fn builder() -> crate::error::entity_already_exists_error::Builder {
-        crate::error::entity_already_exists_error::Builder::default()
+impl EntityAlreadyExistsException {
+    /// Creates a new builder-style object to manufacture [`EntityAlreadyExistsException`](crate::error::EntityAlreadyExistsException)
+    pub fn builder() -> crate::error::entity_already_exists_exception::Builder {
+        crate::error::entity_already_exists_exception::Builder::default()
     }
 }
 
@@ -16111,37 +16544,34 @@ impl EntityAlreadyExistsError {
 /// the account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DuplicateCertificateError {
+pub struct DuplicateCertificateException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DuplicateCertificateError {
+impl std::fmt::Debug for DuplicateCertificateException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DuplicateCertificateError");
+        let mut formatter = f.debug_struct("DuplicateCertificateException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl DuplicateCertificateError {
+impl DuplicateCertificateException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for DuplicateCertificateError {
+impl std::fmt::Display for DuplicateCertificateException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "DuplicateCertificateError [DuplicateCertificateException]"
-        )?;
+        write!(f, "DuplicateCertificateException")?;
         if let Some(inner_10) = &self.message {
             write!(f, ": {}", inner_10)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for DuplicateCertificateError {}
-/// See [`DuplicateCertificateError`](crate::error::DuplicateCertificateError)
-pub mod duplicate_certificate_error {
-    /// A builder for [`DuplicateCertificateError`](crate::error::DuplicateCertificateError)
+impl std::error::Error for DuplicateCertificateException {}
+/// See [`DuplicateCertificateException`](crate::error::DuplicateCertificateException)
+pub mod duplicate_certificate_exception {
+    /// A builder for [`DuplicateCertificateException`](crate::error::DuplicateCertificateException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -16156,18 +16586,18 @@ pub mod duplicate_certificate_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DuplicateCertificateError`](crate::error::DuplicateCertificateError)
-        pub fn build(self) -> crate::error::DuplicateCertificateError {
-            crate::error::DuplicateCertificateError {
+        /// Consumes the builder and constructs a [`DuplicateCertificateException`](crate::error::DuplicateCertificateException)
+        pub fn build(self) -> crate::error::DuplicateCertificateException {
+            crate::error::DuplicateCertificateException {
                 message: self.message,
             }
         }
     }
 }
-impl DuplicateCertificateError {
-    /// Creates a new builder-style object to manufacture [`DuplicateCertificateError`](crate::error::DuplicateCertificateError)
-    pub fn builder() -> crate::error::duplicate_certificate_error::Builder {
-        crate::error::duplicate_certificate_error::Builder::default()
+impl DuplicateCertificateException {
+    /// Creates a new builder-style object to manufacture [`DuplicateCertificateException`](crate::error::DuplicateCertificateException)
+    pub fn builder() -> crate::error::duplicate_certificate_exception::Builder {
+        crate::error::duplicate_certificate_exception::Builder::default()
     }
 }
 
@@ -16175,34 +16605,34 @@ impl DuplicateCertificateError {
 /// match.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct KeyPairMismatchError {
+pub struct KeyPairMismatchException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for KeyPairMismatchError {
+impl std::fmt::Debug for KeyPairMismatchException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KeyPairMismatchError");
+        let mut formatter = f.debug_struct("KeyPairMismatchException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl KeyPairMismatchError {
+impl KeyPairMismatchException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for KeyPairMismatchError {
+impl std::fmt::Display for KeyPairMismatchException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "KeyPairMismatchError [KeyPairMismatchException]")?;
+        write!(f, "KeyPairMismatchException")?;
         if let Some(inner_11) = &self.message {
             write!(f, ": {}", inner_11)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for KeyPairMismatchError {}
-/// See [`KeyPairMismatchError`](crate::error::KeyPairMismatchError)
-pub mod key_pair_mismatch_error {
-    /// A builder for [`KeyPairMismatchError`](crate::error::KeyPairMismatchError)
+impl std::error::Error for KeyPairMismatchException {}
+/// See [`KeyPairMismatchException`](crate::error::KeyPairMismatchException)
+pub mod key_pair_mismatch_exception {
+    /// A builder for [`KeyPairMismatchException`](crate::error::KeyPairMismatchException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -16217,18 +16647,18 @@ pub mod key_pair_mismatch_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`KeyPairMismatchError`](crate::error::KeyPairMismatchError)
-        pub fn build(self) -> crate::error::KeyPairMismatchError {
-            crate::error::KeyPairMismatchError {
+        /// Consumes the builder and constructs a [`KeyPairMismatchException`](crate::error::KeyPairMismatchException)
+        pub fn build(self) -> crate::error::KeyPairMismatchException {
+            crate::error::KeyPairMismatchException {
                 message: self.message,
             }
         }
     }
 }
-impl KeyPairMismatchError {
-    /// Creates a new builder-style object to manufacture [`KeyPairMismatchError`](crate::error::KeyPairMismatchError)
-    pub fn builder() -> crate::error::key_pair_mismatch_error::Builder {
-        crate::error::key_pair_mismatch_error::Builder::default()
+impl KeyPairMismatchException {
+    /// Creates a new builder-style object to manufacture [`KeyPairMismatchException`](crate::error::KeyPairMismatchException)
+    pub fn builder() -> crate::error::key_pair_mismatch_exception::Builder {
+        crate::error::key_pair_mismatch_exception::Builder::default()
     }
 }
 
@@ -16236,34 +16666,34 @@ impl KeyPairMismatchError {
 /// input parameter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidInputError {
+pub struct InvalidInputException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidInputError {
+impl std::fmt::Debug for InvalidInputException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidInputError");
+        let mut formatter = f.debug_struct("InvalidInputException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl InvalidInputError {
+impl InvalidInputException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InvalidInputError {
+impl std::fmt::Display for InvalidInputException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidInputError [InvalidInputException]")?;
+        write!(f, "InvalidInputException")?;
         if let Some(inner_12) = &self.message {
             write!(f, ": {}", inner_12)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InvalidInputError {}
-/// See [`InvalidInputError`](crate::error::InvalidInputError)
-pub mod invalid_input_error {
-    /// A builder for [`InvalidInputError`](crate::error::InvalidInputError)
+impl std::error::Error for InvalidInputException {}
+/// See [`InvalidInputException`](crate::error::InvalidInputException)
+pub mod invalid_input_exception {
+    /// A builder for [`InvalidInputException`](crate::error::InvalidInputException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -16278,18 +16708,18 @@ pub mod invalid_input_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidInputError`](crate::error::InvalidInputError)
-        pub fn build(self) -> crate::error::InvalidInputError {
-            crate::error::InvalidInputError {
+        /// Consumes the builder and constructs a [`InvalidInputException`](crate::error::InvalidInputException)
+        pub fn build(self) -> crate::error::InvalidInputException {
+            crate::error::InvalidInputException {
                 message: self.message,
             }
         }
     }
 }
-impl InvalidInputError {
-    /// Creates a new builder-style object to manufacture [`InvalidInputError`](crate::error::InvalidInputError)
-    pub fn builder() -> crate::error::invalid_input_error::Builder {
-        crate::error::invalid_input_error::Builder::default()
+impl InvalidInputException {
+    /// Creates a new builder-style object to manufacture [`InvalidInputException`](crate::error::InvalidInputException)
+    pub fn builder() -> crate::error::invalid_input_exception::Builder {
+        crate::error::invalid_input_exception::Builder::default()
     }
 }
 
@@ -16297,37 +16727,34 @@ impl InvalidInputError {
 /// simultaneously. Wait a few minutes and submit your request again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ConcurrentModificationError {
+pub struct ConcurrentModificationException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ConcurrentModificationError {
+impl std::fmt::Debug for ConcurrentModificationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConcurrentModificationError");
+        let mut formatter = f.debug_struct("ConcurrentModificationException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl ConcurrentModificationError {
+impl ConcurrentModificationException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ConcurrentModificationError {
+impl std::fmt::Display for ConcurrentModificationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "ConcurrentModificationError [ConcurrentModificationException]"
-        )?;
+        write!(f, "ConcurrentModificationException")?;
         if let Some(inner_13) = &self.message {
             write!(f, ": {}", inner_13)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ConcurrentModificationError {}
-/// See [`ConcurrentModificationError`](crate::error::ConcurrentModificationError)
-pub mod concurrent_modification_error {
-    /// A builder for [`ConcurrentModificationError`](crate::error::ConcurrentModificationError)
+impl std::error::Error for ConcurrentModificationException {}
+/// See [`ConcurrentModificationException`](crate::error::ConcurrentModificationException)
+pub mod concurrent_modification_exception {
+    /// A builder for [`ConcurrentModificationException`](crate::error::ConcurrentModificationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -16342,18 +16769,18 @@ pub mod concurrent_modification_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ConcurrentModificationError`](crate::error::ConcurrentModificationError)
-        pub fn build(self) -> crate::error::ConcurrentModificationError {
-            crate::error::ConcurrentModificationError {
+        /// Consumes the builder and constructs a [`ConcurrentModificationException`](crate::error::ConcurrentModificationException)
+        pub fn build(self) -> crate::error::ConcurrentModificationException {
+            crate::error::ConcurrentModificationException {
                 message: self.message,
             }
         }
     }
 }
-impl ConcurrentModificationError {
-    /// Creates a new builder-style object to manufacture [`ConcurrentModificationError`](crate::error::ConcurrentModificationError)
-    pub fn builder() -> crate::error::concurrent_modification_error::Builder {
-        crate::error::concurrent_modification_error::Builder::default()
+impl ConcurrentModificationException {
+    /// Creates a new builder-style object to manufacture [`ConcurrentModificationException`](crate::error::ConcurrentModificationException)
+    pub fn builder() -> crate::error::concurrent_modification_exception::Builder {
+        crate::error::concurrent_modification_exception::Builder::default()
     }
 }
 
@@ -16363,37 +16790,34 @@ impl ConcurrentModificationError {
 /// describes the entity.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct EntityTemporarilyUnmodifiableError {
+pub struct EntityTemporarilyUnmodifiableException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for EntityTemporarilyUnmodifiableError {
+impl std::fmt::Debug for EntityTemporarilyUnmodifiableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EntityTemporarilyUnmodifiableError");
+        let mut formatter = f.debug_struct("EntityTemporarilyUnmodifiableException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl EntityTemporarilyUnmodifiableError {
+impl EntityTemporarilyUnmodifiableException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for EntityTemporarilyUnmodifiableError {
+impl std::fmt::Display for EntityTemporarilyUnmodifiableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "EntityTemporarilyUnmodifiableError [EntityTemporarilyUnmodifiableException]"
-        )?;
+        write!(f, "EntityTemporarilyUnmodifiableException")?;
         if let Some(inner_14) = &self.message {
             write!(f, ": {}", inner_14)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for EntityTemporarilyUnmodifiableError {}
-/// See [`EntityTemporarilyUnmodifiableError`](crate::error::EntityTemporarilyUnmodifiableError)
-pub mod entity_temporarily_unmodifiable_error {
-    /// A builder for [`EntityTemporarilyUnmodifiableError`](crate::error::EntityTemporarilyUnmodifiableError)
+impl std::error::Error for EntityTemporarilyUnmodifiableException {}
+/// See [`EntityTemporarilyUnmodifiableException`](crate::error::EntityTemporarilyUnmodifiableException)
+pub mod entity_temporarily_unmodifiable_exception {
+    /// A builder for [`EntityTemporarilyUnmodifiableException`](crate::error::EntityTemporarilyUnmodifiableException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -16408,18 +16832,18 @@ pub mod entity_temporarily_unmodifiable_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`EntityTemporarilyUnmodifiableError`](crate::error::EntityTemporarilyUnmodifiableError)
-        pub fn build(self) -> crate::error::EntityTemporarilyUnmodifiableError {
-            crate::error::EntityTemporarilyUnmodifiableError {
+        /// Consumes the builder and constructs a [`EntityTemporarilyUnmodifiableException`](crate::error::EntityTemporarilyUnmodifiableException)
+        pub fn build(self) -> crate::error::EntityTemporarilyUnmodifiableException {
+            crate::error::EntityTemporarilyUnmodifiableException {
                 message: self.message,
             }
         }
     }
 }
-impl EntityTemporarilyUnmodifiableError {
-    /// Creates a new builder-style object to manufacture [`EntityTemporarilyUnmodifiableError`](crate::error::EntityTemporarilyUnmodifiableError)
-    pub fn builder() -> crate::error::entity_temporarily_unmodifiable_error::Builder {
-        crate::error::entity_temporarily_unmodifiable_error::Builder::default()
+impl EntityTemporarilyUnmodifiableException {
+    /// Creates a new builder-style object to manufacture [`EntityTemporarilyUnmodifiableException`](crate::error::EntityTemporarilyUnmodifiableException)
+    pub fn builder() -> crate::error::entity_temporarily_unmodifiable_exception::Builder {
+        crate::error::entity_temporarily_unmodifiable_exception::Builder::default()
     }
 }
 
@@ -16429,34 +16853,34 @@ impl EntityTemporarilyUnmodifiableError {
 /// service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UnmodifiableEntityError {
+pub struct UnmodifiableEntityException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for UnmodifiableEntityError {
+impl std::fmt::Debug for UnmodifiableEntityException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnmodifiableEntityError");
+        let mut formatter = f.debug_struct("UnmodifiableEntityException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl UnmodifiableEntityError {
+impl UnmodifiableEntityException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for UnmodifiableEntityError {
+impl std::fmt::Display for UnmodifiableEntityException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "UnmodifiableEntityError [UnmodifiableEntityException]")?;
+        write!(f, "UnmodifiableEntityException")?;
         if let Some(inner_15) = &self.message {
             write!(f, ": {}", inner_15)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for UnmodifiableEntityError {}
-/// See [`UnmodifiableEntityError`](crate::error::UnmodifiableEntityError)
-pub mod unmodifiable_entity_error {
-    /// A builder for [`UnmodifiableEntityError`](crate::error::UnmodifiableEntityError)
+impl std::error::Error for UnmodifiableEntityException {}
+/// See [`UnmodifiableEntityException`](crate::error::UnmodifiableEntityException)
+pub mod unmodifiable_entity_exception {
+    /// A builder for [`UnmodifiableEntityException`](crate::error::UnmodifiableEntityException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -16471,18 +16895,18 @@ pub mod unmodifiable_entity_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`UnmodifiableEntityError`](crate::error::UnmodifiableEntityError)
-        pub fn build(self) -> crate::error::UnmodifiableEntityError {
-            crate::error::UnmodifiableEntityError {
+        /// Consumes the builder and constructs a [`UnmodifiableEntityException`](crate::error::UnmodifiableEntityException)
+        pub fn build(self) -> crate::error::UnmodifiableEntityException {
+            crate::error::UnmodifiableEntityException {
                 message: self.message,
             }
         }
     }
 }
-impl UnmodifiableEntityError {
-    /// Creates a new builder-style object to manufacture [`UnmodifiableEntityError`](crate::error::UnmodifiableEntityError)
-    pub fn builder() -> crate::error::unmodifiable_entity_error::Builder {
-        crate::error::unmodifiable_entity_error::Builder::default()
+impl UnmodifiableEntityException {
+    /// Creates a new builder-style object to manufacture [`UnmodifiableEntityException`](crate::error::UnmodifiableEntityException)
+    pub fn builder() -> crate::error::unmodifiable_entity_exception::Builder {
+        crate::error::unmodifiable_entity_exception::Builder::default()
     }
 }
 
@@ -16490,37 +16914,34 @@ impl UnmodifiableEntityError {
 /// imposed by the account password policy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct PasswordPolicyViolationError {
+pub struct PasswordPolicyViolationException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for PasswordPolicyViolationError {
+impl std::fmt::Debug for PasswordPolicyViolationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PasswordPolicyViolationError");
+        let mut formatter = f.debug_struct("PasswordPolicyViolationException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl PasswordPolicyViolationError {
+impl PasswordPolicyViolationException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for PasswordPolicyViolationError {
+impl std::fmt::Display for PasswordPolicyViolationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "PasswordPolicyViolationError [PasswordPolicyViolationException]"
-        )?;
+        write!(f, "PasswordPolicyViolationException")?;
         if let Some(inner_16) = &self.message {
             write!(f, ": {}", inner_16)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for PasswordPolicyViolationError {}
-/// See [`PasswordPolicyViolationError`](crate::error::PasswordPolicyViolationError)
-pub mod password_policy_violation_error {
-    /// A builder for [`PasswordPolicyViolationError`](crate::error::PasswordPolicyViolationError)
+impl std::error::Error for PasswordPolicyViolationException {}
+/// See [`PasswordPolicyViolationException`](crate::error::PasswordPolicyViolationException)
+pub mod password_policy_violation_exception {
+    /// A builder for [`PasswordPolicyViolationException`](crate::error::PasswordPolicyViolationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -16535,18 +16956,18 @@ pub mod password_policy_violation_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`PasswordPolicyViolationError`](crate::error::PasswordPolicyViolationError)
-        pub fn build(self) -> crate::error::PasswordPolicyViolationError {
-            crate::error::PasswordPolicyViolationError {
+        /// Consumes the builder and constructs a [`PasswordPolicyViolationException`](crate::error::PasswordPolicyViolationException)
+        pub fn build(self) -> crate::error::PasswordPolicyViolationException {
+            crate::error::PasswordPolicyViolationException {
                 message: self.message,
             }
         }
     }
 }
-impl PasswordPolicyViolationError {
-    /// Creates a new builder-style object to manufacture [`PasswordPolicyViolationError`](crate::error::PasswordPolicyViolationError)
-    pub fn builder() -> crate::error::password_policy_violation_error::Builder {
-        crate::error::password_policy_violation_error::Builder::default()
+impl PasswordPolicyViolationException {
+    /// Creates a new builder-style object to manufacture [`PasswordPolicyViolationException`](crate::error::PasswordPolicyViolationException)
+    pub fn builder() -> crate::error::password_policy_violation_exception::Builder {
+        crate::error::password_policy_violation_exception::Builder::default()
     }
 }
 
@@ -16554,37 +16975,34 @@ impl PasswordPolicyViolationError {
 /// describes the specific error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct MalformedPolicyDocumentError {
+pub struct MalformedPolicyDocumentException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for MalformedPolicyDocumentError {
+impl std::fmt::Debug for MalformedPolicyDocumentException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MalformedPolicyDocumentError");
+        let mut formatter = f.debug_struct("MalformedPolicyDocumentException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl MalformedPolicyDocumentError {
+impl MalformedPolicyDocumentException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for MalformedPolicyDocumentError {
+impl std::fmt::Display for MalformedPolicyDocumentException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "MalformedPolicyDocumentError [MalformedPolicyDocumentException]"
-        )?;
+        write!(f, "MalformedPolicyDocumentException")?;
         if let Some(inner_17) = &self.message {
             write!(f, ": {}", inner_17)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for MalformedPolicyDocumentError {}
-/// See [`MalformedPolicyDocumentError`](crate::error::MalformedPolicyDocumentError)
-pub mod malformed_policy_document_error {
-    /// A builder for [`MalformedPolicyDocumentError`](crate::error::MalformedPolicyDocumentError)
+impl std::error::Error for MalformedPolicyDocumentException {}
+/// See [`MalformedPolicyDocumentException`](crate::error::MalformedPolicyDocumentException)
+pub mod malformed_policy_document_exception {
+    /// A builder for [`MalformedPolicyDocumentException`](crate::error::MalformedPolicyDocumentException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -16599,18 +17017,18 @@ pub mod malformed_policy_document_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`MalformedPolicyDocumentError`](crate::error::MalformedPolicyDocumentError)
-        pub fn build(self) -> crate::error::MalformedPolicyDocumentError {
-            crate::error::MalformedPolicyDocumentError {
+        /// Consumes the builder and constructs a [`MalformedPolicyDocumentException`](crate::error::MalformedPolicyDocumentException)
+        pub fn build(self) -> crate::error::MalformedPolicyDocumentException {
+            crate::error::MalformedPolicyDocumentException {
                 message: self.message,
             }
         }
     }
 }
-impl MalformedPolicyDocumentError {
-    /// Creates a new builder-style object to manufacture [`MalformedPolicyDocumentError`](crate::error::MalformedPolicyDocumentError)
-    pub fn builder() -> crate::error::malformed_policy_document_error::Builder {
-        crate::error::malformed_policy_document_error::Builder::default()
+impl MalformedPolicyDocumentException {
+    /// Creates a new builder-style object to manufacture [`MalformedPolicyDocumentException`](crate::error::MalformedPolicyDocumentException)
+    pub fn builder() -> crate::error::malformed_policy_document_exception::Builder {
+        crate::error::malformed_policy_document_exception::Builder::default()
     }
 }
 
@@ -16618,34 +17036,34 @@ impl MalformedPolicyDocumentError {
 /// additional detailed message indicates the source of the failure.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct PolicyEvaluationError {
+pub struct PolicyEvaluationException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for PolicyEvaluationError {
+impl std::fmt::Debug for PolicyEvaluationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PolicyEvaluationError");
+        let mut formatter = f.debug_struct("PolicyEvaluationException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl PolicyEvaluationError {
+impl PolicyEvaluationException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for PolicyEvaluationError {
+impl std::fmt::Display for PolicyEvaluationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "PolicyEvaluationError [PolicyEvaluationException]")?;
+        write!(f, "PolicyEvaluationException")?;
         if let Some(inner_18) = &self.message {
             write!(f, ": {}", inner_18)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for PolicyEvaluationError {}
-/// See [`PolicyEvaluationError`](crate::error::PolicyEvaluationError)
-pub mod policy_evaluation_error {
-    /// A builder for [`PolicyEvaluationError`](crate::error::PolicyEvaluationError)
+impl std::error::Error for PolicyEvaluationException {}
+/// See [`PolicyEvaluationException`](crate::error::PolicyEvaluationException)
+pub mod policy_evaluation_exception {
+    /// A builder for [`PolicyEvaluationException`](crate::error::PolicyEvaluationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -16660,18 +17078,18 @@ pub mod policy_evaluation_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`PolicyEvaluationError`](crate::error::PolicyEvaluationError)
-        pub fn build(self) -> crate::error::PolicyEvaluationError {
-            crate::error::PolicyEvaluationError {
+        /// Consumes the builder and constructs a [`PolicyEvaluationException`](crate::error::PolicyEvaluationException)
+        pub fn build(self) -> crate::error::PolicyEvaluationException {
+            crate::error::PolicyEvaluationException {
                 message: self.message,
             }
         }
     }
 }
-impl PolicyEvaluationError {
-    /// Creates a new builder-style object to manufacture [`PolicyEvaluationError`](crate::error::PolicyEvaluationError)
-    pub fn builder() -> crate::error::policy_evaluation_error::Builder {
-        crate::error::policy_evaluation_error::Builder::default()
+impl PolicyEvaluationException {
+    /// Creates a new builder-style object to manufacture [`PolicyEvaluationException`](crate::error::PolicyEvaluationException)
+    pub fn builder() -> crate::error::policy_evaluation_exception::Builder {
+        crate::error::policy_evaluation_exception::Builder::default()
     }
 }
 
@@ -16679,37 +17097,34 @@ impl PolicyEvaluationError {
 /// message describes the specific error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidAuthenticationCodeError {
+pub struct InvalidAuthenticationCodeException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidAuthenticationCodeError {
+impl std::fmt::Debug for InvalidAuthenticationCodeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidAuthenticationCodeError");
+        let mut formatter = f.debug_struct("InvalidAuthenticationCodeException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl InvalidAuthenticationCodeError {
+impl InvalidAuthenticationCodeException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InvalidAuthenticationCodeError {
+impl std::fmt::Display for InvalidAuthenticationCodeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "InvalidAuthenticationCodeError [InvalidAuthenticationCodeException]"
-        )?;
+        write!(f, "InvalidAuthenticationCodeException")?;
         if let Some(inner_19) = &self.message {
             write!(f, ": {}", inner_19)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InvalidAuthenticationCodeError {}
-/// See [`InvalidAuthenticationCodeError`](crate::error::InvalidAuthenticationCodeError)
-pub mod invalid_authentication_code_error {
-    /// A builder for [`InvalidAuthenticationCodeError`](crate::error::InvalidAuthenticationCodeError)
+impl std::error::Error for InvalidAuthenticationCodeException {}
+/// See [`InvalidAuthenticationCodeException`](crate::error::InvalidAuthenticationCodeException)
+pub mod invalid_authentication_code_exception {
+    /// A builder for [`InvalidAuthenticationCodeException`](crate::error::InvalidAuthenticationCodeException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -16724,18 +17139,18 @@ pub mod invalid_authentication_code_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidAuthenticationCodeError`](crate::error::InvalidAuthenticationCodeError)
-        pub fn build(self) -> crate::error::InvalidAuthenticationCodeError {
-            crate::error::InvalidAuthenticationCodeError {
+        /// Consumes the builder and constructs a [`InvalidAuthenticationCodeException`](crate::error::InvalidAuthenticationCodeException)
+        pub fn build(self) -> crate::error::InvalidAuthenticationCodeException {
+            crate::error::InvalidAuthenticationCodeException {
                 message: self.message,
             }
         }
     }
 }
-impl InvalidAuthenticationCodeError {
-    /// Creates a new builder-style object to manufacture [`InvalidAuthenticationCodeError`](crate::error::InvalidAuthenticationCodeError)
-    pub fn builder() -> crate::error::invalid_authentication_code_error::Builder {
-        crate::error::invalid_authentication_code_error::Builder::default()
+impl InvalidAuthenticationCodeException {
+    /// Creates a new builder-style object to manufacture [`InvalidAuthenticationCodeException`](crate::error::InvalidAuthenticationCodeException)
+    pub fn builder() -> crate::error::invalid_authentication_code_exception::Builder {
+        crate::error::invalid_authentication_code_exception::Builder::default()
     }
 }
 
@@ -16743,34 +17158,34 @@ impl InvalidAuthenticationCodeError {
 /// service-linked role for that service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct PolicyNotAttachableError {
+pub struct PolicyNotAttachableException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for PolicyNotAttachableError {
+impl std::fmt::Debug for PolicyNotAttachableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PolicyNotAttachableError");
+        let mut formatter = f.debug_struct("PolicyNotAttachableException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl PolicyNotAttachableError {
+impl PolicyNotAttachableException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for PolicyNotAttachableError {
+impl std::fmt::Display for PolicyNotAttachableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "PolicyNotAttachableError [PolicyNotAttachableException]")?;
+        write!(f, "PolicyNotAttachableException")?;
         if let Some(inner_20) = &self.message {
             write!(f, ": {}", inner_20)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for PolicyNotAttachableError {}
-/// See [`PolicyNotAttachableError`](crate::error::PolicyNotAttachableError)
-pub mod policy_not_attachable_error {
-    /// A builder for [`PolicyNotAttachableError`](crate::error::PolicyNotAttachableError)
+impl std::error::Error for PolicyNotAttachableException {}
+/// See [`PolicyNotAttachableException`](crate::error::PolicyNotAttachableException)
+pub mod policy_not_attachable_exception {
+    /// A builder for [`PolicyNotAttachableException`](crate::error::PolicyNotAttachableException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -16785,52 +17200,52 @@ pub mod policy_not_attachable_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`PolicyNotAttachableError`](crate::error::PolicyNotAttachableError)
-        pub fn build(self) -> crate::error::PolicyNotAttachableError {
-            crate::error::PolicyNotAttachableError {
+        /// Consumes the builder and constructs a [`PolicyNotAttachableException`](crate::error::PolicyNotAttachableException)
+        pub fn build(self) -> crate::error::PolicyNotAttachableException {
+            crate::error::PolicyNotAttachableException {
                 message: self.message,
             }
         }
     }
 }
-impl PolicyNotAttachableError {
-    /// Creates a new builder-style object to manufacture [`PolicyNotAttachableError`](crate::error::PolicyNotAttachableError)
-    pub fn builder() -> crate::error::policy_not_attachable_error::Builder {
-        crate::error::policy_not_attachable_error::Builder::default()
+impl PolicyNotAttachableException {
+    /// Creates a new builder-style object to manufacture [`PolicyNotAttachableException`](crate::error::PolicyNotAttachableException)
+    pub fn builder() -> crate::error::policy_not_attachable_exception::Builder {
+        crate::error::policy_not_attachable_exception::Builder::default()
     }
 }
 
 /// <p>The specified service does not support service-specific credentials.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ServiceNotSupportedError {
+pub struct ServiceNotSupportedException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ServiceNotSupportedError {
+impl std::fmt::Debug for ServiceNotSupportedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceNotSupportedError");
+        let mut formatter = f.debug_struct("ServiceNotSupportedException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl ServiceNotSupportedError {
+impl ServiceNotSupportedException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ServiceNotSupportedError {
+impl std::fmt::Display for ServiceNotSupportedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ServiceNotSupportedError [ServiceNotSupportedException]")?;
+        write!(f, "ServiceNotSupportedException")?;
         if let Some(inner_21) = &self.message {
             write!(f, ": {}", inner_21)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ServiceNotSupportedError {}
-/// See [`ServiceNotSupportedError`](crate::error::ServiceNotSupportedError)
-pub mod service_not_supported_error {
-    /// A builder for [`ServiceNotSupportedError`](crate::error::ServiceNotSupportedError)
+impl std::error::Error for ServiceNotSupportedException {}
+/// See [`ServiceNotSupportedException`](crate::error::ServiceNotSupportedException)
+pub mod service_not_supported_exception {
+    /// A builder for [`ServiceNotSupportedException`](crate::error::ServiceNotSupportedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -16845,55 +17260,52 @@ pub mod service_not_supported_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ServiceNotSupportedError`](crate::error::ServiceNotSupportedError)
-        pub fn build(self) -> crate::error::ServiceNotSupportedError {
-            crate::error::ServiceNotSupportedError {
+        /// Consumes the builder and constructs a [`ServiceNotSupportedException`](crate::error::ServiceNotSupportedException)
+        pub fn build(self) -> crate::error::ServiceNotSupportedException {
+            crate::error::ServiceNotSupportedException {
                 message: self.message,
             }
         }
     }
 }
-impl ServiceNotSupportedError {
-    /// Creates a new builder-style object to manufacture [`ServiceNotSupportedError`](crate::error::ServiceNotSupportedError)
-    pub fn builder() -> crate::error::service_not_supported_error::Builder {
-        crate::error::service_not_supported_error::Builder::default()
+impl ServiceNotSupportedException {
+    /// Creates a new builder-style object to manufacture [`ServiceNotSupportedException`](crate::error::ServiceNotSupportedException)
+    pub fn builder() -> crate::error::service_not_supported_exception::Builder {
+        crate::error::service_not_supported_exception::Builder::default()
     }
 }
 
 /// <p>The request was rejected because the credential report is still being generated.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CredentialReportNotReadyError {
+pub struct CredentialReportNotReadyException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for CredentialReportNotReadyError {
+impl std::fmt::Debug for CredentialReportNotReadyException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CredentialReportNotReadyError");
+        let mut formatter = f.debug_struct("CredentialReportNotReadyException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl CredentialReportNotReadyError {
+impl CredentialReportNotReadyException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for CredentialReportNotReadyError {
+impl std::fmt::Display for CredentialReportNotReadyException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "CredentialReportNotReadyError [CredentialReportNotReadyException]"
-        )?;
+        write!(f, "CredentialReportNotReadyException")?;
         if let Some(inner_22) = &self.message {
             write!(f, ": {}", inner_22)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for CredentialReportNotReadyError {}
-/// See [`CredentialReportNotReadyError`](crate::error::CredentialReportNotReadyError)
-pub mod credential_report_not_ready_error {
-    /// A builder for [`CredentialReportNotReadyError`](crate::error::CredentialReportNotReadyError)
+impl std::error::Error for CredentialReportNotReadyException {}
+/// See [`CredentialReportNotReadyException`](crate::error::CredentialReportNotReadyException)
+pub mod credential_report_not_ready_exception {
+    /// A builder for [`CredentialReportNotReadyException`](crate::error::CredentialReportNotReadyException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -16908,18 +17320,18 @@ pub mod credential_report_not_ready_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`CredentialReportNotReadyError`](crate::error::CredentialReportNotReadyError)
-        pub fn build(self) -> crate::error::CredentialReportNotReadyError {
-            crate::error::CredentialReportNotReadyError {
+        /// Consumes the builder and constructs a [`CredentialReportNotReadyException`](crate::error::CredentialReportNotReadyException)
+        pub fn build(self) -> crate::error::CredentialReportNotReadyException {
+            crate::error::CredentialReportNotReadyException {
                 message: self.message,
             }
         }
     }
 }
-impl CredentialReportNotReadyError {
-    /// Creates a new builder-style object to manufacture [`CredentialReportNotReadyError`](crate::error::CredentialReportNotReadyError)
-    pub fn builder() -> crate::error::credential_report_not_ready_error::Builder {
-        crate::error::credential_report_not_ready_error::Builder::default()
+impl CredentialReportNotReadyException {
+    /// Creates a new builder-style object to manufacture [`CredentialReportNotReadyException`](crate::error::CredentialReportNotReadyException)
+    pub fn builder() -> crate::error::credential_report_not_ready_exception::Builder {
+        crate::error::credential_report_not_ready_exception::Builder::default()
     }
 }
 
@@ -16927,37 +17339,34 @@ impl CredentialReportNotReadyError {
 /// credential report, use <a>GenerateCredentialReport</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CredentialReportNotPresentError {
+pub struct CredentialReportNotPresentException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for CredentialReportNotPresentError {
+impl std::fmt::Debug for CredentialReportNotPresentException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CredentialReportNotPresentError");
+        let mut formatter = f.debug_struct("CredentialReportNotPresentException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl CredentialReportNotPresentError {
+impl CredentialReportNotPresentException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for CredentialReportNotPresentError {
+impl std::fmt::Display for CredentialReportNotPresentException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "CredentialReportNotPresentError [CredentialReportNotPresentException]"
-        )?;
+        write!(f, "CredentialReportNotPresentException")?;
         if let Some(inner_23) = &self.message {
             write!(f, ": {}", inner_23)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for CredentialReportNotPresentError {}
-/// See [`CredentialReportNotPresentError`](crate::error::CredentialReportNotPresentError)
-pub mod credential_report_not_present_error {
-    /// A builder for [`CredentialReportNotPresentError`](crate::error::CredentialReportNotPresentError)
+impl std::error::Error for CredentialReportNotPresentException {}
+/// See [`CredentialReportNotPresentException`](crate::error::CredentialReportNotPresentException)
+pub mod credential_report_not_present_exception {
+    /// A builder for [`CredentialReportNotPresentException`](crate::error::CredentialReportNotPresentException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -16972,18 +17381,18 @@ pub mod credential_report_not_present_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`CredentialReportNotPresentError`](crate::error::CredentialReportNotPresentError)
-        pub fn build(self) -> crate::error::CredentialReportNotPresentError {
-            crate::error::CredentialReportNotPresentError {
+        /// Consumes the builder and constructs a [`CredentialReportNotPresentException`](crate::error::CredentialReportNotPresentException)
+        pub fn build(self) -> crate::error::CredentialReportNotPresentException {
+            crate::error::CredentialReportNotPresentException {
                 message: self.message,
             }
         }
     }
 }
-impl CredentialReportNotPresentError {
-    /// Creates a new builder-style object to manufacture [`CredentialReportNotPresentError`](crate::error::CredentialReportNotPresentError)
-    pub fn builder() -> crate::error::credential_report_not_present_error::Builder {
-        crate::error::credential_report_not_present_error::Builder::default()
+impl CredentialReportNotPresentException {
+    /// Creates a new builder-style object to manufacture [`CredentialReportNotPresentException`](crate::error::CredentialReportNotPresentException)
+    pub fn builder() -> crate::error::credential_report_not_present_exception::Builder {
+        crate::error::credential_report_not_present_exception::Builder::default()
     }
 }
 
@@ -16993,37 +17402,34 @@ impl CredentialReportNotPresentError {
 /// <i>IAM User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CredentialReportExpiredError {
+pub struct CredentialReportExpiredException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for CredentialReportExpiredError {
+impl std::fmt::Debug for CredentialReportExpiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CredentialReportExpiredError");
+        let mut formatter = f.debug_struct("CredentialReportExpiredException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl CredentialReportExpiredError {
+impl CredentialReportExpiredException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for CredentialReportExpiredError {
+impl std::fmt::Display for CredentialReportExpiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "CredentialReportExpiredError [CredentialReportExpiredException]"
-        )?;
+        write!(f, "CredentialReportExpiredException")?;
         if let Some(inner_24) = &self.message {
             write!(f, ": {}", inner_24)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for CredentialReportExpiredError {}
-/// See [`CredentialReportExpiredError`](crate::error::CredentialReportExpiredError)
-pub mod credential_report_expired_error {
-    /// A builder for [`CredentialReportExpiredError`](crate::error::CredentialReportExpiredError)
+impl std::error::Error for CredentialReportExpiredException {}
+/// See [`CredentialReportExpiredException`](crate::error::CredentialReportExpiredException)
+pub mod credential_report_expired_exception {
+    /// A builder for [`CredentialReportExpiredException`](crate::error::CredentialReportExpiredException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -17038,18 +17444,18 @@ pub mod credential_report_expired_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`CredentialReportExpiredError`](crate::error::CredentialReportExpiredError)
-        pub fn build(self) -> crate::error::CredentialReportExpiredError {
-            crate::error::CredentialReportExpiredError {
+        /// Consumes the builder and constructs a [`CredentialReportExpiredException`](crate::error::CredentialReportExpiredException)
+        pub fn build(self) -> crate::error::CredentialReportExpiredException {
+            crate::error::CredentialReportExpiredException {
                 message: self.message,
             }
         }
     }
 }
-impl CredentialReportExpiredError {
-    /// Creates a new builder-style object to manufacture [`CredentialReportExpiredError`](crate::error::CredentialReportExpiredError)
-    pub fn builder() -> crate::error::credential_report_expired_error::Builder {
-        crate::error::credential_report_expired_error::Builder::default()
+impl CredentialReportExpiredException {
+    /// Creates a new builder-style object to manufacture [`CredentialReportExpiredException`](crate::error::CredentialReportExpiredException)
+    pub fn builder() -> crate::error::credential_report_expired_exception::Builder {
+        crate::error::credential_report_expired_exception::Builder::default()
     }
 }
 
@@ -17057,37 +17463,34 @@ impl CredentialReportExpiredError {
 /// already running.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ReportGenerationLimitExceededError {
+pub struct ReportGenerationLimitExceededException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ReportGenerationLimitExceededError {
+impl std::fmt::Debug for ReportGenerationLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReportGenerationLimitExceededError");
+        let mut formatter = f.debug_struct("ReportGenerationLimitExceededException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl ReportGenerationLimitExceededError {
+impl ReportGenerationLimitExceededException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ReportGenerationLimitExceededError {
+impl std::fmt::Display for ReportGenerationLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "ReportGenerationLimitExceededError [ReportGenerationLimitExceededException]"
-        )?;
+        write!(f, "ReportGenerationLimitExceededException")?;
         if let Some(inner_25) = &self.message {
             write!(f, ": {}", inner_25)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ReportGenerationLimitExceededError {}
-/// See [`ReportGenerationLimitExceededError`](crate::error::ReportGenerationLimitExceededError)
-pub mod report_generation_limit_exceeded_error {
-    /// A builder for [`ReportGenerationLimitExceededError`](crate::error::ReportGenerationLimitExceededError)
+impl std::error::Error for ReportGenerationLimitExceededException {}
+/// See [`ReportGenerationLimitExceededException`](crate::error::ReportGenerationLimitExceededException)
+pub mod report_generation_limit_exceeded_exception {
+    /// A builder for [`ReportGenerationLimitExceededException`](crate::error::ReportGenerationLimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -17102,18 +17505,18 @@ pub mod report_generation_limit_exceeded_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ReportGenerationLimitExceededError`](crate::error::ReportGenerationLimitExceededError)
-        pub fn build(self) -> crate::error::ReportGenerationLimitExceededError {
-            crate::error::ReportGenerationLimitExceededError {
+        /// Consumes the builder and constructs a [`ReportGenerationLimitExceededException`](crate::error::ReportGenerationLimitExceededException)
+        pub fn build(self) -> crate::error::ReportGenerationLimitExceededException {
+            crate::error::ReportGenerationLimitExceededException {
                 message: self.message,
             }
         }
     }
 }
-impl ReportGenerationLimitExceededError {
-    /// Creates a new builder-style object to manufacture [`ReportGenerationLimitExceededError`](crate::error::ReportGenerationLimitExceededError)
-    pub fn builder() -> crate::error::report_generation_limit_exceeded_error::Builder {
-        crate::error::report_generation_limit_exceeded_error::Builder::default()
+impl ReportGenerationLimitExceededException {
+    /// Creates a new builder-style object to manufacture [`ReportGenerationLimitExceededException`](crate::error::ReportGenerationLimitExceededException)
+    pub fn builder() -> crate::error::report_generation_limit_exceeded_exception::Builder {
+        crate::error::report_generation_limit_exceeded_exception::Builder::default()
     }
 }
 
@@ -17121,34 +17524,34 @@ impl ReportGenerationLimitExceededError {
 /// subordinate entities. The error message describes these entities.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteConflictError {
+pub struct DeleteConflictException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DeleteConflictError {
+impl std::fmt::Debug for DeleteConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteConflictError");
+        let mut formatter = f.debug_struct("DeleteConflictException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl DeleteConflictError {
+impl DeleteConflictException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for DeleteConflictError {
+impl std::fmt::Display for DeleteConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "DeleteConflictError [DeleteConflictException]")?;
+        write!(f, "DeleteConflictException")?;
         if let Some(inner_26) = &self.message {
             write!(f, ": {}", inner_26)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for DeleteConflictError {}
-/// See [`DeleteConflictError`](crate::error::DeleteConflictError)
-pub mod delete_conflict_error {
-    /// A builder for [`DeleteConflictError`](crate::error::DeleteConflictError)
+impl std::error::Error for DeleteConflictException {}
+/// See [`DeleteConflictException`](crate::error::DeleteConflictException)
+pub mod delete_conflict_exception {
+    /// A builder for [`DeleteConflictException`](crate::error::DeleteConflictException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -17163,18 +17566,18 @@ pub mod delete_conflict_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteConflictError`](crate::error::DeleteConflictError)
-        pub fn build(self) -> crate::error::DeleteConflictError {
-            crate::error::DeleteConflictError {
+        /// Consumes the builder and constructs a [`DeleteConflictException`](crate::error::DeleteConflictException)
+        pub fn build(self) -> crate::error::DeleteConflictException {
+            crate::error::DeleteConflictException {
                 message: self.message,
             }
         }
     }
 }
-impl DeleteConflictError {
-    /// Creates a new builder-style object to manufacture [`DeleteConflictError`](crate::error::DeleteConflictError)
-    pub fn builder() -> crate::error::delete_conflict_error::Builder {
-        crate::error::delete_conflict_error::Builder::default()
+impl DeleteConflictException {
+    /// Creates a new builder-style object to manufacture [`DeleteConflictException`](crate::error::DeleteConflictException)
+    pub fn builder() -> crate::error::delete_conflict_exception::Builder {
+        crate::error::delete_conflict_exception::Builder::default()
     }
 }
 
@@ -17182,34 +17585,34 @@ impl DeleteConflictError {
 /// incorrect.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidUserTypeError {
+pub struct InvalidUserTypeException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidUserTypeError {
+impl std::fmt::Debug for InvalidUserTypeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidUserTypeError");
+        let mut formatter = f.debug_struct("InvalidUserTypeException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl InvalidUserTypeError {
+impl InvalidUserTypeException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InvalidUserTypeError {
+impl std::fmt::Display for InvalidUserTypeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidUserTypeError [InvalidUserTypeException]")?;
+        write!(f, "InvalidUserTypeException")?;
         if let Some(inner_27) = &self.message {
             write!(f, ": {}", inner_27)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InvalidUserTypeError {}
-/// See [`InvalidUserTypeError`](crate::error::InvalidUserTypeError)
-pub mod invalid_user_type_error {
-    /// A builder for [`InvalidUserTypeError`](crate::error::InvalidUserTypeError)
+impl std::error::Error for InvalidUserTypeException {}
+/// See [`InvalidUserTypeException`](crate::error::InvalidUserTypeException)
+pub mod invalid_user_type_exception {
+    /// A builder for [`InvalidUserTypeException`](crate::error::InvalidUserTypeException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -17224,17 +17627,17 @@ pub mod invalid_user_type_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidUserTypeError`](crate::error::InvalidUserTypeError)
-        pub fn build(self) -> crate::error::InvalidUserTypeError {
-            crate::error::InvalidUserTypeError {
+        /// Consumes the builder and constructs a [`InvalidUserTypeException`](crate::error::InvalidUserTypeException)
+        pub fn build(self) -> crate::error::InvalidUserTypeException {
+            crate::error::InvalidUserTypeException {
                 message: self.message,
             }
         }
     }
 }
-impl InvalidUserTypeError {
-    /// Creates a new builder-style object to manufacture [`InvalidUserTypeError`](crate::error::InvalidUserTypeError)
-    pub fn builder() -> crate::error::invalid_user_type_error::Builder {
-        crate::error::invalid_user_type_error::Builder::default()
+impl InvalidUserTypeException {
+    /// Creates a new builder-style object to manufacture [`InvalidUserTypeException`](crate::error::InvalidUserTypeException)
+    pub fn builder() -> crate::error::invalid_user_type_exception::Builder {
+        crate::error::invalid_user_type_exception::Builder::default()
     }
 }

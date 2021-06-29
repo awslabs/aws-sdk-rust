@@ -29,7 +29,7 @@ pub mod accept_input_device_transfer_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AcceptInputDeviceTransferInput {
-                input_device_id: self.input_device_id.unwrap_or_default(),
+                input_device_id: self.input_device_id,
             })
         }
     }
@@ -95,13 +95,31 @@ impl AcceptInputDeviceTransferInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let input_device_id = {
+            let input = &self.input_device_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "input_device_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "input_device_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/prod/inputDevices/{InputDeviceId}/accept",
-            InputDeviceId = smithy_http::label::fmt_string(&self.input_device_id, false)
+            InputDeviceId = input_device_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -109,7 +127,7 @@ impl AcceptInputDeviceTransferInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -277,8 +295,9 @@ impl BatchDeleteInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/prod/batch/delete").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/prod/batch/delete").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -286,7 +305,7 @@ impl BatchDeleteInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -423,8 +442,9 @@ impl BatchStartInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/prod/batch/start").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/prod/batch/start").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -432,7 +452,7 @@ impl BatchStartInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -567,8 +587,9 @@ impl BatchStopInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/prod/batch/stop").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/prod/batch/stop").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -576,7 +597,7 @@ impl BatchStopInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -654,7 +675,7 @@ pub mod batch_update_schedule_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::BatchUpdateScheduleInput {
-                channel_id: self.channel_id.unwrap_or_default(),
+                channel_id: self.channel_id,
                 creates: self.creates,
                 deletes: self.deletes,
             })
@@ -724,13 +745,31 @@ impl BatchUpdateScheduleInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let channel_id = {
+            let input = &self.channel_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "channel_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "channel_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/prod/channels/{ChannelId}/schedule",
-            ChannelId = smithy_http::label::fmt_string(&self.channel_id, false)
+            ChannelId = channel_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -738,7 +777,7 @@ impl BatchUpdateScheduleInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PUT").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -793,7 +832,7 @@ pub mod cancel_input_device_transfer_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CancelInputDeviceTransferInput {
-                input_device_id: self.input_device_id.unwrap_or_default(),
+                input_device_id: self.input_device_id,
             })
         }
     }
@@ -859,13 +898,31 @@ impl CancelInputDeviceTransferInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let input_device_id = {
+            let input = &self.input_device_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "input_device_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "input_device_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/prod/inputDevices/{InputDeviceId}/cancel",
-            InputDeviceId = smithy_http::label::fmt_string(&self.input_device_id, false)
+            InputDeviceId = input_device_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -873,7 +930,7 @@ impl CancelInputDeviceTransferInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1171,8 +1228,9 @@ impl CreateChannelInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/prod/channels").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/prod/channels").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -1180,7 +1238,7 @@ impl CreateChannelInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1462,8 +1520,9 @@ impl CreateInputInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/prod/inputs").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/prod/inputs").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -1471,7 +1530,7 @@ impl CreateInputInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1623,8 +1682,9 @@ impl CreateInputSecurityGroupInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/prod/inputSecurityGroups").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/prod/inputSecurityGroups").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -1632,7 +1692,7 @@ impl CreateInputSecurityGroupInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1818,8 +1878,9 @@ impl CreateMultiplexInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/prod/multiplexes").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/prod/multiplexes").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -1827,7 +1888,7 @@ impl CreateMultiplexInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1917,7 +1978,7 @@ pub mod create_multiplex_program_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateMultiplexProgramInput {
-                multiplex_id: self.multiplex_id.unwrap_or_default(),
+                multiplex_id: self.multiplex_id,
                 multiplex_program_settings: self.multiplex_program_settings,
                 program_name: self.program_name,
                 request_id: self.request_id,
@@ -1991,13 +2052,31 @@ impl CreateMultiplexProgramInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let multiplex_id = {
+            let input = &self.multiplex_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "multiplex_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "multiplex_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/prod/multiplexes/{MultiplexId}/programs",
-            MultiplexId = smithy_http::label::fmt_string(&self.multiplex_id, false)
+            MultiplexId = multiplex_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -2005,7 +2084,7 @@ impl CreateMultiplexProgramInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2090,7 +2169,7 @@ pub mod create_partner_input_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreatePartnerInputInput {
-                input_id: self.input_id.unwrap_or_default(),
+                input_id: self.input_id,
                 request_id: self.request_id,
                 tags: self.tags,
             })
@@ -2163,13 +2242,31 @@ impl CreatePartnerInputInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let input_id = {
+            let input = &self.input_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "input_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "input_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/prod/inputs/{InputId}/partners",
-            InputId = smithy_http::label::fmt_string(&self.input_id, false)
+            InputId = input_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -2177,7 +2274,7 @@ impl CreatePartnerInputInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2249,7 +2346,7 @@ pub mod create_tags_input {
         ) -> std::result::Result<crate::input::CreateTagsInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::CreateTagsInput {
-                resource_arn: self.resource_arn.unwrap_or_default(),
+                resource_arn: self.resource_arn,
                 tags: self.tags,
             })
         }
@@ -2318,13 +2415,31 @@ impl CreateTagsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let resource_arn = {
+            let input = &self.resource_arn;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_arn",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_arn",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/prod/tags/{ResourceArn}",
-            ResourceArn = smithy_http::label::fmt_string(&self.resource_arn, false)
+            ResourceArn = resource_arn
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -2332,7 +2447,7 @@ impl CreateTagsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2382,7 +2497,7 @@ pub mod delete_channel_input {
         ) -> std::result::Result<crate::input::DeleteChannelInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::DeleteChannelInput {
-                channel_id: self.channel_id.unwrap_or_default(),
+                channel_id: self.channel_id,
             })
         }
     }
@@ -2447,13 +2562,27 @@ impl DeleteChannelInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/prod/channels/{ChannelId}",
-            ChannelId = smithy_http::label::fmt_string(&self.channel_id, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let channel_id = {
+            let input = &self.channel_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "channel_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "channel_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/prod/channels/{ChannelId}", ChannelId = channel_id)
+            .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -2461,7 +2590,7 @@ impl DeleteChannelInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("DELETE").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2511,7 +2640,7 @@ pub mod delete_input_input {
         ) -> std::result::Result<crate::input::DeleteInputInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::DeleteInputInput {
-                input_id: self.input_id.unwrap_or_default(),
+                input_id: self.input_id,
             })
         }
     }
@@ -2576,13 +2705,27 @@ impl DeleteInputInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/prod/inputs/{InputId}",
-            InputId = smithy_http::label::fmt_string(&self.input_id, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let input_id = {
+            let input = &self.input_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "input_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "input_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/prod/inputs/{InputId}", InputId = input_id)
+            .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -2590,7 +2733,7 @@ impl DeleteInputInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("DELETE").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2645,7 +2788,7 @@ pub mod delete_input_security_group_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteInputSecurityGroupInput {
-                input_security_group_id: self.input_security_group_id.unwrap_or_default(),
+                input_security_group_id: self.input_security_group_id,
             })
         }
     }
@@ -2711,14 +2854,31 @@ impl DeleteInputSecurityGroupInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let input_security_group_id = {
+            let input = &self.input_security_group_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "input_security_group_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "input_security_group_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/prod/inputSecurityGroups/{InputSecurityGroupId}",
-            InputSecurityGroupId =
-                smithy_http::label::fmt_string(&self.input_security_group_id, false)
+            InputSecurityGroupId = input_security_group_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -2726,7 +2886,7 @@ impl DeleteInputSecurityGroupInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("DELETE").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2778,7 +2938,7 @@ pub mod delete_multiplex_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteMultiplexInput {
-                multiplex_id: self.multiplex_id.unwrap_or_default(),
+                multiplex_id: self.multiplex_id,
             })
         }
     }
@@ -2843,13 +3003,31 @@ impl DeleteMultiplexInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let multiplex_id = {
+            let input = &self.multiplex_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "multiplex_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "multiplex_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/prod/multiplexes/{MultiplexId}",
-            MultiplexId = smithy_http::label::fmt_string(&self.multiplex_id, false)
+            MultiplexId = multiplex_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -2857,7 +3035,7 @@ impl DeleteMultiplexInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("DELETE").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2919,8 +3097,8 @@ pub mod delete_multiplex_program_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteMultiplexProgramInput {
-                multiplex_id: self.multiplex_id.unwrap_or_default(),
-                program_name: self.program_name.unwrap_or_default(),
+                multiplex_id: self.multiplex_id,
+                program_name: self.program_name,
             })
         }
     }
@@ -2985,14 +3163,49 @@ impl DeleteMultiplexProgramInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let multiplex_id = {
+            let input = &self.multiplex_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "multiplex_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "multiplex_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let program_name = {
+            let input = &self.program_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "program_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "program_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/prod/multiplexes/{MultiplexId}/programs/{ProgramName}",
-            MultiplexId = smithy_http::label::fmt_string(&self.multiplex_id, false),
-            ProgramName = smithy_http::label::fmt_string(&self.program_name, false)
+            MultiplexId = multiplex_id,
+            ProgramName = program_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -3000,7 +3213,7 @@ impl DeleteMultiplexProgramInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("DELETE").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3055,7 +3268,7 @@ pub mod delete_reservation_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteReservationInput {
-                reservation_id: self.reservation_id.unwrap_or_default(),
+                reservation_id: self.reservation_id,
             })
         }
     }
@@ -3120,13 +3333,31 @@ impl DeleteReservationInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let reservation_id = {
+            let input = &self.reservation_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "reservation_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "reservation_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/prod/reservations/{ReservationId}",
-            ReservationId = smithy_http::label::fmt_string(&self.reservation_id, false)
+            ReservationId = reservation_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -3134,7 +3365,7 @@ impl DeleteReservationInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("DELETE").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3186,7 +3417,7 @@ pub mod delete_schedule_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteScheduleInput {
-                channel_id: self.channel_id.unwrap_or_default(),
+                channel_id: self.channel_id,
             })
         }
     }
@@ -3251,13 +3482,31 @@ impl DeleteScheduleInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let channel_id = {
+            let input = &self.channel_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "channel_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "channel_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/prod/channels/{ChannelId}/schedule",
-            ChannelId = smithy_http::label::fmt_string(&self.channel_id, false)
+            ChannelId = channel_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -3265,7 +3514,7 @@ impl DeleteScheduleInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("DELETE").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3329,7 +3578,7 @@ pub mod delete_tags_input {
         ) -> std::result::Result<crate::input::DeleteTagsInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::DeleteTagsInput {
-                resource_arn: self.resource_arn.unwrap_or_default(),
+                resource_arn: self.resource_arn,
                 tag_keys: self.tag_keys,
             })
         }
@@ -3395,13 +3644,31 @@ impl DeleteTagsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let resource_arn = {
+            let input = &self.resource_arn;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_arn",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_arn",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/prod/tags/{ResourceArn}",
-            ResourceArn = smithy_http::label::fmt_string(&self.resource_arn, false)
+            ResourceArn = resource_arn
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -3417,7 +3684,7 @@ impl DeleteTagsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
     }
@@ -3470,7 +3737,7 @@ pub mod describe_channel_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeChannelInput {
-                channel_id: self.channel_id.unwrap_or_default(),
+                channel_id: self.channel_id,
             })
         }
     }
@@ -3535,13 +3802,27 @@ impl DescribeChannelInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/prod/channels/{ChannelId}",
-            ChannelId = smithy_http::label::fmt_string(&self.channel_id, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let channel_id = {
+            let input = &self.channel_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "channel_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "channel_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/prod/channels/{ChannelId}", ChannelId = channel_id)
+            .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -3549,7 +3830,7 @@ impl DescribeChannelInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3599,7 +3880,7 @@ pub mod describe_input_input {
         ) -> std::result::Result<crate::input::DescribeInputInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::DescribeInputInput {
-                input_id: self.input_id.unwrap_or_default(),
+                input_id: self.input_id,
             })
         }
     }
@@ -3664,13 +3945,27 @@ impl DescribeInputInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/prod/inputs/{InputId}",
-            InputId = smithy_http::label::fmt_string(&self.input_id, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let input_id = {
+            let input = &self.input_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "input_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "input_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/prod/inputs/{InputId}", InputId = input_id)
+            .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -3678,7 +3973,7 @@ impl DescribeInputInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3733,7 +4028,7 @@ pub mod describe_input_device_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeInputDeviceInput {
-                input_device_id: self.input_device_id.unwrap_or_default(),
+                input_device_id: self.input_device_id,
             })
         }
     }
@@ -3798,13 +4093,31 @@ impl DescribeInputDeviceInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let input_device_id = {
+            let input = &self.input_device_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "input_device_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "input_device_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/prod/inputDevices/{InputDeviceId}",
-            InputDeviceId = smithy_http::label::fmt_string(&self.input_device_id, false)
+            InputDeviceId = input_device_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -3812,7 +4125,7 @@ impl DescribeInputDeviceInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3880,7 +4193,7 @@ pub mod describe_input_device_thumbnail_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeInputDeviceThumbnailInput {
-                input_device_id: self.input_device_id.unwrap_or_default(),
+                input_device_id: self.input_device_id,
                 accept: self.accept,
             })
         }
@@ -3947,13 +4260,31 @@ impl DescribeInputDeviceThumbnailInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let input_device_id = {
+            let input = &self.input_device_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "input_device_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "input_device_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/prod/inputDevices/{InputDeviceId}/thumbnailData",
-            InputDeviceId = smithy_http::label::fmt_string(&self.input_device_id, false)
+            InputDeviceId = input_device_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -3985,7 +4316,7 @@ impl DescribeInputDeviceThumbnailInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         let builder = self.add_headers(builder)?;
         Ok(builder.method("GET").uri(uri))
     }
@@ -4041,7 +4372,7 @@ pub mod describe_input_security_group_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeInputSecurityGroupInput {
-                input_security_group_id: self.input_security_group_id.unwrap_or_default(),
+                input_security_group_id: self.input_security_group_id,
             })
         }
     }
@@ -4107,14 +4438,31 @@ impl DescribeInputSecurityGroupInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let input_security_group_id = {
+            let input = &self.input_security_group_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "input_security_group_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "input_security_group_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/prod/inputSecurityGroups/{InputSecurityGroupId}",
-            InputSecurityGroupId =
-                smithy_http::label::fmt_string(&self.input_security_group_id, false)
+            InputSecurityGroupId = input_security_group_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -4122,7 +4470,7 @@ impl DescribeInputSecurityGroupInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4174,7 +4522,7 @@ pub mod describe_multiplex_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeMultiplexInput {
-                multiplex_id: self.multiplex_id.unwrap_or_default(),
+                multiplex_id: self.multiplex_id,
             })
         }
     }
@@ -4239,13 +4587,31 @@ impl DescribeMultiplexInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let multiplex_id = {
+            let input = &self.multiplex_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "multiplex_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "multiplex_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/prod/multiplexes/{MultiplexId}",
-            MultiplexId = smithy_http::label::fmt_string(&self.multiplex_id, false)
+            MultiplexId = multiplex_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -4253,7 +4619,7 @@ impl DescribeMultiplexInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4315,8 +4681,8 @@ pub mod describe_multiplex_program_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeMultiplexProgramInput {
-                multiplex_id: self.multiplex_id.unwrap_or_default(),
-                program_name: self.program_name.unwrap_or_default(),
+                multiplex_id: self.multiplex_id,
+                program_name: self.program_name,
             })
         }
     }
@@ -4382,14 +4748,49 @@ impl DescribeMultiplexProgramInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let multiplex_id = {
+            let input = &self.multiplex_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "multiplex_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "multiplex_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let program_name = {
+            let input = &self.program_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "program_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "program_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/prod/multiplexes/{MultiplexId}/programs/{ProgramName}",
-            MultiplexId = smithy_http::label::fmt_string(&self.multiplex_id, false),
-            ProgramName = smithy_http::label::fmt_string(&self.program_name, false)
+            MultiplexId = multiplex_id,
+            ProgramName = program_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -4397,7 +4798,7 @@ impl DescribeMultiplexProgramInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4449,7 +4850,7 @@ pub mod describe_offering_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeOfferingInput {
-                offering_id: self.offering_id.unwrap_or_default(),
+                offering_id: self.offering_id,
             })
         }
     }
@@ -4514,13 +4915,31 @@ impl DescribeOfferingInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let offering_id = {
+            let input = &self.offering_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "offering_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "offering_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/prod/offerings/{OfferingId}",
-            OfferingId = smithy_http::label::fmt_string(&self.offering_id, false)
+            OfferingId = offering_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -4528,7 +4947,7 @@ impl DescribeOfferingInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4583,7 +5002,7 @@ pub mod describe_reservation_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeReservationInput {
-                reservation_id: self.reservation_id.unwrap_or_default(),
+                reservation_id: self.reservation_id,
             })
         }
     }
@@ -4648,13 +5067,31 @@ impl DescribeReservationInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let reservation_id = {
+            let input = &self.reservation_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "reservation_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "reservation_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/prod/reservations/{ReservationId}",
-            ReservationId = smithy_http::label::fmt_string(&self.reservation_id, false)
+            ReservationId = reservation_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -4662,7 +5099,7 @@ impl DescribeReservationInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4734,7 +5171,7 @@ pub mod describe_schedule_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeScheduleInput {
-                channel_id: self.channel_id.unwrap_or_default(),
+                channel_id: self.channel_id,
                 max_results: self.max_results.unwrap_or_default(),
                 next_token: self.next_token,
             })
@@ -4801,13 +5238,31 @@ impl DescribeScheduleInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let channel_id = {
+            let input = &self.channel_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "channel_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "channel_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/prod/channels/{ChannelId}/schedule",
-            ChannelId = smithy_http::label::fmt_string(&self.channel_id, false)
+            ChannelId = channel_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -4827,7 +5282,7 @@ impl DescribeScheduleInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -4954,8 +5409,9 @@ impl ListChannelsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/prod/channels").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/prod/channels").expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -4975,7 +5431,7 @@ impl ListChannelsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -5104,8 +5560,9 @@ impl ListInputDevicesInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/prod/inputDevices").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/prod/inputDevices").expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -5125,7 +5582,7 @@ impl ListInputDevicesInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -5269,8 +5726,9 @@ impl ListInputDeviceTransfersInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/prod/inputDeviceTransfers").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/prod/inputDeviceTransfers").expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -5293,7 +5751,7 @@ impl ListInputDeviceTransfersInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -5420,8 +5878,9 @@ impl ListInputsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/prod/inputs").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/prod/inputs").expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -5441,7 +5900,7 @@ impl ListInputsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -5571,8 +6030,9 @@ impl ListInputSecurityGroupsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/prod/inputSecurityGroups").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/prod/inputSecurityGroups").expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -5592,7 +6052,7 @@ impl ListInputSecurityGroupsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -5721,8 +6181,9 @@ impl ListMultiplexesInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/prod/multiplexes").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/prod/multiplexes").expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -5742,7 +6203,7 @@ impl ListMultiplexesInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -5816,7 +6277,7 @@ pub mod list_multiplex_programs_input {
         > {
             Ok(crate::input::ListMultiplexProgramsInput {
                 max_results: self.max_results.unwrap_or_default(),
-                multiplex_id: self.multiplex_id.unwrap_or_default(),
+                multiplex_id: self.multiplex_id,
                 next_token: self.next_token,
             })
         }
@@ -5882,13 +6343,31 @@ impl ListMultiplexProgramsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let multiplex_id = {
+            let input = &self.multiplex_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "multiplex_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "multiplex_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/prod/multiplexes/{MultiplexId}/programs",
-            MultiplexId = smithy_http::label::fmt_string(&self.multiplex_id, false)
+            MultiplexId = multiplex_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -5908,7 +6387,7 @@ impl ListMultiplexProgramsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -6166,8 +6645,9 @@ impl ListOfferingsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/prod/offerings").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/prod/offerings").expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -6223,7 +6703,7 @@ impl ListOfferingsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -6458,8 +6938,9 @@ impl ListReservationsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/prod/reservations").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/prod/reservations").expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -6506,7 +6987,7 @@ impl ListReservationsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -6559,7 +7040,7 @@ pub mod list_tags_for_resource_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListTagsForResourceInput {
-                resource_arn: self.resource_arn.unwrap_or_default(),
+                resource_arn: self.resource_arn,
             })
         }
     }
@@ -6624,13 +7105,31 @@ impl ListTagsForResourceInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let resource_arn = {
+            let input = &self.resource_arn;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_arn",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_arn",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/prod/tags/{ResourceArn}",
-            ResourceArn = smithy_http::label::fmt_string(&self.resource_arn, false)
+            ResourceArn = resource_arn
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -6638,7 +7137,7 @@ impl ListTagsForResourceInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -6754,7 +7253,7 @@ pub mod purchase_offering_input {
             Ok(crate::input::PurchaseOfferingInput {
                 count: self.count.unwrap_or_default(),
                 name: self.name,
-                offering_id: self.offering_id.unwrap_or_default(),
+                offering_id: self.offering_id,
                 request_id: self.request_id,
                 start: self.start,
                 tags: self.tags,
@@ -6827,13 +7326,31 @@ impl PurchaseOfferingInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let offering_id = {
+            let input = &self.offering_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "offering_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "offering_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/prod/offerings/{OfferingId}/purchase",
-            OfferingId = smithy_http::label::fmt_string(&self.offering_id, false)
+            OfferingId = offering_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -6841,7 +7358,7 @@ impl PurchaseOfferingInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -6896,7 +7413,7 @@ pub mod reject_input_device_transfer_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::RejectInputDeviceTransferInput {
-                input_device_id: self.input_device_id.unwrap_or_default(),
+                input_device_id: self.input_device_id,
             })
         }
     }
@@ -6962,13 +7479,31 @@ impl RejectInputDeviceTransferInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let input_device_id = {
+            let input = &self.input_device_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "input_device_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "input_device_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/prod/inputDevices/{InputDeviceId}/reject",
-            InputDeviceId = smithy_http::label::fmt_string(&self.input_device_id, false)
+            InputDeviceId = input_device_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -6976,7 +7511,7 @@ impl RejectInputDeviceTransferInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -7026,7 +7561,7 @@ pub mod start_channel_input {
         ) -> std::result::Result<crate::input::StartChannelInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::StartChannelInput {
-                channel_id: self.channel_id.unwrap_or_default(),
+                channel_id: self.channel_id,
             })
         }
     }
@@ -7091,13 +7626,31 @@ impl StartChannelInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let channel_id = {
+            let input = &self.channel_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "channel_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "channel_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/prod/channels/{ChannelId}/start",
-            ChannelId = smithy_http::label::fmt_string(&self.channel_id, false)
+            ChannelId = channel_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -7105,7 +7658,7 @@ impl StartChannelInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -7157,7 +7710,7 @@ pub mod start_multiplex_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::StartMultiplexInput {
-                multiplex_id: self.multiplex_id.unwrap_or_default(),
+                multiplex_id: self.multiplex_id,
             })
         }
     }
@@ -7222,13 +7775,31 @@ impl StartMultiplexInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let multiplex_id = {
+            let input = &self.multiplex_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "multiplex_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "multiplex_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/prod/multiplexes/{MultiplexId}/start",
-            MultiplexId = smithy_http::label::fmt_string(&self.multiplex_id, false)
+            MultiplexId = multiplex_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -7236,7 +7807,7 @@ impl StartMultiplexInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -7286,7 +7857,7 @@ pub mod stop_channel_input {
         ) -> std::result::Result<crate::input::StopChannelInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::StopChannelInput {
-                channel_id: self.channel_id.unwrap_or_default(),
+                channel_id: self.channel_id,
             })
         }
     }
@@ -7351,13 +7922,31 @@ impl StopChannelInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let channel_id = {
+            let input = &self.channel_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "channel_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "channel_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/prod/channels/{ChannelId}/stop",
-            ChannelId = smithy_http::label::fmt_string(&self.channel_id, false)
+            ChannelId = channel_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -7365,7 +7954,7 @@ impl StopChannelInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -7415,7 +8004,7 @@ pub mod stop_multiplex_input {
         ) -> std::result::Result<crate::input::StopMultiplexInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::StopMultiplexInput {
-                multiplex_id: self.multiplex_id.unwrap_or_default(),
+                multiplex_id: self.multiplex_id,
             })
         }
     }
@@ -7480,13 +8069,31 @@ impl StopMultiplexInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let multiplex_id = {
+            let input = &self.multiplex_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "multiplex_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "multiplex_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/prod/multiplexes/{MultiplexId}/stop",
-            MultiplexId = smithy_http::label::fmt_string(&self.multiplex_id, false)
+            MultiplexId = multiplex_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -7494,7 +8101,7 @@ impl StopMultiplexInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -7588,7 +8195,7 @@ pub mod transfer_input_device_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::TransferInputDeviceInput {
-                input_device_id: self.input_device_id.unwrap_or_default(),
+                input_device_id: self.input_device_id,
                 target_customer_id: self.target_customer_id,
                 target_region: self.target_region,
                 transfer_message: self.transfer_message,
@@ -7659,13 +8266,31 @@ impl TransferInputDeviceInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let input_device_id = {
+            let input = &self.input_device_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "input_device_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "input_device_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/prod/inputDevices/{InputDeviceId}/transfer",
-            InputDeviceId = smithy_http::label::fmt_string(&self.input_device_id, false)
+            InputDeviceId = input_device_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -7673,7 +8298,7 @@ impl TransferInputDeviceInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -7830,7 +8455,7 @@ pub mod update_channel_input {
         {
             Ok(crate::input::UpdateChannelInput {
                 cdi_input_specification: self.cdi_input_specification,
-                channel_id: self.channel_id.unwrap_or_default(),
+                channel_id: self.channel_id,
                 destinations: self.destinations,
                 encoder_settings: self.encoder_settings,
                 input_attachments: self.input_attachments,
@@ -7905,13 +8530,27 @@ impl UpdateChannelInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/prod/channels/{ChannelId}",
-            ChannelId = smithy_http::label::fmt_string(&self.channel_id, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let channel_id = {
+            let input = &self.channel_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "channel_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "channel_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/prod/channels/{ChannelId}", ChannelId = channel_id)
+            .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -7919,7 +8558,7 @@ impl UpdateChannelInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PUT").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -8000,7 +8639,7 @@ pub mod update_channel_class_input {
         > {
             Ok(crate::input::UpdateChannelClassInput {
                 channel_class: self.channel_class,
-                channel_id: self.channel_id.unwrap_or_default(),
+                channel_id: self.channel_id,
                 destinations: self.destinations,
             })
         }
@@ -8069,13 +8708,31 @@ impl UpdateChannelClassInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let channel_id = {
+            let input = &self.channel_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "channel_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "channel_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/prod/channels/{ChannelId}/channelClass",
-            ChannelId = smithy_http::label::fmt_string(&self.channel_id, false)
+            ChannelId = channel_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -8083,7 +8740,7 @@ impl UpdateChannelClassInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PUT").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -8234,7 +8891,7 @@ pub mod update_input_input {
             Ok(crate::input::UpdateInputInput {
                 destinations: self.destinations,
                 input_devices: self.input_devices,
-                input_id: self.input_id.unwrap_or_default(),
+                input_id: self.input_id,
                 input_security_groups: self.input_security_groups,
                 media_connect_flows: self.media_connect_flows,
                 name: self.name,
@@ -8307,13 +8964,27 @@ impl UpdateInputInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/prod/inputs/{InputId}",
-            InputId = smithy_http::label::fmt_string(&self.input_id, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let input_id = {
+            let input = &self.input_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "input_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "input_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/prod/inputs/{InputId}", InputId = input_id)
+            .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -8321,7 +8992,7 @@ impl UpdateInputInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PUT").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -8421,7 +9092,7 @@ pub mod update_input_device_input {
         > {
             Ok(crate::input::UpdateInputDeviceInput {
                 hd_device_settings: self.hd_device_settings,
-                input_device_id: self.input_device_id.unwrap_or_default(),
+                input_device_id: self.input_device_id,
                 name: self.name,
                 uhd_device_settings: self.uhd_device_settings,
             })
@@ -8491,13 +9162,31 @@ impl UpdateInputDeviceInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let input_device_id = {
+            let input = &self.input_device_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "input_device_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "input_device_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/prod/inputDevices/{InputDeviceId}",
-            InputDeviceId = smithy_http::label::fmt_string(&self.input_device_id, false)
+            InputDeviceId = input_device_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -8505,7 +9194,7 @@ impl UpdateInputDeviceInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PUT").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -8600,7 +9289,7 @@ pub mod update_input_security_group_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateInputSecurityGroupInput {
-                input_security_group_id: self.input_security_group_id.unwrap_or_default(),
+                input_security_group_id: self.input_security_group_id,
                 tags: self.tags,
                 whitelist_rules: self.whitelist_rules,
             })
@@ -8671,14 +9360,31 @@ impl UpdateInputSecurityGroupInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let input_security_group_id = {
+            let input = &self.input_security_group_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "input_security_group_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "input_security_group_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/prod/inputSecurityGroups/{InputSecurityGroupId}",
-            InputSecurityGroupId =
-                smithy_http::label::fmt_string(&self.input_security_group_id, false)
+            InputSecurityGroupId = input_security_group_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -8686,7 +9392,7 @@ impl UpdateInputSecurityGroupInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PUT").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -8761,7 +9467,7 @@ pub mod update_multiplex_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateMultiplexInput {
-                multiplex_id: self.multiplex_id.unwrap_or_default(),
+                multiplex_id: self.multiplex_id,
                 multiplex_settings: self.multiplex_settings,
                 name: self.name,
             })
@@ -8830,13 +9536,31 @@ impl UpdateMultiplexInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let multiplex_id = {
+            let input = &self.multiplex_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "multiplex_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "multiplex_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/prod/multiplexes/{MultiplexId}",
-            MultiplexId = smithy_http::label::fmt_string(&self.multiplex_id, false)
+            MultiplexId = multiplex_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -8844,7 +9568,7 @@ impl UpdateMultiplexInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PUT").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -8923,9 +9647,9 @@ pub mod update_multiplex_program_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateMultiplexProgramInput {
-                multiplex_id: self.multiplex_id.unwrap_or_default(),
+                multiplex_id: self.multiplex_id,
                 multiplex_program_settings: self.multiplex_program_settings,
-                program_name: self.program_name.unwrap_or_default(),
+                program_name: self.program_name,
             })
         }
     }
@@ -8993,14 +9717,49 @@ impl UpdateMultiplexProgramInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let multiplex_id = {
+            let input = &self.multiplex_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "multiplex_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "multiplex_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let program_name = {
+            let input = &self.program_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "program_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "program_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/prod/multiplexes/{MultiplexId}/programs/{ProgramName}",
-            MultiplexId = smithy_http::label::fmt_string(&self.multiplex_id, false),
-            ProgramName = smithy_http::label::fmt_string(&self.program_name, false)
+            MultiplexId = multiplex_id,
+            ProgramName = program_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -9008,7 +9767,7 @@ impl UpdateMultiplexProgramInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PUT").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -9074,7 +9833,7 @@ pub mod update_reservation_input {
         > {
             Ok(crate::input::UpdateReservationInput {
                 name: self.name,
-                reservation_id: self.reservation_id.unwrap_or_default(),
+                reservation_id: self.reservation_id,
             })
         }
     }
@@ -9142,13 +9901,31 @@ impl UpdateReservationInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let reservation_id = {
+            let input = &self.reservation_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "reservation_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "reservation_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/prod/reservations/{ReservationId}",
-            ReservationId = smithy_http::label::fmt_string(&self.reservation_id, false)
+            ReservationId = reservation_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -9156,7 +9933,7 @@ impl UpdateReservationInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PUT").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -9189,7 +9966,7 @@ pub struct UpdateReservationInput {
     /// Name of the reservation
     pub name: std::option::Option<std::string::String>,
     /// Unique reservation ID, e.g. '1234567'
-    pub reservation_id: std::string::String,
+    pub reservation_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UpdateReservationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9205,11 +9982,11 @@ impl std::fmt::Debug for UpdateReservationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMultiplexProgramInput {
     /// The ID of the multiplex of the program to update.
-    pub multiplex_id: std::string::String,
+    pub multiplex_id: std::option::Option<std::string::String>,
     /// The new settings for a multiplex program.
     pub multiplex_program_settings: std::option::Option<crate::model::MultiplexProgramSettings>,
     /// The name of the program to update.
-    pub program_name: std::string::String,
+    pub program_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UpdateMultiplexProgramInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9229,7 +10006,7 @@ impl std::fmt::Debug for UpdateMultiplexProgramInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMultiplexInput {
     /// ID of the multiplex to update.
-    pub multiplex_id: std::string::String,
+    pub multiplex_id: std::option::Option<std::string::String>,
     /// The new settings for a multiplex.
     pub multiplex_settings: std::option::Option<crate::model::MultiplexSettings>,
     /// Name of the multiplex.
@@ -9250,7 +10027,7 @@ impl std::fmt::Debug for UpdateMultiplexInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateInputSecurityGroupInput {
     /// The id of the Input Security Group to update.
-    pub input_security_group_id: std::string::String,
+    pub input_security_group_id: std::option::Option<std::string::String>,
     /// A collection of key-value pairs.
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -9274,7 +10051,7 @@ pub struct UpdateInputDeviceInput {
     /// The settings that you want to apply to the HD input device.
     pub hd_device_settings: std::option::Option<crate::model::InputDeviceConfigurableSettings>,
     /// The unique ID of the input device. For example, hd-123456789abcdef.
-    pub input_device_id: std::string::String,
+    pub input_device_id: std::option::Option<std::string::String>,
     /// The name that you assigned to this input device (not the unique ID).
     pub name: std::option::Option<std::string::String>,
     /// The settings that you want to apply to the UHD input device.
@@ -9300,7 +10077,7 @@ pub struct UpdateInputInput {
     /// Settings for the devices.
     pub input_devices: std::option::Option<std::vec::Vec<crate::model::InputDeviceRequest>>,
     /// Unique ID of the input.
-    pub input_id: std::string::String,
+    pub input_id: std::option::Option<std::string::String>,
     /// A list of security groups referenced by IDs to attach to the input.
     pub input_security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// A list of the MediaConnect Flow ARNs that you want to use as the source of the input. You can specify as few as one
@@ -9339,7 +10116,7 @@ pub struct UpdateChannelClassInput {
     /// The channel class that you wish to update this channel to use.
     pub channel_class: std::option::Option<crate::model::ChannelClass>,
     /// Channel Id of the channel whose class should be updated.
-    pub channel_id: std::string::String,
+    pub channel_id: std::option::Option<std::string::String>,
     /// A list of output destinations for this channel.
     pub destinations: std::option::Option<std::vec::Vec<crate::model::OutputDestination>>,
 }
@@ -9360,7 +10137,7 @@ pub struct UpdateChannelInput {
     /// Specification of CDI inputs for this channel
     pub cdi_input_specification: std::option::Option<crate::model::CdiInputSpecification>,
     /// channel ID
-    pub channel_id: std::string::String,
+    pub channel_id: std::option::Option<std::string::String>,
     /// A list of output destinations for this channel.
     pub destinations: std::option::Option<std::vec::Vec<crate::model::OutputDestination>>,
     /// The encoder settings for this channel.
@@ -9397,7 +10174,7 @@ impl std::fmt::Debug for UpdateChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TransferInputDeviceInput {
     /// The unique ID of this input device. For example, hd-123456789abcdef.
-    pub input_device_id: std::string::String,
+    pub input_device_id: std::option::Option<std::string::String>,
     /// The AWS account ID (12 digits) for the recipient of the device transfer.
     pub target_customer_id: std::option::Option<std::string::String>,
     /// The target AWS region to transfer the device.
@@ -9421,7 +10198,7 @@ impl std::fmt::Debug for TransferInputDeviceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopMultiplexInput {
     /// The ID of the multiplex.
-    pub multiplex_id: std::string::String,
+    pub multiplex_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for StopMultiplexInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9436,7 +10213,7 @@ impl std::fmt::Debug for StopMultiplexInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopChannelInput {
     /// A request to stop a running channel
-    pub channel_id: std::string::String,
+    pub channel_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for StopChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9451,7 +10228,7 @@ impl std::fmt::Debug for StopChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartMultiplexInput {
     /// The ID of the multiplex.
-    pub multiplex_id: std::string::String,
+    pub multiplex_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for StartMultiplexInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9466,7 +10243,7 @@ impl std::fmt::Debug for StartMultiplexInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartChannelInput {
     /// A request to start a channel
-    pub channel_id: std::string::String,
+    pub channel_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for StartChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9481,7 +10258,7 @@ impl std::fmt::Debug for StartChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RejectInputDeviceTransferInput {
     /// The unique ID of the input device to reject. For example, hd-123456789abcdef.
-    pub input_device_id: std::string::String,
+    pub input_device_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for RejectInputDeviceTransferInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9500,7 +10277,7 @@ pub struct PurchaseOfferingInput {
     /// Name for the new reservation
     pub name: std::option::Option<std::string::String>,
     /// Offering to purchase, e.g. '87654321'
-    pub offering_id: std::string::String,
+    pub offering_id: std::option::Option<std::string::String>,
     /// Unique request ID to be specified. This is needed to prevent retries from creating multiple resources.
     pub request_id: std::option::Option<std::string::String>,
     /// Requested reservation start time (UTC) in ISO-8601 format. The specified time must be between the first day of the current month and one year from now. If no value is given, the default is now.
@@ -9527,7 +10304,7 @@ impl std::fmt::Debug for PurchaseOfferingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// Placeholder documentation for __string
-    pub resource_arn: std::string::String,
+    pub resource_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9634,7 +10411,7 @@ pub struct ListMultiplexProgramsInput {
     /// The maximum number of items to return.
     pub max_results: i32,
     /// The ID of the multiplex that the programs belong to.
-    pub multiplex_id: std::string::String,
+    pub multiplex_id: std::option::Option<std::string::String>,
     /// The token to retrieve the next page of results.
     pub next_token: std::option::Option<std::string::String>,
 }
@@ -9764,7 +10541,7 @@ impl std::fmt::Debug for ListChannelsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeScheduleInput {
     /// Id of the channel whose schedule is being updated.
-    pub channel_id: std::string::String,
+    pub channel_id: std::option::Option<std::string::String>,
     /// Placeholder documentation for MaxResults
     pub max_results: i32,
     /// Placeholder documentation for __string
@@ -9785,7 +10562,7 @@ impl std::fmt::Debug for DescribeScheduleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReservationInput {
     /// Unique reservation ID, e.g. '1234567'
-    pub reservation_id: std::string::String,
+    pub reservation_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeReservationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9800,7 +10577,7 @@ impl std::fmt::Debug for DescribeReservationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOfferingInput {
     /// Unique offering ID, e.g. '87654321'
-    pub offering_id: std::string::String,
+    pub offering_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeOfferingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9815,9 +10592,9 @@ impl std::fmt::Debug for DescribeOfferingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMultiplexProgramInput {
     /// The ID of the multiplex that the program belongs to.
-    pub multiplex_id: std::string::String,
+    pub multiplex_id: std::option::Option<std::string::String>,
     /// The name of the program.
-    pub program_name: std::string::String,
+    pub program_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeMultiplexProgramInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9833,7 +10610,7 @@ impl std::fmt::Debug for DescribeMultiplexProgramInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMultiplexInput {
     /// The ID of the multiplex.
-    pub multiplex_id: std::string::String,
+    pub multiplex_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeMultiplexInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9848,7 +10625,7 @@ impl std::fmt::Debug for DescribeMultiplexInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInputSecurityGroupInput {
     /// The id of the Input Security Group to describe
-    pub input_security_group_id: std::string::String,
+    pub input_security_group_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeInputSecurityGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9863,7 +10640,7 @@ impl std::fmt::Debug for DescribeInputSecurityGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInputDeviceThumbnailInput {
     /// The unique ID of this input device. For example, hd-123456789abcdef.
-    pub input_device_id: std::string::String,
+    pub input_device_id: std::option::Option<std::string::String>,
     /// The HTTP Accept header. Indicates the requested type for the thumbnail.
     pub accept: std::option::Option<crate::model::AcceptHeader>,
 }
@@ -9881,7 +10658,7 @@ impl std::fmt::Debug for DescribeInputDeviceThumbnailInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInputDeviceInput {
     /// The unique ID of this input device. For example, hd-123456789abcdef.
-    pub input_device_id: std::string::String,
+    pub input_device_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeInputDeviceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9896,7 +10673,7 @@ impl std::fmt::Debug for DescribeInputDeviceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInputInput {
     /// Unique ID of the input
-    pub input_id: std::string::String,
+    pub input_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeInputInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9911,7 +10688,7 @@ impl std::fmt::Debug for DescribeInputInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeChannelInput {
     /// channel ID
-    pub channel_id: std::string::String,
+    pub channel_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9926,7 +10703,7 @@ impl std::fmt::Debug for DescribeChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTagsInput {
     /// Placeholder documentation for __string
-    pub resource_arn: std::string::String,
+    pub resource_arn: std::option::Option<std::string::String>,
     /// An array of tag keys to delete
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
@@ -9944,7 +10721,7 @@ impl std::fmt::Debug for DeleteTagsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteScheduleInput {
     /// Id of the channel whose schedule is being deleted.
-    pub channel_id: std::string::String,
+    pub channel_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteScheduleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9959,7 +10736,7 @@ impl std::fmt::Debug for DeleteScheduleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteReservationInput {
     /// Unique reservation ID, e.g. '1234567'
-    pub reservation_id: std::string::String,
+    pub reservation_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteReservationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9974,9 +10751,9 @@ impl std::fmt::Debug for DeleteReservationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMultiplexProgramInput {
     /// The ID of the multiplex that the program belongs to.
-    pub multiplex_id: std::string::String,
+    pub multiplex_id: std::option::Option<std::string::String>,
     /// The multiplex program name.
-    pub program_name: std::string::String,
+    pub program_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteMultiplexProgramInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9992,7 +10769,7 @@ impl std::fmt::Debug for DeleteMultiplexProgramInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMultiplexInput {
     /// The ID of the multiplex.
-    pub multiplex_id: std::string::String,
+    pub multiplex_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteMultiplexInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10007,7 +10784,7 @@ impl std::fmt::Debug for DeleteMultiplexInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteInputSecurityGroupInput {
     /// The Input Security Group to delete
-    pub input_security_group_id: std::string::String,
+    pub input_security_group_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteInputSecurityGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10022,7 +10799,7 @@ impl std::fmt::Debug for DeleteInputSecurityGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteInputInput {
     /// Unique ID of the input
-    pub input_id: std::string::String,
+    pub input_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteInputInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10037,7 +10814,7 @@ impl std::fmt::Debug for DeleteInputInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteChannelInput {
     /// Unique ID of the channel.
-    pub channel_id: std::string::String,
+    pub channel_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10052,7 +10829,7 @@ impl std::fmt::Debug for DeleteChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTagsInput {
     /// Placeholder documentation for __string
-    pub resource_arn: std::string::String,
+    pub resource_arn: std::option::Option<std::string::String>,
     /// Placeholder documentation for Tags
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -10071,7 +10848,7 @@ impl std::fmt::Debug for CreateTagsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePartnerInputInput {
     /// Unique ID of the input.
-    pub input_id: std::string::String,
+    pub input_id: std::option::Option<std::string::String>,
     /// Unique identifier of the request to ensure the request is handled
     /// exactly once in case of retries.
     pub request_id: std::option::Option<std::string::String>,
@@ -10094,7 +10871,7 @@ impl std::fmt::Debug for CreatePartnerInputInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMultiplexProgramInput {
     /// ID of the multiplex where the program is to be created.
-    pub multiplex_id: std::string::String,
+    pub multiplex_id: std::option::Option<std::string::String>,
     /// The settings for this multiplex program.
     pub multiplex_program_settings: std::option::Option<crate::model::MultiplexProgramSettings>,
     /// Name of multiplex program.
@@ -10278,7 +11055,7 @@ impl std::fmt::Debug for CreateChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelInputDeviceTransferInput {
     /// The unique ID of the input device to cancel. For example, hd-123456789abcdef.
-    pub input_device_id: std::string::String,
+    pub input_device_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CancelInputDeviceTransferInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10293,7 +11070,7 @@ impl std::fmt::Debug for CancelInputDeviceTransferInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchUpdateScheduleInput {
     /// Id of the channel whose schedule is being updated.
-    pub channel_id: std::string::String,
+    pub channel_id: std::option::Option<std::string::String>,
     /// Schedule actions to create in the schedule.
     pub creates: std::option::Option<crate::model::BatchScheduleActionCreateRequest>,
     /// Schedule actions to delete from the schedule.
@@ -10374,7 +11151,7 @@ impl std::fmt::Debug for BatchDeleteInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcceptInputDeviceTransferInput {
     /// The unique ID of the input device to accept. For example, hd-123456789abcdef.
-    pub input_device_id: std::string::String,
+    pub input_device_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AcceptInputDeviceTransferInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

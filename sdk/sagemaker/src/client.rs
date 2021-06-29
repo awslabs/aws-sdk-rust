@@ -1605,7 +1605,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::CreateAutoMLJobOutput,
+            crate::output::CreateAutoMlJobOutput,
             smithy_http::result::SdkError<crate::error::CreateAutoMLJobError>,
         >
         where
@@ -1636,26 +1636,26 @@ pub mod fluent_builders {
         /// <p>An array of channel objects that describes the input data and its location. Each channel
         /// is a named input source. Similar to <code>InputDataConfig</code> supported by . Format(s) supported: CSV. Minimum
         /// of 500 rows.</p>
-        pub fn input_data_config(mut self, inp: impl Into<crate::model::AutoMLChannel>) -> Self {
+        pub fn input_data_config(mut self, inp: impl Into<crate::model::AutoMlChannel>) -> Self {
             self.inner = self.inner.input_data_config(inp);
             self
         }
         pub fn set_input_data_config(
             mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AutoMLChannel>>,
+            input: std::option::Option<std::vec::Vec<crate::model::AutoMlChannel>>,
         ) -> Self {
             self.inner = self.inner.set_input_data_config(input);
             self
         }
         /// <p>Provides information about encryption and the Amazon S3 output path needed to store
         /// artifacts from an AutoML job. Format(s) supported: CSV.</p>
-        pub fn output_data_config(mut self, input: crate::model::AutoMLOutputDataConfig) -> Self {
+        pub fn output_data_config(mut self, input: crate::model::AutoMlOutputDataConfig) -> Self {
             self.inner = self.inner.output_data_config(input);
             self
         }
         pub fn set_output_data_config(
             mut self,
-            input: std::option::Option<crate::model::AutoMLOutputDataConfig>,
+            input: std::option::Option<crate::model::AutoMlOutputDataConfig>,
         ) -> Self {
             self.inner = self.inner.set_output_data_config(input);
             self
@@ -1678,26 +1678,26 @@ pub mod fluent_builders {
         /// <p>Defines the objective metric used to measure the predictive quality of an AutoML job.
         /// You provide an <a>AutoMLJobObjective$MetricName</a> and Autopilot infers whether to
         /// minimize or maximize it.</p>
-        pub fn auto_ml_job_objective(mut self, input: crate::model::AutoMLJobObjective) -> Self {
+        pub fn auto_ml_job_objective(mut self, input: crate::model::AutoMlJobObjective) -> Self {
             self.inner = self.inner.auto_ml_job_objective(input);
             self
         }
         pub fn set_auto_ml_job_objective(
             mut self,
-            input: std::option::Option<crate::model::AutoMLJobObjective>,
+            input: std::option::Option<crate::model::AutoMlJobObjective>,
         ) -> Self {
             self.inner = self.inner.set_auto_ml_job_objective(input);
             self
         }
         /// <p>Contains <code>CompletionCriteria</code> and <code>SecurityConfig</code> settings for
         /// the AutoML job.</p>
-        pub fn auto_ml_job_config(mut self, input: crate::model::AutoMLJobConfig) -> Self {
+        pub fn auto_ml_job_config(mut self, input: crate::model::AutoMlJobConfig) -> Self {
             self.inner = self.inner.auto_ml_job_config(input);
             self
         }
         pub fn set_auto_ml_job_config(
             mut self,
-            input: std::option::Option<crate::model::AutoMLJobConfig>,
+            input: std::option::Option<crate::model::AutoMlJobConfig>,
         ) -> Self {
             self.inner = self.inner.set_auto_ml_job_config(input);
             self
@@ -9010,7 +9010,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::DescribeAutoMLJobOutput,
+            crate::output::DescribeAutoMlJobOutput,
             smithy_http::result::SdkError<crate::error::DescribeAutoMLJobError>,
         >
         where
@@ -11897,7 +11897,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::ListAutoMLJobsOutput,
+            crate::output::ListAutoMlJobsOutput,
             smithy_http::result::SdkError<crate::error::ListAutoMLJobsError>,
         >
         where
@@ -12044,7 +12044,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::ListCandidatesForAutoMLJobOutput,
+            crate::output::ListCandidatesForAutoMlJobOutput,
             smithy_http::result::SdkError<crate::error::ListCandidatesForAutoMLJobError>,
         >
         where
@@ -18391,7 +18391,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::StopAutoMLJobOutput,
+            crate::output::StopAutoMlJobOutput,
             smithy_http::result::SdkError<crate::error::StopAutoMLJobError>,
         >
         where

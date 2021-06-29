@@ -2,27 +2,27 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    ExpiredTokenError(crate::error::ExpiredTokenError),
-    IDPCommunicationErrorError(crate::error::IDPCommunicationErrorError),
-    IDPRejectedClaimError(crate::error::IDPRejectedClaimError),
-    InvalidAuthorizationMessageError(crate::error::InvalidAuthorizationMessageError),
-    InvalidIdentityTokenError(crate::error::InvalidIdentityTokenError),
-    MalformedPolicyDocumentError(crate::error::MalformedPolicyDocumentError),
-    PackedPolicyTooLargeError(crate::error::PackedPolicyTooLargeError),
-    RegionDisabledError(crate::error::RegionDisabledError),
+    ExpiredTokenException(crate::error::ExpiredTokenException),
+    IdpCommunicationErrorException(crate::error::IdpCommunicationErrorException),
+    IdpRejectedClaimException(crate::error::IdpRejectedClaimException),
+    InvalidAuthorizationMessageException(crate::error::InvalidAuthorizationMessageException),
+    InvalidIdentityTokenException(crate::error::InvalidIdentityTokenException),
+    MalformedPolicyDocumentException(crate::error::MalformedPolicyDocumentException),
+    PackedPolicyTooLargeException(crate::error::PackedPolicyTooLargeException),
+    RegionDisabledException(crate::error::RegionDisabledException),
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
-            Error::ExpiredTokenError(inner) => inner.fmt(f),
-            Error::IDPCommunicationErrorError(inner) => inner.fmt(f),
-            Error::IDPRejectedClaimError(inner) => inner.fmt(f),
-            Error::InvalidAuthorizationMessageError(inner) => inner.fmt(f),
-            Error::InvalidIdentityTokenError(inner) => inner.fmt(f),
-            Error::MalformedPolicyDocumentError(inner) => inner.fmt(f),
-            Error::PackedPolicyTooLargeError(inner) => inner.fmt(f),
-            Error::RegionDisabledError(inner) => inner.fmt(f),
+            Error::ExpiredTokenException(inner) => inner.fmt(f),
+            Error::IdpCommunicationErrorException(inner) => inner.fmt(f),
+            Error::IdpRejectedClaimException(inner) => inner.fmt(f),
+            Error::InvalidAuthorizationMessageException(inner) => inner.fmt(f),
+            Error::InvalidIdentityTokenException(inner) => inner.fmt(f),
+            Error::MalformedPolicyDocumentException(inner) => inner.fmt(f),
+            Error::PackedPolicyTooLargeException(inner) => inner.fmt(f),
+            Error::RegionDisabledException(inner) => inner.fmt(f),
             Error::Unhandled(inner) => inner.fmt(f),
         }
     }
@@ -31,17 +31,17 @@ impl From<smithy_http::result::SdkError<crate::error::AssumeRoleError>> for Erro
     fn from(err: smithy_http::result::SdkError<crate::error::AssumeRoleError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::AssumeRoleErrorKind::ExpiredTokenError(inner) => {
-                    Error::ExpiredTokenError(inner)
+                crate::error::AssumeRoleErrorKind::ExpiredTokenException(inner) => {
+                    Error::ExpiredTokenException(inner)
                 }
-                crate::error::AssumeRoleErrorKind::MalformedPolicyDocumentError(inner) => {
-                    Error::MalformedPolicyDocumentError(inner)
+                crate::error::AssumeRoleErrorKind::MalformedPolicyDocumentException(inner) => {
+                    Error::MalformedPolicyDocumentException(inner)
                 }
-                crate::error::AssumeRoleErrorKind::PackedPolicyTooLargeError(inner) => {
-                    Error::PackedPolicyTooLargeError(inner)
+                crate::error::AssumeRoleErrorKind::PackedPolicyTooLargeException(inner) => {
+                    Error::PackedPolicyTooLargeException(inner)
                 }
-                crate::error::AssumeRoleErrorKind::RegionDisabledError(inner) => {
-                    Error::RegionDisabledError(inner)
+                crate::error::AssumeRoleErrorKind::RegionDisabledException(inner) => {
+                    Error::RegionDisabledException(inner)
                 }
                 crate::error::AssumeRoleErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -53,23 +53,23 @@ impl From<smithy_http::result::SdkError<crate::error::AssumeRoleWithSAMLError>> 
     fn from(err: smithy_http::result::SdkError<crate::error::AssumeRoleWithSAMLError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::AssumeRoleWithSAMLErrorKind::ExpiredTokenError(inner) => {
-                    Error::ExpiredTokenError(inner)
+                crate::error::AssumeRoleWithSAMLErrorKind::ExpiredTokenException(inner) => {
+                    Error::ExpiredTokenException(inner)
                 }
-                crate::error::AssumeRoleWithSAMLErrorKind::IDPRejectedClaimError(inner) => {
-                    Error::IDPRejectedClaimError(inner)
+                crate::error::AssumeRoleWithSAMLErrorKind::IdpRejectedClaimException(inner) => {
+                    Error::IdpRejectedClaimException(inner)
                 }
-                crate::error::AssumeRoleWithSAMLErrorKind::InvalidIdentityTokenError(inner) => {
-                    Error::InvalidIdentityTokenError(inner)
+                crate::error::AssumeRoleWithSAMLErrorKind::InvalidIdentityTokenException(inner) => {
+                    Error::InvalidIdentityTokenException(inner)
                 }
-                crate::error::AssumeRoleWithSAMLErrorKind::MalformedPolicyDocumentError(inner) => {
-                    Error::MalformedPolicyDocumentError(inner)
+                crate::error::AssumeRoleWithSAMLErrorKind::MalformedPolicyDocumentException(
+                    inner,
+                ) => Error::MalformedPolicyDocumentException(inner),
+                crate::error::AssumeRoleWithSAMLErrorKind::PackedPolicyTooLargeException(inner) => {
+                    Error::PackedPolicyTooLargeException(inner)
                 }
-                crate::error::AssumeRoleWithSAMLErrorKind::PackedPolicyTooLargeError(inner) => {
-                    Error::PackedPolicyTooLargeError(inner)
-                }
-                crate::error::AssumeRoleWithSAMLErrorKind::RegionDisabledError(inner) => {
-                    Error::RegionDisabledError(inner)
+                crate::error::AssumeRoleWithSAMLErrorKind::RegionDisabledException(inner) => {
+                    Error::RegionDisabledException(inner)
                 }
                 crate::error::AssumeRoleWithSAMLErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -84,32 +84,16 @@ impl From<smithy_http::result::SdkError<crate::error::AssumeRoleWithWebIdentityE
         err: smithy_http::result::SdkError<crate::error::AssumeRoleWithWebIdentityError>,
     ) -> Self {
         match err {
-            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::AssumeRoleWithWebIdentityErrorKind::ExpiredTokenError(inner) => {
-                    Error::ExpiredTokenError(inner)
-                }
-                crate::error::AssumeRoleWithWebIdentityErrorKind::IDPCommunicationErrorError(
-                    inner,
-                ) => Error::IDPCommunicationErrorError(inner),
-                crate::error::AssumeRoleWithWebIdentityErrorKind::IDPRejectedClaimError(inner) => {
-                    Error::IDPRejectedClaimError(inner)
-                }
-                crate::error::AssumeRoleWithWebIdentityErrorKind::InvalidIdentityTokenError(
-                    inner,
-                ) => Error::InvalidIdentityTokenError(inner),
-                crate::error::AssumeRoleWithWebIdentityErrorKind::MalformedPolicyDocumentError(
-                    inner,
-                ) => Error::MalformedPolicyDocumentError(inner),
-                crate::error::AssumeRoleWithWebIdentityErrorKind::PackedPolicyTooLargeError(
-                    inner,
-                ) => Error::PackedPolicyTooLargeError(inner),
-                crate::error::AssumeRoleWithWebIdentityErrorKind::RegionDisabledError(inner) => {
-                    Error::RegionDisabledError(inner)
-                }
-                crate::error::AssumeRoleWithWebIdentityErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
+            smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::AssumeRoleWithWebIdentityErrorKind::ExpiredTokenException(inner) => Error::ExpiredTokenException(inner),
+                crate::error::AssumeRoleWithWebIdentityErrorKind::IdpCommunicationErrorException(inner) => Error::IdpCommunicationErrorException(inner),
+                crate::error::AssumeRoleWithWebIdentityErrorKind::IdpRejectedClaimException(inner) => Error::IdpRejectedClaimException(inner),
+                crate::error::AssumeRoleWithWebIdentityErrorKind::InvalidIdentityTokenException(inner) => Error::InvalidIdentityTokenException(inner),
+                crate::error::AssumeRoleWithWebIdentityErrorKind::MalformedPolicyDocumentException(inner) => Error::MalformedPolicyDocumentException(inner),
+                crate::error::AssumeRoleWithWebIdentityErrorKind::PackedPolicyTooLargeException(inner) => Error::PackedPolicyTooLargeException(inner),
+                crate::error::AssumeRoleWithWebIdentityErrorKind::RegionDisabledException(inner) => Error::RegionDisabledException(inner),
+                crate::error::AssumeRoleWithWebIdentityErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -120,7 +104,7 @@ impl From<smithy_http::result::SdkError<crate::error::DecodeAuthorizationMessage
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
-                crate::error::DecodeAuthorizationMessageErrorKind::InvalidAuthorizationMessageError(inner) => Error::InvalidAuthorizationMessageError(inner),
+                crate::error::DecodeAuthorizationMessageErrorKind::InvalidAuthorizationMessageException(inner) => Error::InvalidAuthorizationMessageException(inner),
                 crate::error::DecodeAuthorizationMessageErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
@@ -155,14 +139,14 @@ impl From<smithy_http::result::SdkError<crate::error::GetFederationTokenError>> 
     fn from(err: smithy_http::result::SdkError<crate::error::GetFederationTokenError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetFederationTokenErrorKind::MalformedPolicyDocumentError(inner) => {
-                    Error::MalformedPolicyDocumentError(inner)
+                crate::error::GetFederationTokenErrorKind::MalformedPolicyDocumentException(
+                    inner,
+                ) => Error::MalformedPolicyDocumentException(inner),
+                crate::error::GetFederationTokenErrorKind::PackedPolicyTooLargeException(inner) => {
+                    Error::PackedPolicyTooLargeException(inner)
                 }
-                crate::error::GetFederationTokenErrorKind::PackedPolicyTooLargeError(inner) => {
-                    Error::PackedPolicyTooLargeError(inner)
-                }
-                crate::error::GetFederationTokenErrorKind::RegionDisabledError(inner) => {
-                    Error::RegionDisabledError(inner)
+                crate::error::GetFederationTokenErrorKind::RegionDisabledException(inner) => {
+                    Error::RegionDisabledException(inner)
                 }
                 crate::error::GetFederationTokenErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -176,8 +160,8 @@ impl From<smithy_http::result::SdkError<crate::error::GetSessionTokenError>> for
     fn from(err: smithy_http::result::SdkError<crate::error::GetSessionTokenError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetSessionTokenErrorKind::RegionDisabledError(inner) => {
-                    Error::RegionDisabledError(inner)
+                crate::error::GetSessionTokenErrorKind::RegionDisabledException(inner) => {
+                    Error::RegionDisabledException(inner)
                 }
                 crate::error::GetSessionTokenErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },

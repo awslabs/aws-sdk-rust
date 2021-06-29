@@ -2,28 +2,28 @@
 /// <p>The destination phone number's verification status.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct VerifySMSSandboxPhoneNumberOutput {}
-impl std::fmt::Debug for VerifySMSSandboxPhoneNumberOutput {
+pub struct VerifySmsSandboxPhoneNumberOutput {}
+impl std::fmt::Debug for VerifySmsSandboxPhoneNumberOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VerifySMSSandboxPhoneNumberOutput");
+        let mut formatter = f.debug_struct("VerifySmsSandboxPhoneNumberOutput");
         formatter.finish()
     }
 }
-/// See [`VerifySMSSandboxPhoneNumberOutput`](crate::output::VerifySMSSandboxPhoneNumberOutput)
+/// See [`VerifySmsSandboxPhoneNumberOutput`](crate::output::VerifySmsSandboxPhoneNumberOutput)
 pub mod verify_sms_sandbox_phone_number_output {
-    /// A builder for [`VerifySMSSandboxPhoneNumberOutput`](crate::output::VerifySMSSandboxPhoneNumberOutput)
+    /// A builder for [`VerifySmsSandboxPhoneNumberOutput`](crate::output::VerifySmsSandboxPhoneNumberOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`VerifySMSSandboxPhoneNumberOutput`](crate::output::VerifySMSSandboxPhoneNumberOutput)
-        pub fn build(self) -> crate::output::VerifySMSSandboxPhoneNumberOutput {
-            crate::output::VerifySMSSandboxPhoneNumberOutput {}
+        /// Consumes the builder and constructs a [`VerifySmsSandboxPhoneNumberOutput`](crate::output::VerifySmsSandboxPhoneNumberOutput)
+        pub fn build(self) -> crate::output::VerifySmsSandboxPhoneNumberOutput {
+            crate::output::VerifySmsSandboxPhoneNumberOutput {}
         }
     }
 }
-impl VerifySMSSandboxPhoneNumberOutput {
-    /// Creates a new builder-style object to manufacture [`VerifySMSSandboxPhoneNumberOutput`](crate::output::VerifySMSSandboxPhoneNumberOutput)
+impl VerifySmsSandboxPhoneNumberOutput {
+    /// Creates a new builder-style object to manufacture [`VerifySmsSandboxPhoneNumberOutput`](crate::output::VerifySmsSandboxPhoneNumberOutput)
     pub fn builder() -> crate::output::verify_sms_sandbox_phone_number_output::Builder {
         crate::output::verify_sms_sandbox_phone_number_output::Builder::default()
     }
@@ -233,28 +233,28 @@ impl SetSubscriptionAttributesOutput {
 /// <p>The response for the SetSMSAttributes action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct SetSMSAttributesOutput {}
-impl std::fmt::Debug for SetSMSAttributesOutput {
+pub struct SetSmsAttributesOutput {}
+impl std::fmt::Debug for SetSmsAttributesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetSMSAttributesOutput");
+        let mut formatter = f.debug_struct("SetSmsAttributesOutput");
         formatter.finish()
     }
 }
-/// See [`SetSMSAttributesOutput`](crate::output::SetSMSAttributesOutput)
+/// See [`SetSmsAttributesOutput`](crate::output::SetSmsAttributesOutput)
 pub mod set_sms_attributes_output {
-    /// A builder for [`SetSMSAttributesOutput`](crate::output::SetSMSAttributesOutput)
+    /// A builder for [`SetSmsAttributesOutput`](crate::output::SetSmsAttributesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`SetSMSAttributesOutput`](crate::output::SetSMSAttributesOutput)
-        pub fn build(self) -> crate::output::SetSMSAttributesOutput {
-            crate::output::SetSMSAttributesOutput {}
+        /// Consumes the builder and constructs a [`SetSmsAttributesOutput`](crate::output::SetSmsAttributesOutput)
+        pub fn build(self) -> crate::output::SetSmsAttributesOutput {
+            crate::output::SetSmsAttributesOutput {}
         }
     }
 }
-impl SetSMSAttributesOutput {
-    /// Creates a new builder-style object to manufacture [`SetSMSAttributesOutput`](crate::output::SetSMSAttributesOutput)
+impl SetSmsAttributesOutput {
+    /// Creates a new builder-style object to manufacture [`SetSmsAttributesOutput`](crate::output::SetSmsAttributesOutput)
     pub fn builder() -> crate::output::set_sms_attributes_output::Builder {
         crate::output::set_sms_attributes_output::Builder::default()
     }
@@ -702,36 +702,36 @@ impl ListSubscriptionsOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListSMSSandboxPhoneNumbersOutput {
+pub struct ListSmsSandboxPhoneNumbersOutput {
     /// <p>A list of the calling account's pending and verified phone numbers.</p>
-    pub phone_numbers: std::option::Option<std::vec::Vec<crate::model::SMSSandboxPhoneNumber>>,
+    pub phone_numbers: std::option::Option<std::vec::Vec<crate::model::SmsSandboxPhoneNumber>>,
     /// <p>A <code>NextToken</code> string is returned when you call the
     /// <code>ListSMSSandboxPhoneNumbersInput</code> operation if additional pages of
     /// records are available.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ListSMSSandboxPhoneNumbersOutput {
+impl std::fmt::Debug for ListSmsSandboxPhoneNumbersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSMSSandboxPhoneNumbersOutput");
+        let mut formatter = f.debug_struct("ListSmsSandboxPhoneNumbersOutput");
         formatter.field("phone_numbers", &self.phone_numbers);
         formatter.field("next_token", &self.next_token);
         formatter.finish()
     }
 }
-/// See [`ListSMSSandboxPhoneNumbersOutput`](crate::output::ListSMSSandboxPhoneNumbersOutput)
+/// See [`ListSmsSandboxPhoneNumbersOutput`](crate::output::ListSmsSandboxPhoneNumbersOutput)
 pub mod list_sms_sandbox_phone_numbers_output {
-    /// A builder for [`ListSMSSandboxPhoneNumbersOutput`](crate::output::ListSMSSandboxPhoneNumbersOutput)
+    /// A builder for [`ListSmsSandboxPhoneNumbersOutput`](crate::output::ListSmsSandboxPhoneNumbersOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) phone_numbers:
-            std::option::Option<std::vec::Vec<crate::model::SMSSandboxPhoneNumber>>,
+            std::option::Option<std::vec::Vec<crate::model::SmsSandboxPhoneNumber>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn phone_numbers(
             mut self,
-            input: impl Into<crate::model::SMSSandboxPhoneNumber>,
+            input: impl Into<crate::model::SmsSandboxPhoneNumber>,
         ) -> Self {
             let mut v = self.phone_numbers.unwrap_or_default();
             v.push(input.into());
@@ -740,7 +740,7 @@ pub mod list_sms_sandbox_phone_numbers_output {
         }
         pub fn set_phone_numbers(
             mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SMSSandboxPhoneNumber>>,
+            input: std::option::Option<std::vec::Vec<crate::model::SmsSandboxPhoneNumber>>,
         ) -> Self {
             self.phone_numbers = input;
             self
@@ -756,17 +756,17 @@ pub mod list_sms_sandbox_phone_numbers_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListSMSSandboxPhoneNumbersOutput`](crate::output::ListSMSSandboxPhoneNumbersOutput)
-        pub fn build(self) -> crate::output::ListSMSSandboxPhoneNumbersOutput {
-            crate::output::ListSMSSandboxPhoneNumbersOutput {
+        /// Consumes the builder and constructs a [`ListSmsSandboxPhoneNumbersOutput`](crate::output::ListSmsSandboxPhoneNumbersOutput)
+        pub fn build(self) -> crate::output::ListSmsSandboxPhoneNumbersOutput {
+            crate::output::ListSmsSandboxPhoneNumbersOutput {
                 phone_numbers: self.phone_numbers,
                 next_token: self.next_token,
             }
         }
     }
 }
-impl ListSMSSandboxPhoneNumbersOutput {
-    /// Creates a new builder-style object to manufacture [`ListSMSSandboxPhoneNumbersOutput`](crate::output::ListSMSSandboxPhoneNumbersOutput)
+impl ListSmsSandboxPhoneNumbersOutput {
+    /// Creates a new builder-style object to manufacture [`ListSmsSandboxPhoneNumbersOutput`](crate::output::ListSmsSandboxPhoneNumbersOutput)
     pub fn builder() -> crate::output::list_sms_sandbox_phone_numbers_output::Builder {
         crate::output::list_sms_sandbox_phone_numbers_output::Builder::default()
     }
@@ -1336,20 +1336,20 @@ impl GetSubscriptionAttributesOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetSMSSandboxAccountStatusOutput {
+pub struct GetSmsSandboxAccountStatusOutput {
     /// <p>Indicates whether the calling account is in the SMS sandbox.</p>
     pub is_in_sandbox: bool,
 }
-impl std::fmt::Debug for GetSMSSandboxAccountStatusOutput {
+impl std::fmt::Debug for GetSmsSandboxAccountStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSMSSandboxAccountStatusOutput");
+        let mut formatter = f.debug_struct("GetSmsSandboxAccountStatusOutput");
         formatter.field("is_in_sandbox", &self.is_in_sandbox);
         formatter.finish()
     }
 }
-/// See [`GetSMSSandboxAccountStatusOutput`](crate::output::GetSMSSandboxAccountStatusOutput)
+/// See [`GetSmsSandboxAccountStatusOutput`](crate::output::GetSmsSandboxAccountStatusOutput)
 pub mod get_sms_sandbox_account_status_output {
-    /// A builder for [`GetSMSSandboxAccountStatusOutput`](crate::output::GetSMSSandboxAccountStatusOutput)
+    /// A builder for [`GetSmsSandboxAccountStatusOutput`](crate::output::GetSmsSandboxAccountStatusOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -1365,16 +1365,16 @@ pub mod get_sms_sandbox_account_status_output {
             self.is_in_sandbox = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetSMSSandboxAccountStatusOutput`](crate::output::GetSMSSandboxAccountStatusOutput)
-        pub fn build(self) -> crate::output::GetSMSSandboxAccountStatusOutput {
-            crate::output::GetSMSSandboxAccountStatusOutput {
+        /// Consumes the builder and constructs a [`GetSmsSandboxAccountStatusOutput`](crate::output::GetSmsSandboxAccountStatusOutput)
+        pub fn build(self) -> crate::output::GetSmsSandboxAccountStatusOutput {
+            crate::output::GetSmsSandboxAccountStatusOutput {
                 is_in_sandbox: self.is_in_sandbox.unwrap_or_default(),
             }
         }
     }
 }
-impl GetSMSSandboxAccountStatusOutput {
-    /// Creates a new builder-style object to manufacture [`GetSMSSandboxAccountStatusOutput`](crate::output::GetSMSSandboxAccountStatusOutput)
+impl GetSmsSandboxAccountStatusOutput {
+    /// Creates a new builder-style object to manufacture [`GetSmsSandboxAccountStatusOutput`](crate::output::GetSmsSandboxAccountStatusOutput)
     pub fn builder() -> crate::output::get_sms_sandbox_account_status_output::Builder {
         crate::output::get_sms_sandbox_account_status_output::Builder::default()
     }
@@ -1383,21 +1383,21 @@ impl GetSMSSandboxAccountStatusOutput {
 /// <p>The response from the <code>GetSMSAttributes</code> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetSMSAttributesOutput {
+pub struct GetSmsAttributesOutput {
     /// <p>The SMS attribute names and their values.</p>
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
-impl std::fmt::Debug for GetSMSAttributesOutput {
+impl std::fmt::Debug for GetSmsAttributesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSMSAttributesOutput");
+        let mut formatter = f.debug_struct("GetSmsAttributesOutput");
         formatter.field("attributes", &self.attributes);
         formatter.finish()
     }
 }
-/// See [`GetSMSAttributesOutput`](crate::output::GetSMSAttributesOutput)
+/// See [`GetSmsAttributesOutput`](crate::output::GetSmsAttributesOutput)
 pub mod get_sms_attributes_output {
-    /// A builder for [`GetSMSAttributesOutput`](crate::output::GetSMSAttributesOutput)
+    /// A builder for [`GetSmsAttributesOutput`](crate::output::GetSmsAttributesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -1425,16 +1425,16 @@ pub mod get_sms_attributes_output {
             self.attributes = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetSMSAttributesOutput`](crate::output::GetSMSAttributesOutput)
-        pub fn build(self) -> crate::output::GetSMSAttributesOutput {
-            crate::output::GetSMSAttributesOutput {
+        /// Consumes the builder and constructs a [`GetSmsAttributesOutput`](crate::output::GetSmsAttributesOutput)
+        pub fn build(self) -> crate::output::GetSmsAttributesOutput {
+            crate::output::GetSmsAttributesOutput {
                 attributes: self.attributes,
             }
         }
     }
 }
-impl GetSMSAttributesOutput {
-    /// Creates a new builder-style object to manufacture [`GetSMSAttributesOutput`](crate::output::GetSMSAttributesOutput)
+impl GetSmsAttributesOutput {
+    /// Creates a new builder-style object to manufacture [`GetSmsAttributesOutput`](crate::output::GetSmsAttributesOutput)
     pub fn builder() -> crate::output::get_sms_attributes_output::Builder {
         crate::output::get_sms_attributes_output::Builder::default()
     }
@@ -1639,28 +1639,28 @@ impl DeleteTopicOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteSMSSandboxPhoneNumberOutput {}
-impl std::fmt::Debug for DeleteSMSSandboxPhoneNumberOutput {
+pub struct DeleteSmsSandboxPhoneNumberOutput {}
+impl std::fmt::Debug for DeleteSmsSandboxPhoneNumberOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSMSSandboxPhoneNumberOutput");
+        let mut formatter = f.debug_struct("DeleteSmsSandboxPhoneNumberOutput");
         formatter.finish()
     }
 }
-/// See [`DeleteSMSSandboxPhoneNumberOutput`](crate::output::DeleteSMSSandboxPhoneNumberOutput)
+/// See [`DeleteSmsSandboxPhoneNumberOutput`](crate::output::DeleteSmsSandboxPhoneNumberOutput)
 pub mod delete_sms_sandbox_phone_number_output {
-    /// A builder for [`DeleteSMSSandboxPhoneNumberOutput`](crate::output::DeleteSMSSandboxPhoneNumberOutput)
+    /// A builder for [`DeleteSmsSandboxPhoneNumberOutput`](crate::output::DeleteSmsSandboxPhoneNumberOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteSMSSandboxPhoneNumberOutput`](crate::output::DeleteSMSSandboxPhoneNumberOutput)
-        pub fn build(self) -> crate::output::DeleteSMSSandboxPhoneNumberOutput {
-            crate::output::DeleteSMSSandboxPhoneNumberOutput {}
+        /// Consumes the builder and constructs a [`DeleteSmsSandboxPhoneNumberOutput`](crate::output::DeleteSmsSandboxPhoneNumberOutput)
+        pub fn build(self) -> crate::output::DeleteSmsSandboxPhoneNumberOutput {
+            crate::output::DeleteSmsSandboxPhoneNumberOutput {}
         }
     }
 }
-impl DeleteSMSSandboxPhoneNumberOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteSMSSandboxPhoneNumberOutput`](crate::output::DeleteSMSSandboxPhoneNumberOutput)
+impl DeleteSmsSandboxPhoneNumberOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteSmsSandboxPhoneNumberOutput`](crate::output::DeleteSmsSandboxPhoneNumberOutput)
     pub fn builder() -> crate::output::delete_sms_sandbox_phone_number_output::Builder {
         crate::output::delete_sms_sandbox_phone_number_output::Builder::default()
     }
@@ -1773,28 +1773,28 @@ impl CreateTopicOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateSMSSandboxPhoneNumberOutput {}
-impl std::fmt::Debug for CreateSMSSandboxPhoneNumberOutput {
+pub struct CreateSmsSandboxPhoneNumberOutput {}
+impl std::fmt::Debug for CreateSmsSandboxPhoneNumberOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateSMSSandboxPhoneNumberOutput");
+        let mut formatter = f.debug_struct("CreateSmsSandboxPhoneNumberOutput");
         formatter.finish()
     }
 }
-/// See [`CreateSMSSandboxPhoneNumberOutput`](crate::output::CreateSMSSandboxPhoneNumberOutput)
+/// See [`CreateSmsSandboxPhoneNumberOutput`](crate::output::CreateSmsSandboxPhoneNumberOutput)
 pub mod create_sms_sandbox_phone_number_output {
-    /// A builder for [`CreateSMSSandboxPhoneNumberOutput`](crate::output::CreateSMSSandboxPhoneNumberOutput)
+    /// A builder for [`CreateSmsSandboxPhoneNumberOutput`](crate::output::CreateSmsSandboxPhoneNumberOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`CreateSMSSandboxPhoneNumberOutput`](crate::output::CreateSMSSandboxPhoneNumberOutput)
-        pub fn build(self) -> crate::output::CreateSMSSandboxPhoneNumberOutput {
-            crate::output::CreateSMSSandboxPhoneNumberOutput {}
+        /// Consumes the builder and constructs a [`CreateSmsSandboxPhoneNumberOutput`](crate::output::CreateSmsSandboxPhoneNumberOutput)
+        pub fn build(self) -> crate::output::CreateSmsSandboxPhoneNumberOutput {
+            crate::output::CreateSmsSandboxPhoneNumberOutput {}
         }
     }
 }
-impl CreateSMSSandboxPhoneNumberOutput {
-    /// Creates a new builder-style object to manufacture [`CreateSMSSandboxPhoneNumberOutput`](crate::output::CreateSMSSandboxPhoneNumberOutput)
+impl CreateSmsSandboxPhoneNumberOutput {
+    /// Creates a new builder-style object to manufacture [`CreateSmsSandboxPhoneNumberOutput`](crate::output::CreateSmsSandboxPhoneNumberOutput)
     pub fn builder() -> crate::output::create_sms_sandbox_phone_number_output::Builder {
         crate::output::create_sms_sandbox_phone_number_output::Builder::default()
     }

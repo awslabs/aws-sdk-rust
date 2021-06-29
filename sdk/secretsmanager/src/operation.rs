@@ -60,68 +60,6 @@ impl CancelRotateSecret {
     pub fn builder() -> crate::input::cancel_rotate_secret_input::Builder {
         crate::input::cancel_rotate_secret_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::CancelRotateSecretOutput,
-        crate::error::CancelRotateSecretError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::CancelRotateSecretError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "InternalServiceError" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CancelRotateSecretError {
-                        kind: crate::error::CancelRotateSecretErrorKind::InternalServiceError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CancelRotateSecretError::unhandled(e),
-                },
-                "InvalidParameterException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CancelRotateSecretError {
-                        kind: crate::error::CancelRotateSecretErrorKind::InvalidParameterError(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CancelRotateSecretError::unhandled(e),
-                },
-                "InvalidRequestException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CancelRotateSecretError {
-                        kind: crate::error::CancelRotateSecretErrorKind::InvalidRequestError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CancelRotateSecretError::unhandled(e),
-                },
-                "ResourceNotFoundException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CancelRotateSecretError {
-                        kind: crate::error::CancelRotateSecretErrorKind::ResourceNotFoundError(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CancelRotateSecretError::unhandled(e),
-                },
-                _ => crate::error::CancelRotateSecretError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::cancel_rotate_secret_output::Builder::default();
-        builder = crate::json_deser::cancel_rotate_secret_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::CancelRotateSecretError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -132,7 +70,11 @@ impl smithy_http::response::ParseStrictResponse for CancelRotateSecret {
         crate::error::CancelRotateSecretError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_cancel_rotate_secret_error(response)
+        } else {
+            crate::operation_deser::parse_cancel_rotate_secret_response(response)
+        }
     }
 }
 
@@ -233,97 +175,6 @@ impl CreateSecret {
     pub fn builder() -> crate::input::create_secret_input::Builder {
         crate::input::create_secret_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::CreateSecretOutput, crate::error::CreateSecretError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::CreateSecretError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "EncryptionFailure" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateSecretError {
-                        kind: crate::error::CreateSecretErrorKind::EncryptionFailure(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateSecretError::unhandled(e),
-                },
-                "InternalServiceError" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateSecretError {
-                        kind: crate::error::CreateSecretErrorKind::InternalServiceError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateSecretError::unhandled(e),
-                },
-                "InvalidParameterException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateSecretError {
-                        kind: crate::error::CreateSecretErrorKind::InvalidParameterError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateSecretError::unhandled(e),
-                },
-                "InvalidRequestException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateSecretError {
-                        kind: crate::error::CreateSecretErrorKind::InvalidRequestError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateSecretError::unhandled(e),
-                },
-                "LimitExceededException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateSecretError {
-                        kind: crate::error::CreateSecretErrorKind::LimitExceededError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateSecretError::unhandled(e),
-                },
-                "MalformedPolicyDocumentException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateSecretError {
-                        kind: crate::error::CreateSecretErrorKind::MalformedPolicyDocumentError(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateSecretError::unhandled(e),
-                },
-                "PreconditionNotMetException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateSecretError {
-                        kind: crate::error::CreateSecretErrorKind::PreconditionNotMetError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateSecretError::unhandled(e),
-                },
-                "ResourceExistsException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateSecretError {
-                        kind: crate::error::CreateSecretErrorKind::ResourceExistsError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateSecretError::unhandled(e),
-                },
-                "ResourceNotFoundException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateSecretError {
-                        kind: crate::error::CreateSecretErrorKind::ResourceNotFoundError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateSecretError::unhandled(e),
-                },
-                _ => crate::error::CreateSecretError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::create_secret_output::Builder::default();
-        builder =
-            crate::json_deser::create_secret_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::CreateSecretError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -332,7 +183,11 @@ impl smithy_http::response::ParseStrictResponse for CreateSecret {
     type Output =
         std::result::Result<crate::output::CreateSecretOutput, crate::error::CreateSecretError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_secret_error(response)
+        } else {
+            crate::operation_deser::parse_create_secret_response(response)
+        }
     }
 }
 
@@ -369,72 +224,6 @@ impl DeleteResourcePolicy {
     pub fn builder() -> crate::input::delete_resource_policy_input::Builder {
         crate::input::delete_resource_policy_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DeleteResourcePolicyOutput,
-        crate::error::DeleteResourcePolicyError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::DeleteResourcePolicyError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "InternalServiceError" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DeleteResourcePolicyError {
-                        kind: crate::error::DeleteResourcePolicyErrorKind::InternalServiceError(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DeleteResourcePolicyError::unhandled(e),
-                },
-                "InvalidParameterException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DeleteResourcePolicyError {
-                        kind: crate::error::DeleteResourcePolicyErrorKind::InvalidParameterError(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DeleteResourcePolicyError::unhandled(e),
-                },
-                "InvalidRequestException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DeleteResourcePolicyError {
-                        kind: crate::error::DeleteResourcePolicyErrorKind::InvalidRequestError(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DeleteResourcePolicyError::unhandled(e),
-                },
-                "ResourceNotFoundException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DeleteResourcePolicyError {
-                        kind: crate::error::DeleteResourcePolicyErrorKind::ResourceNotFoundError(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DeleteResourcePolicyError::unhandled(e),
-                },
-                _ => crate::error::DeleteResourcePolicyError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::delete_resource_policy_output::Builder::default();
-        builder = crate::json_deser::delete_resource_policy_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::DeleteResourcePolicyError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -445,7 +234,11 @@ impl smithy_http::response::ParseStrictResponse for DeleteResourcePolicy {
         crate::error::DeleteResourcePolicyError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_resource_policy_error(response)
+        } else {
+            crate::operation_deser::parse_delete_resource_policy_response(response)
+        }
     }
 }
 
@@ -504,60 +297,6 @@ impl DeleteSecret {
     pub fn builder() -> crate::input::delete_secret_input::Builder {
         crate::input::delete_secret_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::DeleteSecretOutput, crate::error::DeleteSecretError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::DeleteSecretError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "InternalServiceError" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DeleteSecretError {
-                        kind: crate::error::DeleteSecretErrorKind::InternalServiceError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DeleteSecretError::unhandled(e),
-                },
-                "InvalidParameterException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DeleteSecretError {
-                        kind: crate::error::DeleteSecretErrorKind::InvalidParameterError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DeleteSecretError::unhandled(e),
-                },
-                "InvalidRequestException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DeleteSecretError {
-                        kind: crate::error::DeleteSecretErrorKind::InvalidRequestError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DeleteSecretError::unhandled(e),
-                },
-                "ResourceNotFoundException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DeleteSecretError {
-                        kind: crate::error::DeleteSecretErrorKind::ResourceNotFoundError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DeleteSecretError::unhandled(e),
-                },
-                _ => crate::error::DeleteSecretError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::delete_secret_output::Builder::default();
-        builder =
-            crate::json_deser::delete_secret_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::DeleteSecretError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -566,7 +305,11 @@ impl smithy_http::response::ParseStrictResponse for DeleteSecret {
     type Output =
         std::result::Result<crate::output::DeleteSecretOutput, crate::error::DeleteSecretError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_secret_error(response)
+        } else {
+            crate::operation_deser::parse_delete_secret_response(response)
+        }
     }
 }
 
@@ -607,46 +350,6 @@ impl DescribeSecret {
     pub fn builder() -> crate::input::describe_secret_input::Builder {
         crate::input::describe_secret_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::DescribeSecretOutput, crate::error::DescribeSecretError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::DescribeSecretError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "InternalServiceError" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DescribeSecretError {
-                        kind: crate::error::DescribeSecretErrorKind::InternalServiceError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DescribeSecretError::unhandled(e),
-                },
-                "ResourceNotFoundException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DescribeSecretError {
-                        kind: crate::error::DescribeSecretErrorKind::ResourceNotFoundError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DescribeSecretError::unhandled(e),
-                },
-                _ => crate::error::DescribeSecretError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::describe_secret_output::Builder::default();
-        builder =
-            crate::json_deser::describe_secret_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::DescribeSecretError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -655,7 +358,11 @@ impl smithy_http::response::ParseStrictResponse for DescribeSecret {
     type Output =
         std::result::Result<crate::output::DescribeSecretOutput, crate::error::DescribeSecretError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_secret_error(response)
+        } else {
+            crate::operation_deser::parse_describe_secret_response(response)
+        }
     }
 }
 
@@ -681,57 +388,6 @@ impl GetRandomPassword {
     pub fn builder() -> crate::input::get_random_password_input::Builder {
         crate::input::get_random_password_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::GetRandomPasswordOutput,
-        crate::error::GetRandomPasswordError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::GetRandomPasswordError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "InternalServiceError" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::GetRandomPasswordError {
-                        kind: crate::error::GetRandomPasswordErrorKind::InternalServiceError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::GetRandomPasswordError::unhandled(e),
-                },
-                "InvalidParameterException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::GetRandomPasswordError {
-                        kind: crate::error::GetRandomPasswordErrorKind::InvalidParameterError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::GetRandomPasswordError::unhandled(e),
-                },
-                "InvalidRequestException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::GetRandomPasswordError {
-                        kind: crate::error::GetRandomPasswordErrorKind::InvalidRequestError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::GetRandomPasswordError::unhandled(e),
-                },
-                _ => crate::error::GetRandomPasswordError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::get_random_password_output::Builder::default();
-        builder = crate::json_deser::get_random_password_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::GetRandomPasswordError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -742,7 +398,11 @@ impl smithy_http::response::ParseStrictResponse for GetRandomPassword {
         crate::error::GetRandomPasswordError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_random_password_error(response)
+        } else {
+            crate::operation_deser::parse_get_random_password_response(response)
+        }
     }
 }
 
@@ -782,57 +442,6 @@ impl GetResourcePolicy {
     pub fn builder() -> crate::input::get_resource_policy_input::Builder {
         crate::input::get_resource_policy_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::GetResourcePolicyOutput,
-        crate::error::GetResourcePolicyError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::GetResourcePolicyError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "InternalServiceError" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::GetResourcePolicyError {
-                        kind: crate::error::GetResourcePolicyErrorKind::InternalServiceError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::GetResourcePolicyError::unhandled(e),
-                },
-                "InvalidRequestException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::GetResourcePolicyError {
-                        kind: crate::error::GetResourcePolicyErrorKind::InvalidRequestError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::GetResourcePolicyError::unhandled(e),
-                },
-                "ResourceNotFoundException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::GetResourcePolicyError {
-                        kind: crate::error::GetResourcePolicyErrorKind::ResourceNotFoundError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::GetResourcePolicyError::unhandled(e),
-                },
-                _ => crate::error::GetResourcePolicyError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::get_resource_policy_output::Builder::default();
-        builder = crate::json_deser::get_resource_policy_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::GetResourcePolicyError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -843,7 +452,11 @@ impl smithy_http::response::ParseStrictResponse for GetResourcePolicy {
         crate::error::GetResourcePolicyError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_resource_policy_error(response)
+        } else {
+            crate::operation_deser::parse_get_resource_policy_response(response)
+        }
     }
 }
 
@@ -884,67 +497,6 @@ impl GetSecretValue {
     pub fn builder() -> crate::input::get_secret_value_input::Builder {
         crate::input::get_secret_value_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::GetSecretValueOutput, crate::error::GetSecretValueError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::GetSecretValueError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "DecryptionFailure" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::GetSecretValueError {
-                        kind: crate::error::GetSecretValueErrorKind::DecryptionFailure(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::GetSecretValueError::unhandled(e),
-                },
-                "InternalServiceError" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::GetSecretValueError {
-                        kind: crate::error::GetSecretValueErrorKind::InternalServiceError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::GetSecretValueError::unhandled(e),
-                },
-                "InvalidParameterException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::GetSecretValueError {
-                        kind: crate::error::GetSecretValueErrorKind::InvalidParameterError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::GetSecretValueError::unhandled(e),
-                },
-                "InvalidRequestException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::GetSecretValueError {
-                        kind: crate::error::GetSecretValueErrorKind::InvalidRequestError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::GetSecretValueError::unhandled(e),
-                },
-                "ResourceNotFoundException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::GetSecretValueError {
-                        kind: crate::error::GetSecretValueErrorKind::ResourceNotFoundError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::GetSecretValueError::unhandled(e),
-                },
-                _ => crate::error::GetSecretValueError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::get_secret_value_output::Builder::default();
-        builder =
-            crate::json_deser::get_secret_value_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::GetSecretValueError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -953,7 +505,11 @@ impl smithy_http::response::ParseStrictResponse for GetSecretValue {
     type Output =
         std::result::Result<crate::output::GetSecretValueOutput, crate::error::GetSecretValueError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_secret_value_error(response)
+        } else {
+            crate::operation_deser::parse_get_secret_value_response(response)
+        }
     }
 }
 
@@ -996,52 +552,6 @@ impl ListSecrets {
     pub fn builder() -> crate::input::list_secrets_input::Builder {
         crate::input::list_secrets_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::ListSecretsOutput, crate::error::ListSecretsError> {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::ListSecretsError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "InternalServiceError" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::ListSecretsError {
-                        kind: crate::error::ListSecretsErrorKind::InternalServiceError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::ListSecretsError::unhandled(e),
-                },
-                "InvalidNextTokenException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::ListSecretsError {
-                        kind: crate::error::ListSecretsErrorKind::InvalidNextTokenError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::ListSecretsError::unhandled(e),
-                },
-                "InvalidParameterException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::ListSecretsError {
-                        kind: crate::error::ListSecretsErrorKind::InvalidParameterError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::ListSecretsError::unhandled(e),
-                },
-                _ => crate::error::ListSecretsError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::list_secrets_output::Builder::default();
-        builder =
-            crate::json_deser::list_secrets_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::ListSecretsError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -1050,7 +560,11 @@ impl smithy_http::response::ParseStrictResponse for ListSecrets {
     type Output =
         std::result::Result<crate::output::ListSecretsOutput, crate::error::ListSecretsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_secrets_error(response)
+        } else {
+            crate::operation_deser::parse_list_secrets_response(response)
+        }
     }
 }
 
@@ -1092,63 +606,6 @@ impl ListSecretVersionIds {
     pub fn builder() -> crate::input::list_secret_version_ids_input::Builder {
         crate::input::list_secret_version_ids_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::ListSecretVersionIdsOutput,
-        crate::error::ListSecretVersionIdsError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::ListSecretVersionIdsError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "InternalServiceError" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::ListSecretVersionIdsError {
-                        kind: crate::error::ListSecretVersionIdsErrorKind::InternalServiceError(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::ListSecretVersionIdsError::unhandled(e),
-                },
-                "InvalidNextTokenException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::ListSecretVersionIdsError {
-                        kind: crate::error::ListSecretVersionIdsErrorKind::InvalidNextTokenError(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::ListSecretVersionIdsError::unhandled(e),
-                },
-                "ResourceNotFoundException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::ListSecretVersionIdsError {
-                        kind: crate::error::ListSecretVersionIdsErrorKind::ResourceNotFoundError(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::ListSecretVersionIdsError::unhandled(e),
-                },
-                _ => crate::error::ListSecretVersionIdsError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::list_secret_version_ids_output::Builder::default();
-        builder = crate::json_deser::list_secret_version_ids_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::ListSecretVersionIdsError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -1159,7 +616,11 @@ impl smithy_http::response::ParseStrictResponse for ListSecretVersionIds {
         crate::error::ListSecretVersionIdsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_secret_version_ids_error(response)
+        } else {
+            crate::operation_deser::parse_list_secret_version_ids_response(response)
+        }
     }
 }
 
@@ -1204,81 +665,6 @@ impl PutResourcePolicy {
     pub fn builder() -> crate::input::put_resource_policy_input::Builder {
         crate::input::put_resource_policy_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::PutResourcePolicyOutput,
-        crate::error::PutResourcePolicyError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::PutResourcePolicyError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "InternalServiceError" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::PutResourcePolicyError {
-                        kind: crate::error::PutResourcePolicyErrorKind::InternalServiceError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::PutResourcePolicyError::unhandled(e),
-                },
-                "InvalidParameterException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::PutResourcePolicyError {
-                        kind: crate::error::PutResourcePolicyErrorKind::InvalidParameterError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::PutResourcePolicyError::unhandled(e),
-                },
-                "InvalidRequestException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::PutResourcePolicyError {
-                        kind: crate::error::PutResourcePolicyErrorKind::InvalidRequestError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::PutResourcePolicyError::unhandled(e),
-                },
-                "MalformedPolicyDocumentException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::PutResourcePolicyError {
-                        kind:
-                            crate::error::PutResourcePolicyErrorKind::MalformedPolicyDocumentError(
-                                body,
-                            ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::PutResourcePolicyError::unhandled(e),
-                },
-                "PublicPolicyException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::PutResourcePolicyError {
-                        kind: crate::error::PutResourcePolicyErrorKind::PublicPolicyError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::PutResourcePolicyError::unhandled(e),
-                },
-                "ResourceNotFoundException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::PutResourcePolicyError {
-                        kind: crate::error::PutResourcePolicyErrorKind::ResourceNotFoundError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::PutResourcePolicyError::unhandled(e),
-                },
-                _ => crate::error::PutResourcePolicyError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::put_resource_policy_output::Builder::default();
-        builder = crate::json_deser::put_resource_policy_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::PutResourcePolicyError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -1289,7 +675,11 @@ impl smithy_http::response::ParseStrictResponse for PutResourcePolicy {
         crate::error::PutResourcePolicyError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_put_resource_policy_error(response)
+        } else {
+            crate::operation_deser::parse_put_resource_policy_response(response)
+        }
     }
 }
 
@@ -1390,81 +780,6 @@ impl PutSecretValue {
     pub fn builder() -> crate::input::put_secret_value_input::Builder {
         crate::input::put_secret_value_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::PutSecretValueOutput, crate::error::PutSecretValueError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::PutSecretValueError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "EncryptionFailure" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::PutSecretValueError {
-                        kind: crate::error::PutSecretValueErrorKind::EncryptionFailure(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::PutSecretValueError::unhandled(e),
-                },
-                "InternalServiceError" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::PutSecretValueError {
-                        kind: crate::error::PutSecretValueErrorKind::InternalServiceError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::PutSecretValueError::unhandled(e),
-                },
-                "InvalidParameterException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::PutSecretValueError {
-                        kind: crate::error::PutSecretValueErrorKind::InvalidParameterError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::PutSecretValueError::unhandled(e),
-                },
-                "InvalidRequestException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::PutSecretValueError {
-                        kind: crate::error::PutSecretValueErrorKind::InvalidRequestError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::PutSecretValueError::unhandled(e),
-                },
-                "LimitExceededException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::PutSecretValueError {
-                        kind: crate::error::PutSecretValueErrorKind::LimitExceededError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::PutSecretValueError::unhandled(e),
-                },
-                "ResourceExistsException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::PutSecretValueError {
-                        kind: crate::error::PutSecretValueErrorKind::ResourceExistsError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::PutSecretValueError::unhandled(e),
-                },
-                "ResourceNotFoundException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::PutSecretValueError {
-                        kind: crate::error::PutSecretValueErrorKind::ResourceNotFoundError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::PutSecretValueError::unhandled(e),
-                },
-                _ => crate::error::PutSecretValueError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::put_secret_value_output::Builder::default();
-        builder =
-            crate::json_deser::put_secret_value_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::PutSecretValueError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -1473,7 +788,11 @@ impl smithy_http::response::ParseStrictResponse for PutSecretValue {
     type Output =
         std::result::Result<crate::output::PutSecretValueOutput, crate::error::PutSecretValueError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_put_secret_value_error(response)
+        } else {
+            crate::operation_deser::parse_put_secret_value_response(response)
+        }
     }
 }
 
@@ -1487,56 +806,6 @@ impl RemoveRegionsFromReplication {
     pub fn builder() -> crate::input::remove_regions_from_replication_input::Builder {
         crate::input::remove_regions_from_replication_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::RemoveRegionsFromReplicationOutput,
-        crate::error::RemoveRegionsFromReplicationError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(crate::error::RemoveRegionsFromReplicationError::unhandled(
-                        generic,
-                    ))
-                }
-            };
-            return Err(match error_code {
-                "InternalServiceError" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::RemoveRegionsFromReplicationError { kind: crate::error::RemoveRegionsFromReplicationErrorKind::InternalServiceError(body), meta: generic },
-                    Err(e) => crate::error::RemoveRegionsFromReplicationError::unhandled(e)
-                }
-                "InvalidParameterException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::RemoveRegionsFromReplicationError { kind: crate::error::RemoveRegionsFromReplicationErrorKind::InvalidParameterError(body), meta: generic },
-                    Err(e) => crate::error::RemoveRegionsFromReplicationError::unhandled(e)
-                }
-                "InvalidRequestException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::RemoveRegionsFromReplicationError { kind: crate::error::RemoveRegionsFromReplicationErrorKind::InvalidRequestError(body), meta: generic },
-                    Err(e) => crate::error::RemoveRegionsFromReplicationError::unhandled(e)
-                }
-                "ResourceNotFoundException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::RemoveRegionsFromReplicationError { kind: crate::error::RemoveRegionsFromReplicationErrorKind::ResourceNotFoundError(body), meta: generic },
-                    Err(e) => crate::error::RemoveRegionsFromReplicationError::unhandled(e)
-                }
-                _ => crate::error::RemoveRegionsFromReplicationError::generic(generic)
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::remove_regions_from_replication_output::Builder::default();
-        builder = crate::json_deser::remove_regions_from_replication_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::RemoveRegionsFromReplicationError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -1547,7 +816,11 @@ impl smithy_http::response::ParseStrictResponse for RemoveRegionsFromReplication
         crate::error::RemoveRegionsFromReplicationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_remove_regions_from_replication_error(response)
+        } else {
+            crate::operation_deser::parse_remove_regions_from_replication_response(response)
+        }
     }
 }
 
@@ -1562,78 +835,6 @@ impl ReplicateSecretToRegions {
     pub fn builder() -> crate::input::replicate_secret_to_regions_input::Builder {
         crate::input::replicate_secret_to_regions_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::ReplicateSecretToRegionsOutput,
-        crate::error::ReplicateSecretToRegionsError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(crate::error::ReplicateSecretToRegionsError::unhandled(
-                        generic,
-                    ))
-                }
-            };
-            return Err(match error_code {
-                "InternalServiceError" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::ReplicateSecretToRegionsError {
-                        kind: crate::error::ReplicateSecretToRegionsErrorKind::InternalServiceError(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::ReplicateSecretToRegionsError::unhandled(e),
-                },
-                "InvalidParameterException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::ReplicateSecretToRegionsError {
-                        kind:
-                            crate::error::ReplicateSecretToRegionsErrorKind::InvalidParameterError(
-                                body,
-                            ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::ReplicateSecretToRegionsError::unhandled(e),
-                },
-                "InvalidRequestException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::ReplicateSecretToRegionsError {
-                        kind: crate::error::ReplicateSecretToRegionsErrorKind::InvalidRequestError(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::ReplicateSecretToRegionsError::unhandled(e),
-                },
-                "ResourceNotFoundException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::ReplicateSecretToRegionsError {
-                        kind:
-                            crate::error::ReplicateSecretToRegionsErrorKind::ResourceNotFoundError(
-                                body,
-                            ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::ReplicateSecretToRegionsError::unhandled(e),
-                },
-                _ => crate::error::ReplicateSecretToRegionsError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::replicate_secret_to_regions_output::Builder::default();
-        builder = crate::json_deser::replicate_secret_to_regions_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::ReplicateSecretToRegionsError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -1644,7 +845,11 @@ impl smithy_http::response::ParseStrictResponse for ReplicateSecretToRegions {
         crate::error::ReplicateSecretToRegionsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_replicate_secret_to_regions_error(response)
+        } else {
+            crate::operation_deser::parse_replicate_secret_to_regions_response(response)
+        }
     }
 }
 
@@ -1676,60 +881,6 @@ impl RestoreSecret {
     pub fn builder() -> crate::input::restore_secret_input::Builder {
         crate::input::restore_secret_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::RestoreSecretOutput, crate::error::RestoreSecretError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::RestoreSecretError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "InternalServiceError" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::RestoreSecretError {
-                        kind: crate::error::RestoreSecretErrorKind::InternalServiceError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::RestoreSecretError::unhandled(e),
-                },
-                "InvalidParameterException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::RestoreSecretError {
-                        kind: crate::error::RestoreSecretErrorKind::InvalidParameterError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::RestoreSecretError::unhandled(e),
-                },
-                "InvalidRequestException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::RestoreSecretError {
-                        kind: crate::error::RestoreSecretErrorKind::InvalidRequestError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::RestoreSecretError::unhandled(e),
-                },
-                "ResourceNotFoundException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::RestoreSecretError {
-                        kind: crate::error::RestoreSecretErrorKind::ResourceNotFoundError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::RestoreSecretError::unhandled(e),
-                },
-                _ => crate::error::RestoreSecretError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::restore_secret_output::Builder::default();
-        builder =
-            crate::json_deser::restore_secret_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::RestoreSecretError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -1738,7 +889,11 @@ impl smithy_http::response::ParseStrictResponse for RestoreSecret {
     type Output =
         std::result::Result<crate::output::RestoreSecretOutput, crate::error::RestoreSecretError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_restore_secret_error(response)
+        } else {
+            crate::operation_deser::parse_restore_secret_response(response)
+        }
     }
 }
 
@@ -1813,60 +968,6 @@ impl RotateSecret {
     pub fn builder() -> crate::input::rotate_secret_input::Builder {
         crate::input::rotate_secret_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::RotateSecretOutput, crate::error::RotateSecretError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::RotateSecretError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "InternalServiceError" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::RotateSecretError {
-                        kind: crate::error::RotateSecretErrorKind::InternalServiceError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::RotateSecretError::unhandled(e),
-                },
-                "InvalidParameterException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::RotateSecretError {
-                        kind: crate::error::RotateSecretErrorKind::InvalidParameterError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::RotateSecretError::unhandled(e),
-                },
-                "InvalidRequestException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::RotateSecretError {
-                        kind: crate::error::RotateSecretErrorKind::InvalidRequestError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::RotateSecretError::unhandled(e),
-                },
-                "ResourceNotFoundException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::RotateSecretError {
-                        kind: crate::error::RotateSecretErrorKind::ResourceNotFoundError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::RotateSecretError::unhandled(e),
-                },
-                _ => crate::error::RotateSecretError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::rotate_secret_output::Builder::default();
-        builder =
-            crate::json_deser::rotate_secret_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::RotateSecretError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -1875,7 +976,11 @@ impl smithy_http::response::ParseStrictResponse for RotateSecret {
     type Output =
         std::result::Result<crate::output::RotateSecretOutput, crate::error::RotateSecretError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_rotate_secret_error(response)
+        } else {
+            crate::operation_deser::parse_rotate_secret_response(response)
+        }
     }
 }
 
@@ -1889,78 +994,6 @@ impl StopReplicationToReplica {
     pub fn builder() -> crate::input::stop_replication_to_replica_input::Builder {
         crate::input::stop_replication_to_replica_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::StopReplicationToReplicaOutput,
-        crate::error::StopReplicationToReplicaError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(crate::error::StopReplicationToReplicaError::unhandled(
-                        generic,
-                    ))
-                }
-            };
-            return Err(match error_code {
-                "InternalServiceError" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::StopReplicationToReplicaError {
-                        kind: crate::error::StopReplicationToReplicaErrorKind::InternalServiceError(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::StopReplicationToReplicaError::unhandled(e),
-                },
-                "InvalidParameterException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::StopReplicationToReplicaError {
-                        kind:
-                            crate::error::StopReplicationToReplicaErrorKind::InvalidParameterError(
-                                body,
-                            ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::StopReplicationToReplicaError::unhandled(e),
-                },
-                "InvalidRequestException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::StopReplicationToReplicaError {
-                        kind: crate::error::StopReplicationToReplicaErrorKind::InvalidRequestError(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::StopReplicationToReplicaError::unhandled(e),
-                },
-                "ResourceNotFoundException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::StopReplicationToReplicaError {
-                        kind:
-                            crate::error::StopReplicationToReplicaErrorKind::ResourceNotFoundError(
-                                body,
-                            ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::StopReplicationToReplicaError::unhandled(e),
-                },
-                _ => crate::error::StopReplicationToReplicaError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::stop_replication_to_replica_output::Builder::default();
-        builder = crate::json_deser::stop_replication_to_replica_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::StopReplicationToReplicaError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -1971,7 +1004,11 @@ impl smithy_http::response::ParseStrictResponse for StopReplicationToReplica {
         crate::error::StopReplicationToReplicaError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_stop_replication_to_replica_error(response)
+        } else {
+            crate::operation_deser::parse_stop_replication_to_replica_response(response)
+        }
     }
 }
 
@@ -2040,56 +1077,6 @@ impl TagResource {
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::TagResourceError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "InternalServiceError" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::TagResourceError {
-                        kind: crate::error::TagResourceErrorKind::InternalServiceError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::TagResourceError::unhandled(e),
-                },
-                "InvalidParameterException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::TagResourceError {
-                        kind: crate::error::TagResourceErrorKind::InvalidParameterError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::TagResourceError::unhandled(e),
-                },
-                "InvalidRequestException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::TagResourceError {
-                        kind: crate::error::TagResourceErrorKind::InvalidRequestError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::TagResourceError::unhandled(e),
-                },
-                "ResourceNotFoundException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::TagResourceError {
-                        kind: crate::error::TagResourceErrorKind::ResourceNotFoundError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::TagResourceError::unhandled(e),
-                },
-                _ => crate::error::TagResourceError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::tag_resource_output::Builder::default();
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -2098,7 +1085,11 @@ impl smithy_http::response::ParseStrictResponse for TagResource {
     type Output =
         std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_tag_resource_error(response)
+        } else {
+            crate::operation_deser::parse_tag_resource_response(response)
+        }
     }
 }
 
@@ -2140,57 +1131,6 @@ impl UntagResource {
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::UntagResourceError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "InternalServiceError" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::UntagResourceError {
-                        kind: crate::error::UntagResourceErrorKind::InternalServiceError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::UntagResourceError::unhandled(e),
-                },
-                "InvalidParameterException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::UntagResourceError {
-                        kind: crate::error::UntagResourceErrorKind::InvalidParameterError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::UntagResourceError::unhandled(e),
-                },
-                "InvalidRequestException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::UntagResourceError {
-                        kind: crate::error::UntagResourceErrorKind::InvalidRequestError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::UntagResourceError::unhandled(e),
-                },
-                "ResourceNotFoundException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::UntagResourceError {
-                        kind: crate::error::UntagResourceErrorKind::ResourceNotFoundError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::UntagResourceError::unhandled(e),
-                },
-                _ => crate::error::UntagResourceError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::untag_resource_output::Builder::default();
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -2199,7 +1139,11 @@ impl smithy_http::response::ParseStrictResponse for UntagResource {
     type Output =
         std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_untag_resource_error(response)
+        } else {
+            crate::operation_deser::parse_untag_resource_response(response)
+        }
     }
 }
 
@@ -2297,97 +1241,6 @@ impl UpdateSecret {
     pub fn builder() -> crate::input::update_secret_input::Builder {
         crate::input::update_secret_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::UpdateSecretOutput, crate::error::UpdateSecretError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::UpdateSecretError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "EncryptionFailure" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::UpdateSecretError {
-                        kind: crate::error::UpdateSecretErrorKind::EncryptionFailure(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::UpdateSecretError::unhandled(e),
-                },
-                "InternalServiceError" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::UpdateSecretError {
-                        kind: crate::error::UpdateSecretErrorKind::InternalServiceError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::UpdateSecretError::unhandled(e),
-                },
-                "InvalidParameterException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::UpdateSecretError {
-                        kind: crate::error::UpdateSecretErrorKind::InvalidParameterError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::UpdateSecretError::unhandled(e),
-                },
-                "InvalidRequestException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::UpdateSecretError {
-                        kind: crate::error::UpdateSecretErrorKind::InvalidRequestError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::UpdateSecretError::unhandled(e),
-                },
-                "LimitExceededException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::UpdateSecretError {
-                        kind: crate::error::UpdateSecretErrorKind::LimitExceededError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::UpdateSecretError::unhandled(e),
-                },
-                "MalformedPolicyDocumentException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::UpdateSecretError {
-                        kind: crate::error::UpdateSecretErrorKind::MalformedPolicyDocumentError(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::UpdateSecretError::unhandled(e),
-                },
-                "PreconditionNotMetException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::UpdateSecretError {
-                        kind: crate::error::UpdateSecretErrorKind::PreconditionNotMetError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::UpdateSecretError::unhandled(e),
-                },
-                "ResourceExistsException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::UpdateSecretError {
-                        kind: crate::error::UpdateSecretErrorKind::ResourceExistsError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::UpdateSecretError::unhandled(e),
-                },
-                "ResourceNotFoundException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::UpdateSecretError {
-                        kind: crate::error::UpdateSecretErrorKind::ResourceNotFoundError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::UpdateSecretError::unhandled(e),
-                },
-                _ => crate::error::UpdateSecretError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::update_secret_output::Builder::default();
-        builder =
-            crate::json_deser::update_secret_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::UpdateSecretError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -2396,7 +1249,11 @@ impl smithy_http::response::ParseStrictResponse for UpdateSecret {
     type Output =
         std::result::Result<crate::output::UpdateSecretOutput, crate::error::UpdateSecretError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_secret_error(response)
+        } else {
+            crate::operation_deser::parse_update_secret_response(response)
+        }
     }
 }
 
@@ -2446,87 +1303,6 @@ impl UpdateSecretVersionStage {
     pub fn builder() -> crate::input::update_secret_version_stage_input::Builder {
         crate::input::update_secret_version_stage_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::UpdateSecretVersionStageOutput,
-        crate::error::UpdateSecretVersionStageError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(crate::error::UpdateSecretVersionStageError::unhandled(
-                        generic,
-                    ))
-                }
-            };
-            return Err(match error_code {
-                "InternalServiceError" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::UpdateSecretVersionStageError {
-                        kind: crate::error::UpdateSecretVersionStageErrorKind::InternalServiceError(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::UpdateSecretVersionStageError::unhandled(e),
-                },
-                "InvalidParameterException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::UpdateSecretVersionStageError {
-                        kind:
-                            crate::error::UpdateSecretVersionStageErrorKind::InvalidParameterError(
-                                body,
-                            ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::UpdateSecretVersionStageError::unhandled(e),
-                },
-                "InvalidRequestException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::UpdateSecretVersionStageError {
-                        kind: crate::error::UpdateSecretVersionStageErrorKind::InvalidRequestError(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::UpdateSecretVersionStageError::unhandled(e),
-                },
-                "LimitExceededException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::UpdateSecretVersionStageError {
-                        kind: crate::error::UpdateSecretVersionStageErrorKind::LimitExceededError(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::UpdateSecretVersionStageError::unhandled(e),
-                },
-                "ResourceNotFoundException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::UpdateSecretVersionStageError {
-                        kind:
-                            crate::error::UpdateSecretVersionStageErrorKind::ResourceNotFoundError(
-                                body,
-                            ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::UpdateSecretVersionStageError::unhandled(e),
-                },
-                _ => crate::error::UpdateSecretVersionStageError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::update_secret_version_stage_output::Builder::default();
-        builder = crate::json_deser::update_secret_version_stage_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::UpdateSecretVersionStageError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -2537,7 +1313,11 @@ impl smithy_http::response::ParseStrictResponse for UpdateSecretVersionStage {
         crate::error::UpdateSecretVersionStageError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_secret_version_stage_error(response)
+        } else {
+            crate::operation_deser::parse_update_secret_version_stage_response(response)
+        }
     }
 }
 
@@ -2583,60 +1363,6 @@ impl ValidateResourcePolicy {
     pub fn builder() -> crate::input::validate_resource_policy_input::Builder {
         crate::input::validate_resource_policy_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::ValidateResourcePolicyOutput,
-        crate::error::ValidateResourcePolicyError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(crate::error::ValidateResourcePolicyError::unhandled(
-                        generic,
-                    ))
-                }
-            };
-            return Err(match error_code {
-                "InternalServiceError" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::ValidateResourcePolicyError { kind: crate::error::ValidateResourcePolicyErrorKind::InternalServiceError(body), meta: generic },
-                    Err(e) => crate::error::ValidateResourcePolicyError::unhandled(e)
-                }
-                "InvalidParameterException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::ValidateResourcePolicyError { kind: crate::error::ValidateResourcePolicyErrorKind::InvalidParameterError(body), meta: generic },
-                    Err(e) => crate::error::ValidateResourcePolicyError::unhandled(e)
-                }
-                "InvalidRequestException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::ValidateResourcePolicyError { kind: crate::error::ValidateResourcePolicyErrorKind::InvalidRequestError(body), meta: generic },
-                    Err(e) => crate::error::ValidateResourcePolicyError::unhandled(e)
-                }
-                "MalformedPolicyDocumentException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::ValidateResourcePolicyError { kind: crate::error::ValidateResourcePolicyErrorKind::MalformedPolicyDocumentError(body), meta: generic },
-                    Err(e) => crate::error::ValidateResourcePolicyError::unhandled(e)
-                }
-                "ResourceNotFoundException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::ValidateResourcePolicyError { kind: crate::error::ValidateResourcePolicyErrorKind::ResourceNotFoundError(body), meta: generic },
-                    Err(e) => crate::error::ValidateResourcePolicyError::unhandled(e)
-                }
-                _ => crate::error::ValidateResourcePolicyError::generic(generic)
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::validate_resource_policy_output::Builder::default();
-        builder = crate::json_deser::validate_resource_policy_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::ValidateResourcePolicyError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -2647,6 +1373,10 @@ impl smithy_http::response::ParseStrictResponse for ValidateResourcePolicy {
         crate::error::ValidateResourcePolicyError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_validate_resource_policy_error(response)
+        } else {
+            crate::operation_deser::parse_validate_resource_policy_response(response)
+        }
     }
 }

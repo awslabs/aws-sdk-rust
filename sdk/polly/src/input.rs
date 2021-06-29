@@ -23,9 +23,7 @@ pub mod delete_lexicon_input {
             self,
         ) -> std::result::Result<crate::input::DeleteLexiconInput, smithy_http::operation::BuildError>
         {
-            Ok(crate::input::DeleteLexiconInput {
-                name: self.name.unwrap_or_default(),
-            })
+            Ok(crate::input::DeleteLexiconInput { name: self.name })
         }
     }
 }
@@ -89,13 +87,26 @@ impl DeleteLexiconInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/v1/lexicons/{Name}",
-            Name = smithy_http::label::fmt_string(&self.name, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let name = {
+            let input = &self.name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/v1/lexicons/{Name}", Name = name).expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -103,7 +114,7 @@ impl DeleteLexiconInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("DELETE").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -269,8 +280,9 @@ impl DescribeVoicesInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/v1/voices").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/v1/voices").expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -296,7 +308,7 @@ impl DescribeVoicesInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -346,9 +358,7 @@ pub mod get_lexicon_input {
             self,
         ) -> std::result::Result<crate::input::GetLexiconInput, smithy_http::operation::BuildError>
         {
-            Ok(crate::input::GetLexiconInput {
-                name: self.name.unwrap_or_default(),
-            })
+            Ok(crate::input::GetLexiconInput { name: self.name })
         }
     }
 }
@@ -409,13 +419,26 @@ impl GetLexiconInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/v1/lexicons/{Name}",
-            Name = smithy_http::label::fmt_string(&self.name, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let name = {
+            let input = &self.name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/v1/lexicons/{Name}", Name = name).expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -423,7 +446,7 @@ impl GetLexiconInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -475,7 +498,7 @@ pub mod get_speech_synthesis_task_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetSpeechSynthesisTaskInput {
-                task_id: self.task_id.unwrap_or_default(),
+                task_id: self.task_id,
             })
         }
     }
@@ -540,13 +563,27 @@ impl GetSpeechSynthesisTaskInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/v1/synthesisTasks/{TaskId}",
-            TaskId = smithy_http::label::fmt_string(&self.task_id, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let task_id = {
+            let input = &self.task_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "task_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "task_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/v1/synthesisTasks/{TaskId}", TaskId = task_id)
+            .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -554,7 +591,7 @@ impl GetSpeechSynthesisTaskInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -670,8 +707,9 @@ impl ListLexiconsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/v1/lexicons").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/v1/lexicons").expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -685,7 +723,7 @@ impl ListLexiconsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -827,8 +865,9 @@ impl ListSpeechSynthesisTasksInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/v1/synthesisTasks").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/v1/synthesisTasks").expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -848,7 +887,7 @@ impl ListSpeechSynthesisTasksInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -910,7 +949,7 @@ pub mod put_lexicon_input {
         ) -> std::result::Result<crate::input::PutLexiconInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::PutLexiconInput {
-                name: self.name.unwrap_or_default(),
+                name: self.name,
                 content: self.content,
             })
         }
@@ -976,13 +1015,26 @@ impl PutLexiconInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/v1/lexicons/{Name}",
-            Name = smithy_http::label::fmt_string(&self.name, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let name = {
+            let input = &self.name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/v1/lexicons/{Name}", Name = name).expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -990,7 +1042,7 @@ impl PutLexiconInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PUT").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1272,8 +1324,9 @@ impl StartSpeechSynthesisTaskInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/v1/synthesisTasks").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/v1/synthesisTasks").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -1281,7 +1334,7 @@ impl StartSpeechSynthesisTaskInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1537,8 +1590,9 @@ impl SynthesizeSpeechInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/v1/speech").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/v1/speech").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -1546,7 +1600,7 @@ impl SynthesizeSpeechInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1716,7 +1770,7 @@ impl std::fmt::Debug for StartSpeechSynthesisTaskInput {
 pub struct PutLexiconInput {
     /// <p>Name of the lexicon. The name must follow the regular express format [0-9A-Za-z]{1,20}.
     /// That is, the name is a case-sensitive alphanumeric string up to 20 characters long. </p>
-    pub name: std::string::String,
+    pub name: std::option::Option<std::string::String>,
     /// <p>Content of the PLS lexicon as string data.</p>
     pub content: std::option::Option<std::string::String>,
 }
@@ -1769,7 +1823,7 @@ impl std::fmt::Debug for ListLexiconsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSpeechSynthesisTaskInput {
     /// <p>The Amazon Polly generated identifier for a speech synthesis task.</p>
-    pub task_id: std::string::String,
+    pub task_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetSpeechSynthesisTaskInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1783,7 +1837,7 @@ impl std::fmt::Debug for GetSpeechSynthesisTaskInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLexiconInput {
     /// <p>Name of the lexicon.</p>
-    pub name: std::string::String,
+    pub name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetLexiconInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1831,7 +1885,7 @@ impl std::fmt::Debug for DescribeVoicesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLexiconInput {
     /// <p>The name of the lexicon to delete. Must be an existing lexicon in the region.</p>
-    pub name: std::string::String,
+    pub name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteLexiconInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

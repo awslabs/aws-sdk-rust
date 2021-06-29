@@ -361,7 +361,7 @@ pub fn deser_operation_get_bucket_cors(
             s if s.matches("CORSRule") /* CORSRules com.amazonaws.s3#GetBucketCorsOutput$CORSRules */ =>  {
                 let var_15 =
                     Some(
-                        Result::<std::vec::Vec<crate::model::CORSRule>, smithy_xml::decode::XmlError>::Ok({
+                        Result::<std::vec::Vec<crate::model::CorsRule>, smithy_xml::decode::XmlError>::Ok({
                             let mut list_16 = builder.cors_rules.take().unwrap_or_default();
                             list_16.push(
                                 crate::xml_deser::deser_structure_cors_rule(&mut tag)
@@ -2701,9 +2701,9 @@ pub fn deser_list_grants(
 
 pub fn deser_structure_cors_rule(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::CORSRule, smithy_xml::decode::XmlError> {
+) -> Result<crate::model::CorsRule, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::CORSRule::builder();
+    let mut builder = crate::model::CorsRule::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ID") /* ID com.amazonaws.s3#CORSRule$ID */ =>  {
@@ -6710,18 +6710,18 @@ pub fn deser_structure_analytics_s3_bucket_destination(
 
 pub fn deser_structure_sses3(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::SSES3, smithy_xml::decode::XmlError> {
+) -> Result<crate::model::Sses3, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::SSES3::builder();
+    let mut builder = crate::model::Sses3::builder();
     let _ = decoder;
     Ok(builder.build())
 }
 
 pub fn deser_structure_ssekms(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::SSEKMS, smithy_xml::decode::XmlError> {
+) -> Result<crate::model::Ssekms, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::SSEKMS::builder();
+    let mut builder = crate::model::Ssekms::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("KeyId") /* KeyId com.amazonaws.s3#SSEKMS$KeyId */ =>  {

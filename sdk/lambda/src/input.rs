@@ -91,7 +91,7 @@ pub mod add_layer_version_permission_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AddLayerVersionPermissionInput {
-                layer_name: self.layer_name.unwrap_or_default(),
+                layer_name: self.layer_name,
                 version_number: self.version_number.unwrap_or_default(),
                 statement_id: self.statement_id,
                 action: self.action,
@@ -167,14 +167,43 @@ impl AddLayerVersionPermissionInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let layer_name = {
+            let input = &self.layer_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "layer_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "layer_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let version_number = {
+            let input = &self.version_number;
+            let formatted = smithy_http::label::fmt_default(input);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "version_number",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2018-10-31/layers/{LayerName}/versions/{VersionNumber}/policy",
-            LayerName = smithy_http::label::fmt_string(&self.layer_name, false),
-            VersionNumber = smithy_http::label::fmt_default(&self.version_number)
+            LayerName = layer_name,
+            VersionNumber = version_number
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -188,7 +217,7 @@ impl AddLayerVersionPermissionInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("POST").uri(uri))
     }
@@ -353,7 +382,7 @@ pub mod add_permission_input {
         ) -> std::result::Result<crate::input::AddPermissionInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::AddPermissionInput {
-                function_name: self.function_name.unwrap_or_default(),
+                function_name: self.function_name,
                 statement_id: self.statement_id,
                 action: self.action,
                 principal: self.principal,
@@ -429,13 +458,31 @@ impl AddPermissionInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let function_name = {
+            let input = &self.function_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "function_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "function_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2015-03-31/functions/{FunctionName}/policy",
-            FunctionName = smithy_http::label::fmt_string(&self.function_name, false)
+            FunctionName = function_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -449,7 +496,7 @@ impl AddPermissionInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("POST").uri(uri))
     }
@@ -569,7 +616,7 @@ pub mod create_alias_input {
         ) -> std::result::Result<crate::input::CreateAliasInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::CreateAliasInput {
-                function_name: self.function_name.unwrap_or_default(),
+                function_name: self.function_name,
                 name: self.name,
                 function_version: self.function_version,
                 description: self.description,
@@ -641,13 +688,31 @@ impl CreateAliasInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let function_name = {
+            let input = &self.function_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "function_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "function_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2015-03-31/functions/{FunctionName}/aliases",
-            FunctionName = smithy_http::label::fmt_string(&self.function_name, false)
+            FunctionName = function_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -655,7 +720,7 @@ impl CreateAliasInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -804,8 +869,9 @@ impl CreateCodeSigningConfigInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/2020-04-22/code-signing-configs").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/2020-04-22/code-signing-configs").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -813,7 +879,7 @@ impl CreateCodeSigningConfigInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1241,8 +1307,9 @@ impl CreateEventSourceMappingInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/2015-03-31/event-source-mappings").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/2015-03-31/event-source-mappings").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -1250,7 +1317,7 @@ impl CreateEventSourceMappingInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1657,8 +1724,9 @@ impl CreateFunctionInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/2015-03-31/functions").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/2015-03-31/functions").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -1666,7 +1734,7 @@ impl CreateFunctionInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1748,8 +1816,8 @@ pub mod delete_alias_input {
         ) -> std::result::Result<crate::input::DeleteAliasInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::DeleteAliasInput {
-                function_name: self.function_name.unwrap_or_default(),
-                name: self.name.unwrap_or_default(),
+                function_name: self.function_name,
+                name: self.name,
             })
         }
     }
@@ -1814,14 +1882,49 @@ impl DeleteAliasInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let function_name = {
+            let input = &self.function_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "function_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "function_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let name = {
+            let input = &self.name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2015-03-31/functions/{FunctionName}/aliases/{Name}",
-            FunctionName = smithy_http::label::fmt_string(&self.function_name, false),
-            Name = smithy_http::label::fmt_string(&self.name, false)
+            FunctionName = function_name,
+            Name = name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -1829,7 +1932,7 @@ impl DeleteAliasInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("DELETE").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1884,7 +1987,7 @@ pub mod delete_code_signing_config_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteCodeSigningConfigInput {
-                code_signing_config_arn: self.code_signing_config_arn.unwrap_or_default(),
+                code_signing_config_arn: self.code_signing_config_arn,
             })
         }
     }
@@ -1950,14 +2053,31 @@ impl DeleteCodeSigningConfigInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let code_signing_config_arn = {
+            let input = &self.code_signing_config_arn;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "code_signing_config_arn",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "code_signing_config_arn",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2020-04-22/code-signing-configs/{CodeSigningConfigArn}",
-            CodeSigningConfigArn =
-                smithy_http::label::fmt_string(&self.code_signing_config_arn, false)
+            CodeSigningConfigArn = code_signing_config_arn
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -1965,7 +2085,7 @@ impl DeleteCodeSigningConfigInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("DELETE").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2016,9 +2136,7 @@ pub mod delete_event_source_mapping_input {
             crate::input::DeleteEventSourceMappingInput,
             smithy_http::operation::BuildError,
         > {
-            Ok(crate::input::DeleteEventSourceMappingInput {
-                uuid: self.uuid.unwrap_or_default(),
-            })
+            Ok(crate::input::DeleteEventSourceMappingInput { uuid: self.uuid })
         }
     }
 }
@@ -2083,13 +2201,31 @@ impl DeleteEventSourceMappingInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let uuid = {
+            let input = &self.uuid;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "uuid",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "uuid",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2015-03-31/event-source-mappings/{UUID}",
-            UUID = smithy_http::label::fmt_string(&self.uuid, false)
+            UUID = uuid
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -2097,7 +2233,7 @@ impl DeleteEventSourceMappingInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("DELETE").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2181,7 +2317,7 @@ pub mod delete_function_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteFunctionInput {
-                function_name: self.function_name.unwrap_or_default(),
+                function_name: self.function_name,
                 qualifier: self.qualifier,
             })
         }
@@ -2247,13 +2383,31 @@ impl DeleteFunctionInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let function_name = {
+            let input = &self.function_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "function_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "function_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2015-03-31/functions/{FunctionName}",
-            FunctionName = smithy_http::label::fmt_string(&self.function_name, false)
+            FunctionName = function_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -2267,7 +2421,7 @@ impl DeleteFunctionInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
     }
@@ -2342,7 +2496,7 @@ pub mod delete_function_code_signing_config_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteFunctionCodeSigningConfigInput {
-                function_name: self.function_name.unwrap_or_default(),
+                function_name: self.function_name,
             })
         }
     }
@@ -2408,13 +2562,31 @@ impl DeleteFunctionCodeSigningConfigInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let function_name = {
+            let input = &self.function_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "function_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "function_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2020-06-30/functions/{FunctionName}/code-signing-config",
-            FunctionName = smithy_http::label::fmt_string(&self.function_name, false)
+            FunctionName = function_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -2422,7 +2594,7 @@ impl DeleteFunctionCodeSigningConfigInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("DELETE").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2496,7 +2668,7 @@ pub mod delete_function_concurrency_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteFunctionConcurrencyInput {
-                function_name: self.function_name.unwrap_or_default(),
+                function_name: self.function_name,
             })
         }
     }
@@ -2562,13 +2734,31 @@ impl DeleteFunctionConcurrencyInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let function_name = {
+            let input = &self.function_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "function_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "function_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2017-10-31/functions/{FunctionName}/concurrency",
-            FunctionName = smithy_http::label::fmt_string(&self.function_name, false)
+            FunctionName = function_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -2576,7 +2766,7 @@ impl DeleteFunctionConcurrencyInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("DELETE").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2660,7 +2850,7 @@ pub mod delete_function_event_invoke_config_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteFunctionEventInvokeConfigInput {
-                function_name: self.function_name.unwrap_or_default(),
+                function_name: self.function_name,
                 qualifier: self.qualifier,
             })
         }
@@ -2727,13 +2917,31 @@ impl DeleteFunctionEventInvokeConfigInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let function_name = {
+            let input = &self.function_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "function_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "function_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2019-09-25/functions/{FunctionName}/event-invoke-config",
-            FunctionName = smithy_http::label::fmt_string(&self.function_name, false)
+            FunctionName = function_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -2747,7 +2955,7 @@ impl DeleteFunctionEventInvokeConfigInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
     }
@@ -2810,7 +3018,7 @@ pub mod delete_layer_version_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteLayerVersionInput {
-                layer_name: self.layer_name.unwrap_or_default(),
+                layer_name: self.layer_name,
                 version_number: self.version_number.unwrap_or_default(),
             })
         }
@@ -2876,14 +3084,43 @@ impl DeleteLayerVersionInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let layer_name = {
+            let input = &self.layer_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "layer_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "layer_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let version_number = {
+            let input = &self.version_number;
+            let formatted = smithy_http::label::fmt_default(input);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "version_number",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2018-10-31/layers/{LayerName}/versions/{VersionNumber}",
-            LayerName = smithy_http::label::fmt_string(&self.layer_name, false),
-            VersionNumber = smithy_http::label::fmt_default(&self.version_number)
+            LayerName = layer_name,
+            VersionNumber = version_number
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -2891,7 +3128,7 @@ impl DeleteLayerVersionInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("DELETE").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2975,7 +3212,7 @@ pub mod delete_provisioned_concurrency_config_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteProvisionedConcurrencyConfigInput {
-                function_name: self.function_name.unwrap_or_default(),
+                function_name: self.function_name,
                 qualifier: self.qualifier,
             })
         }
@@ -3042,13 +3279,31 @@ impl DeleteProvisionedConcurrencyConfigInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let function_name = {
+            let input = &self.function_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "function_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "function_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2019-09-30/functions/{FunctionName}/provisioned-concurrency",
-            FunctionName = smithy_http::label::fmt_string(&self.function_name, false)
+            FunctionName = function_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -3062,7 +3317,7 @@ impl DeleteProvisionedConcurrencyConfigInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
     }
@@ -3167,8 +3422,9 @@ impl GetAccountSettingsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/2016-08-19/account-settings").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/2016-08-19/account-settings").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -3176,7 +3432,7 @@ impl GetAccountSettingsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3258,8 +3514,8 @@ pub mod get_alias_input {
         ) -> std::result::Result<crate::input::GetAliasInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::GetAliasInput {
-                function_name: self.function_name.unwrap_or_default(),
-                name: self.name.unwrap_or_default(),
+                function_name: self.function_name,
+                name: self.name,
             })
         }
     }
@@ -3319,14 +3575,49 @@ impl GetAliasInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let function_name = {
+            let input = &self.function_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "function_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "function_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let name = {
+            let input = &self.name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2015-03-31/functions/{FunctionName}/aliases/{Name}",
-            FunctionName = smithy_http::label::fmt_string(&self.function_name, false),
-            Name = smithy_http::label::fmt_string(&self.name, false)
+            FunctionName = function_name,
+            Name = name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -3334,7 +3625,7 @@ impl GetAliasInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3389,7 +3680,7 @@ pub mod get_code_signing_config_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetCodeSigningConfigInput {
-                code_signing_config_arn: self.code_signing_config_arn.unwrap_or_default(),
+                code_signing_config_arn: self.code_signing_config_arn,
             })
         }
     }
@@ -3454,14 +3745,31 @@ impl GetCodeSigningConfigInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let code_signing_config_arn = {
+            let input = &self.code_signing_config_arn;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "code_signing_config_arn",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "code_signing_config_arn",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2020-04-22/code-signing-configs/{CodeSigningConfigArn}",
-            CodeSigningConfigArn =
-                smithy_http::label::fmt_string(&self.code_signing_config_arn, false)
+            CodeSigningConfigArn = code_signing_config_arn
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -3469,7 +3777,7 @@ impl GetCodeSigningConfigInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3520,9 +3828,7 @@ pub mod get_event_source_mapping_input {
             crate::input::GetEventSourceMappingInput,
             smithy_http::operation::BuildError,
         > {
-            Ok(crate::input::GetEventSourceMappingInput {
-                uuid: self.uuid.unwrap_or_default(),
-            })
+            Ok(crate::input::GetEventSourceMappingInput { uuid: self.uuid })
         }
     }
 }
@@ -3586,13 +3892,31 @@ impl GetEventSourceMappingInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let uuid = {
+            let input = &self.uuid;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "uuid",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "uuid",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2015-03-31/event-source-mappings/{UUID}",
-            UUID = smithy_http::label::fmt_string(&self.uuid, false)
+            UUID = uuid
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -3600,7 +3924,7 @@ impl GetEventSourceMappingInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3682,7 +4006,7 @@ pub mod get_function_input {
         ) -> std::result::Result<crate::input::GetFunctionInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::GetFunctionInput {
-                function_name: self.function_name.unwrap_or_default(),
+                function_name: self.function_name,
                 qualifier: self.qualifier,
             })
         }
@@ -3748,13 +4072,31 @@ impl GetFunctionInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let function_name = {
+            let input = &self.function_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "function_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "function_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2015-03-31/functions/{FunctionName}",
-            FunctionName = smithy_http::label::fmt_string(&self.function_name, false)
+            FunctionName = function_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -3768,7 +4110,7 @@ impl GetFunctionInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -3843,7 +4185,7 @@ pub mod get_function_code_signing_config_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetFunctionCodeSigningConfigInput {
-                function_name: self.function_name.unwrap_or_default(),
+                function_name: self.function_name,
             })
         }
     }
@@ -3909,13 +4251,31 @@ impl GetFunctionCodeSigningConfigInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let function_name = {
+            let input = &self.function_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "function_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "function_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2020-06-30/functions/{FunctionName}/code-signing-config",
-            FunctionName = smithy_http::label::fmt_string(&self.function_name, false)
+            FunctionName = function_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -3923,7 +4283,7 @@ impl GetFunctionCodeSigningConfigInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3997,7 +4357,7 @@ pub mod get_function_concurrency_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetFunctionConcurrencyInput {
-                function_name: self.function_name.unwrap_or_default(),
+                function_name: self.function_name,
             })
         }
     }
@@ -4062,13 +4422,31 @@ impl GetFunctionConcurrencyInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let function_name = {
+            let input = &self.function_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "function_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "function_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2019-09-30/functions/{FunctionName}/concurrency",
-            FunctionName = smithy_http::label::fmt_string(&self.function_name, false)
+            FunctionName = function_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -4076,7 +4454,7 @@ impl GetFunctionConcurrencyInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4160,7 +4538,7 @@ pub mod get_function_configuration_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetFunctionConfigurationInput {
-                function_name: self.function_name.unwrap_or_default(),
+                function_name: self.function_name,
                 qualifier: self.qualifier,
             })
         }
@@ -4227,13 +4605,31 @@ impl GetFunctionConfigurationInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let function_name = {
+            let input = &self.function_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "function_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "function_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2015-03-31/functions/{FunctionName}/configuration",
-            FunctionName = smithy_http::label::fmt_string(&self.function_name, false)
+            FunctionName = function_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -4247,7 +4643,7 @@ impl GetFunctionConfigurationInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -4332,7 +4728,7 @@ pub mod get_function_event_invoke_config_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetFunctionEventInvokeConfigInput {
-                function_name: self.function_name.unwrap_or_default(),
+                function_name: self.function_name,
                 qualifier: self.qualifier,
             })
         }
@@ -4399,13 +4795,31 @@ impl GetFunctionEventInvokeConfigInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let function_name = {
+            let input = &self.function_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "function_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "function_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2019-09-25/functions/{FunctionName}/event-invoke-config",
-            FunctionName = smithy_http::label::fmt_string(&self.function_name, false)
+            FunctionName = function_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -4419,7 +4833,7 @@ impl GetFunctionEventInvokeConfigInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -4482,7 +4896,7 @@ pub mod get_layer_version_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetLayerVersionInput {
-                layer_name: self.layer_name.unwrap_or_default(),
+                layer_name: self.layer_name,
                 version_number: self.version_number.unwrap_or_default(),
             })
         }
@@ -4548,14 +4962,43 @@ impl GetLayerVersionInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let layer_name = {
+            let input = &self.layer_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "layer_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "layer_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let version_number = {
+            let input = &self.version_number;
+            let formatted = smithy_http::label::fmt_default(input);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "version_number",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2018-10-31/layers/{LayerName}/versions/{VersionNumber}",
-            LayerName = smithy_http::label::fmt_string(&self.layer_name, false),
-            VersionNumber = smithy_http::label::fmt_default(&self.version_number)
+            LayerName = layer_name,
+            VersionNumber = version_number
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -4563,7 +5006,7 @@ impl GetLayerVersionInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4678,8 +5121,9 @@ impl GetLayerVersionByArnInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/2018-10-31/layers").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/2018-10-31/layers").expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -4694,7 +5138,7 @@ impl GetLayerVersionByArnInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -4757,7 +5201,7 @@ pub mod get_layer_version_policy_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetLayerVersionPolicyInput {
-                layer_name: self.layer_name.unwrap_or_default(),
+                layer_name: self.layer_name,
                 version_number: self.version_number.unwrap_or_default(),
             })
         }
@@ -4823,14 +5267,43 @@ impl GetLayerVersionPolicyInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let layer_name = {
+            let input = &self.layer_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "layer_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "layer_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let version_number = {
+            let input = &self.version_number;
+            let formatted = smithy_http::label::fmt_default(input);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "version_number",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2018-10-31/layers/{LayerName}/versions/{VersionNumber}/policy",
-            LayerName = smithy_http::label::fmt_string(&self.layer_name, false),
-            VersionNumber = smithy_http::label::fmt_default(&self.version_number)
+            LayerName = layer_name,
+            VersionNumber = version_number
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -4838,7 +5311,7 @@ impl GetLayerVersionPolicyInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4920,7 +5393,7 @@ pub mod get_policy_input {
         ) -> std::result::Result<crate::input::GetPolicyInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::GetPolicyInput {
-                function_name: self.function_name.unwrap_or_default(),
+                function_name: self.function_name,
                 qualifier: self.qualifier,
             })
         }
@@ -4981,13 +5454,31 @@ impl GetPolicyInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let function_name = {
+            let input = &self.function_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "function_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "function_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2015-03-31/functions/{FunctionName}/policy",
-            FunctionName = smithy_http::label::fmt_string(&self.function_name, false)
+            FunctionName = function_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -5001,7 +5492,7 @@ impl GetPolicyInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -5086,7 +5577,7 @@ pub mod get_provisioned_concurrency_config_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetProvisionedConcurrencyConfigInput {
-                function_name: self.function_name.unwrap_or_default(),
+                function_name: self.function_name,
                 qualifier: self.qualifier,
             })
         }
@@ -5153,13 +5644,31 @@ impl GetProvisionedConcurrencyConfigInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let function_name = {
+            let input = &self.function_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "function_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "function_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2019-09-30/functions/{FunctionName}/provisioned-concurrency",
-            FunctionName = smithy_http::label::fmt_string(&self.function_name, false)
+            FunctionName = function_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -5173,7 +5682,7 @@ impl GetProvisionedConcurrencyConfigInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -5321,7 +5830,7 @@ pub mod invoke_input {
         ) -> std::result::Result<crate::input::InvokeInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::InvokeInput {
-                function_name: self.function_name.unwrap_or_default(),
+                function_name: self.function_name,
                 invocation_type: self.invocation_type,
                 log_type: self.log_type,
                 client_context: self.client_context,
@@ -5383,13 +5892,31 @@ impl InvokeInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let function_name = {
+            let input = &self.function_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "function_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "function_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2015-03-31/functions/{FunctionName}/invocations",
-            FunctionName = smithy_http::label::fmt_string(&self.function_name, false)
+            FunctionName = function_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -5463,7 +5990,7 @@ impl InvokeInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("POST").uri(uri))
@@ -5550,7 +6077,7 @@ pub mod invoke_async_input {
         ) -> std::result::Result<crate::input::InvokeAsyncInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::InvokeAsyncInput {
-                function_name: self.function_name.unwrap_or_default(),
+                function_name: self.function_name,
                 invoke_args: self.invoke_args.unwrap_or_default(),
             })
         }
@@ -5616,13 +6143,31 @@ impl InvokeAsyncInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let function_name = {
+            let input = &self.function_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "function_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "function_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2014-11-13/functions/{FunctionName}/invoke-async",
-            FunctionName = smithy_http::label::fmt_string(&self.function_name, false)
+            FunctionName = function_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -5630,7 +6175,7 @@ impl InvokeAsyncInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -5735,7 +6280,7 @@ pub mod list_aliases_input {
         ) -> std::result::Result<crate::input::ListAliasesInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::ListAliasesInput {
-                function_name: self.function_name.unwrap_or_default(),
+                function_name: self.function_name,
                 function_version: self.function_version,
                 marker: self.marker,
                 max_items: self.max_items,
@@ -5803,13 +6348,31 @@ impl ListAliasesInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let function_name = {
+            let input = &self.function_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "function_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "function_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2015-03-31/functions/{FunctionName}/aliases",
-            FunctionName = smithy_http::label::fmt_string(&self.function_name, false)
+            FunctionName = function_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -5832,7 +6395,7 @@ impl ListAliasesInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -5961,8 +6524,9 @@ impl ListCodeSigningConfigsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/2020-04-22/code-signing-configs").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/2020-04-22/code-signing-configs").expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -5979,7 +6543,7 @@ impl ListCodeSigningConfigsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -6178,8 +6742,9 @@ impl ListEventSourceMappingsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/2015-03-31/event-source-mappings").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/2015-03-31/event-source-mappings").expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -6202,7 +6767,7 @@ impl ListEventSourceMappingsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -6297,7 +6862,7 @@ pub mod list_function_event_invoke_configs_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListFunctionEventInvokeConfigsInput {
-                function_name: self.function_name.unwrap_or_default(),
+                function_name: self.function_name,
                 marker: self.marker,
                 max_items: self.max_items,
             })
@@ -6365,13 +6930,31 @@ impl ListFunctionEventInvokeConfigsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let function_name = {
+            let input = &self.function_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "function_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "function_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2019-09-25/functions/{FunctionName}/event-invoke-config/list",
-            FunctionName = smithy_http::label::fmt_string(&self.function_name, false)
+            FunctionName = function_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -6388,7 +6971,7 @@ impl ListFunctionEventInvokeConfigsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -6546,8 +7129,9 @@ impl ListFunctionsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/2015-03-31/functions").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/2015-03-31/functions").expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -6573,7 +7157,7 @@ impl ListFunctionsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -6649,7 +7233,7 @@ pub mod list_functions_by_code_signing_config_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListFunctionsByCodeSigningConfigInput {
-                code_signing_config_arn: self.code_signing_config_arn.unwrap_or_default(),
+                code_signing_config_arn: self.code_signing_config_arn,
                 marker: self.marker,
                 max_items: self.max_items,
             })
@@ -6717,14 +7301,31 @@ impl ListFunctionsByCodeSigningConfigInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let code_signing_config_arn = {
+            let input = &self.code_signing_config_arn;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "code_signing_config_arn",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "code_signing_config_arn",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2020-04-22/code-signing-configs/{CodeSigningConfigArn}/functions",
-            CodeSigningConfigArn =
-                smithy_http::label::fmt_string(&self.code_signing_config_arn, false)
+            CodeSigningConfigArn = code_signing_config_arn
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -6741,7 +7342,7 @@ impl ListFunctionsByCodeSigningConfigInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -6882,8 +7483,9 @@ impl ListLayersInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/2018-10-31/layers").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/2018-10-31/layers").expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -6906,7 +7508,7 @@ impl ListLayersInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -6993,7 +7595,7 @@ pub mod list_layer_versions_input {
         > {
             Ok(crate::input::ListLayerVersionsInput {
                 compatible_runtime: self.compatible_runtime,
-                layer_name: self.layer_name.unwrap_or_default(),
+                layer_name: self.layer_name,
                 marker: self.marker,
                 max_items: self.max_items,
             })
@@ -7060,13 +7662,31 @@ impl ListLayerVersionsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let layer_name = {
+            let input = &self.layer_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "layer_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "layer_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2018-10-31/layers/{LayerName}/versions",
-            LayerName = smithy_http::label::fmt_string(&self.layer_name, false)
+            LayerName = layer_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -7089,7 +7709,7 @@ impl ListLayerVersionsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -7184,7 +7804,7 @@ pub mod list_provisioned_concurrency_configs_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListProvisionedConcurrencyConfigsInput {
-                function_name: self.function_name.unwrap_or_default(),
+                function_name: self.function_name,
                 marker: self.marker,
                 max_items: self.max_items,
             })
@@ -7252,13 +7872,31 @@ impl ListProvisionedConcurrencyConfigsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let function_name = {
+            let input = &self.function_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "function_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "function_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2019-09-30/functions/{FunctionName}/provisioned-concurrency",
-            FunctionName = smithy_http::label::fmt_string(&self.function_name, false)
+            FunctionName = function_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -7276,7 +7914,7 @@ impl ListProvisionedConcurrencyConfigsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -7327,7 +7965,7 @@ pub mod list_tags_input {
         ) -> std::result::Result<crate::input::ListTagsInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::ListTagsInput {
-                resource: self.resource.unwrap_or_default(),
+                resource: self.resource,
             })
         }
     }
@@ -7387,13 +8025,27 @@ impl ListTagsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/2017-03-31/tags/{Resource}",
-            Resource = smithy_http::label::fmt_string(&self.resource, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let resource = {
+            let input = &self.resource;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "resource",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "resource",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/2017-03-31/tags/{Resource}", Resource = resource)
+            .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -7401,7 +8053,7 @@ impl ListTagsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -7495,7 +8147,7 @@ pub mod list_versions_by_function_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListVersionsByFunctionInput {
-                function_name: self.function_name.unwrap_or_default(),
+                function_name: self.function_name,
                 marker: self.marker,
                 max_items: self.max_items,
             })
@@ -7562,13 +8214,31 @@ impl ListVersionsByFunctionInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let function_name = {
+            let input = &self.function_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "function_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "function_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2015-03-31/functions/{FunctionName}/versions",
-            FunctionName = smithy_http::label::fmt_string(&self.function_name, false)
+            FunctionName = function_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -7585,7 +8255,7 @@ impl ListVersionsByFunctionInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -7698,7 +8368,7 @@ pub mod publish_layer_version_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PublishLayerVersionInput {
-                layer_name: self.layer_name.unwrap_or_default(),
+                layer_name: self.layer_name,
                 description: self.description,
                 content: self.content,
                 compatible_runtimes: self.compatible_runtimes,
@@ -7770,13 +8440,31 @@ impl PublishLayerVersionInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let layer_name = {
+            let input = &self.layer_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "layer_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "layer_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2018-10-31/layers/{LayerName}/versions",
-            LayerName = smithy_http::label::fmt_string(&self.layer_name, false)
+            LayerName = layer_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -7784,7 +8472,7 @@ impl PublishLayerVersionInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -7891,7 +8579,7 @@ pub mod publish_version_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PublishVersionInput {
-                function_name: self.function_name.unwrap_or_default(),
+                function_name: self.function_name,
                 code_sha256: self.code_sha256,
                 description: self.description,
                 revision_id: self.revision_id,
@@ -7961,13 +8649,31 @@ impl PublishVersionInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let function_name = {
+            let input = &self.function_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "function_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "function_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2015-03-31/functions/{FunctionName}/versions",
-            FunctionName = smithy_http::label::fmt_string(&self.function_name, false)
+            FunctionName = function_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -7975,7 +8681,7 @@ impl PublishVersionInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -8063,7 +8769,7 @@ pub mod put_function_code_signing_config_input {
         > {
             Ok(crate::input::PutFunctionCodeSigningConfigInput {
                 code_signing_config_arn: self.code_signing_config_arn,
-                function_name: self.function_name.unwrap_or_default(),
+                function_name: self.function_name,
             })
         }
     }
@@ -8133,13 +8839,31 @@ impl PutFunctionCodeSigningConfigInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let function_name = {
+            let input = &self.function_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "function_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "function_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2020-06-30/functions/{FunctionName}/code-signing-config",
-            FunctionName = smithy_http::label::fmt_string(&self.function_name, false)
+            FunctionName = function_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -8147,7 +8871,7 @@ impl PutFunctionCodeSigningConfigInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PUT").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -8234,7 +8958,7 @@ pub mod put_function_concurrency_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutFunctionConcurrencyInput {
-                function_name: self.function_name.unwrap_or_default(),
+                function_name: self.function_name,
                 reserved_concurrent_executions: self.reserved_concurrent_executions,
             })
         }
@@ -8303,13 +9027,31 @@ impl PutFunctionConcurrencyInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let function_name = {
+            let input = &self.function_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "function_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "function_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2017-10-31/functions/{FunctionName}/concurrency",
-            FunctionName = smithy_http::label::fmt_string(&self.function_name, false)
+            FunctionName = function_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -8317,7 +9059,7 @@ impl PutFunctionConcurrencyInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PUT").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -8455,7 +9197,7 @@ pub mod put_function_event_invoke_config_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutFunctionEventInvokeConfigInput {
-                function_name: self.function_name.unwrap_or_default(),
+                function_name: self.function_name,
                 qualifier: self.qualifier,
                 maximum_retry_attempts: self.maximum_retry_attempts,
                 maximum_event_age_in_seconds: self.maximum_event_age_in_seconds,
@@ -8529,13 +9271,31 @@ impl PutFunctionEventInvokeConfigInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let function_name = {
+            let input = &self.function_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "function_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "function_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2019-09-25/functions/{FunctionName}/event-invoke-config",
-            FunctionName = smithy_http::label::fmt_string(&self.function_name, false)
+            FunctionName = function_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -8549,7 +9309,7 @@ impl PutFunctionEventInvokeConfigInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("PUT").uri(uri))
     }
@@ -8647,7 +9407,7 @@ pub mod put_provisioned_concurrency_config_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutProvisionedConcurrencyConfigInput {
-                function_name: self.function_name.unwrap_or_default(),
+                function_name: self.function_name,
                 qualifier: self.qualifier,
                 provisioned_concurrent_executions: self.provisioned_concurrent_executions,
             })
@@ -8719,13 +9479,31 @@ impl PutProvisionedConcurrencyConfigInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let function_name = {
+            let input = &self.function_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "function_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "function_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2019-09-30/functions/{FunctionName}/provisioned-concurrency",
-            FunctionName = smithy_http::label::fmt_string(&self.function_name, false)
+            FunctionName = function_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -8739,7 +9517,7 @@ impl PutProvisionedConcurrencyConfigInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("PUT").uri(uri))
     }
@@ -8823,9 +9601,9 @@ pub mod remove_layer_version_permission_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::RemoveLayerVersionPermissionInput {
-                layer_name: self.layer_name.unwrap_or_default(),
+                layer_name: self.layer_name,
                 version_number: self.version_number.unwrap_or_default(),
-                statement_id: self.statement_id.unwrap_or_default(),
+                statement_id: self.statement_id,
                 revision_id: self.revision_id,
             })
         }
@@ -8892,15 +9670,61 @@ impl RemoveLayerVersionPermissionInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let layer_name = {
+            let input = &self.layer_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "layer_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "layer_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let version_number = {
+            let input = &self.version_number;
+            let formatted = smithy_http::label::fmt_default(input);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "version_number",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let statement_id = {
+            let input = &self.statement_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "statement_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "statement_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2018-10-31/layers/{LayerName}/versions/{VersionNumber}/policy/{StatementId}",
-            LayerName = smithy_http::label::fmt_string(&self.layer_name, false),
-            VersionNumber = smithy_http::label::fmt_default(&self.version_number),
-            StatementId = smithy_http::label::fmt_string(&self.statement_id, false)
+            LayerName = layer_name,
+            VersionNumber = version_number,
+            StatementId = statement_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -8914,7 +9738,7 @@ impl RemoveLayerVersionPermissionInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
     }
@@ -9020,8 +9844,8 @@ pub mod remove_permission_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::RemovePermissionInput {
-                function_name: self.function_name.unwrap_or_default(),
-                statement_id: self.statement_id.unwrap_or_default(),
+                function_name: self.function_name,
+                statement_id: self.statement_id,
                 qualifier: self.qualifier,
                 revision_id: self.revision_id,
             })
@@ -9088,14 +9912,49 @@ impl RemovePermissionInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let function_name = {
+            let input = &self.function_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "function_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "function_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let statement_id = {
+            let input = &self.statement_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "statement_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "statement_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2015-03-31/functions/{FunctionName}/policy/{StatementId}",
-            FunctionName = smithy_http::label::fmt_string(&self.function_name, false),
-            StatementId = smithy_http::label::fmt_string(&self.statement_id, false)
+            FunctionName = function_name,
+            StatementId = statement_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -9112,7 +9971,7 @@ impl RemovePermissionInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
     }
@@ -9185,7 +10044,7 @@ pub mod tag_resource_input {
         ) -> std::result::Result<crate::input::TagResourceInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::TagResourceInput {
-                resource: self.resource.unwrap_or_default(),
+                resource: self.resource,
                 tags: self.tags,
             })
         }
@@ -9254,13 +10113,27 @@ impl TagResourceInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/2017-03-31/tags/{Resource}",
-            Resource = smithy_http::label::fmt_string(&self.resource, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let resource = {
+            let input = &self.resource;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "resource",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "resource",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/2017-03-31/tags/{Resource}", Resource = resource)
+            .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -9268,7 +10141,7 @@ impl TagResourceInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -9332,7 +10205,7 @@ pub mod untag_resource_input {
         ) -> std::result::Result<crate::input::UntagResourceInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::UntagResourceInput {
-                resource: self.resource.unwrap_or_default(),
+                resource: self.resource,
                 tag_keys: self.tag_keys,
             })
         }
@@ -9398,13 +10271,27 @@ impl UntagResourceInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/2017-03-31/tags/{Resource}",
-            Resource = smithy_http::label::fmt_string(&self.resource, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let resource = {
+            let input = &self.resource;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "resource",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "resource",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/2017-03-31/tags/{Resource}", Resource = resource)
+            .expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -9420,7 +10307,7 @@ impl UntagResourceInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
     }
@@ -9551,8 +10438,8 @@ pub mod update_alias_input {
         ) -> std::result::Result<crate::input::UpdateAliasInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::UpdateAliasInput {
-                function_name: self.function_name.unwrap_or_default(),
-                name: self.name.unwrap_or_default(),
+                function_name: self.function_name,
+                name: self.name,
                 function_version: self.function_version,
                 description: self.description,
                 routing_config: self.routing_config,
@@ -9624,14 +10511,49 @@ impl UpdateAliasInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let function_name = {
+            let input = &self.function_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "function_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "function_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let name = {
+            let input = &self.name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2015-03-31/functions/{FunctionName}/aliases/{Name}",
-            FunctionName = smithy_http::label::fmt_string(&self.function_name, false),
-            Name = smithy_http::label::fmt_string(&self.name, false)
+            FunctionName = function_name,
+            Name = name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -9639,7 +10561,7 @@ impl UpdateAliasInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PUT").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -9730,7 +10652,7 @@ pub mod update_code_signing_config_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateCodeSigningConfigInput {
-                code_signing_config_arn: self.code_signing_config_arn.unwrap_or_default(),
+                code_signing_config_arn: self.code_signing_config_arn,
                 description: self.description,
                 allowed_publishers: self.allowed_publishers,
                 code_signing_policies: self.code_signing_policies,
@@ -9802,14 +10724,31 @@ impl UpdateCodeSigningConfigInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let code_signing_config_arn = {
+            let input = &self.code_signing_config_arn;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "code_signing_config_arn",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "code_signing_config_arn",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2020-04-22/code-signing-configs/{CodeSigningConfigArn}",
-            CodeSigningConfigArn =
-                smithy_http::label::fmt_string(&self.code_signing_config_arn, false)
+            CodeSigningConfigArn = code_signing_config_arn
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -9817,7 +10756,7 @@ impl UpdateCodeSigningConfigInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PUT").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -10065,7 +11004,7 @@ pub mod update_event_source_mapping_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateEventSourceMappingInput {
-                uuid: self.uuid.unwrap_or_default(),
+                uuid: self.uuid,
                 function_name: self.function_name,
                 enabled: self.enabled,
                 batch_size: self.batch_size,
@@ -10146,13 +11085,31 @@ impl UpdateEventSourceMappingInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let uuid = {
+            let input = &self.uuid;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "uuid",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "uuid",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2015-03-31/event-source-mappings/{UUID}",
-            UUID = smithy_http::label::fmt_string(&self.uuid, false)
+            UUID = uuid
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -10160,7 +11117,7 @@ impl UpdateEventSourceMappingInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PUT").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -10321,7 +11278,7 @@ pub mod update_function_code_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateFunctionCodeInput {
-                function_name: self.function_name.unwrap_or_default(),
+                function_name: self.function_name,
                 zip_file: self.zip_file,
                 s3_bucket: self.s3_bucket,
                 s3_key: self.s3_key,
@@ -10397,13 +11354,31 @@ impl UpdateFunctionCodeInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let function_name = {
+            let input = &self.function_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "function_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "function_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2015-03-31/functions/{FunctionName}/code",
-            FunctionName = smithy_http::label::fmt_string(&self.function_name, false)
+            FunctionName = function_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -10411,7 +11386,7 @@ impl UpdateFunctionCodeInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PUT").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -10674,7 +11649,7 @@ pub mod update_function_configuration_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateFunctionConfigurationInput {
-                function_name: self.function_name.unwrap_or_default(),
+                function_name: self.function_name,
                 role: self.role,
                 handler: self.handler,
                 description: self.description,
@@ -10759,13 +11734,31 @@ impl UpdateFunctionConfigurationInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let function_name = {
+            let input = &self.function_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "function_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "function_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2015-03-31/functions/{FunctionName}/configuration",
-            FunctionName = smithy_http::label::fmt_string(&self.function_name, false)
+            FunctionName = function_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -10773,7 +11766,7 @@ impl UpdateFunctionConfigurationInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PUT").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -10911,7 +11904,7 @@ pub mod update_function_event_invoke_config_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateFunctionEventInvokeConfigInput {
-                function_name: self.function_name.unwrap_or_default(),
+                function_name: self.function_name,
                 qualifier: self.qualifier,
                 maximum_retry_attempts: self.maximum_retry_attempts,
                 maximum_event_age_in_seconds: self.maximum_event_age_in_seconds,
@@ -10987,13 +11980,31 @@ impl UpdateFunctionEventInvokeConfigInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let function_name = {
+            let input = &self.function_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "function_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "function_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2019-09-25/functions/{FunctionName}/event-invoke-config",
-            FunctionName = smithy_http::label::fmt_string(&self.function_name, false)
+            FunctionName = function_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -11007,7 +12018,7 @@ impl UpdateFunctionEventInvokeConfigInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("POST").uri(uri))
     }
@@ -11057,7 +12068,7 @@ pub struct UpdateFunctionEventInvokeConfigInput {
     /// </ul>
     /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
     /// If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub function_name: std::string::String,
+    pub function_name: std::option::Option<std::string::String>,
     /// <p>A version number or alias name.</p>
     pub qualifier: std::option::Option<std::string::String>,
     /// <p>The maximum number of times to retry when the function returns an error.</p>
@@ -11126,7 +12137,7 @@ pub struct UpdateFunctionConfigurationInput {
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
     /// characters in length.</p>
-    pub function_name: std::string::String,
+    pub function_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the function's execution role.</p>
     pub role: std::option::Option<std::string::String>,
     /// <p>The name of the method within your code that Lambda calls to execute your function. The format includes the
@@ -11217,7 +12228,7 @@ pub struct UpdateFunctionCodeInput {
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
     /// characters in length.</p>
-    pub function_name: std::string::String,
+    pub function_name: std::option::Option<std::string::String>,
     /// <p>The base64-encoded contents of the deployment package. AWS SDK and AWS CLI clients handle the encoding for
     /// you.</p>
     pub zip_file: std::option::Option<smithy_types::Blob>,
@@ -11259,7 +12270,7 @@ impl std::fmt::Debug for UpdateFunctionCodeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateEventSourceMappingInput {
     /// <p>The identifier of the event source mapping.</p>
-    pub uuid: std::string::String,
+    pub uuid: std::option::Option<std::string::String>,
     /// <p>The name of the Lambda function.</p>
     /// <p class="title">
     /// <b>Name formats</b>
@@ -11371,7 +12382,7 @@ impl std::fmt::Debug for UpdateEventSourceMappingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCodeSigningConfigInput {
     /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
-    pub code_signing_config_arn: std::string::String,
+    pub code_signing_config_arn: std::option::Option<std::string::String>,
     /// <p>Descriptive name for this code signing configuration.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>Signing profiles for this code signing configuration.</p>
@@ -11413,9 +12424,9 @@ pub struct UpdateAliasInput {
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
     /// characters in length.</p>
-    pub function_name: std::string::String,
+    pub function_name: std::option::Option<std::string::String>,
     /// <p>The name of the alias.</p>
-    pub name: std::string::String,
+    pub name: std::option::Option<std::string::String>,
     /// <p>The function version that the alias invokes.</p>
     pub function_version: std::option::Option<std::string::String>,
     /// <p>A description of the alias.</p>
@@ -11444,7 +12455,7 @@ impl std::fmt::Debug for UpdateAliasInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The function's Amazon Resource Name (ARN).</p>
-    pub resource: std::string::String,
+    pub resource: std::option::Option<std::string::String>,
     /// <p>A list of tag keys to remove from the function.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
@@ -11461,7 +12472,7 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The function's Amazon Resource Name (ARN).</p>
-    pub resource: std::string::String,
+    pub resource: std::option::Option<std::string::String>,
     /// <p>A list of tags to apply to the function.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -11498,9 +12509,9 @@ pub struct RemovePermissionInput {
     /// </ul>
     /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
     /// If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub function_name: std::string::String,
+    pub function_name: std::option::Option<std::string::String>,
     /// <p>Statement ID of the permission to remove.</p>
-    pub statement_id: std::string::String,
+    pub statement_id: std::option::Option<std::string::String>,
     /// <p>Specify a version or alias to remove permissions from a published version of the function.</p>
     pub qualifier: std::option::Option<std::string::String>,
     /// <p>Only update the policy if the revision ID matches the ID that's specified. Use this option to avoid modifying a
@@ -11522,11 +12533,11 @@ impl std::fmt::Debug for RemovePermissionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveLayerVersionPermissionInput {
     /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
-    pub layer_name: std::string::String,
+    pub layer_name: std::option::Option<std::string::String>,
     /// <p>The version number.</p>
     pub version_number: i64,
     /// <p>The identifier that was specified when the statement was added.</p>
-    pub statement_id: std::string::String,
+    pub statement_id: std::option::Option<std::string::String>,
     /// <p>Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a
     /// policy that has changed since you last read it.</p>
     pub revision_id: std::option::Option<std::string::String>,
@@ -11565,7 +12576,7 @@ pub struct PutProvisionedConcurrencyConfigInput {
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
     /// characters in length.</p>
-    pub function_name: std::string::String,
+    pub function_name: std::option::Option<std::string::String>,
     /// <p>The version number or alias name.</p>
     pub qualifier: std::option::Option<std::string::String>,
     /// <p>The amount of provisioned concurrency to allocate for the version or alias.</p>
@@ -11607,7 +12618,7 @@ pub struct PutFunctionEventInvokeConfigInput {
     /// </ul>
     /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
     /// If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub function_name: std::string::String,
+    pub function_name: std::option::Option<std::string::String>,
     /// <p>A version number or alias name.</p>
     pub qualifier: std::option::Option<std::string::String>,
     /// <p>The maximum number of times to retry when the function returns an error.</p>
@@ -11676,7 +12687,7 @@ pub struct PutFunctionConcurrencyInput {
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
     /// characters in length.</p>
-    pub function_name: std::string::String,
+    pub function_name: std::option::Option<std::string::String>,
     /// <p>The number of simultaneous executions to reserve for the function.</p>
     pub reserved_concurrent_executions: std::option::Option<i32>,
 }
@@ -11717,7 +12728,7 @@ pub struct PutFunctionCodeSigningConfigInput {
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
     /// characters in length.</p>
-    pub function_name: std::string::String,
+    pub function_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PutFunctionCodeSigningConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11751,7 +12762,7 @@ pub struct PublishVersionInput {
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
     /// characters in length.</p>
-    pub function_name: std::string::String,
+    pub function_name: std::option::Option<std::string::String>,
     /// <p>Only publish a version if the hash value matches the value that's specified. Use this option to avoid
     /// publishing a version if the function code has changed since you last updated it. You can get the hash for the
     /// version that you uploaded from the output of <a>UpdateFunctionCode</a>.</p>
@@ -11777,7 +12788,7 @@ impl std::fmt::Debug for PublishVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PublishLayerVersionInput {
     /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
-    pub layer_name: std::string::String,
+    pub layer_name: std::option::Option<std::string::String>,
     /// <p>The description of the version.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The function layer archive.</p>
@@ -11836,7 +12847,7 @@ pub struct ListVersionsByFunctionInput {
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
     /// characters in length.</p>
-    pub function_name: std::string::String,
+    pub function_name: std::option::Option<std::string::String>,
     /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of versions to return.</p>
@@ -11856,7 +12867,7 @@ impl std::fmt::Debug for ListVersionsByFunctionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsInput {
     /// <p>The function's Amazon Resource Name (ARN).</p>
-    pub resource: std::string::String,
+    pub resource: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ListTagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11889,7 +12900,7 @@ pub struct ListProvisionedConcurrencyConfigsInput {
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
     /// characters in length.</p>
-    pub function_name: std::string::String,
+    pub function_name: std::option::Option<std::string::String>,
     /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>Specify a number to limit the number of configurations returned.</p>
@@ -11911,7 +12922,7 @@ pub struct ListLayerVersionsInput {
     /// <p>A runtime identifier. For example, <code>go1.x</code>.</p>
     pub compatible_runtime: std::option::Option<crate::model::Runtime>,
     /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
-    pub layer_name: std::string::String,
+    pub layer_name: std::option::Option<std::string::String>,
     /// <p>A pagination token returned by a previous call.</p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of versions to return.</p>
@@ -11952,7 +12963,7 @@ impl std::fmt::Debug for ListLayersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFunctionsByCodeSigningConfigInput {
     /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
-    pub code_signing_config_arn: std::string::String,
+    pub code_signing_config_arn: std::option::Option<std::string::String>,
     /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>Maximum number of items to return.</p>
@@ -12017,7 +13028,7 @@ pub struct ListFunctionEventInvokeConfigsInput {
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
     /// characters in length.</p>
-    pub function_name: std::string::String,
+    pub function_name: std::option::Option<std::string::String>,
     /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of configurations to return.</p>
@@ -12137,7 +13148,7 @@ pub struct ListAliasesInput {
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
     /// characters in length.</p>
-    pub function_name: std::string::String,
+    pub function_name: std::option::Option<std::string::String>,
     /// <p>Specify a function version to only list aliases that invoke that version.</p>
     pub function_version: std::option::Option<std::string::String>,
     /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
@@ -12178,7 +13189,7 @@ pub struct InvokeAsyncInput {
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
     /// characters in length.</p>
-    pub function_name: std::string::String,
+    pub function_name: std::option::Option<std::string::String>,
     /// <p>The JSON that you want to provide to your Lambda function as input.</p>
     pub invoke_args: smithy_http::byte_stream::ByteStream,
 }
@@ -12214,7 +13225,7 @@ pub struct InvokeInput {
     /// </ul>
     /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
     /// If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub function_name: std::string::String,
+    pub function_name: std::option::Option<std::string::String>,
     /// <p>Choose from the following options.</p>
     /// <ul>
     /// <li>
@@ -12281,7 +13292,7 @@ pub struct GetProvisionedConcurrencyConfigInput {
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
     /// characters in length.</p>
-    pub function_name: std::string::String,
+    pub function_name: std::option::Option<std::string::String>,
     /// <p>The version number or alias name.</p>
     pub qualifier: std::option::Option<std::string::String>,
 }
@@ -12317,7 +13328,7 @@ pub struct GetPolicyInput {
     /// </ul>
     /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
     /// If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub function_name: std::string::String,
+    pub function_name: std::option::Option<std::string::String>,
     /// <p>Specify a version or alias to get the policy for that resource.</p>
     pub qualifier: std::option::Option<std::string::String>,
 }
@@ -12334,7 +13345,7 @@ impl std::fmt::Debug for GetPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLayerVersionPolicyInput {
     /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
-    pub layer_name: std::string::String,
+    pub layer_name: std::option::Option<std::string::String>,
     /// <p>The version number.</p>
     pub version_number: i64,
 }
@@ -12365,7 +13376,7 @@ impl std::fmt::Debug for GetLayerVersionByArnInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLayerVersionInput {
     /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
-    pub layer_name: std::string::String,
+    pub layer_name: std::option::Option<std::string::String>,
     /// <p>The version number.</p>
     pub version_number: i64,
 }
@@ -12401,7 +13412,7 @@ pub struct GetFunctionEventInvokeConfigInput {
     /// </ul>
     /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
     /// If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub function_name: std::string::String,
+    pub function_name: std::option::Option<std::string::String>,
     /// <p>A version number or alias name.</p>
     pub qualifier: std::option::Option<std::string::String>,
 }
@@ -12437,7 +13448,7 @@ pub struct GetFunctionConfigurationInput {
     /// </ul>
     /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
     /// If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub function_name: std::string::String,
+    pub function_name: std::option::Option<std::string::String>,
     /// <p>Specify a version or alias to get details about a published version of the function.</p>
     pub qualifier: std::option::Option<std::string::String>,
 }
@@ -12473,7 +13484,7 @@ pub struct GetFunctionConcurrencyInput {
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
     /// characters in length.</p>
-    pub function_name: std::string::String,
+    pub function_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetFunctionConcurrencyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12506,7 +13517,7 @@ pub struct GetFunctionCodeSigningConfigInput {
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
     /// characters in length.</p>
-    pub function_name: std::string::String,
+    pub function_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetFunctionCodeSigningConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12539,7 +13550,7 @@ pub struct GetFunctionInput {
     /// </ul>
     /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
     /// If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub function_name: std::string::String,
+    pub function_name: std::option::Option<std::string::String>,
     /// <p>Specify a version or alias to get details about a published version of the function.</p>
     pub qualifier: std::option::Option<std::string::String>,
 }
@@ -12556,7 +13567,7 @@ impl std::fmt::Debug for GetFunctionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEventSourceMappingInput {
     /// <p>The identifier of the event source mapping.</p>
-    pub uuid: std::string::String,
+    pub uuid: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetEventSourceMappingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12570,7 +13581,7 @@ impl std::fmt::Debug for GetEventSourceMappingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCodeSigningConfigInput {
     /// <p>The The Amazon Resource Name (ARN) of the code signing configuration. </p>
-    pub code_signing_config_arn: std::string::String,
+    pub code_signing_config_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetCodeSigningConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12603,9 +13614,9 @@ pub struct GetAliasInput {
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
     /// characters in length.</p>
-    pub function_name: std::string::String,
+    pub function_name: std::option::Option<std::string::String>,
     /// <p>The name of the alias.</p>
-    pub name: std::string::String,
+    pub name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetAliasInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12649,7 +13660,7 @@ pub struct DeleteProvisionedConcurrencyConfigInput {
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
     /// characters in length.</p>
-    pub function_name: std::string::String,
+    pub function_name: std::option::Option<std::string::String>,
     /// <p>The version number or alias name.</p>
     pub qualifier: std::option::Option<std::string::String>,
 }
@@ -12666,7 +13677,7 @@ impl std::fmt::Debug for DeleteProvisionedConcurrencyConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLayerVersionInput {
     /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
-    pub layer_name: std::string::String,
+    pub layer_name: std::option::Option<std::string::String>,
     /// <p>The version number.</p>
     pub version_number: i64,
 }
@@ -12702,7 +13713,7 @@ pub struct DeleteFunctionEventInvokeConfigInput {
     /// </ul>
     /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
     /// If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub function_name: std::string::String,
+    pub function_name: std::option::Option<std::string::String>,
     /// <p>A version number or alias name.</p>
     pub qualifier: std::option::Option<std::string::String>,
 }
@@ -12738,7 +13749,7 @@ pub struct DeleteFunctionConcurrencyInput {
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
     /// characters in length.</p>
-    pub function_name: std::string::String,
+    pub function_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteFunctionConcurrencyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12771,7 +13782,7 @@ pub struct DeleteFunctionCodeSigningConfigInput {
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
     /// characters in length.</p>
-    pub function_name: std::string::String,
+    pub function_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteFunctionCodeSigningConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12804,7 +13815,7 @@ pub struct DeleteFunctionInput {
     /// </ul>
     /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
     /// If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub function_name: std::string::String,
+    pub function_name: std::option::Option<std::string::String>,
     /// <p>Specify a version to delete. You can't delete a version that's referenced by an alias.</p>
     pub qualifier: std::option::Option<std::string::String>,
 }
@@ -12821,7 +13832,7 @@ impl std::fmt::Debug for DeleteFunctionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEventSourceMappingInput {
     /// <p>The identifier of the event source mapping.</p>
-    pub uuid: std::string::String,
+    pub uuid: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteEventSourceMappingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12835,7 +13846,7 @@ impl std::fmt::Debug for DeleteEventSourceMappingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCodeSigningConfigInput {
     /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
-    pub code_signing_config_arn: std::string::String,
+    pub code_signing_config_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteCodeSigningConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12868,9 +13879,9 @@ pub struct DeleteAliasInput {
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
     /// characters in length.</p>
-    pub function_name: std::string::String,
+    pub function_name: std::option::Option<std::string::String>,
     /// <p>The name of the alias.</p>
-    pub name: std::string::String,
+    pub name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteAliasInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13181,7 +14192,7 @@ pub struct CreateAliasInput {
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
     /// characters in length.</p>
-    pub function_name: std::string::String,
+    pub function_name: std::option::Option<std::string::String>,
     /// <p>The name of the alias.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The function version that the alias invokes.</p>
@@ -13227,7 +14238,7 @@ pub struct AddPermissionInput {
     /// </ul>
     /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
     /// If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub function_name: std::string::String,
+    pub function_name: std::option::Option<std::string::String>,
     /// <p>A statement identifier that differentiates the statement from others in the same policy.</p>
     pub statement_id: std::option::Option<std::string::String>,
     /// <p>The action that the principal can use on the function. For example, <code>lambda:InvokeFunction</code> or
@@ -13271,7 +14282,7 @@ impl std::fmt::Debug for AddPermissionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddLayerVersionPermissionInput {
     /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
-    pub layer_name: std::string::String,
+    pub layer_name: std::option::Option<std::string::String>,
     /// <p>The version number.</p>
     pub version_number: i64,
     /// <p>An identifier that distinguishes the policy from others on the same layer version.</p>

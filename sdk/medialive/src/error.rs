@@ -8,30 +8,34 @@ pub struct AcceptInputDeviceTransferError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AcceptInputDeviceTransferErrorKind {
-    BadGatewayError(crate::error::BadGatewayError),
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    ForbiddenError(crate::error::ForbiddenError),
-    GatewayTimeoutError(crate::error::GatewayTimeoutError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnprocessableEntityError(crate::error::UnprocessableEntityError),
+    BadGatewayException(crate::error::BadGatewayException),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    ForbiddenException(crate::error::ForbiddenException),
+    GatewayTimeoutException(crate::error::GatewayTimeoutException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnprocessableEntityException(crate::error::UnprocessableEntityException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AcceptInputDeviceTransferError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            AcceptInputDeviceTransferErrorKind::BadGatewayError(_inner) => _inner.fmt(f),
-            AcceptInputDeviceTransferErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            AcceptInputDeviceTransferErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            AcceptInputDeviceTransferErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            AcceptInputDeviceTransferErrorKind::GatewayTimeoutError(_inner) => _inner.fmt(f),
-            AcceptInputDeviceTransferErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            AcceptInputDeviceTransferErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            AcceptInputDeviceTransferErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            AcceptInputDeviceTransferErrorKind::UnprocessableEntityError(_inner) => _inner.fmt(f),
+            AcceptInputDeviceTransferErrorKind::BadGatewayException(_inner) => _inner.fmt(f),
+            AcceptInputDeviceTransferErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            AcceptInputDeviceTransferErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            AcceptInputDeviceTransferErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            AcceptInputDeviceTransferErrorKind::GatewayTimeoutException(_inner) => _inner.fmt(f),
+            AcceptInputDeviceTransferErrorKind::InternalServerErrorException(_inner) => {
+                _inner.fmt(f)
+            }
+            AcceptInputDeviceTransferErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            AcceptInputDeviceTransferErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            AcceptInputDeviceTransferErrorKind::UnprocessableEntityException(_inner) => {
+                _inner.fmt(f)
+            }
             AcceptInputDeviceTransferErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -80,73 +84,77 @@ impl AcceptInputDeviceTransferError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_gateway_error(&self) -> bool {
+    pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(
             &self.kind,
-            AcceptInputDeviceTransferErrorKind::BadGatewayError(_)
+            AcceptInputDeviceTransferErrorKind::BadGatewayException(_)
         )
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            AcceptInputDeviceTransferErrorKind::BadRequestError(_)
+            AcceptInputDeviceTransferErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_conflict_error(&self) -> bool {
+    pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
-            AcceptInputDeviceTransferErrorKind::ConflictError(_)
+            AcceptInputDeviceTransferErrorKind::ConflictException(_)
         )
     }
-    pub fn is_forbidden_error(&self) -> bool {
+    pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
-            AcceptInputDeviceTransferErrorKind::ForbiddenError(_)
+            AcceptInputDeviceTransferErrorKind::ForbiddenException(_)
         )
     }
-    pub fn is_gateway_timeout_error(&self) -> bool {
+    pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
-            AcceptInputDeviceTransferErrorKind::GatewayTimeoutError(_)
+            AcceptInputDeviceTransferErrorKind::GatewayTimeoutException(_)
         )
     }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            AcceptInputDeviceTransferErrorKind::InternalServerErrorError(_)
+            AcceptInputDeviceTransferErrorKind::InternalServerErrorException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            AcceptInputDeviceTransferErrorKind::NotFoundError(_)
+            AcceptInputDeviceTransferErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            AcceptInputDeviceTransferErrorKind::TooManyRequestsError(_)
+            AcceptInputDeviceTransferErrorKind::TooManyRequestsException(_)
         )
     }
-    pub fn is_unprocessable_entity_error(&self) -> bool {
+    pub fn is_unprocessable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            AcceptInputDeviceTransferErrorKind::UnprocessableEntityError(_)
+            AcceptInputDeviceTransferErrorKind::UnprocessableEntityException(_)
         )
     }
 }
 impl std::error::Error for AcceptInputDeviceTransferError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            AcceptInputDeviceTransferErrorKind::BadGatewayError(_inner) => Some(_inner),
-            AcceptInputDeviceTransferErrorKind::BadRequestError(_inner) => Some(_inner),
-            AcceptInputDeviceTransferErrorKind::ConflictError(_inner) => Some(_inner),
-            AcceptInputDeviceTransferErrorKind::ForbiddenError(_inner) => Some(_inner),
-            AcceptInputDeviceTransferErrorKind::GatewayTimeoutError(_inner) => Some(_inner),
-            AcceptInputDeviceTransferErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            AcceptInputDeviceTransferErrorKind::NotFoundError(_inner) => Some(_inner),
-            AcceptInputDeviceTransferErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            AcceptInputDeviceTransferErrorKind::UnprocessableEntityError(_inner) => Some(_inner),
+            AcceptInputDeviceTransferErrorKind::BadGatewayException(_inner) => Some(_inner),
+            AcceptInputDeviceTransferErrorKind::BadRequestException(_inner) => Some(_inner),
+            AcceptInputDeviceTransferErrorKind::ConflictException(_inner) => Some(_inner),
+            AcceptInputDeviceTransferErrorKind::ForbiddenException(_inner) => Some(_inner),
+            AcceptInputDeviceTransferErrorKind::GatewayTimeoutException(_inner) => Some(_inner),
+            AcceptInputDeviceTransferErrorKind::InternalServerErrorException(_inner) => {
+                Some(_inner)
+            }
+            AcceptInputDeviceTransferErrorKind::NotFoundException(_inner) => Some(_inner),
+            AcceptInputDeviceTransferErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            AcceptInputDeviceTransferErrorKind::UnprocessableEntityException(_inner) => {
+                Some(_inner)
+            }
             AcceptInputDeviceTransferErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -161,28 +169,28 @@ pub struct BatchDeleteError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchDeleteErrorKind {
-    BadGatewayError(crate::error::BadGatewayError),
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    ForbiddenError(crate::error::ForbiddenError),
-    GatewayTimeoutError(crate::error::GatewayTimeoutError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadGatewayException(crate::error::BadGatewayException),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    ForbiddenException(crate::error::ForbiddenException),
+    GatewayTimeoutException(crate::error::GatewayTimeoutException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchDeleteError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            BatchDeleteErrorKind::BadGatewayError(_inner) => _inner.fmt(f),
-            BatchDeleteErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            BatchDeleteErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            BatchDeleteErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            BatchDeleteErrorKind::GatewayTimeoutError(_inner) => _inner.fmt(f),
-            BatchDeleteErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            BatchDeleteErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            BatchDeleteErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            BatchDeleteErrorKind::BadGatewayException(_inner) => _inner.fmt(f),
+            BatchDeleteErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            BatchDeleteErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            BatchDeleteErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            BatchDeleteErrorKind::GatewayTimeoutException(_inner) => _inner.fmt(f),
+            BatchDeleteErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            BatchDeleteErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            BatchDeleteErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             BatchDeleteErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -231,45 +239,48 @@ impl BatchDeleteError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_gateway_error(&self) -> bool {
-        matches!(&self.kind, BatchDeleteErrorKind::BadGatewayError(_))
+    pub fn is_bad_gateway_exception(&self) -> bool {
+        matches!(&self.kind, BatchDeleteErrorKind::BadGatewayException(_))
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, BatchDeleteErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, BatchDeleteErrorKind::BadRequestException(_))
     }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, BatchDeleteErrorKind::ConflictError(_))
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, BatchDeleteErrorKind::ConflictException(_))
     }
-    pub fn is_forbidden_error(&self) -> bool {
-        matches!(&self.kind, BatchDeleteErrorKind::ForbiddenError(_))
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, BatchDeleteErrorKind::ForbiddenException(_))
     }
-    pub fn is_gateway_timeout_error(&self) -> bool {
-        matches!(&self.kind, BatchDeleteErrorKind::GatewayTimeoutError(_))
+    pub fn is_gateway_timeout_exception(&self) -> bool {
+        matches!(&self.kind, BatchDeleteErrorKind::GatewayTimeoutException(_))
     }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            BatchDeleteErrorKind::InternalServerErrorError(_)
+            BatchDeleteErrorKind::InternalServerErrorException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, BatchDeleteErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, BatchDeleteErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, BatchDeleteErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchDeleteErrorKind::TooManyRequestsException(_)
+        )
     }
 }
 impl std::error::Error for BatchDeleteError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            BatchDeleteErrorKind::BadGatewayError(_inner) => Some(_inner),
-            BatchDeleteErrorKind::BadRequestError(_inner) => Some(_inner),
-            BatchDeleteErrorKind::ConflictError(_inner) => Some(_inner),
-            BatchDeleteErrorKind::ForbiddenError(_inner) => Some(_inner),
-            BatchDeleteErrorKind::GatewayTimeoutError(_inner) => Some(_inner),
-            BatchDeleteErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            BatchDeleteErrorKind::NotFoundError(_inner) => Some(_inner),
-            BatchDeleteErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            BatchDeleteErrorKind::BadGatewayException(_inner) => Some(_inner),
+            BatchDeleteErrorKind::BadRequestException(_inner) => Some(_inner),
+            BatchDeleteErrorKind::ConflictException(_inner) => Some(_inner),
+            BatchDeleteErrorKind::ForbiddenException(_inner) => Some(_inner),
+            BatchDeleteErrorKind::GatewayTimeoutException(_inner) => Some(_inner),
+            BatchDeleteErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            BatchDeleteErrorKind::NotFoundException(_inner) => Some(_inner),
+            BatchDeleteErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             BatchDeleteErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -284,28 +295,28 @@ pub struct BatchStartError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchStartErrorKind {
-    BadGatewayError(crate::error::BadGatewayError),
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    ForbiddenError(crate::error::ForbiddenError),
-    GatewayTimeoutError(crate::error::GatewayTimeoutError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadGatewayException(crate::error::BadGatewayException),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    ForbiddenException(crate::error::ForbiddenException),
+    GatewayTimeoutException(crate::error::GatewayTimeoutException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchStartError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            BatchStartErrorKind::BadGatewayError(_inner) => _inner.fmt(f),
-            BatchStartErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            BatchStartErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            BatchStartErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            BatchStartErrorKind::GatewayTimeoutError(_inner) => _inner.fmt(f),
-            BatchStartErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            BatchStartErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            BatchStartErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            BatchStartErrorKind::BadGatewayException(_inner) => _inner.fmt(f),
+            BatchStartErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            BatchStartErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            BatchStartErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            BatchStartErrorKind::GatewayTimeoutException(_inner) => _inner.fmt(f),
+            BatchStartErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            BatchStartErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            BatchStartErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             BatchStartErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -354,42 +365,45 @@ impl BatchStartError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_gateway_error(&self) -> bool {
-        matches!(&self.kind, BatchStartErrorKind::BadGatewayError(_))
+    pub fn is_bad_gateway_exception(&self) -> bool {
+        matches!(&self.kind, BatchStartErrorKind::BadGatewayException(_))
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, BatchStartErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, BatchStartErrorKind::BadRequestException(_))
     }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, BatchStartErrorKind::ConflictError(_))
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, BatchStartErrorKind::ConflictException(_))
     }
-    pub fn is_forbidden_error(&self) -> bool {
-        matches!(&self.kind, BatchStartErrorKind::ForbiddenError(_))
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, BatchStartErrorKind::ForbiddenException(_))
     }
-    pub fn is_gateway_timeout_error(&self) -> bool {
-        matches!(&self.kind, BatchStartErrorKind::GatewayTimeoutError(_))
+    pub fn is_gateway_timeout_exception(&self) -> bool {
+        matches!(&self.kind, BatchStartErrorKind::GatewayTimeoutException(_))
     }
-    pub fn is_internal_server_error_error(&self) -> bool {
-        matches!(&self.kind, BatchStartErrorKind::InternalServerErrorError(_))
+    pub fn is_internal_server_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchStartErrorKind::InternalServerErrorException(_)
+        )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, BatchStartErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, BatchStartErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, BatchStartErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(&self.kind, BatchStartErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for BatchStartError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            BatchStartErrorKind::BadGatewayError(_inner) => Some(_inner),
-            BatchStartErrorKind::BadRequestError(_inner) => Some(_inner),
-            BatchStartErrorKind::ConflictError(_inner) => Some(_inner),
-            BatchStartErrorKind::ForbiddenError(_inner) => Some(_inner),
-            BatchStartErrorKind::GatewayTimeoutError(_inner) => Some(_inner),
-            BatchStartErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            BatchStartErrorKind::NotFoundError(_inner) => Some(_inner),
-            BatchStartErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            BatchStartErrorKind::BadGatewayException(_inner) => Some(_inner),
+            BatchStartErrorKind::BadRequestException(_inner) => Some(_inner),
+            BatchStartErrorKind::ConflictException(_inner) => Some(_inner),
+            BatchStartErrorKind::ForbiddenException(_inner) => Some(_inner),
+            BatchStartErrorKind::GatewayTimeoutException(_inner) => Some(_inner),
+            BatchStartErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            BatchStartErrorKind::NotFoundException(_inner) => Some(_inner),
+            BatchStartErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             BatchStartErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -404,28 +418,28 @@ pub struct BatchStopError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchStopErrorKind {
-    BadGatewayError(crate::error::BadGatewayError),
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    ForbiddenError(crate::error::ForbiddenError),
-    GatewayTimeoutError(crate::error::GatewayTimeoutError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadGatewayException(crate::error::BadGatewayException),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    ForbiddenException(crate::error::ForbiddenException),
+    GatewayTimeoutException(crate::error::GatewayTimeoutException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchStopError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            BatchStopErrorKind::BadGatewayError(_inner) => _inner.fmt(f),
-            BatchStopErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            BatchStopErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            BatchStopErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            BatchStopErrorKind::GatewayTimeoutError(_inner) => _inner.fmt(f),
-            BatchStopErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            BatchStopErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            BatchStopErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            BatchStopErrorKind::BadGatewayException(_inner) => _inner.fmt(f),
+            BatchStopErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            BatchStopErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            BatchStopErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            BatchStopErrorKind::GatewayTimeoutException(_inner) => _inner.fmt(f),
+            BatchStopErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            BatchStopErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            BatchStopErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             BatchStopErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -474,42 +488,45 @@ impl BatchStopError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_gateway_error(&self) -> bool {
-        matches!(&self.kind, BatchStopErrorKind::BadGatewayError(_))
+    pub fn is_bad_gateway_exception(&self) -> bool {
+        matches!(&self.kind, BatchStopErrorKind::BadGatewayException(_))
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, BatchStopErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, BatchStopErrorKind::BadRequestException(_))
     }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, BatchStopErrorKind::ConflictError(_))
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, BatchStopErrorKind::ConflictException(_))
     }
-    pub fn is_forbidden_error(&self) -> bool {
-        matches!(&self.kind, BatchStopErrorKind::ForbiddenError(_))
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, BatchStopErrorKind::ForbiddenException(_))
     }
-    pub fn is_gateway_timeout_error(&self) -> bool {
-        matches!(&self.kind, BatchStopErrorKind::GatewayTimeoutError(_))
+    pub fn is_gateway_timeout_exception(&self) -> bool {
+        matches!(&self.kind, BatchStopErrorKind::GatewayTimeoutException(_))
     }
-    pub fn is_internal_server_error_error(&self) -> bool {
-        matches!(&self.kind, BatchStopErrorKind::InternalServerErrorError(_))
+    pub fn is_internal_server_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchStopErrorKind::InternalServerErrorException(_)
+        )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, BatchStopErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, BatchStopErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, BatchStopErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(&self.kind, BatchStopErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for BatchStopError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            BatchStopErrorKind::BadGatewayError(_inner) => Some(_inner),
-            BatchStopErrorKind::BadRequestError(_inner) => Some(_inner),
-            BatchStopErrorKind::ConflictError(_inner) => Some(_inner),
-            BatchStopErrorKind::ForbiddenError(_inner) => Some(_inner),
-            BatchStopErrorKind::GatewayTimeoutError(_inner) => Some(_inner),
-            BatchStopErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            BatchStopErrorKind::NotFoundError(_inner) => Some(_inner),
-            BatchStopErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            BatchStopErrorKind::BadGatewayException(_inner) => Some(_inner),
+            BatchStopErrorKind::BadRequestException(_inner) => Some(_inner),
+            BatchStopErrorKind::ConflictException(_inner) => Some(_inner),
+            BatchStopErrorKind::ForbiddenException(_inner) => Some(_inner),
+            BatchStopErrorKind::GatewayTimeoutException(_inner) => Some(_inner),
+            BatchStopErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            BatchStopErrorKind::NotFoundException(_inner) => Some(_inner),
+            BatchStopErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             BatchStopErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -524,28 +541,28 @@ pub struct BatchUpdateScheduleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchUpdateScheduleErrorKind {
-    BadGatewayError(crate::error::BadGatewayError),
-    BadRequestError(crate::error::BadRequestError),
-    ForbiddenError(crate::error::ForbiddenError),
-    GatewayTimeoutError(crate::error::GatewayTimeoutError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnprocessableEntityError(crate::error::UnprocessableEntityError),
+    BadGatewayException(crate::error::BadGatewayException),
+    BadRequestException(crate::error::BadRequestException),
+    ForbiddenException(crate::error::ForbiddenException),
+    GatewayTimeoutException(crate::error::GatewayTimeoutException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnprocessableEntityException(crate::error::UnprocessableEntityException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchUpdateScheduleError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            BatchUpdateScheduleErrorKind::BadGatewayError(_inner) => _inner.fmt(f),
-            BatchUpdateScheduleErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            BatchUpdateScheduleErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            BatchUpdateScheduleErrorKind::GatewayTimeoutError(_inner) => _inner.fmt(f),
-            BatchUpdateScheduleErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            BatchUpdateScheduleErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            BatchUpdateScheduleErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            BatchUpdateScheduleErrorKind::UnprocessableEntityError(_inner) => _inner.fmt(f),
+            BatchUpdateScheduleErrorKind::BadGatewayException(_inner) => _inner.fmt(f),
+            BatchUpdateScheduleErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            BatchUpdateScheduleErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            BatchUpdateScheduleErrorKind::GatewayTimeoutException(_inner) => _inner.fmt(f),
+            BatchUpdateScheduleErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            BatchUpdateScheduleErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            BatchUpdateScheduleErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            BatchUpdateScheduleErrorKind::UnprocessableEntityException(_inner) => _inner.fmt(f),
             BatchUpdateScheduleErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -594,54 +611,66 @@ impl BatchUpdateScheduleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_gateway_error(&self) -> bool {
-        matches!(&self.kind, BatchUpdateScheduleErrorKind::BadGatewayError(_))
-    }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, BatchUpdateScheduleErrorKind::BadRequestError(_))
-    }
-    pub fn is_forbidden_error(&self) -> bool {
-        matches!(&self.kind, BatchUpdateScheduleErrorKind::ForbiddenError(_))
-    }
-    pub fn is_gateway_timeout_error(&self) -> bool {
+    pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(
             &self.kind,
-            BatchUpdateScheduleErrorKind::GatewayTimeoutError(_)
+            BatchUpdateScheduleErrorKind::BadGatewayException(_)
         )
     }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            BatchUpdateScheduleErrorKind::InternalServerErrorError(_)
+            BatchUpdateScheduleErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, BatchUpdateScheduleErrorKind::NotFoundError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
-            BatchUpdateScheduleErrorKind::TooManyRequestsError(_)
+            BatchUpdateScheduleErrorKind::ForbiddenException(_)
         )
     }
-    pub fn is_unprocessable_entity_error(&self) -> bool {
+    pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
-            BatchUpdateScheduleErrorKind::UnprocessableEntityError(_)
+            BatchUpdateScheduleErrorKind::GatewayTimeoutException(_)
+        )
+    }
+    pub fn is_internal_server_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchUpdateScheduleErrorKind::InternalServerErrorException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchUpdateScheduleErrorKind::NotFoundException(_)
+        )
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchUpdateScheduleErrorKind::TooManyRequestsException(_)
+        )
+    }
+    pub fn is_unprocessable_entity_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchUpdateScheduleErrorKind::UnprocessableEntityException(_)
         )
     }
 }
 impl std::error::Error for BatchUpdateScheduleError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            BatchUpdateScheduleErrorKind::BadGatewayError(_inner) => Some(_inner),
-            BatchUpdateScheduleErrorKind::BadRequestError(_inner) => Some(_inner),
-            BatchUpdateScheduleErrorKind::ForbiddenError(_inner) => Some(_inner),
-            BatchUpdateScheduleErrorKind::GatewayTimeoutError(_inner) => Some(_inner),
-            BatchUpdateScheduleErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            BatchUpdateScheduleErrorKind::NotFoundError(_inner) => Some(_inner),
-            BatchUpdateScheduleErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            BatchUpdateScheduleErrorKind::UnprocessableEntityError(_inner) => Some(_inner),
+            BatchUpdateScheduleErrorKind::BadGatewayException(_inner) => Some(_inner),
+            BatchUpdateScheduleErrorKind::BadRequestException(_inner) => Some(_inner),
+            BatchUpdateScheduleErrorKind::ForbiddenException(_inner) => Some(_inner),
+            BatchUpdateScheduleErrorKind::GatewayTimeoutException(_inner) => Some(_inner),
+            BatchUpdateScheduleErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            BatchUpdateScheduleErrorKind::NotFoundException(_inner) => Some(_inner),
+            BatchUpdateScheduleErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            BatchUpdateScheduleErrorKind::UnprocessableEntityException(_inner) => Some(_inner),
             BatchUpdateScheduleErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -656,30 +685,34 @@ pub struct CancelInputDeviceTransferError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CancelInputDeviceTransferErrorKind {
-    BadGatewayError(crate::error::BadGatewayError),
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    ForbiddenError(crate::error::ForbiddenError),
-    GatewayTimeoutError(crate::error::GatewayTimeoutError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnprocessableEntityError(crate::error::UnprocessableEntityError),
+    BadGatewayException(crate::error::BadGatewayException),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    ForbiddenException(crate::error::ForbiddenException),
+    GatewayTimeoutException(crate::error::GatewayTimeoutException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnprocessableEntityException(crate::error::UnprocessableEntityException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CancelInputDeviceTransferError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CancelInputDeviceTransferErrorKind::BadGatewayError(_inner) => _inner.fmt(f),
-            CancelInputDeviceTransferErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            CancelInputDeviceTransferErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            CancelInputDeviceTransferErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            CancelInputDeviceTransferErrorKind::GatewayTimeoutError(_inner) => _inner.fmt(f),
-            CancelInputDeviceTransferErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            CancelInputDeviceTransferErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            CancelInputDeviceTransferErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            CancelInputDeviceTransferErrorKind::UnprocessableEntityError(_inner) => _inner.fmt(f),
+            CancelInputDeviceTransferErrorKind::BadGatewayException(_inner) => _inner.fmt(f),
+            CancelInputDeviceTransferErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            CancelInputDeviceTransferErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            CancelInputDeviceTransferErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            CancelInputDeviceTransferErrorKind::GatewayTimeoutException(_inner) => _inner.fmt(f),
+            CancelInputDeviceTransferErrorKind::InternalServerErrorException(_inner) => {
+                _inner.fmt(f)
+            }
+            CancelInputDeviceTransferErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            CancelInputDeviceTransferErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            CancelInputDeviceTransferErrorKind::UnprocessableEntityException(_inner) => {
+                _inner.fmt(f)
+            }
             CancelInputDeviceTransferErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -728,73 +761,77 @@ impl CancelInputDeviceTransferError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_gateway_error(&self) -> bool {
+    pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CancelInputDeviceTransferErrorKind::BadGatewayError(_)
+            CancelInputDeviceTransferErrorKind::BadGatewayException(_)
         )
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CancelInputDeviceTransferErrorKind::BadRequestError(_)
+            CancelInputDeviceTransferErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_conflict_error(&self) -> bool {
+    pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CancelInputDeviceTransferErrorKind::ConflictError(_)
+            CancelInputDeviceTransferErrorKind::ConflictException(_)
         )
     }
-    pub fn is_forbidden_error(&self) -> bool {
+    pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CancelInputDeviceTransferErrorKind::ForbiddenError(_)
+            CancelInputDeviceTransferErrorKind::ForbiddenException(_)
         )
     }
-    pub fn is_gateway_timeout_error(&self) -> bool {
+    pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CancelInputDeviceTransferErrorKind::GatewayTimeoutError(_)
+            CancelInputDeviceTransferErrorKind::GatewayTimeoutException(_)
         )
     }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CancelInputDeviceTransferErrorKind::InternalServerErrorError(_)
+            CancelInputDeviceTransferErrorKind::InternalServerErrorException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CancelInputDeviceTransferErrorKind::NotFoundError(_)
+            CancelInputDeviceTransferErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CancelInputDeviceTransferErrorKind::TooManyRequestsError(_)
+            CancelInputDeviceTransferErrorKind::TooManyRequestsException(_)
         )
     }
-    pub fn is_unprocessable_entity_error(&self) -> bool {
+    pub fn is_unprocessable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CancelInputDeviceTransferErrorKind::UnprocessableEntityError(_)
+            CancelInputDeviceTransferErrorKind::UnprocessableEntityException(_)
         )
     }
 }
 impl std::error::Error for CancelInputDeviceTransferError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CancelInputDeviceTransferErrorKind::BadGatewayError(_inner) => Some(_inner),
-            CancelInputDeviceTransferErrorKind::BadRequestError(_inner) => Some(_inner),
-            CancelInputDeviceTransferErrorKind::ConflictError(_inner) => Some(_inner),
-            CancelInputDeviceTransferErrorKind::ForbiddenError(_inner) => Some(_inner),
-            CancelInputDeviceTransferErrorKind::GatewayTimeoutError(_inner) => Some(_inner),
-            CancelInputDeviceTransferErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            CancelInputDeviceTransferErrorKind::NotFoundError(_inner) => Some(_inner),
-            CancelInputDeviceTransferErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            CancelInputDeviceTransferErrorKind::UnprocessableEntityError(_inner) => Some(_inner),
+            CancelInputDeviceTransferErrorKind::BadGatewayException(_inner) => Some(_inner),
+            CancelInputDeviceTransferErrorKind::BadRequestException(_inner) => Some(_inner),
+            CancelInputDeviceTransferErrorKind::ConflictException(_inner) => Some(_inner),
+            CancelInputDeviceTransferErrorKind::ForbiddenException(_inner) => Some(_inner),
+            CancelInputDeviceTransferErrorKind::GatewayTimeoutException(_inner) => Some(_inner),
+            CancelInputDeviceTransferErrorKind::InternalServerErrorException(_inner) => {
+                Some(_inner)
+            }
+            CancelInputDeviceTransferErrorKind::NotFoundException(_inner) => Some(_inner),
+            CancelInputDeviceTransferErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            CancelInputDeviceTransferErrorKind::UnprocessableEntityException(_inner) => {
+                Some(_inner)
+            }
             CancelInputDeviceTransferErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -809,28 +846,28 @@ pub struct CreateChannelError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateChannelErrorKind {
-    BadGatewayError(crate::error::BadGatewayError),
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    ForbiddenError(crate::error::ForbiddenError),
-    GatewayTimeoutError(crate::error::GatewayTimeoutError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnprocessableEntityError(crate::error::UnprocessableEntityError),
+    BadGatewayException(crate::error::BadGatewayException),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    ForbiddenException(crate::error::ForbiddenException),
+    GatewayTimeoutException(crate::error::GatewayTimeoutException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnprocessableEntityException(crate::error::UnprocessableEntityException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateChannelError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateChannelErrorKind::BadGatewayError(_inner) => _inner.fmt(f),
-            CreateChannelErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            CreateChannelErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            CreateChannelErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            CreateChannelErrorKind::GatewayTimeoutError(_inner) => _inner.fmt(f),
-            CreateChannelErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            CreateChannelErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            CreateChannelErrorKind::UnprocessableEntityError(_inner) => _inner.fmt(f),
+            CreateChannelErrorKind::BadGatewayException(_inner) => _inner.fmt(f),
+            CreateChannelErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            CreateChannelErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            CreateChannelErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            CreateChannelErrorKind::GatewayTimeoutException(_inner) => _inner.fmt(f),
+            CreateChannelErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            CreateChannelErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            CreateChannelErrorKind::UnprocessableEntityException(_inner) => _inner.fmt(f),
             CreateChannelErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -879,48 +916,54 @@ impl CreateChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_gateway_error(&self) -> bool {
-        matches!(&self.kind, CreateChannelErrorKind::BadGatewayError(_))
+    pub fn is_bad_gateway_exception(&self) -> bool {
+        matches!(&self.kind, CreateChannelErrorKind::BadGatewayException(_))
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, CreateChannelErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, CreateChannelErrorKind::BadRequestException(_))
     }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, CreateChannelErrorKind::ConflictError(_))
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, CreateChannelErrorKind::ConflictException(_))
     }
-    pub fn is_forbidden_error(&self) -> bool {
-        matches!(&self.kind, CreateChannelErrorKind::ForbiddenError(_))
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, CreateChannelErrorKind::ForbiddenException(_))
     }
-    pub fn is_gateway_timeout_error(&self) -> bool {
-        matches!(&self.kind, CreateChannelErrorKind::GatewayTimeoutError(_))
-    }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateChannelErrorKind::InternalServerErrorError(_)
+            CreateChannelErrorKind::GatewayTimeoutException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, CreateChannelErrorKind::TooManyRequestsError(_))
-    }
-    pub fn is_unprocessable_entity_error(&self) -> bool {
+    pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateChannelErrorKind::UnprocessableEntityError(_)
+            CreateChannelErrorKind::InternalServerErrorException(_)
+        )
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateChannelErrorKind::TooManyRequestsException(_)
+        )
+    }
+    pub fn is_unprocessable_entity_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateChannelErrorKind::UnprocessableEntityException(_)
         )
     }
 }
 impl std::error::Error for CreateChannelError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateChannelErrorKind::BadGatewayError(_inner) => Some(_inner),
-            CreateChannelErrorKind::BadRequestError(_inner) => Some(_inner),
-            CreateChannelErrorKind::ConflictError(_inner) => Some(_inner),
-            CreateChannelErrorKind::ForbiddenError(_inner) => Some(_inner),
-            CreateChannelErrorKind::GatewayTimeoutError(_inner) => Some(_inner),
-            CreateChannelErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            CreateChannelErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            CreateChannelErrorKind::UnprocessableEntityError(_inner) => Some(_inner),
+            CreateChannelErrorKind::BadGatewayException(_inner) => Some(_inner),
+            CreateChannelErrorKind::BadRequestException(_inner) => Some(_inner),
+            CreateChannelErrorKind::ConflictException(_inner) => Some(_inner),
+            CreateChannelErrorKind::ForbiddenException(_inner) => Some(_inner),
+            CreateChannelErrorKind::GatewayTimeoutException(_inner) => Some(_inner),
+            CreateChannelErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            CreateChannelErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            CreateChannelErrorKind::UnprocessableEntityException(_inner) => Some(_inner),
             CreateChannelErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -935,24 +978,24 @@ pub struct CreateInputError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateInputErrorKind {
-    BadGatewayError(crate::error::BadGatewayError),
-    BadRequestError(crate::error::BadRequestError),
-    ForbiddenError(crate::error::ForbiddenError),
-    GatewayTimeoutError(crate::error::GatewayTimeoutError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadGatewayException(crate::error::BadGatewayException),
+    BadRequestException(crate::error::BadRequestException),
+    ForbiddenException(crate::error::ForbiddenException),
+    GatewayTimeoutException(crate::error::GatewayTimeoutException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateInputError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateInputErrorKind::BadGatewayError(_inner) => _inner.fmt(f),
-            CreateInputErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            CreateInputErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            CreateInputErrorKind::GatewayTimeoutError(_inner) => _inner.fmt(f),
-            CreateInputErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            CreateInputErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            CreateInputErrorKind::BadGatewayException(_inner) => _inner.fmt(f),
+            CreateInputErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            CreateInputErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            CreateInputErrorKind::GatewayTimeoutException(_inner) => _inner.fmt(f),
+            CreateInputErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            CreateInputErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             CreateInputErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1001,37 +1044,40 @@ impl CreateInputError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_gateway_error(&self) -> bool {
-        matches!(&self.kind, CreateInputErrorKind::BadGatewayError(_))
+    pub fn is_bad_gateway_exception(&self) -> bool {
+        matches!(&self.kind, CreateInputErrorKind::BadGatewayException(_))
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, CreateInputErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, CreateInputErrorKind::BadRequestException(_))
     }
-    pub fn is_forbidden_error(&self) -> bool {
-        matches!(&self.kind, CreateInputErrorKind::ForbiddenError(_))
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, CreateInputErrorKind::ForbiddenException(_))
     }
-    pub fn is_gateway_timeout_error(&self) -> bool {
-        matches!(&self.kind, CreateInputErrorKind::GatewayTimeoutError(_))
+    pub fn is_gateway_timeout_exception(&self) -> bool {
+        matches!(&self.kind, CreateInputErrorKind::GatewayTimeoutException(_))
     }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateInputErrorKind::InternalServerErrorError(_)
+            CreateInputErrorKind::InternalServerErrorException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, CreateInputErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateInputErrorKind::TooManyRequestsException(_)
+        )
     }
 }
 impl std::error::Error for CreateInputError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateInputErrorKind::BadGatewayError(_inner) => Some(_inner),
-            CreateInputErrorKind::BadRequestError(_inner) => Some(_inner),
-            CreateInputErrorKind::ForbiddenError(_inner) => Some(_inner),
-            CreateInputErrorKind::GatewayTimeoutError(_inner) => Some(_inner),
-            CreateInputErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            CreateInputErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            CreateInputErrorKind::BadGatewayException(_inner) => Some(_inner),
+            CreateInputErrorKind::BadRequestException(_inner) => Some(_inner),
+            CreateInputErrorKind::ForbiddenException(_inner) => Some(_inner),
+            CreateInputErrorKind::GatewayTimeoutException(_inner) => Some(_inner),
+            CreateInputErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            CreateInputErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             CreateInputErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1046,24 +1092,26 @@ pub struct CreateInputSecurityGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateInputSecurityGroupErrorKind {
-    BadGatewayError(crate::error::BadGatewayError),
-    BadRequestError(crate::error::BadRequestError),
-    ForbiddenError(crate::error::ForbiddenError),
-    GatewayTimeoutError(crate::error::GatewayTimeoutError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadGatewayException(crate::error::BadGatewayException),
+    BadRequestException(crate::error::BadRequestException),
+    ForbiddenException(crate::error::ForbiddenException),
+    GatewayTimeoutException(crate::error::GatewayTimeoutException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateInputSecurityGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateInputSecurityGroupErrorKind::BadGatewayError(_inner) => _inner.fmt(f),
-            CreateInputSecurityGroupErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            CreateInputSecurityGroupErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            CreateInputSecurityGroupErrorKind::GatewayTimeoutError(_inner) => _inner.fmt(f),
-            CreateInputSecurityGroupErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            CreateInputSecurityGroupErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            CreateInputSecurityGroupErrorKind::BadGatewayException(_inner) => _inner.fmt(f),
+            CreateInputSecurityGroupErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            CreateInputSecurityGroupErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            CreateInputSecurityGroupErrorKind::GatewayTimeoutException(_inner) => _inner.fmt(f),
+            CreateInputSecurityGroupErrorKind::InternalServerErrorException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateInputSecurityGroupErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             CreateInputSecurityGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1112,52 +1160,52 @@ impl CreateInputSecurityGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_gateway_error(&self) -> bool {
+    pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateInputSecurityGroupErrorKind::BadGatewayError(_)
+            CreateInputSecurityGroupErrorKind::BadGatewayException(_)
         )
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateInputSecurityGroupErrorKind::BadRequestError(_)
+            CreateInputSecurityGroupErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_forbidden_error(&self) -> bool {
+    pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateInputSecurityGroupErrorKind::ForbiddenError(_)
+            CreateInputSecurityGroupErrorKind::ForbiddenException(_)
         )
     }
-    pub fn is_gateway_timeout_error(&self) -> bool {
+    pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateInputSecurityGroupErrorKind::GatewayTimeoutError(_)
+            CreateInputSecurityGroupErrorKind::GatewayTimeoutException(_)
         )
     }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateInputSecurityGroupErrorKind::InternalServerErrorError(_)
+            CreateInputSecurityGroupErrorKind::InternalServerErrorException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateInputSecurityGroupErrorKind::TooManyRequestsError(_)
+            CreateInputSecurityGroupErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for CreateInputSecurityGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateInputSecurityGroupErrorKind::BadGatewayError(_inner) => Some(_inner),
-            CreateInputSecurityGroupErrorKind::BadRequestError(_inner) => Some(_inner),
-            CreateInputSecurityGroupErrorKind::ForbiddenError(_inner) => Some(_inner),
-            CreateInputSecurityGroupErrorKind::GatewayTimeoutError(_inner) => Some(_inner),
-            CreateInputSecurityGroupErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            CreateInputSecurityGroupErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            CreateInputSecurityGroupErrorKind::BadGatewayException(_inner) => Some(_inner),
+            CreateInputSecurityGroupErrorKind::BadRequestException(_inner) => Some(_inner),
+            CreateInputSecurityGroupErrorKind::ForbiddenException(_inner) => Some(_inner),
+            CreateInputSecurityGroupErrorKind::GatewayTimeoutException(_inner) => Some(_inner),
+            CreateInputSecurityGroupErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            CreateInputSecurityGroupErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             CreateInputSecurityGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1172,28 +1220,28 @@ pub struct CreateMultiplexError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateMultiplexErrorKind {
-    BadGatewayError(crate::error::BadGatewayError),
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    ForbiddenError(crate::error::ForbiddenError),
-    GatewayTimeoutError(crate::error::GatewayTimeoutError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnprocessableEntityError(crate::error::UnprocessableEntityError),
+    BadGatewayException(crate::error::BadGatewayException),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    ForbiddenException(crate::error::ForbiddenException),
+    GatewayTimeoutException(crate::error::GatewayTimeoutException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnprocessableEntityException(crate::error::UnprocessableEntityException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateMultiplexError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateMultiplexErrorKind::BadGatewayError(_inner) => _inner.fmt(f),
-            CreateMultiplexErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            CreateMultiplexErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            CreateMultiplexErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            CreateMultiplexErrorKind::GatewayTimeoutError(_inner) => _inner.fmt(f),
-            CreateMultiplexErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            CreateMultiplexErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            CreateMultiplexErrorKind::UnprocessableEntityError(_inner) => _inner.fmt(f),
+            CreateMultiplexErrorKind::BadGatewayException(_inner) => _inner.fmt(f),
+            CreateMultiplexErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            CreateMultiplexErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            CreateMultiplexErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            CreateMultiplexErrorKind::GatewayTimeoutException(_inner) => _inner.fmt(f),
+            CreateMultiplexErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            CreateMultiplexErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            CreateMultiplexErrorKind::UnprocessableEntityException(_inner) => _inner.fmt(f),
             CreateMultiplexErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1242,51 +1290,54 @@ impl CreateMultiplexError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_gateway_error(&self) -> bool {
-        matches!(&self.kind, CreateMultiplexErrorKind::BadGatewayError(_))
+    pub fn is_bad_gateway_exception(&self) -> bool {
+        matches!(&self.kind, CreateMultiplexErrorKind::BadGatewayException(_))
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, CreateMultiplexErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, CreateMultiplexErrorKind::BadRequestException(_))
     }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, CreateMultiplexErrorKind::ConflictError(_))
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, CreateMultiplexErrorKind::ConflictException(_))
     }
-    pub fn is_forbidden_error(&self) -> bool {
-        matches!(&self.kind, CreateMultiplexErrorKind::ForbiddenError(_))
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, CreateMultiplexErrorKind::ForbiddenException(_))
     }
-    pub fn is_gateway_timeout_error(&self) -> bool {
-        matches!(&self.kind, CreateMultiplexErrorKind::GatewayTimeoutError(_))
-    }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateMultiplexErrorKind::InternalServerErrorError(_)
+            CreateMultiplexErrorKind::GatewayTimeoutException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateMultiplexErrorKind::TooManyRequestsError(_)
+            CreateMultiplexErrorKind::InternalServerErrorException(_)
         )
     }
-    pub fn is_unprocessable_entity_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateMultiplexErrorKind::UnprocessableEntityError(_)
+            CreateMultiplexErrorKind::TooManyRequestsException(_)
+        )
+    }
+    pub fn is_unprocessable_entity_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateMultiplexErrorKind::UnprocessableEntityException(_)
         )
     }
 }
 impl std::error::Error for CreateMultiplexError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateMultiplexErrorKind::BadGatewayError(_inner) => Some(_inner),
-            CreateMultiplexErrorKind::BadRequestError(_inner) => Some(_inner),
-            CreateMultiplexErrorKind::ConflictError(_inner) => Some(_inner),
-            CreateMultiplexErrorKind::ForbiddenError(_inner) => Some(_inner),
-            CreateMultiplexErrorKind::GatewayTimeoutError(_inner) => Some(_inner),
-            CreateMultiplexErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            CreateMultiplexErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            CreateMultiplexErrorKind::UnprocessableEntityError(_inner) => Some(_inner),
+            CreateMultiplexErrorKind::BadGatewayException(_inner) => Some(_inner),
+            CreateMultiplexErrorKind::BadRequestException(_inner) => Some(_inner),
+            CreateMultiplexErrorKind::ConflictException(_inner) => Some(_inner),
+            CreateMultiplexErrorKind::ForbiddenException(_inner) => Some(_inner),
+            CreateMultiplexErrorKind::GatewayTimeoutException(_inner) => Some(_inner),
+            CreateMultiplexErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            CreateMultiplexErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            CreateMultiplexErrorKind::UnprocessableEntityException(_inner) => Some(_inner),
             CreateMultiplexErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1301,28 +1352,28 @@ pub struct CreateMultiplexProgramError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateMultiplexProgramErrorKind {
-    BadGatewayError(crate::error::BadGatewayError),
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    ForbiddenError(crate::error::ForbiddenError),
-    GatewayTimeoutError(crate::error::GatewayTimeoutError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnprocessableEntityError(crate::error::UnprocessableEntityError),
+    BadGatewayException(crate::error::BadGatewayException),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    ForbiddenException(crate::error::ForbiddenException),
+    GatewayTimeoutException(crate::error::GatewayTimeoutException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnprocessableEntityException(crate::error::UnprocessableEntityException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateMultiplexProgramError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateMultiplexProgramErrorKind::BadGatewayError(_inner) => _inner.fmt(f),
-            CreateMultiplexProgramErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            CreateMultiplexProgramErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            CreateMultiplexProgramErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            CreateMultiplexProgramErrorKind::GatewayTimeoutError(_inner) => _inner.fmt(f),
-            CreateMultiplexProgramErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            CreateMultiplexProgramErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            CreateMultiplexProgramErrorKind::UnprocessableEntityError(_inner) => _inner.fmt(f),
+            CreateMultiplexProgramErrorKind::BadGatewayException(_inner) => _inner.fmt(f),
+            CreateMultiplexProgramErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            CreateMultiplexProgramErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            CreateMultiplexProgramErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            CreateMultiplexProgramErrorKind::GatewayTimeoutException(_inner) => _inner.fmt(f),
+            CreateMultiplexProgramErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            CreateMultiplexProgramErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            CreateMultiplexProgramErrorKind::UnprocessableEntityException(_inner) => _inner.fmt(f),
             CreateMultiplexProgramErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1371,66 +1422,66 @@ impl CreateMultiplexProgramError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_gateway_error(&self) -> bool {
+    pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateMultiplexProgramErrorKind::BadGatewayError(_)
+            CreateMultiplexProgramErrorKind::BadGatewayException(_)
         )
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateMultiplexProgramErrorKind::BadRequestError(_)
+            CreateMultiplexProgramErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_conflict_error(&self) -> bool {
+    pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateMultiplexProgramErrorKind::ConflictError(_)
+            CreateMultiplexProgramErrorKind::ConflictException(_)
         )
     }
-    pub fn is_forbidden_error(&self) -> bool {
+    pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateMultiplexProgramErrorKind::ForbiddenError(_)
+            CreateMultiplexProgramErrorKind::ForbiddenException(_)
         )
     }
-    pub fn is_gateway_timeout_error(&self) -> bool {
+    pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateMultiplexProgramErrorKind::GatewayTimeoutError(_)
+            CreateMultiplexProgramErrorKind::GatewayTimeoutException(_)
         )
     }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateMultiplexProgramErrorKind::InternalServerErrorError(_)
+            CreateMultiplexProgramErrorKind::InternalServerErrorException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateMultiplexProgramErrorKind::TooManyRequestsError(_)
+            CreateMultiplexProgramErrorKind::TooManyRequestsException(_)
         )
     }
-    pub fn is_unprocessable_entity_error(&self) -> bool {
+    pub fn is_unprocessable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateMultiplexProgramErrorKind::UnprocessableEntityError(_)
+            CreateMultiplexProgramErrorKind::UnprocessableEntityException(_)
         )
     }
 }
 impl std::error::Error for CreateMultiplexProgramError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateMultiplexProgramErrorKind::BadGatewayError(_inner) => Some(_inner),
-            CreateMultiplexProgramErrorKind::BadRequestError(_inner) => Some(_inner),
-            CreateMultiplexProgramErrorKind::ConflictError(_inner) => Some(_inner),
-            CreateMultiplexProgramErrorKind::ForbiddenError(_inner) => Some(_inner),
-            CreateMultiplexProgramErrorKind::GatewayTimeoutError(_inner) => Some(_inner),
-            CreateMultiplexProgramErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            CreateMultiplexProgramErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            CreateMultiplexProgramErrorKind::UnprocessableEntityError(_inner) => Some(_inner),
+            CreateMultiplexProgramErrorKind::BadGatewayException(_inner) => Some(_inner),
+            CreateMultiplexProgramErrorKind::BadRequestException(_inner) => Some(_inner),
+            CreateMultiplexProgramErrorKind::ConflictException(_inner) => Some(_inner),
+            CreateMultiplexProgramErrorKind::ForbiddenException(_inner) => Some(_inner),
+            CreateMultiplexProgramErrorKind::GatewayTimeoutException(_inner) => Some(_inner),
+            CreateMultiplexProgramErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            CreateMultiplexProgramErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            CreateMultiplexProgramErrorKind::UnprocessableEntityException(_inner) => Some(_inner),
             CreateMultiplexProgramErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1445,24 +1496,24 @@ pub struct CreatePartnerInputError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreatePartnerInputErrorKind {
-    BadGatewayError(crate::error::BadGatewayError),
-    BadRequestError(crate::error::BadRequestError),
-    ForbiddenError(crate::error::ForbiddenError),
-    GatewayTimeoutError(crate::error::GatewayTimeoutError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadGatewayException(crate::error::BadGatewayException),
+    BadRequestException(crate::error::BadRequestException),
+    ForbiddenException(crate::error::ForbiddenException),
+    GatewayTimeoutException(crate::error::GatewayTimeoutException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreatePartnerInputError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreatePartnerInputErrorKind::BadGatewayError(_inner) => _inner.fmt(f),
-            CreatePartnerInputErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            CreatePartnerInputErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            CreatePartnerInputErrorKind::GatewayTimeoutError(_inner) => _inner.fmt(f),
-            CreatePartnerInputErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            CreatePartnerInputErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            CreatePartnerInputErrorKind::BadGatewayException(_inner) => _inner.fmt(f),
+            CreatePartnerInputErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            CreatePartnerInputErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            CreatePartnerInputErrorKind::GatewayTimeoutException(_inner) => _inner.fmt(f),
+            CreatePartnerInputErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            CreatePartnerInputErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             CreatePartnerInputErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1511,43 +1562,52 @@ impl CreatePartnerInputError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_gateway_error(&self) -> bool {
-        matches!(&self.kind, CreatePartnerInputErrorKind::BadGatewayError(_))
-    }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, CreatePartnerInputErrorKind::BadRequestError(_))
-    }
-    pub fn is_forbidden_error(&self) -> bool {
-        matches!(&self.kind, CreatePartnerInputErrorKind::ForbiddenError(_))
-    }
-    pub fn is_gateway_timeout_error(&self) -> bool {
+    pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreatePartnerInputErrorKind::GatewayTimeoutError(_)
+            CreatePartnerInputErrorKind::BadGatewayException(_)
         )
     }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreatePartnerInputErrorKind::InternalServerErrorError(_)
+            CreatePartnerInputErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreatePartnerInputErrorKind::TooManyRequestsError(_)
+            CreatePartnerInputErrorKind::ForbiddenException(_)
+        )
+    }
+    pub fn is_gateway_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreatePartnerInputErrorKind::GatewayTimeoutException(_)
+        )
+    }
+    pub fn is_internal_server_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreatePartnerInputErrorKind::InternalServerErrorException(_)
+        )
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreatePartnerInputErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for CreatePartnerInputError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreatePartnerInputErrorKind::BadGatewayError(_inner) => Some(_inner),
-            CreatePartnerInputErrorKind::BadRequestError(_inner) => Some(_inner),
-            CreatePartnerInputErrorKind::ForbiddenError(_inner) => Some(_inner),
-            CreatePartnerInputErrorKind::GatewayTimeoutError(_inner) => Some(_inner),
-            CreatePartnerInputErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            CreatePartnerInputErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            CreatePartnerInputErrorKind::BadGatewayException(_inner) => Some(_inner),
+            CreatePartnerInputErrorKind::BadRequestException(_inner) => Some(_inner),
+            CreatePartnerInputErrorKind::ForbiddenException(_inner) => Some(_inner),
+            CreatePartnerInputErrorKind::GatewayTimeoutException(_inner) => Some(_inner),
+            CreatePartnerInputErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            CreatePartnerInputErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             CreatePartnerInputErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1562,20 +1622,20 @@ pub struct CreateTagsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateTagsErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ForbiddenError(crate::error::ForbiddenError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    NotFoundError(crate::error::NotFoundError),
+    BadRequestException(crate::error::BadRequestException),
+    ForbiddenException(crate::error::ForbiddenException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateTagsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateTagsErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            CreateTagsErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            CreateTagsErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            CreateTagsErrorKind::NotFoundError(_inner) => _inner.fmt(f),
+            CreateTagsErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            CreateTagsErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            CreateTagsErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            CreateTagsErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             CreateTagsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1624,26 +1684,29 @@ impl CreateTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, CreateTagsErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, CreateTagsErrorKind::BadRequestException(_))
     }
-    pub fn is_forbidden_error(&self) -> bool {
-        matches!(&self.kind, CreateTagsErrorKind::ForbiddenError(_))
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, CreateTagsErrorKind::ForbiddenException(_))
     }
-    pub fn is_internal_server_error_error(&self) -> bool {
-        matches!(&self.kind, CreateTagsErrorKind::InternalServerErrorError(_))
+    pub fn is_internal_server_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateTagsErrorKind::InternalServerErrorException(_)
+        )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, CreateTagsErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, CreateTagsErrorKind::NotFoundException(_))
     }
 }
 impl std::error::Error for CreateTagsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateTagsErrorKind::BadRequestError(_inner) => Some(_inner),
-            CreateTagsErrorKind::ForbiddenError(_inner) => Some(_inner),
-            CreateTagsErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            CreateTagsErrorKind::NotFoundError(_inner) => Some(_inner),
+            CreateTagsErrorKind::BadRequestException(_inner) => Some(_inner),
+            CreateTagsErrorKind::ForbiddenException(_inner) => Some(_inner),
+            CreateTagsErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            CreateTagsErrorKind::NotFoundException(_inner) => Some(_inner),
             CreateTagsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1658,28 +1721,28 @@ pub struct DeleteChannelError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteChannelErrorKind {
-    BadGatewayError(crate::error::BadGatewayError),
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    ForbiddenError(crate::error::ForbiddenError),
-    GatewayTimeoutError(crate::error::GatewayTimeoutError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadGatewayException(crate::error::BadGatewayException),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    ForbiddenException(crate::error::ForbiddenException),
+    GatewayTimeoutException(crate::error::GatewayTimeoutException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteChannelError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteChannelErrorKind::BadGatewayError(_inner) => _inner.fmt(f),
-            DeleteChannelErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            DeleteChannelErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            DeleteChannelErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            DeleteChannelErrorKind::GatewayTimeoutError(_inner) => _inner.fmt(f),
-            DeleteChannelErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            DeleteChannelErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            DeleteChannelErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            DeleteChannelErrorKind::BadGatewayException(_inner) => _inner.fmt(f),
+            DeleteChannelErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            DeleteChannelErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            DeleteChannelErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            DeleteChannelErrorKind::GatewayTimeoutException(_inner) => _inner.fmt(f),
+            DeleteChannelErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            DeleteChannelErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DeleteChannelErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             DeleteChannelErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1728,45 +1791,51 @@ impl DeleteChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_gateway_error(&self) -> bool {
-        matches!(&self.kind, DeleteChannelErrorKind::BadGatewayError(_))
+    pub fn is_bad_gateway_exception(&self) -> bool {
+        matches!(&self.kind, DeleteChannelErrorKind::BadGatewayException(_))
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, DeleteChannelErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, DeleteChannelErrorKind::BadRequestException(_))
     }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, DeleteChannelErrorKind::ConflictError(_))
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, DeleteChannelErrorKind::ConflictException(_))
     }
-    pub fn is_forbidden_error(&self) -> bool {
-        matches!(&self.kind, DeleteChannelErrorKind::ForbiddenError(_))
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, DeleteChannelErrorKind::ForbiddenException(_))
     }
-    pub fn is_gateway_timeout_error(&self) -> bool {
-        matches!(&self.kind, DeleteChannelErrorKind::GatewayTimeoutError(_))
-    }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteChannelErrorKind::InternalServerErrorError(_)
+            DeleteChannelErrorKind::GatewayTimeoutException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, DeleteChannelErrorKind::NotFoundError(_))
+    pub fn is_internal_server_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteChannelErrorKind::InternalServerErrorException(_)
+        )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, DeleteChannelErrorKind::TooManyRequestsError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, DeleteChannelErrorKind::NotFoundException(_))
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteChannelErrorKind::TooManyRequestsException(_)
+        )
     }
 }
 impl std::error::Error for DeleteChannelError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteChannelErrorKind::BadGatewayError(_inner) => Some(_inner),
-            DeleteChannelErrorKind::BadRequestError(_inner) => Some(_inner),
-            DeleteChannelErrorKind::ConflictError(_inner) => Some(_inner),
-            DeleteChannelErrorKind::ForbiddenError(_inner) => Some(_inner),
-            DeleteChannelErrorKind::GatewayTimeoutError(_inner) => Some(_inner),
-            DeleteChannelErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            DeleteChannelErrorKind::NotFoundError(_inner) => Some(_inner),
-            DeleteChannelErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            DeleteChannelErrorKind::BadGatewayException(_inner) => Some(_inner),
+            DeleteChannelErrorKind::BadRequestException(_inner) => Some(_inner),
+            DeleteChannelErrorKind::ConflictException(_inner) => Some(_inner),
+            DeleteChannelErrorKind::ForbiddenException(_inner) => Some(_inner),
+            DeleteChannelErrorKind::GatewayTimeoutException(_inner) => Some(_inner),
+            DeleteChannelErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            DeleteChannelErrorKind::NotFoundException(_inner) => Some(_inner),
+            DeleteChannelErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DeleteChannelErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1781,28 +1850,28 @@ pub struct DeleteInputError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteInputErrorKind {
-    BadGatewayError(crate::error::BadGatewayError),
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    ForbiddenError(crate::error::ForbiddenError),
-    GatewayTimeoutError(crate::error::GatewayTimeoutError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadGatewayException(crate::error::BadGatewayException),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    ForbiddenException(crate::error::ForbiddenException),
+    GatewayTimeoutException(crate::error::GatewayTimeoutException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteInputError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteInputErrorKind::BadGatewayError(_inner) => _inner.fmt(f),
-            DeleteInputErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            DeleteInputErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            DeleteInputErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            DeleteInputErrorKind::GatewayTimeoutError(_inner) => _inner.fmt(f),
-            DeleteInputErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            DeleteInputErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            DeleteInputErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            DeleteInputErrorKind::BadGatewayException(_inner) => _inner.fmt(f),
+            DeleteInputErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            DeleteInputErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            DeleteInputErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            DeleteInputErrorKind::GatewayTimeoutException(_inner) => _inner.fmt(f),
+            DeleteInputErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            DeleteInputErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DeleteInputErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             DeleteInputErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1851,45 +1920,48 @@ impl DeleteInputError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_gateway_error(&self) -> bool {
-        matches!(&self.kind, DeleteInputErrorKind::BadGatewayError(_))
+    pub fn is_bad_gateway_exception(&self) -> bool {
+        matches!(&self.kind, DeleteInputErrorKind::BadGatewayException(_))
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, DeleteInputErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, DeleteInputErrorKind::BadRequestException(_))
     }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, DeleteInputErrorKind::ConflictError(_))
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, DeleteInputErrorKind::ConflictException(_))
     }
-    pub fn is_forbidden_error(&self) -> bool {
-        matches!(&self.kind, DeleteInputErrorKind::ForbiddenError(_))
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, DeleteInputErrorKind::ForbiddenException(_))
     }
-    pub fn is_gateway_timeout_error(&self) -> bool {
-        matches!(&self.kind, DeleteInputErrorKind::GatewayTimeoutError(_))
+    pub fn is_gateway_timeout_exception(&self) -> bool {
+        matches!(&self.kind, DeleteInputErrorKind::GatewayTimeoutException(_))
     }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteInputErrorKind::InternalServerErrorError(_)
+            DeleteInputErrorKind::InternalServerErrorException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, DeleteInputErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, DeleteInputErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, DeleteInputErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteInputErrorKind::TooManyRequestsException(_)
+        )
     }
 }
 impl std::error::Error for DeleteInputError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteInputErrorKind::BadGatewayError(_inner) => Some(_inner),
-            DeleteInputErrorKind::BadRequestError(_inner) => Some(_inner),
-            DeleteInputErrorKind::ConflictError(_inner) => Some(_inner),
-            DeleteInputErrorKind::ForbiddenError(_inner) => Some(_inner),
-            DeleteInputErrorKind::GatewayTimeoutError(_inner) => Some(_inner),
-            DeleteInputErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            DeleteInputErrorKind::NotFoundError(_inner) => Some(_inner),
-            DeleteInputErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            DeleteInputErrorKind::BadGatewayException(_inner) => Some(_inner),
+            DeleteInputErrorKind::BadRequestException(_inner) => Some(_inner),
+            DeleteInputErrorKind::ConflictException(_inner) => Some(_inner),
+            DeleteInputErrorKind::ForbiddenException(_inner) => Some(_inner),
+            DeleteInputErrorKind::GatewayTimeoutException(_inner) => Some(_inner),
+            DeleteInputErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            DeleteInputErrorKind::NotFoundException(_inner) => Some(_inner),
+            DeleteInputErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DeleteInputErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1904,26 +1976,28 @@ pub struct DeleteInputSecurityGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteInputSecurityGroupErrorKind {
-    BadGatewayError(crate::error::BadGatewayError),
-    BadRequestError(crate::error::BadRequestError),
-    ForbiddenError(crate::error::ForbiddenError),
-    GatewayTimeoutError(crate::error::GatewayTimeoutError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadGatewayException(crate::error::BadGatewayException),
+    BadRequestException(crate::error::BadRequestException),
+    ForbiddenException(crate::error::ForbiddenException),
+    GatewayTimeoutException(crate::error::GatewayTimeoutException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteInputSecurityGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteInputSecurityGroupErrorKind::BadGatewayError(_inner) => _inner.fmt(f),
-            DeleteInputSecurityGroupErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            DeleteInputSecurityGroupErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            DeleteInputSecurityGroupErrorKind::GatewayTimeoutError(_inner) => _inner.fmt(f),
-            DeleteInputSecurityGroupErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            DeleteInputSecurityGroupErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            DeleteInputSecurityGroupErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            DeleteInputSecurityGroupErrorKind::BadGatewayException(_inner) => _inner.fmt(f),
+            DeleteInputSecurityGroupErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            DeleteInputSecurityGroupErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            DeleteInputSecurityGroupErrorKind::GatewayTimeoutException(_inner) => _inner.fmt(f),
+            DeleteInputSecurityGroupErrorKind::InternalServerErrorException(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteInputSecurityGroupErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DeleteInputSecurityGroupErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             DeleteInputSecurityGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1972,59 +2046,59 @@ impl DeleteInputSecurityGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_gateway_error(&self) -> bool {
+    pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteInputSecurityGroupErrorKind::BadGatewayError(_)
+            DeleteInputSecurityGroupErrorKind::BadGatewayException(_)
         )
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteInputSecurityGroupErrorKind::BadRequestError(_)
+            DeleteInputSecurityGroupErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_forbidden_error(&self) -> bool {
+    pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteInputSecurityGroupErrorKind::ForbiddenError(_)
+            DeleteInputSecurityGroupErrorKind::ForbiddenException(_)
         )
     }
-    pub fn is_gateway_timeout_error(&self) -> bool {
+    pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteInputSecurityGroupErrorKind::GatewayTimeoutError(_)
+            DeleteInputSecurityGroupErrorKind::GatewayTimeoutException(_)
         )
     }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteInputSecurityGroupErrorKind::InternalServerErrorError(_)
+            DeleteInputSecurityGroupErrorKind::InternalServerErrorException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteInputSecurityGroupErrorKind::NotFoundError(_)
+            DeleteInputSecurityGroupErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteInputSecurityGroupErrorKind::TooManyRequestsError(_)
+            DeleteInputSecurityGroupErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for DeleteInputSecurityGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteInputSecurityGroupErrorKind::BadGatewayError(_inner) => Some(_inner),
-            DeleteInputSecurityGroupErrorKind::BadRequestError(_inner) => Some(_inner),
-            DeleteInputSecurityGroupErrorKind::ForbiddenError(_inner) => Some(_inner),
-            DeleteInputSecurityGroupErrorKind::GatewayTimeoutError(_inner) => Some(_inner),
-            DeleteInputSecurityGroupErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            DeleteInputSecurityGroupErrorKind::NotFoundError(_inner) => Some(_inner),
-            DeleteInputSecurityGroupErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            DeleteInputSecurityGroupErrorKind::BadGatewayException(_inner) => Some(_inner),
+            DeleteInputSecurityGroupErrorKind::BadRequestException(_inner) => Some(_inner),
+            DeleteInputSecurityGroupErrorKind::ForbiddenException(_inner) => Some(_inner),
+            DeleteInputSecurityGroupErrorKind::GatewayTimeoutException(_inner) => Some(_inner),
+            DeleteInputSecurityGroupErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            DeleteInputSecurityGroupErrorKind::NotFoundException(_inner) => Some(_inner),
+            DeleteInputSecurityGroupErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DeleteInputSecurityGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2039,28 +2113,28 @@ pub struct DeleteMultiplexError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteMultiplexErrorKind {
-    BadGatewayError(crate::error::BadGatewayError),
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    ForbiddenError(crate::error::ForbiddenError),
-    GatewayTimeoutError(crate::error::GatewayTimeoutError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadGatewayException(crate::error::BadGatewayException),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    ForbiddenException(crate::error::ForbiddenException),
+    GatewayTimeoutException(crate::error::GatewayTimeoutException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteMultiplexError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteMultiplexErrorKind::BadGatewayError(_inner) => _inner.fmt(f),
-            DeleteMultiplexErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            DeleteMultiplexErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            DeleteMultiplexErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            DeleteMultiplexErrorKind::GatewayTimeoutError(_inner) => _inner.fmt(f),
-            DeleteMultiplexErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            DeleteMultiplexErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            DeleteMultiplexErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            DeleteMultiplexErrorKind::BadGatewayException(_inner) => _inner.fmt(f),
+            DeleteMultiplexErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            DeleteMultiplexErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            DeleteMultiplexErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            DeleteMultiplexErrorKind::GatewayTimeoutException(_inner) => _inner.fmt(f),
+            DeleteMultiplexErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            DeleteMultiplexErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DeleteMultiplexErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             DeleteMultiplexErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2109,48 +2183,51 @@ impl DeleteMultiplexError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_gateway_error(&self) -> bool {
-        matches!(&self.kind, DeleteMultiplexErrorKind::BadGatewayError(_))
+    pub fn is_bad_gateway_exception(&self) -> bool {
+        matches!(&self.kind, DeleteMultiplexErrorKind::BadGatewayException(_))
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, DeleteMultiplexErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, DeleteMultiplexErrorKind::BadRequestException(_))
     }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, DeleteMultiplexErrorKind::ConflictError(_))
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, DeleteMultiplexErrorKind::ConflictException(_))
     }
-    pub fn is_forbidden_error(&self) -> bool {
-        matches!(&self.kind, DeleteMultiplexErrorKind::ForbiddenError(_))
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, DeleteMultiplexErrorKind::ForbiddenException(_))
     }
-    pub fn is_gateway_timeout_error(&self) -> bool {
-        matches!(&self.kind, DeleteMultiplexErrorKind::GatewayTimeoutError(_))
-    }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteMultiplexErrorKind::InternalServerErrorError(_)
+            DeleteMultiplexErrorKind::GatewayTimeoutException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, DeleteMultiplexErrorKind::NotFoundError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteMultiplexErrorKind::TooManyRequestsError(_)
+            DeleteMultiplexErrorKind::InternalServerErrorException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, DeleteMultiplexErrorKind::NotFoundException(_))
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteMultiplexErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for DeleteMultiplexError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteMultiplexErrorKind::BadGatewayError(_inner) => Some(_inner),
-            DeleteMultiplexErrorKind::BadRequestError(_inner) => Some(_inner),
-            DeleteMultiplexErrorKind::ConflictError(_inner) => Some(_inner),
-            DeleteMultiplexErrorKind::ForbiddenError(_inner) => Some(_inner),
-            DeleteMultiplexErrorKind::GatewayTimeoutError(_inner) => Some(_inner),
-            DeleteMultiplexErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            DeleteMultiplexErrorKind::NotFoundError(_inner) => Some(_inner),
-            DeleteMultiplexErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            DeleteMultiplexErrorKind::BadGatewayException(_inner) => Some(_inner),
+            DeleteMultiplexErrorKind::BadRequestException(_inner) => Some(_inner),
+            DeleteMultiplexErrorKind::ConflictException(_inner) => Some(_inner),
+            DeleteMultiplexErrorKind::ForbiddenException(_inner) => Some(_inner),
+            DeleteMultiplexErrorKind::GatewayTimeoutException(_inner) => Some(_inner),
+            DeleteMultiplexErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            DeleteMultiplexErrorKind::NotFoundException(_inner) => Some(_inner),
+            DeleteMultiplexErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DeleteMultiplexErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2165,28 +2242,28 @@ pub struct DeleteMultiplexProgramError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteMultiplexProgramErrorKind {
-    BadGatewayError(crate::error::BadGatewayError),
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    ForbiddenError(crate::error::ForbiddenError),
-    GatewayTimeoutError(crate::error::GatewayTimeoutError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadGatewayException(crate::error::BadGatewayException),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    ForbiddenException(crate::error::ForbiddenException),
+    GatewayTimeoutException(crate::error::GatewayTimeoutException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteMultiplexProgramError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteMultiplexProgramErrorKind::BadGatewayError(_inner) => _inner.fmt(f),
-            DeleteMultiplexProgramErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            DeleteMultiplexProgramErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            DeleteMultiplexProgramErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            DeleteMultiplexProgramErrorKind::GatewayTimeoutError(_inner) => _inner.fmt(f),
-            DeleteMultiplexProgramErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            DeleteMultiplexProgramErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            DeleteMultiplexProgramErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            DeleteMultiplexProgramErrorKind::BadGatewayException(_inner) => _inner.fmt(f),
+            DeleteMultiplexProgramErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            DeleteMultiplexProgramErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            DeleteMultiplexProgramErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            DeleteMultiplexProgramErrorKind::GatewayTimeoutException(_inner) => _inner.fmt(f),
+            DeleteMultiplexProgramErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            DeleteMultiplexProgramErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DeleteMultiplexProgramErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             DeleteMultiplexProgramErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2235,66 +2312,66 @@ impl DeleteMultiplexProgramError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_gateway_error(&self) -> bool {
+    pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteMultiplexProgramErrorKind::BadGatewayError(_)
+            DeleteMultiplexProgramErrorKind::BadGatewayException(_)
         )
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteMultiplexProgramErrorKind::BadRequestError(_)
+            DeleteMultiplexProgramErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_conflict_error(&self) -> bool {
+    pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteMultiplexProgramErrorKind::ConflictError(_)
+            DeleteMultiplexProgramErrorKind::ConflictException(_)
         )
     }
-    pub fn is_forbidden_error(&self) -> bool {
+    pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteMultiplexProgramErrorKind::ForbiddenError(_)
+            DeleteMultiplexProgramErrorKind::ForbiddenException(_)
         )
     }
-    pub fn is_gateway_timeout_error(&self) -> bool {
+    pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteMultiplexProgramErrorKind::GatewayTimeoutError(_)
+            DeleteMultiplexProgramErrorKind::GatewayTimeoutException(_)
         )
     }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteMultiplexProgramErrorKind::InternalServerErrorError(_)
+            DeleteMultiplexProgramErrorKind::InternalServerErrorException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteMultiplexProgramErrorKind::NotFoundError(_)
+            DeleteMultiplexProgramErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteMultiplexProgramErrorKind::TooManyRequestsError(_)
+            DeleteMultiplexProgramErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for DeleteMultiplexProgramError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteMultiplexProgramErrorKind::BadGatewayError(_inner) => Some(_inner),
-            DeleteMultiplexProgramErrorKind::BadRequestError(_inner) => Some(_inner),
-            DeleteMultiplexProgramErrorKind::ConflictError(_inner) => Some(_inner),
-            DeleteMultiplexProgramErrorKind::ForbiddenError(_inner) => Some(_inner),
-            DeleteMultiplexProgramErrorKind::GatewayTimeoutError(_inner) => Some(_inner),
-            DeleteMultiplexProgramErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            DeleteMultiplexProgramErrorKind::NotFoundError(_inner) => Some(_inner),
-            DeleteMultiplexProgramErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            DeleteMultiplexProgramErrorKind::BadGatewayException(_inner) => Some(_inner),
+            DeleteMultiplexProgramErrorKind::BadRequestException(_inner) => Some(_inner),
+            DeleteMultiplexProgramErrorKind::ConflictException(_inner) => Some(_inner),
+            DeleteMultiplexProgramErrorKind::ForbiddenException(_inner) => Some(_inner),
+            DeleteMultiplexProgramErrorKind::GatewayTimeoutException(_inner) => Some(_inner),
+            DeleteMultiplexProgramErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            DeleteMultiplexProgramErrorKind::NotFoundException(_inner) => Some(_inner),
+            DeleteMultiplexProgramErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DeleteMultiplexProgramErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2309,28 +2386,28 @@ pub struct DeleteReservationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteReservationErrorKind {
-    BadGatewayError(crate::error::BadGatewayError),
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    ForbiddenError(crate::error::ForbiddenError),
-    GatewayTimeoutError(crate::error::GatewayTimeoutError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadGatewayException(crate::error::BadGatewayException),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    ForbiddenException(crate::error::ForbiddenException),
+    GatewayTimeoutException(crate::error::GatewayTimeoutException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteReservationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteReservationErrorKind::BadGatewayError(_inner) => _inner.fmt(f),
-            DeleteReservationErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            DeleteReservationErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            DeleteReservationErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            DeleteReservationErrorKind::GatewayTimeoutError(_inner) => _inner.fmt(f),
-            DeleteReservationErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            DeleteReservationErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            DeleteReservationErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            DeleteReservationErrorKind::BadGatewayException(_inner) => _inner.fmt(f),
+            DeleteReservationErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            DeleteReservationErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            DeleteReservationErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            DeleteReservationErrorKind::GatewayTimeoutException(_inner) => _inner.fmt(f),
+            DeleteReservationErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            DeleteReservationErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DeleteReservationErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             DeleteReservationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2379,51 +2456,60 @@ impl DeleteReservationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_gateway_error(&self) -> bool {
-        matches!(&self.kind, DeleteReservationErrorKind::BadGatewayError(_))
-    }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, DeleteReservationErrorKind::BadRequestError(_))
-    }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, DeleteReservationErrorKind::ConflictError(_))
-    }
-    pub fn is_forbidden_error(&self) -> bool {
-        matches!(&self.kind, DeleteReservationErrorKind::ForbiddenError(_))
-    }
-    pub fn is_gateway_timeout_error(&self) -> bool {
+    pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteReservationErrorKind::GatewayTimeoutError(_)
+            DeleteReservationErrorKind::BadGatewayException(_)
         )
     }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteReservationErrorKind::InternalServerErrorError(_)
+            DeleteReservationErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, DeleteReservationErrorKind::NotFoundError(_))
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, DeleteReservationErrorKind::ConflictException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteReservationErrorKind::TooManyRequestsError(_)
+            DeleteReservationErrorKind::ForbiddenException(_)
+        )
+    }
+    pub fn is_gateway_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteReservationErrorKind::GatewayTimeoutException(_)
+        )
+    }
+    pub fn is_internal_server_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteReservationErrorKind::InternalServerErrorException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, DeleteReservationErrorKind::NotFoundException(_))
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteReservationErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for DeleteReservationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteReservationErrorKind::BadGatewayError(_inner) => Some(_inner),
-            DeleteReservationErrorKind::BadRequestError(_inner) => Some(_inner),
-            DeleteReservationErrorKind::ConflictError(_inner) => Some(_inner),
-            DeleteReservationErrorKind::ForbiddenError(_inner) => Some(_inner),
-            DeleteReservationErrorKind::GatewayTimeoutError(_inner) => Some(_inner),
-            DeleteReservationErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            DeleteReservationErrorKind::NotFoundError(_inner) => Some(_inner),
-            DeleteReservationErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            DeleteReservationErrorKind::BadGatewayException(_inner) => Some(_inner),
+            DeleteReservationErrorKind::BadRequestException(_inner) => Some(_inner),
+            DeleteReservationErrorKind::ConflictException(_inner) => Some(_inner),
+            DeleteReservationErrorKind::ForbiddenException(_inner) => Some(_inner),
+            DeleteReservationErrorKind::GatewayTimeoutException(_inner) => Some(_inner),
+            DeleteReservationErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            DeleteReservationErrorKind::NotFoundException(_inner) => Some(_inner),
+            DeleteReservationErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DeleteReservationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2438,26 +2524,26 @@ pub struct DeleteScheduleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteScheduleErrorKind {
-    BadGatewayError(crate::error::BadGatewayError),
-    BadRequestError(crate::error::BadRequestError),
-    ForbiddenError(crate::error::ForbiddenError),
-    GatewayTimeoutError(crate::error::GatewayTimeoutError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadGatewayException(crate::error::BadGatewayException),
+    BadRequestException(crate::error::BadRequestException),
+    ForbiddenException(crate::error::ForbiddenException),
+    GatewayTimeoutException(crate::error::GatewayTimeoutException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteScheduleError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteScheduleErrorKind::BadGatewayError(_inner) => _inner.fmt(f),
-            DeleteScheduleErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            DeleteScheduleErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            DeleteScheduleErrorKind::GatewayTimeoutError(_inner) => _inner.fmt(f),
-            DeleteScheduleErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            DeleteScheduleErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            DeleteScheduleErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            DeleteScheduleErrorKind::BadGatewayException(_inner) => _inner.fmt(f),
+            DeleteScheduleErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            DeleteScheduleErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            DeleteScheduleErrorKind::GatewayTimeoutException(_inner) => _inner.fmt(f),
+            DeleteScheduleErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            DeleteScheduleErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DeleteScheduleErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             DeleteScheduleErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2506,41 +2592,47 @@ impl DeleteScheduleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_gateway_error(&self) -> bool {
-        matches!(&self.kind, DeleteScheduleErrorKind::BadGatewayError(_))
+    pub fn is_bad_gateway_exception(&self) -> bool {
+        matches!(&self.kind, DeleteScheduleErrorKind::BadGatewayException(_))
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, DeleteScheduleErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, DeleteScheduleErrorKind::BadRequestException(_))
     }
-    pub fn is_forbidden_error(&self) -> bool {
-        matches!(&self.kind, DeleteScheduleErrorKind::ForbiddenError(_))
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, DeleteScheduleErrorKind::ForbiddenException(_))
     }
-    pub fn is_gateway_timeout_error(&self) -> bool {
-        matches!(&self.kind, DeleteScheduleErrorKind::GatewayTimeoutError(_))
-    }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteScheduleErrorKind::InternalServerErrorError(_)
+            DeleteScheduleErrorKind::GatewayTimeoutException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, DeleteScheduleErrorKind::NotFoundError(_))
+    pub fn is_internal_server_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteScheduleErrorKind::InternalServerErrorException(_)
+        )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, DeleteScheduleErrorKind::TooManyRequestsError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, DeleteScheduleErrorKind::NotFoundException(_))
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteScheduleErrorKind::TooManyRequestsException(_)
+        )
     }
 }
 impl std::error::Error for DeleteScheduleError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteScheduleErrorKind::BadGatewayError(_inner) => Some(_inner),
-            DeleteScheduleErrorKind::BadRequestError(_inner) => Some(_inner),
-            DeleteScheduleErrorKind::ForbiddenError(_inner) => Some(_inner),
-            DeleteScheduleErrorKind::GatewayTimeoutError(_inner) => Some(_inner),
-            DeleteScheduleErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            DeleteScheduleErrorKind::NotFoundError(_inner) => Some(_inner),
-            DeleteScheduleErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            DeleteScheduleErrorKind::BadGatewayException(_inner) => Some(_inner),
+            DeleteScheduleErrorKind::BadRequestException(_inner) => Some(_inner),
+            DeleteScheduleErrorKind::ForbiddenException(_inner) => Some(_inner),
+            DeleteScheduleErrorKind::GatewayTimeoutException(_inner) => Some(_inner),
+            DeleteScheduleErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            DeleteScheduleErrorKind::NotFoundException(_inner) => Some(_inner),
+            DeleteScheduleErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DeleteScheduleErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2555,20 +2647,20 @@ pub struct DeleteTagsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteTagsErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ForbiddenError(crate::error::ForbiddenError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    NotFoundError(crate::error::NotFoundError),
+    BadRequestException(crate::error::BadRequestException),
+    ForbiddenException(crate::error::ForbiddenException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteTagsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteTagsErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            DeleteTagsErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            DeleteTagsErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            DeleteTagsErrorKind::NotFoundError(_inner) => _inner.fmt(f),
+            DeleteTagsErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            DeleteTagsErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            DeleteTagsErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            DeleteTagsErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             DeleteTagsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2617,26 +2709,29 @@ impl DeleteTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, DeleteTagsErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, DeleteTagsErrorKind::BadRequestException(_))
     }
-    pub fn is_forbidden_error(&self) -> bool {
-        matches!(&self.kind, DeleteTagsErrorKind::ForbiddenError(_))
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, DeleteTagsErrorKind::ForbiddenException(_))
     }
-    pub fn is_internal_server_error_error(&self) -> bool {
-        matches!(&self.kind, DeleteTagsErrorKind::InternalServerErrorError(_))
+    pub fn is_internal_server_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteTagsErrorKind::InternalServerErrorException(_)
+        )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, DeleteTagsErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, DeleteTagsErrorKind::NotFoundException(_))
     }
 }
 impl std::error::Error for DeleteTagsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteTagsErrorKind::BadRequestError(_inner) => Some(_inner),
-            DeleteTagsErrorKind::ForbiddenError(_inner) => Some(_inner),
-            DeleteTagsErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            DeleteTagsErrorKind::NotFoundError(_inner) => Some(_inner),
+            DeleteTagsErrorKind::BadRequestException(_inner) => Some(_inner),
+            DeleteTagsErrorKind::ForbiddenException(_inner) => Some(_inner),
+            DeleteTagsErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            DeleteTagsErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteTagsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2651,26 +2746,26 @@ pub struct DescribeChannelError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeChannelErrorKind {
-    BadGatewayError(crate::error::BadGatewayError),
-    BadRequestError(crate::error::BadRequestError),
-    ForbiddenError(crate::error::ForbiddenError),
-    GatewayTimeoutError(crate::error::GatewayTimeoutError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadGatewayException(crate::error::BadGatewayException),
+    BadRequestException(crate::error::BadRequestException),
+    ForbiddenException(crate::error::ForbiddenException),
+    GatewayTimeoutException(crate::error::GatewayTimeoutException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeChannelError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeChannelErrorKind::BadGatewayError(_inner) => _inner.fmt(f),
-            DescribeChannelErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            DescribeChannelErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            DescribeChannelErrorKind::GatewayTimeoutError(_inner) => _inner.fmt(f),
-            DescribeChannelErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            DescribeChannelErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            DescribeChannelErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            DescribeChannelErrorKind::BadGatewayException(_inner) => _inner.fmt(f),
+            DescribeChannelErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            DescribeChannelErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            DescribeChannelErrorKind::GatewayTimeoutException(_inner) => _inner.fmt(f),
+            DescribeChannelErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            DescribeChannelErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DescribeChannelErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             DescribeChannelErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2719,44 +2814,47 @@ impl DescribeChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_gateway_error(&self) -> bool {
-        matches!(&self.kind, DescribeChannelErrorKind::BadGatewayError(_))
+    pub fn is_bad_gateway_exception(&self) -> bool {
+        matches!(&self.kind, DescribeChannelErrorKind::BadGatewayException(_))
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, DescribeChannelErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, DescribeChannelErrorKind::BadRequestException(_))
     }
-    pub fn is_forbidden_error(&self) -> bool {
-        matches!(&self.kind, DescribeChannelErrorKind::ForbiddenError(_))
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, DescribeChannelErrorKind::ForbiddenException(_))
     }
-    pub fn is_gateway_timeout_error(&self) -> bool {
-        matches!(&self.kind, DescribeChannelErrorKind::GatewayTimeoutError(_))
-    }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeChannelErrorKind::InternalServerErrorError(_)
+            DescribeChannelErrorKind::GatewayTimeoutException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, DescribeChannelErrorKind::NotFoundError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeChannelErrorKind::TooManyRequestsError(_)
+            DescribeChannelErrorKind::InternalServerErrorException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, DescribeChannelErrorKind::NotFoundException(_))
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeChannelErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for DescribeChannelError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeChannelErrorKind::BadGatewayError(_inner) => Some(_inner),
-            DescribeChannelErrorKind::BadRequestError(_inner) => Some(_inner),
-            DescribeChannelErrorKind::ForbiddenError(_inner) => Some(_inner),
-            DescribeChannelErrorKind::GatewayTimeoutError(_inner) => Some(_inner),
-            DescribeChannelErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            DescribeChannelErrorKind::NotFoundError(_inner) => Some(_inner),
-            DescribeChannelErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            DescribeChannelErrorKind::BadGatewayException(_inner) => Some(_inner),
+            DescribeChannelErrorKind::BadRequestException(_inner) => Some(_inner),
+            DescribeChannelErrorKind::ForbiddenException(_inner) => Some(_inner),
+            DescribeChannelErrorKind::GatewayTimeoutException(_inner) => Some(_inner),
+            DescribeChannelErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            DescribeChannelErrorKind::NotFoundException(_inner) => Some(_inner),
+            DescribeChannelErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DescribeChannelErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2771,26 +2869,26 @@ pub struct DescribeInputError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeInputErrorKind {
-    BadGatewayError(crate::error::BadGatewayError),
-    BadRequestError(crate::error::BadRequestError),
-    ForbiddenError(crate::error::ForbiddenError),
-    GatewayTimeoutError(crate::error::GatewayTimeoutError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadGatewayException(crate::error::BadGatewayException),
+    BadRequestException(crate::error::BadRequestException),
+    ForbiddenException(crate::error::ForbiddenException),
+    GatewayTimeoutException(crate::error::GatewayTimeoutException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeInputError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeInputErrorKind::BadGatewayError(_inner) => _inner.fmt(f),
-            DescribeInputErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            DescribeInputErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            DescribeInputErrorKind::GatewayTimeoutError(_inner) => _inner.fmt(f),
-            DescribeInputErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            DescribeInputErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            DescribeInputErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            DescribeInputErrorKind::BadGatewayException(_inner) => _inner.fmt(f),
+            DescribeInputErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            DescribeInputErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            DescribeInputErrorKind::GatewayTimeoutException(_inner) => _inner.fmt(f),
+            DescribeInputErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            DescribeInputErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DescribeInputErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             DescribeInputErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2839,41 +2937,47 @@ impl DescribeInputError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_gateway_error(&self) -> bool {
-        matches!(&self.kind, DescribeInputErrorKind::BadGatewayError(_))
+    pub fn is_bad_gateway_exception(&self) -> bool {
+        matches!(&self.kind, DescribeInputErrorKind::BadGatewayException(_))
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, DescribeInputErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, DescribeInputErrorKind::BadRequestException(_))
     }
-    pub fn is_forbidden_error(&self) -> bool {
-        matches!(&self.kind, DescribeInputErrorKind::ForbiddenError(_))
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, DescribeInputErrorKind::ForbiddenException(_))
     }
-    pub fn is_gateway_timeout_error(&self) -> bool {
-        matches!(&self.kind, DescribeInputErrorKind::GatewayTimeoutError(_))
-    }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeInputErrorKind::InternalServerErrorError(_)
+            DescribeInputErrorKind::GatewayTimeoutException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, DescribeInputErrorKind::NotFoundError(_))
+    pub fn is_internal_server_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeInputErrorKind::InternalServerErrorException(_)
+        )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, DescribeInputErrorKind::TooManyRequestsError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, DescribeInputErrorKind::NotFoundException(_))
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeInputErrorKind::TooManyRequestsException(_)
+        )
     }
 }
 impl std::error::Error for DescribeInputError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeInputErrorKind::BadGatewayError(_inner) => Some(_inner),
-            DescribeInputErrorKind::BadRequestError(_inner) => Some(_inner),
-            DescribeInputErrorKind::ForbiddenError(_inner) => Some(_inner),
-            DescribeInputErrorKind::GatewayTimeoutError(_inner) => Some(_inner),
-            DescribeInputErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            DescribeInputErrorKind::NotFoundError(_inner) => Some(_inner),
-            DescribeInputErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            DescribeInputErrorKind::BadGatewayException(_inner) => Some(_inner),
+            DescribeInputErrorKind::BadRequestException(_inner) => Some(_inner),
+            DescribeInputErrorKind::ForbiddenException(_inner) => Some(_inner),
+            DescribeInputErrorKind::GatewayTimeoutException(_inner) => Some(_inner),
+            DescribeInputErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            DescribeInputErrorKind::NotFoundException(_inner) => Some(_inner),
+            DescribeInputErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DescribeInputErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2888,26 +2992,26 @@ pub struct DescribeInputDeviceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeInputDeviceErrorKind {
-    BadGatewayError(crate::error::BadGatewayError),
-    BadRequestError(crate::error::BadRequestError),
-    ForbiddenError(crate::error::ForbiddenError),
-    GatewayTimeoutError(crate::error::GatewayTimeoutError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadGatewayException(crate::error::BadGatewayException),
+    BadRequestException(crate::error::BadRequestException),
+    ForbiddenException(crate::error::ForbiddenException),
+    GatewayTimeoutException(crate::error::GatewayTimeoutException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeInputDeviceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeInputDeviceErrorKind::BadGatewayError(_inner) => _inner.fmt(f),
-            DescribeInputDeviceErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            DescribeInputDeviceErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            DescribeInputDeviceErrorKind::GatewayTimeoutError(_inner) => _inner.fmt(f),
-            DescribeInputDeviceErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            DescribeInputDeviceErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            DescribeInputDeviceErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            DescribeInputDeviceErrorKind::BadGatewayException(_inner) => _inner.fmt(f),
+            DescribeInputDeviceErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            DescribeInputDeviceErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            DescribeInputDeviceErrorKind::GatewayTimeoutException(_inner) => _inner.fmt(f),
+            DescribeInputDeviceErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            DescribeInputDeviceErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DescribeInputDeviceErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             DescribeInputDeviceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2956,47 +3060,59 @@ impl DescribeInputDeviceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_gateway_error(&self) -> bool {
-        matches!(&self.kind, DescribeInputDeviceErrorKind::BadGatewayError(_))
-    }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, DescribeInputDeviceErrorKind::BadRequestError(_))
-    }
-    pub fn is_forbidden_error(&self) -> bool {
-        matches!(&self.kind, DescribeInputDeviceErrorKind::ForbiddenError(_))
-    }
-    pub fn is_gateway_timeout_error(&self) -> bool {
+    pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeInputDeviceErrorKind::GatewayTimeoutError(_)
+            DescribeInputDeviceErrorKind::BadGatewayException(_)
         )
     }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeInputDeviceErrorKind::InternalServerErrorError(_)
+            DescribeInputDeviceErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, DescribeInputDeviceErrorKind::NotFoundError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeInputDeviceErrorKind::TooManyRequestsError(_)
+            DescribeInputDeviceErrorKind::ForbiddenException(_)
+        )
+    }
+    pub fn is_gateway_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeInputDeviceErrorKind::GatewayTimeoutException(_)
+        )
+    }
+    pub fn is_internal_server_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeInputDeviceErrorKind::InternalServerErrorException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeInputDeviceErrorKind::NotFoundException(_)
+        )
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeInputDeviceErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for DescribeInputDeviceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeInputDeviceErrorKind::BadGatewayError(_inner) => Some(_inner),
-            DescribeInputDeviceErrorKind::BadRequestError(_inner) => Some(_inner),
-            DescribeInputDeviceErrorKind::ForbiddenError(_inner) => Some(_inner),
-            DescribeInputDeviceErrorKind::GatewayTimeoutError(_inner) => Some(_inner),
-            DescribeInputDeviceErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            DescribeInputDeviceErrorKind::NotFoundError(_inner) => Some(_inner),
-            DescribeInputDeviceErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            DescribeInputDeviceErrorKind::BadGatewayException(_inner) => Some(_inner),
+            DescribeInputDeviceErrorKind::BadRequestException(_inner) => Some(_inner),
+            DescribeInputDeviceErrorKind::ForbiddenException(_inner) => Some(_inner),
+            DescribeInputDeviceErrorKind::GatewayTimeoutException(_inner) => Some(_inner),
+            DescribeInputDeviceErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            DescribeInputDeviceErrorKind::NotFoundException(_inner) => Some(_inner),
+            DescribeInputDeviceErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DescribeInputDeviceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3011,28 +3127,30 @@ pub struct DescribeInputDeviceThumbnailError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeInputDeviceThumbnailErrorKind {
-    BadGatewayError(crate::error::BadGatewayError),
-    BadRequestError(crate::error::BadRequestError),
-    ForbiddenError(crate::error::ForbiddenError),
-    GatewayTimeoutError(crate::error::GatewayTimeoutError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadGatewayException(crate::error::BadGatewayException),
+    BadRequestException(crate::error::BadRequestException),
+    ForbiddenException(crate::error::ForbiddenException),
+    GatewayTimeoutException(crate::error::GatewayTimeoutException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeInputDeviceThumbnailError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeInputDeviceThumbnailErrorKind::BadGatewayError(_inner) => _inner.fmt(f),
-            DescribeInputDeviceThumbnailErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            DescribeInputDeviceThumbnailErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            DescribeInputDeviceThumbnailErrorKind::GatewayTimeoutError(_inner) => _inner.fmt(f),
-            DescribeInputDeviceThumbnailErrorKind::InternalServerErrorError(_inner) => {
+            DescribeInputDeviceThumbnailErrorKind::BadGatewayException(_inner) => _inner.fmt(f),
+            DescribeInputDeviceThumbnailErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            DescribeInputDeviceThumbnailErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            DescribeInputDeviceThumbnailErrorKind::GatewayTimeoutException(_inner) => _inner.fmt(f),
+            DescribeInputDeviceThumbnailErrorKind::InternalServerErrorException(_inner) => {
                 _inner.fmt(f)
             }
-            DescribeInputDeviceThumbnailErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            DescribeInputDeviceThumbnailErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            DescribeInputDeviceThumbnailErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DescribeInputDeviceThumbnailErrorKind::TooManyRequestsException(_inner) => {
+                _inner.fmt(f)
+            }
             DescribeInputDeviceThumbnailErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3081,59 +3199,61 @@ impl DescribeInputDeviceThumbnailError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_gateway_error(&self) -> bool {
+    pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeInputDeviceThumbnailErrorKind::BadGatewayError(_)
+            DescribeInputDeviceThumbnailErrorKind::BadGatewayException(_)
         )
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeInputDeviceThumbnailErrorKind::BadRequestError(_)
+            DescribeInputDeviceThumbnailErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_forbidden_error(&self) -> bool {
+    pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeInputDeviceThumbnailErrorKind::ForbiddenError(_)
+            DescribeInputDeviceThumbnailErrorKind::ForbiddenException(_)
         )
     }
-    pub fn is_gateway_timeout_error(&self) -> bool {
+    pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeInputDeviceThumbnailErrorKind::GatewayTimeoutError(_)
+            DescribeInputDeviceThumbnailErrorKind::GatewayTimeoutException(_)
         )
     }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeInputDeviceThumbnailErrorKind::InternalServerErrorError(_)
+            DescribeInputDeviceThumbnailErrorKind::InternalServerErrorException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeInputDeviceThumbnailErrorKind::NotFoundError(_)
+            DescribeInputDeviceThumbnailErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeInputDeviceThumbnailErrorKind::TooManyRequestsError(_)
+            DescribeInputDeviceThumbnailErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for DescribeInputDeviceThumbnailError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeInputDeviceThumbnailErrorKind::BadGatewayError(_inner) => Some(_inner),
-            DescribeInputDeviceThumbnailErrorKind::BadRequestError(_inner) => Some(_inner),
-            DescribeInputDeviceThumbnailErrorKind::ForbiddenError(_inner) => Some(_inner),
-            DescribeInputDeviceThumbnailErrorKind::GatewayTimeoutError(_inner) => Some(_inner),
-            DescribeInputDeviceThumbnailErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            DescribeInputDeviceThumbnailErrorKind::NotFoundError(_inner) => Some(_inner),
-            DescribeInputDeviceThumbnailErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            DescribeInputDeviceThumbnailErrorKind::BadGatewayException(_inner) => Some(_inner),
+            DescribeInputDeviceThumbnailErrorKind::BadRequestException(_inner) => Some(_inner),
+            DescribeInputDeviceThumbnailErrorKind::ForbiddenException(_inner) => Some(_inner),
+            DescribeInputDeviceThumbnailErrorKind::GatewayTimeoutException(_inner) => Some(_inner),
+            DescribeInputDeviceThumbnailErrorKind::InternalServerErrorException(_inner) => {
+                Some(_inner)
+            }
+            DescribeInputDeviceThumbnailErrorKind::NotFoundException(_inner) => Some(_inner),
+            DescribeInputDeviceThumbnailErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DescribeInputDeviceThumbnailErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3148,26 +3268,28 @@ pub struct DescribeInputSecurityGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeInputSecurityGroupErrorKind {
-    BadGatewayError(crate::error::BadGatewayError),
-    BadRequestError(crate::error::BadRequestError),
-    ForbiddenError(crate::error::ForbiddenError),
-    GatewayTimeoutError(crate::error::GatewayTimeoutError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadGatewayException(crate::error::BadGatewayException),
+    BadRequestException(crate::error::BadRequestException),
+    ForbiddenException(crate::error::ForbiddenException),
+    GatewayTimeoutException(crate::error::GatewayTimeoutException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeInputSecurityGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeInputSecurityGroupErrorKind::BadGatewayError(_inner) => _inner.fmt(f),
-            DescribeInputSecurityGroupErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            DescribeInputSecurityGroupErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            DescribeInputSecurityGroupErrorKind::GatewayTimeoutError(_inner) => _inner.fmt(f),
-            DescribeInputSecurityGroupErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            DescribeInputSecurityGroupErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            DescribeInputSecurityGroupErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            DescribeInputSecurityGroupErrorKind::BadGatewayException(_inner) => _inner.fmt(f),
+            DescribeInputSecurityGroupErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            DescribeInputSecurityGroupErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            DescribeInputSecurityGroupErrorKind::GatewayTimeoutException(_inner) => _inner.fmt(f),
+            DescribeInputSecurityGroupErrorKind::InternalServerErrorException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeInputSecurityGroupErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DescribeInputSecurityGroupErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             DescribeInputSecurityGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3216,59 +3338,61 @@ impl DescribeInputSecurityGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_gateway_error(&self) -> bool {
+    pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeInputSecurityGroupErrorKind::BadGatewayError(_)
+            DescribeInputSecurityGroupErrorKind::BadGatewayException(_)
         )
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeInputSecurityGroupErrorKind::BadRequestError(_)
+            DescribeInputSecurityGroupErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_forbidden_error(&self) -> bool {
+    pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeInputSecurityGroupErrorKind::ForbiddenError(_)
+            DescribeInputSecurityGroupErrorKind::ForbiddenException(_)
         )
     }
-    pub fn is_gateway_timeout_error(&self) -> bool {
+    pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeInputSecurityGroupErrorKind::GatewayTimeoutError(_)
+            DescribeInputSecurityGroupErrorKind::GatewayTimeoutException(_)
         )
     }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeInputSecurityGroupErrorKind::InternalServerErrorError(_)
+            DescribeInputSecurityGroupErrorKind::InternalServerErrorException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeInputSecurityGroupErrorKind::NotFoundError(_)
+            DescribeInputSecurityGroupErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeInputSecurityGroupErrorKind::TooManyRequestsError(_)
+            DescribeInputSecurityGroupErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for DescribeInputSecurityGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeInputSecurityGroupErrorKind::BadGatewayError(_inner) => Some(_inner),
-            DescribeInputSecurityGroupErrorKind::BadRequestError(_inner) => Some(_inner),
-            DescribeInputSecurityGroupErrorKind::ForbiddenError(_inner) => Some(_inner),
-            DescribeInputSecurityGroupErrorKind::GatewayTimeoutError(_inner) => Some(_inner),
-            DescribeInputSecurityGroupErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            DescribeInputSecurityGroupErrorKind::NotFoundError(_inner) => Some(_inner),
-            DescribeInputSecurityGroupErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            DescribeInputSecurityGroupErrorKind::BadGatewayException(_inner) => Some(_inner),
+            DescribeInputSecurityGroupErrorKind::BadRequestException(_inner) => Some(_inner),
+            DescribeInputSecurityGroupErrorKind::ForbiddenException(_inner) => Some(_inner),
+            DescribeInputSecurityGroupErrorKind::GatewayTimeoutException(_inner) => Some(_inner),
+            DescribeInputSecurityGroupErrorKind::InternalServerErrorException(_inner) => {
+                Some(_inner)
+            }
+            DescribeInputSecurityGroupErrorKind::NotFoundException(_inner) => Some(_inner),
+            DescribeInputSecurityGroupErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DescribeInputSecurityGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3283,26 +3407,26 @@ pub struct DescribeMultiplexError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeMultiplexErrorKind {
-    BadGatewayError(crate::error::BadGatewayError),
-    BadRequestError(crate::error::BadRequestError),
-    ForbiddenError(crate::error::ForbiddenError),
-    GatewayTimeoutError(crate::error::GatewayTimeoutError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadGatewayException(crate::error::BadGatewayException),
+    BadRequestException(crate::error::BadRequestException),
+    ForbiddenException(crate::error::ForbiddenException),
+    GatewayTimeoutException(crate::error::GatewayTimeoutException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeMultiplexError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeMultiplexErrorKind::BadGatewayError(_inner) => _inner.fmt(f),
-            DescribeMultiplexErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            DescribeMultiplexErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            DescribeMultiplexErrorKind::GatewayTimeoutError(_inner) => _inner.fmt(f),
-            DescribeMultiplexErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            DescribeMultiplexErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            DescribeMultiplexErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            DescribeMultiplexErrorKind::BadGatewayException(_inner) => _inner.fmt(f),
+            DescribeMultiplexErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            DescribeMultiplexErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            DescribeMultiplexErrorKind::GatewayTimeoutException(_inner) => _inner.fmt(f),
+            DescribeMultiplexErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            DescribeMultiplexErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DescribeMultiplexErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             DescribeMultiplexErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3351,47 +3475,56 @@ impl DescribeMultiplexError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_gateway_error(&self) -> bool {
-        matches!(&self.kind, DescribeMultiplexErrorKind::BadGatewayError(_))
-    }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, DescribeMultiplexErrorKind::BadRequestError(_))
-    }
-    pub fn is_forbidden_error(&self) -> bool {
-        matches!(&self.kind, DescribeMultiplexErrorKind::ForbiddenError(_))
-    }
-    pub fn is_gateway_timeout_error(&self) -> bool {
+    pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeMultiplexErrorKind::GatewayTimeoutError(_)
+            DescribeMultiplexErrorKind::BadGatewayException(_)
         )
     }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeMultiplexErrorKind::InternalServerErrorError(_)
+            DescribeMultiplexErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, DescribeMultiplexErrorKind::NotFoundError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeMultiplexErrorKind::TooManyRequestsError(_)
+            DescribeMultiplexErrorKind::ForbiddenException(_)
+        )
+    }
+    pub fn is_gateway_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeMultiplexErrorKind::GatewayTimeoutException(_)
+        )
+    }
+    pub fn is_internal_server_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeMultiplexErrorKind::InternalServerErrorException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, DescribeMultiplexErrorKind::NotFoundException(_))
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeMultiplexErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for DescribeMultiplexError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeMultiplexErrorKind::BadGatewayError(_inner) => Some(_inner),
-            DescribeMultiplexErrorKind::BadRequestError(_inner) => Some(_inner),
-            DescribeMultiplexErrorKind::ForbiddenError(_inner) => Some(_inner),
-            DescribeMultiplexErrorKind::GatewayTimeoutError(_inner) => Some(_inner),
-            DescribeMultiplexErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            DescribeMultiplexErrorKind::NotFoundError(_inner) => Some(_inner),
-            DescribeMultiplexErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            DescribeMultiplexErrorKind::BadGatewayException(_inner) => Some(_inner),
+            DescribeMultiplexErrorKind::BadRequestException(_inner) => Some(_inner),
+            DescribeMultiplexErrorKind::ForbiddenException(_inner) => Some(_inner),
+            DescribeMultiplexErrorKind::GatewayTimeoutException(_inner) => Some(_inner),
+            DescribeMultiplexErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            DescribeMultiplexErrorKind::NotFoundException(_inner) => Some(_inner),
+            DescribeMultiplexErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DescribeMultiplexErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3406,26 +3539,28 @@ pub struct DescribeMultiplexProgramError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeMultiplexProgramErrorKind {
-    BadGatewayError(crate::error::BadGatewayError),
-    BadRequestError(crate::error::BadRequestError),
-    ForbiddenError(crate::error::ForbiddenError),
-    GatewayTimeoutError(crate::error::GatewayTimeoutError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadGatewayException(crate::error::BadGatewayException),
+    BadRequestException(crate::error::BadRequestException),
+    ForbiddenException(crate::error::ForbiddenException),
+    GatewayTimeoutException(crate::error::GatewayTimeoutException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeMultiplexProgramError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeMultiplexProgramErrorKind::BadGatewayError(_inner) => _inner.fmt(f),
-            DescribeMultiplexProgramErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            DescribeMultiplexProgramErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            DescribeMultiplexProgramErrorKind::GatewayTimeoutError(_inner) => _inner.fmt(f),
-            DescribeMultiplexProgramErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            DescribeMultiplexProgramErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            DescribeMultiplexProgramErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            DescribeMultiplexProgramErrorKind::BadGatewayException(_inner) => _inner.fmt(f),
+            DescribeMultiplexProgramErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            DescribeMultiplexProgramErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            DescribeMultiplexProgramErrorKind::GatewayTimeoutException(_inner) => _inner.fmt(f),
+            DescribeMultiplexProgramErrorKind::InternalServerErrorException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeMultiplexProgramErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DescribeMultiplexProgramErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             DescribeMultiplexProgramErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3474,59 +3609,59 @@ impl DescribeMultiplexProgramError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_gateway_error(&self) -> bool {
+    pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeMultiplexProgramErrorKind::BadGatewayError(_)
+            DescribeMultiplexProgramErrorKind::BadGatewayException(_)
         )
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeMultiplexProgramErrorKind::BadRequestError(_)
+            DescribeMultiplexProgramErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_forbidden_error(&self) -> bool {
+    pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeMultiplexProgramErrorKind::ForbiddenError(_)
+            DescribeMultiplexProgramErrorKind::ForbiddenException(_)
         )
     }
-    pub fn is_gateway_timeout_error(&self) -> bool {
+    pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeMultiplexProgramErrorKind::GatewayTimeoutError(_)
+            DescribeMultiplexProgramErrorKind::GatewayTimeoutException(_)
         )
     }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeMultiplexProgramErrorKind::InternalServerErrorError(_)
+            DescribeMultiplexProgramErrorKind::InternalServerErrorException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeMultiplexProgramErrorKind::NotFoundError(_)
+            DescribeMultiplexProgramErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeMultiplexProgramErrorKind::TooManyRequestsError(_)
+            DescribeMultiplexProgramErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for DescribeMultiplexProgramError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeMultiplexProgramErrorKind::BadGatewayError(_inner) => Some(_inner),
-            DescribeMultiplexProgramErrorKind::BadRequestError(_inner) => Some(_inner),
-            DescribeMultiplexProgramErrorKind::ForbiddenError(_inner) => Some(_inner),
-            DescribeMultiplexProgramErrorKind::GatewayTimeoutError(_inner) => Some(_inner),
-            DescribeMultiplexProgramErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            DescribeMultiplexProgramErrorKind::NotFoundError(_inner) => Some(_inner),
-            DescribeMultiplexProgramErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            DescribeMultiplexProgramErrorKind::BadGatewayException(_inner) => Some(_inner),
+            DescribeMultiplexProgramErrorKind::BadRequestException(_inner) => Some(_inner),
+            DescribeMultiplexProgramErrorKind::ForbiddenException(_inner) => Some(_inner),
+            DescribeMultiplexProgramErrorKind::GatewayTimeoutException(_inner) => Some(_inner),
+            DescribeMultiplexProgramErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            DescribeMultiplexProgramErrorKind::NotFoundException(_inner) => Some(_inner),
+            DescribeMultiplexProgramErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DescribeMultiplexProgramErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3541,26 +3676,26 @@ pub struct DescribeOfferingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeOfferingErrorKind {
-    BadGatewayError(crate::error::BadGatewayError),
-    BadRequestError(crate::error::BadRequestError),
-    ForbiddenError(crate::error::ForbiddenError),
-    GatewayTimeoutError(crate::error::GatewayTimeoutError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadGatewayException(crate::error::BadGatewayException),
+    BadRequestException(crate::error::BadRequestException),
+    ForbiddenException(crate::error::ForbiddenException),
+    GatewayTimeoutException(crate::error::GatewayTimeoutException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeOfferingError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeOfferingErrorKind::BadGatewayError(_inner) => _inner.fmt(f),
-            DescribeOfferingErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            DescribeOfferingErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            DescribeOfferingErrorKind::GatewayTimeoutError(_inner) => _inner.fmt(f),
-            DescribeOfferingErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            DescribeOfferingErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            DescribeOfferingErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            DescribeOfferingErrorKind::BadGatewayException(_inner) => _inner.fmt(f),
+            DescribeOfferingErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            DescribeOfferingErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            DescribeOfferingErrorKind::GatewayTimeoutException(_inner) => _inner.fmt(f),
+            DescribeOfferingErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            DescribeOfferingErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DescribeOfferingErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             DescribeOfferingErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3609,47 +3744,53 @@ impl DescribeOfferingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_gateway_error(&self) -> bool {
-        matches!(&self.kind, DescribeOfferingErrorKind::BadGatewayError(_))
-    }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, DescribeOfferingErrorKind::BadRequestError(_))
-    }
-    pub fn is_forbidden_error(&self) -> bool {
-        matches!(&self.kind, DescribeOfferingErrorKind::ForbiddenError(_))
-    }
-    pub fn is_gateway_timeout_error(&self) -> bool {
+    pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeOfferingErrorKind::GatewayTimeoutError(_)
+            DescribeOfferingErrorKind::BadGatewayException(_)
         )
     }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeOfferingErrorKind::InternalServerErrorError(_)
+            DescribeOfferingErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, DescribeOfferingErrorKind::NotFoundError(_))
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, DescribeOfferingErrorKind::ForbiddenException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeOfferingErrorKind::TooManyRequestsError(_)
+            DescribeOfferingErrorKind::GatewayTimeoutException(_)
+        )
+    }
+    pub fn is_internal_server_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeOfferingErrorKind::InternalServerErrorException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, DescribeOfferingErrorKind::NotFoundException(_))
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeOfferingErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for DescribeOfferingError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeOfferingErrorKind::BadGatewayError(_inner) => Some(_inner),
-            DescribeOfferingErrorKind::BadRequestError(_inner) => Some(_inner),
-            DescribeOfferingErrorKind::ForbiddenError(_inner) => Some(_inner),
-            DescribeOfferingErrorKind::GatewayTimeoutError(_inner) => Some(_inner),
-            DescribeOfferingErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            DescribeOfferingErrorKind::NotFoundError(_inner) => Some(_inner),
-            DescribeOfferingErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            DescribeOfferingErrorKind::BadGatewayException(_inner) => Some(_inner),
+            DescribeOfferingErrorKind::BadRequestException(_inner) => Some(_inner),
+            DescribeOfferingErrorKind::ForbiddenException(_inner) => Some(_inner),
+            DescribeOfferingErrorKind::GatewayTimeoutException(_inner) => Some(_inner),
+            DescribeOfferingErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            DescribeOfferingErrorKind::NotFoundException(_inner) => Some(_inner),
+            DescribeOfferingErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DescribeOfferingErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3664,26 +3805,26 @@ pub struct DescribeReservationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeReservationErrorKind {
-    BadGatewayError(crate::error::BadGatewayError),
-    BadRequestError(crate::error::BadRequestError),
-    ForbiddenError(crate::error::ForbiddenError),
-    GatewayTimeoutError(crate::error::GatewayTimeoutError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadGatewayException(crate::error::BadGatewayException),
+    BadRequestException(crate::error::BadRequestException),
+    ForbiddenException(crate::error::ForbiddenException),
+    GatewayTimeoutException(crate::error::GatewayTimeoutException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeReservationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeReservationErrorKind::BadGatewayError(_inner) => _inner.fmt(f),
-            DescribeReservationErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            DescribeReservationErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            DescribeReservationErrorKind::GatewayTimeoutError(_inner) => _inner.fmt(f),
-            DescribeReservationErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            DescribeReservationErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            DescribeReservationErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            DescribeReservationErrorKind::BadGatewayException(_inner) => _inner.fmt(f),
+            DescribeReservationErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            DescribeReservationErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            DescribeReservationErrorKind::GatewayTimeoutException(_inner) => _inner.fmt(f),
+            DescribeReservationErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            DescribeReservationErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DescribeReservationErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             DescribeReservationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3732,47 +3873,59 @@ impl DescribeReservationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_gateway_error(&self) -> bool {
-        matches!(&self.kind, DescribeReservationErrorKind::BadGatewayError(_))
-    }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, DescribeReservationErrorKind::BadRequestError(_))
-    }
-    pub fn is_forbidden_error(&self) -> bool {
-        matches!(&self.kind, DescribeReservationErrorKind::ForbiddenError(_))
-    }
-    pub fn is_gateway_timeout_error(&self) -> bool {
+    pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeReservationErrorKind::GatewayTimeoutError(_)
+            DescribeReservationErrorKind::BadGatewayException(_)
         )
     }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeReservationErrorKind::InternalServerErrorError(_)
+            DescribeReservationErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, DescribeReservationErrorKind::NotFoundError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeReservationErrorKind::TooManyRequestsError(_)
+            DescribeReservationErrorKind::ForbiddenException(_)
+        )
+    }
+    pub fn is_gateway_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeReservationErrorKind::GatewayTimeoutException(_)
+        )
+    }
+    pub fn is_internal_server_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeReservationErrorKind::InternalServerErrorException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeReservationErrorKind::NotFoundException(_)
+        )
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeReservationErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for DescribeReservationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeReservationErrorKind::BadGatewayError(_inner) => Some(_inner),
-            DescribeReservationErrorKind::BadRequestError(_inner) => Some(_inner),
-            DescribeReservationErrorKind::ForbiddenError(_inner) => Some(_inner),
-            DescribeReservationErrorKind::GatewayTimeoutError(_inner) => Some(_inner),
-            DescribeReservationErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            DescribeReservationErrorKind::NotFoundError(_inner) => Some(_inner),
-            DescribeReservationErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            DescribeReservationErrorKind::BadGatewayException(_inner) => Some(_inner),
+            DescribeReservationErrorKind::BadRequestException(_inner) => Some(_inner),
+            DescribeReservationErrorKind::ForbiddenException(_inner) => Some(_inner),
+            DescribeReservationErrorKind::GatewayTimeoutException(_inner) => Some(_inner),
+            DescribeReservationErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            DescribeReservationErrorKind::NotFoundException(_inner) => Some(_inner),
+            DescribeReservationErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DescribeReservationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3787,26 +3940,26 @@ pub struct DescribeScheduleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeScheduleErrorKind {
-    BadGatewayError(crate::error::BadGatewayError),
-    BadRequestError(crate::error::BadRequestError),
-    ForbiddenError(crate::error::ForbiddenError),
-    GatewayTimeoutError(crate::error::GatewayTimeoutError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadGatewayException(crate::error::BadGatewayException),
+    BadRequestException(crate::error::BadRequestException),
+    ForbiddenException(crate::error::ForbiddenException),
+    GatewayTimeoutException(crate::error::GatewayTimeoutException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeScheduleError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeScheduleErrorKind::BadGatewayError(_inner) => _inner.fmt(f),
-            DescribeScheduleErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            DescribeScheduleErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            DescribeScheduleErrorKind::GatewayTimeoutError(_inner) => _inner.fmt(f),
-            DescribeScheduleErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            DescribeScheduleErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            DescribeScheduleErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            DescribeScheduleErrorKind::BadGatewayException(_inner) => _inner.fmt(f),
+            DescribeScheduleErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            DescribeScheduleErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            DescribeScheduleErrorKind::GatewayTimeoutException(_inner) => _inner.fmt(f),
+            DescribeScheduleErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            DescribeScheduleErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DescribeScheduleErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             DescribeScheduleErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3855,47 +4008,53 @@ impl DescribeScheduleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_gateway_error(&self) -> bool {
-        matches!(&self.kind, DescribeScheduleErrorKind::BadGatewayError(_))
-    }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, DescribeScheduleErrorKind::BadRequestError(_))
-    }
-    pub fn is_forbidden_error(&self) -> bool {
-        matches!(&self.kind, DescribeScheduleErrorKind::ForbiddenError(_))
-    }
-    pub fn is_gateway_timeout_error(&self) -> bool {
+    pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeScheduleErrorKind::GatewayTimeoutError(_)
+            DescribeScheduleErrorKind::BadGatewayException(_)
         )
     }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeScheduleErrorKind::InternalServerErrorError(_)
+            DescribeScheduleErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, DescribeScheduleErrorKind::NotFoundError(_))
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, DescribeScheduleErrorKind::ForbiddenException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeScheduleErrorKind::TooManyRequestsError(_)
+            DescribeScheduleErrorKind::GatewayTimeoutException(_)
+        )
+    }
+    pub fn is_internal_server_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeScheduleErrorKind::InternalServerErrorException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, DescribeScheduleErrorKind::NotFoundException(_))
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeScheduleErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for DescribeScheduleError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeScheduleErrorKind::BadGatewayError(_inner) => Some(_inner),
-            DescribeScheduleErrorKind::BadRequestError(_inner) => Some(_inner),
-            DescribeScheduleErrorKind::ForbiddenError(_inner) => Some(_inner),
-            DescribeScheduleErrorKind::GatewayTimeoutError(_inner) => Some(_inner),
-            DescribeScheduleErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            DescribeScheduleErrorKind::NotFoundError(_inner) => Some(_inner),
-            DescribeScheduleErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            DescribeScheduleErrorKind::BadGatewayException(_inner) => Some(_inner),
+            DescribeScheduleErrorKind::BadRequestException(_inner) => Some(_inner),
+            DescribeScheduleErrorKind::ForbiddenException(_inner) => Some(_inner),
+            DescribeScheduleErrorKind::GatewayTimeoutException(_inner) => Some(_inner),
+            DescribeScheduleErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            DescribeScheduleErrorKind::NotFoundException(_inner) => Some(_inner),
+            DescribeScheduleErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DescribeScheduleErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3910,24 +4069,24 @@ pub struct ListChannelsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListChannelsErrorKind {
-    BadGatewayError(crate::error::BadGatewayError),
-    BadRequestError(crate::error::BadRequestError),
-    ForbiddenError(crate::error::ForbiddenError),
-    GatewayTimeoutError(crate::error::GatewayTimeoutError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadGatewayException(crate::error::BadGatewayException),
+    BadRequestException(crate::error::BadRequestException),
+    ForbiddenException(crate::error::ForbiddenException),
+    GatewayTimeoutException(crate::error::GatewayTimeoutException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListChannelsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListChannelsErrorKind::BadGatewayError(_inner) => _inner.fmt(f),
-            ListChannelsErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            ListChannelsErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            ListChannelsErrorKind::GatewayTimeoutError(_inner) => _inner.fmt(f),
-            ListChannelsErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            ListChannelsErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            ListChannelsErrorKind::BadGatewayException(_inner) => _inner.fmt(f),
+            ListChannelsErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            ListChannelsErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            ListChannelsErrorKind::GatewayTimeoutException(_inner) => _inner.fmt(f),
+            ListChannelsErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            ListChannelsErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             ListChannelsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3976,37 +4135,43 @@ impl ListChannelsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_gateway_error(&self) -> bool {
-        matches!(&self.kind, ListChannelsErrorKind::BadGatewayError(_))
+    pub fn is_bad_gateway_exception(&self) -> bool {
+        matches!(&self.kind, ListChannelsErrorKind::BadGatewayException(_))
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, ListChannelsErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, ListChannelsErrorKind::BadRequestException(_))
     }
-    pub fn is_forbidden_error(&self) -> bool {
-        matches!(&self.kind, ListChannelsErrorKind::ForbiddenError(_))
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, ListChannelsErrorKind::ForbiddenException(_))
     }
-    pub fn is_gateway_timeout_error(&self) -> bool {
-        matches!(&self.kind, ListChannelsErrorKind::GatewayTimeoutError(_))
-    }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListChannelsErrorKind::InternalServerErrorError(_)
+            ListChannelsErrorKind::GatewayTimeoutException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, ListChannelsErrorKind::TooManyRequestsError(_))
+    pub fn is_internal_server_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListChannelsErrorKind::InternalServerErrorException(_)
+        )
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListChannelsErrorKind::TooManyRequestsException(_)
+        )
     }
 }
 impl std::error::Error for ListChannelsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListChannelsErrorKind::BadGatewayError(_inner) => Some(_inner),
-            ListChannelsErrorKind::BadRequestError(_inner) => Some(_inner),
-            ListChannelsErrorKind::ForbiddenError(_inner) => Some(_inner),
-            ListChannelsErrorKind::GatewayTimeoutError(_inner) => Some(_inner),
-            ListChannelsErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            ListChannelsErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            ListChannelsErrorKind::BadGatewayException(_inner) => Some(_inner),
+            ListChannelsErrorKind::BadRequestException(_inner) => Some(_inner),
+            ListChannelsErrorKind::ForbiddenException(_inner) => Some(_inner),
+            ListChannelsErrorKind::GatewayTimeoutException(_inner) => Some(_inner),
+            ListChannelsErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            ListChannelsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             ListChannelsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4021,24 +4186,24 @@ pub struct ListInputDevicesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListInputDevicesErrorKind {
-    BadGatewayError(crate::error::BadGatewayError),
-    BadRequestError(crate::error::BadRequestError),
-    ForbiddenError(crate::error::ForbiddenError),
-    GatewayTimeoutError(crate::error::GatewayTimeoutError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadGatewayException(crate::error::BadGatewayException),
+    BadRequestException(crate::error::BadRequestException),
+    ForbiddenException(crate::error::ForbiddenException),
+    GatewayTimeoutException(crate::error::GatewayTimeoutException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListInputDevicesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListInputDevicesErrorKind::BadGatewayError(_inner) => _inner.fmt(f),
-            ListInputDevicesErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            ListInputDevicesErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            ListInputDevicesErrorKind::GatewayTimeoutError(_inner) => _inner.fmt(f),
-            ListInputDevicesErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            ListInputDevicesErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            ListInputDevicesErrorKind::BadGatewayException(_inner) => _inner.fmt(f),
+            ListInputDevicesErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            ListInputDevicesErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            ListInputDevicesErrorKind::GatewayTimeoutException(_inner) => _inner.fmt(f),
+            ListInputDevicesErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            ListInputDevicesErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             ListInputDevicesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4087,43 +4252,49 @@ impl ListInputDevicesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_gateway_error(&self) -> bool {
-        matches!(&self.kind, ListInputDevicesErrorKind::BadGatewayError(_))
-    }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, ListInputDevicesErrorKind::BadRequestError(_))
-    }
-    pub fn is_forbidden_error(&self) -> bool {
-        matches!(&self.kind, ListInputDevicesErrorKind::ForbiddenError(_))
-    }
-    pub fn is_gateway_timeout_error(&self) -> bool {
+    pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListInputDevicesErrorKind::GatewayTimeoutError(_)
+            ListInputDevicesErrorKind::BadGatewayException(_)
         )
     }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListInputDevicesErrorKind::InternalServerErrorError(_)
+            ListInputDevicesErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, ListInputDevicesErrorKind::ForbiddenException(_))
+    }
+    pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListInputDevicesErrorKind::TooManyRequestsError(_)
+            ListInputDevicesErrorKind::GatewayTimeoutException(_)
+        )
+    }
+    pub fn is_internal_server_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListInputDevicesErrorKind::InternalServerErrorException(_)
+        )
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListInputDevicesErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for ListInputDevicesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListInputDevicesErrorKind::BadGatewayError(_inner) => Some(_inner),
-            ListInputDevicesErrorKind::BadRequestError(_inner) => Some(_inner),
-            ListInputDevicesErrorKind::ForbiddenError(_inner) => Some(_inner),
-            ListInputDevicesErrorKind::GatewayTimeoutError(_inner) => Some(_inner),
-            ListInputDevicesErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            ListInputDevicesErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            ListInputDevicesErrorKind::BadGatewayException(_inner) => Some(_inner),
+            ListInputDevicesErrorKind::BadRequestException(_inner) => Some(_inner),
+            ListInputDevicesErrorKind::ForbiddenException(_inner) => Some(_inner),
+            ListInputDevicesErrorKind::GatewayTimeoutException(_inner) => Some(_inner),
+            ListInputDevicesErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            ListInputDevicesErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             ListInputDevicesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4138,26 +4309,30 @@ pub struct ListInputDeviceTransfersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListInputDeviceTransfersErrorKind {
-    BadGatewayError(crate::error::BadGatewayError),
-    BadRequestError(crate::error::BadRequestError),
-    ForbiddenError(crate::error::ForbiddenError),
-    GatewayTimeoutError(crate::error::GatewayTimeoutError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnprocessableEntityError(crate::error::UnprocessableEntityError),
+    BadGatewayException(crate::error::BadGatewayException),
+    BadRequestException(crate::error::BadRequestException),
+    ForbiddenException(crate::error::ForbiddenException),
+    GatewayTimeoutException(crate::error::GatewayTimeoutException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnprocessableEntityException(crate::error::UnprocessableEntityException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListInputDeviceTransfersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListInputDeviceTransfersErrorKind::BadGatewayError(_inner) => _inner.fmt(f),
-            ListInputDeviceTransfersErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            ListInputDeviceTransfersErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            ListInputDeviceTransfersErrorKind::GatewayTimeoutError(_inner) => _inner.fmt(f),
-            ListInputDeviceTransfersErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            ListInputDeviceTransfersErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            ListInputDeviceTransfersErrorKind::UnprocessableEntityError(_inner) => _inner.fmt(f),
+            ListInputDeviceTransfersErrorKind::BadGatewayException(_inner) => _inner.fmt(f),
+            ListInputDeviceTransfersErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            ListInputDeviceTransfersErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            ListInputDeviceTransfersErrorKind::GatewayTimeoutException(_inner) => _inner.fmt(f),
+            ListInputDeviceTransfersErrorKind::InternalServerErrorException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListInputDeviceTransfersErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            ListInputDeviceTransfersErrorKind::UnprocessableEntityException(_inner) => {
+                _inner.fmt(f)
+            }
             ListInputDeviceTransfersErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4206,59 +4381,59 @@ impl ListInputDeviceTransfersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_gateway_error(&self) -> bool {
+    pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListInputDeviceTransfersErrorKind::BadGatewayError(_)
+            ListInputDeviceTransfersErrorKind::BadGatewayException(_)
         )
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListInputDeviceTransfersErrorKind::BadRequestError(_)
+            ListInputDeviceTransfersErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_forbidden_error(&self) -> bool {
+    pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListInputDeviceTransfersErrorKind::ForbiddenError(_)
+            ListInputDeviceTransfersErrorKind::ForbiddenException(_)
         )
     }
-    pub fn is_gateway_timeout_error(&self) -> bool {
+    pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListInputDeviceTransfersErrorKind::GatewayTimeoutError(_)
+            ListInputDeviceTransfersErrorKind::GatewayTimeoutException(_)
         )
     }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListInputDeviceTransfersErrorKind::InternalServerErrorError(_)
+            ListInputDeviceTransfersErrorKind::InternalServerErrorException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListInputDeviceTransfersErrorKind::TooManyRequestsError(_)
+            ListInputDeviceTransfersErrorKind::TooManyRequestsException(_)
         )
     }
-    pub fn is_unprocessable_entity_error(&self) -> bool {
+    pub fn is_unprocessable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListInputDeviceTransfersErrorKind::UnprocessableEntityError(_)
+            ListInputDeviceTransfersErrorKind::UnprocessableEntityException(_)
         )
     }
 }
 impl std::error::Error for ListInputDeviceTransfersError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListInputDeviceTransfersErrorKind::BadGatewayError(_inner) => Some(_inner),
-            ListInputDeviceTransfersErrorKind::BadRequestError(_inner) => Some(_inner),
-            ListInputDeviceTransfersErrorKind::ForbiddenError(_inner) => Some(_inner),
-            ListInputDeviceTransfersErrorKind::GatewayTimeoutError(_inner) => Some(_inner),
-            ListInputDeviceTransfersErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            ListInputDeviceTransfersErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            ListInputDeviceTransfersErrorKind::UnprocessableEntityError(_inner) => Some(_inner),
+            ListInputDeviceTransfersErrorKind::BadGatewayException(_inner) => Some(_inner),
+            ListInputDeviceTransfersErrorKind::BadRequestException(_inner) => Some(_inner),
+            ListInputDeviceTransfersErrorKind::ForbiddenException(_inner) => Some(_inner),
+            ListInputDeviceTransfersErrorKind::GatewayTimeoutException(_inner) => Some(_inner),
+            ListInputDeviceTransfersErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            ListInputDeviceTransfersErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            ListInputDeviceTransfersErrorKind::UnprocessableEntityException(_inner) => Some(_inner),
             ListInputDeviceTransfersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4273,24 +4448,24 @@ pub struct ListInputsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListInputsErrorKind {
-    BadGatewayError(crate::error::BadGatewayError),
-    BadRequestError(crate::error::BadRequestError),
-    ForbiddenError(crate::error::ForbiddenError),
-    GatewayTimeoutError(crate::error::GatewayTimeoutError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadGatewayException(crate::error::BadGatewayException),
+    BadRequestException(crate::error::BadRequestException),
+    ForbiddenException(crate::error::ForbiddenException),
+    GatewayTimeoutException(crate::error::GatewayTimeoutException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListInputsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListInputsErrorKind::BadGatewayError(_inner) => _inner.fmt(f),
-            ListInputsErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            ListInputsErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            ListInputsErrorKind::GatewayTimeoutError(_inner) => _inner.fmt(f),
-            ListInputsErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            ListInputsErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            ListInputsErrorKind::BadGatewayException(_inner) => _inner.fmt(f),
+            ListInputsErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            ListInputsErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            ListInputsErrorKind::GatewayTimeoutException(_inner) => _inner.fmt(f),
+            ListInputsErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            ListInputsErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             ListInputsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4339,34 +4514,37 @@ impl ListInputsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_gateway_error(&self) -> bool {
-        matches!(&self.kind, ListInputsErrorKind::BadGatewayError(_))
+    pub fn is_bad_gateway_exception(&self) -> bool {
+        matches!(&self.kind, ListInputsErrorKind::BadGatewayException(_))
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, ListInputsErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, ListInputsErrorKind::BadRequestException(_))
     }
-    pub fn is_forbidden_error(&self) -> bool {
-        matches!(&self.kind, ListInputsErrorKind::ForbiddenError(_))
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, ListInputsErrorKind::ForbiddenException(_))
     }
-    pub fn is_gateway_timeout_error(&self) -> bool {
-        matches!(&self.kind, ListInputsErrorKind::GatewayTimeoutError(_))
+    pub fn is_gateway_timeout_exception(&self) -> bool {
+        matches!(&self.kind, ListInputsErrorKind::GatewayTimeoutException(_))
     }
-    pub fn is_internal_server_error_error(&self) -> bool {
-        matches!(&self.kind, ListInputsErrorKind::InternalServerErrorError(_))
+    pub fn is_internal_server_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListInputsErrorKind::InternalServerErrorException(_)
+        )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, ListInputsErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(&self.kind, ListInputsErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for ListInputsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListInputsErrorKind::BadGatewayError(_inner) => Some(_inner),
-            ListInputsErrorKind::BadRequestError(_inner) => Some(_inner),
-            ListInputsErrorKind::ForbiddenError(_inner) => Some(_inner),
-            ListInputsErrorKind::GatewayTimeoutError(_inner) => Some(_inner),
-            ListInputsErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            ListInputsErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            ListInputsErrorKind::BadGatewayException(_inner) => Some(_inner),
+            ListInputsErrorKind::BadRequestException(_inner) => Some(_inner),
+            ListInputsErrorKind::ForbiddenException(_inner) => Some(_inner),
+            ListInputsErrorKind::GatewayTimeoutException(_inner) => Some(_inner),
+            ListInputsErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            ListInputsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             ListInputsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4381,24 +4559,24 @@ pub struct ListInputSecurityGroupsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListInputSecurityGroupsErrorKind {
-    BadGatewayError(crate::error::BadGatewayError),
-    BadRequestError(crate::error::BadRequestError),
-    ForbiddenError(crate::error::ForbiddenError),
-    GatewayTimeoutError(crate::error::GatewayTimeoutError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadGatewayException(crate::error::BadGatewayException),
+    BadRequestException(crate::error::BadRequestException),
+    ForbiddenException(crate::error::ForbiddenException),
+    GatewayTimeoutException(crate::error::GatewayTimeoutException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListInputSecurityGroupsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListInputSecurityGroupsErrorKind::BadGatewayError(_inner) => _inner.fmt(f),
-            ListInputSecurityGroupsErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            ListInputSecurityGroupsErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            ListInputSecurityGroupsErrorKind::GatewayTimeoutError(_inner) => _inner.fmt(f),
-            ListInputSecurityGroupsErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            ListInputSecurityGroupsErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            ListInputSecurityGroupsErrorKind::BadGatewayException(_inner) => _inner.fmt(f),
+            ListInputSecurityGroupsErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            ListInputSecurityGroupsErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            ListInputSecurityGroupsErrorKind::GatewayTimeoutException(_inner) => _inner.fmt(f),
+            ListInputSecurityGroupsErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            ListInputSecurityGroupsErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             ListInputSecurityGroupsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4447,52 +4625,52 @@ impl ListInputSecurityGroupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_gateway_error(&self) -> bool {
+    pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListInputSecurityGroupsErrorKind::BadGatewayError(_)
+            ListInputSecurityGroupsErrorKind::BadGatewayException(_)
         )
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListInputSecurityGroupsErrorKind::BadRequestError(_)
+            ListInputSecurityGroupsErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_forbidden_error(&self) -> bool {
+    pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListInputSecurityGroupsErrorKind::ForbiddenError(_)
+            ListInputSecurityGroupsErrorKind::ForbiddenException(_)
         )
     }
-    pub fn is_gateway_timeout_error(&self) -> bool {
+    pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListInputSecurityGroupsErrorKind::GatewayTimeoutError(_)
+            ListInputSecurityGroupsErrorKind::GatewayTimeoutException(_)
         )
     }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListInputSecurityGroupsErrorKind::InternalServerErrorError(_)
+            ListInputSecurityGroupsErrorKind::InternalServerErrorException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListInputSecurityGroupsErrorKind::TooManyRequestsError(_)
+            ListInputSecurityGroupsErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for ListInputSecurityGroupsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListInputSecurityGroupsErrorKind::BadGatewayError(_inner) => Some(_inner),
-            ListInputSecurityGroupsErrorKind::BadRequestError(_inner) => Some(_inner),
-            ListInputSecurityGroupsErrorKind::ForbiddenError(_inner) => Some(_inner),
-            ListInputSecurityGroupsErrorKind::GatewayTimeoutError(_inner) => Some(_inner),
-            ListInputSecurityGroupsErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            ListInputSecurityGroupsErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            ListInputSecurityGroupsErrorKind::BadGatewayException(_inner) => Some(_inner),
+            ListInputSecurityGroupsErrorKind::BadRequestException(_inner) => Some(_inner),
+            ListInputSecurityGroupsErrorKind::ForbiddenException(_inner) => Some(_inner),
+            ListInputSecurityGroupsErrorKind::GatewayTimeoutException(_inner) => Some(_inner),
+            ListInputSecurityGroupsErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            ListInputSecurityGroupsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             ListInputSecurityGroupsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4507,24 +4685,24 @@ pub struct ListMultiplexesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListMultiplexesErrorKind {
-    BadGatewayError(crate::error::BadGatewayError),
-    BadRequestError(crate::error::BadRequestError),
-    ForbiddenError(crate::error::ForbiddenError),
-    GatewayTimeoutError(crate::error::GatewayTimeoutError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadGatewayException(crate::error::BadGatewayException),
+    BadRequestException(crate::error::BadRequestException),
+    ForbiddenException(crate::error::ForbiddenException),
+    GatewayTimeoutException(crate::error::GatewayTimeoutException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListMultiplexesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListMultiplexesErrorKind::BadGatewayError(_inner) => _inner.fmt(f),
-            ListMultiplexesErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            ListMultiplexesErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            ListMultiplexesErrorKind::GatewayTimeoutError(_inner) => _inner.fmt(f),
-            ListMultiplexesErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            ListMultiplexesErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            ListMultiplexesErrorKind::BadGatewayException(_inner) => _inner.fmt(f),
+            ListMultiplexesErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            ListMultiplexesErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            ListMultiplexesErrorKind::GatewayTimeoutException(_inner) => _inner.fmt(f),
+            ListMultiplexesErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            ListMultiplexesErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             ListMultiplexesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4573,40 +4751,43 @@ impl ListMultiplexesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_gateway_error(&self) -> bool {
-        matches!(&self.kind, ListMultiplexesErrorKind::BadGatewayError(_))
+    pub fn is_bad_gateway_exception(&self) -> bool {
+        matches!(&self.kind, ListMultiplexesErrorKind::BadGatewayException(_))
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, ListMultiplexesErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, ListMultiplexesErrorKind::BadRequestException(_))
     }
-    pub fn is_forbidden_error(&self) -> bool {
-        matches!(&self.kind, ListMultiplexesErrorKind::ForbiddenError(_))
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, ListMultiplexesErrorKind::ForbiddenException(_))
     }
-    pub fn is_gateway_timeout_error(&self) -> bool {
-        matches!(&self.kind, ListMultiplexesErrorKind::GatewayTimeoutError(_))
-    }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListMultiplexesErrorKind::InternalServerErrorError(_)
+            ListMultiplexesErrorKind::GatewayTimeoutException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListMultiplexesErrorKind::TooManyRequestsError(_)
+            ListMultiplexesErrorKind::InternalServerErrorException(_)
+        )
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListMultiplexesErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for ListMultiplexesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListMultiplexesErrorKind::BadGatewayError(_inner) => Some(_inner),
-            ListMultiplexesErrorKind::BadRequestError(_inner) => Some(_inner),
-            ListMultiplexesErrorKind::ForbiddenError(_inner) => Some(_inner),
-            ListMultiplexesErrorKind::GatewayTimeoutError(_inner) => Some(_inner),
-            ListMultiplexesErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            ListMultiplexesErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            ListMultiplexesErrorKind::BadGatewayException(_inner) => Some(_inner),
+            ListMultiplexesErrorKind::BadRequestException(_inner) => Some(_inner),
+            ListMultiplexesErrorKind::ForbiddenException(_inner) => Some(_inner),
+            ListMultiplexesErrorKind::GatewayTimeoutException(_inner) => Some(_inner),
+            ListMultiplexesErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            ListMultiplexesErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             ListMultiplexesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4621,26 +4802,26 @@ pub struct ListMultiplexProgramsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListMultiplexProgramsErrorKind {
-    BadGatewayError(crate::error::BadGatewayError),
-    BadRequestError(crate::error::BadRequestError),
-    ForbiddenError(crate::error::ForbiddenError),
-    GatewayTimeoutError(crate::error::GatewayTimeoutError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadGatewayException(crate::error::BadGatewayException),
+    BadRequestException(crate::error::BadRequestException),
+    ForbiddenException(crate::error::ForbiddenException),
+    GatewayTimeoutException(crate::error::GatewayTimeoutException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListMultiplexProgramsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListMultiplexProgramsErrorKind::BadGatewayError(_inner) => _inner.fmt(f),
-            ListMultiplexProgramsErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            ListMultiplexProgramsErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            ListMultiplexProgramsErrorKind::GatewayTimeoutError(_inner) => _inner.fmt(f),
-            ListMultiplexProgramsErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            ListMultiplexProgramsErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            ListMultiplexProgramsErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            ListMultiplexProgramsErrorKind::BadGatewayException(_inner) => _inner.fmt(f),
+            ListMultiplexProgramsErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            ListMultiplexProgramsErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            ListMultiplexProgramsErrorKind::GatewayTimeoutException(_inner) => _inner.fmt(f),
+            ListMultiplexProgramsErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            ListMultiplexProgramsErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            ListMultiplexProgramsErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             ListMultiplexProgramsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4689,56 +4870,59 @@ impl ListMultiplexProgramsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_gateway_error(&self) -> bool {
+    pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListMultiplexProgramsErrorKind::BadGatewayError(_)
+            ListMultiplexProgramsErrorKind::BadGatewayException(_)
         )
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListMultiplexProgramsErrorKind::BadRequestError(_)
+            ListMultiplexProgramsErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_forbidden_error(&self) -> bool {
+    pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListMultiplexProgramsErrorKind::ForbiddenError(_)
+            ListMultiplexProgramsErrorKind::ForbiddenException(_)
         )
     }
-    pub fn is_gateway_timeout_error(&self) -> bool {
+    pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListMultiplexProgramsErrorKind::GatewayTimeoutError(_)
+            ListMultiplexProgramsErrorKind::GatewayTimeoutException(_)
         )
     }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListMultiplexProgramsErrorKind::InternalServerErrorError(_)
+            ListMultiplexProgramsErrorKind::InternalServerErrorException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, ListMultiplexProgramsErrorKind::NotFoundError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListMultiplexProgramsErrorKind::TooManyRequestsError(_)
+            ListMultiplexProgramsErrorKind::NotFoundException(_)
+        )
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListMultiplexProgramsErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for ListMultiplexProgramsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListMultiplexProgramsErrorKind::BadGatewayError(_inner) => Some(_inner),
-            ListMultiplexProgramsErrorKind::BadRequestError(_inner) => Some(_inner),
-            ListMultiplexProgramsErrorKind::ForbiddenError(_inner) => Some(_inner),
-            ListMultiplexProgramsErrorKind::GatewayTimeoutError(_inner) => Some(_inner),
-            ListMultiplexProgramsErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            ListMultiplexProgramsErrorKind::NotFoundError(_inner) => Some(_inner),
-            ListMultiplexProgramsErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            ListMultiplexProgramsErrorKind::BadGatewayException(_inner) => Some(_inner),
+            ListMultiplexProgramsErrorKind::BadRequestException(_inner) => Some(_inner),
+            ListMultiplexProgramsErrorKind::ForbiddenException(_inner) => Some(_inner),
+            ListMultiplexProgramsErrorKind::GatewayTimeoutException(_inner) => Some(_inner),
+            ListMultiplexProgramsErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            ListMultiplexProgramsErrorKind::NotFoundException(_inner) => Some(_inner),
+            ListMultiplexProgramsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             ListMultiplexProgramsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4753,24 +4937,24 @@ pub struct ListOfferingsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListOfferingsErrorKind {
-    BadGatewayError(crate::error::BadGatewayError),
-    BadRequestError(crate::error::BadRequestError),
-    ForbiddenError(crate::error::ForbiddenError),
-    GatewayTimeoutError(crate::error::GatewayTimeoutError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadGatewayException(crate::error::BadGatewayException),
+    BadRequestException(crate::error::BadRequestException),
+    ForbiddenException(crate::error::ForbiddenException),
+    GatewayTimeoutException(crate::error::GatewayTimeoutException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListOfferingsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListOfferingsErrorKind::BadGatewayError(_inner) => _inner.fmt(f),
-            ListOfferingsErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            ListOfferingsErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            ListOfferingsErrorKind::GatewayTimeoutError(_inner) => _inner.fmt(f),
-            ListOfferingsErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            ListOfferingsErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            ListOfferingsErrorKind::BadGatewayException(_inner) => _inner.fmt(f),
+            ListOfferingsErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            ListOfferingsErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            ListOfferingsErrorKind::GatewayTimeoutException(_inner) => _inner.fmt(f),
+            ListOfferingsErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            ListOfferingsErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             ListOfferingsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4819,37 +5003,43 @@ impl ListOfferingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_gateway_error(&self) -> bool {
-        matches!(&self.kind, ListOfferingsErrorKind::BadGatewayError(_))
+    pub fn is_bad_gateway_exception(&self) -> bool {
+        matches!(&self.kind, ListOfferingsErrorKind::BadGatewayException(_))
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, ListOfferingsErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, ListOfferingsErrorKind::BadRequestException(_))
     }
-    pub fn is_forbidden_error(&self) -> bool {
-        matches!(&self.kind, ListOfferingsErrorKind::ForbiddenError(_))
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, ListOfferingsErrorKind::ForbiddenException(_))
     }
-    pub fn is_gateway_timeout_error(&self) -> bool {
-        matches!(&self.kind, ListOfferingsErrorKind::GatewayTimeoutError(_))
-    }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListOfferingsErrorKind::InternalServerErrorError(_)
+            ListOfferingsErrorKind::GatewayTimeoutException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, ListOfferingsErrorKind::TooManyRequestsError(_))
+    pub fn is_internal_server_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListOfferingsErrorKind::InternalServerErrorException(_)
+        )
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListOfferingsErrorKind::TooManyRequestsException(_)
+        )
     }
 }
 impl std::error::Error for ListOfferingsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListOfferingsErrorKind::BadGatewayError(_inner) => Some(_inner),
-            ListOfferingsErrorKind::BadRequestError(_inner) => Some(_inner),
-            ListOfferingsErrorKind::ForbiddenError(_inner) => Some(_inner),
-            ListOfferingsErrorKind::GatewayTimeoutError(_inner) => Some(_inner),
-            ListOfferingsErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            ListOfferingsErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            ListOfferingsErrorKind::BadGatewayException(_inner) => Some(_inner),
+            ListOfferingsErrorKind::BadRequestException(_inner) => Some(_inner),
+            ListOfferingsErrorKind::ForbiddenException(_inner) => Some(_inner),
+            ListOfferingsErrorKind::GatewayTimeoutException(_inner) => Some(_inner),
+            ListOfferingsErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            ListOfferingsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             ListOfferingsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4864,24 +5054,24 @@ pub struct ListReservationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListReservationsErrorKind {
-    BadGatewayError(crate::error::BadGatewayError),
-    BadRequestError(crate::error::BadRequestError),
-    ForbiddenError(crate::error::ForbiddenError),
-    GatewayTimeoutError(crate::error::GatewayTimeoutError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadGatewayException(crate::error::BadGatewayException),
+    BadRequestException(crate::error::BadRequestException),
+    ForbiddenException(crate::error::ForbiddenException),
+    GatewayTimeoutException(crate::error::GatewayTimeoutException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListReservationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListReservationsErrorKind::BadGatewayError(_inner) => _inner.fmt(f),
-            ListReservationsErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            ListReservationsErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            ListReservationsErrorKind::GatewayTimeoutError(_inner) => _inner.fmt(f),
-            ListReservationsErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            ListReservationsErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            ListReservationsErrorKind::BadGatewayException(_inner) => _inner.fmt(f),
+            ListReservationsErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            ListReservationsErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            ListReservationsErrorKind::GatewayTimeoutException(_inner) => _inner.fmt(f),
+            ListReservationsErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            ListReservationsErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             ListReservationsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4930,43 +5120,49 @@ impl ListReservationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_gateway_error(&self) -> bool {
-        matches!(&self.kind, ListReservationsErrorKind::BadGatewayError(_))
-    }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, ListReservationsErrorKind::BadRequestError(_))
-    }
-    pub fn is_forbidden_error(&self) -> bool {
-        matches!(&self.kind, ListReservationsErrorKind::ForbiddenError(_))
-    }
-    pub fn is_gateway_timeout_error(&self) -> bool {
+    pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListReservationsErrorKind::GatewayTimeoutError(_)
+            ListReservationsErrorKind::BadGatewayException(_)
         )
     }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListReservationsErrorKind::InternalServerErrorError(_)
+            ListReservationsErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, ListReservationsErrorKind::ForbiddenException(_))
+    }
+    pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListReservationsErrorKind::TooManyRequestsError(_)
+            ListReservationsErrorKind::GatewayTimeoutException(_)
+        )
+    }
+    pub fn is_internal_server_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListReservationsErrorKind::InternalServerErrorException(_)
+        )
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListReservationsErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for ListReservationsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListReservationsErrorKind::BadGatewayError(_inner) => Some(_inner),
-            ListReservationsErrorKind::BadRequestError(_inner) => Some(_inner),
-            ListReservationsErrorKind::ForbiddenError(_inner) => Some(_inner),
-            ListReservationsErrorKind::GatewayTimeoutError(_inner) => Some(_inner),
-            ListReservationsErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            ListReservationsErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            ListReservationsErrorKind::BadGatewayException(_inner) => Some(_inner),
+            ListReservationsErrorKind::BadRequestException(_inner) => Some(_inner),
+            ListReservationsErrorKind::ForbiddenException(_inner) => Some(_inner),
+            ListReservationsErrorKind::GatewayTimeoutException(_inner) => Some(_inner),
+            ListReservationsErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            ListReservationsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             ListReservationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4981,20 +5177,20 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ForbiddenError(crate::error::ForbiddenError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    NotFoundError(crate::error::NotFoundError),
+    BadRequestException(crate::error::BadRequestException),
+    ForbiddenException(crate::error::ForbiddenException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListTagsForResourceErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::NotFoundError(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             ListTagsForResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5043,29 +5239,38 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, ListTagsForResourceErrorKind::BadRequestError(_))
-    }
-    pub fn is_forbidden_error(&self) -> bool {
-        matches!(&self.kind, ListTagsForResourceErrorKind::ForbiddenError(_))
-    }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListTagsForResourceErrorKind::InternalServerErrorError(_)
+            ListTagsForResourceErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, ListTagsForResourceErrorKind::NotFoundError(_))
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForResourceErrorKind::ForbiddenException(_)
+        )
+    }
+    pub fn is_internal_server_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForResourceErrorKind::InternalServerErrorException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForResourceErrorKind::NotFoundException(_)
+        )
     }
 }
 impl std::error::Error for ListTagsForResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListTagsForResourceErrorKind::BadRequestError(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::ForbiddenError(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::NotFoundError(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::BadRequestException(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::ForbiddenException(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::NotFoundException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5080,28 +5285,28 @@ pub struct PurchaseOfferingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PurchaseOfferingErrorKind {
-    BadGatewayError(crate::error::BadGatewayError),
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    ForbiddenError(crate::error::ForbiddenError),
-    GatewayTimeoutError(crate::error::GatewayTimeoutError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadGatewayException(crate::error::BadGatewayException),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    ForbiddenException(crate::error::ForbiddenException),
+    GatewayTimeoutException(crate::error::GatewayTimeoutException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PurchaseOfferingError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PurchaseOfferingErrorKind::BadGatewayError(_inner) => _inner.fmt(f),
-            PurchaseOfferingErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            PurchaseOfferingErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            PurchaseOfferingErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            PurchaseOfferingErrorKind::GatewayTimeoutError(_inner) => _inner.fmt(f),
-            PurchaseOfferingErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            PurchaseOfferingErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            PurchaseOfferingErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            PurchaseOfferingErrorKind::BadGatewayException(_inner) => _inner.fmt(f),
+            PurchaseOfferingErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            PurchaseOfferingErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            PurchaseOfferingErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            PurchaseOfferingErrorKind::GatewayTimeoutException(_inner) => _inner.fmt(f),
+            PurchaseOfferingErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            PurchaseOfferingErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            PurchaseOfferingErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             PurchaseOfferingErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5150,51 +5355,57 @@ impl PurchaseOfferingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_gateway_error(&self) -> bool {
-        matches!(&self.kind, PurchaseOfferingErrorKind::BadGatewayError(_))
-    }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, PurchaseOfferingErrorKind::BadRequestError(_))
-    }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, PurchaseOfferingErrorKind::ConflictError(_))
-    }
-    pub fn is_forbidden_error(&self) -> bool {
-        matches!(&self.kind, PurchaseOfferingErrorKind::ForbiddenError(_))
-    }
-    pub fn is_gateway_timeout_error(&self) -> bool {
+    pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PurchaseOfferingErrorKind::GatewayTimeoutError(_)
+            PurchaseOfferingErrorKind::BadGatewayException(_)
         )
     }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PurchaseOfferingErrorKind::InternalServerErrorError(_)
+            PurchaseOfferingErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, PurchaseOfferingErrorKind::NotFoundError(_))
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, PurchaseOfferingErrorKind::ConflictException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, PurchaseOfferingErrorKind::ForbiddenException(_))
+    }
+    pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PurchaseOfferingErrorKind::TooManyRequestsError(_)
+            PurchaseOfferingErrorKind::GatewayTimeoutException(_)
+        )
+    }
+    pub fn is_internal_server_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PurchaseOfferingErrorKind::InternalServerErrorException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, PurchaseOfferingErrorKind::NotFoundException(_))
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PurchaseOfferingErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for PurchaseOfferingError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PurchaseOfferingErrorKind::BadGatewayError(_inner) => Some(_inner),
-            PurchaseOfferingErrorKind::BadRequestError(_inner) => Some(_inner),
-            PurchaseOfferingErrorKind::ConflictError(_inner) => Some(_inner),
-            PurchaseOfferingErrorKind::ForbiddenError(_inner) => Some(_inner),
-            PurchaseOfferingErrorKind::GatewayTimeoutError(_inner) => Some(_inner),
-            PurchaseOfferingErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            PurchaseOfferingErrorKind::NotFoundError(_inner) => Some(_inner),
-            PurchaseOfferingErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            PurchaseOfferingErrorKind::BadGatewayException(_inner) => Some(_inner),
+            PurchaseOfferingErrorKind::BadRequestException(_inner) => Some(_inner),
+            PurchaseOfferingErrorKind::ConflictException(_inner) => Some(_inner),
+            PurchaseOfferingErrorKind::ForbiddenException(_inner) => Some(_inner),
+            PurchaseOfferingErrorKind::GatewayTimeoutException(_inner) => Some(_inner),
+            PurchaseOfferingErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            PurchaseOfferingErrorKind::NotFoundException(_inner) => Some(_inner),
+            PurchaseOfferingErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             PurchaseOfferingErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5209,30 +5420,34 @@ pub struct RejectInputDeviceTransferError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RejectInputDeviceTransferErrorKind {
-    BadGatewayError(crate::error::BadGatewayError),
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    ForbiddenError(crate::error::ForbiddenError),
-    GatewayTimeoutError(crate::error::GatewayTimeoutError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnprocessableEntityError(crate::error::UnprocessableEntityError),
+    BadGatewayException(crate::error::BadGatewayException),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    ForbiddenException(crate::error::ForbiddenException),
+    GatewayTimeoutException(crate::error::GatewayTimeoutException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnprocessableEntityException(crate::error::UnprocessableEntityException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RejectInputDeviceTransferError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            RejectInputDeviceTransferErrorKind::BadGatewayError(_inner) => _inner.fmt(f),
-            RejectInputDeviceTransferErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            RejectInputDeviceTransferErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            RejectInputDeviceTransferErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            RejectInputDeviceTransferErrorKind::GatewayTimeoutError(_inner) => _inner.fmt(f),
-            RejectInputDeviceTransferErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            RejectInputDeviceTransferErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            RejectInputDeviceTransferErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            RejectInputDeviceTransferErrorKind::UnprocessableEntityError(_inner) => _inner.fmt(f),
+            RejectInputDeviceTransferErrorKind::BadGatewayException(_inner) => _inner.fmt(f),
+            RejectInputDeviceTransferErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            RejectInputDeviceTransferErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            RejectInputDeviceTransferErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            RejectInputDeviceTransferErrorKind::GatewayTimeoutException(_inner) => _inner.fmt(f),
+            RejectInputDeviceTransferErrorKind::InternalServerErrorException(_inner) => {
+                _inner.fmt(f)
+            }
+            RejectInputDeviceTransferErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            RejectInputDeviceTransferErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            RejectInputDeviceTransferErrorKind::UnprocessableEntityException(_inner) => {
+                _inner.fmt(f)
+            }
             RejectInputDeviceTransferErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5281,73 +5496,77 @@ impl RejectInputDeviceTransferError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_gateway_error(&self) -> bool {
+    pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(
             &self.kind,
-            RejectInputDeviceTransferErrorKind::BadGatewayError(_)
+            RejectInputDeviceTransferErrorKind::BadGatewayException(_)
         )
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            RejectInputDeviceTransferErrorKind::BadRequestError(_)
+            RejectInputDeviceTransferErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_conflict_error(&self) -> bool {
+    pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
-            RejectInputDeviceTransferErrorKind::ConflictError(_)
+            RejectInputDeviceTransferErrorKind::ConflictException(_)
         )
     }
-    pub fn is_forbidden_error(&self) -> bool {
+    pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
-            RejectInputDeviceTransferErrorKind::ForbiddenError(_)
+            RejectInputDeviceTransferErrorKind::ForbiddenException(_)
         )
     }
-    pub fn is_gateway_timeout_error(&self) -> bool {
+    pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
-            RejectInputDeviceTransferErrorKind::GatewayTimeoutError(_)
+            RejectInputDeviceTransferErrorKind::GatewayTimeoutException(_)
         )
     }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            RejectInputDeviceTransferErrorKind::InternalServerErrorError(_)
+            RejectInputDeviceTransferErrorKind::InternalServerErrorException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            RejectInputDeviceTransferErrorKind::NotFoundError(_)
+            RejectInputDeviceTransferErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            RejectInputDeviceTransferErrorKind::TooManyRequestsError(_)
+            RejectInputDeviceTransferErrorKind::TooManyRequestsException(_)
         )
     }
-    pub fn is_unprocessable_entity_error(&self) -> bool {
+    pub fn is_unprocessable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            RejectInputDeviceTransferErrorKind::UnprocessableEntityError(_)
+            RejectInputDeviceTransferErrorKind::UnprocessableEntityException(_)
         )
     }
 }
 impl std::error::Error for RejectInputDeviceTransferError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            RejectInputDeviceTransferErrorKind::BadGatewayError(_inner) => Some(_inner),
-            RejectInputDeviceTransferErrorKind::BadRequestError(_inner) => Some(_inner),
-            RejectInputDeviceTransferErrorKind::ConflictError(_inner) => Some(_inner),
-            RejectInputDeviceTransferErrorKind::ForbiddenError(_inner) => Some(_inner),
-            RejectInputDeviceTransferErrorKind::GatewayTimeoutError(_inner) => Some(_inner),
-            RejectInputDeviceTransferErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            RejectInputDeviceTransferErrorKind::NotFoundError(_inner) => Some(_inner),
-            RejectInputDeviceTransferErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            RejectInputDeviceTransferErrorKind::UnprocessableEntityError(_inner) => Some(_inner),
+            RejectInputDeviceTransferErrorKind::BadGatewayException(_inner) => Some(_inner),
+            RejectInputDeviceTransferErrorKind::BadRequestException(_inner) => Some(_inner),
+            RejectInputDeviceTransferErrorKind::ConflictException(_inner) => Some(_inner),
+            RejectInputDeviceTransferErrorKind::ForbiddenException(_inner) => Some(_inner),
+            RejectInputDeviceTransferErrorKind::GatewayTimeoutException(_inner) => Some(_inner),
+            RejectInputDeviceTransferErrorKind::InternalServerErrorException(_inner) => {
+                Some(_inner)
+            }
+            RejectInputDeviceTransferErrorKind::NotFoundException(_inner) => Some(_inner),
+            RejectInputDeviceTransferErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            RejectInputDeviceTransferErrorKind::UnprocessableEntityException(_inner) => {
+                Some(_inner)
+            }
             RejectInputDeviceTransferErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5362,28 +5581,28 @@ pub struct StartChannelError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartChannelErrorKind {
-    BadGatewayError(crate::error::BadGatewayError),
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    ForbiddenError(crate::error::ForbiddenError),
-    GatewayTimeoutError(crate::error::GatewayTimeoutError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadGatewayException(crate::error::BadGatewayException),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    ForbiddenException(crate::error::ForbiddenException),
+    GatewayTimeoutException(crate::error::GatewayTimeoutException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartChannelError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            StartChannelErrorKind::BadGatewayError(_inner) => _inner.fmt(f),
-            StartChannelErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            StartChannelErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            StartChannelErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            StartChannelErrorKind::GatewayTimeoutError(_inner) => _inner.fmt(f),
-            StartChannelErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            StartChannelErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            StartChannelErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            StartChannelErrorKind::BadGatewayException(_inner) => _inner.fmt(f),
+            StartChannelErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            StartChannelErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            StartChannelErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            StartChannelErrorKind::GatewayTimeoutException(_inner) => _inner.fmt(f),
+            StartChannelErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            StartChannelErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            StartChannelErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             StartChannelErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5432,45 +5651,51 @@ impl StartChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_gateway_error(&self) -> bool {
-        matches!(&self.kind, StartChannelErrorKind::BadGatewayError(_))
+    pub fn is_bad_gateway_exception(&self) -> bool {
+        matches!(&self.kind, StartChannelErrorKind::BadGatewayException(_))
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, StartChannelErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, StartChannelErrorKind::BadRequestException(_))
     }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, StartChannelErrorKind::ConflictError(_))
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, StartChannelErrorKind::ConflictException(_))
     }
-    pub fn is_forbidden_error(&self) -> bool {
-        matches!(&self.kind, StartChannelErrorKind::ForbiddenError(_))
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, StartChannelErrorKind::ForbiddenException(_))
     }
-    pub fn is_gateway_timeout_error(&self) -> bool {
-        matches!(&self.kind, StartChannelErrorKind::GatewayTimeoutError(_))
-    }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
-            StartChannelErrorKind::InternalServerErrorError(_)
+            StartChannelErrorKind::GatewayTimeoutException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, StartChannelErrorKind::NotFoundError(_))
+    pub fn is_internal_server_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartChannelErrorKind::InternalServerErrorException(_)
+        )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, StartChannelErrorKind::TooManyRequestsError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, StartChannelErrorKind::NotFoundException(_))
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartChannelErrorKind::TooManyRequestsException(_)
+        )
     }
 }
 impl std::error::Error for StartChannelError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            StartChannelErrorKind::BadGatewayError(_inner) => Some(_inner),
-            StartChannelErrorKind::BadRequestError(_inner) => Some(_inner),
-            StartChannelErrorKind::ConflictError(_inner) => Some(_inner),
-            StartChannelErrorKind::ForbiddenError(_inner) => Some(_inner),
-            StartChannelErrorKind::GatewayTimeoutError(_inner) => Some(_inner),
-            StartChannelErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            StartChannelErrorKind::NotFoundError(_inner) => Some(_inner),
-            StartChannelErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            StartChannelErrorKind::BadGatewayException(_inner) => Some(_inner),
+            StartChannelErrorKind::BadRequestException(_inner) => Some(_inner),
+            StartChannelErrorKind::ConflictException(_inner) => Some(_inner),
+            StartChannelErrorKind::ForbiddenException(_inner) => Some(_inner),
+            StartChannelErrorKind::GatewayTimeoutException(_inner) => Some(_inner),
+            StartChannelErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            StartChannelErrorKind::NotFoundException(_inner) => Some(_inner),
+            StartChannelErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             StartChannelErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5485,28 +5710,28 @@ pub struct StartMultiplexError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartMultiplexErrorKind {
-    BadGatewayError(crate::error::BadGatewayError),
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    ForbiddenError(crate::error::ForbiddenError),
-    GatewayTimeoutError(crate::error::GatewayTimeoutError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadGatewayException(crate::error::BadGatewayException),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    ForbiddenException(crate::error::ForbiddenException),
+    GatewayTimeoutException(crate::error::GatewayTimeoutException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartMultiplexError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            StartMultiplexErrorKind::BadGatewayError(_inner) => _inner.fmt(f),
-            StartMultiplexErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            StartMultiplexErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            StartMultiplexErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            StartMultiplexErrorKind::GatewayTimeoutError(_inner) => _inner.fmt(f),
-            StartMultiplexErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            StartMultiplexErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            StartMultiplexErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            StartMultiplexErrorKind::BadGatewayException(_inner) => _inner.fmt(f),
+            StartMultiplexErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            StartMultiplexErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            StartMultiplexErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            StartMultiplexErrorKind::GatewayTimeoutException(_inner) => _inner.fmt(f),
+            StartMultiplexErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            StartMultiplexErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            StartMultiplexErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             StartMultiplexErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5555,45 +5780,51 @@ impl StartMultiplexError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_gateway_error(&self) -> bool {
-        matches!(&self.kind, StartMultiplexErrorKind::BadGatewayError(_))
+    pub fn is_bad_gateway_exception(&self) -> bool {
+        matches!(&self.kind, StartMultiplexErrorKind::BadGatewayException(_))
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, StartMultiplexErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, StartMultiplexErrorKind::BadRequestException(_))
     }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, StartMultiplexErrorKind::ConflictError(_))
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, StartMultiplexErrorKind::ConflictException(_))
     }
-    pub fn is_forbidden_error(&self) -> bool {
-        matches!(&self.kind, StartMultiplexErrorKind::ForbiddenError(_))
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, StartMultiplexErrorKind::ForbiddenException(_))
     }
-    pub fn is_gateway_timeout_error(&self) -> bool {
-        matches!(&self.kind, StartMultiplexErrorKind::GatewayTimeoutError(_))
-    }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
-            StartMultiplexErrorKind::InternalServerErrorError(_)
+            StartMultiplexErrorKind::GatewayTimeoutException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, StartMultiplexErrorKind::NotFoundError(_))
+    pub fn is_internal_server_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartMultiplexErrorKind::InternalServerErrorException(_)
+        )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, StartMultiplexErrorKind::TooManyRequestsError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, StartMultiplexErrorKind::NotFoundException(_))
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartMultiplexErrorKind::TooManyRequestsException(_)
+        )
     }
 }
 impl std::error::Error for StartMultiplexError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            StartMultiplexErrorKind::BadGatewayError(_inner) => Some(_inner),
-            StartMultiplexErrorKind::BadRequestError(_inner) => Some(_inner),
-            StartMultiplexErrorKind::ConflictError(_inner) => Some(_inner),
-            StartMultiplexErrorKind::ForbiddenError(_inner) => Some(_inner),
-            StartMultiplexErrorKind::GatewayTimeoutError(_inner) => Some(_inner),
-            StartMultiplexErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            StartMultiplexErrorKind::NotFoundError(_inner) => Some(_inner),
-            StartMultiplexErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            StartMultiplexErrorKind::BadGatewayException(_inner) => Some(_inner),
+            StartMultiplexErrorKind::BadRequestException(_inner) => Some(_inner),
+            StartMultiplexErrorKind::ConflictException(_inner) => Some(_inner),
+            StartMultiplexErrorKind::ForbiddenException(_inner) => Some(_inner),
+            StartMultiplexErrorKind::GatewayTimeoutException(_inner) => Some(_inner),
+            StartMultiplexErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            StartMultiplexErrorKind::NotFoundException(_inner) => Some(_inner),
+            StartMultiplexErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             StartMultiplexErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5608,28 +5839,28 @@ pub struct StopChannelError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StopChannelErrorKind {
-    BadGatewayError(crate::error::BadGatewayError),
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    ForbiddenError(crate::error::ForbiddenError),
-    GatewayTimeoutError(crate::error::GatewayTimeoutError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadGatewayException(crate::error::BadGatewayException),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    ForbiddenException(crate::error::ForbiddenException),
+    GatewayTimeoutException(crate::error::GatewayTimeoutException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopChannelError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            StopChannelErrorKind::BadGatewayError(_inner) => _inner.fmt(f),
-            StopChannelErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            StopChannelErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            StopChannelErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            StopChannelErrorKind::GatewayTimeoutError(_inner) => _inner.fmt(f),
-            StopChannelErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            StopChannelErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            StopChannelErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            StopChannelErrorKind::BadGatewayException(_inner) => _inner.fmt(f),
+            StopChannelErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            StopChannelErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            StopChannelErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            StopChannelErrorKind::GatewayTimeoutException(_inner) => _inner.fmt(f),
+            StopChannelErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            StopChannelErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            StopChannelErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             StopChannelErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5678,45 +5909,48 @@ impl StopChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_gateway_error(&self) -> bool {
-        matches!(&self.kind, StopChannelErrorKind::BadGatewayError(_))
+    pub fn is_bad_gateway_exception(&self) -> bool {
+        matches!(&self.kind, StopChannelErrorKind::BadGatewayException(_))
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, StopChannelErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, StopChannelErrorKind::BadRequestException(_))
     }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, StopChannelErrorKind::ConflictError(_))
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, StopChannelErrorKind::ConflictException(_))
     }
-    pub fn is_forbidden_error(&self) -> bool {
-        matches!(&self.kind, StopChannelErrorKind::ForbiddenError(_))
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, StopChannelErrorKind::ForbiddenException(_))
     }
-    pub fn is_gateway_timeout_error(&self) -> bool {
-        matches!(&self.kind, StopChannelErrorKind::GatewayTimeoutError(_))
+    pub fn is_gateway_timeout_exception(&self) -> bool {
+        matches!(&self.kind, StopChannelErrorKind::GatewayTimeoutException(_))
     }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            StopChannelErrorKind::InternalServerErrorError(_)
+            StopChannelErrorKind::InternalServerErrorException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, StopChannelErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, StopChannelErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, StopChannelErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopChannelErrorKind::TooManyRequestsException(_)
+        )
     }
 }
 impl std::error::Error for StopChannelError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            StopChannelErrorKind::BadGatewayError(_inner) => Some(_inner),
-            StopChannelErrorKind::BadRequestError(_inner) => Some(_inner),
-            StopChannelErrorKind::ConflictError(_inner) => Some(_inner),
-            StopChannelErrorKind::ForbiddenError(_inner) => Some(_inner),
-            StopChannelErrorKind::GatewayTimeoutError(_inner) => Some(_inner),
-            StopChannelErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            StopChannelErrorKind::NotFoundError(_inner) => Some(_inner),
-            StopChannelErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            StopChannelErrorKind::BadGatewayException(_inner) => Some(_inner),
+            StopChannelErrorKind::BadRequestException(_inner) => Some(_inner),
+            StopChannelErrorKind::ConflictException(_inner) => Some(_inner),
+            StopChannelErrorKind::ForbiddenException(_inner) => Some(_inner),
+            StopChannelErrorKind::GatewayTimeoutException(_inner) => Some(_inner),
+            StopChannelErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            StopChannelErrorKind::NotFoundException(_inner) => Some(_inner),
+            StopChannelErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             StopChannelErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5731,28 +5965,28 @@ pub struct StopMultiplexError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StopMultiplexErrorKind {
-    BadGatewayError(crate::error::BadGatewayError),
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    ForbiddenError(crate::error::ForbiddenError),
-    GatewayTimeoutError(crate::error::GatewayTimeoutError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadGatewayException(crate::error::BadGatewayException),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    ForbiddenException(crate::error::ForbiddenException),
+    GatewayTimeoutException(crate::error::GatewayTimeoutException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopMultiplexError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            StopMultiplexErrorKind::BadGatewayError(_inner) => _inner.fmt(f),
-            StopMultiplexErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            StopMultiplexErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            StopMultiplexErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            StopMultiplexErrorKind::GatewayTimeoutError(_inner) => _inner.fmt(f),
-            StopMultiplexErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            StopMultiplexErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            StopMultiplexErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            StopMultiplexErrorKind::BadGatewayException(_inner) => _inner.fmt(f),
+            StopMultiplexErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            StopMultiplexErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            StopMultiplexErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            StopMultiplexErrorKind::GatewayTimeoutException(_inner) => _inner.fmt(f),
+            StopMultiplexErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            StopMultiplexErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            StopMultiplexErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             StopMultiplexErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5801,45 +6035,51 @@ impl StopMultiplexError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_gateway_error(&self) -> bool {
-        matches!(&self.kind, StopMultiplexErrorKind::BadGatewayError(_))
+    pub fn is_bad_gateway_exception(&self) -> bool {
+        matches!(&self.kind, StopMultiplexErrorKind::BadGatewayException(_))
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, StopMultiplexErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, StopMultiplexErrorKind::BadRequestException(_))
     }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, StopMultiplexErrorKind::ConflictError(_))
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, StopMultiplexErrorKind::ConflictException(_))
     }
-    pub fn is_forbidden_error(&self) -> bool {
-        matches!(&self.kind, StopMultiplexErrorKind::ForbiddenError(_))
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, StopMultiplexErrorKind::ForbiddenException(_))
     }
-    pub fn is_gateway_timeout_error(&self) -> bool {
-        matches!(&self.kind, StopMultiplexErrorKind::GatewayTimeoutError(_))
-    }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
-            StopMultiplexErrorKind::InternalServerErrorError(_)
+            StopMultiplexErrorKind::GatewayTimeoutException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, StopMultiplexErrorKind::NotFoundError(_))
+    pub fn is_internal_server_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopMultiplexErrorKind::InternalServerErrorException(_)
+        )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, StopMultiplexErrorKind::TooManyRequestsError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, StopMultiplexErrorKind::NotFoundException(_))
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopMultiplexErrorKind::TooManyRequestsException(_)
+        )
     }
 }
 impl std::error::Error for StopMultiplexError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            StopMultiplexErrorKind::BadGatewayError(_inner) => Some(_inner),
-            StopMultiplexErrorKind::BadRequestError(_inner) => Some(_inner),
-            StopMultiplexErrorKind::ConflictError(_inner) => Some(_inner),
-            StopMultiplexErrorKind::ForbiddenError(_inner) => Some(_inner),
-            StopMultiplexErrorKind::GatewayTimeoutError(_inner) => Some(_inner),
-            StopMultiplexErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            StopMultiplexErrorKind::NotFoundError(_inner) => Some(_inner),
-            StopMultiplexErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            StopMultiplexErrorKind::BadGatewayException(_inner) => Some(_inner),
+            StopMultiplexErrorKind::BadRequestException(_inner) => Some(_inner),
+            StopMultiplexErrorKind::ConflictException(_inner) => Some(_inner),
+            StopMultiplexErrorKind::ForbiddenException(_inner) => Some(_inner),
+            StopMultiplexErrorKind::GatewayTimeoutException(_inner) => Some(_inner),
+            StopMultiplexErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            StopMultiplexErrorKind::NotFoundException(_inner) => Some(_inner),
+            StopMultiplexErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             StopMultiplexErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5854,30 +6094,30 @@ pub struct TransferInputDeviceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TransferInputDeviceErrorKind {
-    BadGatewayError(crate::error::BadGatewayError),
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    ForbiddenError(crate::error::ForbiddenError),
-    GatewayTimeoutError(crate::error::GatewayTimeoutError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnprocessableEntityError(crate::error::UnprocessableEntityError),
+    BadGatewayException(crate::error::BadGatewayException),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    ForbiddenException(crate::error::ForbiddenException),
+    GatewayTimeoutException(crate::error::GatewayTimeoutException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnprocessableEntityException(crate::error::UnprocessableEntityException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TransferInputDeviceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            TransferInputDeviceErrorKind::BadGatewayError(_inner) => _inner.fmt(f),
-            TransferInputDeviceErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            TransferInputDeviceErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            TransferInputDeviceErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            TransferInputDeviceErrorKind::GatewayTimeoutError(_inner) => _inner.fmt(f),
-            TransferInputDeviceErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            TransferInputDeviceErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            TransferInputDeviceErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            TransferInputDeviceErrorKind::UnprocessableEntityError(_inner) => _inner.fmt(f),
+            TransferInputDeviceErrorKind::BadGatewayException(_inner) => _inner.fmt(f),
+            TransferInputDeviceErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            TransferInputDeviceErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            TransferInputDeviceErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            TransferInputDeviceErrorKind::GatewayTimeoutException(_inner) => _inner.fmt(f),
+            TransferInputDeviceErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            TransferInputDeviceErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            TransferInputDeviceErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            TransferInputDeviceErrorKind::UnprocessableEntityException(_inner) => _inner.fmt(f),
             TransferInputDeviceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5926,58 +6166,73 @@ impl TransferInputDeviceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_gateway_error(&self) -> bool {
-        matches!(&self.kind, TransferInputDeviceErrorKind::BadGatewayError(_))
-    }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, TransferInputDeviceErrorKind::BadRequestError(_))
-    }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, TransferInputDeviceErrorKind::ConflictError(_))
-    }
-    pub fn is_forbidden_error(&self) -> bool {
-        matches!(&self.kind, TransferInputDeviceErrorKind::ForbiddenError(_))
-    }
-    pub fn is_gateway_timeout_error(&self) -> bool {
+    pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(
             &self.kind,
-            TransferInputDeviceErrorKind::GatewayTimeoutError(_)
+            TransferInputDeviceErrorKind::BadGatewayException(_)
         )
     }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            TransferInputDeviceErrorKind::InternalServerErrorError(_)
+            TransferInputDeviceErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, TransferInputDeviceErrorKind::NotFoundError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
-            TransferInputDeviceErrorKind::TooManyRequestsError(_)
+            TransferInputDeviceErrorKind::ConflictException(_)
         )
     }
-    pub fn is_unprocessable_entity_error(&self) -> bool {
+    pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
-            TransferInputDeviceErrorKind::UnprocessableEntityError(_)
+            TransferInputDeviceErrorKind::ForbiddenException(_)
+        )
+    }
+    pub fn is_gateway_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            TransferInputDeviceErrorKind::GatewayTimeoutException(_)
+        )
+    }
+    pub fn is_internal_server_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            TransferInputDeviceErrorKind::InternalServerErrorException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            TransferInputDeviceErrorKind::NotFoundException(_)
+        )
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            TransferInputDeviceErrorKind::TooManyRequestsException(_)
+        )
+    }
+    pub fn is_unprocessable_entity_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            TransferInputDeviceErrorKind::UnprocessableEntityException(_)
         )
     }
 }
 impl std::error::Error for TransferInputDeviceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            TransferInputDeviceErrorKind::BadGatewayError(_inner) => Some(_inner),
-            TransferInputDeviceErrorKind::BadRequestError(_inner) => Some(_inner),
-            TransferInputDeviceErrorKind::ConflictError(_inner) => Some(_inner),
-            TransferInputDeviceErrorKind::ForbiddenError(_inner) => Some(_inner),
-            TransferInputDeviceErrorKind::GatewayTimeoutError(_inner) => Some(_inner),
-            TransferInputDeviceErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            TransferInputDeviceErrorKind::NotFoundError(_inner) => Some(_inner),
-            TransferInputDeviceErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            TransferInputDeviceErrorKind::UnprocessableEntityError(_inner) => Some(_inner),
+            TransferInputDeviceErrorKind::BadGatewayException(_inner) => Some(_inner),
+            TransferInputDeviceErrorKind::BadRequestException(_inner) => Some(_inner),
+            TransferInputDeviceErrorKind::ConflictException(_inner) => Some(_inner),
+            TransferInputDeviceErrorKind::ForbiddenException(_inner) => Some(_inner),
+            TransferInputDeviceErrorKind::GatewayTimeoutException(_inner) => Some(_inner),
+            TransferInputDeviceErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            TransferInputDeviceErrorKind::NotFoundException(_inner) => Some(_inner),
+            TransferInputDeviceErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            TransferInputDeviceErrorKind::UnprocessableEntityException(_inner) => Some(_inner),
             TransferInputDeviceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5992,26 +6247,26 @@ pub struct UpdateChannelError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateChannelErrorKind {
-    BadGatewayError(crate::error::BadGatewayError),
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    ForbiddenError(crate::error::ForbiddenError),
-    GatewayTimeoutError(crate::error::GatewayTimeoutError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    UnprocessableEntityError(crate::error::UnprocessableEntityError),
+    BadGatewayException(crate::error::BadGatewayException),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    ForbiddenException(crate::error::ForbiddenException),
+    GatewayTimeoutException(crate::error::GatewayTimeoutException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    UnprocessableEntityException(crate::error::UnprocessableEntityException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateChannelError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateChannelErrorKind::BadGatewayError(_inner) => _inner.fmt(f),
-            UpdateChannelErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            UpdateChannelErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            UpdateChannelErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            UpdateChannelErrorKind::GatewayTimeoutError(_inner) => _inner.fmt(f),
-            UpdateChannelErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            UpdateChannelErrorKind::UnprocessableEntityError(_inner) => _inner.fmt(f),
+            UpdateChannelErrorKind::BadGatewayException(_inner) => _inner.fmt(f),
+            UpdateChannelErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            UpdateChannelErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            UpdateChannelErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            UpdateChannelErrorKind::GatewayTimeoutException(_inner) => _inner.fmt(f),
+            UpdateChannelErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            UpdateChannelErrorKind::UnprocessableEntityException(_inner) => _inner.fmt(f),
             UpdateChannelErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -6060,44 +6315,47 @@ impl UpdateChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_gateway_error(&self) -> bool {
-        matches!(&self.kind, UpdateChannelErrorKind::BadGatewayError(_))
+    pub fn is_bad_gateway_exception(&self) -> bool {
+        matches!(&self.kind, UpdateChannelErrorKind::BadGatewayException(_))
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, UpdateChannelErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, UpdateChannelErrorKind::BadRequestException(_))
     }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, UpdateChannelErrorKind::ConflictError(_))
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, UpdateChannelErrorKind::ConflictException(_))
     }
-    pub fn is_forbidden_error(&self) -> bool {
-        matches!(&self.kind, UpdateChannelErrorKind::ForbiddenError(_))
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, UpdateChannelErrorKind::ForbiddenException(_))
     }
-    pub fn is_gateway_timeout_error(&self) -> bool {
-        matches!(&self.kind, UpdateChannelErrorKind::GatewayTimeoutError(_))
-    }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateChannelErrorKind::InternalServerErrorError(_)
+            UpdateChannelErrorKind::GatewayTimeoutException(_)
         )
     }
-    pub fn is_unprocessable_entity_error(&self) -> bool {
+    pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateChannelErrorKind::UnprocessableEntityError(_)
+            UpdateChannelErrorKind::InternalServerErrorException(_)
+        )
+    }
+    pub fn is_unprocessable_entity_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateChannelErrorKind::UnprocessableEntityException(_)
         )
     }
 }
 impl std::error::Error for UpdateChannelError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateChannelErrorKind::BadGatewayError(_inner) => Some(_inner),
-            UpdateChannelErrorKind::BadRequestError(_inner) => Some(_inner),
-            UpdateChannelErrorKind::ConflictError(_inner) => Some(_inner),
-            UpdateChannelErrorKind::ForbiddenError(_inner) => Some(_inner),
-            UpdateChannelErrorKind::GatewayTimeoutError(_inner) => Some(_inner),
-            UpdateChannelErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            UpdateChannelErrorKind::UnprocessableEntityError(_inner) => Some(_inner),
+            UpdateChannelErrorKind::BadGatewayException(_inner) => Some(_inner),
+            UpdateChannelErrorKind::BadRequestException(_inner) => Some(_inner),
+            UpdateChannelErrorKind::ConflictException(_inner) => Some(_inner),
+            UpdateChannelErrorKind::ForbiddenException(_inner) => Some(_inner),
+            UpdateChannelErrorKind::GatewayTimeoutException(_inner) => Some(_inner),
+            UpdateChannelErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            UpdateChannelErrorKind::UnprocessableEntityException(_inner) => Some(_inner),
             UpdateChannelErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -6112,30 +6370,30 @@ pub struct UpdateChannelClassError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateChannelClassErrorKind {
-    BadGatewayError(crate::error::BadGatewayError),
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    ForbiddenError(crate::error::ForbiddenError),
-    GatewayTimeoutError(crate::error::GatewayTimeoutError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnprocessableEntityError(crate::error::UnprocessableEntityError),
+    BadGatewayException(crate::error::BadGatewayException),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    ForbiddenException(crate::error::ForbiddenException),
+    GatewayTimeoutException(crate::error::GatewayTimeoutException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnprocessableEntityException(crate::error::UnprocessableEntityException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateChannelClassError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateChannelClassErrorKind::BadGatewayError(_inner) => _inner.fmt(f),
-            UpdateChannelClassErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            UpdateChannelClassErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            UpdateChannelClassErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            UpdateChannelClassErrorKind::GatewayTimeoutError(_inner) => _inner.fmt(f),
-            UpdateChannelClassErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            UpdateChannelClassErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            UpdateChannelClassErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            UpdateChannelClassErrorKind::UnprocessableEntityError(_inner) => _inner.fmt(f),
+            UpdateChannelClassErrorKind::BadGatewayException(_inner) => _inner.fmt(f),
+            UpdateChannelClassErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            UpdateChannelClassErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            UpdateChannelClassErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            UpdateChannelClassErrorKind::GatewayTimeoutException(_inner) => _inner.fmt(f),
+            UpdateChannelClassErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            UpdateChannelClassErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            UpdateChannelClassErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            UpdateChannelClassErrorKind::UnprocessableEntityException(_inner) => _inner.fmt(f),
             UpdateChannelClassErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -6184,58 +6442,73 @@ impl UpdateChannelClassError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_gateway_error(&self) -> bool {
-        matches!(&self.kind, UpdateChannelClassErrorKind::BadGatewayError(_))
-    }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, UpdateChannelClassErrorKind::BadRequestError(_))
-    }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, UpdateChannelClassErrorKind::ConflictError(_))
-    }
-    pub fn is_forbidden_error(&self) -> bool {
-        matches!(&self.kind, UpdateChannelClassErrorKind::ForbiddenError(_))
-    }
-    pub fn is_gateway_timeout_error(&self) -> bool {
+    pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateChannelClassErrorKind::GatewayTimeoutError(_)
+            UpdateChannelClassErrorKind::BadGatewayException(_)
         )
     }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateChannelClassErrorKind::InternalServerErrorError(_)
+            UpdateChannelClassErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, UpdateChannelClassErrorKind::NotFoundError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateChannelClassErrorKind::TooManyRequestsError(_)
+            UpdateChannelClassErrorKind::ConflictException(_)
         )
     }
-    pub fn is_unprocessable_entity_error(&self) -> bool {
+    pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateChannelClassErrorKind::UnprocessableEntityError(_)
+            UpdateChannelClassErrorKind::ForbiddenException(_)
+        )
+    }
+    pub fn is_gateway_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateChannelClassErrorKind::GatewayTimeoutException(_)
+        )
+    }
+    pub fn is_internal_server_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateChannelClassErrorKind::InternalServerErrorException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateChannelClassErrorKind::NotFoundException(_)
+        )
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateChannelClassErrorKind::TooManyRequestsException(_)
+        )
+    }
+    pub fn is_unprocessable_entity_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateChannelClassErrorKind::UnprocessableEntityException(_)
         )
     }
 }
 impl std::error::Error for UpdateChannelClassError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateChannelClassErrorKind::BadGatewayError(_inner) => Some(_inner),
-            UpdateChannelClassErrorKind::BadRequestError(_inner) => Some(_inner),
-            UpdateChannelClassErrorKind::ConflictError(_inner) => Some(_inner),
-            UpdateChannelClassErrorKind::ForbiddenError(_inner) => Some(_inner),
-            UpdateChannelClassErrorKind::GatewayTimeoutError(_inner) => Some(_inner),
-            UpdateChannelClassErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            UpdateChannelClassErrorKind::NotFoundError(_inner) => Some(_inner),
-            UpdateChannelClassErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            UpdateChannelClassErrorKind::UnprocessableEntityError(_inner) => Some(_inner),
+            UpdateChannelClassErrorKind::BadGatewayException(_inner) => Some(_inner),
+            UpdateChannelClassErrorKind::BadRequestException(_inner) => Some(_inner),
+            UpdateChannelClassErrorKind::ConflictException(_inner) => Some(_inner),
+            UpdateChannelClassErrorKind::ForbiddenException(_inner) => Some(_inner),
+            UpdateChannelClassErrorKind::GatewayTimeoutException(_inner) => Some(_inner),
+            UpdateChannelClassErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            UpdateChannelClassErrorKind::NotFoundException(_inner) => Some(_inner),
+            UpdateChannelClassErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            UpdateChannelClassErrorKind::UnprocessableEntityException(_inner) => Some(_inner),
             UpdateChannelClassErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -6250,26 +6523,26 @@ pub struct UpdateInputError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateInputErrorKind {
-    BadGatewayError(crate::error::BadGatewayError),
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    ForbiddenError(crate::error::ForbiddenError),
-    GatewayTimeoutError(crate::error::GatewayTimeoutError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    NotFoundError(crate::error::NotFoundError),
+    BadGatewayException(crate::error::BadGatewayException),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    ForbiddenException(crate::error::ForbiddenException),
+    GatewayTimeoutException(crate::error::GatewayTimeoutException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateInputError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateInputErrorKind::BadGatewayError(_inner) => _inner.fmt(f),
-            UpdateInputErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            UpdateInputErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            UpdateInputErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            UpdateInputErrorKind::GatewayTimeoutError(_inner) => _inner.fmt(f),
-            UpdateInputErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            UpdateInputErrorKind::NotFoundError(_inner) => _inner.fmt(f),
+            UpdateInputErrorKind::BadGatewayException(_inner) => _inner.fmt(f),
+            UpdateInputErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            UpdateInputErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            UpdateInputErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            UpdateInputErrorKind::GatewayTimeoutException(_inner) => _inner.fmt(f),
+            UpdateInputErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            UpdateInputErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             UpdateInputErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -6318,41 +6591,41 @@ impl UpdateInputError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_gateway_error(&self) -> bool {
-        matches!(&self.kind, UpdateInputErrorKind::BadGatewayError(_))
+    pub fn is_bad_gateway_exception(&self) -> bool {
+        matches!(&self.kind, UpdateInputErrorKind::BadGatewayException(_))
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, UpdateInputErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, UpdateInputErrorKind::BadRequestException(_))
     }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, UpdateInputErrorKind::ConflictError(_))
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, UpdateInputErrorKind::ConflictException(_))
     }
-    pub fn is_forbidden_error(&self) -> bool {
-        matches!(&self.kind, UpdateInputErrorKind::ForbiddenError(_))
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, UpdateInputErrorKind::ForbiddenException(_))
     }
-    pub fn is_gateway_timeout_error(&self) -> bool {
-        matches!(&self.kind, UpdateInputErrorKind::GatewayTimeoutError(_))
+    pub fn is_gateway_timeout_exception(&self) -> bool {
+        matches!(&self.kind, UpdateInputErrorKind::GatewayTimeoutException(_))
     }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateInputErrorKind::InternalServerErrorError(_)
+            UpdateInputErrorKind::InternalServerErrorException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, UpdateInputErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, UpdateInputErrorKind::NotFoundException(_))
     }
 }
 impl std::error::Error for UpdateInputError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateInputErrorKind::BadGatewayError(_inner) => Some(_inner),
-            UpdateInputErrorKind::BadRequestError(_inner) => Some(_inner),
-            UpdateInputErrorKind::ConflictError(_inner) => Some(_inner),
-            UpdateInputErrorKind::ForbiddenError(_inner) => Some(_inner),
-            UpdateInputErrorKind::GatewayTimeoutError(_inner) => Some(_inner),
-            UpdateInputErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            UpdateInputErrorKind::NotFoundError(_inner) => Some(_inner),
+            UpdateInputErrorKind::BadGatewayException(_inner) => Some(_inner),
+            UpdateInputErrorKind::BadRequestException(_inner) => Some(_inner),
+            UpdateInputErrorKind::ConflictException(_inner) => Some(_inner),
+            UpdateInputErrorKind::ForbiddenException(_inner) => Some(_inner),
+            UpdateInputErrorKind::GatewayTimeoutException(_inner) => Some(_inner),
+            UpdateInputErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            UpdateInputErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateInputErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -6367,28 +6640,28 @@ pub struct UpdateInputDeviceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateInputDeviceErrorKind {
-    BadGatewayError(crate::error::BadGatewayError),
-    BadRequestError(crate::error::BadRequestError),
-    ForbiddenError(crate::error::ForbiddenError),
-    GatewayTimeoutError(crate::error::GatewayTimeoutError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnprocessableEntityError(crate::error::UnprocessableEntityError),
+    BadGatewayException(crate::error::BadGatewayException),
+    BadRequestException(crate::error::BadRequestException),
+    ForbiddenException(crate::error::ForbiddenException),
+    GatewayTimeoutException(crate::error::GatewayTimeoutException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnprocessableEntityException(crate::error::UnprocessableEntityException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateInputDeviceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateInputDeviceErrorKind::BadGatewayError(_inner) => _inner.fmt(f),
-            UpdateInputDeviceErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            UpdateInputDeviceErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            UpdateInputDeviceErrorKind::GatewayTimeoutError(_inner) => _inner.fmt(f),
-            UpdateInputDeviceErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            UpdateInputDeviceErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            UpdateInputDeviceErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            UpdateInputDeviceErrorKind::UnprocessableEntityError(_inner) => _inner.fmt(f),
+            UpdateInputDeviceErrorKind::BadGatewayException(_inner) => _inner.fmt(f),
+            UpdateInputDeviceErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            UpdateInputDeviceErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            UpdateInputDeviceErrorKind::GatewayTimeoutException(_inner) => _inner.fmt(f),
+            UpdateInputDeviceErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            UpdateInputDeviceErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            UpdateInputDeviceErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            UpdateInputDeviceErrorKind::UnprocessableEntityException(_inner) => _inner.fmt(f),
             UpdateInputDeviceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -6437,54 +6710,63 @@ impl UpdateInputDeviceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_gateway_error(&self) -> bool {
-        matches!(&self.kind, UpdateInputDeviceErrorKind::BadGatewayError(_))
-    }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, UpdateInputDeviceErrorKind::BadRequestError(_))
-    }
-    pub fn is_forbidden_error(&self) -> bool {
-        matches!(&self.kind, UpdateInputDeviceErrorKind::ForbiddenError(_))
-    }
-    pub fn is_gateway_timeout_error(&self) -> bool {
+    pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateInputDeviceErrorKind::GatewayTimeoutError(_)
+            UpdateInputDeviceErrorKind::BadGatewayException(_)
         )
     }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateInputDeviceErrorKind::InternalServerErrorError(_)
+            UpdateInputDeviceErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, UpdateInputDeviceErrorKind::NotFoundError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateInputDeviceErrorKind::TooManyRequestsError(_)
+            UpdateInputDeviceErrorKind::ForbiddenException(_)
         )
     }
-    pub fn is_unprocessable_entity_error(&self) -> bool {
+    pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateInputDeviceErrorKind::UnprocessableEntityError(_)
+            UpdateInputDeviceErrorKind::GatewayTimeoutException(_)
+        )
+    }
+    pub fn is_internal_server_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateInputDeviceErrorKind::InternalServerErrorException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, UpdateInputDeviceErrorKind::NotFoundException(_))
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateInputDeviceErrorKind::TooManyRequestsException(_)
+        )
+    }
+    pub fn is_unprocessable_entity_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateInputDeviceErrorKind::UnprocessableEntityException(_)
         )
     }
 }
 impl std::error::Error for UpdateInputDeviceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateInputDeviceErrorKind::BadGatewayError(_inner) => Some(_inner),
-            UpdateInputDeviceErrorKind::BadRequestError(_inner) => Some(_inner),
-            UpdateInputDeviceErrorKind::ForbiddenError(_inner) => Some(_inner),
-            UpdateInputDeviceErrorKind::GatewayTimeoutError(_inner) => Some(_inner),
-            UpdateInputDeviceErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            UpdateInputDeviceErrorKind::NotFoundError(_inner) => Some(_inner),
-            UpdateInputDeviceErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            UpdateInputDeviceErrorKind::UnprocessableEntityError(_inner) => Some(_inner),
+            UpdateInputDeviceErrorKind::BadGatewayException(_inner) => Some(_inner),
+            UpdateInputDeviceErrorKind::BadRequestException(_inner) => Some(_inner),
+            UpdateInputDeviceErrorKind::ForbiddenException(_inner) => Some(_inner),
+            UpdateInputDeviceErrorKind::GatewayTimeoutException(_inner) => Some(_inner),
+            UpdateInputDeviceErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            UpdateInputDeviceErrorKind::NotFoundException(_inner) => Some(_inner),
+            UpdateInputDeviceErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            UpdateInputDeviceErrorKind::UnprocessableEntityException(_inner) => Some(_inner),
             UpdateInputDeviceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -6499,26 +6781,28 @@ pub struct UpdateInputSecurityGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateInputSecurityGroupErrorKind {
-    BadGatewayError(crate::error::BadGatewayError),
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    ForbiddenError(crate::error::ForbiddenError),
-    GatewayTimeoutError(crate::error::GatewayTimeoutError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    NotFoundError(crate::error::NotFoundError),
+    BadGatewayException(crate::error::BadGatewayException),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    ForbiddenException(crate::error::ForbiddenException),
+    GatewayTimeoutException(crate::error::GatewayTimeoutException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateInputSecurityGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateInputSecurityGroupErrorKind::BadGatewayError(_inner) => _inner.fmt(f),
-            UpdateInputSecurityGroupErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            UpdateInputSecurityGroupErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            UpdateInputSecurityGroupErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            UpdateInputSecurityGroupErrorKind::GatewayTimeoutError(_inner) => _inner.fmt(f),
-            UpdateInputSecurityGroupErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            UpdateInputSecurityGroupErrorKind::NotFoundError(_inner) => _inner.fmt(f),
+            UpdateInputSecurityGroupErrorKind::BadGatewayException(_inner) => _inner.fmt(f),
+            UpdateInputSecurityGroupErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            UpdateInputSecurityGroupErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            UpdateInputSecurityGroupErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            UpdateInputSecurityGroupErrorKind::GatewayTimeoutException(_inner) => _inner.fmt(f),
+            UpdateInputSecurityGroupErrorKind::InternalServerErrorException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateInputSecurityGroupErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             UpdateInputSecurityGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -6567,59 +6851,59 @@ impl UpdateInputSecurityGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_gateway_error(&self) -> bool {
+    pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateInputSecurityGroupErrorKind::BadGatewayError(_)
+            UpdateInputSecurityGroupErrorKind::BadGatewayException(_)
         )
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateInputSecurityGroupErrorKind::BadRequestError(_)
+            UpdateInputSecurityGroupErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_conflict_error(&self) -> bool {
+    pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateInputSecurityGroupErrorKind::ConflictError(_)
+            UpdateInputSecurityGroupErrorKind::ConflictException(_)
         )
     }
-    pub fn is_forbidden_error(&self) -> bool {
+    pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateInputSecurityGroupErrorKind::ForbiddenError(_)
+            UpdateInputSecurityGroupErrorKind::ForbiddenException(_)
         )
     }
-    pub fn is_gateway_timeout_error(&self) -> bool {
+    pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateInputSecurityGroupErrorKind::GatewayTimeoutError(_)
+            UpdateInputSecurityGroupErrorKind::GatewayTimeoutException(_)
         )
     }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateInputSecurityGroupErrorKind::InternalServerErrorError(_)
+            UpdateInputSecurityGroupErrorKind::InternalServerErrorException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateInputSecurityGroupErrorKind::NotFoundError(_)
+            UpdateInputSecurityGroupErrorKind::NotFoundException(_)
         )
     }
 }
 impl std::error::Error for UpdateInputSecurityGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateInputSecurityGroupErrorKind::BadGatewayError(_inner) => Some(_inner),
-            UpdateInputSecurityGroupErrorKind::BadRequestError(_inner) => Some(_inner),
-            UpdateInputSecurityGroupErrorKind::ConflictError(_inner) => Some(_inner),
-            UpdateInputSecurityGroupErrorKind::ForbiddenError(_inner) => Some(_inner),
-            UpdateInputSecurityGroupErrorKind::GatewayTimeoutError(_inner) => Some(_inner),
-            UpdateInputSecurityGroupErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            UpdateInputSecurityGroupErrorKind::NotFoundError(_inner) => Some(_inner),
+            UpdateInputSecurityGroupErrorKind::BadGatewayException(_inner) => Some(_inner),
+            UpdateInputSecurityGroupErrorKind::BadRequestException(_inner) => Some(_inner),
+            UpdateInputSecurityGroupErrorKind::ConflictException(_inner) => Some(_inner),
+            UpdateInputSecurityGroupErrorKind::ForbiddenException(_inner) => Some(_inner),
+            UpdateInputSecurityGroupErrorKind::GatewayTimeoutException(_inner) => Some(_inner),
+            UpdateInputSecurityGroupErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            UpdateInputSecurityGroupErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateInputSecurityGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -6634,28 +6918,28 @@ pub struct UpdateMultiplexError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateMultiplexErrorKind {
-    BadGatewayError(crate::error::BadGatewayError),
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    ForbiddenError(crate::error::ForbiddenError),
-    GatewayTimeoutError(crate::error::GatewayTimeoutError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    NotFoundError(crate::error::NotFoundError),
-    UnprocessableEntityError(crate::error::UnprocessableEntityError),
+    BadGatewayException(crate::error::BadGatewayException),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    ForbiddenException(crate::error::ForbiddenException),
+    GatewayTimeoutException(crate::error::GatewayTimeoutException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
+    UnprocessableEntityException(crate::error::UnprocessableEntityException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateMultiplexError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateMultiplexErrorKind::BadGatewayError(_inner) => _inner.fmt(f),
-            UpdateMultiplexErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            UpdateMultiplexErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            UpdateMultiplexErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            UpdateMultiplexErrorKind::GatewayTimeoutError(_inner) => _inner.fmt(f),
-            UpdateMultiplexErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            UpdateMultiplexErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            UpdateMultiplexErrorKind::UnprocessableEntityError(_inner) => _inner.fmt(f),
+            UpdateMultiplexErrorKind::BadGatewayException(_inner) => _inner.fmt(f),
+            UpdateMultiplexErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            UpdateMultiplexErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            UpdateMultiplexErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            UpdateMultiplexErrorKind::GatewayTimeoutException(_inner) => _inner.fmt(f),
+            UpdateMultiplexErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            UpdateMultiplexErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            UpdateMultiplexErrorKind::UnprocessableEntityException(_inner) => _inner.fmt(f),
             UpdateMultiplexErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -6704,48 +6988,51 @@ impl UpdateMultiplexError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_gateway_error(&self) -> bool {
-        matches!(&self.kind, UpdateMultiplexErrorKind::BadGatewayError(_))
+    pub fn is_bad_gateway_exception(&self) -> bool {
+        matches!(&self.kind, UpdateMultiplexErrorKind::BadGatewayException(_))
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, UpdateMultiplexErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, UpdateMultiplexErrorKind::BadRequestException(_))
     }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, UpdateMultiplexErrorKind::ConflictError(_))
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, UpdateMultiplexErrorKind::ConflictException(_))
     }
-    pub fn is_forbidden_error(&self) -> bool {
-        matches!(&self.kind, UpdateMultiplexErrorKind::ForbiddenError(_))
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, UpdateMultiplexErrorKind::ForbiddenException(_))
     }
-    pub fn is_gateway_timeout_error(&self) -> bool {
-        matches!(&self.kind, UpdateMultiplexErrorKind::GatewayTimeoutError(_))
-    }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateMultiplexErrorKind::InternalServerErrorError(_)
+            UpdateMultiplexErrorKind::GatewayTimeoutException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, UpdateMultiplexErrorKind::NotFoundError(_))
-    }
-    pub fn is_unprocessable_entity_error(&self) -> bool {
+    pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateMultiplexErrorKind::UnprocessableEntityError(_)
+            UpdateMultiplexErrorKind::InternalServerErrorException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, UpdateMultiplexErrorKind::NotFoundException(_))
+    }
+    pub fn is_unprocessable_entity_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateMultiplexErrorKind::UnprocessableEntityException(_)
         )
     }
 }
 impl std::error::Error for UpdateMultiplexError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateMultiplexErrorKind::BadGatewayError(_inner) => Some(_inner),
-            UpdateMultiplexErrorKind::BadRequestError(_inner) => Some(_inner),
-            UpdateMultiplexErrorKind::ConflictError(_inner) => Some(_inner),
-            UpdateMultiplexErrorKind::ForbiddenError(_inner) => Some(_inner),
-            UpdateMultiplexErrorKind::GatewayTimeoutError(_inner) => Some(_inner),
-            UpdateMultiplexErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            UpdateMultiplexErrorKind::NotFoundError(_inner) => Some(_inner),
-            UpdateMultiplexErrorKind::UnprocessableEntityError(_inner) => Some(_inner),
+            UpdateMultiplexErrorKind::BadGatewayException(_inner) => Some(_inner),
+            UpdateMultiplexErrorKind::BadRequestException(_inner) => Some(_inner),
+            UpdateMultiplexErrorKind::ConflictException(_inner) => Some(_inner),
+            UpdateMultiplexErrorKind::ForbiddenException(_inner) => Some(_inner),
+            UpdateMultiplexErrorKind::GatewayTimeoutException(_inner) => Some(_inner),
+            UpdateMultiplexErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            UpdateMultiplexErrorKind::NotFoundException(_inner) => Some(_inner),
+            UpdateMultiplexErrorKind::UnprocessableEntityException(_inner) => Some(_inner),
             UpdateMultiplexErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -6760,28 +7047,28 @@ pub struct UpdateMultiplexProgramError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateMultiplexProgramErrorKind {
-    BadGatewayError(crate::error::BadGatewayError),
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    ForbiddenError(crate::error::ForbiddenError),
-    GatewayTimeoutError(crate::error::GatewayTimeoutError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    NotFoundError(crate::error::NotFoundError),
-    UnprocessableEntityError(crate::error::UnprocessableEntityError),
+    BadGatewayException(crate::error::BadGatewayException),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    ForbiddenException(crate::error::ForbiddenException),
+    GatewayTimeoutException(crate::error::GatewayTimeoutException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
+    UnprocessableEntityException(crate::error::UnprocessableEntityException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateMultiplexProgramError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateMultiplexProgramErrorKind::BadGatewayError(_inner) => _inner.fmt(f),
-            UpdateMultiplexProgramErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            UpdateMultiplexProgramErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            UpdateMultiplexProgramErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            UpdateMultiplexProgramErrorKind::GatewayTimeoutError(_inner) => _inner.fmt(f),
-            UpdateMultiplexProgramErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            UpdateMultiplexProgramErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            UpdateMultiplexProgramErrorKind::UnprocessableEntityError(_inner) => _inner.fmt(f),
+            UpdateMultiplexProgramErrorKind::BadGatewayException(_inner) => _inner.fmt(f),
+            UpdateMultiplexProgramErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            UpdateMultiplexProgramErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            UpdateMultiplexProgramErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            UpdateMultiplexProgramErrorKind::GatewayTimeoutException(_inner) => _inner.fmt(f),
+            UpdateMultiplexProgramErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            UpdateMultiplexProgramErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            UpdateMultiplexProgramErrorKind::UnprocessableEntityException(_inner) => _inner.fmt(f),
             UpdateMultiplexProgramErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -6830,66 +7117,66 @@ impl UpdateMultiplexProgramError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_gateway_error(&self) -> bool {
+    pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateMultiplexProgramErrorKind::BadGatewayError(_)
+            UpdateMultiplexProgramErrorKind::BadGatewayException(_)
         )
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateMultiplexProgramErrorKind::BadRequestError(_)
+            UpdateMultiplexProgramErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_conflict_error(&self) -> bool {
+    pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateMultiplexProgramErrorKind::ConflictError(_)
+            UpdateMultiplexProgramErrorKind::ConflictException(_)
         )
     }
-    pub fn is_forbidden_error(&self) -> bool {
+    pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateMultiplexProgramErrorKind::ForbiddenError(_)
+            UpdateMultiplexProgramErrorKind::ForbiddenException(_)
         )
     }
-    pub fn is_gateway_timeout_error(&self) -> bool {
+    pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateMultiplexProgramErrorKind::GatewayTimeoutError(_)
+            UpdateMultiplexProgramErrorKind::GatewayTimeoutException(_)
         )
     }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateMultiplexProgramErrorKind::InternalServerErrorError(_)
+            UpdateMultiplexProgramErrorKind::InternalServerErrorException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateMultiplexProgramErrorKind::NotFoundError(_)
+            UpdateMultiplexProgramErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_unprocessable_entity_error(&self) -> bool {
+    pub fn is_unprocessable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateMultiplexProgramErrorKind::UnprocessableEntityError(_)
+            UpdateMultiplexProgramErrorKind::UnprocessableEntityException(_)
         )
     }
 }
 impl std::error::Error for UpdateMultiplexProgramError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateMultiplexProgramErrorKind::BadGatewayError(_inner) => Some(_inner),
-            UpdateMultiplexProgramErrorKind::BadRequestError(_inner) => Some(_inner),
-            UpdateMultiplexProgramErrorKind::ConflictError(_inner) => Some(_inner),
-            UpdateMultiplexProgramErrorKind::ForbiddenError(_inner) => Some(_inner),
-            UpdateMultiplexProgramErrorKind::GatewayTimeoutError(_inner) => Some(_inner),
-            UpdateMultiplexProgramErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            UpdateMultiplexProgramErrorKind::NotFoundError(_inner) => Some(_inner),
-            UpdateMultiplexProgramErrorKind::UnprocessableEntityError(_inner) => Some(_inner),
+            UpdateMultiplexProgramErrorKind::BadGatewayException(_inner) => Some(_inner),
+            UpdateMultiplexProgramErrorKind::BadRequestException(_inner) => Some(_inner),
+            UpdateMultiplexProgramErrorKind::ConflictException(_inner) => Some(_inner),
+            UpdateMultiplexProgramErrorKind::ForbiddenException(_inner) => Some(_inner),
+            UpdateMultiplexProgramErrorKind::GatewayTimeoutException(_inner) => Some(_inner),
+            UpdateMultiplexProgramErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            UpdateMultiplexProgramErrorKind::NotFoundException(_inner) => Some(_inner),
+            UpdateMultiplexProgramErrorKind::UnprocessableEntityException(_inner) => Some(_inner),
             UpdateMultiplexProgramErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -6904,28 +7191,28 @@ pub struct UpdateReservationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateReservationErrorKind {
-    BadGatewayError(crate::error::BadGatewayError),
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    ForbiddenError(crate::error::ForbiddenError),
-    GatewayTimeoutError(crate::error::GatewayTimeoutError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    BadGatewayException(crate::error::BadGatewayException),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    ForbiddenException(crate::error::ForbiddenException),
+    GatewayTimeoutException(crate::error::GatewayTimeoutException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateReservationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateReservationErrorKind::BadGatewayError(_inner) => _inner.fmt(f),
-            UpdateReservationErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            UpdateReservationErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            UpdateReservationErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            UpdateReservationErrorKind::GatewayTimeoutError(_inner) => _inner.fmt(f),
-            UpdateReservationErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            UpdateReservationErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            UpdateReservationErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            UpdateReservationErrorKind::BadGatewayException(_inner) => _inner.fmt(f),
+            UpdateReservationErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            UpdateReservationErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            UpdateReservationErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            UpdateReservationErrorKind::GatewayTimeoutException(_inner) => _inner.fmt(f),
+            UpdateReservationErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            UpdateReservationErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            UpdateReservationErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             UpdateReservationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -6974,51 +7261,60 @@ impl UpdateReservationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_gateway_error(&self) -> bool {
-        matches!(&self.kind, UpdateReservationErrorKind::BadGatewayError(_))
-    }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, UpdateReservationErrorKind::BadRequestError(_))
-    }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, UpdateReservationErrorKind::ConflictError(_))
-    }
-    pub fn is_forbidden_error(&self) -> bool {
-        matches!(&self.kind, UpdateReservationErrorKind::ForbiddenError(_))
-    }
-    pub fn is_gateway_timeout_error(&self) -> bool {
+    pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateReservationErrorKind::GatewayTimeoutError(_)
+            UpdateReservationErrorKind::BadGatewayException(_)
         )
     }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateReservationErrorKind::InternalServerErrorError(_)
+            UpdateReservationErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, UpdateReservationErrorKind::NotFoundError(_))
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, UpdateReservationErrorKind::ConflictException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateReservationErrorKind::TooManyRequestsError(_)
+            UpdateReservationErrorKind::ForbiddenException(_)
+        )
+    }
+    pub fn is_gateway_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateReservationErrorKind::GatewayTimeoutException(_)
+        )
+    }
+    pub fn is_internal_server_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateReservationErrorKind::InternalServerErrorException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, UpdateReservationErrorKind::NotFoundException(_))
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateReservationErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for UpdateReservationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateReservationErrorKind::BadGatewayError(_inner) => Some(_inner),
-            UpdateReservationErrorKind::BadRequestError(_inner) => Some(_inner),
-            UpdateReservationErrorKind::ConflictError(_inner) => Some(_inner),
-            UpdateReservationErrorKind::ForbiddenError(_inner) => Some(_inner),
-            UpdateReservationErrorKind::GatewayTimeoutError(_inner) => Some(_inner),
-            UpdateReservationErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            UpdateReservationErrorKind::NotFoundError(_inner) => Some(_inner),
-            UpdateReservationErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            UpdateReservationErrorKind::BadGatewayException(_inner) => Some(_inner),
+            UpdateReservationErrorKind::BadRequestException(_inner) => Some(_inner),
+            UpdateReservationErrorKind::ConflictException(_inner) => Some(_inner),
+            UpdateReservationErrorKind::ForbiddenException(_inner) => Some(_inner),
+            UpdateReservationErrorKind::GatewayTimeoutException(_inner) => Some(_inner),
+            UpdateReservationErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            UpdateReservationErrorKind::NotFoundException(_inner) => Some(_inner),
+            UpdateReservationErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             UpdateReservationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -7026,38 +7322,36 @@ impl std::error::Error for UpdateReservationError {
 
 /// Placeholder documentation for TooManyRequestsException
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct TooManyRequestsError {
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TooManyRequestsException {
     /// Placeholder documentation for __string
-    #[serde(rename = "message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for TooManyRequestsError {
+impl std::fmt::Debug for TooManyRequestsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyRequestsError");
+        let mut formatter = f.debug_struct("TooManyRequestsException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl TooManyRequestsError {
+impl TooManyRequestsException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for TooManyRequestsError {
+impl std::fmt::Display for TooManyRequestsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TooManyRequestsError [TooManyRequestsException]")?;
+        write!(f, "TooManyRequestsException")?;
         if let Some(inner_1) = &self.message {
             write!(f, ": {}", inner_1)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for TooManyRequestsError {}
-/// See [`TooManyRequestsError`](crate::error::TooManyRequestsError)
-pub mod too_many_requests_error {
-    /// A builder for [`TooManyRequestsError`](crate::error::TooManyRequestsError)
+impl std::error::Error for TooManyRequestsException {}
+/// See [`TooManyRequestsException`](crate::error::TooManyRequestsException)
+pub mod too_many_requests_exception {
+    /// A builder for [`TooManyRequestsException`](crate::error::TooManyRequestsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -7073,55 +7367,53 @@ pub mod too_many_requests_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TooManyRequestsError`](crate::error::TooManyRequestsError)
-        pub fn build(self) -> crate::error::TooManyRequestsError {
-            crate::error::TooManyRequestsError {
+        /// Consumes the builder and constructs a [`TooManyRequestsException`](crate::error::TooManyRequestsException)
+        pub fn build(self) -> crate::error::TooManyRequestsException {
+            crate::error::TooManyRequestsException {
                 message: self.message,
             }
         }
     }
 }
-impl TooManyRequestsError {
-    /// Creates a new builder-style object to manufacture [`TooManyRequestsError`](crate::error::TooManyRequestsError)
-    pub fn builder() -> crate::error::too_many_requests_error::Builder {
-        crate::error::too_many_requests_error::Builder::default()
+impl TooManyRequestsException {
+    /// Creates a new builder-style object to manufacture [`TooManyRequestsException`](crate::error::TooManyRequestsException)
+    pub fn builder() -> crate::error::too_many_requests_exception::Builder {
+        crate::error::too_many_requests_exception::Builder::default()
     }
 }
 
 /// Placeholder documentation for NotFoundException
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct NotFoundError {
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct NotFoundException {
     /// Placeholder documentation for __string
-    #[serde(rename = "message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for NotFoundError {
+impl std::fmt::Debug for NotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotFoundError");
+        let mut formatter = f.debug_struct("NotFoundException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl NotFoundError {
+impl NotFoundException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for NotFoundError {
+impl std::fmt::Display for NotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "NotFoundError [NotFoundException]")?;
+        write!(f, "NotFoundException")?;
         if let Some(inner_2) = &self.message {
             write!(f, ": {}", inner_2)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for NotFoundError {}
-/// See [`NotFoundError`](crate::error::NotFoundError)
-pub mod not_found_error {
-    /// A builder for [`NotFoundError`](crate::error::NotFoundError)
+impl std::error::Error for NotFoundException {}
+/// See [`NotFoundException`](crate::error::NotFoundException)
+pub mod not_found_exception {
+    /// A builder for [`NotFoundException`](crate::error::NotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -7137,55 +7429,53 @@ pub mod not_found_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`NotFoundError`](crate::error::NotFoundError)
-        pub fn build(self) -> crate::error::NotFoundError {
-            crate::error::NotFoundError {
+        /// Consumes the builder and constructs a [`NotFoundException`](crate::error::NotFoundException)
+        pub fn build(self) -> crate::error::NotFoundException {
+            crate::error::NotFoundException {
                 message: self.message,
             }
         }
     }
 }
-impl NotFoundError {
-    /// Creates a new builder-style object to manufacture [`NotFoundError`](crate::error::NotFoundError)
-    pub fn builder() -> crate::error::not_found_error::Builder {
-        crate::error::not_found_error::Builder::default()
+impl NotFoundException {
+    /// Creates a new builder-style object to manufacture [`NotFoundException`](crate::error::NotFoundException)
+    pub fn builder() -> crate::error::not_found_exception::Builder {
+        crate::error::not_found_exception::Builder::default()
     }
 }
 
 /// Placeholder documentation for InternalServerErrorException
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct InternalServerErrorError {
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InternalServerErrorException {
     /// Placeholder documentation for __string
-    #[serde(rename = "message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InternalServerErrorError {
+impl std::fmt::Debug for InternalServerErrorException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InternalServerErrorError");
+        let mut formatter = f.debug_struct("InternalServerErrorException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl InternalServerErrorError {
+impl InternalServerErrorException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InternalServerErrorError {
+impl std::fmt::Display for InternalServerErrorException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InternalServerErrorError [InternalServerErrorException]")?;
+        write!(f, "InternalServerErrorException")?;
         if let Some(inner_3) = &self.message {
             write!(f, ": {}", inner_3)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InternalServerErrorError {}
-/// See [`InternalServerErrorError`](crate::error::InternalServerErrorError)
-pub mod internal_server_error_error {
-    /// A builder for [`InternalServerErrorError`](crate::error::InternalServerErrorError)
+impl std::error::Error for InternalServerErrorException {}
+/// See [`InternalServerErrorException`](crate::error::InternalServerErrorException)
+pub mod internal_server_error_exception {
+    /// A builder for [`InternalServerErrorException`](crate::error::InternalServerErrorException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -7201,55 +7491,53 @@ pub mod internal_server_error_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InternalServerErrorError`](crate::error::InternalServerErrorError)
-        pub fn build(self) -> crate::error::InternalServerErrorError {
-            crate::error::InternalServerErrorError {
+        /// Consumes the builder and constructs a [`InternalServerErrorException`](crate::error::InternalServerErrorException)
+        pub fn build(self) -> crate::error::InternalServerErrorException {
+            crate::error::InternalServerErrorException {
                 message: self.message,
             }
         }
     }
 }
-impl InternalServerErrorError {
-    /// Creates a new builder-style object to manufacture [`InternalServerErrorError`](crate::error::InternalServerErrorError)
-    pub fn builder() -> crate::error::internal_server_error_error::Builder {
-        crate::error::internal_server_error_error::Builder::default()
+impl InternalServerErrorException {
+    /// Creates a new builder-style object to manufacture [`InternalServerErrorException`](crate::error::InternalServerErrorException)
+    pub fn builder() -> crate::error::internal_server_error_exception::Builder {
+        crate::error::internal_server_error_exception::Builder::default()
     }
 }
 
 /// Placeholder documentation for GatewayTimeoutException
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct GatewayTimeoutError {
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GatewayTimeoutException {
     /// Placeholder documentation for __string
-    #[serde(rename = "message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for GatewayTimeoutError {
+impl std::fmt::Debug for GatewayTimeoutException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GatewayTimeoutError");
+        let mut formatter = f.debug_struct("GatewayTimeoutException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl GatewayTimeoutError {
+impl GatewayTimeoutException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for GatewayTimeoutError {
+impl std::fmt::Display for GatewayTimeoutException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "GatewayTimeoutError [GatewayTimeoutException]")?;
+        write!(f, "GatewayTimeoutException")?;
         if let Some(inner_4) = &self.message {
             write!(f, ": {}", inner_4)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for GatewayTimeoutError {}
-/// See [`GatewayTimeoutError`](crate::error::GatewayTimeoutError)
-pub mod gateway_timeout_error {
-    /// A builder for [`GatewayTimeoutError`](crate::error::GatewayTimeoutError)
+impl std::error::Error for GatewayTimeoutException {}
+/// See [`GatewayTimeoutException`](crate::error::GatewayTimeoutException)
+pub mod gateway_timeout_exception {
+    /// A builder for [`GatewayTimeoutException`](crate::error::GatewayTimeoutException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -7265,55 +7553,53 @@ pub mod gateway_timeout_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`GatewayTimeoutError`](crate::error::GatewayTimeoutError)
-        pub fn build(self) -> crate::error::GatewayTimeoutError {
-            crate::error::GatewayTimeoutError {
+        /// Consumes the builder and constructs a [`GatewayTimeoutException`](crate::error::GatewayTimeoutException)
+        pub fn build(self) -> crate::error::GatewayTimeoutException {
+            crate::error::GatewayTimeoutException {
                 message: self.message,
             }
         }
     }
 }
-impl GatewayTimeoutError {
-    /// Creates a new builder-style object to manufacture [`GatewayTimeoutError`](crate::error::GatewayTimeoutError)
-    pub fn builder() -> crate::error::gateway_timeout_error::Builder {
-        crate::error::gateway_timeout_error::Builder::default()
+impl GatewayTimeoutException {
+    /// Creates a new builder-style object to manufacture [`GatewayTimeoutException`](crate::error::GatewayTimeoutException)
+    pub fn builder() -> crate::error::gateway_timeout_exception::Builder {
+        crate::error::gateway_timeout_exception::Builder::default()
     }
 }
 
 /// Placeholder documentation for ForbiddenException
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct ForbiddenError {
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ForbiddenException {
     /// Placeholder documentation for __string
-    #[serde(rename = "message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ForbiddenError {
+impl std::fmt::Debug for ForbiddenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ForbiddenError");
+        let mut formatter = f.debug_struct("ForbiddenException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl ForbiddenError {
+impl ForbiddenException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ForbiddenError {
+impl std::fmt::Display for ForbiddenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ForbiddenError [ForbiddenException]")?;
+        write!(f, "ForbiddenException")?;
         if let Some(inner_5) = &self.message {
             write!(f, ": {}", inner_5)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ForbiddenError {}
-/// See [`ForbiddenError`](crate::error::ForbiddenError)
-pub mod forbidden_error {
-    /// A builder for [`ForbiddenError`](crate::error::ForbiddenError)
+impl std::error::Error for ForbiddenException {}
+/// See [`ForbiddenException`](crate::error::ForbiddenException)
+pub mod forbidden_exception {
+    /// A builder for [`ForbiddenException`](crate::error::ForbiddenException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -7329,55 +7615,53 @@ pub mod forbidden_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ForbiddenError`](crate::error::ForbiddenError)
-        pub fn build(self) -> crate::error::ForbiddenError {
-            crate::error::ForbiddenError {
+        /// Consumes the builder and constructs a [`ForbiddenException`](crate::error::ForbiddenException)
+        pub fn build(self) -> crate::error::ForbiddenException {
+            crate::error::ForbiddenException {
                 message: self.message,
             }
         }
     }
 }
-impl ForbiddenError {
-    /// Creates a new builder-style object to manufacture [`ForbiddenError`](crate::error::ForbiddenError)
-    pub fn builder() -> crate::error::forbidden_error::Builder {
-        crate::error::forbidden_error::Builder::default()
+impl ForbiddenException {
+    /// Creates a new builder-style object to manufacture [`ForbiddenException`](crate::error::ForbiddenException)
+    pub fn builder() -> crate::error::forbidden_exception::Builder {
+        crate::error::forbidden_exception::Builder::default()
     }
 }
 
 /// Placeholder documentation for ConflictException
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct ConflictError {
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ConflictException {
     /// Placeholder documentation for __string
-    #[serde(rename = "message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ConflictError {
+impl std::fmt::Debug for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConflictError");
+        let mut formatter = f.debug_struct("ConflictException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl ConflictError {
+impl ConflictException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ConflictError {
+impl std::fmt::Display for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ConflictError [ConflictException]")?;
+        write!(f, "ConflictException")?;
         if let Some(inner_6) = &self.message {
             write!(f, ": {}", inner_6)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ConflictError {}
-/// See [`ConflictError`](crate::error::ConflictError)
-pub mod conflict_error {
-    /// A builder for [`ConflictError`](crate::error::ConflictError)
+impl std::error::Error for ConflictException {}
+/// See [`ConflictException`](crate::error::ConflictException)
+pub mod conflict_exception {
+    /// A builder for [`ConflictException`](crate::error::ConflictException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -7393,55 +7677,53 @@ pub mod conflict_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ConflictError`](crate::error::ConflictError)
-        pub fn build(self) -> crate::error::ConflictError {
-            crate::error::ConflictError {
+        /// Consumes the builder and constructs a [`ConflictException`](crate::error::ConflictException)
+        pub fn build(self) -> crate::error::ConflictException {
+            crate::error::ConflictException {
                 message: self.message,
             }
         }
     }
 }
-impl ConflictError {
-    /// Creates a new builder-style object to manufacture [`ConflictError`](crate::error::ConflictError)
-    pub fn builder() -> crate::error::conflict_error::Builder {
-        crate::error::conflict_error::Builder::default()
+impl ConflictException {
+    /// Creates a new builder-style object to manufacture [`ConflictException`](crate::error::ConflictException)
+    pub fn builder() -> crate::error::conflict_exception::Builder {
+        crate::error::conflict_exception::Builder::default()
     }
 }
 
 /// Placeholder documentation for BadRequestException
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct BadRequestError {
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BadRequestException {
     /// Placeholder documentation for __string
-    #[serde(rename = "message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for BadRequestError {
+impl std::fmt::Debug for BadRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BadRequestError");
+        let mut formatter = f.debug_struct("BadRequestException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl BadRequestError {
+impl BadRequestException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for BadRequestError {
+impl std::fmt::Display for BadRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "BadRequestError [BadRequestException]")?;
+        write!(f, "BadRequestException")?;
         if let Some(inner_7) = &self.message {
             write!(f, ": {}", inner_7)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for BadRequestError {}
-/// See [`BadRequestError`](crate::error::BadRequestError)
-pub mod bad_request_error {
-    /// A builder for [`BadRequestError`](crate::error::BadRequestError)
+impl std::error::Error for BadRequestException {}
+/// See [`BadRequestException`](crate::error::BadRequestException)
+pub mod bad_request_exception {
+    /// A builder for [`BadRequestException`](crate::error::BadRequestException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -7457,55 +7739,53 @@ pub mod bad_request_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`BadRequestError`](crate::error::BadRequestError)
-        pub fn build(self) -> crate::error::BadRequestError {
-            crate::error::BadRequestError {
+        /// Consumes the builder and constructs a [`BadRequestException`](crate::error::BadRequestException)
+        pub fn build(self) -> crate::error::BadRequestException {
+            crate::error::BadRequestException {
                 message: self.message,
             }
         }
     }
 }
-impl BadRequestError {
-    /// Creates a new builder-style object to manufacture [`BadRequestError`](crate::error::BadRequestError)
-    pub fn builder() -> crate::error::bad_request_error::Builder {
-        crate::error::bad_request_error::Builder::default()
+impl BadRequestException {
+    /// Creates a new builder-style object to manufacture [`BadRequestException`](crate::error::BadRequestException)
+    pub fn builder() -> crate::error::bad_request_exception::Builder {
+        crate::error::bad_request_exception::Builder::default()
     }
 }
 
 /// Placeholder documentation for BadGatewayException
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct BadGatewayError {
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BadGatewayException {
     /// Placeholder documentation for __string
-    #[serde(rename = "message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for BadGatewayError {
+impl std::fmt::Debug for BadGatewayException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BadGatewayError");
+        let mut formatter = f.debug_struct("BadGatewayException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl BadGatewayError {
+impl BadGatewayException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for BadGatewayError {
+impl std::fmt::Display for BadGatewayException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "BadGatewayError [BadGatewayException]")?;
+        write!(f, "BadGatewayException")?;
         if let Some(inner_8) = &self.message {
             write!(f, ": {}", inner_8)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for BadGatewayError {}
-/// See [`BadGatewayError`](crate::error::BadGatewayError)
-pub mod bad_gateway_error {
-    /// A builder for [`BadGatewayError`](crate::error::BadGatewayError)
+impl std::error::Error for BadGatewayException {}
+/// See [`BadGatewayException`](crate::error::BadGatewayException)
+pub mod bad_gateway_exception {
+    /// A builder for [`BadGatewayException`](crate::error::BadGatewayException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -7521,60 +7801,56 @@ pub mod bad_gateway_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`BadGatewayError`](crate::error::BadGatewayError)
-        pub fn build(self) -> crate::error::BadGatewayError {
-            crate::error::BadGatewayError {
+        /// Consumes the builder and constructs a [`BadGatewayException`](crate::error::BadGatewayException)
+        pub fn build(self) -> crate::error::BadGatewayException {
+            crate::error::BadGatewayException {
                 message: self.message,
             }
         }
     }
 }
-impl BadGatewayError {
-    /// Creates a new builder-style object to manufacture [`BadGatewayError`](crate::error::BadGatewayError)
-    pub fn builder() -> crate::error::bad_gateway_error::Builder {
-        crate::error::bad_gateway_error::Builder::default()
+impl BadGatewayException {
+    /// Creates a new builder-style object to manufacture [`BadGatewayException`](crate::error::BadGatewayException)
+    pub fn builder() -> crate::error::bad_gateway_exception::Builder {
+        crate::error::bad_gateway_exception::Builder::default()
     }
 }
 
 /// Placeholder documentation for UnprocessableEntityException
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct UnprocessableEntityError {
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UnprocessableEntityException {
     /// The error message.
-    #[serde(rename = "message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
     /// A collection of validation error responses.
-    #[serde(rename = "validationErrors")]
-    #[serde(default)]
     pub validation_errors: std::option::Option<std::vec::Vec<crate::model::ValidationError>>,
 }
-impl std::fmt::Debug for UnprocessableEntityError {
+impl std::fmt::Debug for UnprocessableEntityException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnprocessableEntityError");
+        let mut formatter = f.debug_struct("UnprocessableEntityException");
         formatter.field("message", &self.message);
         formatter.field("validation_errors", &self.validation_errors);
         formatter.finish()
     }
 }
-impl UnprocessableEntityError {
+impl UnprocessableEntityException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for UnprocessableEntityError {
+impl std::fmt::Display for UnprocessableEntityException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "UnprocessableEntityError [UnprocessableEntityException]")?;
+        write!(f, "UnprocessableEntityException")?;
         if let Some(inner_9) = &self.message {
             write!(f, ": {}", inner_9)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for UnprocessableEntityError {}
-/// See [`UnprocessableEntityError`](crate::error::UnprocessableEntityError)
-pub mod unprocessable_entity_error {
-    /// A builder for [`UnprocessableEntityError`](crate::error::UnprocessableEntityError)
+impl std::error::Error for UnprocessableEntityException {}
+/// See [`UnprocessableEntityException`](crate::error::UnprocessableEntityException)
+pub mod unprocessable_entity_exception {
+    /// A builder for [`UnprocessableEntityException`](crate::error::UnprocessableEntityException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -7608,18 +7884,18 @@ pub mod unprocessable_entity_error {
             self.validation_errors = input;
             self
         }
-        /// Consumes the builder and constructs a [`UnprocessableEntityError`](crate::error::UnprocessableEntityError)
-        pub fn build(self) -> crate::error::UnprocessableEntityError {
-            crate::error::UnprocessableEntityError {
+        /// Consumes the builder and constructs a [`UnprocessableEntityException`](crate::error::UnprocessableEntityException)
+        pub fn build(self) -> crate::error::UnprocessableEntityException {
+            crate::error::UnprocessableEntityException {
                 message: self.message,
                 validation_errors: self.validation_errors,
             }
         }
     }
 }
-impl UnprocessableEntityError {
-    /// Creates a new builder-style object to manufacture [`UnprocessableEntityError`](crate::error::UnprocessableEntityError)
-    pub fn builder() -> crate::error::unprocessable_entity_error::Builder {
-        crate::error::unprocessable_entity_error::Builder::default()
+impl UnprocessableEntityException {
+    /// Creates a new builder-style object to manufacture [`UnprocessableEntityException`](crate::error::UnprocessableEntityException)
+    pub fn builder() -> crate::error::unprocessable_entity_exception::Builder {
+        crate::error::unprocessable_entity_exception::Builder::default()
     }
 }

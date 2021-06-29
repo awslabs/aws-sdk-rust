@@ -13,46 +13,6 @@ impl AddAssociation {
     pub fn builder() -> crate::input::add_association_input::Builder {
         crate::input::add_association_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::AddAssociationOutput, crate::error::AddAssociationError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::AddAssociationError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceLimitExceeded" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::AddAssociationError {
-                        kind: crate::error::AddAssociationErrorKind::ResourceLimitExceeded(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::AddAssociationError::unhandled(e),
-                },
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::AddAssociationError {
-                        kind: crate::error::AddAssociationErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::AddAssociationError::unhandled(e),
-                },
-                _ => crate::error::AddAssociationError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::add_association_output::Builder::default();
-        builder =
-            crate::json_deser::add_association_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::AddAssociationError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -61,7 +21,11 @@ impl smithy_http::response::ParseStrictResponse for AddAssociation {
     type Output =
         std::result::Result<crate::output::AddAssociationOutput, crate::error::AddAssociationError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_add_association_error(response)
+        } else {
+            crate::operation_deser::parse_add_association_response(response)
+        }
     }
 }
 
@@ -100,24 +64,6 @@ impl AddTags {
     pub fn builder() -> crate::input::add_tags_input::Builder {
         crate::input::add_tags_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::AddTagsOutput, crate::error::AddTagsError> {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::AddTagsError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::add_tags_output::Builder::default();
-        builder = crate::json_deser::add_tags_deser_operation(response.body().as_ref(), builder)
-            .map_err(crate::error::AddTagsError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -125,7 +71,11 @@ impl AddTags {
 impl smithy_http::response::ParseStrictResponse for AddTags {
     type Output = std::result::Result<crate::output::AddTagsOutput, crate::error::AddTagsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_add_tags_error(response)
+        } else {
+            crate::operation_deser::parse_add_tags_response(response)
+        }
     }
 }
 
@@ -140,58 +90,6 @@ impl AssociateTrialComponent {
     pub fn builder() -> crate::input::associate_trial_component_input::Builder {
         crate::input::associate_trial_component_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::AssociateTrialComponentOutput,
-        crate::error::AssociateTrialComponentError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(crate::error::AssociateTrialComponentError::unhandled(
-                        generic,
-                    ))
-                }
-            };
-            return Err(match error_code {
-                "ResourceLimitExceeded" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::AssociateTrialComponentError {
-                        kind: crate::error::AssociateTrialComponentErrorKind::ResourceLimitExceeded(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::AssociateTrialComponentError::unhandled(e),
-                },
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::AssociateTrialComponentError {
-                        kind: crate::error::AssociateTrialComponentErrorKind::ResourceNotFound(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::AssociateTrialComponentError::unhandled(e),
-                },
-                _ => crate::error::AssociateTrialComponentError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::associate_trial_component_output::Builder::default();
-        builder = crate::json_deser::associate_trial_component_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::AssociateTrialComponentError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -202,7 +100,11 @@ impl smithy_http::response::ParseStrictResponse for AssociateTrialComponent {
         crate::error::AssociateTrialComponentError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_associate_trial_component_error(response)
+        } else {
+            crate::operation_deser::parse_associate_trial_component_response(response)
+        }
     }
 }
 
@@ -227,39 +129,6 @@ impl CreateAction {
     pub fn builder() -> crate::input::create_action_input::Builder {
         crate::input::create_action_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::CreateActionOutput, crate::error::CreateActionError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::CreateActionError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceLimitExceeded" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateActionError {
-                        kind: crate::error::CreateActionErrorKind::ResourceLimitExceeded(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateActionError::unhandled(e),
-                },
-                _ => crate::error::CreateActionError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::create_action_output::Builder::default();
-        builder =
-            crate::json_deser::create_action_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::CreateActionError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -268,7 +137,11 @@ impl smithy_http::response::ParseStrictResponse for CreateAction {
     type Output =
         std::result::Result<crate::output::CreateActionOutput, crate::error::CreateActionError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_action_error(response)
+        } else {
+            crate::operation_deser::parse_create_action_response(response)
+        }
     }
 }
 
@@ -283,26 +156,6 @@ impl CreateAlgorithm {
     pub fn builder() -> crate::input::create_algorithm_input::Builder {
         crate::input::create_algorithm_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::CreateAlgorithmOutput, crate::error::CreateAlgorithmError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::CreateAlgorithmError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::create_algorithm_output::Builder::default();
-        builder =
-            crate::json_deser::create_algorithm_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::CreateAlgorithmError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -313,7 +166,11 @@ impl smithy_http::response::ParseStrictResponse for CreateAlgorithm {
         crate::error::CreateAlgorithmError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_algorithm_error(response)
+        } else {
+            crate::operation_deser::parse_create_algorithm_response(response)
+        }
     }
 }
 
@@ -330,44 +187,6 @@ impl CreateApp {
     pub fn builder() -> crate::input::create_app_input::Builder {
         crate::input::create_app_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::CreateAppOutput, crate::error::CreateAppError> {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::CreateAppError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceInUse" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateAppError {
-                        kind: crate::error::CreateAppErrorKind::ResourceInUse(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateAppError::unhandled(e),
-                },
-                "ResourceLimitExceeded" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateAppError {
-                        kind: crate::error::CreateAppErrorKind::ResourceLimitExceeded(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateAppError::unhandled(e),
-                },
-                _ => crate::error::CreateAppError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::create_app_output::Builder::default();
-        builder = crate::json_deser::create_app_deser_operation(response.body().as_ref(), builder)
-            .map_err(crate::error::CreateAppError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -375,7 +194,11 @@ impl CreateApp {
 impl smithy_http::response::ParseStrictResponse for CreateApp {
     type Output = std::result::Result<crate::output::CreateAppOutput, crate::error::CreateAppError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_app_error(response)
+        } else {
+            crate::operation_deser::parse_create_app_response(response)
+        }
     }
 }
 
@@ -391,43 +214,6 @@ impl CreateAppImageConfig {
     pub fn builder() -> crate::input::create_app_image_config_input::Builder {
         crate::input::create_app_image_config_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::CreateAppImageConfigOutput,
-        crate::error::CreateAppImageConfigError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::CreateAppImageConfigError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceInUse" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateAppImageConfigError {
-                        kind: crate::error::CreateAppImageConfigErrorKind::ResourceInUse(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateAppImageConfigError::unhandled(e),
-                },
-                _ => crate::error::CreateAppImageConfigError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::create_app_image_config_output::Builder::default();
-        builder = crate::json_deser::create_app_image_config_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::CreateAppImageConfigError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -438,7 +224,11 @@ impl smithy_http::response::ParseStrictResponse for CreateAppImageConfig {
         crate::error::CreateAppImageConfigError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_app_image_config_error(response)
+        } else {
+            crate::operation_deser::parse_create_app_image_config_response(response)
+        }
     }
 }
 
@@ -463,39 +253,6 @@ impl CreateArtifact {
     pub fn builder() -> crate::input::create_artifact_input::Builder {
         crate::input::create_artifact_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::CreateArtifactOutput, crate::error::CreateArtifactError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::CreateArtifactError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceLimitExceeded" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateArtifactError {
-                        kind: crate::error::CreateArtifactErrorKind::ResourceLimitExceeded(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateArtifactError::unhandled(e),
-                },
-                _ => crate::error::CreateArtifactError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::create_artifact_output::Builder::default();
-        builder =
-            crate::json_deser::create_artifact_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::CreateArtifactError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -504,7 +261,11 @@ impl smithy_http::response::ParseStrictResponse for CreateArtifact {
     type Output =
         std::result::Result<crate::output::CreateArtifactOutput, crate::error::CreateArtifactError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_artifact_error(response)
+        } else {
+            crate::operation_deser::parse_create_artifact_response(response)
+        }
     }
 }
 
@@ -517,51 +278,9 @@ pub struct CreateAutoMLJob {
     _private: (),
 }
 impl CreateAutoMLJob {
-    /// Creates a new builder-style object to manufacture [`CreateAutoMLJobInput`](crate::input::CreateAutoMLJobInput)
+    /// Creates a new builder-style object to manufacture [`CreateAutoMlJobInput`](crate::input::CreateAutoMlJobInput)
     pub fn builder() -> crate::input::create_auto_ml_job_input::Builder {
         crate::input::create_auto_ml_job_input::Builder::default()
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::CreateAutoMLJobOutput, crate::error::CreateAutoMLJobError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::CreateAutoMLJobError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceInUse" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateAutoMLJobError {
-                        kind: crate::error::CreateAutoMLJobErrorKind::ResourceInUse(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateAutoMLJobError::unhandled(e),
-                },
-                "ResourceLimitExceeded" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateAutoMLJobError {
-                        kind: crate::error::CreateAutoMLJobErrorKind::ResourceLimitExceeded(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateAutoMLJobError::unhandled(e),
-                },
-                _ => crate::error::CreateAutoMLJobError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::create_auto_ml_job_output::Builder::default();
-        builder = crate::json_deser::create_auto_ml_job_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::CreateAutoMLJobError::unhandled)?;
-        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -569,11 +288,15 @@ impl CreateAutoMLJob {
 }
 impl smithy_http::response::ParseStrictResponse for CreateAutoMLJob {
     type Output = std::result::Result<
-        crate::output::CreateAutoMLJobOutput,
+        crate::output::CreateAutoMlJobOutput,
         crate::error::CreateAutoMLJobError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_auto_ml_job_error(response)
+        } else {
+            crate::operation_deser::parse_create_auto_ml_job_response(response)
+        }
     }
 }
 
@@ -593,30 +316,6 @@ impl CreateCodeRepository {
     pub fn builder() -> crate::input::create_code_repository_input::Builder {
         crate::input::create_code_repository_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::CreateCodeRepositoryOutput,
-        crate::error::CreateCodeRepositoryError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::CreateCodeRepositoryError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::create_code_repository_output::Builder::default();
-        builder = crate::json_deser::create_code_repository_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::CreateCodeRepositoryError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -627,7 +326,11 @@ impl smithy_http::response::ParseStrictResponse for CreateCodeRepository {
         crate::error::CreateCodeRepositoryError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_code_repository_error(response)
+        } else {
+            crate::operation_deser::parse_create_code_repository_response(response)
+        }
     }
 }
 
@@ -672,52 +375,6 @@ impl CreateCompilationJob {
     pub fn builder() -> crate::input::create_compilation_job_input::Builder {
         crate::input::create_compilation_job_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::CreateCompilationJobOutput,
-        crate::error::CreateCompilationJobError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::CreateCompilationJobError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceInUse" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateCompilationJobError {
-                        kind: crate::error::CreateCompilationJobErrorKind::ResourceInUse(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateCompilationJobError::unhandled(e),
-                },
-                "ResourceLimitExceeded" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateCompilationJobError {
-                        kind: crate::error::CreateCompilationJobErrorKind::ResourceLimitExceeded(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateCompilationJobError::unhandled(e),
-                },
-                _ => crate::error::CreateCompilationJobError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::create_compilation_job_output::Builder::default();
-        builder = crate::json_deser::create_compilation_job_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::CreateCompilationJobError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -728,7 +385,11 @@ impl smithy_http::response::ParseStrictResponse for CreateCompilationJob {
         crate::error::CreateCompilationJobError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_compilation_job_error(response)
+        } else {
+            crate::operation_deser::parse_create_compilation_job_response(response)
+        }
     }
 }
 
@@ -753,39 +414,6 @@ impl CreateContext {
     pub fn builder() -> crate::input::create_context_input::Builder {
         crate::input::create_context_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::CreateContextOutput, crate::error::CreateContextError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::CreateContextError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceLimitExceeded" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateContextError {
-                        kind: crate::error::CreateContextErrorKind::ResourceLimitExceeded(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateContextError::unhandled(e),
-                },
-                _ => crate::error::CreateContextError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::create_context_output::Builder::default();
-        builder =
-            crate::json_deser::create_context_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::CreateContextError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -794,7 +422,11 @@ impl smithy_http::response::ParseStrictResponse for CreateContext {
     type Output =
         std::result::Result<crate::output::CreateContextOutput, crate::error::CreateContextError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_context_error(response)
+        } else {
+            crate::operation_deser::parse_create_context_response(response)
+        }
     }
 }
 
@@ -809,49 +441,6 @@ impl CreateDataQualityJobDefinition {
     pub fn builder() -> crate::input::create_data_quality_job_definition_input::Builder {
         crate::input::create_data_quality_job_definition_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::CreateDataQualityJobDefinitionOutput,
-        crate::error::CreateDataQualityJobDefinitionError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(
-                        crate::error::CreateDataQualityJobDefinitionError::unhandled(generic),
-                    )
-                }
-            };
-            return Err(match error_code {
-                "ResourceInUse" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateDataQualityJobDefinitionError { kind: crate::error::CreateDataQualityJobDefinitionErrorKind::ResourceInUse(body), meta: generic },
-                    Err(e) => crate::error::CreateDataQualityJobDefinitionError::unhandled(e)
-                }
-                "ResourceLimitExceeded" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateDataQualityJobDefinitionError { kind: crate::error::CreateDataQualityJobDefinitionErrorKind::ResourceLimitExceeded(body), meta: generic },
-                    Err(e) => crate::error::CreateDataQualityJobDefinitionError::unhandled(e)
-                }
-                _ => crate::error::CreateDataQualityJobDefinitionError::generic(generic)
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder =
-            crate::output::create_data_quality_job_definition_output::Builder::default();
-        builder = crate::json_deser::create_data_quality_job_definition_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::CreateDataQualityJobDefinitionError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -862,7 +451,11 @@ impl smithy_http::response::ParseStrictResponse for CreateDataQualityJobDefiniti
         crate::error::CreateDataQualityJobDefinitionError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_data_quality_job_definition_error(response)
+        } else {
+            crate::operation_deser::parse_create_data_quality_job_definition_response(response)
+        }
     }
 }
 
@@ -876,45 +469,6 @@ impl CreateDeviceFleet {
     pub fn builder() -> crate::input::create_device_fleet_input::Builder {
         crate::input::create_device_fleet_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::CreateDeviceFleetOutput,
-        crate::error::CreateDeviceFleetError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::CreateDeviceFleetError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceInUse" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateDeviceFleetError {
-                        kind: crate::error::CreateDeviceFleetErrorKind::ResourceInUse(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateDeviceFleetError::unhandled(e),
-                },
-                "ResourceLimitExceeded" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateDeviceFleetError {
-                        kind: crate::error::CreateDeviceFleetErrorKind::ResourceLimitExceeded(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateDeviceFleetError::unhandled(e),
-                },
-                _ => crate::error::CreateDeviceFleetError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::create_device_fleet_output::Builder::default();
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -925,7 +479,11 @@ impl smithy_http::response::ParseStrictResponse for CreateDeviceFleet {
         crate::error::CreateDeviceFleetError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_device_fleet_error(response)
+        } else {
+            crate::operation_deser::parse_create_device_fleet_response(response)
+        }
     }
 }
 
@@ -979,46 +537,6 @@ impl CreateDomain {
     pub fn builder() -> crate::input::create_domain_input::Builder {
         crate::input::create_domain_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::CreateDomainOutput, crate::error::CreateDomainError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::CreateDomainError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceInUse" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateDomainError {
-                        kind: crate::error::CreateDomainErrorKind::ResourceInUse(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateDomainError::unhandled(e),
-                },
-                "ResourceLimitExceeded" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateDomainError {
-                        kind: crate::error::CreateDomainErrorKind::ResourceLimitExceeded(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateDomainError::unhandled(e),
-                },
-                _ => crate::error::CreateDomainError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::create_domain_output::Builder::default();
-        builder =
-            crate::json_deser::create_domain_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::CreateDomainError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -1027,7 +545,11 @@ impl smithy_http::response::ParseStrictResponse for CreateDomain {
     type Output =
         std::result::Result<crate::output::CreateDomainOutput, crate::error::CreateDomainError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_domain_error(response)
+        } else {
+            crate::operation_deser::parse_create_domain_response(response)
+        }
     }
 }
 
@@ -1041,44 +563,6 @@ impl CreateEdgePackagingJob {
     pub fn builder() -> crate::input::create_edge_packaging_job_input::Builder {
         crate::input::create_edge_packaging_job_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::CreateEdgePackagingJobOutput,
-        crate::error::CreateEdgePackagingJobError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(crate::error::CreateEdgePackagingJobError::unhandled(
-                        generic,
-                    ))
-                }
-            };
-            return Err(match error_code {
-                "ResourceLimitExceeded" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateEdgePackagingJobError {
-                        kind: crate::error::CreateEdgePackagingJobErrorKind::ResourceLimitExceeded(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateEdgePackagingJobError::unhandled(e),
-                },
-                _ => crate::error::CreateEdgePackagingJobError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::create_edge_packaging_job_output::Builder::default();
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -1089,7 +573,11 @@ impl smithy_http::response::ParseStrictResponse for CreateEdgePackagingJob {
         crate::error::CreateEdgePackagingJobError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_edge_packaging_job_error(response)
+        } else {
+            crate::operation_deser::parse_create_edge_packaging_job_response(response)
+        }
     }
 }
 
@@ -1179,39 +667,6 @@ impl CreateEndpoint {
     pub fn builder() -> crate::input::create_endpoint_input::Builder {
         crate::input::create_endpoint_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::CreateEndpointOutput, crate::error::CreateEndpointError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::CreateEndpointError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceLimitExceeded" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateEndpointError {
-                        kind: crate::error::CreateEndpointErrorKind::ResourceLimitExceeded(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateEndpointError::unhandled(e),
-                },
-                _ => crate::error::CreateEndpointError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::create_endpoint_output::Builder::default();
-        builder =
-            crate::json_deser::create_endpoint_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::CreateEndpointError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -1220,7 +675,11 @@ impl smithy_http::response::ParseStrictResponse for CreateEndpoint {
     type Output =
         std::result::Result<crate::output::CreateEndpointOutput, crate::error::CreateEndpointError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_endpoint_error(response)
+        } else {
+            crate::operation_deser::parse_create_endpoint_response(response)
+        }
     }
 }
 
@@ -1267,45 +726,6 @@ impl CreateEndpointConfig {
     pub fn builder() -> crate::input::create_endpoint_config_input::Builder {
         crate::input::create_endpoint_config_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::CreateEndpointConfigOutput,
-        crate::error::CreateEndpointConfigError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::CreateEndpointConfigError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceLimitExceeded" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateEndpointConfigError {
-                        kind: crate::error::CreateEndpointConfigErrorKind::ResourceLimitExceeded(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateEndpointConfigError::unhandled(e),
-                },
-                _ => crate::error::CreateEndpointConfigError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::create_endpoint_config_output::Builder::default();
-        builder = crate::json_deser::create_endpoint_config_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::CreateEndpointConfigError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -1316,7 +736,11 @@ impl smithy_http::response::ParseStrictResponse for CreateEndpointConfig {
         crate::error::CreateEndpointConfigError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_endpoint_config_error(response)
+        } else {
+            crate::operation_deser::parse_create_endpoint_config_response(response)
+        }
     }
 }
 
@@ -1346,41 +770,6 @@ impl CreateExperiment {
     pub fn builder() -> crate::input::create_experiment_input::Builder {
         crate::input::create_experiment_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::CreateExperimentOutput,
-        crate::error::CreateExperimentError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::CreateExperimentError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceLimitExceeded" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateExperimentError {
-                        kind: crate::error::CreateExperimentErrorKind::ResourceLimitExceeded(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateExperimentError::unhandled(e),
-                },
-                _ => crate::error::CreateExperimentError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::create_experiment_output::Builder::default();
-        builder =
-            crate::json_deser::create_experiment_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::CreateExperimentError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -1391,7 +780,11 @@ impl smithy_http::response::ParseStrictResponse for CreateExperiment {
         crate::error::CreateExperimentError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_experiment_error(response)
+        } else {
+            crate::operation_deser::parse_create_experiment_response(response)
+        }
     }
 }
 
@@ -1417,52 +810,6 @@ impl CreateFeatureGroup {
     pub fn builder() -> crate::input::create_feature_group_input::Builder {
         crate::input::create_feature_group_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::CreateFeatureGroupOutput,
-        crate::error::CreateFeatureGroupError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::CreateFeatureGroupError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceInUse" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateFeatureGroupError {
-                        kind: crate::error::CreateFeatureGroupErrorKind::ResourceInUse(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateFeatureGroupError::unhandled(e),
-                },
-                "ResourceLimitExceeded" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateFeatureGroupError {
-                        kind: crate::error::CreateFeatureGroupErrorKind::ResourceLimitExceeded(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateFeatureGroupError::unhandled(e),
-                },
-                _ => crate::error::CreateFeatureGroupError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::create_feature_group_output::Builder::default();
-        builder = crate::json_deser::create_feature_group_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::CreateFeatureGroupError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -1473,7 +820,11 @@ impl smithy_http::response::ParseStrictResponse for CreateFeatureGroup {
         crate::error::CreateFeatureGroupError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_feature_group_error(response)
+        } else {
+            crate::operation_deser::parse_create_feature_group_response(response)
+        }
     }
 }
 
@@ -1487,52 +838,6 @@ impl CreateFlowDefinition {
     pub fn builder() -> crate::input::create_flow_definition_input::Builder {
         crate::input::create_flow_definition_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::CreateFlowDefinitionOutput,
-        crate::error::CreateFlowDefinitionError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::CreateFlowDefinitionError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceInUse" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateFlowDefinitionError {
-                        kind: crate::error::CreateFlowDefinitionErrorKind::ResourceInUse(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateFlowDefinitionError::unhandled(e),
-                },
-                "ResourceLimitExceeded" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateFlowDefinitionError {
-                        kind: crate::error::CreateFlowDefinitionErrorKind::ResourceLimitExceeded(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateFlowDefinitionError::unhandled(e),
-                },
-                _ => crate::error::CreateFlowDefinitionError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::create_flow_definition_output::Builder::default();
-        builder = crate::json_deser::create_flow_definition_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::CreateFlowDefinitionError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -1543,7 +848,11 @@ impl smithy_http::response::ParseStrictResponse for CreateFlowDefinition {
         crate::error::CreateFlowDefinitionError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_flow_definition_error(response)
+        } else {
+            crate::operation_deser::parse_create_flow_definition_response(response)
+        }
     }
 }
 
@@ -1557,50 +866,6 @@ impl CreateHumanTaskUi {
     pub fn builder() -> crate::input::create_human_task_ui_input::Builder {
         crate::input::create_human_task_ui_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::CreateHumanTaskUiOutput,
-        crate::error::CreateHumanTaskUiError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::CreateHumanTaskUiError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceInUse" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateHumanTaskUiError {
-                        kind: crate::error::CreateHumanTaskUiErrorKind::ResourceInUse(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateHumanTaskUiError::unhandled(e),
-                },
-                "ResourceLimitExceeded" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateHumanTaskUiError {
-                        kind: crate::error::CreateHumanTaskUiErrorKind::ResourceLimitExceeded(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateHumanTaskUiError::unhandled(e),
-                },
-                _ => crate::error::CreateHumanTaskUiError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::create_human_task_ui_output::Builder::default();
-        builder = crate::json_deser::create_human_task_ui_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::CreateHumanTaskUiError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -1611,7 +876,11 @@ impl smithy_http::response::ParseStrictResponse for CreateHumanTaskUi {
         crate::error::CreateHumanTaskUiError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_human_task_ui_error(response)
+        } else {
+            crate::operation_deser::parse_create_human_task_ui_response(response)
+        }
     }
 }
 
@@ -1629,49 +898,6 @@ impl CreateHyperParameterTuningJob {
     pub fn builder() -> crate::input::create_hyper_parameter_tuning_job_input::Builder {
         crate::input::create_hyper_parameter_tuning_job_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::CreateHyperParameterTuningJobOutput,
-        crate::error::CreateHyperParameterTuningJobError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(crate::error::CreateHyperParameterTuningJobError::unhandled(
-                        generic,
-                    ))
-                }
-            };
-            return Err(match error_code {
-                "ResourceInUse" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateHyperParameterTuningJobError { kind: crate::error::CreateHyperParameterTuningJobErrorKind::ResourceInUse(body), meta: generic },
-                    Err(e) => crate::error::CreateHyperParameterTuningJobError::unhandled(e)
-                }
-                "ResourceLimitExceeded" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateHyperParameterTuningJobError { kind: crate::error::CreateHyperParameterTuningJobErrorKind::ResourceLimitExceeded(body), meta: generic },
-                    Err(e) => crate::error::CreateHyperParameterTuningJobError::unhandled(e)
-                }
-                _ => crate::error::CreateHyperParameterTuningJobError::generic(generic)
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder =
-            crate::output::create_hyper_parameter_tuning_job_output::Builder::default();
-        builder = crate::json_deser::create_hyper_parameter_tuning_job_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::CreateHyperParameterTuningJobError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -1682,7 +908,11 @@ impl smithy_http::response::ParseStrictResponse for CreateHyperParameterTuningJo
         crate::error::CreateHyperParameterTuningJobError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_hyper_parameter_tuning_job_error(response)
+        } else {
+            crate::operation_deser::parse_create_hyper_parameter_tuning_job_response(response)
+        }
     }
 }
 
@@ -1698,45 +928,6 @@ impl CreateImage {
     pub fn builder() -> crate::input::create_image_input::Builder {
         crate::input::create_image_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::CreateImageOutput, crate::error::CreateImageError> {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::CreateImageError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceInUse" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateImageError {
-                        kind: crate::error::CreateImageErrorKind::ResourceInUse(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateImageError::unhandled(e),
-                },
-                "ResourceLimitExceeded" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateImageError {
-                        kind: crate::error::CreateImageErrorKind::ResourceLimitExceeded(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateImageError::unhandled(e),
-                },
-                _ => crate::error::CreateImageError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::create_image_output::Builder::default();
-        builder =
-            crate::json_deser::create_image_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::CreateImageError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -1745,7 +936,11 @@ impl smithy_http::response::ParseStrictResponse for CreateImage {
     type Output =
         std::result::Result<crate::output::CreateImageOutput, crate::error::CreateImageError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_image_error(response)
+        } else {
+            crate::operation_deser::parse_create_image_response(response)
+        }
     }
 }
 
@@ -1760,59 +955,6 @@ impl CreateImageVersion {
     pub fn builder() -> crate::input::create_image_version_input::Builder {
         crate::input::create_image_version_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::CreateImageVersionOutput,
-        crate::error::CreateImageVersionError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::CreateImageVersionError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceInUse" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateImageVersionError {
-                        kind: crate::error::CreateImageVersionErrorKind::ResourceInUse(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateImageVersionError::unhandled(e),
-                },
-                "ResourceLimitExceeded" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateImageVersionError {
-                        kind: crate::error::CreateImageVersionErrorKind::ResourceLimitExceeded(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateImageVersionError::unhandled(e),
-                },
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateImageVersionError {
-                        kind: crate::error::CreateImageVersionErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateImageVersionError::unhandled(e),
-                },
-                _ => crate::error::CreateImageVersionError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::create_image_version_output::Builder::default();
-        builder = crate::json_deser::create_image_version_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::CreateImageVersionError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -1823,7 +965,11 @@ impl smithy_http::response::ParseStrictResponse for CreateImageVersion {
         crate::error::CreateImageVersionError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_image_version_error(response)
+        } else {
+            crate::operation_deser::parse_create_image_version_response(response)
+        }
     }
 }
 
@@ -1874,50 +1020,6 @@ impl CreateLabelingJob {
     pub fn builder() -> crate::input::create_labeling_job_input::Builder {
         crate::input::create_labeling_job_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::CreateLabelingJobOutput,
-        crate::error::CreateLabelingJobError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::CreateLabelingJobError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceInUse" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateLabelingJobError {
-                        kind: crate::error::CreateLabelingJobErrorKind::ResourceInUse(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateLabelingJobError::unhandled(e),
-                },
-                "ResourceLimitExceeded" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateLabelingJobError {
-                        kind: crate::error::CreateLabelingJobErrorKind::ResourceLimitExceeded(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateLabelingJobError::unhandled(e),
-                },
-                _ => crate::error::CreateLabelingJobError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::create_labeling_job_output::Builder::default();
-        builder = crate::json_deser::create_labeling_job_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::CreateLabelingJobError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -1928,7 +1030,11 @@ impl smithy_http::response::ParseStrictResponse for CreateLabelingJob {
         crate::error::CreateLabelingJobError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_labeling_job_error(response)
+        } else {
+            crate::operation_deser::parse_create_labeling_job_response(response)
+        }
     }
 }
 
@@ -1966,38 +1072,6 @@ impl CreateModel {
     pub fn builder() -> crate::input::create_model_input::Builder {
         crate::input::create_model_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::CreateModelOutput, crate::error::CreateModelError> {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::CreateModelError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceLimitExceeded" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateModelError {
-                        kind: crate::error::CreateModelErrorKind::ResourceLimitExceeded(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateModelError::unhandled(e),
-                },
-                _ => crate::error::CreateModelError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::create_model_output::Builder::default();
-        builder =
-            crate::json_deser::create_model_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::CreateModelError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -2006,7 +1080,11 @@ impl smithy_http::response::ParseStrictResponse for CreateModel {
     type Output =
         std::result::Result<crate::output::CreateModelOutput, crate::error::CreateModelError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_model_error(response)
+        } else {
+            crate::operation_deser::parse_create_model_response(response)
+        }
     }
 }
 
@@ -2020,49 +1098,6 @@ impl CreateModelBiasJobDefinition {
     pub fn builder() -> crate::input::create_model_bias_job_definition_input::Builder {
         crate::input::create_model_bias_job_definition_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::CreateModelBiasJobDefinitionOutput,
-        crate::error::CreateModelBiasJobDefinitionError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(crate::error::CreateModelBiasJobDefinitionError::unhandled(
-                        generic,
-                    ))
-                }
-            };
-            return Err(match error_code {
-                "ResourceInUse" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateModelBiasJobDefinitionError { kind: crate::error::CreateModelBiasJobDefinitionErrorKind::ResourceInUse(body), meta: generic },
-                    Err(e) => crate::error::CreateModelBiasJobDefinitionError::unhandled(e)
-                }
-                "ResourceLimitExceeded" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateModelBiasJobDefinitionError { kind: crate::error::CreateModelBiasJobDefinitionErrorKind::ResourceLimitExceeded(body), meta: generic },
-                    Err(e) => crate::error::CreateModelBiasJobDefinitionError::unhandled(e)
-                }
-                _ => crate::error::CreateModelBiasJobDefinitionError::generic(generic)
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder =
-            crate::output::create_model_bias_job_definition_output::Builder::default();
-        builder = crate::json_deser::create_model_bias_job_definition_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::CreateModelBiasJobDefinitionError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -2073,7 +1108,11 @@ impl smithy_http::response::ParseStrictResponse for CreateModelBiasJobDefinition
         crate::error::CreateModelBiasJobDefinitionError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_model_bias_job_definition_error(response)
+        } else {
+            crate::operation_deser::parse_create_model_bias_job_definition_response(response)
+        }
     }
 }
 
@@ -2087,51 +1126,6 @@ impl CreateModelExplainabilityJobDefinition {
     pub fn builder() -> crate::input::create_model_explainability_job_definition_input::Builder {
         crate::input::create_model_explainability_job_definition_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::CreateModelExplainabilityJobDefinitionOutput,
-        crate::error::CreateModelExplainabilityJobDefinitionError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(
-                        crate::error::CreateModelExplainabilityJobDefinitionError::unhandled(
-                            generic,
-                        ),
-                    )
-                }
-            };
-            return Err(match error_code {
-                "ResourceInUse" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateModelExplainabilityJobDefinitionError { kind: crate::error::CreateModelExplainabilityJobDefinitionErrorKind::ResourceInUse(body), meta: generic },
-                    Err(e) => crate::error::CreateModelExplainabilityJobDefinitionError::unhandled(e)
-                }
-                "ResourceLimitExceeded" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateModelExplainabilityJobDefinitionError { kind: crate::error::CreateModelExplainabilityJobDefinitionErrorKind::ResourceLimitExceeded(body), meta: generic },
-                    Err(e) => crate::error::CreateModelExplainabilityJobDefinitionError::unhandled(e)
-                }
-                _ => crate::error::CreateModelExplainabilityJobDefinitionError::generic(generic)
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder =
-            crate::output::create_model_explainability_job_definition_output::Builder::default();
-        builder = crate::json_deser::create_model_explainability_job_definition_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::CreateModelExplainabilityJobDefinitionError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -2142,7 +1136,13 @@ impl smithy_http::response::ParseStrictResponse for CreateModelExplainabilityJob
         crate::error::CreateModelExplainabilityJobDefinitionError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_model_explainability_job_definition_error(response)
+        } else {
+            crate::operation_deser::parse_create_model_explainability_job_definition_response(
+                response,
+            )
+        }
     }
 }
 
@@ -2175,52 +1175,6 @@ impl CreateModelPackage {
     pub fn builder() -> crate::input::create_model_package_input::Builder {
         crate::input::create_model_package_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::CreateModelPackageOutput,
-        crate::error::CreateModelPackageError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::CreateModelPackageError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ConflictException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateModelPackageError {
-                        kind: crate::error::CreateModelPackageErrorKind::ConflictError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateModelPackageError::unhandled(e),
-                },
-                "ResourceLimitExceeded" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateModelPackageError {
-                        kind: crate::error::CreateModelPackageErrorKind::ResourceLimitExceeded(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateModelPackageError::unhandled(e),
-                },
-                _ => crate::error::CreateModelPackageError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::create_model_package_output::Builder::default();
-        builder = crate::json_deser::create_model_package_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::CreateModelPackageError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -2231,7 +1185,11 @@ impl smithy_http::response::ParseStrictResponse for CreateModelPackage {
         crate::error::CreateModelPackageError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_model_package_error(response)
+        } else {
+            crate::operation_deser::parse_create_model_package_response(response)
+        }
     }
 }
 
@@ -2245,49 +1203,6 @@ impl CreateModelPackageGroup {
     pub fn builder() -> crate::input::create_model_package_group_input::Builder {
         crate::input::create_model_package_group_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::CreateModelPackageGroupOutput,
-        crate::error::CreateModelPackageGroupError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(crate::error::CreateModelPackageGroupError::unhandled(
-                        generic,
-                    ))
-                }
-            };
-            return Err(match error_code {
-                "ResourceLimitExceeded" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateModelPackageGroupError {
-                        kind: crate::error::CreateModelPackageGroupErrorKind::ResourceLimitExceeded(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateModelPackageGroupError::unhandled(e),
-                },
-                _ => crate::error::CreateModelPackageGroupError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::create_model_package_group_output::Builder::default();
-        builder = crate::json_deser::create_model_package_group_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::CreateModelPackageGroupError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -2298,7 +1213,11 @@ impl smithy_http::response::ParseStrictResponse for CreateModelPackageGroup {
         crate::error::CreateModelPackageGroupError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_model_package_group_error(response)
+        } else {
+            crate::operation_deser::parse_create_model_package_group_response(response)
+        }
     }
 }
 
@@ -2313,49 +1232,6 @@ impl CreateModelQualityJobDefinition {
     pub fn builder() -> crate::input::create_model_quality_job_definition_input::Builder {
         crate::input::create_model_quality_job_definition_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::CreateModelQualityJobDefinitionOutput,
-        crate::error::CreateModelQualityJobDefinitionError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(
-                        crate::error::CreateModelQualityJobDefinitionError::unhandled(generic),
-                    )
-                }
-            };
-            return Err(match error_code {
-                "ResourceInUse" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateModelQualityJobDefinitionError { kind: crate::error::CreateModelQualityJobDefinitionErrorKind::ResourceInUse(body), meta: generic },
-                    Err(e) => crate::error::CreateModelQualityJobDefinitionError::unhandled(e)
-                }
-                "ResourceLimitExceeded" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateModelQualityJobDefinitionError { kind: crate::error::CreateModelQualityJobDefinitionErrorKind::ResourceLimitExceeded(body), meta: generic },
-                    Err(e) => crate::error::CreateModelQualityJobDefinitionError::unhandled(e)
-                }
-                _ => crate::error::CreateModelQualityJobDefinitionError::generic(generic)
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder =
-            crate::output::create_model_quality_job_definition_output::Builder::default();
-        builder = crate::json_deser::create_model_quality_job_definition_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::CreateModelQualityJobDefinitionError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -2366,7 +1242,11 @@ impl smithy_http::response::ParseStrictResponse for CreateModelQualityJobDefinit
         crate::error::CreateModelQualityJobDefinitionError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_model_quality_job_definition_error(response)
+        } else {
+            crate::operation_deser::parse_create_model_quality_job_definition_response(response)
+        }
     }
 }
 
@@ -2381,57 +1261,6 @@ impl CreateMonitoringSchedule {
     pub fn builder() -> crate::input::create_monitoring_schedule_input::Builder {
         crate::input::create_monitoring_schedule_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::CreateMonitoringScheduleOutput,
-        crate::error::CreateMonitoringScheduleError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(crate::error::CreateMonitoringScheduleError::unhandled(
-                        generic,
-                    ))
-                }
-            };
-            return Err(match error_code {
-                "ResourceInUse" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateMonitoringScheduleError {
-                        kind: crate::error::CreateMonitoringScheduleErrorKind::ResourceInUse(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateMonitoringScheduleError::unhandled(e),
-                },
-                "ResourceLimitExceeded" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateMonitoringScheduleError {
-                        kind:
-                            crate::error::CreateMonitoringScheduleErrorKind::ResourceLimitExceeded(
-                                body,
-                            ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateMonitoringScheduleError::unhandled(e),
-                },
-                _ => crate::error::CreateMonitoringScheduleError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::create_monitoring_schedule_output::Builder::default();
-        builder = crate::json_deser::create_monitoring_schedule_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::CreateMonitoringScheduleError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -2442,7 +1271,11 @@ impl smithy_http::response::ParseStrictResponse for CreateMonitoringSchedule {
         crate::error::CreateMonitoringScheduleError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_monitoring_schedule_error(response)
+        } else {
+            crate::operation_deser::parse_create_monitoring_schedule_response(response)
+        }
     }
 }
 
@@ -2490,49 +1323,6 @@ impl CreateNotebookInstance {
     pub fn builder() -> crate::input::create_notebook_instance_input::Builder {
         crate::input::create_notebook_instance_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::CreateNotebookInstanceOutput,
-        crate::error::CreateNotebookInstanceError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(crate::error::CreateNotebookInstanceError::unhandled(
-                        generic,
-                    ))
-                }
-            };
-            return Err(match error_code {
-                "ResourceLimitExceeded" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateNotebookInstanceError {
-                        kind: crate::error::CreateNotebookInstanceErrorKind::ResourceLimitExceeded(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateNotebookInstanceError::unhandled(e),
-                },
-                _ => crate::error::CreateNotebookInstanceError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::create_notebook_instance_output::Builder::default();
-        builder = crate::json_deser::create_notebook_instance_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::CreateNotebookInstanceError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -2543,7 +1333,11 @@ impl smithy_http::response::ParseStrictResponse for CreateNotebookInstance {
         crate::error::CreateNotebookInstanceError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_notebook_instance_error(response)
+        } else {
+            crate::operation_deser::parse_create_notebook_instance_response(response)
+        }
     }
 }
 
@@ -2570,47 +1364,6 @@ impl CreateNotebookInstanceLifecycleConfig {
     pub fn builder() -> crate::input::create_notebook_instance_lifecycle_config_input::Builder {
         crate::input::create_notebook_instance_lifecycle_config_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::CreateNotebookInstanceLifecycleConfigOutput,
-        crate::error::CreateNotebookInstanceLifecycleConfigError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(
-                        crate::error::CreateNotebookInstanceLifecycleConfigError::unhandled(
-                            generic,
-                        ),
-                    )
-                }
-            };
-            return Err(match error_code {
-                "ResourceLimitExceeded" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateNotebookInstanceLifecycleConfigError { kind: crate::error::CreateNotebookInstanceLifecycleConfigErrorKind::ResourceLimitExceeded(body), meta: generic },
-                    Err(e) => crate::error::CreateNotebookInstanceLifecycleConfigError::unhandled(e)
-                }
-                _ => crate::error::CreateNotebookInstanceLifecycleConfigError::generic(generic)
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder =
-            crate::output::create_notebook_instance_lifecycle_config_output::Builder::default();
-        builder = crate::json_deser::create_notebook_instance_lifecycle_config_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::CreateNotebookInstanceLifecycleConfigError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -2621,7 +1374,13 @@ impl smithy_http::response::ParseStrictResponse for CreateNotebookInstanceLifecy
         crate::error::CreateNotebookInstanceLifecycleConfigError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_notebook_instance_lifecycle_config_error(response)
+        } else {
+            crate::operation_deser::parse_create_notebook_instance_lifecycle_config_response(
+                response,
+            )
+        }
     }
 }
 
@@ -2635,46 +1394,6 @@ impl CreatePipeline {
     pub fn builder() -> crate::input::create_pipeline_input::Builder {
         crate::input::create_pipeline_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::CreatePipelineOutput, crate::error::CreatePipelineError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::CreatePipelineError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceLimitExceeded" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreatePipelineError {
-                        kind: crate::error::CreatePipelineErrorKind::ResourceLimitExceeded(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreatePipelineError::unhandled(e),
-                },
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreatePipelineError {
-                        kind: crate::error::CreatePipelineErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreatePipelineError::unhandled(e),
-                },
-                _ => crate::error::CreatePipelineError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::create_pipeline_output::Builder::default();
-        builder =
-            crate::json_deser::create_pipeline_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::CreatePipelineError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -2683,7 +1402,11 @@ impl smithy_http::response::ParseStrictResponse for CreatePipeline {
     type Output =
         std::result::Result<crate::output::CreatePipelineOutput, crate::error::CreatePipelineError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_pipeline_error(response)
+        } else {
+            crate::operation_deser::parse_create_pipeline_response(response)
+        }
     }
 }
 
@@ -2705,49 +1428,6 @@ impl CreatePresignedDomainUrl {
     pub fn builder() -> crate::input::create_presigned_domain_url_input::Builder {
         crate::input::create_presigned_domain_url_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::CreatePresignedDomainUrlOutput,
-        crate::error::CreatePresignedDomainUrlError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(crate::error::CreatePresignedDomainUrlError::unhandled(
-                        generic,
-                    ))
-                }
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreatePresignedDomainUrlError {
-                        kind: crate::error::CreatePresignedDomainUrlErrorKind::ResourceNotFound(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreatePresignedDomainUrlError::unhandled(e),
-                },
-                _ => crate::error::CreatePresignedDomainUrlError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::create_presigned_domain_url_output::Builder::default();
-        builder = crate::json_deser::create_presigned_domain_url_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::CreatePresignedDomainUrlError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -2758,7 +1438,11 @@ impl smithy_http::response::ParseStrictResponse for CreatePresignedDomainUrl {
         crate::error::CreatePresignedDomainUrlError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_presigned_domain_url_error(response)
+        } else {
+            crate::operation_deser::parse_create_presigned_domain_url_response(response)
+        }
     }
 }
 
@@ -2789,31 +1473,6 @@ impl CreatePresignedNotebookInstanceUrl {
     pub fn builder() -> crate::input::create_presigned_notebook_instance_url_input::Builder {
         crate::input::create_presigned_notebook_instance_url_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::CreatePresignedNotebookInstanceUrlOutput,
-        crate::error::CreatePresignedNotebookInstanceUrlError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::CreatePresignedNotebookInstanceUrlError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder =
-            crate::output::create_presigned_notebook_instance_url_output::Builder::default();
-        builder = crate::json_deser::create_presigned_notebook_instance_url_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::CreatePresignedNotebookInstanceUrlError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -2824,7 +1483,11 @@ impl smithy_http::response::ParseStrictResponse for CreatePresignedNotebookInsta
         crate::error::CreatePresignedNotebookInstanceUrlError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_presigned_notebook_instance_url_error(response)
+        } else {
+            crate::operation_deser::parse_create_presigned_notebook_instance_url_response(response)
+        }
     }
 }
 
@@ -2838,59 +1501,6 @@ impl CreateProcessingJob {
     pub fn builder() -> crate::input::create_processing_job_input::Builder {
         crate::input::create_processing_job_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::CreateProcessingJobOutput,
-        crate::error::CreateProcessingJobError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::CreateProcessingJobError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceInUse" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateProcessingJobError {
-                        kind: crate::error::CreateProcessingJobErrorKind::ResourceInUse(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateProcessingJobError::unhandled(e),
-                },
-                "ResourceLimitExceeded" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateProcessingJobError {
-                        kind: crate::error::CreateProcessingJobErrorKind::ResourceLimitExceeded(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateProcessingJobError::unhandled(e),
-                },
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateProcessingJobError {
-                        kind: crate::error::CreateProcessingJobErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateProcessingJobError::unhandled(e),
-                },
-                _ => crate::error::CreateProcessingJobError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::create_processing_job_output::Builder::default();
-        builder = crate::json_deser::create_processing_job_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::CreateProcessingJobError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -2901,7 +1511,11 @@ impl smithy_http::response::ParseStrictResponse for CreateProcessingJob {
         crate::error::CreateProcessingJobError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_processing_job_error(response)
+        } else {
+            crate::operation_deser::parse_create_processing_job_response(response)
+        }
     }
 }
 
@@ -2916,39 +1530,6 @@ impl CreateProject {
     pub fn builder() -> crate::input::create_project_input::Builder {
         crate::input::create_project_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::CreateProjectOutput, crate::error::CreateProjectError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::CreateProjectError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceLimitExceeded" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateProjectError {
-                        kind: crate::error::CreateProjectErrorKind::ResourceLimitExceeded(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateProjectError::unhandled(e),
-                },
-                _ => crate::error::CreateProjectError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::create_project_output::Builder::default();
-        builder =
-            crate::json_deser::create_project_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::CreateProjectError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -2957,7 +1538,11 @@ impl smithy_http::response::ParseStrictResponse for CreateProject {
     type Output =
         std::result::Result<crate::output::CreateProjectOutput, crate::error::CreateProjectError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_project_error(response)
+        } else {
+            crate::operation_deser::parse_create_project_response(response)
+        }
     }
 }
 
@@ -3041,57 +1626,6 @@ impl CreateTrainingJob {
     pub fn builder() -> crate::input::create_training_job_input::Builder {
         crate::input::create_training_job_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::CreateTrainingJobOutput,
-        crate::error::CreateTrainingJobError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::CreateTrainingJobError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceInUse" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateTrainingJobError {
-                        kind: crate::error::CreateTrainingJobErrorKind::ResourceInUse(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateTrainingJobError::unhandled(e),
-                },
-                "ResourceLimitExceeded" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateTrainingJobError {
-                        kind: crate::error::CreateTrainingJobErrorKind::ResourceLimitExceeded(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateTrainingJobError::unhandled(e),
-                },
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateTrainingJobError {
-                        kind: crate::error::CreateTrainingJobErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateTrainingJobError::unhandled(e),
-                },
-                _ => crate::error::CreateTrainingJobError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::create_training_job_output::Builder::default();
-        builder = crate::json_deser::create_training_job_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::CreateTrainingJobError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -3102,7 +1636,11 @@ impl smithy_http::response::ParseStrictResponse for CreateTrainingJob {
         crate::error::CreateTrainingJobError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_training_job_error(response)
+        } else {
+            crate::operation_deser::parse_create_training_job_response(response)
+        }
     }
 }
 
@@ -3150,59 +1688,6 @@ impl CreateTransformJob {
     pub fn builder() -> crate::input::create_transform_job_input::Builder {
         crate::input::create_transform_job_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::CreateTransformJobOutput,
-        crate::error::CreateTransformJobError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::CreateTransformJobError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceInUse" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateTransformJobError {
-                        kind: crate::error::CreateTransformJobErrorKind::ResourceInUse(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateTransformJobError::unhandled(e),
-                },
-                "ResourceLimitExceeded" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateTransformJobError {
-                        kind: crate::error::CreateTransformJobErrorKind::ResourceLimitExceeded(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateTransformJobError::unhandled(e),
-                },
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateTransformJobError {
-                        kind: crate::error::CreateTransformJobErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateTransformJobError::unhandled(e),
-                },
-                _ => crate::error::CreateTransformJobError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::create_transform_job_output::Builder::default();
-        builder = crate::json_deser::create_transform_job_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::CreateTransformJobError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -3213,7 +1698,11 @@ impl smithy_http::response::ParseStrictResponse for CreateTransformJob {
         crate::error::CreateTransformJobError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_transform_job_error(response)
+        } else {
+            crate::operation_deser::parse_create_transform_job_response(response)
+        }
     }
 }
 
@@ -3237,45 +1726,6 @@ impl CreateTrial {
     pub fn builder() -> crate::input::create_trial_input::Builder {
         crate::input::create_trial_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::CreateTrialOutput, crate::error::CreateTrialError> {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::CreateTrialError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceLimitExceeded" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateTrialError {
-                        kind: crate::error::CreateTrialErrorKind::ResourceLimitExceeded(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateTrialError::unhandled(e),
-                },
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateTrialError {
-                        kind: crate::error::CreateTrialErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateTrialError::unhandled(e),
-                },
-                _ => crate::error::CreateTrialError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::create_trial_output::Builder::default();
-        builder =
-            crate::json_deser::create_trial_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::CreateTrialError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -3284,7 +1734,11 @@ impl smithy_http::response::ParseStrictResponse for CreateTrial {
     type Output =
         std::result::Result<crate::output::CreateTrialOutput, crate::error::CreateTrialError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_trial_error(response)
+        } else {
+            crate::operation_deser::parse_create_trial_response(response)
+        }
     }
 }
 
@@ -3314,45 +1768,6 @@ impl CreateTrialComponent {
     pub fn builder() -> crate::input::create_trial_component_input::Builder {
         crate::input::create_trial_component_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::CreateTrialComponentOutput,
-        crate::error::CreateTrialComponentError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::CreateTrialComponentError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceLimitExceeded" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateTrialComponentError {
-                        kind: crate::error::CreateTrialComponentErrorKind::ResourceLimitExceeded(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateTrialComponentError::unhandled(e),
-                },
-                _ => crate::error::CreateTrialComponentError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::create_trial_component_output::Builder::default();
-        builder = crate::json_deser::create_trial_component_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::CreateTrialComponentError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -3363,7 +1778,11 @@ impl smithy_http::response::ParseStrictResponse for CreateTrialComponent {
         crate::error::CreateTrialComponentError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_trial_component_error(response)
+        } else {
+            crate::operation_deser::parse_create_trial_component_response(response)
+        }
     }
 }
 
@@ -3383,50 +1802,6 @@ impl CreateUserProfile {
     pub fn builder() -> crate::input::create_user_profile_input::Builder {
         crate::input::create_user_profile_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::CreateUserProfileOutput,
-        crate::error::CreateUserProfileError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::CreateUserProfileError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceInUse" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateUserProfileError {
-                        kind: crate::error::CreateUserProfileErrorKind::ResourceInUse(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateUserProfileError::unhandled(e),
-                },
-                "ResourceLimitExceeded" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateUserProfileError {
-                        kind: crate::error::CreateUserProfileErrorKind::ResourceLimitExceeded(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateUserProfileError::unhandled(e),
-                },
-                _ => crate::error::CreateUserProfileError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::create_user_profile_output::Builder::default();
-        builder = crate::json_deser::create_user_profile_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::CreateUserProfileError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -3437,7 +1812,11 @@ impl smithy_http::response::ParseStrictResponse for CreateUserProfile {
         crate::error::CreateUserProfileError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_user_profile_error(response)
+        } else {
+            crate::operation_deser::parse_create_user_profile_response(response)
+        }
     }
 }
 
@@ -3468,26 +1847,6 @@ impl CreateWorkforce {
     pub fn builder() -> crate::input::create_workforce_input::Builder {
         crate::input::create_workforce_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::CreateWorkforceOutput, crate::error::CreateWorkforceError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::CreateWorkforceError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::create_workforce_output::Builder::default();
-        builder =
-            crate::json_deser::create_workforce_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::CreateWorkforceError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -3498,7 +1857,11 @@ impl smithy_http::response::ParseStrictResponse for CreateWorkforce {
         crate::error::CreateWorkforceError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_workforce_error(response)
+        } else {
+            crate::operation_deser::parse_create_workforce_response(response)
+        }
     }
 }
 
@@ -3515,46 +1878,6 @@ impl CreateWorkteam {
     pub fn builder() -> crate::input::create_workteam_input::Builder {
         crate::input::create_workteam_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::CreateWorkteamOutput, crate::error::CreateWorkteamError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::CreateWorkteamError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceInUse" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateWorkteamError {
-                        kind: crate::error::CreateWorkteamErrorKind::ResourceInUse(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateWorkteamError::unhandled(e),
-                },
-                "ResourceLimitExceeded" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateWorkteamError {
-                        kind: crate::error::CreateWorkteamErrorKind::ResourceLimitExceeded(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateWorkteamError::unhandled(e),
-                },
-                _ => crate::error::CreateWorkteamError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::create_workteam_output::Builder::default();
-        builder =
-            crate::json_deser::create_workteam_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::CreateWorkteamError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -3563,7 +1886,11 @@ impl smithy_http::response::ParseStrictResponse for CreateWorkteam {
     type Output =
         std::result::Result<crate::output::CreateWorkteamOutput, crate::error::CreateWorkteamError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_workteam_error(response)
+        } else {
+            crate::operation_deser::parse_create_workteam_response(response)
+        }
     }
 }
 
@@ -3577,39 +1904,6 @@ impl DeleteAction {
     pub fn builder() -> crate::input::delete_action_input::Builder {
         crate::input::delete_action_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::DeleteActionOutput, crate::error::DeleteActionError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::DeleteActionError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DeleteActionError {
-                        kind: crate::error::DeleteActionErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DeleteActionError::unhandled(e),
-                },
-                _ => crate::error::DeleteActionError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::delete_action_output::Builder::default();
-        builder =
-            crate::json_deser::delete_action_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::DeleteActionError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -3618,7 +1912,11 @@ impl smithy_http::response::ParseStrictResponse for DeleteAction {
     type Output =
         std::result::Result<crate::output::DeleteActionOutput, crate::error::DeleteActionError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_action_error(response)
+        } else {
+            crate::operation_deser::parse_delete_action_response(response)
+        }
     }
 }
 
@@ -3632,23 +1930,6 @@ impl DeleteAlgorithm {
     pub fn builder() -> crate::input::delete_algorithm_input::Builder {
         crate::input::delete_algorithm_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::DeleteAlgorithmOutput, crate::error::DeleteAlgorithmError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::DeleteAlgorithmError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::delete_algorithm_output::Builder::default();
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -3659,7 +1940,11 @@ impl smithy_http::response::ParseStrictResponse for DeleteAlgorithm {
         crate::error::DeleteAlgorithmError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_algorithm_error(response)
+        } else {
+            crate::operation_deser::parse_delete_algorithm_response(response)
+        }
     }
 }
 
@@ -3673,42 +1958,6 @@ impl DeleteApp {
     pub fn builder() -> crate::input::delete_app_input::Builder {
         crate::input::delete_app_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::DeleteAppOutput, crate::error::DeleteAppError> {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::DeleteAppError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceInUse" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DeleteAppError {
-                        kind: crate::error::DeleteAppErrorKind::ResourceInUse(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DeleteAppError::unhandled(e),
-                },
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DeleteAppError {
-                        kind: crate::error::DeleteAppErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DeleteAppError::unhandled(e),
-                },
-                _ => crate::error::DeleteAppError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::delete_app_output::Builder::default();
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -3716,7 +1965,11 @@ impl DeleteApp {
 impl smithy_http::response::ParseStrictResponse for DeleteApp {
     type Output = std::result::Result<crate::output::DeleteAppOutput, crate::error::DeleteAppError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_app_error(response)
+        } else {
+            crate::operation_deser::parse_delete_app_response(response)
+        }
     }
 }
 
@@ -3730,38 +1983,6 @@ impl DeleteAppImageConfig {
     pub fn builder() -> crate::input::delete_app_image_config_input::Builder {
         crate::input::delete_app_image_config_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DeleteAppImageConfigOutput,
-        crate::error::DeleteAppImageConfigError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::DeleteAppImageConfigError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DeleteAppImageConfigError {
-                        kind: crate::error::DeleteAppImageConfigErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DeleteAppImageConfigError::unhandled(e),
-                },
-                _ => crate::error::DeleteAppImageConfigError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::delete_app_image_config_output::Builder::default();
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -3772,7 +1993,11 @@ impl smithy_http::response::ParseStrictResponse for DeleteAppImageConfig {
         crate::error::DeleteAppImageConfigError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_app_image_config_error(response)
+        } else {
+            crate::operation_deser::parse_delete_app_image_config_response(response)
+        }
     }
 }
 
@@ -3787,39 +2012,6 @@ impl DeleteArtifact {
     pub fn builder() -> crate::input::delete_artifact_input::Builder {
         crate::input::delete_artifact_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::DeleteArtifactOutput, crate::error::DeleteArtifactError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::DeleteArtifactError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DeleteArtifactError {
-                        kind: crate::error::DeleteArtifactErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DeleteArtifactError::unhandled(e),
-                },
-                _ => crate::error::DeleteArtifactError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::delete_artifact_output::Builder::default();
-        builder =
-            crate::json_deser::delete_artifact_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::DeleteArtifactError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -3828,7 +2020,11 @@ impl smithy_http::response::ParseStrictResponse for DeleteArtifact {
     type Output =
         std::result::Result<crate::output::DeleteArtifactOutput, crate::error::DeleteArtifactError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_artifact_error(response)
+        } else {
+            crate::operation_deser::parse_delete_artifact_response(response)
+        }
     }
 }
 
@@ -3842,43 +2038,6 @@ impl DeleteAssociation {
     pub fn builder() -> crate::input::delete_association_input::Builder {
         crate::input::delete_association_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DeleteAssociationOutput,
-        crate::error::DeleteAssociationError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::DeleteAssociationError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DeleteAssociationError {
-                        kind: crate::error::DeleteAssociationErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DeleteAssociationError::unhandled(e),
-                },
-                _ => crate::error::DeleteAssociationError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::delete_association_output::Builder::default();
-        builder = crate::json_deser::delete_association_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::DeleteAssociationError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -3889,7 +2048,11 @@ impl smithy_http::response::ParseStrictResponse for DeleteAssociation {
         crate::error::DeleteAssociationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_association_error(response)
+        } else {
+            crate::operation_deser::parse_delete_association_response(response)
+        }
     }
 }
 
@@ -3903,25 +2066,6 @@ impl DeleteCodeRepository {
     pub fn builder() -> crate::input::delete_code_repository_input::Builder {
         crate::input::delete_code_repository_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DeleteCodeRepositoryOutput,
-        crate::error::DeleteCodeRepositoryError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::DeleteCodeRepositoryError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::delete_code_repository_output::Builder::default();
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -3932,7 +2076,11 @@ impl smithy_http::response::ParseStrictResponse for DeleteCodeRepository {
         crate::error::DeleteCodeRepositoryError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_code_repository_error(response)
+        } else {
+            crate::operation_deser::parse_delete_code_repository_response(response)
+        }
     }
 }
 
@@ -3946,39 +2094,6 @@ impl DeleteContext {
     pub fn builder() -> crate::input::delete_context_input::Builder {
         crate::input::delete_context_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::DeleteContextOutput, crate::error::DeleteContextError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::DeleteContextError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DeleteContextError {
-                        kind: crate::error::DeleteContextErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DeleteContextError::unhandled(e),
-                },
-                _ => crate::error::DeleteContextError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::delete_context_output::Builder::default();
-        builder =
-            crate::json_deser::delete_context_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::DeleteContextError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -3987,7 +2102,11 @@ impl smithy_http::response::ParseStrictResponse for DeleteContext {
     type Output =
         std::result::Result<crate::output::DeleteContextOutput, crate::error::DeleteContextError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_context_error(response)
+        } else {
+            crate::operation_deser::parse_delete_context_response(response)
+        }
     }
 }
 
@@ -4001,46 +2120,6 @@ impl DeleteDataQualityJobDefinition {
     pub fn builder() -> crate::input::delete_data_quality_job_definition_input::Builder {
         crate::input::delete_data_quality_job_definition_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DeleteDataQualityJobDefinitionOutput,
-        crate::error::DeleteDataQualityJobDefinitionError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(
-                        crate::error::DeleteDataQualityJobDefinitionError::unhandled(generic),
-                    )
-                }
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DeleteDataQualityJobDefinitionError {
-                        kind:
-                            crate::error::DeleteDataQualityJobDefinitionErrorKind::ResourceNotFound(
-                                body,
-                            ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DeleteDataQualityJobDefinitionError::unhandled(e),
-                },
-                _ => crate::error::DeleteDataQualityJobDefinitionError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder =
-            crate::output::delete_data_quality_job_definition_output::Builder::default();
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -4051,7 +2130,11 @@ impl smithy_http::response::ParseStrictResponse for DeleteDataQualityJobDefiniti
         crate::error::DeleteDataQualityJobDefinitionError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_data_quality_job_definition_error(response)
+        } else {
+            crate::operation_deser::parse_delete_data_quality_job_definition_response(response)
+        }
     }
 }
 
@@ -4065,38 +2148,6 @@ impl DeleteDeviceFleet {
     pub fn builder() -> crate::input::delete_device_fleet_input::Builder {
         crate::input::delete_device_fleet_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DeleteDeviceFleetOutput,
-        crate::error::DeleteDeviceFleetError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::DeleteDeviceFleetError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceInUse" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DeleteDeviceFleetError {
-                        kind: crate::error::DeleteDeviceFleetErrorKind::ResourceInUse(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DeleteDeviceFleetError::unhandled(e),
-                },
-                _ => crate::error::DeleteDeviceFleetError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::delete_device_fleet_output::Builder::default();
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -4107,7 +2158,11 @@ impl smithy_http::response::ParseStrictResponse for DeleteDeviceFleet {
         crate::error::DeleteDeviceFleetError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_device_fleet_error(response)
+        } else {
+            crate::operation_deser::parse_delete_device_fleet_response(response)
+        }
     }
 }
 
@@ -4125,43 +2180,6 @@ impl DeleteDomain {
     pub fn builder() -> crate::input::delete_domain_input::Builder {
         crate::input::delete_domain_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::DeleteDomainOutput, crate::error::DeleteDomainError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::DeleteDomainError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceInUse" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DeleteDomainError {
-                        kind: crate::error::DeleteDomainErrorKind::ResourceInUse(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DeleteDomainError::unhandled(e),
-                },
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DeleteDomainError {
-                        kind: crate::error::DeleteDomainErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DeleteDomainError::unhandled(e),
-                },
-                _ => crate::error::DeleteDomainError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::delete_domain_output::Builder::default();
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -4170,7 +2188,11 @@ impl smithy_http::response::ParseStrictResponse for DeleteDomain {
     type Output =
         std::result::Result<crate::output::DeleteDomainOutput, crate::error::DeleteDomainError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_domain_error(response)
+        } else {
+            crate::operation_deser::parse_delete_domain_response(response)
+        }
     }
 }
 
@@ -4187,23 +2209,6 @@ impl DeleteEndpoint {
     pub fn builder() -> crate::input::delete_endpoint_input::Builder {
         crate::input::delete_endpoint_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::DeleteEndpointOutput, crate::error::DeleteEndpointError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::DeleteEndpointError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::delete_endpoint_output::Builder::default();
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -4212,7 +2217,11 @@ impl smithy_http::response::ParseStrictResponse for DeleteEndpoint {
     type Output =
         std::result::Result<crate::output::DeleteEndpointOutput, crate::error::DeleteEndpointError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_endpoint_error(response)
+        } else {
+            crate::operation_deser::parse_delete_endpoint_response(response)
+        }
     }
 }
 
@@ -4234,25 +2243,6 @@ impl DeleteEndpointConfig {
     pub fn builder() -> crate::input::delete_endpoint_config_input::Builder {
         crate::input::delete_endpoint_config_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DeleteEndpointConfigOutput,
-        crate::error::DeleteEndpointConfigError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::DeleteEndpointConfigError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::delete_endpoint_config_output::Builder::default();
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -4263,7 +2253,11 @@ impl smithy_http::response::ParseStrictResponse for DeleteEndpointConfig {
         crate::error::DeleteEndpointConfigError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_endpoint_config_error(response)
+        } else {
+            crate::operation_deser::parse_delete_endpoint_config_response(response)
+        }
     }
 }
 
@@ -4279,41 +2273,6 @@ impl DeleteExperiment {
     pub fn builder() -> crate::input::delete_experiment_input::Builder {
         crate::input::delete_experiment_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DeleteExperimentOutput,
-        crate::error::DeleteExperimentError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::DeleteExperimentError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DeleteExperimentError {
-                        kind: crate::error::DeleteExperimentErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DeleteExperimentError::unhandled(e),
-                },
-                _ => crate::error::DeleteExperimentError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::delete_experiment_output::Builder::default();
-        builder =
-            crate::json_deser::delete_experiment_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::DeleteExperimentError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -4324,7 +2283,11 @@ impl smithy_http::response::ParseStrictResponse for DeleteExperiment {
         crate::error::DeleteExperimentError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_experiment_error(response)
+        } else {
+            crate::operation_deser::parse_delete_experiment_response(response)
+        }
     }
 }
 
@@ -4343,38 +2306,6 @@ impl DeleteFeatureGroup {
     pub fn builder() -> crate::input::delete_feature_group_input::Builder {
         crate::input::delete_feature_group_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DeleteFeatureGroupOutput,
-        crate::error::DeleteFeatureGroupError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::DeleteFeatureGroupError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DeleteFeatureGroupError {
-                        kind: crate::error::DeleteFeatureGroupErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DeleteFeatureGroupError::unhandled(e),
-                },
-                _ => crate::error::DeleteFeatureGroupError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::delete_feature_group_output::Builder::default();
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -4385,7 +2316,11 @@ impl smithy_http::response::ParseStrictResponse for DeleteFeatureGroup {
         crate::error::DeleteFeatureGroupError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_feature_group_error(response)
+        } else {
+            crate::operation_deser::parse_delete_feature_group_response(response)
+        }
     }
 }
 
@@ -4399,45 +2334,6 @@ impl DeleteFlowDefinition {
     pub fn builder() -> crate::input::delete_flow_definition_input::Builder {
         crate::input::delete_flow_definition_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DeleteFlowDefinitionOutput,
-        crate::error::DeleteFlowDefinitionError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::DeleteFlowDefinitionError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceInUse" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DeleteFlowDefinitionError {
-                        kind: crate::error::DeleteFlowDefinitionErrorKind::ResourceInUse(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DeleteFlowDefinitionError::unhandled(e),
-                },
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DeleteFlowDefinitionError {
-                        kind: crate::error::DeleteFlowDefinitionErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DeleteFlowDefinitionError::unhandled(e),
-                },
-                _ => crate::error::DeleteFlowDefinitionError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::delete_flow_definition_output::Builder::default();
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -4448,7 +2344,11 @@ impl smithy_http::response::ParseStrictResponse for DeleteFlowDefinition {
         crate::error::DeleteFlowDefinitionError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_flow_definition_error(response)
+        } else {
+            crate::operation_deser::parse_delete_flow_definition_response(response)
+        }
     }
 }
 
@@ -4466,38 +2366,6 @@ impl DeleteHumanTaskUi {
     pub fn builder() -> crate::input::delete_human_task_ui_input::Builder {
         crate::input::delete_human_task_ui_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DeleteHumanTaskUiOutput,
-        crate::error::DeleteHumanTaskUiError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::DeleteHumanTaskUiError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DeleteHumanTaskUiError {
-                        kind: crate::error::DeleteHumanTaskUiErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DeleteHumanTaskUiError::unhandled(e),
-                },
-                _ => crate::error::DeleteHumanTaskUiError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::delete_human_task_ui_output::Builder::default();
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -4508,7 +2376,11 @@ impl smithy_http::response::ParseStrictResponse for DeleteHumanTaskUi {
         crate::error::DeleteHumanTaskUiError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_human_task_ui_error(response)
+        } else {
+            crate::operation_deser::parse_delete_human_task_ui_response(response)
+        }
     }
 }
 
@@ -4523,42 +2395,6 @@ impl DeleteImage {
     pub fn builder() -> crate::input::delete_image_input::Builder {
         crate::input::delete_image_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::DeleteImageOutput, crate::error::DeleteImageError> {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::DeleteImageError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceInUse" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DeleteImageError {
-                        kind: crate::error::DeleteImageErrorKind::ResourceInUse(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DeleteImageError::unhandled(e),
-                },
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DeleteImageError {
-                        kind: crate::error::DeleteImageErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DeleteImageError::unhandled(e),
-                },
-                _ => crate::error::DeleteImageError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::delete_image_output::Builder::default();
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -4567,7 +2403,11 @@ impl smithy_http::response::ParseStrictResponse for DeleteImage {
     type Output =
         std::result::Result<crate::output::DeleteImageOutput, crate::error::DeleteImageError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_image_error(response)
+        } else {
+            crate::operation_deser::parse_delete_image_response(response)
+        }
     }
 }
 
@@ -4582,45 +2422,6 @@ impl DeleteImageVersion {
     pub fn builder() -> crate::input::delete_image_version_input::Builder {
         crate::input::delete_image_version_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DeleteImageVersionOutput,
-        crate::error::DeleteImageVersionError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::DeleteImageVersionError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceInUse" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DeleteImageVersionError {
-                        kind: crate::error::DeleteImageVersionErrorKind::ResourceInUse(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DeleteImageVersionError::unhandled(e),
-                },
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DeleteImageVersionError {
-                        kind: crate::error::DeleteImageVersionErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DeleteImageVersionError::unhandled(e),
-                },
-                _ => crate::error::DeleteImageVersionError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::delete_image_version_output::Builder::default();
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -4631,7 +2432,11 @@ impl smithy_http::response::ParseStrictResponse for DeleteImageVersion {
         crate::error::DeleteImageVersionError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_image_version_error(response)
+        } else {
+            crate::operation_deser::parse_delete_image_version_response(response)
+        }
     }
 }
 
@@ -4648,22 +2453,6 @@ impl DeleteModel {
     pub fn builder() -> crate::input::delete_model_input::Builder {
         crate::input::delete_model_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::DeleteModelOutput, crate::error::DeleteModelError> {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::DeleteModelError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::delete_model_output::Builder::default();
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -4672,7 +2461,11 @@ impl smithy_http::response::ParseStrictResponse for DeleteModel {
     type Output =
         std::result::Result<crate::output::DeleteModelOutput, crate::error::DeleteModelError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_model_error(response)
+        } else {
+            crate::operation_deser::parse_delete_model_response(response)
+        }
     }
 }
 
@@ -4686,45 +2479,6 @@ impl DeleteModelBiasJobDefinition {
     pub fn builder() -> crate::input::delete_model_bias_job_definition_input::Builder {
         crate::input::delete_model_bias_job_definition_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DeleteModelBiasJobDefinitionOutput,
-        crate::error::DeleteModelBiasJobDefinitionError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(crate::error::DeleteModelBiasJobDefinitionError::unhandled(
-                        generic,
-                    ))
-                }
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DeleteModelBiasJobDefinitionError {
-                        kind: crate::error::DeleteModelBiasJobDefinitionErrorKind::ResourceNotFound(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DeleteModelBiasJobDefinitionError::unhandled(e),
-                },
-                _ => crate::error::DeleteModelBiasJobDefinitionError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder =
-            crate::output::delete_model_bias_job_definition_output::Builder::default();
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -4735,7 +2489,11 @@ impl smithy_http::response::ParseStrictResponse for DeleteModelBiasJobDefinition
         crate::error::DeleteModelBiasJobDefinitionError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_model_bias_job_definition_error(response)
+        } else {
+            crate::operation_deser::parse_delete_model_bias_job_definition_response(response)
+        }
     }
 }
 
@@ -4749,42 +2507,6 @@ impl DeleteModelExplainabilityJobDefinition {
     pub fn builder() -> crate::input::delete_model_explainability_job_definition_input::Builder {
         crate::input::delete_model_explainability_job_definition_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DeleteModelExplainabilityJobDefinitionOutput,
-        crate::error::DeleteModelExplainabilityJobDefinitionError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(
-                        crate::error::DeleteModelExplainabilityJobDefinitionError::unhandled(
-                            generic,
-                        ),
-                    )
-                }
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DeleteModelExplainabilityJobDefinitionError { kind: crate::error::DeleteModelExplainabilityJobDefinitionErrorKind::ResourceNotFound(body), meta: generic },
-                    Err(e) => crate::error::DeleteModelExplainabilityJobDefinitionError::unhandled(e)
-                }
-                _ => crate::error::DeleteModelExplainabilityJobDefinitionError::generic(generic)
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder =
-            crate::output::delete_model_explainability_job_definition_output::Builder::default();
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -4795,7 +2517,13 @@ impl smithy_http::response::ParseStrictResponse for DeleteModelExplainabilityJob
         crate::error::DeleteModelExplainabilityJobDefinitionError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_model_explainability_job_definition_error(response)
+        } else {
+            crate::operation_deser::parse_delete_model_explainability_job_definition_response(
+                response,
+            )
+        }
     }
 }
 
@@ -4811,38 +2539,6 @@ impl DeleteModelPackage {
     pub fn builder() -> crate::input::delete_model_package_input::Builder {
         crate::input::delete_model_package_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DeleteModelPackageOutput,
-        crate::error::DeleteModelPackageError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::DeleteModelPackageError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ConflictException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DeleteModelPackageError {
-                        kind: crate::error::DeleteModelPackageErrorKind::ConflictError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DeleteModelPackageError::unhandled(e),
-                },
-                _ => crate::error::DeleteModelPackageError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::delete_model_package_output::Builder::default();
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -4853,7 +2549,11 @@ impl smithy_http::response::ParseStrictResponse for DeleteModelPackage {
         crate::error::DeleteModelPackageError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_model_package_error(response)
+        } else {
+            crate::operation_deser::parse_delete_model_package_response(response)
+        }
     }
 }
 
@@ -4867,25 +2567,6 @@ impl DeleteModelPackageGroup {
     pub fn builder() -> crate::input::delete_model_package_group_input::Builder {
         crate::input::delete_model_package_group_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DeleteModelPackageGroupOutput,
-        crate::error::DeleteModelPackageGroupError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::DeleteModelPackageGroupError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::delete_model_package_group_output::Builder::default();
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -4896,7 +2577,11 @@ impl smithy_http::response::ParseStrictResponse for DeleteModelPackageGroup {
         crate::error::DeleteModelPackageGroupError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_model_package_group_error(response)
+        } else {
+            crate::operation_deser::parse_delete_model_package_group_response(response)
+        }
     }
 }
 
@@ -4910,28 +2595,6 @@ impl DeleteModelPackageGroupPolicy {
     pub fn builder() -> crate::input::delete_model_package_group_policy_input::Builder {
         crate::input::delete_model_package_group_policy_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DeleteModelPackageGroupPolicyOutput,
-        crate::error::DeleteModelPackageGroupPolicyError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::DeleteModelPackageGroupPolicyError::generic(
-                generic,
-            ));
-        }
-        #[allow(unused_mut)]
-        let mut builder =
-            crate::output::delete_model_package_group_policy_output::Builder::default();
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -4942,7 +2605,11 @@ impl smithy_http::response::ParseStrictResponse for DeleteModelPackageGroupPolic
         crate::error::DeleteModelPackageGroupPolicyError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_model_package_group_policy_error(response)
+        } else {
+            crate::operation_deser::parse_delete_model_package_group_policy_response(response)
+        }
     }
 }
 
@@ -4956,46 +2623,6 @@ impl DeleteModelQualityJobDefinition {
     pub fn builder() -> crate::input::delete_model_quality_job_definition_input::Builder {
         crate::input::delete_model_quality_job_definition_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DeleteModelQualityJobDefinitionOutput,
-        crate::error::DeleteModelQualityJobDefinitionError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(
-                        crate::error::DeleteModelQualityJobDefinitionError::unhandled(generic),
-                    )
-                }
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DeleteModelQualityJobDefinitionError {
-                        kind:
-                            crate::error::DeleteModelQualityJobDefinitionErrorKind::ResourceNotFound(
-                                body,
-                            ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DeleteModelQualityJobDefinitionError::unhandled(e),
-                },
-                _ => crate::error::DeleteModelQualityJobDefinitionError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder =
-            crate::output::delete_model_quality_job_definition_output::Builder::default();
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -5006,7 +2633,11 @@ impl smithy_http::response::ParseStrictResponse for DeleteModelQualityJobDefinit
         crate::error::DeleteModelQualityJobDefinitionError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_model_quality_job_definition_error(response)
+        } else {
+            crate::operation_deser::parse_delete_model_quality_job_definition_response(response)
+        }
     }
 }
 
@@ -5021,44 +2652,6 @@ impl DeleteMonitoringSchedule {
     pub fn builder() -> crate::input::delete_monitoring_schedule_input::Builder {
         crate::input::delete_monitoring_schedule_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DeleteMonitoringScheduleOutput,
-        crate::error::DeleteMonitoringScheduleError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(crate::error::DeleteMonitoringScheduleError::unhandled(
-                        generic,
-                    ))
-                }
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DeleteMonitoringScheduleError {
-                        kind: crate::error::DeleteMonitoringScheduleErrorKind::ResourceNotFound(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DeleteMonitoringScheduleError::unhandled(e),
-                },
-                _ => crate::error::DeleteMonitoringScheduleError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::delete_monitoring_schedule_output::Builder::default();
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -5069,7 +2662,11 @@ impl smithy_http::response::ParseStrictResponse for DeleteMonitoringSchedule {
         crate::error::DeleteMonitoringScheduleError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_monitoring_schedule_error(response)
+        } else {
+            crate::operation_deser::parse_delete_monitoring_schedule_response(response)
+        }
     }
 }
 
@@ -5089,25 +2686,6 @@ impl DeleteNotebookInstance {
     pub fn builder() -> crate::input::delete_notebook_instance_input::Builder {
         crate::input::delete_notebook_instance_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DeleteNotebookInstanceOutput,
-        crate::error::DeleteNotebookInstanceError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::DeleteNotebookInstanceError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::delete_notebook_instance_output::Builder::default();
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -5118,7 +2696,11 @@ impl smithy_http::response::ParseStrictResponse for DeleteNotebookInstance {
         crate::error::DeleteNotebookInstanceError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_notebook_instance_error(response)
+        } else {
+            crate::operation_deser::parse_delete_notebook_instance_response(response)
+        }
     }
 }
 
@@ -5132,26 +2714,6 @@ impl DeleteNotebookInstanceLifecycleConfig {
     pub fn builder() -> crate::input::delete_notebook_instance_lifecycle_config_input::Builder {
         crate::input::delete_notebook_instance_lifecycle_config_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DeleteNotebookInstanceLifecycleConfigOutput,
-        crate::error::DeleteNotebookInstanceLifecycleConfigError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::DeleteNotebookInstanceLifecycleConfigError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder =
-            crate::output::delete_notebook_instance_lifecycle_config_output::Builder::default();
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -5162,7 +2724,13 @@ impl smithy_http::response::ParseStrictResponse for DeleteNotebookInstanceLifecy
         crate::error::DeleteNotebookInstanceLifecycleConfigError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_notebook_instance_lifecycle_config_error(response)
+        } else {
+            crate::operation_deser::parse_delete_notebook_instance_lifecycle_config_response(
+                response,
+            )
+        }
     }
 }
 
@@ -5179,39 +2747,6 @@ impl DeletePipeline {
     pub fn builder() -> crate::input::delete_pipeline_input::Builder {
         crate::input::delete_pipeline_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::DeletePipelineOutput, crate::error::DeletePipelineError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::DeletePipelineError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DeletePipelineError {
-                        kind: crate::error::DeletePipelineErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DeletePipelineError::unhandled(e),
-                },
-                _ => crate::error::DeletePipelineError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::delete_pipeline_output::Builder::default();
-        builder =
-            crate::json_deser::delete_pipeline_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::DeletePipelineError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -5220,7 +2755,11 @@ impl smithy_http::response::ParseStrictResponse for DeletePipeline {
     type Output =
         std::result::Result<crate::output::DeletePipelineOutput, crate::error::DeletePipelineError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_pipeline_error(response)
+        } else {
+            crate::operation_deser::parse_delete_pipeline_response(response)
+        }
     }
 }
 
@@ -5234,23 +2773,6 @@ impl DeleteProject {
     pub fn builder() -> crate::input::delete_project_input::Builder {
         crate::input::delete_project_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::DeleteProjectOutput, crate::error::DeleteProjectError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::DeleteProjectError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::delete_project_output::Builder::default();
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -5259,7 +2781,11 @@ impl smithy_http::response::ParseStrictResponse for DeleteProject {
     type Output =
         std::result::Result<crate::output::DeleteProjectOutput, crate::error::DeleteProjectError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_project_error(response)
+        } else {
+            crate::operation_deser::parse_delete_project_response(response)
+        }
     }
 }
 
@@ -5284,22 +2810,6 @@ impl DeleteTags {
     pub fn builder() -> crate::input::delete_tags_input::Builder {
         crate::input::delete_tags_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::DeleteTagsOutput, crate::error::DeleteTagsError> {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::DeleteTagsError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::delete_tags_output::Builder::default();
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -5308,7 +2818,11 @@ impl smithy_http::response::ParseStrictResponse for DeleteTags {
     type Output =
         std::result::Result<crate::output::DeleteTagsOutput, crate::error::DeleteTagsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_tags_error(response)
+        } else {
+            crate::operation_deser::parse_delete_tags_response(response)
+        }
     }
 }
 
@@ -5324,38 +2838,6 @@ impl DeleteTrial {
     pub fn builder() -> crate::input::delete_trial_input::Builder {
         crate::input::delete_trial_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::DeleteTrialOutput, crate::error::DeleteTrialError> {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::DeleteTrialError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DeleteTrialError {
-                        kind: crate::error::DeleteTrialErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DeleteTrialError::unhandled(e),
-                },
-                _ => crate::error::DeleteTrialError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::delete_trial_output::Builder::default();
-        builder =
-            crate::json_deser::delete_trial_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::DeleteTrialError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -5364,7 +2846,11 @@ impl smithy_http::response::ParseStrictResponse for DeleteTrial {
     type Output =
         std::result::Result<crate::output::DeleteTrialOutput, crate::error::DeleteTrialError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_trial_error(response)
+        } else {
+            crate::operation_deser::parse_delete_trial_response(response)
+        }
     }
 }
 
@@ -5380,43 +2866,6 @@ impl DeleteTrialComponent {
     pub fn builder() -> crate::input::delete_trial_component_input::Builder {
         crate::input::delete_trial_component_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DeleteTrialComponentOutput,
-        crate::error::DeleteTrialComponentError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::DeleteTrialComponentError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DeleteTrialComponentError {
-                        kind: crate::error::DeleteTrialComponentErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DeleteTrialComponentError::unhandled(e),
-                },
-                _ => crate::error::DeleteTrialComponentError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::delete_trial_component_output::Builder::default();
-        builder = crate::json_deser::delete_trial_component_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::DeleteTrialComponentError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -5427,7 +2876,11 @@ impl smithy_http::response::ParseStrictResponse for DeleteTrialComponent {
         crate::error::DeleteTrialComponentError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_trial_component_error(response)
+        } else {
+            crate::operation_deser::parse_delete_trial_component_response(response)
+        }
     }
 }
 
@@ -5442,45 +2895,6 @@ impl DeleteUserProfile {
     pub fn builder() -> crate::input::delete_user_profile_input::Builder {
         crate::input::delete_user_profile_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DeleteUserProfileOutput,
-        crate::error::DeleteUserProfileError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::DeleteUserProfileError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceInUse" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DeleteUserProfileError {
-                        kind: crate::error::DeleteUserProfileErrorKind::ResourceInUse(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DeleteUserProfileError::unhandled(e),
-                },
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DeleteUserProfileError {
-                        kind: crate::error::DeleteUserProfileErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DeleteUserProfileError::unhandled(e),
-                },
-                _ => crate::error::DeleteUserProfileError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::delete_user_profile_output::Builder::default();
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -5491,7 +2905,11 @@ impl smithy_http::response::ParseStrictResponse for DeleteUserProfile {
         crate::error::DeleteUserProfileError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_user_profile_error(response)
+        } else {
+            crate::operation_deser::parse_delete_user_profile_response(response)
+        }
     }
 }
 
@@ -5516,23 +2934,6 @@ impl DeleteWorkforce {
     pub fn builder() -> crate::input::delete_workforce_input::Builder {
         crate::input::delete_workforce_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::DeleteWorkforceOutput, crate::error::DeleteWorkforceError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::DeleteWorkforceError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::delete_workforce_output::Builder::default();
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -5543,7 +2944,11 @@ impl smithy_http::response::ParseStrictResponse for DeleteWorkforce {
         crate::error::DeleteWorkforceError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_workforce_error(response)
+        } else {
+            crate::operation_deser::parse_delete_workforce_response(response)
+        }
     }
 }
 
@@ -5557,39 +2962,6 @@ impl DeleteWorkteam {
     pub fn builder() -> crate::input::delete_workteam_input::Builder {
         crate::input::delete_workteam_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::DeleteWorkteamOutput, crate::error::DeleteWorkteamError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::DeleteWorkteamError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceLimitExceeded" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DeleteWorkteamError {
-                        kind: crate::error::DeleteWorkteamErrorKind::ResourceLimitExceeded(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DeleteWorkteamError::unhandled(e),
-                },
-                _ => crate::error::DeleteWorkteamError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::delete_workteam_output::Builder::default();
-        builder =
-            crate::json_deser::delete_workteam_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::DeleteWorkteamError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -5598,7 +2970,11 @@ impl smithy_http::response::ParseStrictResponse for DeleteWorkteam {
     type Output =
         std::result::Result<crate::output::DeleteWorkteamOutput, crate::error::DeleteWorkteamError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_workteam_error(response)
+        } else {
+            crate::operation_deser::parse_delete_workteam_response(response)
+        }
     }
 }
 
@@ -5612,25 +2988,6 @@ impl DeregisterDevices {
     pub fn builder() -> crate::input::deregister_devices_input::Builder {
         crate::input::deregister_devices_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DeregisterDevicesOutput,
-        crate::error::DeregisterDevicesError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::DeregisterDevicesError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::deregister_devices_output::Builder::default();
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -5641,7 +2998,11 @@ impl smithy_http::response::ParseStrictResponse for DeregisterDevices {
         crate::error::DeregisterDevicesError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_deregister_devices_error(response)
+        } else {
+            crate::operation_deser::parse_deregister_devices_response(response)
+        }
     }
 }
 
@@ -5655,39 +3016,6 @@ impl DescribeAction {
     pub fn builder() -> crate::input::describe_action_input::Builder {
         crate::input::describe_action_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::DescribeActionOutput, crate::error::DescribeActionError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::DescribeActionError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DescribeActionError {
-                        kind: crate::error::DescribeActionErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DescribeActionError::unhandled(e),
-                },
-                _ => crate::error::DescribeActionError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::describe_action_output::Builder::default();
-        builder =
-            crate::json_deser::describe_action_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::DescribeActionError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -5696,7 +3024,11 @@ impl smithy_http::response::ParseStrictResponse for DescribeAction {
     type Output =
         std::result::Result<crate::output::DescribeActionOutput, crate::error::DescribeActionError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_action_error(response)
+        } else {
+            crate::operation_deser::parse_describe_action_response(response)
+        }
     }
 }
 
@@ -5710,30 +3042,6 @@ impl DescribeAlgorithm {
     pub fn builder() -> crate::input::describe_algorithm_input::Builder {
         crate::input::describe_algorithm_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DescribeAlgorithmOutput,
-        crate::error::DescribeAlgorithmError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::DescribeAlgorithmError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::describe_algorithm_output::Builder::default();
-        builder = crate::json_deser::describe_algorithm_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::DescribeAlgorithmError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -5744,7 +3052,11 @@ impl smithy_http::response::ParseStrictResponse for DescribeAlgorithm {
         crate::error::DescribeAlgorithmError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_algorithm_error(response)
+        } else {
+            crate::operation_deser::parse_describe_algorithm_response(response)
+        }
     }
 }
 
@@ -5758,38 +3070,6 @@ impl DescribeApp {
     pub fn builder() -> crate::input::describe_app_input::Builder {
         crate::input::describe_app_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::DescribeAppOutput, crate::error::DescribeAppError> {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::DescribeAppError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DescribeAppError {
-                        kind: crate::error::DescribeAppErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DescribeAppError::unhandled(e),
-                },
-                _ => crate::error::DescribeAppError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::describe_app_output::Builder::default();
-        builder =
-            crate::json_deser::describe_app_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::DescribeAppError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -5798,7 +3078,11 @@ impl smithy_http::response::ParseStrictResponse for DescribeApp {
     type Output =
         std::result::Result<crate::output::DescribeAppOutput, crate::error::DescribeAppError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_app_error(response)
+        } else {
+            crate::operation_deser::parse_describe_app_response(response)
+        }
     }
 }
 
@@ -5812,47 +3096,6 @@ impl DescribeAppImageConfig {
     pub fn builder() -> crate::input::describe_app_image_config_input::Builder {
         crate::input::describe_app_image_config_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DescribeAppImageConfigOutput,
-        crate::error::DescribeAppImageConfigError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(crate::error::DescribeAppImageConfigError::unhandled(
-                        generic,
-                    ))
-                }
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DescribeAppImageConfigError {
-                        kind: crate::error::DescribeAppImageConfigErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DescribeAppImageConfigError::unhandled(e),
-                },
-                _ => crate::error::DescribeAppImageConfigError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::describe_app_image_config_output::Builder::default();
-        builder = crate::json_deser::describe_app_image_config_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::DescribeAppImageConfigError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -5863,7 +3106,11 @@ impl smithy_http::response::ParseStrictResponse for DescribeAppImageConfig {
         crate::error::DescribeAppImageConfigError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_app_image_config_error(response)
+        } else {
+            crate::operation_deser::parse_describe_app_image_config_response(response)
+        }
     }
 }
 
@@ -5877,41 +3124,6 @@ impl DescribeArtifact {
     pub fn builder() -> crate::input::describe_artifact_input::Builder {
         crate::input::describe_artifact_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DescribeArtifactOutput,
-        crate::error::DescribeArtifactError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::DescribeArtifactError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DescribeArtifactError {
-                        kind: crate::error::DescribeArtifactErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DescribeArtifactError::unhandled(e),
-                },
-                _ => crate::error::DescribeArtifactError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::describe_artifact_output::Builder::default();
-        builder =
-            crate::json_deser::describe_artifact_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::DescribeArtifactError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -5922,7 +3134,11 @@ impl smithy_http::response::ParseStrictResponse for DescribeArtifact {
         crate::error::DescribeArtifactError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_artifact_error(response)
+        } else {
+            crate::operation_deser::parse_describe_artifact_response(response)
+        }
     }
 }
 
@@ -5932,46 +3148,9 @@ pub struct DescribeAutoMLJob {
     _private: (),
 }
 impl DescribeAutoMLJob {
-    /// Creates a new builder-style object to manufacture [`DescribeAutoMLJobInput`](crate::input::DescribeAutoMLJobInput)
+    /// Creates a new builder-style object to manufacture [`DescribeAutoMlJobInput`](crate::input::DescribeAutoMlJobInput)
     pub fn builder() -> crate::input::describe_auto_ml_job_input::Builder {
         crate::input::describe_auto_ml_job_input::Builder::default()
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DescribeAutoMLJobOutput,
-        crate::error::DescribeAutoMLJobError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::DescribeAutoMLJobError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DescribeAutoMLJobError {
-                        kind: crate::error::DescribeAutoMLJobErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DescribeAutoMLJobError::unhandled(e),
-                },
-                _ => crate::error::DescribeAutoMLJobError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::describe_auto_ml_job_output::Builder::default();
-        builder = crate::json_deser::describe_auto_ml_job_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::DescribeAutoMLJobError::unhandled)?;
-        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -5979,11 +3158,15 @@ impl DescribeAutoMLJob {
 }
 impl smithy_http::response::ParseStrictResponse for DescribeAutoMLJob {
     type Output = std::result::Result<
-        crate::output::DescribeAutoMLJobOutput,
+        crate::output::DescribeAutoMlJobOutput,
         crate::error::DescribeAutoMLJobError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_auto_ml_job_error(response)
+        } else {
+            crate::operation_deser::parse_describe_auto_ml_job_response(response)
+        }
     }
 }
 
@@ -5997,30 +3180,6 @@ impl DescribeCodeRepository {
     pub fn builder() -> crate::input::describe_code_repository_input::Builder {
         crate::input::describe_code_repository_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DescribeCodeRepositoryOutput,
-        crate::error::DescribeCodeRepositoryError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::DescribeCodeRepositoryError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::describe_code_repository_output::Builder::default();
-        builder = crate::json_deser::describe_code_repository_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::DescribeCodeRepositoryError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -6031,7 +3190,11 @@ impl smithy_http::response::ParseStrictResponse for DescribeCodeRepository {
         crate::error::DescribeCodeRepositoryError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_code_repository_error(response)
+        } else {
+            crate::operation_deser::parse_describe_code_repository_response(response)
+        }
     }
 }
 
@@ -6047,47 +3210,6 @@ impl DescribeCompilationJob {
     pub fn builder() -> crate::input::describe_compilation_job_input::Builder {
         crate::input::describe_compilation_job_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DescribeCompilationJobOutput,
-        crate::error::DescribeCompilationJobError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(crate::error::DescribeCompilationJobError::unhandled(
-                        generic,
-                    ))
-                }
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DescribeCompilationJobError {
-                        kind: crate::error::DescribeCompilationJobErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DescribeCompilationJobError::unhandled(e),
-                },
-                _ => crate::error::DescribeCompilationJobError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::describe_compilation_job_output::Builder::default();
-        builder = crate::json_deser::describe_compilation_job_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::DescribeCompilationJobError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -6098,7 +3220,11 @@ impl smithy_http::response::ParseStrictResponse for DescribeCompilationJob {
         crate::error::DescribeCompilationJobError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_compilation_job_error(response)
+        } else {
+            crate::operation_deser::parse_describe_compilation_job_response(response)
+        }
     }
 }
 
@@ -6112,39 +3238,6 @@ impl DescribeContext {
     pub fn builder() -> crate::input::describe_context_input::Builder {
         crate::input::describe_context_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::DescribeContextOutput, crate::error::DescribeContextError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::DescribeContextError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DescribeContextError {
-                        kind: crate::error::DescribeContextErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DescribeContextError::unhandled(e),
-                },
-                _ => crate::error::DescribeContextError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::describe_context_output::Builder::default();
-        builder =
-            crate::json_deser::describe_context_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::DescribeContextError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -6155,7 +3248,11 @@ impl smithy_http::response::ParseStrictResponse for DescribeContext {
         crate::error::DescribeContextError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_context_error(response)
+        } else {
+            crate::operation_deser::parse_describe_context_response(response)
+        }
     }
 }
 
@@ -6169,45 +3266,6 @@ impl DescribeDataQualityJobDefinition {
     pub fn builder() -> crate::input::describe_data_quality_job_definition_input::Builder {
         crate::input::describe_data_quality_job_definition_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DescribeDataQualityJobDefinitionOutput,
-        crate::error::DescribeDataQualityJobDefinitionError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(
-                        crate::error::DescribeDataQualityJobDefinitionError::unhandled(generic),
-                    )
-                }
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DescribeDataQualityJobDefinitionError { kind: crate::error::DescribeDataQualityJobDefinitionErrorKind::ResourceNotFound(body), meta: generic },
-                    Err(e) => crate::error::DescribeDataQualityJobDefinitionError::unhandled(e)
-                }
-                _ => crate::error::DescribeDataQualityJobDefinitionError::generic(generic)
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder =
-            crate::output::describe_data_quality_job_definition_output::Builder::default();
-        builder = crate::json_deser::describe_data_quality_job_definition_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::DescribeDataQualityJobDefinitionError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -6218,7 +3276,11 @@ impl smithy_http::response::ParseStrictResponse for DescribeDataQualityJobDefini
         crate::error::DescribeDataQualityJobDefinitionError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_data_quality_job_definition_error(response)
+        } else {
+            crate::operation_deser::parse_describe_data_quality_job_definition_response(response)
+        }
     }
 }
 
@@ -6232,39 +3294,6 @@ impl DescribeDevice {
     pub fn builder() -> crate::input::describe_device_input::Builder {
         crate::input::describe_device_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::DescribeDeviceOutput, crate::error::DescribeDeviceError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::DescribeDeviceError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DescribeDeviceError {
-                        kind: crate::error::DescribeDeviceErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DescribeDeviceError::unhandled(e),
-                },
-                _ => crate::error::DescribeDeviceError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::describe_device_output::Builder::default();
-        builder =
-            crate::json_deser::describe_device_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::DescribeDeviceError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -6273,7 +3302,11 @@ impl smithy_http::response::ParseStrictResponse for DescribeDevice {
     type Output =
         std::result::Result<crate::output::DescribeDeviceOutput, crate::error::DescribeDeviceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_device_error(response)
+        } else {
+            crate::operation_deser::parse_describe_device_response(response)
+        }
     }
 }
 
@@ -6287,43 +3320,6 @@ impl DescribeDeviceFleet {
     pub fn builder() -> crate::input::describe_device_fleet_input::Builder {
         crate::input::describe_device_fleet_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DescribeDeviceFleetOutput,
-        crate::error::DescribeDeviceFleetError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::DescribeDeviceFleetError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DescribeDeviceFleetError {
-                        kind: crate::error::DescribeDeviceFleetErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DescribeDeviceFleetError::unhandled(e),
-                },
-                _ => crate::error::DescribeDeviceFleetError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::describe_device_fleet_output::Builder::default();
-        builder = crate::json_deser::describe_device_fleet_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::DescribeDeviceFleetError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -6334,7 +3330,11 @@ impl smithy_http::response::ParseStrictResponse for DescribeDeviceFleet {
         crate::error::DescribeDeviceFleetError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_device_fleet_error(response)
+        } else {
+            crate::operation_deser::parse_describe_device_fleet_response(response)
+        }
     }
 }
 
@@ -6348,39 +3348,6 @@ impl DescribeDomain {
     pub fn builder() -> crate::input::describe_domain_input::Builder {
         crate::input::describe_domain_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::DescribeDomainOutput, crate::error::DescribeDomainError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::DescribeDomainError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DescribeDomainError {
-                        kind: crate::error::DescribeDomainErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DescribeDomainError::unhandled(e),
-                },
-                _ => crate::error::DescribeDomainError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::describe_domain_output::Builder::default();
-        builder =
-            crate::json_deser::describe_domain_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::DescribeDomainError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -6389,7 +3356,11 @@ impl smithy_http::response::ParseStrictResponse for DescribeDomain {
     type Output =
         std::result::Result<crate::output::DescribeDomainOutput, crate::error::DescribeDomainError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_domain_error(response)
+        } else {
+            crate::operation_deser::parse_describe_domain_response(response)
+        }
     }
 }
 
@@ -6403,49 +3374,6 @@ impl DescribeEdgePackagingJob {
     pub fn builder() -> crate::input::describe_edge_packaging_job_input::Builder {
         crate::input::describe_edge_packaging_job_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DescribeEdgePackagingJobOutput,
-        crate::error::DescribeEdgePackagingJobError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(crate::error::DescribeEdgePackagingJobError::unhandled(
-                        generic,
-                    ))
-                }
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DescribeEdgePackagingJobError {
-                        kind: crate::error::DescribeEdgePackagingJobErrorKind::ResourceNotFound(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DescribeEdgePackagingJobError::unhandled(e),
-                },
-                _ => crate::error::DescribeEdgePackagingJobError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::describe_edge_packaging_job_output::Builder::default();
-        builder = crate::json_deser::describe_edge_packaging_job_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::DescribeEdgePackagingJobError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -6456,7 +3384,11 @@ impl smithy_http::response::ParseStrictResponse for DescribeEdgePackagingJob {
         crate::error::DescribeEdgePackagingJobError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_edge_packaging_job_error(response)
+        } else {
+            crate::operation_deser::parse_describe_edge_packaging_job_response(response)
+        }
     }
 }
 
@@ -6470,28 +3402,6 @@ impl DescribeEndpoint {
     pub fn builder() -> crate::input::describe_endpoint_input::Builder {
         crate::input::describe_endpoint_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DescribeEndpointOutput,
-        crate::error::DescribeEndpointError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::DescribeEndpointError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::describe_endpoint_output::Builder::default();
-        builder =
-            crate::json_deser::describe_endpoint_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::DescribeEndpointError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -6502,7 +3412,11 @@ impl smithy_http::response::ParseStrictResponse for DescribeEndpoint {
         crate::error::DescribeEndpointError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_endpoint_error(response)
+        } else {
+            crate::operation_deser::parse_describe_endpoint_response(response)
+        }
     }
 }
 
@@ -6517,30 +3431,6 @@ impl DescribeEndpointConfig {
     pub fn builder() -> crate::input::describe_endpoint_config_input::Builder {
         crate::input::describe_endpoint_config_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DescribeEndpointConfigOutput,
-        crate::error::DescribeEndpointConfigError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::DescribeEndpointConfigError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::describe_endpoint_config_output::Builder::default();
-        builder = crate::json_deser::describe_endpoint_config_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::DescribeEndpointConfigError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -6551,7 +3441,11 @@ impl smithy_http::response::ParseStrictResponse for DescribeEndpointConfig {
         crate::error::DescribeEndpointConfigError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_endpoint_config_error(response)
+        } else {
+            crate::operation_deser::parse_describe_endpoint_config_response(response)
+        }
     }
 }
 
@@ -6565,43 +3459,6 @@ impl DescribeExperiment {
     pub fn builder() -> crate::input::describe_experiment_input::Builder {
         crate::input::describe_experiment_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DescribeExperimentOutput,
-        crate::error::DescribeExperimentError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::DescribeExperimentError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DescribeExperimentError {
-                        kind: crate::error::DescribeExperimentErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DescribeExperimentError::unhandled(e),
-                },
-                _ => crate::error::DescribeExperimentError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::describe_experiment_output::Builder::default();
-        builder = crate::json_deser::describe_experiment_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::DescribeExperimentError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -6612,7 +3469,11 @@ impl smithy_http::response::ParseStrictResponse for DescribeExperiment {
         crate::error::DescribeExperimentError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_experiment_error(response)
+        } else {
+            crate::operation_deser::parse_describe_experiment_response(response)
+        }
     }
 }
 
@@ -6628,43 +3489,6 @@ impl DescribeFeatureGroup {
     pub fn builder() -> crate::input::describe_feature_group_input::Builder {
         crate::input::describe_feature_group_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DescribeFeatureGroupOutput,
-        crate::error::DescribeFeatureGroupError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::DescribeFeatureGroupError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DescribeFeatureGroupError {
-                        kind: crate::error::DescribeFeatureGroupErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DescribeFeatureGroupError::unhandled(e),
-                },
-                _ => crate::error::DescribeFeatureGroupError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::describe_feature_group_output::Builder::default();
-        builder = crate::json_deser::describe_feature_group_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::DescribeFeatureGroupError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -6675,7 +3499,11 @@ impl smithy_http::response::ParseStrictResponse for DescribeFeatureGroup {
         crate::error::DescribeFeatureGroupError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_feature_group_error(response)
+        } else {
+            crate::operation_deser::parse_describe_feature_group_response(response)
+        }
     }
 }
 
@@ -6689,47 +3517,6 @@ impl DescribeFlowDefinition {
     pub fn builder() -> crate::input::describe_flow_definition_input::Builder {
         crate::input::describe_flow_definition_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DescribeFlowDefinitionOutput,
-        crate::error::DescribeFlowDefinitionError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(crate::error::DescribeFlowDefinitionError::unhandled(
-                        generic,
-                    ))
-                }
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DescribeFlowDefinitionError {
-                        kind: crate::error::DescribeFlowDefinitionErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DescribeFlowDefinitionError::unhandled(e),
-                },
-                _ => crate::error::DescribeFlowDefinitionError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::describe_flow_definition_output::Builder::default();
-        builder = crate::json_deser::describe_flow_definition_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::DescribeFlowDefinitionError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -6740,7 +3527,11 @@ impl smithy_http::response::ParseStrictResponse for DescribeFlowDefinition {
         crate::error::DescribeFlowDefinitionError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_flow_definition_error(response)
+        } else {
+            crate::operation_deser::parse_describe_flow_definition_response(response)
+        }
     }
 }
 
@@ -6754,43 +3545,6 @@ impl DescribeHumanTaskUi {
     pub fn builder() -> crate::input::describe_human_task_ui_input::Builder {
         crate::input::describe_human_task_ui_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DescribeHumanTaskUiOutput,
-        crate::error::DescribeHumanTaskUiError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::DescribeHumanTaskUiError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DescribeHumanTaskUiError {
-                        kind: crate::error::DescribeHumanTaskUiErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DescribeHumanTaskUiError::unhandled(e),
-                },
-                _ => crate::error::DescribeHumanTaskUiError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::describe_human_task_ui_output::Builder::default();
-        builder = crate::json_deser::describe_human_task_ui_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::DescribeHumanTaskUiError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -6801,7 +3555,11 @@ impl smithy_http::response::ParseStrictResponse for DescribeHumanTaskUi {
         crate::error::DescribeHumanTaskUiError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_human_task_ui_error(response)
+        } else {
+            crate::operation_deser::parse_describe_human_task_ui_response(response)
+        }
     }
 }
 
@@ -6816,51 +3574,6 @@ impl DescribeHyperParameterTuningJob {
     pub fn builder() -> crate::input::describe_hyper_parameter_tuning_job_input::Builder {
         crate::input::describe_hyper_parameter_tuning_job_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DescribeHyperParameterTuningJobOutput,
-        crate::error::DescribeHyperParameterTuningJobError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(
-                        crate::error::DescribeHyperParameterTuningJobError::unhandled(generic),
-                    )
-                }
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DescribeHyperParameterTuningJobError {
-                        kind:
-                            crate::error::DescribeHyperParameterTuningJobErrorKind::ResourceNotFound(
-                                body,
-                            ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DescribeHyperParameterTuningJobError::unhandled(e),
-                },
-                _ => crate::error::DescribeHyperParameterTuningJobError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder =
-            crate::output::describe_hyper_parameter_tuning_job_output::Builder::default();
-        builder = crate::json_deser::describe_hyper_parameter_tuning_job_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::DescribeHyperParameterTuningJobError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -6871,7 +3584,11 @@ impl smithy_http::response::ParseStrictResponse for DescribeHyperParameterTuning
         crate::error::DescribeHyperParameterTuningJobError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_hyper_parameter_tuning_job_error(response)
+        } else {
+            crate::operation_deser::parse_describe_hyper_parameter_tuning_job_response(response)
+        }
     }
 }
 
@@ -6885,39 +3602,6 @@ impl DescribeImage {
     pub fn builder() -> crate::input::describe_image_input::Builder {
         crate::input::describe_image_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::DescribeImageOutput, crate::error::DescribeImageError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::DescribeImageError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DescribeImageError {
-                        kind: crate::error::DescribeImageErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DescribeImageError::unhandled(e),
-                },
-                _ => crate::error::DescribeImageError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::describe_image_output::Builder::default();
-        builder =
-            crate::json_deser::describe_image_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::DescribeImageError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -6926,7 +3610,11 @@ impl smithy_http::response::ParseStrictResponse for DescribeImage {
     type Output =
         std::result::Result<crate::output::DescribeImageOutput, crate::error::DescribeImageError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_image_error(response)
+        } else {
+            crate::operation_deser::parse_describe_image_response(response)
+        }
     }
 }
 
@@ -6940,43 +3628,6 @@ impl DescribeImageVersion {
     pub fn builder() -> crate::input::describe_image_version_input::Builder {
         crate::input::describe_image_version_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DescribeImageVersionOutput,
-        crate::error::DescribeImageVersionError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::DescribeImageVersionError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DescribeImageVersionError {
-                        kind: crate::error::DescribeImageVersionErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DescribeImageVersionError::unhandled(e),
-                },
-                _ => crate::error::DescribeImageVersionError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::describe_image_version_output::Builder::default();
-        builder = crate::json_deser::describe_image_version_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::DescribeImageVersionError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -6987,7 +3638,11 @@ impl smithy_http::response::ParseStrictResponse for DescribeImageVersion {
         crate::error::DescribeImageVersionError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_image_version_error(response)
+        } else {
+            crate::operation_deser::parse_describe_image_version_response(response)
+        }
     }
 }
 
@@ -7001,43 +3656,6 @@ impl DescribeLabelingJob {
     pub fn builder() -> crate::input::describe_labeling_job_input::Builder {
         crate::input::describe_labeling_job_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DescribeLabelingJobOutput,
-        crate::error::DescribeLabelingJobError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::DescribeLabelingJobError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DescribeLabelingJobError {
-                        kind: crate::error::DescribeLabelingJobErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DescribeLabelingJobError::unhandled(e),
-                },
-                _ => crate::error::DescribeLabelingJobError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::describe_labeling_job_output::Builder::default();
-        builder = crate::json_deser::describe_labeling_job_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::DescribeLabelingJobError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -7048,7 +3666,11 @@ impl smithy_http::response::ParseStrictResponse for DescribeLabelingJob {
         crate::error::DescribeLabelingJobError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_labeling_job_error(response)
+        } else {
+            crate::operation_deser::parse_describe_labeling_job_response(response)
+        }
     }
 }
 
@@ -7063,26 +3685,6 @@ impl DescribeModel {
     pub fn builder() -> crate::input::describe_model_input::Builder {
         crate::input::describe_model_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::DescribeModelOutput, crate::error::DescribeModelError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::DescribeModelError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::describe_model_output::Builder::default();
-        builder =
-            crate::json_deser::describe_model_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::DescribeModelError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -7091,7 +3693,11 @@ impl smithy_http::response::ParseStrictResponse for DescribeModel {
     type Output =
         std::result::Result<crate::output::DescribeModelOutput, crate::error::DescribeModelError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_model_error(response)
+        } else {
+            crate::operation_deser::parse_describe_model_response(response)
+        }
     }
 }
 
@@ -7105,51 +3711,6 @@ impl DescribeModelBiasJobDefinition {
     pub fn builder() -> crate::input::describe_model_bias_job_definition_input::Builder {
         crate::input::describe_model_bias_job_definition_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DescribeModelBiasJobDefinitionOutput,
-        crate::error::DescribeModelBiasJobDefinitionError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(
-                        crate::error::DescribeModelBiasJobDefinitionError::unhandled(generic),
-                    )
-                }
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DescribeModelBiasJobDefinitionError {
-                        kind:
-                            crate::error::DescribeModelBiasJobDefinitionErrorKind::ResourceNotFound(
-                                body,
-                            ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DescribeModelBiasJobDefinitionError::unhandled(e),
-                },
-                _ => crate::error::DescribeModelBiasJobDefinitionError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder =
-            crate::output::describe_model_bias_job_definition_output::Builder::default();
-        builder = crate::json_deser::describe_model_bias_job_definition_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::DescribeModelBiasJobDefinitionError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -7160,7 +3721,11 @@ impl smithy_http::response::ParseStrictResponse for DescribeModelBiasJobDefiniti
         crate::error::DescribeModelBiasJobDefinitionError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_model_bias_job_definition_error(response)
+        } else {
+            crate::operation_deser::parse_describe_model_bias_job_definition_response(response)
+        }
     }
 }
 
@@ -7174,47 +3739,6 @@ impl DescribeModelExplainabilityJobDefinition {
     pub fn builder() -> crate::input::describe_model_explainability_job_definition_input::Builder {
         crate::input::describe_model_explainability_job_definition_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DescribeModelExplainabilityJobDefinitionOutput,
-        crate::error::DescribeModelExplainabilityJobDefinitionError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(
-                        crate::error::DescribeModelExplainabilityJobDefinitionError::unhandled(
-                            generic,
-                        ),
-                    )
-                }
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DescribeModelExplainabilityJobDefinitionError { kind: crate::error::DescribeModelExplainabilityJobDefinitionErrorKind::ResourceNotFound(body), meta: generic },
-                    Err(e) => crate::error::DescribeModelExplainabilityJobDefinitionError::unhandled(e)
-                }
-                _ => crate::error::DescribeModelExplainabilityJobDefinitionError::generic(generic)
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder =
-            crate::output::describe_model_explainability_job_definition_output::Builder::default();
-        builder = crate::json_deser::describe_model_explainability_job_definition_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::DescribeModelExplainabilityJobDefinitionError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -7225,7 +3749,15 @@ impl smithy_http::response::ParseStrictResponse for DescribeModelExplainabilityJ
         crate::error::DescribeModelExplainabilityJobDefinitionError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_model_explainability_job_definition_error(
+                response,
+            )
+        } else {
+            crate::operation_deser::parse_describe_model_explainability_job_definition_response(
+                response,
+            )
+        }
     }
 }
 
@@ -7242,30 +3774,6 @@ impl DescribeModelPackage {
     pub fn builder() -> crate::input::describe_model_package_input::Builder {
         crate::input::describe_model_package_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DescribeModelPackageOutput,
-        crate::error::DescribeModelPackageError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::DescribeModelPackageError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::describe_model_package_output::Builder::default();
-        builder = crate::json_deser::describe_model_package_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::DescribeModelPackageError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -7276,7 +3784,11 @@ impl smithy_http::response::ParseStrictResponse for DescribeModelPackage {
         crate::error::DescribeModelPackageError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_model_package_error(response)
+        } else {
+            crate::operation_deser::parse_describe_model_package_response(response)
+        }
     }
 }
 
@@ -7290,32 +3802,6 @@ impl DescribeModelPackageGroup {
     pub fn builder() -> crate::input::describe_model_package_group_input::Builder {
         crate::input::describe_model_package_group_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DescribeModelPackageGroupOutput,
-        crate::error::DescribeModelPackageGroupError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::DescribeModelPackageGroupError::generic(
-                generic,
-            ));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::describe_model_package_group_output::Builder::default();
-        builder = crate::json_deser::describe_model_package_group_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::DescribeModelPackageGroupError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -7326,7 +3812,11 @@ impl smithy_http::response::ParseStrictResponse for DescribeModelPackageGroup {
         crate::error::DescribeModelPackageGroupError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_model_package_group_error(response)
+        } else {
+            crate::operation_deser::parse_describe_model_package_group_response(response)
+        }
     }
 }
 
@@ -7340,45 +3830,6 @@ impl DescribeModelQualityJobDefinition {
     pub fn builder() -> crate::input::describe_model_quality_job_definition_input::Builder {
         crate::input::describe_model_quality_job_definition_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DescribeModelQualityJobDefinitionOutput,
-        crate::error::DescribeModelQualityJobDefinitionError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(
-                        crate::error::DescribeModelQualityJobDefinitionError::unhandled(generic),
-                    )
-                }
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DescribeModelQualityJobDefinitionError { kind: crate::error::DescribeModelQualityJobDefinitionErrorKind::ResourceNotFound(body), meta: generic },
-                    Err(e) => crate::error::DescribeModelQualityJobDefinitionError::unhandled(e)
-                }
-                _ => crate::error::DescribeModelQualityJobDefinitionError::generic(generic)
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder =
-            crate::output::describe_model_quality_job_definition_output::Builder::default();
-        builder = crate::json_deser::describe_model_quality_job_definition_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::DescribeModelQualityJobDefinitionError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -7389,7 +3840,11 @@ impl smithy_http::response::ParseStrictResponse for DescribeModelQualityJobDefin
         crate::error::DescribeModelQualityJobDefinitionError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_model_quality_job_definition_error(response)
+        } else {
+            crate::operation_deser::parse_describe_model_quality_job_definition_response(response)
+        }
     }
 }
 
@@ -7403,49 +3858,6 @@ impl DescribeMonitoringSchedule {
     pub fn builder() -> crate::input::describe_monitoring_schedule_input::Builder {
         crate::input::describe_monitoring_schedule_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DescribeMonitoringScheduleOutput,
-        crate::error::DescribeMonitoringScheduleError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(crate::error::DescribeMonitoringScheduleError::unhandled(
-                        generic,
-                    ))
-                }
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DescribeMonitoringScheduleError {
-                        kind: crate::error::DescribeMonitoringScheduleErrorKind::ResourceNotFound(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DescribeMonitoringScheduleError::unhandled(e),
-                },
-                _ => crate::error::DescribeMonitoringScheduleError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::describe_monitoring_schedule_output::Builder::default();
-        builder = crate::json_deser::describe_monitoring_schedule_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::DescribeMonitoringScheduleError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -7456,7 +3868,11 @@ impl smithy_http::response::ParseStrictResponse for DescribeMonitoringSchedule {
         crate::error::DescribeMonitoringScheduleError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_monitoring_schedule_error(response)
+        } else {
+            crate::operation_deser::parse_describe_monitoring_schedule_response(response)
+        }
     }
 }
 
@@ -7470,32 +3886,6 @@ impl DescribeNotebookInstance {
     pub fn builder() -> crate::input::describe_notebook_instance_input::Builder {
         crate::input::describe_notebook_instance_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DescribeNotebookInstanceOutput,
-        crate::error::DescribeNotebookInstanceError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::DescribeNotebookInstanceError::generic(
-                generic,
-            ));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::describe_notebook_instance_output::Builder::default();
-        builder = crate::json_deser::describe_notebook_instance_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::DescribeNotebookInstanceError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -7506,7 +3896,11 @@ impl smithy_http::response::ParseStrictResponse for DescribeNotebookInstance {
         crate::error::DescribeNotebookInstanceError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_notebook_instance_error(response)
+        } else {
+            crate::operation_deser::parse_describe_notebook_instance_response(response)
+        }
     }
 }
 
@@ -7522,33 +3916,6 @@ impl DescribeNotebookInstanceLifecycleConfig {
     pub fn builder() -> crate::input::describe_notebook_instance_lifecycle_config_input::Builder {
         crate::input::describe_notebook_instance_lifecycle_config_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DescribeNotebookInstanceLifecycleConfigOutput,
-        crate::error::DescribeNotebookInstanceLifecycleConfigError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(
-                crate::error::DescribeNotebookInstanceLifecycleConfigError::generic(generic),
-            );
-        }
-        #[allow(unused_mut)]
-        let mut builder =
-            crate::output::describe_notebook_instance_lifecycle_config_output::Builder::default();
-        builder = crate::json_deser::describe_notebook_instance_lifecycle_config_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::DescribeNotebookInstanceLifecycleConfigError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -7559,7 +3926,15 @@ impl smithy_http::response::ParseStrictResponse for DescribeNotebookInstanceLife
         crate::error::DescribeNotebookInstanceLifecycleConfigError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_notebook_instance_lifecycle_config_error(
+                response,
+            )
+        } else {
+            crate::operation_deser::parse_describe_notebook_instance_lifecycle_config_response(
+                response,
+            )
+        }
     }
 }
 
@@ -7573,41 +3948,6 @@ impl DescribePipeline {
     pub fn builder() -> crate::input::describe_pipeline_input::Builder {
         crate::input::describe_pipeline_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DescribePipelineOutput,
-        crate::error::DescribePipelineError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::DescribePipelineError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DescribePipelineError {
-                        kind: crate::error::DescribePipelineErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DescribePipelineError::unhandled(e),
-                },
-                _ => crate::error::DescribePipelineError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::describe_pipeline_output::Builder::default();
-        builder =
-            crate::json_deser::describe_pipeline_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::DescribePipelineError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -7618,7 +3958,11 @@ impl smithy_http::response::ParseStrictResponse for DescribePipeline {
         crate::error::DescribePipelineError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_pipeline_error(response)
+        } else {
+            crate::operation_deser::parse_describe_pipeline_response(response)
+        }
     }
 }
 
@@ -7632,47 +3976,6 @@ impl DescribePipelineDefinitionForExecution {
     pub fn builder() -> crate::input::describe_pipeline_definition_for_execution_input::Builder {
         crate::input::describe_pipeline_definition_for_execution_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DescribePipelineDefinitionForExecutionOutput,
-        crate::error::DescribePipelineDefinitionForExecutionError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(
-                        crate::error::DescribePipelineDefinitionForExecutionError::unhandled(
-                            generic,
-                        ),
-                    )
-                }
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DescribePipelineDefinitionForExecutionError { kind: crate::error::DescribePipelineDefinitionForExecutionErrorKind::ResourceNotFound(body), meta: generic },
-                    Err(e) => crate::error::DescribePipelineDefinitionForExecutionError::unhandled(e)
-                }
-                _ => crate::error::DescribePipelineDefinitionForExecutionError::generic(generic)
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder =
-            crate::output::describe_pipeline_definition_for_execution_output::Builder::default();
-        builder = crate::json_deser::describe_pipeline_definition_for_execution_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::DescribePipelineDefinitionForExecutionError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -7683,7 +3986,13 @@ impl smithy_http::response::ParseStrictResponse for DescribePipelineDefinitionFo
         crate::error::DescribePipelineDefinitionForExecutionError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_pipeline_definition_for_execution_error(response)
+        } else {
+            crate::operation_deser::parse_describe_pipeline_definition_for_execution_response(
+                response,
+            )
+        }
     }
 }
 
@@ -7697,49 +4006,6 @@ impl DescribePipelineExecution {
     pub fn builder() -> crate::input::describe_pipeline_execution_input::Builder {
         crate::input::describe_pipeline_execution_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DescribePipelineExecutionOutput,
-        crate::error::DescribePipelineExecutionError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(crate::error::DescribePipelineExecutionError::unhandled(
-                        generic,
-                    ))
-                }
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DescribePipelineExecutionError {
-                        kind: crate::error::DescribePipelineExecutionErrorKind::ResourceNotFound(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DescribePipelineExecutionError::unhandled(e),
-                },
-                _ => crate::error::DescribePipelineExecutionError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::describe_pipeline_execution_output::Builder::default();
-        builder = crate::json_deser::describe_pipeline_execution_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::DescribePipelineExecutionError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -7750,7 +4016,11 @@ impl smithy_http::response::ParseStrictResponse for DescribePipelineExecution {
         crate::error::DescribePipelineExecutionError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_pipeline_execution_error(response)
+        } else {
+            crate::operation_deser::parse_describe_pipeline_execution_response(response)
+        }
     }
 }
 
@@ -7764,43 +4034,6 @@ impl DescribeProcessingJob {
     pub fn builder() -> crate::input::describe_processing_job_input::Builder {
         crate::input::describe_processing_job_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DescribeProcessingJobOutput,
-        crate::error::DescribeProcessingJobError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::DescribeProcessingJobError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DescribeProcessingJobError {
-                        kind: crate::error::DescribeProcessingJobErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DescribeProcessingJobError::unhandled(e),
-                },
-                _ => crate::error::DescribeProcessingJobError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::describe_processing_job_output::Builder::default();
-        builder = crate::json_deser::describe_processing_job_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::DescribeProcessingJobError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -7811,7 +4044,11 @@ impl smithy_http::response::ParseStrictResponse for DescribeProcessingJob {
         crate::error::DescribeProcessingJobError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_processing_job_error(response)
+        } else {
+            crate::operation_deser::parse_describe_processing_job_response(response)
+        }
     }
 }
 
@@ -7825,26 +4062,6 @@ impl DescribeProject {
     pub fn builder() -> crate::input::describe_project_input::Builder {
         crate::input::describe_project_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::DescribeProjectOutput, crate::error::DescribeProjectError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::DescribeProjectError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::describe_project_output::Builder::default();
-        builder =
-            crate::json_deser::describe_project_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::DescribeProjectError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -7855,7 +4072,11 @@ impl smithy_http::response::ParseStrictResponse for DescribeProject {
         crate::error::DescribeProjectError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_project_error(response)
+        } else {
+            crate::operation_deser::parse_describe_project_response(response)
+        }
     }
 }
 
@@ -7870,32 +4091,6 @@ impl DescribeSubscribedWorkteam {
     pub fn builder() -> crate::input::describe_subscribed_workteam_input::Builder {
         crate::input::describe_subscribed_workteam_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DescribeSubscribedWorkteamOutput,
-        crate::error::DescribeSubscribedWorkteamError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::DescribeSubscribedWorkteamError::generic(
-                generic,
-            ));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::describe_subscribed_workteam_output::Builder::default();
-        builder = crate::json_deser::describe_subscribed_workteam_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::DescribeSubscribedWorkteamError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -7906,7 +4101,11 @@ impl smithy_http::response::ParseStrictResponse for DescribeSubscribedWorkteam {
         crate::error::DescribeSubscribedWorkteamError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_subscribed_workteam_error(response)
+        } else {
+            crate::operation_deser::parse_describe_subscribed_workteam_response(response)
+        }
     }
 }
 
@@ -7926,43 +4125,6 @@ impl DescribeTrainingJob {
     pub fn builder() -> crate::input::describe_training_job_input::Builder {
         crate::input::describe_training_job_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DescribeTrainingJobOutput,
-        crate::error::DescribeTrainingJobError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::DescribeTrainingJobError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DescribeTrainingJobError {
-                        kind: crate::error::DescribeTrainingJobErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DescribeTrainingJobError::unhandled(e),
-                },
-                _ => crate::error::DescribeTrainingJobError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::describe_training_job_output::Builder::default();
-        builder = crate::json_deser::describe_training_job_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::DescribeTrainingJobError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -7973,7 +4135,11 @@ impl smithy_http::response::ParseStrictResponse for DescribeTrainingJob {
         crate::error::DescribeTrainingJobError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_training_job_error(response)
+        } else {
+            crate::operation_deser::parse_describe_training_job_response(response)
+        }
     }
 }
 
@@ -7987,43 +4153,6 @@ impl DescribeTransformJob {
     pub fn builder() -> crate::input::describe_transform_job_input::Builder {
         crate::input::describe_transform_job_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DescribeTransformJobOutput,
-        crate::error::DescribeTransformJobError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::DescribeTransformJobError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DescribeTransformJobError {
-                        kind: crate::error::DescribeTransformJobErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DescribeTransformJobError::unhandled(e),
-                },
-                _ => crate::error::DescribeTransformJobError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::describe_transform_job_output::Builder::default();
-        builder = crate::json_deser::describe_transform_job_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::DescribeTransformJobError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -8034,7 +4163,11 @@ impl smithy_http::response::ParseStrictResponse for DescribeTransformJob {
         crate::error::DescribeTransformJobError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_transform_job_error(response)
+        } else {
+            crate::operation_deser::parse_describe_transform_job_response(response)
+        }
     }
 }
 
@@ -8048,39 +4181,6 @@ impl DescribeTrial {
     pub fn builder() -> crate::input::describe_trial_input::Builder {
         crate::input::describe_trial_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::DescribeTrialOutput, crate::error::DescribeTrialError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::DescribeTrialError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DescribeTrialError {
-                        kind: crate::error::DescribeTrialErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DescribeTrialError::unhandled(e),
-                },
-                _ => crate::error::DescribeTrialError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::describe_trial_output::Builder::default();
-        builder =
-            crate::json_deser::describe_trial_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::DescribeTrialError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -8089,7 +4189,11 @@ impl smithy_http::response::ParseStrictResponse for DescribeTrial {
     type Output =
         std::result::Result<crate::output::DescribeTrialOutput, crate::error::DescribeTrialError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_trial_error(response)
+        } else {
+            crate::operation_deser::parse_describe_trial_response(response)
+        }
     }
 }
 
@@ -8103,47 +4207,6 @@ impl DescribeTrialComponent {
     pub fn builder() -> crate::input::describe_trial_component_input::Builder {
         crate::input::describe_trial_component_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DescribeTrialComponentOutput,
-        crate::error::DescribeTrialComponentError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(crate::error::DescribeTrialComponentError::unhandled(
-                        generic,
-                    ))
-                }
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DescribeTrialComponentError {
-                        kind: crate::error::DescribeTrialComponentErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DescribeTrialComponentError::unhandled(e),
-                },
-                _ => crate::error::DescribeTrialComponentError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::describe_trial_component_output::Builder::default();
-        builder = crate::json_deser::describe_trial_component_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::DescribeTrialComponentError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -8154,7 +4217,11 @@ impl smithy_http::response::ParseStrictResponse for DescribeTrialComponent {
         crate::error::DescribeTrialComponentError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_trial_component_error(response)
+        } else {
+            crate::operation_deser::parse_describe_trial_component_response(response)
+        }
     }
 }
 
@@ -8168,43 +4235,6 @@ impl DescribeUserProfile {
     pub fn builder() -> crate::input::describe_user_profile_input::Builder {
         crate::input::describe_user_profile_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DescribeUserProfileOutput,
-        crate::error::DescribeUserProfileError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::DescribeUserProfileError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DescribeUserProfileError {
-                        kind: crate::error::DescribeUserProfileErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DescribeUserProfileError::unhandled(e),
-                },
-                _ => crate::error::DescribeUserProfileError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::describe_user_profile_output::Builder::default();
-        builder = crate::json_deser::describe_user_profile_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::DescribeUserProfileError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -8215,7 +4245,11 @@ impl smithy_http::response::ParseStrictResponse for DescribeUserProfile {
         crate::error::DescribeUserProfileError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_user_profile_error(response)
+        } else {
+            crate::operation_deser::parse_describe_user_profile_response(response)
+        }
     }
 }
 
@@ -8234,30 +4268,6 @@ impl DescribeWorkforce {
     pub fn builder() -> crate::input::describe_workforce_input::Builder {
         crate::input::describe_workforce_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DescribeWorkforceOutput,
-        crate::error::DescribeWorkforceError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::DescribeWorkforceError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::describe_workforce_output::Builder::default();
-        builder = crate::json_deser::describe_workforce_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::DescribeWorkforceError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -8268,7 +4278,11 @@ impl smithy_http::response::ParseStrictResponse for DescribeWorkforce {
         crate::error::DescribeWorkforceError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_workforce_error(response)
+        } else {
+            crate::operation_deser::parse_describe_workforce_response(response)
+        }
     }
 }
 
@@ -8284,28 +4298,6 @@ impl DescribeWorkteam {
     pub fn builder() -> crate::input::describe_workteam_input::Builder {
         crate::input::describe_workteam_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DescribeWorkteamOutput,
-        crate::error::DescribeWorkteamError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::DescribeWorkteamError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::describe_workteam_output::Builder::default();
-        builder =
-            crate::json_deser::describe_workteam_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::DescribeWorkteamError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -8316,7 +4308,11 @@ impl smithy_http::response::ParseStrictResponse for DescribeWorkteam {
         crate::error::DescribeWorkteamError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_workteam_error(response)
+        } else {
+            crate::operation_deser::parse_describe_workteam_response(response)
+        }
     }
 }
 
@@ -8331,28 +4327,6 @@ impl DisableSagemakerServicecatalogPortfolio {
     pub fn builder() -> crate::input::disable_sagemaker_servicecatalog_portfolio_input::Builder {
         crate::input::disable_sagemaker_servicecatalog_portfolio_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DisableSagemakerServicecatalogPortfolioOutput,
-        crate::error::DisableSagemakerServicecatalogPortfolioError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(
-                crate::error::DisableSagemakerServicecatalogPortfolioError::generic(generic),
-            );
-        }
-        #[allow(unused_mut)]
-        let mut builder =
-            crate::output::disable_sagemaker_servicecatalog_portfolio_output::Builder::default();
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -8363,7 +4337,13 @@ impl smithy_http::response::ParseStrictResponse for DisableSagemakerServicecatal
         crate::error::DisableSagemakerServicecatalogPortfolioError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_disable_sagemaker_servicecatalog_portfolio_error(response)
+        } else {
+            crate::operation_deser::parse_disable_sagemaker_servicecatalog_portfolio_response(
+                response,
+            )
+        }
     }
 }
 
@@ -8382,49 +4362,6 @@ impl DisassociateTrialComponent {
     pub fn builder() -> crate::input::disassociate_trial_component_input::Builder {
         crate::input::disassociate_trial_component_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DisassociateTrialComponentOutput,
-        crate::error::DisassociateTrialComponentError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(crate::error::DisassociateTrialComponentError::unhandled(
-                        generic,
-                    ))
-                }
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DisassociateTrialComponentError {
-                        kind: crate::error::DisassociateTrialComponentErrorKind::ResourceNotFound(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DisassociateTrialComponentError::unhandled(e),
-                },
-                _ => crate::error::DisassociateTrialComponentError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::disassociate_trial_component_output::Builder::default();
-        builder = crate::json_deser::disassociate_trial_component_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::DisassociateTrialComponentError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -8435,7 +4372,11 @@ impl smithy_http::response::ParseStrictResponse for DisassociateTrialComponent {
         crate::error::DisassociateTrialComponentError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_disassociate_trial_component_error(response)
+        } else {
+            crate::operation_deser::parse_disassociate_trial_component_response(response)
+        }
     }
 }
 
@@ -8450,26 +4391,6 @@ impl EnableSagemakerServicecatalogPortfolio {
     pub fn builder() -> crate::input::enable_sagemaker_servicecatalog_portfolio_input::Builder {
         crate::input::enable_sagemaker_servicecatalog_portfolio_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::EnableSagemakerServicecatalogPortfolioOutput,
-        crate::error::EnableSagemakerServicecatalogPortfolioError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::EnableSagemakerServicecatalogPortfolioError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder =
-            crate::output::enable_sagemaker_servicecatalog_portfolio_output::Builder::default();
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -8480,7 +4401,13 @@ impl smithy_http::response::ParseStrictResponse for EnableSagemakerServicecatalo
         crate::error::EnableSagemakerServicecatalogPortfolioError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_enable_sagemaker_servicecatalog_portfolio_error(response)
+        } else {
+            crate::operation_deser::parse_enable_sagemaker_servicecatalog_portfolio_response(
+                response,
+            )
+        }
     }
 }
 
@@ -8494,30 +4421,6 @@ impl GetDeviceFleetReport {
     pub fn builder() -> crate::input::get_device_fleet_report_input::Builder {
         crate::input::get_device_fleet_report_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::GetDeviceFleetReportOutput,
-        crate::error::GetDeviceFleetReportError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::GetDeviceFleetReportError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::get_device_fleet_report_output::Builder::default();
-        builder = crate::json_deser::get_device_fleet_report_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::GetDeviceFleetReportError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -8528,7 +4431,11 @@ impl smithy_http::response::ParseStrictResponse for GetDeviceFleetReport {
         crate::error::GetDeviceFleetReportError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_device_fleet_report_error(response)
+        } else {
+            crate::operation_deser::parse_get_device_fleet_report_response(response)
+        }
     }
 }
 
@@ -8545,32 +4452,6 @@ impl GetModelPackageGroupPolicy {
     pub fn builder() -> crate::input::get_model_package_group_policy_input::Builder {
         crate::input::get_model_package_group_policy_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::GetModelPackageGroupPolicyOutput,
-        crate::error::GetModelPackageGroupPolicyError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::GetModelPackageGroupPolicyError::generic(
-                generic,
-            ));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::get_model_package_group_policy_output::Builder::default();
-        builder = crate::json_deser::get_model_package_group_policy_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::GetModelPackageGroupPolicyError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -8581,7 +4462,11 @@ impl smithy_http::response::ParseStrictResponse for GetModelPackageGroupPolicy {
         crate::error::GetModelPackageGroupPolicyError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_model_package_group_policy_error(response)
+        } else {
+            crate::operation_deser::parse_get_model_package_group_policy_response(response)
+        }
     }
 }
 
@@ -8596,33 +4481,6 @@ impl GetSagemakerServicecatalogPortfolioStatus {
     pub fn builder() -> crate::input::get_sagemaker_servicecatalog_portfolio_status_input::Builder {
         crate::input::get_sagemaker_servicecatalog_portfolio_status_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::GetSagemakerServicecatalogPortfolioStatusOutput,
-        crate::error::GetSagemakerServicecatalogPortfolioStatusError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(
-                crate::error::GetSagemakerServicecatalogPortfolioStatusError::generic(generic),
-            );
-        }
-        #[allow(unused_mut)]
-        let mut builder =
-            crate::output::get_sagemaker_servicecatalog_portfolio_status_output::Builder::default();
-        builder = crate::json_deser::get_sagemaker_servicecatalog_portfolio_status_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::GetSagemakerServicecatalogPortfolioStatusError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -8633,7 +4491,15 @@ impl smithy_http::response::ParseStrictResponse for GetSagemakerServicecatalogPo
         crate::error::GetSagemakerServicecatalogPortfolioStatusError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_sagemaker_servicecatalog_portfolio_status_error(
+                response,
+            )
+        } else {
+            crate::operation_deser::parse_get_sagemaker_servicecatalog_portfolio_status_response(
+                response,
+            )
+        }
     }
 }
 
@@ -8650,30 +4516,6 @@ impl GetSearchSuggestions {
     pub fn builder() -> crate::input::get_search_suggestions_input::Builder {
         crate::input::get_search_suggestions_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::GetSearchSuggestionsOutput,
-        crate::error::GetSearchSuggestionsError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::GetSearchSuggestionsError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::get_search_suggestions_output::Builder::default();
-        builder = crate::json_deser::get_search_suggestions_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::GetSearchSuggestionsError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -8684,7 +4526,11 @@ impl smithy_http::response::ParseStrictResponse for GetSearchSuggestions {
         crate::error::GetSearchSuggestionsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_search_suggestions_error(response)
+        } else {
+            crate::operation_deser::parse_get_search_suggestions_response(response)
+        }
     }
 }
 
@@ -8698,38 +4544,6 @@ impl ListActions {
     pub fn builder() -> crate::input::list_actions_input::Builder {
         crate::input::list_actions_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::ListActionsOutput, crate::error::ListActionsError> {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::ListActionsError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::ListActionsError {
-                        kind: crate::error::ListActionsErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::ListActionsError::unhandled(e),
-                },
-                _ => crate::error::ListActionsError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::list_actions_output::Builder::default();
-        builder =
-            crate::json_deser::list_actions_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::ListActionsError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -8738,7 +4552,11 @@ impl smithy_http::response::ParseStrictResponse for ListActions {
     type Output =
         std::result::Result<crate::output::ListActionsOutput, crate::error::ListActionsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_actions_error(response)
+        } else {
+            crate::operation_deser::parse_list_actions_response(response)
+        }
     }
 }
 
@@ -8752,26 +4570,6 @@ impl ListAlgorithms {
     pub fn builder() -> crate::input::list_algorithms_input::Builder {
         crate::input::list_algorithms_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::ListAlgorithmsOutput, crate::error::ListAlgorithmsError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::ListAlgorithmsError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::list_algorithms_output::Builder::default();
-        builder =
-            crate::json_deser::list_algorithms_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::ListAlgorithmsError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -8780,7 +4578,11 @@ impl smithy_http::response::ParseStrictResponse for ListAlgorithms {
     type Output =
         std::result::Result<crate::output::ListAlgorithmsOutput, crate::error::ListAlgorithmsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_algorithms_error(response)
+        } else {
+            crate::operation_deser::parse_list_algorithms_response(response)
+        }
     }
 }
 
@@ -8796,30 +4598,6 @@ impl ListAppImageConfigs {
     pub fn builder() -> crate::input::list_app_image_configs_input::Builder {
         crate::input::list_app_image_configs_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::ListAppImageConfigsOutput,
-        crate::error::ListAppImageConfigsError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::ListAppImageConfigsError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::list_app_image_configs_output::Builder::default();
-        builder = crate::json_deser::list_app_image_configs_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::ListAppImageConfigsError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -8830,7 +4608,11 @@ impl smithy_http::response::ParseStrictResponse for ListAppImageConfigs {
         crate::error::ListAppImageConfigsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_app_image_configs_error(response)
+        } else {
+            crate::operation_deser::parse_list_app_image_configs_response(response)
+        }
     }
 }
 
@@ -8844,24 +4626,6 @@ impl ListApps {
     pub fn builder() -> crate::input::list_apps_input::Builder {
         crate::input::list_apps_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::ListAppsOutput, crate::error::ListAppsError> {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::ListAppsError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::list_apps_output::Builder::default();
-        builder = crate::json_deser::list_apps_deser_operation(response.body().as_ref(), builder)
-            .map_err(crate::error::ListAppsError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -8869,7 +4633,11 @@ impl ListApps {
 impl smithy_http::response::ParseStrictResponse for ListApps {
     type Output = std::result::Result<crate::output::ListAppsOutput, crate::error::ListAppsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_apps_error(response)
+        } else {
+            crate::operation_deser::parse_list_apps_response(response)
+        }
     }
 }
 
@@ -8883,39 +4651,6 @@ impl ListArtifacts {
     pub fn builder() -> crate::input::list_artifacts_input::Builder {
         crate::input::list_artifacts_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::ListArtifactsOutput, crate::error::ListArtifactsError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::ListArtifactsError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::ListArtifactsError {
-                        kind: crate::error::ListArtifactsErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::ListArtifactsError::unhandled(e),
-                },
-                _ => crate::error::ListArtifactsError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::list_artifacts_output::Builder::default();
-        builder =
-            crate::json_deser::list_artifacts_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::ListArtifactsError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -8924,7 +4659,11 @@ impl smithy_http::response::ParseStrictResponse for ListArtifacts {
     type Output =
         std::result::Result<crate::output::ListArtifactsOutput, crate::error::ListArtifactsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_artifacts_error(response)
+        } else {
+            crate::operation_deser::parse_list_artifacts_response(response)
+        }
     }
 }
 
@@ -8938,41 +4677,6 @@ impl ListAssociations {
     pub fn builder() -> crate::input::list_associations_input::Builder {
         crate::input::list_associations_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::ListAssociationsOutput,
-        crate::error::ListAssociationsError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::ListAssociationsError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::ListAssociationsError {
-                        kind: crate::error::ListAssociationsErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::ListAssociationsError::unhandled(e),
-                },
-                _ => crate::error::ListAssociationsError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::list_associations_output::Builder::default();
-        builder =
-            crate::json_deser::list_associations_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::ListAssociationsError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -8983,7 +4687,11 @@ impl smithy_http::response::ParseStrictResponse for ListAssociations {
         crate::error::ListAssociationsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_associations_error(response)
+        } else {
+            crate::operation_deser::parse_list_associations_response(response)
+        }
     }
 }
 
@@ -8993,29 +4701,9 @@ pub struct ListAutoMLJobs {
     _private: (),
 }
 impl ListAutoMLJobs {
-    /// Creates a new builder-style object to manufacture [`ListAutoMLJobsInput`](crate::input::ListAutoMLJobsInput)
+    /// Creates a new builder-style object to manufacture [`ListAutoMlJobsInput`](crate::input::ListAutoMlJobsInput)
     pub fn builder() -> crate::input::list_auto_ml_jobs_input::Builder {
         crate::input::list_auto_ml_jobs_input::Builder::default()
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::ListAutoMLJobsOutput, crate::error::ListAutoMLJobsError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::ListAutoMLJobsError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::list_auto_ml_jobs_output::Builder::default();
-        builder =
-            crate::json_deser::list_auto_ml_jobs_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::ListAutoMLJobsError::unhandled)?;
-        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -9023,9 +4711,13 @@ impl ListAutoMLJobs {
 }
 impl smithy_http::response::ParseStrictResponse for ListAutoMLJobs {
     type Output =
-        std::result::Result<crate::output::ListAutoMLJobsOutput, crate::error::ListAutoMLJobsError>;
+        std::result::Result<crate::output::ListAutoMlJobsOutput, crate::error::ListAutoMLJobsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_auto_ml_jobs_error(response)
+        } else {
+            crate::operation_deser::parse_list_auto_ml_jobs_response(response)
+        }
     }
 }
 
@@ -9035,52 +4727,9 @@ pub struct ListCandidatesForAutoMLJob {
     _private: (),
 }
 impl ListCandidatesForAutoMLJob {
-    /// Creates a new builder-style object to manufacture [`ListCandidatesForAutoMLJobInput`](crate::input::ListCandidatesForAutoMLJobInput)
+    /// Creates a new builder-style object to manufacture [`ListCandidatesForAutoMlJobInput`](crate::input::ListCandidatesForAutoMlJobInput)
     pub fn builder() -> crate::input::list_candidates_for_auto_ml_job_input::Builder {
         crate::input::list_candidates_for_auto_ml_job_input::Builder::default()
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::ListCandidatesForAutoMLJobOutput,
-        crate::error::ListCandidatesForAutoMLJobError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(crate::error::ListCandidatesForAutoMLJobError::unhandled(
-                        generic,
-                    ))
-                }
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::ListCandidatesForAutoMLJobError {
-                        kind: crate::error::ListCandidatesForAutoMLJobErrorKind::ResourceNotFound(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::ListCandidatesForAutoMLJobError::unhandled(e),
-                },
-                _ => crate::error::ListCandidatesForAutoMLJobError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::list_candidates_for_auto_ml_job_output::Builder::default();
-        builder = crate::json_deser::list_candidates_for_auto_ml_job_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::ListCandidatesForAutoMLJobError::unhandled)?;
-        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -9088,11 +4737,15 @@ impl ListCandidatesForAutoMLJob {
 }
 impl smithy_http::response::ParseStrictResponse for ListCandidatesForAutoMLJob {
     type Output = std::result::Result<
-        crate::output::ListCandidatesForAutoMLJobOutput,
+        crate::output::ListCandidatesForAutoMlJobOutput,
         crate::error::ListCandidatesForAutoMLJobError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_candidates_for_auto_ml_job_error(response)
+        } else {
+            crate::operation_deser::parse_list_candidates_for_auto_ml_job_response(response)
+        }
     }
 }
 
@@ -9106,30 +4759,6 @@ impl ListCodeRepositories {
     pub fn builder() -> crate::input::list_code_repositories_input::Builder {
         crate::input::list_code_repositories_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::ListCodeRepositoriesOutput,
-        crate::error::ListCodeRepositoriesError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::ListCodeRepositoriesError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::list_code_repositories_output::Builder::default();
-        builder = crate::json_deser::list_code_repositories_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::ListCodeRepositoriesError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -9140,7 +4769,11 @@ impl smithy_http::response::ParseStrictResponse for ListCodeRepositories {
         crate::error::ListCodeRepositoriesError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_code_repositories_error(response)
+        } else {
+            crate::operation_deser::parse_list_code_repositories_response(response)
+        }
     }
 }
 
@@ -9156,30 +4789,6 @@ impl ListCompilationJobs {
     pub fn builder() -> crate::input::list_compilation_jobs_input::Builder {
         crate::input::list_compilation_jobs_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::ListCompilationJobsOutput,
-        crate::error::ListCompilationJobsError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::ListCompilationJobsError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::list_compilation_jobs_output::Builder::default();
-        builder = crate::json_deser::list_compilation_jobs_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::ListCompilationJobsError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -9190,7 +4799,11 @@ impl smithy_http::response::ParseStrictResponse for ListCompilationJobs {
         crate::error::ListCompilationJobsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_compilation_jobs_error(response)
+        } else {
+            crate::operation_deser::parse_list_compilation_jobs_response(response)
+        }
     }
 }
 
@@ -9204,39 +4817,6 @@ impl ListContexts {
     pub fn builder() -> crate::input::list_contexts_input::Builder {
         crate::input::list_contexts_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::ListContextsOutput, crate::error::ListContextsError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::ListContextsError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::ListContextsError {
-                        kind: crate::error::ListContextsErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::ListContextsError::unhandled(e),
-                },
-                _ => crate::error::ListContextsError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::list_contexts_output::Builder::default();
-        builder =
-            crate::json_deser::list_contexts_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::ListContextsError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -9245,7 +4825,11 @@ impl smithy_http::response::ParseStrictResponse for ListContexts {
     type Output =
         std::result::Result<crate::output::ListContextsOutput, crate::error::ListContextsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_contexts_error(response)
+        } else {
+            crate::operation_deser::parse_list_contexts_response(response)
+        }
     }
 }
 
@@ -9259,33 +4843,6 @@ impl ListDataQualityJobDefinitions {
     pub fn builder() -> crate::input::list_data_quality_job_definitions_input::Builder {
         crate::input::list_data_quality_job_definitions_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::ListDataQualityJobDefinitionsOutput,
-        crate::error::ListDataQualityJobDefinitionsError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::ListDataQualityJobDefinitionsError::generic(
-                generic,
-            ));
-        }
-        #[allow(unused_mut)]
-        let mut builder =
-            crate::output::list_data_quality_job_definitions_output::Builder::default();
-        builder = crate::json_deser::list_data_quality_job_definitions_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::ListDataQualityJobDefinitionsError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -9296,7 +4853,11 @@ impl smithy_http::response::ParseStrictResponse for ListDataQualityJobDefinition
         crate::error::ListDataQualityJobDefinitionsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_data_quality_job_definitions_error(response)
+        } else {
+            crate::operation_deser::parse_list_data_quality_job_definitions_response(response)
+        }
     }
 }
 
@@ -9310,30 +4871,6 @@ impl ListDeviceFleets {
     pub fn builder() -> crate::input::list_device_fleets_input::Builder {
         crate::input::list_device_fleets_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::ListDeviceFleetsOutput,
-        crate::error::ListDeviceFleetsError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::ListDeviceFleetsError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::list_device_fleets_output::Builder::default();
-        builder = crate::json_deser::list_device_fleets_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::ListDeviceFleetsError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -9344,7 +4881,11 @@ impl smithy_http::response::ParseStrictResponse for ListDeviceFleets {
         crate::error::ListDeviceFleetsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_device_fleets_error(response)
+        } else {
+            crate::operation_deser::parse_list_device_fleets_response(response)
+        }
     }
 }
 
@@ -9358,25 +4899,6 @@ impl ListDevices {
     pub fn builder() -> crate::input::list_devices_input::Builder {
         crate::input::list_devices_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::ListDevicesOutput, crate::error::ListDevicesError> {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::ListDevicesError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::list_devices_output::Builder::default();
-        builder =
-            crate::json_deser::list_devices_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::ListDevicesError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -9385,7 +4907,11 @@ impl smithy_http::response::ParseStrictResponse for ListDevices {
     type Output =
         std::result::Result<crate::output::ListDevicesOutput, crate::error::ListDevicesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_devices_error(response)
+        } else {
+            crate::operation_deser::parse_list_devices_response(response)
+        }
     }
 }
 
@@ -9399,25 +4925,6 @@ impl ListDomains {
     pub fn builder() -> crate::input::list_domains_input::Builder {
         crate::input::list_domains_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::ListDomainsOutput, crate::error::ListDomainsError> {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::ListDomainsError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::list_domains_output::Builder::default();
-        builder =
-            crate::json_deser::list_domains_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::ListDomainsError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -9426,7 +4933,11 @@ impl smithy_http::response::ParseStrictResponse for ListDomains {
     type Output =
         std::result::Result<crate::output::ListDomainsOutput, crate::error::ListDomainsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_domains_error(response)
+        } else {
+            crate::operation_deser::parse_list_domains_response(response)
+        }
     }
 }
 
@@ -9440,30 +4951,6 @@ impl ListEdgePackagingJobs {
     pub fn builder() -> crate::input::list_edge_packaging_jobs_input::Builder {
         crate::input::list_edge_packaging_jobs_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::ListEdgePackagingJobsOutput,
-        crate::error::ListEdgePackagingJobsError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::ListEdgePackagingJobsError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::list_edge_packaging_jobs_output::Builder::default();
-        builder = crate::json_deser::list_edge_packaging_jobs_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::ListEdgePackagingJobsError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -9474,7 +4961,11 @@ impl smithy_http::response::ParseStrictResponse for ListEdgePackagingJobs {
         crate::error::ListEdgePackagingJobsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_edge_packaging_jobs_error(response)
+        } else {
+            crate::operation_deser::parse_list_edge_packaging_jobs_response(response)
+        }
     }
 }
 
@@ -9488,30 +4979,6 @@ impl ListEndpointConfigs {
     pub fn builder() -> crate::input::list_endpoint_configs_input::Builder {
         crate::input::list_endpoint_configs_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::ListEndpointConfigsOutput,
-        crate::error::ListEndpointConfigsError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::ListEndpointConfigsError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::list_endpoint_configs_output::Builder::default();
-        builder = crate::json_deser::list_endpoint_configs_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::ListEndpointConfigsError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -9522,7 +4989,11 @@ impl smithy_http::response::ParseStrictResponse for ListEndpointConfigs {
         crate::error::ListEndpointConfigsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_endpoint_configs_error(response)
+        } else {
+            crate::operation_deser::parse_list_endpoint_configs_response(response)
+        }
     }
 }
 
@@ -9536,26 +5007,6 @@ impl ListEndpoints {
     pub fn builder() -> crate::input::list_endpoints_input::Builder {
         crate::input::list_endpoints_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::ListEndpointsOutput, crate::error::ListEndpointsError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::ListEndpointsError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::list_endpoints_output::Builder::default();
-        builder =
-            crate::json_deser::list_endpoints_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::ListEndpointsError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -9564,7 +5015,11 @@ impl smithy_http::response::ParseStrictResponse for ListEndpoints {
     type Output =
         std::result::Result<crate::output::ListEndpointsOutput, crate::error::ListEndpointsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_endpoints_error(response)
+        } else {
+            crate::operation_deser::parse_list_endpoints_response(response)
+        }
     }
 }
 
@@ -9580,26 +5035,6 @@ impl ListExperiments {
     pub fn builder() -> crate::input::list_experiments_input::Builder {
         crate::input::list_experiments_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::ListExperimentsOutput, crate::error::ListExperimentsError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::ListExperimentsError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::list_experiments_output::Builder::default();
-        builder =
-            crate::json_deser::list_experiments_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::ListExperimentsError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -9610,7 +5045,11 @@ impl smithy_http::response::ParseStrictResponse for ListExperiments {
         crate::error::ListExperimentsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_experiments_error(response)
+        } else {
+            crate::operation_deser::parse_list_experiments_response(response)
+        }
     }
 }
 
@@ -9624,30 +5063,6 @@ impl ListFeatureGroups {
     pub fn builder() -> crate::input::list_feature_groups_input::Builder {
         crate::input::list_feature_groups_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::ListFeatureGroupsOutput,
-        crate::error::ListFeatureGroupsError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::ListFeatureGroupsError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::list_feature_groups_output::Builder::default();
-        builder = crate::json_deser::list_feature_groups_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::ListFeatureGroupsError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -9658,7 +5073,11 @@ impl smithy_http::response::ParseStrictResponse for ListFeatureGroups {
         crate::error::ListFeatureGroupsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_feature_groups_error(response)
+        } else {
+            crate::operation_deser::parse_list_feature_groups_response(response)
+        }
     }
 }
 
@@ -9672,30 +5091,6 @@ impl ListFlowDefinitions {
     pub fn builder() -> crate::input::list_flow_definitions_input::Builder {
         crate::input::list_flow_definitions_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::ListFlowDefinitionsOutput,
-        crate::error::ListFlowDefinitionsError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::ListFlowDefinitionsError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::list_flow_definitions_output::Builder::default();
-        builder = crate::json_deser::list_flow_definitions_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::ListFlowDefinitionsError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -9706,7 +5101,11 @@ impl smithy_http::response::ParseStrictResponse for ListFlowDefinitions {
         crate::error::ListFlowDefinitionsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_flow_definitions_error(response)
+        } else {
+            crate::operation_deser::parse_list_flow_definitions_response(response)
+        }
     }
 }
 
@@ -9720,30 +5119,6 @@ impl ListHumanTaskUis {
     pub fn builder() -> crate::input::list_human_task_uis_input::Builder {
         crate::input::list_human_task_uis_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::ListHumanTaskUisOutput,
-        crate::error::ListHumanTaskUisError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::ListHumanTaskUisError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::list_human_task_uis_output::Builder::default();
-        builder = crate::json_deser::list_human_task_uis_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::ListHumanTaskUisError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -9754,7 +5129,11 @@ impl smithy_http::response::ParseStrictResponse for ListHumanTaskUis {
         crate::error::ListHumanTaskUisError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_human_task_uis_error(response)
+        } else {
+            crate::operation_deser::parse_list_human_task_uis_response(response)
+        }
     }
 }
 
@@ -9770,33 +5149,6 @@ impl ListHyperParameterTuningJobs {
     pub fn builder() -> crate::input::list_hyper_parameter_tuning_jobs_input::Builder {
         crate::input::list_hyper_parameter_tuning_jobs_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::ListHyperParameterTuningJobsOutput,
-        crate::error::ListHyperParameterTuningJobsError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::ListHyperParameterTuningJobsError::generic(
-                generic,
-            ));
-        }
-        #[allow(unused_mut)]
-        let mut builder =
-            crate::output::list_hyper_parameter_tuning_jobs_output::Builder::default();
-        builder = crate::json_deser::list_hyper_parameter_tuning_jobs_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::ListHyperParameterTuningJobsError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -9807,7 +5159,11 @@ impl smithy_http::response::ParseStrictResponse for ListHyperParameterTuningJobs
         crate::error::ListHyperParameterTuningJobsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_hyper_parameter_tuning_jobs_error(response)
+        } else {
+            crate::operation_deser::parse_list_hyper_parameter_tuning_jobs_response(response)
+        }
     }
 }
 
@@ -9822,24 +5178,6 @@ impl ListImages {
     pub fn builder() -> crate::input::list_images_input::Builder {
         crate::input::list_images_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::ListImagesOutput, crate::error::ListImagesError> {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::ListImagesError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::list_images_output::Builder::default();
-        builder = crate::json_deser::list_images_deser_operation(response.body().as_ref(), builder)
-            .map_err(crate::error::ListImagesError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -9848,7 +5186,11 @@ impl smithy_http::response::ParseStrictResponse for ListImages {
     type Output =
         std::result::Result<crate::output::ListImagesOutput, crate::error::ListImagesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_images_error(response)
+        } else {
+            crate::operation_deser::parse_list_images_response(response)
+        }
     }
 }
 
@@ -9863,43 +5205,6 @@ impl ListImageVersions {
     pub fn builder() -> crate::input::list_image_versions_input::Builder {
         crate::input::list_image_versions_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::ListImageVersionsOutput,
-        crate::error::ListImageVersionsError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::ListImageVersionsError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::ListImageVersionsError {
-                        kind: crate::error::ListImageVersionsErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::ListImageVersionsError::unhandled(e),
-                },
-                _ => crate::error::ListImageVersionsError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::list_image_versions_output::Builder::default();
-        builder = crate::json_deser::list_image_versions_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::ListImageVersionsError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -9910,7 +5215,11 @@ impl smithy_http::response::ParseStrictResponse for ListImageVersions {
         crate::error::ListImageVersionsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_image_versions_error(response)
+        } else {
+            crate::operation_deser::parse_list_image_versions_response(response)
+        }
     }
 }
 
@@ -9924,30 +5233,6 @@ impl ListLabelingJobs {
     pub fn builder() -> crate::input::list_labeling_jobs_input::Builder {
         crate::input::list_labeling_jobs_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::ListLabelingJobsOutput,
-        crate::error::ListLabelingJobsError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::ListLabelingJobsError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::list_labeling_jobs_output::Builder::default();
-        builder = crate::json_deser::list_labeling_jobs_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::ListLabelingJobsError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -9958,7 +5243,11 @@ impl smithy_http::response::ParseStrictResponse for ListLabelingJobs {
         crate::error::ListLabelingJobsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_labeling_jobs_error(response)
+        } else {
+            crate::operation_deser::parse_list_labeling_jobs_response(response)
+        }
     }
 }
 
@@ -9972,49 +5261,6 @@ impl ListLabelingJobsForWorkteam {
     pub fn builder() -> crate::input::list_labeling_jobs_for_workteam_input::Builder {
         crate::input::list_labeling_jobs_for_workteam_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::ListLabelingJobsForWorkteamOutput,
-        crate::error::ListLabelingJobsForWorkteamError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(crate::error::ListLabelingJobsForWorkteamError::unhandled(
-                        generic,
-                    ))
-                }
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::ListLabelingJobsForWorkteamError {
-                        kind: crate::error::ListLabelingJobsForWorkteamErrorKind::ResourceNotFound(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::ListLabelingJobsForWorkteamError::unhandled(e),
-                },
-                _ => crate::error::ListLabelingJobsForWorkteamError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::list_labeling_jobs_for_workteam_output::Builder::default();
-        builder = crate::json_deser::list_labeling_jobs_for_workteam_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::ListLabelingJobsForWorkteamError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -10025,7 +5271,11 @@ impl smithy_http::response::ParseStrictResponse for ListLabelingJobsForWorkteam 
         crate::error::ListLabelingJobsForWorkteamError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_labeling_jobs_for_workteam_error(response)
+        } else {
+            crate::operation_deser::parse_list_labeling_jobs_for_workteam_response(response)
+        }
     }
 }
 
@@ -10039,32 +5289,6 @@ impl ListModelBiasJobDefinitions {
     pub fn builder() -> crate::input::list_model_bias_job_definitions_input::Builder {
         crate::input::list_model_bias_job_definitions_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::ListModelBiasJobDefinitionsOutput,
-        crate::error::ListModelBiasJobDefinitionsError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::ListModelBiasJobDefinitionsError::generic(
-                generic,
-            ));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::list_model_bias_job_definitions_output::Builder::default();
-        builder = crate::json_deser::list_model_bias_job_definitions_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::ListModelBiasJobDefinitionsError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -10075,7 +5299,11 @@ impl smithy_http::response::ParseStrictResponse for ListModelBiasJobDefinitions 
         crate::error::ListModelBiasJobDefinitionsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_model_bias_job_definitions_error(response)
+        } else {
+            crate::operation_deser::parse_list_model_bias_job_definitions_response(response)
+        }
     }
 }
 
@@ -10089,31 +5317,6 @@ impl ListModelExplainabilityJobDefinitions {
     pub fn builder() -> crate::input::list_model_explainability_job_definitions_input::Builder {
         crate::input::list_model_explainability_job_definitions_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::ListModelExplainabilityJobDefinitionsOutput,
-        crate::error::ListModelExplainabilityJobDefinitionsError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::ListModelExplainabilityJobDefinitionsError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder =
-            crate::output::list_model_explainability_job_definitions_output::Builder::default();
-        builder = crate::json_deser::list_model_explainability_job_definitions_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::ListModelExplainabilityJobDefinitionsError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -10124,7 +5327,13 @@ impl smithy_http::response::ParseStrictResponse for ListModelExplainabilityJobDe
         crate::error::ListModelExplainabilityJobDefinitionsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_model_explainability_job_definitions_error(response)
+        } else {
+            crate::operation_deser::parse_list_model_explainability_job_definitions_response(
+                response,
+            )
+        }
     }
 }
 
@@ -10138,30 +5347,6 @@ impl ListModelPackageGroups {
     pub fn builder() -> crate::input::list_model_package_groups_input::Builder {
         crate::input::list_model_package_groups_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::ListModelPackageGroupsOutput,
-        crate::error::ListModelPackageGroupsError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::ListModelPackageGroupsError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::list_model_package_groups_output::Builder::default();
-        builder = crate::json_deser::list_model_package_groups_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::ListModelPackageGroupsError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -10172,7 +5357,11 @@ impl smithy_http::response::ParseStrictResponse for ListModelPackageGroups {
         crate::error::ListModelPackageGroupsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_model_package_groups_error(response)
+        } else {
+            crate::operation_deser::parse_list_model_package_groups_response(response)
+        }
     }
 }
 
@@ -10186,30 +5375,6 @@ impl ListModelPackages {
     pub fn builder() -> crate::input::list_model_packages_input::Builder {
         crate::input::list_model_packages_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::ListModelPackagesOutput,
-        crate::error::ListModelPackagesError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::ListModelPackagesError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::list_model_packages_output::Builder::default();
-        builder = crate::json_deser::list_model_packages_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::ListModelPackagesError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -10220,7 +5385,11 @@ impl smithy_http::response::ParseStrictResponse for ListModelPackages {
         crate::error::ListModelPackagesError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_model_packages_error(response)
+        } else {
+            crate::operation_deser::parse_list_model_packages_response(response)
+        }
     }
 }
 
@@ -10234,33 +5403,6 @@ impl ListModelQualityJobDefinitions {
     pub fn builder() -> crate::input::list_model_quality_job_definitions_input::Builder {
         crate::input::list_model_quality_job_definitions_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::ListModelQualityJobDefinitionsOutput,
-        crate::error::ListModelQualityJobDefinitionsError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::ListModelQualityJobDefinitionsError::generic(
-                generic,
-            ));
-        }
-        #[allow(unused_mut)]
-        let mut builder =
-            crate::output::list_model_quality_job_definitions_output::Builder::default();
-        builder = crate::json_deser::list_model_quality_job_definitions_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::ListModelQualityJobDefinitionsError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -10271,7 +5413,11 @@ impl smithy_http::response::ParseStrictResponse for ListModelQualityJobDefinitio
         crate::error::ListModelQualityJobDefinitionsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_model_quality_job_definitions_error(response)
+        } else {
+            crate::operation_deser::parse_list_model_quality_job_definitions_response(response)
+        }
     }
 }
 
@@ -10285,24 +5431,6 @@ impl ListModels {
     pub fn builder() -> crate::input::list_models_input::Builder {
         crate::input::list_models_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::ListModelsOutput, crate::error::ListModelsError> {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::ListModelsError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::list_models_output::Builder::default();
-        builder = crate::json_deser::list_models_deser_operation(response.body().as_ref(), builder)
-            .map_err(crate::error::ListModelsError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -10311,7 +5439,11 @@ impl smithy_http::response::ParseStrictResponse for ListModels {
     type Output =
         std::result::Result<crate::output::ListModelsOutput, crate::error::ListModelsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_models_error(response)
+        } else {
+            crate::operation_deser::parse_list_models_response(response)
+        }
     }
 }
 
@@ -10325,32 +5457,6 @@ impl ListMonitoringExecutions {
     pub fn builder() -> crate::input::list_monitoring_executions_input::Builder {
         crate::input::list_monitoring_executions_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::ListMonitoringExecutionsOutput,
-        crate::error::ListMonitoringExecutionsError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::ListMonitoringExecutionsError::generic(
-                generic,
-            ));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::list_monitoring_executions_output::Builder::default();
-        builder = crate::json_deser::list_monitoring_executions_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::ListMonitoringExecutionsError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -10361,7 +5467,11 @@ impl smithy_http::response::ParseStrictResponse for ListMonitoringExecutions {
         crate::error::ListMonitoringExecutionsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_monitoring_executions_error(response)
+        } else {
+            crate::operation_deser::parse_list_monitoring_executions_response(response)
+        }
     }
 }
 
@@ -10375,30 +5485,6 @@ impl ListMonitoringSchedules {
     pub fn builder() -> crate::input::list_monitoring_schedules_input::Builder {
         crate::input::list_monitoring_schedules_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::ListMonitoringSchedulesOutput,
-        crate::error::ListMonitoringSchedulesError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::ListMonitoringSchedulesError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::list_monitoring_schedules_output::Builder::default();
-        builder = crate::json_deser::list_monitoring_schedules_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::ListMonitoringSchedulesError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -10409,7 +5495,11 @@ impl smithy_http::response::ParseStrictResponse for ListMonitoringSchedules {
         crate::error::ListMonitoringSchedulesError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_monitoring_schedules_error(response)
+        } else {
+            crate::operation_deser::parse_list_monitoring_schedules_response(response)
+        }
     }
 }
 
@@ -10423,31 +5513,6 @@ impl ListNotebookInstanceLifecycleConfigs {
     pub fn builder() -> crate::input::list_notebook_instance_lifecycle_configs_input::Builder {
         crate::input::list_notebook_instance_lifecycle_configs_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::ListNotebookInstanceLifecycleConfigsOutput,
-        crate::error::ListNotebookInstanceLifecycleConfigsError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::ListNotebookInstanceLifecycleConfigsError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder =
-            crate::output::list_notebook_instance_lifecycle_configs_output::Builder::default();
-        builder = crate::json_deser::list_notebook_instance_lifecycle_configs_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::ListNotebookInstanceLifecycleConfigsError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -10458,7 +5523,13 @@ impl smithy_http::response::ParseStrictResponse for ListNotebookInstanceLifecycl
         crate::error::ListNotebookInstanceLifecycleConfigsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_notebook_instance_lifecycle_configs_error(response)
+        } else {
+            crate::operation_deser::parse_list_notebook_instance_lifecycle_configs_response(
+                response,
+            )
+        }
     }
 }
 
@@ -10473,30 +5544,6 @@ impl ListNotebookInstances {
     pub fn builder() -> crate::input::list_notebook_instances_input::Builder {
         crate::input::list_notebook_instances_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::ListNotebookInstancesOutput,
-        crate::error::ListNotebookInstancesError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::ListNotebookInstancesError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::list_notebook_instances_output::Builder::default();
-        builder = crate::json_deser::list_notebook_instances_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::ListNotebookInstancesError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -10507,7 +5554,11 @@ impl smithy_http::response::ParseStrictResponse for ListNotebookInstances {
         crate::error::ListNotebookInstancesError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_notebook_instances_error(response)
+        } else {
+            crate::operation_deser::parse_list_notebook_instances_response(response)
+        }
     }
 }
 
@@ -10521,47 +5572,6 @@ impl ListPipelineExecutions {
     pub fn builder() -> crate::input::list_pipeline_executions_input::Builder {
         crate::input::list_pipeline_executions_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::ListPipelineExecutionsOutput,
-        crate::error::ListPipelineExecutionsError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(crate::error::ListPipelineExecutionsError::unhandled(
-                        generic,
-                    ))
-                }
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::ListPipelineExecutionsError {
-                        kind: crate::error::ListPipelineExecutionsErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::ListPipelineExecutionsError::unhandled(e),
-                },
-                _ => crate::error::ListPipelineExecutionsError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::list_pipeline_executions_output::Builder::default();
-        builder = crate::json_deser::list_pipeline_executions_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::ListPipelineExecutionsError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -10572,7 +5582,11 @@ impl smithy_http::response::ParseStrictResponse for ListPipelineExecutions {
         crate::error::ListPipelineExecutionsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_pipeline_executions_error(response)
+        } else {
+            crate::operation_deser::parse_list_pipeline_executions_response(response)
+        }
     }
 }
 
@@ -10586,49 +5600,6 @@ impl ListPipelineExecutionSteps {
     pub fn builder() -> crate::input::list_pipeline_execution_steps_input::Builder {
         crate::input::list_pipeline_execution_steps_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::ListPipelineExecutionStepsOutput,
-        crate::error::ListPipelineExecutionStepsError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(crate::error::ListPipelineExecutionStepsError::unhandled(
-                        generic,
-                    ))
-                }
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::ListPipelineExecutionStepsError {
-                        kind: crate::error::ListPipelineExecutionStepsErrorKind::ResourceNotFound(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::ListPipelineExecutionStepsError::unhandled(e),
-                },
-                _ => crate::error::ListPipelineExecutionStepsError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::list_pipeline_execution_steps_output::Builder::default();
-        builder = crate::json_deser::list_pipeline_execution_steps_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::ListPipelineExecutionStepsError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -10639,7 +5610,11 @@ impl smithy_http::response::ParseStrictResponse for ListPipelineExecutionSteps {
         crate::error::ListPipelineExecutionStepsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_pipeline_execution_steps_error(response)
+        } else {
+            crate::operation_deser::parse_list_pipeline_execution_steps_response(response)
+        }
     }
 }
 
@@ -10653,45 +5628,6 @@ impl ListPipelineParametersForExecution {
     pub fn builder() -> crate::input::list_pipeline_parameters_for_execution_input::Builder {
         crate::input::list_pipeline_parameters_for_execution_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::ListPipelineParametersForExecutionOutput,
-        crate::error::ListPipelineParametersForExecutionError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(
-                        crate::error::ListPipelineParametersForExecutionError::unhandled(generic),
-                    )
-                }
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::ListPipelineParametersForExecutionError { kind: crate::error::ListPipelineParametersForExecutionErrorKind::ResourceNotFound(body), meta: generic },
-                    Err(e) => crate::error::ListPipelineParametersForExecutionError::unhandled(e)
-                }
-                _ => crate::error::ListPipelineParametersForExecutionError::generic(generic)
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder =
-            crate::output::list_pipeline_parameters_for_execution_output::Builder::default();
-        builder = crate::json_deser::list_pipeline_parameters_for_execution_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::ListPipelineParametersForExecutionError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -10702,7 +5638,11 @@ impl smithy_http::response::ParseStrictResponse for ListPipelineParametersForExe
         crate::error::ListPipelineParametersForExecutionError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_pipeline_parameters_for_execution_error(response)
+        } else {
+            crate::operation_deser::parse_list_pipeline_parameters_for_execution_response(response)
+        }
     }
 }
 
@@ -10716,26 +5656,6 @@ impl ListPipelines {
     pub fn builder() -> crate::input::list_pipelines_input::Builder {
         crate::input::list_pipelines_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::ListPipelinesOutput, crate::error::ListPipelinesError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::ListPipelinesError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::list_pipelines_output::Builder::default();
-        builder =
-            crate::json_deser::list_pipelines_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::ListPipelinesError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -10744,7 +5664,11 @@ impl smithy_http::response::ParseStrictResponse for ListPipelines {
     type Output =
         std::result::Result<crate::output::ListPipelinesOutput, crate::error::ListPipelinesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_pipelines_error(response)
+        } else {
+            crate::operation_deser::parse_list_pipelines_response(response)
+        }
     }
 }
 
@@ -10758,30 +5682,6 @@ impl ListProcessingJobs {
     pub fn builder() -> crate::input::list_processing_jobs_input::Builder {
         crate::input::list_processing_jobs_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::ListProcessingJobsOutput,
-        crate::error::ListProcessingJobsError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::ListProcessingJobsError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::list_processing_jobs_output::Builder::default();
-        builder = crate::json_deser::list_processing_jobs_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::ListProcessingJobsError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -10792,7 +5692,11 @@ impl smithy_http::response::ParseStrictResponse for ListProcessingJobs {
         crate::error::ListProcessingJobsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_processing_jobs_error(response)
+        } else {
+            crate::operation_deser::parse_list_processing_jobs_response(response)
+        }
     }
 }
 
@@ -10806,26 +5710,6 @@ impl ListProjects {
     pub fn builder() -> crate::input::list_projects_input::Builder {
         crate::input::list_projects_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::ListProjectsOutput, crate::error::ListProjectsError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::ListProjectsError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::list_projects_output::Builder::default();
-        builder =
-            crate::json_deser::list_projects_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::ListProjectsError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -10834,7 +5718,11 @@ impl smithy_http::response::ParseStrictResponse for ListProjects {
     type Output =
         std::result::Result<crate::output::ListProjectsOutput, crate::error::ListProjectsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_projects_error(response)
+        } else {
+            crate::operation_deser::parse_list_projects_response(response)
+        }
     }
 }
 
@@ -10850,30 +5738,6 @@ impl ListSubscribedWorkteams {
     pub fn builder() -> crate::input::list_subscribed_workteams_input::Builder {
         crate::input::list_subscribed_workteams_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::ListSubscribedWorkteamsOutput,
-        crate::error::ListSubscribedWorkteamsError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::ListSubscribedWorkteamsError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::list_subscribed_workteams_output::Builder::default();
-        builder = crate::json_deser::list_subscribed_workteams_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::ListSubscribedWorkteamsError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -10884,7 +5748,11 @@ impl smithy_http::response::ParseStrictResponse for ListSubscribedWorkteams {
         crate::error::ListSubscribedWorkteamsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_subscribed_workteams_error(response)
+        } else {
+            crate::operation_deser::parse_list_subscribed_workteams_response(response)
+        }
     }
 }
 
@@ -10898,24 +5766,6 @@ impl ListTags {
     pub fn builder() -> crate::input::list_tags_input::Builder {
         crate::input::list_tags_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::ListTagsOutput, crate::error::ListTagsError> {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::ListTagsError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::list_tags_output::Builder::default();
-        builder = crate::json_deser::list_tags_deser_operation(response.body().as_ref(), builder)
-            .map_err(crate::error::ListTagsError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -10923,7 +5773,11 @@ impl ListTags {
 impl smithy_http::response::ParseStrictResponse for ListTags {
     type Output = std::result::Result<crate::output::ListTagsOutput, crate::error::ListTagsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_tags_error(response)
+        } else {
+            crate::operation_deser::parse_list_tags_response(response)
+        }
     }
 }
 
@@ -10957,30 +5811,6 @@ impl ListTrainingJobs {
     pub fn builder() -> crate::input::list_training_jobs_input::Builder {
         crate::input::list_training_jobs_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::ListTrainingJobsOutput,
-        crate::error::ListTrainingJobsError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::ListTrainingJobsError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::list_training_jobs_output::Builder::default();
-        builder = crate::json_deser::list_training_jobs_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::ListTrainingJobsError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -10991,7 +5821,11 @@ impl smithy_http::response::ParseStrictResponse for ListTrainingJobs {
         crate::error::ListTrainingJobsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_training_jobs_error(response)
+        } else {
+            crate::operation_deser::parse_list_training_jobs_response(response)
+        }
     }
 }
 
@@ -11007,45 +5841,6 @@ impl ListTrainingJobsForHyperParameterTuningJob {
     ) -> crate::input::list_training_jobs_for_hyper_parameter_tuning_job_input::Builder {
         crate::input::list_training_jobs_for_hyper_parameter_tuning_job_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::ListTrainingJobsForHyperParameterTuningJobOutput,
-        crate::error::ListTrainingJobsForHyperParameterTuningJobError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code =
-                match generic.code() {
-                    Some(code) => code,
-                    None => return Err(
-                        crate::error::ListTrainingJobsForHyperParameterTuningJobError::unhandled(
-                            generic,
-                        ),
-                    ),
-                };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::ListTrainingJobsForHyperParameterTuningJobError { kind: crate::error::ListTrainingJobsForHyperParameterTuningJobErrorKind::ResourceNotFound(body), meta: generic },
-                    Err(e) => crate::error::ListTrainingJobsForHyperParameterTuningJobError::unhandled(e)
-                }
-                _ => crate::error::ListTrainingJobsForHyperParameterTuningJobError::generic(generic)
-            });
-        }
-        #[allow(unused_mut)]let mut builder = crate::output::list_training_jobs_for_hyper_parameter_tuning_job_output::Builder::default();
-        builder =
-            crate::json_deser::list_training_jobs_for_hyper_parameter_tuning_job_deser_operation(
-                response.body().as_ref(),
-                builder,
-            )
-            .map_err(crate::error::ListTrainingJobsForHyperParameterTuningJobError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -11056,7 +5851,15 @@ impl smithy_http::response::ParseStrictResponse for ListTrainingJobsForHyperPara
         crate::error::ListTrainingJobsForHyperParameterTuningJobError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_training_jobs_for_hyper_parameter_tuning_job_error(
+                response,
+            )
+        } else {
+            crate::operation_deser::parse_list_training_jobs_for_hyper_parameter_tuning_job_response(
+                response,
+            )
+        }
     }
 }
 
@@ -11070,30 +5873,6 @@ impl ListTransformJobs {
     pub fn builder() -> crate::input::list_transform_jobs_input::Builder {
         crate::input::list_transform_jobs_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::ListTransformJobsOutput,
-        crate::error::ListTransformJobsError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::ListTransformJobsError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::list_transform_jobs_output::Builder::default();
-        builder = crate::json_deser::list_transform_jobs_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::ListTransformJobsError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -11104,7 +5883,11 @@ impl smithy_http::response::ParseStrictResponse for ListTransformJobs {
         crate::error::ListTransformJobsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_transform_jobs_error(response)
+        } else {
+            crate::operation_deser::parse_list_transform_jobs_response(response)
+        }
     }
 }
 
@@ -11137,43 +5920,6 @@ impl ListTrialComponents {
     pub fn builder() -> crate::input::list_trial_components_input::Builder {
         crate::input::list_trial_components_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::ListTrialComponentsOutput,
-        crate::error::ListTrialComponentsError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::ListTrialComponentsError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::ListTrialComponentsError {
-                        kind: crate::error::ListTrialComponentsErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::ListTrialComponentsError::unhandled(e),
-                },
-                _ => crate::error::ListTrialComponentsError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::list_trial_components_output::Builder::default();
-        builder = crate::json_deser::list_trial_components_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::ListTrialComponentsError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -11184,7 +5930,11 @@ impl smithy_http::response::ParseStrictResponse for ListTrialComponents {
         crate::error::ListTrialComponentsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_trial_components_error(response)
+        } else {
+            crate::operation_deser::parse_list_trial_components_response(response)
+        }
     }
 }
 
@@ -11202,37 +5952,6 @@ impl ListTrials {
     pub fn builder() -> crate::input::list_trials_input::Builder {
         crate::input::list_trials_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::ListTrialsOutput, crate::error::ListTrialsError> {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::ListTrialsError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::ListTrialsError {
-                        kind: crate::error::ListTrialsErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::ListTrialsError::unhandled(e),
-                },
-                _ => crate::error::ListTrialsError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::list_trials_output::Builder::default();
-        builder = crate::json_deser::list_trials_deser_operation(response.body().as_ref(), builder)
-            .map_err(crate::error::ListTrialsError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -11241,7 +5960,11 @@ impl smithy_http::response::ParseStrictResponse for ListTrials {
     type Output =
         std::result::Result<crate::output::ListTrialsOutput, crate::error::ListTrialsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_trials_error(response)
+        } else {
+            crate::operation_deser::parse_list_trials_response(response)
+        }
     }
 }
 
@@ -11255,30 +5978,6 @@ impl ListUserProfiles {
     pub fn builder() -> crate::input::list_user_profiles_input::Builder {
         crate::input::list_user_profiles_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::ListUserProfilesOutput,
-        crate::error::ListUserProfilesError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::ListUserProfilesError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::list_user_profiles_output::Builder::default();
-        builder = crate::json_deser::list_user_profiles_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::ListUserProfilesError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -11289,7 +5988,11 @@ impl smithy_http::response::ParseStrictResponse for ListUserProfiles {
         crate::error::ListUserProfilesError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_user_profiles_error(response)
+        } else {
+            crate::operation_deser::parse_list_user_profiles_response(response)
+        }
     }
 }
 
@@ -11304,26 +6007,6 @@ impl ListWorkforces {
     pub fn builder() -> crate::input::list_workforces_input::Builder {
         crate::input::list_workforces_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::ListWorkforcesOutput, crate::error::ListWorkforcesError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::ListWorkforcesError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::list_workforces_output::Builder::default();
-        builder =
-            crate::json_deser::list_workforces_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::ListWorkforcesError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -11332,7 +6015,11 @@ impl smithy_http::response::ParseStrictResponse for ListWorkforces {
     type Output =
         std::result::Result<crate::output::ListWorkforcesOutput, crate::error::ListWorkforcesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_workforces_error(response)
+        } else {
+            crate::operation_deser::parse_list_workforces_response(response)
+        }
     }
 }
 
@@ -11348,26 +6035,6 @@ impl ListWorkteams {
     pub fn builder() -> crate::input::list_workteams_input::Builder {
         crate::input::list_workteams_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::ListWorkteamsOutput, crate::error::ListWorkteamsError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::ListWorkteamsError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::list_workteams_output::Builder::default();
-        builder =
-            crate::json_deser::list_workteams_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::ListWorkteamsError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -11376,7 +6043,11 @@ impl smithy_http::response::ParseStrictResponse for ListWorkteams {
     type Output =
         std::result::Result<crate::output::ListWorkteamsOutput, crate::error::ListWorkteamsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_workteams_error(response)
+        } else {
+            crate::operation_deser::parse_list_workteams_response(response)
+        }
     }
 }
 
@@ -11392,32 +6063,6 @@ impl PutModelPackageGroupPolicy {
     pub fn builder() -> crate::input::put_model_package_group_policy_input::Builder {
         crate::input::put_model_package_group_policy_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::PutModelPackageGroupPolicyOutput,
-        crate::error::PutModelPackageGroupPolicyError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::PutModelPackageGroupPolicyError::generic(
-                generic,
-            ));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::put_model_package_group_policy_output::Builder::default();
-        builder = crate::json_deser::put_model_package_group_policy_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::PutModelPackageGroupPolicyError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -11428,7 +6073,11 @@ impl smithy_http::response::ParseStrictResponse for PutModelPackageGroupPolicy {
         crate::error::PutModelPackageGroupPolicyError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_put_model_package_group_policy_error(response)
+        } else {
+            crate::operation_deser::parse_put_model_package_group_policy_response(response)
+        }
     }
 }
 
@@ -11442,36 +6091,6 @@ impl RegisterDevices {
     pub fn builder() -> crate::input::register_devices_input::Builder {
         crate::input::register_devices_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::RegisterDevicesOutput, crate::error::RegisterDevicesError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::RegisterDevicesError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceLimitExceeded" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::RegisterDevicesError {
-                        kind: crate::error::RegisterDevicesErrorKind::ResourceLimitExceeded(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::RegisterDevicesError::unhandled(e),
-                },
-                _ => crate::error::RegisterDevicesError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::register_devices_output::Builder::default();
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -11482,7 +6101,11 @@ impl smithy_http::response::ParseStrictResponse for RegisterDevices {
         crate::error::RegisterDevicesError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_register_devices_error(response)
+        } else {
+            crate::operation_deser::parse_register_devices_response(response)
+        }
     }
 }
 
@@ -11496,43 +6119,6 @@ impl RenderUiTemplate {
     pub fn builder() -> crate::input::render_ui_template_input::Builder {
         crate::input::render_ui_template_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::RenderUiTemplateOutput,
-        crate::error::RenderUiTemplateError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::RenderUiTemplateError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::RenderUiTemplateError {
-                        kind: crate::error::RenderUiTemplateErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::RenderUiTemplateError::unhandled(e),
-                },
-                _ => crate::error::RenderUiTemplateError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::render_ui_template_output::Builder::default();
-        builder = crate::json_deser::render_ui_template_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::RenderUiTemplateError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -11543,7 +6129,11 @@ impl smithy_http::response::ParseStrictResponse for RenderUiTemplate {
         crate::error::RenderUiTemplateError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_render_ui_template_error(response)
+        } else {
+            crate::operation_deser::parse_render_ui_template_response(response)
+        }
     }
 }
 
@@ -11561,24 +6151,6 @@ impl Search {
     pub fn builder() -> crate::input::search_input::Builder {
         crate::input::search_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::SearchOutput, crate::error::SearchError> {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::SearchError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::search_output::Builder::default();
-        builder = crate::json_deser::search_deser_operation(response.body().as_ref(), builder)
-            .map_err(crate::error::SearchError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -11586,7 +6158,11 @@ impl Search {
 impl smithy_http::response::ParseStrictResponse for Search {
     type Output = std::result::Result<crate::output::SearchOutput, crate::error::SearchError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_search_error(response)
+        } else {
+            crate::operation_deser::parse_search_response(response)
+        }
     }
 }
 
@@ -11602,49 +6178,6 @@ impl SendPipelineExecutionStepFailure {
     pub fn builder() -> crate::input::send_pipeline_execution_step_failure_input::Builder {
         crate::input::send_pipeline_execution_step_failure_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::SendPipelineExecutionStepFailureOutput,
-        crate::error::SendPipelineExecutionStepFailureError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(
-                        crate::error::SendPipelineExecutionStepFailureError::unhandled(generic),
-                    )
-                }
-            };
-            return Err(match error_code {
-                "ResourceLimitExceeded" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::SendPipelineExecutionStepFailureError { kind: crate::error::SendPipelineExecutionStepFailureErrorKind::ResourceLimitExceeded(body), meta: generic },
-                    Err(e) => crate::error::SendPipelineExecutionStepFailureError::unhandled(e)
-                }
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::SendPipelineExecutionStepFailureError { kind: crate::error::SendPipelineExecutionStepFailureErrorKind::ResourceNotFound(body), meta: generic },
-                    Err(e) => crate::error::SendPipelineExecutionStepFailureError::unhandled(e)
-                }
-                _ => crate::error::SendPipelineExecutionStepFailureError::generic(generic)
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder =
-            crate::output::send_pipeline_execution_step_failure_output::Builder::default();
-        builder = crate::json_deser::send_pipeline_execution_step_failure_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::SendPipelineExecutionStepFailureError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -11655,7 +6188,11 @@ impl smithy_http::response::ParseStrictResponse for SendPipelineExecutionStepFai
         crate::error::SendPipelineExecutionStepFailureError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_send_pipeline_execution_step_failure_error(response)
+        } else {
+            crate::operation_deser::parse_send_pipeline_execution_step_failure_response(response)
+        }
     }
 }
 
@@ -11671,49 +6208,6 @@ impl SendPipelineExecutionStepSuccess {
     pub fn builder() -> crate::input::send_pipeline_execution_step_success_input::Builder {
         crate::input::send_pipeline_execution_step_success_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::SendPipelineExecutionStepSuccessOutput,
-        crate::error::SendPipelineExecutionStepSuccessError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(
-                        crate::error::SendPipelineExecutionStepSuccessError::unhandled(generic),
-                    )
-                }
-            };
-            return Err(match error_code {
-                "ResourceLimitExceeded" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::SendPipelineExecutionStepSuccessError { kind: crate::error::SendPipelineExecutionStepSuccessErrorKind::ResourceLimitExceeded(body), meta: generic },
-                    Err(e) => crate::error::SendPipelineExecutionStepSuccessError::unhandled(e)
-                }
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::SendPipelineExecutionStepSuccessError { kind: crate::error::SendPipelineExecutionStepSuccessErrorKind::ResourceNotFound(body), meta: generic },
-                    Err(e) => crate::error::SendPipelineExecutionStepSuccessError::unhandled(e)
-                }
-                _ => crate::error::SendPipelineExecutionStepSuccessError::generic(generic)
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder =
-            crate::output::send_pipeline_execution_step_success_output::Builder::default();
-        builder = crate::json_deser::send_pipeline_execution_step_success_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::SendPipelineExecutionStepSuccessError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -11724,7 +6218,11 @@ impl smithy_http::response::ParseStrictResponse for SendPipelineExecutionStepSuc
         crate::error::SendPipelineExecutionStepSuccessError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_send_pipeline_execution_step_success_error(response)
+        } else {
+            crate::operation_deser::parse_send_pipeline_execution_step_success_response(response)
+        }
     }
 }
 
@@ -11742,44 +6240,6 @@ impl StartMonitoringSchedule {
     pub fn builder() -> crate::input::start_monitoring_schedule_input::Builder {
         crate::input::start_monitoring_schedule_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::StartMonitoringScheduleOutput,
-        crate::error::StartMonitoringScheduleError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(crate::error::StartMonitoringScheduleError::unhandled(
-                        generic,
-                    ))
-                }
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::StartMonitoringScheduleError {
-                        kind: crate::error::StartMonitoringScheduleErrorKind::ResourceNotFound(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::StartMonitoringScheduleError::unhandled(e),
-                },
-                _ => crate::error::StartMonitoringScheduleError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::start_monitoring_schedule_output::Builder::default();
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -11790,7 +6250,11 @@ impl smithy_http::response::ParseStrictResponse for StartMonitoringSchedule {
         crate::error::StartMonitoringScheduleError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_start_monitoring_schedule_error(response)
+        } else {
+            crate::operation_deser::parse_start_monitoring_schedule_response(response)
+        }
     }
 }
 
@@ -11807,40 +6271,6 @@ impl StartNotebookInstance {
     pub fn builder() -> crate::input::start_notebook_instance_input::Builder {
         crate::input::start_notebook_instance_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::StartNotebookInstanceOutput,
-        crate::error::StartNotebookInstanceError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::StartNotebookInstanceError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceLimitExceeded" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::StartNotebookInstanceError {
-                        kind: crate::error::StartNotebookInstanceErrorKind::ResourceLimitExceeded(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::StartNotebookInstanceError::unhandled(e),
-                },
-                _ => crate::error::StartNotebookInstanceError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::start_notebook_instance_output::Builder::default();
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -11851,7 +6281,11 @@ impl smithy_http::response::ParseStrictResponse for StartNotebookInstance {
         crate::error::StartNotebookInstanceError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_start_notebook_instance_error(response)
+        } else {
+            crate::operation_deser::parse_start_notebook_instance_response(response)
+        }
     }
 }
 
@@ -11865,56 +6299,6 @@ impl StartPipelineExecution {
     pub fn builder() -> crate::input::start_pipeline_execution_input::Builder {
         crate::input::start_pipeline_execution_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::StartPipelineExecutionOutput,
-        crate::error::StartPipelineExecutionError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(crate::error::StartPipelineExecutionError::unhandled(
-                        generic,
-                    ))
-                }
-            };
-            return Err(match error_code {
-                "ResourceLimitExceeded" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::StartPipelineExecutionError {
-                        kind: crate::error::StartPipelineExecutionErrorKind::ResourceLimitExceeded(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::StartPipelineExecutionError::unhandled(e),
-                },
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::StartPipelineExecutionError {
-                        kind: crate::error::StartPipelineExecutionErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::StartPipelineExecutionError::unhandled(e),
-                },
-                _ => crate::error::StartPipelineExecutionError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::start_pipeline_execution_output::Builder::default();
-        builder = crate::json_deser::start_pipeline_execution_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::StartPipelineExecutionError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -11925,7 +6309,11 @@ impl smithy_http::response::ParseStrictResponse for StartPipelineExecution {
         crate::error::StartPipelineExecutionError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_start_pipeline_execution_error(response)
+        } else {
+            crate::operation_deser::parse_start_pipeline_execution_response(response)
+        }
     }
 }
 
@@ -11935,39 +6323,9 @@ pub struct StopAutoMLJob {
     _private: (),
 }
 impl StopAutoMLJob {
-    /// Creates a new builder-style object to manufacture [`StopAutoMLJobInput`](crate::input::StopAutoMLJobInput)
+    /// Creates a new builder-style object to manufacture [`StopAutoMlJobInput`](crate::input::StopAutoMlJobInput)
     pub fn builder() -> crate::input::stop_auto_ml_job_input::Builder {
         crate::input::stop_auto_ml_job_input::Builder::default()
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::StopAutoMLJobOutput, crate::error::StopAutoMLJobError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::StopAutoMLJobError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::StopAutoMLJobError {
-                        kind: crate::error::StopAutoMLJobErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::StopAutoMLJobError::unhandled(e),
-                },
-                _ => crate::error::StopAutoMLJobError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::stop_auto_ml_job_output::Builder::default();
-        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -11975,9 +6333,13 @@ impl StopAutoMLJob {
 }
 impl smithy_http::response::ParseStrictResponse for StopAutoMLJob {
     type Output =
-        std::result::Result<crate::output::StopAutoMLJobOutput, crate::error::StopAutoMLJobError>;
+        std::result::Result<crate::output::StopAutoMlJobOutput, crate::error::StopAutoMLJobError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_stop_auto_ml_job_error(response)
+        } else {
+            crate::operation_deser::parse_stop_auto_ml_job_response(response)
+        }
     }
 }
 
@@ -11996,38 +6358,6 @@ impl StopCompilationJob {
     pub fn builder() -> crate::input::stop_compilation_job_input::Builder {
         crate::input::stop_compilation_job_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::StopCompilationJobOutput,
-        crate::error::StopCompilationJobError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::StopCompilationJobError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::StopCompilationJobError {
-                        kind: crate::error::StopCompilationJobErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::StopCompilationJobError::unhandled(e),
-                },
-                _ => crate::error::StopCompilationJobError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::stop_compilation_job_output::Builder::default();
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -12038,7 +6368,11 @@ impl smithy_http::response::ParseStrictResponse for StopCompilationJob {
         crate::error::StopCompilationJobError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_stop_compilation_job_error(response)
+        } else {
+            crate::operation_deser::parse_stop_compilation_job_response(response)
+        }
     }
 }
 
@@ -12052,25 +6386,6 @@ impl StopEdgePackagingJob {
     pub fn builder() -> crate::input::stop_edge_packaging_job_input::Builder {
         crate::input::stop_edge_packaging_job_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::StopEdgePackagingJobOutput,
-        crate::error::StopEdgePackagingJobError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::StopEdgePackagingJobError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::stop_edge_packaging_job_output::Builder::default();
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -12081,7 +6396,11 @@ impl smithy_http::response::ParseStrictResponse for StopEdgePackagingJob {
         crate::error::StopEdgePackagingJobError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_stop_edge_packaging_job_error(response)
+        } else {
+            crate::operation_deser::parse_stop_edge_packaging_job_response(response)
+        }
     }
 }
 
@@ -12101,44 +6420,6 @@ impl StopHyperParameterTuningJob {
     pub fn builder() -> crate::input::stop_hyper_parameter_tuning_job_input::Builder {
         crate::input::stop_hyper_parameter_tuning_job_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::StopHyperParameterTuningJobOutput,
-        crate::error::StopHyperParameterTuningJobError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(crate::error::StopHyperParameterTuningJobError::unhandled(
-                        generic,
-                    ))
-                }
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::StopHyperParameterTuningJobError {
-                        kind: crate::error::StopHyperParameterTuningJobErrorKind::ResourceNotFound(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::StopHyperParameterTuningJobError::unhandled(e),
-                },
-                _ => crate::error::StopHyperParameterTuningJobError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::stop_hyper_parameter_tuning_job_output::Builder::default();
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -12149,7 +6430,11 @@ impl smithy_http::response::ParseStrictResponse for StopHyperParameterTuningJob 
         crate::error::StopHyperParameterTuningJobError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_stop_hyper_parameter_tuning_job_error(response)
+        } else {
+            crate::operation_deser::parse_stop_hyper_parameter_tuning_job_response(response)
+        }
     }
 }
 
@@ -12164,36 +6449,6 @@ impl StopLabelingJob {
     pub fn builder() -> crate::input::stop_labeling_job_input::Builder {
         crate::input::stop_labeling_job_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::StopLabelingJobOutput, crate::error::StopLabelingJobError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::StopLabelingJobError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::StopLabelingJobError {
-                        kind: crate::error::StopLabelingJobErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::StopLabelingJobError::unhandled(e),
-                },
-                _ => crate::error::StopLabelingJobError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::stop_labeling_job_output::Builder::default();
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -12204,7 +6459,11 @@ impl smithy_http::response::ParseStrictResponse for StopLabelingJob {
         crate::error::StopLabelingJobError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_stop_labeling_job_error(response)
+        } else {
+            crate::operation_deser::parse_stop_labeling_job_response(response)
+        }
     }
 }
 
@@ -12218,42 +6477,6 @@ impl StopMonitoringSchedule {
     pub fn builder() -> crate::input::stop_monitoring_schedule_input::Builder {
         crate::input::stop_monitoring_schedule_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::StopMonitoringScheduleOutput,
-        crate::error::StopMonitoringScheduleError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(crate::error::StopMonitoringScheduleError::unhandled(
-                        generic,
-                    ))
-                }
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::StopMonitoringScheduleError {
-                        kind: crate::error::StopMonitoringScheduleErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::StopMonitoringScheduleError::unhandled(e),
-                },
-                _ => crate::error::StopMonitoringScheduleError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::stop_monitoring_schedule_output::Builder::default();
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -12264,7 +6487,11 @@ impl smithy_http::response::ParseStrictResponse for StopMonitoringSchedule {
         crate::error::StopMonitoringScheduleError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_stop_monitoring_schedule_error(response)
+        } else {
+            crate::operation_deser::parse_stop_monitoring_schedule_response(response)
+        }
     }
 }
 
@@ -12286,25 +6513,6 @@ impl StopNotebookInstance {
     pub fn builder() -> crate::input::stop_notebook_instance_input::Builder {
         crate::input::stop_notebook_instance_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::StopNotebookInstanceOutput,
-        crate::error::StopNotebookInstanceError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::StopNotebookInstanceError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::stop_notebook_instance_output::Builder::default();
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -12315,7 +6523,11 @@ impl smithy_http::response::ParseStrictResponse for StopNotebookInstance {
         crate::error::StopNotebookInstanceError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_stop_notebook_instance_error(response)
+        } else {
+            crate::operation_deser::parse_stop_notebook_instance_response(response)
+        }
     }
 }
 
@@ -12329,43 +6541,6 @@ impl StopPipelineExecution {
     pub fn builder() -> crate::input::stop_pipeline_execution_input::Builder {
         crate::input::stop_pipeline_execution_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::StopPipelineExecutionOutput,
-        crate::error::StopPipelineExecutionError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::StopPipelineExecutionError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::StopPipelineExecutionError {
-                        kind: crate::error::StopPipelineExecutionErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::StopPipelineExecutionError::unhandled(e),
-                },
-                _ => crate::error::StopPipelineExecutionError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::stop_pipeline_execution_output::Builder::default();
-        builder = crate::json_deser::stop_pipeline_execution_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::StopPipelineExecutionError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -12376,7 +6551,11 @@ impl smithy_http::response::ParseStrictResponse for StopPipelineExecution {
         crate::error::StopPipelineExecutionError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_stop_pipeline_execution_error(response)
+        } else {
+            crate::operation_deser::parse_stop_pipeline_execution_response(response)
+        }
     }
 }
 
@@ -12390,38 +6569,6 @@ impl StopProcessingJob {
     pub fn builder() -> crate::input::stop_processing_job_input::Builder {
         crate::input::stop_processing_job_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::StopProcessingJobOutput,
-        crate::error::StopProcessingJobError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::StopProcessingJobError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::StopProcessingJobError {
-                        kind: crate::error::StopProcessingJobErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::StopProcessingJobError::unhandled(e),
-                },
-                _ => crate::error::StopProcessingJobError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::stop_processing_job_output::Builder::default();
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -12432,7 +6579,11 @@ impl smithy_http::response::ParseStrictResponse for StopProcessingJob {
         crate::error::StopProcessingJobError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_stop_processing_job_error(response)
+        } else {
+            crate::operation_deser::parse_stop_processing_job_response(response)
+        }
     }
 }
 
@@ -12452,36 +6603,6 @@ impl StopTrainingJob {
     pub fn builder() -> crate::input::stop_training_job_input::Builder {
         crate::input::stop_training_job_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::StopTrainingJobOutput, crate::error::StopTrainingJobError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::StopTrainingJobError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::StopTrainingJobError {
-                        kind: crate::error::StopTrainingJobErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::StopTrainingJobError::unhandled(e),
-                },
-                _ => crate::error::StopTrainingJobError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::stop_training_job_output::Builder::default();
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -12492,7 +6613,11 @@ impl smithy_http::response::ParseStrictResponse for StopTrainingJob {
         crate::error::StopTrainingJobError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_stop_training_job_error(response)
+        } else {
+            crate::operation_deser::parse_stop_training_job_response(response)
+        }
     }
 }
 
@@ -12511,38 +6636,6 @@ impl StopTransformJob {
     pub fn builder() -> crate::input::stop_transform_job_input::Builder {
         crate::input::stop_transform_job_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::StopTransformJobOutput,
-        crate::error::StopTransformJobError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::StopTransformJobError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::StopTransformJobError {
-                        kind: crate::error::StopTransformJobErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::StopTransformJobError::unhandled(e),
-                },
-                _ => crate::error::StopTransformJobError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::stop_transform_job_output::Builder::default();
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -12553,7 +6646,11 @@ impl smithy_http::response::ParseStrictResponse for StopTransformJob {
         crate::error::StopTransformJobError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_stop_transform_job_error(response)
+        } else {
+            crate::operation_deser::parse_stop_transform_job_response(response)
+        }
     }
 }
 
@@ -12567,46 +6664,6 @@ impl UpdateAction {
     pub fn builder() -> crate::input::update_action_input::Builder {
         crate::input::update_action_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::UpdateActionOutput, crate::error::UpdateActionError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::UpdateActionError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ConflictException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::UpdateActionError {
-                        kind: crate::error::UpdateActionErrorKind::ConflictError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::UpdateActionError::unhandled(e),
-                },
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::UpdateActionError {
-                        kind: crate::error::UpdateActionErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::UpdateActionError::unhandled(e),
-                },
-                _ => crate::error::UpdateActionError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::update_action_output::Builder::default();
-        builder =
-            crate::json_deser::update_action_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::UpdateActionError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -12615,7 +6672,11 @@ impl smithy_http::response::ParseStrictResponse for UpdateAction {
     type Output =
         std::result::Result<crate::output::UpdateActionOutput, crate::error::UpdateActionError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_action_error(response)
+        } else {
+            crate::operation_deser::parse_update_action_response(response)
+        }
     }
 }
 
@@ -12629,43 +6690,6 @@ impl UpdateAppImageConfig {
     pub fn builder() -> crate::input::update_app_image_config_input::Builder {
         crate::input::update_app_image_config_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::UpdateAppImageConfigOutput,
-        crate::error::UpdateAppImageConfigError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::UpdateAppImageConfigError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::UpdateAppImageConfigError {
-                        kind: crate::error::UpdateAppImageConfigErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::UpdateAppImageConfigError::unhandled(e),
-                },
-                _ => crate::error::UpdateAppImageConfigError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::update_app_image_config_output::Builder::default();
-        builder = crate::json_deser::update_app_image_config_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::UpdateAppImageConfigError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -12676,7 +6700,11 @@ impl smithy_http::response::ParseStrictResponse for UpdateAppImageConfig {
         crate::error::UpdateAppImageConfigError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_app_image_config_error(response)
+        } else {
+            crate::operation_deser::parse_update_app_image_config_response(response)
+        }
     }
 }
 
@@ -12690,46 +6718,6 @@ impl UpdateArtifact {
     pub fn builder() -> crate::input::update_artifact_input::Builder {
         crate::input::update_artifact_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::UpdateArtifactOutput, crate::error::UpdateArtifactError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::UpdateArtifactError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ConflictException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::UpdateArtifactError {
-                        kind: crate::error::UpdateArtifactErrorKind::ConflictError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::UpdateArtifactError::unhandled(e),
-                },
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::UpdateArtifactError {
-                        kind: crate::error::UpdateArtifactErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::UpdateArtifactError::unhandled(e),
-                },
-                _ => crate::error::UpdateArtifactError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::update_artifact_output::Builder::default();
-        builder =
-            crate::json_deser::update_artifact_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::UpdateArtifactError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -12738,7 +6726,11 @@ impl smithy_http::response::ParseStrictResponse for UpdateArtifact {
     type Output =
         std::result::Result<crate::output::UpdateArtifactOutput, crate::error::UpdateArtifactError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_artifact_error(response)
+        } else {
+            crate::operation_deser::parse_update_artifact_response(response)
+        }
     }
 }
 
@@ -12752,30 +6744,6 @@ impl UpdateCodeRepository {
     pub fn builder() -> crate::input::update_code_repository_input::Builder {
         crate::input::update_code_repository_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::UpdateCodeRepositoryOutput,
-        crate::error::UpdateCodeRepositoryError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::UpdateCodeRepositoryError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::update_code_repository_output::Builder::default();
-        builder = crate::json_deser::update_code_repository_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::UpdateCodeRepositoryError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -12786,7 +6754,11 @@ impl smithy_http::response::ParseStrictResponse for UpdateCodeRepository {
         crate::error::UpdateCodeRepositoryError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_code_repository_error(response)
+        } else {
+            crate::operation_deser::parse_update_code_repository_response(response)
+        }
     }
 }
 
@@ -12800,46 +6772,6 @@ impl UpdateContext {
     pub fn builder() -> crate::input::update_context_input::Builder {
         crate::input::update_context_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::UpdateContextOutput, crate::error::UpdateContextError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::UpdateContextError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ConflictException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::UpdateContextError {
-                        kind: crate::error::UpdateContextErrorKind::ConflictError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::UpdateContextError::unhandled(e),
-                },
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::UpdateContextError {
-                        kind: crate::error::UpdateContextErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::UpdateContextError::unhandled(e),
-                },
-                _ => crate::error::UpdateContextError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::update_context_output::Builder::default();
-        builder =
-            crate::json_deser::update_context_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::UpdateContextError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -12848,7 +6780,11 @@ impl smithy_http::response::ParseStrictResponse for UpdateContext {
     type Output =
         std::result::Result<crate::output::UpdateContextOutput, crate::error::UpdateContextError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_context_error(response)
+        } else {
+            crate::operation_deser::parse_update_context_response(response)
+        }
     }
 }
 
@@ -12862,38 +6798,6 @@ impl UpdateDeviceFleet {
     pub fn builder() -> crate::input::update_device_fleet_input::Builder {
         crate::input::update_device_fleet_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::UpdateDeviceFleetOutput,
-        crate::error::UpdateDeviceFleetError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::UpdateDeviceFleetError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceInUse" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::UpdateDeviceFleetError {
-                        kind: crate::error::UpdateDeviceFleetErrorKind::ResourceInUse(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::UpdateDeviceFleetError::unhandled(e),
-                },
-                _ => crate::error::UpdateDeviceFleetError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::update_device_fleet_output::Builder::default();
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -12904,7 +6808,11 @@ impl smithy_http::response::ParseStrictResponse for UpdateDeviceFleet {
         crate::error::UpdateDeviceFleetError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_device_fleet_error(response)
+        } else {
+            crate::operation_deser::parse_update_device_fleet_response(response)
+        }
     }
 }
 
@@ -12918,23 +6826,6 @@ impl UpdateDevices {
     pub fn builder() -> crate::input::update_devices_input::Builder {
         crate::input::update_devices_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::UpdateDevicesOutput, crate::error::UpdateDevicesError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::UpdateDevicesError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::update_devices_output::Builder::default();
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -12943,7 +6834,11 @@ impl smithy_http::response::ParseStrictResponse for UpdateDevices {
     type Output =
         std::result::Result<crate::output::UpdateDevicesOutput, crate::error::UpdateDevicesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_devices_error(response)
+        } else {
+            crate::operation_deser::parse_update_devices_response(response)
+        }
     }
 }
 
@@ -12957,53 +6852,6 @@ impl UpdateDomain {
     pub fn builder() -> crate::input::update_domain_input::Builder {
         crate::input::update_domain_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::UpdateDomainOutput, crate::error::UpdateDomainError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::UpdateDomainError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceInUse" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::UpdateDomainError {
-                        kind: crate::error::UpdateDomainErrorKind::ResourceInUse(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::UpdateDomainError::unhandled(e),
-                },
-                "ResourceLimitExceeded" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::UpdateDomainError {
-                        kind: crate::error::UpdateDomainErrorKind::ResourceLimitExceeded(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::UpdateDomainError::unhandled(e),
-                },
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::UpdateDomainError {
-                        kind: crate::error::UpdateDomainErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::UpdateDomainError::unhandled(e),
-                },
-                _ => crate::error::UpdateDomainError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::update_domain_output::Builder::default();
-        builder =
-            crate::json_deser::update_domain_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::UpdateDomainError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -13012,7 +6860,11 @@ impl smithy_http::response::ParseStrictResponse for UpdateDomain {
     type Output =
         std::result::Result<crate::output::UpdateDomainOutput, crate::error::UpdateDomainError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_domain_error(response)
+        } else {
+            crate::operation_deser::parse_update_domain_response(response)
+        }
     }
 }
 
@@ -13041,39 +6893,6 @@ impl UpdateEndpoint {
     pub fn builder() -> crate::input::update_endpoint_input::Builder {
         crate::input::update_endpoint_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::UpdateEndpointOutput, crate::error::UpdateEndpointError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::UpdateEndpointError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceLimitExceeded" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::UpdateEndpointError {
-                        kind: crate::error::UpdateEndpointErrorKind::ResourceLimitExceeded(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::UpdateEndpointError::unhandled(e),
-                },
-                _ => crate::error::UpdateEndpointError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::update_endpoint_output::Builder::default();
-        builder =
-            crate::json_deser::update_endpoint_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::UpdateEndpointError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -13082,7 +6901,11 @@ impl smithy_http::response::ParseStrictResponse for UpdateEndpoint {
     type Output =
         std::result::Result<crate::output::UpdateEndpointOutput, crate::error::UpdateEndpointError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_endpoint_error(response)
+        } else {
+            crate::operation_deser::parse_update_endpoint_response(response)
+        }
     }
 }
 
@@ -13100,45 +6923,6 @@ impl UpdateEndpointWeightsAndCapacities {
     pub fn builder() -> crate::input::update_endpoint_weights_and_capacities_input::Builder {
         crate::input::update_endpoint_weights_and_capacities_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::UpdateEndpointWeightsAndCapacitiesOutput,
-        crate::error::UpdateEndpointWeightsAndCapacitiesError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(
-                        crate::error::UpdateEndpointWeightsAndCapacitiesError::unhandled(generic),
-                    )
-                }
-            };
-            return Err(match error_code {
-                "ResourceLimitExceeded" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::UpdateEndpointWeightsAndCapacitiesError { kind: crate::error::UpdateEndpointWeightsAndCapacitiesErrorKind::ResourceLimitExceeded(body), meta: generic },
-                    Err(e) => crate::error::UpdateEndpointWeightsAndCapacitiesError::unhandled(e)
-                }
-                _ => crate::error::UpdateEndpointWeightsAndCapacitiesError::generic(generic)
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder =
-            crate::output::update_endpoint_weights_and_capacities_output::Builder::default();
-        builder = crate::json_deser::update_endpoint_weights_and_capacities_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::UpdateEndpointWeightsAndCapacitiesError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -13149,7 +6933,11 @@ impl smithy_http::response::ParseStrictResponse for UpdateEndpointWeightsAndCapa
         crate::error::UpdateEndpointWeightsAndCapacitiesError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_endpoint_weights_and_capacities_error(response)
+        } else {
+            crate::operation_deser::parse_update_endpoint_weights_and_capacities_response(response)
+        }
     }
 }
 
@@ -13164,48 +6952,6 @@ impl UpdateExperiment {
     pub fn builder() -> crate::input::update_experiment_input::Builder {
         crate::input::update_experiment_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::UpdateExperimentOutput,
-        crate::error::UpdateExperimentError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::UpdateExperimentError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ConflictException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::UpdateExperimentError {
-                        kind: crate::error::UpdateExperimentErrorKind::ConflictError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::UpdateExperimentError::unhandled(e),
-                },
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::UpdateExperimentError {
-                        kind: crate::error::UpdateExperimentErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::UpdateExperimentError::unhandled(e),
-                },
-                _ => crate::error::UpdateExperimentError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::update_experiment_output::Builder::default();
-        builder =
-            crate::json_deser::update_experiment_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::UpdateExperimentError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -13216,7 +6962,11 @@ impl smithy_http::response::ParseStrictResponse for UpdateExperiment {
         crate::error::UpdateExperimentError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_experiment_error(response)
+        } else {
+            crate::operation_deser::parse_update_experiment_response(response)
+        }
     }
 }
 
@@ -13231,45 +6981,6 @@ impl UpdateImage {
     pub fn builder() -> crate::input::update_image_input::Builder {
         crate::input::update_image_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::UpdateImageOutput, crate::error::UpdateImageError> {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::UpdateImageError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceInUse" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::UpdateImageError {
-                        kind: crate::error::UpdateImageErrorKind::ResourceInUse(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::UpdateImageError::unhandled(e),
-                },
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::UpdateImageError {
-                        kind: crate::error::UpdateImageErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::UpdateImageError::unhandled(e),
-                },
-                _ => crate::error::UpdateImageError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::update_image_output::Builder::default();
-        builder =
-            crate::json_deser::update_image_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::UpdateImageError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -13278,7 +6989,11 @@ impl smithy_http::response::ParseStrictResponse for UpdateImage {
     type Output =
         std::result::Result<crate::output::UpdateImageOutput, crate::error::UpdateImageError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_image_error(response)
+        } else {
+            crate::operation_deser::parse_update_image_response(response)
+        }
     }
 }
 
@@ -13292,30 +7007,6 @@ impl UpdateModelPackage {
     pub fn builder() -> crate::input::update_model_package_input::Builder {
         crate::input::update_model_package_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::UpdateModelPackageOutput,
-        crate::error::UpdateModelPackageError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::UpdateModelPackageError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::update_model_package_output::Builder::default();
-        builder = crate::json_deser::update_model_package_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::UpdateModelPackageError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -13326,7 +7017,11 @@ impl smithy_http::response::ParseStrictResponse for UpdateModelPackage {
         crate::error::UpdateModelPackageError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_model_package_error(response)
+        } else {
+            crate::operation_deser::parse_update_model_package_response(response)
+        }
     }
 }
 
@@ -13340,59 +7035,6 @@ impl UpdateMonitoringSchedule {
     pub fn builder() -> crate::input::update_monitoring_schedule_input::Builder {
         crate::input::update_monitoring_schedule_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::UpdateMonitoringScheduleOutput,
-        crate::error::UpdateMonitoringScheduleError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(crate::error::UpdateMonitoringScheduleError::unhandled(
-                        generic,
-                    ))
-                }
-            };
-            return Err(match error_code {
-                "ResourceLimitExceeded" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::UpdateMonitoringScheduleError {
-                        kind:
-                            crate::error::UpdateMonitoringScheduleErrorKind::ResourceLimitExceeded(
-                                body,
-                            ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::UpdateMonitoringScheduleError::unhandled(e),
-                },
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::UpdateMonitoringScheduleError {
-                        kind: crate::error::UpdateMonitoringScheduleErrorKind::ResourceNotFound(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::UpdateMonitoringScheduleError::unhandled(e),
-                },
-                _ => crate::error::UpdateMonitoringScheduleError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::update_monitoring_schedule_output::Builder::default();
-        builder = crate::json_deser::update_monitoring_schedule_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::UpdateMonitoringScheduleError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -13403,7 +7045,11 @@ impl smithy_http::response::ParseStrictResponse for UpdateMonitoringSchedule {
         crate::error::UpdateMonitoringScheduleError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_monitoring_schedule_error(response)
+        } else {
+            crate::operation_deser::parse_update_monitoring_schedule_response(response)
+        }
     }
 }
 
@@ -13419,44 +7065,6 @@ impl UpdateNotebookInstance {
     pub fn builder() -> crate::input::update_notebook_instance_input::Builder {
         crate::input::update_notebook_instance_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::UpdateNotebookInstanceOutput,
-        crate::error::UpdateNotebookInstanceError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(crate::error::UpdateNotebookInstanceError::unhandled(
-                        generic,
-                    ))
-                }
-            };
-            return Err(match error_code {
-                "ResourceLimitExceeded" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::UpdateNotebookInstanceError {
-                        kind: crate::error::UpdateNotebookInstanceErrorKind::ResourceLimitExceeded(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::UpdateNotebookInstanceError::unhandled(e),
-                },
-                _ => crate::error::UpdateNotebookInstanceError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::update_notebook_instance_output::Builder::default();
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -13467,7 +7075,11 @@ impl smithy_http::response::ParseStrictResponse for UpdateNotebookInstance {
         crate::error::UpdateNotebookInstanceError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_notebook_instance_error(response)
+        } else {
+            crate::operation_deser::parse_update_notebook_instance_response(response)
+        }
     }
 }
 
@@ -13481,42 +7093,6 @@ impl UpdateNotebookInstanceLifecycleConfig {
     pub fn builder() -> crate::input::update_notebook_instance_lifecycle_config_input::Builder {
         crate::input::update_notebook_instance_lifecycle_config_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::UpdateNotebookInstanceLifecycleConfigOutput,
-        crate::error::UpdateNotebookInstanceLifecycleConfigError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(
-                        crate::error::UpdateNotebookInstanceLifecycleConfigError::unhandled(
-                            generic,
-                        ),
-                    )
-                }
-            };
-            return Err(match error_code {
-                "ResourceLimitExceeded" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::UpdateNotebookInstanceLifecycleConfigError { kind: crate::error::UpdateNotebookInstanceLifecycleConfigErrorKind::ResourceLimitExceeded(body), meta: generic },
-                    Err(e) => crate::error::UpdateNotebookInstanceLifecycleConfigError::unhandled(e)
-                }
-                _ => crate::error::UpdateNotebookInstanceLifecycleConfigError::generic(generic)
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder =
-            crate::output::update_notebook_instance_lifecycle_config_output::Builder::default();
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -13527,7 +7103,13 @@ impl smithy_http::response::ParseStrictResponse for UpdateNotebookInstanceLifecy
         crate::error::UpdateNotebookInstanceLifecycleConfigError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_notebook_instance_lifecycle_config_error(response)
+        } else {
+            crate::operation_deser::parse_update_notebook_instance_lifecycle_config_response(
+                response,
+            )
+        }
     }
 }
 
@@ -13541,39 +7123,6 @@ impl UpdatePipeline {
     pub fn builder() -> crate::input::update_pipeline_input::Builder {
         crate::input::update_pipeline_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::UpdatePipelineOutput, crate::error::UpdatePipelineError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::UpdatePipelineError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::UpdatePipelineError {
-                        kind: crate::error::UpdatePipelineErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::UpdatePipelineError::unhandled(e),
-                },
-                _ => crate::error::UpdatePipelineError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::update_pipeline_output::Builder::default();
-        builder =
-            crate::json_deser::update_pipeline_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::UpdatePipelineError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -13582,7 +7131,11 @@ impl smithy_http::response::ParseStrictResponse for UpdatePipeline {
     type Output =
         std::result::Result<crate::output::UpdatePipelineOutput, crate::error::UpdatePipelineError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_pipeline_error(response)
+        } else {
+            crate::operation_deser::parse_update_pipeline_response(response)
+        }
     }
 }
 
@@ -13596,49 +7149,6 @@ impl UpdatePipelineExecution {
     pub fn builder() -> crate::input::update_pipeline_execution_input::Builder {
         crate::input::update_pipeline_execution_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::UpdatePipelineExecutionOutput,
-        crate::error::UpdatePipelineExecutionError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(crate::error::UpdatePipelineExecutionError::unhandled(
-                        generic,
-                    ))
-                }
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::UpdatePipelineExecutionError {
-                        kind: crate::error::UpdatePipelineExecutionErrorKind::ResourceNotFound(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::UpdatePipelineExecutionError::unhandled(e),
-                },
-                _ => crate::error::UpdatePipelineExecutionError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::update_pipeline_execution_output::Builder::default();
-        builder = crate::json_deser::update_pipeline_execution_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::UpdatePipelineExecutionError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -13649,7 +7159,11 @@ impl smithy_http::response::ParseStrictResponse for UpdatePipelineExecution {
         crate::error::UpdatePipelineExecutionError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_pipeline_execution_error(response)
+        } else {
+            crate::operation_deser::parse_update_pipeline_execution_response(response)
+        }
     }
 }
 
@@ -13663,43 +7177,6 @@ impl UpdateTrainingJob {
     pub fn builder() -> crate::input::update_training_job_input::Builder {
         crate::input::update_training_job_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::UpdateTrainingJobOutput,
-        crate::error::UpdateTrainingJobError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::UpdateTrainingJobError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::UpdateTrainingJobError {
-                        kind: crate::error::UpdateTrainingJobErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::UpdateTrainingJobError::unhandled(e),
-                },
-                _ => crate::error::UpdateTrainingJobError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::update_training_job_output::Builder::default();
-        builder = crate::json_deser::update_training_job_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::UpdateTrainingJobError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -13710,7 +7187,11 @@ impl smithy_http::response::ParseStrictResponse for UpdateTrainingJob {
         crate::error::UpdateTrainingJobError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_training_job_error(response)
+        } else {
+            crate::operation_deser::parse_update_training_job_response(response)
+        }
     }
 }
 
@@ -13724,45 +7205,6 @@ impl UpdateTrial {
     pub fn builder() -> crate::input::update_trial_input::Builder {
         crate::input::update_trial_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::UpdateTrialOutput, crate::error::UpdateTrialError> {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::UpdateTrialError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ConflictException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::UpdateTrialError {
-                        kind: crate::error::UpdateTrialErrorKind::ConflictError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::UpdateTrialError::unhandled(e),
-                },
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::UpdateTrialError {
-                        kind: crate::error::UpdateTrialErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::UpdateTrialError::unhandled(e),
-                },
-                _ => crate::error::UpdateTrialError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::update_trial_output::Builder::default();
-        builder =
-            crate::json_deser::update_trial_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::UpdateTrialError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -13771,7 +7213,11 @@ impl smithy_http::response::ParseStrictResponse for UpdateTrial {
     type Output =
         std::result::Result<crate::output::UpdateTrialOutput, crate::error::UpdateTrialError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_trial_error(response)
+        } else {
+            crate::operation_deser::parse_update_trial_response(response)
+        }
     }
 }
 
@@ -13785,50 +7231,6 @@ impl UpdateTrialComponent {
     pub fn builder() -> crate::input::update_trial_component_input::Builder {
         crate::input::update_trial_component_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::UpdateTrialComponentOutput,
-        crate::error::UpdateTrialComponentError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::UpdateTrialComponentError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ConflictException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::UpdateTrialComponentError {
-                        kind: crate::error::UpdateTrialComponentErrorKind::ConflictError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::UpdateTrialComponentError::unhandled(e),
-                },
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::UpdateTrialComponentError {
-                        kind: crate::error::UpdateTrialComponentErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::UpdateTrialComponentError::unhandled(e),
-                },
-                _ => crate::error::UpdateTrialComponentError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::update_trial_component_output::Builder::default();
-        builder = crate::json_deser::update_trial_component_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::UpdateTrialComponentError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -13839,7 +7241,11 @@ impl smithy_http::response::ParseStrictResponse for UpdateTrialComponent {
         crate::error::UpdateTrialComponentError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_trial_component_error(response)
+        } else {
+            crate::operation_deser::parse_update_trial_component_response(response)
+        }
     }
 }
 
@@ -13853,57 +7259,6 @@ impl UpdateUserProfile {
     pub fn builder() -> crate::input::update_user_profile_input::Builder {
         crate::input::update_user_profile_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::UpdateUserProfileOutput,
-        crate::error::UpdateUserProfileError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::UpdateUserProfileError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceInUse" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::UpdateUserProfileError {
-                        kind: crate::error::UpdateUserProfileErrorKind::ResourceInUse(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::UpdateUserProfileError::unhandled(e),
-                },
-                "ResourceLimitExceeded" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::UpdateUserProfileError {
-                        kind: crate::error::UpdateUserProfileErrorKind::ResourceLimitExceeded(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::UpdateUserProfileError::unhandled(e),
-                },
-                "ResourceNotFound" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::UpdateUserProfileError {
-                        kind: crate::error::UpdateUserProfileErrorKind::ResourceNotFound(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::UpdateUserProfileError::unhandled(e),
-                },
-                _ => crate::error::UpdateUserProfileError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::update_user_profile_output::Builder::default();
-        builder = crate::json_deser::update_user_profile_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::UpdateUserProfileError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -13914,7 +7269,11 @@ impl smithy_http::response::ParseStrictResponse for UpdateUserProfile {
         crate::error::UpdateUserProfileError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_user_profile_error(response)
+        } else {
+            crate::operation_deser::parse_update_user_profile_response(response)
+        }
     }
 }
 
@@ -13948,26 +7307,6 @@ impl UpdateWorkforce {
     pub fn builder() -> crate::input::update_workforce_input::Builder {
         crate::input::update_workforce_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::UpdateWorkforceOutput, crate::error::UpdateWorkforceError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            return Err(crate::error::UpdateWorkforceError::generic(generic));
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::update_workforce_output::Builder::default();
-        builder =
-            crate::json_deser::update_workforce_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::UpdateWorkforceError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -13978,7 +7317,11 @@ impl smithy_http::response::ParseStrictResponse for UpdateWorkforce {
         crate::error::UpdateWorkforceError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_workforce_error(response)
+        } else {
+            crate::operation_deser::parse_update_workforce_response(response)
+        }
     }
 }
 
@@ -13992,39 +7335,6 @@ impl UpdateWorkteam {
     pub fn builder() -> crate::input::update_workteam_input::Builder {
         crate::input::update_workteam_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::UpdateWorkteamOutput, crate::error::UpdateWorkteamError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::UpdateWorkteamError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceLimitExceeded" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::UpdateWorkteamError {
-                        kind: crate::error::UpdateWorkteamErrorKind::ResourceLimitExceeded(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::UpdateWorkteamError::unhandled(e),
-                },
-                _ => crate::error::UpdateWorkteamError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::update_workteam_output::Builder::default();
-        builder =
-            crate::json_deser::update_workteam_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::UpdateWorkteamError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -14033,6 +7343,10 @@ impl smithy_http::response::ParseStrictResponse for UpdateWorkteam {
     type Output =
         std::result::Result<crate::output::UpdateWorkteamOutput, crate::error::UpdateWorkteamError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_workteam_error(response)
+        } else {
+            crate::operation_deser::parse_update_workteam_response(response)
+        }
     }
 }

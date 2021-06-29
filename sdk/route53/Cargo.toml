@@ -26,9 +26,6 @@ version = "0.2"
 path = "..//aws-http"
 [dependencies.aws-sig-auth]
 path = "..//aws-sig-auth"
-[dependencies.serde]
-version = "1"
-features = ["derive"]
 [dependencies.bytes]
 version = "1"
 [dependencies.smithy-xml]

@@ -11592,9 +11592,9 @@ pub fn deser_structure_resource_pending_maintenance_actions(
 
 pub fn deser_structure_db_security_group(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::DBSecurityGroup, smithy_xml::decode::XmlError> {
+) -> Result<crate::model::DbSecurityGroup, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::DBSecurityGroup::builder();
+    let mut builder = crate::model::DbSecurityGroup::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("OwnerId") /* OwnerId com.amazonaws.rds#DBSecurityGroup$OwnerId */ =>  {
@@ -11712,9 +11712,9 @@ pub fn deser_list_string_list(
 
 pub fn deser_structure_db_cluster_parameter_group(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::DBClusterParameterGroup, smithy_xml::decode::XmlError> {
+) -> Result<crate::model::DbClusterParameterGroup, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::DBClusterParameterGroup::builder();
+    let mut builder = crate::model::DbClusterParameterGroup::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("DBClusterParameterGroupName") /* DBClusterParameterGroupName com.amazonaws.rds#DBClusterParameterGroup$DBClusterParameterGroupName */ =>  {
@@ -11777,9 +11777,9 @@ pub fn deser_structure_db_cluster_parameter_group(
 
 pub fn deser_structure_db_cluster_snapshot(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::DBClusterSnapshot, smithy_xml::decode::XmlError> {
+) -> Result<crate::model::DbClusterSnapshot, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::DBClusterSnapshot::builder();
+    let mut builder = crate::model::DbClusterSnapshot::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("AvailabilityZones") /* AvailabilityZones com.amazonaws.rds#DBClusterSnapshot$AvailabilityZones */ =>  {
@@ -12087,9 +12087,9 @@ pub fn deser_structure_db_cluster_snapshot(
 
 pub fn deser_structure_db_parameter_group(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::DBParameterGroup, smithy_xml::decode::XmlError> {
+) -> Result<crate::model::DbParameterGroup, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::DBParameterGroup::builder();
+    let mut builder = crate::model::DbParameterGroup::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("DBParameterGroupName") /* DBParameterGroupName com.amazonaws.rds#DBParameterGroup$DBParameterGroupName */ =>  {
@@ -12152,9 +12152,9 @@ pub fn deser_structure_db_parameter_group(
 
 pub fn deser_structure_db_snapshot(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::DBSnapshot, smithy_xml::decode::XmlError> {
+) -> Result<crate::model::DbSnapshot, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::DBSnapshot::builder();
+    let mut builder = crate::model::DbSnapshot::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("DBSnapshotIdentifier") /* DBSnapshotIdentifier com.amazonaws.rds#DBSnapshot$DBSnapshotIdentifier */ =>  {
@@ -12735,9 +12735,9 @@ pub fn deser_structure_custom_availability_zone(
 
 pub fn deser_structure_db_cluster(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::DBCluster, smithy_xml::decode::XmlError> {
+) -> Result<crate::model::DbCluster, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::DBCluster::builder();
+    let mut builder = crate::model::DbCluster::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("AllocatedStorage") /* AllocatedStorage com.amazonaws.rds#DBCluster$AllocatedStorage */ =>  {
@@ -13489,9 +13489,9 @@ pub fn deser_structure_db_cluster(
 
 pub fn deser_structure_db_instance(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::DBInstance, smithy_xml::decode::XmlError> {
+) -> Result<crate::model::DbInstance, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::DBInstance::builder();
+    let mut builder = crate::model::DbInstance::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("DBInstanceIdentifier") /* DBInstanceIdentifier com.amazonaws.rds#DBInstance$DBInstanceIdentifier */ =>  {
@@ -14337,9 +14337,9 @@ pub fn deser_structure_db_instance(
 
 pub fn deser_structure_db_proxy(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::DBProxy, smithy_xml::decode::XmlError> {
+) -> Result<crate::model::DbProxy, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::DBProxy::builder();
+    let mut builder = crate::model::DbProxy::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("DBProxyName") /* DBProxyName com.amazonaws.rds#DBProxy$DBProxyName */ =>  {
@@ -14548,9 +14548,9 @@ pub fn deser_structure_db_proxy(
 
 pub fn deser_structure_db_proxy_endpoint(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::DBProxyEndpoint, smithy_xml::decode::XmlError> {
+) -> Result<crate::model::DbProxyEndpoint, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::DBProxyEndpoint::builder();
+    let mut builder = crate::model::DbProxyEndpoint::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("DBProxyEndpointName") /* DBProxyEndpointName com.amazonaws.rds#DBProxyEndpoint$DBProxyEndpointName */ =>  {
@@ -14704,9 +14704,9 @@ pub fn deser_structure_db_proxy_endpoint(
 
 pub fn deser_structure_db_subnet_group(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::DBSubnetGroup, smithy_xml::decode::XmlError> {
+) -> Result<crate::model::DbSubnetGroup, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::DBSubnetGroup::builder();
+    let mut builder = crate::model::DbSubnetGroup::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("DBSubnetGroupName") /* DBSubnetGroupName com.amazonaws.rds#DBSubnetGroup$DBSubnetGroupName */ =>  {
@@ -14948,9 +14948,9 @@ pub fn deser_structure_global_cluster(
 
 pub fn deser_structure_db_instance_automated_backup(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::DBInstanceAutomatedBackup, smithy_xml::decode::XmlError> {
+) -> Result<crate::model::DbInstanceAutomatedBackup, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::DBInstanceAutomatedBackup::builder();
+    let mut builder = crate::model::DbInstanceAutomatedBackup::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("DBInstanceArn") /* DBInstanceArn com.amazonaws.rds#DBInstanceAutomatedBackup$DBInstanceArn */ =>  {
@@ -15395,7 +15395,7 @@ pub fn deser_list_custom_availability_zone_list(
 
 pub fn deser_list_db_cluster_backtrack_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<std::vec::Vec<crate::model::DBClusterBacktrack>, smithy_xml::decode::XmlError> {
+) -> Result<std::vec::Vec<crate::model::DbClusterBacktrack>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -15414,7 +15414,7 @@ pub fn deser_list_db_cluster_backtrack_list(
 
 pub fn deser_list_db_cluster_endpoint_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<std::vec::Vec<crate::model::DBClusterEndpoint>, smithy_xml::decode::XmlError> {
+) -> Result<std::vec::Vec<crate::model::DbClusterEndpoint>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -15433,7 +15433,7 @@ pub fn deser_list_db_cluster_endpoint_list(
 
 pub fn deser_list_db_cluster_parameter_group_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<std::vec::Vec<crate::model::DBClusterParameterGroup>, smithy_xml::decode::XmlError> {
+) -> Result<std::vec::Vec<crate::model::DbClusterParameterGroup>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -15471,7 +15471,7 @@ pub fn deser_list_parameters_list(
 
 pub fn deser_list_db_cluster_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<std::vec::Vec<crate::model::DBCluster>, smithy_xml::decode::XmlError> {
+) -> Result<std::vec::Vec<crate::model::DbCluster>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -15490,9 +15490,9 @@ pub fn deser_list_db_cluster_list(
 
 pub fn deser_structure_db_cluster_snapshot_attributes_result(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::DBClusterSnapshotAttributesResult, smithy_xml::decode::XmlError> {
+) -> Result<crate::model::DbClusterSnapshotAttributesResult, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::DBClusterSnapshotAttributesResult::builder();
+    let mut builder = crate::model::DbClusterSnapshotAttributesResult::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("DBClusterSnapshotIdentifier") /* DBClusterSnapshotIdentifier com.amazonaws.rds#DBClusterSnapshotAttributesResult$DBClusterSnapshotIdentifier */ =>  {
@@ -15526,7 +15526,7 @@ pub fn deser_structure_db_cluster_snapshot_attributes_result(
 
 pub fn deser_list_db_cluster_snapshot_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<std::vec::Vec<crate::model::DBClusterSnapshot>, smithy_xml::decode::XmlError> {
+) -> Result<std::vec::Vec<crate::model::DbClusterSnapshot>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -15545,7 +15545,7 @@ pub fn deser_list_db_cluster_snapshot_list(
 
 pub fn deser_list_db_engine_version_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<std::vec::Vec<crate::model::DBEngineVersion>, smithy_xml::decode::XmlError> {
+) -> Result<std::vec::Vec<crate::model::DbEngineVersion>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -15564,7 +15564,7 @@ pub fn deser_list_db_engine_version_list(
 
 pub fn deser_list_db_instance_automated_backup_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<std::vec::Vec<crate::model::DBInstanceAutomatedBackup>, smithy_xml::decode::XmlError> {
+) -> Result<std::vec::Vec<crate::model::DbInstanceAutomatedBackup>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -15583,7 +15583,7 @@ pub fn deser_list_db_instance_automated_backup_list(
 
 pub fn deser_list_db_instance_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<std::vec::Vec<crate::model::DBInstance>, smithy_xml::decode::XmlError> {
+) -> Result<std::vec::Vec<crate::model::DbInstance>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -15602,7 +15602,7 @@ pub fn deser_list_db_instance_list(
 
 pub fn deser_list_describe_db_log_files_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<std::vec::Vec<crate::model::DescribeDBLogFilesDetails>, smithy_xml::decode::XmlError> {
+) -> Result<std::vec::Vec<crate::model::DescribeDbLogFilesDetails>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -15621,7 +15621,7 @@ pub fn deser_list_describe_db_log_files_list(
 
 pub fn deser_list_db_parameter_group_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<std::vec::Vec<crate::model::DBParameterGroup>, smithy_xml::decode::XmlError> {
+) -> Result<std::vec::Vec<crate::model::DbParameterGroup>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -15640,7 +15640,7 @@ pub fn deser_list_db_parameter_group_list(
 
 pub fn deser_list_db_proxy_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<std::vec::Vec<crate::model::DBProxy>, smithy_xml::decode::XmlError> {
+) -> Result<std::vec::Vec<crate::model::DbProxy>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -15659,7 +15659,7 @@ pub fn deser_list_db_proxy_list(
 
 pub fn deser_list_db_proxy_endpoint_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<std::vec::Vec<crate::model::DBProxyEndpoint>, smithy_xml::decode::XmlError> {
+) -> Result<std::vec::Vec<crate::model::DbProxyEndpoint>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -15678,7 +15678,7 @@ pub fn deser_list_db_proxy_endpoint_list(
 
 pub fn deser_list_target_group_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<std::vec::Vec<crate::model::DBProxyTargetGroup>, smithy_xml::decode::XmlError> {
+) -> Result<std::vec::Vec<crate::model::DbProxyTargetGroup>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -15697,7 +15697,7 @@ pub fn deser_list_target_group_list(
 
 pub fn deser_list_target_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<std::vec::Vec<crate::model::DBProxyTarget>, smithy_xml::decode::XmlError> {
+) -> Result<std::vec::Vec<crate::model::DbProxyTarget>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -15716,7 +15716,7 @@ pub fn deser_list_target_list(
 
 pub fn deser_list_db_security_groups(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<std::vec::Vec<crate::model::DBSecurityGroup>, smithy_xml::decode::XmlError> {
+) -> Result<std::vec::Vec<crate::model::DbSecurityGroup>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -15735,9 +15735,9 @@ pub fn deser_list_db_security_groups(
 
 pub fn deser_structure_db_snapshot_attributes_result(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::DBSnapshotAttributesResult, smithy_xml::decode::XmlError> {
+) -> Result<crate::model::DbSnapshotAttributesResult, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::DBSnapshotAttributesResult::builder();
+    let mut builder = crate::model::DbSnapshotAttributesResult::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("DBSnapshotIdentifier") /* DBSnapshotIdentifier com.amazonaws.rds#DBSnapshotAttributesResult$DBSnapshotIdentifier */ =>  {
@@ -15771,7 +15771,7 @@ pub fn deser_structure_db_snapshot_attributes_result(
 
 pub fn deser_list_db_snapshot_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<std::vec::Vec<crate::model::DBSnapshot>, smithy_xml::decode::XmlError> {
+) -> Result<std::vec::Vec<crate::model::DbSnapshot>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -15790,7 +15790,7 @@ pub fn deser_list_db_snapshot_list(
 
 pub fn deser_list_db_subnet_groups(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<std::vec::Vec<crate::model::DBSubnetGroup>, smithy_xml::decode::XmlError> {
+) -> Result<std::vec::Vec<crate::model::DbSubnetGroup>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -16010,7 +16010,7 @@ pub fn deser_list_option_groups_list(
 
 pub fn deser_list_orderable_db_instance_options_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<std::vec::Vec<crate::model::OrderableDBInstanceOption>, smithy_xml::decode::XmlError> {
+) -> Result<std::vec::Vec<crate::model::OrderableDbInstanceOption>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -16051,7 +16051,7 @@ pub fn deser_list_pending_maintenance_actions(
 
 pub fn deser_list_reserved_db_instance_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<std::vec::Vec<crate::model::ReservedDBInstance>, smithy_xml::decode::XmlError> {
+) -> Result<std::vec::Vec<crate::model::ReservedDbInstance>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -16070,7 +16070,7 @@ pub fn deser_list_reserved_db_instance_list(
 
 pub fn deser_list_reserved_db_instances_offering_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<std::vec::Vec<crate::model::ReservedDBInstancesOffering>, smithy_xml::decode::XmlError>
+) -> Result<std::vec::Vec<crate::model::ReservedDbInstancesOffering>, smithy_xml::decode::XmlError>
 {
     let mut out = std::vec::Vec::new();
     while let Some(mut tag) = decoder.next_tag() {
@@ -16109,9 +16109,9 @@ pub fn deser_list_source_region_list(
 
 pub fn deser_structure_valid_db_instance_modifications_message(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::ValidDBInstanceModificationsMessage, smithy_xml::decode::XmlError> {
+) -> Result<crate::model::ValidDbInstanceModificationsMessage, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::ValidDBInstanceModificationsMessage::builder();
+    let mut builder = crate::model::ValidDbInstanceModificationsMessage::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Storage") /* Storage com.amazonaws.rds#ValidDBInstanceModificationsMessage$Storage */ =>  {
@@ -16284,9 +16284,9 @@ pub fn deser_structure_certificate(
 
 pub fn deser_structure_db_proxy_target_group(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::DBProxyTargetGroup, smithy_xml::decode::XmlError> {
+) -> Result<crate::model::DbProxyTargetGroup, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::DBProxyTargetGroup::builder();
+    let mut builder = crate::model::DbProxyTargetGroup::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("DBProxyName") /* DBProxyName com.amazonaws.rds#DBProxyTargetGroup$DBProxyName */ =>  {
@@ -16403,9 +16403,9 @@ pub fn deser_structure_db_proxy_target_group(
 
 pub fn deser_structure_reserved_db_instance(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::ReservedDBInstance, smithy_xml::decode::XmlError> {
+) -> Result<crate::model::ReservedDbInstance, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::ReservedDBInstance::builder();
+    let mut builder = crate::model::ReservedDbInstance::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ReservedDBInstanceId") /* ReservedDBInstanceId com.amazonaws.rds#ReservedDBInstance$ReservedDBInstanceId */ =>  {
@@ -16700,7 +16700,7 @@ pub fn deser_list_pending_maintenance_action_details(
 
 pub fn deser_list_ec2_security_group_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<std::vec::Vec<crate::model::EC2SecurityGroup>, smithy_xml::decode::XmlError> {
+) -> Result<std::vec::Vec<crate::model::Ec2SecurityGroup>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -16719,7 +16719,7 @@ pub fn deser_list_ec2_security_group_list(
 
 pub fn deser_list_ip_range_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<std::vec::Vec<crate::model::IPRange>, smithy_xml::decode::XmlError> {
+) -> Result<std::vec::Vec<crate::model::IpRange>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -16889,7 +16889,7 @@ pub fn deser_structure_vpn_details(
 
 pub fn deser_list_db_cluster_option_group_memberships(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<std::vec::Vec<crate::model::DBClusterOptionGroupStatus>, smithy_xml::decode::XmlError> {
+) -> Result<std::vec::Vec<crate::model::DbClusterOptionGroupStatus>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -16930,7 +16930,7 @@ pub fn deser_list_read_replica_identifier_list(
 
 pub fn deser_list_db_cluster_member_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<std::vec::Vec<crate::model::DBClusterMember>, smithy_xml::decode::XmlError> {
+) -> Result<std::vec::Vec<crate::model::DbClusterMember>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -16968,7 +16968,7 @@ pub fn deser_list_vpc_security_group_membership_list(
 
 pub fn deser_list_db_cluster_roles(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<std::vec::Vec<crate::model::DBClusterRole>, smithy_xml::decode::XmlError> {
+) -> Result<std::vec::Vec<crate::model::DbClusterRole>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -17251,7 +17251,7 @@ pub fn deser_structure_endpoint(
 
 pub fn deser_list_db_security_group_membership_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<std::vec::Vec<crate::model::DBSecurityGroupMembership>, smithy_xml::decode::XmlError> {
+) -> Result<std::vec::Vec<crate::model::DbSecurityGroupMembership>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -17270,7 +17270,7 @@ pub fn deser_list_db_security_group_membership_list(
 
 pub fn deser_list_db_parameter_group_status_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<std::vec::Vec<crate::model::DBParameterGroupStatus>, smithy_xml::decode::XmlError> {
+) -> Result<std::vec::Vec<crate::model::DbParameterGroupStatus>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -17585,7 +17585,7 @@ pub fn deser_list_option_group_membership_list(
 
 pub fn deser_list_db_instance_status_info_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<std::vec::Vec<crate::model::DBInstanceStatusInfo>, smithy_xml::decode::XmlError> {
+) -> Result<std::vec::Vec<crate::model::DbInstanceStatusInfo>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -17604,7 +17604,7 @@ pub fn deser_list_db_instance_status_info_list(
 
 pub fn deser_list_db_instance_roles(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<std::vec::Vec<crate::model::DBInstanceRole>, smithy_xml::decode::XmlError> {
+) -> Result<std::vec::Vec<crate::model::DbInstanceRole>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -17624,7 +17624,7 @@ pub fn deser_list_db_instance_roles(
 pub fn deser_list_db_instance_automated_backups_replication_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::DBInstanceAutomatedBackupsReplication>,
+    std::vec::Vec<crate::model::DbInstanceAutomatedBackupsReplication>,
     smithy_xml::decode::XmlError,
 > {
     let mut out = std::vec::Vec::new();
@@ -17854,9 +17854,9 @@ pub fn deser_structure_account_quota(
 
 pub fn deser_structure_db_cluster_backtrack(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::DBClusterBacktrack, smithy_xml::decode::XmlError> {
+) -> Result<crate::model::DbClusterBacktrack, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::DBClusterBacktrack::builder();
+    let mut builder = crate::model::DbClusterBacktrack::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("DBClusterIdentifier") /* DBClusterIdentifier com.amazonaws.rds#DBClusterBacktrack$DBClusterIdentifier */ =>  {
@@ -17948,9 +17948,9 @@ pub fn deser_structure_db_cluster_backtrack(
 
 pub fn deser_structure_db_cluster_endpoint(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::DBClusterEndpoint, smithy_xml::decode::XmlError> {
+) -> Result<crate::model::DbClusterEndpoint, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::DBClusterEndpoint::builder();
+    let mut builder = crate::model::DbClusterEndpoint::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("DBClusterEndpointIdentifier") /* DBClusterEndpointIdentifier com.amazonaws.rds#DBClusterEndpoint$DBClusterEndpointIdentifier */ =>  {
@@ -18242,7 +18242,7 @@ pub fn deser_structure_parameter(
 
 pub fn deser_list_db_cluster_snapshot_attribute_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<std::vec::Vec<crate::model::DBClusterSnapshotAttribute>, smithy_xml::decode::XmlError> {
+) -> Result<std::vec::Vec<crate::model::DbClusterSnapshotAttribute>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -18261,9 +18261,9 @@ pub fn deser_list_db_cluster_snapshot_attribute_list(
 
 pub fn deser_structure_db_engine_version(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::DBEngineVersion, smithy_xml::decode::XmlError> {
+) -> Result<crate::model::DbEngineVersion, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::DBEngineVersion::builder();
+    let mut builder = crate::model::DbEngineVersion::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Engine") /* Engine com.amazonaws.rds#DBEngineVersion$Engine */ =>  {
@@ -18496,9 +18496,9 @@ pub fn deser_structure_db_engine_version(
 
 pub fn deser_structure_describe_db_log_files_details(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::DescribeDBLogFilesDetails, smithy_xml::decode::XmlError> {
+) -> Result<crate::model::DescribeDbLogFilesDetails, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::DescribeDBLogFilesDetails::builder();
+    let mut builder = crate::model::DescribeDbLogFilesDetails::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("LogFileName") /* LogFileName com.amazonaws.rds#DescribeDBLogFilesDetails$LogFileName */ =>  {
@@ -18554,9 +18554,9 @@ pub fn deser_structure_describe_db_log_files_details(
 
 pub fn deser_structure_db_proxy_target(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::DBProxyTarget, smithy_xml::decode::XmlError> {
+) -> Result<crate::model::DbProxyTarget, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::DBProxyTarget::builder();
+    let mut builder = crate::model::DbProxyTarget::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("TargetArn") /* TargetArn com.amazonaws.rds#DBProxyTarget$TargetArn */ =>  {
@@ -18673,7 +18673,7 @@ pub fn deser_structure_db_proxy_target(
 
 pub fn deser_list_db_snapshot_attribute_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<std::vec::Vec<crate::model::DBSnapshotAttribute>, smithy_xml::decode::XmlError> {
+) -> Result<std::vec::Vec<crate::model::DbSnapshotAttribute>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -19376,9 +19376,9 @@ pub fn deser_structure_option_group_option(
 
 pub fn deser_structure_orderable_db_instance_option(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::OrderableDBInstanceOption, smithy_xml::decode::XmlError> {
+) -> Result<crate::model::OrderableDbInstanceOption, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::OrderableDBInstanceOption::builder();
+    let mut builder = crate::model::OrderableDbInstanceOption::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Engine") /* Engine com.amazonaws.rds#OrderableDBInstanceOption$Engine */ =>  {
@@ -19785,9 +19785,9 @@ pub fn deser_structure_orderable_db_instance_option(
 
 pub fn deser_structure_reserved_db_instances_offering(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::ReservedDBInstancesOffering, smithy_xml::decode::XmlError> {
+) -> Result<crate::model::ReservedDbInstancesOffering, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::ReservedDBInstancesOffering::builder();
+    let mut builder = crate::model::ReservedDbInstancesOffering::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ReservedDBInstancesOfferingId") /* ReservedDBInstancesOfferingId com.amazonaws.rds#ReservedDBInstancesOffering$ReservedDBInstancesOfferingId */ =>  {
@@ -20279,9 +20279,9 @@ pub fn deser_structure_pending_maintenance_action(
 
 pub fn deser_structure_ec2_security_group(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::EC2SecurityGroup, smithy_xml::decode::XmlError> {
+) -> Result<crate::model::Ec2SecurityGroup, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::EC2SecurityGroup::builder();
+    let mut builder = crate::model::Ec2SecurityGroup::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Status") /* Status com.amazonaws.rds#EC2SecurityGroup$Status */ =>  {
@@ -20344,9 +20344,9 @@ pub fn deser_structure_ec2_security_group(
 
 pub fn deser_structure_ip_range(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::IPRange, smithy_xml::decode::XmlError> {
+) -> Result<crate::model::IpRange, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::IPRange::builder();
+    let mut builder = crate::model::IpRange::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Status") /* Status com.amazonaws.rds#IPRange$Status */ =>  {
@@ -20552,9 +20552,9 @@ pub fn deser_structure_option(
 
 pub fn deser_structure_db_cluster_option_group_status(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::DBClusterOptionGroupStatus, smithy_xml::decode::XmlError> {
+) -> Result<crate::model::DbClusterOptionGroupStatus, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::DBClusterOptionGroupStatus::builder();
+    let mut builder = crate::model::DbClusterOptionGroupStatus::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("DBClusterOptionGroupName") /* DBClusterOptionGroupName com.amazonaws.rds#DBClusterOptionGroupStatus$DBClusterOptionGroupName */ =>  {
@@ -20591,9 +20591,9 @@ pub fn deser_structure_db_cluster_option_group_status(
 
 pub fn deser_structure_db_cluster_member(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::DBClusterMember, smithy_xml::decode::XmlError> {
+) -> Result<crate::model::DbClusterMember, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::DBClusterMember::builder();
+    let mut builder = crate::model::DbClusterMember::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("DBInstanceIdentifier") /* DBInstanceIdentifier com.amazonaws.rds#DBClusterMember$DBInstanceIdentifier */ =>  {
@@ -20701,9 +20701,9 @@ pub fn deser_structure_vpc_security_group_membership(
 
 pub fn deser_structure_db_cluster_role(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::DBClusterRole, smithy_xml::decode::XmlError> {
+) -> Result<crate::model::DbClusterRole, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::DBClusterRole::builder();
+    let mut builder = crate::model::DbClusterRole::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("RoleArn") /* RoleArn com.amazonaws.rds#DBClusterRole$RoleArn */ =>  {
@@ -20851,9 +20851,9 @@ pub fn deser_structure_pending_cloudwatch_logs_exports(
 
 pub fn deser_structure_db_security_group_membership(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::DBSecurityGroupMembership, smithy_xml::decode::XmlError> {
+) -> Result<crate::model::DbSecurityGroupMembership, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::DBSecurityGroupMembership::builder();
+    let mut builder = crate::model::DbSecurityGroupMembership::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("DBSecurityGroupName") /* DBSecurityGroupName com.amazonaws.rds#DBSecurityGroupMembership$DBSecurityGroupName */ =>  {
@@ -20890,9 +20890,9 @@ pub fn deser_structure_db_security_group_membership(
 
 pub fn deser_structure_db_parameter_group_status(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::DBParameterGroupStatus, smithy_xml::decode::XmlError> {
+) -> Result<crate::model::DbParameterGroupStatus, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::DBParameterGroupStatus::builder();
+    let mut builder = crate::model::DbParameterGroupStatus::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("DBParameterGroupName") /* DBParameterGroupName com.amazonaws.rds#DBParameterGroupStatus$DBParameterGroupName */ =>  {
@@ -20968,9 +20968,9 @@ pub fn deser_structure_option_group_membership(
 
 pub fn deser_structure_db_instance_status_info(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::DBInstanceStatusInfo, smithy_xml::decode::XmlError> {
+) -> Result<crate::model::DbInstanceStatusInfo, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::DBInstanceStatusInfo::builder();
+    let mut builder = crate::model::DbInstanceStatusInfo::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("StatusType") /* StatusType com.amazonaws.rds#DBInstanceStatusInfo$StatusType */ =>  {
@@ -21036,9 +21036,9 @@ pub fn deser_structure_db_instance_status_info(
 
 pub fn deser_structure_db_instance_role(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::DBInstanceRole, smithy_xml::decode::XmlError> {
+) -> Result<crate::model::DbInstanceRole, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::DBInstanceRole::builder();
+    let mut builder = crate::model::DbInstanceRole::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("RoleArn") /* RoleArn com.amazonaws.rds#DBInstanceRole$RoleArn */ =>  {
@@ -21088,9 +21088,9 @@ pub fn deser_structure_db_instance_role(
 
 pub fn deser_structure_db_instance_automated_backups_replication(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::DBInstanceAutomatedBackupsReplication, smithy_xml::decode::XmlError> {
+) -> Result<crate::model::DbInstanceAutomatedBackupsReplication, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::DBInstanceAutomatedBackupsReplication::builder();
+    let mut builder = crate::model::DbInstanceAutomatedBackupsReplication::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("DBInstanceAutomatedBackupsArn") /* DBInstanceAutomatedBackupsArn com.amazonaws.rds#DBInstanceAutomatedBackupsReplication$DBInstanceAutomatedBackupsArn */ =>  {
@@ -21341,9 +21341,9 @@ pub fn deser_list_engine_mode_list(
 
 pub fn deser_structure_db_cluster_snapshot_attribute(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::DBClusterSnapshotAttribute, smithy_xml::decode::XmlError> {
+) -> Result<crate::model::DbClusterSnapshotAttribute, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::DBClusterSnapshotAttribute::builder();
+    let mut builder = crate::model::DbClusterSnapshotAttribute::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("AttributeName") /* AttributeName com.amazonaws.rds#DBClusterSnapshotAttribute$AttributeName */ =>  {
@@ -21549,9 +21549,9 @@ pub fn deser_structure_target_health(
 
 pub fn deser_structure_db_snapshot_attribute(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::DBSnapshotAttribute, smithy_xml::decode::XmlError> {
+) -> Result<crate::model::DbSnapshotAttribute, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::DBSnapshotAttribute::builder();
+    let mut builder = crate::model::DbSnapshotAttribute::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("AttributeName") /* AttributeName com.amazonaws.rds#DBSnapshotAttribute$AttributeName */ =>  {

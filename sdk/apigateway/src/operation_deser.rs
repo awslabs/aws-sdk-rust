@@ -12,92 +12,93 @@ pub fn parse_create_api_key_error(
     Err(match error_code {
         "BadRequestException" => crate::error::CreateApiKeyError {
             meta: generic,
-            kind: crate::error::CreateApiKeyErrorKind::BadRequestError({
+            kind: crate::error::CreateApiKeyErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateApiKeyError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateApiKeyError::unhandled)?;
                 output.build()
             }),
         },
         "ConflictException" => crate::error::CreateApiKeyError {
             meta: generic,
-            kind: crate::error::CreateApiKeyErrorKind::ConflictError({
+            kind: crate::error::CreateApiKeyErrorKind::ConflictException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
+                let mut output = crate::error::conflict_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateApiKeyError::unhandled)?;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateApiKeyError::unhandled)?;
                 output.build()
             }),
         },
         "LimitExceededException" => crate::error::CreateApiKeyError {
             meta: generic,
-            kind: crate::error::CreateApiKeyErrorKind::LimitExceededError({
+            kind: crate::error::CreateApiKeyErrorKind::LimitExceededException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::limit_exceeded_error::Builder::default();
+                let mut output = crate::error::limit_exceeded_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::limit_exceeded_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::CreateApiKeyError::unhandled)?;
-                output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_create_api_key_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::CreateApiKeyError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
-                output.build()
-            }),
-        },
-        "NotFoundException" => crate::error::CreateApiKeyError {
-            meta: generic,
-            kind: crate::error::CreateApiKeyErrorKind::NotFoundError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateApiKeyError::unhandled)?;
-                output.build()
-            }),
-        },
-        "TooManyRequestsException" => crate::error::CreateApiKeyError {
-            meta: generic,
-            kind: crate::error::CreateApiKeyErrorKind::TooManyRequestsError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_limit_exceeded_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::CreateApiKeyError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_create_api_key_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::CreateApiKeyError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_create_api_key_limit_exceeded_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::CreateApiKeyError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
+                output.build()
+            }),
+        },
+        "NotFoundException" => crate::error::CreateApiKeyError {
+            meta: generic,
+            kind: crate::error::CreateApiKeyErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::not_found_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateApiKeyError::unhandled)?;
+                output.build()
+            }),
+        },
+        "TooManyRequestsException" => crate::error::CreateApiKeyError {
+            meta: generic,
+            kind: crate::error::CreateApiKeyErrorKind::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateApiKeyError::unhandled)?;
+                output = output.set_retry_after_seconds(
+                crate::http_serde::deser_header_create_api_key_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::CreateApiKeyError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::CreateApiKeyError {
             meta: generic,
-            kind: crate::error::CreateApiKeyErrorKind::UnauthorizedError({
+            kind: crate::error::CreateApiKeyErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::CreateApiKeyError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateApiKeyError::unhandled)?;
                 output.build()
             }),
         },
@@ -114,7 +115,7 @@ pub fn parse_create_api_key_response(
         let mut output = crate::output::create_api_key_output::Builder::default();
         let _ = response;
         output =
-            crate::json_deser::create_api_key_deser_operation(response.body().as_ref(), output)
+            crate::json_deser::deser_operation_create_api_key(response.body().as_ref(), output)
                 .map_err(crate::error::CreateApiKeyError::unhandled)?;
         output.build()
     })
@@ -134,81 +135,79 @@ pub fn parse_create_authorizer_error(
     Err(match error_code {
         "BadRequestException" => crate::error::CreateAuthorizerError {
             meta: generic,
-            kind: crate::error::CreateAuthorizerErrorKind::BadRequestError({
+            kind: crate::error::CreateAuthorizerErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateAuthorizerError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateAuthorizerError::unhandled)?;
                 output.build()
             }),
         },
         "LimitExceededException" => crate::error::CreateAuthorizerError {
             meta: generic,
-            kind: crate::error::CreateAuthorizerErrorKind::LimitExceededError({
+            kind: crate::error::CreateAuthorizerErrorKind::LimitExceededException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::limit_exceeded_error::Builder::default();
+                let mut output = crate::error::limit_exceeded_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::limit_exceeded_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::CreateAuthorizerError::unhandled)?;
-                output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_create_authorizer_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::CreateAuthorizerError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
-                output.build()
-            }),
-        },
-        "NotFoundException" => crate::error::CreateAuthorizerError {
-            meta: generic,
-            kind: crate::error::CreateAuthorizerErrorKind::NotFoundError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateAuthorizerError::unhandled)?;
-                output.build()
-            }),
-        },
-        "TooManyRequestsException" => crate::error::CreateAuthorizerError {
-            meta: generic,
-            kind: crate::error::CreateAuthorizerErrorKind::TooManyRequestsError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_limit_exceeded_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::CreateAuthorizerError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_create_authorizer_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::CreateAuthorizerError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_create_authorizer_limit_exceeded_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::CreateAuthorizerError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
+                output.build()
+            }),
+        },
+        "NotFoundException" => crate::error::CreateAuthorizerError {
+            meta: generic,
+            kind: crate::error::CreateAuthorizerErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::not_found_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateAuthorizerError::unhandled)?;
+                output.build()
+            }),
+        },
+        "TooManyRequestsException" => crate::error::CreateAuthorizerError {
+            meta: generic,
+            kind: crate::error::CreateAuthorizerErrorKind::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateAuthorizerError::unhandled)?;
+                output = output.set_retry_after_seconds(
+                crate::http_serde::deser_header_create_authorizer_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::CreateAuthorizerError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::CreateAuthorizerError {
             meta: generic,
-            kind: crate::error::CreateAuthorizerErrorKind::UnauthorizedError({
+            kind: crate::error::CreateAuthorizerErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::CreateAuthorizerError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateAuthorizerError::unhandled)?;
                 output.build()
             }),
         },
@@ -226,7 +225,7 @@ pub fn parse_create_authorizer_response(
         let mut output = crate::output::create_authorizer_output::Builder::default();
         let _ = response;
         output =
-            crate::json_deser::create_authorizer_deser_operation(response.body().as_ref(), output)
+            crate::json_deser::deser_operation_create_authorizer(response.body().as_ref(), output)
                 .map_err(crate::error::CreateAuthorizerError::unhandled)?;
         output.build()
     })
@@ -248,66 +247,75 @@ pub fn parse_create_base_path_mapping_error(
     Err(match error_code {
         "BadRequestException" => crate::error::CreateBasePathMappingError {
             meta: generic,
-            kind: crate::error::CreateBasePathMappingErrorKind::BadRequestError({
+            kind: crate::error::CreateBasePathMappingErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateBasePathMappingError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateBasePathMappingError::unhandled)?;
                 output.build()
             }),
         },
         "ConflictException" => crate::error::CreateBasePathMappingError {
             meta: generic,
-            kind: crate::error::CreateBasePathMappingErrorKind::ConflictError({
+            kind: crate::error::CreateBasePathMappingErrorKind::ConflictException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
+                let mut output = crate::error::conflict_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateBasePathMappingError::unhandled)?;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateBasePathMappingError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::CreateBasePathMappingError {
             meta: generic,
-            kind: crate::error::CreateBasePathMappingErrorKind::NotFoundError({
+            kind: crate::error::CreateBasePathMappingErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateBasePathMappingError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateBasePathMappingError::unhandled)?;
                 output.build()
             }),
         },
-        "TooManyRequestsException" => {
-            crate::error::CreateBasePathMappingError {
-                meta: generic,
-                kind: crate::error::CreateBasePathMappingErrorKind::TooManyRequestsError({
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_requests_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::too_many_requests_exception(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateBasePathMappingError::unhandled)?;
-                    output = output.set_retry_after_seconds(
-                crate::http_serde::deser_header_create_base_path_mapping_retry_after_seconds(response.headers())
+        "TooManyRequestsException" => crate::error::CreateBasePathMappingError {
+            meta: generic,
+            kind: crate::error::CreateBasePathMappingErrorKind::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateBasePathMappingError::unhandled)?;
+                output = output.set_retry_after_seconds(
+                crate::http_serde::deser_header_create_base_path_mapping_too_many_requests_exception_retry_after_seconds(response.headers())
                                             .map_err(|_|crate::error::CreateBasePathMappingError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
             );
-                    output.build()
-                }),
-            }
-        }
+                output.build()
+            }),
+        },
         "UnauthorizedException" => crate::error::CreateBasePathMappingError {
             meta: generic,
-            kind: crate::error::CreateBasePathMappingErrorKind::UnauthorizedError({
+            kind: crate::error::CreateBasePathMappingErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::CreateBasePathMappingError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateBasePathMappingError::unhandled)?;
                 output.build()
             }),
         },
@@ -326,7 +334,7 @@ pub fn parse_create_base_path_mapping_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_base_path_mapping_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::create_base_path_mapping_deser_operation(
+        output = crate::json_deser::deser_operation_create_base_path_mapping(
             response.body().as_ref(),
             output,
         )
@@ -349,116 +357,111 @@ pub fn parse_create_deployment_error(
     Err(match error_code {
         "BadRequestException" => crate::error::CreateDeploymentError {
             meta: generic,
-            kind: crate::error::CreateDeploymentErrorKind::BadRequestError({
+            kind: crate::error::CreateDeploymentErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateDeploymentError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateDeploymentError::unhandled)?;
                 output.build()
             }),
         },
         "ConflictException" => crate::error::CreateDeploymentError {
             meta: generic,
-            kind: crate::error::CreateDeploymentErrorKind::ConflictError({
+            kind: crate::error::CreateDeploymentErrorKind::ConflictException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
+                let mut output = crate::error::conflict_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateDeploymentError::unhandled)?;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateDeploymentError::unhandled)?;
                 output.build()
             }),
         },
         "LimitExceededException" => crate::error::CreateDeploymentError {
             meta: generic,
-            kind: crate::error::CreateDeploymentErrorKind::LimitExceededError({
+            kind: crate::error::CreateDeploymentErrorKind::LimitExceededException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::limit_exceeded_error::Builder::default();
+                let mut output = crate::error::limit_exceeded_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::limit_exceeded_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::CreateDeploymentError::unhandled)?;
+                output = crate::json_deser::deser_structure_limit_exceeded_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateDeploymentError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_create_deployment_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::CreateDeploymentError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_create_deployment_limit_exceeded_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::CreateDeploymentError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::CreateDeploymentError {
             meta: generic,
-            kind: crate::error::CreateDeploymentErrorKind::NotFoundError({
+            kind: crate::error::CreateDeploymentErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateDeploymentError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateDeploymentError::unhandled)?;
                 output.build()
             }),
         },
         "ServiceUnavailableException" => crate::error::CreateDeploymentError {
             meta: generic,
-            kind: crate::error::CreateDeploymentErrorKind::ServiceUnavailableError({
+            kind: crate::error::CreateDeploymentErrorKind::ServiceUnavailableException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::service_unavailable_error::Builder::default();
+                let mut output = crate::error::service_unavailable_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::service_unavailable_exception(
+                output = crate::json_deser::deser_structure_service_unavailable_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::CreateDeploymentError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_create_deployment_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::CreateDeploymentError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_create_deployment_service_unavailable_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::CreateDeploymentError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::CreateDeploymentError {
             meta: generic,
-            kind: crate::error::CreateDeploymentErrorKind::TooManyRequestsError({
+            kind: crate::error::CreateDeploymentErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::CreateDeploymentError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_create_deployment_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::CreateDeploymentError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_create_deployment_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::CreateDeploymentError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::CreateDeploymentError {
             meta: generic,
-            kind: crate::error::CreateDeploymentErrorKind::UnauthorizedError({
+            kind: crate::error::CreateDeploymentErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::CreateDeploymentError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateDeploymentError::unhandled)?;
                 output.build()
             }),
         },
@@ -476,7 +479,7 @@ pub fn parse_create_deployment_response(
         let mut output = crate::output::create_deployment_output::Builder::default();
         let _ = response;
         output =
-            crate::json_deser::create_deployment_deser_operation(response.body().as_ref(), output)
+            crate::json_deser::deser_operation_create_deployment(response.body().as_ref(), output)
                 .map_err(crate::error::CreateDeploymentError::unhandled)?;
         output.build()
     })
@@ -502,86 +505,93 @@ pub fn parse_create_documentation_part_error(
     Err(match error_code {
         "BadRequestException" => crate::error::CreateDocumentationPartError {
             meta: generic,
-            kind: crate::error::CreateDocumentationPartErrorKind::BadRequestError({
+            kind: crate::error::CreateDocumentationPartErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateDocumentationPartError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateDocumentationPartError::unhandled)?;
                 output.build()
             }),
         },
         "ConflictException" => crate::error::CreateDocumentationPartError {
             meta: generic,
-            kind: crate::error::CreateDocumentationPartErrorKind::ConflictError({
+            kind: crate::error::CreateDocumentationPartErrorKind::ConflictException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
+                let mut output = crate::error::conflict_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateDocumentationPartError::unhandled)?;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateDocumentationPartError::unhandled)?;
                 output.build()
             }),
         },
-        "LimitExceededException" => {
-            crate::error::CreateDocumentationPartError {
-                meta: generic,
-                kind: crate::error::CreateDocumentationPartErrorKind::LimitExceededError({
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::limit_exceeded_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::limit_exceeded_exception(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateDocumentationPartError::unhandled)?;
-                    output = output.set_retry_after_seconds(
-                crate::http_serde::deser_header_create_documentation_part_retry_after_seconds(response.headers())
+        "LimitExceededException" => crate::error::CreateDocumentationPartError {
+            meta: generic,
+            kind: crate::error::CreateDocumentationPartErrorKind::LimitExceededException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_limit_exceeded_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateDocumentationPartError::unhandled)?;
+                output = output.set_retry_after_seconds(
+                crate::http_serde::deser_header_create_documentation_part_limit_exceeded_exception_retry_after_seconds(response.headers())
                                             .map_err(|_|crate::error::CreateDocumentationPartError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
             );
-                    output.build()
-                }),
-            }
-        }
+                output.build()
+            }),
+        },
         "NotFoundException" => crate::error::CreateDocumentationPartError {
             meta: generic,
-            kind: crate::error::CreateDocumentationPartErrorKind::NotFoundError({
+            kind: crate::error::CreateDocumentationPartErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateDocumentationPartError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateDocumentationPartError::unhandled)?;
                 output.build()
             }),
         },
-        "TooManyRequestsException" => {
-            crate::error::CreateDocumentationPartError {
-                meta: generic,
-                kind: crate::error::CreateDocumentationPartErrorKind::TooManyRequestsError({
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_requests_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::too_many_requests_exception(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateDocumentationPartError::unhandled)?;
-                    output = output.set_retry_after_seconds(
-                crate::http_serde::deser_header_create_documentation_part_retry_after_seconds(response.headers())
+        "TooManyRequestsException" => crate::error::CreateDocumentationPartError {
+            meta: generic,
+            kind: crate::error::CreateDocumentationPartErrorKind::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateDocumentationPartError::unhandled)?;
+                output = output.set_retry_after_seconds(
+                crate::http_serde::deser_header_create_documentation_part_too_many_requests_exception_retry_after_seconds(response.headers())
                                             .map_err(|_|crate::error::CreateDocumentationPartError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
             );
-                    output.build()
-                }),
-            }
-        }
+                output.build()
+            }),
+        },
         "UnauthorizedException" => crate::error::CreateDocumentationPartError {
             meta: generic,
-            kind: crate::error::CreateDocumentationPartErrorKind::UnauthorizedError({
+            kind: crate::error::CreateDocumentationPartErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::CreateDocumentationPartError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateDocumentationPartError::unhandled)?;
                 output.build()
             }),
         },
@@ -600,7 +610,7 @@ pub fn parse_create_documentation_part_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_documentation_part_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::create_documentation_part_deser_operation(
+        output = crate::json_deser::deser_operation_create_documentation_part(
             response.body().as_ref(),
             output,
         )
@@ -629,37 +639,45 @@ pub fn parse_create_documentation_version_error(
     Err(match error_code {
         "BadRequestException" => crate::error::CreateDocumentationVersionError {
             meta: generic,
-            kind: crate::error::CreateDocumentationVersionErrorKind::BadRequestError({
+            kind: crate::error::CreateDocumentationVersionErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateDocumentationVersionError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateDocumentationVersionError::unhandled)?;
                 output.build()
             }),
         },
         "ConflictException" => crate::error::CreateDocumentationVersionError {
             meta: generic,
-            kind: crate::error::CreateDocumentationVersionErrorKind::ConflictError({
+            kind: crate::error::CreateDocumentationVersionErrorKind::ConflictException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
+                let mut output = crate::error::conflict_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateDocumentationVersionError::unhandled)?;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateDocumentationVersionError::unhandled)?;
                 output.build()
             }),
         },
         "LimitExceededException" => crate::error::CreateDocumentationVersionError {
             meta: generic,
-            kind: crate::error::CreateDocumentationVersionErrorKind::LimitExceededError({
+            kind: crate::error::CreateDocumentationVersionErrorKind::LimitExceededException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::limit_exceeded_error::Builder::default();
+                let mut output = crate::error::limit_exceeded_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::limit_exceeded_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::CreateDocumentationVersionError::unhandled)?;
+                output = crate::json_deser::deser_structure_limit_exceeded_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateDocumentationVersionError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                crate::http_serde::deser_header_create_documentation_version_retry_after_seconds(response.headers())
+                crate::http_serde::deser_header_create_documentation_version_limit_exceeded_exception_retry_after_seconds(response.headers())
                                             .map_err(|_|crate::error::CreateDocumentationVersionError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
             );
                 output.build()
@@ -667,28 +685,31 @@ pub fn parse_create_documentation_version_error(
         },
         "NotFoundException" => crate::error::CreateDocumentationVersionError {
             meta: generic,
-            kind: crate::error::CreateDocumentationVersionErrorKind::NotFoundError({
+            kind: crate::error::CreateDocumentationVersionErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateDocumentationVersionError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateDocumentationVersionError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::CreateDocumentationVersionError {
             meta: generic,
-            kind: crate::error::CreateDocumentationVersionErrorKind::TooManyRequestsError({
+            kind: crate::error::CreateDocumentationVersionErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::CreateDocumentationVersionError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                crate::http_serde::deser_header_create_documentation_version_retry_after_seconds(response.headers())
+                crate::http_serde::deser_header_create_documentation_version_too_many_requests_exception_retry_after_seconds(response.headers())
                                             .map_err(|_|crate::error::CreateDocumentationVersionError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
             );
                 output.build()
@@ -696,13 +717,15 @@ pub fn parse_create_documentation_version_error(
         },
         "UnauthorizedException" => crate::error::CreateDocumentationVersionError {
             meta: generic,
-            kind: crate::error::CreateDocumentationVersionErrorKind::UnauthorizedError({
+            kind: crate::error::CreateDocumentationVersionErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::CreateDocumentationVersionError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateDocumentationVersionError::unhandled)?;
                 output.build()
             }),
         },
@@ -721,7 +744,7 @@ pub fn parse_create_documentation_version_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_documentation_version_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::create_documentation_version_deser_operation(
+        output = crate::json_deser::deser_operation_create_documentation_version(
             response.body().as_ref(),
             output,
         )
@@ -744,59 +767,61 @@ pub fn parse_create_domain_name_error(
     Err(match error_code {
         "BadRequestException" => crate::error::CreateDomainNameError {
             meta: generic,
-            kind: crate::error::CreateDomainNameErrorKind::BadRequestError({
+            kind: crate::error::CreateDomainNameErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateDomainNameError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateDomainNameError::unhandled)?;
                 output.build()
             }),
         },
         "ConflictException" => crate::error::CreateDomainNameError {
             meta: generic,
-            kind: crate::error::CreateDomainNameErrorKind::ConflictError({
+            kind: crate::error::CreateDomainNameErrorKind::ConflictException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
+                let mut output = crate::error::conflict_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateDomainNameError::unhandled)?;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateDomainNameError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::CreateDomainNameError {
             meta: generic,
-            kind: crate::error::CreateDomainNameErrorKind::TooManyRequestsError({
+            kind: crate::error::CreateDomainNameErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::CreateDomainNameError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_create_domain_name_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::CreateDomainNameError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_create_domain_name_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::CreateDomainNameError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::CreateDomainNameError {
             meta: generic,
-            kind: crate::error::CreateDomainNameErrorKind::UnauthorizedError({
+            kind: crate::error::CreateDomainNameErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::CreateDomainNameError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateDomainNameError::unhandled)?;
                 output.build()
             }),
         },
@@ -814,7 +839,7 @@ pub fn parse_create_domain_name_response(
         let mut output = crate::output::create_domain_name_output::Builder::default();
         let _ = response;
         output =
-            crate::json_deser::create_domain_name_deser_operation(response.body().as_ref(), output)
+            crate::json_deser::deser_operation_create_domain_name(response.body().as_ref(), output)
                 .map_err(crate::error::CreateDomainNameError::unhandled)?;
         output.build()
     })
@@ -833,92 +858,93 @@ pub fn parse_create_model_error(
     Err(match error_code {
         "BadRequestException" => crate::error::CreateModelError {
             meta: generic,
-            kind: crate::error::CreateModelErrorKind::BadRequestError({
+            kind: crate::error::CreateModelErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateModelError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateModelError::unhandled)?;
                 output.build()
             }),
         },
         "ConflictException" => crate::error::CreateModelError {
             meta: generic,
-            kind: crate::error::CreateModelErrorKind::ConflictError({
+            kind: crate::error::CreateModelErrorKind::ConflictException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
+                let mut output = crate::error::conflict_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateModelError::unhandled)?;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateModelError::unhandled)?;
                 output.build()
             }),
         },
         "LimitExceededException" => crate::error::CreateModelError {
             meta: generic,
-            kind: crate::error::CreateModelErrorKind::LimitExceededError({
+            kind: crate::error::CreateModelErrorKind::LimitExceededException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::limit_exceeded_error::Builder::default();
+                let mut output = crate::error::limit_exceeded_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::limit_exceeded_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::CreateModelError::unhandled)?;
-                output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_create_model_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::CreateModelError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
-                output.build()
-            }),
-        },
-        "NotFoundException" => crate::error::CreateModelError {
-            meta: generic,
-            kind: crate::error::CreateModelErrorKind::NotFoundError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateModelError::unhandled)?;
-                output.build()
-            }),
-        },
-        "TooManyRequestsException" => crate::error::CreateModelError {
-            meta: generic,
-            kind: crate::error::CreateModelErrorKind::TooManyRequestsError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_limit_exceeded_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::CreateModelError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_create_model_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::CreateModelError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_create_model_limit_exceeded_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::CreateModelError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
+                output.build()
+            }),
+        },
+        "NotFoundException" => crate::error::CreateModelError {
+            meta: generic,
+            kind: crate::error::CreateModelErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::not_found_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateModelError::unhandled)?;
+                output.build()
+            }),
+        },
+        "TooManyRequestsException" => crate::error::CreateModelError {
+            meta: generic,
+            kind: crate::error::CreateModelErrorKind::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateModelError::unhandled)?;
+                output = output.set_retry_after_seconds(
+                crate::http_serde::deser_header_create_model_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::CreateModelError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::CreateModelError {
             meta: generic,
-            kind: crate::error::CreateModelErrorKind::UnauthorizedError({
+            kind: crate::error::CreateModelErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::CreateModelError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateModelError::unhandled)?;
                 output.build()
             }),
         },
@@ -934,7 +960,7 @@ pub fn parse_create_model_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_model_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::create_model_deser_operation(response.body().as_ref(), output)
+        output = crate::json_deser::deser_operation_create_model(response.body().as_ref(), output)
             .map_err(crate::error::CreateModelError::unhandled)?;
         output.build()
     })
@@ -960,75 +986,79 @@ pub fn parse_create_request_validator_error(
     Err(match error_code {
         "BadRequestException" => crate::error::CreateRequestValidatorError {
             meta: generic,
-            kind: crate::error::CreateRequestValidatorErrorKind::BadRequestError({
+            kind: crate::error::CreateRequestValidatorErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateRequestValidatorError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateRequestValidatorError::unhandled)?;
                 output.build()
             }),
         },
-        "LimitExceededException" => {
-            crate::error::CreateRequestValidatorError {
-                meta: generic,
-                kind: crate::error::CreateRequestValidatorErrorKind::LimitExceededError({
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::limit_exceeded_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::limit_exceeded_exception(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateRequestValidatorError::unhandled)?;
-                    output = output.set_retry_after_seconds(
-                crate::http_serde::deser_header_create_request_validator_retry_after_seconds(response.headers())
+        "LimitExceededException" => crate::error::CreateRequestValidatorError {
+            meta: generic,
+            kind: crate::error::CreateRequestValidatorErrorKind::LimitExceededException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_limit_exceeded_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateRequestValidatorError::unhandled)?;
+                output = output.set_retry_after_seconds(
+                crate::http_serde::deser_header_create_request_validator_limit_exceeded_exception_retry_after_seconds(response.headers())
                                             .map_err(|_|crate::error::CreateRequestValidatorError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
             );
-                    output.build()
-                }),
-            }
-        }
+                output.build()
+            }),
+        },
         "NotFoundException" => crate::error::CreateRequestValidatorError {
             meta: generic,
-            kind: crate::error::CreateRequestValidatorErrorKind::NotFoundError({
+            kind: crate::error::CreateRequestValidatorErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateRequestValidatorError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateRequestValidatorError::unhandled)?;
                 output.build()
             }),
         },
-        "TooManyRequestsException" => {
-            crate::error::CreateRequestValidatorError {
-                meta: generic,
-                kind: crate::error::CreateRequestValidatorErrorKind::TooManyRequestsError({
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_requests_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::too_many_requests_exception(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateRequestValidatorError::unhandled)?;
-                    output = output.set_retry_after_seconds(
-                crate::http_serde::deser_header_create_request_validator_retry_after_seconds(response.headers())
+        "TooManyRequestsException" => crate::error::CreateRequestValidatorError {
+            meta: generic,
+            kind: crate::error::CreateRequestValidatorErrorKind::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateRequestValidatorError::unhandled)?;
+                output = output.set_retry_after_seconds(
+                crate::http_serde::deser_header_create_request_validator_too_many_requests_exception_retry_after_seconds(response.headers())
                                             .map_err(|_|crate::error::CreateRequestValidatorError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
             );
-                    output.build()
-                }),
-            }
-        }
+                output.build()
+            }),
+        },
         "UnauthorizedException" => crate::error::CreateRequestValidatorError {
             meta: generic,
-            kind: crate::error::CreateRequestValidatorErrorKind::UnauthorizedError({
+            kind: crate::error::CreateRequestValidatorErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::CreateRequestValidatorError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateRequestValidatorError::unhandled)?;
                 output.build()
             }),
         },
@@ -1047,7 +1077,7 @@ pub fn parse_create_request_validator_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_request_validator_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::create_request_validator_deser_operation(
+        output = crate::json_deser::deser_operation_create_request_validator(
             response.body().as_ref(),
             output,
         )
@@ -1069,92 +1099,93 @@ pub fn parse_create_resource_error(
     Err(match error_code {
         "BadRequestException" => crate::error::CreateResourceError {
             meta: generic,
-            kind: crate::error::CreateResourceErrorKind::BadRequestError({
+            kind: crate::error::CreateResourceErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateResourceError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateResourceError::unhandled)?;
                 output.build()
             }),
         },
         "ConflictException" => crate::error::CreateResourceError {
             meta: generic,
-            kind: crate::error::CreateResourceErrorKind::ConflictError({
+            kind: crate::error::CreateResourceErrorKind::ConflictException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
+                let mut output = crate::error::conflict_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateResourceError::unhandled)?;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateResourceError::unhandled)?;
                 output.build()
             }),
         },
         "LimitExceededException" => crate::error::CreateResourceError {
             meta: generic,
-            kind: crate::error::CreateResourceErrorKind::LimitExceededError({
+            kind: crate::error::CreateResourceErrorKind::LimitExceededException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::limit_exceeded_error::Builder::default();
+                let mut output = crate::error::limit_exceeded_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::limit_exceeded_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::CreateResourceError::unhandled)?;
-                output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_create_resource_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::CreateResourceError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
-                output.build()
-            }),
-        },
-        "NotFoundException" => crate::error::CreateResourceError {
-            meta: generic,
-            kind: crate::error::CreateResourceErrorKind::NotFoundError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateResourceError::unhandled)?;
-                output.build()
-            }),
-        },
-        "TooManyRequestsException" => crate::error::CreateResourceError {
-            meta: generic,
-            kind: crate::error::CreateResourceErrorKind::TooManyRequestsError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_limit_exceeded_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::CreateResourceError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_create_resource_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::CreateResourceError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_create_resource_limit_exceeded_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::CreateResourceError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
+                output.build()
+            }),
+        },
+        "NotFoundException" => crate::error::CreateResourceError {
+            meta: generic,
+            kind: crate::error::CreateResourceErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::not_found_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateResourceError::unhandled)?;
+                output.build()
+            }),
+        },
+        "TooManyRequestsException" => crate::error::CreateResourceError {
+            meta: generic,
+            kind: crate::error::CreateResourceErrorKind::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateResourceError::unhandled)?;
+                output = output.set_retry_after_seconds(
+                crate::http_serde::deser_header_create_resource_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::CreateResourceError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::CreateResourceError {
             meta: generic,
-            kind: crate::error::CreateResourceErrorKind::UnauthorizedError({
+            kind: crate::error::CreateResourceErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::CreateResourceError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateResourceError::unhandled)?;
                 output.build()
             }),
         },
@@ -1171,7 +1202,7 @@ pub fn parse_create_resource_response(
         let mut output = crate::output::create_resource_output::Builder::default();
         let _ = response;
         output =
-            crate::json_deser::create_resource_deser_operation(response.body().as_ref(), output)
+            crate::json_deser::deser_operation_create_resource(response.body().as_ref(), output)
                 .map_err(crate::error::CreateResourceError::unhandled)?;
         output.build()
     })
@@ -1190,70 +1221,65 @@ pub fn parse_create_rest_api_error(
     Err(match error_code {
         "BadRequestException" => crate::error::CreateRestApiError {
             meta: generic,
-            kind: crate::error::CreateRestApiErrorKind::BadRequestError({
+            kind: crate::error::CreateRestApiErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateRestApiError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateRestApiError::unhandled)?;
                 output.build()
             }),
         },
         "LimitExceededException" => crate::error::CreateRestApiError {
             meta: generic,
-            kind: crate::error::CreateRestApiErrorKind::LimitExceededError({
+            kind: crate::error::CreateRestApiErrorKind::LimitExceededException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::limit_exceeded_error::Builder::default();
+                let mut output = crate::error::limit_exceeded_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::limit_exceeded_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::CreateRestApiError::unhandled)?;
-                output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_create_rest_api_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::CreateRestApiError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
-                output.build()
-            }),
-        },
-        "TooManyRequestsException" => crate::error::CreateRestApiError {
-            meta: generic,
-            kind: crate::error::CreateRestApiErrorKind::TooManyRequestsError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_limit_exceeded_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::CreateRestApiError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_create_rest_api_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::CreateRestApiError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_create_rest_api_limit_exceeded_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::CreateRestApiError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
+                output.build()
+            }),
+        },
+        "TooManyRequestsException" => crate::error::CreateRestApiError {
+            meta: generic,
+            kind: crate::error::CreateRestApiErrorKind::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateRestApiError::unhandled)?;
+                output = output.set_retry_after_seconds(
+                crate::http_serde::deser_header_create_rest_api_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::CreateRestApiError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::CreateRestApiError {
             meta: generic,
-            kind: crate::error::CreateRestApiErrorKind::UnauthorizedError({
+            kind: crate::error::CreateRestApiErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::CreateRestApiError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateRestApiError::unhandled)?;
                 output.build()
             }),
         },
@@ -1270,7 +1296,7 @@ pub fn parse_create_rest_api_response(
         let mut output = crate::output::create_rest_api_output::Builder::default();
         let _ = response;
         output =
-            crate::json_deser::create_rest_api_deser_operation(response.body().as_ref(), output)
+            crate::json_deser::deser_operation_create_rest_api(response.body().as_ref(), output)
                 .map_err(crate::error::CreateRestApiError::unhandled)?;
         output.build()
     })
@@ -1289,92 +1315,93 @@ pub fn parse_create_stage_error(
     Err(match error_code {
         "BadRequestException" => crate::error::CreateStageError {
             meta: generic,
-            kind: crate::error::CreateStageErrorKind::BadRequestError({
+            kind: crate::error::CreateStageErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateStageError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateStageError::unhandled)?;
                 output.build()
             }),
         },
         "ConflictException" => crate::error::CreateStageError {
             meta: generic,
-            kind: crate::error::CreateStageErrorKind::ConflictError({
+            kind: crate::error::CreateStageErrorKind::ConflictException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
+                let mut output = crate::error::conflict_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateStageError::unhandled)?;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateStageError::unhandled)?;
                 output.build()
             }),
         },
         "LimitExceededException" => crate::error::CreateStageError {
             meta: generic,
-            kind: crate::error::CreateStageErrorKind::LimitExceededError({
+            kind: crate::error::CreateStageErrorKind::LimitExceededException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::limit_exceeded_error::Builder::default();
+                let mut output = crate::error::limit_exceeded_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::limit_exceeded_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::CreateStageError::unhandled)?;
-                output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_create_stage_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::CreateStageError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
-                output.build()
-            }),
-        },
-        "NotFoundException" => crate::error::CreateStageError {
-            meta: generic,
-            kind: crate::error::CreateStageErrorKind::NotFoundError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateStageError::unhandled)?;
-                output.build()
-            }),
-        },
-        "TooManyRequestsException" => crate::error::CreateStageError {
-            meta: generic,
-            kind: crate::error::CreateStageErrorKind::TooManyRequestsError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_limit_exceeded_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::CreateStageError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_create_stage_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::CreateStageError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_create_stage_limit_exceeded_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::CreateStageError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
+                output.build()
+            }),
+        },
+        "NotFoundException" => crate::error::CreateStageError {
+            meta: generic,
+            kind: crate::error::CreateStageErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::not_found_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateStageError::unhandled)?;
+                output.build()
+            }),
+        },
+        "TooManyRequestsException" => crate::error::CreateStageError {
+            meta: generic,
+            kind: crate::error::CreateStageErrorKind::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateStageError::unhandled)?;
+                output = output.set_retry_after_seconds(
+                crate::http_serde::deser_header_create_stage_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::CreateStageError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::CreateStageError {
             meta: generic,
-            kind: crate::error::CreateStageErrorKind::UnauthorizedError({
+            kind: crate::error::CreateStageErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::CreateStageError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateStageError::unhandled)?;
                 output.build()
             }),
         },
@@ -1390,7 +1417,7 @@ pub fn parse_create_stage_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_stage_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::create_stage_deser_operation(response.body().as_ref(), output)
+        output = crate::json_deser::deser_operation_create_stage(response.body().as_ref(), output)
             .map_err(crate::error::CreateStageError::unhandled)?;
         output.build()
     })
@@ -1409,92 +1436,93 @@ pub fn parse_create_usage_plan_error(
     Err(match error_code {
         "BadRequestException" => crate::error::CreateUsagePlanError {
             meta: generic,
-            kind: crate::error::CreateUsagePlanErrorKind::BadRequestError({
+            kind: crate::error::CreateUsagePlanErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateUsagePlanError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateUsagePlanError::unhandled)?;
                 output.build()
             }),
         },
         "ConflictException" => crate::error::CreateUsagePlanError {
             meta: generic,
-            kind: crate::error::CreateUsagePlanErrorKind::ConflictError({
+            kind: crate::error::CreateUsagePlanErrorKind::ConflictException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
+                let mut output = crate::error::conflict_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateUsagePlanError::unhandled)?;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateUsagePlanError::unhandled)?;
                 output.build()
             }),
         },
         "LimitExceededException" => crate::error::CreateUsagePlanError {
             meta: generic,
-            kind: crate::error::CreateUsagePlanErrorKind::LimitExceededError({
+            kind: crate::error::CreateUsagePlanErrorKind::LimitExceededException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::limit_exceeded_error::Builder::default();
+                let mut output = crate::error::limit_exceeded_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::limit_exceeded_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::CreateUsagePlanError::unhandled)?;
-                output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_create_usage_plan_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::CreateUsagePlanError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
-                output.build()
-            }),
-        },
-        "NotFoundException" => crate::error::CreateUsagePlanError {
-            meta: generic,
-            kind: crate::error::CreateUsagePlanErrorKind::NotFoundError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateUsagePlanError::unhandled)?;
-                output.build()
-            }),
-        },
-        "TooManyRequestsException" => crate::error::CreateUsagePlanError {
-            meta: generic,
-            kind: crate::error::CreateUsagePlanErrorKind::TooManyRequestsError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_limit_exceeded_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::CreateUsagePlanError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_create_usage_plan_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::CreateUsagePlanError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_create_usage_plan_limit_exceeded_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::CreateUsagePlanError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
+                output.build()
+            }),
+        },
+        "NotFoundException" => crate::error::CreateUsagePlanError {
+            meta: generic,
+            kind: crate::error::CreateUsagePlanErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::not_found_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateUsagePlanError::unhandled)?;
+                output.build()
+            }),
+        },
+        "TooManyRequestsException" => crate::error::CreateUsagePlanError {
+            meta: generic,
+            kind: crate::error::CreateUsagePlanErrorKind::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateUsagePlanError::unhandled)?;
+                output = output.set_retry_after_seconds(
+                crate::http_serde::deser_header_create_usage_plan_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::CreateUsagePlanError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::CreateUsagePlanError {
             meta: generic,
-            kind: crate::error::CreateUsagePlanErrorKind::UnauthorizedError({
+            kind: crate::error::CreateUsagePlanErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::CreateUsagePlanError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateUsagePlanError::unhandled)?;
                 output.build()
             }),
         },
@@ -1511,7 +1539,7 @@ pub fn parse_create_usage_plan_response(
         let mut output = crate::output::create_usage_plan_output::Builder::default();
         let _ = response;
         output =
-            crate::json_deser::create_usage_plan_deser_operation(response.body().as_ref(), output)
+            crate::json_deser::deser_operation_create_usage_plan(response.body().as_ref(), output)
                 .map_err(crate::error::CreateUsagePlanError::unhandled)?;
         output.build()
     })
@@ -1533,70 +1561,75 @@ pub fn parse_create_usage_plan_key_error(
     Err(match error_code {
         "BadRequestException" => crate::error::CreateUsagePlanKeyError {
             meta: generic,
-            kind: crate::error::CreateUsagePlanKeyErrorKind::BadRequestError({
+            kind: crate::error::CreateUsagePlanKeyErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateUsagePlanKeyError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateUsagePlanKeyError::unhandled)?;
                 output.build()
             }),
         },
         "ConflictException" => crate::error::CreateUsagePlanKeyError {
             meta: generic,
-            kind: crate::error::CreateUsagePlanKeyErrorKind::ConflictError({
+            kind: crate::error::CreateUsagePlanKeyErrorKind::ConflictException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
+                let mut output = crate::error::conflict_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateUsagePlanKeyError::unhandled)?;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateUsagePlanKeyError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::CreateUsagePlanKeyError {
             meta: generic,
-            kind: crate::error::CreateUsagePlanKeyErrorKind::NotFoundError({
+            kind: crate::error::CreateUsagePlanKeyErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateUsagePlanKeyError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateUsagePlanKeyError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::CreateUsagePlanKeyError {
             meta: generic,
-            kind: crate::error::CreateUsagePlanKeyErrorKind::TooManyRequestsError({
+            kind: crate::error::CreateUsagePlanKeyErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::CreateUsagePlanKeyError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_create_usage_plan_key_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::CreateUsagePlanKeyError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_create_usage_plan_key_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::CreateUsagePlanKeyError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::CreateUsagePlanKeyError {
             meta: generic,
-            kind: crate::error::CreateUsagePlanKeyErrorKind::UnauthorizedError({
+            kind: crate::error::CreateUsagePlanKeyErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::CreateUsagePlanKeyError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateUsagePlanKeyError::unhandled)?;
                 output.build()
             }),
         },
@@ -1615,7 +1648,7 @@ pub fn parse_create_usage_plan_key_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_usage_plan_key_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::create_usage_plan_key_deser_operation(
+        output = crate::json_deser::deser_operation_create_usage_plan_key(
             response.body().as_ref(),
             output,
         )
@@ -1637,48 +1670,47 @@ pub fn parse_create_vpc_link_error(
     Err(match error_code {
         "BadRequestException" => crate::error::CreateVpcLinkError {
             meta: generic,
-            kind: crate::error::CreateVpcLinkErrorKind::BadRequestError({
+            kind: crate::error::CreateVpcLinkErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateVpcLinkError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateVpcLinkError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::CreateVpcLinkError {
             meta: generic,
-            kind: crate::error::CreateVpcLinkErrorKind::TooManyRequestsError({
+            kind: crate::error::CreateVpcLinkErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::CreateVpcLinkError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_create_vpc_link_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::CreateVpcLinkError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_create_vpc_link_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::CreateVpcLinkError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::CreateVpcLinkError {
             meta: generic,
-            kind: crate::error::CreateVpcLinkErrorKind::UnauthorizedError({
+            kind: crate::error::CreateVpcLinkErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::CreateVpcLinkError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateVpcLinkError::unhandled)?;
                 output.build()
             }),
         },
@@ -1695,7 +1727,7 @@ pub fn parse_create_vpc_link_response(
         let mut output = crate::output::create_vpc_link_output::Builder::default();
         let _ = response;
         output =
-            crate::json_deser::create_vpc_link_deser_operation(response.body().as_ref(), output)
+            crate::json_deser::deser_operation_create_vpc_link(response.body().as_ref(), output)
                 .map_err(crate::error::CreateVpcLinkError::unhandled)?;
         output.build()
     })
@@ -1714,48 +1746,47 @@ pub fn parse_delete_api_key_error(
     Err(match error_code {
         "NotFoundException" => crate::error::DeleteApiKeyError {
             meta: generic,
-            kind: crate::error::DeleteApiKeyErrorKind::NotFoundError({
+            kind: crate::error::DeleteApiKeyErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteApiKeyError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteApiKeyError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::DeleteApiKeyError {
             meta: generic,
-            kind: crate::error::DeleteApiKeyErrorKind::TooManyRequestsError({
+            kind: crate::error::DeleteApiKeyErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::DeleteApiKeyError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_delete_api_key_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::DeleteApiKeyError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_delete_api_key_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::DeleteApiKeyError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::DeleteApiKeyError {
             meta: generic,
-            kind: crate::error::DeleteApiKeyErrorKind::UnauthorizedError({
+            kind: crate::error::DeleteApiKeyErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::DeleteApiKeyError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteApiKeyError::unhandled)?;
                 output.build()
             }),
         },
@@ -1789,70 +1820,75 @@ pub fn parse_delete_authorizer_error(
     Err(match error_code {
         "BadRequestException" => crate::error::DeleteAuthorizerError {
             meta: generic,
-            kind: crate::error::DeleteAuthorizerErrorKind::BadRequestError({
+            kind: crate::error::DeleteAuthorizerErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteAuthorizerError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteAuthorizerError::unhandled)?;
                 output.build()
             }),
         },
         "ConflictException" => crate::error::DeleteAuthorizerError {
             meta: generic,
-            kind: crate::error::DeleteAuthorizerErrorKind::ConflictError({
+            kind: crate::error::DeleteAuthorizerErrorKind::ConflictException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
+                let mut output = crate::error::conflict_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteAuthorizerError::unhandled)?;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteAuthorizerError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::DeleteAuthorizerError {
             meta: generic,
-            kind: crate::error::DeleteAuthorizerErrorKind::NotFoundError({
+            kind: crate::error::DeleteAuthorizerErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteAuthorizerError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteAuthorizerError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::DeleteAuthorizerError {
             meta: generic,
-            kind: crate::error::DeleteAuthorizerErrorKind::TooManyRequestsError({
+            kind: crate::error::DeleteAuthorizerErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::DeleteAuthorizerError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_delete_authorizer_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::DeleteAuthorizerError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_delete_authorizer_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::DeleteAuthorizerError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::DeleteAuthorizerError {
             meta: generic,
-            kind: crate::error::DeleteAuthorizerErrorKind::UnauthorizedError({
+            kind: crate::error::DeleteAuthorizerErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::DeleteAuthorizerError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteAuthorizerError::unhandled)?;
                 output.build()
             }),
         },
@@ -1889,66 +1925,75 @@ pub fn parse_delete_base_path_mapping_error(
     Err(match error_code {
         "BadRequestException" => crate::error::DeleteBasePathMappingError {
             meta: generic,
-            kind: crate::error::DeleteBasePathMappingErrorKind::BadRequestError({
+            kind: crate::error::DeleteBasePathMappingErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteBasePathMappingError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteBasePathMappingError::unhandled)?;
                 output.build()
             }),
         },
         "ConflictException" => crate::error::DeleteBasePathMappingError {
             meta: generic,
-            kind: crate::error::DeleteBasePathMappingErrorKind::ConflictError({
+            kind: crate::error::DeleteBasePathMappingErrorKind::ConflictException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
+                let mut output = crate::error::conflict_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteBasePathMappingError::unhandled)?;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteBasePathMappingError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::DeleteBasePathMappingError {
             meta: generic,
-            kind: crate::error::DeleteBasePathMappingErrorKind::NotFoundError({
+            kind: crate::error::DeleteBasePathMappingErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteBasePathMappingError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteBasePathMappingError::unhandled)?;
                 output.build()
             }),
         },
-        "TooManyRequestsException" => {
-            crate::error::DeleteBasePathMappingError {
-                meta: generic,
-                kind: crate::error::DeleteBasePathMappingErrorKind::TooManyRequestsError({
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_requests_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::too_many_requests_exception(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteBasePathMappingError::unhandled)?;
-                    output = output.set_retry_after_seconds(
-                crate::http_serde::deser_header_delete_base_path_mapping_retry_after_seconds(response.headers())
+        "TooManyRequestsException" => crate::error::DeleteBasePathMappingError {
+            meta: generic,
+            kind: crate::error::DeleteBasePathMappingErrorKind::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteBasePathMappingError::unhandled)?;
+                output = output.set_retry_after_seconds(
+                crate::http_serde::deser_header_delete_base_path_mapping_too_many_requests_exception_retry_after_seconds(response.headers())
                                             .map_err(|_|crate::error::DeleteBasePathMappingError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
             );
-                    output.build()
-                }),
-            }
-        }
+                output.build()
+            }),
+        },
         "UnauthorizedException" => crate::error::DeleteBasePathMappingError {
             meta: generic,
-            kind: crate::error::DeleteBasePathMappingErrorKind::UnauthorizedError({
+            kind: crate::error::DeleteBasePathMappingErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::DeleteBasePathMappingError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteBasePathMappingError::unhandled)?;
                 output.build()
             }),
         },
@@ -1991,55 +2036,61 @@ pub fn parse_delete_client_certificate_error(
     Err(match error_code {
         "BadRequestException" => crate::error::DeleteClientCertificateError {
             meta: generic,
-            kind: crate::error::DeleteClientCertificateErrorKind::BadRequestError({
+            kind: crate::error::DeleteClientCertificateErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteClientCertificateError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteClientCertificateError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::DeleteClientCertificateError {
             meta: generic,
-            kind: crate::error::DeleteClientCertificateErrorKind::NotFoundError({
+            kind: crate::error::DeleteClientCertificateErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteClientCertificateError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteClientCertificateError::unhandled)?;
                 output.build()
             }),
         },
-        "TooManyRequestsException" => {
-            crate::error::DeleteClientCertificateError {
-                meta: generic,
-                kind: crate::error::DeleteClientCertificateErrorKind::TooManyRequestsError({
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_requests_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::too_many_requests_exception(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteClientCertificateError::unhandled)?;
-                    output = output.set_retry_after_seconds(
-                crate::http_serde::deser_header_delete_client_certificate_retry_after_seconds(response.headers())
+        "TooManyRequestsException" => crate::error::DeleteClientCertificateError {
+            meta: generic,
+            kind: crate::error::DeleteClientCertificateErrorKind::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteClientCertificateError::unhandled)?;
+                output = output.set_retry_after_seconds(
+                crate::http_serde::deser_header_delete_client_certificate_too_many_requests_exception_retry_after_seconds(response.headers())
                                             .map_err(|_|crate::error::DeleteClientCertificateError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
             );
-                    output.build()
-                }),
-            }
-        }
+                output.build()
+            }),
+        },
         "UnauthorizedException" => crate::error::DeleteClientCertificateError {
             meta: generic,
-            kind: crate::error::DeleteClientCertificateErrorKind::UnauthorizedError({
+            kind: crate::error::DeleteClientCertificateErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::DeleteClientCertificateError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteClientCertificateError::unhandled)?;
                 output.build()
             }),
         },
@@ -2076,59 +2127,61 @@ pub fn parse_delete_deployment_error(
     Err(match error_code {
         "BadRequestException" => crate::error::DeleteDeploymentError {
             meta: generic,
-            kind: crate::error::DeleteDeploymentErrorKind::BadRequestError({
+            kind: crate::error::DeleteDeploymentErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteDeploymentError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteDeploymentError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::DeleteDeploymentError {
             meta: generic,
-            kind: crate::error::DeleteDeploymentErrorKind::NotFoundError({
+            kind: crate::error::DeleteDeploymentErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteDeploymentError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteDeploymentError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::DeleteDeploymentError {
             meta: generic,
-            kind: crate::error::DeleteDeploymentErrorKind::TooManyRequestsError({
+            kind: crate::error::DeleteDeploymentErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::DeleteDeploymentError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_delete_deployment_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::DeleteDeploymentError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_delete_deployment_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::DeleteDeploymentError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::DeleteDeploymentError {
             meta: generic,
-            kind: crate::error::DeleteDeploymentErrorKind::UnauthorizedError({
+            kind: crate::error::DeleteDeploymentErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::DeleteDeploymentError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteDeploymentError::unhandled)?;
                 output.build()
             }),
         },
@@ -2169,66 +2222,75 @@ pub fn parse_delete_documentation_part_error(
     Err(match error_code {
         "BadRequestException" => crate::error::DeleteDocumentationPartError {
             meta: generic,
-            kind: crate::error::DeleteDocumentationPartErrorKind::BadRequestError({
+            kind: crate::error::DeleteDocumentationPartErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteDocumentationPartError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteDocumentationPartError::unhandled)?;
                 output.build()
             }),
         },
         "ConflictException" => crate::error::DeleteDocumentationPartError {
             meta: generic,
-            kind: crate::error::DeleteDocumentationPartErrorKind::ConflictError({
+            kind: crate::error::DeleteDocumentationPartErrorKind::ConflictException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
+                let mut output = crate::error::conflict_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteDocumentationPartError::unhandled)?;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteDocumentationPartError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::DeleteDocumentationPartError {
             meta: generic,
-            kind: crate::error::DeleteDocumentationPartErrorKind::NotFoundError({
+            kind: crate::error::DeleteDocumentationPartErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteDocumentationPartError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteDocumentationPartError::unhandled)?;
                 output.build()
             }),
         },
-        "TooManyRequestsException" => {
-            crate::error::DeleteDocumentationPartError {
-                meta: generic,
-                kind: crate::error::DeleteDocumentationPartErrorKind::TooManyRequestsError({
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_requests_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::too_many_requests_exception(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteDocumentationPartError::unhandled)?;
-                    output = output.set_retry_after_seconds(
-                crate::http_serde::deser_header_delete_documentation_part_retry_after_seconds(response.headers())
+        "TooManyRequestsException" => crate::error::DeleteDocumentationPartError {
+            meta: generic,
+            kind: crate::error::DeleteDocumentationPartErrorKind::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteDocumentationPartError::unhandled)?;
+                output = output.set_retry_after_seconds(
+                crate::http_serde::deser_header_delete_documentation_part_too_many_requests_exception_retry_after_seconds(response.headers())
                                             .map_err(|_|crate::error::DeleteDocumentationPartError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
             );
-                    output.build()
-                }),
-            }
-        }
+                output.build()
+            }),
+        },
         "UnauthorizedException" => crate::error::DeleteDocumentationPartError {
             meta: generic,
-            kind: crate::error::DeleteDocumentationPartErrorKind::UnauthorizedError({
+            kind: crate::error::DeleteDocumentationPartErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::DeleteDocumentationPartError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteDocumentationPartError::unhandled)?;
                 output.build()
             }),
         },
@@ -2271,50 +2333,59 @@ pub fn parse_delete_documentation_version_error(
     Err(match error_code {
         "BadRequestException" => crate::error::DeleteDocumentationVersionError {
             meta: generic,
-            kind: crate::error::DeleteDocumentationVersionErrorKind::BadRequestError({
+            kind: crate::error::DeleteDocumentationVersionErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteDocumentationVersionError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteDocumentationVersionError::unhandled)?;
                 output.build()
             }),
         },
         "ConflictException" => crate::error::DeleteDocumentationVersionError {
             meta: generic,
-            kind: crate::error::DeleteDocumentationVersionErrorKind::ConflictError({
+            kind: crate::error::DeleteDocumentationVersionErrorKind::ConflictException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
+                let mut output = crate::error::conflict_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteDocumentationVersionError::unhandled)?;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteDocumentationVersionError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::DeleteDocumentationVersionError {
             meta: generic,
-            kind: crate::error::DeleteDocumentationVersionErrorKind::NotFoundError({
+            kind: crate::error::DeleteDocumentationVersionErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteDocumentationVersionError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteDocumentationVersionError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::DeleteDocumentationVersionError {
             meta: generic,
-            kind: crate::error::DeleteDocumentationVersionErrorKind::TooManyRequestsError({
+            kind: crate::error::DeleteDocumentationVersionErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::DeleteDocumentationVersionError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                crate::http_serde::deser_header_delete_documentation_version_retry_after_seconds(response.headers())
+                crate::http_serde::deser_header_delete_documentation_version_too_many_requests_exception_retry_after_seconds(response.headers())
                                             .map_err(|_|crate::error::DeleteDocumentationVersionError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
             );
                 output.build()
@@ -2322,13 +2393,15 @@ pub fn parse_delete_documentation_version_error(
         },
         "UnauthorizedException" => crate::error::DeleteDocumentationVersionError {
             meta: generic,
-            kind: crate::error::DeleteDocumentationVersionErrorKind::UnauthorizedError({
+            kind: crate::error::DeleteDocumentationVersionErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::DeleteDocumentationVersionError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteDocumentationVersionError::unhandled)?;
                 output.build()
             }),
         },
@@ -2365,59 +2438,61 @@ pub fn parse_delete_domain_name_error(
     Err(match error_code {
         "BadRequestException" => crate::error::DeleteDomainNameError {
             meta: generic,
-            kind: crate::error::DeleteDomainNameErrorKind::BadRequestError({
+            kind: crate::error::DeleteDomainNameErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteDomainNameError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteDomainNameError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::DeleteDomainNameError {
             meta: generic,
-            kind: crate::error::DeleteDomainNameErrorKind::NotFoundError({
+            kind: crate::error::DeleteDomainNameErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteDomainNameError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteDomainNameError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::DeleteDomainNameError {
             meta: generic,
-            kind: crate::error::DeleteDomainNameErrorKind::TooManyRequestsError({
+            kind: crate::error::DeleteDomainNameErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::DeleteDomainNameError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_delete_domain_name_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::DeleteDomainNameError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_delete_domain_name_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::DeleteDomainNameError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::DeleteDomainNameError {
             meta: generic,
-            kind: crate::error::DeleteDomainNameErrorKind::UnauthorizedError({
+            kind: crate::error::DeleteDomainNameErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::DeleteDomainNameError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteDomainNameError::unhandled)?;
                 output.build()
             }),
         },
@@ -2454,66 +2529,75 @@ pub fn parse_delete_gateway_response_error(
     Err(match error_code {
         "BadRequestException" => crate::error::DeleteGatewayResponseError {
             meta: generic,
-            kind: crate::error::DeleteGatewayResponseErrorKind::BadRequestError({
+            kind: crate::error::DeleteGatewayResponseErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteGatewayResponseError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteGatewayResponseError::unhandled)?;
                 output.build()
             }),
         },
         "ConflictException" => crate::error::DeleteGatewayResponseError {
             meta: generic,
-            kind: crate::error::DeleteGatewayResponseErrorKind::ConflictError({
+            kind: crate::error::DeleteGatewayResponseErrorKind::ConflictException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
+                let mut output = crate::error::conflict_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteGatewayResponseError::unhandled)?;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteGatewayResponseError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::DeleteGatewayResponseError {
             meta: generic,
-            kind: crate::error::DeleteGatewayResponseErrorKind::NotFoundError({
+            kind: crate::error::DeleteGatewayResponseErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteGatewayResponseError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteGatewayResponseError::unhandled)?;
                 output.build()
             }),
         },
-        "TooManyRequestsException" => {
-            crate::error::DeleteGatewayResponseError {
-                meta: generic,
-                kind: crate::error::DeleteGatewayResponseErrorKind::TooManyRequestsError({
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_requests_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::too_many_requests_exception(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteGatewayResponseError::unhandled)?;
-                    output = output.set_retry_after_seconds(
-                crate::http_serde::deser_header_delete_gateway_response_retry_after_seconds(response.headers())
+        "TooManyRequestsException" => crate::error::DeleteGatewayResponseError {
+            meta: generic,
+            kind: crate::error::DeleteGatewayResponseErrorKind::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteGatewayResponseError::unhandled)?;
+                output = output.set_retry_after_seconds(
+                crate::http_serde::deser_header_delete_gateway_response_too_many_requests_exception_retry_after_seconds(response.headers())
                                             .map_err(|_|crate::error::DeleteGatewayResponseError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
             );
-                    output.build()
-                }),
-            }
-        }
+                output.build()
+            }),
+        },
         "UnauthorizedException" => crate::error::DeleteGatewayResponseError {
             meta: generic,
-            kind: crate::error::DeleteGatewayResponseErrorKind::UnauthorizedError({
+            kind: crate::error::DeleteGatewayResponseErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::DeleteGatewayResponseError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteGatewayResponseError::unhandled)?;
                 output.build()
             }),
         },
@@ -2550,59 +2634,61 @@ pub fn parse_delete_integration_error(
     Err(match error_code {
         "ConflictException" => crate::error::DeleteIntegrationError {
             meta: generic,
-            kind: crate::error::DeleteIntegrationErrorKind::ConflictError({
+            kind: crate::error::DeleteIntegrationErrorKind::ConflictException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
+                let mut output = crate::error::conflict_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteIntegrationError::unhandled)?;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteIntegrationError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::DeleteIntegrationError {
             meta: generic,
-            kind: crate::error::DeleteIntegrationErrorKind::NotFoundError({
+            kind: crate::error::DeleteIntegrationErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteIntegrationError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteIntegrationError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::DeleteIntegrationError {
             meta: generic,
-            kind: crate::error::DeleteIntegrationErrorKind::TooManyRequestsError({
+            kind: crate::error::DeleteIntegrationErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::DeleteIntegrationError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_delete_integration_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::DeleteIntegrationError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_delete_integration_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::DeleteIntegrationError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::DeleteIntegrationError {
             meta: generic,
-            kind: crate::error::DeleteIntegrationErrorKind::UnauthorizedError({
+            kind: crate::error::DeleteIntegrationErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::DeleteIntegrationError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteIntegrationError::unhandled)?;
                 output.build()
             }),
         },
@@ -2643,50 +2729,59 @@ pub fn parse_delete_integration_response_error(
     Err(match error_code {
         "BadRequestException" => crate::error::DeleteIntegrationResponseError {
             meta: generic,
-            kind: crate::error::DeleteIntegrationResponseErrorKind::BadRequestError({
+            kind: crate::error::DeleteIntegrationResponseErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteIntegrationResponseError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteIntegrationResponseError::unhandled)?;
                 output.build()
             }),
         },
         "ConflictException" => crate::error::DeleteIntegrationResponseError {
             meta: generic,
-            kind: crate::error::DeleteIntegrationResponseErrorKind::ConflictError({
+            kind: crate::error::DeleteIntegrationResponseErrorKind::ConflictException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
+                let mut output = crate::error::conflict_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteIntegrationResponseError::unhandled)?;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteIntegrationResponseError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::DeleteIntegrationResponseError {
             meta: generic,
-            kind: crate::error::DeleteIntegrationResponseErrorKind::NotFoundError({
+            kind: crate::error::DeleteIntegrationResponseErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteIntegrationResponseError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteIntegrationResponseError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::DeleteIntegrationResponseError {
             meta: generic,
-            kind: crate::error::DeleteIntegrationResponseErrorKind::TooManyRequestsError({
+            kind: crate::error::DeleteIntegrationResponseErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::DeleteIntegrationResponseError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                crate::http_serde::deser_header_delete_integration_response_retry_after_seconds(response.headers())
+                crate::http_serde::deser_header_delete_integration_response_too_many_requests_exception_retry_after_seconds(response.headers())
                                             .map_err(|_|crate::error::DeleteIntegrationResponseError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
             );
                 output.build()
@@ -2694,13 +2789,15 @@ pub fn parse_delete_integration_response_error(
         },
         "UnauthorizedException" => crate::error::DeleteIntegrationResponseError {
             meta: generic,
-            kind: crate::error::DeleteIntegrationResponseErrorKind::UnauthorizedError({
+            kind: crate::error::DeleteIntegrationResponseErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::DeleteIntegrationResponseError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteIntegrationResponseError::unhandled)?;
                 output.build()
             }),
         },
@@ -2736,59 +2833,61 @@ pub fn parse_delete_method_error(
     Err(match error_code {
         "ConflictException" => crate::error::DeleteMethodError {
             meta: generic,
-            kind: crate::error::DeleteMethodErrorKind::ConflictError({
+            kind: crate::error::DeleteMethodErrorKind::ConflictException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
+                let mut output = crate::error::conflict_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteMethodError::unhandled)?;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteMethodError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::DeleteMethodError {
             meta: generic,
-            kind: crate::error::DeleteMethodErrorKind::NotFoundError({
+            kind: crate::error::DeleteMethodErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteMethodError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteMethodError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::DeleteMethodError {
             meta: generic,
-            kind: crate::error::DeleteMethodErrorKind::TooManyRequestsError({
+            kind: crate::error::DeleteMethodErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::DeleteMethodError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_delete_method_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::DeleteMethodError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_delete_method_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::DeleteMethodError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::DeleteMethodError {
             meta: generic,
-            kind: crate::error::DeleteMethodErrorKind::UnauthorizedError({
+            kind: crate::error::DeleteMethodErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::DeleteMethodError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteMethodError::unhandled)?;
                 output.build()
             }),
         },
@@ -2824,70 +2923,75 @@ pub fn parse_delete_method_response_error(
     Err(match error_code {
         "BadRequestException" => crate::error::DeleteMethodResponseError {
             meta: generic,
-            kind: crate::error::DeleteMethodResponseErrorKind::BadRequestError({
+            kind: crate::error::DeleteMethodResponseErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteMethodResponseError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteMethodResponseError::unhandled)?;
                 output.build()
             }),
         },
         "ConflictException" => crate::error::DeleteMethodResponseError {
             meta: generic,
-            kind: crate::error::DeleteMethodResponseErrorKind::ConflictError({
+            kind: crate::error::DeleteMethodResponseErrorKind::ConflictException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
+                let mut output = crate::error::conflict_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteMethodResponseError::unhandled)?;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteMethodResponseError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::DeleteMethodResponseError {
             meta: generic,
-            kind: crate::error::DeleteMethodResponseErrorKind::NotFoundError({
+            kind: crate::error::DeleteMethodResponseErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteMethodResponseError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteMethodResponseError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::DeleteMethodResponseError {
             meta: generic,
-            kind: crate::error::DeleteMethodResponseErrorKind::TooManyRequestsError({
+            kind: crate::error::DeleteMethodResponseErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::DeleteMethodResponseError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_delete_method_response_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::DeleteMethodResponseError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_delete_method_response_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::DeleteMethodResponseError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::DeleteMethodResponseError {
             meta: generic,
-            kind: crate::error::DeleteMethodResponseErrorKind::UnauthorizedError({
+            kind: crate::error::DeleteMethodResponseErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::DeleteMethodResponseError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteMethodResponseError::unhandled)?;
                 output.build()
             }),
         },
@@ -2923,70 +3027,75 @@ pub fn parse_delete_model_error(
     Err(match error_code {
         "BadRequestException" => crate::error::DeleteModelError {
             meta: generic,
-            kind: crate::error::DeleteModelErrorKind::BadRequestError({
+            kind: crate::error::DeleteModelErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteModelError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteModelError::unhandled)?;
                 output.build()
             }),
         },
         "ConflictException" => crate::error::DeleteModelError {
             meta: generic,
-            kind: crate::error::DeleteModelErrorKind::ConflictError({
+            kind: crate::error::DeleteModelErrorKind::ConflictException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
+                let mut output = crate::error::conflict_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteModelError::unhandled)?;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteModelError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::DeleteModelError {
             meta: generic,
-            kind: crate::error::DeleteModelErrorKind::NotFoundError({
+            kind: crate::error::DeleteModelErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteModelError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteModelError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::DeleteModelError {
             meta: generic,
-            kind: crate::error::DeleteModelErrorKind::TooManyRequestsError({
+            kind: crate::error::DeleteModelErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::DeleteModelError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_delete_model_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::DeleteModelError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_delete_model_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::DeleteModelError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::DeleteModelError {
             meta: generic,
-            kind: crate::error::DeleteModelErrorKind::UnauthorizedError({
+            kind: crate::error::DeleteModelErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::DeleteModelError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteModelError::unhandled)?;
                 output.build()
             }),
         },
@@ -3026,66 +3135,75 @@ pub fn parse_delete_request_validator_error(
     Err(match error_code {
         "BadRequestException" => crate::error::DeleteRequestValidatorError {
             meta: generic,
-            kind: crate::error::DeleteRequestValidatorErrorKind::BadRequestError({
+            kind: crate::error::DeleteRequestValidatorErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteRequestValidatorError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteRequestValidatorError::unhandled)?;
                 output.build()
             }),
         },
         "ConflictException" => crate::error::DeleteRequestValidatorError {
             meta: generic,
-            kind: crate::error::DeleteRequestValidatorErrorKind::ConflictError({
+            kind: crate::error::DeleteRequestValidatorErrorKind::ConflictException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
+                let mut output = crate::error::conflict_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteRequestValidatorError::unhandled)?;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteRequestValidatorError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::DeleteRequestValidatorError {
             meta: generic,
-            kind: crate::error::DeleteRequestValidatorErrorKind::NotFoundError({
+            kind: crate::error::DeleteRequestValidatorErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteRequestValidatorError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteRequestValidatorError::unhandled)?;
                 output.build()
             }),
         },
-        "TooManyRequestsException" => {
-            crate::error::DeleteRequestValidatorError {
-                meta: generic,
-                kind: crate::error::DeleteRequestValidatorErrorKind::TooManyRequestsError({
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_requests_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::too_many_requests_exception(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteRequestValidatorError::unhandled)?;
-                    output = output.set_retry_after_seconds(
-                crate::http_serde::deser_header_delete_request_validator_retry_after_seconds(response.headers())
+        "TooManyRequestsException" => crate::error::DeleteRequestValidatorError {
+            meta: generic,
+            kind: crate::error::DeleteRequestValidatorErrorKind::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteRequestValidatorError::unhandled)?;
+                output = output.set_retry_after_seconds(
+                crate::http_serde::deser_header_delete_request_validator_too_many_requests_exception_retry_after_seconds(response.headers())
                                             .map_err(|_|crate::error::DeleteRequestValidatorError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
             );
-                    output.build()
-                }),
-            }
-        }
+                output.build()
+            }),
+        },
         "UnauthorizedException" => crate::error::DeleteRequestValidatorError {
             meta: generic,
-            kind: crate::error::DeleteRequestValidatorErrorKind::UnauthorizedError({
+            kind: crate::error::DeleteRequestValidatorErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::DeleteRequestValidatorError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteRequestValidatorError::unhandled)?;
                 output.build()
             }),
         },
@@ -3121,70 +3239,75 @@ pub fn parse_delete_resource_error(
     Err(match error_code {
         "BadRequestException" => crate::error::DeleteResourceError {
             meta: generic,
-            kind: crate::error::DeleteResourceErrorKind::BadRequestError({
+            kind: crate::error::DeleteResourceErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteResourceError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteResourceError::unhandled)?;
                 output.build()
             }),
         },
         "ConflictException" => crate::error::DeleteResourceError {
             meta: generic,
-            kind: crate::error::DeleteResourceErrorKind::ConflictError({
+            kind: crate::error::DeleteResourceErrorKind::ConflictException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
+                let mut output = crate::error::conflict_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteResourceError::unhandled)?;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteResourceError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::DeleteResourceError {
             meta: generic,
-            kind: crate::error::DeleteResourceErrorKind::NotFoundError({
+            kind: crate::error::DeleteResourceErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteResourceError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteResourceError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::DeleteResourceError {
             meta: generic,
-            kind: crate::error::DeleteResourceErrorKind::TooManyRequestsError({
+            kind: crate::error::DeleteResourceErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::DeleteResourceError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_delete_resource_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::DeleteResourceError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_delete_resource_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::DeleteResourceError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::DeleteResourceError {
             meta: generic,
-            kind: crate::error::DeleteResourceErrorKind::UnauthorizedError({
+            kind: crate::error::DeleteResourceErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::DeleteResourceError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteResourceError::unhandled)?;
                 output.build()
             }),
         },
@@ -3217,59 +3340,61 @@ pub fn parse_delete_rest_api_error(
     Err(match error_code {
         "BadRequestException" => crate::error::DeleteRestApiError {
             meta: generic,
-            kind: crate::error::DeleteRestApiErrorKind::BadRequestError({
+            kind: crate::error::DeleteRestApiErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteRestApiError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteRestApiError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::DeleteRestApiError {
             meta: generic,
-            kind: crate::error::DeleteRestApiErrorKind::NotFoundError({
+            kind: crate::error::DeleteRestApiErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteRestApiError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteRestApiError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::DeleteRestApiError {
             meta: generic,
-            kind: crate::error::DeleteRestApiErrorKind::TooManyRequestsError({
+            kind: crate::error::DeleteRestApiErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::DeleteRestApiError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_delete_rest_api_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::DeleteRestApiError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_delete_rest_api_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::DeleteRestApiError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::DeleteRestApiError {
             meta: generic,
-            kind: crate::error::DeleteRestApiErrorKind::UnauthorizedError({
+            kind: crate::error::DeleteRestApiErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::DeleteRestApiError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteRestApiError::unhandled)?;
                 output.build()
             }),
         },
@@ -3302,59 +3427,61 @@ pub fn parse_delete_stage_error(
     Err(match error_code {
         "BadRequestException" => crate::error::DeleteStageError {
             meta: generic,
-            kind: crate::error::DeleteStageErrorKind::BadRequestError({
+            kind: crate::error::DeleteStageErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteStageError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteStageError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::DeleteStageError {
             meta: generic,
-            kind: crate::error::DeleteStageErrorKind::NotFoundError({
+            kind: crate::error::DeleteStageErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteStageError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteStageError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::DeleteStageError {
             meta: generic,
-            kind: crate::error::DeleteStageErrorKind::TooManyRequestsError({
+            kind: crate::error::DeleteStageErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::DeleteStageError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_delete_stage_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::DeleteStageError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_delete_stage_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::DeleteStageError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::DeleteStageError {
             meta: generic,
-            kind: crate::error::DeleteStageErrorKind::UnauthorizedError({
+            kind: crate::error::DeleteStageErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::DeleteStageError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteStageError::unhandled)?;
                 output.build()
             }),
         },
@@ -3387,59 +3514,61 @@ pub fn parse_delete_usage_plan_error(
     Err(match error_code {
         "BadRequestException" => crate::error::DeleteUsagePlanError {
             meta: generic,
-            kind: crate::error::DeleteUsagePlanErrorKind::BadRequestError({
+            kind: crate::error::DeleteUsagePlanErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteUsagePlanError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteUsagePlanError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::DeleteUsagePlanError {
             meta: generic,
-            kind: crate::error::DeleteUsagePlanErrorKind::NotFoundError({
+            kind: crate::error::DeleteUsagePlanErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteUsagePlanError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteUsagePlanError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::DeleteUsagePlanError {
             meta: generic,
-            kind: crate::error::DeleteUsagePlanErrorKind::TooManyRequestsError({
+            kind: crate::error::DeleteUsagePlanErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::DeleteUsagePlanError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_delete_usage_plan_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::DeleteUsagePlanError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_delete_usage_plan_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::DeleteUsagePlanError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::DeleteUsagePlanError {
             meta: generic,
-            kind: crate::error::DeleteUsagePlanErrorKind::UnauthorizedError({
+            kind: crate::error::DeleteUsagePlanErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::DeleteUsagePlanError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteUsagePlanError::unhandled)?;
                 output.build()
             }),
         },
@@ -3475,70 +3604,75 @@ pub fn parse_delete_usage_plan_key_error(
     Err(match error_code {
         "BadRequestException" => crate::error::DeleteUsagePlanKeyError {
             meta: generic,
-            kind: crate::error::DeleteUsagePlanKeyErrorKind::BadRequestError({
+            kind: crate::error::DeleteUsagePlanKeyErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteUsagePlanKeyError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteUsagePlanKeyError::unhandled)?;
                 output.build()
             }),
         },
         "ConflictException" => crate::error::DeleteUsagePlanKeyError {
             meta: generic,
-            kind: crate::error::DeleteUsagePlanKeyErrorKind::ConflictError({
+            kind: crate::error::DeleteUsagePlanKeyErrorKind::ConflictException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
+                let mut output = crate::error::conflict_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteUsagePlanKeyError::unhandled)?;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteUsagePlanKeyError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::DeleteUsagePlanKeyError {
             meta: generic,
-            kind: crate::error::DeleteUsagePlanKeyErrorKind::NotFoundError({
+            kind: crate::error::DeleteUsagePlanKeyErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteUsagePlanKeyError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteUsagePlanKeyError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::DeleteUsagePlanKeyError {
             meta: generic,
-            kind: crate::error::DeleteUsagePlanKeyErrorKind::TooManyRequestsError({
+            kind: crate::error::DeleteUsagePlanKeyErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::DeleteUsagePlanKeyError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_delete_usage_plan_key_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::DeleteUsagePlanKeyError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_delete_usage_plan_key_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::DeleteUsagePlanKeyError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::DeleteUsagePlanKeyError {
             meta: generic,
-            kind: crate::error::DeleteUsagePlanKeyErrorKind::UnauthorizedError({
+            kind: crate::error::DeleteUsagePlanKeyErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::DeleteUsagePlanKeyError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteUsagePlanKeyError::unhandled)?;
                 output.build()
             }),
         },
@@ -3574,59 +3708,61 @@ pub fn parse_delete_vpc_link_error(
     Err(match error_code {
         "BadRequestException" => crate::error::DeleteVpcLinkError {
             meta: generic,
-            kind: crate::error::DeleteVpcLinkErrorKind::BadRequestError({
+            kind: crate::error::DeleteVpcLinkErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteVpcLinkError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteVpcLinkError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::DeleteVpcLinkError {
             meta: generic,
-            kind: crate::error::DeleteVpcLinkErrorKind::NotFoundError({
+            kind: crate::error::DeleteVpcLinkErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteVpcLinkError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteVpcLinkError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::DeleteVpcLinkError {
             meta: generic,
-            kind: crate::error::DeleteVpcLinkErrorKind::TooManyRequestsError({
+            kind: crate::error::DeleteVpcLinkErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::DeleteVpcLinkError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_delete_vpc_link_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::DeleteVpcLinkError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_delete_vpc_link_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::DeleteVpcLinkError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::DeleteVpcLinkError {
             meta: generic,
-            kind: crate::error::DeleteVpcLinkErrorKind::UnauthorizedError({
+            kind: crate::error::DeleteVpcLinkErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::DeleteVpcLinkError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteVpcLinkError::unhandled)?;
                 output.build()
             }),
         },
@@ -3666,39 +3802,45 @@ pub fn parse_flush_stage_authorizers_cache_error(
     Err(match error_code {
         "BadRequestException" => crate::error::FlushStageAuthorizersCacheError {
             meta: generic,
-            kind: crate::error::FlushStageAuthorizersCacheErrorKind::BadRequestError({
+            kind: crate::error::FlushStageAuthorizersCacheErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::FlushStageAuthorizersCacheError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::FlushStageAuthorizersCacheError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::FlushStageAuthorizersCacheError {
             meta: generic,
-            kind: crate::error::FlushStageAuthorizersCacheErrorKind::NotFoundError({
+            kind: crate::error::FlushStageAuthorizersCacheErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::FlushStageAuthorizersCacheError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::FlushStageAuthorizersCacheError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::FlushStageAuthorizersCacheError {
             meta: generic,
-            kind: crate::error::FlushStageAuthorizersCacheErrorKind::TooManyRequestsError({
+            kind: crate::error::FlushStageAuthorizersCacheErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::FlushStageAuthorizersCacheError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                crate::http_serde::deser_header_flush_stage_authorizers_cache_retry_after_seconds(response.headers())
+                crate::http_serde::deser_header_flush_stage_authorizers_cache_too_many_requests_exception_retry_after_seconds(response.headers())
                                             .map_err(|_|crate::error::FlushStageAuthorizersCacheError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
             );
                 output.build()
@@ -3706,13 +3848,15 @@ pub fn parse_flush_stage_authorizers_cache_error(
         },
         "UnauthorizedException" => crate::error::FlushStageAuthorizersCacheError {
             meta: generic,
-            kind: crate::error::FlushStageAuthorizersCacheErrorKind::UnauthorizedError({
+            kind: crate::error::FlushStageAuthorizersCacheErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::FlushStageAuthorizersCacheError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::FlushStageAuthorizersCacheError::unhandled)?;
                 output.build()
             }),
         },
@@ -3748,59 +3892,61 @@ pub fn parse_flush_stage_cache_error(
     Err(match error_code {
         "BadRequestException" => crate::error::FlushStageCacheError {
             meta: generic,
-            kind: crate::error::FlushStageCacheErrorKind::BadRequestError({
+            kind: crate::error::FlushStageCacheErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::FlushStageCacheError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::FlushStageCacheError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::FlushStageCacheError {
             meta: generic,
-            kind: crate::error::FlushStageCacheErrorKind::NotFoundError({
+            kind: crate::error::FlushStageCacheErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::FlushStageCacheError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::FlushStageCacheError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::FlushStageCacheError {
             meta: generic,
-            kind: crate::error::FlushStageCacheErrorKind::TooManyRequestsError({
+            kind: crate::error::FlushStageCacheErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::FlushStageCacheError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_flush_stage_cache_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::FlushStageCacheError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_flush_stage_cache_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::FlushStageCacheError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::FlushStageCacheError {
             meta: generic,
-            kind: crate::error::FlushStageCacheErrorKind::UnauthorizedError({
+            kind: crate::error::FlushStageCacheErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::FlushStageCacheError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::FlushStageCacheError::unhandled)?;
                 output.build()
             }),
         },
@@ -3840,15 +3986,17 @@ pub fn parse_generate_client_certificate_error(
     Err(match error_code {
         "LimitExceededException" => crate::error::GenerateClientCertificateError {
             meta: generic,
-            kind: crate::error::GenerateClientCertificateErrorKind::LimitExceededError({
+            kind: crate::error::GenerateClientCertificateErrorKind::LimitExceededException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::limit_exceeded_error::Builder::default();
+                let mut output = crate::error::limit_exceeded_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::limit_exceeded_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::GenerateClientCertificateError::unhandled)?;
+                output = crate::json_deser::deser_structure_limit_exceeded_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GenerateClientCertificateError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                crate::http_serde::deser_header_generate_client_certificate_retry_after_seconds(response.headers())
+                crate::http_serde::deser_header_generate_client_certificate_limit_exceeded_exception_retry_after_seconds(response.headers())
                                             .map_err(|_|crate::error::GenerateClientCertificateError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
             );
                 output.build()
@@ -3856,17 +4004,17 @@ pub fn parse_generate_client_certificate_error(
         },
         "TooManyRequestsException" => crate::error::GenerateClientCertificateError {
             meta: generic,
-            kind: crate::error::GenerateClientCertificateErrorKind::TooManyRequestsError({
+            kind: crate::error::GenerateClientCertificateErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::GenerateClientCertificateError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                crate::http_serde::deser_header_generate_client_certificate_retry_after_seconds(response.headers())
+                crate::http_serde::deser_header_generate_client_certificate_too_many_requests_exception_retry_after_seconds(response.headers())
                                             .map_err(|_|crate::error::GenerateClientCertificateError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
             );
                 output.build()
@@ -3874,13 +4022,15 @@ pub fn parse_generate_client_certificate_error(
         },
         "UnauthorizedException" => crate::error::GenerateClientCertificateError {
             meta: generic,
-            kind: crate::error::GenerateClientCertificateErrorKind::UnauthorizedError({
+            kind: crate::error::GenerateClientCertificateErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::GenerateClientCertificateError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GenerateClientCertificateError::unhandled)?;
                 output.build()
             }),
         },
@@ -3899,7 +4049,7 @@ pub fn parse_generate_client_certificate_response(
         #[allow(unused_mut)]
         let mut output = crate::output::generate_client_certificate_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::generate_client_certificate_deser_operation(
+        output = crate::json_deser::deser_operation_generate_client_certificate(
             response.body().as_ref(),
             output,
         )
@@ -3921,48 +4071,47 @@ pub fn parse_get_account_error(
     Err(match error_code {
         "NotFoundException" => crate::error::GetAccountError {
             meta: generic,
-            kind: crate::error::GetAccountErrorKind::NotFoundError({
+            kind: crate::error::GetAccountErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetAccountError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetAccountError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::GetAccountError {
             meta: generic,
-            kind: crate::error::GetAccountErrorKind::TooManyRequestsError({
+            kind: crate::error::GetAccountErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::GetAccountError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_get_account_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::GetAccountError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_get_account_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::GetAccountError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::GetAccountError {
             meta: generic,
-            kind: crate::error::GetAccountErrorKind::UnauthorizedError({
+            kind: crate::error::GetAccountErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::GetAccountError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetAccountError::unhandled)?;
                 output.build()
             }),
         },
@@ -3978,7 +4127,7 @@ pub fn parse_get_account_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_account_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::get_account_deser_operation(response.body().as_ref(), output)
+        output = crate::json_deser::deser_operation_get_account(response.body().as_ref(), output)
             .map_err(crate::error::GetAccountError::unhandled)?;
         output.build()
     })
@@ -3997,48 +4146,47 @@ pub fn parse_get_api_key_error(
     Err(match error_code {
         "NotFoundException" => crate::error::GetApiKeyError {
             meta: generic,
-            kind: crate::error::GetApiKeyErrorKind::NotFoundError({
+            kind: crate::error::GetApiKeyErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetApiKeyError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetApiKeyError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::GetApiKeyError {
             meta: generic,
-            kind: crate::error::GetApiKeyErrorKind::TooManyRequestsError({
+            kind: crate::error::GetApiKeyErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::GetApiKeyError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_get_api_key_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::GetApiKeyError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_get_api_key_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::GetApiKeyError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::GetApiKeyError {
             meta: generic,
-            kind: crate::error::GetApiKeyErrorKind::UnauthorizedError({
+            kind: crate::error::GetApiKeyErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::GetApiKeyError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetApiKeyError::unhandled)?;
                 output.build()
             }),
         },
@@ -4054,7 +4202,7 @@ pub fn parse_get_api_key_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_api_key_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::get_api_key_deser_operation(response.body().as_ref(), output)
+        output = crate::json_deser::deser_operation_get_api_key(response.body().as_ref(), output)
             .map_err(crate::error::GetApiKeyError::unhandled)?;
         output.build()
     })
@@ -4073,48 +4221,47 @@ pub fn parse_get_api_keys_error(
     Err(match error_code {
         "BadRequestException" => crate::error::GetApiKeysError {
             meta: generic,
-            kind: crate::error::GetApiKeysErrorKind::BadRequestError({
+            kind: crate::error::GetApiKeysErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetApiKeysError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetApiKeysError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::GetApiKeysError {
             meta: generic,
-            kind: crate::error::GetApiKeysErrorKind::TooManyRequestsError({
+            kind: crate::error::GetApiKeysErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::GetApiKeysError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_get_api_keys_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::GetApiKeysError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_get_api_keys_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::GetApiKeysError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::GetApiKeysError {
             meta: generic,
-            kind: crate::error::GetApiKeysErrorKind::UnauthorizedError({
+            kind: crate::error::GetApiKeysErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::GetApiKeysError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetApiKeysError::unhandled)?;
                 output.build()
             }),
         },
@@ -4130,7 +4277,7 @@ pub fn parse_get_api_keys_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_api_keys_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::get_api_keys_deser_operation(response.body().as_ref(), output)
+        output = crate::json_deser::deser_operation_get_api_keys(response.body().as_ref(), output)
             .map_err(crate::error::GetApiKeysError::unhandled)?;
         output.build()
     })
@@ -4149,48 +4296,47 @@ pub fn parse_get_authorizer_error(
     Err(match error_code {
         "NotFoundException" => crate::error::GetAuthorizerError {
             meta: generic,
-            kind: crate::error::GetAuthorizerErrorKind::NotFoundError({
+            kind: crate::error::GetAuthorizerErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetAuthorizerError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetAuthorizerError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::GetAuthorizerError {
             meta: generic,
-            kind: crate::error::GetAuthorizerErrorKind::TooManyRequestsError({
+            kind: crate::error::GetAuthorizerErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::GetAuthorizerError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_get_authorizer_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::GetAuthorizerError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_get_authorizer_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::GetAuthorizerError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::GetAuthorizerError {
             meta: generic,
-            kind: crate::error::GetAuthorizerErrorKind::UnauthorizedError({
+            kind: crate::error::GetAuthorizerErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::GetAuthorizerError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetAuthorizerError::unhandled)?;
                 output.build()
             }),
         },
@@ -4207,7 +4353,7 @@ pub fn parse_get_authorizer_response(
         let mut output = crate::output::get_authorizer_output::Builder::default();
         let _ = response;
         output =
-            crate::json_deser::get_authorizer_deser_operation(response.body().as_ref(), output)
+            crate::json_deser::deser_operation_get_authorizer(response.body().as_ref(), output)
                 .map_err(crate::error::GetAuthorizerError::unhandled)?;
         output.build()
     })
@@ -4226,59 +4372,61 @@ pub fn parse_get_authorizers_error(
     Err(match error_code {
         "BadRequestException" => crate::error::GetAuthorizersError {
             meta: generic,
-            kind: crate::error::GetAuthorizersErrorKind::BadRequestError({
+            kind: crate::error::GetAuthorizersErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetAuthorizersError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetAuthorizersError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::GetAuthorizersError {
             meta: generic,
-            kind: crate::error::GetAuthorizersErrorKind::NotFoundError({
+            kind: crate::error::GetAuthorizersErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetAuthorizersError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetAuthorizersError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::GetAuthorizersError {
             meta: generic,
-            kind: crate::error::GetAuthorizersErrorKind::TooManyRequestsError({
+            kind: crate::error::GetAuthorizersErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::GetAuthorizersError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_get_authorizers_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::GetAuthorizersError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_get_authorizers_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::GetAuthorizersError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::GetAuthorizersError {
             meta: generic,
-            kind: crate::error::GetAuthorizersErrorKind::UnauthorizedError({
+            kind: crate::error::GetAuthorizersErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::GetAuthorizersError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetAuthorizersError::unhandled)?;
                 output.build()
             }),
         },
@@ -4295,7 +4443,7 @@ pub fn parse_get_authorizers_response(
         let mut output = crate::output::get_authorizers_output::Builder::default();
         let _ = response;
         output =
-            crate::json_deser::get_authorizers_deser_operation(response.body().as_ref(), output)
+            crate::json_deser::deser_operation_get_authorizers(response.body().as_ref(), output)
                 .map_err(crate::error::GetAuthorizersError::unhandled)?;
         output.build()
     })
@@ -4317,48 +4465,47 @@ pub fn parse_get_base_path_mapping_error(
     Err(match error_code {
         "NotFoundException" => crate::error::GetBasePathMappingError {
             meta: generic,
-            kind: crate::error::GetBasePathMappingErrorKind::NotFoundError({
+            kind: crate::error::GetBasePathMappingErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetBasePathMappingError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetBasePathMappingError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::GetBasePathMappingError {
             meta: generic,
-            kind: crate::error::GetBasePathMappingErrorKind::TooManyRequestsError({
+            kind: crate::error::GetBasePathMappingErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::GetBasePathMappingError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_get_base_path_mapping_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::GetBasePathMappingError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_get_base_path_mapping_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::GetBasePathMappingError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::GetBasePathMappingError {
             meta: generic,
-            kind: crate::error::GetBasePathMappingErrorKind::UnauthorizedError({
+            kind: crate::error::GetBasePathMappingErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::GetBasePathMappingError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetBasePathMappingError::unhandled)?;
                 output.build()
             }),
         },
@@ -4377,7 +4524,7 @@ pub fn parse_get_base_path_mapping_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_base_path_mapping_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::get_base_path_mapping_deser_operation(
+        output = crate::json_deser::deser_operation_get_base_path_mapping(
             response.body().as_ref(),
             output,
         )
@@ -4402,48 +4549,47 @@ pub fn parse_get_base_path_mappings_error(
     Err(match error_code {
         "NotFoundException" => crate::error::GetBasePathMappingsError {
             meta: generic,
-            kind: crate::error::GetBasePathMappingsErrorKind::NotFoundError({
+            kind: crate::error::GetBasePathMappingsErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetBasePathMappingsError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetBasePathMappingsError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::GetBasePathMappingsError {
             meta: generic,
-            kind: crate::error::GetBasePathMappingsErrorKind::TooManyRequestsError({
+            kind: crate::error::GetBasePathMappingsErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::GetBasePathMappingsError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_get_base_path_mappings_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::GetBasePathMappingsError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_get_base_path_mappings_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::GetBasePathMappingsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::GetBasePathMappingsError {
             meta: generic,
-            kind: crate::error::GetBasePathMappingsErrorKind::UnauthorizedError({
+            kind: crate::error::GetBasePathMappingsErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::GetBasePathMappingsError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetBasePathMappingsError::unhandled)?;
                 output.build()
             }),
         },
@@ -4462,7 +4608,7 @@ pub fn parse_get_base_path_mappings_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_base_path_mappings_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::get_base_path_mappings_deser_operation(
+        output = crate::json_deser::deser_operation_get_base_path_mappings(
             response.body().as_ref(),
             output,
         )
@@ -4487,48 +4633,47 @@ pub fn parse_get_client_certificate_error(
     Err(match error_code {
         "NotFoundException" => crate::error::GetClientCertificateError {
             meta: generic,
-            kind: crate::error::GetClientCertificateErrorKind::NotFoundError({
+            kind: crate::error::GetClientCertificateErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetClientCertificateError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetClientCertificateError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::GetClientCertificateError {
             meta: generic,
-            kind: crate::error::GetClientCertificateErrorKind::TooManyRequestsError({
+            kind: crate::error::GetClientCertificateErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::GetClientCertificateError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_get_client_certificate_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::GetClientCertificateError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_get_client_certificate_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::GetClientCertificateError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::GetClientCertificateError {
             meta: generic,
-            kind: crate::error::GetClientCertificateErrorKind::UnauthorizedError({
+            kind: crate::error::GetClientCertificateErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::GetClientCertificateError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetClientCertificateError::unhandled)?;
                 output.build()
             }),
         },
@@ -4547,7 +4692,7 @@ pub fn parse_get_client_certificate_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_client_certificate_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::get_client_certificate_deser_operation(
+        output = crate::json_deser::deser_operation_get_client_certificate(
             response.body().as_ref(),
             output,
         )
@@ -4572,44 +4717,47 @@ pub fn parse_get_client_certificates_error(
     Err(match error_code {
         "BadRequestException" => crate::error::GetClientCertificatesError {
             meta: generic,
-            kind: crate::error::GetClientCertificatesErrorKind::BadRequestError({
+            kind: crate::error::GetClientCertificatesErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetClientCertificatesError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetClientCertificatesError::unhandled)?;
                 output.build()
             }),
         },
-        "TooManyRequestsException" => {
-            crate::error::GetClientCertificatesError {
-                meta: generic,
-                kind: crate::error::GetClientCertificatesErrorKind::TooManyRequestsError({
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_requests_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::too_many_requests_exception(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetClientCertificatesError::unhandled)?;
-                    output = output.set_retry_after_seconds(
-                crate::http_serde::deser_header_get_client_certificates_retry_after_seconds(response.headers())
+        "TooManyRequestsException" => crate::error::GetClientCertificatesError {
+            meta: generic,
+            kind: crate::error::GetClientCertificatesErrorKind::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetClientCertificatesError::unhandled)?;
+                output = output.set_retry_after_seconds(
+                crate::http_serde::deser_header_get_client_certificates_too_many_requests_exception_retry_after_seconds(response.headers())
                                             .map_err(|_|crate::error::GetClientCertificatesError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
             );
-                    output.build()
-                }),
-            }
-        }
+                output.build()
+            }),
+        },
         "UnauthorizedException" => crate::error::GetClientCertificatesError {
             meta: generic,
-            kind: crate::error::GetClientCertificatesErrorKind::UnauthorizedError({
+            kind: crate::error::GetClientCertificatesErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::GetClientCertificatesError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetClientCertificatesError::unhandled)?;
                 output.build()
             }),
         },
@@ -4628,7 +4776,7 @@ pub fn parse_get_client_certificates_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_client_certificates_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::get_client_certificates_deser_operation(
+        output = crate::json_deser::deser_operation_get_client_certificates(
             response.body().as_ref(),
             output,
         )
@@ -4650,72 +4798,65 @@ pub fn parse_get_deployment_error(
     Err(match error_code {
         "NotFoundException" => crate::error::GetDeploymentError {
             meta: generic,
-            kind: crate::error::GetDeploymentErrorKind::NotFoundError({
+            kind: crate::error::GetDeploymentErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetDeploymentError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetDeploymentError::unhandled)?;
                 output.build()
             }),
         },
         "ServiceUnavailableException" => crate::error::GetDeploymentError {
             meta: generic,
-            kind: crate::error::GetDeploymentErrorKind::ServiceUnavailableError({
+            kind: crate::error::GetDeploymentErrorKind::ServiceUnavailableException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::service_unavailable_error::Builder::default();
+                let mut output = crate::error::service_unavailable_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::service_unavailable_exception(
+                output = crate::json_deser::deser_structure_service_unavailable_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::GetDeploymentError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_get_deployment_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::GetDeploymentError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_get_deployment_service_unavailable_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::GetDeploymentError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::GetDeploymentError {
             meta: generic,
-            kind: crate::error::GetDeploymentErrorKind::TooManyRequestsError({
+            kind: crate::error::GetDeploymentErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::GetDeploymentError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_get_deployment_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::GetDeploymentError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_get_deployment_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::GetDeploymentError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::GetDeploymentError {
             meta: generic,
-            kind: crate::error::GetDeploymentErrorKind::UnauthorizedError({
+            kind: crate::error::GetDeploymentErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::GetDeploymentError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetDeploymentError::unhandled)?;
                 output.build()
             }),
         },
@@ -4732,7 +4873,7 @@ pub fn parse_get_deployment_response(
         let mut output = crate::output::get_deployment_output::Builder::default();
         let _ = response;
         output =
-            crate::json_deser::get_deployment_deser_operation(response.body().as_ref(), output)
+            crate::json_deser::deser_operation_get_deployment(response.body().as_ref(), output)
                 .map_err(crate::error::GetDeploymentError::unhandled)?;
         output.build()
     })
@@ -4751,83 +4892,79 @@ pub fn parse_get_deployments_error(
     Err(match error_code {
         "BadRequestException" => crate::error::GetDeploymentsError {
             meta: generic,
-            kind: crate::error::GetDeploymentsErrorKind::BadRequestError({
+            kind: crate::error::GetDeploymentsErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetDeploymentsError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetDeploymentsError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::GetDeploymentsError {
             meta: generic,
-            kind: crate::error::GetDeploymentsErrorKind::NotFoundError({
+            kind: crate::error::GetDeploymentsErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetDeploymentsError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetDeploymentsError::unhandled)?;
                 output.build()
             }),
         },
         "ServiceUnavailableException" => crate::error::GetDeploymentsError {
             meta: generic,
-            kind: crate::error::GetDeploymentsErrorKind::ServiceUnavailableError({
+            kind: crate::error::GetDeploymentsErrorKind::ServiceUnavailableException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::service_unavailable_error::Builder::default();
+                let mut output = crate::error::service_unavailable_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::service_unavailable_exception(
+                output = crate::json_deser::deser_structure_service_unavailable_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::GetDeploymentsError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_get_deployments_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::GetDeploymentsError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_get_deployments_service_unavailable_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::GetDeploymentsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::GetDeploymentsError {
             meta: generic,
-            kind: crate::error::GetDeploymentsErrorKind::TooManyRequestsError({
+            kind: crate::error::GetDeploymentsErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::GetDeploymentsError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_get_deployments_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::GetDeploymentsError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_get_deployments_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::GetDeploymentsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::GetDeploymentsError {
             meta: generic,
-            kind: crate::error::GetDeploymentsErrorKind::UnauthorizedError({
+            kind: crate::error::GetDeploymentsErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::GetDeploymentsError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetDeploymentsError::unhandled)?;
                 output.build()
             }),
         },
@@ -4844,7 +4981,7 @@ pub fn parse_get_deployments_response(
         let mut output = crate::output::get_deployments_output::Builder::default();
         let _ = response;
         output =
-            crate::json_deser::get_deployments_deser_operation(response.body().as_ref(), output)
+            crate::json_deser::deser_operation_get_deployments(response.body().as_ref(), output)
                 .map_err(crate::error::GetDeploymentsError::unhandled)?;
         output.build()
     })
@@ -4866,48 +5003,47 @@ pub fn parse_get_documentation_part_error(
     Err(match error_code {
         "NotFoundException" => crate::error::GetDocumentationPartError {
             meta: generic,
-            kind: crate::error::GetDocumentationPartErrorKind::NotFoundError({
+            kind: crate::error::GetDocumentationPartErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetDocumentationPartError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetDocumentationPartError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::GetDocumentationPartError {
             meta: generic,
-            kind: crate::error::GetDocumentationPartErrorKind::TooManyRequestsError({
+            kind: crate::error::GetDocumentationPartErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::GetDocumentationPartError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_get_documentation_part_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::GetDocumentationPartError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_get_documentation_part_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::GetDocumentationPartError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::GetDocumentationPartError {
             meta: generic,
-            kind: crate::error::GetDocumentationPartErrorKind::UnauthorizedError({
+            kind: crate::error::GetDocumentationPartErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::GetDocumentationPartError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetDocumentationPartError::unhandled)?;
                 output.build()
             }),
         },
@@ -4926,7 +5062,7 @@ pub fn parse_get_documentation_part_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_documentation_part_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::get_documentation_part_deser_operation(
+        output = crate::json_deser::deser_operation_get_documentation_part(
             response.body().as_ref(),
             output,
         )
@@ -4951,55 +5087,61 @@ pub fn parse_get_documentation_parts_error(
     Err(match error_code {
         "BadRequestException" => crate::error::GetDocumentationPartsError {
             meta: generic,
-            kind: crate::error::GetDocumentationPartsErrorKind::BadRequestError({
+            kind: crate::error::GetDocumentationPartsErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetDocumentationPartsError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetDocumentationPartsError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::GetDocumentationPartsError {
             meta: generic,
-            kind: crate::error::GetDocumentationPartsErrorKind::NotFoundError({
+            kind: crate::error::GetDocumentationPartsErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetDocumentationPartsError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetDocumentationPartsError::unhandled)?;
                 output.build()
             }),
         },
-        "TooManyRequestsException" => {
-            crate::error::GetDocumentationPartsError {
-                meta: generic,
-                kind: crate::error::GetDocumentationPartsErrorKind::TooManyRequestsError({
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_requests_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::too_many_requests_exception(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetDocumentationPartsError::unhandled)?;
-                    output = output.set_retry_after_seconds(
-                crate::http_serde::deser_header_get_documentation_parts_retry_after_seconds(response.headers())
+        "TooManyRequestsException" => crate::error::GetDocumentationPartsError {
+            meta: generic,
+            kind: crate::error::GetDocumentationPartsErrorKind::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetDocumentationPartsError::unhandled)?;
+                output = output.set_retry_after_seconds(
+                crate::http_serde::deser_header_get_documentation_parts_too_many_requests_exception_retry_after_seconds(response.headers())
                                             .map_err(|_|crate::error::GetDocumentationPartsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
             );
-                    output.build()
-                }),
-            }
-        }
+                output.build()
+            }),
+        },
         "UnauthorizedException" => crate::error::GetDocumentationPartsError {
             meta: generic,
-            kind: crate::error::GetDocumentationPartsErrorKind::UnauthorizedError({
+            kind: crate::error::GetDocumentationPartsErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::GetDocumentationPartsError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetDocumentationPartsError::unhandled)?;
                 output.build()
             }),
         },
@@ -5018,7 +5160,7 @@ pub fn parse_get_documentation_parts_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_documentation_parts_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::get_documentation_parts_deser_operation(
+        output = crate::json_deser::deser_operation_get_documentation_parts(
             response.body().as_ref(),
             output,
         )
@@ -5047,44 +5189,47 @@ pub fn parse_get_documentation_version_error(
     Err(match error_code {
         "NotFoundException" => crate::error::GetDocumentationVersionError {
             meta: generic,
-            kind: crate::error::GetDocumentationVersionErrorKind::NotFoundError({
+            kind: crate::error::GetDocumentationVersionErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetDocumentationVersionError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetDocumentationVersionError::unhandled)?;
                 output.build()
             }),
         },
-        "TooManyRequestsException" => {
-            crate::error::GetDocumentationVersionError {
-                meta: generic,
-                kind: crate::error::GetDocumentationVersionErrorKind::TooManyRequestsError({
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_requests_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::too_many_requests_exception(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetDocumentationVersionError::unhandled)?;
-                    output = output.set_retry_after_seconds(
-                crate::http_serde::deser_header_get_documentation_version_retry_after_seconds(response.headers())
+        "TooManyRequestsException" => crate::error::GetDocumentationVersionError {
+            meta: generic,
+            kind: crate::error::GetDocumentationVersionErrorKind::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetDocumentationVersionError::unhandled)?;
+                output = output.set_retry_after_seconds(
+                crate::http_serde::deser_header_get_documentation_version_too_many_requests_exception_retry_after_seconds(response.headers())
                                             .map_err(|_|crate::error::GetDocumentationVersionError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
             );
-                    output.build()
-                }),
-            }
-        }
+                output.build()
+            }),
+        },
         "UnauthorizedException" => crate::error::GetDocumentationVersionError {
             meta: generic,
-            kind: crate::error::GetDocumentationVersionErrorKind::UnauthorizedError({
+            kind: crate::error::GetDocumentationVersionErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::GetDocumentationVersionError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetDocumentationVersionError::unhandled)?;
                 output.build()
             }),
         },
@@ -5103,7 +5248,7 @@ pub fn parse_get_documentation_version_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_documentation_version_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::get_documentation_version_deser_operation(
+        output = crate::json_deser::deser_operation_get_documentation_version(
             response.body().as_ref(),
             output,
         )
@@ -5132,55 +5277,61 @@ pub fn parse_get_documentation_versions_error(
     Err(match error_code {
         "BadRequestException" => crate::error::GetDocumentationVersionsError {
             meta: generic,
-            kind: crate::error::GetDocumentationVersionsErrorKind::BadRequestError({
+            kind: crate::error::GetDocumentationVersionsErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetDocumentationVersionsError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetDocumentationVersionsError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::GetDocumentationVersionsError {
             meta: generic,
-            kind: crate::error::GetDocumentationVersionsErrorKind::NotFoundError({
+            kind: crate::error::GetDocumentationVersionsErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetDocumentationVersionsError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetDocumentationVersionsError::unhandled)?;
                 output.build()
             }),
         },
-        "TooManyRequestsException" => {
-            crate::error::GetDocumentationVersionsError {
-                meta: generic,
-                kind: crate::error::GetDocumentationVersionsErrorKind::TooManyRequestsError({
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_requests_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::too_many_requests_exception(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetDocumentationVersionsError::unhandled)?;
-                    output = output.set_retry_after_seconds(
-                crate::http_serde::deser_header_get_documentation_versions_retry_after_seconds(response.headers())
+        "TooManyRequestsException" => crate::error::GetDocumentationVersionsError {
+            meta: generic,
+            kind: crate::error::GetDocumentationVersionsErrorKind::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetDocumentationVersionsError::unhandled)?;
+                output = output.set_retry_after_seconds(
+                crate::http_serde::deser_header_get_documentation_versions_too_many_requests_exception_retry_after_seconds(response.headers())
                                             .map_err(|_|crate::error::GetDocumentationVersionsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
             );
-                    output.build()
-                }),
-            }
-        }
+                output.build()
+            }),
+        },
         "UnauthorizedException" => crate::error::GetDocumentationVersionsError {
             meta: generic,
-            kind: crate::error::GetDocumentationVersionsErrorKind::UnauthorizedError({
+            kind: crate::error::GetDocumentationVersionsErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::GetDocumentationVersionsError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetDocumentationVersionsError::unhandled)?;
                 output.build()
             }),
         },
@@ -5199,7 +5350,7 @@ pub fn parse_get_documentation_versions_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_documentation_versions_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::get_documentation_versions_deser_operation(
+        output = crate::json_deser::deser_operation_get_documentation_versions(
             response.body().as_ref(),
             output,
         )
@@ -5221,72 +5372,65 @@ pub fn parse_get_domain_name_error(
     Err(match error_code {
         "NotFoundException" => crate::error::GetDomainNameError {
             meta: generic,
-            kind: crate::error::GetDomainNameErrorKind::NotFoundError({
+            kind: crate::error::GetDomainNameErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetDomainNameError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetDomainNameError::unhandled)?;
                 output.build()
             }),
         },
         "ServiceUnavailableException" => crate::error::GetDomainNameError {
             meta: generic,
-            kind: crate::error::GetDomainNameErrorKind::ServiceUnavailableError({
+            kind: crate::error::GetDomainNameErrorKind::ServiceUnavailableException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::service_unavailable_error::Builder::default();
+                let mut output = crate::error::service_unavailable_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::service_unavailable_exception(
+                output = crate::json_deser::deser_structure_service_unavailable_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::GetDomainNameError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_get_domain_name_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::GetDomainNameError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_get_domain_name_service_unavailable_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::GetDomainNameError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::GetDomainNameError {
             meta: generic,
-            kind: crate::error::GetDomainNameErrorKind::TooManyRequestsError({
+            kind: crate::error::GetDomainNameErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::GetDomainNameError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_get_domain_name_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::GetDomainNameError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_get_domain_name_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::GetDomainNameError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::GetDomainNameError {
             meta: generic,
-            kind: crate::error::GetDomainNameErrorKind::UnauthorizedError({
+            kind: crate::error::GetDomainNameErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::GetDomainNameError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetDomainNameError::unhandled)?;
                 output.build()
             }),
         },
@@ -5303,7 +5447,7 @@ pub fn parse_get_domain_name_response(
         let mut output = crate::output::get_domain_name_output::Builder::default();
         let _ = response;
         output =
-            crate::json_deser::get_domain_name_deser_operation(response.body().as_ref(), output)
+            crate::json_deser::deser_operation_get_domain_name(response.body().as_ref(), output)
                 .map_err(crate::error::GetDomainNameError::unhandled)?;
         output.build()
     })
@@ -5322,48 +5466,47 @@ pub fn parse_get_domain_names_error(
     Err(match error_code {
         "BadRequestException" => crate::error::GetDomainNamesError {
             meta: generic,
-            kind: crate::error::GetDomainNamesErrorKind::BadRequestError({
+            kind: crate::error::GetDomainNamesErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetDomainNamesError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetDomainNamesError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::GetDomainNamesError {
             meta: generic,
-            kind: crate::error::GetDomainNamesErrorKind::TooManyRequestsError({
+            kind: crate::error::GetDomainNamesErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::GetDomainNamesError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_get_domain_names_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::GetDomainNamesError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_get_domain_names_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::GetDomainNamesError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::GetDomainNamesError {
             meta: generic,
-            kind: crate::error::GetDomainNamesErrorKind::UnauthorizedError({
+            kind: crate::error::GetDomainNamesErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::GetDomainNamesError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetDomainNamesError::unhandled)?;
                 output.build()
             }),
         },
@@ -5380,7 +5523,7 @@ pub fn parse_get_domain_names_response(
         let mut output = crate::output::get_domain_names_output::Builder::default();
         let _ = response;
         output =
-            crate::json_deser::get_domain_names_deser_operation(response.body().as_ref(), output)
+            crate::json_deser::deser_operation_get_domain_names(response.body().as_ref(), output)
                 .map_err(crate::error::GetDomainNamesError::unhandled)?;
         output.build()
     })
@@ -5399,70 +5542,75 @@ pub fn parse_get_export_error(
     Err(match error_code {
         "BadRequestException" => crate::error::GetExportError {
             meta: generic,
-            kind: crate::error::GetExportErrorKind::BadRequestError({
+            kind: crate::error::GetExportErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetExportError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetExportError::unhandled)?;
                 output.build()
             }),
         },
         "ConflictException" => crate::error::GetExportError {
             meta: generic,
-            kind: crate::error::GetExportErrorKind::ConflictError({
+            kind: crate::error::GetExportErrorKind::ConflictException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
+                let mut output = crate::error::conflict_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetExportError::unhandled)?;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetExportError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::GetExportError {
             meta: generic,
-            kind: crate::error::GetExportErrorKind::NotFoundError({
+            kind: crate::error::GetExportErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetExportError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetExportError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::GetExportError {
             meta: generic,
-            kind: crate::error::GetExportErrorKind::TooManyRequestsError({
+            kind: crate::error::GetExportErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::GetExportError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_get_export_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::GetExportError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_get_export_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::GetExportError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::GetExportError {
             meta: generic,
-            kind: crate::error::GetExportErrorKind::UnauthorizedError({
+            kind: crate::error::GetExportErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::GetExportError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetExportError::unhandled)?;
                 output.build()
             }),
         },
@@ -5478,25 +5626,30 @@ pub fn parse_get_export_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_export_output::Builder::default();
         let _ = response;
-        output = output.set_body(crate::http_serde::deser_payload_get_export_body(
-            response.body().as_ref(),
-        )?);
+        output = output.set_body(
+            crate::http_serde::deser_payload_get_export_get_export_output_body(
+                response.body().as_ref(),
+            )?,
+        );
         output = output.set_content_disposition(
-            crate::http_serde::deser_header_get_export_content_disposition(response.headers())
-                .map_err(|_| {
-                    crate::error::GetExportError::unhandled(
-                        "Failed to parse contentDisposition from header `Content-Disposition",
-                    )
-                })?,
+            crate::http_serde::deser_header_get_export_get_export_output_content_disposition(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::GetExportError::unhandled(
+                    "Failed to parse contentDisposition from header `Content-Disposition",
+                )
+            })?,
         );
         output = output.set_content_type(
-            crate::http_serde::deser_header_get_export_content_type(response.headers()).map_err(
-                |_| {
-                    crate::error::GetExportError::unhandled(
-                        "Failed to parse contentType from header `Content-Type",
-                    )
-                },
-            )?,
+            crate::http_serde::deser_header_get_export_get_export_output_content_type(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::GetExportError::unhandled(
+                    "Failed to parse contentType from header `Content-Type",
+                )
+            })?,
         );
         output.build()
     })
@@ -5518,48 +5671,47 @@ pub fn parse_get_gateway_response_error(
     Err(match error_code {
         "NotFoundException" => crate::error::GetGatewayResponseError {
             meta: generic,
-            kind: crate::error::GetGatewayResponseErrorKind::NotFoundError({
+            kind: crate::error::GetGatewayResponseErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetGatewayResponseError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetGatewayResponseError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::GetGatewayResponseError {
             meta: generic,
-            kind: crate::error::GetGatewayResponseErrorKind::TooManyRequestsError({
+            kind: crate::error::GetGatewayResponseErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::GetGatewayResponseError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_get_gateway_response_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::GetGatewayResponseError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_get_gateway_response_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::GetGatewayResponseError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::GetGatewayResponseError {
             meta: generic,
-            kind: crate::error::GetGatewayResponseErrorKind::UnauthorizedError({
+            kind: crate::error::GetGatewayResponseErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::GetGatewayResponseError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetGatewayResponseError::unhandled)?;
                 output.build()
             }),
         },
@@ -5578,7 +5730,7 @@ pub fn parse_get_gateway_response_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_gateway_response_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::get_gateway_response_deser_operation(
+        output = crate::json_deser::deser_operation_get_gateway_response(
             response.body().as_ref(),
             output,
         )
@@ -5603,59 +5755,61 @@ pub fn parse_get_gateway_responses_error(
     Err(match error_code {
         "BadRequestException" => crate::error::GetGatewayResponsesError {
             meta: generic,
-            kind: crate::error::GetGatewayResponsesErrorKind::BadRequestError({
+            kind: crate::error::GetGatewayResponsesErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetGatewayResponsesError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetGatewayResponsesError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::GetGatewayResponsesError {
             meta: generic,
-            kind: crate::error::GetGatewayResponsesErrorKind::NotFoundError({
+            kind: crate::error::GetGatewayResponsesErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetGatewayResponsesError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetGatewayResponsesError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::GetGatewayResponsesError {
             meta: generic,
-            kind: crate::error::GetGatewayResponsesErrorKind::TooManyRequestsError({
+            kind: crate::error::GetGatewayResponsesErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::GetGatewayResponsesError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_get_gateway_responses_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::GetGatewayResponsesError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_get_gateway_responses_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::GetGatewayResponsesError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::GetGatewayResponsesError {
             meta: generic,
-            kind: crate::error::GetGatewayResponsesErrorKind::UnauthorizedError({
+            kind: crate::error::GetGatewayResponsesErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::GetGatewayResponsesError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetGatewayResponsesError::unhandled)?;
                 output.build()
             }),
         },
@@ -5674,7 +5828,7 @@ pub fn parse_get_gateway_responses_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_gateway_responses_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::get_gateway_responses_deser_operation(
+        output = crate::json_deser::deser_operation_get_gateway_responses(
             response.body().as_ref(),
             output,
         )
@@ -5696,48 +5850,47 @@ pub fn parse_get_integration_error(
     Err(match error_code {
         "NotFoundException" => crate::error::GetIntegrationError {
             meta: generic,
-            kind: crate::error::GetIntegrationErrorKind::NotFoundError({
+            kind: crate::error::GetIntegrationErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetIntegrationError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetIntegrationError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::GetIntegrationError {
             meta: generic,
-            kind: crate::error::GetIntegrationErrorKind::TooManyRequestsError({
+            kind: crate::error::GetIntegrationErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::GetIntegrationError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_get_integration_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::GetIntegrationError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_get_integration_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::GetIntegrationError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::GetIntegrationError {
             meta: generic,
-            kind: crate::error::GetIntegrationErrorKind::UnauthorizedError({
+            kind: crate::error::GetIntegrationErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::GetIntegrationError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetIntegrationError::unhandled)?;
                 output.build()
             }),
         },
@@ -5754,7 +5907,7 @@ pub fn parse_get_integration_response(
         let mut output = crate::output::get_integration_output::Builder::default();
         let _ = response;
         output =
-            crate::json_deser::get_integration_deser_operation(response.body().as_ref(), output)
+            crate::json_deser::deser_operation_get_integration(response.body().as_ref(), output)
                 .map_err(crate::error::GetIntegrationError::unhandled)?;
         output.build()
     })
@@ -5780,44 +5933,47 @@ pub fn parse_get_integration_response_error(
     Err(match error_code {
         "NotFoundException" => crate::error::GetIntegrationResponseError {
             meta: generic,
-            kind: crate::error::GetIntegrationResponseErrorKind::NotFoundError({
+            kind: crate::error::GetIntegrationResponseErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetIntegrationResponseError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetIntegrationResponseError::unhandled)?;
                 output.build()
             }),
         },
-        "TooManyRequestsException" => {
-            crate::error::GetIntegrationResponseError {
-                meta: generic,
-                kind: crate::error::GetIntegrationResponseErrorKind::TooManyRequestsError({
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_requests_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::too_many_requests_exception(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetIntegrationResponseError::unhandled)?;
-                    output = output.set_retry_after_seconds(
-                crate::http_serde::deser_header_get_integration_response_retry_after_seconds(response.headers())
+        "TooManyRequestsException" => crate::error::GetIntegrationResponseError {
+            meta: generic,
+            kind: crate::error::GetIntegrationResponseErrorKind::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetIntegrationResponseError::unhandled)?;
+                output = output.set_retry_after_seconds(
+                crate::http_serde::deser_header_get_integration_response_too_many_requests_exception_retry_after_seconds(response.headers())
                                             .map_err(|_|crate::error::GetIntegrationResponseError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
             );
-                    output.build()
-                }),
-            }
-        }
+                output.build()
+            }),
+        },
         "UnauthorizedException" => crate::error::GetIntegrationResponseError {
             meta: generic,
-            kind: crate::error::GetIntegrationResponseErrorKind::UnauthorizedError({
+            kind: crate::error::GetIntegrationResponseErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::GetIntegrationResponseError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetIntegrationResponseError::unhandled)?;
                 output.build()
             }),
         },
@@ -5836,7 +5992,7 @@ pub fn parse_get_integration_response_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_integration_response_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::get_integration_response_deser_operation(
+        output = crate::json_deser::deser_operation_get_integration_response(
             response.body().as_ref(),
             output,
         )
@@ -5858,48 +6014,47 @@ pub fn parse_get_method_error(
     Err(match error_code {
         "NotFoundException" => crate::error::GetMethodError {
             meta: generic,
-            kind: crate::error::GetMethodErrorKind::NotFoundError({
+            kind: crate::error::GetMethodErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetMethodError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetMethodError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::GetMethodError {
             meta: generic,
-            kind: crate::error::GetMethodErrorKind::TooManyRequestsError({
+            kind: crate::error::GetMethodErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::GetMethodError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_get_method_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::GetMethodError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_get_method_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::GetMethodError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::GetMethodError {
             meta: generic,
-            kind: crate::error::GetMethodErrorKind::UnauthorizedError({
+            kind: crate::error::GetMethodErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::GetMethodError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetMethodError::unhandled)?;
                 output.build()
             }),
         },
@@ -5915,7 +6070,7 @@ pub fn parse_get_method_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_method_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::get_method_deser_operation(response.body().as_ref(), output)
+        output = crate::json_deser::deser_operation_get_method(response.body().as_ref(), output)
             .map_err(crate::error::GetMethodError::unhandled)?;
         output.build()
     })
@@ -5935,48 +6090,47 @@ pub fn parse_get_method_response_error(
     Err(match error_code {
         "NotFoundException" => crate::error::GetMethodResponseError {
             meta: generic,
-            kind: crate::error::GetMethodResponseErrorKind::NotFoundError({
+            kind: crate::error::GetMethodResponseErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetMethodResponseError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetMethodResponseError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::GetMethodResponseError {
             meta: generic,
-            kind: crate::error::GetMethodResponseErrorKind::TooManyRequestsError({
+            kind: crate::error::GetMethodResponseErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::GetMethodResponseError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_get_method_response_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::GetMethodResponseError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_get_method_response_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::GetMethodResponseError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::GetMethodResponseError {
             meta: generic,
-            kind: crate::error::GetMethodResponseErrorKind::UnauthorizedError({
+            kind: crate::error::GetMethodResponseErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::GetMethodResponseError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetMethodResponseError::unhandled)?;
                 output.build()
             }),
         },
@@ -5993,7 +6147,7 @@ pub fn parse_get_method_response_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_method_response_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::get_method_response_deser_operation(
+        output = crate::json_deser::deser_operation_get_method_response(
             response.body().as_ref(),
             output,
         )
@@ -6015,48 +6169,47 @@ pub fn parse_get_model_error(
     Err(match error_code {
         "NotFoundException" => crate::error::GetModelError {
             meta: generic,
-            kind: crate::error::GetModelErrorKind::NotFoundError({
+            kind: crate::error::GetModelErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetModelError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetModelError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::GetModelError {
             meta: generic,
-            kind: crate::error::GetModelErrorKind::TooManyRequestsError({
+            kind: crate::error::GetModelErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::GetModelError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_get_model_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::GetModelError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_get_model_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::GetModelError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::GetModelError {
             meta: generic,
-            kind: crate::error::GetModelErrorKind::UnauthorizedError({
+            kind: crate::error::GetModelErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::GetModelError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetModelError::unhandled)?;
                 output.build()
             }),
         },
@@ -6072,7 +6225,7 @@ pub fn parse_get_model_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_model_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::get_model_deser_operation(response.body().as_ref(), output)
+        output = crate::json_deser::deser_operation_get_model(response.body().as_ref(), output)
             .map_err(crate::error::GetModelError::unhandled)?;
         output.build()
     })
@@ -6091,59 +6244,61 @@ pub fn parse_get_models_error(
     Err(match error_code {
         "BadRequestException" => crate::error::GetModelsError {
             meta: generic,
-            kind: crate::error::GetModelsErrorKind::BadRequestError({
+            kind: crate::error::GetModelsErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetModelsError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetModelsError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::GetModelsError {
             meta: generic,
-            kind: crate::error::GetModelsErrorKind::NotFoundError({
+            kind: crate::error::GetModelsErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetModelsError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetModelsError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::GetModelsError {
             meta: generic,
-            kind: crate::error::GetModelsErrorKind::TooManyRequestsError({
+            kind: crate::error::GetModelsErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::GetModelsError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_get_models_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::GetModelsError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_get_models_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::GetModelsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::GetModelsError {
             meta: generic,
-            kind: crate::error::GetModelsErrorKind::UnauthorizedError({
+            kind: crate::error::GetModelsErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::GetModelsError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetModelsError::unhandled)?;
                 output.build()
             }),
         },
@@ -6159,7 +6314,7 @@ pub fn parse_get_models_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_models_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::get_models_deser_operation(response.body().as_ref(), output)
+        output = crate::json_deser::deser_operation_get_models(response.body().as_ref(), output)
             .map_err(crate::error::GetModelsError::unhandled)?;
         output.build()
     })
@@ -6179,59 +6334,61 @@ pub fn parse_get_model_template_error(
     Err(match error_code {
         "BadRequestException" => crate::error::GetModelTemplateError {
             meta: generic,
-            kind: crate::error::GetModelTemplateErrorKind::BadRequestError({
+            kind: crate::error::GetModelTemplateErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetModelTemplateError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetModelTemplateError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::GetModelTemplateError {
             meta: generic,
-            kind: crate::error::GetModelTemplateErrorKind::NotFoundError({
+            kind: crate::error::GetModelTemplateErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetModelTemplateError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetModelTemplateError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::GetModelTemplateError {
             meta: generic,
-            kind: crate::error::GetModelTemplateErrorKind::TooManyRequestsError({
+            kind: crate::error::GetModelTemplateErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::GetModelTemplateError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_get_model_template_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::GetModelTemplateError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_get_model_template_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::GetModelTemplateError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::GetModelTemplateError {
             meta: generic,
-            kind: crate::error::GetModelTemplateErrorKind::UnauthorizedError({
+            kind: crate::error::GetModelTemplateErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::GetModelTemplateError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetModelTemplateError::unhandled)?;
                 output.build()
             }),
         },
@@ -6249,7 +6406,7 @@ pub fn parse_get_model_template_response(
         let mut output = crate::output::get_model_template_output::Builder::default();
         let _ = response;
         output =
-            crate::json_deser::get_model_template_deser_operation(response.body().as_ref(), output)
+            crate::json_deser::deser_operation_get_model_template(response.body().as_ref(), output)
                 .map_err(crate::error::GetModelTemplateError::unhandled)?;
         output.build()
     })
@@ -6271,48 +6428,47 @@ pub fn parse_get_request_validator_error(
     Err(match error_code {
         "NotFoundException" => crate::error::GetRequestValidatorError {
             meta: generic,
-            kind: crate::error::GetRequestValidatorErrorKind::NotFoundError({
+            kind: crate::error::GetRequestValidatorErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetRequestValidatorError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetRequestValidatorError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::GetRequestValidatorError {
             meta: generic,
-            kind: crate::error::GetRequestValidatorErrorKind::TooManyRequestsError({
+            kind: crate::error::GetRequestValidatorErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::GetRequestValidatorError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_get_request_validator_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::GetRequestValidatorError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_get_request_validator_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::GetRequestValidatorError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::GetRequestValidatorError {
             meta: generic,
-            kind: crate::error::GetRequestValidatorErrorKind::UnauthorizedError({
+            kind: crate::error::GetRequestValidatorErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::GetRequestValidatorError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetRequestValidatorError::unhandled)?;
                 output.build()
             }),
         },
@@ -6331,7 +6487,7 @@ pub fn parse_get_request_validator_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_request_validator_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::get_request_validator_deser_operation(
+        output = crate::json_deser::deser_operation_get_request_validator(
             response.body().as_ref(),
             output,
         )
@@ -6356,59 +6512,61 @@ pub fn parse_get_request_validators_error(
     Err(match error_code {
         "BadRequestException" => crate::error::GetRequestValidatorsError {
             meta: generic,
-            kind: crate::error::GetRequestValidatorsErrorKind::BadRequestError({
+            kind: crate::error::GetRequestValidatorsErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetRequestValidatorsError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetRequestValidatorsError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::GetRequestValidatorsError {
             meta: generic,
-            kind: crate::error::GetRequestValidatorsErrorKind::NotFoundError({
+            kind: crate::error::GetRequestValidatorsErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetRequestValidatorsError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetRequestValidatorsError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::GetRequestValidatorsError {
             meta: generic,
-            kind: crate::error::GetRequestValidatorsErrorKind::TooManyRequestsError({
+            kind: crate::error::GetRequestValidatorsErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::GetRequestValidatorsError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_get_request_validators_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::GetRequestValidatorsError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_get_request_validators_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::GetRequestValidatorsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::GetRequestValidatorsError {
             meta: generic,
-            kind: crate::error::GetRequestValidatorsErrorKind::UnauthorizedError({
+            kind: crate::error::GetRequestValidatorsErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::GetRequestValidatorsError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetRequestValidatorsError::unhandled)?;
                 output.build()
             }),
         },
@@ -6427,7 +6585,7 @@ pub fn parse_get_request_validators_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_request_validators_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::get_request_validators_deser_operation(
+        output = crate::json_deser::deser_operation_get_request_validators(
             response.body().as_ref(),
             output,
         )
@@ -6449,48 +6607,47 @@ pub fn parse_get_resource_error(
     Err(match error_code {
         "NotFoundException" => crate::error::GetResourceError {
             meta: generic,
-            kind: crate::error::GetResourceErrorKind::NotFoundError({
+            kind: crate::error::GetResourceErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetResourceError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetResourceError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::GetResourceError {
             meta: generic,
-            kind: crate::error::GetResourceErrorKind::TooManyRequestsError({
+            kind: crate::error::GetResourceErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::GetResourceError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_get_resource_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::GetResourceError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_get_resource_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::GetResourceError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::GetResourceError {
             meta: generic,
-            kind: crate::error::GetResourceErrorKind::UnauthorizedError({
+            kind: crate::error::GetResourceErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::GetResourceError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetResourceError::unhandled)?;
                 output.build()
             }),
         },
@@ -6506,7 +6663,7 @@ pub fn parse_get_resource_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_resource_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::get_resource_deser_operation(response.body().as_ref(), output)
+        output = crate::json_deser::deser_operation_get_resource(response.body().as_ref(), output)
             .map_err(crate::error::GetResourceError::unhandled)?;
         output.build()
     })
@@ -6525,59 +6682,61 @@ pub fn parse_get_resources_error(
     Err(match error_code {
         "BadRequestException" => crate::error::GetResourcesError {
             meta: generic,
-            kind: crate::error::GetResourcesErrorKind::BadRequestError({
+            kind: crate::error::GetResourcesErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetResourcesError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetResourcesError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::GetResourcesError {
             meta: generic,
-            kind: crate::error::GetResourcesErrorKind::NotFoundError({
+            kind: crate::error::GetResourcesErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetResourcesError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetResourcesError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::GetResourcesError {
             meta: generic,
-            kind: crate::error::GetResourcesErrorKind::TooManyRequestsError({
+            kind: crate::error::GetResourcesErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::GetResourcesError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_get_resources_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::GetResourcesError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_get_resources_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::GetResourcesError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::GetResourcesError {
             meta: generic,
-            kind: crate::error::GetResourcesErrorKind::UnauthorizedError({
+            kind: crate::error::GetResourcesErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::GetResourcesError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetResourcesError::unhandled)?;
                 output.build()
             }),
         },
@@ -6593,7 +6752,7 @@ pub fn parse_get_resources_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_resources_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::get_resources_deser_operation(response.body().as_ref(), output)
+        output = crate::json_deser::deser_operation_get_resources(response.body().as_ref(), output)
             .map_err(crate::error::GetResourcesError::unhandled)?;
         output.build()
     })
@@ -6612,48 +6771,47 @@ pub fn parse_get_rest_api_error(
     Err(match error_code {
         "NotFoundException" => crate::error::GetRestApiError {
             meta: generic,
-            kind: crate::error::GetRestApiErrorKind::NotFoundError({
+            kind: crate::error::GetRestApiErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetRestApiError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetRestApiError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::GetRestApiError {
             meta: generic,
-            kind: crate::error::GetRestApiErrorKind::TooManyRequestsError({
+            kind: crate::error::GetRestApiErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::GetRestApiError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_get_rest_api_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::GetRestApiError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_get_rest_api_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::GetRestApiError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::GetRestApiError {
             meta: generic,
-            kind: crate::error::GetRestApiErrorKind::UnauthorizedError({
+            kind: crate::error::GetRestApiErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::GetRestApiError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetRestApiError::unhandled)?;
                 output.build()
             }),
         },
@@ -6669,7 +6827,7 @@ pub fn parse_get_rest_api_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_rest_api_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::get_rest_api_deser_operation(response.body().as_ref(), output)
+        output = crate::json_deser::deser_operation_get_rest_api(response.body().as_ref(), output)
             .map_err(crate::error::GetRestApiError::unhandled)?;
         output.build()
     })
@@ -6688,48 +6846,47 @@ pub fn parse_get_rest_apis_error(
     Err(match error_code {
         "BadRequestException" => crate::error::GetRestApisError {
             meta: generic,
-            kind: crate::error::GetRestApisErrorKind::BadRequestError({
+            kind: crate::error::GetRestApisErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetRestApisError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetRestApisError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::GetRestApisError {
             meta: generic,
-            kind: crate::error::GetRestApisErrorKind::TooManyRequestsError({
+            kind: crate::error::GetRestApisErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::GetRestApisError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_get_rest_apis_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::GetRestApisError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_get_rest_apis_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::GetRestApisError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::GetRestApisError {
             meta: generic,
-            kind: crate::error::GetRestApisErrorKind::UnauthorizedError({
+            kind: crate::error::GetRestApisErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::GetRestApisError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetRestApisError::unhandled)?;
                 output.build()
             }),
         },
@@ -6745,7 +6902,7 @@ pub fn parse_get_rest_apis_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_rest_apis_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::get_rest_apis_deser_operation(response.body().as_ref(), output)
+        output = crate::json_deser::deser_operation_get_rest_apis(response.body().as_ref(), output)
             .map_err(crate::error::GetRestApisError::unhandled)?;
         output.build()
     })
@@ -6764,68 +6921,75 @@ pub fn parse_get_sdk_error(
     Err(match error_code {
         "BadRequestException" => crate::error::GetSdkError {
             meta: generic,
-            kind: crate::error::GetSdkErrorKind::BadRequestError({
+            kind: crate::error::GetSdkErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetSdkError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetSdkError::unhandled)?;
                 output.build()
             }),
         },
         "ConflictException" => crate::error::GetSdkError {
             meta: generic,
-            kind: crate::error::GetSdkErrorKind::ConflictError({
+            kind: crate::error::GetSdkErrorKind::ConflictException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
+                let mut output = crate::error::conflict_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetSdkError::unhandled)?;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetSdkError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::GetSdkError {
             meta: generic,
-            kind: crate::error::GetSdkErrorKind::NotFoundError({
+            kind: crate::error::GetSdkErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetSdkError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetSdkError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::GetSdkError {
             meta: generic,
-            kind: crate::error::GetSdkErrorKind::TooManyRequestsError({
+            kind: crate::error::GetSdkErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::GetSdkError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_get_sdk_retry_after_seconds(response.headers())
-                        .map_err(|_| {
-                            crate::error::GetSdkError::unhandled(
-                                "Failed to parse retryAfterSeconds from header `Retry-After",
-                            )
-                        })?,
-                );
+                crate::http_serde::deser_header_get_sdk_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::GetSdkError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::GetSdkError {
             meta: generic,
-            kind: crate::error::GetSdkErrorKind::UnauthorizedError({
+            kind: crate::error::GetSdkErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::GetSdkError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetSdkError::unhandled)?;
                 output.build()
             }),
         },
@@ -6841,25 +7005,26 @@ pub fn parse_get_sdk_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_sdk_output::Builder::default();
         let _ = response;
-        output = output.set_body(crate::http_serde::deser_payload_get_sdk_body(
-            response.body().as_ref(),
-        )?);
+        output = output.set_body(
+            crate::http_serde::deser_payload_get_sdk_get_sdk_output_body(response.body().as_ref())?,
+        );
         output = output.set_content_disposition(
-            crate::http_serde::deser_header_get_sdk_content_disposition(response.headers())
-                .map_err(|_| {
-                    crate::error::GetSdkError::unhandled(
-                        "Failed to parse contentDisposition from header `Content-Disposition",
-                    )
-                })?,
+            crate::http_serde::deser_header_get_sdk_get_sdk_output_content_disposition(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::GetSdkError::unhandled(
+                    "Failed to parse contentDisposition from header `Content-Disposition",
+                )
+            })?,
         );
         output = output.set_content_type(
-            crate::http_serde::deser_header_get_sdk_content_type(response.headers()).map_err(
-                |_| {
+            crate::http_serde::deser_header_get_sdk_get_sdk_output_content_type(response.headers())
+                .map_err(|_| {
                     crate::error::GetSdkError::unhandled(
                         "Failed to parse contentType from header `Content-Type",
                     )
-                },
-            )?,
+                })?,
         );
         output.build()
     })
@@ -6878,48 +7043,47 @@ pub fn parse_get_sdk_type_error(
     Err(match error_code {
         "NotFoundException" => crate::error::GetSdkTypeError {
             meta: generic,
-            kind: crate::error::GetSdkTypeErrorKind::NotFoundError({
+            kind: crate::error::GetSdkTypeErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetSdkTypeError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetSdkTypeError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::GetSdkTypeError {
             meta: generic,
-            kind: crate::error::GetSdkTypeErrorKind::TooManyRequestsError({
+            kind: crate::error::GetSdkTypeErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::GetSdkTypeError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_get_sdk_type_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::GetSdkTypeError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_get_sdk_type_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::GetSdkTypeError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::GetSdkTypeError {
             meta: generic,
-            kind: crate::error::GetSdkTypeErrorKind::UnauthorizedError({
+            kind: crate::error::GetSdkTypeErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::GetSdkTypeError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetSdkTypeError::unhandled)?;
                 output.build()
             }),
         },
@@ -6935,7 +7099,7 @@ pub fn parse_get_sdk_type_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_sdk_type_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::get_sdk_type_deser_operation(response.body().as_ref(), output)
+        output = crate::json_deser::deser_operation_get_sdk_type(response.body().as_ref(), output)
             .map_err(crate::error::GetSdkTypeError::unhandled)?;
         output.build()
     })
@@ -6954,37 +7118,33 @@ pub fn parse_get_sdk_types_error(
     Err(match error_code {
         "TooManyRequestsException" => crate::error::GetSdkTypesError {
             meta: generic,
-            kind: crate::error::GetSdkTypesErrorKind::TooManyRequestsError({
+            kind: crate::error::GetSdkTypesErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::GetSdkTypesError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_get_sdk_types_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::GetSdkTypesError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_get_sdk_types_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::GetSdkTypesError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::GetSdkTypesError {
             meta: generic,
-            kind: crate::error::GetSdkTypesErrorKind::UnauthorizedError({
+            kind: crate::error::GetSdkTypesErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::GetSdkTypesError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetSdkTypesError::unhandled)?;
                 output.build()
             }),
         },
@@ -7000,7 +7160,7 @@ pub fn parse_get_sdk_types_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_sdk_types_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::get_sdk_types_deser_operation(response.body().as_ref(), output)
+        output = crate::json_deser::deser_operation_get_sdk_types(response.body().as_ref(), output)
             .map_err(crate::error::GetSdkTypesError::unhandled)?;
         output.build()
     })
@@ -7019,48 +7179,47 @@ pub fn parse_get_stage_error(
     Err(match error_code {
         "NotFoundException" => crate::error::GetStageError {
             meta: generic,
-            kind: crate::error::GetStageErrorKind::NotFoundError({
+            kind: crate::error::GetStageErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetStageError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetStageError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::GetStageError {
             meta: generic,
-            kind: crate::error::GetStageErrorKind::TooManyRequestsError({
+            kind: crate::error::GetStageErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::GetStageError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_get_stage_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::GetStageError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_get_stage_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::GetStageError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::GetStageError {
             meta: generic,
-            kind: crate::error::GetStageErrorKind::UnauthorizedError({
+            kind: crate::error::GetStageErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::GetStageError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetStageError::unhandled)?;
                 output.build()
             }),
         },
@@ -7076,7 +7235,7 @@ pub fn parse_get_stage_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_stage_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::get_stage_deser_operation(response.body().as_ref(), output)
+        output = crate::json_deser::deser_operation_get_stage(response.body().as_ref(), output)
             .map_err(crate::error::GetStageError::unhandled)?;
         output.build()
     })
@@ -7095,48 +7254,47 @@ pub fn parse_get_stages_error(
     Err(match error_code {
         "NotFoundException" => crate::error::GetStagesError {
             meta: generic,
-            kind: crate::error::GetStagesErrorKind::NotFoundError({
+            kind: crate::error::GetStagesErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetStagesError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetStagesError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::GetStagesError {
             meta: generic,
-            kind: crate::error::GetStagesErrorKind::TooManyRequestsError({
+            kind: crate::error::GetStagesErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::GetStagesError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_get_stages_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::GetStagesError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_get_stages_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::GetStagesError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::GetStagesError {
             meta: generic,
-            kind: crate::error::GetStagesErrorKind::UnauthorizedError({
+            kind: crate::error::GetStagesErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::GetStagesError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetStagesError::unhandled)?;
                 output.build()
             }),
         },
@@ -7152,7 +7310,7 @@ pub fn parse_get_stages_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_stages_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::get_stages_deser_operation(response.body().as_ref(), output)
+        output = crate::json_deser::deser_operation_get_stages(response.body().as_ref(), output)
             .map_err(crate::error::GetStagesError::unhandled)?;
         output.build()
     })
@@ -7171,81 +7329,79 @@ pub fn parse_get_tags_error(
     Err(match error_code {
         "BadRequestException" => crate::error::GetTagsError {
             meta: generic,
-            kind: crate::error::GetTagsErrorKind::BadRequestError({
+            kind: crate::error::GetTagsErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetTagsError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetTagsError::unhandled)?;
                 output.build()
             }),
         },
         "LimitExceededException" => crate::error::GetTagsError {
             meta: generic,
-            kind: crate::error::GetTagsErrorKind::LimitExceededError({
+            kind: crate::error::GetTagsErrorKind::LimitExceededException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::limit_exceeded_error::Builder::default();
+                let mut output = crate::error::limit_exceeded_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::limit_exceeded_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::GetTagsError::unhandled)?;
-                output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_get_tags_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::GetTagsError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
-                output.build()
-            }),
-        },
-        "NotFoundException" => crate::error::GetTagsError {
-            meta: generic,
-            kind: crate::error::GetTagsErrorKind::NotFoundError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetTagsError::unhandled)?;
-                output.build()
-            }),
-        },
-        "TooManyRequestsException" => crate::error::GetTagsError {
-            meta: generic,
-            kind: crate::error::GetTagsErrorKind::TooManyRequestsError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_limit_exceeded_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::GetTagsError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_get_tags_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::GetTagsError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_get_tags_limit_exceeded_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::GetTagsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
+                output.build()
+            }),
+        },
+        "NotFoundException" => crate::error::GetTagsError {
+            meta: generic,
+            kind: crate::error::GetTagsErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::not_found_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetTagsError::unhandled)?;
+                output.build()
+            }),
+        },
+        "TooManyRequestsException" => crate::error::GetTagsError {
+            meta: generic,
+            kind: crate::error::GetTagsErrorKind::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetTagsError::unhandled)?;
+                output = output.set_retry_after_seconds(
+                crate::http_serde::deser_header_get_tags_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::GetTagsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::GetTagsError {
             meta: generic,
-            kind: crate::error::GetTagsErrorKind::UnauthorizedError({
+            kind: crate::error::GetTagsErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::GetTagsError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetTagsError::unhandled)?;
                 output.build()
             }),
         },
@@ -7261,7 +7417,7 @@ pub fn parse_get_tags_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_tags_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::get_tags_deser_operation(response.body().as_ref(), output)
+        output = crate::json_deser::deser_operation_get_tags(response.body().as_ref(), output)
             .map_err(crate::error::GetTagsError::unhandled)?;
         output.build()
     })
@@ -7280,59 +7436,61 @@ pub fn parse_get_usage_error(
     Err(match error_code {
         "BadRequestException" => crate::error::GetUsageError {
             meta: generic,
-            kind: crate::error::GetUsageErrorKind::BadRequestError({
+            kind: crate::error::GetUsageErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetUsageError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetUsageError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::GetUsageError {
             meta: generic,
-            kind: crate::error::GetUsageErrorKind::NotFoundError({
+            kind: crate::error::GetUsageErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetUsageError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetUsageError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::GetUsageError {
             meta: generic,
-            kind: crate::error::GetUsageErrorKind::TooManyRequestsError({
+            kind: crate::error::GetUsageErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::GetUsageError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_get_usage_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::GetUsageError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_get_usage_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::GetUsageError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::GetUsageError {
             meta: generic,
-            kind: crate::error::GetUsageErrorKind::UnauthorizedError({
+            kind: crate::error::GetUsageErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::GetUsageError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetUsageError::unhandled)?;
                 output.build()
             }),
         },
@@ -7348,7 +7506,7 @@ pub fn parse_get_usage_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_usage_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::get_usage_deser_operation(response.body().as_ref(), output)
+        output = crate::json_deser::deser_operation_get_usage(response.body().as_ref(), output)
             .map_err(crate::error::GetUsageError::unhandled)?;
         output.build()
     })
@@ -7367,59 +7525,61 @@ pub fn parse_get_usage_plan_error(
     Err(match error_code {
         "BadRequestException" => crate::error::GetUsagePlanError {
             meta: generic,
-            kind: crate::error::GetUsagePlanErrorKind::BadRequestError({
+            kind: crate::error::GetUsagePlanErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetUsagePlanError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetUsagePlanError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::GetUsagePlanError {
             meta: generic,
-            kind: crate::error::GetUsagePlanErrorKind::NotFoundError({
+            kind: crate::error::GetUsagePlanErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetUsagePlanError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetUsagePlanError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::GetUsagePlanError {
             meta: generic,
-            kind: crate::error::GetUsagePlanErrorKind::TooManyRequestsError({
+            kind: crate::error::GetUsagePlanErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::GetUsagePlanError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_get_usage_plan_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::GetUsagePlanError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_get_usage_plan_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::GetUsagePlanError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::GetUsagePlanError {
             meta: generic,
-            kind: crate::error::GetUsagePlanErrorKind::UnauthorizedError({
+            kind: crate::error::GetUsagePlanErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::GetUsagePlanError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetUsagePlanError::unhandled)?;
                 output.build()
             }),
         },
@@ -7436,7 +7596,7 @@ pub fn parse_get_usage_plan_response(
         let mut output = crate::output::get_usage_plan_output::Builder::default();
         let _ = response;
         output =
-            crate::json_deser::get_usage_plan_deser_operation(response.body().as_ref(), output)
+            crate::json_deser::deser_operation_get_usage_plan(response.body().as_ref(), output)
                 .map_err(crate::error::GetUsagePlanError::unhandled)?;
         output.build()
     })
@@ -7455,59 +7615,61 @@ pub fn parse_get_usage_plan_key_error(
     Err(match error_code {
         "BadRequestException" => crate::error::GetUsagePlanKeyError {
             meta: generic,
-            kind: crate::error::GetUsagePlanKeyErrorKind::BadRequestError({
+            kind: crate::error::GetUsagePlanKeyErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetUsagePlanKeyError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetUsagePlanKeyError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::GetUsagePlanKeyError {
             meta: generic,
-            kind: crate::error::GetUsagePlanKeyErrorKind::NotFoundError({
+            kind: crate::error::GetUsagePlanKeyErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetUsagePlanKeyError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetUsagePlanKeyError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::GetUsagePlanKeyError {
             meta: generic,
-            kind: crate::error::GetUsagePlanKeyErrorKind::TooManyRequestsError({
+            kind: crate::error::GetUsagePlanKeyErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::GetUsagePlanKeyError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_get_usage_plan_key_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::GetUsagePlanKeyError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_get_usage_plan_key_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::GetUsagePlanKeyError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::GetUsagePlanKeyError {
             meta: generic,
-            kind: crate::error::GetUsagePlanKeyErrorKind::UnauthorizedError({
+            kind: crate::error::GetUsagePlanKeyErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::GetUsagePlanKeyError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetUsagePlanKeyError::unhandled)?;
                 output.build()
             }),
         },
@@ -7524,7 +7686,7 @@ pub fn parse_get_usage_plan_key_response(
         let mut output = crate::output::get_usage_plan_key_output::Builder::default();
         let _ = response;
         output =
-            crate::json_deser::get_usage_plan_key_deser_operation(response.body().as_ref(), output)
+            crate::json_deser::deser_operation_get_usage_plan_key(response.body().as_ref(), output)
                 .map_err(crate::error::GetUsagePlanKeyError::unhandled)?;
         output.build()
     })
@@ -7544,59 +7706,61 @@ pub fn parse_get_usage_plan_keys_error(
     Err(match error_code {
         "BadRequestException" => crate::error::GetUsagePlanKeysError {
             meta: generic,
-            kind: crate::error::GetUsagePlanKeysErrorKind::BadRequestError({
+            kind: crate::error::GetUsagePlanKeysErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetUsagePlanKeysError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetUsagePlanKeysError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::GetUsagePlanKeysError {
             meta: generic,
-            kind: crate::error::GetUsagePlanKeysErrorKind::NotFoundError({
+            kind: crate::error::GetUsagePlanKeysErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetUsagePlanKeysError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetUsagePlanKeysError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::GetUsagePlanKeysError {
             meta: generic,
-            kind: crate::error::GetUsagePlanKeysErrorKind::TooManyRequestsError({
+            kind: crate::error::GetUsagePlanKeysErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::GetUsagePlanKeysError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_get_usage_plan_keys_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::GetUsagePlanKeysError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_get_usage_plan_keys_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::GetUsagePlanKeysError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::GetUsagePlanKeysError {
             meta: generic,
-            kind: crate::error::GetUsagePlanKeysErrorKind::UnauthorizedError({
+            kind: crate::error::GetUsagePlanKeysErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::GetUsagePlanKeysError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetUsagePlanKeysError::unhandled)?;
                 output.build()
             }),
         },
@@ -7613,7 +7777,7 @@ pub fn parse_get_usage_plan_keys_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_usage_plan_keys_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::get_usage_plan_keys_deser_operation(
+        output = crate::json_deser::deser_operation_get_usage_plan_keys(
             response.body().as_ref(),
             output,
         )
@@ -7635,70 +7799,75 @@ pub fn parse_get_usage_plans_error(
     Err(match error_code {
         "BadRequestException" => crate::error::GetUsagePlansError {
             meta: generic,
-            kind: crate::error::GetUsagePlansErrorKind::BadRequestError({
+            kind: crate::error::GetUsagePlansErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetUsagePlansError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetUsagePlansError::unhandled)?;
                 output.build()
             }),
         },
         "ConflictException" => crate::error::GetUsagePlansError {
             meta: generic,
-            kind: crate::error::GetUsagePlansErrorKind::ConflictError({
+            kind: crate::error::GetUsagePlansErrorKind::ConflictException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
+                let mut output = crate::error::conflict_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetUsagePlansError::unhandled)?;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetUsagePlansError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::GetUsagePlansError {
             meta: generic,
-            kind: crate::error::GetUsagePlansErrorKind::NotFoundError({
+            kind: crate::error::GetUsagePlansErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetUsagePlansError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetUsagePlansError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::GetUsagePlansError {
             meta: generic,
-            kind: crate::error::GetUsagePlansErrorKind::TooManyRequestsError({
+            kind: crate::error::GetUsagePlansErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::GetUsagePlansError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_get_usage_plans_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::GetUsagePlansError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_get_usage_plans_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::GetUsagePlansError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::GetUsagePlansError {
             meta: generic,
-            kind: crate::error::GetUsagePlansErrorKind::UnauthorizedError({
+            kind: crate::error::GetUsagePlansErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::GetUsagePlansError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetUsagePlansError::unhandled)?;
                 output.build()
             }),
         },
@@ -7715,7 +7884,7 @@ pub fn parse_get_usage_plans_response(
         let mut output = crate::output::get_usage_plans_output::Builder::default();
         let _ = response;
         output =
-            crate::json_deser::get_usage_plans_deser_operation(response.body().as_ref(), output)
+            crate::json_deser::deser_operation_get_usage_plans(response.body().as_ref(), output)
                 .map_err(crate::error::GetUsagePlansError::unhandled)?;
         output.build()
     })
@@ -7734,48 +7903,47 @@ pub fn parse_get_vpc_link_error(
     Err(match error_code {
         "NotFoundException" => crate::error::GetVpcLinkError {
             meta: generic,
-            kind: crate::error::GetVpcLinkErrorKind::NotFoundError({
+            kind: crate::error::GetVpcLinkErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetVpcLinkError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetVpcLinkError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::GetVpcLinkError {
             meta: generic,
-            kind: crate::error::GetVpcLinkErrorKind::TooManyRequestsError({
+            kind: crate::error::GetVpcLinkErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::GetVpcLinkError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_get_vpc_link_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::GetVpcLinkError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_get_vpc_link_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::GetVpcLinkError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::GetVpcLinkError {
             meta: generic,
-            kind: crate::error::GetVpcLinkErrorKind::UnauthorizedError({
+            kind: crate::error::GetVpcLinkErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::GetVpcLinkError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetVpcLinkError::unhandled)?;
                 output.build()
             }),
         },
@@ -7791,7 +7959,7 @@ pub fn parse_get_vpc_link_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_vpc_link_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::get_vpc_link_deser_operation(response.body().as_ref(), output)
+        output = crate::json_deser::deser_operation_get_vpc_link(response.body().as_ref(), output)
             .map_err(crate::error::GetVpcLinkError::unhandled)?;
         output.build()
     })
@@ -7810,48 +7978,47 @@ pub fn parse_get_vpc_links_error(
     Err(match error_code {
         "BadRequestException" => crate::error::GetVpcLinksError {
             meta: generic,
-            kind: crate::error::GetVpcLinksErrorKind::BadRequestError({
+            kind: crate::error::GetVpcLinksErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetVpcLinksError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetVpcLinksError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::GetVpcLinksError {
             meta: generic,
-            kind: crate::error::GetVpcLinksErrorKind::TooManyRequestsError({
+            kind: crate::error::GetVpcLinksErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::GetVpcLinksError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_get_vpc_links_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::GetVpcLinksError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_get_vpc_links_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::GetVpcLinksError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::GetVpcLinksError {
             meta: generic,
-            kind: crate::error::GetVpcLinksErrorKind::UnauthorizedError({
+            kind: crate::error::GetVpcLinksErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::GetVpcLinksError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetVpcLinksError::unhandled)?;
                 output.build()
             }),
         },
@@ -7867,7 +8034,7 @@ pub fn parse_get_vpc_links_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_vpc_links_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::get_vpc_links_deser_operation(response.body().as_ref(), output)
+        output = crate::json_deser::deser_operation_get_vpc_links(response.body().as_ref(), output)
             .map_err(crate::error::GetVpcLinksError::unhandled)?;
         output.build()
     })
@@ -7886,92 +8053,93 @@ pub fn parse_import_api_keys_error(
     Err(match error_code {
         "BadRequestException" => crate::error::ImportApiKeysError {
             meta: generic,
-            kind: crate::error::ImportApiKeysErrorKind::BadRequestError({
+            kind: crate::error::ImportApiKeysErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::ImportApiKeysError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ImportApiKeysError::unhandled)?;
                 output.build()
             }),
         },
         "ConflictException" => crate::error::ImportApiKeysError {
             meta: generic,
-            kind: crate::error::ImportApiKeysErrorKind::ConflictError({
+            kind: crate::error::ImportApiKeysErrorKind::ConflictException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
+                let mut output = crate::error::conflict_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::ImportApiKeysError::unhandled)?;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ImportApiKeysError::unhandled)?;
                 output.build()
             }),
         },
         "LimitExceededException" => crate::error::ImportApiKeysError {
             meta: generic,
-            kind: crate::error::ImportApiKeysErrorKind::LimitExceededError({
+            kind: crate::error::ImportApiKeysErrorKind::LimitExceededException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::limit_exceeded_error::Builder::default();
+                let mut output = crate::error::limit_exceeded_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::limit_exceeded_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::ImportApiKeysError::unhandled)?;
-                output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_import_api_keys_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::ImportApiKeysError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
-                output.build()
-            }),
-        },
-        "NotFoundException" => crate::error::ImportApiKeysError {
-            meta: generic,
-            kind: crate::error::ImportApiKeysErrorKind::NotFoundError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::ImportApiKeysError::unhandled)?;
-                output.build()
-            }),
-        },
-        "TooManyRequestsException" => crate::error::ImportApiKeysError {
-            meta: generic,
-            kind: crate::error::ImportApiKeysErrorKind::TooManyRequestsError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_limit_exceeded_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::ImportApiKeysError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_import_api_keys_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::ImportApiKeysError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_import_api_keys_limit_exceeded_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::ImportApiKeysError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
+                output.build()
+            }),
+        },
+        "NotFoundException" => crate::error::ImportApiKeysError {
+            meta: generic,
+            kind: crate::error::ImportApiKeysErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::not_found_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ImportApiKeysError::unhandled)?;
+                output.build()
+            }),
+        },
+        "TooManyRequestsException" => crate::error::ImportApiKeysError {
+            meta: generic,
+            kind: crate::error::ImportApiKeysErrorKind::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ImportApiKeysError::unhandled)?;
+                output = output.set_retry_after_seconds(
+                crate::http_serde::deser_header_import_api_keys_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::ImportApiKeysError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::ImportApiKeysError {
             meta: generic,
-            kind: crate::error::ImportApiKeysErrorKind::UnauthorizedError({
+            kind: crate::error::ImportApiKeysErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::ImportApiKeysError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ImportApiKeysError::unhandled)?;
                 output.build()
             }),
         },
@@ -7988,7 +8156,7 @@ pub fn parse_import_api_keys_response(
         let mut output = crate::output::import_api_keys_output::Builder::default();
         let _ = response;
         output =
-            crate::json_deser::import_api_keys_deser_operation(response.body().as_ref(), output)
+            crate::json_deser::deser_operation_import_api_keys(response.body().as_ref(), output)
                 .map_err(crate::error::ImportApiKeysError::unhandled)?;
         output.build()
     })
@@ -8014,75 +8182,79 @@ pub fn parse_import_documentation_parts_error(
     Err(match error_code {
         "BadRequestException" => crate::error::ImportDocumentationPartsError {
             meta: generic,
-            kind: crate::error::ImportDocumentationPartsErrorKind::BadRequestError({
+            kind: crate::error::ImportDocumentationPartsErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::ImportDocumentationPartsError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ImportDocumentationPartsError::unhandled)?;
                 output.build()
             }),
         },
-        "LimitExceededException" => {
-            crate::error::ImportDocumentationPartsError {
-                meta: generic,
-                kind: crate::error::ImportDocumentationPartsErrorKind::LimitExceededError({
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::limit_exceeded_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::limit_exceeded_exception(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ImportDocumentationPartsError::unhandled)?;
-                    output = output.set_retry_after_seconds(
-                crate::http_serde::deser_header_import_documentation_parts_retry_after_seconds(response.headers())
+        "LimitExceededException" => crate::error::ImportDocumentationPartsError {
+            meta: generic,
+            kind: crate::error::ImportDocumentationPartsErrorKind::LimitExceededException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_limit_exceeded_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ImportDocumentationPartsError::unhandled)?;
+                output = output.set_retry_after_seconds(
+                crate::http_serde::deser_header_import_documentation_parts_limit_exceeded_exception_retry_after_seconds(response.headers())
                                             .map_err(|_|crate::error::ImportDocumentationPartsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
             );
-                    output.build()
-                }),
-            }
-        }
+                output.build()
+            }),
+        },
         "NotFoundException" => crate::error::ImportDocumentationPartsError {
             meta: generic,
-            kind: crate::error::ImportDocumentationPartsErrorKind::NotFoundError({
+            kind: crate::error::ImportDocumentationPartsErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::ImportDocumentationPartsError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ImportDocumentationPartsError::unhandled)?;
                 output.build()
             }),
         },
-        "TooManyRequestsException" => {
-            crate::error::ImportDocumentationPartsError {
-                meta: generic,
-                kind: crate::error::ImportDocumentationPartsErrorKind::TooManyRequestsError({
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_requests_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::too_many_requests_exception(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ImportDocumentationPartsError::unhandled)?;
-                    output = output.set_retry_after_seconds(
-                crate::http_serde::deser_header_import_documentation_parts_retry_after_seconds(response.headers())
+        "TooManyRequestsException" => crate::error::ImportDocumentationPartsError {
+            meta: generic,
+            kind: crate::error::ImportDocumentationPartsErrorKind::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ImportDocumentationPartsError::unhandled)?;
+                output = output.set_retry_after_seconds(
+                crate::http_serde::deser_header_import_documentation_parts_too_many_requests_exception_retry_after_seconds(response.headers())
                                             .map_err(|_|crate::error::ImportDocumentationPartsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
             );
-                    output.build()
-                }),
-            }
-        }
+                output.build()
+            }),
+        },
         "UnauthorizedException" => crate::error::ImportDocumentationPartsError {
             meta: generic,
-            kind: crate::error::ImportDocumentationPartsErrorKind::UnauthorizedError({
+            kind: crate::error::ImportDocumentationPartsErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::ImportDocumentationPartsError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ImportDocumentationPartsError::unhandled)?;
                 output.build()
             }),
         },
@@ -8101,7 +8273,7 @@ pub fn parse_import_documentation_parts_response(
         #[allow(unused_mut)]
         let mut output = crate::output::import_documentation_parts_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::import_documentation_parts_deser_operation(
+        output = crate::json_deser::deser_operation_import_documentation_parts(
             response.body().as_ref(),
             output,
         )
@@ -8123,81 +8295,79 @@ pub fn parse_import_rest_api_error(
     Err(match error_code {
         "BadRequestException" => crate::error::ImportRestApiError {
             meta: generic,
-            kind: crate::error::ImportRestApiErrorKind::BadRequestError({
+            kind: crate::error::ImportRestApiErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::ImportRestApiError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ImportRestApiError::unhandled)?;
                 output.build()
             }),
         },
         "ConflictException" => crate::error::ImportRestApiError {
             meta: generic,
-            kind: crate::error::ImportRestApiErrorKind::ConflictError({
+            kind: crate::error::ImportRestApiErrorKind::ConflictException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
+                let mut output = crate::error::conflict_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::ImportRestApiError::unhandled)?;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ImportRestApiError::unhandled)?;
                 output.build()
             }),
         },
         "LimitExceededException" => crate::error::ImportRestApiError {
             meta: generic,
-            kind: crate::error::ImportRestApiErrorKind::LimitExceededError({
+            kind: crate::error::ImportRestApiErrorKind::LimitExceededException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::limit_exceeded_error::Builder::default();
+                let mut output = crate::error::limit_exceeded_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::limit_exceeded_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::ImportRestApiError::unhandled)?;
-                output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_import_rest_api_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::ImportRestApiError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
-                output.build()
-            }),
-        },
-        "TooManyRequestsException" => crate::error::ImportRestApiError {
-            meta: generic,
-            kind: crate::error::ImportRestApiErrorKind::TooManyRequestsError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_limit_exceeded_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::ImportRestApiError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_import_rest_api_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::ImportRestApiError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_import_rest_api_limit_exceeded_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::ImportRestApiError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
+                output.build()
+            }),
+        },
+        "TooManyRequestsException" => crate::error::ImportRestApiError {
+            meta: generic,
+            kind: crate::error::ImportRestApiErrorKind::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ImportRestApiError::unhandled)?;
+                output = output.set_retry_after_seconds(
+                crate::http_serde::deser_header_import_rest_api_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::ImportRestApiError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::ImportRestApiError {
             meta: generic,
-            kind: crate::error::ImportRestApiErrorKind::UnauthorizedError({
+            kind: crate::error::ImportRestApiErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::ImportRestApiError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ImportRestApiError::unhandled)?;
                 output.build()
             }),
         },
@@ -8214,7 +8384,7 @@ pub fn parse_import_rest_api_response(
         let mut output = crate::output::import_rest_api_output::Builder::default();
         let _ = response;
         output =
-            crate::json_deser::import_rest_api_deser_operation(response.body().as_ref(), output)
+            crate::json_deser::deser_operation_import_rest_api(response.body().as_ref(), output)
                 .map_err(crate::error::ImportRestApiError::unhandled)?;
         output.build()
     })
@@ -8236,81 +8406,79 @@ pub fn parse_put_gateway_response_error(
     Err(match error_code {
         "BadRequestException" => crate::error::PutGatewayResponseError {
             meta: generic,
-            kind: crate::error::PutGatewayResponseErrorKind::BadRequestError({
+            kind: crate::error::PutGatewayResponseErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::PutGatewayResponseError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PutGatewayResponseError::unhandled)?;
                 output.build()
             }),
         },
         "LimitExceededException" => crate::error::PutGatewayResponseError {
             meta: generic,
-            kind: crate::error::PutGatewayResponseErrorKind::LimitExceededError({
+            kind: crate::error::PutGatewayResponseErrorKind::LimitExceededException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::limit_exceeded_error::Builder::default();
+                let mut output = crate::error::limit_exceeded_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::limit_exceeded_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::PutGatewayResponseError::unhandled)?;
-                output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_put_gateway_response_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::PutGatewayResponseError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
-                output.build()
-            }),
-        },
-        "NotFoundException" => crate::error::PutGatewayResponseError {
-            meta: generic,
-            kind: crate::error::PutGatewayResponseErrorKind::NotFoundError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::PutGatewayResponseError::unhandled)?;
-                output.build()
-            }),
-        },
-        "TooManyRequestsException" => crate::error::PutGatewayResponseError {
-            meta: generic,
-            kind: crate::error::PutGatewayResponseErrorKind::TooManyRequestsError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_limit_exceeded_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::PutGatewayResponseError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_put_gateway_response_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::PutGatewayResponseError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_put_gateway_response_limit_exceeded_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::PutGatewayResponseError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
+                output.build()
+            }),
+        },
+        "NotFoundException" => crate::error::PutGatewayResponseError {
+            meta: generic,
+            kind: crate::error::PutGatewayResponseErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::not_found_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PutGatewayResponseError::unhandled)?;
+                output.build()
+            }),
+        },
+        "TooManyRequestsException" => crate::error::PutGatewayResponseError {
+            meta: generic,
+            kind: crate::error::PutGatewayResponseErrorKind::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PutGatewayResponseError::unhandled)?;
+                output = output.set_retry_after_seconds(
+                crate::http_serde::deser_header_put_gateway_response_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::PutGatewayResponseError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::PutGatewayResponseError {
             meta: generic,
-            kind: crate::error::PutGatewayResponseErrorKind::UnauthorizedError({
+            kind: crate::error::PutGatewayResponseErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::PutGatewayResponseError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PutGatewayResponseError::unhandled)?;
                 output.build()
             }),
         },
@@ -8329,7 +8497,7 @@ pub fn parse_put_gateway_response_response(
         #[allow(unused_mut)]
         let mut output = crate::output::put_gateway_response_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::put_gateway_response_deser_operation(
+        output = crate::json_deser::deser_operation_put_gateway_response(
             response.body().as_ref(),
             output,
         )
@@ -8351,70 +8519,75 @@ pub fn parse_put_integration_error(
     Err(match error_code {
         "BadRequestException" => crate::error::PutIntegrationError {
             meta: generic,
-            kind: crate::error::PutIntegrationErrorKind::BadRequestError({
+            kind: crate::error::PutIntegrationErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::PutIntegrationError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PutIntegrationError::unhandled)?;
                 output.build()
             }),
         },
         "ConflictException" => crate::error::PutIntegrationError {
             meta: generic,
-            kind: crate::error::PutIntegrationErrorKind::ConflictError({
+            kind: crate::error::PutIntegrationErrorKind::ConflictException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
+                let mut output = crate::error::conflict_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::PutIntegrationError::unhandled)?;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PutIntegrationError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::PutIntegrationError {
             meta: generic,
-            kind: crate::error::PutIntegrationErrorKind::NotFoundError({
+            kind: crate::error::PutIntegrationErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::PutIntegrationError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PutIntegrationError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::PutIntegrationError {
             meta: generic,
-            kind: crate::error::PutIntegrationErrorKind::TooManyRequestsError({
+            kind: crate::error::PutIntegrationErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::PutIntegrationError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_put_integration_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::PutIntegrationError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_put_integration_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::PutIntegrationError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::PutIntegrationError {
             meta: generic,
-            kind: crate::error::PutIntegrationErrorKind::UnauthorizedError({
+            kind: crate::error::PutIntegrationErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::PutIntegrationError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PutIntegrationError::unhandled)?;
                 output.build()
             }),
         },
@@ -8431,7 +8604,7 @@ pub fn parse_put_integration_response(
         let mut output = crate::output::put_integration_output::Builder::default();
         let _ = response;
         output =
-            crate::json_deser::put_integration_deser_operation(response.body().as_ref(), output)
+            crate::json_deser::deser_operation_put_integration(response.body().as_ref(), output)
                 .map_err(crate::error::PutIntegrationError::unhandled)?;
         output.build()
     })
@@ -8457,86 +8630,93 @@ pub fn parse_put_integration_response_error(
     Err(match error_code {
         "BadRequestException" => crate::error::PutIntegrationResponseError {
             meta: generic,
-            kind: crate::error::PutIntegrationResponseErrorKind::BadRequestError({
+            kind: crate::error::PutIntegrationResponseErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::PutIntegrationResponseError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PutIntegrationResponseError::unhandled)?;
                 output.build()
             }),
         },
         "ConflictException" => crate::error::PutIntegrationResponseError {
             meta: generic,
-            kind: crate::error::PutIntegrationResponseErrorKind::ConflictError({
+            kind: crate::error::PutIntegrationResponseErrorKind::ConflictException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
+                let mut output = crate::error::conflict_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::PutIntegrationResponseError::unhandled)?;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PutIntegrationResponseError::unhandled)?;
                 output.build()
             }),
         },
-        "LimitExceededException" => {
-            crate::error::PutIntegrationResponseError {
-                meta: generic,
-                kind: crate::error::PutIntegrationResponseErrorKind::LimitExceededError({
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::limit_exceeded_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::limit_exceeded_exception(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::PutIntegrationResponseError::unhandled)?;
-                    output = output.set_retry_after_seconds(
-                crate::http_serde::deser_header_put_integration_response_retry_after_seconds(response.headers())
+        "LimitExceededException" => crate::error::PutIntegrationResponseError {
+            meta: generic,
+            kind: crate::error::PutIntegrationResponseErrorKind::LimitExceededException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_limit_exceeded_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PutIntegrationResponseError::unhandled)?;
+                output = output.set_retry_after_seconds(
+                crate::http_serde::deser_header_put_integration_response_limit_exceeded_exception_retry_after_seconds(response.headers())
                                             .map_err(|_|crate::error::PutIntegrationResponseError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
             );
-                    output.build()
-                }),
-            }
-        }
+                output.build()
+            }),
+        },
         "NotFoundException" => crate::error::PutIntegrationResponseError {
             meta: generic,
-            kind: crate::error::PutIntegrationResponseErrorKind::NotFoundError({
+            kind: crate::error::PutIntegrationResponseErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::PutIntegrationResponseError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PutIntegrationResponseError::unhandled)?;
                 output.build()
             }),
         },
-        "TooManyRequestsException" => {
-            crate::error::PutIntegrationResponseError {
-                meta: generic,
-                kind: crate::error::PutIntegrationResponseErrorKind::TooManyRequestsError({
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_requests_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::too_many_requests_exception(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::PutIntegrationResponseError::unhandled)?;
-                    output = output.set_retry_after_seconds(
-                crate::http_serde::deser_header_put_integration_response_retry_after_seconds(response.headers())
+        "TooManyRequestsException" => crate::error::PutIntegrationResponseError {
+            meta: generic,
+            kind: crate::error::PutIntegrationResponseErrorKind::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PutIntegrationResponseError::unhandled)?;
+                output = output.set_retry_after_seconds(
+                crate::http_serde::deser_header_put_integration_response_too_many_requests_exception_retry_after_seconds(response.headers())
                                             .map_err(|_|crate::error::PutIntegrationResponseError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
             );
-                    output.build()
-                }),
-            }
-        }
+                output.build()
+            }),
+        },
         "UnauthorizedException" => crate::error::PutIntegrationResponseError {
             meta: generic,
-            kind: crate::error::PutIntegrationResponseErrorKind::UnauthorizedError({
+            kind: crate::error::PutIntegrationResponseErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::PutIntegrationResponseError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PutIntegrationResponseError::unhandled)?;
                 output.build()
             }),
         },
@@ -8555,7 +8735,7 @@ pub fn parse_put_integration_response_response(
         #[allow(unused_mut)]
         let mut output = crate::output::put_integration_response_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::put_integration_response_deser_operation(
+        output = crate::json_deser::deser_operation_put_integration_response(
             response.body().as_ref(),
             output,
         )
@@ -8577,92 +8757,93 @@ pub fn parse_put_method_error(
     Err(match error_code {
         "BadRequestException" => crate::error::PutMethodError {
             meta: generic,
-            kind: crate::error::PutMethodErrorKind::BadRequestError({
+            kind: crate::error::PutMethodErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::PutMethodError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PutMethodError::unhandled)?;
                 output.build()
             }),
         },
         "ConflictException" => crate::error::PutMethodError {
             meta: generic,
-            kind: crate::error::PutMethodErrorKind::ConflictError({
+            kind: crate::error::PutMethodErrorKind::ConflictException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
+                let mut output = crate::error::conflict_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::PutMethodError::unhandled)?;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PutMethodError::unhandled)?;
                 output.build()
             }),
         },
         "LimitExceededException" => crate::error::PutMethodError {
             meta: generic,
-            kind: crate::error::PutMethodErrorKind::LimitExceededError({
+            kind: crate::error::PutMethodErrorKind::LimitExceededException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::limit_exceeded_error::Builder::default();
+                let mut output = crate::error::limit_exceeded_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::limit_exceeded_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::PutMethodError::unhandled)?;
-                output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_put_method_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::PutMethodError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
-                output.build()
-            }),
-        },
-        "NotFoundException" => crate::error::PutMethodError {
-            meta: generic,
-            kind: crate::error::PutMethodErrorKind::NotFoundError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::PutMethodError::unhandled)?;
-                output.build()
-            }),
-        },
-        "TooManyRequestsException" => crate::error::PutMethodError {
-            meta: generic,
-            kind: crate::error::PutMethodErrorKind::TooManyRequestsError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_limit_exceeded_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::PutMethodError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_put_method_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::PutMethodError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_put_method_limit_exceeded_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::PutMethodError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
+                output.build()
+            }),
+        },
+        "NotFoundException" => crate::error::PutMethodError {
+            meta: generic,
+            kind: crate::error::PutMethodErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::not_found_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PutMethodError::unhandled)?;
+                output.build()
+            }),
+        },
+        "TooManyRequestsException" => crate::error::PutMethodError {
+            meta: generic,
+            kind: crate::error::PutMethodErrorKind::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PutMethodError::unhandled)?;
+                output = output.set_retry_after_seconds(
+                crate::http_serde::deser_header_put_method_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::PutMethodError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::PutMethodError {
             meta: generic,
-            kind: crate::error::PutMethodErrorKind::UnauthorizedError({
+            kind: crate::error::PutMethodErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::PutMethodError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PutMethodError::unhandled)?;
                 output.build()
             }),
         },
@@ -8678,7 +8859,7 @@ pub fn parse_put_method_response(
         #[allow(unused_mut)]
         let mut output = crate::output::put_method_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::put_method_deser_operation(response.body().as_ref(), output)
+        output = crate::json_deser::deser_operation_put_method(response.body().as_ref(), output)
             .map_err(crate::error::PutMethodError::unhandled)?;
         output.build()
     })
@@ -8698,92 +8879,93 @@ pub fn parse_put_method_response_error(
     Err(match error_code {
         "BadRequestException" => crate::error::PutMethodResponseError {
             meta: generic,
-            kind: crate::error::PutMethodResponseErrorKind::BadRequestError({
+            kind: crate::error::PutMethodResponseErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::PutMethodResponseError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PutMethodResponseError::unhandled)?;
                 output.build()
             }),
         },
         "ConflictException" => crate::error::PutMethodResponseError {
             meta: generic,
-            kind: crate::error::PutMethodResponseErrorKind::ConflictError({
+            kind: crate::error::PutMethodResponseErrorKind::ConflictException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
+                let mut output = crate::error::conflict_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::PutMethodResponseError::unhandled)?;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PutMethodResponseError::unhandled)?;
                 output.build()
             }),
         },
         "LimitExceededException" => crate::error::PutMethodResponseError {
             meta: generic,
-            kind: crate::error::PutMethodResponseErrorKind::LimitExceededError({
+            kind: crate::error::PutMethodResponseErrorKind::LimitExceededException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::limit_exceeded_error::Builder::default();
+                let mut output = crate::error::limit_exceeded_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::limit_exceeded_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::PutMethodResponseError::unhandled)?;
-                output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_put_method_response_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::PutMethodResponseError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
-                output.build()
-            }),
-        },
-        "NotFoundException" => crate::error::PutMethodResponseError {
-            meta: generic,
-            kind: crate::error::PutMethodResponseErrorKind::NotFoundError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::PutMethodResponseError::unhandled)?;
-                output.build()
-            }),
-        },
-        "TooManyRequestsException" => crate::error::PutMethodResponseError {
-            meta: generic,
-            kind: crate::error::PutMethodResponseErrorKind::TooManyRequestsError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_limit_exceeded_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::PutMethodResponseError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_put_method_response_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::PutMethodResponseError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_put_method_response_limit_exceeded_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::PutMethodResponseError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
+                output.build()
+            }),
+        },
+        "NotFoundException" => crate::error::PutMethodResponseError {
+            meta: generic,
+            kind: crate::error::PutMethodResponseErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::not_found_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PutMethodResponseError::unhandled)?;
+                output.build()
+            }),
+        },
+        "TooManyRequestsException" => crate::error::PutMethodResponseError {
+            meta: generic,
+            kind: crate::error::PutMethodResponseErrorKind::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PutMethodResponseError::unhandled)?;
+                output = output.set_retry_after_seconds(
+                crate::http_serde::deser_header_put_method_response_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::PutMethodResponseError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::PutMethodResponseError {
             meta: generic,
-            kind: crate::error::PutMethodResponseErrorKind::UnauthorizedError({
+            kind: crate::error::PutMethodResponseErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::PutMethodResponseError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PutMethodResponseError::unhandled)?;
                 output.build()
             }),
         },
@@ -8800,7 +8982,7 @@ pub fn parse_put_method_response_response(
         #[allow(unused_mut)]
         let mut output = crate::output::put_method_response_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::put_method_response_deser_operation(
+        output = crate::json_deser::deser_operation_put_method_response(
             response.body().as_ref(),
             output,
         )
@@ -8822,92 +9004,93 @@ pub fn parse_put_rest_api_error(
     Err(match error_code {
         "BadRequestException" => crate::error::PutRestApiError {
             meta: generic,
-            kind: crate::error::PutRestApiErrorKind::BadRequestError({
+            kind: crate::error::PutRestApiErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::PutRestApiError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PutRestApiError::unhandled)?;
                 output.build()
             }),
         },
         "ConflictException" => crate::error::PutRestApiError {
             meta: generic,
-            kind: crate::error::PutRestApiErrorKind::ConflictError({
+            kind: crate::error::PutRestApiErrorKind::ConflictException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
+                let mut output = crate::error::conflict_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::PutRestApiError::unhandled)?;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PutRestApiError::unhandled)?;
                 output.build()
             }),
         },
         "LimitExceededException" => crate::error::PutRestApiError {
             meta: generic,
-            kind: crate::error::PutRestApiErrorKind::LimitExceededError({
+            kind: crate::error::PutRestApiErrorKind::LimitExceededException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::limit_exceeded_error::Builder::default();
+                let mut output = crate::error::limit_exceeded_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::limit_exceeded_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::PutRestApiError::unhandled)?;
-                output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_put_rest_api_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::PutRestApiError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
-                output.build()
-            }),
-        },
-        "NotFoundException" => crate::error::PutRestApiError {
-            meta: generic,
-            kind: crate::error::PutRestApiErrorKind::NotFoundError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::PutRestApiError::unhandled)?;
-                output.build()
-            }),
-        },
-        "TooManyRequestsException" => crate::error::PutRestApiError {
-            meta: generic,
-            kind: crate::error::PutRestApiErrorKind::TooManyRequestsError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_limit_exceeded_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::PutRestApiError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_put_rest_api_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::PutRestApiError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_put_rest_api_limit_exceeded_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::PutRestApiError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
+                output.build()
+            }),
+        },
+        "NotFoundException" => crate::error::PutRestApiError {
+            meta: generic,
+            kind: crate::error::PutRestApiErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::not_found_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PutRestApiError::unhandled)?;
+                output.build()
+            }),
+        },
+        "TooManyRequestsException" => crate::error::PutRestApiError {
+            meta: generic,
+            kind: crate::error::PutRestApiErrorKind::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PutRestApiError::unhandled)?;
+                output = output.set_retry_after_seconds(
+                crate::http_serde::deser_header_put_rest_api_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::PutRestApiError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::PutRestApiError {
             meta: generic,
-            kind: crate::error::PutRestApiErrorKind::UnauthorizedError({
+            kind: crate::error::PutRestApiErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::PutRestApiError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PutRestApiError::unhandled)?;
                 output.build()
             }),
         },
@@ -8923,7 +9106,7 @@ pub fn parse_put_rest_api_response(
         #[allow(unused_mut)]
         let mut output = crate::output::put_rest_api_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::put_rest_api_deser_operation(response.body().as_ref(), output)
+        output = crate::json_deser::deser_operation_put_rest_api(response.body().as_ref(), output)
             .map_err(crate::error::PutRestApiError::unhandled)?;
         output.build()
     })
@@ -8942,92 +9125,93 @@ pub fn parse_tag_resource_error(
     Err(match error_code {
         "BadRequestException" => crate::error::TagResourceError {
             meta: generic,
-            kind: crate::error::TagResourceErrorKind::BadRequestError({
+            kind: crate::error::TagResourceErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::TagResourceError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::TagResourceError::unhandled)?;
                 output.build()
             }),
         },
         "ConflictException" => crate::error::TagResourceError {
             meta: generic,
-            kind: crate::error::TagResourceErrorKind::ConflictError({
+            kind: crate::error::TagResourceErrorKind::ConflictException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
+                let mut output = crate::error::conflict_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::TagResourceError::unhandled)?;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::TagResourceError::unhandled)?;
                 output.build()
             }),
         },
         "LimitExceededException" => crate::error::TagResourceError {
             meta: generic,
-            kind: crate::error::TagResourceErrorKind::LimitExceededError({
+            kind: crate::error::TagResourceErrorKind::LimitExceededException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::limit_exceeded_error::Builder::default();
+                let mut output = crate::error::limit_exceeded_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::limit_exceeded_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::TagResourceError::unhandled)?;
-                output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_tag_resource_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::TagResourceError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
-                output.build()
-            }),
-        },
-        "NotFoundException" => crate::error::TagResourceError {
-            meta: generic,
-            kind: crate::error::TagResourceErrorKind::NotFoundError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::TagResourceError::unhandled)?;
-                output.build()
-            }),
-        },
-        "TooManyRequestsException" => crate::error::TagResourceError {
-            meta: generic,
-            kind: crate::error::TagResourceErrorKind::TooManyRequestsError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_limit_exceeded_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::TagResourceError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_tag_resource_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::TagResourceError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_tag_resource_limit_exceeded_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::TagResourceError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
+                output.build()
+            }),
+        },
+        "NotFoundException" => crate::error::TagResourceError {
+            meta: generic,
+            kind: crate::error::TagResourceErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::not_found_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::TagResourceError::unhandled)?;
+                output.build()
+            }),
+        },
+        "TooManyRequestsException" => crate::error::TagResourceError {
+            meta: generic,
+            kind: crate::error::TagResourceErrorKind::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::TagResourceError::unhandled)?;
+                output = output.set_retry_after_seconds(
+                crate::http_serde::deser_header_tag_resource_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::TagResourceError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::TagResourceError {
             meta: generic,
-            kind: crate::error::TagResourceErrorKind::UnauthorizedError({
+            kind: crate::error::TagResourceErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::TagResourceError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::TagResourceError::unhandled)?;
                 output.build()
             }),
         },
@@ -9063,59 +9247,61 @@ pub fn parse_test_invoke_authorizer_error(
     Err(match error_code {
         "BadRequestException" => crate::error::TestInvokeAuthorizerError {
             meta: generic,
-            kind: crate::error::TestInvokeAuthorizerErrorKind::BadRequestError({
+            kind: crate::error::TestInvokeAuthorizerErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::TestInvokeAuthorizerError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::TestInvokeAuthorizerError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::TestInvokeAuthorizerError {
             meta: generic,
-            kind: crate::error::TestInvokeAuthorizerErrorKind::NotFoundError({
+            kind: crate::error::TestInvokeAuthorizerErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::TestInvokeAuthorizerError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::TestInvokeAuthorizerError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::TestInvokeAuthorizerError {
             meta: generic,
-            kind: crate::error::TestInvokeAuthorizerErrorKind::TooManyRequestsError({
+            kind: crate::error::TestInvokeAuthorizerErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::TestInvokeAuthorizerError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_test_invoke_authorizer_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::TestInvokeAuthorizerError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_test_invoke_authorizer_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::TestInvokeAuthorizerError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::TestInvokeAuthorizerError {
             meta: generic,
-            kind: crate::error::TestInvokeAuthorizerErrorKind::UnauthorizedError({
+            kind: crate::error::TestInvokeAuthorizerErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::TestInvokeAuthorizerError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::TestInvokeAuthorizerError::unhandled)?;
                 output.build()
             }),
         },
@@ -9134,7 +9320,7 @@ pub fn parse_test_invoke_authorizer_response(
         #[allow(unused_mut)]
         let mut output = crate::output::test_invoke_authorizer_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::test_invoke_authorizer_deser_operation(
+        output = crate::json_deser::deser_operation_test_invoke_authorizer(
             response.body().as_ref(),
             output,
         )
@@ -9157,59 +9343,61 @@ pub fn parse_test_invoke_method_error(
     Err(match error_code {
         "BadRequestException" => crate::error::TestInvokeMethodError {
             meta: generic,
-            kind: crate::error::TestInvokeMethodErrorKind::BadRequestError({
+            kind: crate::error::TestInvokeMethodErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::TestInvokeMethodError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::TestInvokeMethodError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::TestInvokeMethodError {
             meta: generic,
-            kind: crate::error::TestInvokeMethodErrorKind::NotFoundError({
+            kind: crate::error::TestInvokeMethodErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::TestInvokeMethodError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::TestInvokeMethodError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::TestInvokeMethodError {
             meta: generic,
-            kind: crate::error::TestInvokeMethodErrorKind::TooManyRequestsError({
+            kind: crate::error::TestInvokeMethodErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::TestInvokeMethodError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_test_invoke_method_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::TestInvokeMethodError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_test_invoke_method_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::TestInvokeMethodError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::TestInvokeMethodError {
             meta: generic,
-            kind: crate::error::TestInvokeMethodErrorKind::UnauthorizedError({
+            kind: crate::error::TestInvokeMethodErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::TestInvokeMethodError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::TestInvokeMethodError::unhandled)?;
                 output.build()
             }),
         },
@@ -9227,7 +9415,7 @@ pub fn parse_test_invoke_method_response(
         let mut output = crate::output::test_invoke_method_output::Builder::default();
         let _ = response;
         output =
-            crate::json_deser::test_invoke_method_deser_operation(response.body().as_ref(), output)
+            crate::json_deser::deser_operation_test_invoke_method(response.body().as_ref(), output)
                 .map_err(crate::error::TestInvokeMethodError::unhandled)?;
         output.build()
     })
@@ -9246,70 +9434,75 @@ pub fn parse_untag_resource_error(
     Err(match error_code {
         "BadRequestException" => crate::error::UntagResourceError {
             meta: generic,
-            kind: crate::error::UntagResourceErrorKind::BadRequestError({
+            kind: crate::error::UntagResourceErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UntagResourceError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UntagResourceError::unhandled)?;
                 output.build()
             }),
         },
         "ConflictException" => crate::error::UntagResourceError {
             meta: generic,
-            kind: crate::error::UntagResourceErrorKind::ConflictError({
+            kind: crate::error::UntagResourceErrorKind::ConflictException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
+                let mut output = crate::error::conflict_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UntagResourceError::unhandled)?;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UntagResourceError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::UntagResourceError {
             meta: generic,
-            kind: crate::error::UntagResourceErrorKind::NotFoundError({
+            kind: crate::error::UntagResourceErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UntagResourceError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UntagResourceError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::UntagResourceError {
             meta: generic,
-            kind: crate::error::UntagResourceErrorKind::TooManyRequestsError({
+            kind: crate::error::UntagResourceErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::UntagResourceError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_untag_resource_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::UntagResourceError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_untag_resource_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::UntagResourceError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::UntagResourceError {
             meta: generic,
-            kind: crate::error::UntagResourceErrorKind::UnauthorizedError({
+            kind: crate::error::UntagResourceErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::UntagResourceError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UntagResourceError::unhandled)?;
                 output.build()
             }),
         },
@@ -9342,59 +9535,61 @@ pub fn parse_update_account_error(
     Err(match error_code {
         "BadRequestException" => crate::error::UpdateAccountError {
             meta: generic,
-            kind: crate::error::UpdateAccountErrorKind::BadRequestError({
+            kind: crate::error::UpdateAccountErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateAccountError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateAccountError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::UpdateAccountError {
             meta: generic,
-            kind: crate::error::UpdateAccountErrorKind::NotFoundError({
+            kind: crate::error::UpdateAccountErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateAccountError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateAccountError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::UpdateAccountError {
             meta: generic,
-            kind: crate::error::UpdateAccountErrorKind::TooManyRequestsError({
+            kind: crate::error::UpdateAccountErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::UpdateAccountError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_update_account_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::UpdateAccountError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_update_account_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::UpdateAccountError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::UpdateAccountError {
             meta: generic,
-            kind: crate::error::UpdateAccountErrorKind::UnauthorizedError({
+            kind: crate::error::UpdateAccountErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::UpdateAccountError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateAccountError::unhandled)?;
                 output.build()
             }),
         },
@@ -9411,7 +9606,7 @@ pub fn parse_update_account_response(
         let mut output = crate::output::update_account_output::Builder::default();
         let _ = response;
         output =
-            crate::json_deser::update_account_deser_operation(response.body().as_ref(), output)
+            crate::json_deser::deser_operation_update_account(response.body().as_ref(), output)
                 .map_err(crate::error::UpdateAccountError::unhandled)?;
         output.build()
     })
@@ -9430,70 +9625,75 @@ pub fn parse_update_api_key_error(
     Err(match error_code {
         "BadRequestException" => crate::error::UpdateApiKeyError {
             meta: generic,
-            kind: crate::error::UpdateApiKeyErrorKind::BadRequestError({
+            kind: crate::error::UpdateApiKeyErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateApiKeyError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateApiKeyError::unhandled)?;
                 output.build()
             }),
         },
         "ConflictException" => crate::error::UpdateApiKeyError {
             meta: generic,
-            kind: crate::error::UpdateApiKeyErrorKind::ConflictError({
+            kind: crate::error::UpdateApiKeyErrorKind::ConflictException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
+                let mut output = crate::error::conflict_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateApiKeyError::unhandled)?;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateApiKeyError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::UpdateApiKeyError {
             meta: generic,
-            kind: crate::error::UpdateApiKeyErrorKind::NotFoundError({
+            kind: crate::error::UpdateApiKeyErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateApiKeyError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateApiKeyError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::UpdateApiKeyError {
             meta: generic,
-            kind: crate::error::UpdateApiKeyErrorKind::TooManyRequestsError({
+            kind: crate::error::UpdateApiKeyErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::UpdateApiKeyError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_update_api_key_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::UpdateApiKeyError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_update_api_key_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::UpdateApiKeyError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::UpdateApiKeyError {
             meta: generic,
-            kind: crate::error::UpdateApiKeyErrorKind::UnauthorizedError({
+            kind: crate::error::UpdateApiKeyErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::UpdateApiKeyError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateApiKeyError::unhandled)?;
                 output.build()
             }),
         },
@@ -9510,7 +9710,7 @@ pub fn parse_update_api_key_response(
         let mut output = crate::output::update_api_key_output::Builder::default();
         let _ = response;
         output =
-            crate::json_deser::update_api_key_deser_operation(response.body().as_ref(), output)
+            crate::json_deser::deser_operation_update_api_key(response.body().as_ref(), output)
                 .map_err(crate::error::UpdateApiKeyError::unhandled)?;
         output.build()
     })
@@ -9530,59 +9730,61 @@ pub fn parse_update_authorizer_error(
     Err(match error_code {
         "BadRequestException" => crate::error::UpdateAuthorizerError {
             meta: generic,
-            kind: crate::error::UpdateAuthorizerErrorKind::BadRequestError({
+            kind: crate::error::UpdateAuthorizerErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateAuthorizerError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateAuthorizerError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::UpdateAuthorizerError {
             meta: generic,
-            kind: crate::error::UpdateAuthorizerErrorKind::NotFoundError({
+            kind: crate::error::UpdateAuthorizerErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateAuthorizerError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateAuthorizerError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::UpdateAuthorizerError {
             meta: generic,
-            kind: crate::error::UpdateAuthorizerErrorKind::TooManyRequestsError({
+            kind: crate::error::UpdateAuthorizerErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::UpdateAuthorizerError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_update_authorizer_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::UpdateAuthorizerError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_update_authorizer_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::UpdateAuthorizerError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::UpdateAuthorizerError {
             meta: generic,
-            kind: crate::error::UpdateAuthorizerErrorKind::UnauthorizedError({
+            kind: crate::error::UpdateAuthorizerErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::UpdateAuthorizerError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateAuthorizerError::unhandled)?;
                 output.build()
             }),
         },
@@ -9600,7 +9802,7 @@ pub fn parse_update_authorizer_response(
         let mut output = crate::output::update_authorizer_output::Builder::default();
         let _ = response;
         output =
-            crate::json_deser::update_authorizer_deser_operation(response.body().as_ref(), output)
+            crate::json_deser::deser_operation_update_authorizer(response.body().as_ref(), output)
                 .map_err(crate::error::UpdateAuthorizerError::unhandled)?;
         output.build()
     })
@@ -9622,66 +9824,75 @@ pub fn parse_update_base_path_mapping_error(
     Err(match error_code {
         "BadRequestException" => crate::error::UpdateBasePathMappingError {
             meta: generic,
-            kind: crate::error::UpdateBasePathMappingErrorKind::BadRequestError({
+            kind: crate::error::UpdateBasePathMappingErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateBasePathMappingError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateBasePathMappingError::unhandled)?;
                 output.build()
             }),
         },
         "ConflictException" => crate::error::UpdateBasePathMappingError {
             meta: generic,
-            kind: crate::error::UpdateBasePathMappingErrorKind::ConflictError({
+            kind: crate::error::UpdateBasePathMappingErrorKind::ConflictException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
+                let mut output = crate::error::conflict_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateBasePathMappingError::unhandled)?;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateBasePathMappingError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::UpdateBasePathMappingError {
             meta: generic,
-            kind: crate::error::UpdateBasePathMappingErrorKind::NotFoundError({
+            kind: crate::error::UpdateBasePathMappingErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateBasePathMappingError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateBasePathMappingError::unhandled)?;
                 output.build()
             }),
         },
-        "TooManyRequestsException" => {
-            crate::error::UpdateBasePathMappingError {
-                meta: generic,
-                kind: crate::error::UpdateBasePathMappingErrorKind::TooManyRequestsError({
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_requests_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::too_many_requests_exception(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateBasePathMappingError::unhandled)?;
-                    output = output.set_retry_after_seconds(
-                crate::http_serde::deser_header_update_base_path_mapping_retry_after_seconds(response.headers())
+        "TooManyRequestsException" => crate::error::UpdateBasePathMappingError {
+            meta: generic,
+            kind: crate::error::UpdateBasePathMappingErrorKind::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateBasePathMappingError::unhandled)?;
+                output = output.set_retry_after_seconds(
+                crate::http_serde::deser_header_update_base_path_mapping_too_many_requests_exception_retry_after_seconds(response.headers())
                                             .map_err(|_|crate::error::UpdateBasePathMappingError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
             );
-                    output.build()
-                }),
-            }
-        }
+                output.build()
+            }),
+        },
         "UnauthorizedException" => crate::error::UpdateBasePathMappingError {
             meta: generic,
-            kind: crate::error::UpdateBasePathMappingErrorKind::UnauthorizedError({
+            kind: crate::error::UpdateBasePathMappingErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::UpdateBasePathMappingError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateBasePathMappingError::unhandled)?;
                 output.build()
             }),
         },
@@ -9700,7 +9911,7 @@ pub fn parse_update_base_path_mapping_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_base_path_mapping_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::update_base_path_mapping_deser_operation(
+        output = crate::json_deser::deser_operation_update_base_path_mapping(
             response.body().as_ref(),
             output,
         )
@@ -9729,55 +9940,61 @@ pub fn parse_update_client_certificate_error(
     Err(match error_code {
         "BadRequestException" => crate::error::UpdateClientCertificateError {
             meta: generic,
-            kind: crate::error::UpdateClientCertificateErrorKind::BadRequestError({
+            kind: crate::error::UpdateClientCertificateErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateClientCertificateError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateClientCertificateError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::UpdateClientCertificateError {
             meta: generic,
-            kind: crate::error::UpdateClientCertificateErrorKind::NotFoundError({
+            kind: crate::error::UpdateClientCertificateErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateClientCertificateError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateClientCertificateError::unhandled)?;
                 output.build()
             }),
         },
-        "TooManyRequestsException" => {
-            crate::error::UpdateClientCertificateError {
-                meta: generic,
-                kind: crate::error::UpdateClientCertificateErrorKind::TooManyRequestsError({
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_requests_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::too_many_requests_exception(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateClientCertificateError::unhandled)?;
-                    output = output.set_retry_after_seconds(
-                crate::http_serde::deser_header_update_client_certificate_retry_after_seconds(response.headers())
+        "TooManyRequestsException" => crate::error::UpdateClientCertificateError {
+            meta: generic,
+            kind: crate::error::UpdateClientCertificateErrorKind::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateClientCertificateError::unhandled)?;
+                output = output.set_retry_after_seconds(
+                crate::http_serde::deser_header_update_client_certificate_too_many_requests_exception_retry_after_seconds(response.headers())
                                             .map_err(|_|crate::error::UpdateClientCertificateError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
             );
-                    output.build()
-                }),
-            }
-        }
+                output.build()
+            }),
+        },
         "UnauthorizedException" => crate::error::UpdateClientCertificateError {
             meta: generic,
-            kind: crate::error::UpdateClientCertificateErrorKind::UnauthorizedError({
+            kind: crate::error::UpdateClientCertificateErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::UpdateClientCertificateError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateClientCertificateError::unhandled)?;
                 output.build()
             }),
         },
@@ -9796,7 +10013,7 @@ pub fn parse_update_client_certificate_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_client_certificate_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::update_client_certificate_deser_operation(
+        output = crate::json_deser::deser_operation_update_client_certificate(
             response.body().as_ref(),
             output,
         )
@@ -9819,83 +10036,79 @@ pub fn parse_update_deployment_error(
     Err(match error_code {
         "BadRequestException" => crate::error::UpdateDeploymentError {
             meta: generic,
-            kind: crate::error::UpdateDeploymentErrorKind::BadRequestError({
+            kind: crate::error::UpdateDeploymentErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateDeploymentError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateDeploymentError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::UpdateDeploymentError {
             meta: generic,
-            kind: crate::error::UpdateDeploymentErrorKind::NotFoundError({
+            kind: crate::error::UpdateDeploymentErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateDeploymentError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateDeploymentError::unhandled)?;
                 output.build()
             }),
         },
         "ServiceUnavailableException" => crate::error::UpdateDeploymentError {
             meta: generic,
-            kind: crate::error::UpdateDeploymentErrorKind::ServiceUnavailableError({
+            kind: crate::error::UpdateDeploymentErrorKind::ServiceUnavailableException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::service_unavailable_error::Builder::default();
+                let mut output = crate::error::service_unavailable_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::service_unavailable_exception(
+                output = crate::json_deser::deser_structure_service_unavailable_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::UpdateDeploymentError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_update_deployment_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::UpdateDeploymentError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_update_deployment_service_unavailable_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::UpdateDeploymentError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::UpdateDeploymentError {
             meta: generic,
-            kind: crate::error::UpdateDeploymentErrorKind::TooManyRequestsError({
+            kind: crate::error::UpdateDeploymentErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::UpdateDeploymentError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_update_deployment_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::UpdateDeploymentError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_update_deployment_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::UpdateDeploymentError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::UpdateDeploymentError {
             meta: generic,
-            kind: crate::error::UpdateDeploymentErrorKind::UnauthorizedError({
+            kind: crate::error::UpdateDeploymentErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::UpdateDeploymentError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateDeploymentError::unhandled)?;
                 output.build()
             }),
         },
@@ -9913,7 +10126,7 @@ pub fn parse_update_deployment_response(
         let mut output = crate::output::update_deployment_output::Builder::default();
         let _ = response;
         output =
-            crate::json_deser::update_deployment_deser_operation(response.body().as_ref(), output)
+            crate::json_deser::deser_operation_update_deployment(response.body().as_ref(), output)
                 .map_err(crate::error::UpdateDeploymentError::unhandled)?;
         output.build()
     })
@@ -9939,86 +10152,93 @@ pub fn parse_update_documentation_part_error(
     Err(match error_code {
         "BadRequestException" => crate::error::UpdateDocumentationPartError {
             meta: generic,
-            kind: crate::error::UpdateDocumentationPartErrorKind::BadRequestError({
+            kind: crate::error::UpdateDocumentationPartErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateDocumentationPartError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateDocumentationPartError::unhandled)?;
                 output.build()
             }),
         },
         "ConflictException" => crate::error::UpdateDocumentationPartError {
             meta: generic,
-            kind: crate::error::UpdateDocumentationPartErrorKind::ConflictError({
+            kind: crate::error::UpdateDocumentationPartErrorKind::ConflictException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
+                let mut output = crate::error::conflict_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateDocumentationPartError::unhandled)?;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateDocumentationPartError::unhandled)?;
                 output.build()
             }),
         },
-        "LimitExceededException" => {
-            crate::error::UpdateDocumentationPartError {
-                meta: generic,
-                kind: crate::error::UpdateDocumentationPartErrorKind::LimitExceededError({
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::limit_exceeded_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::limit_exceeded_exception(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateDocumentationPartError::unhandled)?;
-                    output = output.set_retry_after_seconds(
-                crate::http_serde::deser_header_update_documentation_part_retry_after_seconds(response.headers())
+        "LimitExceededException" => crate::error::UpdateDocumentationPartError {
+            meta: generic,
+            kind: crate::error::UpdateDocumentationPartErrorKind::LimitExceededException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_limit_exceeded_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateDocumentationPartError::unhandled)?;
+                output = output.set_retry_after_seconds(
+                crate::http_serde::deser_header_update_documentation_part_limit_exceeded_exception_retry_after_seconds(response.headers())
                                             .map_err(|_|crate::error::UpdateDocumentationPartError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
             );
-                    output.build()
-                }),
-            }
-        }
+                output.build()
+            }),
+        },
         "NotFoundException" => crate::error::UpdateDocumentationPartError {
             meta: generic,
-            kind: crate::error::UpdateDocumentationPartErrorKind::NotFoundError({
+            kind: crate::error::UpdateDocumentationPartErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateDocumentationPartError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateDocumentationPartError::unhandled)?;
                 output.build()
             }),
         },
-        "TooManyRequestsException" => {
-            crate::error::UpdateDocumentationPartError {
-                meta: generic,
-                kind: crate::error::UpdateDocumentationPartErrorKind::TooManyRequestsError({
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_requests_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::too_many_requests_exception(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateDocumentationPartError::unhandled)?;
-                    output = output.set_retry_after_seconds(
-                crate::http_serde::deser_header_update_documentation_part_retry_after_seconds(response.headers())
+        "TooManyRequestsException" => crate::error::UpdateDocumentationPartError {
+            meta: generic,
+            kind: crate::error::UpdateDocumentationPartErrorKind::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateDocumentationPartError::unhandled)?;
+                output = output.set_retry_after_seconds(
+                crate::http_serde::deser_header_update_documentation_part_too_many_requests_exception_retry_after_seconds(response.headers())
                                             .map_err(|_|crate::error::UpdateDocumentationPartError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
             );
-                    output.build()
-                }),
-            }
-        }
+                output.build()
+            }),
+        },
         "UnauthorizedException" => crate::error::UpdateDocumentationPartError {
             meta: generic,
-            kind: crate::error::UpdateDocumentationPartErrorKind::UnauthorizedError({
+            kind: crate::error::UpdateDocumentationPartErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::UpdateDocumentationPartError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateDocumentationPartError::unhandled)?;
                 output.build()
             }),
         },
@@ -10037,7 +10257,7 @@ pub fn parse_update_documentation_part_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_documentation_part_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::update_documentation_part_deser_operation(
+        output = crate::json_deser::deser_operation_update_documentation_part(
             response.body().as_ref(),
             output,
         )
@@ -10066,50 +10286,59 @@ pub fn parse_update_documentation_version_error(
     Err(match error_code {
         "BadRequestException" => crate::error::UpdateDocumentationVersionError {
             meta: generic,
-            kind: crate::error::UpdateDocumentationVersionErrorKind::BadRequestError({
+            kind: crate::error::UpdateDocumentationVersionErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateDocumentationVersionError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateDocumentationVersionError::unhandled)?;
                 output.build()
             }),
         },
         "ConflictException" => crate::error::UpdateDocumentationVersionError {
             meta: generic,
-            kind: crate::error::UpdateDocumentationVersionErrorKind::ConflictError({
+            kind: crate::error::UpdateDocumentationVersionErrorKind::ConflictException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
+                let mut output = crate::error::conflict_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateDocumentationVersionError::unhandled)?;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateDocumentationVersionError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::UpdateDocumentationVersionError {
             meta: generic,
-            kind: crate::error::UpdateDocumentationVersionErrorKind::NotFoundError({
+            kind: crate::error::UpdateDocumentationVersionErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateDocumentationVersionError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateDocumentationVersionError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::UpdateDocumentationVersionError {
             meta: generic,
-            kind: crate::error::UpdateDocumentationVersionErrorKind::TooManyRequestsError({
+            kind: crate::error::UpdateDocumentationVersionErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::UpdateDocumentationVersionError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                crate::http_serde::deser_header_update_documentation_version_retry_after_seconds(response.headers())
+                crate::http_serde::deser_header_update_documentation_version_too_many_requests_exception_retry_after_seconds(response.headers())
                                             .map_err(|_|crate::error::UpdateDocumentationVersionError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
             );
                 output.build()
@@ -10117,13 +10346,15 @@ pub fn parse_update_documentation_version_error(
         },
         "UnauthorizedException" => crate::error::UpdateDocumentationVersionError {
             meta: generic,
-            kind: crate::error::UpdateDocumentationVersionErrorKind::UnauthorizedError({
+            kind: crate::error::UpdateDocumentationVersionErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::UpdateDocumentationVersionError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateDocumentationVersionError::unhandled)?;
                 output.build()
             }),
         },
@@ -10142,7 +10373,7 @@ pub fn parse_update_documentation_version_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_documentation_version_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::update_documentation_version_deser_operation(
+        output = crate::json_deser::deser_operation_update_documentation_version(
             response.body().as_ref(),
             output,
         )
@@ -10165,70 +10396,75 @@ pub fn parse_update_domain_name_error(
     Err(match error_code {
         "BadRequestException" => crate::error::UpdateDomainNameError {
             meta: generic,
-            kind: crate::error::UpdateDomainNameErrorKind::BadRequestError({
+            kind: crate::error::UpdateDomainNameErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateDomainNameError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateDomainNameError::unhandled)?;
                 output.build()
             }),
         },
         "ConflictException" => crate::error::UpdateDomainNameError {
             meta: generic,
-            kind: crate::error::UpdateDomainNameErrorKind::ConflictError({
+            kind: crate::error::UpdateDomainNameErrorKind::ConflictException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
+                let mut output = crate::error::conflict_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateDomainNameError::unhandled)?;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateDomainNameError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::UpdateDomainNameError {
             meta: generic,
-            kind: crate::error::UpdateDomainNameErrorKind::NotFoundError({
+            kind: crate::error::UpdateDomainNameErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateDomainNameError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateDomainNameError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::UpdateDomainNameError {
             meta: generic,
-            kind: crate::error::UpdateDomainNameErrorKind::TooManyRequestsError({
+            kind: crate::error::UpdateDomainNameErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::UpdateDomainNameError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_update_domain_name_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::UpdateDomainNameError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_update_domain_name_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::UpdateDomainNameError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::UpdateDomainNameError {
             meta: generic,
-            kind: crate::error::UpdateDomainNameErrorKind::UnauthorizedError({
+            kind: crate::error::UpdateDomainNameErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::UpdateDomainNameError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateDomainNameError::unhandled)?;
                 output.build()
             }),
         },
@@ -10246,7 +10482,7 @@ pub fn parse_update_domain_name_response(
         let mut output = crate::output::update_domain_name_output::Builder::default();
         let _ = response;
         output =
-            crate::json_deser::update_domain_name_deser_operation(response.body().as_ref(), output)
+            crate::json_deser::deser_operation_update_domain_name(response.body().as_ref(), output)
                 .map_err(crate::error::UpdateDomainNameError::unhandled)?;
         output.build()
     })
@@ -10268,55 +10504,61 @@ pub fn parse_update_gateway_response_error(
     Err(match error_code {
         "BadRequestException" => crate::error::UpdateGatewayResponseError {
             meta: generic,
-            kind: crate::error::UpdateGatewayResponseErrorKind::BadRequestError({
+            kind: crate::error::UpdateGatewayResponseErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateGatewayResponseError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateGatewayResponseError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::UpdateGatewayResponseError {
             meta: generic,
-            kind: crate::error::UpdateGatewayResponseErrorKind::NotFoundError({
+            kind: crate::error::UpdateGatewayResponseErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateGatewayResponseError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateGatewayResponseError::unhandled)?;
                 output.build()
             }),
         },
-        "TooManyRequestsException" => {
-            crate::error::UpdateGatewayResponseError {
-                meta: generic,
-                kind: crate::error::UpdateGatewayResponseErrorKind::TooManyRequestsError({
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_requests_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::too_many_requests_exception(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateGatewayResponseError::unhandled)?;
-                    output = output.set_retry_after_seconds(
-                crate::http_serde::deser_header_update_gateway_response_retry_after_seconds(response.headers())
+        "TooManyRequestsException" => crate::error::UpdateGatewayResponseError {
+            meta: generic,
+            kind: crate::error::UpdateGatewayResponseErrorKind::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateGatewayResponseError::unhandled)?;
+                output = output.set_retry_after_seconds(
+                crate::http_serde::deser_header_update_gateway_response_too_many_requests_exception_retry_after_seconds(response.headers())
                                             .map_err(|_|crate::error::UpdateGatewayResponseError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
             );
-                    output.build()
-                }),
-            }
-        }
+                output.build()
+            }),
+        },
         "UnauthorizedException" => crate::error::UpdateGatewayResponseError {
             meta: generic,
-            kind: crate::error::UpdateGatewayResponseErrorKind::UnauthorizedError({
+            kind: crate::error::UpdateGatewayResponseErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::UpdateGatewayResponseError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateGatewayResponseError::unhandled)?;
                 output.build()
             }),
         },
@@ -10335,7 +10577,7 @@ pub fn parse_update_gateway_response_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_gateway_response_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::update_gateway_response_deser_operation(
+        output = crate::json_deser::deser_operation_update_gateway_response(
             response.body().as_ref(),
             output,
         )
@@ -10358,70 +10600,75 @@ pub fn parse_update_integration_error(
     Err(match error_code {
         "BadRequestException" => crate::error::UpdateIntegrationError {
             meta: generic,
-            kind: crate::error::UpdateIntegrationErrorKind::BadRequestError({
+            kind: crate::error::UpdateIntegrationErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateIntegrationError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateIntegrationError::unhandled)?;
                 output.build()
             }),
         },
         "ConflictException" => crate::error::UpdateIntegrationError {
             meta: generic,
-            kind: crate::error::UpdateIntegrationErrorKind::ConflictError({
+            kind: crate::error::UpdateIntegrationErrorKind::ConflictException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
+                let mut output = crate::error::conflict_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateIntegrationError::unhandled)?;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateIntegrationError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::UpdateIntegrationError {
             meta: generic,
-            kind: crate::error::UpdateIntegrationErrorKind::NotFoundError({
+            kind: crate::error::UpdateIntegrationErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateIntegrationError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateIntegrationError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::UpdateIntegrationError {
             meta: generic,
-            kind: crate::error::UpdateIntegrationErrorKind::TooManyRequestsError({
+            kind: crate::error::UpdateIntegrationErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::UpdateIntegrationError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_update_integration_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::UpdateIntegrationError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_update_integration_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::UpdateIntegrationError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::UpdateIntegrationError {
             meta: generic,
-            kind: crate::error::UpdateIntegrationErrorKind::UnauthorizedError({
+            kind: crate::error::UpdateIntegrationErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::UpdateIntegrationError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateIntegrationError::unhandled)?;
                 output.build()
             }),
         },
@@ -10439,7 +10686,7 @@ pub fn parse_update_integration_response(
         let mut output = crate::output::update_integration_output::Builder::default();
         let _ = response;
         output =
-            crate::json_deser::update_integration_deser_operation(response.body().as_ref(), output)
+            crate::json_deser::deser_operation_update_integration(response.body().as_ref(), output)
                 .map_err(crate::error::UpdateIntegrationError::unhandled)?;
         output.build()
     })
@@ -10465,50 +10712,59 @@ pub fn parse_update_integration_response_error(
     Err(match error_code {
         "BadRequestException" => crate::error::UpdateIntegrationResponseError {
             meta: generic,
-            kind: crate::error::UpdateIntegrationResponseErrorKind::BadRequestError({
+            kind: crate::error::UpdateIntegrationResponseErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateIntegrationResponseError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateIntegrationResponseError::unhandled)?;
                 output.build()
             }),
         },
         "ConflictException" => crate::error::UpdateIntegrationResponseError {
             meta: generic,
-            kind: crate::error::UpdateIntegrationResponseErrorKind::ConflictError({
+            kind: crate::error::UpdateIntegrationResponseErrorKind::ConflictException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
+                let mut output = crate::error::conflict_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateIntegrationResponseError::unhandled)?;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateIntegrationResponseError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::UpdateIntegrationResponseError {
             meta: generic,
-            kind: crate::error::UpdateIntegrationResponseErrorKind::NotFoundError({
+            kind: crate::error::UpdateIntegrationResponseErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateIntegrationResponseError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateIntegrationResponseError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::UpdateIntegrationResponseError {
             meta: generic,
-            kind: crate::error::UpdateIntegrationResponseErrorKind::TooManyRequestsError({
+            kind: crate::error::UpdateIntegrationResponseErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::UpdateIntegrationResponseError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                crate::http_serde::deser_header_update_integration_response_retry_after_seconds(response.headers())
+                crate::http_serde::deser_header_update_integration_response_too_many_requests_exception_retry_after_seconds(response.headers())
                                             .map_err(|_|crate::error::UpdateIntegrationResponseError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
             );
                 output.build()
@@ -10516,13 +10772,15 @@ pub fn parse_update_integration_response_error(
         },
         "UnauthorizedException" => crate::error::UpdateIntegrationResponseError {
             meta: generic,
-            kind: crate::error::UpdateIntegrationResponseErrorKind::UnauthorizedError({
+            kind: crate::error::UpdateIntegrationResponseErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::UpdateIntegrationResponseError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateIntegrationResponseError::unhandled)?;
                 output.build()
             }),
         },
@@ -10541,7 +10799,7 @@ pub fn parse_update_integration_response_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_integration_response_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::update_integration_response_deser_operation(
+        output = crate::json_deser::deser_operation_update_integration_response(
             response.body().as_ref(),
             output,
         )
@@ -10563,70 +10821,75 @@ pub fn parse_update_method_error(
     Err(match error_code {
         "BadRequestException" => crate::error::UpdateMethodError {
             meta: generic,
-            kind: crate::error::UpdateMethodErrorKind::BadRequestError({
+            kind: crate::error::UpdateMethodErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateMethodError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateMethodError::unhandled)?;
                 output.build()
             }),
         },
         "ConflictException" => crate::error::UpdateMethodError {
             meta: generic,
-            kind: crate::error::UpdateMethodErrorKind::ConflictError({
+            kind: crate::error::UpdateMethodErrorKind::ConflictException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
+                let mut output = crate::error::conflict_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateMethodError::unhandled)?;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateMethodError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::UpdateMethodError {
             meta: generic,
-            kind: crate::error::UpdateMethodErrorKind::NotFoundError({
+            kind: crate::error::UpdateMethodErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateMethodError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateMethodError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::UpdateMethodError {
             meta: generic,
-            kind: crate::error::UpdateMethodErrorKind::TooManyRequestsError({
+            kind: crate::error::UpdateMethodErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::UpdateMethodError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_update_method_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::UpdateMethodError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_update_method_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::UpdateMethodError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::UpdateMethodError {
             meta: generic,
-            kind: crate::error::UpdateMethodErrorKind::UnauthorizedError({
+            kind: crate::error::UpdateMethodErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::UpdateMethodError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateMethodError::unhandled)?;
                 output.build()
             }),
         },
@@ -10642,7 +10905,7 @@ pub fn parse_update_method_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_method_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::update_method_deser_operation(response.body().as_ref(), output)
+        output = crate::json_deser::deser_operation_update_method(response.body().as_ref(), output)
             .map_err(crate::error::UpdateMethodError::unhandled)?;
         output.build()
     })
@@ -10664,92 +10927,93 @@ pub fn parse_update_method_response_error(
     Err(match error_code {
         "BadRequestException" => crate::error::UpdateMethodResponseError {
             meta: generic,
-            kind: crate::error::UpdateMethodResponseErrorKind::BadRequestError({
+            kind: crate::error::UpdateMethodResponseErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateMethodResponseError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateMethodResponseError::unhandled)?;
                 output.build()
             }),
         },
         "ConflictException" => crate::error::UpdateMethodResponseError {
             meta: generic,
-            kind: crate::error::UpdateMethodResponseErrorKind::ConflictError({
+            kind: crate::error::UpdateMethodResponseErrorKind::ConflictException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
+                let mut output = crate::error::conflict_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateMethodResponseError::unhandled)?;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateMethodResponseError::unhandled)?;
                 output.build()
             }),
         },
         "LimitExceededException" => crate::error::UpdateMethodResponseError {
             meta: generic,
-            kind: crate::error::UpdateMethodResponseErrorKind::LimitExceededError({
+            kind: crate::error::UpdateMethodResponseErrorKind::LimitExceededException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::limit_exceeded_error::Builder::default();
+                let mut output = crate::error::limit_exceeded_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::limit_exceeded_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::UpdateMethodResponseError::unhandled)?;
-                output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_update_method_response_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::UpdateMethodResponseError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
-                output.build()
-            }),
-        },
-        "NotFoundException" => crate::error::UpdateMethodResponseError {
-            meta: generic,
-            kind: crate::error::UpdateMethodResponseErrorKind::NotFoundError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateMethodResponseError::unhandled)?;
-                output.build()
-            }),
-        },
-        "TooManyRequestsException" => crate::error::UpdateMethodResponseError {
-            meta: generic,
-            kind: crate::error::UpdateMethodResponseErrorKind::TooManyRequestsError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_limit_exceeded_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::UpdateMethodResponseError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_update_method_response_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::UpdateMethodResponseError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_update_method_response_limit_exceeded_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::UpdateMethodResponseError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
+                output.build()
+            }),
+        },
+        "NotFoundException" => crate::error::UpdateMethodResponseError {
+            meta: generic,
+            kind: crate::error::UpdateMethodResponseErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::not_found_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateMethodResponseError::unhandled)?;
+                output.build()
+            }),
+        },
+        "TooManyRequestsException" => crate::error::UpdateMethodResponseError {
+            meta: generic,
+            kind: crate::error::UpdateMethodResponseErrorKind::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateMethodResponseError::unhandled)?;
+                output = output.set_retry_after_seconds(
+                crate::http_serde::deser_header_update_method_response_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::UpdateMethodResponseError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::UpdateMethodResponseError {
             meta: generic,
-            kind: crate::error::UpdateMethodResponseErrorKind::UnauthorizedError({
+            kind: crate::error::UpdateMethodResponseErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::UpdateMethodResponseError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateMethodResponseError::unhandled)?;
                 output.build()
             }),
         },
@@ -10768,7 +11032,7 @@ pub fn parse_update_method_response_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_method_response_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::update_method_response_deser_operation(
+        output = crate::json_deser::deser_operation_update_method_response(
             response.body().as_ref(),
             output,
         )
@@ -10790,70 +11054,75 @@ pub fn parse_update_model_error(
     Err(match error_code {
         "BadRequestException" => crate::error::UpdateModelError {
             meta: generic,
-            kind: crate::error::UpdateModelErrorKind::BadRequestError({
+            kind: crate::error::UpdateModelErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateModelError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateModelError::unhandled)?;
                 output.build()
             }),
         },
         "ConflictException" => crate::error::UpdateModelError {
             meta: generic,
-            kind: crate::error::UpdateModelErrorKind::ConflictError({
+            kind: crate::error::UpdateModelErrorKind::ConflictException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
+                let mut output = crate::error::conflict_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateModelError::unhandled)?;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateModelError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::UpdateModelError {
             meta: generic,
-            kind: crate::error::UpdateModelErrorKind::NotFoundError({
+            kind: crate::error::UpdateModelErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateModelError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateModelError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::UpdateModelError {
             meta: generic,
-            kind: crate::error::UpdateModelErrorKind::TooManyRequestsError({
+            kind: crate::error::UpdateModelErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::UpdateModelError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_update_model_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::UpdateModelError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_update_model_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::UpdateModelError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::UpdateModelError {
             meta: generic,
-            kind: crate::error::UpdateModelErrorKind::UnauthorizedError({
+            kind: crate::error::UpdateModelErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::UpdateModelError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateModelError::unhandled)?;
                 output.build()
             }),
         },
@@ -10869,7 +11138,7 @@ pub fn parse_update_model_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_model_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::update_model_deser_operation(response.body().as_ref(), output)
+        output = crate::json_deser::deser_operation_update_model(response.body().as_ref(), output)
             .map_err(crate::error::UpdateModelError::unhandled)?;
         output.build()
     })
@@ -10895,55 +11164,61 @@ pub fn parse_update_request_validator_error(
     Err(match error_code {
         "BadRequestException" => crate::error::UpdateRequestValidatorError {
             meta: generic,
-            kind: crate::error::UpdateRequestValidatorErrorKind::BadRequestError({
+            kind: crate::error::UpdateRequestValidatorErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateRequestValidatorError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateRequestValidatorError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::UpdateRequestValidatorError {
             meta: generic,
-            kind: crate::error::UpdateRequestValidatorErrorKind::NotFoundError({
+            kind: crate::error::UpdateRequestValidatorErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateRequestValidatorError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateRequestValidatorError::unhandled)?;
                 output.build()
             }),
         },
-        "TooManyRequestsException" => {
-            crate::error::UpdateRequestValidatorError {
-                meta: generic,
-                kind: crate::error::UpdateRequestValidatorErrorKind::TooManyRequestsError({
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_requests_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::too_many_requests_exception(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateRequestValidatorError::unhandled)?;
-                    output = output.set_retry_after_seconds(
-                crate::http_serde::deser_header_update_request_validator_retry_after_seconds(response.headers())
+        "TooManyRequestsException" => crate::error::UpdateRequestValidatorError {
+            meta: generic,
+            kind: crate::error::UpdateRequestValidatorErrorKind::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateRequestValidatorError::unhandled)?;
+                output = output.set_retry_after_seconds(
+                crate::http_serde::deser_header_update_request_validator_too_many_requests_exception_retry_after_seconds(response.headers())
                                             .map_err(|_|crate::error::UpdateRequestValidatorError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
             );
-                    output.build()
-                }),
-            }
-        }
+                output.build()
+            }),
+        },
         "UnauthorizedException" => crate::error::UpdateRequestValidatorError {
             meta: generic,
-            kind: crate::error::UpdateRequestValidatorErrorKind::UnauthorizedError({
+            kind: crate::error::UpdateRequestValidatorErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::UpdateRequestValidatorError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateRequestValidatorError::unhandled)?;
                 output.build()
             }),
         },
@@ -10962,7 +11237,7 @@ pub fn parse_update_request_validator_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_request_validator_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::update_request_validator_deser_operation(
+        output = crate::json_deser::deser_operation_update_request_validator(
             response.body().as_ref(),
             output,
         )
@@ -10984,70 +11259,75 @@ pub fn parse_update_resource_error(
     Err(match error_code {
         "BadRequestException" => crate::error::UpdateResourceError {
             meta: generic,
-            kind: crate::error::UpdateResourceErrorKind::BadRequestError({
+            kind: crate::error::UpdateResourceErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateResourceError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateResourceError::unhandled)?;
                 output.build()
             }),
         },
         "ConflictException" => crate::error::UpdateResourceError {
             meta: generic,
-            kind: crate::error::UpdateResourceErrorKind::ConflictError({
+            kind: crate::error::UpdateResourceErrorKind::ConflictException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
+                let mut output = crate::error::conflict_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateResourceError::unhandled)?;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateResourceError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::UpdateResourceError {
             meta: generic,
-            kind: crate::error::UpdateResourceErrorKind::NotFoundError({
+            kind: crate::error::UpdateResourceErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateResourceError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateResourceError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::UpdateResourceError {
             meta: generic,
-            kind: crate::error::UpdateResourceErrorKind::TooManyRequestsError({
+            kind: crate::error::UpdateResourceErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::UpdateResourceError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_update_resource_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::UpdateResourceError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_update_resource_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::UpdateResourceError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::UpdateResourceError {
             meta: generic,
-            kind: crate::error::UpdateResourceErrorKind::UnauthorizedError({
+            kind: crate::error::UpdateResourceErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::UpdateResourceError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateResourceError::unhandled)?;
                 output.build()
             }),
         },
@@ -11064,7 +11344,7 @@ pub fn parse_update_resource_response(
         let mut output = crate::output::update_resource_output::Builder::default();
         let _ = response;
         output =
-            crate::json_deser::update_resource_deser_operation(response.body().as_ref(), output)
+            crate::json_deser::deser_operation_update_resource(response.body().as_ref(), output)
                 .map_err(crate::error::UpdateResourceError::unhandled)?;
         output.build()
     })
@@ -11083,70 +11363,75 @@ pub fn parse_update_rest_api_error(
     Err(match error_code {
         "BadRequestException" => crate::error::UpdateRestApiError {
             meta: generic,
-            kind: crate::error::UpdateRestApiErrorKind::BadRequestError({
+            kind: crate::error::UpdateRestApiErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateRestApiError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateRestApiError::unhandled)?;
                 output.build()
             }),
         },
         "ConflictException" => crate::error::UpdateRestApiError {
             meta: generic,
-            kind: crate::error::UpdateRestApiErrorKind::ConflictError({
+            kind: crate::error::UpdateRestApiErrorKind::ConflictException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
+                let mut output = crate::error::conflict_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateRestApiError::unhandled)?;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateRestApiError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::UpdateRestApiError {
             meta: generic,
-            kind: crate::error::UpdateRestApiErrorKind::NotFoundError({
+            kind: crate::error::UpdateRestApiErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateRestApiError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateRestApiError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::UpdateRestApiError {
             meta: generic,
-            kind: crate::error::UpdateRestApiErrorKind::TooManyRequestsError({
+            kind: crate::error::UpdateRestApiErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::UpdateRestApiError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_update_rest_api_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::UpdateRestApiError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_update_rest_api_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::UpdateRestApiError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::UpdateRestApiError {
             meta: generic,
-            kind: crate::error::UpdateRestApiErrorKind::UnauthorizedError({
+            kind: crate::error::UpdateRestApiErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::UpdateRestApiError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateRestApiError::unhandled)?;
                 output.build()
             }),
         },
@@ -11163,7 +11448,7 @@ pub fn parse_update_rest_api_response(
         let mut output = crate::output::update_rest_api_output::Builder::default();
         let _ = response;
         output =
-            crate::json_deser::update_rest_api_deser_operation(response.body().as_ref(), output)
+            crate::json_deser::deser_operation_update_rest_api(response.body().as_ref(), output)
                 .map_err(crate::error::UpdateRestApiError::unhandled)?;
         output.build()
     })
@@ -11182,70 +11467,75 @@ pub fn parse_update_stage_error(
     Err(match error_code {
         "BadRequestException" => crate::error::UpdateStageError {
             meta: generic,
-            kind: crate::error::UpdateStageErrorKind::BadRequestError({
+            kind: crate::error::UpdateStageErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateStageError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateStageError::unhandled)?;
                 output.build()
             }),
         },
         "ConflictException" => crate::error::UpdateStageError {
             meta: generic,
-            kind: crate::error::UpdateStageErrorKind::ConflictError({
+            kind: crate::error::UpdateStageErrorKind::ConflictException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
+                let mut output = crate::error::conflict_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateStageError::unhandled)?;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateStageError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::UpdateStageError {
             meta: generic,
-            kind: crate::error::UpdateStageErrorKind::NotFoundError({
+            kind: crate::error::UpdateStageErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateStageError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateStageError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::UpdateStageError {
             meta: generic,
-            kind: crate::error::UpdateStageErrorKind::TooManyRequestsError({
+            kind: crate::error::UpdateStageErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::UpdateStageError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_update_stage_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::UpdateStageError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_update_stage_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::UpdateStageError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::UpdateStageError {
             meta: generic,
-            kind: crate::error::UpdateStageErrorKind::UnauthorizedError({
+            kind: crate::error::UpdateStageErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::UpdateStageError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateStageError::unhandled)?;
                 output.build()
             }),
         },
@@ -11261,7 +11551,7 @@ pub fn parse_update_stage_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_stage_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::update_stage_deser_operation(response.body().as_ref(), output)
+        output = crate::json_deser::deser_operation_update_stage(response.body().as_ref(), output)
             .map_err(crate::error::UpdateStageError::unhandled)?;
         output.build()
     })
@@ -11280,59 +11570,61 @@ pub fn parse_update_usage_error(
     Err(match error_code {
         "BadRequestException" => crate::error::UpdateUsageError {
             meta: generic,
-            kind: crate::error::UpdateUsageErrorKind::BadRequestError({
+            kind: crate::error::UpdateUsageErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateUsageError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateUsageError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::UpdateUsageError {
             meta: generic,
-            kind: crate::error::UpdateUsageErrorKind::NotFoundError({
+            kind: crate::error::UpdateUsageErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateUsageError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateUsageError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::UpdateUsageError {
             meta: generic,
-            kind: crate::error::UpdateUsageErrorKind::TooManyRequestsError({
+            kind: crate::error::UpdateUsageErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::UpdateUsageError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_update_usage_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::UpdateUsageError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_update_usage_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::UpdateUsageError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::UpdateUsageError {
             meta: generic,
-            kind: crate::error::UpdateUsageErrorKind::UnauthorizedError({
+            kind: crate::error::UpdateUsageErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::UpdateUsageError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateUsageError::unhandled)?;
                 output.build()
             }),
         },
@@ -11348,7 +11640,7 @@ pub fn parse_update_usage_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_usage_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::update_usage_deser_operation(response.body().as_ref(), output)
+        output = crate::json_deser::deser_operation_update_usage(response.body().as_ref(), output)
             .map_err(crate::error::UpdateUsageError::unhandled)?;
         output.build()
     })
@@ -11367,70 +11659,75 @@ pub fn parse_update_usage_plan_error(
     Err(match error_code {
         "BadRequestException" => crate::error::UpdateUsagePlanError {
             meta: generic,
-            kind: crate::error::UpdateUsagePlanErrorKind::BadRequestError({
+            kind: crate::error::UpdateUsagePlanErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateUsagePlanError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateUsagePlanError::unhandled)?;
                 output.build()
             }),
         },
         "ConflictException" => crate::error::UpdateUsagePlanError {
             meta: generic,
-            kind: crate::error::UpdateUsagePlanErrorKind::ConflictError({
+            kind: crate::error::UpdateUsagePlanErrorKind::ConflictException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
+                let mut output = crate::error::conflict_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateUsagePlanError::unhandled)?;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateUsagePlanError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::UpdateUsagePlanError {
             meta: generic,
-            kind: crate::error::UpdateUsagePlanErrorKind::NotFoundError({
+            kind: crate::error::UpdateUsagePlanErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateUsagePlanError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateUsagePlanError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::UpdateUsagePlanError {
             meta: generic,
-            kind: crate::error::UpdateUsagePlanErrorKind::TooManyRequestsError({
+            kind: crate::error::UpdateUsagePlanErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::UpdateUsagePlanError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_update_usage_plan_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::UpdateUsagePlanError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_update_usage_plan_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::UpdateUsagePlanError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::UpdateUsagePlanError {
             meta: generic,
-            kind: crate::error::UpdateUsagePlanErrorKind::UnauthorizedError({
+            kind: crate::error::UpdateUsagePlanErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::UpdateUsagePlanError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateUsagePlanError::unhandled)?;
                 output.build()
             }),
         },
@@ -11447,7 +11744,7 @@ pub fn parse_update_usage_plan_response(
         let mut output = crate::output::update_usage_plan_output::Builder::default();
         let _ = response;
         output =
-            crate::json_deser::update_usage_plan_deser_operation(response.body().as_ref(), output)
+            crate::json_deser::deser_operation_update_usage_plan(response.body().as_ref(), output)
                 .map_err(crate::error::UpdateUsagePlanError::unhandled)?;
         output.build()
     })
@@ -11466,70 +11763,75 @@ pub fn parse_update_vpc_link_error(
     Err(match error_code {
         "BadRequestException" => crate::error::UpdateVpcLinkError {
             meta: generic,
-            kind: crate::error::UpdateVpcLinkErrorKind::BadRequestError({
+            kind: crate::error::UpdateVpcLinkErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateVpcLinkError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateVpcLinkError::unhandled)?;
                 output.build()
             }),
         },
         "ConflictException" => crate::error::UpdateVpcLinkError {
             meta: generic,
-            kind: crate::error::UpdateVpcLinkErrorKind::ConflictError({
+            kind: crate::error::UpdateVpcLinkErrorKind::ConflictException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
+                let mut output = crate::error::conflict_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateVpcLinkError::unhandled)?;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateVpcLinkError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::UpdateVpcLinkError {
             meta: generic,
-            kind: crate::error::UpdateVpcLinkErrorKind::NotFoundError({
+            kind: crate::error::UpdateVpcLinkErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateVpcLinkError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateVpcLinkError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::UpdateVpcLinkError {
             meta: generic,
-            kind: crate::error::UpdateVpcLinkErrorKind::TooManyRequestsError({
+            kind: crate::error::UpdateVpcLinkErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::UpdateVpcLinkError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::http_serde::deser_header_update_vpc_link_retry_after_seconds(
-                        response.headers(),
-                    )
-                    .map_err(|_| {
-                        crate::error::UpdateVpcLinkError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
+                crate::http_serde::deser_header_update_vpc_link_too_many_requests_exception_retry_after_seconds(response.headers())
+                                            .map_err(|_|crate::error::UpdateVpcLinkError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+            );
                 output.build()
             }),
         },
         "UnauthorizedException" => crate::error::UpdateVpcLinkError {
             meta: generic,
-            kind: crate::error::UpdateVpcLinkErrorKind::UnauthorizedError({
+            kind: crate::error::UpdateVpcLinkErrorKind::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_error::Builder::default();
+                let mut output = crate::error::unauthorized_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::unauthorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::UpdateVpcLinkError::unhandled)?;
+                output = crate::json_deser::deser_structure_unauthorized_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateVpcLinkError::unhandled)?;
                 output.build()
             }),
         },
@@ -11546,7 +11848,7 @@ pub fn parse_update_vpc_link_response(
         let mut output = crate::output::update_vpc_link_output::Builder::default();
         let _ = response;
         output =
-            crate::json_deser::update_vpc_link_deser_operation(response.body().as_ref(), output)
+            crate::json_deser::deser_operation_update_vpc_link(response.body().as_ref(), output)
                 .map_err(crate::error::UpdateVpcLinkError::unhandled)?;
         output.build()
     })

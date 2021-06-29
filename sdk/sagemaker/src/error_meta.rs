@@ -2,7 +2,7 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    ConflictError(crate::error::ConflictError),
+    ConflictException(crate::error::ConflictException),
     ResourceInUse(crate::error::ResourceInUse),
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     ResourceNotFound(crate::error::ResourceNotFound),
@@ -11,7 +11,7 @@ pub enum Error {
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
-            Error::ConflictError(inner) => inner.fmt(f),
+            Error::ConflictException(inner) => inner.fmt(f),
             Error::ResourceInUse(inner) => inner.fmt(f),
             Error::ResourceLimitExceeded(inner) => inner.fmt(f),
             Error::ResourceNotFound(inner) => inner.fmt(f),
@@ -493,8 +493,8 @@ impl From<smithy_http::result::SdkError<crate::error::CreateModelPackageError>> 
     fn from(err: smithy_http::result::SdkError<crate::error::CreateModelPackageError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateModelPackageErrorKind::ConflictError(inner) => {
-                    Error::ConflictError(inner)
+                crate::error::CreateModelPackageErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
                 }
                 crate::error::CreateModelPackageErrorKind::ResourceLimitExceeded(inner) => {
                     Error::ResourceLimitExceeded(inner)
@@ -1128,8 +1128,8 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteModelPackageError>> 
     fn from(err: smithy_http::result::SdkError<crate::error::DeleteModelPackageError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteModelPackageErrorKind::ConflictError(inner) => {
-                    Error::ConflictError(inner)
+                crate::error::DeleteModelPackageErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
                 }
                 crate::error::DeleteModelPackageErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -3126,8 +3126,8 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateActionError>> for Er
     fn from(err: smithy_http::result::SdkError<crate::error::UpdateActionError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateActionErrorKind::ConflictError(inner) => {
-                    Error::ConflictError(inner)
+                crate::error::UpdateActionErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
                 }
                 crate::error::UpdateActionErrorKind::ResourceNotFound(inner) => {
                     Error::ResourceNotFound(inner)
@@ -3157,8 +3157,8 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateArtifactError>> for 
     fn from(err: smithy_http::result::SdkError<crate::error::UpdateArtifactError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateArtifactErrorKind::ConflictError(inner) => {
-                    Error::ConflictError(inner)
+                crate::error::UpdateArtifactErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
                 }
                 crate::error::UpdateArtifactErrorKind::ResourceNotFound(inner) => {
                     Error::ResourceNotFound(inner)
@@ -3185,8 +3185,8 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateContextError>> for E
     fn from(err: smithy_http::result::SdkError<crate::error::UpdateContextError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateContextErrorKind::ConflictError(inner) => {
-                    Error::ConflictError(inner)
+                crate::error::UpdateContextErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
                 }
                 crate::error::UpdateContextErrorKind::ResourceNotFound(inner) => {
                     Error::ResourceNotFound(inner)
@@ -3273,8 +3273,8 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateExperimentError>> fo
     fn from(err: smithy_http::result::SdkError<crate::error::UpdateExperimentError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateExperimentErrorKind::ConflictError(inner) => {
-                    Error::ConflictError(inner)
+                crate::error::UpdateExperimentErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
                 }
                 crate::error::UpdateExperimentErrorKind::ResourceNotFound(inner) => {
                     Error::ResourceNotFound(inner)
@@ -3416,8 +3416,8 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateTrialError>> for Err
     fn from(err: smithy_http::result::SdkError<crate::error::UpdateTrialError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateTrialErrorKind::ConflictError(inner) => {
-                    Error::ConflictError(inner)
+                crate::error::UpdateTrialErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
                 }
                 crate::error::UpdateTrialErrorKind::ResourceNotFound(inner) => {
                     Error::ResourceNotFound(inner)
@@ -3432,8 +3432,8 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateTrialComponentError>
     fn from(err: smithy_http::result::SdkError<crate::error::UpdateTrialComponentError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateTrialComponentErrorKind::ConflictError(inner) => {
-                    Error::ConflictError(inner)
+                crate::error::UpdateTrialComponentErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
                 }
                 crate::error::UpdateTrialComponentErrorKind::ResourceNotFound(inner) => {
                     Error::ResourceNotFound(inner)

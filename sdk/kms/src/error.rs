@@ -8,22 +8,22 @@ pub struct CancelKeyDeletionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CancelKeyDeletionErrorKind {
-    DependencyTimeoutError(crate::error::DependencyTimeoutError),
-    InvalidArnError(crate::error::InvalidArnError),
-    KMSInternalError(crate::error::KMSInternalError),
-    KMSInvalidStateError(crate::error::KMSInvalidStateError),
-    NotFoundError(crate::error::NotFoundError),
+    DependencyTimeoutException(crate::error::DependencyTimeoutException),
+    InvalidArnException(crate::error::InvalidArnException),
+    KmsInternalException(crate::error::KmsInternalException),
+    KmsInvalidStateException(crate::error::KmsInvalidStateException),
+    NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CancelKeyDeletionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CancelKeyDeletionErrorKind::DependencyTimeoutError(_inner) => _inner.fmt(f),
-            CancelKeyDeletionErrorKind::InvalidArnError(_inner) => _inner.fmt(f),
-            CancelKeyDeletionErrorKind::KMSInternalError(_inner) => _inner.fmt(f),
-            CancelKeyDeletionErrorKind::KMSInvalidStateError(_inner) => _inner.fmt(f),
-            CancelKeyDeletionErrorKind::NotFoundError(_inner) => _inner.fmt(f),
+            CancelKeyDeletionErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
+            CancelKeyDeletionErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
+            CancelKeyDeletionErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
+            CancelKeyDeletionErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
+            CancelKeyDeletionErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             CancelKeyDeletionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -72,36 +72,42 @@ impl CancelKeyDeletionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_dependency_timeout_error(&self) -> bool {
+    pub fn is_dependency_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CancelKeyDeletionErrorKind::DependencyTimeoutError(_)
+            CancelKeyDeletionErrorKind::DependencyTimeoutException(_)
         )
     }
-    pub fn is_invalid_arn_error(&self) -> bool {
-        matches!(&self.kind, CancelKeyDeletionErrorKind::InvalidArnError(_))
-    }
-    pub fn is_kms_internal_error(&self) -> bool {
-        matches!(&self.kind, CancelKeyDeletionErrorKind::KMSInternalError(_))
-    }
-    pub fn is_kms_invalid_state_error(&self) -> bool {
+    pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CancelKeyDeletionErrorKind::KMSInvalidStateError(_)
+            CancelKeyDeletionErrorKind::InvalidArnException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, CancelKeyDeletionErrorKind::NotFoundError(_))
+    pub fn is_kms_internal_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelKeyDeletionErrorKind::KmsInternalException(_)
+        )
+    }
+    pub fn is_kms_invalid_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelKeyDeletionErrorKind::KmsInvalidStateException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, CancelKeyDeletionErrorKind::NotFoundException(_))
     }
 }
 impl std::error::Error for CancelKeyDeletionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CancelKeyDeletionErrorKind::DependencyTimeoutError(_inner) => Some(_inner),
-            CancelKeyDeletionErrorKind::InvalidArnError(_inner) => Some(_inner),
-            CancelKeyDeletionErrorKind::KMSInternalError(_inner) => Some(_inner),
-            CancelKeyDeletionErrorKind::KMSInvalidStateError(_inner) => Some(_inner),
-            CancelKeyDeletionErrorKind::NotFoundError(_inner) => Some(_inner),
+            CancelKeyDeletionErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
+            CancelKeyDeletionErrorKind::InvalidArnException(_inner) => Some(_inner),
+            CancelKeyDeletionErrorKind::KmsInternalException(_inner) => Some(_inner),
+            CancelKeyDeletionErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
+            CancelKeyDeletionErrorKind::NotFoundException(_inner) => Some(_inner),
             CancelKeyDeletionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -116,28 +122,32 @@ pub struct ConnectCustomKeyStoreError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ConnectCustomKeyStoreErrorKind {
-    CloudHsmClusterInvalidConfigurationError(
-        crate::error::CloudHsmClusterInvalidConfigurationError,
+    CloudHsmClusterInvalidConfigurationException(
+        crate::error::CloudHsmClusterInvalidConfigurationException,
     ),
-    CloudHsmClusterNotActiveError(crate::error::CloudHsmClusterNotActiveError),
-    CustomKeyStoreInvalidStateError(crate::error::CustomKeyStoreInvalidStateError),
-    CustomKeyStoreNotFoundError(crate::error::CustomKeyStoreNotFoundError),
-    KMSInternalError(crate::error::KMSInternalError),
+    CloudHsmClusterNotActiveException(crate::error::CloudHsmClusterNotActiveException),
+    CustomKeyStoreInvalidStateException(crate::error::CustomKeyStoreInvalidStateException),
+    CustomKeyStoreNotFoundException(crate::error::CustomKeyStoreNotFoundException),
+    KmsInternalException(crate::error::KmsInternalException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ConnectCustomKeyStoreError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ConnectCustomKeyStoreErrorKind::CloudHsmClusterInvalidConfigurationError(_inner) => {
+            ConnectCustomKeyStoreErrorKind::CloudHsmClusterInvalidConfigurationException(
+                _inner,
+            ) => _inner.fmt(f),
+            ConnectCustomKeyStoreErrorKind::CloudHsmClusterNotActiveException(_inner) => {
                 _inner.fmt(f)
             }
-            ConnectCustomKeyStoreErrorKind::CloudHsmClusterNotActiveError(_inner) => _inner.fmt(f),
-            ConnectCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateError(_inner) => {
+            ConnectCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateException(_inner) => {
                 _inner.fmt(f)
             }
-            ConnectCustomKeyStoreErrorKind::CustomKeyStoreNotFoundError(_inner) => _inner.fmt(f),
-            ConnectCustomKeyStoreErrorKind::KMSInternalError(_inner) => _inner.fmt(f),
+            ConnectCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            ConnectCustomKeyStoreErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
             ConnectCustomKeyStoreErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -186,47 +196,51 @@ impl ConnectCustomKeyStoreError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_cloud_hsm_cluster_invalid_configuration_error(&self) -> bool {
+    pub fn is_cloud_hsm_cluster_invalid_configuration_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ConnectCustomKeyStoreErrorKind::CloudHsmClusterInvalidConfigurationError(_)
+            ConnectCustomKeyStoreErrorKind::CloudHsmClusterInvalidConfigurationException(_)
         )
     }
-    pub fn is_cloud_hsm_cluster_not_active_error(&self) -> bool {
+    pub fn is_cloud_hsm_cluster_not_active_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ConnectCustomKeyStoreErrorKind::CloudHsmClusterNotActiveError(_)
+            ConnectCustomKeyStoreErrorKind::CloudHsmClusterNotActiveException(_)
         )
     }
-    pub fn is_custom_key_store_invalid_state_error(&self) -> bool {
+    pub fn is_custom_key_store_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ConnectCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateError(_)
+            ConnectCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateException(_)
         )
     }
-    pub fn is_custom_key_store_not_found_error(&self) -> bool {
+    pub fn is_custom_key_store_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ConnectCustomKeyStoreErrorKind::CustomKeyStoreNotFoundError(_)
+            ConnectCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException(_)
         )
     }
-    pub fn is_kms_internal_error(&self) -> bool {
+    pub fn is_kms_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ConnectCustomKeyStoreErrorKind::KMSInternalError(_)
+            ConnectCustomKeyStoreErrorKind::KmsInternalException(_)
         )
     }
 }
 impl std::error::Error for ConnectCustomKeyStoreError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ConnectCustomKeyStoreErrorKind::CloudHsmClusterInvalidConfigurationError(_inner) => {
+            ConnectCustomKeyStoreErrorKind::CloudHsmClusterInvalidConfigurationException(
+                _inner,
+            ) => Some(_inner),
+            ConnectCustomKeyStoreErrorKind::CloudHsmClusterNotActiveException(_inner) => {
                 Some(_inner)
             }
-            ConnectCustomKeyStoreErrorKind::CloudHsmClusterNotActiveError(_inner) => Some(_inner),
-            ConnectCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateError(_inner) => Some(_inner),
-            ConnectCustomKeyStoreErrorKind::CustomKeyStoreNotFoundError(_inner) => Some(_inner),
-            ConnectCustomKeyStoreErrorKind::KMSInternalError(_inner) => Some(_inner),
+            ConnectCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateException(_inner) => {
+                Some(_inner)
+            }
+            ConnectCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException(_inner) => Some(_inner),
+            ConnectCustomKeyStoreErrorKind::KmsInternalException(_inner) => Some(_inner),
             ConnectCustomKeyStoreErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -241,26 +255,26 @@ pub struct CreateAliasError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateAliasErrorKind {
-    AlreadyExistsError(crate::error::AlreadyExistsError),
-    DependencyTimeoutError(crate::error::DependencyTimeoutError),
-    InvalidAliasNameError(crate::error::InvalidAliasNameError),
-    KMSInternalError(crate::error::KMSInternalError),
-    KMSInvalidStateError(crate::error::KMSInvalidStateError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NotFoundError(crate::error::NotFoundError),
+    AlreadyExistsException(crate::error::AlreadyExistsException),
+    DependencyTimeoutException(crate::error::DependencyTimeoutException),
+    InvalidAliasNameException(crate::error::InvalidAliasNameException),
+    KmsInternalException(crate::error::KmsInternalException),
+    KmsInvalidStateException(crate::error::KmsInvalidStateException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateAliasError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateAliasErrorKind::AlreadyExistsError(_inner) => _inner.fmt(f),
-            CreateAliasErrorKind::DependencyTimeoutError(_inner) => _inner.fmt(f),
-            CreateAliasErrorKind::InvalidAliasNameError(_inner) => _inner.fmt(f),
-            CreateAliasErrorKind::KMSInternalError(_inner) => _inner.fmt(f),
-            CreateAliasErrorKind::KMSInvalidStateError(_inner) => _inner.fmt(f),
-            CreateAliasErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            CreateAliasErrorKind::NotFoundError(_inner) => _inner.fmt(f),
+            CreateAliasErrorKind::AlreadyExistsException(_inner) => _inner.fmt(f),
+            CreateAliasErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
+            CreateAliasErrorKind::InvalidAliasNameException(_inner) => _inner.fmt(f),
+            CreateAliasErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
+            CreateAliasErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
+            CreateAliasErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateAliasErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             CreateAliasErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -309,38 +323,47 @@ impl CreateAliasError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_already_exists_error(&self) -> bool {
-        matches!(&self.kind, CreateAliasErrorKind::AlreadyExistsError(_))
+    pub fn is_already_exists_exception(&self) -> bool {
+        matches!(&self.kind, CreateAliasErrorKind::AlreadyExistsException(_))
     }
-    pub fn is_dependency_timeout_error(&self) -> bool {
-        matches!(&self.kind, CreateAliasErrorKind::DependencyTimeoutError(_))
+    pub fn is_dependency_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAliasErrorKind::DependencyTimeoutException(_)
+        )
     }
-    pub fn is_invalid_alias_name_error(&self) -> bool {
-        matches!(&self.kind, CreateAliasErrorKind::InvalidAliasNameError(_))
+    pub fn is_invalid_alias_name_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAliasErrorKind::InvalidAliasNameException(_)
+        )
     }
-    pub fn is_kms_internal_error(&self) -> bool {
-        matches!(&self.kind, CreateAliasErrorKind::KMSInternalError(_))
+    pub fn is_kms_internal_exception(&self) -> bool {
+        matches!(&self.kind, CreateAliasErrorKind::KmsInternalException(_))
     }
-    pub fn is_kms_invalid_state_error(&self) -> bool {
-        matches!(&self.kind, CreateAliasErrorKind::KMSInvalidStateError(_))
+    pub fn is_kms_invalid_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAliasErrorKind::KmsInvalidStateException(_)
+        )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, CreateAliasErrorKind::LimitExceededError(_))
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(&self.kind, CreateAliasErrorKind::LimitExceededException(_))
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, CreateAliasErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, CreateAliasErrorKind::NotFoundException(_))
     }
 }
 impl std::error::Error for CreateAliasError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateAliasErrorKind::AlreadyExistsError(_inner) => Some(_inner),
-            CreateAliasErrorKind::DependencyTimeoutError(_inner) => Some(_inner),
-            CreateAliasErrorKind::InvalidAliasNameError(_inner) => Some(_inner),
-            CreateAliasErrorKind::KMSInternalError(_inner) => Some(_inner),
-            CreateAliasErrorKind::KMSInvalidStateError(_inner) => Some(_inner),
-            CreateAliasErrorKind::LimitExceededError(_inner) => Some(_inner),
-            CreateAliasErrorKind::NotFoundError(_inner) => Some(_inner),
+            CreateAliasErrorKind::AlreadyExistsException(_inner) => Some(_inner),
+            CreateAliasErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
+            CreateAliasErrorKind::InvalidAliasNameException(_inner) => Some(_inner),
+            CreateAliasErrorKind::KmsInternalException(_inner) => Some(_inner),
+            CreateAliasErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
+            CreateAliasErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateAliasErrorKind::NotFoundException(_inner) => Some(_inner),
             CreateAliasErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -355,30 +378,36 @@ pub struct CreateCustomKeyStoreError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateCustomKeyStoreErrorKind {
-    CloudHsmClusterInUseError(crate::error::CloudHsmClusterInUseError),
-    CloudHsmClusterInvalidConfigurationError(
-        crate::error::CloudHsmClusterInvalidConfigurationError,
+    CloudHsmClusterInUseException(crate::error::CloudHsmClusterInUseException),
+    CloudHsmClusterInvalidConfigurationException(
+        crate::error::CloudHsmClusterInvalidConfigurationException,
     ),
-    CloudHsmClusterNotActiveError(crate::error::CloudHsmClusterNotActiveError),
-    CloudHsmClusterNotFoundError(crate::error::CloudHsmClusterNotFoundError),
-    CustomKeyStoreNameInUseError(crate::error::CustomKeyStoreNameInUseError),
-    IncorrectTrustAnchorError(crate::error::IncorrectTrustAnchorError),
-    KMSInternalError(crate::error::KMSInternalError),
+    CloudHsmClusterNotActiveException(crate::error::CloudHsmClusterNotActiveException),
+    CloudHsmClusterNotFoundException(crate::error::CloudHsmClusterNotFoundException),
+    CustomKeyStoreNameInUseException(crate::error::CustomKeyStoreNameInUseException),
+    IncorrectTrustAnchorException(crate::error::IncorrectTrustAnchorException),
+    KmsInternalException(crate::error::KmsInternalException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateCustomKeyStoreError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateCustomKeyStoreErrorKind::CloudHsmClusterInUseError(_inner) => _inner.fmt(f),
-            CreateCustomKeyStoreErrorKind::CloudHsmClusterInvalidConfigurationError(_inner) => {
+            CreateCustomKeyStoreErrorKind::CloudHsmClusterInUseException(_inner) => _inner.fmt(f),
+            CreateCustomKeyStoreErrorKind::CloudHsmClusterInvalidConfigurationException(_inner) => {
                 _inner.fmt(f)
             }
-            CreateCustomKeyStoreErrorKind::CloudHsmClusterNotActiveError(_inner) => _inner.fmt(f),
-            CreateCustomKeyStoreErrorKind::CloudHsmClusterNotFoundError(_inner) => _inner.fmt(f),
-            CreateCustomKeyStoreErrorKind::CustomKeyStoreNameInUseError(_inner) => _inner.fmt(f),
-            CreateCustomKeyStoreErrorKind::IncorrectTrustAnchorError(_inner) => _inner.fmt(f),
-            CreateCustomKeyStoreErrorKind::KMSInternalError(_inner) => _inner.fmt(f),
+            CreateCustomKeyStoreErrorKind::CloudHsmClusterNotActiveException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateCustomKeyStoreErrorKind::CloudHsmClusterNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateCustomKeyStoreErrorKind::CustomKeyStoreNameInUseException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateCustomKeyStoreErrorKind::IncorrectTrustAnchorException(_inner) => _inner.fmt(f),
+            CreateCustomKeyStoreErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
             CreateCustomKeyStoreErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -427,61 +456,63 @@ impl CreateCustomKeyStoreError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_cloud_hsm_cluster_in_use_error(&self) -> bool {
+    pub fn is_cloud_hsm_cluster_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateCustomKeyStoreErrorKind::CloudHsmClusterInUseError(_)
+            CreateCustomKeyStoreErrorKind::CloudHsmClusterInUseException(_)
         )
     }
-    pub fn is_cloud_hsm_cluster_invalid_configuration_error(&self) -> bool {
+    pub fn is_cloud_hsm_cluster_invalid_configuration_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateCustomKeyStoreErrorKind::CloudHsmClusterInvalidConfigurationError(_)
+            CreateCustomKeyStoreErrorKind::CloudHsmClusterInvalidConfigurationException(_)
         )
     }
-    pub fn is_cloud_hsm_cluster_not_active_error(&self) -> bool {
+    pub fn is_cloud_hsm_cluster_not_active_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateCustomKeyStoreErrorKind::CloudHsmClusterNotActiveError(_)
+            CreateCustomKeyStoreErrorKind::CloudHsmClusterNotActiveException(_)
         )
     }
-    pub fn is_cloud_hsm_cluster_not_found_error(&self) -> bool {
+    pub fn is_cloud_hsm_cluster_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateCustomKeyStoreErrorKind::CloudHsmClusterNotFoundError(_)
+            CreateCustomKeyStoreErrorKind::CloudHsmClusterNotFoundException(_)
         )
     }
-    pub fn is_custom_key_store_name_in_use_error(&self) -> bool {
+    pub fn is_custom_key_store_name_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateCustomKeyStoreErrorKind::CustomKeyStoreNameInUseError(_)
+            CreateCustomKeyStoreErrorKind::CustomKeyStoreNameInUseException(_)
         )
     }
-    pub fn is_incorrect_trust_anchor_error(&self) -> bool {
+    pub fn is_incorrect_trust_anchor_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateCustomKeyStoreErrorKind::IncorrectTrustAnchorError(_)
+            CreateCustomKeyStoreErrorKind::IncorrectTrustAnchorException(_)
         )
     }
-    pub fn is_kms_internal_error(&self) -> bool {
+    pub fn is_kms_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateCustomKeyStoreErrorKind::KMSInternalError(_)
+            CreateCustomKeyStoreErrorKind::KmsInternalException(_)
         )
     }
 }
 impl std::error::Error for CreateCustomKeyStoreError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateCustomKeyStoreErrorKind::CloudHsmClusterInUseError(_inner) => Some(_inner),
-            CreateCustomKeyStoreErrorKind::CloudHsmClusterInvalidConfigurationError(_inner) => {
+            CreateCustomKeyStoreErrorKind::CloudHsmClusterInUseException(_inner) => Some(_inner),
+            CreateCustomKeyStoreErrorKind::CloudHsmClusterInvalidConfigurationException(_inner) => {
                 Some(_inner)
             }
-            CreateCustomKeyStoreErrorKind::CloudHsmClusterNotActiveError(_inner) => Some(_inner),
-            CreateCustomKeyStoreErrorKind::CloudHsmClusterNotFoundError(_inner) => Some(_inner),
-            CreateCustomKeyStoreErrorKind::CustomKeyStoreNameInUseError(_inner) => Some(_inner),
-            CreateCustomKeyStoreErrorKind::IncorrectTrustAnchorError(_inner) => Some(_inner),
-            CreateCustomKeyStoreErrorKind::KMSInternalError(_inner) => Some(_inner),
+            CreateCustomKeyStoreErrorKind::CloudHsmClusterNotActiveException(_inner) => {
+                Some(_inner)
+            }
+            CreateCustomKeyStoreErrorKind::CloudHsmClusterNotFoundException(_inner) => Some(_inner),
+            CreateCustomKeyStoreErrorKind::CustomKeyStoreNameInUseException(_inner) => Some(_inner),
+            CreateCustomKeyStoreErrorKind::IncorrectTrustAnchorException(_inner) => Some(_inner),
+            CreateCustomKeyStoreErrorKind::KmsInternalException(_inner) => Some(_inner),
             CreateCustomKeyStoreErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -496,28 +527,28 @@ pub struct CreateGrantError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateGrantErrorKind {
-    DependencyTimeoutError(crate::error::DependencyTimeoutError),
-    DisabledError(crate::error::DisabledError),
-    InvalidArnError(crate::error::InvalidArnError),
-    InvalidGrantTokenError(crate::error::InvalidGrantTokenError),
-    KMSInternalError(crate::error::KMSInternalError),
-    KMSInvalidStateError(crate::error::KMSInvalidStateError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NotFoundError(crate::error::NotFoundError),
+    DependencyTimeoutException(crate::error::DependencyTimeoutException),
+    DisabledException(crate::error::DisabledException),
+    InvalidArnException(crate::error::InvalidArnException),
+    InvalidGrantTokenException(crate::error::InvalidGrantTokenException),
+    KmsInternalException(crate::error::KmsInternalException),
+    KmsInvalidStateException(crate::error::KmsInvalidStateException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateGrantError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateGrantErrorKind::DependencyTimeoutError(_inner) => _inner.fmt(f),
-            CreateGrantErrorKind::DisabledError(_inner) => _inner.fmt(f),
-            CreateGrantErrorKind::InvalidArnError(_inner) => _inner.fmt(f),
-            CreateGrantErrorKind::InvalidGrantTokenError(_inner) => _inner.fmt(f),
-            CreateGrantErrorKind::KMSInternalError(_inner) => _inner.fmt(f),
-            CreateGrantErrorKind::KMSInvalidStateError(_inner) => _inner.fmt(f),
-            CreateGrantErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            CreateGrantErrorKind::NotFoundError(_inner) => _inner.fmt(f),
+            CreateGrantErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
+            CreateGrantErrorKind::DisabledException(_inner) => _inner.fmt(f),
+            CreateGrantErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
+            CreateGrantErrorKind::InvalidGrantTokenException(_inner) => _inner.fmt(f),
+            CreateGrantErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
+            CreateGrantErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
+            CreateGrantErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateGrantErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             CreateGrantErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -566,42 +597,51 @@ impl CreateGrantError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_dependency_timeout_error(&self) -> bool {
-        matches!(&self.kind, CreateGrantErrorKind::DependencyTimeoutError(_))
+    pub fn is_dependency_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateGrantErrorKind::DependencyTimeoutException(_)
+        )
     }
-    pub fn is_disabled_error(&self) -> bool {
-        matches!(&self.kind, CreateGrantErrorKind::DisabledError(_))
+    pub fn is_disabled_exception(&self) -> bool {
+        matches!(&self.kind, CreateGrantErrorKind::DisabledException(_))
     }
-    pub fn is_invalid_arn_error(&self) -> bool {
-        matches!(&self.kind, CreateGrantErrorKind::InvalidArnError(_))
+    pub fn is_invalid_arn_exception(&self) -> bool {
+        matches!(&self.kind, CreateGrantErrorKind::InvalidArnException(_))
     }
-    pub fn is_invalid_grant_token_error(&self) -> bool {
-        matches!(&self.kind, CreateGrantErrorKind::InvalidGrantTokenError(_))
+    pub fn is_invalid_grant_token_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateGrantErrorKind::InvalidGrantTokenException(_)
+        )
     }
-    pub fn is_kms_internal_error(&self) -> bool {
-        matches!(&self.kind, CreateGrantErrorKind::KMSInternalError(_))
+    pub fn is_kms_internal_exception(&self) -> bool {
+        matches!(&self.kind, CreateGrantErrorKind::KmsInternalException(_))
     }
-    pub fn is_kms_invalid_state_error(&self) -> bool {
-        matches!(&self.kind, CreateGrantErrorKind::KMSInvalidStateError(_))
+    pub fn is_kms_invalid_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateGrantErrorKind::KmsInvalidStateException(_)
+        )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, CreateGrantErrorKind::LimitExceededError(_))
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(&self.kind, CreateGrantErrorKind::LimitExceededException(_))
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, CreateGrantErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, CreateGrantErrorKind::NotFoundException(_))
     }
 }
 impl std::error::Error for CreateGrantError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateGrantErrorKind::DependencyTimeoutError(_inner) => Some(_inner),
-            CreateGrantErrorKind::DisabledError(_inner) => Some(_inner),
-            CreateGrantErrorKind::InvalidArnError(_inner) => Some(_inner),
-            CreateGrantErrorKind::InvalidGrantTokenError(_inner) => Some(_inner),
-            CreateGrantErrorKind::KMSInternalError(_inner) => Some(_inner),
-            CreateGrantErrorKind::KMSInvalidStateError(_inner) => Some(_inner),
-            CreateGrantErrorKind::LimitExceededError(_inner) => Some(_inner),
-            CreateGrantErrorKind::NotFoundError(_inner) => Some(_inner),
+            CreateGrantErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
+            CreateGrantErrorKind::DisabledException(_inner) => Some(_inner),
+            CreateGrantErrorKind::InvalidArnException(_inner) => Some(_inner),
+            CreateGrantErrorKind::InvalidGrantTokenException(_inner) => Some(_inner),
+            CreateGrantErrorKind::KmsInternalException(_inner) => Some(_inner),
+            CreateGrantErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
+            CreateGrantErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateGrantErrorKind::NotFoundException(_inner) => Some(_inner),
             CreateGrantErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -616,34 +656,36 @@ pub struct CreateKeyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateKeyErrorKind {
-    CloudHsmClusterInvalidConfigurationError(
-        crate::error::CloudHsmClusterInvalidConfigurationError,
+    CloudHsmClusterInvalidConfigurationException(
+        crate::error::CloudHsmClusterInvalidConfigurationException,
     ),
-    CustomKeyStoreInvalidStateError(crate::error::CustomKeyStoreInvalidStateError),
-    CustomKeyStoreNotFoundError(crate::error::CustomKeyStoreNotFoundError),
-    DependencyTimeoutError(crate::error::DependencyTimeoutError),
-    InvalidArnError(crate::error::InvalidArnError),
-    KMSInternalError(crate::error::KMSInternalError),
-    LimitExceededError(crate::error::LimitExceededError),
-    MalformedPolicyDocumentError(crate::error::MalformedPolicyDocumentError),
-    TagError(crate::error::TagError),
-    UnsupportedOperationError(crate::error::UnsupportedOperationError),
+    CustomKeyStoreInvalidStateException(crate::error::CustomKeyStoreInvalidStateException),
+    CustomKeyStoreNotFoundException(crate::error::CustomKeyStoreNotFoundException),
+    DependencyTimeoutException(crate::error::DependencyTimeoutException),
+    InvalidArnException(crate::error::InvalidArnException),
+    KmsInternalException(crate::error::KmsInternalException),
+    LimitExceededException(crate::error::LimitExceededException),
+    MalformedPolicyDocumentException(crate::error::MalformedPolicyDocumentException),
+    TagException(crate::error::TagException),
+    UnsupportedOperationException(crate::error::UnsupportedOperationException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateKeyErrorKind::CloudHsmClusterInvalidConfigurationError(_inner) => _inner.fmt(f),
-            CreateKeyErrorKind::CustomKeyStoreInvalidStateError(_inner) => _inner.fmt(f),
-            CreateKeyErrorKind::CustomKeyStoreNotFoundError(_inner) => _inner.fmt(f),
-            CreateKeyErrorKind::DependencyTimeoutError(_inner) => _inner.fmt(f),
-            CreateKeyErrorKind::InvalidArnError(_inner) => _inner.fmt(f),
-            CreateKeyErrorKind::KMSInternalError(_inner) => _inner.fmt(f),
-            CreateKeyErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            CreateKeyErrorKind::MalformedPolicyDocumentError(_inner) => _inner.fmt(f),
-            CreateKeyErrorKind::TagError(_inner) => _inner.fmt(f),
-            CreateKeyErrorKind::UnsupportedOperationError(_inner) => _inner.fmt(f),
+            CreateKeyErrorKind::CloudHsmClusterInvalidConfigurationException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateKeyErrorKind::CustomKeyStoreInvalidStateException(_inner) => _inner.fmt(f),
+            CreateKeyErrorKind::CustomKeyStoreNotFoundException(_inner) => _inner.fmt(f),
+            CreateKeyErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
+            CreateKeyErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
+            CreateKeyErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
+            CreateKeyErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateKeyErrorKind::MalformedPolicyDocumentException(_inner) => _inner.fmt(f),
+            CreateKeyErrorKind::TagException(_inner) => _inner.fmt(f),
+            CreateKeyErrorKind::UnsupportedOperationException(_inner) => _inner.fmt(f),
             CreateKeyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -692,62 +734,70 @@ impl CreateKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_cloud_hsm_cluster_invalid_configuration_error(&self) -> bool {
+    pub fn is_cloud_hsm_cluster_invalid_configuration_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateKeyErrorKind::CloudHsmClusterInvalidConfigurationError(_)
+            CreateKeyErrorKind::CloudHsmClusterInvalidConfigurationException(_)
         )
     }
-    pub fn is_custom_key_store_invalid_state_error(&self) -> bool {
+    pub fn is_custom_key_store_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateKeyErrorKind::CustomKeyStoreInvalidStateError(_)
+            CreateKeyErrorKind::CustomKeyStoreInvalidStateException(_)
         )
     }
-    pub fn is_custom_key_store_not_found_error(&self) -> bool {
+    pub fn is_custom_key_store_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateKeyErrorKind::CustomKeyStoreNotFoundError(_)
+            CreateKeyErrorKind::CustomKeyStoreNotFoundException(_)
         )
     }
-    pub fn is_dependency_timeout_error(&self) -> bool {
-        matches!(&self.kind, CreateKeyErrorKind::DependencyTimeoutError(_))
-    }
-    pub fn is_invalid_arn_error(&self) -> bool {
-        matches!(&self.kind, CreateKeyErrorKind::InvalidArnError(_))
-    }
-    pub fn is_kms_internal_error(&self) -> bool {
-        matches!(&self.kind, CreateKeyErrorKind::KMSInternalError(_))
-    }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, CreateKeyErrorKind::LimitExceededError(_))
-    }
-    pub fn is_malformed_policy_document_error(&self) -> bool {
+    pub fn is_dependency_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateKeyErrorKind::MalformedPolicyDocumentError(_)
+            CreateKeyErrorKind::DependencyTimeoutException(_)
         )
     }
-    pub fn is_tag_error(&self) -> bool {
-        matches!(&self.kind, CreateKeyErrorKind::TagError(_))
+    pub fn is_invalid_arn_exception(&self) -> bool {
+        matches!(&self.kind, CreateKeyErrorKind::InvalidArnException(_))
     }
-    pub fn is_unsupported_operation_error(&self) -> bool {
-        matches!(&self.kind, CreateKeyErrorKind::UnsupportedOperationError(_))
+    pub fn is_kms_internal_exception(&self) -> bool {
+        matches!(&self.kind, CreateKeyErrorKind::KmsInternalException(_))
+    }
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(&self.kind, CreateKeyErrorKind::LimitExceededException(_))
+    }
+    pub fn is_malformed_policy_document_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateKeyErrorKind::MalformedPolicyDocumentException(_)
+        )
+    }
+    pub fn is_tag_exception(&self) -> bool {
+        matches!(&self.kind, CreateKeyErrorKind::TagException(_))
+    }
+    pub fn is_unsupported_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateKeyErrorKind::UnsupportedOperationException(_)
+        )
     }
 }
 impl std::error::Error for CreateKeyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateKeyErrorKind::CloudHsmClusterInvalidConfigurationError(_inner) => Some(_inner),
-            CreateKeyErrorKind::CustomKeyStoreInvalidStateError(_inner) => Some(_inner),
-            CreateKeyErrorKind::CustomKeyStoreNotFoundError(_inner) => Some(_inner),
-            CreateKeyErrorKind::DependencyTimeoutError(_inner) => Some(_inner),
-            CreateKeyErrorKind::InvalidArnError(_inner) => Some(_inner),
-            CreateKeyErrorKind::KMSInternalError(_inner) => Some(_inner),
-            CreateKeyErrorKind::LimitExceededError(_inner) => Some(_inner),
-            CreateKeyErrorKind::MalformedPolicyDocumentError(_inner) => Some(_inner),
-            CreateKeyErrorKind::TagError(_inner) => Some(_inner),
-            CreateKeyErrorKind::UnsupportedOperationError(_inner) => Some(_inner),
+            CreateKeyErrorKind::CloudHsmClusterInvalidConfigurationException(_inner) => {
+                Some(_inner)
+            }
+            CreateKeyErrorKind::CustomKeyStoreInvalidStateException(_inner) => Some(_inner),
+            CreateKeyErrorKind::CustomKeyStoreNotFoundException(_inner) => Some(_inner),
+            CreateKeyErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
+            CreateKeyErrorKind::InvalidArnException(_inner) => Some(_inner),
+            CreateKeyErrorKind::KmsInternalException(_inner) => Some(_inner),
+            CreateKeyErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateKeyErrorKind::MalformedPolicyDocumentException(_inner) => Some(_inner),
+            CreateKeyErrorKind::TagException(_inner) => Some(_inner),
+            CreateKeyErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
             CreateKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -762,32 +812,32 @@ pub struct DecryptError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DecryptErrorKind {
-    DependencyTimeoutError(crate::error::DependencyTimeoutError),
-    DisabledError(crate::error::DisabledError),
-    IncorrectKeyError(crate::error::IncorrectKeyError),
-    InvalidCiphertextError(crate::error::InvalidCiphertextError),
-    InvalidGrantTokenError(crate::error::InvalidGrantTokenError),
-    InvalidKeyUsageError(crate::error::InvalidKeyUsageError),
-    KeyUnavailableError(crate::error::KeyUnavailableError),
-    KMSInternalError(crate::error::KMSInternalError),
-    KMSInvalidStateError(crate::error::KMSInvalidStateError),
-    NotFoundError(crate::error::NotFoundError),
+    DependencyTimeoutException(crate::error::DependencyTimeoutException),
+    DisabledException(crate::error::DisabledException),
+    IncorrectKeyException(crate::error::IncorrectKeyException),
+    InvalidCiphertextException(crate::error::InvalidCiphertextException),
+    InvalidGrantTokenException(crate::error::InvalidGrantTokenException),
+    InvalidKeyUsageException(crate::error::InvalidKeyUsageException),
+    KeyUnavailableException(crate::error::KeyUnavailableException),
+    KmsInternalException(crate::error::KmsInternalException),
+    KmsInvalidStateException(crate::error::KmsInvalidStateException),
+    NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DecryptError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DecryptErrorKind::DependencyTimeoutError(_inner) => _inner.fmt(f),
-            DecryptErrorKind::DisabledError(_inner) => _inner.fmt(f),
-            DecryptErrorKind::IncorrectKeyError(_inner) => _inner.fmt(f),
-            DecryptErrorKind::InvalidCiphertextError(_inner) => _inner.fmt(f),
-            DecryptErrorKind::InvalidGrantTokenError(_inner) => _inner.fmt(f),
-            DecryptErrorKind::InvalidKeyUsageError(_inner) => _inner.fmt(f),
-            DecryptErrorKind::KeyUnavailableError(_inner) => _inner.fmt(f),
-            DecryptErrorKind::KMSInternalError(_inner) => _inner.fmt(f),
-            DecryptErrorKind::KMSInvalidStateError(_inner) => _inner.fmt(f),
-            DecryptErrorKind::NotFoundError(_inner) => _inner.fmt(f),
+            DecryptErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
+            DecryptErrorKind::DisabledException(_inner) => _inner.fmt(f),
+            DecryptErrorKind::IncorrectKeyException(_inner) => _inner.fmt(f),
+            DecryptErrorKind::InvalidCiphertextException(_inner) => _inner.fmt(f),
+            DecryptErrorKind::InvalidGrantTokenException(_inner) => _inner.fmt(f),
+            DecryptErrorKind::InvalidKeyUsageException(_inner) => _inner.fmt(f),
+            DecryptErrorKind::KeyUnavailableException(_inner) => _inner.fmt(f),
+            DecryptErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
+            DecryptErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
+            DecryptErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             DecryptErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -836,50 +886,50 @@ impl DecryptError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_dependency_timeout_error(&self) -> bool {
-        matches!(&self.kind, DecryptErrorKind::DependencyTimeoutError(_))
+    pub fn is_dependency_timeout_exception(&self) -> bool {
+        matches!(&self.kind, DecryptErrorKind::DependencyTimeoutException(_))
     }
-    pub fn is_disabled_error(&self) -> bool {
-        matches!(&self.kind, DecryptErrorKind::DisabledError(_))
+    pub fn is_disabled_exception(&self) -> bool {
+        matches!(&self.kind, DecryptErrorKind::DisabledException(_))
     }
-    pub fn is_incorrect_key_error(&self) -> bool {
-        matches!(&self.kind, DecryptErrorKind::IncorrectKeyError(_))
+    pub fn is_incorrect_key_exception(&self) -> bool {
+        matches!(&self.kind, DecryptErrorKind::IncorrectKeyException(_))
     }
-    pub fn is_invalid_ciphertext_error(&self) -> bool {
-        matches!(&self.kind, DecryptErrorKind::InvalidCiphertextError(_))
+    pub fn is_invalid_ciphertext_exception(&self) -> bool {
+        matches!(&self.kind, DecryptErrorKind::InvalidCiphertextException(_))
     }
-    pub fn is_invalid_grant_token_error(&self) -> bool {
-        matches!(&self.kind, DecryptErrorKind::InvalidGrantTokenError(_))
+    pub fn is_invalid_grant_token_exception(&self) -> bool {
+        matches!(&self.kind, DecryptErrorKind::InvalidGrantTokenException(_))
     }
-    pub fn is_invalid_key_usage_error(&self) -> bool {
-        matches!(&self.kind, DecryptErrorKind::InvalidKeyUsageError(_))
+    pub fn is_invalid_key_usage_exception(&self) -> bool {
+        matches!(&self.kind, DecryptErrorKind::InvalidKeyUsageException(_))
     }
-    pub fn is_key_unavailable_error(&self) -> bool {
-        matches!(&self.kind, DecryptErrorKind::KeyUnavailableError(_))
+    pub fn is_key_unavailable_exception(&self) -> bool {
+        matches!(&self.kind, DecryptErrorKind::KeyUnavailableException(_))
     }
-    pub fn is_kms_internal_error(&self) -> bool {
-        matches!(&self.kind, DecryptErrorKind::KMSInternalError(_))
+    pub fn is_kms_internal_exception(&self) -> bool {
+        matches!(&self.kind, DecryptErrorKind::KmsInternalException(_))
     }
-    pub fn is_kms_invalid_state_error(&self) -> bool {
-        matches!(&self.kind, DecryptErrorKind::KMSInvalidStateError(_))
+    pub fn is_kms_invalid_state_exception(&self) -> bool {
+        matches!(&self.kind, DecryptErrorKind::KmsInvalidStateException(_))
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, DecryptErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, DecryptErrorKind::NotFoundException(_))
     }
 }
 impl std::error::Error for DecryptError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DecryptErrorKind::DependencyTimeoutError(_inner) => Some(_inner),
-            DecryptErrorKind::DisabledError(_inner) => Some(_inner),
-            DecryptErrorKind::IncorrectKeyError(_inner) => Some(_inner),
-            DecryptErrorKind::InvalidCiphertextError(_inner) => Some(_inner),
-            DecryptErrorKind::InvalidGrantTokenError(_inner) => Some(_inner),
-            DecryptErrorKind::InvalidKeyUsageError(_inner) => Some(_inner),
-            DecryptErrorKind::KeyUnavailableError(_inner) => Some(_inner),
-            DecryptErrorKind::KMSInternalError(_inner) => Some(_inner),
-            DecryptErrorKind::KMSInvalidStateError(_inner) => Some(_inner),
-            DecryptErrorKind::NotFoundError(_inner) => Some(_inner),
+            DecryptErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
+            DecryptErrorKind::DisabledException(_inner) => Some(_inner),
+            DecryptErrorKind::IncorrectKeyException(_inner) => Some(_inner),
+            DecryptErrorKind::InvalidCiphertextException(_inner) => Some(_inner),
+            DecryptErrorKind::InvalidGrantTokenException(_inner) => Some(_inner),
+            DecryptErrorKind::InvalidKeyUsageException(_inner) => Some(_inner),
+            DecryptErrorKind::KeyUnavailableException(_inner) => Some(_inner),
+            DecryptErrorKind::KmsInternalException(_inner) => Some(_inner),
+            DecryptErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
+            DecryptErrorKind::NotFoundException(_inner) => Some(_inner),
             DecryptErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -894,20 +944,20 @@ pub struct DeleteAliasError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteAliasErrorKind {
-    DependencyTimeoutError(crate::error::DependencyTimeoutError),
-    KMSInternalError(crate::error::KMSInternalError),
-    KMSInvalidStateError(crate::error::KMSInvalidStateError),
-    NotFoundError(crate::error::NotFoundError),
+    DependencyTimeoutException(crate::error::DependencyTimeoutException),
+    KmsInternalException(crate::error::KmsInternalException),
+    KmsInvalidStateException(crate::error::KmsInvalidStateException),
+    NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAliasError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteAliasErrorKind::DependencyTimeoutError(_inner) => _inner.fmt(f),
-            DeleteAliasErrorKind::KMSInternalError(_inner) => _inner.fmt(f),
-            DeleteAliasErrorKind::KMSInvalidStateError(_inner) => _inner.fmt(f),
-            DeleteAliasErrorKind::NotFoundError(_inner) => _inner.fmt(f),
+            DeleteAliasErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
+            DeleteAliasErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
+            DeleteAliasErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
+            DeleteAliasErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             DeleteAliasErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -956,26 +1006,32 @@ impl DeleteAliasError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_dependency_timeout_error(&self) -> bool {
-        matches!(&self.kind, DeleteAliasErrorKind::DependencyTimeoutError(_))
+    pub fn is_dependency_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteAliasErrorKind::DependencyTimeoutException(_)
+        )
     }
-    pub fn is_kms_internal_error(&self) -> bool {
-        matches!(&self.kind, DeleteAliasErrorKind::KMSInternalError(_))
+    pub fn is_kms_internal_exception(&self) -> bool {
+        matches!(&self.kind, DeleteAliasErrorKind::KmsInternalException(_))
     }
-    pub fn is_kms_invalid_state_error(&self) -> bool {
-        matches!(&self.kind, DeleteAliasErrorKind::KMSInvalidStateError(_))
+    pub fn is_kms_invalid_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteAliasErrorKind::KmsInvalidStateException(_)
+        )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, DeleteAliasErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, DeleteAliasErrorKind::NotFoundException(_))
     }
 }
 impl std::error::Error for DeleteAliasError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteAliasErrorKind::DependencyTimeoutError(_inner) => Some(_inner),
-            DeleteAliasErrorKind::KMSInternalError(_inner) => Some(_inner),
-            DeleteAliasErrorKind::KMSInvalidStateError(_inner) => Some(_inner),
-            DeleteAliasErrorKind::NotFoundError(_inner) => Some(_inner),
+            DeleteAliasErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
+            DeleteAliasErrorKind::KmsInternalException(_inner) => Some(_inner),
+            DeleteAliasErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
+            DeleteAliasErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteAliasErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -990,20 +1046,22 @@ pub struct DeleteCustomKeyStoreError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteCustomKeyStoreErrorKind {
-    CustomKeyStoreHasCMKsError(crate::error::CustomKeyStoreHasCMKsError),
-    CustomKeyStoreInvalidStateError(crate::error::CustomKeyStoreInvalidStateError),
-    CustomKeyStoreNotFoundError(crate::error::CustomKeyStoreNotFoundError),
-    KMSInternalError(crate::error::KMSInternalError),
+    CustomKeyStoreHasCmKsException(crate::error::CustomKeyStoreHasCmKsException),
+    CustomKeyStoreInvalidStateException(crate::error::CustomKeyStoreInvalidStateException),
+    CustomKeyStoreNotFoundException(crate::error::CustomKeyStoreNotFoundException),
+    KmsInternalException(crate::error::KmsInternalException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteCustomKeyStoreError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteCustomKeyStoreErrorKind::CustomKeyStoreHasCMKsError(_inner) => _inner.fmt(f),
-            DeleteCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateError(_inner) => _inner.fmt(f),
-            DeleteCustomKeyStoreErrorKind::CustomKeyStoreNotFoundError(_inner) => _inner.fmt(f),
-            DeleteCustomKeyStoreErrorKind::KMSInternalError(_inner) => _inner.fmt(f),
+            DeleteCustomKeyStoreErrorKind::CustomKeyStoreHasCmKsException(_inner) => _inner.fmt(f),
+            DeleteCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateException(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException(_inner) => _inner.fmt(f),
+            DeleteCustomKeyStoreErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
             DeleteCustomKeyStoreErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1052,38 +1110,40 @@ impl DeleteCustomKeyStoreError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_custom_key_store_has_cm_ks_error(&self) -> bool {
+    pub fn is_custom_key_store_has_cm_ks_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteCustomKeyStoreErrorKind::CustomKeyStoreHasCMKsError(_)
+            DeleteCustomKeyStoreErrorKind::CustomKeyStoreHasCmKsException(_)
         )
     }
-    pub fn is_custom_key_store_invalid_state_error(&self) -> bool {
+    pub fn is_custom_key_store_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateError(_)
+            DeleteCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateException(_)
         )
     }
-    pub fn is_custom_key_store_not_found_error(&self) -> bool {
+    pub fn is_custom_key_store_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteCustomKeyStoreErrorKind::CustomKeyStoreNotFoundError(_)
+            DeleteCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException(_)
         )
     }
-    pub fn is_kms_internal_error(&self) -> bool {
+    pub fn is_kms_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteCustomKeyStoreErrorKind::KMSInternalError(_)
+            DeleteCustomKeyStoreErrorKind::KmsInternalException(_)
         )
     }
 }
 impl std::error::Error for DeleteCustomKeyStoreError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteCustomKeyStoreErrorKind::CustomKeyStoreHasCMKsError(_inner) => Some(_inner),
-            DeleteCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateError(_inner) => Some(_inner),
-            DeleteCustomKeyStoreErrorKind::CustomKeyStoreNotFoundError(_inner) => Some(_inner),
-            DeleteCustomKeyStoreErrorKind::KMSInternalError(_inner) => Some(_inner),
+            DeleteCustomKeyStoreErrorKind::CustomKeyStoreHasCmKsException(_inner) => Some(_inner),
+            DeleteCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateException(_inner) => {
+                Some(_inner)
+            }
+            DeleteCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException(_inner) => Some(_inner),
+            DeleteCustomKeyStoreErrorKind::KmsInternalException(_inner) => Some(_inner),
             DeleteCustomKeyStoreErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1098,24 +1158,26 @@ pub struct DeleteImportedKeyMaterialError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteImportedKeyMaterialErrorKind {
-    DependencyTimeoutError(crate::error::DependencyTimeoutError),
-    InvalidArnError(crate::error::InvalidArnError),
-    KMSInternalError(crate::error::KMSInternalError),
-    KMSInvalidStateError(crate::error::KMSInvalidStateError),
-    NotFoundError(crate::error::NotFoundError),
-    UnsupportedOperationError(crate::error::UnsupportedOperationError),
+    DependencyTimeoutException(crate::error::DependencyTimeoutException),
+    InvalidArnException(crate::error::InvalidArnException),
+    KmsInternalException(crate::error::KmsInternalException),
+    KmsInvalidStateException(crate::error::KmsInvalidStateException),
+    NotFoundException(crate::error::NotFoundException),
+    UnsupportedOperationException(crate::error::UnsupportedOperationException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteImportedKeyMaterialError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteImportedKeyMaterialErrorKind::DependencyTimeoutError(_inner) => _inner.fmt(f),
-            DeleteImportedKeyMaterialErrorKind::InvalidArnError(_inner) => _inner.fmt(f),
-            DeleteImportedKeyMaterialErrorKind::KMSInternalError(_inner) => _inner.fmt(f),
-            DeleteImportedKeyMaterialErrorKind::KMSInvalidStateError(_inner) => _inner.fmt(f),
-            DeleteImportedKeyMaterialErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            DeleteImportedKeyMaterialErrorKind::UnsupportedOperationError(_inner) => _inner.fmt(f),
+            DeleteImportedKeyMaterialErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
+            DeleteImportedKeyMaterialErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
+            DeleteImportedKeyMaterialErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
+            DeleteImportedKeyMaterialErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
+            DeleteImportedKeyMaterialErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DeleteImportedKeyMaterialErrorKind::UnsupportedOperationException(_inner) => {
+                _inner.fmt(f)
+            }
             DeleteImportedKeyMaterialErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1164,52 +1226,54 @@ impl DeleteImportedKeyMaterialError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_dependency_timeout_error(&self) -> bool {
+    pub fn is_dependency_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteImportedKeyMaterialErrorKind::DependencyTimeoutError(_)
+            DeleteImportedKeyMaterialErrorKind::DependencyTimeoutException(_)
         )
     }
-    pub fn is_invalid_arn_error(&self) -> bool {
+    pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteImportedKeyMaterialErrorKind::InvalidArnError(_)
+            DeleteImportedKeyMaterialErrorKind::InvalidArnException(_)
         )
     }
-    pub fn is_kms_internal_error(&self) -> bool {
+    pub fn is_kms_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteImportedKeyMaterialErrorKind::KMSInternalError(_)
+            DeleteImportedKeyMaterialErrorKind::KmsInternalException(_)
         )
     }
-    pub fn is_kms_invalid_state_error(&self) -> bool {
+    pub fn is_kms_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteImportedKeyMaterialErrorKind::KMSInvalidStateError(_)
+            DeleteImportedKeyMaterialErrorKind::KmsInvalidStateException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteImportedKeyMaterialErrorKind::NotFoundError(_)
+            DeleteImportedKeyMaterialErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_unsupported_operation_error(&self) -> bool {
+    pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteImportedKeyMaterialErrorKind::UnsupportedOperationError(_)
+            DeleteImportedKeyMaterialErrorKind::UnsupportedOperationException(_)
         )
     }
 }
 impl std::error::Error for DeleteImportedKeyMaterialError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteImportedKeyMaterialErrorKind::DependencyTimeoutError(_inner) => Some(_inner),
-            DeleteImportedKeyMaterialErrorKind::InvalidArnError(_inner) => Some(_inner),
-            DeleteImportedKeyMaterialErrorKind::KMSInternalError(_inner) => Some(_inner),
-            DeleteImportedKeyMaterialErrorKind::KMSInvalidStateError(_inner) => Some(_inner),
-            DeleteImportedKeyMaterialErrorKind::NotFoundError(_inner) => Some(_inner),
-            DeleteImportedKeyMaterialErrorKind::UnsupportedOperationError(_inner) => Some(_inner),
+            DeleteImportedKeyMaterialErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
+            DeleteImportedKeyMaterialErrorKind::InvalidArnException(_inner) => Some(_inner),
+            DeleteImportedKeyMaterialErrorKind::KmsInternalException(_inner) => Some(_inner),
+            DeleteImportedKeyMaterialErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
+            DeleteImportedKeyMaterialErrorKind::NotFoundException(_inner) => Some(_inner),
+            DeleteImportedKeyMaterialErrorKind::UnsupportedOperationException(_inner) => {
+                Some(_inner)
+            }
             DeleteImportedKeyMaterialErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1224,16 +1288,18 @@ pub struct DescribeCustomKeyStoresError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeCustomKeyStoresErrorKind {
-    CustomKeyStoreNotFoundError(crate::error::CustomKeyStoreNotFoundError),
-    KMSInternalError(crate::error::KMSInternalError),
+    CustomKeyStoreNotFoundException(crate::error::CustomKeyStoreNotFoundException),
+    KmsInternalException(crate::error::KmsInternalException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeCustomKeyStoresError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeCustomKeyStoresErrorKind::CustomKeyStoreNotFoundError(_inner) => _inner.fmt(f),
-            DescribeCustomKeyStoresErrorKind::KMSInternalError(_inner) => _inner.fmt(f),
+            DescribeCustomKeyStoresErrorKind::CustomKeyStoreNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeCustomKeyStoresErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
             DescribeCustomKeyStoresErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1282,24 +1348,26 @@ impl DescribeCustomKeyStoresError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_custom_key_store_not_found_error(&self) -> bool {
+    pub fn is_custom_key_store_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeCustomKeyStoresErrorKind::CustomKeyStoreNotFoundError(_)
+            DescribeCustomKeyStoresErrorKind::CustomKeyStoreNotFoundException(_)
         )
     }
-    pub fn is_kms_internal_error(&self) -> bool {
+    pub fn is_kms_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeCustomKeyStoresErrorKind::KMSInternalError(_)
+            DescribeCustomKeyStoresErrorKind::KmsInternalException(_)
         )
     }
 }
 impl std::error::Error for DescribeCustomKeyStoresError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeCustomKeyStoresErrorKind::CustomKeyStoreNotFoundError(_inner) => Some(_inner),
-            DescribeCustomKeyStoresErrorKind::KMSInternalError(_inner) => Some(_inner),
+            DescribeCustomKeyStoresErrorKind::CustomKeyStoreNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            DescribeCustomKeyStoresErrorKind::KmsInternalException(_inner) => Some(_inner),
             DescribeCustomKeyStoresErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1314,20 +1382,20 @@ pub struct DescribeKeyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeKeyErrorKind {
-    DependencyTimeoutError(crate::error::DependencyTimeoutError),
-    InvalidArnError(crate::error::InvalidArnError),
-    KMSInternalError(crate::error::KMSInternalError),
-    NotFoundError(crate::error::NotFoundError),
+    DependencyTimeoutException(crate::error::DependencyTimeoutException),
+    InvalidArnException(crate::error::InvalidArnException),
+    KmsInternalException(crate::error::KmsInternalException),
+    NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeKeyErrorKind::DependencyTimeoutError(_inner) => _inner.fmt(f),
-            DescribeKeyErrorKind::InvalidArnError(_inner) => _inner.fmt(f),
-            DescribeKeyErrorKind::KMSInternalError(_inner) => _inner.fmt(f),
-            DescribeKeyErrorKind::NotFoundError(_inner) => _inner.fmt(f),
+            DescribeKeyErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
+            DescribeKeyErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
+            DescribeKeyErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
+            DescribeKeyErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             DescribeKeyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1376,26 +1444,29 @@ impl DescribeKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_dependency_timeout_error(&self) -> bool {
-        matches!(&self.kind, DescribeKeyErrorKind::DependencyTimeoutError(_))
+    pub fn is_dependency_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeKeyErrorKind::DependencyTimeoutException(_)
+        )
     }
-    pub fn is_invalid_arn_error(&self) -> bool {
-        matches!(&self.kind, DescribeKeyErrorKind::InvalidArnError(_))
+    pub fn is_invalid_arn_exception(&self) -> bool {
+        matches!(&self.kind, DescribeKeyErrorKind::InvalidArnException(_))
     }
-    pub fn is_kms_internal_error(&self) -> bool {
-        matches!(&self.kind, DescribeKeyErrorKind::KMSInternalError(_))
+    pub fn is_kms_internal_exception(&self) -> bool {
+        matches!(&self.kind, DescribeKeyErrorKind::KmsInternalException(_))
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, DescribeKeyErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, DescribeKeyErrorKind::NotFoundException(_))
     }
 }
 impl std::error::Error for DescribeKeyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeKeyErrorKind::DependencyTimeoutError(_inner) => Some(_inner),
-            DescribeKeyErrorKind::InvalidArnError(_inner) => Some(_inner),
-            DescribeKeyErrorKind::KMSInternalError(_inner) => Some(_inner),
-            DescribeKeyErrorKind::NotFoundError(_inner) => Some(_inner),
+            DescribeKeyErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
+            DescribeKeyErrorKind::InvalidArnException(_inner) => Some(_inner),
+            DescribeKeyErrorKind::KmsInternalException(_inner) => Some(_inner),
+            DescribeKeyErrorKind::NotFoundException(_inner) => Some(_inner),
             DescribeKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1410,22 +1481,22 @@ pub struct DisableKeyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisableKeyErrorKind {
-    DependencyTimeoutError(crate::error::DependencyTimeoutError),
-    InvalidArnError(crate::error::InvalidArnError),
-    KMSInternalError(crate::error::KMSInternalError),
-    KMSInvalidStateError(crate::error::KMSInvalidStateError),
-    NotFoundError(crate::error::NotFoundError),
+    DependencyTimeoutException(crate::error::DependencyTimeoutException),
+    InvalidArnException(crate::error::InvalidArnException),
+    KmsInternalException(crate::error::KmsInternalException),
+    KmsInvalidStateException(crate::error::KmsInvalidStateException),
+    NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisableKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DisableKeyErrorKind::DependencyTimeoutError(_inner) => _inner.fmt(f),
-            DisableKeyErrorKind::InvalidArnError(_inner) => _inner.fmt(f),
-            DisableKeyErrorKind::KMSInternalError(_inner) => _inner.fmt(f),
-            DisableKeyErrorKind::KMSInvalidStateError(_inner) => _inner.fmt(f),
-            DisableKeyErrorKind::NotFoundError(_inner) => _inner.fmt(f),
+            DisableKeyErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
+            DisableKeyErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
+            DisableKeyErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
+            DisableKeyErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
+            DisableKeyErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             DisableKeyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1474,30 +1545,33 @@ impl DisableKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_dependency_timeout_error(&self) -> bool {
-        matches!(&self.kind, DisableKeyErrorKind::DependencyTimeoutError(_))
+    pub fn is_dependency_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisableKeyErrorKind::DependencyTimeoutException(_)
+        )
     }
-    pub fn is_invalid_arn_error(&self) -> bool {
-        matches!(&self.kind, DisableKeyErrorKind::InvalidArnError(_))
+    pub fn is_invalid_arn_exception(&self) -> bool {
+        matches!(&self.kind, DisableKeyErrorKind::InvalidArnException(_))
     }
-    pub fn is_kms_internal_error(&self) -> bool {
-        matches!(&self.kind, DisableKeyErrorKind::KMSInternalError(_))
+    pub fn is_kms_internal_exception(&self) -> bool {
+        matches!(&self.kind, DisableKeyErrorKind::KmsInternalException(_))
     }
-    pub fn is_kms_invalid_state_error(&self) -> bool {
-        matches!(&self.kind, DisableKeyErrorKind::KMSInvalidStateError(_))
+    pub fn is_kms_invalid_state_exception(&self) -> bool {
+        matches!(&self.kind, DisableKeyErrorKind::KmsInvalidStateException(_))
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, DisableKeyErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, DisableKeyErrorKind::NotFoundException(_))
     }
 }
 impl std::error::Error for DisableKeyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DisableKeyErrorKind::DependencyTimeoutError(_inner) => Some(_inner),
-            DisableKeyErrorKind::InvalidArnError(_inner) => Some(_inner),
-            DisableKeyErrorKind::KMSInternalError(_inner) => Some(_inner),
-            DisableKeyErrorKind::KMSInvalidStateError(_inner) => Some(_inner),
-            DisableKeyErrorKind::NotFoundError(_inner) => Some(_inner),
+            DisableKeyErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
+            DisableKeyErrorKind::InvalidArnException(_inner) => Some(_inner),
+            DisableKeyErrorKind::KmsInternalException(_inner) => Some(_inner),
+            DisableKeyErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
+            DisableKeyErrorKind::NotFoundException(_inner) => Some(_inner),
             DisableKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1512,26 +1586,26 @@ pub struct DisableKeyRotationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisableKeyRotationErrorKind {
-    DependencyTimeoutError(crate::error::DependencyTimeoutError),
-    DisabledError(crate::error::DisabledError),
-    InvalidArnError(crate::error::InvalidArnError),
-    KMSInternalError(crate::error::KMSInternalError),
-    KMSInvalidStateError(crate::error::KMSInvalidStateError),
-    NotFoundError(crate::error::NotFoundError),
-    UnsupportedOperationError(crate::error::UnsupportedOperationError),
+    DependencyTimeoutException(crate::error::DependencyTimeoutException),
+    DisabledException(crate::error::DisabledException),
+    InvalidArnException(crate::error::InvalidArnException),
+    KmsInternalException(crate::error::KmsInternalException),
+    KmsInvalidStateException(crate::error::KmsInvalidStateException),
+    NotFoundException(crate::error::NotFoundException),
+    UnsupportedOperationException(crate::error::UnsupportedOperationException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisableKeyRotationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DisableKeyRotationErrorKind::DependencyTimeoutError(_inner) => _inner.fmt(f),
-            DisableKeyRotationErrorKind::DisabledError(_inner) => _inner.fmt(f),
-            DisableKeyRotationErrorKind::InvalidArnError(_inner) => _inner.fmt(f),
-            DisableKeyRotationErrorKind::KMSInternalError(_inner) => _inner.fmt(f),
-            DisableKeyRotationErrorKind::KMSInvalidStateError(_inner) => _inner.fmt(f),
-            DisableKeyRotationErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            DisableKeyRotationErrorKind::UnsupportedOperationError(_inner) => _inner.fmt(f),
+            DisableKeyRotationErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
+            DisableKeyRotationErrorKind::DisabledException(_inner) => _inner.fmt(f),
+            DisableKeyRotationErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
+            DisableKeyRotationErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
+            DisableKeyRotationErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
+            DisableKeyRotationErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DisableKeyRotationErrorKind::UnsupportedOperationException(_inner) => _inner.fmt(f),
             DisableKeyRotationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1580,47 +1654,59 @@ impl DisableKeyRotationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_dependency_timeout_error(&self) -> bool {
+    pub fn is_dependency_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DisableKeyRotationErrorKind::DependencyTimeoutError(_)
+            DisableKeyRotationErrorKind::DependencyTimeoutException(_)
         )
     }
-    pub fn is_disabled_error(&self) -> bool {
-        matches!(&self.kind, DisableKeyRotationErrorKind::DisabledError(_))
-    }
-    pub fn is_invalid_arn_error(&self) -> bool {
-        matches!(&self.kind, DisableKeyRotationErrorKind::InvalidArnError(_))
-    }
-    pub fn is_kms_internal_error(&self) -> bool {
-        matches!(&self.kind, DisableKeyRotationErrorKind::KMSInternalError(_))
-    }
-    pub fn is_kms_invalid_state_error(&self) -> bool {
+    pub fn is_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DisableKeyRotationErrorKind::KMSInvalidStateError(_)
+            DisableKeyRotationErrorKind::DisabledException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, DisableKeyRotationErrorKind::NotFoundError(_))
-    }
-    pub fn is_unsupported_operation_error(&self) -> bool {
+    pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DisableKeyRotationErrorKind::UnsupportedOperationError(_)
+            DisableKeyRotationErrorKind::InvalidArnException(_)
+        )
+    }
+    pub fn is_kms_internal_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisableKeyRotationErrorKind::KmsInternalException(_)
+        )
+    }
+    pub fn is_kms_invalid_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisableKeyRotationErrorKind::KmsInvalidStateException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisableKeyRotationErrorKind::NotFoundException(_)
+        )
+    }
+    pub fn is_unsupported_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisableKeyRotationErrorKind::UnsupportedOperationException(_)
         )
     }
 }
 impl std::error::Error for DisableKeyRotationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DisableKeyRotationErrorKind::DependencyTimeoutError(_inner) => Some(_inner),
-            DisableKeyRotationErrorKind::DisabledError(_inner) => Some(_inner),
-            DisableKeyRotationErrorKind::InvalidArnError(_inner) => Some(_inner),
-            DisableKeyRotationErrorKind::KMSInternalError(_inner) => Some(_inner),
-            DisableKeyRotationErrorKind::KMSInvalidStateError(_inner) => Some(_inner),
-            DisableKeyRotationErrorKind::NotFoundError(_inner) => Some(_inner),
-            DisableKeyRotationErrorKind::UnsupportedOperationError(_inner) => Some(_inner),
+            DisableKeyRotationErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
+            DisableKeyRotationErrorKind::DisabledException(_inner) => Some(_inner),
+            DisableKeyRotationErrorKind::InvalidArnException(_inner) => Some(_inner),
+            DisableKeyRotationErrorKind::KmsInternalException(_inner) => Some(_inner),
+            DisableKeyRotationErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
+            DisableKeyRotationErrorKind::NotFoundException(_inner) => Some(_inner),
+            DisableKeyRotationErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
             DisableKeyRotationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1635,20 +1721,22 @@ pub struct DisconnectCustomKeyStoreError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisconnectCustomKeyStoreErrorKind {
-    CustomKeyStoreInvalidStateError(crate::error::CustomKeyStoreInvalidStateError),
-    CustomKeyStoreNotFoundError(crate::error::CustomKeyStoreNotFoundError),
-    KMSInternalError(crate::error::KMSInternalError),
+    CustomKeyStoreInvalidStateException(crate::error::CustomKeyStoreInvalidStateException),
+    CustomKeyStoreNotFoundException(crate::error::CustomKeyStoreNotFoundException),
+    KmsInternalException(crate::error::KmsInternalException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisconnectCustomKeyStoreError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DisconnectCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateError(_inner) => {
+            DisconnectCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateException(_inner) => {
                 _inner.fmt(f)
             }
-            DisconnectCustomKeyStoreErrorKind::CustomKeyStoreNotFoundError(_inner) => _inner.fmt(f),
-            DisconnectCustomKeyStoreErrorKind::KMSInternalError(_inner) => _inner.fmt(f),
+            DisconnectCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            DisconnectCustomKeyStoreErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
             DisconnectCustomKeyStoreErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1697,33 +1785,35 @@ impl DisconnectCustomKeyStoreError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_custom_key_store_invalid_state_error(&self) -> bool {
+    pub fn is_custom_key_store_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DisconnectCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateError(_)
+            DisconnectCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateException(_)
         )
     }
-    pub fn is_custom_key_store_not_found_error(&self) -> bool {
+    pub fn is_custom_key_store_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DisconnectCustomKeyStoreErrorKind::CustomKeyStoreNotFoundError(_)
+            DisconnectCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException(_)
         )
     }
-    pub fn is_kms_internal_error(&self) -> bool {
+    pub fn is_kms_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DisconnectCustomKeyStoreErrorKind::KMSInternalError(_)
+            DisconnectCustomKeyStoreErrorKind::KmsInternalException(_)
         )
     }
 }
 impl std::error::Error for DisconnectCustomKeyStoreError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DisconnectCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateError(_inner) => {
+            DisconnectCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateException(_inner) => {
                 Some(_inner)
             }
-            DisconnectCustomKeyStoreErrorKind::CustomKeyStoreNotFoundError(_inner) => Some(_inner),
-            DisconnectCustomKeyStoreErrorKind::KMSInternalError(_inner) => Some(_inner),
+            DisconnectCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            DisconnectCustomKeyStoreErrorKind::KmsInternalException(_inner) => Some(_inner),
             DisconnectCustomKeyStoreErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1738,24 +1828,24 @@ pub struct EnableKeyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum EnableKeyErrorKind {
-    DependencyTimeoutError(crate::error::DependencyTimeoutError),
-    InvalidArnError(crate::error::InvalidArnError),
-    KMSInternalError(crate::error::KMSInternalError),
-    KMSInvalidStateError(crate::error::KMSInvalidStateError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NotFoundError(crate::error::NotFoundError),
+    DependencyTimeoutException(crate::error::DependencyTimeoutException),
+    InvalidArnException(crate::error::InvalidArnException),
+    KmsInternalException(crate::error::KmsInternalException),
+    KmsInvalidStateException(crate::error::KmsInvalidStateException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for EnableKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            EnableKeyErrorKind::DependencyTimeoutError(_inner) => _inner.fmt(f),
-            EnableKeyErrorKind::InvalidArnError(_inner) => _inner.fmt(f),
-            EnableKeyErrorKind::KMSInternalError(_inner) => _inner.fmt(f),
-            EnableKeyErrorKind::KMSInvalidStateError(_inner) => _inner.fmt(f),
-            EnableKeyErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            EnableKeyErrorKind::NotFoundError(_inner) => _inner.fmt(f),
+            EnableKeyErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
+            EnableKeyErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
+            EnableKeyErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
+            EnableKeyErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
+            EnableKeyErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            EnableKeyErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             EnableKeyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1804,34 +1894,37 @@ impl EnableKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_dependency_timeout_error(&self) -> bool {
-        matches!(&self.kind, EnableKeyErrorKind::DependencyTimeoutError(_))
+    pub fn is_dependency_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            EnableKeyErrorKind::DependencyTimeoutException(_)
+        )
     }
-    pub fn is_invalid_arn_error(&self) -> bool {
-        matches!(&self.kind, EnableKeyErrorKind::InvalidArnError(_))
+    pub fn is_invalid_arn_exception(&self) -> bool {
+        matches!(&self.kind, EnableKeyErrorKind::InvalidArnException(_))
     }
-    pub fn is_kms_internal_error(&self) -> bool {
-        matches!(&self.kind, EnableKeyErrorKind::KMSInternalError(_))
+    pub fn is_kms_internal_exception(&self) -> bool {
+        matches!(&self.kind, EnableKeyErrorKind::KmsInternalException(_))
     }
-    pub fn is_kms_invalid_state_error(&self) -> bool {
-        matches!(&self.kind, EnableKeyErrorKind::KMSInvalidStateError(_))
+    pub fn is_kms_invalid_state_exception(&self) -> bool {
+        matches!(&self.kind, EnableKeyErrorKind::KmsInvalidStateException(_))
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, EnableKeyErrorKind::LimitExceededError(_))
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(&self.kind, EnableKeyErrorKind::LimitExceededException(_))
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, EnableKeyErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, EnableKeyErrorKind::NotFoundException(_))
     }
 }
 impl std::error::Error for EnableKeyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            EnableKeyErrorKind::DependencyTimeoutError(_inner) => Some(_inner),
-            EnableKeyErrorKind::InvalidArnError(_inner) => Some(_inner),
-            EnableKeyErrorKind::KMSInternalError(_inner) => Some(_inner),
-            EnableKeyErrorKind::KMSInvalidStateError(_inner) => Some(_inner),
-            EnableKeyErrorKind::LimitExceededError(_inner) => Some(_inner),
-            EnableKeyErrorKind::NotFoundError(_inner) => Some(_inner),
+            EnableKeyErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
+            EnableKeyErrorKind::InvalidArnException(_inner) => Some(_inner),
+            EnableKeyErrorKind::KmsInternalException(_inner) => Some(_inner),
+            EnableKeyErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
+            EnableKeyErrorKind::LimitExceededException(_inner) => Some(_inner),
+            EnableKeyErrorKind::NotFoundException(_inner) => Some(_inner),
             EnableKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1846,26 +1939,26 @@ pub struct EnableKeyRotationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum EnableKeyRotationErrorKind {
-    DependencyTimeoutError(crate::error::DependencyTimeoutError),
-    DisabledError(crate::error::DisabledError),
-    InvalidArnError(crate::error::InvalidArnError),
-    KMSInternalError(crate::error::KMSInternalError),
-    KMSInvalidStateError(crate::error::KMSInvalidStateError),
-    NotFoundError(crate::error::NotFoundError),
-    UnsupportedOperationError(crate::error::UnsupportedOperationError),
+    DependencyTimeoutException(crate::error::DependencyTimeoutException),
+    DisabledException(crate::error::DisabledException),
+    InvalidArnException(crate::error::InvalidArnException),
+    KmsInternalException(crate::error::KmsInternalException),
+    KmsInvalidStateException(crate::error::KmsInvalidStateException),
+    NotFoundException(crate::error::NotFoundException),
+    UnsupportedOperationException(crate::error::UnsupportedOperationException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for EnableKeyRotationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            EnableKeyRotationErrorKind::DependencyTimeoutError(_inner) => _inner.fmt(f),
-            EnableKeyRotationErrorKind::DisabledError(_inner) => _inner.fmt(f),
-            EnableKeyRotationErrorKind::InvalidArnError(_inner) => _inner.fmt(f),
-            EnableKeyRotationErrorKind::KMSInternalError(_inner) => _inner.fmt(f),
-            EnableKeyRotationErrorKind::KMSInvalidStateError(_inner) => _inner.fmt(f),
-            EnableKeyRotationErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            EnableKeyRotationErrorKind::UnsupportedOperationError(_inner) => _inner.fmt(f),
+            EnableKeyRotationErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
+            EnableKeyRotationErrorKind::DisabledException(_inner) => _inner.fmt(f),
+            EnableKeyRotationErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
+            EnableKeyRotationErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
+            EnableKeyRotationErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
+            EnableKeyRotationErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            EnableKeyRotationErrorKind::UnsupportedOperationException(_inner) => _inner.fmt(f),
             EnableKeyRotationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1914,47 +2007,53 @@ impl EnableKeyRotationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_dependency_timeout_error(&self) -> bool {
+    pub fn is_dependency_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
-            EnableKeyRotationErrorKind::DependencyTimeoutError(_)
+            EnableKeyRotationErrorKind::DependencyTimeoutException(_)
         )
     }
-    pub fn is_disabled_error(&self) -> bool {
-        matches!(&self.kind, EnableKeyRotationErrorKind::DisabledError(_))
+    pub fn is_disabled_exception(&self) -> bool {
+        matches!(&self.kind, EnableKeyRotationErrorKind::DisabledException(_))
     }
-    pub fn is_invalid_arn_error(&self) -> bool {
-        matches!(&self.kind, EnableKeyRotationErrorKind::InvalidArnError(_))
-    }
-    pub fn is_kms_internal_error(&self) -> bool {
-        matches!(&self.kind, EnableKeyRotationErrorKind::KMSInternalError(_))
-    }
-    pub fn is_kms_invalid_state_error(&self) -> bool {
+    pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
-            EnableKeyRotationErrorKind::KMSInvalidStateError(_)
+            EnableKeyRotationErrorKind::InvalidArnException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, EnableKeyRotationErrorKind::NotFoundError(_))
-    }
-    pub fn is_unsupported_operation_error(&self) -> bool {
+    pub fn is_kms_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
-            EnableKeyRotationErrorKind::UnsupportedOperationError(_)
+            EnableKeyRotationErrorKind::KmsInternalException(_)
+        )
+    }
+    pub fn is_kms_invalid_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            EnableKeyRotationErrorKind::KmsInvalidStateException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, EnableKeyRotationErrorKind::NotFoundException(_))
+    }
+    pub fn is_unsupported_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            EnableKeyRotationErrorKind::UnsupportedOperationException(_)
         )
     }
 }
 impl std::error::Error for EnableKeyRotationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            EnableKeyRotationErrorKind::DependencyTimeoutError(_inner) => Some(_inner),
-            EnableKeyRotationErrorKind::DisabledError(_inner) => Some(_inner),
-            EnableKeyRotationErrorKind::InvalidArnError(_inner) => Some(_inner),
-            EnableKeyRotationErrorKind::KMSInternalError(_inner) => Some(_inner),
-            EnableKeyRotationErrorKind::KMSInvalidStateError(_inner) => Some(_inner),
-            EnableKeyRotationErrorKind::NotFoundError(_inner) => Some(_inner),
-            EnableKeyRotationErrorKind::UnsupportedOperationError(_inner) => Some(_inner),
+            EnableKeyRotationErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
+            EnableKeyRotationErrorKind::DisabledException(_inner) => Some(_inner),
+            EnableKeyRotationErrorKind::InvalidArnException(_inner) => Some(_inner),
+            EnableKeyRotationErrorKind::KmsInternalException(_inner) => Some(_inner),
+            EnableKeyRotationErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
+            EnableKeyRotationErrorKind::NotFoundException(_inner) => Some(_inner),
+            EnableKeyRotationErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
             EnableKeyRotationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1969,28 +2068,28 @@ pub struct EncryptError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum EncryptErrorKind {
-    DependencyTimeoutError(crate::error::DependencyTimeoutError),
-    DisabledError(crate::error::DisabledError),
-    InvalidGrantTokenError(crate::error::InvalidGrantTokenError),
-    InvalidKeyUsageError(crate::error::InvalidKeyUsageError),
-    KeyUnavailableError(crate::error::KeyUnavailableError),
-    KMSInternalError(crate::error::KMSInternalError),
-    KMSInvalidStateError(crate::error::KMSInvalidStateError),
-    NotFoundError(crate::error::NotFoundError),
+    DependencyTimeoutException(crate::error::DependencyTimeoutException),
+    DisabledException(crate::error::DisabledException),
+    InvalidGrantTokenException(crate::error::InvalidGrantTokenException),
+    InvalidKeyUsageException(crate::error::InvalidKeyUsageException),
+    KeyUnavailableException(crate::error::KeyUnavailableException),
+    KmsInternalException(crate::error::KmsInternalException),
+    KmsInvalidStateException(crate::error::KmsInvalidStateException),
+    NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for EncryptError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            EncryptErrorKind::DependencyTimeoutError(_inner) => _inner.fmt(f),
-            EncryptErrorKind::DisabledError(_inner) => _inner.fmt(f),
-            EncryptErrorKind::InvalidGrantTokenError(_inner) => _inner.fmt(f),
-            EncryptErrorKind::InvalidKeyUsageError(_inner) => _inner.fmt(f),
-            EncryptErrorKind::KeyUnavailableError(_inner) => _inner.fmt(f),
-            EncryptErrorKind::KMSInternalError(_inner) => _inner.fmt(f),
-            EncryptErrorKind::KMSInvalidStateError(_inner) => _inner.fmt(f),
-            EncryptErrorKind::NotFoundError(_inner) => _inner.fmt(f),
+            EncryptErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
+            EncryptErrorKind::DisabledException(_inner) => _inner.fmt(f),
+            EncryptErrorKind::InvalidGrantTokenException(_inner) => _inner.fmt(f),
+            EncryptErrorKind::InvalidKeyUsageException(_inner) => _inner.fmt(f),
+            EncryptErrorKind::KeyUnavailableException(_inner) => _inner.fmt(f),
+            EncryptErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
+            EncryptErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
+            EncryptErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             EncryptErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2039,42 +2138,42 @@ impl EncryptError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_dependency_timeout_error(&self) -> bool {
-        matches!(&self.kind, EncryptErrorKind::DependencyTimeoutError(_))
+    pub fn is_dependency_timeout_exception(&self) -> bool {
+        matches!(&self.kind, EncryptErrorKind::DependencyTimeoutException(_))
     }
-    pub fn is_disabled_error(&self) -> bool {
-        matches!(&self.kind, EncryptErrorKind::DisabledError(_))
+    pub fn is_disabled_exception(&self) -> bool {
+        matches!(&self.kind, EncryptErrorKind::DisabledException(_))
     }
-    pub fn is_invalid_grant_token_error(&self) -> bool {
-        matches!(&self.kind, EncryptErrorKind::InvalidGrantTokenError(_))
+    pub fn is_invalid_grant_token_exception(&self) -> bool {
+        matches!(&self.kind, EncryptErrorKind::InvalidGrantTokenException(_))
     }
-    pub fn is_invalid_key_usage_error(&self) -> bool {
-        matches!(&self.kind, EncryptErrorKind::InvalidKeyUsageError(_))
+    pub fn is_invalid_key_usage_exception(&self) -> bool {
+        matches!(&self.kind, EncryptErrorKind::InvalidKeyUsageException(_))
     }
-    pub fn is_key_unavailable_error(&self) -> bool {
-        matches!(&self.kind, EncryptErrorKind::KeyUnavailableError(_))
+    pub fn is_key_unavailable_exception(&self) -> bool {
+        matches!(&self.kind, EncryptErrorKind::KeyUnavailableException(_))
     }
-    pub fn is_kms_internal_error(&self) -> bool {
-        matches!(&self.kind, EncryptErrorKind::KMSInternalError(_))
+    pub fn is_kms_internal_exception(&self) -> bool {
+        matches!(&self.kind, EncryptErrorKind::KmsInternalException(_))
     }
-    pub fn is_kms_invalid_state_error(&self) -> bool {
-        matches!(&self.kind, EncryptErrorKind::KMSInvalidStateError(_))
+    pub fn is_kms_invalid_state_exception(&self) -> bool {
+        matches!(&self.kind, EncryptErrorKind::KmsInvalidStateException(_))
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, EncryptErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, EncryptErrorKind::NotFoundException(_))
     }
 }
 impl std::error::Error for EncryptError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            EncryptErrorKind::DependencyTimeoutError(_inner) => Some(_inner),
-            EncryptErrorKind::DisabledError(_inner) => Some(_inner),
-            EncryptErrorKind::InvalidGrantTokenError(_inner) => Some(_inner),
-            EncryptErrorKind::InvalidKeyUsageError(_inner) => Some(_inner),
-            EncryptErrorKind::KeyUnavailableError(_inner) => Some(_inner),
-            EncryptErrorKind::KMSInternalError(_inner) => Some(_inner),
-            EncryptErrorKind::KMSInvalidStateError(_inner) => Some(_inner),
-            EncryptErrorKind::NotFoundError(_inner) => Some(_inner),
+            EncryptErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
+            EncryptErrorKind::DisabledException(_inner) => Some(_inner),
+            EncryptErrorKind::InvalidGrantTokenException(_inner) => Some(_inner),
+            EncryptErrorKind::InvalidKeyUsageException(_inner) => Some(_inner),
+            EncryptErrorKind::KeyUnavailableException(_inner) => Some(_inner),
+            EncryptErrorKind::KmsInternalException(_inner) => Some(_inner),
+            EncryptErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
+            EncryptErrorKind::NotFoundException(_inner) => Some(_inner),
             EncryptErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2089,28 +2188,28 @@ pub struct GenerateDataKeyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GenerateDataKeyErrorKind {
-    DependencyTimeoutError(crate::error::DependencyTimeoutError),
-    DisabledError(crate::error::DisabledError),
-    InvalidGrantTokenError(crate::error::InvalidGrantTokenError),
-    InvalidKeyUsageError(crate::error::InvalidKeyUsageError),
-    KeyUnavailableError(crate::error::KeyUnavailableError),
-    KMSInternalError(crate::error::KMSInternalError),
-    KMSInvalidStateError(crate::error::KMSInvalidStateError),
-    NotFoundError(crate::error::NotFoundError),
+    DependencyTimeoutException(crate::error::DependencyTimeoutException),
+    DisabledException(crate::error::DisabledException),
+    InvalidGrantTokenException(crate::error::InvalidGrantTokenException),
+    InvalidKeyUsageException(crate::error::InvalidKeyUsageException),
+    KeyUnavailableException(crate::error::KeyUnavailableException),
+    KmsInternalException(crate::error::KmsInternalException),
+    KmsInvalidStateException(crate::error::KmsInvalidStateException),
+    NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GenerateDataKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GenerateDataKeyErrorKind::DependencyTimeoutError(_inner) => _inner.fmt(f),
-            GenerateDataKeyErrorKind::DisabledError(_inner) => _inner.fmt(f),
-            GenerateDataKeyErrorKind::InvalidGrantTokenError(_inner) => _inner.fmt(f),
-            GenerateDataKeyErrorKind::InvalidKeyUsageError(_inner) => _inner.fmt(f),
-            GenerateDataKeyErrorKind::KeyUnavailableError(_inner) => _inner.fmt(f),
-            GenerateDataKeyErrorKind::KMSInternalError(_inner) => _inner.fmt(f),
-            GenerateDataKeyErrorKind::KMSInvalidStateError(_inner) => _inner.fmt(f),
-            GenerateDataKeyErrorKind::NotFoundError(_inner) => _inner.fmt(f),
+            GenerateDataKeyErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
+            GenerateDataKeyErrorKind::DisabledException(_inner) => _inner.fmt(f),
+            GenerateDataKeyErrorKind::InvalidGrantTokenException(_inner) => _inner.fmt(f),
+            GenerateDataKeyErrorKind::InvalidKeyUsageException(_inner) => _inner.fmt(f),
+            GenerateDataKeyErrorKind::KeyUnavailableException(_inner) => _inner.fmt(f),
+            GenerateDataKeyErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
+            GenerateDataKeyErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
+            GenerateDataKeyErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             GenerateDataKeyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2159,54 +2258,60 @@ impl GenerateDataKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_dependency_timeout_error(&self) -> bool {
+    pub fn is_dependency_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GenerateDataKeyErrorKind::DependencyTimeoutError(_)
+            GenerateDataKeyErrorKind::DependencyTimeoutException(_)
         )
     }
-    pub fn is_disabled_error(&self) -> bool {
-        matches!(&self.kind, GenerateDataKeyErrorKind::DisabledError(_))
+    pub fn is_disabled_exception(&self) -> bool {
+        matches!(&self.kind, GenerateDataKeyErrorKind::DisabledException(_))
     }
-    pub fn is_invalid_grant_token_error(&self) -> bool {
+    pub fn is_invalid_grant_token_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GenerateDataKeyErrorKind::InvalidGrantTokenError(_)
+            GenerateDataKeyErrorKind::InvalidGrantTokenException(_)
         )
     }
-    pub fn is_invalid_key_usage_error(&self) -> bool {
+    pub fn is_invalid_key_usage_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GenerateDataKeyErrorKind::InvalidKeyUsageError(_)
+            GenerateDataKeyErrorKind::InvalidKeyUsageException(_)
         )
     }
-    pub fn is_key_unavailable_error(&self) -> bool {
-        matches!(&self.kind, GenerateDataKeyErrorKind::KeyUnavailableError(_))
-    }
-    pub fn is_kms_internal_error(&self) -> bool {
-        matches!(&self.kind, GenerateDataKeyErrorKind::KMSInternalError(_))
-    }
-    pub fn is_kms_invalid_state_error(&self) -> bool {
+    pub fn is_key_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GenerateDataKeyErrorKind::KMSInvalidStateError(_)
+            GenerateDataKeyErrorKind::KeyUnavailableException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, GenerateDataKeyErrorKind::NotFoundError(_))
+    pub fn is_kms_internal_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateDataKeyErrorKind::KmsInternalException(_)
+        )
+    }
+    pub fn is_kms_invalid_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateDataKeyErrorKind::KmsInvalidStateException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, GenerateDataKeyErrorKind::NotFoundException(_))
     }
 }
 impl std::error::Error for GenerateDataKeyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GenerateDataKeyErrorKind::DependencyTimeoutError(_inner) => Some(_inner),
-            GenerateDataKeyErrorKind::DisabledError(_inner) => Some(_inner),
-            GenerateDataKeyErrorKind::InvalidGrantTokenError(_inner) => Some(_inner),
-            GenerateDataKeyErrorKind::InvalidKeyUsageError(_inner) => Some(_inner),
-            GenerateDataKeyErrorKind::KeyUnavailableError(_inner) => Some(_inner),
-            GenerateDataKeyErrorKind::KMSInternalError(_inner) => Some(_inner),
-            GenerateDataKeyErrorKind::KMSInvalidStateError(_inner) => Some(_inner),
-            GenerateDataKeyErrorKind::NotFoundError(_inner) => Some(_inner),
+            GenerateDataKeyErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
+            GenerateDataKeyErrorKind::DisabledException(_inner) => Some(_inner),
+            GenerateDataKeyErrorKind::InvalidGrantTokenException(_inner) => Some(_inner),
+            GenerateDataKeyErrorKind::InvalidKeyUsageException(_inner) => Some(_inner),
+            GenerateDataKeyErrorKind::KeyUnavailableException(_inner) => Some(_inner),
+            GenerateDataKeyErrorKind::KmsInternalException(_inner) => Some(_inner),
+            GenerateDataKeyErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
+            GenerateDataKeyErrorKind::NotFoundException(_inner) => Some(_inner),
             GenerateDataKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2221,30 +2326,30 @@ pub struct GenerateDataKeyPairError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GenerateDataKeyPairErrorKind {
-    DependencyTimeoutError(crate::error::DependencyTimeoutError),
-    DisabledError(crate::error::DisabledError),
-    InvalidGrantTokenError(crate::error::InvalidGrantTokenError),
-    InvalidKeyUsageError(crate::error::InvalidKeyUsageError),
-    KeyUnavailableError(crate::error::KeyUnavailableError),
-    KMSInternalError(crate::error::KMSInternalError),
-    KMSInvalidStateError(crate::error::KMSInvalidStateError),
-    NotFoundError(crate::error::NotFoundError),
-    UnsupportedOperationError(crate::error::UnsupportedOperationError),
+    DependencyTimeoutException(crate::error::DependencyTimeoutException),
+    DisabledException(crate::error::DisabledException),
+    InvalidGrantTokenException(crate::error::InvalidGrantTokenException),
+    InvalidKeyUsageException(crate::error::InvalidKeyUsageException),
+    KeyUnavailableException(crate::error::KeyUnavailableException),
+    KmsInternalException(crate::error::KmsInternalException),
+    KmsInvalidStateException(crate::error::KmsInvalidStateException),
+    NotFoundException(crate::error::NotFoundException),
+    UnsupportedOperationException(crate::error::UnsupportedOperationException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GenerateDataKeyPairError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GenerateDataKeyPairErrorKind::DependencyTimeoutError(_inner) => _inner.fmt(f),
-            GenerateDataKeyPairErrorKind::DisabledError(_inner) => _inner.fmt(f),
-            GenerateDataKeyPairErrorKind::InvalidGrantTokenError(_inner) => _inner.fmt(f),
-            GenerateDataKeyPairErrorKind::InvalidKeyUsageError(_inner) => _inner.fmt(f),
-            GenerateDataKeyPairErrorKind::KeyUnavailableError(_inner) => _inner.fmt(f),
-            GenerateDataKeyPairErrorKind::KMSInternalError(_inner) => _inner.fmt(f),
-            GenerateDataKeyPairErrorKind::KMSInvalidStateError(_inner) => _inner.fmt(f),
-            GenerateDataKeyPairErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            GenerateDataKeyPairErrorKind::UnsupportedOperationError(_inner) => _inner.fmt(f),
+            GenerateDataKeyPairErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
+            GenerateDataKeyPairErrorKind::DisabledException(_inner) => _inner.fmt(f),
+            GenerateDataKeyPairErrorKind::InvalidGrantTokenException(_inner) => _inner.fmt(f),
+            GenerateDataKeyPairErrorKind::InvalidKeyUsageException(_inner) => _inner.fmt(f),
+            GenerateDataKeyPairErrorKind::KeyUnavailableException(_inner) => _inner.fmt(f),
+            GenerateDataKeyPairErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
+            GenerateDataKeyPairErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
+            GenerateDataKeyPairErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GenerateDataKeyPairErrorKind::UnsupportedOperationException(_inner) => _inner.fmt(f),
             GenerateDataKeyPairErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2293,67 +2398,73 @@ impl GenerateDataKeyPairError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_dependency_timeout_error(&self) -> bool {
+    pub fn is_dependency_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GenerateDataKeyPairErrorKind::DependencyTimeoutError(_)
+            GenerateDataKeyPairErrorKind::DependencyTimeoutException(_)
         )
     }
-    pub fn is_disabled_error(&self) -> bool {
-        matches!(&self.kind, GenerateDataKeyPairErrorKind::DisabledError(_))
-    }
-    pub fn is_invalid_grant_token_error(&self) -> bool {
+    pub fn is_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GenerateDataKeyPairErrorKind::InvalidGrantTokenError(_)
+            GenerateDataKeyPairErrorKind::DisabledException(_)
         )
     }
-    pub fn is_invalid_key_usage_error(&self) -> bool {
+    pub fn is_invalid_grant_token_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GenerateDataKeyPairErrorKind::InvalidKeyUsageError(_)
+            GenerateDataKeyPairErrorKind::InvalidGrantTokenException(_)
         )
     }
-    pub fn is_key_unavailable_error(&self) -> bool {
+    pub fn is_invalid_key_usage_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GenerateDataKeyPairErrorKind::KeyUnavailableError(_)
+            GenerateDataKeyPairErrorKind::InvalidKeyUsageException(_)
         )
     }
-    pub fn is_kms_internal_error(&self) -> bool {
+    pub fn is_key_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GenerateDataKeyPairErrorKind::KMSInternalError(_)
+            GenerateDataKeyPairErrorKind::KeyUnavailableException(_)
         )
     }
-    pub fn is_kms_invalid_state_error(&self) -> bool {
+    pub fn is_kms_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GenerateDataKeyPairErrorKind::KMSInvalidStateError(_)
+            GenerateDataKeyPairErrorKind::KmsInternalException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, GenerateDataKeyPairErrorKind::NotFoundError(_))
-    }
-    pub fn is_unsupported_operation_error(&self) -> bool {
+    pub fn is_kms_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GenerateDataKeyPairErrorKind::UnsupportedOperationError(_)
+            GenerateDataKeyPairErrorKind::KmsInvalidStateException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateDataKeyPairErrorKind::NotFoundException(_)
+        )
+    }
+    pub fn is_unsupported_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateDataKeyPairErrorKind::UnsupportedOperationException(_)
         )
     }
 }
 impl std::error::Error for GenerateDataKeyPairError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GenerateDataKeyPairErrorKind::DependencyTimeoutError(_inner) => Some(_inner),
-            GenerateDataKeyPairErrorKind::DisabledError(_inner) => Some(_inner),
-            GenerateDataKeyPairErrorKind::InvalidGrantTokenError(_inner) => Some(_inner),
-            GenerateDataKeyPairErrorKind::InvalidKeyUsageError(_inner) => Some(_inner),
-            GenerateDataKeyPairErrorKind::KeyUnavailableError(_inner) => Some(_inner),
-            GenerateDataKeyPairErrorKind::KMSInternalError(_inner) => Some(_inner),
-            GenerateDataKeyPairErrorKind::KMSInvalidStateError(_inner) => Some(_inner),
-            GenerateDataKeyPairErrorKind::NotFoundError(_inner) => Some(_inner),
-            GenerateDataKeyPairErrorKind::UnsupportedOperationError(_inner) => Some(_inner),
+            GenerateDataKeyPairErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
+            GenerateDataKeyPairErrorKind::DisabledException(_inner) => Some(_inner),
+            GenerateDataKeyPairErrorKind::InvalidGrantTokenException(_inner) => Some(_inner),
+            GenerateDataKeyPairErrorKind::InvalidKeyUsageException(_inner) => Some(_inner),
+            GenerateDataKeyPairErrorKind::KeyUnavailableException(_inner) => Some(_inner),
+            GenerateDataKeyPairErrorKind::KmsInternalException(_inner) => Some(_inner),
+            GenerateDataKeyPairErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
+            GenerateDataKeyPairErrorKind::NotFoundException(_inner) => Some(_inner),
+            GenerateDataKeyPairErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
             GenerateDataKeyPairErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2368,40 +2479,46 @@ pub struct GenerateDataKeyPairWithoutPlaintextError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GenerateDataKeyPairWithoutPlaintextErrorKind {
-    DependencyTimeoutError(crate::error::DependencyTimeoutError),
-    DisabledError(crate::error::DisabledError),
-    InvalidGrantTokenError(crate::error::InvalidGrantTokenError),
-    InvalidKeyUsageError(crate::error::InvalidKeyUsageError),
-    KeyUnavailableError(crate::error::KeyUnavailableError),
-    KMSInternalError(crate::error::KMSInternalError),
-    KMSInvalidStateError(crate::error::KMSInvalidStateError),
-    NotFoundError(crate::error::NotFoundError),
-    UnsupportedOperationError(crate::error::UnsupportedOperationError),
+    DependencyTimeoutException(crate::error::DependencyTimeoutException),
+    DisabledException(crate::error::DisabledException),
+    InvalidGrantTokenException(crate::error::InvalidGrantTokenException),
+    InvalidKeyUsageException(crate::error::InvalidKeyUsageException),
+    KeyUnavailableException(crate::error::KeyUnavailableException),
+    KmsInternalException(crate::error::KmsInternalException),
+    KmsInvalidStateException(crate::error::KmsInvalidStateException),
+    NotFoundException(crate::error::NotFoundException),
+    UnsupportedOperationException(crate::error::UnsupportedOperationException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GenerateDataKeyPairWithoutPlaintextError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GenerateDataKeyPairWithoutPlaintextErrorKind::DependencyTimeoutError(_inner) => {
+            GenerateDataKeyPairWithoutPlaintextErrorKind::DependencyTimeoutException(_inner) => {
                 _inner.fmt(f)
             }
-            GenerateDataKeyPairWithoutPlaintextErrorKind::DisabledError(_inner) => _inner.fmt(f),
-            GenerateDataKeyPairWithoutPlaintextErrorKind::InvalidGrantTokenError(_inner) => {
+            GenerateDataKeyPairWithoutPlaintextErrorKind::DisabledException(_inner) => {
                 _inner.fmt(f)
             }
-            GenerateDataKeyPairWithoutPlaintextErrorKind::InvalidKeyUsageError(_inner) => {
+            GenerateDataKeyPairWithoutPlaintextErrorKind::InvalidGrantTokenException(_inner) => {
                 _inner.fmt(f)
             }
-            GenerateDataKeyPairWithoutPlaintextErrorKind::KeyUnavailableError(_inner) => {
+            GenerateDataKeyPairWithoutPlaintextErrorKind::InvalidKeyUsageException(_inner) => {
                 _inner.fmt(f)
             }
-            GenerateDataKeyPairWithoutPlaintextErrorKind::KMSInternalError(_inner) => _inner.fmt(f),
-            GenerateDataKeyPairWithoutPlaintextErrorKind::KMSInvalidStateError(_inner) => {
+            GenerateDataKeyPairWithoutPlaintextErrorKind::KeyUnavailableException(_inner) => {
                 _inner.fmt(f)
             }
-            GenerateDataKeyPairWithoutPlaintextErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            GenerateDataKeyPairWithoutPlaintextErrorKind::UnsupportedOperationError(_inner) => {
+            GenerateDataKeyPairWithoutPlaintextErrorKind::KmsInternalException(_inner) => {
+                _inner.fmt(f)
+            }
+            GenerateDataKeyPairWithoutPlaintextErrorKind::KmsInvalidStateException(_inner) => {
+                _inner.fmt(f)
+            }
+            GenerateDataKeyPairWithoutPlaintextErrorKind::NotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            GenerateDataKeyPairWithoutPlaintextErrorKind::UnsupportedOperationException(_inner) => {
                 _inner.fmt(f)
             }
             GenerateDataKeyPairWithoutPlaintextErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -2455,83 +2572,85 @@ impl GenerateDataKeyPairWithoutPlaintextError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_dependency_timeout_error(&self) -> bool {
+    pub fn is_dependency_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GenerateDataKeyPairWithoutPlaintextErrorKind::DependencyTimeoutError(_)
+            GenerateDataKeyPairWithoutPlaintextErrorKind::DependencyTimeoutException(_)
         )
     }
-    pub fn is_disabled_error(&self) -> bool {
+    pub fn is_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GenerateDataKeyPairWithoutPlaintextErrorKind::DisabledError(_)
+            GenerateDataKeyPairWithoutPlaintextErrorKind::DisabledException(_)
         )
     }
-    pub fn is_invalid_grant_token_error(&self) -> bool {
+    pub fn is_invalid_grant_token_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GenerateDataKeyPairWithoutPlaintextErrorKind::InvalidGrantTokenError(_)
+            GenerateDataKeyPairWithoutPlaintextErrorKind::InvalidGrantTokenException(_)
         )
     }
-    pub fn is_invalid_key_usage_error(&self) -> bool {
+    pub fn is_invalid_key_usage_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GenerateDataKeyPairWithoutPlaintextErrorKind::InvalidKeyUsageError(_)
+            GenerateDataKeyPairWithoutPlaintextErrorKind::InvalidKeyUsageException(_)
         )
     }
-    pub fn is_key_unavailable_error(&self) -> bool {
+    pub fn is_key_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GenerateDataKeyPairWithoutPlaintextErrorKind::KeyUnavailableError(_)
+            GenerateDataKeyPairWithoutPlaintextErrorKind::KeyUnavailableException(_)
         )
     }
-    pub fn is_kms_internal_error(&self) -> bool {
+    pub fn is_kms_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GenerateDataKeyPairWithoutPlaintextErrorKind::KMSInternalError(_)
+            GenerateDataKeyPairWithoutPlaintextErrorKind::KmsInternalException(_)
         )
     }
-    pub fn is_kms_invalid_state_error(&self) -> bool {
+    pub fn is_kms_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GenerateDataKeyPairWithoutPlaintextErrorKind::KMSInvalidStateError(_)
+            GenerateDataKeyPairWithoutPlaintextErrorKind::KmsInvalidStateException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GenerateDataKeyPairWithoutPlaintextErrorKind::NotFoundError(_)
+            GenerateDataKeyPairWithoutPlaintextErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_unsupported_operation_error(&self) -> bool {
+    pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GenerateDataKeyPairWithoutPlaintextErrorKind::UnsupportedOperationError(_)
+            GenerateDataKeyPairWithoutPlaintextErrorKind::UnsupportedOperationException(_)
         )
     }
 }
 impl std::error::Error for GenerateDataKeyPairWithoutPlaintextError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GenerateDataKeyPairWithoutPlaintextErrorKind::DependencyTimeoutError(_inner) => {
+            GenerateDataKeyPairWithoutPlaintextErrorKind::DependencyTimeoutException(_inner) => {
                 Some(_inner)
             }
-            GenerateDataKeyPairWithoutPlaintextErrorKind::DisabledError(_inner) => Some(_inner),
-            GenerateDataKeyPairWithoutPlaintextErrorKind::InvalidGrantTokenError(_inner) => {
+            GenerateDataKeyPairWithoutPlaintextErrorKind::DisabledException(_inner) => Some(_inner),
+            GenerateDataKeyPairWithoutPlaintextErrorKind::InvalidGrantTokenException(_inner) => {
                 Some(_inner)
             }
-            GenerateDataKeyPairWithoutPlaintextErrorKind::InvalidKeyUsageError(_inner) => {
+            GenerateDataKeyPairWithoutPlaintextErrorKind::InvalidKeyUsageException(_inner) => {
                 Some(_inner)
             }
-            GenerateDataKeyPairWithoutPlaintextErrorKind::KeyUnavailableError(_inner) => {
+            GenerateDataKeyPairWithoutPlaintextErrorKind::KeyUnavailableException(_inner) => {
                 Some(_inner)
             }
-            GenerateDataKeyPairWithoutPlaintextErrorKind::KMSInternalError(_inner) => Some(_inner),
-            GenerateDataKeyPairWithoutPlaintextErrorKind::KMSInvalidStateError(_inner) => {
+            GenerateDataKeyPairWithoutPlaintextErrorKind::KmsInternalException(_inner) => {
                 Some(_inner)
             }
-            GenerateDataKeyPairWithoutPlaintextErrorKind::NotFoundError(_inner) => Some(_inner),
-            GenerateDataKeyPairWithoutPlaintextErrorKind::UnsupportedOperationError(_inner) => {
+            GenerateDataKeyPairWithoutPlaintextErrorKind::KmsInvalidStateException(_inner) => {
+                Some(_inner)
+            }
+            GenerateDataKeyPairWithoutPlaintextErrorKind::NotFoundException(_inner) => Some(_inner),
+            GenerateDataKeyPairWithoutPlaintextErrorKind::UnsupportedOperationException(_inner) => {
                 Some(_inner)
             }
             GenerateDataKeyPairWithoutPlaintextErrorKind::Unhandled(_inner) => {
@@ -2550,32 +2669,38 @@ pub struct GenerateDataKeyWithoutPlaintextError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GenerateDataKeyWithoutPlaintextErrorKind {
-    DependencyTimeoutError(crate::error::DependencyTimeoutError),
-    DisabledError(crate::error::DisabledError),
-    InvalidGrantTokenError(crate::error::InvalidGrantTokenError),
-    InvalidKeyUsageError(crate::error::InvalidKeyUsageError),
-    KeyUnavailableError(crate::error::KeyUnavailableError),
-    KMSInternalError(crate::error::KMSInternalError),
-    KMSInvalidStateError(crate::error::KMSInvalidStateError),
-    NotFoundError(crate::error::NotFoundError),
+    DependencyTimeoutException(crate::error::DependencyTimeoutException),
+    DisabledException(crate::error::DisabledException),
+    InvalidGrantTokenException(crate::error::InvalidGrantTokenException),
+    InvalidKeyUsageException(crate::error::InvalidKeyUsageException),
+    KeyUnavailableException(crate::error::KeyUnavailableException),
+    KmsInternalException(crate::error::KmsInternalException),
+    KmsInvalidStateException(crate::error::KmsInvalidStateException),
+    NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GenerateDataKeyWithoutPlaintextError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GenerateDataKeyWithoutPlaintextErrorKind::DependencyTimeoutError(_inner) => {
+            GenerateDataKeyWithoutPlaintextErrorKind::DependencyTimeoutException(_inner) => {
                 _inner.fmt(f)
             }
-            GenerateDataKeyWithoutPlaintextErrorKind::DisabledError(_inner) => _inner.fmt(f),
-            GenerateDataKeyWithoutPlaintextErrorKind::InvalidGrantTokenError(_inner) => {
+            GenerateDataKeyWithoutPlaintextErrorKind::DisabledException(_inner) => _inner.fmt(f),
+            GenerateDataKeyWithoutPlaintextErrorKind::InvalidGrantTokenException(_inner) => {
                 _inner.fmt(f)
             }
-            GenerateDataKeyWithoutPlaintextErrorKind::InvalidKeyUsageError(_inner) => _inner.fmt(f),
-            GenerateDataKeyWithoutPlaintextErrorKind::KeyUnavailableError(_inner) => _inner.fmt(f),
-            GenerateDataKeyWithoutPlaintextErrorKind::KMSInternalError(_inner) => _inner.fmt(f),
-            GenerateDataKeyWithoutPlaintextErrorKind::KMSInvalidStateError(_inner) => _inner.fmt(f),
-            GenerateDataKeyWithoutPlaintextErrorKind::NotFoundError(_inner) => _inner.fmt(f),
+            GenerateDataKeyWithoutPlaintextErrorKind::InvalidKeyUsageException(_inner) => {
+                _inner.fmt(f)
+            }
+            GenerateDataKeyWithoutPlaintextErrorKind::KeyUnavailableException(_inner) => {
+                _inner.fmt(f)
+            }
+            GenerateDataKeyWithoutPlaintextErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
+            GenerateDataKeyWithoutPlaintextErrorKind::KmsInvalidStateException(_inner) => {
+                _inner.fmt(f)
+            }
+            GenerateDataKeyWithoutPlaintextErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             GenerateDataKeyWithoutPlaintextErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2624,70 +2749,76 @@ impl GenerateDataKeyWithoutPlaintextError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_dependency_timeout_error(&self) -> bool {
+    pub fn is_dependency_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GenerateDataKeyWithoutPlaintextErrorKind::DependencyTimeoutError(_)
+            GenerateDataKeyWithoutPlaintextErrorKind::DependencyTimeoutException(_)
         )
     }
-    pub fn is_disabled_error(&self) -> bool {
+    pub fn is_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GenerateDataKeyWithoutPlaintextErrorKind::DisabledError(_)
+            GenerateDataKeyWithoutPlaintextErrorKind::DisabledException(_)
         )
     }
-    pub fn is_invalid_grant_token_error(&self) -> bool {
+    pub fn is_invalid_grant_token_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GenerateDataKeyWithoutPlaintextErrorKind::InvalidGrantTokenError(_)
+            GenerateDataKeyWithoutPlaintextErrorKind::InvalidGrantTokenException(_)
         )
     }
-    pub fn is_invalid_key_usage_error(&self) -> bool {
+    pub fn is_invalid_key_usage_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GenerateDataKeyWithoutPlaintextErrorKind::InvalidKeyUsageError(_)
+            GenerateDataKeyWithoutPlaintextErrorKind::InvalidKeyUsageException(_)
         )
     }
-    pub fn is_key_unavailable_error(&self) -> bool {
+    pub fn is_key_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GenerateDataKeyWithoutPlaintextErrorKind::KeyUnavailableError(_)
+            GenerateDataKeyWithoutPlaintextErrorKind::KeyUnavailableException(_)
         )
     }
-    pub fn is_kms_internal_error(&self) -> bool {
+    pub fn is_kms_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GenerateDataKeyWithoutPlaintextErrorKind::KMSInternalError(_)
+            GenerateDataKeyWithoutPlaintextErrorKind::KmsInternalException(_)
         )
     }
-    pub fn is_kms_invalid_state_error(&self) -> bool {
+    pub fn is_kms_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GenerateDataKeyWithoutPlaintextErrorKind::KMSInvalidStateError(_)
+            GenerateDataKeyWithoutPlaintextErrorKind::KmsInvalidStateException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GenerateDataKeyWithoutPlaintextErrorKind::NotFoundError(_)
+            GenerateDataKeyWithoutPlaintextErrorKind::NotFoundException(_)
         )
     }
 }
 impl std::error::Error for GenerateDataKeyWithoutPlaintextError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GenerateDataKeyWithoutPlaintextErrorKind::DependencyTimeoutError(_inner) => {
+            GenerateDataKeyWithoutPlaintextErrorKind::DependencyTimeoutException(_inner) => {
                 Some(_inner)
             }
-            GenerateDataKeyWithoutPlaintextErrorKind::DisabledError(_inner) => Some(_inner),
-            GenerateDataKeyWithoutPlaintextErrorKind::InvalidGrantTokenError(_inner) => {
+            GenerateDataKeyWithoutPlaintextErrorKind::DisabledException(_inner) => Some(_inner),
+            GenerateDataKeyWithoutPlaintextErrorKind::InvalidGrantTokenException(_inner) => {
                 Some(_inner)
             }
-            GenerateDataKeyWithoutPlaintextErrorKind::InvalidKeyUsageError(_inner) => Some(_inner),
-            GenerateDataKeyWithoutPlaintextErrorKind::KeyUnavailableError(_inner) => Some(_inner),
-            GenerateDataKeyWithoutPlaintextErrorKind::KMSInternalError(_inner) => Some(_inner),
-            GenerateDataKeyWithoutPlaintextErrorKind::KMSInvalidStateError(_inner) => Some(_inner),
-            GenerateDataKeyWithoutPlaintextErrorKind::NotFoundError(_inner) => Some(_inner),
+            GenerateDataKeyWithoutPlaintextErrorKind::InvalidKeyUsageException(_inner) => {
+                Some(_inner)
+            }
+            GenerateDataKeyWithoutPlaintextErrorKind::KeyUnavailableException(_inner) => {
+                Some(_inner)
+            }
+            GenerateDataKeyWithoutPlaintextErrorKind::KmsInternalException(_inner) => Some(_inner),
+            GenerateDataKeyWithoutPlaintextErrorKind::KmsInvalidStateException(_inner) => {
+                Some(_inner)
+            }
+            GenerateDataKeyWithoutPlaintextErrorKind::NotFoundException(_inner) => Some(_inner),
             GenerateDataKeyWithoutPlaintextErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2702,20 +2833,20 @@ pub struct GenerateRandomError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GenerateRandomErrorKind {
-    CustomKeyStoreInvalidStateError(crate::error::CustomKeyStoreInvalidStateError),
-    CustomKeyStoreNotFoundError(crate::error::CustomKeyStoreNotFoundError),
-    DependencyTimeoutError(crate::error::DependencyTimeoutError),
-    KMSInternalError(crate::error::KMSInternalError),
+    CustomKeyStoreInvalidStateException(crate::error::CustomKeyStoreInvalidStateException),
+    CustomKeyStoreNotFoundException(crate::error::CustomKeyStoreNotFoundException),
+    DependencyTimeoutException(crate::error::DependencyTimeoutException),
+    KmsInternalException(crate::error::KmsInternalException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GenerateRandomError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GenerateRandomErrorKind::CustomKeyStoreInvalidStateError(_inner) => _inner.fmt(f),
-            GenerateRandomErrorKind::CustomKeyStoreNotFoundError(_inner) => _inner.fmt(f),
-            GenerateRandomErrorKind::DependencyTimeoutError(_inner) => _inner.fmt(f),
-            GenerateRandomErrorKind::KMSInternalError(_inner) => _inner.fmt(f),
+            GenerateRandomErrorKind::CustomKeyStoreInvalidStateException(_inner) => _inner.fmt(f),
+            GenerateRandomErrorKind::CustomKeyStoreNotFoundException(_inner) => _inner.fmt(f),
+            GenerateRandomErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
+            GenerateRandomErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
             GenerateRandomErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2764,35 +2895,35 @@ impl GenerateRandomError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_custom_key_store_invalid_state_error(&self) -> bool {
+    pub fn is_custom_key_store_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GenerateRandomErrorKind::CustomKeyStoreInvalidStateError(_)
+            GenerateRandomErrorKind::CustomKeyStoreInvalidStateException(_)
         )
     }
-    pub fn is_custom_key_store_not_found_error(&self) -> bool {
+    pub fn is_custom_key_store_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GenerateRandomErrorKind::CustomKeyStoreNotFoundError(_)
+            GenerateRandomErrorKind::CustomKeyStoreNotFoundException(_)
         )
     }
-    pub fn is_dependency_timeout_error(&self) -> bool {
+    pub fn is_dependency_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GenerateRandomErrorKind::DependencyTimeoutError(_)
+            GenerateRandomErrorKind::DependencyTimeoutException(_)
         )
     }
-    pub fn is_kms_internal_error(&self) -> bool {
-        matches!(&self.kind, GenerateRandomErrorKind::KMSInternalError(_))
+    pub fn is_kms_internal_exception(&self) -> bool {
+        matches!(&self.kind, GenerateRandomErrorKind::KmsInternalException(_))
     }
 }
 impl std::error::Error for GenerateRandomError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GenerateRandomErrorKind::CustomKeyStoreInvalidStateError(_inner) => Some(_inner),
-            GenerateRandomErrorKind::CustomKeyStoreNotFoundError(_inner) => Some(_inner),
-            GenerateRandomErrorKind::DependencyTimeoutError(_inner) => Some(_inner),
-            GenerateRandomErrorKind::KMSInternalError(_inner) => Some(_inner),
+            GenerateRandomErrorKind::CustomKeyStoreInvalidStateException(_inner) => Some(_inner),
+            GenerateRandomErrorKind::CustomKeyStoreNotFoundException(_inner) => Some(_inner),
+            GenerateRandomErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
+            GenerateRandomErrorKind::KmsInternalException(_inner) => Some(_inner),
             GenerateRandomErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2807,22 +2938,22 @@ pub struct GetKeyPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetKeyPolicyErrorKind {
-    DependencyTimeoutError(crate::error::DependencyTimeoutError),
-    InvalidArnError(crate::error::InvalidArnError),
-    KMSInternalError(crate::error::KMSInternalError),
-    KMSInvalidStateError(crate::error::KMSInvalidStateError),
-    NotFoundError(crate::error::NotFoundError),
+    DependencyTimeoutException(crate::error::DependencyTimeoutException),
+    InvalidArnException(crate::error::InvalidArnException),
+    KmsInternalException(crate::error::KmsInternalException),
+    KmsInvalidStateException(crate::error::KmsInvalidStateException),
+    NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetKeyPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetKeyPolicyErrorKind::DependencyTimeoutError(_inner) => _inner.fmt(f),
-            GetKeyPolicyErrorKind::InvalidArnError(_inner) => _inner.fmt(f),
-            GetKeyPolicyErrorKind::KMSInternalError(_inner) => _inner.fmt(f),
-            GetKeyPolicyErrorKind::KMSInvalidStateError(_inner) => _inner.fmt(f),
-            GetKeyPolicyErrorKind::NotFoundError(_inner) => _inner.fmt(f),
+            GetKeyPolicyErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
+            GetKeyPolicyErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
+            GetKeyPolicyErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
+            GetKeyPolicyErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
+            GetKeyPolicyErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             GetKeyPolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2871,30 +3002,36 @@ impl GetKeyPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_dependency_timeout_error(&self) -> bool {
-        matches!(&self.kind, GetKeyPolicyErrorKind::DependencyTimeoutError(_))
+    pub fn is_dependency_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetKeyPolicyErrorKind::DependencyTimeoutException(_)
+        )
     }
-    pub fn is_invalid_arn_error(&self) -> bool {
-        matches!(&self.kind, GetKeyPolicyErrorKind::InvalidArnError(_))
+    pub fn is_invalid_arn_exception(&self) -> bool {
+        matches!(&self.kind, GetKeyPolicyErrorKind::InvalidArnException(_))
     }
-    pub fn is_kms_internal_error(&self) -> bool {
-        matches!(&self.kind, GetKeyPolicyErrorKind::KMSInternalError(_))
+    pub fn is_kms_internal_exception(&self) -> bool {
+        matches!(&self.kind, GetKeyPolicyErrorKind::KmsInternalException(_))
     }
-    pub fn is_kms_invalid_state_error(&self) -> bool {
-        matches!(&self.kind, GetKeyPolicyErrorKind::KMSInvalidStateError(_))
+    pub fn is_kms_invalid_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetKeyPolicyErrorKind::KmsInvalidStateException(_)
+        )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, GetKeyPolicyErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, GetKeyPolicyErrorKind::NotFoundException(_))
     }
 }
 impl std::error::Error for GetKeyPolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetKeyPolicyErrorKind::DependencyTimeoutError(_inner) => Some(_inner),
-            GetKeyPolicyErrorKind::InvalidArnError(_inner) => Some(_inner),
-            GetKeyPolicyErrorKind::KMSInternalError(_inner) => Some(_inner),
-            GetKeyPolicyErrorKind::KMSInvalidStateError(_inner) => Some(_inner),
-            GetKeyPolicyErrorKind::NotFoundError(_inner) => Some(_inner),
+            GetKeyPolicyErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
+            GetKeyPolicyErrorKind::InvalidArnException(_inner) => Some(_inner),
+            GetKeyPolicyErrorKind::KmsInternalException(_inner) => Some(_inner),
+            GetKeyPolicyErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
+            GetKeyPolicyErrorKind::NotFoundException(_inner) => Some(_inner),
             GetKeyPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2909,24 +3046,24 @@ pub struct GetKeyRotationStatusError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetKeyRotationStatusErrorKind {
-    DependencyTimeoutError(crate::error::DependencyTimeoutError),
-    InvalidArnError(crate::error::InvalidArnError),
-    KMSInternalError(crate::error::KMSInternalError),
-    KMSInvalidStateError(crate::error::KMSInvalidStateError),
-    NotFoundError(crate::error::NotFoundError),
-    UnsupportedOperationError(crate::error::UnsupportedOperationError),
+    DependencyTimeoutException(crate::error::DependencyTimeoutException),
+    InvalidArnException(crate::error::InvalidArnException),
+    KmsInternalException(crate::error::KmsInternalException),
+    KmsInvalidStateException(crate::error::KmsInvalidStateException),
+    NotFoundException(crate::error::NotFoundException),
+    UnsupportedOperationException(crate::error::UnsupportedOperationException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetKeyRotationStatusError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetKeyRotationStatusErrorKind::DependencyTimeoutError(_inner) => _inner.fmt(f),
-            GetKeyRotationStatusErrorKind::InvalidArnError(_inner) => _inner.fmt(f),
-            GetKeyRotationStatusErrorKind::KMSInternalError(_inner) => _inner.fmt(f),
-            GetKeyRotationStatusErrorKind::KMSInvalidStateError(_inner) => _inner.fmt(f),
-            GetKeyRotationStatusErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            GetKeyRotationStatusErrorKind::UnsupportedOperationError(_inner) => _inner.fmt(f),
+            GetKeyRotationStatusErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
+            GetKeyRotationStatusErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
+            GetKeyRotationStatusErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
+            GetKeyRotationStatusErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
+            GetKeyRotationStatusErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetKeyRotationStatusErrorKind::UnsupportedOperationException(_inner) => _inner.fmt(f),
             GetKeyRotationStatusErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2975,49 +3112,52 @@ impl GetKeyRotationStatusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_dependency_timeout_error(&self) -> bool {
+    pub fn is_dependency_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetKeyRotationStatusErrorKind::DependencyTimeoutError(_)
+            GetKeyRotationStatusErrorKind::DependencyTimeoutException(_)
         )
     }
-    pub fn is_invalid_arn_error(&self) -> bool {
+    pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetKeyRotationStatusErrorKind::InvalidArnError(_)
+            GetKeyRotationStatusErrorKind::InvalidArnException(_)
         )
     }
-    pub fn is_kms_internal_error(&self) -> bool {
+    pub fn is_kms_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetKeyRotationStatusErrorKind::KMSInternalError(_)
+            GetKeyRotationStatusErrorKind::KmsInternalException(_)
         )
     }
-    pub fn is_kms_invalid_state_error(&self) -> bool {
+    pub fn is_kms_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetKeyRotationStatusErrorKind::KMSInvalidStateError(_)
+            GetKeyRotationStatusErrorKind::KmsInvalidStateException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, GetKeyRotationStatusErrorKind::NotFoundError(_))
-    }
-    pub fn is_unsupported_operation_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetKeyRotationStatusErrorKind::UnsupportedOperationError(_)
+            GetKeyRotationStatusErrorKind::NotFoundException(_)
+        )
+    }
+    pub fn is_unsupported_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetKeyRotationStatusErrorKind::UnsupportedOperationException(_)
         )
     }
 }
 impl std::error::Error for GetKeyRotationStatusError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetKeyRotationStatusErrorKind::DependencyTimeoutError(_inner) => Some(_inner),
-            GetKeyRotationStatusErrorKind::InvalidArnError(_inner) => Some(_inner),
-            GetKeyRotationStatusErrorKind::KMSInternalError(_inner) => Some(_inner),
-            GetKeyRotationStatusErrorKind::KMSInvalidStateError(_inner) => Some(_inner),
-            GetKeyRotationStatusErrorKind::NotFoundError(_inner) => Some(_inner),
-            GetKeyRotationStatusErrorKind::UnsupportedOperationError(_inner) => Some(_inner),
+            GetKeyRotationStatusErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
+            GetKeyRotationStatusErrorKind::InvalidArnException(_inner) => Some(_inner),
+            GetKeyRotationStatusErrorKind::KmsInternalException(_inner) => Some(_inner),
+            GetKeyRotationStatusErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
+            GetKeyRotationStatusErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetKeyRotationStatusErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
             GetKeyRotationStatusErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3032,24 +3172,24 @@ pub struct GetParametersForImportError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetParametersForImportErrorKind {
-    DependencyTimeoutError(crate::error::DependencyTimeoutError),
-    InvalidArnError(crate::error::InvalidArnError),
-    KMSInternalError(crate::error::KMSInternalError),
-    KMSInvalidStateError(crate::error::KMSInvalidStateError),
-    NotFoundError(crate::error::NotFoundError),
-    UnsupportedOperationError(crate::error::UnsupportedOperationError),
+    DependencyTimeoutException(crate::error::DependencyTimeoutException),
+    InvalidArnException(crate::error::InvalidArnException),
+    KmsInternalException(crate::error::KmsInternalException),
+    KmsInvalidStateException(crate::error::KmsInvalidStateException),
+    NotFoundException(crate::error::NotFoundException),
+    UnsupportedOperationException(crate::error::UnsupportedOperationException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetParametersForImportError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetParametersForImportErrorKind::DependencyTimeoutError(_inner) => _inner.fmt(f),
-            GetParametersForImportErrorKind::InvalidArnError(_inner) => _inner.fmt(f),
-            GetParametersForImportErrorKind::KMSInternalError(_inner) => _inner.fmt(f),
-            GetParametersForImportErrorKind::KMSInvalidStateError(_inner) => _inner.fmt(f),
-            GetParametersForImportErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            GetParametersForImportErrorKind::UnsupportedOperationError(_inner) => _inner.fmt(f),
+            GetParametersForImportErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
+            GetParametersForImportErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
+            GetParametersForImportErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
+            GetParametersForImportErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
+            GetParametersForImportErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetParametersForImportErrorKind::UnsupportedOperationException(_inner) => _inner.fmt(f),
             GetParametersForImportErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3098,52 +3238,52 @@ impl GetParametersForImportError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_dependency_timeout_error(&self) -> bool {
+    pub fn is_dependency_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetParametersForImportErrorKind::DependencyTimeoutError(_)
+            GetParametersForImportErrorKind::DependencyTimeoutException(_)
         )
     }
-    pub fn is_invalid_arn_error(&self) -> bool {
+    pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetParametersForImportErrorKind::InvalidArnError(_)
+            GetParametersForImportErrorKind::InvalidArnException(_)
         )
     }
-    pub fn is_kms_internal_error(&self) -> bool {
+    pub fn is_kms_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetParametersForImportErrorKind::KMSInternalError(_)
+            GetParametersForImportErrorKind::KmsInternalException(_)
         )
     }
-    pub fn is_kms_invalid_state_error(&self) -> bool {
+    pub fn is_kms_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetParametersForImportErrorKind::KMSInvalidStateError(_)
+            GetParametersForImportErrorKind::KmsInvalidStateException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetParametersForImportErrorKind::NotFoundError(_)
+            GetParametersForImportErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_unsupported_operation_error(&self) -> bool {
+    pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetParametersForImportErrorKind::UnsupportedOperationError(_)
+            GetParametersForImportErrorKind::UnsupportedOperationException(_)
         )
     }
 }
 impl std::error::Error for GetParametersForImportError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetParametersForImportErrorKind::DependencyTimeoutError(_inner) => Some(_inner),
-            GetParametersForImportErrorKind::InvalidArnError(_inner) => Some(_inner),
-            GetParametersForImportErrorKind::KMSInternalError(_inner) => Some(_inner),
-            GetParametersForImportErrorKind::KMSInvalidStateError(_inner) => Some(_inner),
-            GetParametersForImportErrorKind::NotFoundError(_inner) => Some(_inner),
-            GetParametersForImportErrorKind::UnsupportedOperationError(_inner) => Some(_inner),
+            GetParametersForImportErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
+            GetParametersForImportErrorKind::InvalidArnException(_inner) => Some(_inner),
+            GetParametersForImportErrorKind::KmsInternalException(_inner) => Some(_inner),
+            GetParametersForImportErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
+            GetParametersForImportErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetParametersForImportErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
             GetParametersForImportErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3158,32 +3298,32 @@ pub struct GetPublicKeyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetPublicKeyErrorKind {
-    DependencyTimeoutError(crate::error::DependencyTimeoutError),
-    DisabledError(crate::error::DisabledError),
-    InvalidArnError(crate::error::InvalidArnError),
-    InvalidGrantTokenError(crate::error::InvalidGrantTokenError),
-    InvalidKeyUsageError(crate::error::InvalidKeyUsageError),
-    KeyUnavailableError(crate::error::KeyUnavailableError),
-    KMSInternalError(crate::error::KMSInternalError),
-    KMSInvalidStateError(crate::error::KMSInvalidStateError),
-    NotFoundError(crate::error::NotFoundError),
-    UnsupportedOperationError(crate::error::UnsupportedOperationError),
+    DependencyTimeoutException(crate::error::DependencyTimeoutException),
+    DisabledException(crate::error::DisabledException),
+    InvalidArnException(crate::error::InvalidArnException),
+    InvalidGrantTokenException(crate::error::InvalidGrantTokenException),
+    InvalidKeyUsageException(crate::error::InvalidKeyUsageException),
+    KeyUnavailableException(crate::error::KeyUnavailableException),
+    KmsInternalException(crate::error::KmsInternalException),
+    KmsInvalidStateException(crate::error::KmsInvalidStateException),
+    NotFoundException(crate::error::NotFoundException),
+    UnsupportedOperationException(crate::error::UnsupportedOperationException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetPublicKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetPublicKeyErrorKind::DependencyTimeoutError(_inner) => _inner.fmt(f),
-            GetPublicKeyErrorKind::DisabledError(_inner) => _inner.fmt(f),
-            GetPublicKeyErrorKind::InvalidArnError(_inner) => _inner.fmt(f),
-            GetPublicKeyErrorKind::InvalidGrantTokenError(_inner) => _inner.fmt(f),
-            GetPublicKeyErrorKind::InvalidKeyUsageError(_inner) => _inner.fmt(f),
-            GetPublicKeyErrorKind::KeyUnavailableError(_inner) => _inner.fmt(f),
-            GetPublicKeyErrorKind::KMSInternalError(_inner) => _inner.fmt(f),
-            GetPublicKeyErrorKind::KMSInvalidStateError(_inner) => _inner.fmt(f),
-            GetPublicKeyErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            GetPublicKeyErrorKind::UnsupportedOperationError(_inner) => _inner.fmt(f),
+            GetPublicKeyErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
+            GetPublicKeyErrorKind::DisabledException(_inner) => _inner.fmt(f),
+            GetPublicKeyErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
+            GetPublicKeyErrorKind::InvalidGrantTokenException(_inner) => _inner.fmt(f),
+            GetPublicKeyErrorKind::InvalidKeyUsageException(_inner) => _inner.fmt(f),
+            GetPublicKeyErrorKind::KeyUnavailableException(_inner) => _inner.fmt(f),
+            GetPublicKeyErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
+            GetPublicKeyErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
+            GetPublicKeyErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetPublicKeyErrorKind::UnsupportedOperationException(_inner) => _inner.fmt(f),
             GetPublicKeyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3232,53 +3372,68 @@ impl GetPublicKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_dependency_timeout_error(&self) -> bool {
-        matches!(&self.kind, GetPublicKeyErrorKind::DependencyTimeoutError(_))
-    }
-    pub fn is_disabled_error(&self) -> bool {
-        matches!(&self.kind, GetPublicKeyErrorKind::DisabledError(_))
-    }
-    pub fn is_invalid_arn_error(&self) -> bool {
-        matches!(&self.kind, GetPublicKeyErrorKind::InvalidArnError(_))
-    }
-    pub fn is_invalid_grant_token_error(&self) -> bool {
-        matches!(&self.kind, GetPublicKeyErrorKind::InvalidGrantTokenError(_))
-    }
-    pub fn is_invalid_key_usage_error(&self) -> bool {
-        matches!(&self.kind, GetPublicKeyErrorKind::InvalidKeyUsageError(_))
-    }
-    pub fn is_key_unavailable_error(&self) -> bool {
-        matches!(&self.kind, GetPublicKeyErrorKind::KeyUnavailableError(_))
-    }
-    pub fn is_kms_internal_error(&self) -> bool {
-        matches!(&self.kind, GetPublicKeyErrorKind::KMSInternalError(_))
-    }
-    pub fn is_kms_invalid_state_error(&self) -> bool {
-        matches!(&self.kind, GetPublicKeyErrorKind::KMSInvalidStateError(_))
-    }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, GetPublicKeyErrorKind::NotFoundError(_))
-    }
-    pub fn is_unsupported_operation_error(&self) -> bool {
+    pub fn is_dependency_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetPublicKeyErrorKind::UnsupportedOperationError(_)
+            GetPublicKeyErrorKind::DependencyTimeoutException(_)
+        )
+    }
+    pub fn is_disabled_exception(&self) -> bool {
+        matches!(&self.kind, GetPublicKeyErrorKind::DisabledException(_))
+    }
+    pub fn is_invalid_arn_exception(&self) -> bool {
+        matches!(&self.kind, GetPublicKeyErrorKind::InvalidArnException(_))
+    }
+    pub fn is_invalid_grant_token_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetPublicKeyErrorKind::InvalidGrantTokenException(_)
+        )
+    }
+    pub fn is_invalid_key_usage_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetPublicKeyErrorKind::InvalidKeyUsageException(_)
+        )
+    }
+    pub fn is_key_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetPublicKeyErrorKind::KeyUnavailableException(_)
+        )
+    }
+    pub fn is_kms_internal_exception(&self) -> bool {
+        matches!(&self.kind, GetPublicKeyErrorKind::KmsInternalException(_))
+    }
+    pub fn is_kms_invalid_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetPublicKeyErrorKind::KmsInvalidStateException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, GetPublicKeyErrorKind::NotFoundException(_))
+    }
+    pub fn is_unsupported_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetPublicKeyErrorKind::UnsupportedOperationException(_)
         )
     }
 }
 impl std::error::Error for GetPublicKeyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetPublicKeyErrorKind::DependencyTimeoutError(_inner) => Some(_inner),
-            GetPublicKeyErrorKind::DisabledError(_inner) => Some(_inner),
-            GetPublicKeyErrorKind::InvalidArnError(_inner) => Some(_inner),
-            GetPublicKeyErrorKind::InvalidGrantTokenError(_inner) => Some(_inner),
-            GetPublicKeyErrorKind::InvalidKeyUsageError(_inner) => Some(_inner),
-            GetPublicKeyErrorKind::KeyUnavailableError(_inner) => Some(_inner),
-            GetPublicKeyErrorKind::KMSInternalError(_inner) => Some(_inner),
-            GetPublicKeyErrorKind::KMSInvalidStateError(_inner) => Some(_inner),
-            GetPublicKeyErrorKind::NotFoundError(_inner) => Some(_inner),
-            GetPublicKeyErrorKind::UnsupportedOperationError(_inner) => Some(_inner),
+            GetPublicKeyErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
+            GetPublicKeyErrorKind::DisabledException(_inner) => Some(_inner),
+            GetPublicKeyErrorKind::InvalidArnException(_inner) => Some(_inner),
+            GetPublicKeyErrorKind::InvalidGrantTokenException(_inner) => Some(_inner),
+            GetPublicKeyErrorKind::InvalidKeyUsageException(_inner) => Some(_inner),
+            GetPublicKeyErrorKind::KeyUnavailableException(_inner) => Some(_inner),
+            GetPublicKeyErrorKind::KmsInternalException(_inner) => Some(_inner),
+            GetPublicKeyErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
+            GetPublicKeyErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetPublicKeyErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
             GetPublicKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3293,32 +3448,32 @@ pub struct ImportKeyMaterialError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ImportKeyMaterialErrorKind {
-    DependencyTimeoutError(crate::error::DependencyTimeoutError),
-    ExpiredImportTokenError(crate::error::ExpiredImportTokenError),
-    IncorrectKeyMaterialError(crate::error::IncorrectKeyMaterialError),
-    InvalidArnError(crate::error::InvalidArnError),
-    InvalidCiphertextError(crate::error::InvalidCiphertextError),
-    InvalidImportTokenError(crate::error::InvalidImportTokenError),
-    KMSInternalError(crate::error::KMSInternalError),
-    KMSInvalidStateError(crate::error::KMSInvalidStateError),
-    NotFoundError(crate::error::NotFoundError),
-    UnsupportedOperationError(crate::error::UnsupportedOperationError),
+    DependencyTimeoutException(crate::error::DependencyTimeoutException),
+    ExpiredImportTokenException(crate::error::ExpiredImportTokenException),
+    IncorrectKeyMaterialException(crate::error::IncorrectKeyMaterialException),
+    InvalidArnException(crate::error::InvalidArnException),
+    InvalidCiphertextException(crate::error::InvalidCiphertextException),
+    InvalidImportTokenException(crate::error::InvalidImportTokenException),
+    KmsInternalException(crate::error::KmsInternalException),
+    KmsInvalidStateException(crate::error::KmsInvalidStateException),
+    NotFoundException(crate::error::NotFoundException),
+    UnsupportedOperationException(crate::error::UnsupportedOperationException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ImportKeyMaterialError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ImportKeyMaterialErrorKind::DependencyTimeoutError(_inner) => _inner.fmt(f),
-            ImportKeyMaterialErrorKind::ExpiredImportTokenError(_inner) => _inner.fmt(f),
-            ImportKeyMaterialErrorKind::IncorrectKeyMaterialError(_inner) => _inner.fmt(f),
-            ImportKeyMaterialErrorKind::InvalidArnError(_inner) => _inner.fmt(f),
-            ImportKeyMaterialErrorKind::InvalidCiphertextError(_inner) => _inner.fmt(f),
-            ImportKeyMaterialErrorKind::InvalidImportTokenError(_inner) => _inner.fmt(f),
-            ImportKeyMaterialErrorKind::KMSInternalError(_inner) => _inner.fmt(f),
-            ImportKeyMaterialErrorKind::KMSInvalidStateError(_inner) => _inner.fmt(f),
-            ImportKeyMaterialErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            ImportKeyMaterialErrorKind::UnsupportedOperationError(_inner) => _inner.fmt(f),
+            ImportKeyMaterialErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
+            ImportKeyMaterialErrorKind::ExpiredImportTokenException(_inner) => _inner.fmt(f),
+            ImportKeyMaterialErrorKind::IncorrectKeyMaterialException(_inner) => _inner.fmt(f),
+            ImportKeyMaterialErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
+            ImportKeyMaterialErrorKind::InvalidCiphertextException(_inner) => _inner.fmt(f),
+            ImportKeyMaterialErrorKind::InvalidImportTokenException(_inner) => _inner.fmt(f),
+            ImportKeyMaterialErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
+            ImportKeyMaterialErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
+            ImportKeyMaterialErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            ImportKeyMaterialErrorKind::UnsupportedOperationException(_inner) => _inner.fmt(f),
             ImportKeyMaterialErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3367,71 +3522,77 @@ impl ImportKeyMaterialError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_dependency_timeout_error(&self) -> bool {
+    pub fn is_dependency_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ImportKeyMaterialErrorKind::DependencyTimeoutError(_)
+            ImportKeyMaterialErrorKind::DependencyTimeoutException(_)
         )
     }
-    pub fn is_expired_import_token_error(&self) -> bool {
+    pub fn is_expired_import_token_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ImportKeyMaterialErrorKind::ExpiredImportTokenError(_)
+            ImportKeyMaterialErrorKind::ExpiredImportTokenException(_)
         )
     }
-    pub fn is_incorrect_key_material_error(&self) -> bool {
+    pub fn is_incorrect_key_material_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ImportKeyMaterialErrorKind::IncorrectKeyMaterialError(_)
+            ImportKeyMaterialErrorKind::IncorrectKeyMaterialException(_)
         )
     }
-    pub fn is_invalid_arn_error(&self) -> bool {
-        matches!(&self.kind, ImportKeyMaterialErrorKind::InvalidArnError(_))
-    }
-    pub fn is_invalid_ciphertext_error(&self) -> bool {
+    pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ImportKeyMaterialErrorKind::InvalidCiphertextError(_)
+            ImportKeyMaterialErrorKind::InvalidArnException(_)
         )
     }
-    pub fn is_invalid_import_token_error(&self) -> bool {
+    pub fn is_invalid_ciphertext_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ImportKeyMaterialErrorKind::InvalidImportTokenError(_)
+            ImportKeyMaterialErrorKind::InvalidCiphertextException(_)
         )
     }
-    pub fn is_kms_internal_error(&self) -> bool {
-        matches!(&self.kind, ImportKeyMaterialErrorKind::KMSInternalError(_))
-    }
-    pub fn is_kms_invalid_state_error(&self) -> bool {
+    pub fn is_invalid_import_token_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ImportKeyMaterialErrorKind::KMSInvalidStateError(_)
+            ImportKeyMaterialErrorKind::InvalidImportTokenException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, ImportKeyMaterialErrorKind::NotFoundError(_))
-    }
-    pub fn is_unsupported_operation_error(&self) -> bool {
+    pub fn is_kms_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ImportKeyMaterialErrorKind::UnsupportedOperationError(_)
+            ImportKeyMaterialErrorKind::KmsInternalException(_)
+        )
+    }
+    pub fn is_kms_invalid_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ImportKeyMaterialErrorKind::KmsInvalidStateException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, ImportKeyMaterialErrorKind::NotFoundException(_))
+    }
+    pub fn is_unsupported_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ImportKeyMaterialErrorKind::UnsupportedOperationException(_)
         )
     }
 }
 impl std::error::Error for ImportKeyMaterialError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ImportKeyMaterialErrorKind::DependencyTimeoutError(_inner) => Some(_inner),
-            ImportKeyMaterialErrorKind::ExpiredImportTokenError(_inner) => Some(_inner),
-            ImportKeyMaterialErrorKind::IncorrectKeyMaterialError(_inner) => Some(_inner),
-            ImportKeyMaterialErrorKind::InvalidArnError(_inner) => Some(_inner),
-            ImportKeyMaterialErrorKind::InvalidCiphertextError(_inner) => Some(_inner),
-            ImportKeyMaterialErrorKind::InvalidImportTokenError(_inner) => Some(_inner),
-            ImportKeyMaterialErrorKind::KMSInternalError(_inner) => Some(_inner),
-            ImportKeyMaterialErrorKind::KMSInvalidStateError(_inner) => Some(_inner),
-            ImportKeyMaterialErrorKind::NotFoundError(_inner) => Some(_inner),
-            ImportKeyMaterialErrorKind::UnsupportedOperationError(_inner) => Some(_inner),
+            ImportKeyMaterialErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
+            ImportKeyMaterialErrorKind::ExpiredImportTokenException(_inner) => Some(_inner),
+            ImportKeyMaterialErrorKind::IncorrectKeyMaterialException(_inner) => Some(_inner),
+            ImportKeyMaterialErrorKind::InvalidArnException(_inner) => Some(_inner),
+            ImportKeyMaterialErrorKind::InvalidCiphertextException(_inner) => Some(_inner),
+            ImportKeyMaterialErrorKind::InvalidImportTokenException(_inner) => Some(_inner),
+            ImportKeyMaterialErrorKind::KmsInternalException(_inner) => Some(_inner),
+            ImportKeyMaterialErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
+            ImportKeyMaterialErrorKind::NotFoundException(_inner) => Some(_inner),
+            ImportKeyMaterialErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
             ImportKeyMaterialErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3446,22 +3607,22 @@ pub struct ListAliasesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAliasesErrorKind {
-    DependencyTimeoutError(crate::error::DependencyTimeoutError),
-    InvalidArnError(crate::error::InvalidArnError),
-    InvalidMarkerError(crate::error::InvalidMarkerError),
-    KMSInternalError(crate::error::KMSInternalError),
-    NotFoundError(crate::error::NotFoundError),
+    DependencyTimeoutException(crate::error::DependencyTimeoutException),
+    InvalidArnException(crate::error::InvalidArnException),
+    InvalidMarkerException(crate::error::InvalidMarkerException),
+    KmsInternalException(crate::error::KmsInternalException),
+    NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAliasesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListAliasesErrorKind::DependencyTimeoutError(_inner) => _inner.fmt(f),
-            ListAliasesErrorKind::InvalidArnError(_inner) => _inner.fmt(f),
-            ListAliasesErrorKind::InvalidMarkerError(_inner) => _inner.fmt(f),
-            ListAliasesErrorKind::KMSInternalError(_inner) => _inner.fmt(f),
-            ListAliasesErrorKind::NotFoundError(_inner) => _inner.fmt(f),
+            ListAliasesErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
+            ListAliasesErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
+            ListAliasesErrorKind::InvalidMarkerException(_inner) => _inner.fmt(f),
+            ListAliasesErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
+            ListAliasesErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             ListAliasesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3510,30 +3671,33 @@ impl ListAliasesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_dependency_timeout_error(&self) -> bool {
-        matches!(&self.kind, ListAliasesErrorKind::DependencyTimeoutError(_))
+    pub fn is_dependency_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAliasesErrorKind::DependencyTimeoutException(_)
+        )
     }
-    pub fn is_invalid_arn_error(&self) -> bool {
-        matches!(&self.kind, ListAliasesErrorKind::InvalidArnError(_))
+    pub fn is_invalid_arn_exception(&self) -> bool {
+        matches!(&self.kind, ListAliasesErrorKind::InvalidArnException(_))
     }
-    pub fn is_invalid_marker_error(&self) -> bool {
-        matches!(&self.kind, ListAliasesErrorKind::InvalidMarkerError(_))
+    pub fn is_invalid_marker_exception(&self) -> bool {
+        matches!(&self.kind, ListAliasesErrorKind::InvalidMarkerException(_))
     }
-    pub fn is_kms_internal_error(&self) -> bool {
-        matches!(&self.kind, ListAliasesErrorKind::KMSInternalError(_))
+    pub fn is_kms_internal_exception(&self) -> bool {
+        matches!(&self.kind, ListAliasesErrorKind::KmsInternalException(_))
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, ListAliasesErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, ListAliasesErrorKind::NotFoundException(_))
     }
 }
 impl std::error::Error for ListAliasesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListAliasesErrorKind::DependencyTimeoutError(_inner) => Some(_inner),
-            ListAliasesErrorKind::InvalidArnError(_inner) => Some(_inner),
-            ListAliasesErrorKind::InvalidMarkerError(_inner) => Some(_inner),
-            ListAliasesErrorKind::KMSInternalError(_inner) => Some(_inner),
-            ListAliasesErrorKind::NotFoundError(_inner) => Some(_inner),
+            ListAliasesErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
+            ListAliasesErrorKind::InvalidArnException(_inner) => Some(_inner),
+            ListAliasesErrorKind::InvalidMarkerException(_inner) => Some(_inner),
+            ListAliasesErrorKind::KmsInternalException(_inner) => Some(_inner),
+            ListAliasesErrorKind::NotFoundException(_inner) => Some(_inner),
             ListAliasesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3548,26 +3712,26 @@ pub struct ListGrantsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListGrantsErrorKind {
-    DependencyTimeoutError(crate::error::DependencyTimeoutError),
-    InvalidArnError(crate::error::InvalidArnError),
-    InvalidGrantIdError(crate::error::InvalidGrantIdError),
-    InvalidMarkerError(crate::error::InvalidMarkerError),
-    KMSInternalError(crate::error::KMSInternalError),
-    KMSInvalidStateError(crate::error::KMSInvalidStateError),
-    NotFoundError(crate::error::NotFoundError),
+    DependencyTimeoutException(crate::error::DependencyTimeoutException),
+    InvalidArnException(crate::error::InvalidArnException),
+    InvalidGrantIdException(crate::error::InvalidGrantIdException),
+    InvalidMarkerException(crate::error::InvalidMarkerException),
+    KmsInternalException(crate::error::KmsInternalException),
+    KmsInvalidStateException(crate::error::KmsInvalidStateException),
+    NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListGrantsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListGrantsErrorKind::DependencyTimeoutError(_inner) => _inner.fmt(f),
-            ListGrantsErrorKind::InvalidArnError(_inner) => _inner.fmt(f),
-            ListGrantsErrorKind::InvalidGrantIdError(_inner) => _inner.fmt(f),
-            ListGrantsErrorKind::InvalidMarkerError(_inner) => _inner.fmt(f),
-            ListGrantsErrorKind::KMSInternalError(_inner) => _inner.fmt(f),
-            ListGrantsErrorKind::KMSInvalidStateError(_inner) => _inner.fmt(f),
-            ListGrantsErrorKind::NotFoundError(_inner) => _inner.fmt(f),
+            ListGrantsErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
+            ListGrantsErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
+            ListGrantsErrorKind::InvalidGrantIdException(_inner) => _inner.fmt(f),
+            ListGrantsErrorKind::InvalidMarkerException(_inner) => _inner.fmt(f),
+            ListGrantsErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
+            ListGrantsErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
+            ListGrantsErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             ListGrantsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3616,38 +3780,41 @@ impl ListGrantsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_dependency_timeout_error(&self) -> bool {
-        matches!(&self.kind, ListGrantsErrorKind::DependencyTimeoutError(_))
+    pub fn is_dependency_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListGrantsErrorKind::DependencyTimeoutException(_)
+        )
     }
-    pub fn is_invalid_arn_error(&self) -> bool {
-        matches!(&self.kind, ListGrantsErrorKind::InvalidArnError(_))
+    pub fn is_invalid_arn_exception(&self) -> bool {
+        matches!(&self.kind, ListGrantsErrorKind::InvalidArnException(_))
     }
-    pub fn is_invalid_grant_id_error(&self) -> bool {
-        matches!(&self.kind, ListGrantsErrorKind::InvalidGrantIdError(_))
+    pub fn is_invalid_grant_id_exception(&self) -> bool {
+        matches!(&self.kind, ListGrantsErrorKind::InvalidGrantIdException(_))
     }
-    pub fn is_invalid_marker_error(&self) -> bool {
-        matches!(&self.kind, ListGrantsErrorKind::InvalidMarkerError(_))
+    pub fn is_invalid_marker_exception(&self) -> bool {
+        matches!(&self.kind, ListGrantsErrorKind::InvalidMarkerException(_))
     }
-    pub fn is_kms_internal_error(&self) -> bool {
-        matches!(&self.kind, ListGrantsErrorKind::KMSInternalError(_))
+    pub fn is_kms_internal_exception(&self) -> bool {
+        matches!(&self.kind, ListGrantsErrorKind::KmsInternalException(_))
     }
-    pub fn is_kms_invalid_state_error(&self) -> bool {
-        matches!(&self.kind, ListGrantsErrorKind::KMSInvalidStateError(_))
+    pub fn is_kms_invalid_state_exception(&self) -> bool {
+        matches!(&self.kind, ListGrantsErrorKind::KmsInvalidStateException(_))
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, ListGrantsErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, ListGrantsErrorKind::NotFoundException(_))
     }
 }
 impl std::error::Error for ListGrantsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListGrantsErrorKind::DependencyTimeoutError(_inner) => Some(_inner),
-            ListGrantsErrorKind::InvalidArnError(_inner) => Some(_inner),
-            ListGrantsErrorKind::InvalidGrantIdError(_inner) => Some(_inner),
-            ListGrantsErrorKind::InvalidMarkerError(_inner) => Some(_inner),
-            ListGrantsErrorKind::KMSInternalError(_inner) => Some(_inner),
-            ListGrantsErrorKind::KMSInvalidStateError(_inner) => Some(_inner),
-            ListGrantsErrorKind::NotFoundError(_inner) => Some(_inner),
+            ListGrantsErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
+            ListGrantsErrorKind::InvalidArnException(_inner) => Some(_inner),
+            ListGrantsErrorKind::InvalidGrantIdException(_inner) => Some(_inner),
+            ListGrantsErrorKind::InvalidMarkerException(_inner) => Some(_inner),
+            ListGrantsErrorKind::KmsInternalException(_inner) => Some(_inner),
+            ListGrantsErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
+            ListGrantsErrorKind::NotFoundException(_inner) => Some(_inner),
             ListGrantsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3662,22 +3829,22 @@ pub struct ListKeyPoliciesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListKeyPoliciesErrorKind {
-    DependencyTimeoutError(crate::error::DependencyTimeoutError),
-    InvalidArnError(crate::error::InvalidArnError),
-    KMSInternalError(crate::error::KMSInternalError),
-    KMSInvalidStateError(crate::error::KMSInvalidStateError),
-    NotFoundError(crate::error::NotFoundError),
+    DependencyTimeoutException(crate::error::DependencyTimeoutException),
+    InvalidArnException(crate::error::InvalidArnException),
+    KmsInternalException(crate::error::KmsInternalException),
+    KmsInvalidStateException(crate::error::KmsInvalidStateException),
+    NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListKeyPoliciesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListKeyPoliciesErrorKind::DependencyTimeoutError(_inner) => _inner.fmt(f),
-            ListKeyPoliciesErrorKind::InvalidArnError(_inner) => _inner.fmt(f),
-            ListKeyPoliciesErrorKind::KMSInternalError(_inner) => _inner.fmt(f),
-            ListKeyPoliciesErrorKind::KMSInvalidStateError(_inner) => _inner.fmt(f),
-            ListKeyPoliciesErrorKind::NotFoundError(_inner) => _inner.fmt(f),
+            ListKeyPoliciesErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
+            ListKeyPoliciesErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
+            ListKeyPoliciesErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
+            ListKeyPoliciesErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
+            ListKeyPoliciesErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             ListKeyPoliciesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3726,36 +3893,39 @@ impl ListKeyPoliciesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_dependency_timeout_error(&self) -> bool {
+    pub fn is_dependency_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListKeyPoliciesErrorKind::DependencyTimeoutError(_)
+            ListKeyPoliciesErrorKind::DependencyTimeoutException(_)
         )
     }
-    pub fn is_invalid_arn_error(&self) -> bool {
-        matches!(&self.kind, ListKeyPoliciesErrorKind::InvalidArnError(_))
+    pub fn is_invalid_arn_exception(&self) -> bool {
+        matches!(&self.kind, ListKeyPoliciesErrorKind::InvalidArnException(_))
     }
-    pub fn is_kms_internal_error(&self) -> bool {
-        matches!(&self.kind, ListKeyPoliciesErrorKind::KMSInternalError(_))
-    }
-    pub fn is_kms_invalid_state_error(&self) -> bool {
+    pub fn is_kms_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListKeyPoliciesErrorKind::KMSInvalidStateError(_)
+            ListKeyPoliciesErrorKind::KmsInternalException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, ListKeyPoliciesErrorKind::NotFoundError(_))
+    pub fn is_kms_invalid_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListKeyPoliciesErrorKind::KmsInvalidStateException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, ListKeyPoliciesErrorKind::NotFoundException(_))
     }
 }
 impl std::error::Error for ListKeyPoliciesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListKeyPoliciesErrorKind::DependencyTimeoutError(_inner) => Some(_inner),
-            ListKeyPoliciesErrorKind::InvalidArnError(_inner) => Some(_inner),
-            ListKeyPoliciesErrorKind::KMSInternalError(_inner) => Some(_inner),
-            ListKeyPoliciesErrorKind::KMSInvalidStateError(_inner) => Some(_inner),
-            ListKeyPoliciesErrorKind::NotFoundError(_inner) => Some(_inner),
+            ListKeyPoliciesErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
+            ListKeyPoliciesErrorKind::InvalidArnException(_inner) => Some(_inner),
+            ListKeyPoliciesErrorKind::KmsInternalException(_inner) => Some(_inner),
+            ListKeyPoliciesErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
+            ListKeyPoliciesErrorKind::NotFoundException(_inner) => Some(_inner),
             ListKeyPoliciesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3770,18 +3940,18 @@ pub struct ListKeysError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListKeysErrorKind {
-    DependencyTimeoutError(crate::error::DependencyTimeoutError),
-    InvalidMarkerError(crate::error::InvalidMarkerError),
-    KMSInternalError(crate::error::KMSInternalError),
+    DependencyTimeoutException(crate::error::DependencyTimeoutException),
+    InvalidMarkerException(crate::error::InvalidMarkerException),
+    KmsInternalException(crate::error::KmsInternalException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListKeysError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListKeysErrorKind::DependencyTimeoutError(_inner) => _inner.fmt(f),
-            ListKeysErrorKind::InvalidMarkerError(_inner) => _inner.fmt(f),
-            ListKeysErrorKind::KMSInternalError(_inner) => _inner.fmt(f),
+            ListKeysErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
+            ListKeysErrorKind::InvalidMarkerException(_inner) => _inner.fmt(f),
+            ListKeysErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
             ListKeysErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3830,22 +4000,22 @@ impl ListKeysError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_dependency_timeout_error(&self) -> bool {
-        matches!(&self.kind, ListKeysErrorKind::DependencyTimeoutError(_))
+    pub fn is_dependency_timeout_exception(&self) -> bool {
+        matches!(&self.kind, ListKeysErrorKind::DependencyTimeoutException(_))
     }
-    pub fn is_invalid_marker_error(&self) -> bool {
-        matches!(&self.kind, ListKeysErrorKind::InvalidMarkerError(_))
+    pub fn is_invalid_marker_exception(&self) -> bool {
+        matches!(&self.kind, ListKeysErrorKind::InvalidMarkerException(_))
     }
-    pub fn is_kms_internal_error(&self) -> bool {
-        matches!(&self.kind, ListKeysErrorKind::KMSInternalError(_))
+    pub fn is_kms_internal_exception(&self) -> bool {
+        matches!(&self.kind, ListKeysErrorKind::KmsInternalException(_))
     }
 }
 impl std::error::Error for ListKeysError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListKeysErrorKind::DependencyTimeoutError(_inner) => Some(_inner),
-            ListKeysErrorKind::InvalidMarkerError(_inner) => Some(_inner),
-            ListKeysErrorKind::KMSInternalError(_inner) => Some(_inner),
+            ListKeysErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
+            ListKeysErrorKind::InvalidMarkerException(_inner) => Some(_inner),
+            ListKeysErrorKind::KmsInternalException(_inner) => Some(_inner),
             ListKeysErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3860,20 +4030,20 @@ pub struct ListResourceTagsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListResourceTagsErrorKind {
-    InvalidArnError(crate::error::InvalidArnError),
-    InvalidMarkerError(crate::error::InvalidMarkerError),
-    KMSInternalError(crate::error::KMSInternalError),
-    NotFoundError(crate::error::NotFoundError),
+    InvalidArnException(crate::error::InvalidArnException),
+    InvalidMarkerException(crate::error::InvalidMarkerException),
+    KmsInternalException(crate::error::KmsInternalException),
+    NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListResourceTagsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListResourceTagsErrorKind::InvalidArnError(_inner) => _inner.fmt(f),
-            ListResourceTagsErrorKind::InvalidMarkerError(_inner) => _inner.fmt(f),
-            ListResourceTagsErrorKind::KMSInternalError(_inner) => _inner.fmt(f),
-            ListResourceTagsErrorKind::NotFoundError(_inner) => _inner.fmt(f),
+            ListResourceTagsErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
+            ListResourceTagsErrorKind::InvalidMarkerException(_inner) => _inner.fmt(f),
+            ListResourceTagsErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
+            ListResourceTagsErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             ListResourceTagsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3922,26 +4092,35 @@ impl ListResourceTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_arn_error(&self) -> bool {
-        matches!(&self.kind, ListResourceTagsErrorKind::InvalidArnError(_))
+    pub fn is_invalid_arn_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListResourceTagsErrorKind::InvalidArnException(_)
+        )
     }
-    pub fn is_invalid_marker_error(&self) -> bool {
-        matches!(&self.kind, ListResourceTagsErrorKind::InvalidMarkerError(_))
+    pub fn is_invalid_marker_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListResourceTagsErrorKind::InvalidMarkerException(_)
+        )
     }
-    pub fn is_kms_internal_error(&self) -> bool {
-        matches!(&self.kind, ListResourceTagsErrorKind::KMSInternalError(_))
+    pub fn is_kms_internal_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListResourceTagsErrorKind::KmsInternalException(_)
+        )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, ListResourceTagsErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, ListResourceTagsErrorKind::NotFoundException(_))
     }
 }
 impl std::error::Error for ListResourceTagsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListResourceTagsErrorKind::InvalidArnError(_inner) => Some(_inner),
-            ListResourceTagsErrorKind::InvalidMarkerError(_inner) => Some(_inner),
-            ListResourceTagsErrorKind::KMSInternalError(_inner) => Some(_inner),
-            ListResourceTagsErrorKind::NotFoundError(_inner) => Some(_inner),
+            ListResourceTagsErrorKind::InvalidArnException(_inner) => Some(_inner),
+            ListResourceTagsErrorKind::InvalidMarkerException(_inner) => Some(_inner),
+            ListResourceTagsErrorKind::KmsInternalException(_inner) => Some(_inner),
+            ListResourceTagsErrorKind::NotFoundException(_inner) => Some(_inner),
             ListResourceTagsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3956,22 +4135,22 @@ pub struct ListRetirableGrantsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListRetirableGrantsErrorKind {
-    DependencyTimeoutError(crate::error::DependencyTimeoutError),
-    InvalidArnError(crate::error::InvalidArnError),
-    InvalidMarkerError(crate::error::InvalidMarkerError),
-    KMSInternalError(crate::error::KMSInternalError),
-    NotFoundError(crate::error::NotFoundError),
+    DependencyTimeoutException(crate::error::DependencyTimeoutException),
+    InvalidArnException(crate::error::InvalidArnException),
+    InvalidMarkerException(crate::error::InvalidMarkerException),
+    KmsInternalException(crate::error::KmsInternalException),
+    NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListRetirableGrantsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListRetirableGrantsErrorKind::DependencyTimeoutError(_inner) => _inner.fmt(f),
-            ListRetirableGrantsErrorKind::InvalidArnError(_inner) => _inner.fmt(f),
-            ListRetirableGrantsErrorKind::InvalidMarkerError(_inner) => _inner.fmt(f),
-            ListRetirableGrantsErrorKind::KMSInternalError(_inner) => _inner.fmt(f),
-            ListRetirableGrantsErrorKind::NotFoundError(_inner) => _inner.fmt(f),
+            ListRetirableGrantsErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
+            ListRetirableGrantsErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
+            ListRetirableGrantsErrorKind::InvalidMarkerException(_inner) => _inner.fmt(f),
+            ListRetirableGrantsErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
+            ListRetirableGrantsErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             ListRetirableGrantsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4020,39 +4199,45 @@ impl ListRetirableGrantsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_dependency_timeout_error(&self) -> bool {
+    pub fn is_dependency_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListRetirableGrantsErrorKind::DependencyTimeoutError(_)
+            ListRetirableGrantsErrorKind::DependencyTimeoutException(_)
         )
     }
-    pub fn is_invalid_arn_error(&self) -> bool {
-        matches!(&self.kind, ListRetirableGrantsErrorKind::InvalidArnError(_))
-    }
-    pub fn is_invalid_marker_error(&self) -> bool {
+    pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListRetirableGrantsErrorKind::InvalidMarkerError(_)
+            ListRetirableGrantsErrorKind::InvalidArnException(_)
         )
     }
-    pub fn is_kms_internal_error(&self) -> bool {
+    pub fn is_invalid_marker_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListRetirableGrantsErrorKind::KMSInternalError(_)
+            ListRetirableGrantsErrorKind::InvalidMarkerException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, ListRetirableGrantsErrorKind::NotFoundError(_))
+    pub fn is_kms_internal_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListRetirableGrantsErrorKind::KmsInternalException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListRetirableGrantsErrorKind::NotFoundException(_)
+        )
     }
 }
 impl std::error::Error for ListRetirableGrantsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListRetirableGrantsErrorKind::DependencyTimeoutError(_inner) => Some(_inner),
-            ListRetirableGrantsErrorKind::InvalidArnError(_inner) => Some(_inner),
-            ListRetirableGrantsErrorKind::InvalidMarkerError(_inner) => Some(_inner),
-            ListRetirableGrantsErrorKind::KMSInternalError(_inner) => Some(_inner),
-            ListRetirableGrantsErrorKind::NotFoundError(_inner) => Some(_inner),
+            ListRetirableGrantsErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
+            ListRetirableGrantsErrorKind::InvalidArnException(_inner) => Some(_inner),
+            ListRetirableGrantsErrorKind::InvalidMarkerException(_inner) => Some(_inner),
+            ListRetirableGrantsErrorKind::KmsInternalException(_inner) => Some(_inner),
+            ListRetirableGrantsErrorKind::NotFoundException(_inner) => Some(_inner),
             ListRetirableGrantsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4067,28 +4252,28 @@ pub struct PutKeyPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutKeyPolicyErrorKind {
-    DependencyTimeoutError(crate::error::DependencyTimeoutError),
-    InvalidArnError(crate::error::InvalidArnError),
-    KMSInternalError(crate::error::KMSInternalError),
-    KMSInvalidStateError(crate::error::KMSInvalidStateError),
-    LimitExceededError(crate::error::LimitExceededError),
-    MalformedPolicyDocumentError(crate::error::MalformedPolicyDocumentError),
-    NotFoundError(crate::error::NotFoundError),
-    UnsupportedOperationError(crate::error::UnsupportedOperationError),
+    DependencyTimeoutException(crate::error::DependencyTimeoutException),
+    InvalidArnException(crate::error::InvalidArnException),
+    KmsInternalException(crate::error::KmsInternalException),
+    KmsInvalidStateException(crate::error::KmsInvalidStateException),
+    LimitExceededException(crate::error::LimitExceededException),
+    MalformedPolicyDocumentException(crate::error::MalformedPolicyDocumentException),
+    NotFoundException(crate::error::NotFoundException),
+    UnsupportedOperationException(crate::error::UnsupportedOperationException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutKeyPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutKeyPolicyErrorKind::DependencyTimeoutError(_inner) => _inner.fmt(f),
-            PutKeyPolicyErrorKind::InvalidArnError(_inner) => _inner.fmt(f),
-            PutKeyPolicyErrorKind::KMSInternalError(_inner) => _inner.fmt(f),
-            PutKeyPolicyErrorKind::KMSInvalidStateError(_inner) => _inner.fmt(f),
-            PutKeyPolicyErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            PutKeyPolicyErrorKind::MalformedPolicyDocumentError(_inner) => _inner.fmt(f),
-            PutKeyPolicyErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            PutKeyPolicyErrorKind::UnsupportedOperationError(_inner) => _inner.fmt(f),
+            PutKeyPolicyErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
+            PutKeyPolicyErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
+            PutKeyPolicyErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
+            PutKeyPolicyErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
+            PutKeyPolicyErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            PutKeyPolicyErrorKind::MalformedPolicyDocumentException(_inner) => _inner.fmt(f),
+            PutKeyPolicyErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            PutKeyPolicyErrorKind::UnsupportedOperationException(_inner) => _inner.fmt(f),
             PutKeyPolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4137,48 +4322,54 @@ impl PutKeyPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_dependency_timeout_error(&self) -> bool {
-        matches!(&self.kind, PutKeyPolicyErrorKind::DependencyTimeoutError(_))
-    }
-    pub fn is_invalid_arn_error(&self) -> bool {
-        matches!(&self.kind, PutKeyPolicyErrorKind::InvalidArnError(_))
-    }
-    pub fn is_kms_internal_error(&self) -> bool {
-        matches!(&self.kind, PutKeyPolicyErrorKind::KMSInternalError(_))
-    }
-    pub fn is_kms_invalid_state_error(&self) -> bool {
-        matches!(&self.kind, PutKeyPolicyErrorKind::KMSInvalidStateError(_))
-    }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, PutKeyPolicyErrorKind::LimitExceededError(_))
-    }
-    pub fn is_malformed_policy_document_error(&self) -> bool {
+    pub fn is_dependency_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutKeyPolicyErrorKind::MalformedPolicyDocumentError(_)
+            PutKeyPolicyErrorKind::DependencyTimeoutException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, PutKeyPolicyErrorKind::NotFoundError(_))
+    pub fn is_invalid_arn_exception(&self) -> bool {
+        matches!(&self.kind, PutKeyPolicyErrorKind::InvalidArnException(_))
     }
-    pub fn is_unsupported_operation_error(&self) -> bool {
+    pub fn is_kms_internal_exception(&self) -> bool {
+        matches!(&self.kind, PutKeyPolicyErrorKind::KmsInternalException(_))
+    }
+    pub fn is_kms_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutKeyPolicyErrorKind::UnsupportedOperationError(_)
+            PutKeyPolicyErrorKind::KmsInvalidStateException(_)
+        )
+    }
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(&self.kind, PutKeyPolicyErrorKind::LimitExceededException(_))
+    }
+    pub fn is_malformed_policy_document_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutKeyPolicyErrorKind::MalformedPolicyDocumentException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, PutKeyPolicyErrorKind::NotFoundException(_))
+    }
+    pub fn is_unsupported_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutKeyPolicyErrorKind::UnsupportedOperationException(_)
         )
     }
 }
 impl std::error::Error for PutKeyPolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutKeyPolicyErrorKind::DependencyTimeoutError(_inner) => Some(_inner),
-            PutKeyPolicyErrorKind::InvalidArnError(_inner) => Some(_inner),
-            PutKeyPolicyErrorKind::KMSInternalError(_inner) => Some(_inner),
-            PutKeyPolicyErrorKind::KMSInvalidStateError(_inner) => Some(_inner),
-            PutKeyPolicyErrorKind::LimitExceededError(_inner) => Some(_inner),
-            PutKeyPolicyErrorKind::MalformedPolicyDocumentError(_inner) => Some(_inner),
-            PutKeyPolicyErrorKind::NotFoundError(_inner) => Some(_inner),
-            PutKeyPolicyErrorKind::UnsupportedOperationError(_inner) => Some(_inner),
+            PutKeyPolicyErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
+            PutKeyPolicyErrorKind::InvalidArnException(_inner) => Some(_inner),
+            PutKeyPolicyErrorKind::KmsInternalException(_inner) => Some(_inner),
+            PutKeyPolicyErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
+            PutKeyPolicyErrorKind::LimitExceededException(_inner) => Some(_inner),
+            PutKeyPolicyErrorKind::MalformedPolicyDocumentException(_inner) => Some(_inner),
+            PutKeyPolicyErrorKind::NotFoundException(_inner) => Some(_inner),
+            PutKeyPolicyErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
             PutKeyPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4193,32 +4384,32 @@ pub struct ReEncryptError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ReEncryptErrorKind {
-    DependencyTimeoutError(crate::error::DependencyTimeoutError),
-    DisabledError(crate::error::DisabledError),
-    IncorrectKeyError(crate::error::IncorrectKeyError),
-    InvalidCiphertextError(crate::error::InvalidCiphertextError),
-    InvalidGrantTokenError(crate::error::InvalidGrantTokenError),
-    InvalidKeyUsageError(crate::error::InvalidKeyUsageError),
-    KeyUnavailableError(crate::error::KeyUnavailableError),
-    KMSInternalError(crate::error::KMSInternalError),
-    KMSInvalidStateError(crate::error::KMSInvalidStateError),
-    NotFoundError(crate::error::NotFoundError),
+    DependencyTimeoutException(crate::error::DependencyTimeoutException),
+    DisabledException(crate::error::DisabledException),
+    IncorrectKeyException(crate::error::IncorrectKeyException),
+    InvalidCiphertextException(crate::error::InvalidCiphertextException),
+    InvalidGrantTokenException(crate::error::InvalidGrantTokenException),
+    InvalidKeyUsageException(crate::error::InvalidKeyUsageException),
+    KeyUnavailableException(crate::error::KeyUnavailableException),
+    KmsInternalException(crate::error::KmsInternalException),
+    KmsInvalidStateException(crate::error::KmsInvalidStateException),
+    NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ReEncryptError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ReEncryptErrorKind::DependencyTimeoutError(_inner) => _inner.fmt(f),
-            ReEncryptErrorKind::DisabledError(_inner) => _inner.fmt(f),
-            ReEncryptErrorKind::IncorrectKeyError(_inner) => _inner.fmt(f),
-            ReEncryptErrorKind::InvalidCiphertextError(_inner) => _inner.fmt(f),
-            ReEncryptErrorKind::InvalidGrantTokenError(_inner) => _inner.fmt(f),
-            ReEncryptErrorKind::InvalidKeyUsageError(_inner) => _inner.fmt(f),
-            ReEncryptErrorKind::KeyUnavailableError(_inner) => _inner.fmt(f),
-            ReEncryptErrorKind::KMSInternalError(_inner) => _inner.fmt(f),
-            ReEncryptErrorKind::KMSInvalidStateError(_inner) => _inner.fmt(f),
-            ReEncryptErrorKind::NotFoundError(_inner) => _inner.fmt(f),
+            ReEncryptErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
+            ReEncryptErrorKind::DisabledException(_inner) => _inner.fmt(f),
+            ReEncryptErrorKind::IncorrectKeyException(_inner) => _inner.fmt(f),
+            ReEncryptErrorKind::InvalidCiphertextException(_inner) => _inner.fmt(f),
+            ReEncryptErrorKind::InvalidGrantTokenException(_inner) => _inner.fmt(f),
+            ReEncryptErrorKind::InvalidKeyUsageException(_inner) => _inner.fmt(f),
+            ReEncryptErrorKind::KeyUnavailableException(_inner) => _inner.fmt(f),
+            ReEncryptErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
+            ReEncryptErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
+            ReEncryptErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             ReEncryptErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4267,50 +4458,59 @@ impl ReEncryptError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_dependency_timeout_error(&self) -> bool {
-        matches!(&self.kind, ReEncryptErrorKind::DependencyTimeoutError(_))
+    pub fn is_dependency_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ReEncryptErrorKind::DependencyTimeoutException(_)
+        )
     }
-    pub fn is_disabled_error(&self) -> bool {
-        matches!(&self.kind, ReEncryptErrorKind::DisabledError(_))
+    pub fn is_disabled_exception(&self) -> bool {
+        matches!(&self.kind, ReEncryptErrorKind::DisabledException(_))
     }
-    pub fn is_incorrect_key_error(&self) -> bool {
-        matches!(&self.kind, ReEncryptErrorKind::IncorrectKeyError(_))
+    pub fn is_incorrect_key_exception(&self) -> bool {
+        matches!(&self.kind, ReEncryptErrorKind::IncorrectKeyException(_))
     }
-    pub fn is_invalid_ciphertext_error(&self) -> bool {
-        matches!(&self.kind, ReEncryptErrorKind::InvalidCiphertextError(_))
+    pub fn is_invalid_ciphertext_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ReEncryptErrorKind::InvalidCiphertextException(_)
+        )
     }
-    pub fn is_invalid_grant_token_error(&self) -> bool {
-        matches!(&self.kind, ReEncryptErrorKind::InvalidGrantTokenError(_))
+    pub fn is_invalid_grant_token_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ReEncryptErrorKind::InvalidGrantTokenException(_)
+        )
     }
-    pub fn is_invalid_key_usage_error(&self) -> bool {
-        matches!(&self.kind, ReEncryptErrorKind::InvalidKeyUsageError(_))
+    pub fn is_invalid_key_usage_exception(&self) -> bool {
+        matches!(&self.kind, ReEncryptErrorKind::InvalidKeyUsageException(_))
     }
-    pub fn is_key_unavailable_error(&self) -> bool {
-        matches!(&self.kind, ReEncryptErrorKind::KeyUnavailableError(_))
+    pub fn is_key_unavailable_exception(&self) -> bool {
+        matches!(&self.kind, ReEncryptErrorKind::KeyUnavailableException(_))
     }
-    pub fn is_kms_internal_error(&self) -> bool {
-        matches!(&self.kind, ReEncryptErrorKind::KMSInternalError(_))
+    pub fn is_kms_internal_exception(&self) -> bool {
+        matches!(&self.kind, ReEncryptErrorKind::KmsInternalException(_))
     }
-    pub fn is_kms_invalid_state_error(&self) -> bool {
-        matches!(&self.kind, ReEncryptErrorKind::KMSInvalidStateError(_))
+    pub fn is_kms_invalid_state_exception(&self) -> bool {
+        matches!(&self.kind, ReEncryptErrorKind::KmsInvalidStateException(_))
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, ReEncryptErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, ReEncryptErrorKind::NotFoundException(_))
     }
 }
 impl std::error::Error for ReEncryptError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ReEncryptErrorKind::DependencyTimeoutError(_inner) => Some(_inner),
-            ReEncryptErrorKind::DisabledError(_inner) => Some(_inner),
-            ReEncryptErrorKind::IncorrectKeyError(_inner) => Some(_inner),
-            ReEncryptErrorKind::InvalidCiphertextError(_inner) => Some(_inner),
-            ReEncryptErrorKind::InvalidGrantTokenError(_inner) => Some(_inner),
-            ReEncryptErrorKind::InvalidKeyUsageError(_inner) => Some(_inner),
-            ReEncryptErrorKind::KeyUnavailableError(_inner) => Some(_inner),
-            ReEncryptErrorKind::KMSInternalError(_inner) => Some(_inner),
-            ReEncryptErrorKind::KMSInvalidStateError(_inner) => Some(_inner),
-            ReEncryptErrorKind::NotFoundError(_inner) => Some(_inner),
+            ReEncryptErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
+            ReEncryptErrorKind::DisabledException(_inner) => Some(_inner),
+            ReEncryptErrorKind::IncorrectKeyException(_inner) => Some(_inner),
+            ReEncryptErrorKind::InvalidCiphertextException(_inner) => Some(_inner),
+            ReEncryptErrorKind::InvalidGrantTokenException(_inner) => Some(_inner),
+            ReEncryptErrorKind::InvalidKeyUsageException(_inner) => Some(_inner),
+            ReEncryptErrorKind::KeyUnavailableException(_inner) => Some(_inner),
+            ReEncryptErrorKind::KmsInternalException(_inner) => Some(_inner),
+            ReEncryptErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
+            ReEncryptErrorKind::NotFoundException(_inner) => Some(_inner),
             ReEncryptErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4325,26 +4525,26 @@ pub struct RetireGrantError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RetireGrantErrorKind {
-    DependencyTimeoutError(crate::error::DependencyTimeoutError),
-    InvalidArnError(crate::error::InvalidArnError),
-    InvalidGrantIdError(crate::error::InvalidGrantIdError),
-    InvalidGrantTokenError(crate::error::InvalidGrantTokenError),
-    KMSInternalError(crate::error::KMSInternalError),
-    KMSInvalidStateError(crate::error::KMSInvalidStateError),
-    NotFoundError(crate::error::NotFoundError),
+    DependencyTimeoutException(crate::error::DependencyTimeoutException),
+    InvalidArnException(crate::error::InvalidArnException),
+    InvalidGrantIdException(crate::error::InvalidGrantIdException),
+    InvalidGrantTokenException(crate::error::InvalidGrantTokenException),
+    KmsInternalException(crate::error::KmsInternalException),
+    KmsInvalidStateException(crate::error::KmsInvalidStateException),
+    NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RetireGrantError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            RetireGrantErrorKind::DependencyTimeoutError(_inner) => _inner.fmt(f),
-            RetireGrantErrorKind::InvalidArnError(_inner) => _inner.fmt(f),
-            RetireGrantErrorKind::InvalidGrantIdError(_inner) => _inner.fmt(f),
-            RetireGrantErrorKind::InvalidGrantTokenError(_inner) => _inner.fmt(f),
-            RetireGrantErrorKind::KMSInternalError(_inner) => _inner.fmt(f),
-            RetireGrantErrorKind::KMSInvalidStateError(_inner) => _inner.fmt(f),
-            RetireGrantErrorKind::NotFoundError(_inner) => _inner.fmt(f),
+            RetireGrantErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
+            RetireGrantErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
+            RetireGrantErrorKind::InvalidGrantIdException(_inner) => _inner.fmt(f),
+            RetireGrantErrorKind::InvalidGrantTokenException(_inner) => _inner.fmt(f),
+            RetireGrantErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
+            RetireGrantErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
+            RetireGrantErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             RetireGrantErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4393,38 +4593,47 @@ impl RetireGrantError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_dependency_timeout_error(&self) -> bool {
-        matches!(&self.kind, RetireGrantErrorKind::DependencyTimeoutError(_))
+    pub fn is_dependency_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RetireGrantErrorKind::DependencyTimeoutException(_)
+        )
     }
-    pub fn is_invalid_arn_error(&self) -> bool {
-        matches!(&self.kind, RetireGrantErrorKind::InvalidArnError(_))
+    pub fn is_invalid_arn_exception(&self) -> bool {
+        matches!(&self.kind, RetireGrantErrorKind::InvalidArnException(_))
     }
-    pub fn is_invalid_grant_id_error(&self) -> bool {
-        matches!(&self.kind, RetireGrantErrorKind::InvalidGrantIdError(_))
+    pub fn is_invalid_grant_id_exception(&self) -> bool {
+        matches!(&self.kind, RetireGrantErrorKind::InvalidGrantIdException(_))
     }
-    pub fn is_invalid_grant_token_error(&self) -> bool {
-        matches!(&self.kind, RetireGrantErrorKind::InvalidGrantTokenError(_))
+    pub fn is_invalid_grant_token_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RetireGrantErrorKind::InvalidGrantTokenException(_)
+        )
     }
-    pub fn is_kms_internal_error(&self) -> bool {
-        matches!(&self.kind, RetireGrantErrorKind::KMSInternalError(_))
+    pub fn is_kms_internal_exception(&self) -> bool {
+        matches!(&self.kind, RetireGrantErrorKind::KmsInternalException(_))
     }
-    pub fn is_kms_invalid_state_error(&self) -> bool {
-        matches!(&self.kind, RetireGrantErrorKind::KMSInvalidStateError(_))
+    pub fn is_kms_invalid_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RetireGrantErrorKind::KmsInvalidStateException(_)
+        )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, RetireGrantErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, RetireGrantErrorKind::NotFoundException(_))
     }
 }
 impl std::error::Error for RetireGrantError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            RetireGrantErrorKind::DependencyTimeoutError(_inner) => Some(_inner),
-            RetireGrantErrorKind::InvalidArnError(_inner) => Some(_inner),
-            RetireGrantErrorKind::InvalidGrantIdError(_inner) => Some(_inner),
-            RetireGrantErrorKind::InvalidGrantTokenError(_inner) => Some(_inner),
-            RetireGrantErrorKind::KMSInternalError(_inner) => Some(_inner),
-            RetireGrantErrorKind::KMSInvalidStateError(_inner) => Some(_inner),
-            RetireGrantErrorKind::NotFoundError(_inner) => Some(_inner),
+            RetireGrantErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
+            RetireGrantErrorKind::InvalidArnException(_inner) => Some(_inner),
+            RetireGrantErrorKind::InvalidGrantIdException(_inner) => Some(_inner),
+            RetireGrantErrorKind::InvalidGrantTokenException(_inner) => Some(_inner),
+            RetireGrantErrorKind::KmsInternalException(_inner) => Some(_inner),
+            RetireGrantErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
+            RetireGrantErrorKind::NotFoundException(_inner) => Some(_inner),
             RetireGrantErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4439,24 +4648,24 @@ pub struct RevokeGrantError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RevokeGrantErrorKind {
-    DependencyTimeoutError(crate::error::DependencyTimeoutError),
-    InvalidArnError(crate::error::InvalidArnError),
-    InvalidGrantIdError(crate::error::InvalidGrantIdError),
-    KMSInternalError(crate::error::KMSInternalError),
-    KMSInvalidStateError(crate::error::KMSInvalidStateError),
-    NotFoundError(crate::error::NotFoundError),
+    DependencyTimeoutException(crate::error::DependencyTimeoutException),
+    InvalidArnException(crate::error::InvalidArnException),
+    InvalidGrantIdException(crate::error::InvalidGrantIdException),
+    KmsInternalException(crate::error::KmsInternalException),
+    KmsInvalidStateException(crate::error::KmsInvalidStateException),
+    NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RevokeGrantError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            RevokeGrantErrorKind::DependencyTimeoutError(_inner) => _inner.fmt(f),
-            RevokeGrantErrorKind::InvalidArnError(_inner) => _inner.fmt(f),
-            RevokeGrantErrorKind::InvalidGrantIdError(_inner) => _inner.fmt(f),
-            RevokeGrantErrorKind::KMSInternalError(_inner) => _inner.fmt(f),
-            RevokeGrantErrorKind::KMSInvalidStateError(_inner) => _inner.fmt(f),
-            RevokeGrantErrorKind::NotFoundError(_inner) => _inner.fmt(f),
+            RevokeGrantErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
+            RevokeGrantErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
+            RevokeGrantErrorKind::InvalidGrantIdException(_inner) => _inner.fmt(f),
+            RevokeGrantErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
+            RevokeGrantErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
+            RevokeGrantErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             RevokeGrantErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4505,34 +4714,40 @@ impl RevokeGrantError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_dependency_timeout_error(&self) -> bool {
-        matches!(&self.kind, RevokeGrantErrorKind::DependencyTimeoutError(_))
+    pub fn is_dependency_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RevokeGrantErrorKind::DependencyTimeoutException(_)
+        )
     }
-    pub fn is_invalid_arn_error(&self) -> bool {
-        matches!(&self.kind, RevokeGrantErrorKind::InvalidArnError(_))
+    pub fn is_invalid_arn_exception(&self) -> bool {
+        matches!(&self.kind, RevokeGrantErrorKind::InvalidArnException(_))
     }
-    pub fn is_invalid_grant_id_error(&self) -> bool {
-        matches!(&self.kind, RevokeGrantErrorKind::InvalidGrantIdError(_))
+    pub fn is_invalid_grant_id_exception(&self) -> bool {
+        matches!(&self.kind, RevokeGrantErrorKind::InvalidGrantIdException(_))
     }
-    pub fn is_kms_internal_error(&self) -> bool {
-        matches!(&self.kind, RevokeGrantErrorKind::KMSInternalError(_))
+    pub fn is_kms_internal_exception(&self) -> bool {
+        matches!(&self.kind, RevokeGrantErrorKind::KmsInternalException(_))
     }
-    pub fn is_kms_invalid_state_error(&self) -> bool {
-        matches!(&self.kind, RevokeGrantErrorKind::KMSInvalidStateError(_))
+    pub fn is_kms_invalid_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RevokeGrantErrorKind::KmsInvalidStateException(_)
+        )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, RevokeGrantErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, RevokeGrantErrorKind::NotFoundException(_))
     }
 }
 impl std::error::Error for RevokeGrantError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            RevokeGrantErrorKind::DependencyTimeoutError(_inner) => Some(_inner),
-            RevokeGrantErrorKind::InvalidArnError(_inner) => Some(_inner),
-            RevokeGrantErrorKind::InvalidGrantIdError(_inner) => Some(_inner),
-            RevokeGrantErrorKind::KMSInternalError(_inner) => Some(_inner),
-            RevokeGrantErrorKind::KMSInvalidStateError(_inner) => Some(_inner),
-            RevokeGrantErrorKind::NotFoundError(_inner) => Some(_inner),
+            RevokeGrantErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
+            RevokeGrantErrorKind::InvalidArnException(_inner) => Some(_inner),
+            RevokeGrantErrorKind::InvalidGrantIdException(_inner) => Some(_inner),
+            RevokeGrantErrorKind::KmsInternalException(_inner) => Some(_inner),
+            RevokeGrantErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
+            RevokeGrantErrorKind::NotFoundException(_inner) => Some(_inner),
             RevokeGrantErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4547,22 +4762,22 @@ pub struct ScheduleKeyDeletionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ScheduleKeyDeletionErrorKind {
-    DependencyTimeoutError(crate::error::DependencyTimeoutError),
-    InvalidArnError(crate::error::InvalidArnError),
-    KMSInternalError(crate::error::KMSInternalError),
-    KMSInvalidStateError(crate::error::KMSInvalidStateError),
-    NotFoundError(crate::error::NotFoundError),
+    DependencyTimeoutException(crate::error::DependencyTimeoutException),
+    InvalidArnException(crate::error::InvalidArnException),
+    KmsInternalException(crate::error::KmsInternalException),
+    KmsInvalidStateException(crate::error::KmsInvalidStateException),
+    NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ScheduleKeyDeletionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ScheduleKeyDeletionErrorKind::DependencyTimeoutError(_inner) => _inner.fmt(f),
-            ScheduleKeyDeletionErrorKind::InvalidArnError(_inner) => _inner.fmt(f),
-            ScheduleKeyDeletionErrorKind::KMSInternalError(_inner) => _inner.fmt(f),
-            ScheduleKeyDeletionErrorKind::KMSInvalidStateError(_inner) => _inner.fmt(f),
-            ScheduleKeyDeletionErrorKind::NotFoundError(_inner) => _inner.fmt(f),
+            ScheduleKeyDeletionErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
+            ScheduleKeyDeletionErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
+            ScheduleKeyDeletionErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
+            ScheduleKeyDeletionErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
+            ScheduleKeyDeletionErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             ScheduleKeyDeletionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4611,39 +4826,45 @@ impl ScheduleKeyDeletionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_dependency_timeout_error(&self) -> bool {
+    pub fn is_dependency_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ScheduleKeyDeletionErrorKind::DependencyTimeoutError(_)
+            ScheduleKeyDeletionErrorKind::DependencyTimeoutException(_)
         )
     }
-    pub fn is_invalid_arn_error(&self) -> bool {
-        matches!(&self.kind, ScheduleKeyDeletionErrorKind::InvalidArnError(_))
-    }
-    pub fn is_kms_internal_error(&self) -> bool {
+    pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ScheduleKeyDeletionErrorKind::KMSInternalError(_)
+            ScheduleKeyDeletionErrorKind::InvalidArnException(_)
         )
     }
-    pub fn is_kms_invalid_state_error(&self) -> bool {
+    pub fn is_kms_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ScheduleKeyDeletionErrorKind::KMSInvalidStateError(_)
+            ScheduleKeyDeletionErrorKind::KmsInternalException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, ScheduleKeyDeletionErrorKind::NotFoundError(_))
+    pub fn is_kms_invalid_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ScheduleKeyDeletionErrorKind::KmsInvalidStateException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ScheduleKeyDeletionErrorKind::NotFoundException(_)
+        )
     }
 }
 impl std::error::Error for ScheduleKeyDeletionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ScheduleKeyDeletionErrorKind::DependencyTimeoutError(_inner) => Some(_inner),
-            ScheduleKeyDeletionErrorKind::InvalidArnError(_inner) => Some(_inner),
-            ScheduleKeyDeletionErrorKind::KMSInternalError(_inner) => Some(_inner),
-            ScheduleKeyDeletionErrorKind::KMSInvalidStateError(_inner) => Some(_inner),
-            ScheduleKeyDeletionErrorKind::NotFoundError(_inner) => Some(_inner),
+            ScheduleKeyDeletionErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
+            ScheduleKeyDeletionErrorKind::InvalidArnException(_inner) => Some(_inner),
+            ScheduleKeyDeletionErrorKind::KmsInternalException(_inner) => Some(_inner),
+            ScheduleKeyDeletionErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
+            ScheduleKeyDeletionErrorKind::NotFoundException(_inner) => Some(_inner),
             ScheduleKeyDeletionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4658,28 +4879,28 @@ pub struct SignError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SignErrorKind {
-    DependencyTimeoutError(crate::error::DependencyTimeoutError),
-    DisabledError(crate::error::DisabledError),
-    InvalidGrantTokenError(crate::error::InvalidGrantTokenError),
-    InvalidKeyUsageError(crate::error::InvalidKeyUsageError),
-    KeyUnavailableError(crate::error::KeyUnavailableError),
-    KMSInternalError(crate::error::KMSInternalError),
-    KMSInvalidStateError(crate::error::KMSInvalidStateError),
-    NotFoundError(crate::error::NotFoundError),
+    DependencyTimeoutException(crate::error::DependencyTimeoutException),
+    DisabledException(crate::error::DisabledException),
+    InvalidGrantTokenException(crate::error::InvalidGrantTokenException),
+    InvalidKeyUsageException(crate::error::InvalidKeyUsageException),
+    KeyUnavailableException(crate::error::KeyUnavailableException),
+    KmsInternalException(crate::error::KmsInternalException),
+    KmsInvalidStateException(crate::error::KmsInvalidStateException),
+    NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SignError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            SignErrorKind::DependencyTimeoutError(_inner) => _inner.fmt(f),
-            SignErrorKind::DisabledError(_inner) => _inner.fmt(f),
-            SignErrorKind::InvalidGrantTokenError(_inner) => _inner.fmt(f),
-            SignErrorKind::InvalidKeyUsageError(_inner) => _inner.fmt(f),
-            SignErrorKind::KeyUnavailableError(_inner) => _inner.fmt(f),
-            SignErrorKind::KMSInternalError(_inner) => _inner.fmt(f),
-            SignErrorKind::KMSInvalidStateError(_inner) => _inner.fmt(f),
-            SignErrorKind::NotFoundError(_inner) => _inner.fmt(f),
+            SignErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
+            SignErrorKind::DisabledException(_inner) => _inner.fmt(f),
+            SignErrorKind::InvalidGrantTokenException(_inner) => _inner.fmt(f),
+            SignErrorKind::InvalidKeyUsageException(_inner) => _inner.fmt(f),
+            SignErrorKind::KeyUnavailableException(_inner) => _inner.fmt(f),
+            SignErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
+            SignErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
+            SignErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             SignErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4728,42 +4949,42 @@ impl SignError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_dependency_timeout_error(&self) -> bool {
-        matches!(&self.kind, SignErrorKind::DependencyTimeoutError(_))
+    pub fn is_dependency_timeout_exception(&self) -> bool {
+        matches!(&self.kind, SignErrorKind::DependencyTimeoutException(_))
     }
-    pub fn is_disabled_error(&self) -> bool {
-        matches!(&self.kind, SignErrorKind::DisabledError(_))
+    pub fn is_disabled_exception(&self) -> bool {
+        matches!(&self.kind, SignErrorKind::DisabledException(_))
     }
-    pub fn is_invalid_grant_token_error(&self) -> bool {
-        matches!(&self.kind, SignErrorKind::InvalidGrantTokenError(_))
+    pub fn is_invalid_grant_token_exception(&self) -> bool {
+        matches!(&self.kind, SignErrorKind::InvalidGrantTokenException(_))
     }
-    pub fn is_invalid_key_usage_error(&self) -> bool {
-        matches!(&self.kind, SignErrorKind::InvalidKeyUsageError(_))
+    pub fn is_invalid_key_usage_exception(&self) -> bool {
+        matches!(&self.kind, SignErrorKind::InvalidKeyUsageException(_))
     }
-    pub fn is_key_unavailable_error(&self) -> bool {
-        matches!(&self.kind, SignErrorKind::KeyUnavailableError(_))
+    pub fn is_key_unavailable_exception(&self) -> bool {
+        matches!(&self.kind, SignErrorKind::KeyUnavailableException(_))
     }
-    pub fn is_kms_internal_error(&self) -> bool {
-        matches!(&self.kind, SignErrorKind::KMSInternalError(_))
+    pub fn is_kms_internal_exception(&self) -> bool {
+        matches!(&self.kind, SignErrorKind::KmsInternalException(_))
     }
-    pub fn is_kms_invalid_state_error(&self) -> bool {
-        matches!(&self.kind, SignErrorKind::KMSInvalidStateError(_))
+    pub fn is_kms_invalid_state_exception(&self) -> bool {
+        matches!(&self.kind, SignErrorKind::KmsInvalidStateException(_))
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, SignErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, SignErrorKind::NotFoundException(_))
     }
 }
 impl std::error::Error for SignError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            SignErrorKind::DependencyTimeoutError(_inner) => Some(_inner),
-            SignErrorKind::DisabledError(_inner) => Some(_inner),
-            SignErrorKind::InvalidGrantTokenError(_inner) => Some(_inner),
-            SignErrorKind::InvalidKeyUsageError(_inner) => Some(_inner),
-            SignErrorKind::KeyUnavailableError(_inner) => Some(_inner),
-            SignErrorKind::KMSInternalError(_inner) => Some(_inner),
-            SignErrorKind::KMSInvalidStateError(_inner) => Some(_inner),
-            SignErrorKind::NotFoundError(_inner) => Some(_inner),
+            SignErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
+            SignErrorKind::DisabledException(_inner) => Some(_inner),
+            SignErrorKind::InvalidGrantTokenException(_inner) => Some(_inner),
+            SignErrorKind::InvalidKeyUsageException(_inner) => Some(_inner),
+            SignErrorKind::KeyUnavailableException(_inner) => Some(_inner),
+            SignErrorKind::KmsInternalException(_inner) => Some(_inner),
+            SignErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
+            SignErrorKind::NotFoundException(_inner) => Some(_inner),
             SignErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4778,24 +4999,24 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    InvalidArnError(crate::error::InvalidArnError),
-    KMSInternalError(crate::error::KMSInternalError),
-    KMSInvalidStateError(crate::error::KMSInvalidStateError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NotFoundError(crate::error::NotFoundError),
-    TagError(crate::error::TagError),
+    InvalidArnException(crate::error::InvalidArnException),
+    KmsInternalException(crate::error::KmsInternalException),
+    KmsInvalidStateException(crate::error::KmsInvalidStateException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NotFoundException(crate::error::NotFoundException),
+    TagException(crate::error::TagException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            TagResourceErrorKind::InvalidArnError(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::KMSInternalError(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::KMSInvalidStateError(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::TagError(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::TagException(_inner) => _inner.fmt(f),
             TagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4844,34 +5065,37 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_arn_error(&self) -> bool {
-        matches!(&self.kind, TagResourceErrorKind::InvalidArnError(_))
+    pub fn is_invalid_arn_exception(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::InvalidArnException(_))
     }
-    pub fn is_kms_internal_error(&self) -> bool {
-        matches!(&self.kind, TagResourceErrorKind::KMSInternalError(_))
+    pub fn is_kms_internal_exception(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::KmsInternalException(_))
     }
-    pub fn is_kms_invalid_state_error(&self) -> bool {
-        matches!(&self.kind, TagResourceErrorKind::KMSInvalidStateError(_))
+    pub fn is_kms_invalid_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            TagResourceErrorKind::KmsInvalidStateException(_)
+        )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, TagResourceErrorKind::LimitExceededError(_))
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::LimitExceededException(_))
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, TagResourceErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::NotFoundException(_))
     }
-    pub fn is_tag_error(&self) -> bool {
-        matches!(&self.kind, TagResourceErrorKind::TagError(_))
+    pub fn is_tag_exception(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::TagException(_))
     }
 }
 impl std::error::Error for TagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            TagResourceErrorKind::InvalidArnError(_inner) => Some(_inner),
-            TagResourceErrorKind::KMSInternalError(_inner) => Some(_inner),
-            TagResourceErrorKind::KMSInvalidStateError(_inner) => Some(_inner),
-            TagResourceErrorKind::LimitExceededError(_inner) => Some(_inner),
-            TagResourceErrorKind::NotFoundError(_inner) => Some(_inner),
-            TagResourceErrorKind::TagError(_inner) => Some(_inner),
+            TagResourceErrorKind::InvalidArnException(_inner) => Some(_inner),
+            TagResourceErrorKind::KmsInternalException(_inner) => Some(_inner),
+            TagResourceErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
+            TagResourceErrorKind::LimitExceededException(_inner) => Some(_inner),
+            TagResourceErrorKind::NotFoundException(_inner) => Some(_inner),
+            TagResourceErrorKind::TagException(_inner) => Some(_inner),
             TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4886,22 +5110,22 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    InvalidArnError(crate::error::InvalidArnError),
-    KMSInternalError(crate::error::KMSInternalError),
-    KMSInvalidStateError(crate::error::KMSInvalidStateError),
-    NotFoundError(crate::error::NotFoundError),
-    TagError(crate::error::TagError),
+    InvalidArnException(crate::error::InvalidArnException),
+    KmsInternalException(crate::error::KmsInternalException),
+    KmsInvalidStateException(crate::error::KmsInvalidStateException),
+    NotFoundException(crate::error::NotFoundException),
+    TagException(crate::error::TagException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UntagResourceErrorKind::InvalidArnError(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::KMSInternalError(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::KMSInvalidStateError(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::TagError(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::TagException(_inner) => _inner.fmt(f),
             UntagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4950,30 +5174,33 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_arn_error(&self) -> bool {
-        matches!(&self.kind, UntagResourceErrorKind::InvalidArnError(_))
+    pub fn is_invalid_arn_exception(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::InvalidArnException(_))
     }
-    pub fn is_kms_internal_error(&self) -> bool {
-        matches!(&self.kind, UntagResourceErrorKind::KMSInternalError(_))
+    pub fn is_kms_internal_exception(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::KmsInternalException(_))
     }
-    pub fn is_kms_invalid_state_error(&self) -> bool {
-        matches!(&self.kind, UntagResourceErrorKind::KMSInvalidStateError(_))
+    pub fn is_kms_invalid_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UntagResourceErrorKind::KmsInvalidStateException(_)
+        )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, UntagResourceErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::NotFoundException(_))
     }
-    pub fn is_tag_error(&self) -> bool {
-        matches!(&self.kind, UntagResourceErrorKind::TagError(_))
+    pub fn is_tag_exception(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::TagException(_))
     }
 }
 impl std::error::Error for UntagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UntagResourceErrorKind::InvalidArnError(_inner) => Some(_inner),
-            UntagResourceErrorKind::KMSInternalError(_inner) => Some(_inner),
-            UntagResourceErrorKind::KMSInvalidStateError(_inner) => Some(_inner),
-            UntagResourceErrorKind::NotFoundError(_inner) => Some(_inner),
-            UntagResourceErrorKind::TagError(_inner) => Some(_inner),
+            UntagResourceErrorKind::InvalidArnException(_inner) => Some(_inner),
+            UntagResourceErrorKind::KmsInternalException(_inner) => Some(_inner),
+            UntagResourceErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
+            UntagResourceErrorKind::NotFoundException(_inner) => Some(_inner),
+            UntagResourceErrorKind::TagException(_inner) => Some(_inner),
             UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4988,22 +5215,22 @@ pub struct UpdateAliasError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateAliasErrorKind {
-    DependencyTimeoutError(crate::error::DependencyTimeoutError),
-    KMSInternalError(crate::error::KMSInternalError),
-    KMSInvalidStateError(crate::error::KMSInvalidStateError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NotFoundError(crate::error::NotFoundError),
+    DependencyTimeoutException(crate::error::DependencyTimeoutException),
+    KmsInternalException(crate::error::KmsInternalException),
+    KmsInvalidStateException(crate::error::KmsInvalidStateException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateAliasError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateAliasErrorKind::DependencyTimeoutError(_inner) => _inner.fmt(f),
-            UpdateAliasErrorKind::KMSInternalError(_inner) => _inner.fmt(f),
-            UpdateAliasErrorKind::KMSInvalidStateError(_inner) => _inner.fmt(f),
-            UpdateAliasErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            UpdateAliasErrorKind::NotFoundError(_inner) => _inner.fmt(f),
+            UpdateAliasErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
+            UpdateAliasErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
+            UpdateAliasErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
+            UpdateAliasErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            UpdateAliasErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             UpdateAliasErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5052,30 +5279,36 @@ impl UpdateAliasError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_dependency_timeout_error(&self) -> bool {
-        matches!(&self.kind, UpdateAliasErrorKind::DependencyTimeoutError(_))
+    pub fn is_dependency_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAliasErrorKind::DependencyTimeoutException(_)
+        )
     }
-    pub fn is_kms_internal_error(&self) -> bool {
-        matches!(&self.kind, UpdateAliasErrorKind::KMSInternalError(_))
+    pub fn is_kms_internal_exception(&self) -> bool {
+        matches!(&self.kind, UpdateAliasErrorKind::KmsInternalException(_))
     }
-    pub fn is_kms_invalid_state_error(&self) -> bool {
-        matches!(&self.kind, UpdateAliasErrorKind::KMSInvalidStateError(_))
+    pub fn is_kms_invalid_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAliasErrorKind::KmsInvalidStateException(_)
+        )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, UpdateAliasErrorKind::LimitExceededError(_))
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(&self.kind, UpdateAliasErrorKind::LimitExceededException(_))
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, UpdateAliasErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, UpdateAliasErrorKind::NotFoundException(_))
     }
 }
 impl std::error::Error for UpdateAliasError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateAliasErrorKind::DependencyTimeoutError(_inner) => Some(_inner),
-            UpdateAliasErrorKind::KMSInternalError(_inner) => Some(_inner),
-            UpdateAliasErrorKind::KMSInvalidStateError(_inner) => Some(_inner),
-            UpdateAliasErrorKind::LimitExceededError(_inner) => Some(_inner),
-            UpdateAliasErrorKind::NotFoundError(_inner) => Some(_inner),
+            UpdateAliasErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
+            UpdateAliasErrorKind::KmsInternalException(_inner) => Some(_inner),
+            UpdateAliasErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
+            UpdateAliasErrorKind::LimitExceededException(_inner) => Some(_inner),
+            UpdateAliasErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateAliasErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5090,32 +5323,42 @@ pub struct UpdateCustomKeyStoreError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateCustomKeyStoreErrorKind {
-    CloudHsmClusterInvalidConfigurationError(
-        crate::error::CloudHsmClusterInvalidConfigurationError,
+    CloudHsmClusterInvalidConfigurationException(
+        crate::error::CloudHsmClusterInvalidConfigurationException,
     ),
-    CloudHsmClusterNotActiveError(crate::error::CloudHsmClusterNotActiveError),
-    CloudHsmClusterNotFoundError(crate::error::CloudHsmClusterNotFoundError),
-    CloudHsmClusterNotRelatedError(crate::error::CloudHsmClusterNotRelatedError),
-    CustomKeyStoreInvalidStateError(crate::error::CustomKeyStoreInvalidStateError),
-    CustomKeyStoreNameInUseError(crate::error::CustomKeyStoreNameInUseError),
-    CustomKeyStoreNotFoundError(crate::error::CustomKeyStoreNotFoundError),
-    KMSInternalError(crate::error::KMSInternalError),
+    CloudHsmClusterNotActiveException(crate::error::CloudHsmClusterNotActiveException),
+    CloudHsmClusterNotFoundException(crate::error::CloudHsmClusterNotFoundException),
+    CloudHsmClusterNotRelatedException(crate::error::CloudHsmClusterNotRelatedException),
+    CustomKeyStoreInvalidStateException(crate::error::CustomKeyStoreInvalidStateException),
+    CustomKeyStoreNameInUseException(crate::error::CustomKeyStoreNameInUseException),
+    CustomKeyStoreNotFoundException(crate::error::CustomKeyStoreNotFoundException),
+    KmsInternalException(crate::error::KmsInternalException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateCustomKeyStoreError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateCustomKeyStoreErrorKind::CloudHsmClusterInvalidConfigurationError(_inner) => {
+            UpdateCustomKeyStoreErrorKind::CloudHsmClusterInvalidConfigurationException(_inner) => {
                 _inner.fmt(f)
             }
-            UpdateCustomKeyStoreErrorKind::CloudHsmClusterNotActiveError(_inner) => _inner.fmt(f),
-            UpdateCustomKeyStoreErrorKind::CloudHsmClusterNotFoundError(_inner) => _inner.fmt(f),
-            UpdateCustomKeyStoreErrorKind::CloudHsmClusterNotRelatedError(_inner) => _inner.fmt(f),
-            UpdateCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateError(_inner) => _inner.fmt(f),
-            UpdateCustomKeyStoreErrorKind::CustomKeyStoreNameInUseError(_inner) => _inner.fmt(f),
-            UpdateCustomKeyStoreErrorKind::CustomKeyStoreNotFoundError(_inner) => _inner.fmt(f),
-            UpdateCustomKeyStoreErrorKind::KMSInternalError(_inner) => _inner.fmt(f),
+            UpdateCustomKeyStoreErrorKind::CloudHsmClusterNotActiveException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateCustomKeyStoreErrorKind::CloudHsmClusterNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateCustomKeyStoreErrorKind::CloudHsmClusterNotRelatedException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateCustomKeyStoreErrorKind::CustomKeyStoreNameInUseException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException(_inner) => _inner.fmt(f),
+            UpdateCustomKeyStoreErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
             UpdateCustomKeyStoreErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5164,68 +5407,74 @@ impl UpdateCustomKeyStoreError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_cloud_hsm_cluster_invalid_configuration_error(&self) -> bool {
+    pub fn is_cloud_hsm_cluster_invalid_configuration_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateCustomKeyStoreErrorKind::CloudHsmClusterInvalidConfigurationError(_)
+            UpdateCustomKeyStoreErrorKind::CloudHsmClusterInvalidConfigurationException(_)
         )
     }
-    pub fn is_cloud_hsm_cluster_not_active_error(&self) -> bool {
+    pub fn is_cloud_hsm_cluster_not_active_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateCustomKeyStoreErrorKind::CloudHsmClusterNotActiveError(_)
+            UpdateCustomKeyStoreErrorKind::CloudHsmClusterNotActiveException(_)
         )
     }
-    pub fn is_cloud_hsm_cluster_not_found_error(&self) -> bool {
+    pub fn is_cloud_hsm_cluster_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateCustomKeyStoreErrorKind::CloudHsmClusterNotFoundError(_)
+            UpdateCustomKeyStoreErrorKind::CloudHsmClusterNotFoundException(_)
         )
     }
-    pub fn is_cloud_hsm_cluster_not_related_error(&self) -> bool {
+    pub fn is_cloud_hsm_cluster_not_related_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateCustomKeyStoreErrorKind::CloudHsmClusterNotRelatedError(_)
+            UpdateCustomKeyStoreErrorKind::CloudHsmClusterNotRelatedException(_)
         )
     }
-    pub fn is_custom_key_store_invalid_state_error(&self) -> bool {
+    pub fn is_custom_key_store_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateError(_)
+            UpdateCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateException(_)
         )
     }
-    pub fn is_custom_key_store_name_in_use_error(&self) -> bool {
+    pub fn is_custom_key_store_name_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateCustomKeyStoreErrorKind::CustomKeyStoreNameInUseError(_)
+            UpdateCustomKeyStoreErrorKind::CustomKeyStoreNameInUseException(_)
         )
     }
-    pub fn is_custom_key_store_not_found_error(&self) -> bool {
+    pub fn is_custom_key_store_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateCustomKeyStoreErrorKind::CustomKeyStoreNotFoundError(_)
+            UpdateCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException(_)
         )
     }
-    pub fn is_kms_internal_error(&self) -> bool {
+    pub fn is_kms_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateCustomKeyStoreErrorKind::KMSInternalError(_)
+            UpdateCustomKeyStoreErrorKind::KmsInternalException(_)
         )
     }
 }
 impl std::error::Error for UpdateCustomKeyStoreError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateCustomKeyStoreErrorKind::CloudHsmClusterInvalidConfigurationError(_inner) => {
+            UpdateCustomKeyStoreErrorKind::CloudHsmClusterInvalidConfigurationException(_inner) => {
                 Some(_inner)
             }
-            UpdateCustomKeyStoreErrorKind::CloudHsmClusterNotActiveError(_inner) => Some(_inner),
-            UpdateCustomKeyStoreErrorKind::CloudHsmClusterNotFoundError(_inner) => Some(_inner),
-            UpdateCustomKeyStoreErrorKind::CloudHsmClusterNotRelatedError(_inner) => Some(_inner),
-            UpdateCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateError(_inner) => Some(_inner),
-            UpdateCustomKeyStoreErrorKind::CustomKeyStoreNameInUseError(_inner) => Some(_inner),
-            UpdateCustomKeyStoreErrorKind::CustomKeyStoreNotFoundError(_inner) => Some(_inner),
-            UpdateCustomKeyStoreErrorKind::KMSInternalError(_inner) => Some(_inner),
+            UpdateCustomKeyStoreErrorKind::CloudHsmClusterNotActiveException(_inner) => {
+                Some(_inner)
+            }
+            UpdateCustomKeyStoreErrorKind::CloudHsmClusterNotFoundException(_inner) => Some(_inner),
+            UpdateCustomKeyStoreErrorKind::CloudHsmClusterNotRelatedException(_inner) => {
+                Some(_inner)
+            }
+            UpdateCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateException(_inner) => {
+                Some(_inner)
+            }
+            UpdateCustomKeyStoreErrorKind::CustomKeyStoreNameInUseException(_inner) => Some(_inner),
+            UpdateCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException(_inner) => Some(_inner),
+            UpdateCustomKeyStoreErrorKind::KmsInternalException(_inner) => Some(_inner),
             UpdateCustomKeyStoreErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5240,22 +5489,22 @@ pub struct UpdateKeyDescriptionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateKeyDescriptionErrorKind {
-    DependencyTimeoutError(crate::error::DependencyTimeoutError),
-    InvalidArnError(crate::error::InvalidArnError),
-    KMSInternalError(crate::error::KMSInternalError),
-    KMSInvalidStateError(crate::error::KMSInvalidStateError),
-    NotFoundError(crate::error::NotFoundError),
+    DependencyTimeoutException(crate::error::DependencyTimeoutException),
+    InvalidArnException(crate::error::InvalidArnException),
+    KmsInternalException(crate::error::KmsInternalException),
+    KmsInvalidStateException(crate::error::KmsInvalidStateException),
+    NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateKeyDescriptionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateKeyDescriptionErrorKind::DependencyTimeoutError(_inner) => _inner.fmt(f),
-            UpdateKeyDescriptionErrorKind::InvalidArnError(_inner) => _inner.fmt(f),
-            UpdateKeyDescriptionErrorKind::KMSInternalError(_inner) => _inner.fmt(f),
-            UpdateKeyDescriptionErrorKind::KMSInvalidStateError(_inner) => _inner.fmt(f),
-            UpdateKeyDescriptionErrorKind::NotFoundError(_inner) => _inner.fmt(f),
+            UpdateKeyDescriptionErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
+            UpdateKeyDescriptionErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
+            UpdateKeyDescriptionErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
+            UpdateKeyDescriptionErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
+            UpdateKeyDescriptionErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             UpdateKeyDescriptionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5304,42 +5553,45 @@ impl UpdateKeyDescriptionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_dependency_timeout_error(&self) -> bool {
+    pub fn is_dependency_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateKeyDescriptionErrorKind::DependencyTimeoutError(_)
+            UpdateKeyDescriptionErrorKind::DependencyTimeoutException(_)
         )
     }
-    pub fn is_invalid_arn_error(&self) -> bool {
+    pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateKeyDescriptionErrorKind::InvalidArnError(_)
+            UpdateKeyDescriptionErrorKind::InvalidArnException(_)
         )
     }
-    pub fn is_kms_internal_error(&self) -> bool {
+    pub fn is_kms_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateKeyDescriptionErrorKind::KMSInternalError(_)
+            UpdateKeyDescriptionErrorKind::KmsInternalException(_)
         )
     }
-    pub fn is_kms_invalid_state_error(&self) -> bool {
+    pub fn is_kms_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateKeyDescriptionErrorKind::KMSInvalidStateError(_)
+            UpdateKeyDescriptionErrorKind::KmsInvalidStateException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, UpdateKeyDescriptionErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateKeyDescriptionErrorKind::NotFoundException(_)
+        )
     }
 }
 impl std::error::Error for UpdateKeyDescriptionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateKeyDescriptionErrorKind::DependencyTimeoutError(_inner) => Some(_inner),
-            UpdateKeyDescriptionErrorKind::InvalidArnError(_inner) => Some(_inner),
-            UpdateKeyDescriptionErrorKind::KMSInternalError(_inner) => Some(_inner),
-            UpdateKeyDescriptionErrorKind::KMSInvalidStateError(_inner) => Some(_inner),
-            UpdateKeyDescriptionErrorKind::NotFoundError(_inner) => Some(_inner),
+            UpdateKeyDescriptionErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
+            UpdateKeyDescriptionErrorKind::InvalidArnException(_inner) => Some(_inner),
+            UpdateKeyDescriptionErrorKind::KmsInternalException(_inner) => Some(_inner),
+            UpdateKeyDescriptionErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
+            UpdateKeyDescriptionErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateKeyDescriptionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5354,30 +5606,30 @@ pub struct VerifyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum VerifyErrorKind {
-    DependencyTimeoutError(crate::error::DependencyTimeoutError),
-    DisabledError(crate::error::DisabledError),
-    InvalidGrantTokenError(crate::error::InvalidGrantTokenError),
-    InvalidKeyUsageError(crate::error::InvalidKeyUsageError),
-    KeyUnavailableError(crate::error::KeyUnavailableError),
-    KMSInternalError(crate::error::KMSInternalError),
-    KMSInvalidSignatureError(crate::error::KMSInvalidSignatureError),
-    KMSInvalidStateError(crate::error::KMSInvalidStateError),
-    NotFoundError(crate::error::NotFoundError),
+    DependencyTimeoutException(crate::error::DependencyTimeoutException),
+    DisabledException(crate::error::DisabledException),
+    InvalidGrantTokenException(crate::error::InvalidGrantTokenException),
+    InvalidKeyUsageException(crate::error::InvalidKeyUsageException),
+    KeyUnavailableException(crate::error::KeyUnavailableException),
+    KmsInternalException(crate::error::KmsInternalException),
+    KmsInvalidSignatureException(crate::error::KmsInvalidSignatureException),
+    KmsInvalidStateException(crate::error::KmsInvalidStateException),
+    NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for VerifyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            VerifyErrorKind::DependencyTimeoutError(_inner) => _inner.fmt(f),
-            VerifyErrorKind::DisabledError(_inner) => _inner.fmt(f),
-            VerifyErrorKind::InvalidGrantTokenError(_inner) => _inner.fmt(f),
-            VerifyErrorKind::InvalidKeyUsageError(_inner) => _inner.fmt(f),
-            VerifyErrorKind::KeyUnavailableError(_inner) => _inner.fmt(f),
-            VerifyErrorKind::KMSInternalError(_inner) => _inner.fmt(f),
-            VerifyErrorKind::KMSInvalidSignatureError(_inner) => _inner.fmt(f),
-            VerifyErrorKind::KMSInvalidStateError(_inner) => _inner.fmt(f),
-            VerifyErrorKind::NotFoundError(_inner) => _inner.fmt(f),
+            VerifyErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
+            VerifyErrorKind::DisabledException(_inner) => _inner.fmt(f),
+            VerifyErrorKind::InvalidGrantTokenException(_inner) => _inner.fmt(f),
+            VerifyErrorKind::InvalidKeyUsageException(_inner) => _inner.fmt(f),
+            VerifyErrorKind::KeyUnavailableException(_inner) => _inner.fmt(f),
+            VerifyErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
+            VerifyErrorKind::KmsInvalidSignatureException(_inner) => _inner.fmt(f),
+            VerifyErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
+            VerifyErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             VerifyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5426,46 +5678,46 @@ impl VerifyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_dependency_timeout_error(&self) -> bool {
-        matches!(&self.kind, VerifyErrorKind::DependencyTimeoutError(_))
+    pub fn is_dependency_timeout_exception(&self) -> bool {
+        matches!(&self.kind, VerifyErrorKind::DependencyTimeoutException(_))
     }
-    pub fn is_disabled_error(&self) -> bool {
-        matches!(&self.kind, VerifyErrorKind::DisabledError(_))
+    pub fn is_disabled_exception(&self) -> bool {
+        matches!(&self.kind, VerifyErrorKind::DisabledException(_))
     }
-    pub fn is_invalid_grant_token_error(&self) -> bool {
-        matches!(&self.kind, VerifyErrorKind::InvalidGrantTokenError(_))
+    pub fn is_invalid_grant_token_exception(&self) -> bool {
+        matches!(&self.kind, VerifyErrorKind::InvalidGrantTokenException(_))
     }
-    pub fn is_invalid_key_usage_error(&self) -> bool {
-        matches!(&self.kind, VerifyErrorKind::InvalidKeyUsageError(_))
+    pub fn is_invalid_key_usage_exception(&self) -> bool {
+        matches!(&self.kind, VerifyErrorKind::InvalidKeyUsageException(_))
     }
-    pub fn is_key_unavailable_error(&self) -> bool {
-        matches!(&self.kind, VerifyErrorKind::KeyUnavailableError(_))
+    pub fn is_key_unavailable_exception(&self) -> bool {
+        matches!(&self.kind, VerifyErrorKind::KeyUnavailableException(_))
     }
-    pub fn is_kms_internal_error(&self) -> bool {
-        matches!(&self.kind, VerifyErrorKind::KMSInternalError(_))
+    pub fn is_kms_internal_exception(&self) -> bool {
+        matches!(&self.kind, VerifyErrorKind::KmsInternalException(_))
     }
-    pub fn is_kms_invalid_signature_error(&self) -> bool {
-        matches!(&self.kind, VerifyErrorKind::KMSInvalidSignatureError(_))
+    pub fn is_kms_invalid_signature_exception(&self) -> bool {
+        matches!(&self.kind, VerifyErrorKind::KmsInvalidSignatureException(_))
     }
-    pub fn is_kms_invalid_state_error(&self) -> bool {
-        matches!(&self.kind, VerifyErrorKind::KMSInvalidStateError(_))
+    pub fn is_kms_invalid_state_exception(&self) -> bool {
+        matches!(&self.kind, VerifyErrorKind::KmsInvalidStateException(_))
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, VerifyErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, VerifyErrorKind::NotFoundException(_))
     }
 }
 impl std::error::Error for VerifyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            VerifyErrorKind::DependencyTimeoutError(_inner) => Some(_inner),
-            VerifyErrorKind::DisabledError(_inner) => Some(_inner),
-            VerifyErrorKind::InvalidGrantTokenError(_inner) => Some(_inner),
-            VerifyErrorKind::InvalidKeyUsageError(_inner) => Some(_inner),
-            VerifyErrorKind::KeyUnavailableError(_inner) => Some(_inner),
-            VerifyErrorKind::KMSInternalError(_inner) => Some(_inner),
-            VerifyErrorKind::KMSInvalidSignatureError(_inner) => Some(_inner),
-            VerifyErrorKind::KMSInvalidStateError(_inner) => Some(_inner),
-            VerifyErrorKind::NotFoundError(_inner) => Some(_inner),
+            VerifyErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
+            VerifyErrorKind::DisabledException(_inner) => Some(_inner),
+            VerifyErrorKind::InvalidGrantTokenException(_inner) => Some(_inner),
+            VerifyErrorKind::InvalidKeyUsageException(_inner) => Some(_inner),
+            VerifyErrorKind::KeyUnavailableException(_inner) => Some(_inner),
+            VerifyErrorKind::KmsInternalException(_inner) => Some(_inner),
+            VerifyErrorKind::KmsInvalidSignatureException(_inner) => Some(_inner),
+            VerifyErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
+            VerifyErrorKind::NotFoundException(_inner) => Some(_inner),
             VerifyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5474,37 +5726,35 @@ impl std::error::Error for VerifyError {
 /// <p>The request was rejected because the specified entity or resource could not be
 /// found.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct NotFoundError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct NotFoundException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for NotFoundError {
+impl std::fmt::Debug for NotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotFoundError");
+        let mut formatter = f.debug_struct("NotFoundException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl NotFoundError {
+impl NotFoundException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for NotFoundError {
+impl std::fmt::Display for NotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "NotFoundError [NotFoundException]")?;
+        write!(f, "NotFoundException")?;
         if let Some(inner_1) = &self.message {
             write!(f, ": {}", inner_1)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for NotFoundError {}
-/// See [`NotFoundError`](crate::error::NotFoundError)
-pub mod not_found_error {
-    /// A builder for [`NotFoundError`](crate::error::NotFoundError)
+impl std::error::Error for NotFoundException {}
+/// See [`NotFoundException`](crate::error::NotFoundException)
+pub mod not_found_exception {
+    /// A builder for [`NotFoundException`](crate::error::NotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -5519,18 +5769,18 @@ pub mod not_found_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`NotFoundError`](crate::error::NotFoundError)
-        pub fn build(self) -> crate::error::NotFoundError {
-            crate::error::NotFoundError {
+        /// Consumes the builder and constructs a [`NotFoundException`](crate::error::NotFoundException)
+        pub fn build(self) -> crate::error::NotFoundException {
+            crate::error::NotFoundException {
                 message: self.message,
             }
         }
     }
 }
-impl NotFoundError {
-    /// Creates a new builder-style object to manufacture [`NotFoundError`](crate::error::NotFoundError)
-    pub fn builder() -> crate::error::not_found_error::Builder {
-        crate::error::not_found_error::Builder::default()
+impl NotFoundException {
+    /// Creates a new builder-style object to manufacture [`NotFoundException`](crate::error::NotFoundException)
+    pub fn builder() -> crate::error::not_found_exception::Builder {
+        crate::error::not_found_exception::Builder::default()
     }
 }
 
@@ -5541,37 +5791,35 @@ impl NotFoundError {
 /// <i>AWS Key Management Service Developer Guide</i>
 /// </i>.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct KMSInvalidStateError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct KmsInvalidStateException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for KMSInvalidStateError {
+impl std::fmt::Debug for KmsInvalidStateException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KMSInvalidStateError");
+        let mut formatter = f.debug_struct("KmsInvalidStateException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl KMSInvalidStateError {
+impl KmsInvalidStateException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for KMSInvalidStateError {
+impl std::fmt::Display for KmsInvalidStateException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "KMSInvalidStateError [KMSInvalidStateException]")?;
+        write!(f, "KmsInvalidStateException [KMSInvalidStateException]")?;
         if let Some(inner_2) = &self.message {
             write!(f, ": {}", inner_2)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for KMSInvalidStateError {}
-/// See [`KMSInvalidStateError`](crate::error::KMSInvalidStateError)
-pub mod kms_invalid_state_error {
-    /// A builder for [`KMSInvalidStateError`](crate::error::KMSInvalidStateError)
+impl std::error::Error for KmsInvalidStateException {}
+/// See [`KmsInvalidStateException`](crate::error::KmsInvalidStateException)
+pub mod kms_invalid_state_exception {
+    /// A builder for [`KmsInvalidStateException`](crate::error::KmsInvalidStateException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -5586,18 +5834,18 @@ pub mod kms_invalid_state_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`KMSInvalidStateError`](crate::error::KMSInvalidStateError)
-        pub fn build(self) -> crate::error::KMSInvalidStateError {
-            crate::error::KMSInvalidStateError {
+        /// Consumes the builder and constructs a [`KmsInvalidStateException`](crate::error::KmsInvalidStateException)
+        pub fn build(self) -> crate::error::KmsInvalidStateException {
+            crate::error::KmsInvalidStateException {
                 message: self.message,
             }
         }
     }
 }
-impl KMSInvalidStateError {
-    /// Creates a new builder-style object to manufacture [`KMSInvalidStateError`](crate::error::KMSInvalidStateError)
-    pub fn builder() -> crate::error::kms_invalid_state_error::Builder {
-        crate::error::kms_invalid_state_error::Builder::default()
+impl KmsInvalidStateException {
+    /// Creates a new builder-style object to manufacture [`KmsInvalidStateException`](crate::error::KmsInvalidStateException)
+    pub fn builder() -> crate::error::kms_invalid_state_exception::Builder {
+        crate::error::kms_invalid_state_exception::Builder::default()
     }
 }
 
@@ -5605,37 +5853,38 @@ impl KMSInvalidStateError {
 /// verification fails when it cannot confirm that signature was produced by signing the specified
 /// message with the specified CMK and signing algorithm.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct KMSInvalidSignatureError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct KmsInvalidSignatureException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for KMSInvalidSignatureError {
+impl std::fmt::Debug for KmsInvalidSignatureException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KMSInvalidSignatureError");
+        let mut formatter = f.debug_struct("KmsInvalidSignatureException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl KMSInvalidSignatureError {
+impl KmsInvalidSignatureException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for KMSInvalidSignatureError {
+impl std::fmt::Display for KmsInvalidSignatureException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "KMSInvalidSignatureError [KMSInvalidSignatureException]")?;
+        write!(
+            f,
+            "KmsInvalidSignatureException [KMSInvalidSignatureException]"
+        )?;
         if let Some(inner_3) = &self.message {
             write!(f, ": {}", inner_3)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for KMSInvalidSignatureError {}
-/// See [`KMSInvalidSignatureError`](crate::error::KMSInvalidSignatureError)
-pub mod kms_invalid_signature_error {
-    /// A builder for [`KMSInvalidSignatureError`](crate::error::KMSInvalidSignatureError)
+impl std::error::Error for KmsInvalidSignatureException {}
+/// See [`KmsInvalidSignatureException`](crate::error::KmsInvalidSignatureException)
+pub mod kms_invalid_signature_exception {
+    /// A builder for [`KmsInvalidSignatureException`](crate::error::KmsInvalidSignatureException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -5650,55 +5899,53 @@ pub mod kms_invalid_signature_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`KMSInvalidSignatureError`](crate::error::KMSInvalidSignatureError)
-        pub fn build(self) -> crate::error::KMSInvalidSignatureError {
-            crate::error::KMSInvalidSignatureError {
+        /// Consumes the builder and constructs a [`KmsInvalidSignatureException`](crate::error::KmsInvalidSignatureException)
+        pub fn build(self) -> crate::error::KmsInvalidSignatureException {
+            crate::error::KmsInvalidSignatureException {
                 message: self.message,
             }
         }
     }
 }
-impl KMSInvalidSignatureError {
-    /// Creates a new builder-style object to manufacture [`KMSInvalidSignatureError`](crate::error::KMSInvalidSignatureError)
-    pub fn builder() -> crate::error::kms_invalid_signature_error::Builder {
-        crate::error::kms_invalid_signature_error::Builder::default()
+impl KmsInvalidSignatureException {
+    /// Creates a new builder-style object to manufacture [`KmsInvalidSignatureException`](crate::error::KmsInvalidSignatureException)
+    pub fn builder() -> crate::error::kms_invalid_signature_exception::Builder {
+        crate::error::kms_invalid_signature_exception::Builder::default()
     }
 }
 
 /// <p>The request was rejected because an internal exception occurred. The request can be
 /// retried.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct KMSInternalError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct KmsInternalException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for KMSInternalError {
+impl std::fmt::Debug for KmsInternalException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KMSInternalError");
+        let mut formatter = f.debug_struct("KmsInternalException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl KMSInternalError {
+impl KmsInternalException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for KMSInternalError {
+impl std::fmt::Display for KmsInternalException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "KMSInternalError [KMSInternalException]")?;
+        write!(f, "KmsInternalException [KMSInternalException]")?;
         if let Some(inner_4) = &self.message {
             write!(f, ": {}", inner_4)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for KMSInternalError {}
-/// See [`KMSInternalError`](crate::error::KMSInternalError)
-pub mod kms_internal_error {
-    /// A builder for [`KMSInternalError`](crate::error::KMSInternalError)
+impl std::error::Error for KmsInternalException {}
+/// See [`KmsInternalException`](crate::error::KmsInternalException)
+pub mod kms_internal_exception {
+    /// A builder for [`KmsInternalException`](crate::error::KmsInternalException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -5713,55 +5960,53 @@ pub mod kms_internal_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`KMSInternalError`](crate::error::KMSInternalError)
-        pub fn build(self) -> crate::error::KMSInternalError {
-            crate::error::KMSInternalError {
+        /// Consumes the builder and constructs a [`KmsInternalException`](crate::error::KmsInternalException)
+        pub fn build(self) -> crate::error::KmsInternalException {
+            crate::error::KmsInternalException {
                 message: self.message,
             }
         }
     }
 }
-impl KMSInternalError {
-    /// Creates a new builder-style object to manufacture [`KMSInternalError`](crate::error::KMSInternalError)
-    pub fn builder() -> crate::error::kms_internal_error::Builder {
-        crate::error::kms_internal_error::Builder::default()
+impl KmsInternalException {
+    /// Creates a new builder-style object to manufacture [`KmsInternalException`](crate::error::KmsInternalException)
+    pub fn builder() -> crate::error::kms_internal_exception::Builder {
+        crate::error::kms_internal_exception::Builder::default()
     }
 }
 
 /// <p>The request was rejected because the specified CMK was not available. You can retry the
 /// request.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct KeyUnavailableError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct KeyUnavailableException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for KeyUnavailableError {
+impl std::fmt::Debug for KeyUnavailableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KeyUnavailableError");
+        let mut formatter = f.debug_struct("KeyUnavailableException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl KeyUnavailableError {
+impl KeyUnavailableException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for KeyUnavailableError {
+impl std::fmt::Display for KeyUnavailableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "KeyUnavailableError [KeyUnavailableException]")?;
+        write!(f, "KeyUnavailableException")?;
         if let Some(inner_5) = &self.message {
             write!(f, ": {}", inner_5)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for KeyUnavailableError {}
-/// See [`KeyUnavailableError`](crate::error::KeyUnavailableError)
-pub mod key_unavailable_error {
-    /// A builder for [`KeyUnavailableError`](crate::error::KeyUnavailableError)
+impl std::error::Error for KeyUnavailableException {}
+/// See [`KeyUnavailableException`](crate::error::KeyUnavailableException)
+pub mod key_unavailable_exception {
+    /// A builder for [`KeyUnavailableException`](crate::error::KeyUnavailableException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -5776,18 +6021,18 @@ pub mod key_unavailable_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`KeyUnavailableError`](crate::error::KeyUnavailableError)
-        pub fn build(self) -> crate::error::KeyUnavailableError {
-            crate::error::KeyUnavailableError {
+        /// Consumes the builder and constructs a [`KeyUnavailableException`](crate::error::KeyUnavailableException)
+        pub fn build(self) -> crate::error::KeyUnavailableException {
+            crate::error::KeyUnavailableException {
                 message: self.message,
             }
         }
     }
 }
-impl KeyUnavailableError {
-    /// Creates a new builder-style object to manufacture [`KeyUnavailableError`](crate::error::KeyUnavailableError)
-    pub fn builder() -> crate::error::key_unavailable_error::Builder {
-        crate::error::key_unavailable_error::Builder::default()
+impl KeyUnavailableException {
+    /// Creates a new builder-style object to manufacture [`KeyUnavailableException`](crate::error::KeyUnavailableException)
+    pub fn builder() -> crate::error::key_unavailable_exception::Builder {
+        crate::error::key_unavailable_exception::Builder::default()
     }
 }
 
@@ -5809,37 +6054,35 @@ impl KeyUnavailableError {
 /// a CMK, use the <a>DescribeKey</a> operation.</p>
 /// <p>To find the encryption or signing algorithms supported for a particular CMK, use the <a>DescribeKey</a> operation.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidKeyUsageError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InvalidKeyUsageException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidKeyUsageError {
+impl std::fmt::Debug for InvalidKeyUsageException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidKeyUsageError");
+        let mut formatter = f.debug_struct("InvalidKeyUsageException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl InvalidKeyUsageError {
+impl InvalidKeyUsageException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InvalidKeyUsageError {
+impl std::fmt::Display for InvalidKeyUsageException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidKeyUsageError [InvalidKeyUsageException]")?;
+        write!(f, "InvalidKeyUsageException")?;
         if let Some(inner_6) = &self.message {
             write!(f, ": {}", inner_6)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InvalidKeyUsageError {}
-/// See [`InvalidKeyUsageError`](crate::error::InvalidKeyUsageError)
-pub mod invalid_key_usage_error {
-    /// A builder for [`InvalidKeyUsageError`](crate::error::InvalidKeyUsageError)
+impl std::error::Error for InvalidKeyUsageException {}
+/// See [`InvalidKeyUsageException`](crate::error::InvalidKeyUsageException)
+pub mod invalid_key_usage_exception {
+    /// A builder for [`InvalidKeyUsageException`](crate::error::InvalidKeyUsageException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -5854,54 +6097,52 @@ pub mod invalid_key_usage_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidKeyUsageError`](crate::error::InvalidKeyUsageError)
-        pub fn build(self) -> crate::error::InvalidKeyUsageError {
-            crate::error::InvalidKeyUsageError {
+        /// Consumes the builder and constructs a [`InvalidKeyUsageException`](crate::error::InvalidKeyUsageException)
+        pub fn build(self) -> crate::error::InvalidKeyUsageException {
+            crate::error::InvalidKeyUsageException {
                 message: self.message,
             }
         }
     }
 }
-impl InvalidKeyUsageError {
-    /// Creates a new builder-style object to manufacture [`InvalidKeyUsageError`](crate::error::InvalidKeyUsageError)
-    pub fn builder() -> crate::error::invalid_key_usage_error::Builder {
-        crate::error::invalid_key_usage_error::Builder::default()
+impl InvalidKeyUsageException {
+    /// Creates a new builder-style object to manufacture [`InvalidKeyUsageException`](crate::error::InvalidKeyUsageException)
+    pub fn builder() -> crate::error::invalid_key_usage_exception::Builder {
+        crate::error::invalid_key_usage_exception::Builder::default()
     }
 }
 
 /// <p>The request was rejected because the specified grant token is not valid.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidGrantTokenError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InvalidGrantTokenException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidGrantTokenError {
+impl std::fmt::Debug for InvalidGrantTokenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidGrantTokenError");
+        let mut formatter = f.debug_struct("InvalidGrantTokenException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl InvalidGrantTokenError {
+impl InvalidGrantTokenException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InvalidGrantTokenError {
+impl std::fmt::Display for InvalidGrantTokenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidGrantTokenError [InvalidGrantTokenException]")?;
+        write!(f, "InvalidGrantTokenException")?;
         if let Some(inner_7) = &self.message {
             write!(f, ": {}", inner_7)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InvalidGrantTokenError {}
-/// See [`InvalidGrantTokenError`](crate::error::InvalidGrantTokenError)
-pub mod invalid_grant_token_error {
-    /// A builder for [`InvalidGrantTokenError`](crate::error::InvalidGrantTokenError)
+impl std::error::Error for InvalidGrantTokenException {}
+/// See [`InvalidGrantTokenException`](crate::error::InvalidGrantTokenException)
+pub mod invalid_grant_token_exception {
+    /// A builder for [`InvalidGrantTokenException`](crate::error::InvalidGrantTokenException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -5916,54 +6157,52 @@ pub mod invalid_grant_token_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidGrantTokenError`](crate::error::InvalidGrantTokenError)
-        pub fn build(self) -> crate::error::InvalidGrantTokenError {
-            crate::error::InvalidGrantTokenError {
+        /// Consumes the builder and constructs a [`InvalidGrantTokenException`](crate::error::InvalidGrantTokenException)
+        pub fn build(self) -> crate::error::InvalidGrantTokenException {
+            crate::error::InvalidGrantTokenException {
                 message: self.message,
             }
         }
     }
 }
-impl InvalidGrantTokenError {
-    /// Creates a new builder-style object to manufacture [`InvalidGrantTokenError`](crate::error::InvalidGrantTokenError)
-    pub fn builder() -> crate::error::invalid_grant_token_error::Builder {
-        crate::error::invalid_grant_token_error::Builder::default()
+impl InvalidGrantTokenException {
+    /// Creates a new builder-style object to manufacture [`InvalidGrantTokenException`](crate::error::InvalidGrantTokenException)
+    pub fn builder() -> crate::error::invalid_grant_token_exception::Builder {
+        crate::error::invalid_grant_token_exception::Builder::default()
     }
 }
 
 /// <p>The request was rejected because the specified CMK is not enabled.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct DisabledError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DisabledException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DisabledError {
+impl std::fmt::Debug for DisabledException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisabledError");
+        let mut formatter = f.debug_struct("DisabledException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl DisabledError {
+impl DisabledException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for DisabledError {
+impl std::fmt::Display for DisabledException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "DisabledError [DisabledException]")?;
+        write!(f, "DisabledException")?;
         if let Some(inner_8) = &self.message {
             write!(f, ": {}", inner_8)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for DisabledError {}
-/// See [`DisabledError`](crate::error::DisabledError)
-pub mod disabled_error {
-    /// A builder for [`DisabledError`](crate::error::DisabledError)
+impl std::error::Error for DisabledException {}
+/// See [`DisabledException`](crate::error::DisabledException)
+pub mod disabled_exception {
+    /// A builder for [`DisabledException`](crate::error::DisabledException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -5978,55 +6217,53 @@ pub mod disabled_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DisabledError`](crate::error::DisabledError)
-        pub fn build(self) -> crate::error::DisabledError {
-            crate::error::DisabledError {
+        /// Consumes the builder and constructs a [`DisabledException`](crate::error::DisabledException)
+        pub fn build(self) -> crate::error::DisabledException {
+            crate::error::DisabledException {
                 message: self.message,
             }
         }
     }
 }
-impl DisabledError {
-    /// Creates a new builder-style object to manufacture [`DisabledError`](crate::error::DisabledError)
-    pub fn builder() -> crate::error::disabled_error::Builder {
-        crate::error::disabled_error::Builder::default()
+impl DisabledException {
+    /// Creates a new builder-style object to manufacture [`DisabledException`](crate::error::DisabledException)
+    pub fn builder() -> crate::error::disabled_exception::Builder {
+        crate::error::disabled_exception::Builder::default()
     }
 }
 
 /// <p>The system timed out while trying to fulfill the request. The request can be
 /// retried.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct DependencyTimeoutError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DependencyTimeoutException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DependencyTimeoutError {
+impl std::fmt::Debug for DependencyTimeoutException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DependencyTimeoutError");
+        let mut formatter = f.debug_struct("DependencyTimeoutException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl DependencyTimeoutError {
+impl DependencyTimeoutException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for DependencyTimeoutError {
+impl std::fmt::Display for DependencyTimeoutException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "DependencyTimeoutError [DependencyTimeoutException]")?;
+        write!(f, "DependencyTimeoutException")?;
         if let Some(inner_9) = &self.message {
             write!(f, ": {}", inner_9)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for DependencyTimeoutError {}
-/// See [`DependencyTimeoutError`](crate::error::DependencyTimeoutError)
-pub mod dependency_timeout_error {
-    /// A builder for [`DependencyTimeoutError`](crate::error::DependencyTimeoutError)
+impl std::error::Error for DependencyTimeoutException {}
+/// See [`DependencyTimeoutException`](crate::error::DependencyTimeoutException)
+pub mod dependency_timeout_exception {
+    /// A builder for [`DependencyTimeoutException`](crate::error::DependencyTimeoutException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -6041,55 +6278,53 @@ pub mod dependency_timeout_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DependencyTimeoutError`](crate::error::DependencyTimeoutError)
-        pub fn build(self) -> crate::error::DependencyTimeoutError {
-            crate::error::DependencyTimeoutError {
+        /// Consumes the builder and constructs a [`DependencyTimeoutException`](crate::error::DependencyTimeoutException)
+        pub fn build(self) -> crate::error::DependencyTimeoutException {
+            crate::error::DependencyTimeoutException {
                 message: self.message,
             }
         }
     }
 }
-impl DependencyTimeoutError {
-    /// Creates a new builder-style object to manufacture [`DependencyTimeoutError`](crate::error::DependencyTimeoutError)
-    pub fn builder() -> crate::error::dependency_timeout_error::Builder {
-        crate::error::dependency_timeout_error::Builder::default()
+impl DependencyTimeoutException {
+    /// Creates a new builder-style object to manufacture [`DependencyTimeoutException`](crate::error::DependencyTimeoutException)
+    pub fn builder() -> crate::error::dependency_timeout_exception::Builder {
+        crate::error::dependency_timeout_exception::Builder::default()
     }
 }
 
 /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not
 /// valid.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidArnError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InvalidArnException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidArnError {
+impl std::fmt::Debug for InvalidArnException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidArnError");
+        let mut formatter = f.debug_struct("InvalidArnException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl InvalidArnError {
+impl InvalidArnException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InvalidArnError {
+impl std::fmt::Display for InvalidArnException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidArnError [InvalidArnException]")?;
+        write!(f, "InvalidArnException")?;
         if let Some(inner_10) = &self.message {
             write!(f, ": {}", inner_10)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InvalidArnError {}
-/// See [`InvalidArnError`](crate::error::InvalidArnError)
-pub mod invalid_arn_error {
-    /// A builder for [`InvalidArnError`](crate::error::InvalidArnError)
+impl std::error::Error for InvalidArnException {}
+/// See [`InvalidArnException`](crate::error::InvalidArnException)
+pub mod invalid_arn_exception {
+    /// A builder for [`InvalidArnException`](crate::error::InvalidArnException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -6104,58 +6339,53 @@ pub mod invalid_arn_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidArnError`](crate::error::InvalidArnError)
-        pub fn build(self) -> crate::error::InvalidArnError {
-            crate::error::InvalidArnError {
+        /// Consumes the builder and constructs a [`InvalidArnException`](crate::error::InvalidArnException)
+        pub fn build(self) -> crate::error::InvalidArnException {
+            crate::error::InvalidArnException {
                 message: self.message,
             }
         }
     }
 }
-impl InvalidArnError {
-    /// Creates a new builder-style object to manufacture [`InvalidArnError`](crate::error::InvalidArnError)
-    pub fn builder() -> crate::error::invalid_arn_error::Builder {
-        crate::error::invalid_arn_error::Builder::default()
+impl InvalidArnException {
+    /// Creates a new builder-style object to manufacture [`InvalidArnException`](crate::error::InvalidArnException)
+    pub fn builder() -> crate::error::invalid_arn_exception::Builder {
+        crate::error::invalid_arn_exception::Builder::default()
     }
 }
 
 /// <p>The request was rejected because AWS KMS cannot find a custom key store with the specified
 /// key store name or ID.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct CustomKeyStoreNotFoundError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CustomKeyStoreNotFoundException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for CustomKeyStoreNotFoundError {
+impl std::fmt::Debug for CustomKeyStoreNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomKeyStoreNotFoundError");
+        let mut formatter = f.debug_struct("CustomKeyStoreNotFoundException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl CustomKeyStoreNotFoundError {
+impl CustomKeyStoreNotFoundException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for CustomKeyStoreNotFoundError {
+impl std::fmt::Display for CustomKeyStoreNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "CustomKeyStoreNotFoundError [CustomKeyStoreNotFoundException]"
-        )?;
+        write!(f, "CustomKeyStoreNotFoundException")?;
         if let Some(inner_11) = &self.message {
             write!(f, ": {}", inner_11)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for CustomKeyStoreNotFoundError {}
-/// See [`CustomKeyStoreNotFoundError`](crate::error::CustomKeyStoreNotFoundError)
-pub mod custom_key_store_not_found_error {
-    /// A builder for [`CustomKeyStoreNotFoundError`](crate::error::CustomKeyStoreNotFoundError)
+impl std::error::Error for CustomKeyStoreNotFoundException {}
+/// See [`CustomKeyStoreNotFoundException`](crate::error::CustomKeyStoreNotFoundException)
+pub mod custom_key_store_not_found_exception {
+    /// A builder for [`CustomKeyStoreNotFoundException`](crate::error::CustomKeyStoreNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -6170,18 +6400,18 @@ pub mod custom_key_store_not_found_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`CustomKeyStoreNotFoundError`](crate::error::CustomKeyStoreNotFoundError)
-        pub fn build(self) -> crate::error::CustomKeyStoreNotFoundError {
-            crate::error::CustomKeyStoreNotFoundError {
+        /// Consumes the builder and constructs a [`CustomKeyStoreNotFoundException`](crate::error::CustomKeyStoreNotFoundException)
+        pub fn build(self) -> crate::error::CustomKeyStoreNotFoundException {
+            crate::error::CustomKeyStoreNotFoundException {
                 message: self.message,
             }
         }
     }
 }
-impl CustomKeyStoreNotFoundError {
-    /// Creates a new builder-style object to manufacture [`CustomKeyStoreNotFoundError`](crate::error::CustomKeyStoreNotFoundError)
-    pub fn builder() -> crate::error::custom_key_store_not_found_error::Builder {
-        crate::error::custom_key_store_not_found_error::Builder::default()
+impl CustomKeyStoreNotFoundException {
+    /// Creates a new builder-style object to manufacture [`CustomKeyStoreNotFoundException`](crate::error::CustomKeyStoreNotFoundException)
+    pub fn builder() -> crate::error::custom_key_store_not_found_exception::Builder {
+        crate::error::custom_key_store_not_found_exception::Builder::default()
     }
 }
 
@@ -6189,40 +6419,35 @@ impl CustomKeyStoreNotFoundError {
 /// to another custom key store in the account. Try again with a custom key store name that is
 /// unique in the account.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct CustomKeyStoreNameInUseError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CustomKeyStoreNameInUseException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for CustomKeyStoreNameInUseError {
+impl std::fmt::Debug for CustomKeyStoreNameInUseException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomKeyStoreNameInUseError");
+        let mut formatter = f.debug_struct("CustomKeyStoreNameInUseException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl CustomKeyStoreNameInUseError {
+impl CustomKeyStoreNameInUseException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for CustomKeyStoreNameInUseError {
+impl std::fmt::Display for CustomKeyStoreNameInUseException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "CustomKeyStoreNameInUseError [CustomKeyStoreNameInUseException]"
-        )?;
+        write!(f, "CustomKeyStoreNameInUseException")?;
         if let Some(inner_12) = &self.message {
             write!(f, ": {}", inner_12)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for CustomKeyStoreNameInUseError {}
-/// See [`CustomKeyStoreNameInUseError`](crate::error::CustomKeyStoreNameInUseError)
-pub mod custom_key_store_name_in_use_error {
-    /// A builder for [`CustomKeyStoreNameInUseError`](crate::error::CustomKeyStoreNameInUseError)
+impl std::error::Error for CustomKeyStoreNameInUseException {}
+/// See [`CustomKeyStoreNameInUseException`](crate::error::CustomKeyStoreNameInUseException)
+pub mod custom_key_store_name_in_use_exception {
+    /// A builder for [`CustomKeyStoreNameInUseException`](crate::error::CustomKeyStoreNameInUseException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -6237,18 +6462,18 @@ pub mod custom_key_store_name_in_use_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`CustomKeyStoreNameInUseError`](crate::error::CustomKeyStoreNameInUseError)
-        pub fn build(self) -> crate::error::CustomKeyStoreNameInUseError {
-            crate::error::CustomKeyStoreNameInUseError {
+        /// Consumes the builder and constructs a [`CustomKeyStoreNameInUseException`](crate::error::CustomKeyStoreNameInUseException)
+        pub fn build(self) -> crate::error::CustomKeyStoreNameInUseException {
+            crate::error::CustomKeyStoreNameInUseException {
                 message: self.message,
             }
         }
     }
 }
-impl CustomKeyStoreNameInUseError {
-    /// Creates a new builder-style object to manufacture [`CustomKeyStoreNameInUseError`](crate::error::CustomKeyStoreNameInUseError)
-    pub fn builder() -> crate::error::custom_key_store_name_in_use_error::Builder {
-        crate::error::custom_key_store_name_in_use_error::Builder::default()
+impl CustomKeyStoreNameInUseException {
+    /// Creates a new builder-style object to manufacture [`CustomKeyStoreNameInUseException`](crate::error::CustomKeyStoreNameInUseException)
+    pub fn builder() -> crate::error::custom_key_store_name_in_use_exception::Builder {
+        crate::error::custom_key_store_name_in_use_exception::Builder::default()
     }
 }
 
@@ -6274,40 +6499,35 @@ impl CustomKeyStoreNameInUseError {
 /// </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct CustomKeyStoreInvalidStateError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CustomKeyStoreInvalidStateException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for CustomKeyStoreInvalidStateError {
+impl std::fmt::Debug for CustomKeyStoreInvalidStateException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomKeyStoreInvalidStateError");
+        let mut formatter = f.debug_struct("CustomKeyStoreInvalidStateException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl CustomKeyStoreInvalidStateError {
+impl CustomKeyStoreInvalidStateException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for CustomKeyStoreInvalidStateError {
+impl std::fmt::Display for CustomKeyStoreInvalidStateException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "CustomKeyStoreInvalidStateError [CustomKeyStoreInvalidStateException]"
-        )?;
+        write!(f, "CustomKeyStoreInvalidStateException")?;
         if let Some(inner_13) = &self.message {
             write!(f, ": {}", inner_13)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for CustomKeyStoreInvalidStateError {}
-/// See [`CustomKeyStoreInvalidStateError`](crate::error::CustomKeyStoreInvalidStateError)
-pub mod custom_key_store_invalid_state_error {
-    /// A builder for [`CustomKeyStoreInvalidStateError`](crate::error::CustomKeyStoreInvalidStateError)
+impl std::error::Error for CustomKeyStoreInvalidStateException {}
+/// See [`CustomKeyStoreInvalidStateException`](crate::error::CustomKeyStoreInvalidStateException)
+pub mod custom_key_store_invalid_state_exception {
+    /// A builder for [`CustomKeyStoreInvalidStateException`](crate::error::CustomKeyStoreInvalidStateException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -6322,18 +6542,18 @@ pub mod custom_key_store_invalid_state_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`CustomKeyStoreInvalidStateError`](crate::error::CustomKeyStoreInvalidStateError)
-        pub fn build(self) -> crate::error::CustomKeyStoreInvalidStateError {
-            crate::error::CustomKeyStoreInvalidStateError {
+        /// Consumes the builder and constructs a [`CustomKeyStoreInvalidStateException`](crate::error::CustomKeyStoreInvalidStateException)
+        pub fn build(self) -> crate::error::CustomKeyStoreInvalidStateException {
+            crate::error::CustomKeyStoreInvalidStateException {
                 message: self.message,
             }
         }
     }
 }
-impl CustomKeyStoreInvalidStateError {
-    /// Creates a new builder-style object to manufacture [`CustomKeyStoreInvalidStateError`](crate::error::CustomKeyStoreInvalidStateError)
-    pub fn builder() -> crate::error::custom_key_store_invalid_state_error::Builder {
-        crate::error::custom_key_store_invalid_state_error::Builder::default()
+impl CustomKeyStoreInvalidStateException {
+    /// Creates a new builder-style object to manufacture [`CustomKeyStoreInvalidStateException`](crate::error::CustomKeyStoreInvalidStateException)
+    pub fn builder() -> crate::error::custom_key_store_invalid_state_exception::Builder {
+        crate::error::custom_key_store_invalid_state_exception::Builder::default()
     }
 }
 
@@ -6346,40 +6566,35 @@ impl CustomKeyStoreInvalidStateError {
 /// <p>Clusters that share a backup history have the same cluster certificate. To view the
 /// cluster certificate of a cluster, use the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a> operation.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct CloudHsmClusterNotRelatedError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CloudHsmClusterNotRelatedException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for CloudHsmClusterNotRelatedError {
+impl std::fmt::Debug for CloudHsmClusterNotRelatedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudHsmClusterNotRelatedError");
+        let mut formatter = f.debug_struct("CloudHsmClusterNotRelatedException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl CloudHsmClusterNotRelatedError {
+impl CloudHsmClusterNotRelatedException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for CloudHsmClusterNotRelatedError {
+impl std::fmt::Display for CloudHsmClusterNotRelatedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "CloudHsmClusterNotRelatedError [CloudHsmClusterNotRelatedException]"
-        )?;
+        write!(f, "CloudHsmClusterNotRelatedException")?;
         if let Some(inner_14) = &self.message {
             write!(f, ": {}", inner_14)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for CloudHsmClusterNotRelatedError {}
-/// See [`CloudHsmClusterNotRelatedError`](crate::error::CloudHsmClusterNotRelatedError)
-pub mod cloud_hsm_cluster_not_related_error {
-    /// A builder for [`CloudHsmClusterNotRelatedError`](crate::error::CloudHsmClusterNotRelatedError)
+impl std::error::Error for CloudHsmClusterNotRelatedException {}
+/// See [`CloudHsmClusterNotRelatedException`](crate::error::CloudHsmClusterNotRelatedException)
+pub mod cloud_hsm_cluster_not_related_exception {
+    /// A builder for [`CloudHsmClusterNotRelatedException`](crate::error::CloudHsmClusterNotRelatedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -6394,58 +6609,53 @@ pub mod cloud_hsm_cluster_not_related_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`CloudHsmClusterNotRelatedError`](crate::error::CloudHsmClusterNotRelatedError)
-        pub fn build(self) -> crate::error::CloudHsmClusterNotRelatedError {
-            crate::error::CloudHsmClusterNotRelatedError {
+        /// Consumes the builder and constructs a [`CloudHsmClusterNotRelatedException`](crate::error::CloudHsmClusterNotRelatedException)
+        pub fn build(self) -> crate::error::CloudHsmClusterNotRelatedException {
+            crate::error::CloudHsmClusterNotRelatedException {
                 message: self.message,
             }
         }
     }
 }
-impl CloudHsmClusterNotRelatedError {
-    /// Creates a new builder-style object to manufacture [`CloudHsmClusterNotRelatedError`](crate::error::CloudHsmClusterNotRelatedError)
-    pub fn builder() -> crate::error::cloud_hsm_cluster_not_related_error::Builder {
-        crate::error::cloud_hsm_cluster_not_related_error::Builder::default()
+impl CloudHsmClusterNotRelatedException {
+    /// Creates a new builder-style object to manufacture [`CloudHsmClusterNotRelatedException`](crate::error::CloudHsmClusterNotRelatedException)
+    pub fn builder() -> crate::error::cloud_hsm_cluster_not_related_exception::Builder {
+        crate::error::cloud_hsm_cluster_not_related_exception::Builder::default()
     }
 }
 
 /// <p>The request was rejected because AWS KMS cannot find the AWS CloudHSM cluster with the specified
 /// cluster ID. Retry the request with a different cluster ID.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct CloudHsmClusterNotFoundError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CloudHsmClusterNotFoundException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for CloudHsmClusterNotFoundError {
+impl std::fmt::Debug for CloudHsmClusterNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudHsmClusterNotFoundError");
+        let mut formatter = f.debug_struct("CloudHsmClusterNotFoundException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl CloudHsmClusterNotFoundError {
+impl CloudHsmClusterNotFoundException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for CloudHsmClusterNotFoundError {
+impl std::fmt::Display for CloudHsmClusterNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "CloudHsmClusterNotFoundError [CloudHsmClusterNotFoundException]"
-        )?;
+        write!(f, "CloudHsmClusterNotFoundException")?;
         if let Some(inner_15) = &self.message {
             write!(f, ": {}", inner_15)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for CloudHsmClusterNotFoundError {}
-/// See [`CloudHsmClusterNotFoundError`](crate::error::CloudHsmClusterNotFoundError)
-pub mod cloud_hsm_cluster_not_found_error {
-    /// A builder for [`CloudHsmClusterNotFoundError`](crate::error::CloudHsmClusterNotFoundError)
+impl std::error::Error for CloudHsmClusterNotFoundException {}
+/// See [`CloudHsmClusterNotFoundException`](crate::error::CloudHsmClusterNotFoundException)
+pub mod cloud_hsm_cluster_not_found_exception {
+    /// A builder for [`CloudHsmClusterNotFoundException`](crate::error::CloudHsmClusterNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -6460,18 +6670,18 @@ pub mod cloud_hsm_cluster_not_found_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`CloudHsmClusterNotFoundError`](crate::error::CloudHsmClusterNotFoundError)
-        pub fn build(self) -> crate::error::CloudHsmClusterNotFoundError {
-            crate::error::CloudHsmClusterNotFoundError {
+        /// Consumes the builder and constructs a [`CloudHsmClusterNotFoundException`](crate::error::CloudHsmClusterNotFoundException)
+        pub fn build(self) -> crate::error::CloudHsmClusterNotFoundException {
+            crate::error::CloudHsmClusterNotFoundException {
                 message: self.message,
             }
         }
     }
 }
-impl CloudHsmClusterNotFoundError {
-    /// Creates a new builder-style object to manufacture [`CloudHsmClusterNotFoundError`](crate::error::CloudHsmClusterNotFoundError)
-    pub fn builder() -> crate::error::cloud_hsm_cluster_not_found_error::Builder {
-        crate::error::cloud_hsm_cluster_not_found_error::Builder::default()
+impl CloudHsmClusterNotFoundException {
+    /// Creates a new builder-style object to manufacture [`CloudHsmClusterNotFoundException`](crate::error::CloudHsmClusterNotFoundException)
+    pub fn builder() -> crate::error::cloud_hsm_cluster_not_found_exception::Builder {
+        crate::error::cloud_hsm_cluster_not_found_exception::Builder::default()
     }
 }
 
@@ -6479,40 +6689,35 @@ impl CloudHsmClusterNotFoundError {
 /// store is not active. Initialize and activate the cluster and try the command again. For
 /// detailed instructions, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/getting-started.html">Getting Started</a> in the <i>AWS CloudHSM User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct CloudHsmClusterNotActiveError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CloudHsmClusterNotActiveException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for CloudHsmClusterNotActiveError {
+impl std::fmt::Debug for CloudHsmClusterNotActiveException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudHsmClusterNotActiveError");
+        let mut formatter = f.debug_struct("CloudHsmClusterNotActiveException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl CloudHsmClusterNotActiveError {
+impl CloudHsmClusterNotActiveException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for CloudHsmClusterNotActiveError {
+impl std::fmt::Display for CloudHsmClusterNotActiveException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "CloudHsmClusterNotActiveError [CloudHsmClusterNotActiveException]"
-        )?;
+        write!(f, "CloudHsmClusterNotActiveException")?;
         if let Some(inner_16) = &self.message {
             write!(f, ": {}", inner_16)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for CloudHsmClusterNotActiveError {}
-/// See [`CloudHsmClusterNotActiveError`](crate::error::CloudHsmClusterNotActiveError)
-pub mod cloud_hsm_cluster_not_active_error {
-    /// A builder for [`CloudHsmClusterNotActiveError`](crate::error::CloudHsmClusterNotActiveError)
+impl std::error::Error for CloudHsmClusterNotActiveException {}
+/// See [`CloudHsmClusterNotActiveException`](crate::error::CloudHsmClusterNotActiveException)
+pub mod cloud_hsm_cluster_not_active_exception {
+    /// A builder for [`CloudHsmClusterNotActiveException`](crate::error::CloudHsmClusterNotActiveException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -6527,18 +6732,18 @@ pub mod cloud_hsm_cluster_not_active_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`CloudHsmClusterNotActiveError`](crate::error::CloudHsmClusterNotActiveError)
-        pub fn build(self) -> crate::error::CloudHsmClusterNotActiveError {
-            crate::error::CloudHsmClusterNotActiveError {
+        /// Consumes the builder and constructs a [`CloudHsmClusterNotActiveException`](crate::error::CloudHsmClusterNotActiveException)
+        pub fn build(self) -> crate::error::CloudHsmClusterNotActiveException {
+            crate::error::CloudHsmClusterNotActiveException {
                 message: self.message,
             }
         }
     }
 }
-impl CloudHsmClusterNotActiveError {
-    /// Creates a new builder-style object to manufacture [`CloudHsmClusterNotActiveError`](crate::error::CloudHsmClusterNotActiveError)
-    pub fn builder() -> crate::error::cloud_hsm_cluster_not_active_error::Builder {
-        crate::error::cloud_hsm_cluster_not_active_error::Builder::default()
+impl CloudHsmClusterNotActiveException {
+    /// Creates a new builder-style object to manufacture [`CloudHsmClusterNotActiveException`](crate::error::CloudHsmClusterNotActiveException)
+    pub fn builder() -> crate::error::cloud_hsm_cluster_not_active_exception::Builder {
+        crate::error::cloud_hsm_cluster_not_active_exception::Builder::default()
     }
 }
 
@@ -6575,37 +6780,35 @@ impl CloudHsmClusterNotActiveError {
 /// <i>AWS CloudHSM User Guide</i>
 /// </i>. </p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct CloudHsmClusterInvalidConfigurationError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CloudHsmClusterInvalidConfigurationException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for CloudHsmClusterInvalidConfigurationError {
+impl std::fmt::Debug for CloudHsmClusterInvalidConfigurationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudHsmClusterInvalidConfigurationError");
+        let mut formatter = f.debug_struct("CloudHsmClusterInvalidConfigurationException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl CloudHsmClusterInvalidConfigurationError {
+impl CloudHsmClusterInvalidConfigurationException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for CloudHsmClusterInvalidConfigurationError {
+impl std::fmt::Display for CloudHsmClusterInvalidConfigurationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "CloudHsmClusterInvalidConfigurationError [CloudHsmClusterInvalidConfigurationException]")?;
+        write!(f, "CloudHsmClusterInvalidConfigurationException")?;
         if let Some(inner_17) = &self.message {
             write!(f, ": {}", inner_17)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for CloudHsmClusterInvalidConfigurationError {}
-/// See [`CloudHsmClusterInvalidConfigurationError`](crate::error::CloudHsmClusterInvalidConfigurationError)
-pub mod cloud_hsm_cluster_invalid_configuration_error {
-    /// A builder for [`CloudHsmClusterInvalidConfigurationError`](crate::error::CloudHsmClusterInvalidConfigurationError)
+impl std::error::Error for CloudHsmClusterInvalidConfigurationException {}
+/// See [`CloudHsmClusterInvalidConfigurationException`](crate::error::CloudHsmClusterInvalidConfigurationException)
+pub mod cloud_hsm_cluster_invalid_configuration_exception {
+    /// A builder for [`CloudHsmClusterInvalidConfigurationException`](crate::error::CloudHsmClusterInvalidConfigurationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -6620,55 +6823,53 @@ pub mod cloud_hsm_cluster_invalid_configuration_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`CloudHsmClusterInvalidConfigurationError`](crate::error::CloudHsmClusterInvalidConfigurationError)
-        pub fn build(self) -> crate::error::CloudHsmClusterInvalidConfigurationError {
-            crate::error::CloudHsmClusterInvalidConfigurationError {
+        /// Consumes the builder and constructs a [`CloudHsmClusterInvalidConfigurationException`](crate::error::CloudHsmClusterInvalidConfigurationException)
+        pub fn build(self) -> crate::error::CloudHsmClusterInvalidConfigurationException {
+            crate::error::CloudHsmClusterInvalidConfigurationException {
                 message: self.message,
             }
         }
     }
 }
-impl CloudHsmClusterInvalidConfigurationError {
-    /// Creates a new builder-style object to manufacture [`CloudHsmClusterInvalidConfigurationError`](crate::error::CloudHsmClusterInvalidConfigurationError)
-    pub fn builder() -> crate::error::cloud_hsm_cluster_invalid_configuration_error::Builder {
-        crate::error::cloud_hsm_cluster_invalid_configuration_error::Builder::default()
+impl CloudHsmClusterInvalidConfigurationException {
+    /// Creates a new builder-style object to manufacture [`CloudHsmClusterInvalidConfigurationException`](crate::error::CloudHsmClusterInvalidConfigurationException)
+    pub fn builder() -> crate::error::cloud_hsm_cluster_invalid_configuration_exception::Builder {
+        crate::error::cloud_hsm_cluster_invalid_configuration_exception::Builder::default()
     }
 }
 
 /// <p>The request was rejected because a quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a> in the
 /// <i>AWS Key Management Service Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct LimitExceededError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct LimitExceededException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for LimitExceededError {
+impl std::fmt::Debug for LimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LimitExceededError");
+        let mut formatter = f.debug_struct("LimitExceededException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl LimitExceededError {
+impl LimitExceededException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for LimitExceededError {
+impl std::fmt::Display for LimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "LimitExceededError [LimitExceededException]")?;
+        write!(f, "LimitExceededException")?;
         if let Some(inner_18) = &self.message {
             write!(f, ": {}", inner_18)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for LimitExceededError {}
-/// See [`LimitExceededError`](crate::error::LimitExceededError)
-pub mod limit_exceeded_error {
-    /// A builder for [`LimitExceededError`](crate::error::LimitExceededError)
+impl std::error::Error for LimitExceededException {}
+/// See [`LimitExceededException`](crate::error::LimitExceededException)
+pub mod limit_exceeded_exception {
+    /// A builder for [`LimitExceededException`](crate::error::LimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -6683,54 +6884,52 @@ pub mod limit_exceeded_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`LimitExceededError`](crate::error::LimitExceededError)
-        pub fn build(self) -> crate::error::LimitExceededError {
-            crate::error::LimitExceededError {
+        /// Consumes the builder and constructs a [`LimitExceededException`](crate::error::LimitExceededException)
+        pub fn build(self) -> crate::error::LimitExceededException {
+            crate::error::LimitExceededException {
                 message: self.message,
             }
         }
     }
 }
-impl LimitExceededError {
-    /// Creates a new builder-style object to manufacture [`LimitExceededError`](crate::error::LimitExceededError)
-    pub fn builder() -> crate::error::limit_exceeded_error::Builder {
-        crate::error::limit_exceeded_error::Builder::default()
+impl LimitExceededException {
+    /// Creates a new builder-style object to manufacture [`LimitExceededException`](crate::error::LimitExceededException)
+    pub fn builder() -> crate::error::limit_exceeded_exception::Builder {
+        crate::error::limit_exceeded_exception::Builder::default()
     }
 }
 
 /// <p>The request was rejected because one or more tags are not valid.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct TagError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TagException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for TagError {
+impl std::fmt::Debug for TagException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagError");
+        let mut formatter = f.debug_struct("TagException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl TagError {
+impl TagException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for TagError {
+impl std::fmt::Display for TagException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TagError [TagException]")?;
+        write!(f, "TagException")?;
         if let Some(inner_19) = &self.message {
             write!(f, ": {}", inner_19)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for TagError {}
-/// See [`TagError`](crate::error::TagError)
-pub mod tag_error {
-    /// A builder for [`TagError`](crate::error::TagError)
+impl std::error::Error for TagException {}
+/// See [`TagException`](crate::error::TagException)
+pub mod tag_exception {
+    /// A builder for [`TagException`](crate::error::TagException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -6745,54 +6944,52 @@ pub mod tag_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TagError`](crate::error::TagError)
-        pub fn build(self) -> crate::error::TagError {
-            crate::error::TagError {
+        /// Consumes the builder and constructs a [`TagException`](crate::error::TagException)
+        pub fn build(self) -> crate::error::TagException {
+            crate::error::TagException {
                 message: self.message,
             }
         }
     }
 }
-impl TagError {
-    /// Creates a new builder-style object to manufacture [`TagError`](crate::error::TagError)
-    pub fn builder() -> crate::error::tag_error::Builder {
-        crate::error::tag_error::Builder::default()
+impl TagException {
+    /// Creates a new builder-style object to manufacture [`TagException`](crate::error::TagException)
+    pub fn builder() -> crate::error::tag_exception::Builder {
+        crate::error::tag_exception::Builder::default()
     }
 }
 
 /// <p>The request was rejected because the specified <code>GrantId</code> is not valid.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidGrantIdError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InvalidGrantIdException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidGrantIdError {
+impl std::fmt::Debug for InvalidGrantIdException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidGrantIdError");
+        let mut formatter = f.debug_struct("InvalidGrantIdException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl InvalidGrantIdError {
+impl InvalidGrantIdException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InvalidGrantIdError {
+impl std::fmt::Display for InvalidGrantIdException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidGrantIdError [InvalidGrantIdException]")?;
+        write!(f, "InvalidGrantIdException")?;
         if let Some(inner_20) = &self.message {
             write!(f, ": {}", inner_20)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InvalidGrantIdError {}
-/// See [`InvalidGrantIdError`](crate::error::InvalidGrantIdError)
-pub mod invalid_grant_id_error {
-    /// A builder for [`InvalidGrantIdError`](crate::error::InvalidGrantIdError)
+impl std::error::Error for InvalidGrantIdException {}
+/// See [`InvalidGrantIdException`](crate::error::InvalidGrantIdException)
+pub mod invalid_grant_id_exception {
+    /// A builder for [`InvalidGrantIdException`](crate::error::InvalidGrantIdException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -6807,18 +7004,18 @@ pub mod invalid_grant_id_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidGrantIdError`](crate::error::InvalidGrantIdError)
-        pub fn build(self) -> crate::error::InvalidGrantIdError {
-            crate::error::InvalidGrantIdError {
+        /// Consumes the builder and constructs a [`InvalidGrantIdException`](crate::error::InvalidGrantIdException)
+        pub fn build(self) -> crate::error::InvalidGrantIdException {
+            crate::error::InvalidGrantIdException {
                 message: self.message,
             }
         }
     }
 }
-impl InvalidGrantIdError {
-    /// Creates a new builder-style object to manufacture [`InvalidGrantIdError`](crate::error::InvalidGrantIdError)
-    pub fn builder() -> crate::error::invalid_grant_id_error::Builder {
-        crate::error::invalid_grant_id_error::Builder::default()
+impl InvalidGrantIdException {
+    /// Creates a new builder-style object to manufacture [`InvalidGrantIdException`](crate::error::InvalidGrantIdException)
+    pub fn builder() -> crate::error::invalid_grant_id_exception::Builder {
+        crate::error::invalid_grant_id_exception::Builder::default()
     }
 }
 
@@ -6829,37 +7026,35 @@ impl InvalidGrantIdError {
 /// <p>From the <a>ImportKeyMaterial</a> operation, the request was rejected because
 /// AWS KMS could not decrypt the encrypted (wrapped) key material. </p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidCiphertextError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InvalidCiphertextException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidCiphertextError {
+impl std::fmt::Debug for InvalidCiphertextException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidCiphertextError");
+        let mut formatter = f.debug_struct("InvalidCiphertextException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl InvalidCiphertextError {
+impl InvalidCiphertextException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InvalidCiphertextError {
+impl std::fmt::Display for InvalidCiphertextException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidCiphertextError [InvalidCiphertextException]")?;
+        write!(f, "InvalidCiphertextException")?;
         if let Some(inner_21) = &self.message {
             write!(f, ": {}", inner_21)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InvalidCiphertextError {}
-/// See [`InvalidCiphertextError`](crate::error::InvalidCiphertextError)
-pub mod invalid_ciphertext_error {
-    /// A builder for [`InvalidCiphertextError`](crate::error::InvalidCiphertextError)
+impl std::error::Error for InvalidCiphertextException {}
+/// See [`InvalidCiphertextException`](crate::error::InvalidCiphertextException)
+pub mod invalid_ciphertext_exception {
+    /// A builder for [`InvalidCiphertextException`](crate::error::InvalidCiphertextException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -6874,18 +7069,18 @@ pub mod invalid_ciphertext_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidCiphertextError`](crate::error::InvalidCiphertextError)
-        pub fn build(self) -> crate::error::InvalidCiphertextError {
-            crate::error::InvalidCiphertextError {
+        /// Consumes the builder and constructs a [`InvalidCiphertextException`](crate::error::InvalidCiphertextException)
+        pub fn build(self) -> crate::error::InvalidCiphertextException {
+            crate::error::InvalidCiphertextException {
                 message: self.message,
             }
         }
     }
 }
-impl InvalidCiphertextError {
-    /// Creates a new builder-style object to manufacture [`InvalidCiphertextError`](crate::error::InvalidCiphertextError)
-    pub fn builder() -> crate::error::invalid_ciphertext_error::Builder {
-        crate::error::invalid_ciphertext_error::Builder::default()
+impl InvalidCiphertextException {
+    /// Creates a new builder-style object to manufacture [`InvalidCiphertextException`](crate::error::InvalidCiphertextException)
+    pub fn builder() -> crate::error::invalid_ciphertext_exception::Builder {
+        crate::error::invalid_ciphertext_exception::Builder::default()
     }
 }
 
@@ -6894,37 +7089,35 @@ impl InvalidCiphertextError {
 /// in a <a>ReEncrypt</a> request must identify the same CMK that was used to encrypt
 /// the ciphertext.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct IncorrectKeyError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct IncorrectKeyException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for IncorrectKeyError {
+impl std::fmt::Debug for IncorrectKeyException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IncorrectKeyError");
+        let mut formatter = f.debug_struct("IncorrectKeyException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl IncorrectKeyError {
+impl IncorrectKeyException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for IncorrectKeyError {
+impl std::fmt::Display for IncorrectKeyException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "IncorrectKeyError [IncorrectKeyException]")?;
+        write!(f, "IncorrectKeyException")?;
         if let Some(inner_22) = &self.message {
             write!(f, ": {}", inner_22)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for IncorrectKeyError {}
-/// See [`IncorrectKeyError`](crate::error::IncorrectKeyError)
-pub mod incorrect_key_error {
-    /// A builder for [`IncorrectKeyError`](crate::error::IncorrectKeyError)
+impl std::error::Error for IncorrectKeyException {}
+/// See [`IncorrectKeyException`](crate::error::IncorrectKeyException)
+pub mod incorrect_key_exception {
+    /// A builder for [`IncorrectKeyException`](crate::error::IncorrectKeyException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -6939,58 +7132,53 @@ pub mod incorrect_key_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`IncorrectKeyError`](crate::error::IncorrectKeyError)
-        pub fn build(self) -> crate::error::IncorrectKeyError {
-            crate::error::IncorrectKeyError {
+        /// Consumes the builder and constructs a [`IncorrectKeyException`](crate::error::IncorrectKeyException)
+        pub fn build(self) -> crate::error::IncorrectKeyException {
+            crate::error::IncorrectKeyException {
                 message: self.message,
             }
         }
     }
 }
-impl IncorrectKeyError {
-    /// Creates a new builder-style object to manufacture [`IncorrectKeyError`](crate::error::IncorrectKeyError)
-    pub fn builder() -> crate::error::incorrect_key_error::Builder {
-        crate::error::incorrect_key_error::Builder::default()
+impl IncorrectKeyException {
+    /// Creates a new builder-style object to manufacture [`IncorrectKeyException`](crate::error::IncorrectKeyException)
+    pub fn builder() -> crate::error::incorrect_key_exception::Builder {
+        crate::error::incorrect_key_exception::Builder::default()
     }
 }
 
 /// <p>The request was rejected because a specified parameter is not supported or a specified
 /// resource is not valid for this operation.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct UnsupportedOperationError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UnsupportedOperationException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for UnsupportedOperationError {
+impl std::fmt::Debug for UnsupportedOperationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnsupportedOperationError");
+        let mut formatter = f.debug_struct("UnsupportedOperationException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl UnsupportedOperationError {
+impl UnsupportedOperationException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for UnsupportedOperationError {
+impl std::fmt::Display for UnsupportedOperationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "UnsupportedOperationError [UnsupportedOperationException]"
-        )?;
+        write!(f, "UnsupportedOperationException")?;
         if let Some(inner_23) = &self.message {
             write!(f, ": {}", inner_23)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for UnsupportedOperationError {}
-/// See [`UnsupportedOperationError`](crate::error::UnsupportedOperationError)
-pub mod unsupported_operation_error {
-    /// A builder for [`UnsupportedOperationError`](crate::error::UnsupportedOperationError)
+impl std::error::Error for UnsupportedOperationException {}
+/// See [`UnsupportedOperationException`](crate::error::UnsupportedOperationException)
+pub mod unsupported_operation_exception {
+    /// A builder for [`UnsupportedOperationException`](crate::error::UnsupportedOperationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -7005,58 +7193,53 @@ pub mod unsupported_operation_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`UnsupportedOperationError`](crate::error::UnsupportedOperationError)
-        pub fn build(self) -> crate::error::UnsupportedOperationError {
-            crate::error::UnsupportedOperationError {
+        /// Consumes the builder and constructs a [`UnsupportedOperationException`](crate::error::UnsupportedOperationException)
+        pub fn build(self) -> crate::error::UnsupportedOperationException {
+            crate::error::UnsupportedOperationException {
                 message: self.message,
             }
         }
     }
 }
-impl UnsupportedOperationError {
-    /// Creates a new builder-style object to manufacture [`UnsupportedOperationError`](crate::error::UnsupportedOperationError)
-    pub fn builder() -> crate::error::unsupported_operation_error::Builder {
-        crate::error::unsupported_operation_error::Builder::default()
+impl UnsupportedOperationException {
+    /// Creates a new builder-style object to manufacture [`UnsupportedOperationException`](crate::error::UnsupportedOperationException)
+    pub fn builder() -> crate::error::unsupported_operation_exception::Builder {
+        crate::error::unsupported_operation_exception::Builder::default()
     }
 }
 
 /// <p>The request was rejected because the specified policy is not syntactically or semantically
 /// correct.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct MalformedPolicyDocumentError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MalformedPolicyDocumentException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for MalformedPolicyDocumentError {
+impl std::fmt::Debug for MalformedPolicyDocumentException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MalformedPolicyDocumentError");
+        let mut formatter = f.debug_struct("MalformedPolicyDocumentException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl MalformedPolicyDocumentError {
+impl MalformedPolicyDocumentException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for MalformedPolicyDocumentError {
+impl std::fmt::Display for MalformedPolicyDocumentException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "MalformedPolicyDocumentError [MalformedPolicyDocumentException]"
-        )?;
+        write!(f, "MalformedPolicyDocumentException")?;
         if let Some(inner_24) = &self.message {
             write!(f, ": {}", inner_24)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for MalformedPolicyDocumentError {}
-/// See [`MalformedPolicyDocumentError`](crate::error::MalformedPolicyDocumentError)
-pub mod malformed_policy_document_error {
-    /// A builder for [`MalformedPolicyDocumentError`](crate::error::MalformedPolicyDocumentError)
+impl std::error::Error for MalformedPolicyDocumentException {}
+/// See [`MalformedPolicyDocumentException`](crate::error::MalformedPolicyDocumentException)
+pub mod malformed_policy_document_exception {
+    /// A builder for [`MalformedPolicyDocumentException`](crate::error::MalformedPolicyDocumentException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -7071,55 +7254,53 @@ pub mod malformed_policy_document_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`MalformedPolicyDocumentError`](crate::error::MalformedPolicyDocumentError)
-        pub fn build(self) -> crate::error::MalformedPolicyDocumentError {
-            crate::error::MalformedPolicyDocumentError {
+        /// Consumes the builder and constructs a [`MalformedPolicyDocumentException`](crate::error::MalformedPolicyDocumentException)
+        pub fn build(self) -> crate::error::MalformedPolicyDocumentException {
+            crate::error::MalformedPolicyDocumentException {
                 message: self.message,
             }
         }
     }
 }
-impl MalformedPolicyDocumentError {
-    /// Creates a new builder-style object to manufacture [`MalformedPolicyDocumentError`](crate::error::MalformedPolicyDocumentError)
-    pub fn builder() -> crate::error::malformed_policy_document_error::Builder {
-        crate::error::malformed_policy_document_error::Builder::default()
+impl MalformedPolicyDocumentException {
+    /// Creates a new builder-style object to manufacture [`MalformedPolicyDocumentException`](crate::error::MalformedPolicyDocumentException)
+    pub fn builder() -> crate::error::malformed_policy_document_exception::Builder {
+        crate::error::malformed_policy_document_exception::Builder::default()
     }
 }
 
 /// <p>The request was rejected because the marker that specifies where pagination should next
 /// begin is not valid.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidMarkerError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InvalidMarkerException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidMarkerError {
+impl std::fmt::Debug for InvalidMarkerException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidMarkerError");
+        let mut formatter = f.debug_struct("InvalidMarkerException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl InvalidMarkerError {
+impl InvalidMarkerException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InvalidMarkerError {
+impl std::fmt::Display for InvalidMarkerException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidMarkerError [InvalidMarkerException]")?;
+        write!(f, "InvalidMarkerException")?;
         if let Some(inner_25) = &self.message {
             write!(f, ": {}", inner_25)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InvalidMarkerError {}
-/// See [`InvalidMarkerError`](crate::error::InvalidMarkerError)
-pub mod invalid_marker_error {
-    /// A builder for [`InvalidMarkerError`](crate::error::InvalidMarkerError)
+impl std::error::Error for InvalidMarkerException {}
+/// See [`InvalidMarkerException`](crate::error::InvalidMarkerException)
+pub mod invalid_marker_exception {
+    /// A builder for [`InvalidMarkerException`](crate::error::InvalidMarkerException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -7134,55 +7315,53 @@ pub mod invalid_marker_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidMarkerError`](crate::error::InvalidMarkerError)
-        pub fn build(self) -> crate::error::InvalidMarkerError {
-            crate::error::InvalidMarkerError {
+        /// Consumes the builder and constructs a [`InvalidMarkerException`](crate::error::InvalidMarkerException)
+        pub fn build(self) -> crate::error::InvalidMarkerException {
+            crate::error::InvalidMarkerException {
                 message: self.message,
             }
         }
     }
 }
-impl InvalidMarkerError {
-    /// Creates a new builder-style object to manufacture [`InvalidMarkerError`](crate::error::InvalidMarkerError)
-    pub fn builder() -> crate::error::invalid_marker_error::Builder {
-        crate::error::invalid_marker_error::Builder::default()
+impl InvalidMarkerException {
+    /// Creates a new builder-style object to manufacture [`InvalidMarkerException`](crate::error::InvalidMarkerException)
+    pub fn builder() -> crate::error::invalid_marker_exception::Builder {
+        crate::error::invalid_marker_exception::Builder::default()
     }
 }
 
 /// <p>The request was rejected because the provided import token is invalid or is associated
 /// with a different customer master key (CMK).</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidImportTokenError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InvalidImportTokenException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidImportTokenError {
+impl std::fmt::Debug for InvalidImportTokenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidImportTokenError");
+        let mut formatter = f.debug_struct("InvalidImportTokenException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl InvalidImportTokenError {
+impl InvalidImportTokenException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InvalidImportTokenError {
+impl std::fmt::Display for InvalidImportTokenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidImportTokenError [InvalidImportTokenException]")?;
+        write!(f, "InvalidImportTokenException")?;
         if let Some(inner_26) = &self.message {
             write!(f, ": {}", inner_26)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InvalidImportTokenError {}
-/// See [`InvalidImportTokenError`](crate::error::InvalidImportTokenError)
-pub mod invalid_import_token_error {
-    /// A builder for [`InvalidImportTokenError`](crate::error::InvalidImportTokenError)
+impl std::error::Error for InvalidImportTokenException {}
+/// See [`InvalidImportTokenException`](crate::error::InvalidImportTokenException)
+pub mod invalid_import_token_exception {
+    /// A builder for [`InvalidImportTokenException`](crate::error::InvalidImportTokenException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -7197,18 +7376,18 @@ pub mod invalid_import_token_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidImportTokenError`](crate::error::InvalidImportTokenError)
-        pub fn build(self) -> crate::error::InvalidImportTokenError {
-            crate::error::InvalidImportTokenError {
+        /// Consumes the builder and constructs a [`InvalidImportTokenException`](crate::error::InvalidImportTokenException)
+        pub fn build(self) -> crate::error::InvalidImportTokenException {
+            crate::error::InvalidImportTokenException {
                 message: self.message,
             }
         }
     }
 }
-impl InvalidImportTokenError {
-    /// Creates a new builder-style object to manufacture [`InvalidImportTokenError`](crate::error::InvalidImportTokenError)
-    pub fn builder() -> crate::error::invalid_import_token_error::Builder {
-        crate::error::invalid_import_token_error::Builder::default()
+impl InvalidImportTokenException {
+    /// Creates a new builder-style object to manufacture [`InvalidImportTokenException`](crate::error::InvalidImportTokenException)
+    pub fn builder() -> crate::error::invalid_import_token_exception::Builder {
+        crate::error::invalid_import_token_exception::Builder::default()
     }
 }
 
@@ -7216,40 +7395,35 @@ impl InvalidImportTokenError {
 /// is not the same key material that was previously imported into this customer master key
 /// (CMK).</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct IncorrectKeyMaterialError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct IncorrectKeyMaterialException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for IncorrectKeyMaterialError {
+impl std::fmt::Debug for IncorrectKeyMaterialException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IncorrectKeyMaterialError");
+        let mut formatter = f.debug_struct("IncorrectKeyMaterialException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl IncorrectKeyMaterialError {
+impl IncorrectKeyMaterialException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for IncorrectKeyMaterialError {
+impl std::fmt::Display for IncorrectKeyMaterialException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "IncorrectKeyMaterialError [IncorrectKeyMaterialException]"
-        )?;
+        write!(f, "IncorrectKeyMaterialException")?;
         if let Some(inner_27) = &self.message {
             write!(f, ": {}", inner_27)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for IncorrectKeyMaterialError {}
-/// See [`IncorrectKeyMaterialError`](crate::error::IncorrectKeyMaterialError)
-pub mod incorrect_key_material_error {
-    /// A builder for [`IncorrectKeyMaterialError`](crate::error::IncorrectKeyMaterialError)
+impl std::error::Error for IncorrectKeyMaterialException {}
+/// See [`IncorrectKeyMaterialException`](crate::error::IncorrectKeyMaterialException)
+pub mod incorrect_key_material_exception {
+    /// A builder for [`IncorrectKeyMaterialException`](crate::error::IncorrectKeyMaterialException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -7264,55 +7438,53 @@ pub mod incorrect_key_material_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`IncorrectKeyMaterialError`](crate::error::IncorrectKeyMaterialError)
-        pub fn build(self) -> crate::error::IncorrectKeyMaterialError {
-            crate::error::IncorrectKeyMaterialError {
+        /// Consumes the builder and constructs a [`IncorrectKeyMaterialException`](crate::error::IncorrectKeyMaterialException)
+        pub fn build(self) -> crate::error::IncorrectKeyMaterialException {
+            crate::error::IncorrectKeyMaterialException {
                 message: self.message,
             }
         }
     }
 }
-impl IncorrectKeyMaterialError {
-    /// Creates a new builder-style object to manufacture [`IncorrectKeyMaterialError`](crate::error::IncorrectKeyMaterialError)
-    pub fn builder() -> crate::error::incorrect_key_material_error::Builder {
-        crate::error::incorrect_key_material_error::Builder::default()
+impl IncorrectKeyMaterialException {
+    /// Creates a new builder-style object to manufacture [`IncorrectKeyMaterialException`](crate::error::IncorrectKeyMaterialException)
+    pub fn builder() -> crate::error::incorrect_key_material_exception::Builder {
+        crate::error::incorrect_key_material_exception::Builder::default()
     }
 }
 
 /// <p>The request was rejected because the specified import token is expired. Use <a>GetParametersForImport</a> to get a new import token and public key, use the new
 /// public key to encrypt the key material, and then try the request again.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct ExpiredImportTokenError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ExpiredImportTokenException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ExpiredImportTokenError {
+impl std::fmt::Debug for ExpiredImportTokenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExpiredImportTokenError");
+        let mut formatter = f.debug_struct("ExpiredImportTokenException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl ExpiredImportTokenError {
+impl ExpiredImportTokenException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ExpiredImportTokenError {
+impl std::fmt::Display for ExpiredImportTokenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ExpiredImportTokenError [ExpiredImportTokenException]")?;
+        write!(f, "ExpiredImportTokenException")?;
         if let Some(inner_28) = &self.message {
             write!(f, ": {}", inner_28)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ExpiredImportTokenError {}
-/// See [`ExpiredImportTokenError`](crate::error::ExpiredImportTokenError)
-pub mod expired_import_token_error {
-    /// A builder for [`ExpiredImportTokenError`](crate::error::ExpiredImportTokenError)
+impl std::error::Error for ExpiredImportTokenException {}
+/// See [`ExpiredImportTokenException`](crate::error::ExpiredImportTokenException)
+pub mod expired_import_token_exception {
+    /// A builder for [`ExpiredImportTokenException`](crate::error::ExpiredImportTokenException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -7327,18 +7499,18 @@ pub mod expired_import_token_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ExpiredImportTokenError`](crate::error::ExpiredImportTokenError)
-        pub fn build(self) -> crate::error::ExpiredImportTokenError {
-            crate::error::ExpiredImportTokenError {
+        /// Consumes the builder and constructs a [`ExpiredImportTokenException`](crate::error::ExpiredImportTokenException)
+        pub fn build(self) -> crate::error::ExpiredImportTokenException {
+            crate::error::ExpiredImportTokenException {
                 message: self.message,
             }
         }
     }
 }
-impl ExpiredImportTokenError {
-    /// Creates a new builder-style object to manufacture [`ExpiredImportTokenError`](crate::error::ExpiredImportTokenError)
-    pub fn builder() -> crate::error::expired_import_token_error::Builder {
-        crate::error::expired_import_token_error::Builder::default()
+impl ExpiredImportTokenException {
+    /// Creates a new builder-style object to manufacture [`ExpiredImportTokenException`](crate::error::ExpiredImportTokenException)
+    pub fn builder() -> crate::error::expired_import_token_exception::Builder {
+        crate::error::expired_import_token_exception::Builder::default()
     }
 }
 
@@ -7346,29 +7518,27 @@ impl ExpiredImportTokenError {
 /// (CMKs). After verifying that you do not need to use the CMKs, use the <a>ScheduleKeyDeletion</a> operation to delete the CMKs. After they are deleted, you
 /// can delete the custom key store.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct CustomKeyStoreHasCMKsError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CustomKeyStoreHasCmKsException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for CustomKeyStoreHasCMKsError {
+impl std::fmt::Debug for CustomKeyStoreHasCmKsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomKeyStoreHasCMKsError");
+        let mut formatter = f.debug_struct("CustomKeyStoreHasCmKsException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl CustomKeyStoreHasCMKsError {
+impl CustomKeyStoreHasCmKsException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for CustomKeyStoreHasCMKsError {
+impl std::fmt::Display for CustomKeyStoreHasCmKsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(
             f,
-            "CustomKeyStoreHasCMKsError [CustomKeyStoreHasCMKsException]"
+            "CustomKeyStoreHasCmKsException [CustomKeyStoreHasCMKsException]"
         )?;
         if let Some(inner_29) = &self.message {
             write!(f, ": {}", inner_29)?;
@@ -7376,10 +7546,10 @@ impl std::fmt::Display for CustomKeyStoreHasCMKsError {
         Ok(())
     }
 }
-impl std::error::Error for CustomKeyStoreHasCMKsError {}
-/// See [`CustomKeyStoreHasCMKsError`](crate::error::CustomKeyStoreHasCMKsError)
-pub mod custom_key_store_has_cm_ks_error {
-    /// A builder for [`CustomKeyStoreHasCMKsError`](crate::error::CustomKeyStoreHasCMKsError)
+impl std::error::Error for CustomKeyStoreHasCmKsException {}
+/// See [`CustomKeyStoreHasCmKsException`](crate::error::CustomKeyStoreHasCmKsException)
+pub mod custom_key_store_has_cm_ks_exception {
+    /// A builder for [`CustomKeyStoreHasCmKsException`](crate::error::CustomKeyStoreHasCmKsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -7394,18 +7564,18 @@ pub mod custom_key_store_has_cm_ks_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`CustomKeyStoreHasCMKsError`](crate::error::CustomKeyStoreHasCMKsError)
-        pub fn build(self) -> crate::error::CustomKeyStoreHasCMKsError {
-            crate::error::CustomKeyStoreHasCMKsError {
+        /// Consumes the builder and constructs a [`CustomKeyStoreHasCmKsException`](crate::error::CustomKeyStoreHasCmKsException)
+        pub fn build(self) -> crate::error::CustomKeyStoreHasCmKsException {
+            crate::error::CustomKeyStoreHasCmKsException {
                 message: self.message,
             }
         }
     }
 }
-impl CustomKeyStoreHasCMKsError {
-    /// Creates a new builder-style object to manufacture [`CustomKeyStoreHasCMKsError`](crate::error::CustomKeyStoreHasCMKsError)
-    pub fn builder() -> crate::error::custom_key_store_has_cm_ks_error::Builder {
-        crate::error::custom_key_store_has_cm_ks_error::Builder::default()
+impl CustomKeyStoreHasCmKsException {
+    /// Creates a new builder-style object to manufacture [`CustomKeyStoreHasCmKsException`](crate::error::CustomKeyStoreHasCmKsException)
+    pub fn builder() -> crate::error::custom_key_store_has_cm_ks_exception::Builder {
+        crate::error::custom_key_store_has_cm_ks_exception::Builder::default()
     }
 }
 
@@ -7414,40 +7584,35 @@ impl CustomKeyStoreHasCMKsError {
 /// <p>When you <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html#sign-csr">initialize the cluster</a>, you create the trust anchor certificate and save it in the
 /// <code>customerCA.crt</code> file.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct IncorrectTrustAnchorError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct IncorrectTrustAnchorException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for IncorrectTrustAnchorError {
+impl std::fmt::Debug for IncorrectTrustAnchorException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IncorrectTrustAnchorError");
+        let mut formatter = f.debug_struct("IncorrectTrustAnchorException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl IncorrectTrustAnchorError {
+impl IncorrectTrustAnchorException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for IncorrectTrustAnchorError {
+impl std::fmt::Display for IncorrectTrustAnchorException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "IncorrectTrustAnchorError [IncorrectTrustAnchorException]"
-        )?;
+        write!(f, "IncorrectTrustAnchorException")?;
         if let Some(inner_30) = &self.message {
             write!(f, ": {}", inner_30)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for IncorrectTrustAnchorError {}
-/// See [`IncorrectTrustAnchorError`](crate::error::IncorrectTrustAnchorError)
-pub mod incorrect_trust_anchor_error {
-    /// A builder for [`IncorrectTrustAnchorError`](crate::error::IncorrectTrustAnchorError)
+impl std::error::Error for IncorrectTrustAnchorException {}
+/// See [`IncorrectTrustAnchorException`](crate::error::IncorrectTrustAnchorException)
+pub mod incorrect_trust_anchor_exception {
+    /// A builder for [`IncorrectTrustAnchorException`](crate::error::IncorrectTrustAnchorException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -7462,18 +7627,18 @@ pub mod incorrect_trust_anchor_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`IncorrectTrustAnchorError`](crate::error::IncorrectTrustAnchorError)
-        pub fn build(self) -> crate::error::IncorrectTrustAnchorError {
-            crate::error::IncorrectTrustAnchorError {
+        /// Consumes the builder and constructs a [`IncorrectTrustAnchorException`](crate::error::IncorrectTrustAnchorException)
+        pub fn build(self) -> crate::error::IncorrectTrustAnchorException {
+            crate::error::IncorrectTrustAnchorException {
                 message: self.message,
             }
         }
     }
 }
-impl IncorrectTrustAnchorError {
-    /// Creates a new builder-style object to manufacture [`IncorrectTrustAnchorError`](crate::error::IncorrectTrustAnchorError)
-    pub fn builder() -> crate::error::incorrect_trust_anchor_error::Builder {
-        crate::error::incorrect_trust_anchor_error::Builder::default()
+impl IncorrectTrustAnchorException {
+    /// Creates a new builder-style object to manufacture [`IncorrectTrustAnchorException`](crate::error::IncorrectTrustAnchorException)
+    pub fn builder() -> crate::error::incorrect_trust_anchor_exception::Builder {
+        crate::error::incorrect_trust_anchor_exception::Builder::default()
     }
 }
 
@@ -7483,40 +7648,35 @@ impl IncorrectTrustAnchorError {
 /// <p>Clusters that share a backup history have the same cluster certificate. To view the
 /// cluster certificate of a cluster, use the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a> operation.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct CloudHsmClusterInUseError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CloudHsmClusterInUseException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for CloudHsmClusterInUseError {
+impl std::fmt::Debug for CloudHsmClusterInUseException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudHsmClusterInUseError");
+        let mut formatter = f.debug_struct("CloudHsmClusterInUseException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl CloudHsmClusterInUseError {
+impl CloudHsmClusterInUseException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for CloudHsmClusterInUseError {
+impl std::fmt::Display for CloudHsmClusterInUseException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "CloudHsmClusterInUseError [CloudHsmClusterInUseException]"
-        )?;
+        write!(f, "CloudHsmClusterInUseException")?;
         if let Some(inner_31) = &self.message {
             write!(f, ": {}", inner_31)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for CloudHsmClusterInUseError {}
-/// See [`CloudHsmClusterInUseError`](crate::error::CloudHsmClusterInUseError)
-pub mod cloud_hsm_cluster_in_use_error {
-    /// A builder for [`CloudHsmClusterInUseError`](crate::error::CloudHsmClusterInUseError)
+impl std::error::Error for CloudHsmClusterInUseException {}
+/// See [`CloudHsmClusterInUseException`](crate::error::CloudHsmClusterInUseException)
+pub mod cloud_hsm_cluster_in_use_exception {
+    /// A builder for [`CloudHsmClusterInUseException`](crate::error::CloudHsmClusterInUseException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -7531,54 +7691,52 @@ pub mod cloud_hsm_cluster_in_use_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`CloudHsmClusterInUseError`](crate::error::CloudHsmClusterInUseError)
-        pub fn build(self) -> crate::error::CloudHsmClusterInUseError {
-            crate::error::CloudHsmClusterInUseError {
+        /// Consumes the builder and constructs a [`CloudHsmClusterInUseException`](crate::error::CloudHsmClusterInUseException)
+        pub fn build(self) -> crate::error::CloudHsmClusterInUseException {
+            crate::error::CloudHsmClusterInUseException {
                 message: self.message,
             }
         }
     }
 }
-impl CloudHsmClusterInUseError {
-    /// Creates a new builder-style object to manufacture [`CloudHsmClusterInUseError`](crate::error::CloudHsmClusterInUseError)
-    pub fn builder() -> crate::error::cloud_hsm_cluster_in_use_error::Builder {
-        crate::error::cloud_hsm_cluster_in_use_error::Builder::default()
+impl CloudHsmClusterInUseException {
+    /// Creates a new builder-style object to manufacture [`CloudHsmClusterInUseException`](crate::error::CloudHsmClusterInUseException)
+    pub fn builder() -> crate::error::cloud_hsm_cluster_in_use_exception::Builder {
+        crate::error::cloud_hsm_cluster_in_use_exception::Builder::default()
     }
 }
 
 /// <p>The request was rejected because the specified alias name is not valid.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidAliasNameError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InvalidAliasNameException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidAliasNameError {
+impl std::fmt::Debug for InvalidAliasNameException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidAliasNameError");
+        let mut formatter = f.debug_struct("InvalidAliasNameException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl InvalidAliasNameError {
+impl InvalidAliasNameException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InvalidAliasNameError {
+impl std::fmt::Display for InvalidAliasNameException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidAliasNameError [InvalidAliasNameException]")?;
+        write!(f, "InvalidAliasNameException")?;
         if let Some(inner_32) = &self.message {
             write!(f, ": {}", inner_32)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InvalidAliasNameError {}
-/// See [`InvalidAliasNameError`](crate::error::InvalidAliasNameError)
-pub mod invalid_alias_name_error {
-    /// A builder for [`InvalidAliasNameError`](crate::error::InvalidAliasNameError)
+impl std::error::Error for InvalidAliasNameException {}
+/// See [`InvalidAliasNameException`](crate::error::InvalidAliasNameException)
+pub mod invalid_alias_name_exception {
+    /// A builder for [`InvalidAliasNameException`](crate::error::InvalidAliasNameException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -7593,55 +7751,53 @@ pub mod invalid_alias_name_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidAliasNameError`](crate::error::InvalidAliasNameError)
-        pub fn build(self) -> crate::error::InvalidAliasNameError {
-            crate::error::InvalidAliasNameError {
+        /// Consumes the builder and constructs a [`InvalidAliasNameException`](crate::error::InvalidAliasNameException)
+        pub fn build(self) -> crate::error::InvalidAliasNameException {
+            crate::error::InvalidAliasNameException {
                 message: self.message,
             }
         }
     }
 }
-impl InvalidAliasNameError {
-    /// Creates a new builder-style object to manufacture [`InvalidAliasNameError`](crate::error::InvalidAliasNameError)
-    pub fn builder() -> crate::error::invalid_alias_name_error::Builder {
-        crate::error::invalid_alias_name_error::Builder::default()
+impl InvalidAliasNameException {
+    /// Creates a new builder-style object to manufacture [`InvalidAliasNameException`](crate::error::InvalidAliasNameException)
+    pub fn builder() -> crate::error::invalid_alias_name_exception::Builder {
+        crate::error::invalid_alias_name_exception::Builder::default()
     }
 }
 
 /// <p>The request was rejected because it attempted to create a resource that already
 /// exists.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct AlreadyExistsError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AlreadyExistsException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for AlreadyExistsError {
+impl std::fmt::Debug for AlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AlreadyExistsError");
+        let mut formatter = f.debug_struct("AlreadyExistsException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl AlreadyExistsError {
+impl AlreadyExistsException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for AlreadyExistsError {
+impl std::fmt::Display for AlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "AlreadyExistsError [AlreadyExistsException]")?;
+        write!(f, "AlreadyExistsException")?;
         if let Some(inner_33) = &self.message {
             write!(f, ": {}", inner_33)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for AlreadyExistsError {}
-/// See [`AlreadyExistsError`](crate::error::AlreadyExistsError)
-pub mod already_exists_error {
-    /// A builder for [`AlreadyExistsError`](crate::error::AlreadyExistsError)
+impl std::error::Error for AlreadyExistsException {}
+/// See [`AlreadyExistsException`](crate::error::AlreadyExistsException)
+pub mod already_exists_exception {
+    /// A builder for [`AlreadyExistsException`](crate::error::AlreadyExistsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -7656,17 +7812,17 @@ pub mod already_exists_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`AlreadyExistsError`](crate::error::AlreadyExistsError)
-        pub fn build(self) -> crate::error::AlreadyExistsError {
-            crate::error::AlreadyExistsError {
+        /// Consumes the builder and constructs a [`AlreadyExistsException`](crate::error::AlreadyExistsException)
+        pub fn build(self) -> crate::error::AlreadyExistsException {
+            crate::error::AlreadyExistsException {
                 message: self.message,
             }
         }
     }
 }
-impl AlreadyExistsError {
-    /// Creates a new builder-style object to manufacture [`AlreadyExistsError`](crate::error::AlreadyExistsError)
-    pub fn builder() -> crate::error::already_exists_error::Builder {
-        crate::error::already_exists_error::Builder::default()
+impl AlreadyExistsException {
+    /// Creates a new builder-style object to manufacture [`AlreadyExistsException`](crate::error::AlreadyExistsException)
+    pub fn builder() -> crate::error::already_exists_exception::Builder {
+        crate::error::already_exists_exception::Builder::default()
     }
 }

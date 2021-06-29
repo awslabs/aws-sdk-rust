@@ -133,8 +133,9 @@ impl AddPermissionInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -142,7 +143,7 @@ impl AddPermissionInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -264,8 +265,9 @@ impl CheckIfPhoneNumberIsOptedOutInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -273,7 +275,7 @@ impl CheckIfPhoneNumberIsOptedOutInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -424,8 +426,9 @@ impl ConfirmSubscriptionInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -433,7 +436,7 @@ impl ConfirmSubscriptionInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -591,8 +594,9 @@ impl CreatePlatformApplicationInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -600,7 +604,7 @@ impl CreatePlatformApplicationInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -777,8 +781,9 @@ impl CreatePlatformEndpointInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -786,7 +791,7 @@ impl CreatePlatformEndpointInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -812,9 +817,9 @@ impl CreatePlatformEndpointInput {
     }
 }
 
-/// See [`CreateSMSSandboxPhoneNumberInput`](crate::input::CreateSMSSandboxPhoneNumberInput)
+/// See [`CreateSmsSandboxPhoneNumberInput`](crate::input::CreateSmsSandboxPhoneNumberInput)
 pub mod create_sms_sandbox_phone_number_input {
-    /// A builder for [`CreateSMSSandboxPhoneNumberInput`](crate::input::CreateSMSSandboxPhoneNumberInput)
+    /// A builder for [`CreateSmsSandboxPhoneNumberInput`](crate::input::CreateSmsSandboxPhoneNumberInput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -845,14 +850,14 @@ pub mod create_sms_sandbox_phone_number_input {
             self.language_code = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateSMSSandboxPhoneNumberInput`](crate::input::CreateSMSSandboxPhoneNumberInput)
+        /// Consumes the builder and constructs a [`CreateSmsSandboxPhoneNumberInput`](crate::input::CreateSmsSandboxPhoneNumberInput)
         pub fn build(
             self,
         ) -> std::result::Result<
-            crate::input::CreateSMSSandboxPhoneNumberInput,
+            crate::input::CreateSmsSandboxPhoneNumberInput,
             smithy_http::operation::BuildError,
         > {
-            Ok(crate::input::CreateSMSSandboxPhoneNumberInput {
+            Ok(crate::input::CreateSmsSandboxPhoneNumberInput {
                 phone_number: self.phone_number,
                 language_code: self.language_code,
             })
@@ -864,7 +869,7 @@ pub type CreateSMSSandboxPhoneNumberInputOperationOutputAlias =
     crate::operation::CreateSMSSandboxPhoneNumber;
 #[doc(hidden)]
 pub type CreateSMSSandboxPhoneNumberInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
-impl CreateSMSSandboxPhoneNumberInput {
+impl CreateSmsSandboxPhoneNumberInput {
     /// Consumes the builder and constructs an Operation<[`CreateSMSSandboxPhoneNumber`](crate::operation::CreateSMSSandboxPhoneNumber)>
     #[allow(clippy::let_and_return)]
     pub fn make_operation(
@@ -924,8 +929,9 @@ impl CreateSMSSandboxPhoneNumberInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -933,7 +939,7 @@ impl CreateSMSSandboxPhoneNumberInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -953,7 +959,7 @@ impl CreateSMSSandboxPhoneNumberInput {
         }
         builder.body(body).expect("should be valid request")
     }
-    /// Creates a new builder-style object to manufacture [`CreateSMSSandboxPhoneNumberInput`](crate::input::CreateSMSSandboxPhoneNumberInput)
+    /// Creates a new builder-style object to manufacture [`CreateSmsSandboxPhoneNumberInput`](crate::input::CreateSmsSandboxPhoneNumberInput)
     pub fn builder() -> crate::input::create_sms_sandbox_phone_number_input::Builder {
         crate::input::create_sms_sandbox_phone_number_input::Builder::default()
     }
@@ -1091,8 +1097,9 @@ impl CreateTopicInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -1100,7 +1107,7 @@ impl CreateTopicInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1219,8 +1226,9 @@ impl DeleteEndpointInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -1228,7 +1236,7 @@ impl DeleteEndpointInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1352,8 +1360,9 @@ impl DeletePlatformApplicationInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -1361,7 +1370,7 @@ impl DeletePlatformApplicationInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1387,9 +1396,9 @@ impl DeletePlatformApplicationInput {
     }
 }
 
-/// See [`DeleteSMSSandboxPhoneNumberInput`](crate::input::DeleteSMSSandboxPhoneNumberInput)
+/// See [`DeleteSmsSandboxPhoneNumberInput`](crate::input::DeleteSmsSandboxPhoneNumberInput)
 pub mod delete_sms_sandbox_phone_number_input {
-    /// A builder for [`DeleteSMSSandboxPhoneNumberInput`](crate::input::DeleteSMSSandboxPhoneNumberInput)
+    /// A builder for [`DeleteSmsSandboxPhoneNumberInput`](crate::input::DeleteSmsSandboxPhoneNumberInput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -1405,14 +1414,14 @@ pub mod delete_sms_sandbox_phone_number_input {
             self.phone_number = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteSMSSandboxPhoneNumberInput`](crate::input::DeleteSMSSandboxPhoneNumberInput)
+        /// Consumes the builder and constructs a [`DeleteSmsSandboxPhoneNumberInput`](crate::input::DeleteSmsSandboxPhoneNumberInput)
         pub fn build(
             self,
         ) -> std::result::Result<
-            crate::input::DeleteSMSSandboxPhoneNumberInput,
+            crate::input::DeleteSmsSandboxPhoneNumberInput,
             smithy_http::operation::BuildError,
         > {
-            Ok(crate::input::DeleteSMSSandboxPhoneNumberInput {
+            Ok(crate::input::DeleteSmsSandboxPhoneNumberInput {
                 phone_number: self.phone_number,
             })
         }
@@ -1423,7 +1432,7 @@ pub type DeleteSMSSandboxPhoneNumberInputOperationOutputAlias =
     crate::operation::DeleteSMSSandboxPhoneNumber;
 #[doc(hidden)]
 pub type DeleteSMSSandboxPhoneNumberInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
-impl DeleteSMSSandboxPhoneNumberInput {
+impl DeleteSmsSandboxPhoneNumberInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSMSSandboxPhoneNumber`](crate::operation::DeleteSMSSandboxPhoneNumber)>
     #[allow(clippy::let_and_return)]
     pub fn make_operation(
@@ -1483,8 +1492,9 @@ impl DeleteSMSSandboxPhoneNumberInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -1492,7 +1502,7 @@ impl DeleteSMSSandboxPhoneNumberInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1512,7 +1522,7 @@ impl DeleteSMSSandboxPhoneNumberInput {
         }
         builder.body(body).expect("should be valid request")
     }
-    /// Creates a new builder-style object to manufacture [`DeleteSMSSandboxPhoneNumberInput`](crate::input::DeleteSMSSandboxPhoneNumberInput)
+    /// Creates a new builder-style object to manufacture [`DeleteSmsSandboxPhoneNumberInput`](crate::input::DeleteSmsSandboxPhoneNumberInput)
     pub fn builder() -> crate::input::delete_sms_sandbox_phone_number_input::Builder {
         crate::input::delete_sms_sandbox_phone_number_input::Builder::default()
     }
@@ -1607,8 +1617,9 @@ impl DeleteTopicInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -1616,7 +1627,7 @@ impl DeleteTopicInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1736,8 +1747,9 @@ impl GetEndpointAttributesInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -1745,7 +1757,7 @@ impl GetEndpointAttributesInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1872,8 +1884,9 @@ impl GetPlatformApplicationAttributesInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -1881,7 +1894,7 @@ impl GetPlatformApplicationAttributesInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1907,9 +1920,9 @@ impl GetPlatformApplicationAttributesInput {
     }
 }
 
-/// See [`GetSMSAttributesInput`](crate::input::GetSMSAttributesInput)
+/// See [`GetSmsAttributesInput`](crate::input::GetSmsAttributesInput)
 pub mod get_sms_attributes_input {
-    /// A builder for [`GetSMSAttributesInput`](crate::input::GetSMSAttributesInput)
+    /// A builder for [`GetSmsAttributesInput`](crate::input::GetSmsAttributesInput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -1929,14 +1942,14 @@ pub mod get_sms_attributes_input {
             self.attributes = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetSMSAttributesInput`](crate::input::GetSMSAttributesInput)
+        /// Consumes the builder and constructs a [`GetSmsAttributesInput`](crate::input::GetSmsAttributesInput)
         pub fn build(
             self,
         ) -> std::result::Result<
-            crate::input::GetSMSAttributesInput,
+            crate::input::GetSmsAttributesInput,
             smithy_http::operation::BuildError,
         > {
-            Ok(crate::input::GetSMSAttributesInput {
+            Ok(crate::input::GetSmsAttributesInput {
                 attributes: self.attributes,
             })
         }
@@ -1946,7 +1959,7 @@ pub mod get_sms_attributes_input {
 pub type GetSMSAttributesInputOperationOutputAlias = crate::operation::GetSMSAttributes;
 #[doc(hidden)]
 pub type GetSMSAttributesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
-impl GetSMSAttributesInput {
+impl GetSmsAttributesInput {
     /// Consumes the builder and constructs an Operation<[`GetSMSAttributes`](crate::operation::GetSMSAttributes)>
     #[allow(clippy::let_and_return)]
     pub fn make_operation(
@@ -2005,8 +2018,9 @@ impl GetSMSAttributesInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -2014,7 +2028,7 @@ impl GetSMSAttributesInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2034,27 +2048,27 @@ impl GetSMSAttributesInput {
         }
         builder.body(body).expect("should be valid request")
     }
-    /// Creates a new builder-style object to manufacture [`GetSMSAttributesInput`](crate::input::GetSMSAttributesInput)
+    /// Creates a new builder-style object to manufacture [`GetSmsAttributesInput`](crate::input::GetSmsAttributesInput)
     pub fn builder() -> crate::input::get_sms_attributes_input::Builder {
         crate::input::get_sms_attributes_input::Builder::default()
     }
 }
 
-/// See [`GetSMSSandboxAccountStatusInput`](crate::input::GetSMSSandboxAccountStatusInput)
+/// See [`GetSmsSandboxAccountStatusInput`](crate::input::GetSmsSandboxAccountStatusInput)
 pub mod get_sms_sandbox_account_status_input {
-    /// A builder for [`GetSMSSandboxAccountStatusInput`](crate::input::GetSMSSandboxAccountStatusInput)
+    /// A builder for [`GetSmsSandboxAccountStatusInput`](crate::input::GetSmsSandboxAccountStatusInput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`GetSMSSandboxAccountStatusInput`](crate::input::GetSMSSandboxAccountStatusInput)
+        /// Consumes the builder and constructs a [`GetSmsSandboxAccountStatusInput`](crate::input::GetSmsSandboxAccountStatusInput)
         pub fn build(
             self,
         ) -> std::result::Result<
-            crate::input::GetSMSSandboxAccountStatusInput,
+            crate::input::GetSmsSandboxAccountStatusInput,
             smithy_http::operation::BuildError,
         > {
-            Ok(crate::input::GetSMSSandboxAccountStatusInput {})
+            Ok(crate::input::GetSmsSandboxAccountStatusInput {})
         }
     }
 }
@@ -2063,7 +2077,7 @@ pub type GetSMSSandboxAccountStatusInputOperationOutputAlias =
     crate::operation::GetSMSSandboxAccountStatus;
 #[doc(hidden)]
 pub type GetSMSSandboxAccountStatusInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
-impl GetSMSSandboxAccountStatusInput {
+impl GetSmsSandboxAccountStatusInput {
     /// Consumes the builder and constructs an Operation<[`GetSMSSandboxAccountStatus`](crate::operation::GetSMSSandboxAccountStatus)>
     #[allow(clippy::let_and_return)]
     pub fn make_operation(
@@ -2123,8 +2137,9 @@ impl GetSMSSandboxAccountStatusInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -2132,7 +2147,7 @@ impl GetSMSSandboxAccountStatusInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2152,7 +2167,7 @@ impl GetSMSSandboxAccountStatusInput {
         }
         builder.body(body).expect("should be valid request")
     }
-    /// Creates a new builder-style object to manufacture [`GetSMSSandboxAccountStatusInput`](crate::input::GetSMSSandboxAccountStatusInput)
+    /// Creates a new builder-style object to manufacture [`GetSmsSandboxAccountStatusInput`](crate::input::GetSmsSandboxAccountStatusInput)
     pub fn builder() -> crate::input::get_sms_sandbox_account_status_input::Builder {
         crate::input::get_sms_sandbox_account_status_input::Builder::default()
     }
@@ -2256,8 +2271,9 @@ impl GetSubscriptionAttributesInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -2265,7 +2281,7 @@ impl GetSubscriptionAttributesInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2385,8 +2401,9 @@ impl GetTopicAttributesInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -2394,7 +2411,7 @@ impl GetTopicAttributesInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2533,8 +2550,9 @@ impl ListEndpointsByPlatformApplicationInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -2542,7 +2560,7 @@ impl ListEndpointsByPlatformApplicationInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2673,8 +2691,9 @@ impl ListOriginationNumbersInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -2682,7 +2701,7 @@ impl ListOriginationNumbersInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2806,8 +2825,9 @@ impl ListPhoneNumbersOptedOutInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -2815,7 +2835,7 @@ impl ListPhoneNumbersOptedOutInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2937,8 +2957,9 @@ impl ListPlatformApplicationsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -2946,7 +2967,7 @@ impl ListPlatformApplicationsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2972,9 +2993,9 @@ impl ListPlatformApplicationsInput {
     }
 }
 
-/// See [`ListSMSSandboxPhoneNumbersInput`](crate::input::ListSMSSandboxPhoneNumbersInput)
+/// See [`ListSmsSandboxPhoneNumbersInput`](crate::input::ListSmsSandboxPhoneNumbersInput)
 pub mod list_sms_sandbox_phone_numbers_input {
-    /// A builder for [`ListSMSSandboxPhoneNumbersInput`](crate::input::ListSMSSandboxPhoneNumbersInput)
+    /// A builder for [`ListSmsSandboxPhoneNumbersInput`](crate::input::ListSmsSandboxPhoneNumbersInput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -3001,14 +3022,14 @@ pub mod list_sms_sandbox_phone_numbers_input {
             self.max_results = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListSMSSandboxPhoneNumbersInput`](crate::input::ListSMSSandboxPhoneNumbersInput)
+        /// Consumes the builder and constructs a [`ListSmsSandboxPhoneNumbersInput`](crate::input::ListSmsSandboxPhoneNumbersInput)
         pub fn build(
             self,
         ) -> std::result::Result<
-            crate::input::ListSMSSandboxPhoneNumbersInput,
+            crate::input::ListSmsSandboxPhoneNumbersInput,
             smithy_http::operation::BuildError,
         > {
-            Ok(crate::input::ListSMSSandboxPhoneNumbersInput {
+            Ok(crate::input::ListSmsSandboxPhoneNumbersInput {
                 next_token: self.next_token,
                 max_results: self.max_results,
             })
@@ -3020,7 +3041,7 @@ pub type ListSMSSandboxPhoneNumbersInputOperationOutputAlias =
     crate::operation::ListSMSSandboxPhoneNumbers;
 #[doc(hidden)]
 pub type ListSMSSandboxPhoneNumbersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
-impl ListSMSSandboxPhoneNumbersInput {
+impl ListSmsSandboxPhoneNumbersInput {
     /// Consumes the builder and constructs an Operation<[`ListSMSSandboxPhoneNumbers`](crate::operation::ListSMSSandboxPhoneNumbers)>
     #[allow(clippy::let_and_return)]
     pub fn make_operation(
@@ -3080,8 +3101,9 @@ impl ListSMSSandboxPhoneNumbersInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -3089,7 +3111,7 @@ impl ListSMSSandboxPhoneNumbersInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3109,7 +3131,7 @@ impl ListSMSSandboxPhoneNumbersInput {
         }
         builder.body(body).expect("should be valid request")
     }
-    /// Creates a new builder-style object to manufacture [`ListSMSSandboxPhoneNumbersInput`](crate::input::ListSMSSandboxPhoneNumbersInput)
+    /// Creates a new builder-style object to manufacture [`ListSmsSandboxPhoneNumbersInput`](crate::input::ListSmsSandboxPhoneNumbersInput)
     pub fn builder() -> crate::input::list_sms_sandbox_phone_numbers_input::Builder {
         crate::input::list_sms_sandbox_phone_numbers_input::Builder::default()
     }
@@ -3209,8 +3231,9 @@ impl ListSubscriptionsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -3218,7 +3241,7 @@ impl ListSubscriptionsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3350,8 +3373,9 @@ impl ListSubscriptionsByTopicInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -3359,7 +3383,7 @@ impl ListSubscriptionsByTopicInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3479,8 +3503,9 @@ impl ListTagsForResourceInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -3488,7 +3513,7 @@ impl ListTagsForResourceInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3603,8 +3628,9 @@ impl ListTopicsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -3612,7 +3638,7 @@ impl ListTopicsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3732,8 +3758,9 @@ impl OptInPhoneNumberInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -3741,7 +3768,7 @@ impl OptInPhoneNumberInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4065,8 +4092,9 @@ impl PublishInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -4074,7 +4102,7 @@ impl PublishInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4204,8 +4232,9 @@ impl RemovePermissionInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -4213,7 +4242,7 @@ impl RemovePermissionInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4356,8 +4385,9 @@ impl SetEndpointAttributesInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -4365,7 +4395,7 @@ impl SetEndpointAttributesInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4515,8 +4545,9 @@ impl SetPlatformApplicationAttributesInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -4524,7 +4555,7 @@ impl SetPlatformApplicationAttributesInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4550,9 +4581,9 @@ impl SetPlatformApplicationAttributesInput {
     }
 }
 
-/// See [`SetSMSAttributesInput`](crate::input::SetSMSAttributesInput)
+/// See [`SetSmsAttributesInput`](crate::input::SetSmsAttributesInput)
 pub mod set_sms_attributes_input {
-    /// A builder for [`SetSMSAttributesInput`](crate::input::SetSMSAttributesInput)
+    /// A builder for [`SetSmsAttributesInput`](crate::input::SetSmsAttributesInput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -4580,14 +4611,14 @@ pub mod set_sms_attributes_input {
             self.attributes = input;
             self
         }
-        /// Consumes the builder and constructs a [`SetSMSAttributesInput`](crate::input::SetSMSAttributesInput)
+        /// Consumes the builder and constructs a [`SetSmsAttributesInput`](crate::input::SetSmsAttributesInput)
         pub fn build(
             self,
         ) -> std::result::Result<
-            crate::input::SetSMSAttributesInput,
+            crate::input::SetSmsAttributesInput,
             smithy_http::operation::BuildError,
         > {
-            Ok(crate::input::SetSMSAttributesInput {
+            Ok(crate::input::SetSmsAttributesInput {
                 attributes: self.attributes,
             })
         }
@@ -4597,7 +4628,7 @@ pub mod set_sms_attributes_input {
 pub type SetSMSAttributesInputOperationOutputAlias = crate::operation::SetSMSAttributes;
 #[doc(hidden)]
 pub type SetSMSAttributesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
-impl SetSMSAttributesInput {
+impl SetSmsAttributesInput {
     /// Consumes the builder and constructs an Operation<[`SetSMSAttributes`](crate::operation::SetSMSAttributes)>
     #[allow(clippy::let_and_return)]
     pub fn make_operation(
@@ -4656,8 +4687,9 @@ impl SetSMSAttributesInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -4665,7 +4697,7 @@ impl SetSMSAttributesInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4685,7 +4717,7 @@ impl SetSMSAttributesInput {
         }
         builder.body(body).expect("should be valid request")
     }
-    /// Creates a new builder-style object to manufacture [`SetSMSAttributesInput`](crate::input::SetSMSAttributesInput)
+    /// Creates a new builder-style object to manufacture [`SetSmsAttributesInput`](crate::input::SetSmsAttributesInput)
     pub fn builder() -> crate::input::set_sms_attributes_input::Builder {
         crate::input::set_sms_attributes_input::Builder::default()
     }
@@ -4864,8 +4896,9 @@ impl SetSubscriptionAttributesInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -4873,7 +4906,7 @@ impl SetSubscriptionAttributesInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -5075,8 +5108,9 @@ impl SetTopicAttributesInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -5084,7 +5118,7 @@ impl SetTopicAttributesInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -5345,8 +5379,9 @@ impl SubscribeInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -5354,7 +5389,7 @@ impl SubscribeInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -5484,8 +5519,9 @@ impl TagResourceInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -5493,7 +5529,7 @@ impl TagResourceInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -5611,8 +5647,9 @@ impl UnsubscribeInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -5620,7 +5657,7 @@ impl UnsubscribeInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -5753,8 +5790,9 @@ impl UntagResourceInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -5762,7 +5800,7 @@ impl UntagResourceInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -5788,9 +5826,9 @@ impl UntagResourceInput {
     }
 }
 
-/// See [`VerifySMSSandboxPhoneNumberInput`](crate::input::VerifySMSSandboxPhoneNumberInput)
+/// See [`VerifySmsSandboxPhoneNumberInput`](crate::input::VerifySmsSandboxPhoneNumberInput)
 pub mod verify_sms_sandbox_phone_number_input {
-    /// A builder for [`VerifySMSSandboxPhoneNumberInput`](crate::input::VerifySMSSandboxPhoneNumberInput)
+    /// A builder for [`VerifySmsSandboxPhoneNumberInput`](crate::input::VerifySmsSandboxPhoneNumberInput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -5820,14 +5858,14 @@ pub mod verify_sms_sandbox_phone_number_input {
             self.one_time_password = input;
             self
         }
-        /// Consumes the builder and constructs a [`VerifySMSSandboxPhoneNumberInput`](crate::input::VerifySMSSandboxPhoneNumberInput)
+        /// Consumes the builder and constructs a [`VerifySmsSandboxPhoneNumberInput`](crate::input::VerifySmsSandboxPhoneNumberInput)
         pub fn build(
             self,
         ) -> std::result::Result<
-            crate::input::VerifySMSSandboxPhoneNumberInput,
+            crate::input::VerifySmsSandboxPhoneNumberInput,
             smithy_http::operation::BuildError,
         > {
-            Ok(crate::input::VerifySMSSandboxPhoneNumberInput {
+            Ok(crate::input::VerifySmsSandboxPhoneNumberInput {
                 phone_number: self.phone_number,
                 one_time_password: self.one_time_password,
             })
@@ -5839,7 +5877,7 @@ pub type VerifySMSSandboxPhoneNumberInputOperationOutputAlias =
     crate::operation::VerifySMSSandboxPhoneNumber;
 #[doc(hidden)]
 pub type VerifySMSSandboxPhoneNumberInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
-impl VerifySMSSandboxPhoneNumberInput {
+impl VerifySmsSandboxPhoneNumberInput {
     /// Consumes the builder and constructs an Operation<[`VerifySMSSandboxPhoneNumber`](crate::operation::VerifySMSSandboxPhoneNumber)>
     #[allow(clippy::let_and_return)]
     pub fn make_operation(
@@ -5899,8 +5937,9 @@ impl VerifySMSSandboxPhoneNumberInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -5908,7 +5947,7 @@ impl VerifySMSSandboxPhoneNumberInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -5928,7 +5967,7 @@ impl VerifySMSSandboxPhoneNumberInput {
         }
         builder.body(body).expect("should be valid request")
     }
-    /// Creates a new builder-style object to manufacture [`VerifySMSSandboxPhoneNumberInput`](crate::input::VerifySMSSandboxPhoneNumberInput)
+    /// Creates a new builder-style object to manufacture [`VerifySmsSandboxPhoneNumberInput`](crate::input::VerifySmsSandboxPhoneNumberInput)
     pub fn builder() -> crate::input::verify_sms_sandbox_phone_number_input::Builder {
         crate::input::verify_sms_sandbox_phone_number_input::Builder::default()
     }
@@ -5936,16 +5975,16 @@ impl VerifySMSSandboxPhoneNumberInput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct VerifySMSSandboxPhoneNumberInput {
+pub struct VerifySmsSandboxPhoneNumberInput {
     /// <p>The destination phone number to verify.</p>
     pub phone_number: std::option::Option<std::string::String>,
     /// <p>The OTP sent to the destination number from the
     /// <code>CreateSMSSandBoxPhoneNumber</code> call.</p>
     pub one_time_password: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for VerifySMSSandboxPhoneNumberInput {
+impl std::fmt::Debug for VerifySmsSandboxPhoneNumberInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VerifySMSSandboxPhoneNumberInput");
+        let mut formatter = f.debug_struct("VerifySmsSandboxPhoneNumberInput");
         formatter.field("phone_number", &self.phone_number);
         formatter.field("one_time_password", &self.one_time_password);
         formatter.finish()
@@ -6315,7 +6354,7 @@ impl std::fmt::Debug for SetSubscriptionAttributesInput {
 /// <p>The input for the SetSMSAttributes action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct SetSMSAttributesInput {
+pub struct SetSmsAttributesInput {
     /// <p>The default settings for sending SMS messages from your account. You can set values
     /// for the following attribute names:</p>
     /// <p>
@@ -6405,9 +6444,9 @@ pub struct SetSMSAttributesInput {
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
-impl std::fmt::Debug for SetSMSAttributesInput {
+impl std::fmt::Debug for SetSmsAttributesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetSMSAttributesInput");
+        let mut formatter = f.debug_struct("SetSmsAttributesInput");
         formatter.field("attributes", &self.attributes);
         formatter.finish()
     }
@@ -6774,16 +6813,16 @@ impl std::fmt::Debug for ListSubscriptionsInput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListSMSSandboxPhoneNumbersInput {
+pub struct ListSmsSandboxPhoneNumbersInput {
     /// <p>Token that the previous <code>ListSMSSandboxPhoneNumbersInput</code> request
     /// returns.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of phone numbers to return.</p>
     pub max_results: std::option::Option<i32>,
 }
-impl std::fmt::Debug for ListSMSSandboxPhoneNumbersInput {
+impl std::fmt::Debug for ListSmsSandboxPhoneNumbersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSMSSandboxPhoneNumbersInput");
+        let mut formatter = f.debug_struct("ListSmsSandboxPhoneNumbersInput");
         formatter.field("next_token", &self.next_token);
         formatter.field("max_results", &self.max_results);
         formatter.finish()
@@ -6891,10 +6930,10 @@ impl std::fmt::Debug for GetSubscriptionAttributesInput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetSMSSandboxAccountStatusInput {}
-impl std::fmt::Debug for GetSMSSandboxAccountStatusInput {
+pub struct GetSmsSandboxAccountStatusInput {}
+impl std::fmt::Debug for GetSmsSandboxAccountStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSMSSandboxAccountStatusInput");
+        let mut formatter = f.debug_struct("GetSmsSandboxAccountStatusInput");
         formatter.finish()
     }
 }
@@ -6902,16 +6941,16 @@ impl std::fmt::Debug for GetSMSSandboxAccountStatusInput {
 /// <p>The input for the <code>GetSMSAttributes</code> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetSMSAttributesInput {
+pub struct GetSmsAttributesInput {
     /// <p>A list of the individual attribute names, such as <code>MonthlySpendLimit</code>, for
     /// which you want values.</p>
     /// <p>For all attribute names, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_SetSMSAttributes.html">SetSMSAttributes</a>.</p>
     /// <p>If you don't use this parameter, Amazon SNS returns all SMS attributes.</p>
     pub attributes: std::option::Option<std::vec::Vec<std::string::String>>,
 }
-impl std::fmt::Debug for GetSMSAttributesInput {
+impl std::fmt::Debug for GetSmsAttributesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSMSAttributesInput");
+        let mut formatter = f.debug_struct("GetSmsAttributesInput");
         formatter.field("attributes", &self.attributes);
         formatter.finish()
     }
@@ -6963,13 +7002,13 @@ impl std::fmt::Debug for DeleteTopicInput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteSMSSandboxPhoneNumberInput {
+pub struct DeleteSmsSandboxPhoneNumberInput {
     /// <p>The destination phone number to delete.</p>
     pub phone_number: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DeleteSMSSandboxPhoneNumberInput {
+impl std::fmt::Debug for DeleteSmsSandboxPhoneNumberInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSMSSandboxPhoneNumberInput");
+        let mut formatter = f.debug_struct("DeleteSmsSandboxPhoneNumberInput");
         formatter.field("phone_number", &self.phone_number);
         formatter.finish()
     }
@@ -7103,7 +7142,7 @@ impl std::fmt::Debug for CreateTopicInput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateSMSSandboxPhoneNumberInput {
+pub struct CreateSmsSandboxPhoneNumberInput {
     /// <p>The destination phone number to verify. On verification, Amazon SNS adds this phone number
     /// to the list of verified phone numbers that you can send SMS messages to.</p>
     pub phone_number: std::option::Option<std::string::String>,
@@ -7111,9 +7150,9 @@ pub struct CreateSMSSandboxPhoneNumberInput {
     /// <code>en-US</code>.</p>
     pub language_code: std::option::Option<crate::model::LanguageCodeString>,
 }
-impl std::fmt::Debug for CreateSMSSandboxPhoneNumberInput {
+impl std::fmt::Debug for CreateSmsSandboxPhoneNumberInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateSMSSandboxPhoneNumberInput");
+        let mut formatter = f.debug_struct("CreateSmsSandboxPhoneNumberInput");
         formatter.field("phone_number", &self.phone_number);
         formatter.field("language_code", &self.language_code);
         formatter.finish()

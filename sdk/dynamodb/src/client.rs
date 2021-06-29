@@ -986,13 +986,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>Represents the settings used to enable server-side encryption.</p>
-        pub fn sse_specification(mut self, input: crate::model::SSESpecification) -> Self {
+        pub fn sse_specification(mut self, input: crate::model::SseSpecification) -> Self {
             self.inner = self.inner.sse_specification(input);
             self
         }
         pub fn set_sse_specification(
             mut self,
-            input: std::option::Option<crate::model::SSESpecification>,
+            input: std::option::Option<crate::model::SseSpecification>,
         ) -> Self {
             self.inner = self.inner.set_sse_specification(input);
             self
@@ -3794,13 +3794,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new server-side encryption settings for the restored table.</p>
-        pub fn sse_specification_override(mut self, input: crate::model::SSESpecification) -> Self {
+        pub fn sse_specification_override(mut self, input: crate::model::SseSpecification) -> Self {
             self.inner = self.inner.sse_specification_override(input);
             self
         }
         pub fn set_sse_specification_override(
             mut self,
-            input: std::option::Option<crate::model::SSESpecification>,
+            input: std::option::Option<crate::model::SseSpecification>,
         ) -> Self {
             self.inner = self.inner.set_sse_specification_override(input);
             self
@@ -3958,13 +3958,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new server-side encryption settings for the restored table.</p>
-        pub fn sse_specification_override(mut self, input: crate::model::SSESpecification) -> Self {
+        pub fn sse_specification_override(mut self, input: crate::model::SseSpecification) -> Self {
             self.inner = self.inner.sse_specification_override(input);
             self
         }
         pub fn set_sse_specification_override(
             mut self,
-            input: std::option::Option<crate::model::SSESpecification>,
+            input: std::option::Option<crate::model::SseSpecification>,
         ) -> Self {
             self.inner = self.inner.set_sse_specification_override(input);
             self
@@ -5569,13 +5569,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new server-side encryption settings for the specified table.</p>
-        pub fn sse_specification(mut self, input: crate::model::SSESpecification) -> Self {
+        pub fn sse_specification(mut self, input: crate::model::SseSpecification) -> Self {
             self.inner = self.inner.sse_specification(input);
             self
         }
         pub fn set_sse_specification(
             mut self,
-            input: std::option::Option<crate::model::SSESpecification>,
+            input: std::option::Option<crate::model::SseSpecification>,
         ) -> Self {
             self.inner = self.inner.set_sse_specification(input);
             self

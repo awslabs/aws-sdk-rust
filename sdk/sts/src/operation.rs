@@ -244,7 +244,7 @@ pub struct AssumeRoleWithSAML {
     _private: (),
 }
 impl AssumeRoleWithSAML {
-    /// Creates a new builder-style object to manufacture [`AssumeRoleWithSAMLInput`](crate::input::AssumeRoleWithSAMLInput)
+    /// Creates a new builder-style object to manufacture [`AssumeRoleWithSamlInput`](crate::input::AssumeRoleWithSamlInput)
     pub fn builder() -> crate::input::assume_role_with_saml_input::Builder {
         crate::input::assume_role_with_saml_input::Builder::default()
     }
@@ -254,7 +254,7 @@ impl AssumeRoleWithSAML {
 }
 impl smithy_http::response::ParseStrictResponse for AssumeRoleWithSAML {
     type Output = std::result::Result<
-        crate::output::AssumeRoleWithSAMLOutput,
+        crate::output::AssumeRoleWithSamlOutput,
         crate::error::AssumeRoleWithSAMLError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {

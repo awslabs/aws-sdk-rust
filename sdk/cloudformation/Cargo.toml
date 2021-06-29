@@ -28,14 +28,8 @@ path = "..//aws-http"
 path = "..//aws-sig-auth"
 [dependencies.http]
 version = "0.2"
-[dependencies.serde]
-version = "1"
-features = ["derive"]
 [dependencies.bytes]
 version = "1"
-[dependencies.serde_json]
-version = "1"
-features = ["float_roundtrip"]
 [dependencies.smithy-query]
 path = "..//smithy-query"
 [dependencies.smithy-xml]

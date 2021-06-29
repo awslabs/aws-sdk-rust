@@ -37,8 +37,8 @@ pub mod cancel_journal_kinesis_stream_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CancelJournalKinesisStreamInput {
-                ledger_name: self.ledger_name.unwrap_or_default(),
-                stream_id: self.stream_id.unwrap_or_default(),
+                ledger_name: self.ledger_name,
+                stream_id: self.stream_id,
             })
         }
     }
@@ -104,14 +104,49 @@ impl CancelJournalKinesisStreamInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let ledger_name = {
+            let input = &self.ledger_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "ledger_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "ledger_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let stream_id = {
+            let input = &self.stream_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "stream_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "stream_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/ledgers/{LedgerName}/journal-kinesis-streams/{StreamId}",
-            LedgerName = smithy_http::label::fmt_string(&self.ledger_name, false),
-            StreamId = smithy_http::label::fmt_string(&self.stream_id, false)
+            LedgerName = ledger_name,
+            StreamId = stream_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -119,7 +154,7 @@ impl CancelJournalKinesisStreamInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("DELETE").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -326,8 +361,9 @@ impl CreateLedgerInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/ledgers").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/ledgers").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -335,7 +371,7 @@ impl CreateLedgerInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -384,9 +420,7 @@ pub mod delete_ledger_input {
             self,
         ) -> std::result::Result<crate::input::DeleteLedgerInput, smithy_http::operation::BuildError>
         {
-            Ok(crate::input::DeleteLedgerInput {
-                name: self.name.unwrap_or_default(),
-            })
+            Ok(crate::input::DeleteLedgerInput { name: self.name })
         }
     }
 }
@@ -450,13 +484,26 @@ impl DeleteLedgerInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/ledgers/{Name}",
-            Name = smithy_http::label::fmt_string(&self.name, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let name = {
+            let input = &self.name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/ledgers/{Name}", Name = name).expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -464,7 +511,7 @@ impl DeleteLedgerInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("DELETE").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -527,8 +574,8 @@ pub mod describe_journal_kinesis_stream_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeJournalKinesisStreamInput {
-                ledger_name: self.ledger_name.unwrap_or_default(),
-                stream_id: self.stream_id.unwrap_or_default(),
+                ledger_name: self.ledger_name,
+                stream_id: self.stream_id,
             })
         }
     }
@@ -594,14 +641,49 @@ impl DescribeJournalKinesisStreamInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let ledger_name = {
+            let input = &self.ledger_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "ledger_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "ledger_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let stream_id = {
+            let input = &self.stream_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "stream_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "stream_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/ledgers/{LedgerName}/journal-kinesis-streams/{StreamId}",
-            LedgerName = smithy_http::label::fmt_string(&self.ledger_name, false),
-            StreamId = smithy_http::label::fmt_string(&self.stream_id, false)
+            LedgerName = ledger_name,
+            StreamId = stream_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -609,7 +691,7 @@ impl DescribeJournalKinesisStreamInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -672,8 +754,8 @@ pub mod describe_journal_s3_export_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeJournalS3ExportInput {
-                name: self.name.unwrap_or_default(),
-                export_id: self.export_id.unwrap_or_default(),
+                name: self.name,
+                export_id: self.export_id,
             })
         }
     }
@@ -739,14 +821,49 @@ impl DescribeJournalS3ExportInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let name = {
+            let input = &self.name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let export_id = {
+            let input = &self.export_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "export_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "export_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/ledgers/{Name}/journal-s3-exports/{ExportId}",
-            Name = smithy_http::label::fmt_string(&self.name, false),
-            ExportId = smithy_http::label::fmt_string(&self.export_id, false)
+            Name = name,
+            ExportId = export_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -754,7 +871,7 @@ impl DescribeJournalS3ExportInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -805,9 +922,7 @@ pub mod describe_ledger_input {
             crate::input::DescribeLedgerInput,
             smithy_http::operation::BuildError,
         > {
-            Ok(crate::input::DescribeLedgerInput {
-                name: self.name.unwrap_or_default(),
-            })
+            Ok(crate::input::DescribeLedgerInput { name: self.name })
         }
     }
 }
@@ -871,13 +986,26 @@ impl DescribeLedgerInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/ledgers/{Name}",
-            Name = smithy_http::label::fmt_string(&self.name, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let name = {
+            let input = &self.name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/ledgers/{Name}", Name = name).expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -885,7 +1013,7 @@ impl DescribeLedgerInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1013,7 +1141,7 @@ pub mod export_journal_to_s3_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ExportJournalToS3Input {
-                name: self.name.unwrap_or_default(),
+                name: self.name,
                 inclusive_start_time: self.inclusive_start_time,
                 exclusive_end_time: self.exclusive_end_time,
                 s3_export_configuration: self.s3_export_configuration,
@@ -1085,13 +1213,27 @@ impl ExportJournalToS3Input {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/ledgers/{Name}/journal-s3-exports",
-            Name = smithy_http::label::fmt_string(&self.name, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let name = {
+            let input = &self.name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/ledgers/{Name}/journal-s3-exports", Name = name)
+            .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -1099,7 +1241,7 @@ impl ExportJournalToS3Input {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1180,7 +1322,7 @@ pub mod get_block_input {
         ) -> std::result::Result<crate::input::GetBlockInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::GetBlockInput {
-                name: self.name.unwrap_or_default(),
+                name: self.name,
                 block_address: self.block_address,
                 digest_tip_address: self.digest_tip_address,
             })
@@ -1245,13 +1387,26 @@ impl GetBlockInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/ledgers/{Name}/block",
-            Name = smithy_http::label::fmt_string(&self.name, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let name = {
+            let input = &self.name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/ledgers/{Name}/block", Name = name).expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -1259,7 +1414,7 @@ impl GetBlockInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1308,9 +1463,7 @@ pub mod get_digest_input {
             self,
         ) -> std::result::Result<crate::input::GetDigestInput, smithy_http::operation::BuildError>
         {
-            Ok(crate::input::GetDigestInput {
-                name: self.name.unwrap_or_default(),
-            })
+            Ok(crate::input::GetDigestInput { name: self.name })
         }
     }
 }
@@ -1369,13 +1522,26 @@ impl GetDigestInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/ledgers/{Name}/digest",
-            Name = smithy_http::label::fmt_string(&self.name, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let name = {
+            let input = &self.name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/ledgers/{Name}/digest", Name = name).expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -1383,7 +1549,7 @@ impl GetDigestInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1474,7 +1640,7 @@ pub mod get_revision_input {
         ) -> std::result::Result<crate::input::GetRevisionInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::GetRevisionInput {
-                name: self.name.unwrap_or_default(),
+                name: self.name,
                 block_address: self.block_address,
                 document_id: self.document_id,
                 digest_tip_address: self.digest_tip_address,
@@ -1542,13 +1708,26 @@ impl GetRevisionInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/ledgers/{Name}/revision",
-            Name = smithy_http::label::fmt_string(&self.name, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let name = {
+            let input = &self.name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/ledgers/{Name}/revision", Name = name).expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -1556,7 +1735,7 @@ impl GetRevisionInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1633,7 +1812,7 @@ pub mod list_journal_kinesis_streams_for_ledger_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListJournalKinesisStreamsForLedgerInput {
-                ledger_name: self.ledger_name.unwrap_or_default(),
+                ledger_name: self.ledger_name,
                 max_results: self.max_results,
                 next_token: self.next_token,
             })
@@ -1701,13 +1880,31 @@ impl ListJournalKinesisStreamsForLedgerInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let ledger_name = {
+            let input = &self.ledger_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "ledger_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "ledger_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/ledgers/{LedgerName}/journal-kinesis-streams",
-            LedgerName = smithy_http::label::fmt_string(&self.ledger_name, false)
+            LedgerName = ledger_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -1724,7 +1921,7 @@ impl ListJournalKinesisStreamsForLedgerInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -1857,8 +2054,9 @@ impl ListJournalS3ExportsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/journal-s3-exports").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/journal-s3-exports").expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -1875,7 +2073,7 @@ impl ListJournalS3ExportsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -1953,7 +2151,7 @@ pub mod list_journal_s3_exports_for_ledger_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListJournalS3ExportsForLedgerInput {
-                name: self.name.unwrap_or_default(),
+                name: self.name,
                 max_results: self.max_results,
                 next_token: self.next_token,
             })
@@ -2021,13 +2219,27 @@ impl ListJournalS3ExportsForLedgerInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/ledgers/{Name}/journal-s3-exports",
-            Name = smithy_http::label::fmt_string(&self.name, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let name = {
+            let input = &self.name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/ledgers/{Name}/journal-s3-exports", Name = name)
+            .expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -2044,7 +2256,7 @@ impl ListJournalS3ExportsForLedgerInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -2171,8 +2383,9 @@ impl ListLedgersInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/ledgers").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/ledgers").expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -2189,7 +2402,7 @@ impl ListLedgersInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -2245,7 +2458,7 @@ pub mod list_tags_for_resource_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListTagsForResourceInput {
-                resource_arn: self.resource_arn.unwrap_or_default(),
+                resource_arn: self.resource_arn,
             })
         }
     }
@@ -2310,13 +2523,27 @@ impl ListTagsForResourceInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/tags/{ResourceArn}",
-            ResourceArn = smithy_http::label::fmt_string(&self.resource_arn, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let resource_arn = {
+            let input = &self.resource_arn;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_arn",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_arn",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn)
+            .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -2324,7 +2551,7 @@ impl ListTagsForResourceInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2480,7 +2707,7 @@ pub mod stream_journal_to_kinesis_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::StreamJournalToKinesisInput {
-                ledger_name: self.ledger_name.unwrap_or_default(),
+                ledger_name: self.ledger_name,
                 role_arn: self.role_arn,
                 tags: self.tags,
                 inclusive_start_time: self.inclusive_start_time,
@@ -2554,13 +2781,31 @@ impl StreamJournalToKinesisInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let ledger_name = {
+            let input = &self.ledger_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "ledger_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "ledger_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/ledgers/{LedgerName}/journal-kinesis-streams",
-            LedgerName = smithy_http::label::fmt_string(&self.ledger_name, false)
+            LedgerName = ledger_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -2568,7 +2813,7 @@ impl StreamJournalToKinesisInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2649,7 +2894,7 @@ pub mod tag_resource_input {
         ) -> std::result::Result<crate::input::TagResourceInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::TagResourceInput {
-                resource_arn: self.resource_arn.unwrap_or_default(),
+                resource_arn: self.resource_arn,
                 tags: self.tags,
             })
         }
@@ -2715,13 +2960,27 @@ impl TagResourceInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/tags/{ResourceArn}",
-            ResourceArn = smithy_http::label::fmt_string(&self.resource_arn, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let resource_arn = {
+            let input = &self.resource_arn;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_arn",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_arn",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn)
+            .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -2729,7 +2988,7 @@ impl TagResourceInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2796,7 +3055,7 @@ pub mod untag_resource_input {
         ) -> std::result::Result<crate::input::UntagResourceInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::UntagResourceInput {
-                resource_arn: self.resource_arn.unwrap_or_default(),
+                resource_arn: self.resource_arn,
                 tag_keys: self.tag_keys,
             })
         }
@@ -2862,13 +3121,27 @@ impl UntagResourceInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/tags/{ResourceArn}",
-            ResourceArn = smithy_http::label::fmt_string(&self.resource_arn, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let resource_arn = {
+            let input = &self.resource_arn;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_arn",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_arn",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn)
+            .expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -2884,7 +3157,7 @@ impl UntagResourceInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
     }
@@ -2948,7 +3221,7 @@ pub mod update_ledger_input {
         ) -> std::result::Result<crate::input::UpdateLedgerInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::UpdateLedgerInput {
-                name: self.name.unwrap_or_default(),
+                name: self.name,
                 deletion_protection: self.deletion_protection,
             })
         }
@@ -3017,13 +3290,26 @@ impl UpdateLedgerInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/ledgers/{Name}",
-            Name = smithy_http::label::fmt_string(&self.name, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let name = {
+            let input = &self.name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/ledgers/{Name}", Name = name).expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -3031,7 +3317,7 @@ impl UpdateLedgerInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PATCH").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3125,7 +3411,7 @@ pub mod update_ledger_permissions_mode_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateLedgerPermissionsModeInput {
-                name: self.name.unwrap_or_default(),
+                name: self.name,
                 permissions_mode: self.permissions_mode,
             })
         }
@@ -3196,13 +3482,27 @@ impl UpdateLedgerPermissionsModeInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/ledgers/{Name}/permissions-mode",
-            Name = smithy_http::label::fmt_string(&self.name, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let name = {
+            let input = &self.name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/ledgers/{Name}/permissions-mode", Name = name)
+            .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -3210,7 +3510,7 @@ impl UpdateLedgerPermissionsModeInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PATCH").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3240,7 +3540,7 @@ impl UpdateLedgerPermissionsModeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateLedgerPermissionsModeInput {
     /// <p>The name of the ledger.</p>
-    pub name: std::string::String,
+    pub name: std::option::Option<std::string::String>,
     /// <p>The permissions mode to assign to the ledger. This parameter can have one of the
     /// following values:</p>
     /// <ul>
@@ -3286,7 +3586,7 @@ impl std::fmt::Debug for UpdateLedgerPermissionsModeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateLedgerInput {
     /// <p>The name of the ledger.</p>
-    pub name: std::string::String,
+    pub name: std::option::Option<std::string::String>,
     /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on
     /// ledger creation, this feature is enabled (<code>true</code>) by default.</p>
     /// <p>If deletion protection is enabled, you must first disable it before you can delete the
@@ -3309,7 +3609,7 @@ pub struct UntagResourceInput {
     /// <p>
     /// <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code>
     /// </p>
-    pub resource_arn: std::string::String,
+    pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The list of tag keys to remove.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
@@ -3329,7 +3629,7 @@ pub struct TagResourceInput {
     /// <p>
     /// <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code>
     /// </p>
-    pub resource_arn: std::string::String,
+    pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The key-value pairs to add as tags to the specified QLDB resource. Tag keys are case
     /// sensitive. If you specify a key that already exists for the resource, your request fails
     /// and returns an error. Tag values are case sensitive and can be null.</p>
@@ -3350,7 +3650,7 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StreamJournalToKinesisInput {
     /// <p>The name of the ledger.</p>
-    pub ledger_name: std::string::String,
+    pub ledger_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a
     /// journal stream to write data records to a Kinesis Data Streams resource.</p>
     pub role_arn: std::option::Option<std::string::String>,
@@ -3405,7 +3705,7 @@ pub struct ListTagsForResourceInput {
     /// <p>
     /// <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code>
     /// </p>
-    pub resource_arn: std::string::String,
+    pub resource_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3439,7 +3739,7 @@ impl std::fmt::Debug for ListLedgersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListJournalS3ExportsForLedgerInput {
     /// <p>The name of the ledger.</p>
-    pub name: std::string::String,
+    pub name: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a single
     /// <code>ListJournalS3ExportsForLedger</code> request. (The actual number of results
     /// returned might be fewer.)</p>
@@ -3485,7 +3785,7 @@ impl std::fmt::Debug for ListJournalS3ExportsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListJournalKinesisStreamsForLedgerInput {
     /// <p>The name of the ledger.</p>
-    pub ledger_name: std::string::String,
+    pub ledger_name: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a single
     /// <code>ListJournalKinesisStreamsForLedger</code> request. (The actual number of results
     /// returned might be fewer.)</p>
@@ -3510,7 +3810,7 @@ impl std::fmt::Debug for ListJournalKinesisStreamsForLedgerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRevisionInput {
     /// <p>The name of the ledger.</p>
-    pub name: std::string::String,
+    pub name: std::option::Option<std::string::String>,
     /// <p>The block location of the document revision to be verified. An address is an Amazon Ion
     /// structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
     /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.</p>
@@ -3538,7 +3838,7 @@ impl std::fmt::Debug for GetRevisionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDigestInput {
     /// <p>The name of the ledger.</p>
-    pub name: std::string::String,
+    pub name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetDigestInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3552,7 +3852,7 @@ impl std::fmt::Debug for GetDigestInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBlockInput {
     /// <p>The name of the ledger.</p>
-    pub name: std::string::String,
+    pub name: std::option::Option<std::string::String>,
     /// <p>The location of the block that you want to request. An address is an Amazon Ion
     /// structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
     /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.</p>
@@ -3577,7 +3877,7 @@ impl std::fmt::Debug for GetBlockInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportJournalToS3Input {
     /// <p>The name of the ledger.</p>
-    pub name: std::string::String,
+    pub name: std::option::Option<std::string::String>,
     /// <p>The inclusive start date and time for the range of journal contents to export.</p>
     /// <p>The <code>InclusiveStartTime</code> must be in <code>ISO 8601</code> date and time
     /// format and in Universal Coordinated Time (UTC). For example:
@@ -3626,7 +3926,7 @@ impl std::fmt::Debug for ExportJournalToS3Input {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLedgerInput {
     /// <p>The name of the ledger that you want to describe.</p>
-    pub name: std::string::String,
+    pub name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeLedgerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3640,10 +3940,10 @@ impl std::fmt::Debug for DescribeLedgerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeJournalS3ExportInput {
     /// <p>The name of the ledger.</p>
-    pub name: std::string::String,
+    pub name: std::option::Option<std::string::String>,
     /// <p>The UUID (represented in Base62-encoded text) of the journal export job to
     /// describe.</p>
-    pub export_id: std::string::String,
+    pub export_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeJournalS3ExportInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3658,10 +3958,10 @@ impl std::fmt::Debug for DescribeJournalS3ExportInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeJournalKinesisStreamInput {
     /// <p>The name of the ledger.</p>
-    pub ledger_name: std::string::String,
+    pub ledger_name: std::option::Option<std::string::String>,
     /// <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream to
     /// describe.</p>
-    pub stream_id: std::string::String,
+    pub stream_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeJournalKinesisStreamInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3676,7 +3976,7 @@ impl std::fmt::Debug for DescribeJournalKinesisStreamInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLedgerInput {
     /// <p>The name of the ledger that you want to delete.</p>
-    pub name: std::string::String,
+    pub name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteLedgerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3751,10 +4051,10 @@ impl std::fmt::Debug for CreateLedgerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelJournalKinesisStreamInput {
     /// <p>The name of the ledger.</p>
-    pub ledger_name: std::string::String,
+    pub ledger_name: std::option::Option<std::string::String>,
     /// <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream to be
     /// canceled.</p>
-    pub stream_id: std::string::String,
+    pub stream_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CancelJournalKinesisStreamInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

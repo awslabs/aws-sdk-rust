@@ -74,7 +74,7 @@ impl<'a> JsonTokenIterator<'a> {
     /// Expects there to be another byte coming up, and previews it.
     /// If there isn't, an `UnexpectedEOS` error is returned.
     fn peek_expect(&self) -> Result<u8, Error> {
-        self.peek_byte().ok_or_else(|| self.error(UnexpectedEOS))
+        self.peek_byte().ok_or_else(|| self.error(UnexpectedEos))
     }
 
     /// Advances to the next byte in the stream.
@@ -94,7 +94,7 @@ impl<'a> JsonTokenIterator<'a> {
     /// Expects there to be another byte coming up, and returns it while advancing.
     /// If there isn't, an `UnexpectedEOS` error is returned.
     fn next_expect(&mut self) -> Result<u8, Error> {
-        self.next_byte().ok_or_else(|| self.error(UnexpectedEOS))
+        self.next_byte().ok_or_else(|| self.error(UnexpectedEos))
     }
 
     /// Creates an error at the given `offset` in the stream.
@@ -195,7 +195,7 @@ impl<'a> JsonTokenIterator<'a> {
                     b'\\' | b'/' | b'"' | b'b' | b'f' | b'n' | b'r' | b't' => self.advance(),
                     b'u' => {
                         if self.index + 4 > self.input.len() {
-                            return Err(self.error_at(self.input.len(), UnexpectedEOS));
+                            return Err(self.error_at(self.input.len(), UnexpectedEos));
                         }
                         self.index += 4;
                     }
@@ -211,7 +211,7 @@ impl<'a> JsonTokenIterator<'a> {
     fn expect_literal(&mut self, expected: &[u8]) -> Result<(), Error> {
         let (start, end) = (self.index, self.index + expected.len());
         if end > self.input.len() {
-            return Err(self.error_at(self.input.len(), UnexpectedEOS));
+            return Err(self.error_at(self.input.len(), UnexpectedEos));
         }
         if expected != &self.input[start..end] {
             return Err(self.error_at(
@@ -681,7 +681,7 @@ mod tests {
         assert_eq!(start_array(1), iter.next());
         assert_eq!(value_null(2), iter.next());
         assert_eq!(
-            Some(Err(Error::new(ErrorReason::UnexpectedEOS, Some(7)))),
+            Some(Err(Error::new(ErrorReason::UnexpectedEos, Some(7)))),
             iter.next()
         );
     }
@@ -757,7 +757,7 @@ mod tests {
         assert_eq!(start_object(1), iter.next());
         assert_eq!(object_key(2, "test"), iter.next());
         assert_eq!(
-            Some(Err(Error::new(ErrorReason::UnexpectedEOS, Some(9),))),
+            Some(Err(Error::new(ErrorReason::UnexpectedEos, Some(9),))),
             iter.next()
         );
         assert_eq!(None, iter.next());

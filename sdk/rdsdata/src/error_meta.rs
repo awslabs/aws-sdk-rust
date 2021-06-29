@@ -2,23 +2,23 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    BadRequestError(crate::error::BadRequestError),
-    ForbiddenError(crate::error::ForbiddenError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    NotFoundError(crate::error::NotFoundError),
+    BadRequestException(crate::error::BadRequestException),
+    ForbiddenException(crate::error::ForbiddenException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
     ServiceUnavailableError(crate::error::ServiceUnavailableError),
-    StatementTimeoutError(crate::error::StatementTimeoutError),
+    StatementTimeoutException(crate::error::StatementTimeoutException),
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
-            Error::BadRequestError(inner) => inner.fmt(f),
-            Error::ForbiddenError(inner) => inner.fmt(f),
-            Error::InternalServerErrorError(inner) => inner.fmt(f),
-            Error::NotFoundError(inner) => inner.fmt(f),
+            Error::BadRequestException(inner) => inner.fmt(f),
+            Error::ForbiddenException(inner) => inner.fmt(f),
+            Error::InternalServerErrorException(inner) => inner.fmt(f),
+            Error::NotFoundException(inner) => inner.fmt(f),
             Error::ServiceUnavailableError(inner) => inner.fmt(f),
-            Error::StatementTimeoutError(inner) => inner.fmt(f),
+            Error::StatementTimeoutException(inner) => inner.fmt(f),
             Error::Unhandled(inner) => inner.fmt(f),
         }
     }
@@ -27,20 +27,20 @@ impl From<smithy_http::result::SdkError<crate::error::BatchExecuteStatementError
     fn from(err: smithy_http::result::SdkError<crate::error::BatchExecuteStatementError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::BatchExecuteStatementErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::BatchExecuteStatementErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::BatchExecuteStatementErrorKind::ForbiddenError(inner) => {
-                    Error::ForbiddenError(inner)
+                crate::error::BatchExecuteStatementErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
                 }
-                crate::error::BatchExecuteStatementErrorKind::InternalServerErrorError(inner) => {
-                    Error::InternalServerErrorError(inner)
-                }
+                crate::error::BatchExecuteStatementErrorKind::InternalServerErrorException(
+                    inner,
+                ) => Error::InternalServerErrorException(inner),
                 crate::error::BatchExecuteStatementErrorKind::ServiceUnavailableError(inner) => {
                     Error::ServiceUnavailableError(inner)
                 }
-                crate::error::BatchExecuteStatementErrorKind::StatementTimeoutError(inner) => {
-                    Error::StatementTimeoutError(inner)
+                crate::error::BatchExecuteStatementErrorKind::StatementTimeoutException(inner) => {
+                    Error::StatementTimeoutException(inner)
                 }
                 crate::error::BatchExecuteStatementErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -54,20 +54,20 @@ impl From<smithy_http::result::SdkError<crate::error::BeginTransactionError>> fo
     fn from(err: smithy_http::result::SdkError<crate::error::BeginTransactionError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::BeginTransactionErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::BeginTransactionErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::BeginTransactionErrorKind::ForbiddenError(inner) => {
-                    Error::ForbiddenError(inner)
+                crate::error::BeginTransactionErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
                 }
-                crate::error::BeginTransactionErrorKind::InternalServerErrorError(inner) => {
-                    Error::InternalServerErrorError(inner)
+                crate::error::BeginTransactionErrorKind::InternalServerErrorException(inner) => {
+                    Error::InternalServerErrorException(inner)
                 }
                 crate::error::BeginTransactionErrorKind::ServiceUnavailableError(inner) => {
                     Error::ServiceUnavailableError(inner)
                 }
-                crate::error::BeginTransactionErrorKind::StatementTimeoutError(inner) => {
-                    Error::StatementTimeoutError(inner)
+                crate::error::BeginTransactionErrorKind::StatementTimeoutException(inner) => {
+                    Error::StatementTimeoutException(inner)
                 }
                 crate::error::BeginTransactionErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -81,23 +81,23 @@ impl From<smithy_http::result::SdkError<crate::error::CommitTransactionError>> f
     fn from(err: smithy_http::result::SdkError<crate::error::CommitTransactionError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CommitTransactionErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::CommitTransactionErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::CommitTransactionErrorKind::ForbiddenError(inner) => {
-                    Error::ForbiddenError(inner)
+                crate::error::CommitTransactionErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
                 }
-                crate::error::CommitTransactionErrorKind::InternalServerErrorError(inner) => {
-                    Error::InternalServerErrorError(inner)
+                crate::error::CommitTransactionErrorKind::InternalServerErrorException(inner) => {
+                    Error::InternalServerErrorException(inner)
                 }
-                crate::error::CommitTransactionErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::CommitTransactionErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
                 crate::error::CommitTransactionErrorKind::ServiceUnavailableError(inner) => {
                     Error::ServiceUnavailableError(inner)
                 }
-                crate::error::CommitTransactionErrorKind::StatementTimeoutError(inner) => {
-                    Error::StatementTimeoutError(inner)
+                crate::error::CommitTransactionErrorKind::StatementTimeoutException(inner) => {
+                    Error::StatementTimeoutException(inner)
                 }
                 crate::error::CommitTransactionErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -111,14 +111,14 @@ impl From<smithy_http::result::SdkError<crate::error::ExecuteSqlError>> for Erro
     fn from(err: smithy_http::result::SdkError<crate::error::ExecuteSqlError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ExecuteSqlErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::ExecuteSqlErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::ExecuteSqlErrorKind::ForbiddenError(inner) => {
-                    Error::ForbiddenError(inner)
+                crate::error::ExecuteSqlErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
                 }
-                crate::error::ExecuteSqlErrorKind::InternalServerErrorError(inner) => {
-                    Error::InternalServerErrorError(inner)
+                crate::error::ExecuteSqlErrorKind::InternalServerErrorException(inner) => {
+                    Error::InternalServerErrorException(inner)
                 }
                 crate::error::ExecuteSqlErrorKind::ServiceUnavailableError(inner) => {
                     Error::ServiceUnavailableError(inner)
@@ -133,20 +133,20 @@ impl From<smithy_http::result::SdkError<crate::error::ExecuteStatementError>> fo
     fn from(err: smithy_http::result::SdkError<crate::error::ExecuteStatementError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ExecuteStatementErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::ExecuteStatementErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::ExecuteStatementErrorKind::ForbiddenError(inner) => {
-                    Error::ForbiddenError(inner)
+                crate::error::ExecuteStatementErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
                 }
-                crate::error::ExecuteStatementErrorKind::InternalServerErrorError(inner) => {
-                    Error::InternalServerErrorError(inner)
+                crate::error::ExecuteStatementErrorKind::InternalServerErrorException(inner) => {
+                    Error::InternalServerErrorException(inner)
                 }
                 crate::error::ExecuteStatementErrorKind::ServiceUnavailableError(inner) => {
                     Error::ServiceUnavailableError(inner)
                 }
-                crate::error::ExecuteStatementErrorKind::StatementTimeoutError(inner) => {
-                    Error::StatementTimeoutError(inner)
+                crate::error::ExecuteStatementErrorKind::StatementTimeoutException(inner) => {
+                    Error::StatementTimeoutException(inner)
                 }
                 crate::error::ExecuteStatementErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -160,23 +160,23 @@ impl From<smithy_http::result::SdkError<crate::error::RollbackTransactionError>>
     fn from(err: smithy_http::result::SdkError<crate::error::RollbackTransactionError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::RollbackTransactionErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::RollbackTransactionErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::RollbackTransactionErrorKind::ForbiddenError(inner) => {
-                    Error::ForbiddenError(inner)
+                crate::error::RollbackTransactionErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
                 }
-                crate::error::RollbackTransactionErrorKind::InternalServerErrorError(inner) => {
-                    Error::InternalServerErrorError(inner)
+                crate::error::RollbackTransactionErrorKind::InternalServerErrorException(inner) => {
+                    Error::InternalServerErrorException(inner)
                 }
-                crate::error::RollbackTransactionErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::RollbackTransactionErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
                 crate::error::RollbackTransactionErrorKind::ServiceUnavailableError(inner) => {
                     Error::ServiceUnavailableError(inner)
                 }
-                crate::error::RollbackTransactionErrorKind::StatementTimeoutError(inner) => {
-                    Error::StatementTimeoutError(inner)
+                crate::error::RollbackTransactionErrorKind::StatementTimeoutException(inner) => {
+                    Error::StatementTimeoutException(inner)
                 }
                 crate::error::RollbackTransactionErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)

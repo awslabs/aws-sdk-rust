@@ -5986,7 +5986,7 @@ impl GetBucketEncryptionOutput {
 pub struct GetBucketCorsOutput {
     /// <p>A set of origins and methods (cross-origin access that you want to allow). You can add
     /// up to 100 rules to the configuration.</p>
-    pub cors_rules: std::option::Option<std::vec::Vec<crate::model::CORSRule>>,
+    pub cors_rules: std::option::Option<std::vec::Vec<crate::model::CorsRule>>,
 }
 impl std::fmt::Debug for GetBucketCorsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6001,10 +6001,10 @@ pub mod get_bucket_cors_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) cors_rules: std::option::Option<std::vec::Vec<crate::model::CORSRule>>,
+        pub(crate) cors_rules: std::option::Option<std::vec::Vec<crate::model::CorsRule>>,
     }
     impl Builder {
-        pub fn cors_rules(mut self, input: impl Into<crate::model::CORSRule>) -> Self {
+        pub fn cors_rules(mut self, input: impl Into<crate::model::CorsRule>) -> Self {
             let mut v = self.cors_rules.unwrap_or_default();
             v.push(input.into());
             self.cors_rules = Some(v);
@@ -6012,7 +6012,7 @@ pub mod get_bucket_cors_output {
         }
         pub fn set_cors_rules(
             mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CORSRule>>,
+            input: std::option::Option<std::vec::Vec<crate::model::CorsRule>>,
         ) -> Self {
             self.cors_rules = input;
             self

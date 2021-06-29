@@ -101,8 +101,9 @@ impl BatchGetRecordInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/BatchGetRecord").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/BatchGetRecord").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -110,7 +111,7 @@ impl BatchGetRecordInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -191,7 +192,7 @@ pub mod delete_record_input {
         ) -> std::result::Result<crate::input::DeleteRecordInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::DeleteRecordInput {
-                feature_group_name: self.feature_group_name.unwrap_or_default(),
+                feature_group_name: self.feature_group_name,
                 record_identifier_value_as_string: self.record_identifier_value_as_string,
                 event_time: self.event_time,
             })
@@ -258,13 +259,31 @@ impl DeleteRecordInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let feature_group_name = {
+            let input = &self.feature_group_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "feature_group_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "feature_group_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/FeatureGroup/{FeatureGroupName}",
-            FeatureGroupName = smithy_http::label::fmt_string(&self.feature_group_name, false)
+            FeatureGroupName = feature_group_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -284,7 +303,7 @@ impl DeleteRecordInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
     }
@@ -369,7 +388,7 @@ pub mod get_record_input {
         ) -> std::result::Result<crate::input::GetRecordInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::GetRecordInput {
-                feature_group_name: self.feature_group_name.unwrap_or_default(),
+                feature_group_name: self.feature_group_name,
                 record_identifier_value_as_string: self.record_identifier_value_as_string,
                 feature_names: self.feature_names,
             })
@@ -434,13 +453,31 @@ impl GetRecordInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let feature_group_name = {
+            let input = &self.feature_group_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "feature_group_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "feature_group_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/FeatureGroup/{FeatureGroupName}",
-            FeatureGroupName = smithy_http::label::fmt_string(&self.feature_group_name, false)
+            FeatureGroupName = feature_group_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -462,7 +499,7 @@ impl GetRecordInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -530,7 +567,7 @@ pub mod put_record_input {
         ) -> std::result::Result<crate::input::PutRecordInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::PutRecordInput {
-                feature_group_name: self.feature_group_name.unwrap_or_default(),
+                feature_group_name: self.feature_group_name,
                 record: self.record,
             })
         }
@@ -597,13 +634,31 @@ impl PutRecordInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let feature_group_name = {
+            let input = &self.feature_group_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "feature_group_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "feature_group_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/FeatureGroup/{FeatureGroupName}",
-            FeatureGroupName = smithy_http::label::fmt_string(&self.feature_group_name, false)
+            FeatureGroupName = feature_group_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -611,7 +666,7 @@ impl PutRecordInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PUT").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -641,7 +696,7 @@ impl PutRecordInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutRecordInput {
     /// <p>The name of the feature group that you want to insert the record into.</p>
-    pub feature_group_name: std::string::String,
+    pub feature_group_name: std::option::Option<std::string::String>,
     /// <p>List of FeatureValues to be inserted. This will be a full over-write. If you only want
     /// to update few of the feature values, do the following:</p>
     /// <ul>
@@ -670,7 +725,7 @@ impl std::fmt::Debug for PutRecordInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRecordInput {
     /// <p>The name of the feature group in which you want to put the records.</p>
-    pub feature_group_name: std::string::String,
+    pub feature_group_name: std::option::Option<std::string::String>,
     /// <p>The value that corresponds to <code>RecordIdentifier</code> type and uniquely identifies
     /// the record in the <code>FeatureGroup</code>. </p>
     pub record_identifier_value_as_string: std::option::Option<std::string::String>,
@@ -695,7 +750,7 @@ impl std::fmt::Debug for GetRecordInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRecordInput {
     /// <p>The name of the feature group to delete the record from. </p>
-    pub feature_group_name: std::string::String,
+    pub feature_group_name: std::option::Option<std::string::String>,
     /// <p>The value for the <code>RecordIdentifier</code> that uniquely identifies the record, in
     /// string format. </p>
     pub record_identifier_value_as_string: std::option::Option<std::string::String>,

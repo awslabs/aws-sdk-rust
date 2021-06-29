@@ -2,16 +2,12 @@
 /// <p>Represents the settings used to enable or disable Time to Live (TTL) for the specified
 /// table.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TimeToLiveSpecification {
     /// <p>Indicates whether TTL is to be enabled (true) or disabled (false) on the table.</p>
-    #[serde(rename = "Enabled")]
-    #[serde(default)]
     pub enabled: std::option::Option<bool>,
     /// <p>The name of the TTL attribute used to store the expiration time for items in the
     /// table.</p>
-    #[serde(rename = "AttributeName")]
-    #[serde(default)]
     pub attribute_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TimeToLiveSpecification {
@@ -72,11 +68,9 @@ impl TimeToLiveSpecification {
 
 /// <p>Represents the auto scaling configuration for a global table.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TableAutoScalingDescription {
     /// <p>The name of the table.</p>
-    #[serde(rename = "TableName")]
-    #[serde(default)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>The current state of the table:</p>
     /// <ul>
@@ -97,12 +91,8 @@ pub struct TableAutoScalingDescription {
     /// <code>ACTIVE</code> - The table is ready for use.</p>
     /// </li>
     /// </ul>
-    #[serde(rename = "TableStatus")]
-    #[serde(default)]
     pub table_status: std::option::Option<crate::model::TableStatus>,
     /// <p>Represents replicas of the global table.</p>
-    #[serde(rename = "Replicas")]
-    #[serde(default)]
     pub replicas: std::option::Option<std::vec::Vec<crate::model::ReplicaAutoScalingDescription>>,
 }
 impl std::fmt::Debug for TableAutoScalingDescription {
@@ -200,28 +190,20 @@ impl TableAutoScalingDescription {
 
 /// <p>Represents the auto scaling settings of the replica.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicaAutoScalingDescription {
     /// <p>The Region where the replica exists.</p>
-    #[serde(rename = "RegionName")]
-    #[serde(default)]
     pub region_name: std::option::Option<std::string::String>,
     /// <p>Replica-specific global secondary index auto scaling settings.</p>
-    #[serde(rename = "GlobalSecondaryIndexes")]
-    #[serde(default)]
     pub global_secondary_indexes: std::option::Option<
         std::vec::Vec<crate::model::ReplicaGlobalSecondaryIndexAutoScalingDescription>,
     >,
     /// <p>Represents the auto scaling settings for a global table or global secondary
     /// index.</p>
-    #[serde(rename = "ReplicaProvisionedReadCapacityAutoScalingSettings")]
-    #[serde(default)]
     pub replica_provisioned_read_capacity_auto_scaling_settings:
         std::option::Option<crate::model::AutoScalingSettingsDescription>,
     /// <p>Represents the auto scaling settings for a global table or global secondary
     /// index.</p>
-    #[serde(rename = "ReplicaProvisionedWriteCapacityAutoScalingSettings")]
-    #[serde(default)]
     pub replica_provisioned_write_capacity_auto_scaling_settings:
         std::option::Option<crate::model::AutoScalingSettingsDescription>,
     /// <p>The current state of the replica:</p>
@@ -243,8 +225,6 @@ pub struct ReplicaAutoScalingDescription {
     /// <code>ACTIVE</code> - The replica is ready for use.</p>
     /// </li>
     /// </ul>
-    #[serde(rename = "ReplicaStatus")]
-    #[serde(default)]
     pub replica_status: std::option::Option<crate::model::ReplicaStatus>,
 }
 impl std::fmt::Debug for ReplicaAutoScalingDescription {
@@ -431,7 +411,7 @@ impl std::convert::From<&str> for ReplicaStatus {
 impl std::str::FromStr for ReplicaStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ReplicaStatus::from(s))
     }
 }
@@ -456,40 +436,21 @@ impl AsRef<str> for ReplicaStatus {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for ReplicaStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>Represents the auto scaling settings for a global table or global secondary
 /// index.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoScalingSettingsDescription {
     /// <p>The minimum capacity units that a global table or global secondary index should be scaled down to.</p>
-    #[serde(rename = "MinimumUnits")]
-    #[serde(default)]
     pub minimum_units: std::option::Option<i64>,
     /// <p>The maximum capacity units that a global table or global secondary index should be scaled up to.</p>
-    #[serde(rename = "MaximumUnits")]
-    #[serde(default)]
     pub maximum_units: std::option::Option<i64>,
     /// <p>Disabled auto scaling for this global table or global secondary index.</p>
-    #[serde(rename = "AutoScalingDisabled")]
-    #[serde(default)]
     pub auto_scaling_disabled: std::option::Option<bool>,
     /// <p>Role ARN used for configuring the auto scaling policy.</p>
-    #[serde(rename = "AutoScalingRoleArn")]
-    #[serde(default)]
     pub auto_scaling_role_arn: std::option::Option<std::string::String>,
     /// <p>Information about the scaling policies.</p>
-    #[serde(rename = "ScalingPolicies")]
-    #[serde(default)]
     pub scaling_policies:
         std::option::Option<std::vec::Vec<crate::model::AutoScalingPolicyDescription>>,
 }
@@ -594,15 +555,11 @@ impl AutoScalingSettingsDescription {
 
 /// <p>Represents the properties of the scaling policy.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoScalingPolicyDescription {
     /// <p>The name of the scaling policy.</p>
-    #[serde(rename = "PolicyName")]
-    #[serde(default)]
     pub policy_name: std::option::Option<std::string::String>,
     /// <p>Represents a target tracking scaling policy configuration.</p>
-    #[serde(rename = "TargetTrackingScalingPolicyConfiguration")]
-    #[serde(default)]
     pub target_tracking_scaling_policy_configuration: std::option::Option<
         crate::model::AutoScalingTargetTrackingScalingPolicyConfigurationDescription,
     >,
@@ -675,14 +632,12 @@ impl AutoScalingPolicyDescription {
 
 /// <p>Represents the properties of a target tracking scaling policy.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoScalingTargetTrackingScalingPolicyConfigurationDescription {
     /// <p>Indicates whether scale in by the target tracking policy is disabled. If the value is true,
     /// scale in is disabled and the target tracking policy won't remove capacity from the scalable resource.
     /// Otherwise, scale in is enabled and the target tracking policy can remove capacity from the scalable resource.
     /// The default value is false.</p>
-    #[serde(rename = "DisableScaleIn")]
-    #[serde(default)]
     pub disable_scale_in: std::option::Option<bool>,
     /// <p>The amount of time, in seconds, after a scale in activity completes before another scale
     /// in activity can start. The cooldown period is used to block subsequent scale in requests
@@ -690,20 +645,14 @@ pub struct AutoScalingTargetTrackingScalingPolicyConfigurationDescription {
     /// availability. However, if another alarm triggers a scale out policy during the cooldown
     /// period after a scale-in, application auto scaling scales out your scalable target
     /// immediately. </p>
-    #[serde(rename = "ScaleInCooldown")]
-    #[serde(default)]
     pub scale_in_cooldown: std::option::Option<i32>,
     /// <p>The amount of time, in seconds, after a scale out activity completes before another scale out
     /// activity can start. While the cooldown period is in effect, the capacity that has been added
     /// by the previous scale out event that initiated the cooldown is calculated as part of the
     /// desired capacity for the next scale out. You should continuously (but not excessively)
     /// scale out.</p>
-    #[serde(rename = "ScaleOutCooldown")]
-    #[serde(default)]
     pub scale_out_cooldown: std::option::Option<i32>,
     /// <p>The target value for the metric. The range is 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2).</p>
-    #[serde(rename = "TargetValue")]
-    #[serde(default)]
     pub target_value: std::option::Option<f64>,
 }
 impl std::fmt::Debug for AutoScalingTargetTrackingScalingPolicyConfigurationDescription {
@@ -801,11 +750,9 @@ impl AutoScalingTargetTrackingScalingPolicyConfigurationDescription {
 
 /// <p>Represents the auto scaling configuration for a replica global secondary index.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicaGlobalSecondaryIndexAutoScalingDescription {
     /// <p>The name of the global secondary index.</p>
-    #[serde(rename = "IndexName")]
-    #[serde(default)]
     pub index_name: std::option::Option<std::string::String>,
     /// <p>The current state of the replica global secondary index:</p>
     /// <ul>
@@ -826,19 +773,13 @@ pub struct ReplicaGlobalSecondaryIndexAutoScalingDescription {
     /// <code>ACTIVE</code> - The index is ready for use.</p>
     /// </li>
     /// </ul>
-    #[serde(rename = "IndexStatus")]
-    #[serde(default)]
     pub index_status: std::option::Option<crate::model::IndexStatus>,
     /// <p>Represents the auto scaling settings for a global table or global secondary
     /// index.</p>
-    #[serde(rename = "ProvisionedReadCapacityAutoScalingSettings")]
-    #[serde(default)]
     pub provisioned_read_capacity_auto_scaling_settings:
         std::option::Option<crate::model::AutoScalingSettingsDescription>,
     /// <p>Represents the auto scaling settings for a global table or global secondary
     /// index.</p>
-    #[serde(rename = "ProvisionedWriteCapacityAutoScalingSettings")]
-    #[serde(default)]
     pub provisioned_write_capacity_auto_scaling_settings:
         std::option::Option<crate::model::AutoScalingSettingsDescription>,
 }
@@ -996,7 +937,7 @@ impl std::convert::From<&str> for IndexStatus {
 impl std::str::FromStr for IndexStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(IndexStatus::from(s))
     }
 }
@@ -1014,15 +955,6 @@ impl IndexStatus {
 impl AsRef<str> for IndexStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for IndexStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -1064,7 +996,7 @@ impl std::convert::From<&str> for TableStatus {
 impl std::str::FromStr for TableStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(TableStatus::from(s))
     }
 }
@@ -1087,35 +1019,20 @@ impl AsRef<str> for TableStatus {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for TableStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>Represents the auto scaling settings of a replica that will be modified.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicaAutoScalingUpdate {
     /// <p>The Region where the replica exists.</p>
-    #[serde(rename = "RegionName")]
-    #[serde(default)]
     pub region_name: std::option::Option<std::string::String>,
     /// <p>Represents the auto scaling settings of global secondary indexes that will
     /// be modified.</p>
-    #[serde(rename = "ReplicaGlobalSecondaryIndexUpdates")]
-    #[serde(default)]
     pub replica_global_secondary_index_updates: std::option::Option<
         std::vec::Vec<crate::model::ReplicaGlobalSecondaryIndexAutoScalingUpdate>,
     >,
     /// <p>Represents the auto scaling settings to be modified for a global table or global
     /// secondary index.</p>
-    #[serde(rename = "ReplicaProvisionedReadCapacityAutoScalingUpdate")]
-    #[serde(default)]
     pub replica_provisioned_read_capacity_auto_scaling_update:
         std::option::Option<crate::model::AutoScalingSettingsUpdate>,
 }
@@ -1214,27 +1131,17 @@ impl ReplicaAutoScalingUpdate {
 /// <p>Represents the auto scaling settings to be modified for a global table or global
 /// secondary index.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoScalingSettingsUpdate {
     /// <p>The minimum capacity units that a global table or global secondary index should be scaled down to.</p>
-    #[serde(rename = "MinimumUnits")]
-    #[serde(default)]
     pub minimum_units: std::option::Option<i64>,
     /// <p>The maximum capacity units that a global table or global secondary index should be scaled up to.</p>
-    #[serde(rename = "MaximumUnits")]
-    #[serde(default)]
     pub maximum_units: std::option::Option<i64>,
     /// <p>Disabled auto scaling for this global table or global secondary index.</p>
-    #[serde(rename = "AutoScalingDisabled")]
-    #[serde(default)]
     pub auto_scaling_disabled: std::option::Option<bool>,
     /// <p>Role ARN used for configuring auto scaling policy.</p>
-    #[serde(rename = "AutoScalingRoleArn")]
-    #[serde(default)]
     pub auto_scaling_role_arn: std::option::Option<std::string::String>,
     /// <p>The scaling policy to apply for scaling target global table or global secondary index capacity units.</p>
-    #[serde(rename = "ScalingPolicyUpdate")]
-    #[serde(default)]
     pub scaling_policy_update: std::option::Option<crate::model::AutoScalingPolicyUpdate>,
 }
 impl std::fmt::Debug for AutoScalingSettingsUpdate {
@@ -1337,15 +1244,11 @@ impl AutoScalingSettingsUpdate {
 
 /// <p>Represents the auto scaling policy to be modified.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoScalingPolicyUpdate {
     /// <p>The name of the scaling policy.</p>
-    #[serde(rename = "PolicyName")]
-    #[serde(default)]
     pub policy_name: std::option::Option<std::string::String>,
     /// <p>Represents a target tracking scaling policy configuration.</p>
-    #[serde(rename = "TargetTrackingScalingPolicyConfiguration")]
-    #[serde(default)]
     pub target_tracking_scaling_policy_configuration: std::option::Option<
         crate::model::AutoScalingTargetTrackingScalingPolicyConfigurationUpdate,
     >,
@@ -1418,14 +1321,12 @@ impl AutoScalingPolicyUpdate {
 
 /// <p>Represents the settings of a target tracking scaling policy that will be modified.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoScalingTargetTrackingScalingPolicyConfigurationUpdate {
     /// <p>Indicates whether scale in by the target tracking policy is disabled. If the value is true,
     /// scale in is disabled and the target tracking policy won't remove capacity from the scalable resource.
     /// Otherwise, scale in is enabled and the target tracking policy can remove capacity from the scalable resource.
     /// The default value is false.</p>
-    #[serde(rename = "DisableScaleIn")]
-    #[serde(default)]
     pub disable_scale_in: std::option::Option<bool>,
     /// <p>The amount of time, in seconds, after a scale in activity completes before another scale
     /// in activity can start. The cooldown period is used to block subsequent scale in requests
@@ -1433,20 +1334,14 @@ pub struct AutoScalingTargetTrackingScalingPolicyConfigurationUpdate {
     /// availability. However, if another alarm triggers a scale out policy during the cooldown
     /// period after a scale-in, application auto scaling scales out your scalable target
     /// immediately. </p>
-    #[serde(rename = "ScaleInCooldown")]
-    #[serde(default)]
     pub scale_in_cooldown: std::option::Option<i32>,
     /// <p>The amount of time, in seconds, after a scale out activity completes before another scale out
     /// activity can start. While the cooldown period is in effect, the capacity that has been added
     /// by the previous scale out event that initiated the cooldown is calculated as part of the
     /// desired capacity for the next scale out. You should continuously (but not excessively)
     /// scale out.</p>
-    #[serde(rename = "ScaleOutCooldown")]
-    #[serde(default)]
     pub scale_out_cooldown: std::option::Option<i32>,
     /// <p>The target value for the metric. The range is 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2).</p>
-    #[serde(rename = "TargetValue")]
-    #[serde(default)]
     pub target_value: std::option::Option<f64>,
 }
 impl std::fmt::Debug for AutoScalingTargetTrackingScalingPolicyConfigurationUpdate {
@@ -1545,16 +1440,12 @@ impl AutoScalingTargetTrackingScalingPolicyConfigurationUpdate {
 /// <p>Represents the auto scaling settings of a global secondary index for a replica
 /// that will be modified.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicaGlobalSecondaryIndexAutoScalingUpdate {
     /// <p>The name of the global secondary index.</p>
-    #[serde(rename = "IndexName")]
-    #[serde(default)]
     pub index_name: std::option::Option<std::string::String>,
     /// <p>Represents the auto scaling settings to be modified for a global table or global
     /// secondary index.</p>
-    #[serde(rename = "ProvisionedReadCapacityAutoScalingUpdate")]
-    #[serde(default)]
     pub provisioned_read_capacity_auto_scaling_update:
         std::option::Option<crate::model::AutoScalingSettingsUpdate>,
 }
@@ -1625,16 +1516,12 @@ impl ReplicaGlobalSecondaryIndexAutoScalingUpdate {
 /// <p>Represents the auto scaling settings of a global secondary index for a global table
 /// that will be modified.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GlobalSecondaryIndexAutoScalingUpdate {
     /// <p>The name of the global secondary index.</p>
-    #[serde(rename = "IndexName")]
-    #[serde(default)]
     pub index_name: std::option::Option<std::string::String>,
     /// <p>Represents the auto scaling settings to be modified for a global table or global
     /// secondary index.</p>
-    #[serde(rename = "ProvisionedWriteCapacityAutoScalingUpdate")]
-    #[serde(default)]
     pub provisioned_write_capacity_auto_scaling_update:
         std::option::Option<crate::model::AutoScalingSettingsUpdate>,
 }
@@ -1704,7 +1591,7 @@ impl GlobalSecondaryIndexAutoScalingUpdate {
 
 /// <p>Represents the properties of a table.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TableDescription {
     /// <p>An array of <code>AttributeDefinition</code> objects. Each of these objects describes one attribute
     /// in the table and index key schema.</p>
@@ -1719,13 +1606,9 @@ pub struct TableDescription {
     /// <code>AttributeType</code> - The data type for the attribute.</p>
     /// </li>
     /// </ul>
-    #[serde(rename = "AttributeDefinitions")]
-    #[serde(default)]
     pub attribute_definitions:
         std::option::Option<std::vec::Vec<crate::model::AttributeDefinition>>,
     /// <p>The name of the table.</p>
-    #[serde(rename = "TableName")]
-    #[serde(default)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>The primary key structure for the table. Each <code>KeySchemaElement</code> consists of:</p>
     /// <ul>
@@ -1758,8 +1641,6 @@ pub struct TableDescription {
     /// </ul>
     /// <p>For more information about primary keys, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary Key</a> in the
     /// <i>Amazon DynamoDB Developer Guide</i>.</p>
-    #[serde(rename = "KeySchema")]
-    #[serde(default)]
     pub key_schema: std::option::Option<std::vec::Vec<crate::model::KeySchemaElement>>,
     /// <p>The current state of the table:</p>
     /// <ul>
@@ -1801,39 +1682,20 @@ pub struct TableDescription {
     /// </p>
     /// </li>
     /// </ul>
-    #[serde(rename = "TableStatus")]
-    #[serde(default)]
     pub table_status: std::option::Option<crate::model::TableStatus>,
     /// <p>The date and time when the table was created, in <a href="http://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    #[serde(rename = "CreationDateTime")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub creation_date_time: std::option::Option<smithy_types::Instant>,
     /// <p>The provisioned throughput settings for the table, consisting of read and write capacity units, along with data about increases and decreases.</p>
-    #[serde(rename = "ProvisionedThroughput")]
-    #[serde(default)]
     pub provisioned_throughput: std::option::Option<crate::model::ProvisionedThroughputDescription>,
     /// <p>The total size of the specified table, in bytes. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
-    #[serde(rename = "TableSizeBytes")]
-    #[serde(default)]
     pub table_size_bytes: i64,
     /// <p>The number of items in the specified table. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
-    #[serde(rename = "ItemCount")]
-    #[serde(default)]
     pub item_count: i64,
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the table.</p>
-    #[serde(rename = "TableArn")]
-    #[serde(default)]
     pub table_arn: std::option::Option<std::string::String>,
     /// <p>Unique identifier for the table for which the backup was created. </p>
-    #[serde(rename = "TableId")]
-    #[serde(default)]
     pub table_id: std::option::Option<std::string::String>,
     /// <p>Contains the details for the read/write capacity mode.</p>
-    #[serde(rename = "BillingModeSummary")]
-    #[serde(default)]
     pub billing_mode_summary: std::option::Option<crate::model::BillingModeSummary>,
     /// <p>Represents one or more local secondary indexes on the table. Each index is scoped to a given partition key value. Tables with one or more local secondary indexes are subject to an item collection size limit, where the amount of data within a given item collection cannot exceed 10 GB. Each element is composed of:</p>
     /// <ul>
@@ -1899,8 +1761,6 @@ pub struct TableDescription {
     /// </ul>
     /// <p>If the table is in the <code>DELETING</code> state, no information about indexes will be
     /// returned.</p>
-    #[serde(rename = "LocalSecondaryIndexes")]
-    #[serde(default)]
     pub local_secondary_indexes:
         std::option::Option<std::vec::Vec<crate::model::LocalSecondaryIndexDescription>>,
     /// <p>The global secondary indexes, if any, on the table. Each index is scoped to a given partition key value. Each element is composed of:</p>
@@ -2008,13 +1868,9 @@ pub struct TableDescription {
     /// </ul>
     /// <p>If the table is in the <code>DELETING</code> state, no information about indexes will be
     /// returned.</p>
-    #[serde(rename = "GlobalSecondaryIndexes")]
-    #[serde(default)]
     pub global_secondary_indexes:
         std::option::Option<std::vec::Vec<crate::model::GlobalSecondaryIndexDescription>>,
     /// <p>The current DynamoDB Streams configuration for the table.</p>
-    #[serde(rename = "StreamSpecification")]
-    #[serde(default)]
     pub stream_specification: std::option::Option<crate::model::StreamSpecification>,
     /// <p>A timestamp, in ISO 8601 format, for this stream.</p>
     /// <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p>
@@ -2031,32 +1887,18 @@ pub struct TableDescription {
     /// </p>
     /// </li>
     /// </ul>
-    #[serde(rename = "LatestStreamLabel")]
-    #[serde(default)]
     pub latest_stream_label: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the latest stream for this table.</p>
-    #[serde(rename = "LatestStreamArn")]
-    #[serde(default)]
     pub latest_stream_arn: std::option::Option<std::string::String>,
     /// <p>Represents the version of <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">global tables</a> in use, if the table is replicated across AWS Regions.</p>
-    #[serde(rename = "GlobalTableVersion")]
-    #[serde(default)]
     pub global_table_version: std::option::Option<std::string::String>,
     /// <p>Represents replicas of the table.</p>
-    #[serde(rename = "Replicas")]
-    #[serde(default)]
     pub replicas: std::option::Option<std::vec::Vec<crate::model::ReplicaDescription>>,
     /// <p>Contains details for the restore.</p>
-    #[serde(rename = "RestoreSummary")]
-    #[serde(default)]
     pub restore_summary: std::option::Option<crate::model::RestoreSummary>,
     /// <p>The description of the server-side encryption status on the specified table.</p>
-    #[serde(rename = "SSEDescription")]
-    #[serde(default)]
-    pub sse_description: std::option::Option<crate::model::SSEDescription>,
+    pub sse_description: std::option::Option<crate::model::SseDescription>,
     /// <p>Contains information about the table archive.</p>
-    #[serde(rename = "ArchivalSummary")]
-    #[serde(default)]
     pub archival_summary: std::option::Option<crate::model::ArchivalSummary>,
 }
 impl std::fmt::Debug for TableDescription {
@@ -2115,7 +1957,7 @@ pub mod table_description {
         pub(crate) global_table_version: std::option::Option<std::string::String>,
         pub(crate) replicas: std::option::Option<std::vec::Vec<crate::model::ReplicaDescription>>,
         pub(crate) restore_summary: std::option::Option<crate::model::RestoreSummary>,
-        pub(crate) sse_description: std::option::Option<crate::model::SSEDescription>,
+        pub(crate) sse_description: std::option::Option<crate::model::SseDescription>,
         pub(crate) archival_summary: std::option::Option<crate::model::ArchivalSummary>,
     }
     impl Builder {
@@ -2405,13 +2247,13 @@ pub mod table_description {
             self
         }
         /// <p>The description of the server-side encryption status on the specified table.</p>
-        pub fn sse_description(mut self, input: crate::model::SSEDescription) -> Self {
+        pub fn sse_description(mut self, input: crate::model::SseDescription) -> Self {
             self.sse_description = Some(input);
             self
         }
         pub fn set_sse_description(
             mut self,
-            input: std::option::Option<crate::model::SSEDescription>,
+            input: std::option::Option<crate::model::SseDescription>,
         ) -> Self {
             self.sse_description = input;
             self
@@ -2465,15 +2307,10 @@ impl TableDescription {
 
 /// <p>Contains details of a table archival operation.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ArchivalSummary {
     /// <p>The date and time when table archival was initiated by DynamoDB,
     /// in UNIX epoch time format.</p>
-    #[serde(rename = "ArchivalDateTime")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub archival_date_time: std::option::Option<smithy_types::Instant>,
     /// <p>The reason DynamoDB archived the table. Currently, the only
     /// possible value is:</p>
@@ -2486,15 +2323,11 @@ pub struct ArchivalSummary {
     /// time.</p>
     /// </li>
     /// </ul>
-    #[serde(rename = "ArchivalReason")]
-    #[serde(default)]
     pub archival_reason: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the backup the table was archived
     /// to, when applicable in the archival reason. If you wish to restore this
     /// backup to the same table name, you will need to delete the original
     /// table.</p>
-    #[serde(rename = "ArchivalBackupArn")]
-    #[serde(default)]
     pub archival_backup_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ArchivalSummary {
@@ -2586,8 +2419,8 @@ impl ArchivalSummary {
 
 /// <p>The description of the server-side encryption status on the specified table.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct SSEDescription {
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SseDescription {
     /// <p>Represents the current state of server-side encryption. The only supported values are:</p>
     /// <ul>
     /// <li>
@@ -2599,8 +2432,6 @@ pub struct SSEDescription {
     /// <code>UPDATING</code> - Server-side encryption is being updated.</p>
     /// </li>
     /// </ul>
-    #[serde(rename = "Status")]
-    #[serde(default)]
     pub status: std::option::Option<crate::model::SseStatus>,
     /// <p>Server-side encryption type. The only supported value is:</p>
     /// <ul>
@@ -2611,28 +2442,19 @@ pub struct SSEDescription {
     /// apply).</p>
     /// </li>
     /// </ul>
-    #[serde(rename = "SSEType")]
-    #[serde(default)]
     pub sse_type: std::option::Option<crate::model::SseType>,
     /// <p>The AWS KMS customer master key (CMK) ARN used for the AWS KMS encryption.</p>
-    #[serde(rename = "KMSMasterKeyArn")]
-    #[serde(default)]
     pub kms_master_key_arn: std::option::Option<std::string::String>,
     /// <p>Indicates the time, in UNIX epoch date format, when DynamoDB detected that the table's
     /// AWS KMS key was inaccessible. This attribute will automatically be cleared when DynamoDB
     /// detects that the table's AWS KMS key is accessible again. DynamoDB will initiate the table
     /// archival process when table's AWS KMS key remains inaccessible for more than seven days
     /// from this date.</p>
-    #[serde(rename = "InaccessibleEncryptionDateTime")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub inaccessible_encryption_date_time: std::option::Option<smithy_types::Instant>,
 }
-impl std::fmt::Debug for SSEDescription {
+impl std::fmt::Debug for SseDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SSEDescription");
+        let mut formatter = f.debug_struct("SseDescription");
         formatter.field("status", &self.status);
         formatter.field("sse_type", &self.sse_type);
         formatter.field("kms_master_key_arn", &self.kms_master_key_arn);
@@ -2643,9 +2465,9 @@ impl std::fmt::Debug for SSEDescription {
         formatter.finish()
     }
 }
-/// See [`SSEDescription`](crate::model::SSEDescription)
+/// See [`SseDescription`](crate::model::SseDescription)
 pub mod sse_description {
-    /// A builder for [`SSEDescription`](crate::model::SSEDescription)
+    /// A builder for [`SseDescription`](crate::model::SseDescription)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -2719,9 +2541,9 @@ pub mod sse_description {
             self.inaccessible_encryption_date_time = input;
             self
         }
-        /// Consumes the builder and constructs a [`SSEDescription`](crate::model::SSEDescription)
-        pub fn build(self) -> crate::model::SSEDescription {
-            crate::model::SSEDescription {
+        /// Consumes the builder and constructs a [`SseDescription`](crate::model::SseDescription)
+        pub fn build(self) -> crate::model::SseDescription {
+            crate::model::SseDescription {
                 status: self.status,
                 sse_type: self.sse_type,
                 kms_master_key_arn: self.kms_master_key_arn,
@@ -2730,8 +2552,8 @@ pub mod sse_description {
         }
     }
 }
-impl SSEDescription {
-    /// Creates a new builder-style object to manufacture [`SSEDescription`](crate::model::SSEDescription)
+impl SseDescription {
+    /// Creates a new builder-style object to manufacture [`SseDescription`](crate::model::SseDescription)
     pub fn builder() -> crate::model::sse_description::Builder {
         crate::model::sse_description::Builder::default()
     }
@@ -2765,7 +2587,7 @@ impl std::convert::From<&str> for SseType {
 impl std::str::FromStr for SseType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(SseType::from(s))
     }
 }
@@ -2781,15 +2603,6 @@ impl SseType {
 impl AsRef<str> for SseType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for SseType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -2827,7 +2640,7 @@ impl std::convert::From<&str> for SseStatus {
 impl std::str::FromStr for SseStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(SseStatus::from(s))
     }
 }
@@ -2848,38 +2661,18 @@ impl AsRef<str> for SseStatus {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for SseStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>Contains details for the restore.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestoreSummary {
     /// <p>The Amazon Resource Name (ARN) of the backup from which the table was restored.</p>
-    #[serde(rename = "SourceBackupArn")]
-    #[serde(default)]
     pub source_backup_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the source table of the backup that is being restored.</p>
-    #[serde(rename = "SourceTableArn")]
-    #[serde(default)]
     pub source_table_arn: std::option::Option<std::string::String>,
     /// <p>Point in time or source backup time.</p>
-    #[serde(rename = "RestoreDateTime")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub restore_date_time: std::option::Option<smithy_types::Instant>,
     /// <p>Indicates if a restore is in progress or not.</p>
-    #[serde(rename = "RestoreInProgress")]
-    #[serde(default)]
     pub restore_in_progress: std::option::Option<bool>,
 }
 impl std::fmt::Debug for RestoreSummary {
@@ -2969,11 +2762,9 @@ impl RestoreSummary {
 
 /// <p>Contains the details of the replica.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicaDescription {
     /// <p>The name of the Region.</p>
-    #[serde(rename = "RegionName")]
-    #[serde(default)]
     pub region_name: std::option::Option<std::string::String>,
     /// <p>The current state of the replica:</p>
     /// <ul>
@@ -3008,40 +2799,23 @@ pub struct ReplicaDescription {
     /// </note>
     /// </li>
     /// </ul>
-    #[serde(rename = "ReplicaStatus")]
-    #[serde(default)]
     pub replica_status: std::option::Option<crate::model::ReplicaStatus>,
     /// <p>Detailed information about the replica status.</p>
-    #[serde(rename = "ReplicaStatusDescription")]
-    #[serde(default)]
     pub replica_status_description: std::option::Option<std::string::String>,
     /// <p>Specifies the progress of a Create, Update, or Delete action on the replica
     /// as a percentage.</p>
-    #[serde(rename = "ReplicaStatusPercentProgress")]
-    #[serde(default)]
     pub replica_status_percent_progress: std::option::Option<std::string::String>,
     /// <p>The AWS KMS customer master key (CMK) of the replica that will be used for AWS KMS
     /// encryption.</p>
-    #[serde(rename = "KMSMasterKeyId")]
-    #[serde(default)]
     pub kms_master_key_id: std::option::Option<std::string::String>,
     /// <p>Replica-specific provisioned throughput. If not described, uses the source table's
     /// provisioned throughput settings.</p>
-    #[serde(rename = "ProvisionedThroughputOverride")]
-    #[serde(default)]
     pub provisioned_throughput_override:
         std::option::Option<crate::model::ProvisionedThroughputOverride>,
     /// <p>Replica-specific global secondary index settings.</p>
-    #[serde(rename = "GlobalSecondaryIndexes")]
-    #[serde(default)]
     pub global_secondary_indexes:
         std::option::Option<std::vec::Vec<crate::model::ReplicaGlobalSecondaryIndexDescription>>,
     /// <p>The time at which the replica was first detected as inaccessible. To determine cause of inaccessibility check the <code>ReplicaStatus</code> property.</p>
-    #[serde(rename = "ReplicaInaccessibleDateTime")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub replica_inaccessible_date_time: std::option::Option<smithy_types::Instant>,
 }
 impl std::fmt::Debug for ReplicaDescription {
@@ -3253,15 +3027,11 @@ impl ReplicaDescription {
 
 /// <p>Represents the properties of a replica global secondary index.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicaGlobalSecondaryIndexDescription {
     /// <p>The name of the global secondary index.</p>
-    #[serde(rename = "IndexName")]
-    #[serde(default)]
     pub index_name: std::option::Option<std::string::String>,
     /// <p>If not described, uses the source table GSI's read capacity settings.</p>
-    #[serde(rename = "ProvisionedThroughputOverride")]
-    #[serde(default)]
     pub provisioned_throughput_override:
         std::option::Option<crate::model::ProvisionedThroughputOverride>,
 }
@@ -3330,12 +3100,10 @@ impl ReplicaGlobalSecondaryIndexDescription {
 /// <p>Replica-specific provisioned throughput settings. If not specified, uses the
 /// source table's provisioned throughput settings.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProvisionedThroughputOverride {
     /// <p>Replica-specific read capacity units. If not specified, uses the source table's
     /// read capacity settings.</p>
-    #[serde(rename = "ReadCapacityUnits")]
-    #[serde(default)]
     pub read_capacity_units: std::option::Option<i64>,
 }
 impl std::fmt::Debug for ProvisionedThroughputOverride {
@@ -3381,11 +3149,9 @@ impl ProvisionedThroughputOverride {
 
 /// <p>Represents the DynamoDB Streams configuration for a table in DynamoDB.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StreamSpecification {
     /// <p>Indicates whether DynamoDB Streams is enabled (true) or disabled (false) on the table.</p>
-    #[serde(rename = "StreamEnabled")]
-    #[serde(default)]
     pub stream_enabled: std::option::Option<bool>,
     /// <p>
     /// When an item in the table is modified, <code>StreamViewType</code>
@@ -3412,8 +3178,6 @@ pub struct StreamSpecification {
     /// written to the stream.</p>
     /// </li>
     /// </ul>
-    #[serde(rename = "StreamViewType")]
-    #[serde(default)]
     pub stream_view_type: std::option::Option<crate::model::StreamViewType>,
 }
 impl std::fmt::Debug for StreamSpecification {
@@ -3527,7 +3291,7 @@ impl std::convert::From<&str> for StreamViewType {
 impl std::str::FromStr for StreamViewType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(StreamViewType::from(s))
     }
 }
@@ -3547,23 +3311,12 @@ impl AsRef<str> for StreamViewType {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for StreamViewType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>Represents the properties of a global secondary index.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GlobalSecondaryIndexDescription {
     /// <p>The name of the global secondary index.</p>
-    #[serde(rename = "IndexName")]
-    #[serde(default)]
     pub index_name: std::option::Option<std::string::String>,
     /// <p>The complete key schema for a global secondary index, which consists of one or more pairs of attribute names and key types:</p>
     /// <ul>
@@ -3584,14 +3337,10 @@ pub struct GlobalSecondaryIndexDescription {
     /// The term "range attribute" derives from the way DynamoDB stores items with the same
     /// partition key physically close together, in sorted order by the sort key value.</p>
     /// </note>
-    #[serde(rename = "KeySchema")]
-    #[serde(default)]
     pub key_schema: std::option::Option<std::vec::Vec<crate::model::KeySchemaElement>>,
     /// <p>Represents attributes that are copied (projected) from the table into the global
     /// secondary index. These are in addition to the primary key attributes and index key
     /// attributes, which are automatically projected. </p>
-    #[serde(rename = "Projection")]
-    #[serde(default)]
     pub projection: std::option::Option<crate::model::Projection>,
     /// <p>The current state of the global secondary index:</p>
     /// <ul>
@@ -3612,8 +3361,6 @@ pub struct GlobalSecondaryIndexDescription {
     /// <code>ACTIVE</code> - The index is ready for use.</p>
     /// </li>
     /// </ul>
-    #[serde(rename = "IndexStatus")]
-    #[serde(default)]
     pub index_status: std::option::Option<crate::model::IndexStatus>,
     /// <p>Indicates whether the index is currently backfilling. <i>Backfilling</i> is the process of reading items from
     /// the table and determining whether they can be added to the index. (Not all items will qualify:  For example, a partition key
@@ -3626,25 +3373,15 @@ pub struct GlobalSecondaryIndexDescription {
     /// <note>
     /// <p>For indexes that were created during a <code>CreateTable</code> operation, the <code>Backfilling</code> attribute does not appear in the <code>DescribeTable</code> output.</p>
     /// </note>
-    #[serde(rename = "Backfilling")]
-    #[serde(default)]
     pub backfilling: std::option::Option<bool>,
     /// <p>Represents the provisioned throughput settings for the specified global secondary index.</p>
     /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    #[serde(rename = "ProvisionedThroughput")]
-    #[serde(default)]
     pub provisioned_throughput: std::option::Option<crate::model::ProvisionedThroughputDescription>,
     /// <p>The total size of the specified index, in bytes. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
-    #[serde(rename = "IndexSizeBytes")]
-    #[serde(default)]
     pub index_size_bytes: i64,
     /// <p>The number of items in the specified index. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
-    #[serde(rename = "ItemCount")]
-    #[serde(default)]
     pub item_count: i64,
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the index.</p>
-    #[serde(rename = "IndexArn")]
-    #[serde(default)]
     pub index_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GlobalSecondaryIndexDescription {
@@ -3833,38 +3570,22 @@ impl GlobalSecondaryIndexDescription {
 
 /// <p>Represents the provisioned throughput settings for the table, consisting of read and write capacity units, along with data about increases and decreases.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProvisionedThroughputDescription {
     /// <p>The date and time of the last provisioned throughput increase for this table.</p>
-    #[serde(rename = "LastIncreaseDateTime")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub last_increase_date_time: std::option::Option<smithy_types::Instant>,
     /// <p>The date and time of the last provisioned throughput decrease for this table.</p>
-    #[serde(rename = "LastDecreaseDateTime")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub last_decrease_date_time: std::option::Option<smithy_types::Instant>,
     /// <p>The number of provisioned throughput decreases for this table during this UTC calendar day.
     /// For current maximums on provisioned throughput decreases, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    #[serde(rename = "NumberOfDecreasesToday")]
-    #[serde(default)]
     pub number_of_decreases_today: std::option::Option<i64>,
     /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a
     /// <code>ThrottlingException</code>. Eventually consistent reads require less effort than strongly
     /// consistent reads, so a setting of 50 <code>ReadCapacityUnits</code> per second provides 100
     /// eventually consistent <code>ReadCapacityUnits</code> per second.</p>
-    #[serde(rename = "ReadCapacityUnits")]
-    #[serde(default)]
     pub read_capacity_units: std::option::Option<i64>,
     /// <p>The maximum number of writes consumed per second before DynamoDB returns a
     /// <code>ThrottlingException</code>.</p>
-    #[serde(rename = "WriteCapacityUnits")]
-    #[serde(default)]
     pub write_capacity_units: std::option::Option<i64>,
 }
 impl std::fmt::Debug for ProvisionedThroughputDescription {
@@ -3968,7 +3689,7 @@ impl ProvisionedThroughputDescription {
 
 /// <p>Represents attributes that are copied (projected) from the table into an index. These are in addition to the primary key attributes and index key attributes, which are automatically projected.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Projection {
     /// <p>The set of attributes that are projected into the index:</p>
     /// <ul>
@@ -3986,15 +3707,11 @@ pub struct Projection {
     /// <code>ALL</code> - All of the table attributes are projected into the index.</p>
     /// </li>
     /// </ul>
-    #[serde(rename = "ProjectionType")]
-    #[serde(default)]
     pub projection_type: std::option::Option<crate::model::ProjectionType>,
     /// <p>Represents the non-key attribute names which will be projected into the index.</p>
     /// <p>For local secondary indexes, the total count of <code>NonKeyAttributes</code> summed across all of the local secondary indexes,
     /// must not exceed 20. If you project the same attribute into two
     /// different indexes, this counts as two distinct attributes when determining the total.</p>
-    #[serde(rename = "NonKeyAttributes")]
-    #[serde(default)]
     pub non_key_attributes: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl std::fmt::Debug for Projection {
@@ -4101,7 +3818,7 @@ impl std::convert::From<&str> for ProjectionType {
 impl std::str::FromStr for ProjectionType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ProjectionType::from(s))
     }
 }
@@ -4120,15 +3837,6 @@ impl AsRef<str> for ProjectionType {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for ProjectionType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>Represents <i>a single element</i> of a key schema. A key schema specifies the attributes
 /// that make up the primary key of a table, or the key attributes of an index.</p>
@@ -4138,11 +3846,9 @@ impl<'de> serde::Deserialize<'de> for ProjectionType {
 /// <code>KeySchemaElement</code> for the sort key.</p>
 /// <p>A <code>KeySchemaElement</code> must be a scalar, top-level attribute (not a nested attribute). The data type must be one of String, Number, or Binary.  The attribute cannot be nested within a List or a Map.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KeySchemaElement {
     /// <p>The name of a key attribute.</p>
-    #[serde(rename = "AttributeName")]
-    #[serde(default)]
     pub attribute_name: std::option::Option<std::string::String>,
     /// <p>The role that this key attribute will assume:</p>
     /// <ul>
@@ -4163,8 +3869,6 @@ pub struct KeySchemaElement {
     /// The term "range attribute" derives from the way DynamoDB stores items with the same
     /// partition key physically close together, in sorted order by the sort key value.</p>
     /// </note>
-    #[serde(rename = "KeyType")]
-    #[serde(default)]
     pub key_type: std::option::Option<crate::model::KeyType>,
 }
 impl std::fmt::Debug for KeySchemaElement {
@@ -4268,7 +3972,7 @@ impl std::convert::From<&str> for KeyType {
 impl std::str::FromStr for KeyType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(KeyType::from(s))
     }
 }
@@ -4286,23 +3990,12 @@ impl AsRef<str> for KeyType {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for KeyType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>Represents the properties of a local secondary index.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LocalSecondaryIndexDescription {
     /// <p>Represents the name of the local secondary index.</p>
-    #[serde(rename = "IndexName")]
-    #[serde(default)]
     pub index_name: std::option::Option<std::string::String>,
     /// <p>The complete key schema for the local secondary index, consisting of one or more pairs of attribute names and key types:</p>
     /// <ul>
@@ -4323,26 +4016,16 @@ pub struct LocalSecondaryIndexDescription {
     /// The term "range attribute" derives from the way DynamoDB stores items with the same
     /// partition key physically close together, in sorted order by the sort key value.</p>
     /// </note>
-    #[serde(rename = "KeySchema")]
-    #[serde(default)]
     pub key_schema: std::option::Option<std::vec::Vec<crate::model::KeySchemaElement>>,
     /// <p>Represents attributes that are copied (projected) from the table into the global
     /// secondary index. These are in addition to the primary key attributes and index key
     /// attributes, which are automatically projected. </p>
-    #[serde(rename = "Projection")]
-    #[serde(default)]
     pub projection: std::option::Option<crate::model::Projection>,
     /// <p>The total size of the specified index, in bytes. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
-    #[serde(rename = "IndexSizeBytes")]
-    #[serde(default)]
     pub index_size_bytes: i64,
     /// <p>The number of items in the specified index. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
-    #[serde(rename = "ItemCount")]
-    #[serde(default)]
     pub item_count: i64,
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the index.</p>
-    #[serde(rename = "IndexArn")]
-    #[serde(default)]
     pub index_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for LocalSecondaryIndexDescription {
@@ -4456,7 +4139,7 @@ impl LocalSecondaryIndexDescription {
 
 /// <p>Contains the details for the read/write capacity mode.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BillingModeSummary {
     /// <p>Controls how you are charged for read and write throughput and how you manage capacity. This setting can be changed later.</p>
     /// <ul>
@@ -4470,15 +4153,8 @@ pub struct BillingModeSummary {
     /// </p>
     /// </li>
     /// </ul>
-    #[serde(rename = "BillingMode")]
-    #[serde(default)]
     pub billing_mode: std::option::Option<crate::model::BillingMode>,
     /// <p>Represents the time when <code>PAY_PER_REQUEST</code> was last set as the read/write capacity mode.</p>
-    #[serde(rename = "LastUpdateToPayPerRequestDateTime")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub last_update_to_pay_per_request_date_time: std::option::Option<smithy_types::Instant>,
 }
 impl std::fmt::Debug for BillingModeSummary {
@@ -4586,7 +4262,7 @@ impl std::convert::From<&str> for BillingMode {
 impl std::str::FromStr for BillingMode {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(BillingMode::from(s))
     }
 }
@@ -4604,23 +4280,12 @@ impl AsRef<str> for BillingMode {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for BillingMode {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>Represents an attribute for describing the key schema for the table and indexes.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttributeDefinition {
     /// <p>A name for the attribute.</p>
-    #[serde(rename = "AttributeName")]
-    #[serde(default)]
     pub attribute_name: std::option::Option<std::string::String>,
     /// <p>The data type for the attribute, where:</p>
     /// <ul>
@@ -4637,8 +4302,6 @@ pub struct AttributeDefinition {
     /// <code>B</code> - the attribute is of type Binary</p>
     /// </li>
     /// </ul>
-    #[serde(rename = "AttributeType")]
-    #[serde(default)]
     pub attribute_type: std::option::Option<crate::model::ScalarAttributeType>,
 }
 impl std::fmt::Debug for AttributeDefinition {
@@ -4743,7 +4406,7 @@ impl std::convert::From<&str> for ScalarAttributeType {
 impl std::str::FromStr for ScalarAttributeType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ScalarAttributeType::from(s))
     }
 }
@@ -4760,15 +4423,6 @@ impl ScalarAttributeType {
 impl AsRef<str> for ScalarAttributeType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ScalarAttributeType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -4790,19 +4444,13 @@ impl<'de> serde::Deserialize<'de> for ScalarAttributeType {
 /// </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicationGroupUpdate {
     /// <p>The parameters required for creating a replica for the table.</p>
-    #[serde(rename = "Create")]
-    #[serde(default)]
     pub create: std::option::Option<crate::model::CreateReplicationGroupMemberAction>,
     /// <p>The parameters required for updating a replica for the table.</p>
-    #[serde(rename = "Update")]
-    #[serde(default)]
     pub update: std::option::Option<crate::model::UpdateReplicationGroupMemberAction>,
     /// <p>The parameters required for deleting a replica for the table.</p>
-    #[serde(rename = "Delete")]
-    #[serde(default)]
     pub delete: std::option::Option<crate::model::DeleteReplicationGroupMemberAction>,
 }
 impl std::fmt::Debug for ReplicationGroupUpdate {
@@ -4880,11 +4528,9 @@ impl ReplicationGroupUpdate {
 
 /// <p>Represents a replica to be deleted.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteReplicationGroupMemberAction {
     /// <p>The Region where the replica exists.</p>
-    #[serde(rename = "RegionName")]
-    #[serde(default)]
     pub region_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteReplicationGroupMemberAction {
@@ -4929,28 +4575,20 @@ impl DeleteReplicationGroupMemberAction {
 
 /// <p>Represents a replica to be modified.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateReplicationGroupMemberAction {
     /// <p>The Region where the replica exists.</p>
-    #[serde(rename = "RegionName")]
-    #[serde(default)]
     pub region_name: std::option::Option<std::string::String>,
     /// <p>The AWS KMS customer master key (CMK) of the replica that should be used for AWS KMS encryption.
     /// To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias
     /// ARN. Note that you should only provide this parameter if the key is different from
     /// the default DynamoDB KMS master key alias/aws/dynamodb.</p>
-    #[serde(rename = "KMSMasterKeyId")]
-    #[serde(default)]
     pub kms_master_key_id: std::option::Option<std::string::String>,
     /// <p>Replica-specific provisioned throughput. If not specified, uses the source table's
     /// provisioned throughput settings.</p>
-    #[serde(rename = "ProvisionedThroughputOverride")]
-    #[serde(default)]
     pub provisioned_throughput_override:
         std::option::Option<crate::model::ProvisionedThroughputOverride>,
     /// <p>Replica-specific global secondary index settings.</p>
-    #[serde(rename = "GlobalSecondaryIndexes")]
-    #[serde(default)]
     pub global_secondary_indexes:
         std::option::Option<std::vec::Vec<crate::model::ReplicaGlobalSecondaryIndex>>,
 }
@@ -5057,16 +4695,12 @@ impl UpdateReplicationGroupMemberAction {
 
 /// <p>Represents the properties of a replica global secondary index.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicaGlobalSecondaryIndex {
     /// <p>The name of the global secondary index.</p>
-    #[serde(rename = "IndexName")]
-    #[serde(default)]
     pub index_name: std::option::Option<std::string::String>,
     /// <p>Replica table GSI-specific provisioned throughput. If not specified, uses the
     /// source table GSI's read capacity settings.</p>
-    #[serde(rename = "ProvisionedThroughputOverride")]
-    #[serde(default)]
     pub provisioned_throughput_override:
         std::option::Option<crate::model::ProvisionedThroughputOverride>,
 }
@@ -5135,28 +4769,20 @@ impl ReplicaGlobalSecondaryIndex {
 
 /// <p>Represents a replica to be created.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateReplicationGroupMemberAction {
     /// <p>The Region where the new replica will be created.</p>
-    #[serde(rename = "RegionName")]
-    #[serde(default)]
     pub region_name: std::option::Option<std::string::String>,
     /// <p>The AWS KMS customer master key (CMK) that should be used for AWS KMS encryption
     /// in the new replica. To specify a CMK, use its key ID, Amazon Resource Name (ARN),
     /// alias name, or alias ARN. Note that you should only provide this parameter if the
     /// key is different from the default DynamoDB KMS master key alias/aws/dynamodb.</p>
-    #[serde(rename = "KMSMasterKeyId")]
-    #[serde(default)]
     pub kms_master_key_id: std::option::Option<std::string::String>,
     /// <p>Replica-specific provisioned throughput. If not specified, uses the source table's
     /// provisioned throughput settings.</p>
-    #[serde(rename = "ProvisionedThroughputOverride")]
-    #[serde(default)]
     pub provisioned_throughput_override:
         std::option::Option<crate::model::ProvisionedThroughputOverride>,
     /// <p>Replica-specific global secondary index settings.</p>
-    #[serde(rename = "GlobalSecondaryIndexes")]
-    #[serde(default)]
     pub global_secondary_indexes:
         std::option::Option<std::vec::Vec<crate::model::ReplicaGlobalSecondaryIndex>>,
 }
@@ -5263,13 +4889,11 @@ impl CreateReplicationGroupMemberAction {
 
 /// <p>Represents the settings used to enable server-side encryption.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct SSESpecification {
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SseSpecification {
     /// <p>Indicates whether server-side encryption is done using an AWS managed CMK or an AWS owned CMK. If enabled (true),
     /// server-side encryption type is set to <code>KMS</code> and an AWS managed CMK is used (AWS KMS charges apply). If disabled (false) or not specified, server-side
     /// encryption is set to AWS owned CMK.</p>
-    #[serde(rename = "Enabled")]
-    #[serde(default)]
     pub enabled: std::option::Option<bool>,
     /// <p>Server-side encryption type. The only supported value is:</p>
     /// <ul>
@@ -5280,29 +4904,25 @@ pub struct SSESpecification {
     /// apply).</p>
     /// </li>
     /// </ul>
-    #[serde(rename = "SSEType")]
-    #[serde(default)]
     pub sse_type: std::option::Option<crate::model::SseType>,
     /// <p>The AWS KMS customer master key (CMK) that should be used for the AWS KMS encryption. To
     /// specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. Note
     /// that you should only provide this parameter if the key is different from the default
     /// DynamoDB customer master key alias/aws/dynamodb.</p>
-    #[serde(rename = "KMSMasterKeyId")]
-    #[serde(default)]
     pub kms_master_key_id: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for SSESpecification {
+impl std::fmt::Debug for SseSpecification {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SSESpecification");
+        let mut formatter = f.debug_struct("SseSpecification");
         formatter.field("enabled", &self.enabled);
         formatter.field("sse_type", &self.sse_type);
         formatter.field("kms_master_key_id", &self.kms_master_key_id);
         formatter.finish()
     }
 }
-/// See [`SSESpecification`](crate::model::SSESpecification)
+/// See [`SseSpecification`](crate::model::SseSpecification)
 pub mod sse_specification {
-    /// A builder for [`SSESpecification`](crate::model::SSESpecification)
+    /// A builder for [`SseSpecification`](crate::model::SseSpecification)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -5354,9 +4974,9 @@ pub mod sse_specification {
             self.kms_master_key_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`SSESpecification`](crate::model::SSESpecification)
-        pub fn build(self) -> crate::model::SSESpecification {
-            crate::model::SSESpecification {
+        /// Consumes the builder and constructs a [`SseSpecification`](crate::model::SseSpecification)
+        pub fn build(self) -> crate::model::SseSpecification {
+            crate::model::SseSpecification {
                 enabled: self.enabled,
                 sse_type: self.sse_type,
                 kms_master_key_id: self.kms_master_key_id,
@@ -5364,8 +4984,8 @@ pub mod sse_specification {
         }
     }
 }
-impl SSESpecification {
-    /// Creates a new builder-style object to manufacture [`SSESpecification`](crate::model::SSESpecification)
+impl SseSpecification {
+    /// Creates a new builder-style object to manufacture [`SseSpecification`](crate::model::SseSpecification)
     pub fn builder() -> crate::model::sse_specification::Builder {
         crate::model::sse_specification::Builder::default()
     }
@@ -5384,11 +5004,9 @@ impl SSESpecification {
 /// </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GlobalSecondaryIndexUpdate {
     /// <p>The name of an existing global secondary index, along with new provisioned throughput settings to be applied to that index.</p>
-    #[serde(rename = "Update")]
-    #[serde(default)]
     pub update: std::option::Option<crate::model::UpdateGlobalSecondaryIndexAction>,
     /// <p>The parameters required for creating a global secondary index on an existing table:</p>
     /// <ul>
@@ -5418,12 +5036,8 @@ pub struct GlobalSecondaryIndexUpdate {
     /// </p>
     /// </li>
     /// </ul>
-    #[serde(rename = "Create")]
-    #[serde(default)]
     pub create: std::option::Option<crate::model::CreateGlobalSecondaryIndexAction>,
     /// <p>The name of an existing global secondary index to be removed.</p>
-    #[serde(rename = "Delete")]
-    #[serde(default)]
     pub delete: std::option::Option<crate::model::DeleteGlobalSecondaryIndexAction>,
 }
 impl std::fmt::Debug for GlobalSecondaryIndexUpdate {
@@ -5528,11 +5142,9 @@ impl GlobalSecondaryIndexUpdate {
 
 /// <p>Represents a global secondary index to be deleted from an existing table.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteGlobalSecondaryIndexAction {
     /// <p>The name of the global secondary index to be deleted.</p>
-    #[serde(rename = "IndexName")]
-    #[serde(default)]
     pub index_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteGlobalSecondaryIndexAction {
@@ -5577,26 +5189,18 @@ impl DeleteGlobalSecondaryIndexAction {
 
 /// <p>Represents a new global secondary index to be added to an existing table.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGlobalSecondaryIndexAction {
     /// <p>The name of the global secondary index to be created.</p>
-    #[serde(rename = "IndexName")]
-    #[serde(default)]
     pub index_name: std::option::Option<std::string::String>,
     /// <p>The key schema for the global secondary index.</p>
-    #[serde(rename = "KeySchema")]
-    #[serde(default)]
     pub key_schema: std::option::Option<std::vec::Vec<crate::model::KeySchemaElement>>,
     /// <p>Represents attributes that are copied (projected) from the table into an index. These
     /// are in addition to the primary key attributes and index key attributes, which are
     /// automatically projected.</p>
-    #[serde(rename = "Projection")]
-    #[serde(default)]
     pub projection: std::option::Option<crate::model::Projection>,
     /// <p>Represents the provisioned throughput settings for the specified global secondary index.</p>
     /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    #[serde(rename = "ProvisionedThroughput")]
-    #[serde(default)]
     pub provisioned_throughput: std::option::Option<crate::model::ProvisionedThroughput>,
 }
 impl std::fmt::Debug for CreateGlobalSecondaryIndexAction {
@@ -5695,21 +5299,17 @@ impl CreateGlobalSecondaryIndexAction {
 /// can be modified using the <code>UpdateTable</code> operation.</p>
 /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProvisionedThroughput {
     /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a
     /// <code>ThrottlingException</code>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write
     /// Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     /// <p>If read/write capacity mode is <code>PAY_PER_REQUEST</code> the value is set to 0.</p>
-    #[serde(rename = "ReadCapacityUnits")]
-    #[serde(default)]
     pub read_capacity_units: std::option::Option<i64>,
     /// <p>The maximum number of writes consumed per second before DynamoDB returns a
     /// <code>ThrottlingException</code>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write
     /// Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     /// <p>If read/write capacity mode is <code>PAY_PER_REQUEST</code> the value is set to 0.</p>
-    #[serde(rename = "WriteCapacityUnits")]
-    #[serde(default)]
     pub write_capacity_units: std::option::Option<i64>,
 }
 impl std::fmt::Debug for ProvisionedThroughput {
@@ -5772,16 +5372,12 @@ impl ProvisionedThroughput {
 
 /// <p>Represents the new provisioned throughput settings to be applied to a global secondary index.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGlobalSecondaryIndexAction {
     /// <p>The name of the global secondary index to be updated.</p>
-    #[serde(rename = "IndexName")]
-    #[serde(default)]
     pub index_name: std::option::Option<std::string::String>,
     /// <p>Represents the provisioned throughput settings for the specified global secondary index.</p>
     /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    #[serde(rename = "ProvisionedThroughput")]
-    #[serde(default)]
     pub provisioned_throughput: std::option::Option<crate::model::ProvisionedThroughput>,
 }
 impl std::fmt::Debug for UpdateGlobalSecondaryIndexAction {
@@ -5847,18 +5443,14 @@ impl UpdateGlobalSecondaryIndexAction {
 /// <code>ItemCollectionMetrics</code> is only returned if the request asked for it. If the
 /// table does not have any local secondary indexes, this information is not returned in the response.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ItemCollectionMetrics {
     /// <p>The partition key value of the item collection. This value is the same as the partition key value of the item.</p>
-    #[serde(rename = "ItemCollectionKey")]
-    #[serde(default)]
     pub item_collection_key: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
     /// <p>An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p>
     /// <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p>
-    #[serde(rename = "SizeEstimateRangeGB")]
-    #[serde(default)]
     pub size_estimate_range_gb: std::option::Option<std::vec::Vec<f64>>,
 }
 impl std::fmt::Debug for ItemCollectionMetrics {
@@ -5930,71 +5522,59 @@ impl ItemCollectionMetrics {
 }
 
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum AttributeValue {
     /// <p>An attribute of type Binary.  For example:</p>
     /// <p>
     /// <code>"B": "dGhpcyB0ZXh0IGlzIGJhc2U2NC1lbmNvZGVk"</code>
     /// </p>
-    #[serde(rename = "B")]
-    #[serde(deserialize_with = "crate::serde_util::smithytypesblob_deser")]
     B(smithy_types::Blob),
     /// <p>An attribute of type Boolean.  For example:</p>
     /// <p>
     /// <code>"BOOL": true</code>
     /// </p>
-    #[serde(rename = "BOOL")]
     Bool(bool),
     /// <p>An attribute of type Binary Set.  For example:</p>
     /// <p>
     /// <code>"BS": ["U3Vubnk=", "UmFpbnk=", "U25vd3k="]</code>
     /// </p>
-    #[serde(rename = "BS")]
-    #[serde(deserialize_with = "crate::serde_util::stdvecvecsmithytypesblob_deser")]
     Bs(std::vec::Vec<smithy_types::Blob>),
     /// <p>An attribute of type List.  For example:</p>
     /// <p>
     /// <code>"L": [ {"S": "Cookies"} , {"S": "Coffee"}, {"N", "3.14159"}]</code>
     /// </p>
-    #[serde(rename = "L")]
     L(std::vec::Vec<crate::model::AttributeValue>),
     /// <p>An attribute of type Map.  For example:</p>
     /// <p>
     /// <code>"M": {"Name": {"S": "Joe"}, "Age": {"N": "35"}}</code>
     /// </p>
-    #[serde(rename = "M")]
     M(std::collections::HashMap<std::string::String, crate::model::AttributeValue>),
     /// <p>An attribute of type Number.  For example:</p>
     /// <p>
     /// <code>"N": "123.45"</code>
     /// </p>
     /// <p>Numbers are sent across the network to DynamoDB as strings, to maximize compatibility across languages and libraries. However, DynamoDB treats them as number type attributes for mathematical operations.</p>
-    #[serde(rename = "N")]
     N(std::string::String),
     /// <p>An attribute of type Number Set.  For example:</p>
     /// <p>
     /// <code>"NS": ["42.2", "-19", "7.5", "3.14"]</code>
     /// </p>
     /// <p>Numbers are sent across the network to DynamoDB as strings, to maximize compatibility across languages and libraries. However, DynamoDB treats them as number type attributes for mathematical operations.</p>
-    #[serde(rename = "NS")]
     Ns(std::vec::Vec<std::string::String>),
     /// <p>An attribute of type Null.  For example:</p>
     /// <p>
     /// <code>"NULL": true</code>
     /// </p>
-    #[serde(rename = "NULL")]
     Null(bool),
     /// <p>An attribute of type  String. For example:</p>
     /// <p>
     /// <code>"S": "Hello"</code>
     /// </p>
-    #[serde(rename = "S")]
     S(std::string::String),
     /// <p>An attribute of type String Set.  For example:</p>
     /// <p>
     /// <code>"SS": ["Giraffe", "Hippo" ,"Zebra"]</code>
     /// </p>
-    #[serde(rename = "SS")]
     Ss(std::vec::Vec<std::string::String>),
 }
 impl AttributeValue {
@@ -6109,36 +5689,22 @@ impl AttributeValue {
 /// For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
 /// Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConsumedCapacity {
     /// <p>The name of the table that was affected by the operation.</p>
-    #[serde(rename = "TableName")]
-    #[serde(default)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>The total number of capacity units consumed by the operation.</p>
-    #[serde(rename = "CapacityUnits")]
-    #[serde(default)]
     pub capacity_units: std::option::Option<f64>,
     /// <p>The total number of read capacity units consumed by the operation.</p>
-    #[serde(rename = "ReadCapacityUnits")]
-    #[serde(default)]
     pub read_capacity_units: std::option::Option<f64>,
     /// <p>The total number of write capacity units consumed by the operation.</p>
-    #[serde(rename = "WriteCapacityUnits")]
-    #[serde(default)]
     pub write_capacity_units: std::option::Option<f64>,
     /// <p>The amount of throughput consumed on the table affected by the operation.</p>
-    #[serde(rename = "Table")]
-    #[serde(default)]
     pub table: std::option::Option<crate::model::Capacity>,
     /// <p>The amount of throughput consumed on each local index affected by the operation.</p>
-    #[serde(rename = "LocalSecondaryIndexes")]
-    #[serde(default)]
     pub local_secondary_indexes:
         std::option::Option<std::collections::HashMap<std::string::String, crate::model::Capacity>>,
     /// <p>The amount of throughput consumed on each global index affected by the operation.</p>
-    #[serde(rename = "GlobalSecondaryIndexes")]
-    #[serde(default)]
     pub global_secondary_indexes:
         std::option::Option<std::collections::HashMap<std::string::String, crate::model::Capacity>>,
 }
@@ -6280,19 +5846,13 @@ impl ConsumedCapacity {
 
 /// <p>Represents the amount of provisioned throughput capacity consumed on a table or an index.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Capacity {
     /// <p>The total number of read capacity units consumed on a table or an index.</p>
-    #[serde(rename = "ReadCapacityUnits")]
-    #[serde(default)]
     pub read_capacity_units: std::option::Option<f64>,
     /// <p>The total number of write capacity units consumed on a table or an index.</p>
-    #[serde(rename = "WriteCapacityUnits")]
-    #[serde(default)]
     pub write_capacity_units: std::option::Option<f64>,
     /// <p>The total number of capacity units consumed on a table or an index.</p>
-    #[serde(rename = "CapacityUnits")]
-    #[serde(default)]
     pub capacity_units: std::option::Option<f64>,
 }
 impl std::fmt::Debug for Capacity {
@@ -6387,7 +5947,7 @@ impl std::convert::From<&str> for ReturnItemCollectionMetrics {
 impl std::str::FromStr for ReturnItemCollectionMetrics {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ReturnItemCollectionMetrics::from(s))
     }
 }
@@ -6403,15 +5963,6 @@ impl ReturnItemCollectionMetrics {
 impl AsRef<str> for ReturnItemCollectionMetrics {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ReturnItemCollectionMetrics {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -6461,7 +6012,7 @@ impl std::convert::From<&str> for ReturnConsumedCapacity {
 impl std::str::FromStr for ReturnConsumedCapacity {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ReturnConsumedCapacity::from(s))
     }
 }
@@ -6478,15 +6029,6 @@ impl ReturnConsumedCapacity {
 impl AsRef<str> for ReturnConsumedCapacity {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ReturnConsumedCapacity {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -6524,7 +6066,7 @@ impl std::convert::From<&str> for ReturnValue {
 impl std::str::FromStr for ReturnValue {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ReturnValue::from(s))
     }
 }
@@ -6543,15 +6085,6 @@ impl ReturnValue {
 impl AsRef<str> for ReturnValue {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ReturnValue {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -6583,7 +6116,7 @@ impl std::convert::From<&str> for ConditionalOperator {
 impl std::str::FromStr for ConditionalOperator {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ConditionalOperator::from(s))
     }
 }
@@ -6599,15 +6132,6 @@ impl ConditionalOperator {
 impl AsRef<str> for ConditionalOperator {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ConditionalOperator {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -6636,14 +6160,12 @@ impl<'de> serde::Deserialize<'de> for ConditionalOperator {
 /// <code>ComparisonOperator</code>. Note that if you use both sets of parameters at once, DynamoDB will
 /// return a <code>ValidationException</code> exception.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExpectedAttributeValue {
     /// <p>Represents the data for the expected attribute.</p>
     /// <p>Each attribute value is described as a name-value pair.  The name is the data type, and the value is the data itself.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data Types</a> in the
     /// <i>Amazon DynamoDB Developer Guide</i>.</p>
-    #[serde(rename = "Value")]
-    #[serde(default)]
     pub value: std::option::Option<crate::model::AttributeValue>,
     /// <p>Causes DynamoDB to evaluate the value before attempting a conditional operation:</p>
     /// <ul>
@@ -6675,8 +6197,6 @@ pub struct ExpectedAttributeValue {
     /// expect an attribute to have a value, while also expecting it not to exist.)</p>
     /// </li>
     /// </ul>
-    #[serde(rename = "Exists")]
-    #[serde(default)]
     pub exists: std::option::Option<bool>,
     /// <p>A comparator for evaluating attributes in the <code>AttributeValueList</code>. For example, equals,
     /// greater than, less than, etc.</p>
@@ -6824,8 +6344,6 @@ pub struct ExpectedAttributeValue {
     /// </p>
     /// </li>
     /// </ul>
-    #[serde(rename = "ComparisonOperator")]
-    #[serde(default)]
     pub comparison_operator: std::option::Option<crate::model::ComparisonOperator>,
     /// <p>One or more values to evaluate against the supplied attribute. The number of values in the
     /// list depends on the <code>ComparisonOperator</code> being used.</p>
@@ -6835,8 +6353,6 @@ pub struct ExpectedAttributeValue {
     /// is greater than <code>B</code>. For a list of code values, see <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.</p>
     /// <p>For Binary, DynamoDB treats each byte of the binary data as unsigned when it compares binary values.</p>
     /// <p>For information on specifying data types in JSON, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    #[serde(rename = "AttributeValueList")]
-    #[serde(default)]
     pub attribute_value_list: std::option::Option<std::vec::Vec<crate::model::AttributeValue>>,
 }
 impl std::fmt::Debug for ExpectedAttributeValue {
@@ -7156,7 +6672,7 @@ impl std::convert::From<&str> for ComparisonOperator {
 impl std::str::FromStr for ComparisonOperator {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ComparisonOperator::from(s))
     }
 }
@@ -7185,15 +6701,6 @@ impl AsRef<str> for ComparisonOperator {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for ComparisonOperator {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>For the <code>UpdateItem</code> operation, represents the attributes to be modified, the action to
 /// perform on each, and the new value for each.</p>
@@ -7206,14 +6713,12 @@ impl<'de> serde::Deserialize<'de> for ComparisonOperator {
 /// than zero; and set type attributes must not be empty. Requests with empty values will be
 /// rejected with a <code>ValidationException</code> exception.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttributeValueUpdate {
     /// <p>Represents the data for an attribute.</p>
     /// <p>Each attribute value is described as a name-value pair. The name is the data type, and the value is the data itself.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.
     /// </p>
-    #[serde(rename = "Value")]
-    #[serde(default)]
     pub value: std::option::Option<crate::model::AttributeValue>,
     /// <p>Specifies how to perform the update. Valid values are <code>PUT</code> (default), <code>DELETE</code>,
     /// and <code>ADD</code>. The behavior depends on whether the specified primary key already exists
@@ -7298,8 +6803,6 @@ pub struct AttributeValueUpdate {
     /// set; no other data types can be specified.</p>
     /// </li>
     /// </ul>
-    #[serde(rename = "Action")]
-    #[serde(default)]
     pub action: std::option::Option<crate::model::AttributeAction>,
 }
 impl std::fmt::Debug for AttributeValueUpdate {
@@ -7475,7 +6978,7 @@ impl std::convert::From<&str> for AttributeAction {
 impl std::str::FromStr for AttributeAction {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(AttributeAction::from(s))
     }
 }
@@ -7494,23 +6997,12 @@ impl AsRef<str> for AttributeAction {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for AttributeAction {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>Represents the properties of a replica.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicaSettingsDescription {
     /// <p>The Region name of the replica.</p>
-    #[serde(rename = "RegionName")]
-    #[serde(default)]
     pub region_name: std::option::Option<std::string::String>,
     /// <p>The current state of the Region:</p>
     /// <ul>
@@ -7531,39 +7023,25 @@ pub struct ReplicaSettingsDescription {
     /// <code>ACTIVE</code> - The Region is ready for use.</p>
     /// </li>
     /// </ul>
-    #[serde(rename = "ReplicaStatus")]
-    #[serde(default)]
     pub replica_status: std::option::Option<crate::model::ReplicaStatus>,
     /// <p>The read/write capacity mode of the replica.</p>
-    #[serde(rename = "ReplicaBillingModeSummary")]
-    #[serde(default)]
     pub replica_billing_mode_summary: std::option::Option<crate::model::BillingModeSummary>,
     /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>.
     /// For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write
     /// Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.
     /// </p>
-    #[serde(rename = "ReplicaProvisionedReadCapacityUnits")]
-    #[serde(default)]
     pub replica_provisioned_read_capacity_units: std::option::Option<i64>,
     /// <p>Auto scaling settings for a global table replica's read capacity units.</p>
-    #[serde(rename = "ReplicaProvisionedReadCapacityAutoScalingSettings")]
-    #[serde(default)]
     pub replica_provisioned_read_capacity_auto_scaling_settings:
         std::option::Option<crate::model::AutoScalingSettingsDescription>,
     /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>.
     /// For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write
     /// Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    #[serde(rename = "ReplicaProvisionedWriteCapacityUnits")]
-    #[serde(default)]
     pub replica_provisioned_write_capacity_units: std::option::Option<i64>,
     /// <p>Auto scaling settings for a global table replica's write capacity units.</p>
-    #[serde(rename = "ReplicaProvisionedWriteCapacityAutoScalingSettings")]
-    #[serde(default)]
     pub replica_provisioned_write_capacity_auto_scaling_settings:
         std::option::Option<crate::model::AutoScalingSettingsDescription>,
     /// <p>Replica global secondary index settings for the global table.</p>
-    #[serde(rename = "ReplicaGlobalSecondaryIndexSettings")]
-    #[serde(default)]
     pub replica_global_secondary_index_settings: std::option::Option<
         std::vec::Vec<crate::model::ReplicaGlobalSecondaryIndexSettingsDescription>,
     >,
@@ -7783,11 +7261,9 @@ impl ReplicaSettingsDescription {
 
 /// <p>Represents the properties of a global secondary index.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicaGlobalSecondaryIndexSettingsDescription {
     /// <p>The name of the global secondary index. The name must be unique among all other indexes on this table.</p>
-    #[serde(rename = "IndexName")]
-    #[serde(default)]
     pub index_name: std::option::Option<std::string::String>,
     /// <p>
     /// The current status of the global secondary index:</p>
@@ -7809,26 +7285,16 @@ pub struct ReplicaGlobalSecondaryIndexSettingsDescription {
     /// <code>ACTIVE</code> - The global secondary index is ready for use.</p>
     /// </li>
     /// </ul>
-    #[serde(rename = "IndexStatus")]
-    #[serde(default)]
     pub index_status: std::option::Option<crate::model::IndexStatus>,
     /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>.</p>
-    #[serde(rename = "ProvisionedReadCapacityUnits")]
-    #[serde(default)]
     pub provisioned_read_capacity_units: std::option::Option<i64>,
     /// <p>Auto scaling settings for a global secondary index replica's read capacity units.</p>
-    #[serde(rename = "ProvisionedReadCapacityAutoScalingSettings")]
-    #[serde(default)]
     pub provisioned_read_capacity_auto_scaling_settings:
         std::option::Option<crate::model::AutoScalingSettingsDescription>,
     /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>.</p>
-    #[serde(rename = "ProvisionedWriteCapacityUnits")]
-    #[serde(default)]
     pub provisioned_write_capacity_units: std::option::Option<i64>,
     /// <p>Auto scaling settings for a global secondary index replica's write capacity
     /// units.</p>
-    #[serde(rename = "ProvisionedWriteCapacityAutoScalingSettings")]
-    #[serde(default)]
     pub provisioned_write_capacity_auto_scaling_settings:
         std::option::Option<crate::model::AutoScalingSettingsDescription>,
 }
@@ -7991,27 +7457,19 @@ impl ReplicaGlobalSecondaryIndexSettingsDescription {
 
 /// <p>Represents the settings for a global table in a Region that will be modified.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicaSettingsUpdate {
     /// <p>The Region of the replica to be added.</p>
-    #[serde(rename = "RegionName")]
-    #[serde(default)]
     pub region_name: std::option::Option<std::string::String>,
     /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>.
     /// For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write
     /// Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.
     /// </p>
-    #[serde(rename = "ReplicaProvisionedReadCapacityUnits")]
-    #[serde(default)]
     pub replica_provisioned_read_capacity_units: std::option::Option<i64>,
     /// <p>Auto scaling settings for managing a global table replica's read capacity units.</p>
-    #[serde(rename = "ReplicaProvisionedReadCapacityAutoScalingSettingsUpdate")]
-    #[serde(default)]
     pub replica_provisioned_read_capacity_auto_scaling_settings_update:
         std::option::Option<crate::model::AutoScalingSettingsUpdate>,
     /// <p>Represents the settings of a global secondary index for a global table that will be modified.</p>
-    #[serde(rename = "ReplicaGlobalSecondaryIndexSettingsUpdate")]
-    #[serde(default)]
     pub replica_global_secondary_index_settings_update:
         std::option::Option<std::vec::Vec<crate::model::ReplicaGlobalSecondaryIndexSettingsUpdate>>,
 }
@@ -8131,20 +7589,14 @@ impl ReplicaSettingsUpdate {
 
 /// <p>Represents the settings of a global secondary index for a global table that will be modified.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicaGlobalSecondaryIndexSettingsUpdate {
     /// <p>The name of the global secondary index. The name must be unique among all other indexes on this table.</p>
-    #[serde(rename = "IndexName")]
-    #[serde(default)]
     pub index_name: std::option::Option<std::string::String>,
     /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>.</p>
-    #[serde(rename = "ProvisionedReadCapacityUnits")]
-    #[serde(default)]
     pub provisioned_read_capacity_units: std::option::Option<i64>,
     /// <p>Auto scaling settings for managing a global secondary index replica's read capacity
     /// units.</p>
-    #[serde(rename = "ProvisionedReadCapacityAutoScalingSettingsUpdate")]
-    #[serde(default)]
     pub provisioned_read_capacity_auto_scaling_settings_update:
         std::option::Option<crate::model::AutoScalingSettingsUpdate>,
 }
@@ -8232,21 +7684,15 @@ impl ReplicaGlobalSecondaryIndexSettingsUpdate {
 
 /// <p>Represents the settings of a global secondary index for a global table that will be modified.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GlobalTableGlobalSecondaryIndexSettingsUpdate {
     /// <p>The name of the global secondary index. The name must be unique among all other indexes on this table.</p>
-    #[serde(rename = "IndexName")]
-    #[serde(default)]
     pub index_name: std::option::Option<std::string::String>,
     /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException.</code>
     /// </p>
-    #[serde(rename = "ProvisionedWriteCapacityUnits")]
-    #[serde(default)]
     pub provisioned_write_capacity_units: std::option::Option<i64>,
     /// <p>Auto scaling settings for managing a global secondary index's write capacity
     /// units.</p>
-    #[serde(rename = "ProvisionedWriteCapacityAutoScalingSettingsUpdate")]
-    #[serde(default)]
     pub provisioned_write_capacity_auto_scaling_settings_update:
         std::option::Option<crate::model::AutoScalingSettingsUpdate>,
 }
@@ -8335,22 +7781,13 @@ impl GlobalTableGlobalSecondaryIndexSettingsUpdate {
 
 /// <p>Contains details about the global table.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GlobalTableDescription {
     /// <p>The Regions where the global table has replicas.</p>
-    #[serde(rename = "ReplicationGroup")]
-    #[serde(default)]
     pub replication_group: std::option::Option<std::vec::Vec<crate::model::ReplicaDescription>>,
     /// <p>The unique identifier of the global table.</p>
-    #[serde(rename = "GlobalTableArn")]
-    #[serde(default)]
     pub global_table_arn: std::option::Option<std::string::String>,
     /// <p>The creation time of the global table.</p>
-    #[serde(rename = "CreationDateTime")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub creation_date_time: std::option::Option<smithy_types::Instant>,
     /// <p>The current state of the global table:</p>
     /// <ul>
@@ -8371,12 +7808,8 @@ pub struct GlobalTableDescription {
     /// <code>ACTIVE</code> - The global table is ready for use.</p>
     /// </li>
     /// </ul>
-    #[serde(rename = "GlobalTableStatus")]
-    #[serde(default)]
     pub global_table_status: std::option::Option<crate::model::GlobalTableStatus>,
     /// <p>The global table name.</p>
-    #[serde(rename = "GlobalTableName")]
-    #[serde(default)]
     pub global_table_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GlobalTableDescription {
@@ -8537,7 +7970,7 @@ impl std::convert::From<&str> for GlobalTableStatus {
 impl std::str::FromStr for GlobalTableStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(GlobalTableStatus::from(s))
     }
 }
@@ -8557,15 +7990,6 @@ impl AsRef<str> for GlobalTableStatus {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for GlobalTableStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>Represents one of the following:</p>
 /// <ul>
@@ -8580,15 +8004,11 @@ impl<'de> serde::Deserialize<'de> for GlobalTableStatus {
 /// </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicaUpdate {
     /// <p>The parameters required for creating a replica on an existing global table.</p>
-    #[serde(rename = "Create")]
-    #[serde(default)]
     pub create: std::option::Option<crate::model::CreateReplicaAction>,
     /// <p>The name of the existing replica to be removed.</p>
-    #[serde(rename = "Delete")]
-    #[serde(default)]
     pub delete: std::option::Option<crate::model::DeleteReplicaAction>,
 }
 impl std::fmt::Debug for ReplicaUpdate {
@@ -8651,11 +8071,9 @@ impl ReplicaUpdate {
 
 /// <p>Represents a replica to be removed.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteReplicaAction {
     /// <p>The Region of the replica to be removed.</p>
-    #[serde(rename = "RegionName")]
-    #[serde(default)]
     pub region_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteReplicaAction {
@@ -8700,11 +8118,9 @@ impl DeleteReplicaAction {
 
 /// <p>Represents a replica to be added.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateReplicaAction {
     /// <p>The Region of the replica to be added.</p>
-    #[serde(rename = "RegionName")]
-    #[serde(default)]
     pub region_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CreateReplicaAction {
@@ -8781,7 +8197,7 @@ impl std::convert::From<&str> for ContributorInsightsStatus {
 impl std::str::FromStr for ContributorInsightsStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ContributorInsightsStatus::from(s))
     }
 }
@@ -8800,15 +8216,6 @@ impl ContributorInsightsStatus {
 impl AsRef<str> for ContributorInsightsStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ContributorInsightsStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -8840,7 +8247,7 @@ impl std::convert::From<&str> for ContributorInsightsAction {
 impl std::str::FromStr for ContributorInsightsAction {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ContributorInsightsAction::from(s))
     }
 }
@@ -8858,29 +8265,16 @@ impl AsRef<str> for ContributorInsightsAction {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for ContributorInsightsAction {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>Represents the continuous backups and point in time recovery settings on the table.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContinuousBackupsDescription {
     /// <p>
     /// <code>ContinuousBackupsStatus</code> can be one of the following states: ENABLED,
     /// DISABLED</p>
-    #[serde(rename = "ContinuousBackupsStatus")]
-    #[serde(default)]
     pub continuous_backups_status: std::option::Option<crate::model::ContinuousBackupsStatus>,
     /// <p>The description of the point in time recovery settings applied to the table.</p>
-    #[serde(rename = "PointInTimeRecoveryDescription")]
-    #[serde(default)]
     pub point_in_time_recovery_description:
         std::option::Option<crate::model::PointInTimeRecoveryDescription>,
 }
@@ -8957,7 +8351,7 @@ impl ContinuousBackupsDescription {
 
 /// <p>The description of the point in time settings applied to the table.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PointInTimeRecoveryDescription {
     /// <p>The current state of point in time recovery:</p>
     /// <ul>
@@ -8974,25 +8368,13 @@ pub struct PointInTimeRecoveryDescription {
     /// <code>DISABLED</code> - Point in time recovery is disabled.</p>
     /// </li>
     /// </ul>
-    #[serde(rename = "PointInTimeRecoveryStatus")]
-    #[serde(default)]
     pub point_in_time_recovery_status: std::option::Option<crate::model::PointInTimeRecoveryStatus>,
     /// <p>Specifies the earliest point in time you can restore your table to. You can restore your
     /// table to any point in time during the last 35 days. </p>
-    #[serde(rename = "EarliestRestorableDateTime")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub earliest_restorable_date_time: std::option::Option<smithy_types::Instant>,
     /// <p>
     /// <code>LatestRestorableDateTime</code> is typically 5 minutes before the current time.
     /// </p>
-    #[serde(rename = "LatestRestorableDateTime")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub latest_restorable_date_time: std::option::Option<smithy_types::Instant>,
 }
 impl std::fmt::Debug for PointInTimeRecoveryDescription {
@@ -9126,7 +8508,7 @@ impl std::convert::From<&str> for PointInTimeRecoveryStatus {
 impl std::str::FromStr for PointInTimeRecoveryStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(PointInTimeRecoveryStatus::from(s))
     }
 }
@@ -9142,15 +8524,6 @@ impl PointInTimeRecoveryStatus {
 impl AsRef<str> for PointInTimeRecoveryStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for PointInTimeRecoveryStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -9182,7 +8555,7 @@ impl std::convert::From<&str> for ContinuousBackupsStatus {
 impl std::str::FromStr for ContinuousBackupsStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ContinuousBackupsStatus::from(s))
     }
 }
@@ -9200,23 +8573,12 @@ impl AsRef<str> for ContinuousBackupsStatus {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for ContinuousBackupsStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>Represents the settings used to enable point in time recovery.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PointInTimeRecoverySpecification {
     /// <p>Indicates whether point in time recovery is enabled (true) or disabled (false) on the table.</p>
-    #[serde(rename = "PointInTimeRecoveryEnabled")]
-    #[serde(default)]
     pub point_in_time_recovery_enabled: std::option::Option<bool>,
 }
 impl std::fmt::Debug for PointInTimeRecoverySpecification {
@@ -9271,21 +8633,15 @@ impl PointInTimeRecoverySpecification {
 /// occurred for the associated item an error with a Null code and Null message will be present.
 /// </p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancellationReason {
     /// <p>Item in the request which caused the transaction to get cancelled.</p>
-    #[serde(rename = "Item")]
-    #[serde(default)]
     pub item: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
     /// <p>Status code for the result of the cancelled transaction.</p>
-    #[serde(rename = "Code")]
-    #[serde(default)]
     pub code: std::option::Option<std::string::String>,
     /// <p>Cancellation reason message description.</p>
-    #[serde(rename = "Message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CancellationReason {
@@ -9366,23 +8722,15 @@ impl CancellationReason {
 
 /// <p>A list of requests that can perform update, put, delete, or check operations on multiple items in one or more tables atomically.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TransactWriteItem {
     /// <p>A request to perform a check item operation.</p>
-    #[serde(rename = "ConditionCheck")]
-    #[serde(default)]
     pub condition_check: std::option::Option<crate::model::ConditionCheck>,
     /// <p>A request to perform a <code>PutItem</code> operation.</p>
-    #[serde(rename = "Put")]
-    #[serde(default)]
     pub put: std::option::Option<crate::model::Put>,
     /// <p>A request to perform a <code>DeleteItem</code> operation.</p>
-    #[serde(rename = "Delete")]
-    #[serde(default)]
     pub delete: std::option::Option<crate::model::Delete>,
     /// <p>A request to perform an <code>UpdateItem</code> operation.</p>
-    #[serde(rename = "Update")]
-    #[serde(default)]
     pub update: std::option::Option<crate::model::Update>,
 }
 impl std::fmt::Debug for TransactWriteItem {
@@ -9466,37 +8814,25 @@ impl TransactWriteItem {
 
 /// <p>Represents a request to perform an <code>UpdateItem</code> operation.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Update {
     /// <p>The primary key of the item to be updated. Each element consists of
     /// an attribute name and a value for that attribute.</p>
-    #[serde(rename = "Key")]
-    #[serde(default)]
     pub key: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
     /// <p>An expression that defines one or more attributes to be updated,
     /// the action to be performed on them, and new value(s) for them.</p>
-    #[serde(rename = "UpdateExpression")]
-    #[serde(default)]
     pub update_expression: std::option::Option<std::string::String>,
     /// <p>Name of the table for the <code>UpdateItem</code> request.</p>
-    #[serde(rename = "TableName")]
-    #[serde(default)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>A condition that must be satisfied in order for a conditional update to
     /// succeed.</p>
-    #[serde(rename = "ConditionExpression")]
-    #[serde(default)]
     pub condition_expression: std::option::Option<std::string::String>,
     /// <p>One or more substitution tokens for attribute names in an expression.</p>
-    #[serde(rename = "ExpressionAttributeNames")]
-    #[serde(default)]
     pub expression_attribute_names:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>One or more values that can be substituted in an expression.</p>
-    #[serde(rename = "ExpressionAttributeValues")]
-    #[serde(default)]
     pub expression_attribute_values: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
@@ -9504,8 +8840,6 @@ pub struct Update {
     /// get the item attributes if the <code>Update</code> condition fails.
     /// For <code>ReturnValuesOnConditionCheckFailure</code>, the valid
     /// values are: NONE, ALL_OLD, UPDATED_OLD, ALL_NEW, UPDATED_NEW.</p>
-    #[serde(rename = "ReturnValuesOnConditionCheckFailure")]
-    #[serde(default)]
     pub return_values_on_condition_check_failure:
         std::option::Option<crate::model::ReturnValuesOnConditionCheckFailure>,
 }
@@ -9713,7 +9047,7 @@ impl std::convert::From<&str> for ReturnValuesOnConditionCheckFailure {
 impl std::str::FromStr for ReturnValuesOnConditionCheckFailure {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ReturnValuesOnConditionCheckFailure::from(s))
     }
 }
@@ -9731,43 +9065,24 @@ impl AsRef<str> for ReturnValuesOnConditionCheckFailure {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for ReturnValuesOnConditionCheckFailure {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>Represents a request to perform a <code>DeleteItem</code> operation.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Delete {
     /// <p>The primary key of the item to be deleted. Each element consists of an
     /// attribute name and a value for that attribute.</p>
-    #[serde(rename = "Key")]
-    #[serde(default)]
     pub key: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
     /// <p>Name of the table in which the item to be deleted resides.</p>
-    #[serde(rename = "TableName")]
-    #[serde(default)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>A condition that must be satisfied in order for a conditional delete to succeed.</p>
-    #[serde(rename = "ConditionExpression")]
-    #[serde(default)]
     pub condition_expression: std::option::Option<std::string::String>,
     /// <p>One or more substitution tokens for attribute names in an expression.</p>
-    #[serde(rename = "ExpressionAttributeNames")]
-    #[serde(default)]
     pub expression_attribute_names:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>One or more values that can be substituted in an expression.</p>
-    #[serde(rename = "ExpressionAttributeValues")]
-    #[serde(default)]
     pub expression_attribute_values: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
@@ -9775,8 +9090,6 @@ pub struct Delete {
     /// get the item attributes if the <code>Delete</code> condition fails.
     /// For <code>ReturnValuesOnConditionCheckFailure</code>, the valid
     /// values are: NONE and ALL_OLD.</p>
-    #[serde(rename = "ReturnValuesOnConditionCheckFailure")]
-    #[serde(default)]
     pub return_values_on_condition_check_failure:
         std::option::Option<crate::model::ReturnValuesOnConditionCheckFailure>,
 }
@@ -9941,34 +9254,24 @@ impl Delete {
 
 /// <p>Represents a request to perform a <code>PutItem</code> operation.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Put {
     /// <p>A map of attribute name to attribute values, representing the primary key
     /// of the item to be written by <code>PutItem</code>. All of the table's primary key
     /// attributes must be specified, and their data types must match those of the table's
     /// key schema. If any attributes are present in the item that are part of an index
     /// key schema for the table, their types must match the index key schema. </p>
-    #[serde(rename = "Item")]
-    #[serde(default)]
     pub item: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
     /// <p>Name of the table in which to write the item.</p>
-    #[serde(rename = "TableName")]
-    #[serde(default)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>A condition that must be satisfied in order for a conditional update to succeed.</p>
-    #[serde(rename = "ConditionExpression")]
-    #[serde(default)]
     pub condition_expression: std::option::Option<std::string::String>,
     /// <p>One or more substitution tokens for attribute names in an expression.</p>
-    #[serde(rename = "ExpressionAttributeNames")]
-    #[serde(default)]
     pub expression_attribute_names:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>One or more values that can be substituted in an expression.</p>
-    #[serde(rename = "ExpressionAttributeValues")]
-    #[serde(default)]
     pub expression_attribute_values: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
@@ -9976,8 +9279,6 @@ pub struct Put {
     /// get the item attributes if the <code>Put</code> condition fails.
     /// For <code>ReturnValuesOnConditionCheckFailure</code>, the valid
     /// values are: NONE and ALL_OLD.</p>
-    #[serde(rename = "ReturnValuesOnConditionCheckFailure")]
-    #[serde(default)]
     pub return_values_on_condition_check_failure:
         std::option::Option<crate::model::ReturnValuesOnConditionCheckFailure>,
 }
@@ -10143,31 +9444,21 @@ impl Put {
 /// <p>Represents a request to perform a check that an item exists or to check the condition of
 /// specific attributes of the item.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConditionCheck {
     /// <p>The primary key of the item to be checked. Each element consists of an
     /// attribute name and a value for that attribute.</p>
-    #[serde(rename = "Key")]
-    #[serde(default)]
     pub key: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
     /// <p>Name of the table for the check item request.</p>
-    #[serde(rename = "TableName")]
-    #[serde(default)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>A condition that must be satisfied in order for a conditional update to succeed.</p>
-    #[serde(rename = "ConditionExpression")]
-    #[serde(default)]
     pub condition_expression: std::option::Option<std::string::String>,
     /// <p>One or more substitution tokens for attribute names in an expression.</p>
-    #[serde(rename = "ExpressionAttributeNames")]
-    #[serde(default)]
     pub expression_attribute_names:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>One or more values that can be substituted in an expression.</p>
-    #[serde(rename = "ExpressionAttributeValues")]
-    #[serde(default)]
     pub expression_attribute_values: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
@@ -10175,8 +9466,6 @@ pub struct ConditionCheck {
     /// get the item attributes if the <code>ConditionCheck</code> condition fails.
     /// For <code>ReturnValuesOnConditionCheckFailure</code>, the valid
     /// values are: NONE and ALL_OLD.</p>
-    #[serde(rename = "ReturnValuesOnConditionCheckFailure")]
-    #[serde(default)]
     pub return_values_on_condition_check_failure:
         std::option::Option<crate::model::ReturnValuesOnConditionCheckFailure>,
 }
@@ -10341,11 +9630,9 @@ impl ConditionCheck {
 
 /// <p>Details for the requested item.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ItemResponse {
     /// <p>Map of attribute data consisting of the data type and attribute value.</p>
-    #[serde(rename = "Item")]
-    #[serde(default)]
     pub item: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
@@ -10402,13 +9689,11 @@ impl ItemResponse {
 
 /// <p>Specifies an item to be retrieved as part of the transaction.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TransactGetItem {
     /// <p>Contains the primary key that identifies the item to get, together
     /// with the name of the table that contains the item, and optionally
     /// the specific attributes of the item to retrieve.</p>
-    #[serde(rename = "Get")]
-    #[serde(default)]
     pub get: std::option::Option<crate::model::Get>,
 }
 impl std::fmt::Debug for TransactGetItem {
@@ -10454,31 +9739,23 @@ impl TransactGetItem {
 /// <p>Specifies an item and related attribute values to retrieve in a
 /// <code>TransactGetItem</code> object.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Get {
     /// <p>A map of attribute names to <code>AttributeValue</code> objects that
     /// specifies the primary key of the item to retrieve.</p>
-    #[serde(rename = "Key")]
-    #[serde(default)]
     pub key: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
     /// <p>The name of the table from which to retrieve the specified item.</p>
-    #[serde(rename = "TableName")]
-    #[serde(default)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>A string that identifies one or more attributes of the specified item
     /// to retrieve from the table.  The attributes in the expression must be
     /// separated by commas. If no attribute names are specified, then all
     /// attributes of the specified item are returned. If any of the requested
     /// attributes are not found, they do not appear in the result.</p>
-    #[serde(rename = "ProjectionExpression")]
-    #[serde(default)]
     pub projection_expression: std::option::Option<std::string::String>,
     /// <p>One or more substitution tokens for attribute names in the
     /// ProjectionExpression parameter.</p>
-    #[serde(rename = "ExpressionAttributeNames")]
-    #[serde(default)]
     pub expression_attribute_names:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -10602,17 +9879,13 @@ impl Get {
 /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging for DynamoDB</a>
 /// in the <i>Amazon DynamoDB Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>The key of the tag. Tag keys are case sensitive. Each DynamoDB table can only have up to
     /// one tag with the same key. If you try to add an existing tag (same key), the existing
     /// tag value will be updated to the new value. </p>
-    #[serde(rename = "Key")]
-    #[serde(default)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The value of the tag. Tag values are case-sensitive and can be null.</p>
-    #[serde(rename = "Value")]
-    #[serde(default)]
     pub value: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for Tag {
@@ -10688,7 +9961,7 @@ impl Tag {
 /// </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Condition {
     /// <p>One or more values to evaluate against the supplied attribute. The number of values in the
     /// list depends on the <code>ComparisonOperator</code> being used.</p>
@@ -10697,8 +9970,6 @@ pub struct Condition {
     /// code values. For example, <code>a</code> is greater than <code>A</code>, and <code>a</code>
     /// is greater than <code>B</code>. For a list of code values, see <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.</p>
     /// <p>For Binary, DynamoDB treats each byte of the binary data as unsigned when it compares binary values.</p>
-    #[serde(rename = "AttributeValueList")]
-    #[serde(default)]
     pub attribute_value_list: std::option::Option<std::vec::Vec<crate::model::AttributeValue>>,
     /// <p>A comparator for evaluating attributes. For example, equals, greater than, less than, etc.</p>
     /// <p>The following comparison operators are available:</p>
@@ -10848,8 +10119,6 @@ pub struct Condition {
     /// <p>For usage examples of <code>AttributeValueList</code> and <code>ComparisonOperator</code>, see
     /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy Conditional Parameters</a>
     /// in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    #[serde(rename = "ComparisonOperator")]
-    #[serde(default)]
     pub comparison_operator: std::option::Option<crate::model::ComparisonOperator>,
 }
 impl std::fmt::Debug for Condition {
@@ -11094,7 +10363,7 @@ impl std::convert::From<&str> for Select {
 impl std::str::FromStr for Select {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(Select::from(s))
     }
 }
@@ -11114,23 +10383,12 @@ impl AsRef<str> for Select {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for Select {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>Represents the properties of a local secondary index.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LocalSecondaryIndex {
     /// <p>The name of the local secondary index. The name must be unique among all other indexes on this table.</p>
-    #[serde(rename = "IndexName")]
-    #[serde(default)]
     pub index_name: std::option::Option<std::string::String>,
     /// <p>The complete key schema for the local secondary index, consisting of one or more pairs of attribute names and key types:</p>
     /// <ul>
@@ -11151,14 +10409,10 @@ pub struct LocalSecondaryIndex {
     /// The term "range attribute" derives from the way DynamoDB stores items with the same
     /// partition key physically close together, in sorted order by the sort key value.</p>
     /// </note>
-    #[serde(rename = "KeySchema")]
-    #[serde(default)]
     pub key_schema: std::option::Option<std::vec::Vec<crate::model::KeySchemaElement>>,
     /// <p>Represents attributes that are copied (projected) from the table into the local
     /// secondary index. These are in addition to the primary key attributes and index key
     /// attributes, which are automatically projected. </p>
-    #[serde(rename = "Projection")]
-    #[serde(default)]
     pub projection: std::option::Option<crate::model::Projection>,
 }
 impl std::fmt::Debug for LocalSecondaryIndex {
@@ -11236,11 +10490,9 @@ impl LocalSecondaryIndex {
 
 /// <p>Represents the properties of a global secondary index.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GlobalSecondaryIndex {
     /// <p>The name of the global secondary index. The name must be unique among all other indexes on this table.</p>
-    #[serde(rename = "IndexName")]
-    #[serde(default)]
     pub index_name: std::option::Option<std::string::String>,
     /// <p>The complete key schema for a global secondary index, which consists of one or more pairs of attribute names and key types:</p>
     /// <ul>
@@ -11261,19 +10513,13 @@ pub struct GlobalSecondaryIndex {
     /// The term "range attribute" derives from the way DynamoDB stores items with the same
     /// partition key physically close together, in sorted order by the sort key value.</p>
     /// </note>
-    #[serde(rename = "KeySchema")]
-    #[serde(default)]
     pub key_schema: std::option::Option<std::vec::Vec<crate::model::KeySchemaElement>>,
     /// <p>Represents attributes that are copied (projected) from the table into the global
     /// secondary index. These are in addition to the primary key attributes and index key
     /// attributes, which are automatically projected. </p>
-    #[serde(rename = "Projection")]
-    #[serde(default)]
     pub projection: std::option::Option<crate::model::Projection>,
     /// <p>Represents the provisioned throughput settings for the specified global secondary index.</p>
     /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    #[serde(rename = "ProvisionedThroughput")]
-    #[serde(default)]
     pub provisioned_throughput: std::option::Option<crate::model::ProvisionedThroughput>,
 }
 impl std::fmt::Debug for GlobalSecondaryIndex {
@@ -11370,15 +10616,11 @@ impl GlobalSecondaryIndex {
 
 /// <p>Represents the properties of a global table.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GlobalTable {
     /// <p>The global table name.</p>
-    #[serde(rename = "GlobalTableName")]
-    #[serde(default)]
     pub global_table_name: std::option::Option<std::string::String>,
     /// <p>The Regions where the global table has replicas.</p>
-    #[serde(rename = "ReplicationGroup")]
-    #[serde(default)]
     pub replication_group: std::option::Option<std::vec::Vec<crate::model::Replica>>,
 }
 impl std::fmt::Debug for GlobalTable {
@@ -11442,11 +10684,9 @@ impl GlobalTable {
 
 /// <p>Represents the properties of a replica.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Replica {
     /// <p>The Region where the replica needs to be created.</p>
-    #[serde(rename = "RegionName")]
-    #[serde(default)]
     pub region_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for Replica {
@@ -11491,15 +10731,11 @@ impl Replica {
 
 /// <p>Summary information about an export task.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportSummary {
     /// <p>The Amazon Resource Name (ARN) of the export.</p>
-    #[serde(rename = "ExportArn")]
-    #[serde(default)]
     pub export_arn: std::option::Option<std::string::String>,
     /// <p>Export can be in one of the following states: IN_PROGRESS, COMPLETED, or FAILED.</p>
-    #[serde(rename = "ExportStatus")]
-    #[serde(default)]
     pub export_status: std::option::Option<crate::model::ExportStatus>,
 }
 impl std::fmt::Debug for ExportSummary {
@@ -11587,7 +10823,7 @@ impl std::convert::From<&str> for ExportStatus {
 impl std::str::FromStr for ExportStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ExportStatus::from(s))
     }
 }
@@ -11606,31 +10842,16 @@ impl AsRef<str> for ExportStatus {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for ExportStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>Represents a Contributor Insights summary entry.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContributorInsightsSummary {
     /// <p>Name of the table associated with the summary.</p>
-    #[serde(rename = "TableName")]
-    #[serde(default)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>Name of the index associated with the summary, if any.</p>
-    #[serde(rename = "IndexName")]
-    #[serde(default)]
     pub index_name: std::option::Option<std::string::String>,
     /// <p>Describes the current status for contributor insights for the given table and index, if applicable.</p>
-    #[serde(rename = "ContributorInsightsStatus")]
-    #[serde(default)]
     pub contributor_insights_status: std::option::Option<crate::model::ContributorInsightsStatus>,
 }
 impl std::fmt::Debug for ContributorInsightsSummary {
@@ -11709,47 +10930,25 @@ impl ContributorInsightsSummary {
 
 /// <p>Contains details for the backup.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BackupSummary {
     /// <p>Name of the table.</p>
-    #[serde(rename = "TableName")]
-    #[serde(default)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>Unique identifier for the table.</p>
-    #[serde(rename = "TableId")]
-    #[serde(default)]
     pub table_id: std::option::Option<std::string::String>,
     /// <p>ARN associated with the table.</p>
-    #[serde(rename = "TableArn")]
-    #[serde(default)]
     pub table_arn: std::option::Option<std::string::String>,
     /// <p>ARN associated with the backup.</p>
-    #[serde(rename = "BackupArn")]
-    #[serde(default)]
     pub backup_arn: std::option::Option<std::string::String>,
     /// <p>Name of the specified backup.</p>
-    #[serde(rename = "BackupName")]
-    #[serde(default)]
     pub backup_name: std::option::Option<std::string::String>,
     /// <p>Time at which the backup was created.</p>
-    #[serde(rename = "BackupCreationDateTime")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub backup_creation_date_time: std::option::Option<smithy_types::Instant>,
     /// <p>Time at which the automatic on-demand backup created by DynamoDB will expire. This
     /// <code>SYSTEM</code> on-demand backup expires automatically 35 days after its
     /// creation.</p>
-    #[serde(rename = "BackupExpiryDateTime")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub backup_expiry_date_time: std::option::Option<smithy_types::Instant>,
     /// <p>Backup can be in one of the following states: CREATING, ACTIVE, DELETED.</p>
-    #[serde(rename = "BackupStatus")]
-    #[serde(default)]
     pub backup_status: std::option::Option<crate::model::BackupStatus>,
     /// <p>BackupType:</p>
     /// <ul>
@@ -11769,12 +10968,8 @@ pub struct BackupSummary {
     /// <code>AWS_BACKUP</code> - On-demand backup created by you from AWS Backup service.</p>
     /// </li>
     /// </ul>
-    #[serde(rename = "BackupType")]
-    #[serde(default)]
     pub backup_type: std::option::Option<crate::model::BackupType>,
     /// <p>Size of the backup in bytes.</p>
-    #[serde(rename = "BackupSizeBytes")]
-    #[serde(default)]
     pub backup_size_bytes: std::option::Option<i64>,
 }
 impl std::fmt::Debug for BackupSummary {
@@ -11986,7 +11181,7 @@ impl std::convert::From<&str> for BackupType {
 impl std::str::FromStr for BackupType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(BackupType::from(s))
     }
 }
@@ -12003,15 +11198,6 @@ impl BackupType {
 impl AsRef<str> for BackupType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for BackupType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -12045,7 +11231,7 @@ impl std::convert::From<&str> for BackupStatus {
 impl std::str::FromStr for BackupStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(BackupStatus::from(s))
     }
 }
@@ -12062,15 +11248,6 @@ impl BackupStatus {
 impl AsRef<str> for BackupStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for BackupStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -12106,7 +11283,7 @@ impl std::convert::From<&str> for BackupTypeFilter {
 impl std::str::FromStr for BackupTypeFilter {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(BackupTypeFilter::from(s))
     }
 }
@@ -12126,79 +11303,37 @@ impl AsRef<str> for BackupTypeFilter {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for BackupTypeFilter {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>Represents the properties of the exported table.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportDescription {
     /// <p>The Amazon Resource Name (ARN) of the table export.</p>
-    #[serde(rename = "ExportArn")]
-    #[serde(default)]
     pub export_arn: std::option::Option<std::string::String>,
     /// <p>Export can be in one of the following states: IN_PROGRESS, COMPLETED, or FAILED.</p>
-    #[serde(rename = "ExportStatus")]
-    #[serde(default)]
     pub export_status: std::option::Option<crate::model::ExportStatus>,
     /// <p>The time at which the export task began.</p>
-    #[serde(rename = "StartTime")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub start_time: std::option::Option<smithy_types::Instant>,
     /// <p>The time at which the export task completed.</p>
-    #[serde(rename = "EndTime")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub end_time: std::option::Option<smithy_types::Instant>,
     /// <p>The name of the manifest file for the export task.</p>
-    #[serde(rename = "ExportManifest")]
-    #[serde(default)]
     pub export_manifest: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the table that was exported.</p>
-    #[serde(rename = "TableArn")]
-    #[serde(default)]
     pub table_arn: std::option::Option<std::string::String>,
     /// <p>Unique ID of the table that was exported.</p>
-    #[serde(rename = "TableId")]
-    #[serde(default)]
     pub table_id: std::option::Option<std::string::String>,
     /// <p>Point in time from which table data was exported.</p>
-    #[serde(rename = "ExportTime")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub export_time: std::option::Option<smithy_types::Instant>,
     /// <p>The client token that was provided for the export task. A client token makes calls to
     /// <code>ExportTableToPointInTimeInput</code> idempotent, meaning that multiple
     /// identical calls have the same effect as one single call.</p>
-    #[serde(rename = "ClientToken")]
-    #[serde(default)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The name of the Amazon S3 bucket containing the export.</p>
-    #[serde(rename = "S3Bucket")]
-    #[serde(default)]
     pub s3_bucket: std::option::Option<std::string::String>,
     /// <p>The ID of the AWS account that owns the bucket containing the export.</p>
-    #[serde(rename = "S3BucketOwner")]
-    #[serde(default)]
     pub s3_bucket_owner: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 bucket prefix used as the file name and path of the exported
     /// snapshot.</p>
-    #[serde(rename = "S3Prefix")]
-    #[serde(default)]
     pub s3_prefix: std::option::Option<std::string::String>,
     /// <p>Type of encryption used on the bucket where export data is stored. Valid values
     /// for <code>S3SseAlgorithm</code> are:</p>
@@ -12212,34 +11347,20 @@ pub struct ExportDescription {
     /// <code>KMS</code> - server-side encryption with AWS KMS managed keys</p>
     /// </li>
     /// </ul>
-    #[serde(rename = "S3SseAlgorithm")]
-    #[serde(default)]
     pub s3_sse_algorithm: std::option::Option<crate::model::S3SseAlgorithm>,
     /// <p>The ID of the AWS KMS managed key used to encrypt the S3 bucket where export data is
     /// stored (if applicable).</p>
-    #[serde(rename = "S3SseKmsKeyId")]
-    #[serde(default)]
     pub s3_sse_kms_key_id: std::option::Option<std::string::String>,
     /// <p>Status code for the result of the failed export.</p>
-    #[serde(rename = "FailureCode")]
-    #[serde(default)]
     pub failure_code: std::option::Option<std::string::String>,
     /// <p>Export failure reason description.</p>
-    #[serde(rename = "FailureMessage")]
-    #[serde(default)]
     pub failure_message: std::option::Option<std::string::String>,
     /// <p>The format of the exported data. Valid values for <code>ExportFormat</code> are
     /// <code>DYNAMODB_JSON</code> or <code>ION</code>.</p>
-    #[serde(rename = "ExportFormat")]
-    #[serde(default)]
     pub export_format: std::option::Option<crate::model::ExportFormat>,
     /// <p>The billable size of the table export.</p>
-    #[serde(rename = "BilledSizeBytes")]
-    #[serde(default)]
     pub billed_size_bytes: std::option::Option<i64>,
     /// <p>The number of items exported.</p>
-    #[serde(rename = "ItemCount")]
-    #[serde(default)]
     pub item_count: std::option::Option<i64>,
 }
 impl std::fmt::Debug for ExportDescription {
@@ -12566,7 +11687,7 @@ impl std::convert::From<&str> for ExportFormat {
 impl std::str::FromStr for ExportFormat {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ExportFormat::from(s))
     }
 }
@@ -12582,15 +11703,6 @@ impl ExportFormat {
 impl AsRef<str> for ExportFormat {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ExportFormat {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -12622,7 +11734,7 @@ impl std::convert::From<&str> for S3SseAlgorithm {
 impl std::str::FromStr for S3SseAlgorithm {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(S3SseAlgorithm::from(s))
     }
 }
@@ -12640,33 +11752,20 @@ impl AsRef<str> for S3SseAlgorithm {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for S3SseAlgorithm {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>
 /// Represents a PartiQL statment that uses parameters.
 /// </p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ParameterizedStatement {
     /// <p>
     /// A PartiQL statment that uses parameters.
     /// </p>
-    #[serde(rename = "Statement")]
-    #[serde(default)]
     pub statement: std::option::Option<std::string::String>,
     /// <p>
     /// The parameter values.
     /// </p>
-    #[serde(rename = "Parameters")]
-    #[serde(default)]
     pub parameters: std::option::Option<std::vec::Vec<crate::model::AttributeValue>>,
 }
 impl std::fmt::Debug for ParameterizedStatement {
@@ -12761,7 +11860,7 @@ impl std::convert::From<&str> for DestinationStatus {
 impl std::str::FromStr for DestinationStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(DestinationStatus::from(s))
     }
 }
@@ -12782,27 +11881,14 @@ impl AsRef<str> for DestinationStatus {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for DestinationStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>The description of the Time to Live (TTL) status on the specified table. </p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TimeToLiveDescription {
     /// <p> The TTL status for the table.</p>
-    #[serde(rename = "TimeToLiveStatus")]
-    #[serde(default)]
     pub time_to_live_status: std::option::Option<crate::model::TimeToLiveStatus>,
     /// <p> The name of the TTL attribute for items in the table.</p>
-    #[serde(rename = "AttributeName")]
-    #[serde(default)]
     pub attribute_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TimeToLiveDescription {
@@ -12895,7 +11981,7 @@ impl std::convert::From<&str> for TimeToLiveStatus {
 impl std::str::FromStr for TimeToLiveStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(TimeToLiveStatus::from(s))
     }
 }
@@ -12915,31 +12001,16 @@ impl AsRef<str> for TimeToLiveStatus {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for TimeToLiveStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>Describes a Kinesis data stream destination.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KinesisDataStreamDestination {
     /// <p>The ARN for a specific Kinesis data stream.</p>
-    #[serde(rename = "StreamArn")]
-    #[serde(default)]
     pub stream_arn: std::option::Option<std::string::String>,
     /// <p>The current status of replication.</p>
-    #[serde(rename = "DestinationStatus")]
-    #[serde(default)]
     pub destination_status: std::option::Option<crate::model::DestinationStatus>,
     /// <p>The human-readable string that corresponds to the replica status.</p>
-    #[serde(rename = "DestinationStatusDescription")]
-    #[serde(default)]
     pub destination_status_description: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for KinesisDataStreamDestination {
@@ -13020,15 +12091,11 @@ impl KinesisDataStreamDestination {
 
 /// <p>An endpoint information details.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Endpoint {
     /// <p>IP address of the endpoint.</p>
-    #[serde(rename = "Address")]
-    #[serde(default)]
     pub address: std::option::Option<std::string::String>,
     /// <p>Endpoint cache time to live (TTL) value.</p>
-    #[serde(rename = "CachePeriodInMinutes")]
-    #[serde(default)]
     pub cache_period_in_minutes: i64,
 }
 impl std::fmt::Debug for Endpoint {
@@ -13085,15 +12152,11 @@ impl Endpoint {
 
 /// <p>Represents a failure a contributor insights operation.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FailureException {
     /// <p>Exception name.</p>
-    #[serde(rename = "ExceptionName")]
-    #[serde(default)]
     pub exception_name: std::option::Option<std::string::String>,
     /// <p>Description of the failure.</p>
-    #[serde(rename = "ExceptionDescription")]
-    #[serde(default)]
     pub exception_description: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for FailureException {
@@ -13156,19 +12219,13 @@ impl FailureException {
 
 /// <p>Contains the description of the backup created for the table.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BackupDescription {
     /// <p>Contains the details of the backup created for the table. </p>
-    #[serde(rename = "BackupDetails")]
-    #[serde(default)]
     pub backup_details: std::option::Option<crate::model::BackupDetails>,
     /// <p>Contains the details of the table when the backup was created. </p>
-    #[serde(rename = "SourceTableDetails")]
-    #[serde(default)]
     pub source_table_details: std::option::Option<crate::model::SourceTableDetails>,
     /// <p>Contains the details of the features enabled on the table when the backup was created. For example, LSIs, GSIs, streams, TTL.</p>
-    #[serde(rename = "SourceTableFeatureDetails")]
-    #[serde(default)]
     pub source_table_feature_details: std::option::Option<crate::model::SourceTableFeatureDetails>,
 }
 impl std::fmt::Debug for BackupDescription {
@@ -13253,32 +12310,22 @@ impl BackupDescription {
 
 /// <p>Contains the details of the features enabled on the table when the backup was created. For example, LSIs, GSIs, streams, TTL. </p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SourceTableFeatureDetails {
     /// <p>Represents the LSI properties for the table when the backup was created. It includes the IndexName, KeySchema and Projection for the LSIs on the table at the time of backup. </p>
-    #[serde(rename = "LocalSecondaryIndexes")]
-    #[serde(default)]
     pub local_secondary_indexes:
         std::option::Option<std::vec::Vec<crate::model::LocalSecondaryIndexInfo>>,
     /// <p>Represents the GSI properties for the table when the backup was created. It includes the
     /// IndexName, KeySchema, Projection, and ProvisionedThroughput for the GSIs on the table at
     /// the time of backup. </p>
-    #[serde(rename = "GlobalSecondaryIndexes")]
-    #[serde(default)]
     pub global_secondary_indexes:
         std::option::Option<std::vec::Vec<crate::model::GlobalSecondaryIndexInfo>>,
     /// <p>Stream settings on the table when the backup was created.</p>
-    #[serde(rename = "StreamDescription")]
-    #[serde(default)]
     pub stream_description: std::option::Option<crate::model::StreamSpecification>,
     /// <p>Time to Live settings on the table when the backup was created.</p>
-    #[serde(rename = "TimeToLiveDescription")]
-    #[serde(default)]
     pub time_to_live_description: std::option::Option<crate::model::TimeToLiveDescription>,
     /// <p>The description of the server-side encryption status on the table when the backup was created.</p>
-    #[serde(rename = "SSEDescription")]
-    #[serde(default)]
-    pub sse_description: std::option::Option<crate::model::SSEDescription>,
+    pub sse_description: std::option::Option<crate::model::SseDescription>,
 }
 impl std::fmt::Debug for SourceTableFeatureDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13304,7 +12351,7 @@ pub mod source_table_feature_details {
         pub(crate) stream_description: std::option::Option<crate::model::StreamSpecification>,
         pub(crate) time_to_live_description:
             std::option::Option<crate::model::TimeToLiveDescription>,
-        pub(crate) sse_description: std::option::Option<crate::model::SSEDescription>,
+        pub(crate) sse_description: std::option::Option<crate::model::SseDescription>,
     }
     impl Builder {
         pub fn local_secondary_indexes(
@@ -13367,13 +12414,13 @@ pub mod source_table_feature_details {
             self
         }
         /// <p>The description of the server-side encryption status on the table when the backup was created.</p>
-        pub fn sse_description(mut self, input: crate::model::SSEDescription) -> Self {
+        pub fn sse_description(mut self, input: crate::model::SseDescription) -> Self {
             self.sse_description = Some(input);
             self
         }
         pub fn set_sse_description(
             mut self,
-            input: std::option::Option<crate::model::SSEDescription>,
+            input: std::option::Option<crate::model::SseDescription>,
         ) -> Self {
             self.sse_description = input;
             self
@@ -13400,11 +12447,9 @@ impl SourceTableFeatureDetails {
 /// <p>Represents the properties of a global secondary index for the table
 /// when the backup was created.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GlobalSecondaryIndexInfo {
     /// <p>The name of the global secondary index.</p>
-    #[serde(rename = "IndexName")]
-    #[serde(default)]
     pub index_name: std::option::Option<std::string::String>,
     /// <p>The complete key schema for a global secondary index, which consists of one or more pairs of attribute names and key types:</p>
     /// <ul>
@@ -13425,19 +12470,13 @@ pub struct GlobalSecondaryIndexInfo {
     /// The term "range attribute" derives from the way DynamoDB stores items with the same
     /// partition key physically close together, in sorted order by the sort key value.</p>
     /// </note>
-    #[serde(rename = "KeySchema")]
-    #[serde(default)]
     pub key_schema: std::option::Option<std::vec::Vec<crate::model::KeySchemaElement>>,
     /// <p>Represents attributes that are copied (projected) from the table into
     /// the global secondary index. These are in addition to the primary
     /// key attributes and index key attributes, which are automatically
     /// projected. </p>
-    #[serde(rename = "Projection")]
-    #[serde(default)]
     pub projection: std::option::Option<crate::model::Projection>,
     /// <p>Represents the provisioned throughput settings for the specified global secondary index. </p>
-    #[serde(rename = "ProvisionedThroughput")]
-    #[serde(default)]
     pub provisioned_throughput: std::option::Option<crate::model::ProvisionedThroughput>,
 }
 impl std::fmt::Debug for GlobalSecondaryIndexInfo {
@@ -13535,11 +12574,9 @@ impl GlobalSecondaryIndexInfo {
 /// <p>Represents the properties of a local secondary index for the table
 /// when the backup was created.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LocalSecondaryIndexInfo {
     /// <p>Represents the name of the local secondary index.</p>
-    #[serde(rename = "IndexName")]
-    #[serde(default)]
     pub index_name: std::option::Option<std::string::String>,
     /// <p>The complete key schema for a local secondary index, which consists of one or more pairs of attribute names and key types:</p>
     /// <ul>
@@ -13560,12 +12597,8 @@ pub struct LocalSecondaryIndexInfo {
     /// The term "range attribute" derives from the way DynamoDB stores items with the same
     /// partition key physically close together, in sorted order by the sort key value.</p>
     /// </note>
-    #[serde(rename = "KeySchema")]
-    #[serde(default)]
     pub key_schema: std::option::Option<std::vec::Vec<crate::model::KeySchemaElement>>,
     /// <p>Represents attributes that are copied (projected) from the table into the global secondary index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. </p>
-    #[serde(rename = "Projection")]
-    #[serde(default)]
     pub projection: std::option::Option<crate::model::Projection>,
 }
 impl std::fmt::Debug for LocalSecondaryIndexInfo {
@@ -13641,42 +12674,23 @@ impl LocalSecondaryIndexInfo {
 
 /// <p>Contains the details of the table when the backup was created. </p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SourceTableDetails {
     /// <p>The name of the table for which the backup was created. </p>
-    #[serde(rename = "TableName")]
-    #[serde(default)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>Unique identifier for the table for which the backup was created. </p>
-    #[serde(rename = "TableId")]
-    #[serde(default)]
     pub table_id: std::option::Option<std::string::String>,
     /// <p>ARN of the table for which backup was created. </p>
-    #[serde(rename = "TableArn")]
-    #[serde(default)]
     pub table_arn: std::option::Option<std::string::String>,
     /// <p>Size of the table in bytes. Note that this is an approximate value.</p>
-    #[serde(rename = "TableSizeBytes")]
-    #[serde(default)]
     pub table_size_bytes: i64,
     /// <p>Schema of the table. </p>
-    #[serde(rename = "KeySchema")]
-    #[serde(default)]
     pub key_schema: std::option::Option<std::vec::Vec<crate::model::KeySchemaElement>>,
     /// <p>Time when the source table was created. </p>
-    #[serde(rename = "TableCreationDateTime")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub table_creation_date_time: std::option::Option<smithy_types::Instant>,
     /// <p>Read IOPs and Write IOPS on the table when the backup was created.</p>
-    #[serde(rename = "ProvisionedThroughput")]
-    #[serde(default)]
     pub provisioned_throughput: std::option::Option<crate::model::ProvisionedThroughput>,
     /// <p>Number of items in the table. Note that this is an approximate value. </p>
-    #[serde(rename = "ItemCount")]
-    #[serde(default)]
     pub item_count: std::option::Option<i64>,
     /// <p>Controls how you are charged for read and write throughput and how you manage capacity. This setting can be changed later.</p>
     /// <ul>
@@ -13690,8 +12704,6 @@ pub struct SourceTableDetails {
     /// </p>
     /// </li>
     /// </ul>
-    #[serde(rename = "BillingMode")]
-    #[serde(default)]
     pub billing_mode: std::option::Option<crate::model::BillingMode>,
 }
 impl std::fmt::Debug for SourceTableDetails {
@@ -13859,23 +12871,15 @@ impl SourceTableDetails {
 
 /// <p>Contains the details of the backup created for the table.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BackupDetails {
     /// <p>ARN associated with the backup.</p>
-    #[serde(rename = "BackupArn")]
-    #[serde(default)]
     pub backup_arn: std::option::Option<std::string::String>,
     /// <p>Name of the requested backup.</p>
-    #[serde(rename = "BackupName")]
-    #[serde(default)]
     pub backup_name: std::option::Option<std::string::String>,
     /// <p>Size of the backup in bytes.</p>
-    #[serde(rename = "BackupSizeBytes")]
-    #[serde(default)]
     pub backup_size_bytes: std::option::Option<i64>,
     /// <p>Backup can be in one of the following states: CREATING, ACTIVE, DELETED. </p>
-    #[serde(rename = "BackupStatus")]
-    #[serde(default)]
     pub backup_status: std::option::Option<crate::model::BackupStatus>,
     /// <p>BackupType:</p>
     /// <ul>
@@ -13895,23 +12899,11 @@ pub struct BackupDetails {
     /// <code>AWS_BACKUP</code> - On-demand backup created by you from AWS Backup service.</p>
     /// </li>
     /// </ul>
-    #[serde(rename = "BackupType")]
-    #[serde(default)]
     pub backup_type: std::option::Option<crate::model::BackupType>,
     /// <p>Time at which the backup was created. This is the request time of the backup. </p>
-    #[serde(rename = "BackupCreationDateTime")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub backup_creation_date_time: std::option::Option<smithy_types::Instant>,
     /// <p>Time at which the automatic on-demand backup created by DynamoDB will expire. This <code>SYSTEM</code>
     /// on-demand backup expires automatically 35 days after its creation.</p>
-    #[serde(rename = "BackupExpiryDateTime")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub backup_expiry_date_time: std::option::Option<smithy_types::Instant>,
 }
 impl std::fmt::Debug for BackupDetails {
@@ -14061,15 +13053,11 @@ impl BackupDetails {
 /// single <code>WriteRequest</code>. If you do need to perform both of these operations, you
 /// need to provide two separate <code>WriteRequest</code> objects.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WriteRequest {
     /// <p>A request to perform a <code>PutItem</code> operation.</p>
-    #[serde(rename = "PutRequest")]
-    #[serde(default)]
     pub put_request: std::option::Option<crate::model::PutRequest>,
     /// <p>A request to perform a <code>DeleteItem</code> operation.</p>
-    #[serde(rename = "DeleteRequest")]
-    #[serde(default)]
     pub delete_request: std::option::Option<crate::model::DeleteRequest>,
 }
 impl std::fmt::Debug for WriteRequest {
@@ -14132,11 +13120,9 @@ impl WriteRequest {
 
 /// <p>Represents a request to perform a <code>DeleteItem</code> operation on an item.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRequest {
     /// <p>A map of attribute name to attribute values, representing the primary key of the item to delete. All of the table's primary key attributes must be specified, and their data types must match those of the table's key schema.</p>
-    #[serde(rename = "Key")]
-    #[serde(default)]
     pub key: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
@@ -14193,15 +13179,13 @@ impl DeleteRequest {
 
 /// <p>Represents a request to perform a <code>PutItem</code> operation on an item.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutRequest {
     /// <p>A map of attribute name to attribute values, representing the primary key of an item to
     /// be processed by <code>PutItem</code>. All of the table's primary key attributes must be
     /// specified, and their data types must match those of the table's key schema. If any
     /// attributes are present in the item that are part of an index key schema for the table,
     /// their types must match the index key schema.</p>
-    #[serde(rename = "Item")]
-    #[serde(default)]
     pub item: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
@@ -14261,31 +13245,23 @@ impl PutRequest {
 /// simple primary key, you only need to provide the partition key. For a composite
 /// primary key, you must provide <i>both</i> the partition key and the sort key.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KeysAndAttributes {
     /// <p>The primary key attribute values that define the items and the attributes associated with the items.</p>
-    #[serde(rename = "Keys")]
-    #[serde(default)]
     pub keys: std::option::Option<
         std::vec::Vec<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>,
     >,
     /// <p>This is a legacy parameter.  Use <code>ProjectionExpression</code> instead.  For more information, see
     /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy Conditional Parameters</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    #[serde(rename = "AttributesToGet")]
-    #[serde(default)]
     pub attributes_to_get: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The consistency of a read operation. If set to <code>true</code>, then a strongly consistent
     /// read is used; otherwise, an eventually consistent read is used.</p>
-    #[serde(rename = "ConsistentRead")]
-    #[serde(default)]
     pub consistent_read: std::option::Option<bool>,
     /// <p>A string that identifies one or more attributes to retrieve from the table. These attributes can include scalars,
     /// sets, or elements of a JSON document. The attributes in the <code>ProjectionExpression</code> must be separated by
     /// commas.</p>
     /// <p>If no attribute names are specified, then all attributes will be returned. If any of the requested attributes are not found, they will not appear in the result.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    #[serde(rename = "ProjectionExpression")]
-    #[serde(default)]
     pub projection_expression: std::option::Option<std::string::String>,
     /// <p>One or more substitution tokens for attribute names in an expression. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
     /// <ul>
@@ -14327,8 +13303,6 @@ pub struct KeysAndAttributes {
     /// <p>Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</p>
     /// </note>
     /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    #[serde(rename = "ExpressionAttributeNames")]
-    #[serde(default)]
     pub expression_attribute_names:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -14468,25 +13442,19 @@ impl KeysAndAttributes {
 /// A PartiQL batch statement response..
 /// </p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchStatementResponse {
     /// <p>
     /// The error associated with a failed PartiQL batch statement.
     /// </p>
-    #[serde(rename = "Error")]
-    #[serde(default)]
     pub error: std::option::Option<crate::model::BatchStatementError>,
     /// <p>
     /// The table name associated with a failed PartiQL batch statement.
     /// </p>
-    #[serde(rename = "TableName")]
-    #[serde(default)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>
     /// A DynamoDB item associated with a BatchStatementResponse
     /// </p>
-    #[serde(rename = "Item")]
-    #[serde(default)]
     pub item: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
@@ -14578,19 +13546,15 @@ impl BatchStatementResponse {
 /// An error associated with a statement in a PartiQL batch that was run.
 /// </p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchStatementError {
     /// <p>
     /// The error code associated with the failed PartiQL batch statement.
     /// </p>
-    #[serde(rename = "Code")]
-    #[serde(default)]
     pub code: std::option::Option<crate::model::BatchStatementErrorCodeEnum>,
     /// <p>
     /// The error message associated with the PartiQL batch resposne.
     /// </p>
-    #[serde(rename = "Message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for BatchStatementError {
@@ -14702,7 +13666,7 @@ impl std::convert::From<&str> for BatchStatementErrorCodeEnum {
 impl std::str::FromStr for BatchStatementErrorCodeEnum {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(BatchStatementErrorCodeEnum::from(s))
     }
 }
@@ -14733,39 +13697,24 @@ impl AsRef<str> for BatchStatementErrorCodeEnum {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for BatchStatementErrorCodeEnum {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>
 /// A PartiQL batch statement request.
 /// </p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchStatementRequest {
     /// <p>
     /// A valid PartiQL statement.
     /// </p>
-    #[serde(rename = "Statement")]
-    #[serde(default)]
     pub statement: std::option::Option<std::string::String>,
     /// <p>
     /// The parameters associated with a PartiQL statement in the batch request.
     /// </p>
-    #[serde(rename = "Parameters")]
-    #[serde(default)]
     pub parameters: std::option::Option<std::vec::Vec<crate::model::AttributeValue>>,
     /// <p>
     /// The read consistency of the PartiQL batch request.
     /// </p>
-    #[serde(rename = "ConsistentRead")]
-    #[serde(default)]
     pub consistent_read: std::option::Option<bool>,
 }
 impl std::fmt::Debug for BatchStatementRequest {

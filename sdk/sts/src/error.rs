@@ -8,20 +8,20 @@ pub struct AssumeRoleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AssumeRoleErrorKind {
-    ExpiredTokenError(crate::error::ExpiredTokenError),
-    MalformedPolicyDocumentError(crate::error::MalformedPolicyDocumentError),
-    PackedPolicyTooLargeError(crate::error::PackedPolicyTooLargeError),
-    RegionDisabledError(crate::error::RegionDisabledError),
+    ExpiredTokenException(crate::error::ExpiredTokenException),
+    MalformedPolicyDocumentException(crate::error::MalformedPolicyDocumentException),
+    PackedPolicyTooLargeException(crate::error::PackedPolicyTooLargeException),
+    RegionDisabledException(crate::error::RegionDisabledException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssumeRoleError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            AssumeRoleErrorKind::ExpiredTokenError(_inner) => _inner.fmt(f),
-            AssumeRoleErrorKind::MalformedPolicyDocumentError(_inner) => _inner.fmt(f),
-            AssumeRoleErrorKind::PackedPolicyTooLargeError(_inner) => _inner.fmt(f),
-            AssumeRoleErrorKind::RegionDisabledError(_inner) => _inner.fmt(f),
+            AssumeRoleErrorKind::ExpiredTokenException(_inner) => _inner.fmt(f),
+            AssumeRoleErrorKind::MalformedPolicyDocumentException(_inner) => _inner.fmt(f),
+            AssumeRoleErrorKind::PackedPolicyTooLargeException(_inner) => _inner.fmt(f),
+            AssumeRoleErrorKind::RegionDisabledException(_inner) => _inner.fmt(f),
             AssumeRoleErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -70,32 +70,32 @@ impl AssumeRoleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_expired_token_error(&self) -> bool {
-        matches!(&self.kind, AssumeRoleErrorKind::ExpiredTokenError(_))
+    pub fn is_expired_token_exception(&self) -> bool {
+        matches!(&self.kind, AssumeRoleErrorKind::ExpiredTokenException(_))
     }
-    pub fn is_malformed_policy_document_error(&self) -> bool {
+    pub fn is_malformed_policy_document_exception(&self) -> bool {
         matches!(
             &self.kind,
-            AssumeRoleErrorKind::MalformedPolicyDocumentError(_)
+            AssumeRoleErrorKind::MalformedPolicyDocumentException(_)
         )
     }
-    pub fn is_packed_policy_too_large_error(&self) -> bool {
+    pub fn is_packed_policy_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
-            AssumeRoleErrorKind::PackedPolicyTooLargeError(_)
+            AssumeRoleErrorKind::PackedPolicyTooLargeException(_)
         )
     }
-    pub fn is_region_disabled_error(&self) -> bool {
-        matches!(&self.kind, AssumeRoleErrorKind::RegionDisabledError(_))
+    pub fn is_region_disabled_exception(&self) -> bool {
+        matches!(&self.kind, AssumeRoleErrorKind::RegionDisabledException(_))
     }
 }
 impl std::error::Error for AssumeRoleError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            AssumeRoleErrorKind::ExpiredTokenError(_inner) => Some(_inner),
-            AssumeRoleErrorKind::MalformedPolicyDocumentError(_inner) => Some(_inner),
-            AssumeRoleErrorKind::PackedPolicyTooLargeError(_inner) => Some(_inner),
-            AssumeRoleErrorKind::RegionDisabledError(_inner) => Some(_inner),
+            AssumeRoleErrorKind::ExpiredTokenException(_inner) => Some(_inner),
+            AssumeRoleErrorKind::MalformedPolicyDocumentException(_inner) => Some(_inner),
+            AssumeRoleErrorKind::PackedPolicyTooLargeException(_inner) => Some(_inner),
+            AssumeRoleErrorKind::RegionDisabledException(_inner) => Some(_inner),
             AssumeRoleErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -110,24 +110,24 @@ pub struct AssumeRoleWithSAMLError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AssumeRoleWithSAMLErrorKind {
-    ExpiredTokenError(crate::error::ExpiredTokenError),
-    IDPRejectedClaimError(crate::error::IDPRejectedClaimError),
-    InvalidIdentityTokenError(crate::error::InvalidIdentityTokenError),
-    MalformedPolicyDocumentError(crate::error::MalformedPolicyDocumentError),
-    PackedPolicyTooLargeError(crate::error::PackedPolicyTooLargeError),
-    RegionDisabledError(crate::error::RegionDisabledError),
+    ExpiredTokenException(crate::error::ExpiredTokenException),
+    IdpRejectedClaimException(crate::error::IdpRejectedClaimException),
+    InvalidIdentityTokenException(crate::error::InvalidIdentityTokenException),
+    MalformedPolicyDocumentException(crate::error::MalformedPolicyDocumentException),
+    PackedPolicyTooLargeException(crate::error::PackedPolicyTooLargeException),
+    RegionDisabledException(crate::error::RegionDisabledException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssumeRoleWithSAMLError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            AssumeRoleWithSAMLErrorKind::ExpiredTokenError(_inner) => _inner.fmt(f),
-            AssumeRoleWithSAMLErrorKind::IDPRejectedClaimError(_inner) => _inner.fmt(f),
-            AssumeRoleWithSAMLErrorKind::InvalidIdentityTokenError(_inner) => _inner.fmt(f),
-            AssumeRoleWithSAMLErrorKind::MalformedPolicyDocumentError(_inner) => _inner.fmt(f),
-            AssumeRoleWithSAMLErrorKind::PackedPolicyTooLargeError(_inner) => _inner.fmt(f),
-            AssumeRoleWithSAMLErrorKind::RegionDisabledError(_inner) => _inner.fmt(f),
+            AssumeRoleWithSAMLErrorKind::ExpiredTokenException(_inner) => _inner.fmt(f),
+            AssumeRoleWithSAMLErrorKind::IdpRejectedClaimException(_inner) => _inner.fmt(f),
+            AssumeRoleWithSAMLErrorKind::InvalidIdentityTokenException(_inner) => _inner.fmt(f),
+            AssumeRoleWithSAMLErrorKind::MalformedPolicyDocumentException(_inner) => _inner.fmt(f),
+            AssumeRoleWithSAMLErrorKind::PackedPolicyTooLargeException(_inner) => _inner.fmt(f),
+            AssumeRoleWithSAMLErrorKind::RegionDisabledException(_inner) => _inner.fmt(f),
             AssumeRoleWithSAMLErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -176,52 +176,52 @@ impl AssumeRoleWithSAMLError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_expired_token_error(&self) -> bool {
+    pub fn is_expired_token_exception(&self) -> bool {
         matches!(
             &self.kind,
-            AssumeRoleWithSAMLErrorKind::ExpiredTokenError(_)
+            AssumeRoleWithSAMLErrorKind::ExpiredTokenException(_)
         )
     }
-    pub fn is_idp_rejected_claim_error(&self) -> bool {
+    pub fn is_idp_rejected_claim_exception(&self) -> bool {
         matches!(
             &self.kind,
-            AssumeRoleWithSAMLErrorKind::IDPRejectedClaimError(_)
+            AssumeRoleWithSAMLErrorKind::IdpRejectedClaimException(_)
         )
     }
-    pub fn is_invalid_identity_token_error(&self) -> bool {
+    pub fn is_invalid_identity_token_exception(&self) -> bool {
         matches!(
             &self.kind,
-            AssumeRoleWithSAMLErrorKind::InvalidIdentityTokenError(_)
+            AssumeRoleWithSAMLErrorKind::InvalidIdentityTokenException(_)
         )
     }
-    pub fn is_malformed_policy_document_error(&self) -> bool {
+    pub fn is_malformed_policy_document_exception(&self) -> bool {
         matches!(
             &self.kind,
-            AssumeRoleWithSAMLErrorKind::MalformedPolicyDocumentError(_)
+            AssumeRoleWithSAMLErrorKind::MalformedPolicyDocumentException(_)
         )
     }
-    pub fn is_packed_policy_too_large_error(&self) -> bool {
+    pub fn is_packed_policy_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
-            AssumeRoleWithSAMLErrorKind::PackedPolicyTooLargeError(_)
+            AssumeRoleWithSAMLErrorKind::PackedPolicyTooLargeException(_)
         )
     }
-    pub fn is_region_disabled_error(&self) -> bool {
+    pub fn is_region_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
-            AssumeRoleWithSAMLErrorKind::RegionDisabledError(_)
+            AssumeRoleWithSAMLErrorKind::RegionDisabledException(_)
         )
     }
 }
 impl std::error::Error for AssumeRoleWithSAMLError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            AssumeRoleWithSAMLErrorKind::ExpiredTokenError(_inner) => Some(_inner),
-            AssumeRoleWithSAMLErrorKind::IDPRejectedClaimError(_inner) => Some(_inner),
-            AssumeRoleWithSAMLErrorKind::InvalidIdentityTokenError(_inner) => Some(_inner),
-            AssumeRoleWithSAMLErrorKind::MalformedPolicyDocumentError(_inner) => Some(_inner),
-            AssumeRoleWithSAMLErrorKind::PackedPolicyTooLargeError(_inner) => Some(_inner),
-            AssumeRoleWithSAMLErrorKind::RegionDisabledError(_inner) => Some(_inner),
+            AssumeRoleWithSAMLErrorKind::ExpiredTokenException(_inner) => Some(_inner),
+            AssumeRoleWithSAMLErrorKind::IdpRejectedClaimException(_inner) => Some(_inner),
+            AssumeRoleWithSAMLErrorKind::InvalidIdentityTokenException(_inner) => Some(_inner),
+            AssumeRoleWithSAMLErrorKind::MalformedPolicyDocumentException(_inner) => Some(_inner),
+            AssumeRoleWithSAMLErrorKind::PackedPolicyTooLargeException(_inner) => Some(_inner),
+            AssumeRoleWithSAMLErrorKind::RegionDisabledException(_inner) => Some(_inner),
             AssumeRoleWithSAMLErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -236,28 +236,34 @@ pub struct AssumeRoleWithWebIdentityError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AssumeRoleWithWebIdentityErrorKind {
-    ExpiredTokenError(crate::error::ExpiredTokenError),
-    IDPCommunicationErrorError(crate::error::IDPCommunicationErrorError),
-    IDPRejectedClaimError(crate::error::IDPRejectedClaimError),
-    InvalidIdentityTokenError(crate::error::InvalidIdentityTokenError),
-    MalformedPolicyDocumentError(crate::error::MalformedPolicyDocumentError),
-    PackedPolicyTooLargeError(crate::error::PackedPolicyTooLargeError),
-    RegionDisabledError(crate::error::RegionDisabledError),
+    ExpiredTokenException(crate::error::ExpiredTokenException),
+    IdpCommunicationErrorException(crate::error::IdpCommunicationErrorException),
+    IdpRejectedClaimException(crate::error::IdpRejectedClaimException),
+    InvalidIdentityTokenException(crate::error::InvalidIdentityTokenException),
+    MalformedPolicyDocumentException(crate::error::MalformedPolicyDocumentException),
+    PackedPolicyTooLargeException(crate::error::PackedPolicyTooLargeException),
+    RegionDisabledException(crate::error::RegionDisabledException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssumeRoleWithWebIdentityError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            AssumeRoleWithWebIdentityErrorKind::ExpiredTokenError(_inner) => _inner.fmt(f),
-            AssumeRoleWithWebIdentityErrorKind::IDPCommunicationErrorError(_inner) => _inner.fmt(f),
-            AssumeRoleWithWebIdentityErrorKind::IDPRejectedClaimError(_inner) => _inner.fmt(f),
-            AssumeRoleWithWebIdentityErrorKind::InvalidIdentityTokenError(_inner) => _inner.fmt(f),
-            AssumeRoleWithWebIdentityErrorKind::MalformedPolicyDocumentError(_inner) => {
+            AssumeRoleWithWebIdentityErrorKind::ExpiredTokenException(_inner) => _inner.fmt(f),
+            AssumeRoleWithWebIdentityErrorKind::IdpCommunicationErrorException(_inner) => {
                 _inner.fmt(f)
             }
-            AssumeRoleWithWebIdentityErrorKind::PackedPolicyTooLargeError(_inner) => _inner.fmt(f),
-            AssumeRoleWithWebIdentityErrorKind::RegionDisabledError(_inner) => _inner.fmt(f),
+            AssumeRoleWithWebIdentityErrorKind::IdpRejectedClaimException(_inner) => _inner.fmt(f),
+            AssumeRoleWithWebIdentityErrorKind::InvalidIdentityTokenException(_inner) => {
+                _inner.fmt(f)
+            }
+            AssumeRoleWithWebIdentityErrorKind::MalformedPolicyDocumentException(_inner) => {
+                _inner.fmt(f)
+            }
+            AssumeRoleWithWebIdentityErrorKind::PackedPolicyTooLargeException(_inner) => {
+                _inner.fmt(f)
+            }
+            AssumeRoleWithWebIdentityErrorKind::RegionDisabledException(_inner) => _inner.fmt(f),
             AssumeRoleWithWebIdentityErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -306,61 +312,67 @@ impl AssumeRoleWithWebIdentityError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_expired_token_error(&self) -> bool {
+    pub fn is_expired_token_exception(&self) -> bool {
         matches!(
             &self.kind,
-            AssumeRoleWithWebIdentityErrorKind::ExpiredTokenError(_)
+            AssumeRoleWithWebIdentityErrorKind::ExpiredTokenException(_)
         )
     }
-    pub fn is_idp_communication_error_error(&self) -> bool {
+    pub fn is_idp_communication_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            AssumeRoleWithWebIdentityErrorKind::IDPCommunicationErrorError(_)
+            AssumeRoleWithWebIdentityErrorKind::IdpCommunicationErrorException(_)
         )
     }
-    pub fn is_idp_rejected_claim_error(&self) -> bool {
+    pub fn is_idp_rejected_claim_exception(&self) -> bool {
         matches!(
             &self.kind,
-            AssumeRoleWithWebIdentityErrorKind::IDPRejectedClaimError(_)
+            AssumeRoleWithWebIdentityErrorKind::IdpRejectedClaimException(_)
         )
     }
-    pub fn is_invalid_identity_token_error(&self) -> bool {
+    pub fn is_invalid_identity_token_exception(&self) -> bool {
         matches!(
             &self.kind,
-            AssumeRoleWithWebIdentityErrorKind::InvalidIdentityTokenError(_)
+            AssumeRoleWithWebIdentityErrorKind::InvalidIdentityTokenException(_)
         )
     }
-    pub fn is_malformed_policy_document_error(&self) -> bool {
+    pub fn is_malformed_policy_document_exception(&self) -> bool {
         matches!(
             &self.kind,
-            AssumeRoleWithWebIdentityErrorKind::MalformedPolicyDocumentError(_)
+            AssumeRoleWithWebIdentityErrorKind::MalformedPolicyDocumentException(_)
         )
     }
-    pub fn is_packed_policy_too_large_error(&self) -> bool {
+    pub fn is_packed_policy_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
-            AssumeRoleWithWebIdentityErrorKind::PackedPolicyTooLargeError(_)
+            AssumeRoleWithWebIdentityErrorKind::PackedPolicyTooLargeException(_)
         )
     }
-    pub fn is_region_disabled_error(&self) -> bool {
+    pub fn is_region_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
-            AssumeRoleWithWebIdentityErrorKind::RegionDisabledError(_)
+            AssumeRoleWithWebIdentityErrorKind::RegionDisabledException(_)
         )
     }
 }
 impl std::error::Error for AssumeRoleWithWebIdentityError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            AssumeRoleWithWebIdentityErrorKind::ExpiredTokenError(_inner) => Some(_inner),
-            AssumeRoleWithWebIdentityErrorKind::IDPCommunicationErrorError(_inner) => Some(_inner),
-            AssumeRoleWithWebIdentityErrorKind::IDPRejectedClaimError(_inner) => Some(_inner),
-            AssumeRoleWithWebIdentityErrorKind::InvalidIdentityTokenError(_inner) => Some(_inner),
-            AssumeRoleWithWebIdentityErrorKind::MalformedPolicyDocumentError(_inner) => {
+            AssumeRoleWithWebIdentityErrorKind::ExpiredTokenException(_inner) => Some(_inner),
+            AssumeRoleWithWebIdentityErrorKind::IdpCommunicationErrorException(_inner) => {
                 Some(_inner)
             }
-            AssumeRoleWithWebIdentityErrorKind::PackedPolicyTooLargeError(_inner) => Some(_inner),
-            AssumeRoleWithWebIdentityErrorKind::RegionDisabledError(_inner) => Some(_inner),
+            AssumeRoleWithWebIdentityErrorKind::IdpRejectedClaimException(_inner) => Some(_inner),
+            AssumeRoleWithWebIdentityErrorKind::InvalidIdentityTokenException(_inner) => {
+                Some(_inner)
+            }
+            AssumeRoleWithWebIdentityErrorKind::MalformedPolicyDocumentException(_inner) => {
+                Some(_inner)
+            }
+            AssumeRoleWithWebIdentityErrorKind::PackedPolicyTooLargeException(_inner) => {
+                Some(_inner)
+            }
+            AssumeRoleWithWebIdentityErrorKind::RegionDisabledException(_inner) => Some(_inner),
             AssumeRoleWithWebIdentityErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -375,14 +387,14 @@ pub struct DecodeAuthorizationMessageError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DecodeAuthorizationMessageErrorKind {
-    InvalidAuthorizationMessageError(crate::error::InvalidAuthorizationMessageError),
+    InvalidAuthorizationMessageException(crate::error::InvalidAuthorizationMessageException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DecodeAuthorizationMessageError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DecodeAuthorizationMessageErrorKind::InvalidAuthorizationMessageError(_inner) => {
+            DecodeAuthorizationMessageErrorKind::InvalidAuthorizationMessageException(_inner) => {
                 _inner.fmt(f)
             }
             DecodeAuthorizationMessageErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -433,17 +445,17 @@ impl DecodeAuthorizationMessageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_authorization_message_error(&self) -> bool {
+    pub fn is_invalid_authorization_message_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DecodeAuthorizationMessageErrorKind::InvalidAuthorizationMessageError(_)
+            DecodeAuthorizationMessageErrorKind::InvalidAuthorizationMessageException(_)
         )
     }
 }
 impl std::error::Error for DecodeAuthorizationMessageError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DecodeAuthorizationMessageErrorKind::InvalidAuthorizationMessageError(_inner) => {
+            DecodeAuthorizationMessageErrorKind::InvalidAuthorizationMessageException(_inner) => {
                 Some(_inner)
             }
             DecodeAuthorizationMessageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -604,18 +616,18 @@ pub struct GetFederationTokenError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetFederationTokenErrorKind {
-    MalformedPolicyDocumentError(crate::error::MalformedPolicyDocumentError),
-    PackedPolicyTooLargeError(crate::error::PackedPolicyTooLargeError),
-    RegionDisabledError(crate::error::RegionDisabledError),
+    MalformedPolicyDocumentException(crate::error::MalformedPolicyDocumentException),
+    PackedPolicyTooLargeException(crate::error::PackedPolicyTooLargeException),
+    RegionDisabledException(crate::error::RegionDisabledException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetFederationTokenError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetFederationTokenErrorKind::MalformedPolicyDocumentError(_inner) => _inner.fmt(f),
-            GetFederationTokenErrorKind::PackedPolicyTooLargeError(_inner) => _inner.fmt(f),
-            GetFederationTokenErrorKind::RegionDisabledError(_inner) => _inner.fmt(f),
+            GetFederationTokenErrorKind::MalformedPolicyDocumentException(_inner) => _inner.fmt(f),
+            GetFederationTokenErrorKind::PackedPolicyTooLargeException(_inner) => _inner.fmt(f),
+            GetFederationTokenErrorKind::RegionDisabledException(_inner) => _inner.fmt(f),
             GetFederationTokenErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -664,31 +676,31 @@ impl GetFederationTokenError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_malformed_policy_document_error(&self) -> bool {
+    pub fn is_malformed_policy_document_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetFederationTokenErrorKind::MalformedPolicyDocumentError(_)
+            GetFederationTokenErrorKind::MalformedPolicyDocumentException(_)
         )
     }
-    pub fn is_packed_policy_too_large_error(&self) -> bool {
+    pub fn is_packed_policy_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetFederationTokenErrorKind::PackedPolicyTooLargeError(_)
+            GetFederationTokenErrorKind::PackedPolicyTooLargeException(_)
         )
     }
-    pub fn is_region_disabled_error(&self) -> bool {
+    pub fn is_region_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetFederationTokenErrorKind::RegionDisabledError(_)
+            GetFederationTokenErrorKind::RegionDisabledException(_)
         )
     }
 }
 impl std::error::Error for GetFederationTokenError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetFederationTokenErrorKind::MalformedPolicyDocumentError(_inner) => Some(_inner),
-            GetFederationTokenErrorKind::PackedPolicyTooLargeError(_inner) => Some(_inner),
-            GetFederationTokenErrorKind::RegionDisabledError(_inner) => Some(_inner),
+            GetFederationTokenErrorKind::MalformedPolicyDocumentException(_inner) => Some(_inner),
+            GetFederationTokenErrorKind::PackedPolicyTooLargeException(_inner) => Some(_inner),
+            GetFederationTokenErrorKind::RegionDisabledException(_inner) => Some(_inner),
             GetFederationTokenErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -703,14 +715,14 @@ pub struct GetSessionTokenError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetSessionTokenErrorKind {
-    RegionDisabledError(crate::error::RegionDisabledError),
+    RegionDisabledException(crate::error::RegionDisabledException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSessionTokenError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetSessionTokenErrorKind::RegionDisabledError(_inner) => _inner.fmt(f),
+            GetSessionTokenErrorKind::RegionDisabledException(_inner) => _inner.fmt(f),
             GetSessionTokenErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -759,14 +771,17 @@ impl GetSessionTokenError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_region_disabled_error(&self) -> bool {
-        matches!(&self.kind, GetSessionTokenErrorKind::RegionDisabledError(_))
+    pub fn is_region_disabled_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetSessionTokenErrorKind::RegionDisabledException(_)
+        )
     }
 }
 impl std::error::Error for GetSessionTokenError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetSessionTokenErrorKind::RegionDisabledError(_inner) => Some(_inner),
+            GetSessionTokenErrorKind::RegionDisabledException(_inner) => Some(_inner),
             GetSessionTokenErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -779,34 +794,34 @@ impl std::error::Error for GetSessionTokenError {
 /// Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct RegionDisabledError {
+pub struct RegionDisabledException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for RegionDisabledError {
+impl std::fmt::Debug for RegionDisabledException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegionDisabledError");
+        let mut formatter = f.debug_struct("RegionDisabledException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl RegionDisabledError {
+impl RegionDisabledException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for RegionDisabledError {
+impl std::fmt::Display for RegionDisabledException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "RegionDisabledError [RegionDisabledException]")?;
+        write!(f, "RegionDisabledException")?;
         if let Some(inner_1) = &self.message {
             write!(f, ": {}", inner_1)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for RegionDisabledError {}
-/// See [`RegionDisabledError`](crate::error::RegionDisabledError)
-pub mod region_disabled_error {
-    /// A builder for [`RegionDisabledError`](crate::error::RegionDisabledError)
+impl std::error::Error for RegionDisabledException {}
+/// See [`RegionDisabledException`](crate::error::RegionDisabledException)
+pub mod region_disabled_exception {
+    /// A builder for [`RegionDisabledException`](crate::error::RegionDisabledException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -821,18 +836,18 @@ pub mod region_disabled_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`RegionDisabledError`](crate::error::RegionDisabledError)
-        pub fn build(self) -> crate::error::RegionDisabledError {
-            crate::error::RegionDisabledError {
+        /// Consumes the builder and constructs a [`RegionDisabledException`](crate::error::RegionDisabledException)
+        pub fn build(self) -> crate::error::RegionDisabledException {
+            crate::error::RegionDisabledException {
                 message: self.message,
             }
         }
     }
 }
-impl RegionDisabledError {
-    /// Creates a new builder-style object to manufacture [`RegionDisabledError`](crate::error::RegionDisabledError)
-    pub fn builder() -> crate::error::region_disabled_error::Builder {
-        crate::error::region_disabled_error::Builder::default()
+impl RegionDisabledException {
+    /// Creates a new builder-style object to manufacture [`RegionDisabledException`](crate::error::RegionDisabledException)
+    pub fn builder() -> crate::error::region_disabled_exception::Builder {
+        crate::error::region_disabled_exception::Builder::default()
     }
 }
 
@@ -847,37 +862,34 @@ impl RegionDisabledError {
 /// Character Limits</a> in the <i>IAM User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct PackedPolicyTooLargeError {
+pub struct PackedPolicyTooLargeException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for PackedPolicyTooLargeError {
+impl std::fmt::Debug for PackedPolicyTooLargeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PackedPolicyTooLargeError");
+        let mut formatter = f.debug_struct("PackedPolicyTooLargeException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl PackedPolicyTooLargeError {
+impl PackedPolicyTooLargeException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for PackedPolicyTooLargeError {
+impl std::fmt::Display for PackedPolicyTooLargeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "PackedPolicyTooLargeError [PackedPolicyTooLargeException]"
-        )?;
+        write!(f, "PackedPolicyTooLargeException")?;
         if let Some(inner_2) = &self.message {
             write!(f, ": {}", inner_2)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for PackedPolicyTooLargeError {}
-/// See [`PackedPolicyTooLargeError`](crate::error::PackedPolicyTooLargeError)
-pub mod packed_policy_too_large_error {
-    /// A builder for [`PackedPolicyTooLargeError`](crate::error::PackedPolicyTooLargeError)
+impl std::error::Error for PackedPolicyTooLargeException {}
+/// See [`PackedPolicyTooLargeException`](crate::error::PackedPolicyTooLargeException)
+pub mod packed_policy_too_large_exception {
+    /// A builder for [`PackedPolicyTooLargeException`](crate::error::PackedPolicyTooLargeException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -892,18 +904,18 @@ pub mod packed_policy_too_large_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`PackedPolicyTooLargeError`](crate::error::PackedPolicyTooLargeError)
-        pub fn build(self) -> crate::error::PackedPolicyTooLargeError {
-            crate::error::PackedPolicyTooLargeError {
+        /// Consumes the builder and constructs a [`PackedPolicyTooLargeException`](crate::error::PackedPolicyTooLargeException)
+        pub fn build(self) -> crate::error::PackedPolicyTooLargeException {
+            crate::error::PackedPolicyTooLargeException {
                 message: self.message,
             }
         }
     }
 }
-impl PackedPolicyTooLargeError {
-    /// Creates a new builder-style object to manufacture [`PackedPolicyTooLargeError`](crate::error::PackedPolicyTooLargeError)
-    pub fn builder() -> crate::error::packed_policy_too_large_error::Builder {
-        crate::error::packed_policy_too_large_error::Builder::default()
+impl PackedPolicyTooLargeException {
+    /// Creates a new builder-style object to manufacture [`PackedPolicyTooLargeException`](crate::error::PackedPolicyTooLargeException)
+    pub fn builder() -> crate::error::packed_policy_too_large_exception::Builder {
+        crate::error::packed_policy_too_large_exception::Builder::default()
     }
 }
 
@@ -911,37 +923,34 @@ impl PackedPolicyTooLargeError {
 /// describes the specific error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct MalformedPolicyDocumentError {
+pub struct MalformedPolicyDocumentException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for MalformedPolicyDocumentError {
+impl std::fmt::Debug for MalformedPolicyDocumentException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MalformedPolicyDocumentError");
+        let mut formatter = f.debug_struct("MalformedPolicyDocumentException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl MalformedPolicyDocumentError {
+impl MalformedPolicyDocumentException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for MalformedPolicyDocumentError {
+impl std::fmt::Display for MalformedPolicyDocumentException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "MalformedPolicyDocumentError [MalformedPolicyDocumentException]"
-        )?;
+        write!(f, "MalformedPolicyDocumentException")?;
         if let Some(inner_3) = &self.message {
             write!(f, ": {}", inner_3)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for MalformedPolicyDocumentError {}
-/// See [`MalformedPolicyDocumentError`](crate::error::MalformedPolicyDocumentError)
-pub mod malformed_policy_document_error {
-    /// A builder for [`MalformedPolicyDocumentError`](crate::error::MalformedPolicyDocumentError)
+impl std::error::Error for MalformedPolicyDocumentException {}
+/// See [`MalformedPolicyDocumentException`](crate::error::MalformedPolicyDocumentException)
+pub mod malformed_policy_document_exception {
+    /// A builder for [`MalformedPolicyDocumentException`](crate::error::MalformedPolicyDocumentException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -956,18 +965,18 @@ pub mod malformed_policy_document_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`MalformedPolicyDocumentError`](crate::error::MalformedPolicyDocumentError)
-        pub fn build(self) -> crate::error::MalformedPolicyDocumentError {
-            crate::error::MalformedPolicyDocumentError {
+        /// Consumes the builder and constructs a [`MalformedPolicyDocumentException`](crate::error::MalformedPolicyDocumentException)
+        pub fn build(self) -> crate::error::MalformedPolicyDocumentException {
+            crate::error::MalformedPolicyDocumentException {
                 message: self.message,
             }
         }
     }
 }
-impl MalformedPolicyDocumentError {
-    /// Creates a new builder-style object to manufacture [`MalformedPolicyDocumentError`](crate::error::MalformedPolicyDocumentError)
-    pub fn builder() -> crate::error::malformed_policy_document_error::Builder {
-        crate::error::malformed_policy_document_error::Builder::default()
+impl MalformedPolicyDocumentException {
+    /// Creates a new builder-style object to manufacture [`MalformedPolicyDocumentException`](crate::error::MalformedPolicyDocumentException)
+    pub fn builder() -> crate::error::malformed_policy_document_exception::Builder {
+        crate::error::malformed_policy_document_exception::Builder::default()
     }
 }
 
@@ -976,37 +985,34 @@ impl MalformedPolicyDocumentError {
 /// linebreaks. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidAuthorizationMessageError {
+pub struct InvalidAuthorizationMessageException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidAuthorizationMessageError {
+impl std::fmt::Debug for InvalidAuthorizationMessageException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidAuthorizationMessageError");
+        let mut formatter = f.debug_struct("InvalidAuthorizationMessageException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl InvalidAuthorizationMessageError {
+impl InvalidAuthorizationMessageException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InvalidAuthorizationMessageError {
+impl std::fmt::Display for InvalidAuthorizationMessageException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "InvalidAuthorizationMessageError [InvalidAuthorizationMessageException]"
-        )?;
+        write!(f, "InvalidAuthorizationMessageException")?;
         if let Some(inner_4) = &self.message {
             write!(f, ": {}", inner_4)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InvalidAuthorizationMessageError {}
-/// See [`InvalidAuthorizationMessageError`](crate::error::InvalidAuthorizationMessageError)
-pub mod invalid_authorization_message_error {
-    /// A builder for [`InvalidAuthorizationMessageError`](crate::error::InvalidAuthorizationMessageError)
+impl std::error::Error for InvalidAuthorizationMessageException {}
+/// See [`InvalidAuthorizationMessageException`](crate::error::InvalidAuthorizationMessageException)
+pub mod invalid_authorization_message_exception {
+    /// A builder for [`InvalidAuthorizationMessageException`](crate::error::InvalidAuthorizationMessageException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -1021,18 +1027,18 @@ pub mod invalid_authorization_message_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidAuthorizationMessageError`](crate::error::InvalidAuthorizationMessageError)
-        pub fn build(self) -> crate::error::InvalidAuthorizationMessageError {
-            crate::error::InvalidAuthorizationMessageError {
+        /// Consumes the builder and constructs a [`InvalidAuthorizationMessageException`](crate::error::InvalidAuthorizationMessageException)
+        pub fn build(self) -> crate::error::InvalidAuthorizationMessageException {
+            crate::error::InvalidAuthorizationMessageException {
                 message: self.message,
             }
         }
     }
 }
-impl InvalidAuthorizationMessageError {
-    /// Creates a new builder-style object to manufacture [`InvalidAuthorizationMessageError`](crate::error::InvalidAuthorizationMessageError)
-    pub fn builder() -> crate::error::invalid_authorization_message_error::Builder {
-        crate::error::invalid_authorization_message_error::Builder::default()
+impl InvalidAuthorizationMessageException {
+    /// Creates a new builder-style object to manufacture [`InvalidAuthorizationMessageException`](crate::error::InvalidAuthorizationMessageException)
+    pub fn builder() -> crate::error::invalid_authorization_message_exception::Builder {
+        crate::error::invalid_authorization_message_exception::Builder::default()
     }
 }
 
@@ -1040,37 +1046,34 @@ impl InvalidAuthorizationMessageError {
 /// identity token from the identity provider and then retry the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidIdentityTokenError {
+pub struct InvalidIdentityTokenException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidIdentityTokenError {
+impl std::fmt::Debug for InvalidIdentityTokenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidIdentityTokenError");
+        let mut formatter = f.debug_struct("InvalidIdentityTokenException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl InvalidIdentityTokenError {
+impl InvalidIdentityTokenException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InvalidIdentityTokenError {
+impl std::fmt::Display for InvalidIdentityTokenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "InvalidIdentityTokenError [InvalidIdentityTokenException]"
-        )?;
+        write!(f, "InvalidIdentityTokenException")?;
         if let Some(inner_5) = &self.message {
             write!(f, ": {}", inner_5)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InvalidIdentityTokenError {}
-/// See [`InvalidIdentityTokenError`](crate::error::InvalidIdentityTokenError)
-pub mod invalid_identity_token_error {
-    /// A builder for [`InvalidIdentityTokenError`](crate::error::InvalidIdentityTokenError)
+impl std::error::Error for InvalidIdentityTokenException {}
+/// See [`InvalidIdentityTokenException`](crate::error::InvalidIdentityTokenException)
+pub mod invalid_identity_token_exception {
+    /// A builder for [`InvalidIdentityTokenException`](crate::error::InvalidIdentityTokenException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -1085,18 +1088,18 @@ pub mod invalid_identity_token_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidIdentityTokenError`](crate::error::InvalidIdentityTokenError)
-        pub fn build(self) -> crate::error::InvalidIdentityTokenError {
-            crate::error::InvalidIdentityTokenError {
+        /// Consumes the builder and constructs a [`InvalidIdentityTokenException`](crate::error::InvalidIdentityTokenException)
+        pub fn build(self) -> crate::error::InvalidIdentityTokenException {
+            crate::error::InvalidIdentityTokenException {
                 message: self.message,
             }
         }
     }
 }
-impl InvalidIdentityTokenError {
-    /// Creates a new builder-style object to manufacture [`InvalidIdentityTokenError`](crate::error::InvalidIdentityTokenError)
-    pub fn builder() -> crate::error::invalid_identity_token_error::Builder {
-        crate::error::invalid_identity_token_error::Builder::default()
+impl InvalidIdentityTokenException {
+    /// Creates a new builder-style object to manufacture [`InvalidIdentityTokenException`](crate::error::InvalidIdentityTokenException)
+    pub fn builder() -> crate::error::invalid_identity_token_exception::Builder {
+        crate::error::invalid_identity_token_exception::Builder::default()
     }
 }
 
@@ -1106,34 +1109,34 @@ impl InvalidIdentityTokenError {
 /// can also mean that the claim has expired or has been explicitly revoked. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct IDPRejectedClaimError {
+pub struct IdpRejectedClaimException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for IDPRejectedClaimError {
+impl std::fmt::Debug for IdpRejectedClaimException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IDPRejectedClaimError");
+        let mut formatter = f.debug_struct("IdpRejectedClaimException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl IDPRejectedClaimError {
+impl IdpRejectedClaimException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for IDPRejectedClaimError {
+impl std::fmt::Display for IdpRejectedClaimException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "IDPRejectedClaimError [IDPRejectedClaimException]")?;
+        write!(f, "IdpRejectedClaimException [IDPRejectedClaimException]")?;
         if let Some(inner_6) = &self.message {
             write!(f, ": {}", inner_6)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for IDPRejectedClaimError {}
-/// See [`IDPRejectedClaimError`](crate::error::IDPRejectedClaimError)
-pub mod idp_rejected_claim_error {
-    /// A builder for [`IDPRejectedClaimError`](crate::error::IDPRejectedClaimError)
+impl std::error::Error for IdpRejectedClaimException {}
+/// See [`IdpRejectedClaimException`](crate::error::IdpRejectedClaimException)
+pub mod idp_rejected_claim_exception {
+    /// A builder for [`IdpRejectedClaimException`](crate::error::IdpRejectedClaimException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -1148,18 +1151,18 @@ pub mod idp_rejected_claim_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`IDPRejectedClaimError`](crate::error::IDPRejectedClaimError)
-        pub fn build(self) -> crate::error::IDPRejectedClaimError {
-            crate::error::IDPRejectedClaimError {
+        /// Consumes the builder and constructs a [`IdpRejectedClaimException`](crate::error::IdpRejectedClaimException)
+        pub fn build(self) -> crate::error::IdpRejectedClaimException {
+            crate::error::IdpRejectedClaimException {
                 message: self.message,
             }
         }
     }
 }
-impl IDPRejectedClaimError {
-    /// Creates a new builder-style object to manufacture [`IDPRejectedClaimError`](crate::error::IDPRejectedClaimError)
-    pub fn builder() -> crate::error::idp_rejected_claim_error::Builder {
-        crate::error::idp_rejected_claim_error::Builder::default()
+impl IdpRejectedClaimException {
+    /// Creates a new builder-style object to manufacture [`IdpRejectedClaimException`](crate::error::IdpRejectedClaimException)
+    pub fn builder() -> crate::error::idp_rejected_claim_exception::Builder {
+        crate::error::idp_rejected_claim_exception::Builder::default()
     }
 }
 
@@ -1170,26 +1173,26 @@ impl IDPRejectedClaimError {
 /// identity provider might be down or not responding.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct IDPCommunicationErrorError {
+pub struct IdpCommunicationErrorException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for IDPCommunicationErrorError {
+impl std::fmt::Debug for IdpCommunicationErrorException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IDPCommunicationErrorError");
+        let mut formatter = f.debug_struct("IdpCommunicationErrorException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl IDPCommunicationErrorError {
+impl IdpCommunicationErrorException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for IDPCommunicationErrorError {
+impl std::fmt::Display for IdpCommunicationErrorException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(
             f,
-            "IDPCommunicationErrorError [IDPCommunicationErrorException]"
+            "IdpCommunicationErrorException [IDPCommunicationErrorException]"
         )?;
         if let Some(inner_7) = &self.message {
             write!(f, ": {}", inner_7)?;
@@ -1197,10 +1200,10 @@ impl std::fmt::Display for IDPCommunicationErrorError {
         Ok(())
     }
 }
-impl std::error::Error for IDPCommunicationErrorError {}
-/// See [`IDPCommunicationErrorError`](crate::error::IDPCommunicationErrorError)
-pub mod idp_communication_error_error {
-    /// A builder for [`IDPCommunicationErrorError`](crate::error::IDPCommunicationErrorError)
+impl std::error::Error for IdpCommunicationErrorException {}
+/// See [`IdpCommunicationErrorException`](crate::error::IdpCommunicationErrorException)
+pub mod idp_communication_error_exception {
+    /// A builder for [`IdpCommunicationErrorException`](crate::error::IdpCommunicationErrorException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -1215,18 +1218,18 @@ pub mod idp_communication_error_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`IDPCommunicationErrorError`](crate::error::IDPCommunicationErrorError)
-        pub fn build(self) -> crate::error::IDPCommunicationErrorError {
-            crate::error::IDPCommunicationErrorError {
+        /// Consumes the builder and constructs a [`IdpCommunicationErrorException`](crate::error::IdpCommunicationErrorException)
+        pub fn build(self) -> crate::error::IdpCommunicationErrorException {
+            crate::error::IdpCommunicationErrorException {
                 message: self.message,
             }
         }
     }
 }
-impl IDPCommunicationErrorError {
-    /// Creates a new builder-style object to manufacture [`IDPCommunicationErrorError`](crate::error::IDPCommunicationErrorError)
-    pub fn builder() -> crate::error::idp_communication_error_error::Builder {
-        crate::error::idp_communication_error_error::Builder::default()
+impl IdpCommunicationErrorException {
+    /// Creates a new builder-style object to manufacture [`IdpCommunicationErrorException`](crate::error::IdpCommunicationErrorException)
+    pub fn builder() -> crate::error::idp_communication_error_exception::Builder {
+        crate::error::idp_communication_error_exception::Builder::default()
     }
 }
 
@@ -1234,34 +1237,34 @@ impl IDPCommunicationErrorError {
 /// token from the identity provider and then retry the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ExpiredTokenError {
+pub struct ExpiredTokenException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ExpiredTokenError {
+impl std::fmt::Debug for ExpiredTokenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExpiredTokenError");
+        let mut formatter = f.debug_struct("ExpiredTokenException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl ExpiredTokenError {
+impl ExpiredTokenException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ExpiredTokenError {
+impl std::fmt::Display for ExpiredTokenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ExpiredTokenError [ExpiredTokenException]")?;
+        write!(f, "ExpiredTokenException")?;
         if let Some(inner_8) = &self.message {
             write!(f, ": {}", inner_8)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ExpiredTokenError {}
-/// See [`ExpiredTokenError`](crate::error::ExpiredTokenError)
-pub mod expired_token_error {
-    /// A builder for [`ExpiredTokenError`](crate::error::ExpiredTokenError)
+impl std::error::Error for ExpiredTokenException {}
+/// See [`ExpiredTokenException`](crate::error::ExpiredTokenException)
+pub mod expired_token_exception {
+    /// A builder for [`ExpiredTokenException`](crate::error::ExpiredTokenException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -1276,17 +1279,17 @@ pub mod expired_token_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ExpiredTokenError`](crate::error::ExpiredTokenError)
-        pub fn build(self) -> crate::error::ExpiredTokenError {
-            crate::error::ExpiredTokenError {
+        /// Consumes the builder and constructs a [`ExpiredTokenException`](crate::error::ExpiredTokenException)
+        pub fn build(self) -> crate::error::ExpiredTokenException {
+            crate::error::ExpiredTokenException {
                 message: self.message,
             }
         }
     }
 }
-impl ExpiredTokenError {
-    /// Creates a new builder-style object to manufacture [`ExpiredTokenError`](crate::error::ExpiredTokenError)
-    pub fn builder() -> crate::error::expired_token_error::Builder {
-        crate::error::expired_token_error::Builder::default()
+impl ExpiredTokenException {
+    /// Creates a new builder-style object to manufacture [`ExpiredTokenException`](crate::error::ExpiredTokenException)
+    pub fn builder() -> crate::error::expired_token_exception::Builder {
+        crate::error::expired_token_exception::Builder::default()
     }
 }

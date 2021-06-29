@@ -5,15 +5,15 @@ pub enum Error {
     DecryptionFailure(crate::error::DecryptionFailure),
     EncryptionFailure(crate::error::EncryptionFailure),
     InternalServiceError(crate::error::InternalServiceError),
-    InvalidNextTokenError(crate::error::InvalidNextTokenError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    InvalidRequestError(crate::error::InvalidRequestError),
-    LimitExceededError(crate::error::LimitExceededError),
-    MalformedPolicyDocumentError(crate::error::MalformedPolicyDocumentError),
-    PreconditionNotMetError(crate::error::PreconditionNotMetError),
-    PublicPolicyError(crate::error::PublicPolicyError),
-    ResourceExistsError(crate::error::ResourceExistsError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
+    InvalidNextTokenException(crate::error::InvalidNextTokenException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    InvalidRequestException(crate::error::InvalidRequestException),
+    LimitExceededException(crate::error::LimitExceededException),
+    MalformedPolicyDocumentException(crate::error::MalformedPolicyDocumentException),
+    PreconditionNotMetException(crate::error::PreconditionNotMetException),
+    PublicPolicyException(crate::error::PublicPolicyException),
+    ResourceExistsException(crate::error::ResourceExistsException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for Error {
@@ -22,15 +22,15 @@ impl std::fmt::Display for Error {
             Error::DecryptionFailure(inner) => inner.fmt(f),
             Error::EncryptionFailure(inner) => inner.fmt(f),
             Error::InternalServiceError(inner) => inner.fmt(f),
-            Error::InvalidNextTokenError(inner) => inner.fmt(f),
-            Error::InvalidParameterError(inner) => inner.fmt(f),
-            Error::InvalidRequestError(inner) => inner.fmt(f),
-            Error::LimitExceededError(inner) => inner.fmt(f),
-            Error::MalformedPolicyDocumentError(inner) => inner.fmt(f),
-            Error::PreconditionNotMetError(inner) => inner.fmt(f),
-            Error::PublicPolicyError(inner) => inner.fmt(f),
-            Error::ResourceExistsError(inner) => inner.fmt(f),
-            Error::ResourceNotFoundError(inner) => inner.fmt(f),
+            Error::InvalidNextTokenException(inner) => inner.fmt(f),
+            Error::InvalidParameterException(inner) => inner.fmt(f),
+            Error::InvalidRequestException(inner) => inner.fmt(f),
+            Error::LimitExceededException(inner) => inner.fmt(f),
+            Error::MalformedPolicyDocumentException(inner) => inner.fmt(f),
+            Error::PreconditionNotMetException(inner) => inner.fmt(f),
+            Error::PublicPolicyException(inner) => inner.fmt(f),
+            Error::ResourceExistsException(inner) => inner.fmt(f),
+            Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::Unhandled(inner) => inner.fmt(f),
         }
     }
@@ -42,14 +42,14 @@ impl From<smithy_http::result::SdkError<crate::error::CancelRotateSecretError>> 
                 crate::error::CancelRotateSecretErrorKind::InternalServiceError(inner) => {
                     Error::InternalServiceError(inner)
                 }
-                crate::error::CancelRotateSecretErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
+                crate::error::CancelRotateSecretErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
                 }
-                crate::error::CancelRotateSecretErrorKind::InvalidRequestError(inner) => {
-                    Error::InvalidRequestError(inner)
+                crate::error::CancelRotateSecretErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
                 }
-                crate::error::CancelRotateSecretErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::CancelRotateSecretErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
                 crate::error::CancelRotateSecretErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -69,26 +69,26 @@ impl From<smithy_http::result::SdkError<crate::error::CreateSecretError>> for Er
                 crate::error::CreateSecretErrorKind::InternalServiceError(inner) => {
                     Error::InternalServiceError(inner)
                 }
-                crate::error::CreateSecretErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
+                crate::error::CreateSecretErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
                 }
-                crate::error::CreateSecretErrorKind::InvalidRequestError(inner) => {
-                    Error::InvalidRequestError(inner)
+                crate::error::CreateSecretErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
                 }
-                crate::error::CreateSecretErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
+                crate::error::CreateSecretErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
                 }
-                crate::error::CreateSecretErrorKind::MalformedPolicyDocumentError(inner) => {
-                    Error::MalformedPolicyDocumentError(inner)
+                crate::error::CreateSecretErrorKind::MalformedPolicyDocumentException(inner) => {
+                    Error::MalformedPolicyDocumentException(inner)
                 }
-                crate::error::CreateSecretErrorKind::PreconditionNotMetError(inner) => {
-                    Error::PreconditionNotMetError(inner)
+                crate::error::CreateSecretErrorKind::PreconditionNotMetException(inner) => {
+                    Error::PreconditionNotMetException(inner)
                 }
-                crate::error::CreateSecretErrorKind::ResourceExistsError(inner) => {
-                    Error::ResourceExistsError(inner)
+                crate::error::CreateSecretErrorKind::ResourceExistsException(inner) => {
+                    Error::ResourceExistsException(inner)
                 }
-                crate::error::CreateSecretErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::CreateSecretErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
                 crate::error::CreateSecretErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -103,14 +103,14 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteResourcePolicyError>
                 crate::error::DeleteResourcePolicyErrorKind::InternalServiceError(inner) => {
                     Error::InternalServiceError(inner)
                 }
-                crate::error::DeleteResourcePolicyErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
+                crate::error::DeleteResourcePolicyErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
                 }
-                crate::error::DeleteResourcePolicyErrorKind::InvalidRequestError(inner) => {
-                    Error::InvalidRequestError(inner)
+                crate::error::DeleteResourcePolicyErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
                 }
-                crate::error::DeleteResourcePolicyErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::DeleteResourcePolicyErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
                 crate::error::DeleteResourcePolicyErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -127,14 +127,14 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteSecretError>> for Er
                 crate::error::DeleteSecretErrorKind::InternalServiceError(inner) => {
                     Error::InternalServiceError(inner)
                 }
-                crate::error::DeleteSecretErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
+                crate::error::DeleteSecretErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
                 }
-                crate::error::DeleteSecretErrorKind::InvalidRequestError(inner) => {
-                    Error::InvalidRequestError(inner)
+                crate::error::DeleteSecretErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
                 }
-                crate::error::DeleteSecretErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::DeleteSecretErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
                 crate::error::DeleteSecretErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -149,8 +149,8 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeSecretError>> for 
                 crate::error::DescribeSecretErrorKind::InternalServiceError(inner) => {
                     Error::InternalServiceError(inner)
                 }
-                crate::error::DescribeSecretErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::DescribeSecretErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
                 crate::error::DescribeSecretErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -165,11 +165,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetRandomPasswordError>> f
                 crate::error::GetRandomPasswordErrorKind::InternalServiceError(inner) => {
                     Error::InternalServiceError(inner)
                 }
-                crate::error::GetRandomPasswordErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
+                crate::error::GetRandomPasswordErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
                 }
-                crate::error::GetRandomPasswordErrorKind::InvalidRequestError(inner) => {
-                    Error::InvalidRequestError(inner)
+                crate::error::GetRandomPasswordErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
                 }
                 crate::error::GetRandomPasswordErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -186,11 +186,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetResourcePolicyError>> f
                 crate::error::GetResourcePolicyErrorKind::InternalServiceError(inner) => {
                     Error::InternalServiceError(inner)
                 }
-                crate::error::GetResourcePolicyErrorKind::InvalidRequestError(inner) => {
-                    Error::InvalidRequestError(inner)
+                crate::error::GetResourcePolicyErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
                 }
-                crate::error::GetResourcePolicyErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::GetResourcePolicyErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
                 crate::error::GetResourcePolicyErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -210,14 +210,14 @@ impl From<smithy_http::result::SdkError<crate::error::GetSecretValueError>> for 
                 crate::error::GetSecretValueErrorKind::InternalServiceError(inner) => {
                     Error::InternalServiceError(inner)
                 }
-                crate::error::GetSecretValueErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
+                crate::error::GetSecretValueErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
                 }
-                crate::error::GetSecretValueErrorKind::InvalidRequestError(inner) => {
-                    Error::InvalidRequestError(inner)
+                crate::error::GetSecretValueErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
                 }
-                crate::error::GetSecretValueErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::GetSecretValueErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
                 crate::error::GetSecretValueErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -232,11 +232,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListSecretsError>> for Err
                 crate::error::ListSecretsErrorKind::InternalServiceError(inner) => {
                     Error::InternalServiceError(inner)
                 }
-                crate::error::ListSecretsErrorKind::InvalidNextTokenError(inner) => {
-                    Error::InvalidNextTokenError(inner)
+                crate::error::ListSecretsErrorKind::InvalidNextTokenException(inner) => {
+                    Error::InvalidNextTokenException(inner)
                 }
-                crate::error::ListSecretsErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
+                crate::error::ListSecretsErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
                 }
                 crate::error::ListSecretsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -251,11 +251,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListSecretVersionIdsError>
                 crate::error::ListSecretVersionIdsErrorKind::InternalServiceError(inner) => {
                     Error::InternalServiceError(inner)
                 }
-                crate::error::ListSecretVersionIdsErrorKind::InvalidNextTokenError(inner) => {
-                    Error::InvalidNextTokenError(inner)
+                crate::error::ListSecretVersionIdsErrorKind::InvalidNextTokenException(inner) => {
+                    Error::InvalidNextTokenException(inner)
                 }
-                crate::error::ListSecretVersionIdsErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::ListSecretVersionIdsErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
                 crate::error::ListSecretVersionIdsErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -272,20 +272,20 @@ impl From<smithy_http::result::SdkError<crate::error::PutResourcePolicyError>> f
                 crate::error::PutResourcePolicyErrorKind::InternalServiceError(inner) => {
                     Error::InternalServiceError(inner)
                 }
-                crate::error::PutResourcePolicyErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
+                crate::error::PutResourcePolicyErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
                 }
-                crate::error::PutResourcePolicyErrorKind::InvalidRequestError(inner) => {
-                    Error::InvalidRequestError(inner)
+                crate::error::PutResourcePolicyErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
                 }
-                crate::error::PutResourcePolicyErrorKind::MalformedPolicyDocumentError(inner) => {
-                    Error::MalformedPolicyDocumentError(inner)
+                crate::error::PutResourcePolicyErrorKind::MalformedPolicyDocumentException(
+                    inner,
+                ) => Error::MalformedPolicyDocumentException(inner),
+                crate::error::PutResourcePolicyErrorKind::PublicPolicyException(inner) => {
+                    Error::PublicPolicyException(inner)
                 }
-                crate::error::PutResourcePolicyErrorKind::PublicPolicyError(inner) => {
-                    Error::PublicPolicyError(inner)
-                }
-                crate::error::PutResourcePolicyErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::PutResourcePolicyErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
                 crate::error::PutResourcePolicyErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -305,20 +305,20 @@ impl From<smithy_http::result::SdkError<crate::error::PutSecretValueError>> for 
                 crate::error::PutSecretValueErrorKind::InternalServiceError(inner) => {
                     Error::InternalServiceError(inner)
                 }
-                crate::error::PutSecretValueErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
+                crate::error::PutSecretValueErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
                 }
-                crate::error::PutSecretValueErrorKind::InvalidRequestError(inner) => {
-                    Error::InvalidRequestError(inner)
+                crate::error::PutSecretValueErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
                 }
-                crate::error::PutSecretValueErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
+                crate::error::PutSecretValueErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
                 }
-                crate::error::PutSecretValueErrorKind::ResourceExistsError(inner) => {
-                    Error::ResourceExistsError(inner)
+                crate::error::PutSecretValueErrorKind::ResourceExistsException(inner) => {
+                    Error::ResourceExistsException(inner)
                 }
-                crate::error::PutSecretValueErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::PutSecretValueErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
                 crate::error::PutSecretValueErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -337,15 +337,15 @@ impl From<smithy_http::result::SdkError<crate::error::RemoveRegionsFromReplicati
                 crate::error::RemoveRegionsFromReplicationErrorKind::InternalServiceError(
                     inner,
                 ) => Error::InternalServiceError(inner),
-                crate::error::RemoveRegionsFromReplicationErrorKind::InvalidParameterError(
+                crate::error::RemoveRegionsFromReplicationErrorKind::InvalidParameterException(
                     inner,
-                ) => Error::InvalidParameterError(inner),
-                crate::error::RemoveRegionsFromReplicationErrorKind::InvalidRequestError(inner) => {
-                    Error::InvalidRequestError(inner)
-                }
-                crate::error::RemoveRegionsFromReplicationErrorKind::ResourceNotFoundError(
+                ) => Error::InvalidParameterException(inner),
+                crate::error::RemoveRegionsFromReplicationErrorKind::InvalidRequestException(
                     inner,
-                ) => Error::ResourceNotFoundError(inner),
+                ) => Error::InvalidRequestException(inner),
+                crate::error::RemoveRegionsFromReplicationErrorKind::ResourceNotFoundException(
+                    inner,
+                ) => Error::ResourceNotFoundException(inner),
                 crate::error::RemoveRegionsFromReplicationErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -363,15 +363,15 @@ impl From<smithy_http::result::SdkError<crate::error::ReplicateSecretToRegionsEr
                 crate::error::ReplicateSecretToRegionsErrorKind::InternalServiceError(inner) => {
                     Error::InternalServiceError(inner)
                 }
-                crate::error::ReplicateSecretToRegionsErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
+                crate::error::ReplicateSecretToRegionsErrorKind::InvalidParameterException(
+                    inner,
+                ) => Error::InvalidParameterException(inner),
+                crate::error::ReplicateSecretToRegionsErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
                 }
-                crate::error::ReplicateSecretToRegionsErrorKind::InvalidRequestError(inner) => {
-                    Error::InvalidRequestError(inner)
-                }
-                crate::error::ReplicateSecretToRegionsErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
-                }
+                crate::error::ReplicateSecretToRegionsErrorKind::ResourceNotFoundException(
+                    inner,
+                ) => Error::ResourceNotFoundException(inner),
                 crate::error::ReplicateSecretToRegionsErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -387,14 +387,14 @@ impl From<smithy_http::result::SdkError<crate::error::RestoreSecretError>> for E
                 crate::error::RestoreSecretErrorKind::InternalServiceError(inner) => {
                     Error::InternalServiceError(inner)
                 }
-                crate::error::RestoreSecretErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
+                crate::error::RestoreSecretErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
                 }
-                crate::error::RestoreSecretErrorKind::InvalidRequestError(inner) => {
-                    Error::InvalidRequestError(inner)
+                crate::error::RestoreSecretErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
                 }
-                crate::error::RestoreSecretErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::RestoreSecretErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
                 crate::error::RestoreSecretErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -409,14 +409,14 @@ impl From<smithy_http::result::SdkError<crate::error::RotateSecretError>> for Er
                 crate::error::RotateSecretErrorKind::InternalServiceError(inner) => {
                     Error::InternalServiceError(inner)
                 }
-                crate::error::RotateSecretErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
+                crate::error::RotateSecretErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
                 }
-                crate::error::RotateSecretErrorKind::InvalidRequestError(inner) => {
-                    Error::InvalidRequestError(inner)
+                crate::error::RotateSecretErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
                 }
-                crate::error::RotateSecretErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::RotateSecretErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
                 crate::error::RotateSecretErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -433,15 +433,15 @@ impl From<smithy_http::result::SdkError<crate::error::StopReplicationToReplicaEr
                 crate::error::StopReplicationToReplicaErrorKind::InternalServiceError(inner) => {
                     Error::InternalServiceError(inner)
                 }
-                crate::error::StopReplicationToReplicaErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
+                crate::error::StopReplicationToReplicaErrorKind::InvalidParameterException(
+                    inner,
+                ) => Error::InvalidParameterException(inner),
+                crate::error::StopReplicationToReplicaErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
                 }
-                crate::error::StopReplicationToReplicaErrorKind::InvalidRequestError(inner) => {
-                    Error::InvalidRequestError(inner)
-                }
-                crate::error::StopReplicationToReplicaErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
-                }
+                crate::error::StopReplicationToReplicaErrorKind::ResourceNotFoundException(
+                    inner,
+                ) => Error::ResourceNotFoundException(inner),
                 crate::error::StopReplicationToReplicaErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -457,14 +457,14 @@ impl From<smithy_http::result::SdkError<crate::error::TagResourceError>> for Err
                 crate::error::TagResourceErrorKind::InternalServiceError(inner) => {
                     Error::InternalServiceError(inner)
                 }
-                crate::error::TagResourceErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
+                crate::error::TagResourceErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
                 }
-                crate::error::TagResourceErrorKind::InvalidRequestError(inner) => {
-                    Error::InvalidRequestError(inner)
+                crate::error::TagResourceErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
                 }
-                crate::error::TagResourceErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::TagResourceErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
                 crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -479,14 +479,14 @@ impl From<smithy_http::result::SdkError<crate::error::UntagResourceError>> for E
                 crate::error::UntagResourceErrorKind::InternalServiceError(inner) => {
                     Error::InternalServiceError(inner)
                 }
-                crate::error::UntagResourceErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
+                crate::error::UntagResourceErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
                 }
-                crate::error::UntagResourceErrorKind::InvalidRequestError(inner) => {
-                    Error::InvalidRequestError(inner)
+                crate::error::UntagResourceErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
                 }
-                crate::error::UntagResourceErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::UntagResourceErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
                 crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -504,26 +504,26 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateSecretError>> for Er
                 crate::error::UpdateSecretErrorKind::InternalServiceError(inner) => {
                     Error::InternalServiceError(inner)
                 }
-                crate::error::UpdateSecretErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
+                crate::error::UpdateSecretErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
                 }
-                crate::error::UpdateSecretErrorKind::InvalidRequestError(inner) => {
-                    Error::InvalidRequestError(inner)
+                crate::error::UpdateSecretErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
                 }
-                crate::error::UpdateSecretErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
+                crate::error::UpdateSecretErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
                 }
-                crate::error::UpdateSecretErrorKind::MalformedPolicyDocumentError(inner) => {
-                    Error::MalformedPolicyDocumentError(inner)
+                crate::error::UpdateSecretErrorKind::MalformedPolicyDocumentException(inner) => {
+                    Error::MalformedPolicyDocumentException(inner)
                 }
-                crate::error::UpdateSecretErrorKind::PreconditionNotMetError(inner) => {
-                    Error::PreconditionNotMetError(inner)
+                crate::error::UpdateSecretErrorKind::PreconditionNotMetException(inner) => {
+                    Error::PreconditionNotMetException(inner)
                 }
-                crate::error::UpdateSecretErrorKind::ResourceExistsError(inner) => {
-                    Error::ResourceExistsError(inner)
+                crate::error::UpdateSecretErrorKind::ResourceExistsException(inner) => {
+                    Error::ResourceExistsException(inner)
                 }
-                crate::error::UpdateSecretErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::UpdateSecretErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
                 crate::error::UpdateSecretErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -540,18 +540,18 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateSecretVersionStageEr
                 crate::error::UpdateSecretVersionStageErrorKind::InternalServiceError(inner) => {
                     Error::InternalServiceError(inner)
                 }
-                crate::error::UpdateSecretVersionStageErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
+                crate::error::UpdateSecretVersionStageErrorKind::InvalidParameterException(
+                    inner,
+                ) => Error::InvalidParameterException(inner),
+                crate::error::UpdateSecretVersionStageErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
                 }
-                crate::error::UpdateSecretVersionStageErrorKind::InvalidRequestError(inner) => {
-                    Error::InvalidRequestError(inner)
+                crate::error::UpdateSecretVersionStageErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
                 }
-                crate::error::UpdateSecretVersionStageErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
-                }
-                crate::error::UpdateSecretVersionStageErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
-                }
+                crate::error::UpdateSecretVersionStageErrorKind::ResourceNotFoundException(
+                    inner,
+                ) => Error::ResourceNotFoundException(inner),
                 crate::error::UpdateSecretVersionStageErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -567,17 +567,17 @@ impl From<smithy_http::result::SdkError<crate::error::ValidateResourcePolicyErro
                 crate::error::ValidateResourcePolicyErrorKind::InternalServiceError(inner) => {
                     Error::InternalServiceError(inner)
                 }
-                crate::error::ValidateResourcePolicyErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
+                crate::error::ValidateResourcePolicyErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
                 }
-                crate::error::ValidateResourcePolicyErrorKind::InvalidRequestError(inner) => {
-                    Error::InvalidRequestError(inner)
+                crate::error::ValidateResourcePolicyErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
                 }
-                crate::error::ValidateResourcePolicyErrorKind::MalformedPolicyDocumentError(
+                crate::error::ValidateResourcePolicyErrorKind::MalformedPolicyDocumentException(
                     inner,
-                ) => Error::MalformedPolicyDocumentError(inner),
-                crate::error::ValidateResourcePolicyErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                ) => Error::MalformedPolicyDocumentException(inner),
+                crate::error::ValidateResourcePolicyErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
                 crate::error::ValidateResourcePolicyErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)

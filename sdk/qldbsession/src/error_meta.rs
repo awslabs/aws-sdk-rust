@@ -2,23 +2,23 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    BadRequestError(crate::error::BadRequestError),
-    CapacityExceededError(crate::error::CapacityExceededError),
-    InvalidSessionError(crate::error::InvalidSessionError),
-    LimitExceededError(crate::error::LimitExceededError),
-    OccConflictError(crate::error::OccConflictError),
-    RateExceededError(crate::error::RateExceededError),
+    BadRequestException(crate::error::BadRequestException),
+    CapacityExceededException(crate::error::CapacityExceededException),
+    InvalidSessionException(crate::error::InvalidSessionException),
+    LimitExceededException(crate::error::LimitExceededException),
+    OccConflictException(crate::error::OccConflictException),
+    RateExceededException(crate::error::RateExceededException),
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
-            Error::BadRequestError(inner) => inner.fmt(f),
-            Error::CapacityExceededError(inner) => inner.fmt(f),
-            Error::InvalidSessionError(inner) => inner.fmt(f),
-            Error::LimitExceededError(inner) => inner.fmt(f),
-            Error::OccConflictError(inner) => inner.fmt(f),
-            Error::RateExceededError(inner) => inner.fmt(f),
+            Error::BadRequestException(inner) => inner.fmt(f),
+            Error::CapacityExceededException(inner) => inner.fmt(f),
+            Error::InvalidSessionException(inner) => inner.fmt(f),
+            Error::LimitExceededException(inner) => inner.fmt(f),
+            Error::OccConflictException(inner) => inner.fmt(f),
+            Error::RateExceededException(inner) => inner.fmt(f),
             Error::Unhandled(inner) => inner.fmt(f),
         }
     }
@@ -27,23 +27,23 @@ impl From<smithy_http::result::SdkError<crate::error::SendCommandError>> for Err
     fn from(err: smithy_http::result::SdkError<crate::error::SendCommandError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::SendCommandErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::SendCommandErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::SendCommandErrorKind::CapacityExceededError(inner) => {
-                    Error::CapacityExceededError(inner)
+                crate::error::SendCommandErrorKind::CapacityExceededException(inner) => {
+                    Error::CapacityExceededException(inner)
                 }
-                crate::error::SendCommandErrorKind::InvalidSessionError(inner) => {
-                    Error::InvalidSessionError(inner)
+                crate::error::SendCommandErrorKind::InvalidSessionException(inner) => {
+                    Error::InvalidSessionException(inner)
                 }
-                crate::error::SendCommandErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
+                crate::error::SendCommandErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
                 }
-                crate::error::SendCommandErrorKind::OccConflictError(inner) => {
-                    Error::OccConflictError(inner)
+                crate::error::SendCommandErrorKind::OccConflictException(inner) => {
+                    Error::OccConflictException(inner)
                 }
-                crate::error::SendCommandErrorKind::RateExceededError(inner) => {
-                    Error::RateExceededError(inner)
+                crate::error::SendCommandErrorKind::RateExceededException(inner) => {
+                    Error::RateExceededException(inner)
                 }
                 crate::error::SendCommandErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },

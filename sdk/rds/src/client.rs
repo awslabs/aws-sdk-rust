@@ -546,7 +546,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::AddRoleToDBClusterOutput,
+            crate::output::AddRoleToDbClusterOutput,
             smithy_http::result::SdkError<crate::error::AddRoleToDBClusterError>,
         >
         where
@@ -610,7 +610,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::AddRoleToDBInstanceOutput,
+            crate::output::AddRoleToDbInstanceOutput,
             smithy_http::result::SdkError<crate::error::AddRoleToDBInstanceError>,
         >
         where
@@ -898,7 +898,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::AuthorizeDBSecurityGroupIngressOutput,
+            crate::output::AuthorizeDbSecurityGroupIngressOutput,
             smithy_http::result::SdkError<crate::error::AuthorizeDBSecurityGroupIngressError>,
         >
         where
@@ -1005,7 +1005,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::BacktrackDBClusterOutput,
+            crate::output::BacktrackDbClusterOutput,
             smithy_http::result::SdkError<crate::error::BacktrackDBClusterError>,
         >
         where
@@ -1167,7 +1167,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::CopyDBClusterParameterGroupOutput,
+            crate::output::CopyDbClusterParameterGroupOutput,
             smithy_http::result::SdkError<crate::error::CopyDBClusterParameterGroupError>,
         >
         where
@@ -1298,7 +1298,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::CopyDBClusterSnapshotOutput,
+            crate::output::CopyDbClusterSnapshotOutput,
             smithy_http::result::SdkError<crate::error::CopyDBClusterSnapshotError>,
         >
         where
@@ -1482,7 +1482,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::CopyDBParameterGroupOutput,
+            crate::output::CopyDbParameterGroupOutput,
             smithy_http::result::SdkError<crate::error::CopyDBParameterGroupError>,
         >
         where
@@ -1602,7 +1602,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::CopyDBSnapshotOutput,
+            crate::output::CopyDbSnapshotOutput,
             smithy_http::result::SdkError<crate::error::CopyDBSnapshotError>,
         >
         where
@@ -2050,7 +2050,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::CreateDBClusterOutput,
+            crate::output::CreateDbClusterOutput,
             smithy_http::result::SdkError<crate::error::CreateDBClusterError>,
         >
         where
@@ -2716,7 +2716,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::CreateDBClusterEndpointOutput,
+            crate::output::CreateDbClusterEndpointOutput,
             smithy_http::result::SdkError<crate::error::CreateDBClusterEndpointError>,
         >
         where
@@ -2826,7 +2826,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::CreateDBClusterParameterGroupOutput,
+            crate::output::CreateDbClusterParameterGroupOutput,
             smithy_http::result::SdkError<crate::error::CreateDBClusterParameterGroupError>,
         >
         where
@@ -2953,7 +2953,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::CreateDBClusterSnapshotOutput,
+            crate::output::CreateDbClusterSnapshotOutput,
             smithy_http::result::SdkError<crate::error::CreateDBClusterSnapshotError>,
         >
         where
@@ -3046,7 +3046,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::CreateDBInstanceOutput,
+            crate::output::CreateDbInstanceOutput,
             smithy_http::result::SdkError<crate::error::CreateDBInstanceError>,
         >
         where
@@ -4382,7 +4382,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::CreateDBInstanceReadReplicaOutput,
+            crate::output::CreateDbInstanceReadReplicaOutput,
             smithy_http::result::SdkError<crate::error::CreateDBInstanceReadReplicaError>,
         >
         where
@@ -5016,7 +5016,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::CreateDBParameterGroupOutput,
+            crate::output::CreateDbParameterGroupOutput,
             smithy_http::result::SdkError<crate::error::CreateDBParameterGroupError>,
         >
         where
@@ -5190,7 +5190,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::CreateDBProxyOutput,
+            crate::output::CreateDbProxyOutput,
             smithy_http::result::SdkError<crate::error::CreateDBProxyError>,
         >
         where
@@ -5340,7 +5340,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::CreateDBProxyEndpointOutput,
+            crate::output::CreateDbProxyEndpointOutput,
             smithy_http::result::SdkError<crate::error::CreateDBProxyEndpointError>,
         >
         where
@@ -5450,7 +5450,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::CreateDBSecurityGroupOutput,
+            crate::output::CreateDbSecurityGroupOutput,
             smithy_http::result::SdkError<crate::error::CreateDBSecurityGroupError>,
         >
         where
@@ -5538,7 +5538,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::CreateDBSnapshotOutput,
+            crate::output::CreateDbSnapshotOutput,
             smithy_http::result::SdkError<crate::error::CreateDBSnapshotError>,
         >
         where
@@ -5631,7 +5631,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::CreateDBSubnetGroupOutput,
+            crate::output::CreateDbSubnetGroupOutput,
             smithy_http::result::SdkError<crate::error::CreateDBSubnetGroupError>,
         >
         where
@@ -6195,7 +6195,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::DeleteDBClusterOutput,
+            crate::output::DeleteDbClusterOutput,
             smithy_http::result::SdkError<crate::error::DeleteDBClusterError>,
         >
         where
@@ -6295,7 +6295,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::DeleteDBClusterEndpointOutput,
+            crate::output::DeleteDbClusterEndpointOutput,
             smithy_http::result::SdkError<crate::error::DeleteDBClusterEndpointError>,
         >
         where
@@ -6342,7 +6342,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::DeleteDBClusterParameterGroupOutput,
+            crate::output::DeleteDbClusterParameterGroupOutput,
             smithy_http::result::SdkError<crate::error::DeleteDBClusterParameterGroupError>,
         >
         where
@@ -6401,7 +6401,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::DeleteDBClusterSnapshotOutput,
+            crate::output::DeleteDbClusterSnapshotOutput,
             smithy_http::result::SdkError<crate::error::DeleteDBClusterSnapshotError>,
         >
         where
@@ -6449,7 +6449,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::DeleteDBInstanceOutput,
+            crate::output::DeleteDbInstanceOutput,
             smithy_http::result::SdkError<crate::error::DeleteDBInstanceError>,
         >
         where
@@ -6562,7 +6562,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::DeleteDBInstanceAutomatedBackupOutput,
+            crate::output::DeleteDbInstanceAutomatedBackupOutput,
             smithy_http::result::SdkError<crate::error::DeleteDBInstanceAutomatedBackupError>,
         >
         where
@@ -6622,7 +6622,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::DeleteDBParameterGroupOutput,
+            crate::output::DeleteDbParameterGroupOutput,
             smithy_http::result::SdkError<crate::error::DeleteDBParameterGroupError>,
         >
         where
@@ -6678,7 +6678,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::DeleteDBProxyOutput,
+            crate::output::DeleteDbProxyOutput,
             smithy_http::result::SdkError<crate::error::DeleteDBProxyError>,
         >
         where
@@ -6722,7 +6722,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::DeleteDBProxyEndpointOutput,
+            crate::output::DeleteDbProxyEndpointOutput,
             smithy_http::result::SdkError<crate::error::DeleteDBProxyEndpointError>,
         >
         where
@@ -6766,7 +6766,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::DeleteDBSecurityGroupOutput,
+            crate::output::DeleteDbSecurityGroupOutput,
             smithy_http::result::SdkError<crate::error::DeleteDBSecurityGroupError>,
         >
         where
@@ -6828,7 +6828,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::DeleteDBSnapshotOutput,
+            crate::output::DeleteDbSnapshotOutput,
             smithy_http::result::SdkError<crate::error::DeleteDBSnapshotError>,
         >
         where
@@ -6873,7 +6873,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::DeleteDBSubnetGroupOutput,
+            crate::output::DeleteDbSubnetGroupOutput,
             smithy_http::result::SdkError<crate::error::DeleteDBSubnetGroupError>,
         >
         where
@@ -7105,7 +7105,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::DeregisterDBProxyTargetsOutput,
+            crate::output::DeregisterDbProxyTargetsOutput,
             smithy_http::result::SdkError<crate::error::DeregisterDBProxyTargetsError>,
         >
         where
@@ -7394,7 +7394,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::DescribeDBClusterBacktracksOutput,
+            crate::output::DescribeDbClusterBacktracksOutput,
             smithy_http::result::SdkError<crate::error::DescribeDBClusterBacktracksError>,
         >
         where
@@ -7553,7 +7553,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::DescribeDBClusterEndpointsOutput,
+            crate::output::DescribeDbClusterEndpointsOutput,
             smithy_http::result::SdkError<crate::error::DescribeDBClusterEndpointsError>,
         >
         where
@@ -7660,7 +7660,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::DescribeDBClusterParameterGroupsOutput,
+            crate::output::DescribeDbClusterParameterGroupsOutput,
             smithy_http::result::SdkError<crate::error::DescribeDBClusterParameterGroupsError>,
         >
         where
@@ -7755,7 +7755,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::DescribeDBClusterParametersOutput,
+            crate::output::DescribeDbClusterParametersOutput,
             smithy_http::result::SdkError<crate::error::DescribeDBClusterParametersError>,
         >
         where
@@ -7863,7 +7863,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::DescribeDBClustersOutput,
+            crate::output::DescribeDbClustersOutput,
             smithy_http::result::SdkError<crate::error::DescribeDBClustersError>,
         >
         where
@@ -7972,7 +7972,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::DescribeDBClusterSnapshotAttributesOutput,
+            crate::output::DescribeDbClusterSnapshotAttributesOutput,
             smithy_http::result::SdkError<crate::error::DescribeDBClusterSnapshotAttributesError>,
         >
         where
@@ -8019,7 +8019,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::DescribeDBClusterSnapshotsOutput,
+            crate::output::DescribeDbClusterSnapshotsOutput,
             smithy_http::result::SdkError<crate::error::DescribeDBClusterSnapshotsError>,
         >
         where
@@ -8224,7 +8224,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::DescribeDBEngineVersionsOutput,
+            crate::output::DescribeDbEngineVersionsOutput,
             smithy_http::result::SdkError<crate::error::DescribeDBEngineVersionsError>,
         >
         where
@@ -8455,7 +8455,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::DescribeDBInstanceAutomatedBackupsOutput,
+            crate::output::DescribeDbInstanceAutomatedBackupsOutput,
             smithy_http::result::SdkError<crate::error::DescribeDBInstanceAutomatedBackupsError>,
         >
         where
@@ -8596,7 +8596,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::DescribeDBInstancesOutput,
+            crate::output::DescribeDbInstancesOutput,
             smithy_http::result::SdkError<crate::error::DescribeDBInstancesError>,
         >
         where
@@ -8719,7 +8719,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::DescribeDBLogFilesOutput,
+            crate::output::DescribeDbLogFilesOutput,
             smithy_http::result::SdkError<crate::error::DescribeDBLogFilesError>,
         >
         where
@@ -8829,7 +8829,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::DescribeDBParameterGroupsOutput,
+            crate::output::DescribeDbParameterGroupsOutput,
             smithy_http::result::SdkError<crate::error::DescribeDBParameterGroupsError>,
         >
         where
@@ -8922,7 +8922,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::DescribeDBParametersOutput,
+            crate::output::DescribeDbParametersOutput,
             smithy_http::result::SdkError<crate::error::DescribeDBParametersError>,
         >
         where
@@ -9027,7 +9027,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::DescribeDBProxiesOutput,
+            crate::output::DescribeDbProxiesOutput,
             smithy_http::result::SdkError<crate::error::DescribeDBProxiesError>,
         >
         where
@@ -9111,7 +9111,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::DescribeDBProxyEndpointsOutput,
+            crate::output::DescribeDbProxyEndpointsOutput,
             smithy_http::result::SdkError<crate::error::DescribeDBProxyEndpointsError>,
         >
         where
@@ -9209,7 +9209,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::DescribeDBProxyTargetGroupsOutput,
+            crate::output::DescribeDbProxyTargetGroupsOutput,
             smithy_http::result::SdkError<crate::error::DescribeDBProxyTargetGroupsError>,
         >
         where
@@ -9306,7 +9306,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::DescribeDBProxyTargetsOutput,
+            crate::output::DescribeDbProxyTargetsOutput,
             smithy_http::result::SdkError<crate::error::DescribeDBProxyTargetsError>,
         >
         where
@@ -9403,7 +9403,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::DescribeDBSecurityGroupsOutput,
+            crate::output::DescribeDbSecurityGroupsOutput,
             smithy_http::result::SdkError<crate::error::DescribeDBSecurityGroupsError>,
         >
         where
@@ -9490,7 +9490,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::DescribeDBSnapshotAttributesOutput,
+            crate::output::DescribeDbSnapshotAttributesOutput,
             smithy_http::result::SdkError<crate::error::DescribeDBSnapshotAttributesError>,
         >
         where
@@ -9534,7 +9534,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::DescribeDBSnapshotsOutput,
+            crate::output::DescribeDbSnapshotsOutput,
             smithy_http::result::SdkError<crate::error::DescribeDBSnapshotsError>,
         >
         where
@@ -9764,7 +9764,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::DescribeDBSubnetGroupsOutput,
+            crate::output::DescribeDbSubnetGroupsOutput,
             smithy_http::result::SdkError<crate::error::DescribeDBSubnetGroupsError>,
         >
         where
@@ -10969,7 +10969,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::DescribeOrderableDBInstanceOptionsOutput,
+            crate::output::DescribeOrderableDbInstanceOptionsOutput,
             smithy_http::result::SdkError<crate::error::DescribeOrderableDBInstanceOptionsError>,
         >
         where
@@ -11285,7 +11285,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::DescribeReservedDBInstancesOutput,
+            crate::output::DescribeReservedDbInstancesOutput,
             smithy_http::result::SdkError<crate::error::DescribeReservedDBInstancesError>,
         >
         where
@@ -11455,7 +11455,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::DescribeReservedDBInstancesOfferingsOutput,
+            crate::output::DescribeReservedDbInstancesOfferingsOutput,
             smithy_http::result::SdkError<crate::error::DescribeReservedDBInstancesOfferingsError>,
         >
         where
@@ -11689,7 +11689,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::DescribeValidDBInstanceModificationsOutput,
+            crate::output::DescribeValidDbInstanceModificationsOutput,
             smithy_http::result::SdkError<crate::error::DescribeValidDBInstanceModificationsError>,
         >
         where
@@ -11734,7 +11734,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::DownloadDBLogFilePortionOutput,
+            crate::output::DownloadDbLogFilePortionOutput,
             smithy_http::result::SdkError<crate::error::DownloadDBLogFilePortionError>,
         >
         where
@@ -11838,7 +11838,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::FailoverDBClusterOutput,
+            crate::output::FailoverDbClusterOutput,
             smithy_http::result::SdkError<crate::error::FailoverDBClusterError>,
         >
         where
@@ -12230,7 +12230,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::ModifyCurrentDBClusterCapacityOutput,
+            crate::output::ModifyCurrentDbClusterCapacityOutput,
             smithy_http::result::SdkError<crate::error::ModifyCurrentDBClusterCapacityError>,
         >
         where
@@ -12331,7 +12331,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::ModifyDBClusterOutput,
+            crate::output::ModifyDbClusterOutput,
             smithy_http::result::SdkError<crate::error::ModifyDBClusterError>,
         >
         where
@@ -12787,7 +12787,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::ModifyDBClusterEndpointOutput,
+            crate::output::ModifyDbClusterEndpointOutput,
             smithy_http::result::SdkError<crate::error::ModifyDBClusterEndpointError>,
         >
         where
@@ -12872,7 +12872,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::ModifyDBClusterParameterGroupOutput,
+            crate::output::ModifyDbClusterParameterGroupOutput,
             smithy_http::result::SdkError<crate::error::ModifyDBClusterParameterGroupError>,
         >
         where
@@ -12941,7 +12941,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::ModifyDBClusterSnapshotAttributeOutput,
+            crate::output::ModifyDbClusterSnapshotAttributeOutput,
             smithy_http::result::SdkError<crate::error::ModifyDBClusterSnapshotAttributeError>,
         >
         where
@@ -13041,7 +13041,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::ModifyDBInstanceOutput,
+            crate::output::ModifyDbInstanceOutput,
             smithy_http::result::SdkError<crate::error::ModifyDBInstanceError>,
         >
         where
@@ -14016,7 +14016,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::ModifyDBParameterGroupOutput,
+            crate::output::ModifyDbParameterGroupOutput,
             smithy_http::result::SdkError<crate::error::ModifyDBParameterGroupError>,
         >
         where
@@ -14089,7 +14089,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::ModifyDBProxyOutput,
+            crate::output::ModifyDbProxyOutput,
             smithy_http::result::SdkError<crate::error::ModifyDBProxyError>,
         >
         where
@@ -14213,7 +14213,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::ModifyDBProxyEndpointOutput,
+            crate::output::ModifyDbProxyEndpointOutput,
             smithy_http::result::SdkError<crate::error::ModifyDBProxyEndpointError>,
         >
         where
@@ -14285,7 +14285,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::ModifyDBProxyTargetGroupOutput,
+            crate::output::ModifyDbProxyTargetGroupOutput,
             smithy_http::result::SdkError<crate::error::ModifyDBProxyTargetGroupError>,
         >
         where
@@ -14365,7 +14365,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::ModifyDBSnapshotOutput,
+            crate::output::ModifyDbSnapshotOutput,
             smithy_http::result::SdkError<crate::error::ModifyDBSnapshotError>,
         >
         where
@@ -14475,7 +14475,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::ModifyDBSnapshotAttributeOutput,
+            crate::output::ModifyDbSnapshotAttributeOutput,
             smithy_http::result::SdkError<crate::error::ModifyDBSnapshotAttributeError>,
         >
         where
@@ -14572,7 +14572,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::ModifyDBSubnetGroupOutput,
+            crate::output::ModifyDbSubnetGroupOutput,
             smithy_http::result::SdkError<crate::error::ModifyDBSubnetGroupError>,
         >
         where
@@ -15070,7 +15070,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::PromoteReadReplicaDBClusterOutput,
+            crate::output::PromoteReadReplicaDbClusterOutput,
             smithy_http::result::SdkError<crate::error::PromoteReadReplicaDBClusterError>,
         >
         where
@@ -15123,7 +15123,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::PurchaseReservedDBInstancesOfferingOutput,
+            crate::output::PurchaseReservedDbInstancesOfferingOutput,
             smithy_http::result::SdkError<crate::error::PurchaseReservedDBInstancesOfferingError>,
         >
         where
@@ -15209,7 +15209,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::RebootDBInstanceOutput,
+            crate::output::RebootDbInstanceOutput,
             smithy_http::result::SdkError<crate::error::RebootDBInstanceError>,
         >
         where
@@ -15271,7 +15271,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::RegisterDBProxyTargetsOutput,
+            crate::output::RegisterDbProxyTargetsOutput,
             smithy_http::result::SdkError<crate::error::RegisterDBProxyTargetsError>,
         >
         where
@@ -15411,7 +15411,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::RemoveRoleFromDBClusterOutput,
+            crate::output::RemoveRoleFromDbClusterOutput,
             smithy_http::result::SdkError<crate::error::RemoveRoleFromDBClusterError>,
         >
         where
@@ -15475,7 +15475,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::RemoveRoleFromDBInstanceOutput,
+            crate::output::RemoveRoleFromDbInstanceOutput,
             smithy_http::result::SdkError<crate::error::RemoveRoleFromDBInstanceError>,
         >
         where
@@ -15661,7 +15661,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::ResetDBClusterParameterGroupOutput,
+            crate::output::ResetDbClusterParameterGroupOutput,
             smithy_http::result::SdkError<crate::error::ResetDBClusterParameterGroupError>,
         >
         where
@@ -15732,7 +15732,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::ResetDBParameterGroupOutput,
+            crate::output::ResetDbParameterGroupOutput,
             smithy_http::result::SdkError<crate::error::ResetDBParameterGroupError>,
         >
         where
@@ -15831,7 +15831,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::RestoreDBClusterFromS3Output,
+            crate::output::RestoreDbClusterFromS3Output,
             smithy_http::result::SdkError<crate::error::RestoreDBClusterFromS3Error>,
         >
         where
@@ -16371,7 +16371,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::RestoreDBClusterFromSnapshotOutput,
+            crate::output::RestoreDbClusterFromSnapshotOutput,
             smithy_http::result::SdkError<crate::error::RestoreDBClusterFromSnapshotError>,
         >
         where
@@ -16771,7 +16771,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::RestoreDBClusterToPointInTimeOutput,
+            crate::output::RestoreDbClusterToPointInTimeOutput,
             smithy_http::result::SdkError<crate::error::RestoreDBClusterToPointInTimeError>,
         >
         where
@@ -17140,7 +17140,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::RestoreDBInstanceFromDBSnapshotOutput,
+            crate::output::RestoreDbInstanceFromDbSnapshotOutput,
             smithy_http::result::SdkError<crate::error::RestoreDBInstanceFromDBSnapshotError>,
         >
         where
@@ -17674,7 +17674,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::RestoreDBInstanceFromS3Output,
+            crate::output::RestoreDbInstanceFromS3Output,
             smithy_http::result::SdkError<crate::error::RestoreDBInstanceFromS3Error>,
         >
         where
@@ -18408,7 +18408,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::RestoreDBInstanceToPointInTimeOutput,
+            crate::output::RestoreDbInstanceToPointInTimeOutput,
             smithy_http::result::SdkError<crate::error::RestoreDBInstanceToPointInTimeError>,
         >
         where
@@ -19016,7 +19016,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::RevokeDBSecurityGroupIngressOutput,
+            crate::output::RevokeDbSecurityGroupIngressOutput,
             smithy_http::result::SdkError<crate::error::RevokeDBSecurityGroupIngressError>,
         >
         where
@@ -19204,7 +19204,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::StartDBClusterOutput,
+            crate::output::StartDbClusterOutput,
             smithy_http::result::SdkError<crate::error::StartDBClusterError>,
         >
         where
@@ -19249,7 +19249,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::StartDBInstanceOutput,
+            crate::output::StartDbInstanceOutput,
             smithy_http::result::SdkError<crate::error::StartDBInstanceError>,
         >
         where
@@ -19295,7 +19295,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::StartDBInstanceAutomatedBackupsReplicationOutput,
+            crate::output::StartDbInstanceAutomatedBackupsReplicationOutput,
             smithy_http::result::SdkError<
                 crate::error::StartDBInstanceAutomatedBackupsReplicationError,
             >,
@@ -19594,7 +19594,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::StopDBClusterOutput,
+            crate::output::StopDbClusterOutput,
             smithy_http::result::SdkError<crate::error::StopDBClusterError>,
         >
         where
@@ -19639,7 +19639,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::StopDBInstanceOutput,
+            crate::output::StopDbInstanceOutput,
             smithy_http::result::SdkError<crate::error::StopDBInstanceError>,
         >
         where
@@ -19699,7 +19699,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::StopDBInstanceAutomatedBackupsReplicationOutput,
+            crate::output::StopDbInstanceAutomatedBackupsReplicationOutput,
             smithy_http::result::SdkError<
                 crate::error::StopDBInstanceAutomatedBackupsReplicationError,
             >,

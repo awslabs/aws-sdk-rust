@@ -3,48 +3,48 @@
 /// request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UploadSSHPublicKeyOutput {
+pub struct UploadSshPublicKeyOutput {
     /// <p>Contains information about the SSH public key.</p>
-    pub ssh_public_key: std::option::Option<crate::model::SSHPublicKey>,
+    pub ssh_public_key: std::option::Option<crate::model::SshPublicKey>,
 }
-impl std::fmt::Debug for UploadSSHPublicKeyOutput {
+impl std::fmt::Debug for UploadSshPublicKeyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UploadSSHPublicKeyOutput");
+        let mut formatter = f.debug_struct("UploadSshPublicKeyOutput");
         formatter.field("ssh_public_key", &self.ssh_public_key);
         formatter.finish()
     }
 }
-/// See [`UploadSSHPublicKeyOutput`](crate::output::UploadSSHPublicKeyOutput)
+/// See [`UploadSshPublicKeyOutput`](crate::output::UploadSshPublicKeyOutput)
 pub mod upload_ssh_public_key_output {
-    /// A builder for [`UploadSSHPublicKeyOutput`](crate::output::UploadSSHPublicKeyOutput)
+    /// A builder for [`UploadSshPublicKeyOutput`](crate::output::UploadSshPublicKeyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) ssh_public_key: std::option::Option<crate::model::SSHPublicKey>,
+        pub(crate) ssh_public_key: std::option::Option<crate::model::SshPublicKey>,
     }
     impl Builder {
         /// <p>Contains information about the SSH public key.</p>
-        pub fn ssh_public_key(mut self, input: crate::model::SSHPublicKey) -> Self {
+        pub fn ssh_public_key(mut self, input: crate::model::SshPublicKey) -> Self {
             self.ssh_public_key = Some(input);
             self
         }
         pub fn set_ssh_public_key(
             mut self,
-            input: std::option::Option<crate::model::SSHPublicKey>,
+            input: std::option::Option<crate::model::SshPublicKey>,
         ) -> Self {
             self.ssh_public_key = input;
             self
         }
-        /// Consumes the builder and constructs a [`UploadSSHPublicKeyOutput`](crate::output::UploadSSHPublicKeyOutput)
-        pub fn build(self) -> crate::output::UploadSSHPublicKeyOutput {
-            crate::output::UploadSSHPublicKeyOutput {
+        /// Consumes the builder and constructs a [`UploadSshPublicKeyOutput`](crate::output::UploadSshPublicKeyOutput)
+        pub fn build(self) -> crate::output::UploadSshPublicKeyOutput {
+            crate::output::UploadSshPublicKeyOutput {
                 ssh_public_key: self.ssh_public_key,
             }
         }
     }
 }
-impl UploadSSHPublicKeyOutput {
-    /// Creates a new builder-style object to manufacture [`UploadSSHPublicKeyOutput`](crate::output::UploadSSHPublicKeyOutput)
+impl UploadSshPublicKeyOutput {
+    /// Creates a new builder-style object to manufacture [`UploadSshPublicKeyOutput`](crate::output::UploadSshPublicKeyOutput)
     pub fn builder() -> crate::output::upload_ssh_public_key_output::Builder {
         crate::output::upload_ssh_public_key_output::Builder::default()
     }
@@ -212,28 +212,28 @@ impl UpdateUserOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateSSHPublicKeyOutput {}
-impl std::fmt::Debug for UpdateSSHPublicKeyOutput {
+pub struct UpdateSshPublicKeyOutput {}
+impl std::fmt::Debug for UpdateSshPublicKeyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateSSHPublicKeyOutput");
+        let mut formatter = f.debug_struct("UpdateSshPublicKeyOutput");
         formatter.finish()
     }
 }
-/// See [`UpdateSSHPublicKeyOutput`](crate::output::UpdateSSHPublicKeyOutput)
+/// See [`UpdateSshPublicKeyOutput`](crate::output::UpdateSshPublicKeyOutput)
 pub mod update_ssh_public_key_output {
-    /// A builder for [`UpdateSSHPublicKeyOutput`](crate::output::UpdateSSHPublicKeyOutput)
+    /// A builder for [`UpdateSshPublicKeyOutput`](crate::output::UpdateSshPublicKeyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UpdateSSHPublicKeyOutput`](crate::output::UpdateSSHPublicKeyOutput)
-        pub fn build(self) -> crate::output::UpdateSSHPublicKeyOutput {
-            crate::output::UpdateSSHPublicKeyOutput {}
+        /// Consumes the builder and constructs a [`UpdateSshPublicKeyOutput`](crate::output::UpdateSshPublicKeyOutput)
+        pub fn build(self) -> crate::output::UpdateSshPublicKeyOutput {
+            crate::output::UpdateSshPublicKeyOutput {}
         }
     }
 }
-impl UpdateSSHPublicKeyOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateSSHPublicKeyOutput`](crate::output::UpdateSSHPublicKeyOutput)
+impl UpdateSshPublicKeyOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateSshPublicKeyOutput`](crate::output::UpdateSshPublicKeyOutput)
     pub fn builder() -> crate::output::update_ssh_public_key_output::Builder {
         crate::output::update_ssh_public_key_output::Builder::default()
     }
@@ -330,20 +330,20 @@ impl UpdateServerCertificateOutput {
 /// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateSAMLProviderOutput {
+pub struct UpdateSamlProviderOutput {
     /// <p>The Amazon Resource Name (ARN) of the SAML provider that was updated.</p>
     pub saml_provider_arn: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for UpdateSAMLProviderOutput {
+impl std::fmt::Debug for UpdateSamlProviderOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateSAMLProviderOutput");
+        let mut formatter = f.debug_struct("UpdateSamlProviderOutput");
         formatter.field("saml_provider_arn", &self.saml_provider_arn);
         formatter.finish()
     }
 }
-/// See [`UpdateSAMLProviderOutput`](crate::output::UpdateSAMLProviderOutput)
+/// See [`UpdateSamlProviderOutput`](crate::output::UpdateSamlProviderOutput)
 pub mod update_saml_provider_output {
-    /// A builder for [`UpdateSAMLProviderOutput`](crate::output::UpdateSAMLProviderOutput)
+    /// A builder for [`UpdateSamlProviderOutput`](crate::output::UpdateSamlProviderOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -362,16 +362,16 @@ pub mod update_saml_provider_output {
             self.saml_provider_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateSAMLProviderOutput`](crate::output::UpdateSAMLProviderOutput)
-        pub fn build(self) -> crate::output::UpdateSAMLProviderOutput {
-            crate::output::UpdateSAMLProviderOutput {
+        /// Consumes the builder and constructs a [`UpdateSamlProviderOutput`](crate::output::UpdateSamlProviderOutput)
+        pub fn build(self) -> crate::output::UpdateSamlProviderOutput {
+            crate::output::UpdateSamlProviderOutput {
                 saml_provider_arn: self.saml_provider_arn,
             }
         }
     }
 }
-impl UpdateSAMLProviderOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateSAMLProviderOutput`](crate::output::UpdateSAMLProviderOutput)
+impl UpdateSamlProviderOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateSamlProviderOutput`](crate::output::UpdateSamlProviderOutput)
     pub fn builder() -> crate::output::update_saml_provider_output::Builder {
         crate::output::update_saml_provider_output::Builder::default()
     }
@@ -452,28 +452,28 @@ impl UpdateRoleOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateOpenIDConnectProviderThumbprintOutput {}
-impl std::fmt::Debug for UpdateOpenIDConnectProviderThumbprintOutput {
+pub struct UpdateOpenIdConnectProviderThumbprintOutput {}
+impl std::fmt::Debug for UpdateOpenIdConnectProviderThumbprintOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateOpenIDConnectProviderThumbprintOutput");
+        let mut formatter = f.debug_struct("UpdateOpenIdConnectProviderThumbprintOutput");
         formatter.finish()
     }
 }
-/// See [`UpdateOpenIDConnectProviderThumbprintOutput`](crate::output::UpdateOpenIDConnectProviderThumbprintOutput)
+/// See [`UpdateOpenIdConnectProviderThumbprintOutput`](crate::output::UpdateOpenIdConnectProviderThumbprintOutput)
 pub mod update_open_id_connect_provider_thumbprint_output {
-    /// A builder for [`UpdateOpenIDConnectProviderThumbprintOutput`](crate::output::UpdateOpenIDConnectProviderThumbprintOutput)
+    /// A builder for [`UpdateOpenIdConnectProviderThumbprintOutput`](crate::output::UpdateOpenIdConnectProviderThumbprintOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UpdateOpenIDConnectProviderThumbprintOutput`](crate::output::UpdateOpenIDConnectProviderThumbprintOutput)
-        pub fn build(self) -> crate::output::UpdateOpenIDConnectProviderThumbprintOutput {
-            crate::output::UpdateOpenIDConnectProviderThumbprintOutput {}
+        /// Consumes the builder and constructs a [`UpdateOpenIdConnectProviderThumbprintOutput`](crate::output::UpdateOpenIdConnectProviderThumbprintOutput)
+        pub fn build(self) -> crate::output::UpdateOpenIdConnectProviderThumbprintOutput {
+            crate::output::UpdateOpenIdConnectProviderThumbprintOutput {}
         }
     }
 }
-impl UpdateOpenIDConnectProviderThumbprintOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateOpenIDConnectProviderThumbprintOutput`](crate::output::UpdateOpenIDConnectProviderThumbprintOutput)
+impl UpdateOpenIdConnectProviderThumbprintOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateOpenIdConnectProviderThumbprintOutput`](crate::output::UpdateOpenIdConnectProviderThumbprintOutput)
     pub fn builder() -> crate::output::update_open_id_connect_provider_thumbprint_output::Builder {
         crate::output::update_open_id_connect_provider_thumbprint_output::Builder::default()
     }
@@ -684,28 +684,28 @@ impl UntagServerCertificateOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UntagSAMLProviderOutput {}
-impl std::fmt::Debug for UntagSAMLProviderOutput {
+pub struct UntagSamlProviderOutput {}
+impl std::fmt::Debug for UntagSamlProviderOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagSAMLProviderOutput");
+        let mut formatter = f.debug_struct("UntagSamlProviderOutput");
         formatter.finish()
     }
 }
-/// See [`UntagSAMLProviderOutput`](crate::output::UntagSAMLProviderOutput)
+/// See [`UntagSamlProviderOutput`](crate::output::UntagSamlProviderOutput)
 pub mod untag_saml_provider_output {
-    /// A builder for [`UntagSAMLProviderOutput`](crate::output::UntagSAMLProviderOutput)
+    /// A builder for [`UntagSamlProviderOutput`](crate::output::UntagSamlProviderOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UntagSAMLProviderOutput`](crate::output::UntagSAMLProviderOutput)
-        pub fn build(self) -> crate::output::UntagSAMLProviderOutput {
-            crate::output::UntagSAMLProviderOutput {}
+        /// Consumes the builder and constructs a [`UntagSamlProviderOutput`](crate::output::UntagSamlProviderOutput)
+        pub fn build(self) -> crate::output::UntagSamlProviderOutput {
+            crate::output::UntagSamlProviderOutput {}
         }
     }
 }
-impl UntagSAMLProviderOutput {
-    /// Creates a new builder-style object to manufacture [`UntagSAMLProviderOutput`](crate::output::UntagSAMLProviderOutput)
+impl UntagSamlProviderOutput {
+    /// Creates a new builder-style object to manufacture [`UntagSamlProviderOutput`](crate::output::UntagSamlProviderOutput)
     pub fn builder() -> crate::output::untag_saml_provider_output::Builder {
         crate::output::untag_saml_provider_output::Builder::default()
     }
@@ -771,28 +771,28 @@ impl UntagPolicyOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UntagOpenIDConnectProviderOutput {}
-impl std::fmt::Debug for UntagOpenIDConnectProviderOutput {
+pub struct UntagOpenIdConnectProviderOutput {}
+impl std::fmt::Debug for UntagOpenIdConnectProviderOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagOpenIDConnectProviderOutput");
+        let mut formatter = f.debug_struct("UntagOpenIdConnectProviderOutput");
         formatter.finish()
     }
 }
-/// See [`UntagOpenIDConnectProviderOutput`](crate::output::UntagOpenIDConnectProviderOutput)
+/// See [`UntagOpenIdConnectProviderOutput`](crate::output::UntagOpenIdConnectProviderOutput)
 pub mod untag_open_id_connect_provider_output {
-    /// A builder for [`UntagOpenIDConnectProviderOutput`](crate::output::UntagOpenIDConnectProviderOutput)
+    /// A builder for [`UntagOpenIdConnectProviderOutput`](crate::output::UntagOpenIdConnectProviderOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UntagOpenIDConnectProviderOutput`](crate::output::UntagOpenIDConnectProviderOutput)
-        pub fn build(self) -> crate::output::UntagOpenIDConnectProviderOutput {
-            crate::output::UntagOpenIDConnectProviderOutput {}
+        /// Consumes the builder and constructs a [`UntagOpenIdConnectProviderOutput`](crate::output::UntagOpenIdConnectProviderOutput)
+        pub fn build(self) -> crate::output::UntagOpenIdConnectProviderOutput {
+            crate::output::UntagOpenIdConnectProviderOutput {}
         }
     }
 }
-impl UntagOpenIDConnectProviderOutput {
-    /// Creates a new builder-style object to manufacture [`UntagOpenIDConnectProviderOutput`](crate::output::UntagOpenIDConnectProviderOutput)
+impl UntagOpenIdConnectProviderOutput {
+    /// Creates a new builder-style object to manufacture [`UntagOpenIdConnectProviderOutput`](crate::output::UntagOpenIdConnectProviderOutput)
     pub fn builder() -> crate::output::untag_open_id_connect_provider_output::Builder {
         crate::output::untag_open_id_connect_provider_output::Builder::default()
     }
@@ -800,28 +800,28 @@ impl UntagOpenIDConnectProviderOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UntagMFADeviceOutput {}
-impl std::fmt::Debug for UntagMFADeviceOutput {
+pub struct UntagMfaDeviceOutput {}
+impl std::fmt::Debug for UntagMfaDeviceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagMFADeviceOutput");
+        let mut formatter = f.debug_struct("UntagMfaDeviceOutput");
         formatter.finish()
     }
 }
-/// See [`UntagMFADeviceOutput`](crate::output::UntagMFADeviceOutput)
+/// See [`UntagMfaDeviceOutput`](crate::output::UntagMfaDeviceOutput)
 pub mod untag_mfa_device_output {
-    /// A builder for [`UntagMFADeviceOutput`](crate::output::UntagMFADeviceOutput)
+    /// A builder for [`UntagMfaDeviceOutput`](crate::output::UntagMfaDeviceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UntagMFADeviceOutput`](crate::output::UntagMFADeviceOutput)
-        pub fn build(self) -> crate::output::UntagMFADeviceOutput {
-            crate::output::UntagMFADeviceOutput {}
+        /// Consumes the builder and constructs a [`UntagMfaDeviceOutput`](crate::output::UntagMfaDeviceOutput)
+        pub fn build(self) -> crate::output::UntagMfaDeviceOutput {
+            crate::output::UntagMfaDeviceOutput {}
         }
     }
 }
-impl UntagMFADeviceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagMFADeviceOutput`](crate::output::UntagMFADeviceOutput)
+impl UntagMfaDeviceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagMfaDeviceOutput`](crate::output::UntagMfaDeviceOutput)
     pub fn builder() -> crate::output::untag_mfa_device_output::Builder {
         crate::output::untag_mfa_device_output::Builder::default()
     }
@@ -916,28 +916,28 @@ impl TagServerCertificateOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct TagSAMLProviderOutput {}
-impl std::fmt::Debug for TagSAMLProviderOutput {
+pub struct TagSamlProviderOutput {}
+impl std::fmt::Debug for TagSamlProviderOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagSAMLProviderOutput");
+        let mut formatter = f.debug_struct("TagSamlProviderOutput");
         formatter.finish()
     }
 }
-/// See [`TagSAMLProviderOutput`](crate::output::TagSAMLProviderOutput)
+/// See [`TagSamlProviderOutput`](crate::output::TagSamlProviderOutput)
 pub mod tag_saml_provider_output {
-    /// A builder for [`TagSAMLProviderOutput`](crate::output::TagSAMLProviderOutput)
+    /// A builder for [`TagSamlProviderOutput`](crate::output::TagSamlProviderOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`TagSAMLProviderOutput`](crate::output::TagSAMLProviderOutput)
-        pub fn build(self) -> crate::output::TagSAMLProviderOutput {
-            crate::output::TagSAMLProviderOutput {}
+        /// Consumes the builder and constructs a [`TagSamlProviderOutput`](crate::output::TagSamlProviderOutput)
+        pub fn build(self) -> crate::output::TagSamlProviderOutput {
+            crate::output::TagSamlProviderOutput {}
         }
     }
 }
-impl TagSAMLProviderOutput {
-    /// Creates a new builder-style object to manufacture [`TagSAMLProviderOutput`](crate::output::TagSAMLProviderOutput)
+impl TagSamlProviderOutput {
+    /// Creates a new builder-style object to manufacture [`TagSamlProviderOutput`](crate::output::TagSamlProviderOutput)
     pub fn builder() -> crate::output::tag_saml_provider_output::Builder {
         crate::output::tag_saml_provider_output::Builder::default()
     }
@@ -1003,28 +1003,28 @@ impl TagPolicyOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct TagOpenIDConnectProviderOutput {}
-impl std::fmt::Debug for TagOpenIDConnectProviderOutput {
+pub struct TagOpenIdConnectProviderOutput {}
+impl std::fmt::Debug for TagOpenIdConnectProviderOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagOpenIDConnectProviderOutput");
+        let mut formatter = f.debug_struct("TagOpenIdConnectProviderOutput");
         formatter.finish()
     }
 }
-/// See [`TagOpenIDConnectProviderOutput`](crate::output::TagOpenIDConnectProviderOutput)
+/// See [`TagOpenIdConnectProviderOutput`](crate::output::TagOpenIdConnectProviderOutput)
 pub mod tag_open_id_connect_provider_output {
-    /// A builder for [`TagOpenIDConnectProviderOutput`](crate::output::TagOpenIDConnectProviderOutput)
+    /// A builder for [`TagOpenIdConnectProviderOutput`](crate::output::TagOpenIdConnectProviderOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`TagOpenIDConnectProviderOutput`](crate::output::TagOpenIDConnectProviderOutput)
-        pub fn build(self) -> crate::output::TagOpenIDConnectProviderOutput {
-            crate::output::TagOpenIDConnectProviderOutput {}
+        /// Consumes the builder and constructs a [`TagOpenIdConnectProviderOutput`](crate::output::TagOpenIdConnectProviderOutput)
+        pub fn build(self) -> crate::output::TagOpenIdConnectProviderOutput {
+            crate::output::TagOpenIdConnectProviderOutput {}
         }
     }
 }
-impl TagOpenIDConnectProviderOutput {
-    /// Creates a new builder-style object to manufacture [`TagOpenIDConnectProviderOutput`](crate::output::TagOpenIDConnectProviderOutput)
+impl TagOpenIdConnectProviderOutput {
+    /// Creates a new builder-style object to manufacture [`TagOpenIdConnectProviderOutput`](crate::output::TagOpenIdConnectProviderOutput)
     pub fn builder() -> crate::output::tag_open_id_connect_provider_output::Builder {
         crate::output::tag_open_id_connect_provider_output::Builder::default()
     }
@@ -1032,28 +1032,28 @@ impl TagOpenIDConnectProviderOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct TagMFADeviceOutput {}
-impl std::fmt::Debug for TagMFADeviceOutput {
+pub struct TagMfaDeviceOutput {}
+impl std::fmt::Debug for TagMfaDeviceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagMFADeviceOutput");
+        let mut formatter = f.debug_struct("TagMfaDeviceOutput");
         formatter.finish()
     }
 }
-/// See [`TagMFADeviceOutput`](crate::output::TagMFADeviceOutput)
+/// See [`TagMfaDeviceOutput`](crate::output::TagMfaDeviceOutput)
 pub mod tag_mfa_device_output {
-    /// A builder for [`TagMFADeviceOutput`](crate::output::TagMFADeviceOutput)
+    /// A builder for [`TagMfaDeviceOutput`](crate::output::TagMfaDeviceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`TagMFADeviceOutput`](crate::output::TagMFADeviceOutput)
-        pub fn build(self) -> crate::output::TagMFADeviceOutput {
-            crate::output::TagMFADeviceOutput {}
+        /// Consumes the builder and constructs a [`TagMfaDeviceOutput`](crate::output::TagMfaDeviceOutput)
+        pub fn build(self) -> crate::output::TagMfaDeviceOutput {
+            crate::output::TagMfaDeviceOutput {}
         }
     }
 }
-impl TagMFADeviceOutput {
-    /// Creates a new builder-style object to manufacture [`TagMFADeviceOutput`](crate::output::TagMFADeviceOutput)
+impl TagMfaDeviceOutput {
+    /// Creates a new builder-style object to manufacture [`TagMfaDeviceOutput`](crate::output::TagMfaDeviceOutput)
     pub fn builder() -> crate::output::tag_mfa_device_output::Builder {
         crate::output::tag_mfa_device_output::Builder::default()
     }
@@ -1344,28 +1344,28 @@ impl SetDefaultPolicyVersionOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ResyncMFADeviceOutput {}
-impl std::fmt::Debug for ResyncMFADeviceOutput {
+pub struct ResyncMfaDeviceOutput {}
+impl std::fmt::Debug for ResyncMfaDeviceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResyncMFADeviceOutput");
+        let mut formatter = f.debug_struct("ResyncMfaDeviceOutput");
         formatter.finish()
     }
 }
-/// See [`ResyncMFADeviceOutput`](crate::output::ResyncMFADeviceOutput)
+/// See [`ResyncMfaDeviceOutput`](crate::output::ResyncMfaDeviceOutput)
 pub mod resync_mfa_device_output {
-    /// A builder for [`ResyncMFADeviceOutput`](crate::output::ResyncMFADeviceOutput)
+    /// A builder for [`ResyncMfaDeviceOutput`](crate::output::ResyncMfaDeviceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`ResyncMFADeviceOutput`](crate::output::ResyncMFADeviceOutput)
-        pub fn build(self) -> crate::output::ResyncMFADeviceOutput {
-            crate::output::ResyncMFADeviceOutput {}
+        /// Consumes the builder and constructs a [`ResyncMfaDeviceOutput`](crate::output::ResyncMfaDeviceOutput)
+        pub fn build(self) -> crate::output::ResyncMfaDeviceOutput {
+            crate::output::ResyncMfaDeviceOutput {}
         }
     }
 }
-impl ResyncMFADeviceOutput {
-    /// Creates a new builder-style object to manufacture [`ResyncMFADeviceOutput`](crate::output::ResyncMFADeviceOutput)
+impl ResyncMfaDeviceOutput {
+    /// Creates a new builder-style object to manufacture [`ResyncMfaDeviceOutput`](crate::output::ResyncMfaDeviceOutput)
     pub fn builder() -> crate::output::resync_mfa_device_output::Builder {
         crate::output::resync_mfa_device_output::Builder::default()
     }
@@ -1497,28 +1497,28 @@ impl RemoveRoleFromInstanceProfileOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct RemoveClientIDFromOpenIDConnectProviderOutput {}
-impl std::fmt::Debug for RemoveClientIDFromOpenIDConnectProviderOutput {
+pub struct RemoveClientIdFromOpenIdConnectProviderOutput {}
+impl std::fmt::Debug for RemoveClientIdFromOpenIdConnectProviderOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveClientIDFromOpenIDConnectProviderOutput");
+        let mut formatter = f.debug_struct("RemoveClientIdFromOpenIdConnectProviderOutput");
         formatter.finish()
     }
 }
-/// See [`RemoveClientIDFromOpenIDConnectProviderOutput`](crate::output::RemoveClientIDFromOpenIDConnectProviderOutput)
+/// See [`RemoveClientIdFromOpenIdConnectProviderOutput`](crate::output::RemoveClientIdFromOpenIdConnectProviderOutput)
 pub mod remove_client_id_from_open_id_connect_provider_output {
-    /// A builder for [`RemoveClientIDFromOpenIDConnectProviderOutput`](crate::output::RemoveClientIDFromOpenIDConnectProviderOutput)
+    /// A builder for [`RemoveClientIdFromOpenIdConnectProviderOutput`](crate::output::RemoveClientIdFromOpenIdConnectProviderOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`RemoveClientIDFromOpenIDConnectProviderOutput`](crate::output::RemoveClientIDFromOpenIDConnectProviderOutput)
-        pub fn build(self) -> crate::output::RemoveClientIDFromOpenIDConnectProviderOutput {
-            crate::output::RemoveClientIDFromOpenIDConnectProviderOutput {}
+        /// Consumes the builder and constructs a [`RemoveClientIdFromOpenIdConnectProviderOutput`](crate::output::RemoveClientIdFromOpenIdConnectProviderOutput)
+        pub fn build(self) -> crate::output::RemoveClientIdFromOpenIdConnectProviderOutput {
+            crate::output::RemoveClientIdFromOpenIdConnectProviderOutput {}
         }
     }
 }
-impl RemoveClientIDFromOpenIDConnectProviderOutput {
-    /// Creates a new builder-style object to manufacture [`RemoveClientIDFromOpenIDConnectProviderOutput`](crate::output::RemoveClientIDFromOpenIDConnectProviderOutput)
+impl RemoveClientIdFromOpenIdConnectProviderOutput {
+    /// Creates a new builder-style object to manufacture [`RemoveClientIdFromOpenIdConnectProviderOutput`](crate::output::RemoveClientIdFromOpenIdConnectProviderOutput)
     pub fn builder() -> crate::output::remove_client_id_from_open_id_connect_provider_output::Builder
     {
         crate::output::remove_client_id_from_open_id_connect_provider_output::Builder::default()
@@ -1674,10 +1674,10 @@ impl PutGroupPolicyOutput {
 /// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListVirtualMFADevicesOutput {
+pub struct ListVirtualMfaDevicesOutput {
     /// <p> The list of virtual MFA devices in the current account that match the
     /// <code>AssignmentStatus</code> value that was passed in the request.</p>
-    pub virtual_mfa_devices: std::option::Option<std::vec::Vec<crate::model::VirtualMFADevice>>,
+    pub virtual_mfa_devices: std::option::Option<std::vec::Vec<crate::model::VirtualMfaDevice>>,
     /// <p>A flag that indicates whether there are more items to return. If your
     /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
     /// request parameter to retrieve more items. Note that IAM might return fewer than the
@@ -1690,30 +1690,30 @@ pub struct ListVirtualMFADevicesOutput {
     /// pagination request.</p>
     pub marker: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ListVirtualMFADevicesOutput {
+impl std::fmt::Debug for ListVirtualMfaDevicesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListVirtualMFADevicesOutput");
+        let mut formatter = f.debug_struct("ListVirtualMfaDevicesOutput");
         formatter.field("virtual_mfa_devices", &self.virtual_mfa_devices);
         formatter.field("is_truncated", &self.is_truncated);
         formatter.field("marker", &self.marker);
         formatter.finish()
     }
 }
-/// See [`ListVirtualMFADevicesOutput`](crate::output::ListVirtualMFADevicesOutput)
+/// See [`ListVirtualMfaDevicesOutput`](crate::output::ListVirtualMfaDevicesOutput)
 pub mod list_virtual_mfa_devices_output {
-    /// A builder for [`ListVirtualMFADevicesOutput`](crate::output::ListVirtualMFADevicesOutput)
+    /// A builder for [`ListVirtualMfaDevicesOutput`](crate::output::ListVirtualMfaDevicesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_mfa_devices:
-            std::option::Option<std::vec::Vec<crate::model::VirtualMFADevice>>,
+            std::option::Option<std::vec::Vec<crate::model::VirtualMfaDevice>>,
         pub(crate) is_truncated: std::option::Option<bool>,
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn virtual_mfa_devices(
             mut self,
-            input: impl Into<crate::model::VirtualMFADevice>,
+            input: impl Into<crate::model::VirtualMfaDevice>,
         ) -> Self {
             let mut v = self.virtual_mfa_devices.unwrap_or_default();
             v.push(input.into());
@@ -1722,7 +1722,7 @@ pub mod list_virtual_mfa_devices_output {
         }
         pub fn set_virtual_mfa_devices(
             mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::VirtualMFADevice>>,
+            input: std::option::Option<std::vec::Vec<crate::model::VirtualMfaDevice>>,
         ) -> Self {
             self.virtual_mfa_devices = input;
             self
@@ -1752,9 +1752,9 @@ pub mod list_virtual_mfa_devices_output {
             self.marker = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListVirtualMFADevicesOutput`](crate::output::ListVirtualMFADevicesOutput)
-        pub fn build(self) -> crate::output::ListVirtualMFADevicesOutput {
-            crate::output::ListVirtualMFADevicesOutput {
+        /// Consumes the builder and constructs a [`ListVirtualMfaDevicesOutput`](crate::output::ListVirtualMfaDevicesOutput)
+        pub fn build(self) -> crate::output::ListVirtualMfaDevicesOutput {
+            crate::output::ListVirtualMfaDevicesOutput {
                 virtual_mfa_devices: self.virtual_mfa_devices,
                 is_truncated: self.is_truncated.unwrap_or_default(),
                 marker: self.marker,
@@ -1762,8 +1762,8 @@ pub mod list_virtual_mfa_devices_output {
         }
     }
 }
-impl ListVirtualMFADevicesOutput {
-    /// Creates a new builder-style object to manufacture [`ListVirtualMFADevicesOutput`](crate::output::ListVirtualMFADevicesOutput)
+impl ListVirtualMfaDevicesOutput {
+    /// Creates a new builder-style object to manufacture [`ListVirtualMfaDevicesOutput`](crate::output::ListVirtualMfaDevicesOutput)
     pub fn builder() -> crate::output::list_virtual_mfa_devices_output::Builder {
         crate::output::list_virtual_mfa_devices_output::Builder::default()
     }
@@ -2048,9 +2048,9 @@ impl ListUserPoliciesOutput {
 /// request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListSSHPublicKeysOutput {
+pub struct ListSshPublicKeysOutput {
     /// <p>A list of the SSH public keys assigned to IAM user.</p>
-    pub ssh_public_keys: std::option::Option<std::vec::Vec<crate::model::SSHPublicKeyMetadata>>,
+    pub ssh_public_keys: std::option::Option<std::vec::Vec<crate::model::SshPublicKeyMetadata>>,
     /// <p>A flag that indicates whether there are more items to return. If your
     /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
     /// request parameter to retrieve more items. Note that IAM might return fewer than the
@@ -2063,30 +2063,30 @@ pub struct ListSSHPublicKeysOutput {
     /// pagination request.</p>
     pub marker: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ListSSHPublicKeysOutput {
+impl std::fmt::Debug for ListSshPublicKeysOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSSHPublicKeysOutput");
+        let mut formatter = f.debug_struct("ListSshPublicKeysOutput");
         formatter.field("ssh_public_keys", &self.ssh_public_keys);
         formatter.field("is_truncated", &self.is_truncated);
         formatter.field("marker", &self.marker);
         formatter.finish()
     }
 }
-/// See [`ListSSHPublicKeysOutput`](crate::output::ListSSHPublicKeysOutput)
+/// See [`ListSshPublicKeysOutput`](crate::output::ListSshPublicKeysOutput)
 pub mod list_ssh_public_keys_output {
-    /// A builder for [`ListSSHPublicKeysOutput`](crate::output::ListSSHPublicKeysOutput)
+    /// A builder for [`ListSshPublicKeysOutput`](crate::output::ListSshPublicKeysOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ssh_public_keys:
-            std::option::Option<std::vec::Vec<crate::model::SSHPublicKeyMetadata>>,
+            std::option::Option<std::vec::Vec<crate::model::SshPublicKeyMetadata>>,
         pub(crate) is_truncated: std::option::Option<bool>,
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn ssh_public_keys(
             mut self,
-            input: impl Into<crate::model::SSHPublicKeyMetadata>,
+            input: impl Into<crate::model::SshPublicKeyMetadata>,
         ) -> Self {
             let mut v = self.ssh_public_keys.unwrap_or_default();
             v.push(input.into());
@@ -2095,7 +2095,7 @@ pub mod list_ssh_public_keys_output {
         }
         pub fn set_ssh_public_keys(
             mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SSHPublicKeyMetadata>>,
+            input: std::option::Option<std::vec::Vec<crate::model::SshPublicKeyMetadata>>,
         ) -> Self {
             self.ssh_public_keys = input;
             self
@@ -2125,9 +2125,9 @@ pub mod list_ssh_public_keys_output {
             self.marker = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListSSHPublicKeysOutput`](crate::output::ListSSHPublicKeysOutput)
-        pub fn build(self) -> crate::output::ListSSHPublicKeysOutput {
-            crate::output::ListSSHPublicKeysOutput {
+        /// Consumes the builder and constructs a [`ListSshPublicKeysOutput`](crate::output::ListSshPublicKeysOutput)
+        pub fn build(self) -> crate::output::ListSshPublicKeysOutput {
+            crate::output::ListSshPublicKeysOutput {
                 ssh_public_keys: self.ssh_public_keys,
                 is_truncated: self.is_truncated.unwrap_or_default(),
                 marker: self.marker,
@@ -2135,8 +2135,8 @@ pub mod list_ssh_public_keys_output {
         }
     }
 }
-impl ListSSHPublicKeysOutput {
-    /// Creates a new builder-style object to manufacture [`ListSSHPublicKeysOutput`](crate::output::ListSSHPublicKeysOutput)
+impl ListSshPublicKeysOutput {
+    /// Creates a new builder-style object to manufacture [`ListSshPublicKeysOutput`](crate::output::ListSshPublicKeysOutput)
     pub fn builder() -> crate::output::list_ssh_public_keys_output::Builder {
         crate::output::list_ssh_public_keys_output::Builder::default()
     }
@@ -2491,7 +2491,7 @@ impl ListServerCertificatesOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListSAMLProviderTagsOutput {
+pub struct ListSamlProviderTagsOutput {
     /// <p>The list of tags that are currently attached to the Security Assertion Markup Language
     /// (SAML) identity provider. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2505,18 +2505,18 @@ pub struct ListSAMLProviderTagsOutput {
     /// pagination request.</p>
     pub marker: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ListSAMLProviderTagsOutput {
+impl std::fmt::Debug for ListSamlProviderTagsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSAMLProviderTagsOutput");
+        let mut formatter = f.debug_struct("ListSamlProviderTagsOutput");
         formatter.field("tags", &self.tags);
         formatter.field("is_truncated", &self.is_truncated);
         formatter.field("marker", &self.marker);
         formatter.finish()
     }
 }
-/// See [`ListSAMLProviderTagsOutput`](crate::output::ListSAMLProviderTagsOutput)
+/// See [`ListSamlProviderTagsOutput`](crate::output::ListSamlProviderTagsOutput)
 pub mod list_saml_provider_tags_output {
-    /// A builder for [`ListSAMLProviderTagsOutput`](crate::output::ListSAMLProviderTagsOutput)
+    /// A builder for [`ListSamlProviderTagsOutput`](crate::output::ListSamlProviderTagsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -2561,9 +2561,9 @@ pub mod list_saml_provider_tags_output {
             self.marker = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListSAMLProviderTagsOutput`](crate::output::ListSAMLProviderTagsOutput)
-        pub fn build(self) -> crate::output::ListSAMLProviderTagsOutput {
-            crate::output::ListSAMLProviderTagsOutput {
+        /// Consumes the builder and constructs a [`ListSamlProviderTagsOutput`](crate::output::ListSamlProviderTagsOutput)
+        pub fn build(self) -> crate::output::ListSamlProviderTagsOutput {
+            crate::output::ListSamlProviderTagsOutput {
                 tags: self.tags,
                 is_truncated: self.is_truncated.unwrap_or_default(),
                 marker: self.marker,
@@ -2571,8 +2571,8 @@ pub mod list_saml_provider_tags_output {
         }
     }
 }
-impl ListSAMLProviderTagsOutput {
-    /// Creates a new builder-style object to manufacture [`ListSAMLProviderTagsOutput`](crate::output::ListSAMLProviderTagsOutput)
+impl ListSamlProviderTagsOutput {
+    /// Creates a new builder-style object to manufacture [`ListSamlProviderTagsOutput`](crate::output::ListSamlProviderTagsOutput)
     pub fn builder() -> crate::output::list_saml_provider_tags_output::Builder {
         crate::output::list_saml_provider_tags_output::Builder::default()
     }
@@ -2582,31 +2582,31 @@ impl ListSAMLProviderTagsOutput {
 /// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListSAMLProvidersOutput {
+pub struct ListSamlProvidersOutput {
     /// <p>The list of SAML provider resource objects defined in IAM for this AWS
     /// account.</p>
-    pub saml_provider_list: std::option::Option<std::vec::Vec<crate::model::SAMLProviderListEntry>>,
+    pub saml_provider_list: std::option::Option<std::vec::Vec<crate::model::SamlProviderListEntry>>,
 }
-impl std::fmt::Debug for ListSAMLProvidersOutput {
+impl std::fmt::Debug for ListSamlProvidersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSAMLProvidersOutput");
+        let mut formatter = f.debug_struct("ListSamlProvidersOutput");
         formatter.field("saml_provider_list", &self.saml_provider_list);
         formatter.finish()
     }
 }
-/// See [`ListSAMLProvidersOutput`](crate::output::ListSAMLProvidersOutput)
+/// See [`ListSamlProvidersOutput`](crate::output::ListSamlProvidersOutput)
 pub mod list_saml_providers_output {
-    /// A builder for [`ListSAMLProvidersOutput`](crate::output::ListSAMLProvidersOutput)
+    /// A builder for [`ListSamlProvidersOutput`](crate::output::ListSamlProvidersOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) saml_provider_list:
-            std::option::Option<std::vec::Vec<crate::model::SAMLProviderListEntry>>,
+            std::option::Option<std::vec::Vec<crate::model::SamlProviderListEntry>>,
     }
     impl Builder {
         pub fn saml_provider_list(
             mut self,
-            input: impl Into<crate::model::SAMLProviderListEntry>,
+            input: impl Into<crate::model::SamlProviderListEntry>,
         ) -> Self {
             let mut v = self.saml_provider_list.unwrap_or_default();
             v.push(input.into());
@@ -2615,21 +2615,21 @@ pub mod list_saml_providers_output {
         }
         pub fn set_saml_provider_list(
             mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SAMLProviderListEntry>>,
+            input: std::option::Option<std::vec::Vec<crate::model::SamlProviderListEntry>>,
         ) -> Self {
             self.saml_provider_list = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListSAMLProvidersOutput`](crate::output::ListSAMLProvidersOutput)
-        pub fn build(self) -> crate::output::ListSAMLProvidersOutput {
-            crate::output::ListSAMLProvidersOutput {
+        /// Consumes the builder and constructs a [`ListSamlProvidersOutput`](crate::output::ListSamlProvidersOutput)
+        pub fn build(self) -> crate::output::ListSamlProvidersOutput {
+            crate::output::ListSamlProvidersOutput {
                 saml_provider_list: self.saml_provider_list,
             }
         }
     }
 }
-impl ListSAMLProvidersOutput {
-    /// Creates a new builder-style object to manufacture [`ListSAMLProvidersOutput`](crate::output::ListSAMLProvidersOutput)
+impl ListSamlProvidersOutput {
+    /// Creates a new builder-style object to manufacture [`ListSamlProvidersOutput`](crate::output::ListSamlProvidersOutput)
     pub fn builder() -> crate::output::list_saml_providers_output::Builder {
         crate::output::list_saml_providers_output::Builder::default()
     }
@@ -3294,7 +3294,7 @@ impl ListPoliciesOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListOpenIDConnectProviderTagsOutput {
+pub struct ListOpenIdConnectProviderTagsOutput {
     /// <p>The list of tags that are currently attached to the OpenID Connect (OIDC) identity
     /// provider. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3308,18 +3308,18 @@ pub struct ListOpenIDConnectProviderTagsOutput {
     /// pagination request.</p>
     pub marker: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ListOpenIDConnectProviderTagsOutput {
+impl std::fmt::Debug for ListOpenIdConnectProviderTagsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListOpenIDConnectProviderTagsOutput");
+        let mut formatter = f.debug_struct("ListOpenIdConnectProviderTagsOutput");
         formatter.field("tags", &self.tags);
         formatter.field("is_truncated", &self.is_truncated);
         formatter.field("marker", &self.marker);
         formatter.finish()
     }
 }
-/// See [`ListOpenIDConnectProviderTagsOutput`](crate::output::ListOpenIDConnectProviderTagsOutput)
+/// See [`ListOpenIdConnectProviderTagsOutput`](crate::output::ListOpenIdConnectProviderTagsOutput)
 pub mod list_open_id_connect_provider_tags_output {
-    /// A builder for [`ListOpenIDConnectProviderTagsOutput`](crate::output::ListOpenIDConnectProviderTagsOutput)
+    /// A builder for [`ListOpenIdConnectProviderTagsOutput`](crate::output::ListOpenIdConnectProviderTagsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -3364,9 +3364,9 @@ pub mod list_open_id_connect_provider_tags_output {
             self.marker = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListOpenIDConnectProviderTagsOutput`](crate::output::ListOpenIDConnectProviderTagsOutput)
-        pub fn build(self) -> crate::output::ListOpenIDConnectProviderTagsOutput {
-            crate::output::ListOpenIDConnectProviderTagsOutput {
+        /// Consumes the builder and constructs a [`ListOpenIdConnectProviderTagsOutput`](crate::output::ListOpenIdConnectProviderTagsOutput)
+        pub fn build(self) -> crate::output::ListOpenIdConnectProviderTagsOutput {
+            crate::output::ListOpenIdConnectProviderTagsOutput {
                 tags: self.tags,
                 is_truncated: self.is_truncated.unwrap_or_default(),
                 marker: self.marker,
@@ -3374,8 +3374,8 @@ pub mod list_open_id_connect_provider_tags_output {
         }
     }
 }
-impl ListOpenIDConnectProviderTagsOutput {
-    /// Creates a new builder-style object to manufacture [`ListOpenIDConnectProviderTagsOutput`](crate::output::ListOpenIDConnectProviderTagsOutput)
+impl ListOpenIdConnectProviderTagsOutput {
+    /// Creates a new builder-style object to manufacture [`ListOpenIdConnectProviderTagsOutput`](crate::output::ListOpenIdConnectProviderTagsOutput)
     pub fn builder() -> crate::output::list_open_id_connect_provider_tags_output::Builder {
         crate::output::list_open_id_connect_provider_tags_output::Builder::default()
     }
@@ -3385,14 +3385,14 @@ impl ListOpenIDConnectProviderTagsOutput {
 /// request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListOpenIDConnectProvidersOutput {
+pub struct ListOpenIdConnectProvidersOutput {
     /// <p>The list of IAM OIDC provider resource objects defined in the AWS account.</p>
     pub open_id_connect_provider_list:
-        std::option::Option<std::vec::Vec<crate::model::OpenIDConnectProviderListEntry>>,
+        std::option::Option<std::vec::Vec<crate::model::OpenIdConnectProviderListEntry>>,
 }
-impl std::fmt::Debug for ListOpenIDConnectProvidersOutput {
+impl std::fmt::Debug for ListOpenIdConnectProvidersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListOpenIDConnectProvidersOutput");
+        let mut formatter = f.debug_struct("ListOpenIdConnectProvidersOutput");
         formatter.field(
             "open_id_connect_provider_list",
             &self.open_id_connect_provider_list,
@@ -3400,19 +3400,19 @@ impl std::fmt::Debug for ListOpenIDConnectProvidersOutput {
         formatter.finish()
     }
 }
-/// See [`ListOpenIDConnectProvidersOutput`](crate::output::ListOpenIDConnectProvidersOutput)
+/// See [`ListOpenIdConnectProvidersOutput`](crate::output::ListOpenIdConnectProvidersOutput)
 pub mod list_open_id_connect_providers_output {
-    /// A builder for [`ListOpenIDConnectProvidersOutput`](crate::output::ListOpenIDConnectProvidersOutput)
+    /// A builder for [`ListOpenIdConnectProvidersOutput`](crate::output::ListOpenIdConnectProvidersOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) open_id_connect_provider_list:
-            std::option::Option<std::vec::Vec<crate::model::OpenIDConnectProviderListEntry>>,
+            std::option::Option<std::vec::Vec<crate::model::OpenIdConnectProviderListEntry>>,
     }
     impl Builder {
         pub fn open_id_connect_provider_list(
             mut self,
-            input: impl Into<crate::model::OpenIDConnectProviderListEntry>,
+            input: impl Into<crate::model::OpenIdConnectProviderListEntry>,
         ) -> Self {
             let mut v = self.open_id_connect_provider_list.unwrap_or_default();
             v.push(input.into());
@@ -3421,21 +3421,21 @@ pub mod list_open_id_connect_providers_output {
         }
         pub fn set_open_id_connect_provider_list(
             mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::OpenIDConnectProviderListEntry>>,
+            input: std::option::Option<std::vec::Vec<crate::model::OpenIdConnectProviderListEntry>>,
         ) -> Self {
             self.open_id_connect_provider_list = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListOpenIDConnectProvidersOutput`](crate::output::ListOpenIDConnectProvidersOutput)
-        pub fn build(self) -> crate::output::ListOpenIDConnectProvidersOutput {
-            crate::output::ListOpenIDConnectProvidersOutput {
+        /// Consumes the builder and constructs a [`ListOpenIdConnectProvidersOutput`](crate::output::ListOpenIdConnectProvidersOutput)
+        pub fn build(self) -> crate::output::ListOpenIdConnectProvidersOutput {
+            crate::output::ListOpenIdConnectProvidersOutput {
                 open_id_connect_provider_list: self.open_id_connect_provider_list,
             }
         }
     }
 }
-impl ListOpenIDConnectProvidersOutput {
-    /// Creates a new builder-style object to manufacture [`ListOpenIDConnectProvidersOutput`](crate::output::ListOpenIDConnectProvidersOutput)
+impl ListOpenIdConnectProvidersOutput {
+    /// Creates a new builder-style object to manufacture [`ListOpenIdConnectProvidersOutput`](crate::output::ListOpenIdConnectProvidersOutput)
     pub fn builder() -> crate::output::list_open_id_connect_providers_output::Builder {
         crate::output::list_open_id_connect_providers_output::Builder::default()
     }
@@ -3443,7 +3443,7 @@ impl ListOpenIDConnectProvidersOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListMFADeviceTagsOutput {
+pub struct ListMfaDeviceTagsOutput {
     /// <p>The list of tags that are currently attached to the virtual MFA device. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>A flag that indicates whether there are more items to return. If your
@@ -3456,18 +3456,18 @@ pub struct ListMFADeviceTagsOutput {
     /// pagination request.</p>
     pub marker: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ListMFADeviceTagsOutput {
+impl std::fmt::Debug for ListMfaDeviceTagsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListMFADeviceTagsOutput");
+        let mut formatter = f.debug_struct("ListMfaDeviceTagsOutput");
         formatter.field("tags", &self.tags);
         formatter.field("is_truncated", &self.is_truncated);
         formatter.field("marker", &self.marker);
         formatter.finish()
     }
 }
-/// See [`ListMFADeviceTagsOutput`](crate::output::ListMFADeviceTagsOutput)
+/// See [`ListMfaDeviceTagsOutput`](crate::output::ListMfaDeviceTagsOutput)
 pub mod list_mfa_device_tags_output {
-    /// A builder for [`ListMFADeviceTagsOutput`](crate::output::ListMFADeviceTagsOutput)
+    /// A builder for [`ListMfaDeviceTagsOutput`](crate::output::ListMfaDeviceTagsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -3512,9 +3512,9 @@ pub mod list_mfa_device_tags_output {
             self.marker = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListMFADeviceTagsOutput`](crate::output::ListMFADeviceTagsOutput)
-        pub fn build(self) -> crate::output::ListMFADeviceTagsOutput {
-            crate::output::ListMFADeviceTagsOutput {
+        /// Consumes the builder and constructs a [`ListMfaDeviceTagsOutput`](crate::output::ListMfaDeviceTagsOutput)
+        pub fn build(self) -> crate::output::ListMfaDeviceTagsOutput {
+            crate::output::ListMfaDeviceTagsOutput {
                 tags: self.tags,
                 is_truncated: self.is_truncated.unwrap_or_default(),
                 marker: self.marker,
@@ -3522,8 +3522,8 @@ pub mod list_mfa_device_tags_output {
         }
     }
 }
-impl ListMFADeviceTagsOutput {
-    /// Creates a new builder-style object to manufacture [`ListMFADeviceTagsOutput`](crate::output::ListMFADeviceTagsOutput)
+impl ListMfaDeviceTagsOutput {
+    /// Creates a new builder-style object to manufacture [`ListMfaDeviceTagsOutput`](crate::output::ListMfaDeviceTagsOutput)
     pub fn builder() -> crate::output::list_mfa_device_tags_output::Builder {
         crate::output::list_mfa_device_tags_output::Builder::default()
     }
@@ -3533,9 +3533,9 @@ impl ListMFADeviceTagsOutput {
 /// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListMFADevicesOutput {
+pub struct ListMfaDevicesOutput {
     /// <p>A list of MFA devices.</p>
-    pub mfa_devices: std::option::Option<std::vec::Vec<crate::model::MFADevice>>,
+    pub mfa_devices: std::option::Option<std::vec::Vec<crate::model::MfaDevice>>,
     /// <p>A flag that indicates whether there are more items to return. If your
     /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
     /// request parameter to retrieve more items. Note that IAM might return fewer than the
@@ -3548,27 +3548,27 @@ pub struct ListMFADevicesOutput {
     /// pagination request.</p>
     pub marker: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ListMFADevicesOutput {
+impl std::fmt::Debug for ListMfaDevicesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListMFADevicesOutput");
+        let mut formatter = f.debug_struct("ListMfaDevicesOutput");
         formatter.field("mfa_devices", &self.mfa_devices);
         formatter.field("is_truncated", &self.is_truncated);
         formatter.field("marker", &self.marker);
         formatter.finish()
     }
 }
-/// See [`ListMFADevicesOutput`](crate::output::ListMFADevicesOutput)
+/// See [`ListMfaDevicesOutput`](crate::output::ListMfaDevicesOutput)
 pub mod list_mfa_devices_output {
-    /// A builder for [`ListMFADevicesOutput`](crate::output::ListMFADevicesOutput)
+    /// A builder for [`ListMfaDevicesOutput`](crate::output::ListMfaDevicesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) mfa_devices: std::option::Option<std::vec::Vec<crate::model::MFADevice>>,
+        pub(crate) mfa_devices: std::option::Option<std::vec::Vec<crate::model::MfaDevice>>,
         pub(crate) is_truncated: std::option::Option<bool>,
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn mfa_devices(mut self, input: impl Into<crate::model::MFADevice>) -> Self {
+        pub fn mfa_devices(mut self, input: impl Into<crate::model::MfaDevice>) -> Self {
             let mut v = self.mfa_devices.unwrap_or_default();
             v.push(input.into());
             self.mfa_devices = Some(v);
@@ -3576,7 +3576,7 @@ pub mod list_mfa_devices_output {
         }
         pub fn set_mfa_devices(
             mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MFADevice>>,
+            input: std::option::Option<std::vec::Vec<crate::model::MfaDevice>>,
         ) -> Self {
             self.mfa_devices = input;
             self
@@ -3606,9 +3606,9 @@ pub mod list_mfa_devices_output {
             self.marker = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListMFADevicesOutput`](crate::output::ListMFADevicesOutput)
-        pub fn build(self) -> crate::output::ListMFADevicesOutput {
-            crate::output::ListMFADevicesOutput {
+        /// Consumes the builder and constructs a [`ListMfaDevicesOutput`](crate::output::ListMfaDevicesOutput)
+        pub fn build(self) -> crate::output::ListMfaDevicesOutput {
+            crate::output::ListMfaDevicesOutput {
                 mfa_devices: self.mfa_devices,
                 is_truncated: self.is_truncated.unwrap_or_default(),
                 marker: self.marker,
@@ -3616,8 +3616,8 @@ pub mod list_mfa_devices_output {
         }
     }
 }
-impl ListMFADevicesOutput {
-    /// Creates a new builder-style object to manufacture [`ListMFADevicesOutput`](crate::output::ListMFADevicesOutput)
+impl ListMfaDevicesOutput {
+    /// Creates a new builder-style object to manufacture [`ListMfaDevicesOutput`](crate::output::ListMfaDevicesOutput)
     pub fn builder() -> crate::output::list_mfa_devices_output::Builder {
         crate::output::list_mfa_devices_output::Builder::default()
     }
@@ -4962,48 +4962,48 @@ impl GetUserOutput {
 /// request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetSSHPublicKeyOutput {
+pub struct GetSshPublicKeyOutput {
     /// <p>A structure containing details about the SSH public key.</p>
-    pub ssh_public_key: std::option::Option<crate::model::SSHPublicKey>,
+    pub ssh_public_key: std::option::Option<crate::model::SshPublicKey>,
 }
-impl std::fmt::Debug for GetSSHPublicKeyOutput {
+impl std::fmt::Debug for GetSshPublicKeyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSSHPublicKeyOutput");
+        let mut formatter = f.debug_struct("GetSshPublicKeyOutput");
         formatter.field("ssh_public_key", &self.ssh_public_key);
         formatter.finish()
     }
 }
-/// See [`GetSSHPublicKeyOutput`](crate::output::GetSSHPublicKeyOutput)
+/// See [`GetSshPublicKeyOutput`](crate::output::GetSshPublicKeyOutput)
 pub mod get_ssh_public_key_output {
-    /// A builder for [`GetSSHPublicKeyOutput`](crate::output::GetSSHPublicKeyOutput)
+    /// A builder for [`GetSshPublicKeyOutput`](crate::output::GetSshPublicKeyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) ssh_public_key: std::option::Option<crate::model::SSHPublicKey>,
+        pub(crate) ssh_public_key: std::option::Option<crate::model::SshPublicKey>,
     }
     impl Builder {
         /// <p>A structure containing details about the SSH public key.</p>
-        pub fn ssh_public_key(mut self, input: crate::model::SSHPublicKey) -> Self {
+        pub fn ssh_public_key(mut self, input: crate::model::SshPublicKey) -> Self {
             self.ssh_public_key = Some(input);
             self
         }
         pub fn set_ssh_public_key(
             mut self,
-            input: std::option::Option<crate::model::SSHPublicKey>,
+            input: std::option::Option<crate::model::SshPublicKey>,
         ) -> Self {
             self.ssh_public_key = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetSSHPublicKeyOutput`](crate::output::GetSSHPublicKeyOutput)
-        pub fn build(self) -> crate::output::GetSSHPublicKeyOutput {
-            crate::output::GetSSHPublicKeyOutput {
+        /// Consumes the builder and constructs a [`GetSshPublicKeyOutput`](crate::output::GetSshPublicKeyOutput)
+        pub fn build(self) -> crate::output::GetSshPublicKeyOutput {
+            crate::output::GetSshPublicKeyOutput {
                 ssh_public_key: self.ssh_public_key,
             }
         }
     }
 }
-impl GetSSHPublicKeyOutput {
-    /// Creates a new builder-style object to manufacture [`GetSSHPublicKeyOutput`](crate::output::GetSSHPublicKeyOutput)
+impl GetSshPublicKeyOutput {
+    /// Creates a new builder-style object to manufacture [`GetSshPublicKeyOutput`](crate::output::GetSshPublicKeyOutput)
     pub fn builder() -> crate::output::get_ssh_public_key_output::Builder {
         crate::output::get_ssh_public_key_output::Builder::default()
     }
@@ -5494,7 +5494,7 @@ impl GetServerCertificateOutput {
 /// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetSAMLProviderOutput {
+pub struct GetSamlProviderOutput {
     /// <p>The XML metadata document that includes information about an identity provider.</p>
     pub saml_metadata_document: std::option::Option<std::string::String>,
     /// <p>The date and time when the SAML provider was created.</p>
@@ -5506,9 +5506,9 @@ pub struct GetSAMLProviderOutput {
     /// <i>IAM User Guide</i>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
-impl std::fmt::Debug for GetSAMLProviderOutput {
+impl std::fmt::Debug for GetSamlProviderOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSAMLProviderOutput");
+        let mut formatter = f.debug_struct("GetSamlProviderOutput");
         formatter.field("saml_metadata_document", &self.saml_metadata_document);
         formatter.field("create_date", &self.create_date);
         formatter.field("valid_until", &self.valid_until);
@@ -5516,9 +5516,9 @@ impl std::fmt::Debug for GetSAMLProviderOutput {
         formatter.finish()
     }
 }
-/// See [`GetSAMLProviderOutput`](crate::output::GetSAMLProviderOutput)
+/// See [`GetSamlProviderOutput`](crate::output::GetSamlProviderOutput)
 pub mod get_saml_provider_output {
-    /// A builder for [`GetSAMLProviderOutput`](crate::output::GetSAMLProviderOutput)
+    /// A builder for [`GetSamlProviderOutput`](crate::output::GetSamlProviderOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -5577,9 +5577,9 @@ pub mod get_saml_provider_output {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetSAMLProviderOutput`](crate::output::GetSAMLProviderOutput)
-        pub fn build(self) -> crate::output::GetSAMLProviderOutput {
-            crate::output::GetSAMLProviderOutput {
+        /// Consumes the builder and constructs a [`GetSamlProviderOutput`](crate::output::GetSamlProviderOutput)
+        pub fn build(self) -> crate::output::GetSamlProviderOutput {
+            crate::output::GetSamlProviderOutput {
                 saml_metadata_document: self.saml_metadata_document,
                 create_date: self.create_date,
                 valid_until: self.valid_until,
@@ -5588,8 +5588,8 @@ pub mod get_saml_provider_output {
         }
     }
 }
-impl GetSAMLProviderOutput {
-    /// Creates a new builder-style object to manufacture [`GetSAMLProviderOutput`](crate::output::GetSAMLProviderOutput)
+impl GetSamlProviderOutput {
+    /// Creates a new builder-style object to manufacture [`GetSamlProviderOutput`](crate::output::GetSamlProviderOutput)
     pub fn builder() -> crate::output::get_saml_provider_output::Builder {
         crate::output::get_saml_provider_output::Builder::default()
     }
@@ -6042,7 +6042,7 @@ impl GetOrganizationsAccessReportOutput {
 /// request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetOpenIDConnectProviderOutput {
+pub struct GetOpenIdConnectProviderOutput {
     /// <p>The URL that the IAM OIDC provider resource object is associated with. For more
     /// information, see <a>CreateOpenIDConnectProvider</a>.</p>
     pub url: std::option::Option<std::string::String>,
@@ -6060,9 +6060,9 @@ pub struct GetOpenIDConnectProviderOutput {
     /// <i>IAM User Guide</i>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
-impl std::fmt::Debug for GetOpenIDConnectProviderOutput {
+impl std::fmt::Debug for GetOpenIdConnectProviderOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetOpenIDConnectProviderOutput");
+        let mut formatter = f.debug_struct("GetOpenIdConnectProviderOutput");
         formatter.field("url", &self.url);
         formatter.field("client_id_list", &self.client_id_list);
         formatter.field("thumbprint_list", &self.thumbprint_list);
@@ -6071,9 +6071,9 @@ impl std::fmt::Debug for GetOpenIDConnectProviderOutput {
         formatter.finish()
     }
 }
-/// See [`GetOpenIDConnectProviderOutput`](crate::output::GetOpenIDConnectProviderOutput)
+/// See [`GetOpenIdConnectProviderOutput`](crate::output::GetOpenIdConnectProviderOutput)
 pub mod get_open_id_connect_provider_output {
-    /// A builder for [`GetOpenIDConnectProviderOutput`](crate::output::GetOpenIDConnectProviderOutput)
+    /// A builder for [`GetOpenIdConnectProviderOutput`](crate::output::GetOpenIdConnectProviderOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -6146,9 +6146,9 @@ pub mod get_open_id_connect_provider_output {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetOpenIDConnectProviderOutput`](crate::output::GetOpenIDConnectProviderOutput)
-        pub fn build(self) -> crate::output::GetOpenIDConnectProviderOutput {
-            crate::output::GetOpenIDConnectProviderOutput {
+        /// Consumes the builder and constructs a [`GetOpenIdConnectProviderOutput`](crate::output::GetOpenIdConnectProviderOutput)
+        pub fn build(self) -> crate::output::GetOpenIdConnectProviderOutput {
+            crate::output::GetOpenIdConnectProviderOutput {
                 url: self.url,
                 client_id_list: self.client_id_list,
                 thumbprint_list: self.thumbprint_list,
@@ -6158,8 +6158,8 @@ pub mod get_open_id_connect_provider_output {
         }
     }
 }
-impl GetOpenIDConnectProviderOutput {
-    /// Creates a new builder-style object to manufacture [`GetOpenIDConnectProviderOutput`](crate::output::GetOpenIDConnectProviderOutput)
+impl GetOpenIdConnectProviderOutput {
+    /// Creates a new builder-style object to manufacture [`GetOpenIdConnectProviderOutput`](crate::output::GetOpenIdConnectProviderOutput)
     pub fn builder() -> crate::output::get_open_id_connect_provider_output::Builder {
         crate::output::get_open_id_connect_provider_output::Builder::default()
     }
@@ -7136,28 +7136,28 @@ impl GenerateCredentialReportOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct EnableMFADeviceOutput {}
-impl std::fmt::Debug for EnableMFADeviceOutput {
+pub struct EnableMfaDeviceOutput {}
+impl std::fmt::Debug for EnableMfaDeviceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnableMFADeviceOutput");
+        let mut formatter = f.debug_struct("EnableMfaDeviceOutput");
         formatter.finish()
     }
 }
-/// See [`EnableMFADeviceOutput`](crate::output::EnableMFADeviceOutput)
+/// See [`EnableMfaDeviceOutput`](crate::output::EnableMfaDeviceOutput)
 pub mod enable_mfa_device_output {
-    /// A builder for [`EnableMFADeviceOutput`](crate::output::EnableMFADeviceOutput)
+    /// A builder for [`EnableMfaDeviceOutput`](crate::output::EnableMfaDeviceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`EnableMFADeviceOutput`](crate::output::EnableMFADeviceOutput)
-        pub fn build(self) -> crate::output::EnableMFADeviceOutput {
-            crate::output::EnableMFADeviceOutput {}
+        /// Consumes the builder and constructs a [`EnableMfaDeviceOutput`](crate::output::EnableMfaDeviceOutput)
+        pub fn build(self) -> crate::output::EnableMfaDeviceOutput {
+            crate::output::EnableMfaDeviceOutput {}
         }
     }
 }
-impl EnableMFADeviceOutput {
-    /// Creates a new builder-style object to manufacture [`EnableMFADeviceOutput`](crate::output::EnableMFADeviceOutput)
+impl EnableMfaDeviceOutput {
+    /// Creates a new builder-style object to manufacture [`EnableMfaDeviceOutput`](crate::output::EnableMfaDeviceOutput)
     pub fn builder() -> crate::output::enable_mfa_device_output::Builder {
         crate::output::enable_mfa_device_output::Builder::default()
     }
@@ -7252,28 +7252,28 @@ impl DetachGroupPolicyOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteVirtualMFADeviceOutput {}
-impl std::fmt::Debug for DeleteVirtualMFADeviceOutput {
+pub struct DeleteVirtualMfaDeviceOutput {}
+impl std::fmt::Debug for DeleteVirtualMfaDeviceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteVirtualMFADeviceOutput");
+        let mut formatter = f.debug_struct("DeleteVirtualMfaDeviceOutput");
         formatter.finish()
     }
 }
-/// See [`DeleteVirtualMFADeviceOutput`](crate::output::DeleteVirtualMFADeviceOutput)
+/// See [`DeleteVirtualMfaDeviceOutput`](crate::output::DeleteVirtualMfaDeviceOutput)
 pub mod delete_virtual_mfa_device_output {
-    /// A builder for [`DeleteVirtualMFADeviceOutput`](crate::output::DeleteVirtualMFADeviceOutput)
+    /// A builder for [`DeleteVirtualMfaDeviceOutput`](crate::output::DeleteVirtualMfaDeviceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteVirtualMFADeviceOutput`](crate::output::DeleteVirtualMFADeviceOutput)
-        pub fn build(self) -> crate::output::DeleteVirtualMFADeviceOutput {
-            crate::output::DeleteVirtualMFADeviceOutput {}
+        /// Consumes the builder and constructs a [`DeleteVirtualMfaDeviceOutput`](crate::output::DeleteVirtualMfaDeviceOutput)
+        pub fn build(self) -> crate::output::DeleteVirtualMfaDeviceOutput {
+            crate::output::DeleteVirtualMfaDeviceOutput {}
         }
     }
 }
-impl DeleteVirtualMFADeviceOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteVirtualMFADeviceOutput`](crate::output::DeleteVirtualMFADeviceOutput)
+impl DeleteVirtualMfaDeviceOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteVirtualMfaDeviceOutput`](crate::output::DeleteVirtualMfaDeviceOutput)
     pub fn builder() -> crate::output::delete_virtual_mfa_device_output::Builder {
         crate::output::delete_virtual_mfa_device_output::Builder::default()
     }
@@ -7368,28 +7368,28 @@ impl DeleteUserOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteSSHPublicKeyOutput {}
-impl std::fmt::Debug for DeleteSSHPublicKeyOutput {
+pub struct DeleteSshPublicKeyOutput {}
+impl std::fmt::Debug for DeleteSshPublicKeyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSSHPublicKeyOutput");
+        let mut formatter = f.debug_struct("DeleteSshPublicKeyOutput");
         formatter.finish()
     }
 }
-/// See [`DeleteSSHPublicKeyOutput`](crate::output::DeleteSSHPublicKeyOutput)
+/// See [`DeleteSshPublicKeyOutput`](crate::output::DeleteSshPublicKeyOutput)
 pub mod delete_ssh_public_key_output {
-    /// A builder for [`DeleteSSHPublicKeyOutput`](crate::output::DeleteSSHPublicKeyOutput)
+    /// A builder for [`DeleteSshPublicKeyOutput`](crate::output::DeleteSshPublicKeyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteSSHPublicKeyOutput`](crate::output::DeleteSSHPublicKeyOutput)
-        pub fn build(self) -> crate::output::DeleteSSHPublicKeyOutput {
-            crate::output::DeleteSSHPublicKeyOutput {}
+        /// Consumes the builder and constructs a [`DeleteSshPublicKeyOutput`](crate::output::DeleteSshPublicKeyOutput)
+        pub fn build(self) -> crate::output::DeleteSshPublicKeyOutput {
+            crate::output::DeleteSshPublicKeyOutput {}
         }
     }
 }
-impl DeleteSSHPublicKeyOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteSSHPublicKeyOutput`](crate::output::DeleteSSHPublicKeyOutput)
+impl DeleteSshPublicKeyOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteSshPublicKeyOutput`](crate::output::DeleteSshPublicKeyOutput)
     pub fn builder() -> crate::output::delete_ssh_public_key_output::Builder {
         crate::output::delete_ssh_public_key_output::Builder::default()
     }
@@ -7537,28 +7537,28 @@ impl DeleteServerCertificateOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteSAMLProviderOutput {}
-impl std::fmt::Debug for DeleteSAMLProviderOutput {
+pub struct DeleteSamlProviderOutput {}
+impl std::fmt::Debug for DeleteSamlProviderOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSAMLProviderOutput");
+        let mut formatter = f.debug_struct("DeleteSamlProviderOutput");
         formatter.finish()
     }
 }
-/// See [`DeleteSAMLProviderOutput`](crate::output::DeleteSAMLProviderOutput)
+/// See [`DeleteSamlProviderOutput`](crate::output::DeleteSamlProviderOutput)
 pub mod delete_saml_provider_output {
-    /// A builder for [`DeleteSAMLProviderOutput`](crate::output::DeleteSAMLProviderOutput)
+    /// A builder for [`DeleteSamlProviderOutput`](crate::output::DeleteSamlProviderOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteSAMLProviderOutput`](crate::output::DeleteSAMLProviderOutput)
-        pub fn build(self) -> crate::output::DeleteSAMLProviderOutput {
-            crate::output::DeleteSAMLProviderOutput {}
+        /// Consumes the builder and constructs a [`DeleteSamlProviderOutput`](crate::output::DeleteSamlProviderOutput)
+        pub fn build(self) -> crate::output::DeleteSamlProviderOutput {
+            crate::output::DeleteSamlProviderOutput {}
         }
     }
 }
-impl DeleteSAMLProviderOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteSAMLProviderOutput`](crate::output::DeleteSAMLProviderOutput)
+impl DeleteSamlProviderOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteSamlProviderOutput`](crate::output::DeleteSamlProviderOutput)
     pub fn builder() -> crate::output::delete_saml_provider_output::Builder {
         crate::output::delete_saml_provider_output::Builder::default()
     }
@@ -7711,28 +7711,28 @@ impl DeletePolicyOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteOpenIDConnectProviderOutput {}
-impl std::fmt::Debug for DeleteOpenIDConnectProviderOutput {
+pub struct DeleteOpenIdConnectProviderOutput {}
+impl std::fmt::Debug for DeleteOpenIdConnectProviderOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteOpenIDConnectProviderOutput");
+        let mut formatter = f.debug_struct("DeleteOpenIdConnectProviderOutput");
         formatter.finish()
     }
 }
-/// See [`DeleteOpenIDConnectProviderOutput`](crate::output::DeleteOpenIDConnectProviderOutput)
+/// See [`DeleteOpenIdConnectProviderOutput`](crate::output::DeleteOpenIdConnectProviderOutput)
 pub mod delete_open_id_connect_provider_output {
-    /// A builder for [`DeleteOpenIDConnectProviderOutput`](crate::output::DeleteOpenIDConnectProviderOutput)
+    /// A builder for [`DeleteOpenIdConnectProviderOutput`](crate::output::DeleteOpenIdConnectProviderOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteOpenIDConnectProviderOutput`](crate::output::DeleteOpenIDConnectProviderOutput)
-        pub fn build(self) -> crate::output::DeleteOpenIDConnectProviderOutput {
-            crate::output::DeleteOpenIDConnectProviderOutput {}
+        /// Consumes the builder and constructs a [`DeleteOpenIdConnectProviderOutput`](crate::output::DeleteOpenIdConnectProviderOutput)
+        pub fn build(self) -> crate::output::DeleteOpenIdConnectProviderOutput {
+            crate::output::DeleteOpenIdConnectProviderOutput {}
         }
     }
 }
-impl DeleteOpenIDConnectProviderOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteOpenIDConnectProviderOutput`](crate::output::DeleteOpenIDConnectProviderOutput)
+impl DeleteOpenIdConnectProviderOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteOpenIdConnectProviderOutput`](crate::output::DeleteOpenIdConnectProviderOutput)
     pub fn builder() -> crate::output::delete_open_id_connect_provider_output::Builder {
         crate::output::delete_open_id_connect_provider_output::Builder::default()
     }
@@ -7943,28 +7943,28 @@ impl DeleteAccessKeyOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeactivateMFADeviceOutput {}
-impl std::fmt::Debug for DeactivateMFADeviceOutput {
+pub struct DeactivateMfaDeviceOutput {}
+impl std::fmt::Debug for DeactivateMfaDeviceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeactivateMFADeviceOutput");
+        let mut formatter = f.debug_struct("DeactivateMfaDeviceOutput");
         formatter.finish()
     }
 }
-/// See [`DeactivateMFADeviceOutput`](crate::output::DeactivateMFADeviceOutput)
+/// See [`DeactivateMfaDeviceOutput`](crate::output::DeactivateMfaDeviceOutput)
 pub mod deactivate_mfa_device_output {
-    /// A builder for [`DeactivateMFADeviceOutput`](crate::output::DeactivateMFADeviceOutput)
+    /// A builder for [`DeactivateMfaDeviceOutput`](crate::output::DeactivateMfaDeviceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeactivateMFADeviceOutput`](crate::output::DeactivateMFADeviceOutput)
-        pub fn build(self) -> crate::output::DeactivateMFADeviceOutput {
-            crate::output::DeactivateMFADeviceOutput {}
+        /// Consumes the builder and constructs a [`DeactivateMfaDeviceOutput`](crate::output::DeactivateMfaDeviceOutput)
+        pub fn build(self) -> crate::output::DeactivateMfaDeviceOutput {
+            crate::output::DeactivateMfaDeviceOutput {}
         }
     }
 }
-impl DeactivateMFADeviceOutput {
-    /// Creates a new builder-style object to manufacture [`DeactivateMFADeviceOutput`](crate::output::DeactivateMFADeviceOutput)
+impl DeactivateMfaDeviceOutput {
+    /// Creates a new builder-style object to manufacture [`DeactivateMfaDeviceOutput`](crate::output::DeactivateMfaDeviceOutput)
     pub fn builder() -> crate::output::deactivate_mfa_device_output::Builder {
         crate::output::deactivate_mfa_device_output::Builder::default()
     }
@@ -7974,48 +7974,48 @@ impl DeactivateMFADeviceOutput {
 /// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateVirtualMFADeviceOutput {
+pub struct CreateVirtualMfaDeviceOutput {
     /// <p>A structure containing details about the new virtual MFA device.</p>
-    pub virtual_mfa_device: std::option::Option<crate::model::VirtualMFADevice>,
+    pub virtual_mfa_device: std::option::Option<crate::model::VirtualMfaDevice>,
 }
-impl std::fmt::Debug for CreateVirtualMFADeviceOutput {
+impl std::fmt::Debug for CreateVirtualMfaDeviceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateVirtualMFADeviceOutput");
+        let mut formatter = f.debug_struct("CreateVirtualMfaDeviceOutput");
         formatter.field("virtual_mfa_device", &self.virtual_mfa_device);
         formatter.finish()
     }
 }
-/// See [`CreateVirtualMFADeviceOutput`](crate::output::CreateVirtualMFADeviceOutput)
+/// See [`CreateVirtualMfaDeviceOutput`](crate::output::CreateVirtualMfaDeviceOutput)
 pub mod create_virtual_mfa_device_output {
-    /// A builder for [`CreateVirtualMFADeviceOutput`](crate::output::CreateVirtualMFADeviceOutput)
+    /// A builder for [`CreateVirtualMfaDeviceOutput`](crate::output::CreateVirtualMfaDeviceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) virtual_mfa_device: std::option::Option<crate::model::VirtualMFADevice>,
+        pub(crate) virtual_mfa_device: std::option::Option<crate::model::VirtualMfaDevice>,
     }
     impl Builder {
         /// <p>A structure containing details about the new virtual MFA device.</p>
-        pub fn virtual_mfa_device(mut self, input: crate::model::VirtualMFADevice) -> Self {
+        pub fn virtual_mfa_device(mut self, input: crate::model::VirtualMfaDevice) -> Self {
             self.virtual_mfa_device = Some(input);
             self
         }
         pub fn set_virtual_mfa_device(
             mut self,
-            input: std::option::Option<crate::model::VirtualMFADevice>,
+            input: std::option::Option<crate::model::VirtualMfaDevice>,
         ) -> Self {
             self.virtual_mfa_device = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateVirtualMFADeviceOutput`](crate::output::CreateVirtualMFADeviceOutput)
-        pub fn build(self) -> crate::output::CreateVirtualMFADeviceOutput {
-            crate::output::CreateVirtualMFADeviceOutput {
+        /// Consumes the builder and constructs a [`CreateVirtualMfaDeviceOutput`](crate::output::CreateVirtualMfaDeviceOutput)
+        pub fn build(self) -> crate::output::CreateVirtualMfaDeviceOutput {
+            crate::output::CreateVirtualMfaDeviceOutput {
                 virtual_mfa_device: self.virtual_mfa_device,
             }
         }
     }
 }
-impl CreateVirtualMFADeviceOutput {
-    /// Creates a new builder-style object to manufacture [`CreateVirtualMFADeviceOutput`](crate::output::CreateVirtualMFADeviceOutput)
+impl CreateVirtualMfaDeviceOutput {
+    /// Creates a new builder-style object to manufacture [`CreateVirtualMfaDeviceOutput`](crate::output::CreateVirtualMfaDeviceOutput)
     pub fn builder() -> crate::output::create_virtual_mfa_device_output::Builder {
         crate::output::create_virtual_mfa_device_output::Builder::default()
     }
@@ -8182,7 +8182,7 @@ impl CreateServiceLinkedRoleOutput {
 /// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateSAMLProviderOutput {
+pub struct CreateSamlProviderOutput {
     /// <p>The Amazon Resource Name (ARN) of the new SAML provider resource in IAM.</p>
     pub saml_provider_arn: std::option::Option<std::string::String>,
     /// <p>A list of tags that are attached to the new IAM SAML provider. The returned list of tags is sorted by tag key.
@@ -8190,17 +8190,17 @@ pub struct CreateSAMLProviderOutput {
     /// <i>IAM User Guide</i>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
-impl std::fmt::Debug for CreateSAMLProviderOutput {
+impl std::fmt::Debug for CreateSamlProviderOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateSAMLProviderOutput");
+        let mut formatter = f.debug_struct("CreateSamlProviderOutput");
         formatter.field("saml_provider_arn", &self.saml_provider_arn);
         formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }
-/// See [`CreateSAMLProviderOutput`](crate::output::CreateSAMLProviderOutput)
+/// See [`CreateSamlProviderOutput`](crate::output::CreateSamlProviderOutput)
 pub mod create_saml_provider_output {
-    /// A builder for [`CreateSAMLProviderOutput`](crate::output::CreateSAMLProviderOutput)
+    /// A builder for [`CreateSamlProviderOutput`](crate::output::CreateSamlProviderOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -8233,17 +8233,17 @@ pub mod create_saml_provider_output {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateSAMLProviderOutput`](crate::output::CreateSAMLProviderOutput)
-        pub fn build(self) -> crate::output::CreateSAMLProviderOutput {
-            crate::output::CreateSAMLProviderOutput {
+        /// Consumes the builder and constructs a [`CreateSamlProviderOutput`](crate::output::CreateSamlProviderOutput)
+        pub fn build(self) -> crate::output::CreateSamlProviderOutput {
+            crate::output::CreateSamlProviderOutput {
                 saml_provider_arn: self.saml_provider_arn,
                 tags: self.tags,
             }
         }
     }
 }
-impl CreateSAMLProviderOutput {
-    /// Creates a new builder-style object to manufacture [`CreateSAMLProviderOutput`](crate::output::CreateSAMLProviderOutput)
+impl CreateSamlProviderOutput {
+    /// Creates a new builder-style object to manufacture [`CreateSamlProviderOutput`](crate::output::CreateSamlProviderOutput)
     pub fn builder() -> crate::output::create_saml_provider_output::Builder {
         crate::output::create_saml_provider_output::Builder::default()
     }
@@ -8397,7 +8397,7 @@ impl CreatePolicyOutput {
 /// request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateOpenIDConnectProviderOutput {
+pub struct CreateOpenIdConnectProviderOutput {
     /// <p>The Amazon Resource Name (ARN) of the new IAM OpenID Connect provider that is
     /// created. For more information, see <a>OpenIDConnectProviderListEntry</a>.
     /// </p>
@@ -8407,9 +8407,9 @@ pub struct CreateOpenIDConnectProviderOutput {
     /// <i>IAM User Guide</i>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
-impl std::fmt::Debug for CreateOpenIDConnectProviderOutput {
+impl std::fmt::Debug for CreateOpenIdConnectProviderOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateOpenIDConnectProviderOutput");
+        let mut formatter = f.debug_struct("CreateOpenIdConnectProviderOutput");
         formatter.field(
             "open_id_connect_provider_arn",
             &self.open_id_connect_provider_arn,
@@ -8418,9 +8418,9 @@ impl std::fmt::Debug for CreateOpenIDConnectProviderOutput {
         formatter.finish()
     }
 }
-/// See [`CreateOpenIDConnectProviderOutput`](crate::output::CreateOpenIDConnectProviderOutput)
+/// See [`CreateOpenIdConnectProviderOutput`](crate::output::CreateOpenIdConnectProviderOutput)
 pub mod create_open_id_connect_provider_output {
-    /// A builder for [`CreateOpenIDConnectProviderOutput`](crate::output::CreateOpenIDConnectProviderOutput)
+    /// A builder for [`CreateOpenIdConnectProviderOutput`](crate::output::CreateOpenIdConnectProviderOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -8458,17 +8458,17 @@ pub mod create_open_id_connect_provider_output {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateOpenIDConnectProviderOutput`](crate::output::CreateOpenIDConnectProviderOutput)
-        pub fn build(self) -> crate::output::CreateOpenIDConnectProviderOutput {
-            crate::output::CreateOpenIDConnectProviderOutput {
+        /// Consumes the builder and constructs a [`CreateOpenIdConnectProviderOutput`](crate::output::CreateOpenIdConnectProviderOutput)
+        pub fn build(self) -> crate::output::CreateOpenIdConnectProviderOutput {
+            crate::output::CreateOpenIdConnectProviderOutput {
                 open_id_connect_provider_arn: self.open_id_connect_provider_arn,
                 tags: self.tags,
             }
         }
     }
 }
-impl CreateOpenIDConnectProviderOutput {
-    /// Creates a new builder-style object to manufacture [`CreateOpenIDConnectProviderOutput`](crate::output::CreateOpenIDConnectProviderOutput)
+impl CreateOpenIdConnectProviderOutput {
+    /// Creates a new builder-style object to manufacture [`CreateOpenIdConnectProviderOutput`](crate::output::CreateOpenIdConnectProviderOutput)
     pub fn builder() -> crate::output::create_open_id_connect_provider_output::Builder {
         crate::output::create_open_id_connect_provider_output::Builder::default()
     }
@@ -8877,28 +8877,28 @@ impl AddRoleToInstanceProfileOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct AddClientIDToOpenIDConnectProviderOutput {}
-impl std::fmt::Debug for AddClientIDToOpenIDConnectProviderOutput {
+pub struct AddClientIdToOpenIdConnectProviderOutput {}
+impl std::fmt::Debug for AddClientIdToOpenIdConnectProviderOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddClientIDToOpenIDConnectProviderOutput");
+        let mut formatter = f.debug_struct("AddClientIdToOpenIdConnectProviderOutput");
         formatter.finish()
     }
 }
-/// See [`AddClientIDToOpenIDConnectProviderOutput`](crate::output::AddClientIDToOpenIDConnectProviderOutput)
+/// See [`AddClientIdToOpenIdConnectProviderOutput`](crate::output::AddClientIdToOpenIdConnectProviderOutput)
 pub mod add_client_id_to_open_id_connect_provider_output {
-    /// A builder for [`AddClientIDToOpenIDConnectProviderOutput`](crate::output::AddClientIDToOpenIDConnectProviderOutput)
+    /// A builder for [`AddClientIdToOpenIdConnectProviderOutput`](crate::output::AddClientIdToOpenIdConnectProviderOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`AddClientIDToOpenIDConnectProviderOutput`](crate::output::AddClientIDToOpenIDConnectProviderOutput)
-        pub fn build(self) -> crate::output::AddClientIDToOpenIDConnectProviderOutput {
-            crate::output::AddClientIDToOpenIDConnectProviderOutput {}
+        /// Consumes the builder and constructs a [`AddClientIdToOpenIdConnectProviderOutput`](crate::output::AddClientIdToOpenIdConnectProviderOutput)
+        pub fn build(self) -> crate::output::AddClientIdToOpenIdConnectProviderOutput {
+            crate::output::AddClientIdToOpenIdConnectProviderOutput {}
         }
     }
 }
-impl AddClientIDToOpenIDConnectProviderOutput {
-    /// Creates a new builder-style object to manufacture [`AddClientIDToOpenIDConnectProviderOutput`](crate::output::AddClientIDToOpenIDConnectProviderOutput)
+impl AddClientIdToOpenIdConnectProviderOutput {
+    /// Creates a new builder-style object to manufacture [`AddClientIdToOpenIdConnectProviderOutput`](crate::output::AddClientIdToOpenIdConnectProviderOutput)
     pub fn builder() -> crate::output::add_client_id_to_open_id_connect_provider_output::Builder {
         crate::output::add_client_id_to_open_id_connect_provider_output::Builder::default()
     }

@@ -3970,7 +3970,7 @@ pub fn serialize_structure_phase2_integrity_algorithms_request_list_value(
 #[allow(unused_mut)]
 pub fn serialize_structure_phase1_dh_group_numbers_request_list_value(
     mut writer: smithy_query::QueryValueWriter,
-    input: &crate::model::Phase1DHGroupNumbersRequestListValue,
+    input: &crate::model::Phase1DhGroupNumbersRequestListValue,
 ) {
     #[allow(unused_mut)]
     let mut scope_1150 = writer.prefix("Value");
@@ -3985,7 +3985,7 @@ pub fn serialize_structure_phase1_dh_group_numbers_request_list_value(
 #[allow(unused_mut)]
 pub fn serialize_structure_phase2_dh_group_numbers_request_list_value(
     mut writer: smithy_query::QueryValueWriter,
-    input: &crate::model::Phase2DHGroupNumbersRequestListValue,
+    input: &crate::model::Phase2DhGroupNumbersRequestListValue,
 ) {
     #[allow(unused_mut)]
     let mut scope_1152 = writer.prefix("Value");
@@ -4000,7 +4000,7 @@ pub fn serialize_structure_phase2_dh_group_numbers_request_list_value(
 #[allow(unused_mut)]
 pub fn serialize_structure_ike_versions_request_list_value(
     mut writer: smithy_query::QueryValueWriter,
-    input: &crate::model::IKEVersionsRequestListValue,
+    input: &crate::model::IkeVersionsRequestListValue,
 ) {
     #[allow(unused_mut)]
     let mut scope_1154 = writer.prefix("Value");

@@ -3,6 +3,7 @@
 #![allow(clippy::large_enum_variant)]
 #![allow(clippy::wrong_self_convention)]
 #![allow(clippy::should_implement_trait)]
+#![allow(clippy::blacklisted_name)]
 //! <p>Using AWS Batch, you can run batch computing workloads on the AWS Cloud. Batch computing is a common means for
 //! developers, scientists, and engineers to access large amounts of compute resources. AWS Batch uses the advantages of
 //! this computing workload to remove the undifferentiated heavy lifting of configuring and managing required
@@ -20,7 +21,6 @@ pub use error_meta::Error;
 pub use config::Config;
 
 mod aws_endpoint;
-mod aws_json_errors;
 #[cfg(feature = "client")]
 pub mod client;
 pub mod config;
@@ -28,13 +28,13 @@ pub mod error;
 mod error_meta;
 pub mod input;
 mod json_deser;
+mod json_errors;
 mod json_ser;
 pub mod model;
 pub mod operation;
 mod operation_deser;
 mod operation_ser;
 pub mod output;
-mod serializer;
 pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");
 pub use smithy_http::byte_stream::ByteStream;
 pub use smithy_http::result::SdkError;

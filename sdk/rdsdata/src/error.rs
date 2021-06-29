@@ -8,22 +8,22 @@ pub struct BatchExecuteStatementError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchExecuteStatementErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ForbiddenError(crate::error::ForbiddenError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
+    BadRequestException(crate::error::BadRequestException),
+    ForbiddenException(crate::error::ForbiddenException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
     ServiceUnavailableError(crate::error::ServiceUnavailableError),
-    StatementTimeoutError(crate::error::StatementTimeoutError),
+    StatementTimeoutException(crate::error::StatementTimeoutException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchExecuteStatementError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            BatchExecuteStatementErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            BatchExecuteStatementErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            BatchExecuteStatementErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
+            BatchExecuteStatementErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            BatchExecuteStatementErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            BatchExecuteStatementErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
             BatchExecuteStatementErrorKind::ServiceUnavailableError(_inner) => _inner.fmt(f),
-            BatchExecuteStatementErrorKind::StatementTimeoutError(_inner) => _inner.fmt(f),
+            BatchExecuteStatementErrorKind::StatementTimeoutException(_inner) => _inner.fmt(f),
             BatchExecuteStatementErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -72,22 +72,22 @@ impl BatchExecuteStatementError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            BatchExecuteStatementErrorKind::BadRequestError(_)
+            BatchExecuteStatementErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_forbidden_error(&self) -> bool {
+    pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
-            BatchExecuteStatementErrorKind::ForbiddenError(_)
+            BatchExecuteStatementErrorKind::ForbiddenException(_)
         )
     }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            BatchExecuteStatementErrorKind::InternalServerErrorError(_)
+            BatchExecuteStatementErrorKind::InternalServerErrorException(_)
         )
     }
     pub fn is_service_unavailable_error(&self) -> bool {
@@ -96,21 +96,21 @@ impl BatchExecuteStatementError {
             BatchExecuteStatementErrorKind::ServiceUnavailableError(_)
         )
     }
-    pub fn is_statement_timeout_error(&self) -> bool {
+    pub fn is_statement_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
-            BatchExecuteStatementErrorKind::StatementTimeoutError(_)
+            BatchExecuteStatementErrorKind::StatementTimeoutException(_)
         )
     }
 }
 impl std::error::Error for BatchExecuteStatementError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            BatchExecuteStatementErrorKind::BadRequestError(_inner) => Some(_inner),
-            BatchExecuteStatementErrorKind::ForbiddenError(_inner) => Some(_inner),
-            BatchExecuteStatementErrorKind::InternalServerErrorError(_inner) => Some(_inner),
+            BatchExecuteStatementErrorKind::BadRequestException(_inner) => Some(_inner),
+            BatchExecuteStatementErrorKind::ForbiddenException(_inner) => Some(_inner),
+            BatchExecuteStatementErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             BatchExecuteStatementErrorKind::ServiceUnavailableError(_inner) => Some(_inner),
-            BatchExecuteStatementErrorKind::StatementTimeoutError(_inner) => Some(_inner),
+            BatchExecuteStatementErrorKind::StatementTimeoutException(_inner) => Some(_inner),
             BatchExecuteStatementErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -125,22 +125,22 @@ pub struct BeginTransactionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BeginTransactionErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ForbiddenError(crate::error::ForbiddenError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
+    BadRequestException(crate::error::BadRequestException),
+    ForbiddenException(crate::error::ForbiddenException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
     ServiceUnavailableError(crate::error::ServiceUnavailableError),
-    StatementTimeoutError(crate::error::StatementTimeoutError),
+    StatementTimeoutException(crate::error::StatementTimeoutException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BeginTransactionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            BeginTransactionErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            BeginTransactionErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            BeginTransactionErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
+            BeginTransactionErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            BeginTransactionErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            BeginTransactionErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
             BeginTransactionErrorKind::ServiceUnavailableError(_inner) => _inner.fmt(f),
-            BeginTransactionErrorKind::StatementTimeoutError(_inner) => _inner.fmt(f),
+            BeginTransactionErrorKind::StatementTimeoutException(_inner) => _inner.fmt(f),
             BeginTransactionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -189,16 +189,19 @@ impl BeginTransactionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, BeginTransactionErrorKind::BadRequestError(_))
-    }
-    pub fn is_forbidden_error(&self) -> bool {
-        matches!(&self.kind, BeginTransactionErrorKind::ForbiddenError(_))
-    }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            BeginTransactionErrorKind::InternalServerErrorError(_)
+            BeginTransactionErrorKind::BadRequestException(_)
+        )
+    }
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, BeginTransactionErrorKind::ForbiddenException(_))
+    }
+    pub fn is_internal_server_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BeginTransactionErrorKind::InternalServerErrorException(_)
         )
     }
     pub fn is_service_unavailable_error(&self) -> bool {
@@ -207,21 +210,21 @@ impl BeginTransactionError {
             BeginTransactionErrorKind::ServiceUnavailableError(_)
         )
     }
-    pub fn is_statement_timeout_error(&self) -> bool {
+    pub fn is_statement_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
-            BeginTransactionErrorKind::StatementTimeoutError(_)
+            BeginTransactionErrorKind::StatementTimeoutException(_)
         )
     }
 }
 impl std::error::Error for BeginTransactionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            BeginTransactionErrorKind::BadRequestError(_inner) => Some(_inner),
-            BeginTransactionErrorKind::ForbiddenError(_inner) => Some(_inner),
-            BeginTransactionErrorKind::InternalServerErrorError(_inner) => Some(_inner),
+            BeginTransactionErrorKind::BadRequestException(_inner) => Some(_inner),
+            BeginTransactionErrorKind::ForbiddenException(_inner) => Some(_inner),
+            BeginTransactionErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             BeginTransactionErrorKind::ServiceUnavailableError(_inner) => Some(_inner),
-            BeginTransactionErrorKind::StatementTimeoutError(_inner) => Some(_inner),
+            BeginTransactionErrorKind::StatementTimeoutException(_inner) => Some(_inner),
             BeginTransactionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -236,24 +239,24 @@ pub struct CommitTransactionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CommitTransactionErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ForbiddenError(crate::error::ForbiddenError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    NotFoundError(crate::error::NotFoundError),
+    BadRequestException(crate::error::BadRequestException),
+    ForbiddenException(crate::error::ForbiddenException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
     ServiceUnavailableError(crate::error::ServiceUnavailableError),
-    StatementTimeoutError(crate::error::StatementTimeoutError),
+    StatementTimeoutException(crate::error::StatementTimeoutException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CommitTransactionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CommitTransactionErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            CommitTransactionErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            CommitTransactionErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            CommitTransactionErrorKind::NotFoundError(_inner) => _inner.fmt(f),
+            CommitTransactionErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            CommitTransactionErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            CommitTransactionErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            CommitTransactionErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             CommitTransactionErrorKind::ServiceUnavailableError(_inner) => _inner.fmt(f),
-            CommitTransactionErrorKind::StatementTimeoutError(_inner) => _inner.fmt(f),
+            CommitTransactionErrorKind::StatementTimeoutException(_inner) => _inner.fmt(f),
             CommitTransactionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -302,20 +305,26 @@ impl CommitTransactionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, CommitTransactionErrorKind::BadRequestError(_))
-    }
-    pub fn is_forbidden_error(&self) -> bool {
-        matches!(&self.kind, CommitTransactionErrorKind::ForbiddenError(_))
-    }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CommitTransactionErrorKind::InternalServerErrorError(_)
+            CommitTransactionErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, CommitTransactionErrorKind::NotFoundError(_))
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CommitTransactionErrorKind::ForbiddenException(_)
+        )
+    }
+    pub fn is_internal_server_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CommitTransactionErrorKind::InternalServerErrorException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, CommitTransactionErrorKind::NotFoundException(_))
     }
     pub fn is_service_unavailable_error(&self) -> bool {
         matches!(
@@ -323,22 +332,22 @@ impl CommitTransactionError {
             CommitTransactionErrorKind::ServiceUnavailableError(_)
         )
     }
-    pub fn is_statement_timeout_error(&self) -> bool {
+    pub fn is_statement_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CommitTransactionErrorKind::StatementTimeoutError(_)
+            CommitTransactionErrorKind::StatementTimeoutException(_)
         )
     }
 }
 impl std::error::Error for CommitTransactionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CommitTransactionErrorKind::BadRequestError(_inner) => Some(_inner),
-            CommitTransactionErrorKind::ForbiddenError(_inner) => Some(_inner),
-            CommitTransactionErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            CommitTransactionErrorKind::NotFoundError(_inner) => Some(_inner),
+            CommitTransactionErrorKind::BadRequestException(_inner) => Some(_inner),
+            CommitTransactionErrorKind::ForbiddenException(_inner) => Some(_inner),
+            CommitTransactionErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            CommitTransactionErrorKind::NotFoundException(_inner) => Some(_inner),
             CommitTransactionErrorKind::ServiceUnavailableError(_inner) => Some(_inner),
-            CommitTransactionErrorKind::StatementTimeoutError(_inner) => Some(_inner),
+            CommitTransactionErrorKind::StatementTimeoutException(_inner) => Some(_inner),
             CommitTransactionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -353,9 +362,9 @@ pub struct ExecuteSqlError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ExecuteSqlErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ForbiddenError(crate::error::ForbiddenError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
+    BadRequestException(crate::error::BadRequestException),
+    ForbiddenException(crate::error::ForbiddenException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
     ServiceUnavailableError(crate::error::ServiceUnavailableError),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -363,9 +372,9 @@ pub enum ExecuteSqlErrorKind {
 impl std::fmt::Display for ExecuteSqlError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ExecuteSqlErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            ExecuteSqlErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            ExecuteSqlErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
+            ExecuteSqlErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            ExecuteSqlErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            ExecuteSqlErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
             ExecuteSqlErrorKind::ServiceUnavailableError(_inner) => _inner.fmt(f),
             ExecuteSqlErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -415,14 +424,17 @@ impl ExecuteSqlError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, ExecuteSqlErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, ExecuteSqlErrorKind::BadRequestException(_))
     }
-    pub fn is_forbidden_error(&self) -> bool {
-        matches!(&self.kind, ExecuteSqlErrorKind::ForbiddenError(_))
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, ExecuteSqlErrorKind::ForbiddenException(_))
     }
-    pub fn is_internal_server_error_error(&self) -> bool {
-        matches!(&self.kind, ExecuteSqlErrorKind::InternalServerErrorError(_))
+    pub fn is_internal_server_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ExecuteSqlErrorKind::InternalServerErrorException(_)
+        )
     }
     pub fn is_service_unavailable_error(&self) -> bool {
         matches!(&self.kind, ExecuteSqlErrorKind::ServiceUnavailableError(_))
@@ -431,9 +443,9 @@ impl ExecuteSqlError {
 impl std::error::Error for ExecuteSqlError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ExecuteSqlErrorKind::BadRequestError(_inner) => Some(_inner),
-            ExecuteSqlErrorKind::ForbiddenError(_inner) => Some(_inner),
-            ExecuteSqlErrorKind::InternalServerErrorError(_inner) => Some(_inner),
+            ExecuteSqlErrorKind::BadRequestException(_inner) => Some(_inner),
+            ExecuteSqlErrorKind::ForbiddenException(_inner) => Some(_inner),
+            ExecuteSqlErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             ExecuteSqlErrorKind::ServiceUnavailableError(_inner) => Some(_inner),
             ExecuteSqlErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -449,22 +461,22 @@ pub struct ExecuteStatementError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ExecuteStatementErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ForbiddenError(crate::error::ForbiddenError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
+    BadRequestException(crate::error::BadRequestException),
+    ForbiddenException(crate::error::ForbiddenException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
     ServiceUnavailableError(crate::error::ServiceUnavailableError),
-    StatementTimeoutError(crate::error::StatementTimeoutError),
+    StatementTimeoutException(crate::error::StatementTimeoutException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ExecuteStatementError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ExecuteStatementErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            ExecuteStatementErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            ExecuteStatementErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
+            ExecuteStatementErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            ExecuteStatementErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            ExecuteStatementErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
             ExecuteStatementErrorKind::ServiceUnavailableError(_inner) => _inner.fmt(f),
-            ExecuteStatementErrorKind::StatementTimeoutError(_inner) => _inner.fmt(f),
+            ExecuteStatementErrorKind::StatementTimeoutException(_inner) => _inner.fmt(f),
             ExecuteStatementErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -513,16 +525,19 @@ impl ExecuteStatementError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, ExecuteStatementErrorKind::BadRequestError(_))
-    }
-    pub fn is_forbidden_error(&self) -> bool {
-        matches!(&self.kind, ExecuteStatementErrorKind::ForbiddenError(_))
-    }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ExecuteStatementErrorKind::InternalServerErrorError(_)
+            ExecuteStatementErrorKind::BadRequestException(_)
+        )
+    }
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, ExecuteStatementErrorKind::ForbiddenException(_))
+    }
+    pub fn is_internal_server_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ExecuteStatementErrorKind::InternalServerErrorException(_)
         )
     }
     pub fn is_service_unavailable_error(&self) -> bool {
@@ -531,21 +546,21 @@ impl ExecuteStatementError {
             ExecuteStatementErrorKind::ServiceUnavailableError(_)
         )
     }
-    pub fn is_statement_timeout_error(&self) -> bool {
+    pub fn is_statement_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ExecuteStatementErrorKind::StatementTimeoutError(_)
+            ExecuteStatementErrorKind::StatementTimeoutException(_)
         )
     }
 }
 impl std::error::Error for ExecuteStatementError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ExecuteStatementErrorKind::BadRequestError(_inner) => Some(_inner),
-            ExecuteStatementErrorKind::ForbiddenError(_inner) => Some(_inner),
-            ExecuteStatementErrorKind::InternalServerErrorError(_inner) => Some(_inner),
+            ExecuteStatementErrorKind::BadRequestException(_inner) => Some(_inner),
+            ExecuteStatementErrorKind::ForbiddenException(_inner) => Some(_inner),
+            ExecuteStatementErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             ExecuteStatementErrorKind::ServiceUnavailableError(_inner) => Some(_inner),
-            ExecuteStatementErrorKind::StatementTimeoutError(_inner) => Some(_inner),
+            ExecuteStatementErrorKind::StatementTimeoutException(_inner) => Some(_inner),
             ExecuteStatementErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -560,24 +575,24 @@ pub struct RollbackTransactionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RollbackTransactionErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ForbiddenError(crate::error::ForbiddenError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    NotFoundError(crate::error::NotFoundError),
+    BadRequestException(crate::error::BadRequestException),
+    ForbiddenException(crate::error::ForbiddenException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
     ServiceUnavailableError(crate::error::ServiceUnavailableError),
-    StatementTimeoutError(crate::error::StatementTimeoutError),
+    StatementTimeoutException(crate::error::StatementTimeoutException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RollbackTransactionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            RollbackTransactionErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            RollbackTransactionErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            RollbackTransactionErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            RollbackTransactionErrorKind::NotFoundError(_inner) => _inner.fmt(f),
+            RollbackTransactionErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            RollbackTransactionErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            RollbackTransactionErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            RollbackTransactionErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             RollbackTransactionErrorKind::ServiceUnavailableError(_inner) => _inner.fmt(f),
-            RollbackTransactionErrorKind::StatementTimeoutError(_inner) => _inner.fmt(f),
+            RollbackTransactionErrorKind::StatementTimeoutException(_inner) => _inner.fmt(f),
             RollbackTransactionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -626,20 +641,29 @@ impl RollbackTransactionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, RollbackTransactionErrorKind::BadRequestError(_))
-    }
-    pub fn is_forbidden_error(&self) -> bool {
-        matches!(&self.kind, RollbackTransactionErrorKind::ForbiddenError(_))
-    }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            RollbackTransactionErrorKind::InternalServerErrorError(_)
+            RollbackTransactionErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, RollbackTransactionErrorKind::NotFoundError(_))
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RollbackTransactionErrorKind::ForbiddenException(_)
+        )
+    }
+    pub fn is_internal_server_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RollbackTransactionErrorKind::InternalServerErrorException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RollbackTransactionErrorKind::NotFoundException(_)
+        )
     }
     pub fn is_service_unavailable_error(&self) -> bool {
         matches!(
@@ -647,22 +671,22 @@ impl RollbackTransactionError {
             RollbackTransactionErrorKind::ServiceUnavailableError(_)
         )
     }
-    pub fn is_statement_timeout_error(&self) -> bool {
+    pub fn is_statement_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
-            RollbackTransactionErrorKind::StatementTimeoutError(_)
+            RollbackTransactionErrorKind::StatementTimeoutException(_)
         )
     }
 }
 impl std::error::Error for RollbackTransactionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            RollbackTransactionErrorKind::BadRequestError(_inner) => Some(_inner),
-            RollbackTransactionErrorKind::ForbiddenError(_inner) => Some(_inner),
-            RollbackTransactionErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            RollbackTransactionErrorKind::NotFoundError(_inner) => Some(_inner),
+            RollbackTransactionErrorKind::BadRequestException(_inner) => Some(_inner),
+            RollbackTransactionErrorKind::ForbiddenException(_inner) => Some(_inner),
+            RollbackTransactionErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            RollbackTransactionErrorKind::NotFoundException(_inner) => Some(_inner),
             RollbackTransactionErrorKind::ServiceUnavailableError(_inner) => Some(_inner),
-            RollbackTransactionErrorKind::StatementTimeoutError(_inner) => Some(_inner),
+            RollbackTransactionErrorKind::StatementTimeoutException(_inner) => Some(_inner),
             RollbackTransactionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -670,43 +694,39 @@ impl std::error::Error for RollbackTransactionError {
 
 /// <p>The execution of the SQL statement timed out.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct StatementTimeoutError {
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StatementTimeoutException {
     /// <p>The error message returned by this <code>StatementTimeoutException</code> error.</p>
-    #[serde(rename = "message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The database connection ID that executed the SQL statement.</p>
-    #[serde(rename = "dbConnectionId")]
-    #[serde(default)]
     pub db_connection_id: i64,
 }
-impl std::fmt::Debug for StatementTimeoutError {
+impl std::fmt::Debug for StatementTimeoutException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StatementTimeoutError");
+        let mut formatter = f.debug_struct("StatementTimeoutException");
         formatter.field("message", &self.message);
         formatter.field("db_connection_id", &self.db_connection_id);
         formatter.finish()
     }
 }
-impl StatementTimeoutError {
+impl StatementTimeoutException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for StatementTimeoutError {
+impl std::fmt::Display for StatementTimeoutException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "StatementTimeoutError [StatementTimeoutException]")?;
+        write!(f, "StatementTimeoutException")?;
         if let Some(inner_1) = &self.message {
             write!(f, ": {}", inner_1)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for StatementTimeoutError {}
-/// See [`StatementTimeoutError`](crate::error::StatementTimeoutError)
-pub mod statement_timeout_error {
-    /// A builder for [`StatementTimeoutError`](crate::error::StatementTimeoutError)
+impl std::error::Error for StatementTimeoutException {}
+/// See [`StatementTimeoutException`](crate::error::StatementTimeoutException)
+pub mod statement_timeout_exception {
+    /// A builder for [`StatementTimeoutException`](crate::error::StatementTimeoutException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -732,26 +752,26 @@ pub mod statement_timeout_error {
             self.db_connection_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`StatementTimeoutError`](crate::error::StatementTimeoutError)
-        pub fn build(self) -> crate::error::StatementTimeoutError {
-            crate::error::StatementTimeoutError {
+        /// Consumes the builder and constructs a [`StatementTimeoutException`](crate::error::StatementTimeoutException)
+        pub fn build(self) -> crate::error::StatementTimeoutException {
+            crate::error::StatementTimeoutException {
                 message: self.message,
                 db_connection_id: self.db_connection_id.unwrap_or_default(),
             }
         }
     }
 }
-impl StatementTimeoutError {
-    /// Creates a new builder-style object to manufacture [`StatementTimeoutError`](crate::error::StatementTimeoutError)
-    pub fn builder() -> crate::error::statement_timeout_error::Builder {
-        crate::error::statement_timeout_error::Builder::default()
+impl StatementTimeoutException {
+    /// Creates a new builder-style object to manufacture [`StatementTimeoutException`](crate::error::StatementTimeoutException)
+    pub fn builder() -> crate::error::statement_timeout_exception::Builder {
+        crate::error::statement_timeout_exception::Builder::default()
     }
 }
 
 /// <p>The service specified by the <code>resourceArn</code> parameter is not
 /// available.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceUnavailableError {}
 impl std::fmt::Debug for ServiceUnavailableError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -793,38 +813,36 @@ impl ServiceUnavailableError {
 
 /// <p>The <code>resourceArn</code>, <code>secretArn</code>, or <code>transactionId</code> value can't be found.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct NotFoundError {
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct NotFoundException {
     /// <p>The error message returned by this <code>NotFoundException</code> error.</p>
-    #[serde(rename = "message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for NotFoundError {
+impl std::fmt::Debug for NotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotFoundError");
+        let mut formatter = f.debug_struct("NotFoundException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl NotFoundError {
+impl NotFoundException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for NotFoundError {
+impl std::fmt::Display for NotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "NotFoundError [NotFoundException]")?;
+        write!(f, "NotFoundException")?;
         if let Some(inner_2) = &self.message {
             write!(f, ": {}", inner_2)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for NotFoundError {}
-/// See [`NotFoundError`](crate::error::NotFoundError)
-pub mod not_found_error {
-    /// A builder for [`NotFoundError`](crate::error::NotFoundError)
+impl std::error::Error for NotFoundException {}
+/// See [`NotFoundException`](crate::error::NotFoundException)
+pub mod not_found_exception {
+    /// A builder for [`NotFoundException`](crate::error::NotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -840,97 +858,95 @@ pub mod not_found_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`NotFoundError`](crate::error::NotFoundError)
-        pub fn build(self) -> crate::error::NotFoundError {
-            crate::error::NotFoundError {
+        /// Consumes the builder and constructs a [`NotFoundException`](crate::error::NotFoundException)
+        pub fn build(self) -> crate::error::NotFoundException {
+            crate::error::NotFoundException {
                 message: self.message,
             }
         }
     }
 }
-impl NotFoundError {
-    /// Creates a new builder-style object to manufacture [`NotFoundError`](crate::error::NotFoundError)
-    pub fn builder() -> crate::error::not_found_error::Builder {
-        crate::error::not_found_error::Builder::default()
+impl NotFoundException {
+    /// Creates a new builder-style object to manufacture [`NotFoundException`](crate::error::NotFoundException)
+    pub fn builder() -> crate::error::not_found_exception::Builder {
+        crate::error::not_found_exception::Builder::default()
     }
 }
 
 /// <p>An internal error occurred.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct InternalServerErrorError {}
-impl std::fmt::Debug for InternalServerErrorError {
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InternalServerErrorException {}
+impl std::fmt::Debug for InternalServerErrorException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InternalServerErrorError");
+        let mut formatter = f.debug_struct("InternalServerErrorException");
         formatter.finish()
     }
 }
-impl InternalServerErrorError {
+impl InternalServerErrorException {
     pub fn message(&self) -> Option<&str> {
         None
     }
 }
-impl std::fmt::Display for InternalServerErrorError {
+impl std::fmt::Display for InternalServerErrorException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InternalServerErrorError [InternalServerErrorException]")?;
+        write!(f, "InternalServerErrorException")?;
         Ok(())
     }
 }
-impl std::error::Error for InternalServerErrorError {}
-/// See [`InternalServerErrorError`](crate::error::InternalServerErrorError)
-pub mod internal_server_error_error {
-    /// A builder for [`InternalServerErrorError`](crate::error::InternalServerErrorError)
+impl std::error::Error for InternalServerErrorException {}
+/// See [`InternalServerErrorException`](crate::error::InternalServerErrorException)
+pub mod internal_server_error_exception {
+    /// A builder for [`InternalServerErrorException`](crate::error::InternalServerErrorException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`InternalServerErrorError`](crate::error::InternalServerErrorError)
-        pub fn build(self) -> crate::error::InternalServerErrorError {
-            crate::error::InternalServerErrorError {}
+        /// Consumes the builder and constructs a [`InternalServerErrorException`](crate::error::InternalServerErrorException)
+        pub fn build(self) -> crate::error::InternalServerErrorException {
+            crate::error::InternalServerErrorException {}
         }
     }
 }
-impl InternalServerErrorError {
-    /// Creates a new builder-style object to manufacture [`InternalServerErrorError`](crate::error::InternalServerErrorError)
-    pub fn builder() -> crate::error::internal_server_error_error::Builder {
-        crate::error::internal_server_error_error::Builder::default()
+impl InternalServerErrorException {
+    /// Creates a new builder-style object to manufacture [`InternalServerErrorException`](crate::error::InternalServerErrorException)
+    pub fn builder() -> crate::error::internal_server_error_exception::Builder {
+        crate::error::internal_server_error_exception::Builder::default()
     }
 }
 
 /// <p>There are insufficient privileges to make the call.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct ForbiddenError {
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ForbiddenException {
     /// <p>The error message returned by this <code>ForbiddenException</code> error.</p>
-    #[serde(rename = "message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ForbiddenError {
+impl std::fmt::Debug for ForbiddenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ForbiddenError");
+        let mut formatter = f.debug_struct("ForbiddenException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl ForbiddenError {
+impl ForbiddenException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ForbiddenError {
+impl std::fmt::Display for ForbiddenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ForbiddenError [ForbiddenException]")?;
+        write!(f, "ForbiddenException")?;
         if let Some(inner_3) = &self.message {
             write!(f, ": {}", inner_3)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ForbiddenError {}
-/// See [`ForbiddenError`](crate::error::ForbiddenError)
-pub mod forbidden_error {
-    /// A builder for [`ForbiddenError`](crate::error::ForbiddenError)
+impl std::error::Error for ForbiddenException {}
+/// See [`ForbiddenException`](crate::error::ForbiddenException)
+pub mod forbidden_exception {
+    /// A builder for [`ForbiddenException`](crate::error::ForbiddenException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -946,55 +962,53 @@ pub mod forbidden_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ForbiddenError`](crate::error::ForbiddenError)
-        pub fn build(self) -> crate::error::ForbiddenError {
-            crate::error::ForbiddenError {
+        /// Consumes the builder and constructs a [`ForbiddenException`](crate::error::ForbiddenException)
+        pub fn build(self) -> crate::error::ForbiddenException {
+            crate::error::ForbiddenException {
                 message: self.message,
             }
         }
     }
 }
-impl ForbiddenError {
-    /// Creates a new builder-style object to manufacture [`ForbiddenError`](crate::error::ForbiddenError)
-    pub fn builder() -> crate::error::forbidden_error::Builder {
-        crate::error::forbidden_error::Builder::default()
+impl ForbiddenException {
+    /// Creates a new builder-style object to manufacture [`ForbiddenException`](crate::error::ForbiddenException)
+    pub fn builder() -> crate::error::forbidden_exception::Builder {
+        crate::error::forbidden_exception::Builder::default()
     }
 }
 
 /// <p>There is an error in the call or in a SQL statement.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct BadRequestError {
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BadRequestException {
     /// <p>The error message returned by this <code>BadRequestException</code> error.</p>
-    #[serde(rename = "message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for BadRequestError {
+impl std::fmt::Debug for BadRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BadRequestError");
+        let mut formatter = f.debug_struct("BadRequestException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl BadRequestError {
+impl BadRequestException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for BadRequestError {
+impl std::fmt::Display for BadRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "BadRequestError [BadRequestException]")?;
+        write!(f, "BadRequestException")?;
         if let Some(inner_4) = &self.message {
             write!(f, ": {}", inner_4)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for BadRequestError {}
-/// See [`BadRequestError`](crate::error::BadRequestError)
-pub mod bad_request_error {
-    /// A builder for [`BadRequestError`](crate::error::BadRequestError)
+impl std::error::Error for BadRequestException {}
+/// See [`BadRequestException`](crate::error::BadRequestException)
+pub mod bad_request_exception {
+    /// A builder for [`BadRequestException`](crate::error::BadRequestException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -1010,17 +1024,17 @@ pub mod bad_request_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`BadRequestError`](crate::error::BadRequestError)
-        pub fn build(self) -> crate::error::BadRequestError {
-            crate::error::BadRequestError {
+        /// Consumes the builder and constructs a [`BadRequestException`](crate::error::BadRequestException)
+        pub fn build(self) -> crate::error::BadRequestException {
+            crate::error::BadRequestException {
                 message: self.message,
             }
         }
     }
 }
-impl BadRequestError {
-    /// Creates a new builder-style object to manufacture [`BadRequestError`](crate::error::BadRequestError)
-    pub fn builder() -> crate::error::bad_request_error::Builder {
-        crate::error::bad_request_error::Builder::default()
+impl BadRequestException {
+    /// Creates a new builder-style object to manufacture [`BadRequestException`](crate::error::BadRequestException)
+    pub fn builder() -> crate::error::bad_request_exception::Builder {
+        crate::error::bad_request_exception::Builder::default()
     }
 }

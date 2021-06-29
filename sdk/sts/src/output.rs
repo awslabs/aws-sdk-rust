@@ -571,7 +571,7 @@ impl AssumeRoleWithWebIdentityOutput {
 /// including temporary AWS credentials that can be used to make AWS requests. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct AssumeRoleWithSAMLOutput {
+pub struct AssumeRoleWithSamlOutput {
     /// <p>The temporary security credentials, which include an access key ID, a secret access key,
     /// and a security (or session) token.</p>
     /// <note>
@@ -639,9 +639,9 @@ pub struct AssumeRoleWithSAMLOutput {
     /// also include underscores or any of the following characters: =,.@-</p>
     pub source_identity: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for AssumeRoleWithSAMLOutput {
+impl std::fmt::Debug for AssumeRoleWithSamlOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssumeRoleWithSAMLOutput");
+        let mut formatter = f.debug_struct("AssumeRoleWithSamlOutput");
         formatter.field("credentials", &self.credentials);
         formatter.field("assumed_role_user", &self.assumed_role_user);
         formatter.field("packed_policy_size", &self.packed_policy_size);
@@ -654,9 +654,9 @@ impl std::fmt::Debug for AssumeRoleWithSAMLOutput {
         formatter.finish()
     }
 }
-/// See [`AssumeRoleWithSAMLOutput`](crate::output::AssumeRoleWithSAMLOutput)
+/// See [`AssumeRoleWithSamlOutput`](crate::output::AssumeRoleWithSamlOutput)
 pub mod assume_role_with_saml_output {
-    /// A builder for [`AssumeRoleWithSAMLOutput`](crate::output::AssumeRoleWithSAMLOutput)
+    /// A builder for [`AssumeRoleWithSamlOutput`](crate::output::AssumeRoleWithSamlOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -812,9 +812,9 @@ pub mod assume_role_with_saml_output {
             self.source_identity = input;
             self
         }
-        /// Consumes the builder and constructs a [`AssumeRoleWithSAMLOutput`](crate::output::AssumeRoleWithSAMLOutput)
-        pub fn build(self) -> crate::output::AssumeRoleWithSAMLOutput {
-            crate::output::AssumeRoleWithSAMLOutput {
+        /// Consumes the builder and constructs a [`AssumeRoleWithSamlOutput`](crate::output::AssumeRoleWithSamlOutput)
+        pub fn build(self) -> crate::output::AssumeRoleWithSamlOutput {
+            crate::output::AssumeRoleWithSamlOutput {
                 credentials: self.credentials,
                 assumed_role_user: self.assumed_role_user,
                 packed_policy_size: self.packed_policy_size,
@@ -828,8 +828,8 @@ pub mod assume_role_with_saml_output {
         }
     }
 }
-impl AssumeRoleWithSAMLOutput {
-    /// Creates a new builder-style object to manufacture [`AssumeRoleWithSAMLOutput`](crate::output::AssumeRoleWithSAMLOutput)
+impl AssumeRoleWithSamlOutput {
+    /// Creates a new builder-style object to manufacture [`AssumeRoleWithSamlOutput`](crate::output::AssumeRoleWithSamlOutput)
     pub fn builder() -> crate::output::assume_role_with_saml_output::Builder {
         crate::output::assume_role_with_saml_output::Builder::default()
     }

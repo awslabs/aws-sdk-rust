@@ -8,14 +8,14 @@ pub struct GetDeviceRegistrationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDeviceRegistrationErrorKind {
-    InternalServiceError(crate::error::InternalServiceError),
+    InternalServiceException(crate::error::InternalServiceException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDeviceRegistrationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetDeviceRegistrationErrorKind::InternalServiceError(_inner) => _inner.fmt(f),
+            GetDeviceRegistrationErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
             GetDeviceRegistrationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -64,17 +64,17 @@ impl GetDeviceRegistrationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_internal_service_error(&self) -> bool {
+    pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetDeviceRegistrationErrorKind::InternalServiceError(_)
+            GetDeviceRegistrationErrorKind::InternalServiceException(_)
         )
     }
 }
 impl std::error::Error for GetDeviceRegistrationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetDeviceRegistrationErrorKind::InternalServiceError(_inner) => Some(_inner),
+            GetDeviceRegistrationErrorKind::InternalServiceException(_inner) => Some(_inner),
             GetDeviceRegistrationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -89,14 +89,14 @@ pub struct SendHeartbeatError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SendHeartbeatErrorKind {
-    InternalServiceError(crate::error::InternalServiceError),
+    InternalServiceException(crate::error::InternalServiceException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SendHeartbeatError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            SendHeartbeatErrorKind::InternalServiceError(_inner) => _inner.fmt(f),
+            SendHeartbeatErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
             SendHeartbeatErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -145,14 +145,17 @@ impl SendHeartbeatError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_internal_service_error(&self) -> bool {
-        matches!(&self.kind, SendHeartbeatErrorKind::InternalServiceError(_))
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SendHeartbeatErrorKind::InternalServiceException(_)
+        )
     }
 }
 impl std::error::Error for SendHeartbeatError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            SendHeartbeatErrorKind::InternalServiceError(_inner) => Some(_inner),
+            SendHeartbeatErrorKind::InternalServiceException(_inner) => Some(_inner),
             SendHeartbeatErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -161,37 +164,35 @@ impl std::error::Error for SendHeartbeatError {
 /// <p>An internal failure occurred. Try your request again. If the problem
 /// persists, contact AWS customer support.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct InternalServiceError {
-    #[serde(rename = "Message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InternalServiceException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InternalServiceError {
+impl std::fmt::Debug for InternalServiceException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InternalServiceError");
+        let mut formatter = f.debug_struct("InternalServiceException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl InternalServiceError {
+impl InternalServiceException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InternalServiceError {
+impl std::fmt::Display for InternalServiceException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InternalServiceError [InternalServiceException]")?;
+        write!(f, "InternalServiceException")?;
         if let Some(inner_1) = &self.message {
             write!(f, ": {}", inner_1)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InternalServiceError {}
-/// See [`InternalServiceError`](crate::error::InternalServiceError)
-pub mod internal_service_error {
-    /// A builder for [`InternalServiceError`](crate::error::InternalServiceError)
+impl std::error::Error for InternalServiceException {}
+/// See [`InternalServiceException`](crate::error::InternalServiceException)
+pub mod internal_service_exception {
+    /// A builder for [`InternalServiceException`](crate::error::InternalServiceException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -206,17 +207,17 @@ pub mod internal_service_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InternalServiceError`](crate::error::InternalServiceError)
-        pub fn build(self) -> crate::error::InternalServiceError {
-            crate::error::InternalServiceError {
+        /// Consumes the builder and constructs a [`InternalServiceException`](crate::error::InternalServiceException)
+        pub fn build(self) -> crate::error::InternalServiceException {
+            crate::error::InternalServiceException {
                 message: self.message,
             }
         }
     }
 }
-impl InternalServiceError {
-    /// Creates a new builder-style object to manufacture [`InternalServiceError`](crate::error::InternalServiceError)
-    pub fn builder() -> crate::error::internal_service_error::Builder {
-        crate::error::internal_service_error::Builder::default()
+impl InternalServiceException {
+    /// Creates a new builder-style object to manufacture [`InternalServiceException`](crate::error::InternalServiceException)
+    pub fn builder() -> crate::error::internal_service_exception::Builder {
+        crate::error::internal_service_exception::Builder::default()
     }
 }

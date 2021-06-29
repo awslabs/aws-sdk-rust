@@ -17,57 +17,6 @@ impl AddTagsToStream {
     pub fn builder() -> crate::input::add_tags_to_stream_input::Builder {
         crate::input::add_tags_to_stream_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::AddTagsToStreamOutput, crate::error::AddTagsToStreamError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::AddTagsToStreamError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "InvalidArgumentException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::AddTagsToStreamError {
-                        kind: crate::error::AddTagsToStreamErrorKind::InvalidArgumentError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::AddTagsToStreamError::unhandled(e),
-                },
-                "ResourceInUseException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::AddTagsToStreamError {
-                        kind: crate::error::AddTagsToStreamErrorKind::ResourceInUseError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::AddTagsToStreamError::unhandled(e),
-                },
-                "LimitExceededException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::AddTagsToStreamError {
-                        kind: crate::error::AddTagsToStreamErrorKind::LimitExceededError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::AddTagsToStreamError::unhandled(e),
-                },
-                "ResourceNotFoundException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::AddTagsToStreamError {
-                        kind: crate::error::AddTagsToStreamErrorKind::ResourceNotFoundError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::AddTagsToStreamError::unhandled(e),
-                },
-                _ => crate::error::AddTagsToStreamError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::add_tags_to_stream_output::Builder::default();
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -78,7 +27,11 @@ impl smithy_http::response::ParseStrictResponse for AddTagsToStream {
         crate::error::AddTagsToStreamError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_add_tags_to_stream_error(response)
+        } else {
+            crate::operation_deser::parse_add_tags_to_stream_response(response)
+        }
     }
 }
 
@@ -130,50 +83,6 @@ impl CreateStream {
     pub fn builder() -> crate::input::create_stream_input::Builder {
         crate::input::create_stream_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::CreateStreamOutput, crate::error::CreateStreamError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::CreateStreamError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "InvalidArgumentException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateStreamError {
-                        kind: crate::error::CreateStreamErrorKind::InvalidArgumentError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateStreamError::unhandled(e),
-                },
-                "ResourceInUseException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateStreamError {
-                        kind: crate::error::CreateStreamErrorKind::ResourceInUseError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateStreamError::unhandled(e),
-                },
-                "LimitExceededException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::CreateStreamError {
-                        kind: crate::error::CreateStreamErrorKind::LimitExceededError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::CreateStreamError::unhandled(e),
-                },
-                _ => crate::error::CreateStreamError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::create_stream_output::Builder::default();
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -182,7 +91,11 @@ impl smithy_http::response::ParseStrictResponse for CreateStream {
     type Output =
         std::result::Result<crate::output::CreateStreamOutput, crate::error::CreateStreamError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_stream_error(response)
+        } else {
+            crate::operation_deser::parse_create_stream_response(response)
+        }
     }
 }
 
@@ -201,52 +114,6 @@ impl DecreaseStreamRetentionPeriod {
     pub fn builder() -> crate::input::decrease_stream_retention_period_input::Builder {
         crate::input::decrease_stream_retention_period_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DecreaseStreamRetentionPeriodOutput,
-        crate::error::DecreaseStreamRetentionPeriodError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(crate::error::DecreaseStreamRetentionPeriodError::unhandled(
-                        generic,
-                    ))
-                }
-            };
-            return Err(match error_code {
-                "InvalidArgumentException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DecreaseStreamRetentionPeriodError { kind: crate::error::DecreaseStreamRetentionPeriodErrorKind::InvalidArgumentError(body), meta: generic },
-                    Err(e) => crate::error::DecreaseStreamRetentionPeriodError::unhandled(e)
-                }
-                "ResourceInUseException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DecreaseStreamRetentionPeriodError { kind: crate::error::DecreaseStreamRetentionPeriodErrorKind::ResourceInUseError(body), meta: generic },
-                    Err(e) => crate::error::DecreaseStreamRetentionPeriodError::unhandled(e)
-                }
-                "LimitExceededException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DecreaseStreamRetentionPeriodError { kind: crate::error::DecreaseStreamRetentionPeriodErrorKind::LimitExceededError(body), meta: generic },
-                    Err(e) => crate::error::DecreaseStreamRetentionPeriodError::unhandled(e)
-                }
-                "ResourceNotFoundException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DecreaseStreamRetentionPeriodError { kind: crate::error::DecreaseStreamRetentionPeriodErrorKind::ResourceNotFoundError(body), meta: generic },
-                    Err(e) => crate::error::DecreaseStreamRetentionPeriodError::unhandled(e)
-                }
-                _ => crate::error::DecreaseStreamRetentionPeriodError::generic(generic)
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder =
-            crate::output::decrease_stream_retention_period_output::Builder::default();
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -257,7 +124,11 @@ impl smithy_http::response::ParseStrictResponse for DecreaseStreamRetentionPerio
         crate::error::DecreaseStreamRetentionPeriodError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_decrease_stream_retention_period_error(response)
+        } else {
+            crate::operation_deser::parse_decrease_stream_retention_period_response(response)
+        }
     }
 }
 
@@ -289,50 +160,6 @@ impl DeleteStream {
     pub fn builder() -> crate::input::delete_stream_input::Builder {
         crate::input::delete_stream_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::DeleteStreamOutput, crate::error::DeleteStreamError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::DeleteStreamError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceInUseException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DeleteStreamError {
-                        kind: crate::error::DeleteStreamErrorKind::ResourceInUseError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DeleteStreamError::unhandled(e),
-                },
-                "LimitExceededException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DeleteStreamError {
-                        kind: crate::error::DeleteStreamErrorKind::LimitExceededError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DeleteStreamError::unhandled(e),
-                },
-                "ResourceNotFoundException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DeleteStreamError {
-                        kind: crate::error::DeleteStreamErrorKind::ResourceNotFoundError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DeleteStreamError::unhandled(e),
-                },
-                _ => crate::error::DeleteStreamError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::delete_stream_output::Builder::default();
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -341,7 +168,11 @@ impl smithy_http::response::ParseStrictResponse for DeleteStream {
     type Output =
         std::result::Result<crate::output::DeleteStreamOutput, crate::error::DeleteStreamError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_stream_error(response)
+        } else {
+            crate::operation_deser::parse_delete_stream_response(response)
+        }
     }
 }
 
@@ -362,63 +193,6 @@ impl DeregisterStreamConsumer {
     pub fn builder() -> crate::input::deregister_stream_consumer_input::Builder {
         crate::input::deregister_stream_consumer_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DeregisterStreamConsumerOutput,
-        crate::error::DeregisterStreamConsumerError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(crate::error::DeregisterStreamConsumerError::unhandled(
-                        generic,
-                    ))
-                }
-            };
-            return Err(match error_code {
-                "InvalidArgumentException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DeregisterStreamConsumerError {
-                        kind: crate::error::DeregisterStreamConsumerErrorKind::InvalidArgumentError(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DeregisterStreamConsumerError::unhandled(e),
-                },
-                "LimitExceededException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DeregisterStreamConsumerError {
-                        kind: crate::error::DeregisterStreamConsumerErrorKind::LimitExceededError(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DeregisterStreamConsumerError::unhandled(e),
-                },
-                "ResourceNotFoundException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DeregisterStreamConsumerError {
-                        kind:
-                            crate::error::DeregisterStreamConsumerErrorKind::ResourceNotFoundError(
-                                body,
-                            ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DeregisterStreamConsumerError::unhandled(e),
-                },
-                _ => crate::error::DeregisterStreamConsumerError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::deregister_stream_consumer_output::Builder::default();
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -429,7 +203,11 @@ impl smithy_http::response::ParseStrictResponse for DeregisterStreamConsumer {
         crate::error::DeregisterStreamConsumerError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_deregister_stream_consumer_error(response)
+        } else {
+            crate::operation_deser::parse_deregister_stream_consumer_response(response)
+        }
     }
 }
 
@@ -446,39 +224,6 @@ impl DescribeLimits {
     pub fn builder() -> crate::input::describe_limits_input::Builder {
         crate::input::describe_limits_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::DescribeLimitsOutput, crate::error::DescribeLimitsError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::DescribeLimitsError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "LimitExceededException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DescribeLimitsError {
-                        kind: crate::error::DescribeLimitsErrorKind::LimitExceededError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DescribeLimitsError::unhandled(e),
-                },
-                _ => crate::error::DescribeLimitsError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::describe_limits_output::Builder::default();
-        builder =
-            crate::json_deser::describe_limits_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::DescribeLimitsError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -487,7 +232,11 @@ impl smithy_http::response::ParseStrictResponse for DescribeLimits {
     type Output =
         std::result::Result<crate::output::DescribeLimitsOutput, crate::error::DescribeLimitsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_limits_error(response)
+        } else {
+            crate::operation_deser::parse_describe_limits_response(response)
+        }
     }
 }
 
@@ -515,46 +264,6 @@ impl DescribeStream {
     pub fn builder() -> crate::input::describe_stream_input::Builder {
         crate::input::describe_stream_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::DescribeStreamOutput, crate::error::DescribeStreamError>
-    {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::DescribeStreamError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "LimitExceededException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DescribeStreamError {
-                        kind: crate::error::DescribeStreamErrorKind::LimitExceededError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DescribeStreamError::unhandled(e),
-                },
-                "ResourceNotFoundException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DescribeStreamError {
-                        kind: crate::error::DescribeStreamErrorKind::ResourceNotFoundError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DescribeStreamError::unhandled(e),
-                },
-                _ => crate::error::DescribeStreamError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::describe_stream_output::Builder::default();
-        builder =
-            crate::json_deser::describe_stream_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::DescribeStreamError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -563,7 +272,11 @@ impl smithy_http::response::ParseStrictResponse for DescribeStream {
     type Output =
         std::result::Result<crate::output::DescribeStreamOutput, crate::error::DescribeStreamError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_stream_error(response)
+        } else {
+            crate::operation_deser::parse_describe_stream_response(response)
+        }
     }
 }
 
@@ -584,67 +297,6 @@ impl DescribeStreamConsumer {
     pub fn builder() -> crate::input::describe_stream_consumer_input::Builder {
         crate::input::describe_stream_consumer_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DescribeStreamConsumerOutput,
-        crate::error::DescribeStreamConsumerError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(crate::error::DescribeStreamConsumerError::unhandled(
-                        generic,
-                    ))
-                }
-            };
-            return Err(match error_code {
-                "InvalidArgumentException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DescribeStreamConsumerError {
-                        kind: crate::error::DescribeStreamConsumerErrorKind::InvalidArgumentError(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DescribeStreamConsumerError::unhandled(e),
-                },
-                "LimitExceededException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DescribeStreamConsumerError {
-                        kind: crate::error::DescribeStreamConsumerErrorKind::LimitExceededError(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DescribeStreamConsumerError::unhandled(e),
-                },
-                "ResourceNotFoundException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DescribeStreamConsumerError {
-                        kind: crate::error::DescribeStreamConsumerErrorKind::ResourceNotFoundError(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DescribeStreamConsumerError::unhandled(e),
-                },
-                _ => crate::error::DescribeStreamConsumerError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::describe_stream_consumer_output::Builder::default();
-        builder = crate::json_deser::describe_stream_consumer_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::DescribeStreamConsumerError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -655,7 +307,11 @@ impl smithy_http::response::ParseStrictResponse for DescribeStreamConsumer {
         crate::error::DescribeStreamConsumerError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_stream_consumer_error(response)
+        } else {
+            crate::operation_deser::parse_describe_stream_consumer_response(response)
+        }
     }
 }
 
@@ -676,54 +332,6 @@ impl DescribeStreamSummary {
     pub fn builder() -> crate::input::describe_stream_summary_input::Builder {
         crate::input::describe_stream_summary_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DescribeStreamSummaryOutput,
-        crate::error::DescribeStreamSummaryError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::DescribeStreamSummaryError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "LimitExceededException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DescribeStreamSummaryError {
-                        kind: crate::error::DescribeStreamSummaryErrorKind::LimitExceededError(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DescribeStreamSummaryError::unhandled(e),
-                },
-                "ResourceNotFoundException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DescribeStreamSummaryError {
-                        kind: crate::error::DescribeStreamSummaryErrorKind::ResourceNotFoundError(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DescribeStreamSummaryError::unhandled(e),
-                },
-                _ => crate::error::DescribeStreamSummaryError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::describe_stream_summary_output::Builder::default();
-        builder = crate::json_deser::describe_stream_summary_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::DescribeStreamSummaryError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -734,7 +342,11 @@ impl smithy_http::response::ParseStrictResponse for DescribeStreamSummary {
         crate::error::DescribeStreamSummaryError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_stream_summary_error(response)
+        } else {
+            crate::operation_deser::parse_describe_stream_summary_response(response)
+        }
     }
 }
 
@@ -748,78 +360,6 @@ impl DisableEnhancedMonitoring {
     pub fn builder() -> crate::input::disable_enhanced_monitoring_input::Builder {
         crate::input::disable_enhanced_monitoring_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::DisableEnhancedMonitoringOutput,
-        crate::error::DisableEnhancedMonitoringError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(crate::error::DisableEnhancedMonitoringError::unhandled(
-                        generic,
-                    ))
-                }
-            };
-            return Err(match error_code {
-                "InvalidArgumentException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DisableEnhancedMonitoringError {
-                        kind:
-                            crate::error::DisableEnhancedMonitoringErrorKind::InvalidArgumentError(
-                                body,
-                            ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DisableEnhancedMonitoringError::unhandled(e),
-                },
-                "ResourceInUseException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DisableEnhancedMonitoringError {
-                        kind: crate::error::DisableEnhancedMonitoringErrorKind::ResourceInUseError(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DisableEnhancedMonitoringError::unhandled(e),
-                },
-                "LimitExceededException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DisableEnhancedMonitoringError {
-                        kind: crate::error::DisableEnhancedMonitoringErrorKind::LimitExceededError(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DisableEnhancedMonitoringError::unhandled(e),
-                },
-                "ResourceNotFoundException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DisableEnhancedMonitoringError {
-                        kind:
-                            crate::error::DisableEnhancedMonitoringErrorKind::ResourceNotFoundError(
-                                body,
-                            ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::DisableEnhancedMonitoringError::unhandled(e),
-                },
-                _ => crate::error::DisableEnhancedMonitoringError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::disable_enhanced_monitoring_output::Builder::default();
-        builder = crate::json_deser::disable_enhanced_monitoring_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::DisableEnhancedMonitoringError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -830,7 +370,11 @@ impl smithy_http::response::ParseStrictResponse for DisableEnhancedMonitoring {
         crate::error::DisableEnhancedMonitoringError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_disable_enhanced_monitoring_error(response)
+        } else {
+            crate::operation_deser::parse_disable_enhanced_monitoring_response(response)
+        }
     }
 }
 
@@ -844,77 +388,6 @@ impl EnableEnhancedMonitoring {
     pub fn builder() -> crate::input::enable_enhanced_monitoring_input::Builder {
         crate::input::enable_enhanced_monitoring_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::EnableEnhancedMonitoringOutput,
-        crate::error::EnableEnhancedMonitoringError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(crate::error::EnableEnhancedMonitoringError::unhandled(
-                        generic,
-                    ))
-                }
-            };
-            return Err(match error_code {
-                "InvalidArgumentException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::EnableEnhancedMonitoringError {
-                        kind: crate::error::EnableEnhancedMonitoringErrorKind::InvalidArgumentError(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::EnableEnhancedMonitoringError::unhandled(e),
-                },
-                "ResourceInUseException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::EnableEnhancedMonitoringError {
-                        kind: crate::error::EnableEnhancedMonitoringErrorKind::ResourceInUseError(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::EnableEnhancedMonitoringError::unhandled(e),
-                },
-                "LimitExceededException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::EnableEnhancedMonitoringError {
-                        kind: crate::error::EnableEnhancedMonitoringErrorKind::LimitExceededError(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::EnableEnhancedMonitoringError::unhandled(e),
-                },
-                "ResourceNotFoundException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::EnableEnhancedMonitoringError {
-                        kind:
-                            crate::error::EnableEnhancedMonitoringErrorKind::ResourceNotFoundError(
-                                body,
-                            ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::EnableEnhancedMonitoringError::unhandled(e),
-                },
-                _ => crate::error::EnableEnhancedMonitoringError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::enable_enhanced_monitoring_output::Builder::default();
-        builder = crate::json_deser::enable_enhanced_monitoring_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::EnableEnhancedMonitoringError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -925,7 +398,11 @@ impl smithy_http::response::ParseStrictResponse for EnableEnhancedMonitoring {
         crate::error::EnableEnhancedMonitoringError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_enable_enhanced_monitoring_error(response)
+        } else {
+            crate::operation_deser::parse_enable_enhanced_monitoring_response(response)
+        }
     }
 }
 
@@ -984,102 +461,6 @@ impl GetRecords {
     pub fn builder() -> crate::input::get_records_input::Builder {
         crate::input::get_records_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::GetRecordsOutput, crate::error::GetRecordsError> {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::GetRecordsError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "KMSAccessDeniedException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::GetRecordsError {
-                        kind: crate::error::GetRecordsErrorKind::KMSAccessDeniedError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::GetRecordsError::unhandled(e),
-                },
-                "KMSDisabledException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::GetRecordsError {
-                        kind: crate::error::GetRecordsErrorKind::KMSDisabledError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::GetRecordsError::unhandled(e),
-                },
-                "KMSNotFoundException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::GetRecordsError {
-                        kind: crate::error::GetRecordsErrorKind::KMSNotFoundError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::GetRecordsError::unhandled(e),
-                },
-                "ExpiredIteratorException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::GetRecordsError {
-                        kind: crate::error::GetRecordsErrorKind::ExpiredIteratorError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::GetRecordsError::unhandled(e),
-                },
-                "KMSOptInRequired" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::GetRecordsError {
-                        kind: crate::error::GetRecordsErrorKind::KMSOptInRequired(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::GetRecordsError::unhandled(e),
-                },
-                "KMSThrottlingException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::GetRecordsError {
-                        kind: crate::error::GetRecordsErrorKind::KMSThrottlingError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::GetRecordsError::unhandled(e),
-                },
-                "ProvisionedThroughputExceededException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::GetRecordsError {
-                        kind: crate::error::GetRecordsErrorKind::ProvisionedThroughputExceededError(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::GetRecordsError::unhandled(e),
-                },
-                "InvalidArgumentException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::GetRecordsError {
-                        kind: crate::error::GetRecordsErrorKind::InvalidArgumentError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::GetRecordsError::unhandled(e),
-                },
-                "KMSInvalidStateException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::GetRecordsError {
-                        kind: crate::error::GetRecordsErrorKind::KMSInvalidStateError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::GetRecordsError::unhandled(e),
-                },
-                "ResourceNotFoundException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::GetRecordsError {
-                        kind: crate::error::GetRecordsErrorKind::ResourceNotFoundError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::GetRecordsError::unhandled(e),
-                },
-                _ => crate::error::GetRecordsError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::get_records_output::Builder::default();
-        builder = crate::json_deser::get_records_deser_operation(response.body().as_ref(), builder)
-            .map_err(crate::error::GetRecordsError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -1088,7 +469,11 @@ impl smithy_http::response::ParseStrictResponse for GetRecords {
     type Output =
         std::result::Result<crate::output::GetRecordsOutput, crate::error::GetRecordsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_records_error(response)
+        } else {
+            crate::operation_deser::parse_get_records_response(response)
+        }
     }
 }
 
@@ -1135,48 +520,6 @@ impl GetShardIterator {
     pub fn builder() -> crate::input::get_shard_iterator_input::Builder {
         crate::input::get_shard_iterator_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::GetShardIteratorOutput,
-        crate::error::GetShardIteratorError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::GetShardIteratorError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ProvisionedThroughputExceededException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::GetShardIteratorError { kind: crate::error::GetShardIteratorErrorKind::ProvisionedThroughputExceededError(body), meta: generic },
-                    Err(e) => crate::error::GetShardIteratorError::unhandled(e)
-                }
-                "InvalidArgumentException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::GetShardIteratorError { kind: crate::error::GetShardIteratorErrorKind::InvalidArgumentError(body), meta: generic },
-                    Err(e) => crate::error::GetShardIteratorError::unhandled(e)
-                }
-                "ResourceNotFoundException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::GetShardIteratorError { kind: crate::error::GetShardIteratorErrorKind::ResourceNotFoundError(body), meta: generic },
-                    Err(e) => crate::error::GetShardIteratorError::unhandled(e)
-                }
-                _ => crate::error::GetShardIteratorError::generic(generic)
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::get_shard_iterator_output::Builder::default();
-        builder = crate::json_deser::get_shard_iterator_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::GetShardIteratorError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -1187,7 +530,11 @@ impl smithy_http::response::ParseStrictResponse for GetShardIterator {
         crate::error::GetShardIteratorError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_shard_iterator_error(response)
+        } else {
+            crate::operation_deser::parse_get_shard_iterator_response(response)
+        }
     }
 }
 
@@ -1209,52 +556,6 @@ impl IncreaseStreamRetentionPeriod {
     pub fn builder() -> crate::input::increase_stream_retention_period_input::Builder {
         crate::input::increase_stream_retention_period_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::IncreaseStreamRetentionPeriodOutput,
-        crate::error::IncreaseStreamRetentionPeriodError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(crate::error::IncreaseStreamRetentionPeriodError::unhandled(
-                        generic,
-                    ))
-                }
-            };
-            return Err(match error_code {
-                "InvalidArgumentException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::IncreaseStreamRetentionPeriodError { kind: crate::error::IncreaseStreamRetentionPeriodErrorKind::InvalidArgumentError(body), meta: generic },
-                    Err(e) => crate::error::IncreaseStreamRetentionPeriodError::unhandled(e)
-                }
-                "ResourceInUseException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::IncreaseStreamRetentionPeriodError { kind: crate::error::IncreaseStreamRetentionPeriodErrorKind::ResourceInUseError(body), meta: generic },
-                    Err(e) => crate::error::IncreaseStreamRetentionPeriodError::unhandled(e)
-                }
-                "LimitExceededException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::IncreaseStreamRetentionPeriodError { kind: crate::error::IncreaseStreamRetentionPeriodErrorKind::LimitExceededError(body), meta: generic },
-                    Err(e) => crate::error::IncreaseStreamRetentionPeriodError::unhandled(e)
-                }
-                "ResourceNotFoundException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::IncreaseStreamRetentionPeriodError { kind: crate::error::IncreaseStreamRetentionPeriodErrorKind::ResourceNotFoundError(body), meta: generic },
-                    Err(e) => crate::error::IncreaseStreamRetentionPeriodError::unhandled(e)
-                }
-                _ => crate::error::IncreaseStreamRetentionPeriodError::generic(generic)
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder =
-            crate::output::increase_stream_retention_period_output::Builder::default();
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -1265,7 +566,11 @@ impl smithy_http::response::ParseStrictResponse for IncreaseStreamRetentionPerio
         crate::error::IncreaseStreamRetentionPeriodError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_increase_stream_retention_period_error(response)
+        } else {
+            crate::operation_deser::parse_increase_stream_retention_period_response(response)
+        }
     }
 }
 
@@ -1287,65 +592,6 @@ impl ListShards {
     pub fn builder() -> crate::input::list_shards_input::Builder {
         crate::input::list_shards_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::ListShardsOutput, crate::error::ListShardsError> {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::ListShardsError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ExpiredNextTokenException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::ListShardsError {
-                        kind: crate::error::ListShardsErrorKind::ExpiredNextTokenError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::ListShardsError::unhandled(e),
-                },
-                "InvalidArgumentException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::ListShardsError {
-                        kind: crate::error::ListShardsErrorKind::InvalidArgumentError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::ListShardsError::unhandled(e),
-                },
-                "ResourceInUseException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::ListShardsError {
-                        kind: crate::error::ListShardsErrorKind::ResourceInUseError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::ListShardsError::unhandled(e),
-                },
-                "LimitExceededException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::ListShardsError {
-                        kind: crate::error::ListShardsErrorKind::LimitExceededError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::ListShardsError::unhandled(e),
-                },
-                "ResourceNotFoundException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::ListShardsError {
-                        kind: crate::error::ListShardsErrorKind::ResourceNotFoundError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::ListShardsError::unhandled(e),
-                },
-                _ => crate::error::ListShardsError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::list_shards_output::Builder::default();
-        builder = crate::json_deser::list_shards_deser_operation(response.body().as_ref(), builder)
-            .map_err(crate::error::ListShardsError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -1354,7 +600,11 @@ impl smithy_http::response::ParseStrictResponse for ListShards {
     type Output =
         std::result::Result<crate::output::ListShardsOutput, crate::error::ListShardsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_shards_error(response)
+        } else {
+            crate::operation_deser::parse_list_shards_response(response)
+        }
     }
 }
 
@@ -1370,77 +620,6 @@ impl ListStreamConsumers {
     pub fn builder() -> crate::input::list_stream_consumers_input::Builder {
         crate::input::list_stream_consumers_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::ListStreamConsumersOutput,
-        crate::error::ListStreamConsumersError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::ListStreamConsumersError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ExpiredNextTokenException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::ListStreamConsumersError {
-                        kind: crate::error::ListStreamConsumersErrorKind::ExpiredNextTokenError(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::ListStreamConsumersError::unhandled(e),
-                },
-                "InvalidArgumentException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::ListStreamConsumersError {
-                        kind: crate::error::ListStreamConsumersErrorKind::InvalidArgumentError(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::ListStreamConsumersError::unhandled(e),
-                },
-                "ResourceInUseException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::ListStreamConsumersError {
-                        kind: crate::error::ListStreamConsumersErrorKind::ResourceInUseError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::ListStreamConsumersError::unhandled(e),
-                },
-                "LimitExceededException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::ListStreamConsumersError {
-                        kind: crate::error::ListStreamConsumersErrorKind::LimitExceededError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::ListStreamConsumersError::unhandled(e),
-                },
-                "ResourceNotFoundException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::ListStreamConsumersError {
-                        kind: crate::error::ListStreamConsumersErrorKind::ResourceNotFoundError(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::ListStreamConsumersError::unhandled(e),
-                },
-                _ => crate::error::ListStreamConsumersError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::list_stream_consumers_output::Builder::default();
-        builder = crate::json_deser::list_stream_consumers_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::ListStreamConsumersError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -1451,7 +630,11 @@ impl smithy_http::response::ParseStrictResponse for ListStreamConsumers {
         crate::error::ListStreamConsumersError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_stream_consumers_error(response)
+        } else {
+            crate::operation_deser::parse_list_stream_consumers_response(response)
+        }
     }
 }
 
@@ -1480,38 +663,6 @@ impl ListStreams {
     pub fn builder() -> crate::input::list_streams_input::Builder {
         crate::input::list_streams_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::ListStreamsOutput, crate::error::ListStreamsError> {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::ListStreamsError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "LimitExceededException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::ListStreamsError {
-                        kind: crate::error::ListStreamsErrorKind::LimitExceededError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::ListStreamsError::unhandled(e),
-                },
-                _ => crate::error::ListStreamsError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::list_streams_output::Builder::default();
-        builder =
-            crate::json_deser::list_streams_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::ListStreamsError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -1520,7 +671,11 @@ impl smithy_http::response::ParseStrictResponse for ListStreams {
     type Output =
         std::result::Result<crate::output::ListStreamsOutput, crate::error::ListStreamsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_streams_error(response)
+        } else {
+            crate::operation_deser::parse_list_streams_response(response)
+        }
     }
 }
 
@@ -1535,57 +690,6 @@ impl ListTagsForStream {
     pub fn builder() -> crate::input::list_tags_for_stream_input::Builder {
         crate::input::list_tags_for_stream_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::ListTagsForStreamOutput,
-        crate::error::ListTagsForStreamError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::ListTagsForStreamError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "InvalidArgumentException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::ListTagsForStreamError {
-                        kind: crate::error::ListTagsForStreamErrorKind::InvalidArgumentError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::ListTagsForStreamError::unhandled(e),
-                },
-                "LimitExceededException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::ListTagsForStreamError {
-                        kind: crate::error::ListTagsForStreamErrorKind::LimitExceededError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::ListTagsForStreamError::unhandled(e),
-                },
-                "ResourceNotFoundException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::ListTagsForStreamError {
-                        kind: crate::error::ListTagsForStreamErrorKind::ResourceNotFoundError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::ListTagsForStreamError::unhandled(e),
-                },
-                _ => crate::error::ListTagsForStreamError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::list_tags_for_stream_output::Builder::default();
-        builder = crate::json_deser::list_tags_for_stream_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::ListTagsForStreamError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -1596,7 +700,11 @@ impl smithy_http::response::ParseStrictResponse for ListTagsForStream {
         crate::error::ListTagsForStreamError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_tags_for_stream_error(response)
+        } else {
+            crate::operation_deser::parse_list_tags_for_stream_response(response)
+        }
     }
 }
 
@@ -1645,56 +753,6 @@ impl MergeShards {
     pub fn builder() -> crate::input::merge_shards_input::Builder {
         crate::input::merge_shards_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::MergeShardsOutput, crate::error::MergeShardsError> {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::MergeShardsError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "InvalidArgumentException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::MergeShardsError {
-                        kind: crate::error::MergeShardsErrorKind::InvalidArgumentError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::MergeShardsError::unhandled(e),
-                },
-                "ResourceInUseException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::MergeShardsError {
-                        kind: crate::error::MergeShardsErrorKind::ResourceInUseError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::MergeShardsError::unhandled(e),
-                },
-                "LimitExceededException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::MergeShardsError {
-                        kind: crate::error::MergeShardsErrorKind::LimitExceededError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::MergeShardsError::unhandled(e),
-                },
-                "ResourceNotFoundException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::MergeShardsError {
-                        kind: crate::error::MergeShardsErrorKind::ResourceNotFoundError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::MergeShardsError::unhandled(e),
-                },
-                _ => crate::error::MergeShardsError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::merge_shards_output::Builder::default();
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -1703,7 +761,11 @@ impl smithy_http::response::ParseStrictResponse for MergeShards {
     type Output =
         std::result::Result<crate::output::MergeShardsOutput, crate::error::MergeShardsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_merge_shards_error(response)
+        } else {
+            crate::operation_deser::parse_merge_shards_response(response)
+        }
     }
 }
 
@@ -1752,95 +814,6 @@ impl PutRecord {
     pub fn builder() -> crate::input::put_record_input::Builder {
         crate::input::put_record_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::PutRecordOutput, crate::error::PutRecordError> {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::PutRecordError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "KMSAccessDeniedException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::PutRecordError {
-                        kind: crate::error::PutRecordErrorKind::KMSAccessDeniedError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::PutRecordError::unhandled(e),
-                },
-                "KMSDisabledException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::PutRecordError {
-                        kind: crate::error::PutRecordErrorKind::KMSDisabledError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::PutRecordError::unhandled(e),
-                },
-                "KMSNotFoundException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::PutRecordError {
-                        kind: crate::error::PutRecordErrorKind::KMSNotFoundError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::PutRecordError::unhandled(e),
-                },
-                "KMSOptInRequired" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::PutRecordError {
-                        kind: crate::error::PutRecordErrorKind::KMSOptInRequired(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::PutRecordError::unhandled(e),
-                },
-                "KMSThrottlingException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::PutRecordError {
-                        kind: crate::error::PutRecordErrorKind::KMSThrottlingError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::PutRecordError::unhandled(e),
-                },
-                "ProvisionedThroughputExceededException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::PutRecordError {
-                        kind: crate::error::PutRecordErrorKind::ProvisionedThroughputExceededError(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::PutRecordError::unhandled(e),
-                },
-                "InvalidArgumentException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::PutRecordError {
-                        kind: crate::error::PutRecordErrorKind::InvalidArgumentError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::PutRecordError::unhandled(e),
-                },
-                "KMSInvalidStateException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::PutRecordError {
-                        kind: crate::error::PutRecordErrorKind::KMSInvalidStateError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::PutRecordError::unhandled(e),
-                },
-                "ResourceNotFoundException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::PutRecordError {
-                        kind: crate::error::PutRecordErrorKind::ResourceNotFoundError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::PutRecordError::unhandled(e),
-                },
-                _ => crate::error::PutRecordError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::put_record_output::Builder::default();
-        builder = crate::json_deser::put_record_deser_operation(response.body().as_ref(), builder)
-            .map_err(crate::error::PutRecordError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -1848,7 +821,11 @@ impl PutRecord {
 impl smithy_http::response::ParseStrictResponse for PutRecord {
     type Output = std::result::Result<crate::output::PutRecordOutput, crate::error::PutRecordError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_put_record_error(response)
+        } else {
+            crate::operation_deser::parse_put_record_response(response)
+        }
     }
 }
 
@@ -1917,95 +894,6 @@ impl PutRecords {
     pub fn builder() -> crate::input::put_records_input::Builder {
         crate::input::put_records_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::PutRecordsOutput, crate::error::PutRecordsError> {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::PutRecordsError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "KMSAccessDeniedException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::PutRecordsError {
-                        kind: crate::error::PutRecordsErrorKind::KMSAccessDeniedError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::PutRecordsError::unhandled(e),
-                },
-                "KMSDisabledException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::PutRecordsError {
-                        kind: crate::error::PutRecordsErrorKind::KMSDisabledError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::PutRecordsError::unhandled(e),
-                },
-                "KMSNotFoundException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::PutRecordsError {
-                        kind: crate::error::PutRecordsErrorKind::KMSNotFoundError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::PutRecordsError::unhandled(e),
-                },
-                "KMSOptInRequired" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::PutRecordsError {
-                        kind: crate::error::PutRecordsErrorKind::KMSOptInRequired(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::PutRecordsError::unhandled(e),
-                },
-                "KMSThrottlingException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::PutRecordsError {
-                        kind: crate::error::PutRecordsErrorKind::KMSThrottlingError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::PutRecordsError::unhandled(e),
-                },
-                "ProvisionedThroughputExceededException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::PutRecordsError {
-                        kind: crate::error::PutRecordsErrorKind::ProvisionedThroughputExceededError(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::PutRecordsError::unhandled(e),
-                },
-                "InvalidArgumentException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::PutRecordsError {
-                        kind: crate::error::PutRecordsErrorKind::InvalidArgumentError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::PutRecordsError::unhandled(e),
-                },
-                "KMSInvalidStateException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::PutRecordsError {
-                        kind: crate::error::PutRecordsErrorKind::KMSInvalidStateError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::PutRecordsError::unhandled(e),
-                },
-                "ResourceNotFoundException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::PutRecordsError {
-                        kind: crate::error::PutRecordsErrorKind::ResourceNotFoundError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::PutRecordsError::unhandled(e),
-                },
-                _ => crate::error::PutRecordsError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::put_records_output::Builder::default();
-        builder = crate::json_deser::put_records_deser_operation(response.body().as_ref(), builder)
-            .map_err(crate::error::PutRecordsError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -2014,7 +902,11 @@ impl smithy_http::response::ParseStrictResponse for PutRecords {
     type Output =
         std::result::Result<crate::output::PutRecordsOutput, crate::error::PutRecordsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_put_records_error(response)
+        } else {
+            crate::operation_deser::parse_put_records_response(response)
+        }
     }
 }
 
@@ -2041,76 +933,6 @@ impl RegisterStreamConsumer {
     pub fn builder() -> crate::input::register_stream_consumer_input::Builder {
         crate::input::register_stream_consumer_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::RegisterStreamConsumerOutput,
-        crate::error::RegisterStreamConsumerError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(crate::error::RegisterStreamConsumerError::unhandled(
-                        generic,
-                    ))
-                }
-            };
-            return Err(match error_code {
-                "InvalidArgumentException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::RegisterStreamConsumerError {
-                        kind: crate::error::RegisterStreamConsumerErrorKind::InvalidArgumentError(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::RegisterStreamConsumerError::unhandled(e),
-                },
-                "ResourceInUseException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::RegisterStreamConsumerError {
-                        kind: crate::error::RegisterStreamConsumerErrorKind::ResourceInUseError(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::RegisterStreamConsumerError::unhandled(e),
-                },
-                "LimitExceededException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::RegisterStreamConsumerError {
-                        kind: crate::error::RegisterStreamConsumerErrorKind::LimitExceededError(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::RegisterStreamConsumerError::unhandled(e),
-                },
-                "ResourceNotFoundException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::RegisterStreamConsumerError {
-                        kind: crate::error::RegisterStreamConsumerErrorKind::ResourceNotFoundError(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::RegisterStreamConsumerError::unhandled(e),
-                },
-                _ => crate::error::RegisterStreamConsumerError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::register_stream_consumer_output::Builder::default();
-        builder = crate::json_deser::register_stream_consumer_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::RegisterStreamConsumerError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -2121,7 +943,11 @@ impl smithy_http::response::ParseStrictResponse for RegisterStreamConsumer {
         crate::error::RegisterStreamConsumerError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_register_stream_consumer_error(response)
+        } else {
+            crate::operation_deser::parse_register_stream_consumer_response(response)
+        }
     }
 }
 
@@ -2140,63 +966,6 @@ impl RemoveTagsFromStream {
     pub fn builder() -> crate::input::remove_tags_from_stream_input::Builder {
         crate::input::remove_tags_from_stream_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::RemoveTagsFromStreamOutput,
-        crate::error::RemoveTagsFromStreamError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::RemoveTagsFromStreamError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "InvalidArgumentException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::RemoveTagsFromStreamError {
-                        kind: crate::error::RemoveTagsFromStreamErrorKind::InvalidArgumentError(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::RemoveTagsFromStreamError::unhandled(e),
-                },
-                "ResourceInUseException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::RemoveTagsFromStreamError {
-                        kind: crate::error::RemoveTagsFromStreamErrorKind::ResourceInUseError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::RemoveTagsFromStreamError::unhandled(e),
-                },
-                "LimitExceededException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::RemoveTagsFromStreamError {
-                        kind: crate::error::RemoveTagsFromStreamErrorKind::LimitExceededError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::RemoveTagsFromStreamError::unhandled(e),
-                },
-                "ResourceNotFoundException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::RemoveTagsFromStreamError {
-                        kind: crate::error::RemoveTagsFromStreamErrorKind::ResourceNotFoundError(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::RemoveTagsFromStreamError::unhandled(e),
-                },
-                _ => crate::error::RemoveTagsFromStreamError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::remove_tags_from_stream_output::Builder::default();
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -2207,7 +976,11 @@ impl smithy_http::response::ParseStrictResponse for RemoveTagsFromStream {
         crate::error::RemoveTagsFromStreamError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_remove_tags_from_stream_error(response)
+        } else {
+            crate::operation_deser::parse_remove_tags_from_stream_response(response)
+        }
     }
 }
 
@@ -2262,56 +1035,6 @@ impl SplitShard {
     pub fn builder() -> crate::input::split_shard_input::Builder {
         crate::input::split_shard_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::SplitShardOutput, crate::error::SplitShardError> {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::SplitShardError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "InvalidArgumentException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::SplitShardError {
-                        kind: crate::error::SplitShardErrorKind::InvalidArgumentError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::SplitShardError::unhandled(e),
-                },
-                "ResourceInUseException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::SplitShardError {
-                        kind: crate::error::SplitShardErrorKind::ResourceInUseError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::SplitShardError::unhandled(e),
-                },
-                "LimitExceededException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::SplitShardError {
-                        kind: crate::error::SplitShardErrorKind::LimitExceededError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::SplitShardError::unhandled(e),
-                },
-                "ResourceNotFoundException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::SplitShardError {
-                        kind: crate::error::SplitShardErrorKind::ResourceNotFoundError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::SplitShardError::unhandled(e),
-                },
-                _ => crate::error::SplitShardError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::split_shard_output::Builder::default();
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -2320,7 +1043,11 @@ impl smithy_http::response::ParseStrictResponse for SplitShard {
     type Output =
         std::result::Result<crate::output::SplitShardOutput, crate::error::SplitShardError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_split_shard_error(response)
+        } else {
+            crate::operation_deser::parse_split_shard_response(response)
+        }
     }
 }
 
@@ -2349,115 +1076,6 @@ impl StartStreamEncryption {
     pub fn builder() -> crate::input::start_stream_encryption_input::Builder {
         crate::input::start_stream_encryption_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::StartStreamEncryptionOutput,
-        crate::error::StartStreamEncryptionError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::StartStreamEncryptionError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "KMSAccessDeniedException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::StartStreamEncryptionError {
-                        kind: crate::error::StartStreamEncryptionErrorKind::KMSAccessDeniedError(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::StartStreamEncryptionError::unhandled(e),
-                },
-                "KMSDisabledException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::StartStreamEncryptionError {
-                        kind: crate::error::StartStreamEncryptionErrorKind::KMSDisabledError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::StartStreamEncryptionError::unhandled(e),
-                },
-                "KMSNotFoundException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::StartStreamEncryptionError {
-                        kind: crate::error::StartStreamEncryptionErrorKind::KMSNotFoundError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::StartStreamEncryptionError::unhandled(e),
-                },
-                "KMSOptInRequired" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::StartStreamEncryptionError {
-                        kind: crate::error::StartStreamEncryptionErrorKind::KMSOptInRequired(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::StartStreamEncryptionError::unhandled(e),
-                },
-                "KMSThrottlingException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::StartStreamEncryptionError {
-                        kind: crate::error::StartStreamEncryptionErrorKind::KMSThrottlingError(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::StartStreamEncryptionError::unhandled(e),
-                },
-                "InvalidArgumentException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::StartStreamEncryptionError {
-                        kind: crate::error::StartStreamEncryptionErrorKind::InvalidArgumentError(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::StartStreamEncryptionError::unhandled(e),
-                },
-                "KMSInvalidStateException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::StartStreamEncryptionError {
-                        kind: crate::error::StartStreamEncryptionErrorKind::KMSInvalidStateError(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::StartStreamEncryptionError::unhandled(e),
-                },
-                "ResourceInUseException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::StartStreamEncryptionError {
-                        kind: crate::error::StartStreamEncryptionErrorKind::ResourceInUseError(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::StartStreamEncryptionError::unhandled(e),
-                },
-                "LimitExceededException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::StartStreamEncryptionError {
-                        kind: crate::error::StartStreamEncryptionErrorKind::LimitExceededError(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::StartStreamEncryptionError::unhandled(e),
-                },
-                "ResourceNotFoundException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::StartStreamEncryptionError {
-                        kind: crate::error::StartStreamEncryptionErrorKind::ResourceNotFoundError(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::StartStreamEncryptionError::unhandled(e),
-                },
-                _ => crate::error::StartStreamEncryptionError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::start_stream_encryption_output::Builder::default();
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -2468,7 +1086,11 @@ impl smithy_http::response::ParseStrictResponse for StartStreamEncryption {
         crate::error::StartStreamEncryptionError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_start_stream_encryption_error(response)
+        } else {
+            crate::operation_deser::parse_start_stream_encryption_response(response)
+        }
     }
 }
 
@@ -2497,63 +1119,6 @@ impl StopStreamEncryption {
     pub fn builder() -> crate::input::stop_stream_encryption_input::Builder {
         crate::input::stop_stream_encryption_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::StopStreamEncryptionOutput,
-        crate::error::StopStreamEncryptionError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::StopStreamEncryptionError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "InvalidArgumentException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::StopStreamEncryptionError {
-                        kind: crate::error::StopStreamEncryptionErrorKind::InvalidArgumentError(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::StopStreamEncryptionError::unhandled(e),
-                },
-                "ResourceInUseException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::StopStreamEncryptionError {
-                        kind: crate::error::StopStreamEncryptionErrorKind::ResourceInUseError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::StopStreamEncryptionError::unhandled(e),
-                },
-                "LimitExceededException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::StopStreamEncryptionError {
-                        kind: crate::error::StopStreamEncryptionErrorKind::LimitExceededError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::StopStreamEncryptionError::unhandled(e),
-                },
-                "ResourceNotFoundException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::StopStreamEncryptionError {
-                        kind: crate::error::StopStreamEncryptionErrorKind::ResourceNotFoundError(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::StopStreamEncryptionError::unhandled(e),
-                },
-                _ => crate::error::StopStreamEncryptionError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::stop_stream_encryption_output::Builder::default();
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -2564,7 +1129,11 @@ impl smithy_http::response::ParseStrictResponse for StopStreamEncryption {
         crate::error::StopStreamEncryptionError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_stop_stream_encryption_error(response)
+        } else {
+            crate::operation_deser::parse_stop_stream_encryption_response(response)
+        }
     }
 }
 
@@ -2621,64 +1190,6 @@ impl UpdateShardCount {
     pub fn builder() -> crate::input::update_shard_count_input::Builder {
         crate::input::update_shard_count_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<
-        crate::output::UpdateShardCountOutput,
-        crate::error::UpdateShardCountError,
-    > {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::UpdateShardCountError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "InvalidArgumentException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::UpdateShardCountError {
-                        kind: crate::error::UpdateShardCountErrorKind::InvalidArgumentError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::UpdateShardCountError::unhandled(e),
-                },
-                "ResourceInUseException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::UpdateShardCountError {
-                        kind: crate::error::UpdateShardCountErrorKind::ResourceInUseError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::UpdateShardCountError::unhandled(e),
-                },
-                "LimitExceededException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::UpdateShardCountError {
-                        kind: crate::error::UpdateShardCountErrorKind::LimitExceededError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::UpdateShardCountError::unhandled(e),
-                },
-                "ResourceNotFoundException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::UpdateShardCountError {
-                        kind: crate::error::UpdateShardCountErrorKind::ResourceNotFoundError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::UpdateShardCountError::unhandled(e),
-                },
-                _ => crate::error::UpdateShardCountError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::update_shard_count_output::Builder::default();
-        builder = crate::json_deser::update_shard_count_deser_operation(
-            response.body().as_ref(),
-            builder,
-        )
-        .map_err(crate::error::UpdateShardCountError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -2689,6 +1200,10 @@ impl smithy_http::response::ParseStrictResponse for UpdateShardCount {
         crate::error::UpdateShardCountError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_shard_count_error(response)
+        } else {
+            crate::operation_deser::parse_update_shard_count_response(response)
+        }
     }
 }

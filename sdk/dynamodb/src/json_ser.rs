@@ -1662,7 +1662,7 @@ pub fn serialize_structure_stream_specification(
 
 pub fn serialize_structure_sse_specification(
     object: &mut smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::SSESpecification,
+    input: &crate::model::SseSpecification,
 ) {
     if let Some(var_442) = &input.enabled {
         object.key("Enabled").boolean(*var_442);

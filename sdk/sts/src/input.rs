@@ -308,8 +308,9 @@ impl AssumeRoleInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -317,7 +318,7 @@ impl AssumeRoleInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -343,9 +344,9 @@ impl AssumeRoleInput {
     }
 }
 
-/// See [`AssumeRoleWithSAMLInput`](crate::input::AssumeRoleWithSAMLInput)
+/// See [`AssumeRoleWithSamlInput`](crate::input::AssumeRoleWithSamlInput)
 pub mod assume_role_with_saml_input {
-    /// A builder for [`AssumeRoleWithSAMLInput`](crate::input::AssumeRoleWithSAMLInput)
+    /// A builder for [`AssumeRoleWithSamlInput`](crate::input::AssumeRoleWithSamlInput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -466,14 +467,14 @@ pub mod assume_role_with_saml_input {
             self.duration_seconds = input;
             self
         }
-        /// Consumes the builder and constructs a [`AssumeRoleWithSAMLInput`](crate::input::AssumeRoleWithSAMLInput)
+        /// Consumes the builder and constructs a [`AssumeRoleWithSamlInput`](crate::input::AssumeRoleWithSamlInput)
         pub fn build(
             self,
         ) -> std::result::Result<
-            crate::input::AssumeRoleWithSAMLInput,
+            crate::input::AssumeRoleWithSamlInput,
             smithy_http::operation::BuildError,
         > {
-            Ok(crate::input::AssumeRoleWithSAMLInput {
+            Ok(crate::input::AssumeRoleWithSamlInput {
                 role_arn: self.role_arn,
                 principal_arn: self.principal_arn,
                 saml_assertion: self.saml_assertion,
@@ -488,7 +489,7 @@ pub mod assume_role_with_saml_input {
 pub type AssumeRoleWithSAMLInputOperationOutputAlias = crate::operation::AssumeRoleWithSAML;
 #[doc(hidden)]
 pub type AssumeRoleWithSAMLInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
-impl AssumeRoleWithSAMLInput {
+impl AssumeRoleWithSamlInput {
     /// Consumes the builder and constructs an Operation<[`AssumeRoleWithSAML`](crate::operation::AssumeRoleWithSAML)>
     #[allow(clippy::let_and_return)]
     pub fn make_operation(
@@ -547,8 +548,9 @@ impl AssumeRoleWithSAMLInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -556,7 +558,7 @@ impl AssumeRoleWithSAMLInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -576,7 +578,7 @@ impl AssumeRoleWithSAMLInput {
         }
         builder.body(body).expect("should be valid request")
     }
-    /// Creates a new builder-style object to manufacture [`AssumeRoleWithSAMLInput`](crate::input::AssumeRoleWithSAMLInput)
+    /// Creates a new builder-style object to manufacture [`AssumeRoleWithSamlInput`](crate::input::AssumeRoleWithSamlInput)
     pub fn builder() -> crate::input::assume_role_with_saml_input::Builder {
         crate::input::assume_role_with_saml_input::Builder::default()
     }
@@ -808,8 +810,9 @@ impl AssumeRoleWithWebIdentityInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -817,7 +820,7 @@ impl AssumeRoleWithWebIdentityInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -942,8 +945,9 @@ impl DecodeAuthorizationMessageInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -951,7 +955,7 @@ impl DecodeAuthorizationMessageInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1076,8 +1080,9 @@ impl GetAccessKeyInfoInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -1085,7 +1090,7 @@ impl GetAccessKeyInfoInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1192,8 +1197,9 @@ impl GetCallerIdentityInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -1201,7 +1207,7 @@ impl GetCallerIdentityInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1414,8 +1420,9 @@ impl GetFederationTokenInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -1423,7 +1430,7 @@ impl GetFederationTokenInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1586,8 +1593,9 @@ impl GetSessionTokenInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -1595,7 +1603,7 @@ impl GetSessionTokenInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1927,7 +1935,7 @@ impl std::fmt::Debug for AssumeRoleWithWebIdentityInput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct AssumeRoleWithSAMLInput {
+pub struct AssumeRoleWithSamlInput {
     /// <p>The Amazon Resource Name (ARN) of the role that the caller is assuming.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the SAML provider in IAM that describes the
@@ -2006,9 +2014,9 @@ pub struct AssumeRoleWithSAMLInput {
     /// </note>
     pub duration_seconds: std::option::Option<i32>,
 }
-impl std::fmt::Debug for AssumeRoleWithSAMLInput {
+impl std::fmt::Debug for AssumeRoleWithSamlInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssumeRoleWithSAMLInput");
+        let mut formatter = f.debug_struct("AssumeRoleWithSamlInput");
         formatter.field("role_arn", &self.role_arn);
         formatter.field("principal_arn", &self.principal_arn);
         formatter.field("saml_assertion", &self.saml_assertion);

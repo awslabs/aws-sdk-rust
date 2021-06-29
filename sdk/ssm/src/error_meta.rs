@@ -2,51 +2,59 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    AlreadyExistsError(crate::error::AlreadyExistsError),
+    AlreadyExistsException(crate::error::AlreadyExistsException),
     AssociatedInstances(crate::error::AssociatedInstances),
     AssociationAlreadyExists(crate::error::AssociationAlreadyExists),
     AssociationDoesNotExist(crate::error::AssociationDoesNotExist),
     AssociationExecutionDoesNotExist(crate::error::AssociationExecutionDoesNotExist),
     AssociationLimitExceeded(crate::error::AssociationLimitExceeded),
     AssociationVersionLimitExceeded(crate::error::AssociationVersionLimitExceeded),
-    AutomationDefinitionNotApprovedError(crate::error::AutomationDefinitionNotApprovedError),
-    AutomationDefinitionNotFoundError(crate::error::AutomationDefinitionNotFoundError),
-    AutomationDefinitionVersionNotFoundError(
-        crate::error::AutomationDefinitionVersionNotFoundError,
+    AutomationDefinitionNotApprovedException(
+        crate::error::AutomationDefinitionNotApprovedException,
     ),
-    AutomationExecutionLimitExceededError(crate::error::AutomationExecutionLimitExceededError),
-    AutomationExecutionNotFoundError(crate::error::AutomationExecutionNotFoundError),
-    AutomationStepNotFoundError(crate::error::AutomationStepNotFoundError),
-    ComplianceTypeCountLimitExceededError(crate::error::ComplianceTypeCountLimitExceededError),
-    CustomSchemaCountLimitExceededError(crate::error::CustomSchemaCountLimitExceededError),
+    AutomationDefinitionNotFoundException(crate::error::AutomationDefinitionNotFoundException),
+    AutomationDefinitionVersionNotFoundException(
+        crate::error::AutomationDefinitionVersionNotFoundException,
+    ),
+    AutomationExecutionLimitExceededException(
+        crate::error::AutomationExecutionLimitExceededException,
+    ),
+    AutomationExecutionNotFoundException(crate::error::AutomationExecutionNotFoundException),
+    AutomationStepNotFoundException(crate::error::AutomationStepNotFoundException),
+    ComplianceTypeCountLimitExceededException(
+        crate::error::ComplianceTypeCountLimitExceededException,
+    ),
+    CustomSchemaCountLimitExceededException(crate::error::CustomSchemaCountLimitExceededException),
     DocumentAlreadyExists(crate::error::DocumentAlreadyExists),
     DocumentLimitExceeded(crate::error::DocumentLimitExceeded),
     DocumentPermissionLimit(crate::error::DocumentPermissionLimit),
     DocumentVersionLimitExceeded(crate::error::DocumentVersionLimitExceeded),
-    DoesNotExistError(crate::error::DoesNotExistError),
+    DoesNotExistException(crate::error::DoesNotExistException),
     DuplicateDocumentContent(crate::error::DuplicateDocumentContent),
     DuplicateDocumentVersionName(crate::error::DuplicateDocumentVersionName),
     DuplicateInstanceId(crate::error::DuplicateInstanceId),
-    FeatureNotAvailableError(crate::error::FeatureNotAvailableError),
-    HierarchyLevelLimitExceededError(crate::error::HierarchyLevelLimitExceededError),
-    HierarchyTypeMismatchError(crate::error::HierarchyTypeMismatchError),
+    FeatureNotAvailableException(crate::error::FeatureNotAvailableException),
+    HierarchyLevelLimitExceededException(crate::error::HierarchyLevelLimitExceededException),
+    HierarchyTypeMismatchException(crate::error::HierarchyTypeMismatchException),
     IdempotentParameterMismatch(crate::error::IdempotentParameterMismatch),
-    IncompatiblePolicyError(crate::error::IncompatiblePolicyError),
+    IncompatiblePolicyException(crate::error::IncompatiblePolicyException),
     InternalServerError(crate::error::InternalServerError),
     InvalidActivation(crate::error::InvalidActivation),
     InvalidActivationId(crate::error::InvalidActivationId),
-    InvalidAggregatorError(crate::error::InvalidAggregatorError),
-    InvalidAllowedPatternError(crate::error::InvalidAllowedPatternError),
+    InvalidAggregatorException(crate::error::InvalidAggregatorException),
+    InvalidAllowedPatternException(crate::error::InvalidAllowedPatternException),
     InvalidAssociation(crate::error::InvalidAssociation),
     InvalidAssociationVersion(crate::error::InvalidAssociationVersion),
-    InvalidAutomationExecutionParametersError(
-        crate::error::InvalidAutomationExecutionParametersError,
+    InvalidAutomationExecutionParametersException(
+        crate::error::InvalidAutomationExecutionParametersException,
     ),
-    InvalidAutomationSignalError(crate::error::InvalidAutomationSignalError),
-    InvalidAutomationStatusUpdateError(crate::error::InvalidAutomationStatusUpdateError),
+    InvalidAutomationSignalException(crate::error::InvalidAutomationSignalException),
+    InvalidAutomationStatusUpdateException(crate::error::InvalidAutomationStatusUpdateException),
     InvalidCommandId(crate::error::InvalidCommandId),
-    InvalidDeleteInventoryParametersError(crate::error::InvalidDeleteInventoryParametersError),
-    InvalidDeletionIdError(crate::error::InvalidDeletionIdError),
+    InvalidDeleteInventoryParametersException(
+        crate::error::InvalidDeleteInventoryParametersException,
+    ),
+    InvalidDeletionIdException(crate::error::InvalidDeletionIdException),
     InvalidDocument(crate::error::InvalidDocument),
     InvalidDocumentContent(crate::error::InvalidDocumentContent),
     InvalidDocumentOperation(crate::error::InvalidDocumentOperation),
@@ -59,76 +67,82 @@ pub enum Error {
     InvalidFilterValue(crate::error::InvalidFilterValue),
     InvalidInstanceId(crate::error::InvalidInstanceId),
     InvalidInstanceInformationFilterValue(crate::error::InvalidInstanceInformationFilterValue),
-    InvalidInventoryGroupError(crate::error::InvalidInventoryGroupError),
-    InvalidInventoryItemContextError(crate::error::InvalidInventoryItemContextError),
-    InvalidInventoryRequestError(crate::error::InvalidInventoryRequestError),
-    InvalidItemContentError(crate::error::InvalidItemContentError),
+    InvalidInventoryGroupException(crate::error::InvalidInventoryGroupException),
+    InvalidInventoryItemContextException(crate::error::InvalidInventoryItemContextException),
+    InvalidInventoryRequestException(crate::error::InvalidInventoryRequestException),
+    InvalidItemContentException(crate::error::InvalidItemContentException),
     InvalidKeyId(crate::error::InvalidKeyId),
     InvalidNextToken(crate::error::InvalidNextToken),
     InvalidNotificationConfig(crate::error::InvalidNotificationConfig),
-    InvalidOptionError(crate::error::InvalidOptionError),
+    InvalidOptionException(crate::error::InvalidOptionException),
     InvalidOutputFolder(crate::error::InvalidOutputFolder),
     InvalidOutputLocation(crate::error::InvalidOutputLocation),
     InvalidParameters(crate::error::InvalidParameters),
     InvalidPermissionType(crate::error::InvalidPermissionType),
     InvalidPluginName(crate::error::InvalidPluginName),
-    InvalidPolicyAttributeError(crate::error::InvalidPolicyAttributeError),
-    InvalidPolicyTypeError(crate::error::InvalidPolicyTypeError),
+    InvalidPolicyAttributeException(crate::error::InvalidPolicyAttributeException),
+    InvalidPolicyTypeException(crate::error::InvalidPolicyTypeException),
     InvalidResourceId(crate::error::InvalidResourceId),
     InvalidResourceType(crate::error::InvalidResourceType),
-    InvalidResultAttributeError(crate::error::InvalidResultAttributeError),
+    InvalidResultAttributeException(crate::error::InvalidResultAttributeException),
     InvalidRole(crate::error::InvalidRole),
     InvalidSchedule(crate::error::InvalidSchedule),
     InvalidTarget(crate::error::InvalidTarget),
-    InvalidTypeNameError(crate::error::InvalidTypeNameError),
+    InvalidTypeNameException(crate::error::InvalidTypeNameException),
     InvalidUpdate(crate::error::InvalidUpdate),
     InvocationDoesNotExist(crate::error::InvocationDoesNotExist),
-    ItemContentMismatchError(crate::error::ItemContentMismatchError),
-    ItemSizeLimitExceededError(crate::error::ItemSizeLimitExceededError),
+    ItemContentMismatchException(crate::error::ItemContentMismatchException),
+    ItemSizeLimitExceededException(crate::error::ItemSizeLimitExceededException),
     MaxDocumentSizeExceeded(crate::error::MaxDocumentSizeExceeded),
-    OpsItemAlreadyExistsError(crate::error::OpsItemAlreadyExistsError),
-    OpsItemInvalidParameterError(crate::error::OpsItemInvalidParameterError),
-    OpsItemLimitExceededError(crate::error::OpsItemLimitExceededError),
-    OpsItemNotFoundError(crate::error::OpsItemNotFoundError),
-    OpsItemRelatedItemAlreadyExistsError(crate::error::OpsItemRelatedItemAlreadyExistsError),
-    OpsItemRelatedItemAssociationNotFoundError(
-        crate::error::OpsItemRelatedItemAssociationNotFoundError,
+    OpsItemAlreadyExistsException(crate::error::OpsItemAlreadyExistsException),
+    OpsItemInvalidParameterException(crate::error::OpsItemInvalidParameterException),
+    OpsItemLimitExceededException(crate::error::OpsItemLimitExceededException),
+    OpsItemNotFoundException(crate::error::OpsItemNotFoundException),
+    OpsItemRelatedItemAlreadyExistsException(
+        crate::error::OpsItemRelatedItemAlreadyExistsException,
     ),
-    OpsMetadataAlreadyExistsError(crate::error::OpsMetadataAlreadyExistsError),
-    OpsMetadataInvalidArgumentError(crate::error::OpsMetadataInvalidArgumentError),
-    OpsMetadataKeyLimitExceededError(crate::error::OpsMetadataKeyLimitExceededError),
-    OpsMetadataLimitExceededError(crate::error::OpsMetadataLimitExceededError),
-    OpsMetadataNotFoundError(crate::error::OpsMetadataNotFoundError),
-    OpsMetadataTooManyUpdatesError(crate::error::OpsMetadataTooManyUpdatesError),
+    OpsItemRelatedItemAssociationNotFoundException(
+        crate::error::OpsItemRelatedItemAssociationNotFoundException,
+    ),
+    OpsMetadataAlreadyExistsException(crate::error::OpsMetadataAlreadyExistsException),
+    OpsMetadataInvalidArgumentException(crate::error::OpsMetadataInvalidArgumentException),
+    OpsMetadataKeyLimitExceededException(crate::error::OpsMetadataKeyLimitExceededException),
+    OpsMetadataLimitExceededException(crate::error::OpsMetadataLimitExceededException),
+    OpsMetadataNotFoundException(crate::error::OpsMetadataNotFoundException),
+    OpsMetadataTooManyUpdatesException(crate::error::OpsMetadataTooManyUpdatesException),
     ParameterAlreadyExists(crate::error::ParameterAlreadyExists),
     ParameterLimitExceeded(crate::error::ParameterLimitExceeded),
     ParameterMaxVersionLimitExceeded(crate::error::ParameterMaxVersionLimitExceeded),
     ParameterNotFound(crate::error::ParameterNotFound),
-    ParameterPatternMismatchError(crate::error::ParameterPatternMismatchError),
+    ParameterPatternMismatchException(crate::error::ParameterPatternMismatchException),
     ParameterVersionLabelLimitExceeded(crate::error::ParameterVersionLabelLimitExceeded),
     ParameterVersionNotFound(crate::error::ParameterVersionNotFound),
-    PoliciesLimitExceededError(crate::error::PoliciesLimitExceededError),
-    ResourceDataSyncAlreadyExistsError(crate::error::ResourceDataSyncAlreadyExistsError),
-    ResourceDataSyncConflictError(crate::error::ResourceDataSyncConflictError),
-    ResourceDataSyncCountExceededError(crate::error::ResourceDataSyncCountExceededError),
-    ResourceDataSyncInvalidConfigurationError(
-        crate::error::ResourceDataSyncInvalidConfigurationError,
+    PoliciesLimitExceededException(crate::error::PoliciesLimitExceededException),
+    ResourceDataSyncAlreadyExistsException(crate::error::ResourceDataSyncAlreadyExistsException),
+    ResourceDataSyncConflictException(crate::error::ResourceDataSyncConflictException),
+    ResourceDataSyncCountExceededException(crate::error::ResourceDataSyncCountExceededException),
+    ResourceDataSyncInvalidConfigurationException(
+        crate::error::ResourceDataSyncInvalidConfigurationException,
     ),
-    ResourceDataSyncNotFoundError(crate::error::ResourceDataSyncNotFoundError),
-    ResourceInUseError(crate::error::ResourceInUseError),
-    ResourceLimitExceededError(crate::error::ResourceLimitExceededError),
+    ResourceDataSyncNotFoundException(crate::error::ResourceDataSyncNotFoundException),
+    ResourceInUseException(crate::error::ResourceInUseException),
+    ResourceLimitExceededException(crate::error::ResourceLimitExceededException),
     ServiceSettingNotFound(crate::error::ServiceSettingNotFound),
     StatusUnchanged(crate::error::StatusUnchanged),
-    SubTypeCountLimitExceededError(crate::error::SubTypeCountLimitExceededError),
-    TargetInUseError(crate::error::TargetInUseError),
+    SubTypeCountLimitExceededException(crate::error::SubTypeCountLimitExceededException),
+    TargetInUseException(crate::error::TargetInUseException),
     TargetNotConnected(crate::error::TargetNotConnected),
     TooManyTagsError(crate::error::TooManyTagsError),
     TooManyUpdates(crate::error::TooManyUpdates),
-    TotalSizeLimitExceededError(crate::error::TotalSizeLimitExceededError),
-    UnsupportedCalendarError(crate::error::UnsupportedCalendarError),
-    UnsupportedFeatureRequiredError(crate::error::UnsupportedFeatureRequiredError),
-    UnsupportedInventoryItemContextError(crate::error::UnsupportedInventoryItemContextError),
-    UnsupportedInventorySchemaVersionError(crate::error::UnsupportedInventorySchemaVersionError),
+    TotalSizeLimitExceededException(crate::error::TotalSizeLimitExceededException),
+    UnsupportedCalendarException(crate::error::UnsupportedCalendarException),
+    UnsupportedFeatureRequiredException(crate::error::UnsupportedFeatureRequiredException),
+    UnsupportedInventoryItemContextException(
+        crate::error::UnsupportedInventoryItemContextException,
+    ),
+    UnsupportedInventorySchemaVersionException(
+        crate::error::UnsupportedInventorySchemaVersionException,
+    ),
     UnsupportedOperatingSystem(crate::error::UnsupportedOperatingSystem),
     UnsupportedParameterType(crate::error::UnsupportedParameterType),
     UnsupportedPlatformType(crate::error::UnsupportedPlatformType),
@@ -137,47 +151,47 @@ pub enum Error {
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
-            Error::AlreadyExistsError(inner) => inner.fmt(f),
+            Error::AlreadyExistsException(inner) => inner.fmt(f),
             Error::AssociatedInstances(inner) => inner.fmt(f),
             Error::AssociationAlreadyExists(inner) => inner.fmt(f),
             Error::AssociationDoesNotExist(inner) => inner.fmt(f),
             Error::AssociationExecutionDoesNotExist(inner) => inner.fmt(f),
             Error::AssociationLimitExceeded(inner) => inner.fmt(f),
             Error::AssociationVersionLimitExceeded(inner) => inner.fmt(f),
-            Error::AutomationDefinitionNotApprovedError(inner) => inner.fmt(f),
-            Error::AutomationDefinitionNotFoundError(inner) => inner.fmt(f),
-            Error::AutomationDefinitionVersionNotFoundError(inner) => inner.fmt(f),
-            Error::AutomationExecutionLimitExceededError(inner) => inner.fmt(f),
-            Error::AutomationExecutionNotFoundError(inner) => inner.fmt(f),
-            Error::AutomationStepNotFoundError(inner) => inner.fmt(f),
-            Error::ComplianceTypeCountLimitExceededError(inner) => inner.fmt(f),
-            Error::CustomSchemaCountLimitExceededError(inner) => inner.fmt(f),
+            Error::AutomationDefinitionNotApprovedException(inner) => inner.fmt(f),
+            Error::AutomationDefinitionNotFoundException(inner) => inner.fmt(f),
+            Error::AutomationDefinitionVersionNotFoundException(inner) => inner.fmt(f),
+            Error::AutomationExecutionLimitExceededException(inner) => inner.fmt(f),
+            Error::AutomationExecutionNotFoundException(inner) => inner.fmt(f),
+            Error::AutomationStepNotFoundException(inner) => inner.fmt(f),
+            Error::ComplianceTypeCountLimitExceededException(inner) => inner.fmt(f),
+            Error::CustomSchemaCountLimitExceededException(inner) => inner.fmt(f),
             Error::DocumentAlreadyExists(inner) => inner.fmt(f),
             Error::DocumentLimitExceeded(inner) => inner.fmt(f),
             Error::DocumentPermissionLimit(inner) => inner.fmt(f),
             Error::DocumentVersionLimitExceeded(inner) => inner.fmt(f),
-            Error::DoesNotExistError(inner) => inner.fmt(f),
+            Error::DoesNotExistException(inner) => inner.fmt(f),
             Error::DuplicateDocumentContent(inner) => inner.fmt(f),
             Error::DuplicateDocumentVersionName(inner) => inner.fmt(f),
             Error::DuplicateInstanceId(inner) => inner.fmt(f),
-            Error::FeatureNotAvailableError(inner) => inner.fmt(f),
-            Error::HierarchyLevelLimitExceededError(inner) => inner.fmt(f),
-            Error::HierarchyTypeMismatchError(inner) => inner.fmt(f),
+            Error::FeatureNotAvailableException(inner) => inner.fmt(f),
+            Error::HierarchyLevelLimitExceededException(inner) => inner.fmt(f),
+            Error::HierarchyTypeMismatchException(inner) => inner.fmt(f),
             Error::IdempotentParameterMismatch(inner) => inner.fmt(f),
-            Error::IncompatiblePolicyError(inner) => inner.fmt(f),
+            Error::IncompatiblePolicyException(inner) => inner.fmt(f),
             Error::InternalServerError(inner) => inner.fmt(f),
             Error::InvalidActivation(inner) => inner.fmt(f),
             Error::InvalidActivationId(inner) => inner.fmt(f),
-            Error::InvalidAggregatorError(inner) => inner.fmt(f),
-            Error::InvalidAllowedPatternError(inner) => inner.fmt(f),
+            Error::InvalidAggregatorException(inner) => inner.fmt(f),
+            Error::InvalidAllowedPatternException(inner) => inner.fmt(f),
             Error::InvalidAssociation(inner) => inner.fmt(f),
             Error::InvalidAssociationVersion(inner) => inner.fmt(f),
-            Error::InvalidAutomationExecutionParametersError(inner) => inner.fmt(f),
-            Error::InvalidAutomationSignalError(inner) => inner.fmt(f),
-            Error::InvalidAutomationStatusUpdateError(inner) => inner.fmt(f),
+            Error::InvalidAutomationExecutionParametersException(inner) => inner.fmt(f),
+            Error::InvalidAutomationSignalException(inner) => inner.fmt(f),
+            Error::InvalidAutomationStatusUpdateException(inner) => inner.fmt(f),
             Error::InvalidCommandId(inner) => inner.fmt(f),
-            Error::InvalidDeleteInventoryParametersError(inner) => inner.fmt(f),
-            Error::InvalidDeletionIdError(inner) => inner.fmt(f),
+            Error::InvalidDeleteInventoryParametersException(inner) => inner.fmt(f),
+            Error::InvalidDeletionIdException(inner) => inner.fmt(f),
             Error::InvalidDocument(inner) => inner.fmt(f),
             Error::InvalidDocumentContent(inner) => inner.fmt(f),
             Error::InvalidDocumentOperation(inner) => inner.fmt(f),
@@ -190,72 +204,72 @@ impl std::fmt::Display for Error {
             Error::InvalidFilterValue(inner) => inner.fmt(f),
             Error::InvalidInstanceId(inner) => inner.fmt(f),
             Error::InvalidInstanceInformationFilterValue(inner) => inner.fmt(f),
-            Error::InvalidInventoryGroupError(inner) => inner.fmt(f),
-            Error::InvalidInventoryItemContextError(inner) => inner.fmt(f),
-            Error::InvalidInventoryRequestError(inner) => inner.fmt(f),
-            Error::InvalidItemContentError(inner) => inner.fmt(f),
+            Error::InvalidInventoryGroupException(inner) => inner.fmt(f),
+            Error::InvalidInventoryItemContextException(inner) => inner.fmt(f),
+            Error::InvalidInventoryRequestException(inner) => inner.fmt(f),
+            Error::InvalidItemContentException(inner) => inner.fmt(f),
             Error::InvalidKeyId(inner) => inner.fmt(f),
             Error::InvalidNextToken(inner) => inner.fmt(f),
             Error::InvalidNotificationConfig(inner) => inner.fmt(f),
-            Error::InvalidOptionError(inner) => inner.fmt(f),
+            Error::InvalidOptionException(inner) => inner.fmt(f),
             Error::InvalidOutputFolder(inner) => inner.fmt(f),
             Error::InvalidOutputLocation(inner) => inner.fmt(f),
             Error::InvalidParameters(inner) => inner.fmt(f),
             Error::InvalidPermissionType(inner) => inner.fmt(f),
             Error::InvalidPluginName(inner) => inner.fmt(f),
-            Error::InvalidPolicyAttributeError(inner) => inner.fmt(f),
-            Error::InvalidPolicyTypeError(inner) => inner.fmt(f),
+            Error::InvalidPolicyAttributeException(inner) => inner.fmt(f),
+            Error::InvalidPolicyTypeException(inner) => inner.fmt(f),
             Error::InvalidResourceId(inner) => inner.fmt(f),
             Error::InvalidResourceType(inner) => inner.fmt(f),
-            Error::InvalidResultAttributeError(inner) => inner.fmt(f),
+            Error::InvalidResultAttributeException(inner) => inner.fmt(f),
             Error::InvalidRole(inner) => inner.fmt(f),
             Error::InvalidSchedule(inner) => inner.fmt(f),
             Error::InvalidTarget(inner) => inner.fmt(f),
-            Error::InvalidTypeNameError(inner) => inner.fmt(f),
+            Error::InvalidTypeNameException(inner) => inner.fmt(f),
             Error::InvalidUpdate(inner) => inner.fmt(f),
             Error::InvocationDoesNotExist(inner) => inner.fmt(f),
-            Error::ItemContentMismatchError(inner) => inner.fmt(f),
-            Error::ItemSizeLimitExceededError(inner) => inner.fmt(f),
+            Error::ItemContentMismatchException(inner) => inner.fmt(f),
+            Error::ItemSizeLimitExceededException(inner) => inner.fmt(f),
             Error::MaxDocumentSizeExceeded(inner) => inner.fmt(f),
-            Error::OpsItemAlreadyExistsError(inner) => inner.fmt(f),
-            Error::OpsItemInvalidParameterError(inner) => inner.fmt(f),
-            Error::OpsItemLimitExceededError(inner) => inner.fmt(f),
-            Error::OpsItemNotFoundError(inner) => inner.fmt(f),
-            Error::OpsItemRelatedItemAlreadyExistsError(inner) => inner.fmt(f),
-            Error::OpsItemRelatedItemAssociationNotFoundError(inner) => inner.fmt(f),
-            Error::OpsMetadataAlreadyExistsError(inner) => inner.fmt(f),
-            Error::OpsMetadataInvalidArgumentError(inner) => inner.fmt(f),
-            Error::OpsMetadataKeyLimitExceededError(inner) => inner.fmt(f),
-            Error::OpsMetadataLimitExceededError(inner) => inner.fmt(f),
-            Error::OpsMetadataNotFoundError(inner) => inner.fmt(f),
-            Error::OpsMetadataTooManyUpdatesError(inner) => inner.fmt(f),
+            Error::OpsItemAlreadyExistsException(inner) => inner.fmt(f),
+            Error::OpsItemInvalidParameterException(inner) => inner.fmt(f),
+            Error::OpsItemLimitExceededException(inner) => inner.fmt(f),
+            Error::OpsItemNotFoundException(inner) => inner.fmt(f),
+            Error::OpsItemRelatedItemAlreadyExistsException(inner) => inner.fmt(f),
+            Error::OpsItemRelatedItemAssociationNotFoundException(inner) => inner.fmt(f),
+            Error::OpsMetadataAlreadyExistsException(inner) => inner.fmt(f),
+            Error::OpsMetadataInvalidArgumentException(inner) => inner.fmt(f),
+            Error::OpsMetadataKeyLimitExceededException(inner) => inner.fmt(f),
+            Error::OpsMetadataLimitExceededException(inner) => inner.fmt(f),
+            Error::OpsMetadataNotFoundException(inner) => inner.fmt(f),
+            Error::OpsMetadataTooManyUpdatesException(inner) => inner.fmt(f),
             Error::ParameterAlreadyExists(inner) => inner.fmt(f),
             Error::ParameterLimitExceeded(inner) => inner.fmt(f),
             Error::ParameterMaxVersionLimitExceeded(inner) => inner.fmt(f),
             Error::ParameterNotFound(inner) => inner.fmt(f),
-            Error::ParameterPatternMismatchError(inner) => inner.fmt(f),
+            Error::ParameterPatternMismatchException(inner) => inner.fmt(f),
             Error::ParameterVersionLabelLimitExceeded(inner) => inner.fmt(f),
             Error::ParameterVersionNotFound(inner) => inner.fmt(f),
-            Error::PoliciesLimitExceededError(inner) => inner.fmt(f),
-            Error::ResourceDataSyncAlreadyExistsError(inner) => inner.fmt(f),
-            Error::ResourceDataSyncConflictError(inner) => inner.fmt(f),
-            Error::ResourceDataSyncCountExceededError(inner) => inner.fmt(f),
-            Error::ResourceDataSyncInvalidConfigurationError(inner) => inner.fmt(f),
-            Error::ResourceDataSyncNotFoundError(inner) => inner.fmt(f),
-            Error::ResourceInUseError(inner) => inner.fmt(f),
-            Error::ResourceLimitExceededError(inner) => inner.fmt(f),
+            Error::PoliciesLimitExceededException(inner) => inner.fmt(f),
+            Error::ResourceDataSyncAlreadyExistsException(inner) => inner.fmt(f),
+            Error::ResourceDataSyncConflictException(inner) => inner.fmt(f),
+            Error::ResourceDataSyncCountExceededException(inner) => inner.fmt(f),
+            Error::ResourceDataSyncInvalidConfigurationException(inner) => inner.fmt(f),
+            Error::ResourceDataSyncNotFoundException(inner) => inner.fmt(f),
+            Error::ResourceInUseException(inner) => inner.fmt(f),
+            Error::ResourceLimitExceededException(inner) => inner.fmt(f),
             Error::ServiceSettingNotFound(inner) => inner.fmt(f),
             Error::StatusUnchanged(inner) => inner.fmt(f),
-            Error::SubTypeCountLimitExceededError(inner) => inner.fmt(f),
-            Error::TargetInUseError(inner) => inner.fmt(f),
+            Error::SubTypeCountLimitExceededException(inner) => inner.fmt(f),
+            Error::TargetInUseException(inner) => inner.fmt(f),
             Error::TargetNotConnected(inner) => inner.fmt(f),
             Error::TooManyTagsError(inner) => inner.fmt(f),
             Error::TooManyUpdates(inner) => inner.fmt(f),
-            Error::TotalSizeLimitExceededError(inner) => inner.fmt(f),
-            Error::UnsupportedCalendarError(inner) => inner.fmt(f),
-            Error::UnsupportedFeatureRequiredError(inner) => inner.fmt(f),
-            Error::UnsupportedInventoryItemContextError(inner) => inner.fmt(f),
-            Error::UnsupportedInventorySchemaVersionError(inner) => inner.fmt(f),
+            Error::TotalSizeLimitExceededException(inner) => inner.fmt(f),
+            Error::UnsupportedCalendarException(inner) => inner.fmt(f),
+            Error::UnsupportedFeatureRequiredException(inner) => inner.fmt(f),
+            Error::UnsupportedInventoryItemContextException(inner) => inner.fmt(f),
+            Error::UnsupportedInventorySchemaVersionException(inner) => inner.fmt(f),
             Error::UnsupportedOperatingSystem(inner) => inner.fmt(f),
             Error::UnsupportedParameterType(inner) => inner.fmt(f),
             Error::UnsupportedPlatformType(inner) => inner.fmt(f),
@@ -297,10 +311,10 @@ impl From<smithy_http::result::SdkError<crate::error::AssociateOpsItemRelatedIte
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::AssociateOpsItemRelatedItemErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
-                crate::error::AssociateOpsItemRelatedItemErrorKind::OpsItemInvalidParameterError(inner) => Error::OpsItemInvalidParameterError(inner),
-                crate::error::AssociateOpsItemRelatedItemErrorKind::OpsItemLimitExceededError(inner) => Error::OpsItemLimitExceededError(inner),
-                crate::error::AssociateOpsItemRelatedItemErrorKind::OpsItemNotFoundError(inner) => Error::OpsItemNotFoundError(inner),
-                crate::error::AssociateOpsItemRelatedItemErrorKind::OpsItemRelatedItemAlreadyExistsError(inner) => Error::OpsItemRelatedItemAlreadyExistsError(inner),
+                crate::error::AssociateOpsItemRelatedItemErrorKind::OpsItemInvalidParameterException(inner) => Error::OpsItemInvalidParameterException(inner),
+                crate::error::AssociateOpsItemRelatedItemErrorKind::OpsItemLimitExceededException(inner) => Error::OpsItemLimitExceededException(inner),
+                crate::error::AssociateOpsItemRelatedItemErrorKind::OpsItemNotFoundException(inner) => Error::OpsItemNotFoundException(inner),
+                crate::error::AssociateOpsItemRelatedItemErrorKind::OpsItemRelatedItemAlreadyExistsException(inner) => Error::OpsItemRelatedItemAlreadyExistsException(inner),
                 crate::error::AssociateOpsItemRelatedItemErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
@@ -337,9 +351,9 @@ impl From<smithy_http::result::SdkError<crate::error::CancelMaintenanceWindowExe
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CancelMaintenanceWindowExecutionErrorKind::DoesNotExistError(
+                crate::error::CancelMaintenanceWindowExecutionErrorKind::DoesNotExistException(
                     inner,
-                ) => Error::DoesNotExistError(inner),
+                ) => Error::DoesNotExistException(inner),
                 crate::error::CancelMaintenanceWindowExecutionErrorKind::InternalServerError(
                     inner,
                 ) => Error::InternalServerError(inner),
@@ -496,9 +510,9 @@ impl From<smithy_http::result::SdkError<crate::error::CreateMaintenanceWindowErr
                 crate::error::CreateMaintenanceWindowErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
-                crate::error::CreateMaintenanceWindowErrorKind::ResourceLimitExceededError(
+                crate::error::CreateMaintenanceWindowErrorKind::ResourceLimitExceededException(
                     inner,
-                ) => Error::ResourceLimitExceededError(inner),
+                ) => Error::ResourceLimitExceededException(inner),
                 crate::error::CreateMaintenanceWindowErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -514,14 +528,14 @@ impl From<smithy_http::result::SdkError<crate::error::CreateOpsItemError>> for E
                 crate::error::CreateOpsItemErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
-                crate::error::CreateOpsItemErrorKind::OpsItemAlreadyExistsError(inner) => {
-                    Error::OpsItemAlreadyExistsError(inner)
+                crate::error::CreateOpsItemErrorKind::OpsItemAlreadyExistsException(inner) => {
+                    Error::OpsItemAlreadyExistsException(inner)
                 }
-                crate::error::CreateOpsItemErrorKind::OpsItemInvalidParameterError(inner) => {
-                    Error::OpsItemInvalidParameterError(inner)
+                crate::error::CreateOpsItemErrorKind::OpsItemInvalidParameterException(inner) => {
+                    Error::OpsItemInvalidParameterException(inner)
                 }
-                crate::error::CreateOpsItemErrorKind::OpsItemLimitExceededError(inner) => {
-                    Error::OpsItemLimitExceededError(inner)
+                crate::error::CreateOpsItemErrorKind::OpsItemLimitExceededException(inner) => {
+                    Error::OpsItemLimitExceededException(inner)
                 }
                 crate::error::CreateOpsItemErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -536,18 +550,18 @@ impl From<smithy_http::result::SdkError<crate::error::CreateOpsMetadataError>> f
                 crate::error::CreateOpsMetadataErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
-                crate::error::CreateOpsMetadataErrorKind::OpsMetadataAlreadyExistsError(inner) => {
-                    Error::OpsMetadataAlreadyExistsError(inner)
-                }
-                crate::error::CreateOpsMetadataErrorKind::OpsMetadataInvalidArgumentError(
+                crate::error::CreateOpsMetadataErrorKind::OpsMetadataAlreadyExistsException(
                     inner,
-                ) => Error::OpsMetadataInvalidArgumentError(inner),
-                crate::error::CreateOpsMetadataErrorKind::OpsMetadataLimitExceededError(inner) => {
-                    Error::OpsMetadataLimitExceededError(inner)
-                }
-                crate::error::CreateOpsMetadataErrorKind::OpsMetadataTooManyUpdatesError(inner) => {
-                    Error::OpsMetadataTooManyUpdatesError(inner)
-                }
+                ) => Error::OpsMetadataAlreadyExistsException(inner),
+                crate::error::CreateOpsMetadataErrorKind::OpsMetadataInvalidArgumentException(
+                    inner,
+                ) => Error::OpsMetadataInvalidArgumentException(inner),
+                crate::error::CreateOpsMetadataErrorKind::OpsMetadataLimitExceededException(
+                    inner,
+                ) => Error::OpsMetadataLimitExceededException(inner),
+                crate::error::CreateOpsMetadataErrorKind::OpsMetadataTooManyUpdatesException(
+                    inner,
+                ) => Error::OpsMetadataTooManyUpdatesException(inner),
                 crate::error::CreateOpsMetadataErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -566,9 +580,9 @@ impl From<smithy_http::result::SdkError<crate::error::CreatePatchBaselineError>>
                 crate::error::CreatePatchBaselineErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
-                crate::error::CreatePatchBaselineErrorKind::ResourceLimitExceededError(inner) => {
-                    Error::ResourceLimitExceededError(inner)
-                }
+                crate::error::CreatePatchBaselineErrorKind::ResourceLimitExceededException(
+                    inner,
+                ) => Error::ResourceLimitExceededException(inner),
                 crate::error::CreatePatchBaselineErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -582,9 +596,9 @@ impl From<smithy_http::result::SdkError<crate::error::CreateResourceDataSyncErro
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::CreateResourceDataSyncErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
-                crate::error::CreateResourceDataSyncErrorKind::ResourceDataSyncAlreadyExistsError(inner) => Error::ResourceDataSyncAlreadyExistsError(inner),
-                crate::error::CreateResourceDataSyncErrorKind::ResourceDataSyncCountExceededError(inner) => Error::ResourceDataSyncCountExceededError(inner),
-                crate::error::CreateResourceDataSyncErrorKind::ResourceDataSyncInvalidConfigurationError(inner) => Error::ResourceDataSyncInvalidConfigurationError(inner),
+                crate::error::CreateResourceDataSyncErrorKind::ResourceDataSyncAlreadyExistsException(inner) => Error::ResourceDataSyncAlreadyExistsException(inner),
+                crate::error::CreateResourceDataSyncErrorKind::ResourceDataSyncCountExceededException(inner) => Error::ResourceDataSyncCountExceededException(inner),
+                crate::error::CreateResourceDataSyncErrorKind::ResourceDataSyncInvalidConfigurationException(inner) => Error::ResourceDataSyncInvalidConfigurationException(inner),
                 crate::error::CreateResourceDataSyncErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
@@ -667,24 +681,14 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteDocumentError>> for 
 impl From<smithy_http::result::SdkError<crate::error::DeleteInventoryError>> for Error {
     fn from(err: smithy_http::result::SdkError<crate::error::DeleteInventoryError>) -> Self {
         match err {
-            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteInventoryErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
-                }
-                crate::error::DeleteInventoryErrorKind::InvalidDeleteInventoryParametersError(
-                    inner,
-                ) => Error::InvalidDeleteInventoryParametersError(inner),
-                crate::error::DeleteInventoryErrorKind::InvalidInventoryRequestError(inner) => {
-                    Error::InvalidInventoryRequestError(inner)
-                }
-                crate::error::DeleteInventoryErrorKind::InvalidOptionError(inner) => {
-                    Error::InvalidOptionError(inner)
-                }
-                crate::error::DeleteInventoryErrorKind::InvalidTypeNameError(inner) => {
-                    Error::InvalidTypeNameError(inner)
-                }
+            smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::DeleteInventoryErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+                crate::error::DeleteInventoryErrorKind::InvalidDeleteInventoryParametersException(inner) => Error::InvalidDeleteInventoryParametersException(inner),
+                crate::error::DeleteInventoryErrorKind::InvalidInventoryRequestException(inner) => Error::InvalidInventoryRequestException(inner),
+                crate::error::DeleteInventoryErrorKind::InvalidOptionException(inner) => Error::InvalidOptionException(inner),
+                crate::error::DeleteInventoryErrorKind::InvalidTypeNameException(inner) => Error::InvalidTypeNameException(inner),
                 crate::error::DeleteInventoryErrorKind::Unhandled(inner) => Error::Unhandled(inner),
-            },
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -713,11 +717,11 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteOpsMetadataError>> f
                 crate::error::DeleteOpsMetadataErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
-                crate::error::DeleteOpsMetadataErrorKind::OpsMetadataInvalidArgumentError(
+                crate::error::DeleteOpsMetadataErrorKind::OpsMetadataInvalidArgumentException(
                     inner,
-                ) => Error::OpsMetadataInvalidArgumentError(inner),
-                crate::error::DeleteOpsMetadataErrorKind::OpsMetadataNotFoundError(inner) => {
-                    Error::OpsMetadataNotFoundError(inner)
+                ) => Error::OpsMetadataInvalidArgumentException(inner),
+                crate::error::DeleteOpsMetadataErrorKind::OpsMetadataNotFoundException(inner) => {
+                    Error::OpsMetadataNotFoundException(inner)
                 }
                 crate::error::DeleteOpsMetadataErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -765,8 +769,8 @@ impl From<smithy_http::result::SdkError<crate::error::DeletePatchBaselineError>>
                 crate::error::DeletePatchBaselineErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
-                crate::error::DeletePatchBaselineErrorKind::ResourceInUseError(inner) => {
-                    Error::ResourceInUseError(inner)
+                crate::error::DeletePatchBaselineErrorKind::ResourceInUseException(inner) => {
+                    Error::ResourceInUseException(inner)
                 }
                 crate::error::DeletePatchBaselineErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -781,8 +785,8 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteResourceDataSyncErro
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DeleteResourceDataSyncErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
-                crate::error::DeleteResourceDataSyncErrorKind::ResourceDataSyncInvalidConfigurationError(inner) => Error::ResourceDataSyncInvalidConfigurationError(inner),
-                crate::error::DeleteResourceDataSyncErrorKind::ResourceDataSyncNotFoundError(inner) => Error::ResourceDataSyncNotFoundError(inner),
+                crate::error::DeleteResourceDataSyncErrorKind::ResourceDataSyncInvalidConfigurationException(inner) => Error::ResourceDataSyncInvalidConfigurationException(inner),
+                crate::error::DeleteResourceDataSyncErrorKind::ResourceDataSyncNotFoundException(inner) => Error::ResourceDataSyncNotFoundException(inner),
                 crate::error::DeleteResourceDataSyncErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
@@ -835,9 +839,9 @@ impl From<smithy_http::result::SdkError<crate::error::DeregisterTargetFromMainte
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
-                crate::error::DeregisterTargetFromMaintenanceWindowErrorKind::DoesNotExistError(inner) => Error::DoesNotExistError(inner),
+                crate::error::DeregisterTargetFromMaintenanceWindowErrorKind::DoesNotExistException(inner) => Error::DoesNotExistException(inner),
                 crate::error::DeregisterTargetFromMaintenanceWindowErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
-                crate::error::DeregisterTargetFromMaintenanceWindowErrorKind::TargetInUseError(inner) => Error::TargetInUseError(inner),
+                crate::error::DeregisterTargetFromMaintenanceWindowErrorKind::TargetInUseException(inner) => Error::TargetInUseException(inner),
                 crate::error::DeregisterTargetFromMaintenanceWindowErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
@@ -851,17 +855,11 @@ impl From<smithy_http::result::SdkError<crate::error::DeregisterTaskFromMaintena
         err: smithy_http::result::SdkError<crate::error::DeregisterTaskFromMaintenanceWindowError>,
     ) -> Self {
         match err {
-            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeregisterTaskFromMaintenanceWindowErrorKind::DoesNotExistError(
-                    inner,
-                ) => Error::DoesNotExistError(inner),
-                crate::error::DeregisterTaskFromMaintenanceWindowErrorKind::InternalServerError(
-                    inner,
-                ) => Error::InternalServerError(inner),
-                crate::error::DeregisterTaskFromMaintenanceWindowErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
+            smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::DeregisterTaskFromMaintenanceWindowErrorKind::DoesNotExistException(inner) => Error::DoesNotExistException(inner),
+                crate::error::DeregisterTaskFromMaintenanceWindowErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+                crate::error::DeregisterTaskFromMaintenanceWindowErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -993,7 +991,7 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeAutomationStepExec
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
-                crate::error::DescribeAutomationStepExecutionsErrorKind::AutomationExecutionNotFoundError(inner) => Error::AutomationExecutionNotFoundError(inner),
+                crate::error::DescribeAutomationStepExecutionsErrorKind::AutomationExecutionNotFoundException(inner) => Error::AutomationExecutionNotFoundException(inner),
                 crate::error::DescribeAutomationStepExecutionsErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
                 crate::error::DescribeAutomationStepExecutionsErrorKind::InvalidFilterKey(inner) => Error::InvalidFilterKey(inner),
                 crate::error::DescribeAutomationStepExecutionsErrorKind::InvalidFilterValue(inner) => Error::InvalidFilterValue(inner),
@@ -1101,7 +1099,7 @@ impl
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
-                crate::error::DescribeEffectivePatchesForPatchBaselineErrorKind::DoesNotExistError(inner) => Error::DoesNotExistError(inner),
+                crate::error::DescribeEffectivePatchesForPatchBaselineErrorKind::DoesNotExistException(inner) => Error::DoesNotExistException(inner),
                 crate::error::DescribeEffectivePatchesForPatchBaselineErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
                 crate::error::DescribeEffectivePatchesForPatchBaselineErrorKind::InvalidResourceId(inner) => Error::InvalidResourceId(inner),
                 crate::error::DescribeEffectivePatchesForPatchBaselineErrorKind::UnsupportedOperatingSystem(inner) => Error::UnsupportedOperatingSystem(inner),
@@ -1228,9 +1226,9 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeInventoryDeletions
                 crate::error::DescribeInventoryDeletionsErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
-                crate::error::DescribeInventoryDeletionsErrorKind::InvalidDeletionIdError(
+                crate::error::DescribeInventoryDeletionsErrorKind::InvalidDeletionIdException(
                     inner,
-                ) => Error::InvalidDeletionIdError(inner),
+                ) => Error::InvalidDeletionIdException(inner),
                 crate::error::DescribeInventoryDeletionsErrorKind::InvalidNextToken(inner) => {
                     Error::InvalidNextToken(inner)
                 }
@@ -1275,7 +1273,7 @@ impl
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
-                crate::error::DescribeMaintenanceWindowExecutionTaskInvocationsErrorKind::DoesNotExistError(inner) => Error::DoesNotExistError(inner),
+                crate::error::DescribeMaintenanceWindowExecutionTaskInvocationsErrorKind::DoesNotExistException(inner) => Error::DoesNotExistException(inner),
                 crate::error::DescribeMaintenanceWindowExecutionTaskInvocationsErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
                 crate::error::DescribeMaintenanceWindowExecutionTaskInvocationsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
@@ -1293,7 +1291,7 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeMaintenanceWindowE
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
-                crate::error::DescribeMaintenanceWindowExecutionTasksErrorKind::DoesNotExistError(inner) => Error::DoesNotExistError(inner),
+                crate::error::DescribeMaintenanceWindowExecutionTasksErrorKind::DoesNotExistException(inner) => Error::DoesNotExistException(inner),
                 crate::error::DescribeMaintenanceWindowExecutionTasksErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
                 crate::error::DescribeMaintenanceWindowExecutionTasksErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
@@ -1326,9 +1324,9 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeMaintenanceWindowS
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeMaintenanceWindowScheduleErrorKind::DoesNotExistError(
+                crate::error::DescribeMaintenanceWindowScheduleErrorKind::DoesNotExistException(
                     inner,
-                ) => Error::DoesNotExistError(inner),
+                ) => Error::DoesNotExistException(inner),
                 crate::error::DescribeMaintenanceWindowScheduleErrorKind::InternalServerError(
                     inner,
                 ) => Error::InternalServerError(inner),
@@ -1367,9 +1365,9 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeMaintenanceWindowT
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeMaintenanceWindowTargetsErrorKind::DoesNotExistError(
+                crate::error::DescribeMaintenanceWindowTargetsErrorKind::DoesNotExistException(
                     inner,
-                ) => Error::DoesNotExistError(inner),
+                ) => Error::DoesNotExistException(inner),
                 crate::error::DescribeMaintenanceWindowTargetsErrorKind::InternalServerError(
                     inner,
                 ) => Error::InternalServerError(inner),
@@ -1389,9 +1387,9 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeMaintenanceWindowT
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeMaintenanceWindowTasksErrorKind::DoesNotExistError(inner) => {
-                    Error::DoesNotExistError(inner)
-                }
+                crate::error::DescribeMaintenanceWindowTasksErrorKind::DoesNotExistException(
+                    inner,
+                ) => Error::DoesNotExistException(inner),
                 crate::error::DescribeMaintenanceWindowTasksErrorKind::InternalServerError(
                     inner,
                 ) => Error::InternalServerError(inner),
@@ -1542,9 +1540,9 @@ impl From<smithy_http::result::SdkError<crate::error::DisassociateOpsItemRelated
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DisassociateOpsItemRelatedItemErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
-                crate::error::DisassociateOpsItemRelatedItemErrorKind::OpsItemInvalidParameterError(inner) => Error::OpsItemInvalidParameterError(inner),
-                crate::error::DisassociateOpsItemRelatedItemErrorKind::OpsItemNotFoundError(inner) => Error::OpsItemNotFoundError(inner),
-                crate::error::DisassociateOpsItemRelatedItemErrorKind::OpsItemRelatedItemAssociationNotFoundError(inner) => Error::OpsItemRelatedItemAssociationNotFoundError(inner),
+                crate::error::DisassociateOpsItemRelatedItemErrorKind::OpsItemInvalidParameterException(inner) => Error::OpsItemInvalidParameterException(inner),
+                crate::error::DisassociateOpsItemRelatedItemErrorKind::OpsItemNotFoundException(inner) => Error::OpsItemNotFoundException(inner),
+                crate::error::DisassociateOpsItemRelatedItemErrorKind::OpsItemRelatedItemAssociationNotFoundException(inner) => Error::OpsItemRelatedItemAssociationNotFoundException(inner),
                 crate::error::DisassociateOpsItemRelatedItemErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
@@ -1554,17 +1552,11 @@ impl From<smithy_http::result::SdkError<crate::error::DisassociateOpsItemRelated
 impl From<smithy_http::result::SdkError<crate::error::GetAutomationExecutionError>> for Error {
     fn from(err: smithy_http::result::SdkError<crate::error::GetAutomationExecutionError>) -> Self {
         match err {
-            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetAutomationExecutionErrorKind::AutomationExecutionNotFoundError(
-                    inner,
-                ) => Error::AutomationExecutionNotFoundError(inner),
-                crate::error::GetAutomationExecutionErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
-                }
-                crate::error::GetAutomationExecutionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
+            smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::GetAutomationExecutionErrorKind::AutomationExecutionNotFoundException(inner) => Error::AutomationExecutionNotFoundException(inner),
+                crate::error::GetAutomationExecutionErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+                crate::error::GetAutomationExecutionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -1582,8 +1574,8 @@ impl From<smithy_http::result::SdkError<crate::error::GetCalendarStateError>> fo
                 crate::error::GetCalendarStateErrorKind::InvalidDocumentType(inner) => {
                     Error::InvalidDocumentType(inner)
                 }
-                crate::error::GetCalendarStateErrorKind::UnsupportedCalendarError(inner) => {
-                    Error::UnsupportedCalendarError(inner)
+                crate::error::GetCalendarStateErrorKind::UnsupportedCalendarException(inner) => {
+                    Error::UnsupportedCalendarException(inner)
                 }
                 crate::error::GetCalendarStateErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -1663,7 +1655,7 @@ impl From<smithy_http::result::SdkError<crate::error::GetDeployablePatchSnapshot
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::GetDeployablePatchSnapshotForInstanceErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
-                crate::error::GetDeployablePatchSnapshotForInstanceErrorKind::UnsupportedFeatureRequiredError(inner) => Error::UnsupportedFeatureRequiredError(inner),
+                crate::error::GetDeployablePatchSnapshotForInstanceErrorKind::UnsupportedFeatureRequiredException(inner) => Error::UnsupportedFeatureRequiredException(inner),
                 crate::error::GetDeployablePatchSnapshotForInstanceErrorKind::UnsupportedOperatingSystem(inner) => Error::UnsupportedOperatingSystem(inner),
                 crate::error::GetDeployablePatchSnapshotForInstanceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
@@ -1697,23 +1689,23 @@ impl From<smithy_http::result::SdkError<crate::error::GetInventoryError>> for Er
                 crate::error::GetInventoryErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
-                crate::error::GetInventoryErrorKind::InvalidAggregatorError(inner) => {
-                    Error::InvalidAggregatorError(inner)
+                crate::error::GetInventoryErrorKind::InvalidAggregatorException(inner) => {
+                    Error::InvalidAggregatorException(inner)
                 }
                 crate::error::GetInventoryErrorKind::InvalidFilter(inner) => {
                     Error::InvalidFilter(inner)
                 }
-                crate::error::GetInventoryErrorKind::InvalidInventoryGroupError(inner) => {
-                    Error::InvalidInventoryGroupError(inner)
+                crate::error::GetInventoryErrorKind::InvalidInventoryGroupException(inner) => {
+                    Error::InvalidInventoryGroupException(inner)
                 }
                 crate::error::GetInventoryErrorKind::InvalidNextToken(inner) => {
                     Error::InvalidNextToken(inner)
                 }
-                crate::error::GetInventoryErrorKind::InvalidResultAttributeError(inner) => {
-                    Error::InvalidResultAttributeError(inner)
+                crate::error::GetInventoryErrorKind::InvalidResultAttributeException(inner) => {
+                    Error::InvalidResultAttributeException(inner)
                 }
-                crate::error::GetInventoryErrorKind::InvalidTypeNameError(inner) => {
-                    Error::InvalidTypeNameError(inner)
+                crate::error::GetInventoryErrorKind::InvalidTypeNameException(inner) => {
+                    Error::InvalidTypeNameException(inner)
                 }
                 crate::error::GetInventoryErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -1731,8 +1723,8 @@ impl From<smithy_http::result::SdkError<crate::error::GetInventorySchemaError>> 
                 crate::error::GetInventorySchemaErrorKind::InvalidNextToken(inner) => {
                     Error::InvalidNextToken(inner)
                 }
-                crate::error::GetInventorySchemaErrorKind::InvalidTypeNameError(inner) => {
-                    Error::InvalidTypeNameError(inner)
+                crate::error::GetInventorySchemaErrorKind::InvalidTypeNameException(inner) => {
+                    Error::InvalidTypeNameException(inner)
                 }
                 crate::error::GetInventorySchemaErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -1746,8 +1738,8 @@ impl From<smithy_http::result::SdkError<crate::error::GetMaintenanceWindowError>
     fn from(err: smithy_http::result::SdkError<crate::error::GetMaintenanceWindowError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetMaintenanceWindowErrorKind::DoesNotExistError(inner) => {
-                    Error::DoesNotExistError(inner)
+                crate::error::GetMaintenanceWindowErrorKind::DoesNotExistException(inner) => {
+                    Error::DoesNotExistException(inner)
                 }
                 crate::error::GetMaintenanceWindowErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
@@ -1768,9 +1760,9 @@ impl From<smithy_http::result::SdkError<crate::error::GetMaintenanceWindowExecut
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetMaintenanceWindowExecutionErrorKind::DoesNotExistError(inner) => {
-                    Error::DoesNotExistError(inner)
-                }
+                crate::error::GetMaintenanceWindowExecutionErrorKind::DoesNotExistException(
+                    inner,
+                ) => Error::DoesNotExistException(inner),
                 crate::error::GetMaintenanceWindowExecutionErrorKind::InternalServerError(
                     inner,
                 ) => Error::InternalServerError(inner),
@@ -1790,9 +1782,9 @@ impl From<smithy_http::result::SdkError<crate::error::GetMaintenanceWindowExecut
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetMaintenanceWindowExecutionTaskErrorKind::DoesNotExistError(
+                crate::error::GetMaintenanceWindowExecutionTaskErrorKind::DoesNotExistException(
                     inner,
-                ) => Error::DoesNotExistError(inner),
+                ) => Error::DoesNotExistException(inner),
                 crate::error::GetMaintenanceWindowExecutionTaskErrorKind::InternalServerError(
                     inner,
                 ) => Error::InternalServerError(inner),
@@ -1818,7 +1810,7 @@ impl
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
-                crate::error::GetMaintenanceWindowExecutionTaskInvocationErrorKind::DoesNotExistError(inner) => Error::DoesNotExistError(inner),
+                crate::error::GetMaintenanceWindowExecutionTaskInvocationErrorKind::DoesNotExistException(inner) => Error::DoesNotExistException(inner),
                 crate::error::GetMaintenanceWindowExecutionTaskInvocationErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
                 crate::error::GetMaintenanceWindowExecutionTaskInvocationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
@@ -1832,8 +1824,8 @@ impl From<smithy_http::result::SdkError<crate::error::GetMaintenanceWindowTaskEr
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetMaintenanceWindowTaskErrorKind::DoesNotExistError(inner) => {
-                    Error::DoesNotExistError(inner)
+                crate::error::GetMaintenanceWindowTaskErrorKind::DoesNotExistException(inner) => {
+                    Error::DoesNotExistException(inner)
                 }
                 crate::error::GetMaintenanceWindowTaskErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
@@ -1853,8 +1845,8 @@ impl From<smithy_http::result::SdkError<crate::error::GetOpsItemError>> for Erro
                 crate::error::GetOpsItemErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
-                crate::error::GetOpsItemErrorKind::OpsItemNotFoundError(inner) => {
-                    Error::OpsItemNotFoundError(inner)
+                crate::error::GetOpsItemErrorKind::OpsItemNotFoundException(inner) => {
+                    Error::OpsItemNotFoundException(inner)
                 }
                 crate::error::GetOpsItemErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -1869,11 +1861,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetOpsMetadataError>> for 
                 crate::error::GetOpsMetadataErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
-                crate::error::GetOpsMetadataErrorKind::OpsMetadataInvalidArgumentError(inner) => {
-                    Error::OpsMetadataInvalidArgumentError(inner)
-                }
-                crate::error::GetOpsMetadataErrorKind::OpsMetadataNotFoundError(inner) => {
-                    Error::OpsMetadataNotFoundError(inner)
+                crate::error::GetOpsMetadataErrorKind::OpsMetadataInvalidArgumentException(
+                    inner,
+                ) => Error::OpsMetadataInvalidArgumentException(inner),
+                crate::error::GetOpsMetadataErrorKind::OpsMetadataNotFoundException(inner) => {
+                    Error::OpsMetadataNotFoundException(inner)
                 }
                 crate::error::GetOpsMetadataErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -1888,8 +1880,8 @@ impl From<smithy_http::result::SdkError<crate::error::GetOpsSummaryError>> for E
                 crate::error::GetOpsSummaryErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
-                crate::error::GetOpsSummaryErrorKind::InvalidAggregatorError(inner) => {
-                    Error::InvalidAggregatorError(inner)
+                crate::error::GetOpsSummaryErrorKind::InvalidAggregatorException(inner) => {
+                    Error::InvalidAggregatorException(inner)
                 }
                 crate::error::GetOpsSummaryErrorKind::InvalidFilter(inner) => {
                     Error::InvalidFilter(inner)
@@ -1897,11 +1889,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetOpsSummaryError>> for E
                 crate::error::GetOpsSummaryErrorKind::InvalidNextToken(inner) => {
                     Error::InvalidNextToken(inner)
                 }
-                crate::error::GetOpsSummaryErrorKind::InvalidTypeNameError(inner) => {
-                    Error::InvalidTypeNameError(inner)
+                crate::error::GetOpsSummaryErrorKind::InvalidTypeNameException(inner) => {
+                    Error::InvalidTypeNameException(inner)
                 }
-                crate::error::GetOpsSummaryErrorKind::ResourceDataSyncNotFoundError(inner) => {
-                    Error::ResourceDataSyncNotFoundError(inner)
+                crate::error::GetOpsSummaryErrorKind::ResourceDataSyncNotFoundException(inner) => {
+                    Error::ResourceDataSyncNotFoundException(inner)
                 }
                 crate::error::GetOpsSummaryErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -2005,8 +1997,8 @@ impl From<smithy_http::result::SdkError<crate::error::GetPatchBaselineError>> fo
     fn from(err: smithy_http::result::SdkError<crate::error::GetPatchBaselineError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetPatchBaselineErrorKind::DoesNotExistError(inner) => {
-                    Error::DoesNotExistError(inner)
+                crate::error::GetPatchBaselineErrorKind::DoesNotExistException(inner) => {
+                    Error::DoesNotExistException(inner)
                 }
                 crate::error::GetPatchBaselineErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
@@ -2299,8 +2291,8 @@ impl From<smithy_http::result::SdkError<crate::error::ListInventoryEntriesError>
                 crate::error::ListInventoryEntriesErrorKind::InvalidNextToken(inner) => {
                     Error::InvalidNextToken(inner)
                 }
-                crate::error::ListInventoryEntriesErrorKind::InvalidTypeNameError(inner) => {
-                    Error::InvalidTypeNameError(inner)
+                crate::error::ListInventoryEntriesErrorKind::InvalidTypeNameException(inner) => {
+                    Error::InvalidTypeNameException(inner)
                 }
                 crate::error::ListInventoryEntriesErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -2317,14 +2309,14 @@ impl From<smithy_http::result::SdkError<crate::error::ListOpsItemEventsError>> f
                 crate::error::ListOpsItemEventsErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
-                crate::error::ListOpsItemEventsErrorKind::OpsItemInvalidParameterError(inner) => {
-                    Error::OpsItemInvalidParameterError(inner)
+                crate::error::ListOpsItemEventsErrorKind::OpsItemInvalidParameterException(
+                    inner,
+                ) => Error::OpsItemInvalidParameterException(inner),
+                crate::error::ListOpsItemEventsErrorKind::OpsItemLimitExceededException(inner) => {
+                    Error::OpsItemLimitExceededException(inner)
                 }
-                crate::error::ListOpsItemEventsErrorKind::OpsItemLimitExceededError(inner) => {
-                    Error::OpsItemLimitExceededError(inner)
-                }
-                crate::error::ListOpsItemEventsErrorKind::OpsItemNotFoundError(inner) => {
-                    Error::OpsItemNotFoundError(inner)
+                crate::error::ListOpsItemEventsErrorKind::OpsItemNotFoundException(inner) => {
+                    Error::OpsItemNotFoundException(inner)
                 }
                 crate::error::ListOpsItemEventsErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -2339,17 +2331,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListOpsItemRelatedItemsErr
         err: smithy_http::result::SdkError<crate::error::ListOpsItemRelatedItemsError>,
     ) -> Self {
         match err {
-            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListOpsItemRelatedItemsErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
-                }
-                crate::error::ListOpsItemRelatedItemsErrorKind::OpsItemInvalidParameterError(
-                    inner,
-                ) => Error::OpsItemInvalidParameterError(inner),
-                crate::error::ListOpsItemRelatedItemsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
+            smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::ListOpsItemRelatedItemsErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+                crate::error::ListOpsItemRelatedItemsErrorKind::OpsItemInvalidParameterException(inner) => Error::OpsItemInvalidParameterException(inner),
+                crate::error::ListOpsItemRelatedItemsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -2361,9 +2347,9 @@ impl From<smithy_http::result::SdkError<crate::error::ListOpsMetadataError>> for
                 crate::error::ListOpsMetadataErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
-                crate::error::ListOpsMetadataErrorKind::OpsMetadataInvalidArgumentError(inner) => {
-                    Error::OpsMetadataInvalidArgumentError(inner)
-                }
+                crate::error::ListOpsMetadataErrorKind::OpsMetadataInvalidArgumentException(
+                    inner,
+                ) => Error::OpsMetadataInvalidArgumentException(inner),
                 crate::error::ListOpsMetadataErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
             _ => Error::Unhandled(err.into()),
@@ -2401,7 +2387,7 @@ impl From<smithy_http::result::SdkError<crate::error::ListResourceDataSyncError>
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::ListResourceDataSyncErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
                 crate::error::ListResourceDataSyncErrorKind::InvalidNextToken(inner) => Error::InvalidNextToken(inner),
-                crate::error::ListResourceDataSyncErrorKind::ResourceDataSyncInvalidConfigurationError(inner) => Error::ResourceDataSyncInvalidConfigurationError(inner),
+                crate::error::ListResourceDataSyncErrorKind::ResourceDataSyncInvalidConfigurationException(inner) => Error::ResourceDataSyncInvalidConfigurationException(inner),
                 crate::error::ListResourceDataSyncErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
@@ -2462,13 +2448,13 @@ impl From<smithy_http::result::SdkError<crate::error::PutComplianceItemsError>> 
     fn from(err: smithy_http::result::SdkError<crate::error::PutComplianceItemsError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
-                crate::error::PutComplianceItemsErrorKind::ComplianceTypeCountLimitExceededError(inner) => Error::ComplianceTypeCountLimitExceededError(inner),
+                crate::error::PutComplianceItemsErrorKind::ComplianceTypeCountLimitExceededException(inner) => Error::ComplianceTypeCountLimitExceededException(inner),
                 crate::error::PutComplianceItemsErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
-                crate::error::PutComplianceItemsErrorKind::InvalidItemContentError(inner) => Error::InvalidItemContentError(inner),
+                crate::error::PutComplianceItemsErrorKind::InvalidItemContentException(inner) => Error::InvalidItemContentException(inner),
                 crate::error::PutComplianceItemsErrorKind::InvalidResourceId(inner) => Error::InvalidResourceId(inner),
                 crate::error::PutComplianceItemsErrorKind::InvalidResourceType(inner) => Error::InvalidResourceType(inner),
-                crate::error::PutComplianceItemsErrorKind::ItemSizeLimitExceededError(inner) => Error::ItemSizeLimitExceededError(inner),
-                crate::error::PutComplianceItemsErrorKind::TotalSizeLimitExceededError(inner) => Error::TotalSizeLimitExceededError(inner),
+                crate::error::PutComplianceItemsErrorKind::ItemSizeLimitExceededException(inner) => Error::ItemSizeLimitExceededException(inner),
+                crate::error::PutComplianceItemsErrorKind::TotalSizeLimitExceededException(inner) => Error::TotalSizeLimitExceededException(inner),
                 crate::error::PutComplianceItemsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
@@ -2479,42 +2465,42 @@ impl From<smithy_http::result::SdkError<crate::error::PutInventoryError>> for Er
     fn from(err: smithy_http::result::SdkError<crate::error::PutInventoryError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::PutInventoryErrorKind::CustomSchemaCountLimitExceededError(inner) => {
-                    Error::CustomSchemaCountLimitExceededError(inner)
-                }
+                crate::error::PutInventoryErrorKind::CustomSchemaCountLimitExceededException(
+                    inner,
+                ) => Error::CustomSchemaCountLimitExceededException(inner),
                 crate::error::PutInventoryErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
                 crate::error::PutInventoryErrorKind::InvalidInstanceId(inner) => {
                     Error::InvalidInstanceId(inner)
                 }
-                crate::error::PutInventoryErrorKind::InvalidInventoryItemContextError(inner) => {
-                    Error::InvalidInventoryItemContextError(inner)
-                }
-                crate::error::PutInventoryErrorKind::InvalidItemContentError(inner) => {
-                    Error::InvalidItemContentError(inner)
-                }
-                crate::error::PutInventoryErrorKind::InvalidTypeNameError(inner) => {
-                    Error::InvalidTypeNameError(inner)
-                }
-                crate::error::PutInventoryErrorKind::ItemContentMismatchError(inner) => {
-                    Error::ItemContentMismatchError(inner)
-                }
-                crate::error::PutInventoryErrorKind::ItemSizeLimitExceededError(inner) => {
-                    Error::ItemSizeLimitExceededError(inner)
-                }
-                crate::error::PutInventoryErrorKind::SubTypeCountLimitExceededError(inner) => {
-                    Error::SubTypeCountLimitExceededError(inner)
-                }
-                crate::error::PutInventoryErrorKind::TotalSizeLimitExceededError(inner) => {
-                    Error::TotalSizeLimitExceededError(inner)
-                }
-                crate::error::PutInventoryErrorKind::UnsupportedInventoryItemContextError(
+                crate::error::PutInventoryErrorKind::InvalidInventoryItemContextException(
                     inner,
-                ) => Error::UnsupportedInventoryItemContextError(inner),
-                crate::error::PutInventoryErrorKind::UnsupportedInventorySchemaVersionError(
+                ) => Error::InvalidInventoryItemContextException(inner),
+                crate::error::PutInventoryErrorKind::InvalidItemContentException(inner) => {
+                    Error::InvalidItemContentException(inner)
+                }
+                crate::error::PutInventoryErrorKind::InvalidTypeNameException(inner) => {
+                    Error::InvalidTypeNameException(inner)
+                }
+                crate::error::PutInventoryErrorKind::ItemContentMismatchException(inner) => {
+                    Error::ItemContentMismatchException(inner)
+                }
+                crate::error::PutInventoryErrorKind::ItemSizeLimitExceededException(inner) => {
+                    Error::ItemSizeLimitExceededException(inner)
+                }
+                crate::error::PutInventoryErrorKind::SubTypeCountLimitExceededException(inner) => {
+                    Error::SubTypeCountLimitExceededException(inner)
+                }
+                crate::error::PutInventoryErrorKind::TotalSizeLimitExceededException(inner) => {
+                    Error::TotalSizeLimitExceededException(inner)
+                }
+                crate::error::PutInventoryErrorKind::UnsupportedInventoryItemContextException(
                     inner,
-                ) => Error::UnsupportedInventorySchemaVersionError(inner),
+                ) => Error::UnsupportedInventoryItemContextException(inner),
+                crate::error::PutInventoryErrorKind::UnsupportedInventorySchemaVersionException(
+                    inner,
+                ) => Error::UnsupportedInventorySchemaVersionException(inner),
                 crate::error::PutInventoryErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
             _ => Error::Unhandled(err.into()),
@@ -2525,29 +2511,29 @@ impl From<smithy_http::result::SdkError<crate::error::PutParameterError>> for Er
     fn from(err: smithy_http::result::SdkError<crate::error::PutParameterError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::PutParameterErrorKind::HierarchyLevelLimitExceededError(inner) => {
-                    Error::HierarchyLevelLimitExceededError(inner)
+                crate::error::PutParameterErrorKind::HierarchyLevelLimitExceededException(
+                    inner,
+                ) => Error::HierarchyLevelLimitExceededException(inner),
+                crate::error::PutParameterErrorKind::HierarchyTypeMismatchException(inner) => {
+                    Error::HierarchyTypeMismatchException(inner)
                 }
-                crate::error::PutParameterErrorKind::HierarchyTypeMismatchError(inner) => {
-                    Error::HierarchyTypeMismatchError(inner)
-                }
-                crate::error::PutParameterErrorKind::IncompatiblePolicyError(inner) => {
-                    Error::IncompatiblePolicyError(inner)
+                crate::error::PutParameterErrorKind::IncompatiblePolicyException(inner) => {
+                    Error::IncompatiblePolicyException(inner)
                 }
                 crate::error::PutParameterErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
-                crate::error::PutParameterErrorKind::InvalidAllowedPatternError(inner) => {
-                    Error::InvalidAllowedPatternError(inner)
+                crate::error::PutParameterErrorKind::InvalidAllowedPatternException(inner) => {
+                    Error::InvalidAllowedPatternException(inner)
                 }
                 crate::error::PutParameterErrorKind::InvalidKeyId(inner) => {
                     Error::InvalidKeyId(inner)
                 }
-                crate::error::PutParameterErrorKind::InvalidPolicyAttributeError(inner) => {
-                    Error::InvalidPolicyAttributeError(inner)
+                crate::error::PutParameterErrorKind::InvalidPolicyAttributeException(inner) => {
+                    Error::InvalidPolicyAttributeException(inner)
                 }
-                crate::error::PutParameterErrorKind::InvalidPolicyTypeError(inner) => {
-                    Error::InvalidPolicyTypeError(inner)
+                crate::error::PutParameterErrorKind::InvalidPolicyTypeException(inner) => {
+                    Error::InvalidPolicyTypeException(inner)
                 }
                 crate::error::PutParameterErrorKind::ParameterAlreadyExists(inner) => {
                     Error::ParameterAlreadyExists(inner)
@@ -2558,11 +2544,11 @@ impl From<smithy_http::result::SdkError<crate::error::PutParameterError>> for Er
                 crate::error::PutParameterErrorKind::ParameterMaxVersionLimitExceeded(inner) => {
                     Error::ParameterMaxVersionLimitExceeded(inner)
                 }
-                crate::error::PutParameterErrorKind::ParameterPatternMismatchError(inner) => {
-                    Error::ParameterPatternMismatchError(inner)
+                crate::error::PutParameterErrorKind::ParameterPatternMismatchException(inner) => {
+                    Error::ParameterPatternMismatchException(inner)
                 }
-                crate::error::PutParameterErrorKind::PoliciesLimitExceededError(inner) => {
-                    Error::PoliciesLimitExceededError(inner)
+                crate::error::PutParameterErrorKind::PoliciesLimitExceededException(inner) => {
+                    Error::PoliciesLimitExceededException(inner)
                 }
                 crate::error::PutParameterErrorKind::TooManyUpdates(inner) => {
                     Error::TooManyUpdates(inner)
@@ -2584,9 +2570,9 @@ impl From<smithy_http::result::SdkError<crate::error::RegisterDefaultPatchBaseli
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::RegisterDefaultPatchBaselineErrorKind::DoesNotExistError(inner) => {
-                    Error::DoesNotExistError(inner)
-                }
+                crate::error::RegisterDefaultPatchBaselineErrorKind::DoesNotExistException(
+                    inner,
+                ) => Error::DoesNotExistException(inner),
                 crate::error::RegisterDefaultPatchBaselineErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
@@ -2609,11 +2595,11 @@ impl From<smithy_http::result::SdkError<crate::error::RegisterPatchBaselineForPa
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
-                crate::error::RegisterPatchBaselineForPatchGroupErrorKind::AlreadyExistsError(inner) => Error::AlreadyExistsError(inner),
-                crate::error::RegisterPatchBaselineForPatchGroupErrorKind::DoesNotExistError(inner) => Error::DoesNotExistError(inner),
+                crate::error::RegisterPatchBaselineForPatchGroupErrorKind::AlreadyExistsException(inner) => Error::AlreadyExistsException(inner),
+                crate::error::RegisterPatchBaselineForPatchGroupErrorKind::DoesNotExistException(inner) => Error::DoesNotExistException(inner),
                 crate::error::RegisterPatchBaselineForPatchGroupErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
                 crate::error::RegisterPatchBaselineForPatchGroupErrorKind::InvalidResourceId(inner) => Error::InvalidResourceId(inner),
-                crate::error::RegisterPatchBaselineForPatchGroupErrorKind::ResourceLimitExceededError(inner) => Error::ResourceLimitExceededError(inner),
+                crate::error::RegisterPatchBaselineForPatchGroupErrorKind::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
                 crate::error::RegisterPatchBaselineForPatchGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
@@ -2628,10 +2614,10 @@ impl From<smithy_http::result::SdkError<crate::error::RegisterTargetWithMaintena
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
-                crate::error::RegisterTargetWithMaintenanceWindowErrorKind::DoesNotExistError(inner) => Error::DoesNotExistError(inner),
+                crate::error::RegisterTargetWithMaintenanceWindowErrorKind::DoesNotExistException(inner) => Error::DoesNotExistException(inner),
                 crate::error::RegisterTargetWithMaintenanceWindowErrorKind::IdempotentParameterMismatch(inner) => Error::IdempotentParameterMismatch(inner),
                 crate::error::RegisterTargetWithMaintenanceWindowErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
-                crate::error::RegisterTargetWithMaintenanceWindowErrorKind::ResourceLimitExceededError(inner) => Error::ResourceLimitExceededError(inner),
+                crate::error::RegisterTargetWithMaintenanceWindowErrorKind::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
                 crate::error::RegisterTargetWithMaintenanceWindowErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
@@ -2646,11 +2632,11 @@ impl From<smithy_http::result::SdkError<crate::error::RegisterTaskWithMaintenanc
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
-                crate::error::RegisterTaskWithMaintenanceWindowErrorKind::DoesNotExistError(inner) => Error::DoesNotExistError(inner),
-                crate::error::RegisterTaskWithMaintenanceWindowErrorKind::FeatureNotAvailableError(inner) => Error::FeatureNotAvailableError(inner),
+                crate::error::RegisterTaskWithMaintenanceWindowErrorKind::DoesNotExistException(inner) => Error::DoesNotExistException(inner),
+                crate::error::RegisterTaskWithMaintenanceWindowErrorKind::FeatureNotAvailableException(inner) => Error::FeatureNotAvailableException(inner),
                 crate::error::RegisterTaskWithMaintenanceWindowErrorKind::IdempotentParameterMismatch(inner) => Error::IdempotentParameterMismatch(inner),
                 crate::error::RegisterTaskWithMaintenanceWindowErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
-                crate::error::RegisterTaskWithMaintenanceWindowErrorKind::ResourceLimitExceededError(inner) => Error::ResourceLimitExceededError(inner),
+                crate::error::RegisterTaskWithMaintenanceWindowErrorKind::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
                 crate::error::RegisterTaskWithMaintenanceWindowErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
@@ -2706,8 +2692,8 @@ impl From<smithy_http::result::SdkError<crate::error::ResumeSessionError>> for E
     fn from(err: smithy_http::result::SdkError<crate::error::ResumeSessionError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ResumeSessionErrorKind::DoesNotExistError(inner) => {
-                    Error::DoesNotExistError(inner)
+                crate::error::ResumeSessionErrorKind::DoesNotExistException(inner) => {
+                    Error::DoesNotExistException(inner)
                 }
                 crate::error::ResumeSessionErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
@@ -2721,23 +2707,13 @@ impl From<smithy_http::result::SdkError<crate::error::ResumeSessionError>> for E
 impl From<smithy_http::result::SdkError<crate::error::SendAutomationSignalError>> for Error {
     fn from(err: smithy_http::result::SdkError<crate::error::SendAutomationSignalError>) -> Self {
         match err {
-            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::SendAutomationSignalErrorKind::AutomationExecutionNotFoundError(
-                    inner,
-                ) => Error::AutomationExecutionNotFoundError(inner),
-                crate::error::SendAutomationSignalErrorKind::AutomationStepNotFoundError(inner) => {
-                    Error::AutomationStepNotFoundError(inner)
-                }
-                crate::error::SendAutomationSignalErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
-                }
-                crate::error::SendAutomationSignalErrorKind::InvalidAutomationSignalError(
-                    inner,
-                ) => Error::InvalidAutomationSignalError(inner),
-                crate::error::SendAutomationSignalErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
+            smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::SendAutomationSignalErrorKind::AutomationExecutionNotFoundException(inner) => Error::AutomationExecutionNotFoundException(inner),
+                crate::error::SendAutomationSignalErrorKind::AutomationStepNotFoundException(inner) => Error::AutomationStepNotFoundException(inner),
+                crate::error::SendAutomationSignalErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+                crate::error::SendAutomationSignalErrorKind::InvalidAutomationSignalException(inner) => Error::InvalidAutomationSignalException(inner),
+                crate::error::SendAutomationSignalErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -2807,12 +2783,12 @@ impl From<smithy_http::result::SdkError<crate::error::StartAutomationExecutionEr
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
-                crate::error::StartAutomationExecutionErrorKind::AutomationDefinitionNotFoundError(inner) => Error::AutomationDefinitionNotFoundError(inner),
-                crate::error::StartAutomationExecutionErrorKind::AutomationDefinitionVersionNotFoundError(inner) => Error::AutomationDefinitionVersionNotFoundError(inner),
-                crate::error::StartAutomationExecutionErrorKind::AutomationExecutionLimitExceededError(inner) => Error::AutomationExecutionLimitExceededError(inner),
+                crate::error::StartAutomationExecutionErrorKind::AutomationDefinitionNotFoundException(inner) => Error::AutomationDefinitionNotFoundException(inner),
+                crate::error::StartAutomationExecutionErrorKind::AutomationDefinitionVersionNotFoundException(inner) => Error::AutomationDefinitionVersionNotFoundException(inner),
+                crate::error::StartAutomationExecutionErrorKind::AutomationExecutionLimitExceededException(inner) => Error::AutomationExecutionLimitExceededException(inner),
                 crate::error::StartAutomationExecutionErrorKind::IdempotentParameterMismatch(inner) => Error::IdempotentParameterMismatch(inner),
                 crate::error::StartAutomationExecutionErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
-                crate::error::StartAutomationExecutionErrorKind::InvalidAutomationExecutionParametersError(inner) => Error::InvalidAutomationExecutionParametersError(inner),
+                crate::error::StartAutomationExecutionErrorKind::InvalidAutomationExecutionParametersException(inner) => Error::InvalidAutomationExecutionParametersException(inner),
                 crate::error::StartAutomationExecutionErrorKind::InvalidTarget(inner) => Error::InvalidTarget(inner),
                 crate::error::StartAutomationExecutionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
@@ -2826,13 +2802,13 @@ impl From<smithy_http::result::SdkError<crate::error::StartChangeRequestExecutio
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
-                crate::error::StartChangeRequestExecutionErrorKind::AutomationDefinitionNotApprovedError(inner) => Error::AutomationDefinitionNotApprovedError(inner),
-                crate::error::StartChangeRequestExecutionErrorKind::AutomationDefinitionNotFoundError(inner) => Error::AutomationDefinitionNotFoundError(inner),
-                crate::error::StartChangeRequestExecutionErrorKind::AutomationDefinitionVersionNotFoundError(inner) => Error::AutomationDefinitionVersionNotFoundError(inner),
-                crate::error::StartChangeRequestExecutionErrorKind::AutomationExecutionLimitExceededError(inner) => Error::AutomationExecutionLimitExceededError(inner),
+                crate::error::StartChangeRequestExecutionErrorKind::AutomationDefinitionNotApprovedException(inner) => Error::AutomationDefinitionNotApprovedException(inner),
+                crate::error::StartChangeRequestExecutionErrorKind::AutomationDefinitionNotFoundException(inner) => Error::AutomationDefinitionNotFoundException(inner),
+                crate::error::StartChangeRequestExecutionErrorKind::AutomationDefinitionVersionNotFoundException(inner) => Error::AutomationDefinitionVersionNotFoundException(inner),
+                crate::error::StartChangeRequestExecutionErrorKind::AutomationExecutionLimitExceededException(inner) => Error::AutomationExecutionLimitExceededException(inner),
                 crate::error::StartChangeRequestExecutionErrorKind::IdempotentParameterMismatch(inner) => Error::IdempotentParameterMismatch(inner),
                 crate::error::StartChangeRequestExecutionErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
-                crate::error::StartChangeRequestExecutionErrorKind::InvalidAutomationExecutionParametersError(inner) => Error::InvalidAutomationExecutionParametersError(inner),
+                crate::error::StartChangeRequestExecutionErrorKind::InvalidAutomationExecutionParametersException(inner) => Error::InvalidAutomationExecutionParametersException(inner),
                 crate::error::StartChangeRequestExecutionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
@@ -2864,9 +2840,9 @@ impl From<smithy_http::result::SdkError<crate::error::StopAutomationExecutionErr
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
-                crate::error::StopAutomationExecutionErrorKind::AutomationExecutionNotFoundError(inner) => Error::AutomationExecutionNotFoundError(inner),
+                crate::error::StopAutomationExecutionErrorKind::AutomationExecutionNotFoundException(inner) => Error::AutomationExecutionNotFoundException(inner),
                 crate::error::StopAutomationExecutionErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
-                crate::error::StopAutomationExecutionErrorKind::InvalidAutomationStatusUpdateError(inner) => Error::InvalidAutomationStatusUpdateError(inner),
+                crate::error::StopAutomationExecutionErrorKind::InvalidAutomationStatusUpdateException(inner) => Error::InvalidAutomationStatusUpdateException(inner),
                 crate::error::StopAutomationExecutionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
@@ -2877,8 +2853,8 @@ impl From<smithy_http::result::SdkError<crate::error::TerminateSessionError>> fo
     fn from(err: smithy_http::result::SdkError<crate::error::TerminateSessionError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::TerminateSessionErrorKind::DoesNotExistError(inner) => {
-                    Error::DoesNotExistError(inner)
+                crate::error::TerminateSessionErrorKind::DoesNotExistException(inner) => {
+                    Error::DoesNotExistException(inner)
                 }
                 crate::error::TerminateSessionErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
@@ -3085,8 +3061,8 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateMaintenanceWindowErr
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateMaintenanceWindowErrorKind::DoesNotExistError(inner) => {
-                    Error::DoesNotExistError(inner)
+                crate::error::UpdateMaintenanceWindowErrorKind::DoesNotExistException(inner) => {
+                    Error::DoesNotExistException(inner)
                 }
                 crate::error::UpdateMaintenanceWindowErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
@@ -3107,9 +3083,9 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateMaintenanceWindowTar
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateMaintenanceWindowTargetErrorKind::DoesNotExistError(inner) => {
-                    Error::DoesNotExistError(inner)
-                }
+                crate::error::UpdateMaintenanceWindowTargetErrorKind::DoesNotExistException(
+                    inner,
+                ) => Error::DoesNotExistException(inner),
                 crate::error::UpdateMaintenanceWindowTargetErrorKind::InternalServerError(
                     inner,
                 ) => Error::InternalServerError(inner),
@@ -3127,9 +3103,9 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateMaintenanceWindowTas
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateMaintenanceWindowTaskErrorKind::DoesNotExistError(inner) => {
-                    Error::DoesNotExistError(inner)
-                }
+                crate::error::UpdateMaintenanceWindowTaskErrorKind::DoesNotExistException(
+                    inner,
+                ) => Error::DoesNotExistException(inner),
                 crate::error::UpdateMaintenanceWindowTaskErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
@@ -3168,17 +3144,17 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateOpsItemError>> for E
                 crate::error::UpdateOpsItemErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
-                crate::error::UpdateOpsItemErrorKind::OpsItemAlreadyExistsError(inner) => {
-                    Error::OpsItemAlreadyExistsError(inner)
+                crate::error::UpdateOpsItemErrorKind::OpsItemAlreadyExistsException(inner) => {
+                    Error::OpsItemAlreadyExistsException(inner)
                 }
-                crate::error::UpdateOpsItemErrorKind::OpsItemInvalidParameterError(inner) => {
-                    Error::OpsItemInvalidParameterError(inner)
+                crate::error::UpdateOpsItemErrorKind::OpsItemInvalidParameterException(inner) => {
+                    Error::OpsItemInvalidParameterException(inner)
                 }
-                crate::error::UpdateOpsItemErrorKind::OpsItemLimitExceededError(inner) => {
-                    Error::OpsItemLimitExceededError(inner)
+                crate::error::UpdateOpsItemErrorKind::OpsItemLimitExceededException(inner) => {
+                    Error::OpsItemLimitExceededException(inner)
                 }
-                crate::error::UpdateOpsItemErrorKind::OpsItemNotFoundError(inner) => {
-                    Error::OpsItemNotFoundError(inner)
+                crate::error::UpdateOpsItemErrorKind::OpsItemNotFoundException(inner) => {
+                    Error::OpsItemNotFoundException(inner)
                 }
                 crate::error::UpdateOpsItemErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -3193,18 +3169,18 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateOpsMetadataError>> f
                 crate::error::UpdateOpsMetadataErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
-                crate::error::UpdateOpsMetadataErrorKind::OpsMetadataInvalidArgumentError(
+                crate::error::UpdateOpsMetadataErrorKind::OpsMetadataInvalidArgumentException(
                     inner,
-                ) => Error::OpsMetadataInvalidArgumentError(inner),
-                crate::error::UpdateOpsMetadataErrorKind::OpsMetadataKeyLimitExceededError(
+                ) => Error::OpsMetadataInvalidArgumentException(inner),
+                crate::error::UpdateOpsMetadataErrorKind::OpsMetadataKeyLimitExceededException(
                     inner,
-                ) => Error::OpsMetadataKeyLimitExceededError(inner),
-                crate::error::UpdateOpsMetadataErrorKind::OpsMetadataNotFoundError(inner) => {
-                    Error::OpsMetadataNotFoundError(inner)
+                ) => Error::OpsMetadataKeyLimitExceededException(inner),
+                crate::error::UpdateOpsMetadataErrorKind::OpsMetadataNotFoundException(inner) => {
+                    Error::OpsMetadataNotFoundException(inner)
                 }
-                crate::error::UpdateOpsMetadataErrorKind::OpsMetadataTooManyUpdatesError(inner) => {
-                    Error::OpsMetadataTooManyUpdatesError(inner)
-                }
+                crate::error::UpdateOpsMetadataErrorKind::OpsMetadataTooManyUpdatesException(
+                    inner,
+                ) => Error::OpsMetadataTooManyUpdatesException(inner),
                 crate::error::UpdateOpsMetadataErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -3217,8 +3193,8 @@ impl From<smithy_http::result::SdkError<crate::error::UpdatePatchBaselineError>>
     fn from(err: smithy_http::result::SdkError<crate::error::UpdatePatchBaselineError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdatePatchBaselineErrorKind::DoesNotExistError(inner) => {
-                    Error::DoesNotExistError(inner)
+                crate::error::UpdatePatchBaselineErrorKind::DoesNotExistException(inner) => {
+                    Error::DoesNotExistException(inner)
                 }
                 crate::error::UpdatePatchBaselineErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
@@ -3236,9 +3212,9 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateResourceDataSyncErro
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::UpdateResourceDataSyncErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
-                crate::error::UpdateResourceDataSyncErrorKind::ResourceDataSyncConflictError(inner) => Error::ResourceDataSyncConflictError(inner),
-                crate::error::UpdateResourceDataSyncErrorKind::ResourceDataSyncInvalidConfigurationError(inner) => Error::ResourceDataSyncInvalidConfigurationError(inner),
-                crate::error::UpdateResourceDataSyncErrorKind::ResourceDataSyncNotFoundError(inner) => Error::ResourceDataSyncNotFoundError(inner),
+                crate::error::UpdateResourceDataSyncErrorKind::ResourceDataSyncConflictException(inner) => Error::ResourceDataSyncConflictException(inner),
+                crate::error::UpdateResourceDataSyncErrorKind::ResourceDataSyncInvalidConfigurationException(inner) => Error::ResourceDataSyncInvalidConfigurationException(inner),
+                crate::error::UpdateResourceDataSyncErrorKind::ResourceDataSyncNotFoundException(inner) => Error::ResourceDataSyncNotFoundException(inner),
                 crate::error::UpdateResourceDataSyncErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),

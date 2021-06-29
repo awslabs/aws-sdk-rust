@@ -2,25 +2,25 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NotFoundError(crate::error::NotFoundError),
-    ServiceUnavailableError(crate::error::ServiceUnavailableError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NotFoundException(crate::error::NotFoundException),
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
-            Error::BadRequestError(inner) => inner.fmt(f),
-            Error::ConflictError(inner) => inner.fmt(f),
-            Error::LimitExceededError(inner) => inner.fmt(f),
-            Error::NotFoundError(inner) => inner.fmt(f),
-            Error::ServiceUnavailableError(inner) => inner.fmt(f),
-            Error::TooManyRequestsError(inner) => inner.fmt(f),
-            Error::UnauthorizedError(inner) => inner.fmt(f),
+            Error::BadRequestException(inner) => inner.fmt(f),
+            Error::ConflictException(inner) => inner.fmt(f),
+            Error::LimitExceededException(inner) => inner.fmt(f),
+            Error::NotFoundException(inner) => inner.fmt(f),
+            Error::ServiceUnavailableException(inner) => inner.fmt(f),
+            Error::TooManyRequestsException(inner) => inner.fmt(f),
+            Error::UnauthorizedException(inner) => inner.fmt(f),
             Error::Unhandled(inner) => inner.fmt(f),
         }
     }
@@ -29,23 +29,23 @@ impl From<smithy_http::result::SdkError<crate::error::CreateApiKeyError>> for Er
     fn from(err: smithy_http::result::SdkError<crate::error::CreateApiKeyError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateApiKeyErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::CreateApiKeyErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::CreateApiKeyErrorKind::ConflictError(inner) => {
-                    Error::ConflictError(inner)
+                crate::error::CreateApiKeyErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
                 }
-                crate::error::CreateApiKeyErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
+                crate::error::CreateApiKeyErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
                 }
-                crate::error::CreateApiKeyErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::CreateApiKeyErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::CreateApiKeyErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::CreateApiKeyErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::CreateApiKeyErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::CreateApiKeyErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::CreateApiKeyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -57,20 +57,20 @@ impl From<smithy_http::result::SdkError<crate::error::CreateAuthorizerError>> fo
     fn from(err: smithy_http::result::SdkError<crate::error::CreateAuthorizerError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateAuthorizerErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::CreateAuthorizerErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::CreateAuthorizerErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
+                crate::error::CreateAuthorizerErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
                 }
-                crate::error::CreateAuthorizerErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::CreateAuthorizerErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::CreateAuthorizerErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::CreateAuthorizerErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::CreateAuthorizerErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::CreateAuthorizerErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::CreateAuthorizerErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -84,20 +84,20 @@ impl From<smithy_http::result::SdkError<crate::error::CreateBasePathMappingError
     fn from(err: smithy_http::result::SdkError<crate::error::CreateBasePathMappingError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateBasePathMappingErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::CreateBasePathMappingErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::CreateBasePathMappingErrorKind::ConflictError(inner) => {
-                    Error::ConflictError(inner)
+                crate::error::CreateBasePathMappingErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
                 }
-                crate::error::CreateBasePathMappingErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::CreateBasePathMappingErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::CreateBasePathMappingErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::CreateBasePathMappingErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::CreateBasePathMappingErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::CreateBasePathMappingErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::CreateBasePathMappingErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -111,26 +111,26 @@ impl From<smithy_http::result::SdkError<crate::error::CreateDeploymentError>> fo
     fn from(err: smithy_http::result::SdkError<crate::error::CreateDeploymentError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateDeploymentErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::CreateDeploymentErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::CreateDeploymentErrorKind::ConflictError(inner) => {
-                    Error::ConflictError(inner)
+                crate::error::CreateDeploymentErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
                 }
-                crate::error::CreateDeploymentErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
+                crate::error::CreateDeploymentErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
                 }
-                crate::error::CreateDeploymentErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::CreateDeploymentErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::CreateDeploymentErrorKind::ServiceUnavailableError(inner) => {
-                    Error::ServiceUnavailableError(inner)
+                crate::error::CreateDeploymentErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
                 }
-                crate::error::CreateDeploymentErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::CreateDeploymentErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::CreateDeploymentErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::CreateDeploymentErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::CreateDeploymentErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -146,23 +146,23 @@ impl From<smithy_http::result::SdkError<crate::error::CreateDocumentationPartErr
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateDocumentationPartErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::CreateDocumentationPartErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::CreateDocumentationPartErrorKind::ConflictError(inner) => {
-                    Error::ConflictError(inner)
+                crate::error::CreateDocumentationPartErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
                 }
-                crate::error::CreateDocumentationPartErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
+                crate::error::CreateDocumentationPartErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
                 }
-                crate::error::CreateDocumentationPartErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::CreateDocumentationPartErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::CreateDocumentationPartErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::CreateDocumentationPartErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::CreateDocumentationPartErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::CreateDocumentationPartErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::CreateDocumentationPartErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -178,23 +178,23 @@ impl From<smithy_http::result::SdkError<crate::error::CreateDocumentationVersion
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateDocumentationVersionErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::CreateDocumentationVersionErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::CreateDocumentationVersionErrorKind::ConflictError(inner) => {
-                    Error::ConflictError(inner)
+                crate::error::CreateDocumentationVersionErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
                 }
-                crate::error::CreateDocumentationVersionErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
+                crate::error::CreateDocumentationVersionErrorKind::LimitExceededException(
+                    inner,
+                ) => Error::LimitExceededException(inner),
+                crate::error::CreateDocumentationVersionErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::CreateDocumentationVersionErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
-                }
-                crate::error::CreateDocumentationVersionErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
-                }
-                crate::error::CreateDocumentationVersionErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::CreateDocumentationVersionErrorKind::TooManyRequestsException(
+                    inner,
+                ) => Error::TooManyRequestsException(inner),
+                crate::error::CreateDocumentationVersionErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::CreateDocumentationVersionErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -208,17 +208,17 @@ impl From<smithy_http::result::SdkError<crate::error::CreateDomainNameError>> fo
     fn from(err: smithy_http::result::SdkError<crate::error::CreateDomainNameError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateDomainNameErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::CreateDomainNameErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::CreateDomainNameErrorKind::ConflictError(inner) => {
-                    Error::ConflictError(inner)
+                crate::error::CreateDomainNameErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
                 }
-                crate::error::CreateDomainNameErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::CreateDomainNameErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::CreateDomainNameErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::CreateDomainNameErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::CreateDomainNameErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -232,23 +232,23 @@ impl From<smithy_http::result::SdkError<crate::error::CreateModelError>> for Err
     fn from(err: smithy_http::result::SdkError<crate::error::CreateModelError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateModelErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::CreateModelErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::CreateModelErrorKind::ConflictError(inner) => {
-                    Error::ConflictError(inner)
+                crate::error::CreateModelErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
                 }
-                crate::error::CreateModelErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
+                crate::error::CreateModelErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
                 }
-                crate::error::CreateModelErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::CreateModelErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::CreateModelErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::CreateModelErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::CreateModelErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::CreateModelErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::CreateModelErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -260,20 +260,20 @@ impl From<smithy_http::result::SdkError<crate::error::CreateRequestValidatorErro
     fn from(err: smithy_http::result::SdkError<crate::error::CreateRequestValidatorError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateRequestValidatorErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::CreateRequestValidatorErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::CreateRequestValidatorErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
+                crate::error::CreateRequestValidatorErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
                 }
-                crate::error::CreateRequestValidatorErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::CreateRequestValidatorErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::CreateRequestValidatorErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::CreateRequestValidatorErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::CreateRequestValidatorErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::CreateRequestValidatorErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::CreateRequestValidatorErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -287,23 +287,23 @@ impl From<smithy_http::result::SdkError<crate::error::CreateResourceError>> for 
     fn from(err: smithy_http::result::SdkError<crate::error::CreateResourceError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateResourceErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::CreateResourceErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::CreateResourceErrorKind::ConflictError(inner) => {
-                    Error::ConflictError(inner)
+                crate::error::CreateResourceErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
                 }
-                crate::error::CreateResourceErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
+                crate::error::CreateResourceErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
                 }
-                crate::error::CreateResourceErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::CreateResourceErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::CreateResourceErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::CreateResourceErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::CreateResourceErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::CreateResourceErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::CreateResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -315,17 +315,17 @@ impl From<smithy_http::result::SdkError<crate::error::CreateRestApiError>> for E
     fn from(err: smithy_http::result::SdkError<crate::error::CreateRestApiError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateRestApiErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::CreateRestApiErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::CreateRestApiErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
+                crate::error::CreateRestApiErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
                 }
-                crate::error::CreateRestApiErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::CreateRestApiErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::CreateRestApiErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::CreateRestApiErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::CreateRestApiErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -337,23 +337,23 @@ impl From<smithy_http::result::SdkError<crate::error::CreateStageError>> for Err
     fn from(err: smithy_http::result::SdkError<crate::error::CreateStageError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateStageErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::CreateStageErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::CreateStageErrorKind::ConflictError(inner) => {
-                    Error::ConflictError(inner)
+                crate::error::CreateStageErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
                 }
-                crate::error::CreateStageErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
+                crate::error::CreateStageErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
                 }
-                crate::error::CreateStageErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::CreateStageErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::CreateStageErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::CreateStageErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::CreateStageErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::CreateStageErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::CreateStageErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -365,23 +365,23 @@ impl From<smithy_http::result::SdkError<crate::error::CreateUsagePlanError>> for
     fn from(err: smithy_http::result::SdkError<crate::error::CreateUsagePlanError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateUsagePlanErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::CreateUsagePlanErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::CreateUsagePlanErrorKind::ConflictError(inner) => {
-                    Error::ConflictError(inner)
+                crate::error::CreateUsagePlanErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
                 }
-                crate::error::CreateUsagePlanErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
+                crate::error::CreateUsagePlanErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
                 }
-                crate::error::CreateUsagePlanErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::CreateUsagePlanErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::CreateUsagePlanErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::CreateUsagePlanErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::CreateUsagePlanErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::CreateUsagePlanErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::CreateUsagePlanErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -393,20 +393,20 @@ impl From<smithy_http::result::SdkError<crate::error::CreateUsagePlanKeyError>> 
     fn from(err: smithy_http::result::SdkError<crate::error::CreateUsagePlanKeyError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateUsagePlanKeyErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::CreateUsagePlanKeyErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::CreateUsagePlanKeyErrorKind::ConflictError(inner) => {
-                    Error::ConflictError(inner)
+                crate::error::CreateUsagePlanKeyErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
                 }
-                crate::error::CreateUsagePlanKeyErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::CreateUsagePlanKeyErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::CreateUsagePlanKeyErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::CreateUsagePlanKeyErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::CreateUsagePlanKeyErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::CreateUsagePlanKeyErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::CreateUsagePlanKeyErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -420,14 +420,14 @@ impl From<smithy_http::result::SdkError<crate::error::CreateVpcLinkError>> for E
     fn from(err: smithy_http::result::SdkError<crate::error::CreateVpcLinkError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateVpcLinkErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::CreateVpcLinkErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::CreateVpcLinkErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::CreateVpcLinkErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::CreateVpcLinkErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::CreateVpcLinkErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::CreateVpcLinkErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -439,14 +439,14 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteApiKeyError>> for Er
     fn from(err: smithy_http::result::SdkError<crate::error::DeleteApiKeyError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteApiKeyErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::DeleteApiKeyErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::DeleteApiKeyErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::DeleteApiKeyErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::DeleteApiKeyErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::DeleteApiKeyErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::DeleteApiKeyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -458,20 +458,20 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteAuthorizerError>> fo
     fn from(err: smithy_http::result::SdkError<crate::error::DeleteAuthorizerError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteAuthorizerErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::DeleteAuthorizerErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::DeleteAuthorizerErrorKind::ConflictError(inner) => {
-                    Error::ConflictError(inner)
+                crate::error::DeleteAuthorizerErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
                 }
-                crate::error::DeleteAuthorizerErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::DeleteAuthorizerErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::DeleteAuthorizerErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::DeleteAuthorizerErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::DeleteAuthorizerErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::DeleteAuthorizerErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::DeleteAuthorizerErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -485,20 +485,20 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteBasePathMappingError
     fn from(err: smithy_http::result::SdkError<crate::error::DeleteBasePathMappingError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteBasePathMappingErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::DeleteBasePathMappingErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::DeleteBasePathMappingErrorKind::ConflictError(inner) => {
-                    Error::ConflictError(inner)
+                crate::error::DeleteBasePathMappingErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
                 }
-                crate::error::DeleteBasePathMappingErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::DeleteBasePathMappingErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::DeleteBasePathMappingErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::DeleteBasePathMappingErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::DeleteBasePathMappingErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::DeleteBasePathMappingErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::DeleteBasePathMappingErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -514,17 +514,17 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteClientCertificateErr
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteClientCertificateErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::DeleteClientCertificateErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::DeleteClientCertificateErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::DeleteClientCertificateErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::DeleteClientCertificateErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::DeleteClientCertificateErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::DeleteClientCertificateErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::DeleteClientCertificateErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::DeleteClientCertificateErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -538,17 +538,17 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteDeploymentError>> fo
     fn from(err: smithy_http::result::SdkError<crate::error::DeleteDeploymentError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteDeploymentErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::DeleteDeploymentErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::DeleteDeploymentErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::DeleteDeploymentErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::DeleteDeploymentErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::DeleteDeploymentErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::DeleteDeploymentErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::DeleteDeploymentErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::DeleteDeploymentErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -564,20 +564,20 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteDocumentationPartErr
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteDocumentationPartErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::DeleteDocumentationPartErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::DeleteDocumentationPartErrorKind::ConflictError(inner) => {
-                    Error::ConflictError(inner)
+                crate::error::DeleteDocumentationPartErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
                 }
-                crate::error::DeleteDocumentationPartErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::DeleteDocumentationPartErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::DeleteDocumentationPartErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::DeleteDocumentationPartErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::DeleteDocumentationPartErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::DeleteDocumentationPartErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::DeleteDocumentationPartErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -593,20 +593,20 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteDocumentationVersion
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteDocumentationVersionErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::DeleteDocumentationVersionErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::DeleteDocumentationVersionErrorKind::ConflictError(inner) => {
-                    Error::ConflictError(inner)
+                crate::error::DeleteDocumentationVersionErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
                 }
-                crate::error::DeleteDocumentationVersionErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::DeleteDocumentationVersionErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::DeleteDocumentationVersionErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
-                }
-                crate::error::DeleteDocumentationVersionErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::DeleteDocumentationVersionErrorKind::TooManyRequestsException(
+                    inner,
+                ) => Error::TooManyRequestsException(inner),
+                crate::error::DeleteDocumentationVersionErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::DeleteDocumentationVersionErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -620,17 +620,17 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteDomainNameError>> fo
     fn from(err: smithy_http::result::SdkError<crate::error::DeleteDomainNameError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteDomainNameErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::DeleteDomainNameErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::DeleteDomainNameErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::DeleteDomainNameErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::DeleteDomainNameErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::DeleteDomainNameErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::DeleteDomainNameErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::DeleteDomainNameErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::DeleteDomainNameErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -644,20 +644,20 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteGatewayResponseError
     fn from(err: smithy_http::result::SdkError<crate::error::DeleteGatewayResponseError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteGatewayResponseErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::DeleteGatewayResponseErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::DeleteGatewayResponseErrorKind::ConflictError(inner) => {
-                    Error::ConflictError(inner)
+                crate::error::DeleteGatewayResponseErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
                 }
-                crate::error::DeleteGatewayResponseErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::DeleteGatewayResponseErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::DeleteGatewayResponseErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::DeleteGatewayResponseErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::DeleteGatewayResponseErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::DeleteGatewayResponseErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::DeleteGatewayResponseErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -671,17 +671,17 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteIntegrationError>> f
     fn from(err: smithy_http::result::SdkError<crate::error::DeleteIntegrationError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteIntegrationErrorKind::ConflictError(inner) => {
-                    Error::ConflictError(inner)
+                crate::error::DeleteIntegrationErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
                 }
-                crate::error::DeleteIntegrationErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::DeleteIntegrationErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::DeleteIntegrationErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::DeleteIntegrationErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::DeleteIntegrationErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::DeleteIntegrationErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::DeleteIntegrationErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -697,20 +697,20 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteIntegrationResponseE
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteIntegrationResponseErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::DeleteIntegrationResponseErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::DeleteIntegrationResponseErrorKind::ConflictError(inner) => {
-                    Error::ConflictError(inner)
+                crate::error::DeleteIntegrationResponseErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
                 }
-                crate::error::DeleteIntegrationResponseErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::DeleteIntegrationResponseErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::DeleteIntegrationResponseErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
-                }
-                crate::error::DeleteIntegrationResponseErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::DeleteIntegrationResponseErrorKind::TooManyRequestsException(
+                    inner,
+                ) => Error::TooManyRequestsException(inner),
+                crate::error::DeleteIntegrationResponseErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::DeleteIntegrationResponseErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -724,17 +724,17 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteMethodError>> for Er
     fn from(err: smithy_http::result::SdkError<crate::error::DeleteMethodError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteMethodErrorKind::ConflictError(inner) => {
-                    Error::ConflictError(inner)
+                crate::error::DeleteMethodErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
                 }
-                crate::error::DeleteMethodErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::DeleteMethodErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::DeleteMethodErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::DeleteMethodErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::DeleteMethodErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::DeleteMethodErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::DeleteMethodErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -746,20 +746,20 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteMethodResponseError>
     fn from(err: smithy_http::result::SdkError<crate::error::DeleteMethodResponseError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteMethodResponseErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::DeleteMethodResponseErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::DeleteMethodResponseErrorKind::ConflictError(inner) => {
-                    Error::ConflictError(inner)
+                crate::error::DeleteMethodResponseErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
                 }
-                crate::error::DeleteMethodResponseErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::DeleteMethodResponseErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::DeleteMethodResponseErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::DeleteMethodResponseErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::DeleteMethodResponseErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::DeleteMethodResponseErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::DeleteMethodResponseErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -773,20 +773,20 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteModelError>> for Err
     fn from(err: smithy_http::result::SdkError<crate::error::DeleteModelError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteModelErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::DeleteModelErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::DeleteModelErrorKind::ConflictError(inner) => {
-                    Error::ConflictError(inner)
+                crate::error::DeleteModelErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
                 }
-                crate::error::DeleteModelErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::DeleteModelErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::DeleteModelErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::DeleteModelErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::DeleteModelErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::DeleteModelErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::DeleteModelErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -798,20 +798,20 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteRequestValidatorErro
     fn from(err: smithy_http::result::SdkError<crate::error::DeleteRequestValidatorError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteRequestValidatorErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::DeleteRequestValidatorErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::DeleteRequestValidatorErrorKind::ConflictError(inner) => {
-                    Error::ConflictError(inner)
+                crate::error::DeleteRequestValidatorErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
                 }
-                crate::error::DeleteRequestValidatorErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::DeleteRequestValidatorErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::DeleteRequestValidatorErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::DeleteRequestValidatorErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::DeleteRequestValidatorErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::DeleteRequestValidatorErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::DeleteRequestValidatorErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -825,20 +825,20 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteResourceError>> for 
     fn from(err: smithy_http::result::SdkError<crate::error::DeleteResourceError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteResourceErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::DeleteResourceErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::DeleteResourceErrorKind::ConflictError(inner) => {
-                    Error::ConflictError(inner)
+                crate::error::DeleteResourceErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
                 }
-                crate::error::DeleteResourceErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::DeleteResourceErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::DeleteResourceErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::DeleteResourceErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::DeleteResourceErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::DeleteResourceErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::DeleteResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -850,17 +850,17 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteRestApiError>> for E
     fn from(err: smithy_http::result::SdkError<crate::error::DeleteRestApiError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteRestApiErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::DeleteRestApiErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::DeleteRestApiErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::DeleteRestApiErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::DeleteRestApiErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::DeleteRestApiErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::DeleteRestApiErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::DeleteRestApiErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::DeleteRestApiErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -872,17 +872,17 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteStageError>> for Err
     fn from(err: smithy_http::result::SdkError<crate::error::DeleteStageError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteStageErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::DeleteStageErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::DeleteStageErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::DeleteStageErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::DeleteStageErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::DeleteStageErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::DeleteStageErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::DeleteStageErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::DeleteStageErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -894,17 +894,17 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteUsagePlanError>> for
     fn from(err: smithy_http::result::SdkError<crate::error::DeleteUsagePlanError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteUsagePlanErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::DeleteUsagePlanErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::DeleteUsagePlanErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::DeleteUsagePlanErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::DeleteUsagePlanErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::DeleteUsagePlanErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::DeleteUsagePlanErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::DeleteUsagePlanErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::DeleteUsagePlanErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -916,20 +916,20 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteUsagePlanKeyError>> 
     fn from(err: smithy_http::result::SdkError<crate::error::DeleteUsagePlanKeyError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteUsagePlanKeyErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::DeleteUsagePlanKeyErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::DeleteUsagePlanKeyErrorKind::ConflictError(inner) => {
-                    Error::ConflictError(inner)
+                crate::error::DeleteUsagePlanKeyErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
                 }
-                crate::error::DeleteUsagePlanKeyErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::DeleteUsagePlanKeyErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::DeleteUsagePlanKeyErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::DeleteUsagePlanKeyErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::DeleteUsagePlanKeyErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::DeleteUsagePlanKeyErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::DeleteUsagePlanKeyErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -943,17 +943,17 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteVpcLinkError>> for E
     fn from(err: smithy_http::result::SdkError<crate::error::DeleteVpcLinkError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteVpcLinkErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::DeleteVpcLinkErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::DeleteVpcLinkErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::DeleteVpcLinkErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::DeleteVpcLinkErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::DeleteVpcLinkErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::DeleteVpcLinkErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::DeleteVpcLinkErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::DeleteVpcLinkErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -967,17 +967,17 @@ impl From<smithy_http::result::SdkError<crate::error::FlushStageAuthorizersCache
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::FlushStageAuthorizersCacheErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::FlushStageAuthorizersCacheErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::FlushStageAuthorizersCacheErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::FlushStageAuthorizersCacheErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::FlushStageAuthorizersCacheErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
-                }
-                crate::error::FlushStageAuthorizersCacheErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::FlushStageAuthorizersCacheErrorKind::TooManyRequestsException(
+                    inner,
+                ) => Error::TooManyRequestsException(inner),
+                crate::error::FlushStageAuthorizersCacheErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::FlushStageAuthorizersCacheErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -991,17 +991,17 @@ impl From<smithy_http::result::SdkError<crate::error::FlushStageCacheError>> for
     fn from(err: smithy_http::result::SdkError<crate::error::FlushStageCacheError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::FlushStageCacheErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::FlushStageCacheErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::FlushStageCacheErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::FlushStageCacheErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::FlushStageCacheErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::FlushStageCacheErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::FlushStageCacheErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::FlushStageCacheErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::FlushStageCacheErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -1015,14 +1015,14 @@ impl From<smithy_http::result::SdkError<crate::error::GenerateClientCertificateE
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GenerateClientCertificateErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
+                crate::error::GenerateClientCertificateErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
                 }
-                crate::error::GenerateClientCertificateErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
-                }
-                crate::error::GenerateClientCertificateErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::GenerateClientCertificateErrorKind::TooManyRequestsException(
+                    inner,
+                ) => Error::TooManyRequestsException(inner),
+                crate::error::GenerateClientCertificateErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::GenerateClientCertificateErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -1036,14 +1036,14 @@ impl From<smithy_http::result::SdkError<crate::error::GetAccountError>> for Erro
     fn from(err: smithy_http::result::SdkError<crate::error::GetAccountError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetAccountErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::GetAccountErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::GetAccountErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::GetAccountErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::GetAccountErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::GetAccountErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::GetAccountErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -1055,14 +1055,14 @@ impl From<smithy_http::result::SdkError<crate::error::GetApiKeyError>> for Error
     fn from(err: smithy_http::result::SdkError<crate::error::GetApiKeyError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetApiKeyErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::GetApiKeyErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::GetApiKeyErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::GetApiKeyErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::GetApiKeyErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::GetApiKeyErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::GetApiKeyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -1074,14 +1074,14 @@ impl From<smithy_http::result::SdkError<crate::error::GetApiKeysError>> for Erro
     fn from(err: smithy_http::result::SdkError<crate::error::GetApiKeysError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetApiKeysErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::GetApiKeysErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::GetApiKeysErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::GetApiKeysErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::GetApiKeysErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::GetApiKeysErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::GetApiKeysErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -1093,14 +1093,14 @@ impl From<smithy_http::result::SdkError<crate::error::GetAuthorizerError>> for E
     fn from(err: smithy_http::result::SdkError<crate::error::GetAuthorizerError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetAuthorizerErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::GetAuthorizerErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::GetAuthorizerErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::GetAuthorizerErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::GetAuthorizerErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::GetAuthorizerErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::GetAuthorizerErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -1112,17 +1112,17 @@ impl From<smithy_http::result::SdkError<crate::error::GetAuthorizersError>> for 
     fn from(err: smithy_http::result::SdkError<crate::error::GetAuthorizersError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetAuthorizersErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::GetAuthorizersErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::GetAuthorizersErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::GetAuthorizersErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::GetAuthorizersErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::GetAuthorizersErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::GetAuthorizersErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::GetAuthorizersErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::GetAuthorizersErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -1134,14 +1134,14 @@ impl From<smithy_http::result::SdkError<crate::error::GetBasePathMappingError>> 
     fn from(err: smithy_http::result::SdkError<crate::error::GetBasePathMappingError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetBasePathMappingErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::GetBasePathMappingErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::GetBasePathMappingErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::GetBasePathMappingErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::GetBasePathMappingErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::GetBasePathMappingErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::GetBasePathMappingErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -1155,14 +1155,14 @@ impl From<smithy_http::result::SdkError<crate::error::GetBasePathMappingsError>>
     fn from(err: smithy_http::result::SdkError<crate::error::GetBasePathMappingsError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetBasePathMappingsErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::GetBasePathMappingsErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::GetBasePathMappingsErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::GetBasePathMappingsErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::GetBasePathMappingsErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::GetBasePathMappingsErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::GetBasePathMappingsErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -1176,14 +1176,14 @@ impl From<smithy_http::result::SdkError<crate::error::GetClientCertificateError>
     fn from(err: smithy_http::result::SdkError<crate::error::GetClientCertificateError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetClientCertificateErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::GetClientCertificateErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::GetClientCertificateErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::GetClientCertificateErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::GetClientCertificateErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::GetClientCertificateErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::GetClientCertificateErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -1197,14 +1197,14 @@ impl From<smithy_http::result::SdkError<crate::error::GetClientCertificatesError
     fn from(err: smithy_http::result::SdkError<crate::error::GetClientCertificatesError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetClientCertificatesErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::GetClientCertificatesErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::GetClientCertificatesErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::GetClientCertificatesErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::GetClientCertificatesErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::GetClientCertificatesErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::GetClientCertificatesErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -1218,17 +1218,17 @@ impl From<smithy_http::result::SdkError<crate::error::GetDeploymentError>> for E
     fn from(err: smithy_http::result::SdkError<crate::error::GetDeploymentError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetDeploymentErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::GetDeploymentErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::GetDeploymentErrorKind::ServiceUnavailableError(inner) => {
-                    Error::ServiceUnavailableError(inner)
+                crate::error::GetDeploymentErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
                 }
-                crate::error::GetDeploymentErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::GetDeploymentErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::GetDeploymentErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::GetDeploymentErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::GetDeploymentErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -1240,20 +1240,20 @@ impl From<smithy_http::result::SdkError<crate::error::GetDeploymentsError>> for 
     fn from(err: smithy_http::result::SdkError<crate::error::GetDeploymentsError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetDeploymentsErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::GetDeploymentsErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::GetDeploymentsErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::GetDeploymentsErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::GetDeploymentsErrorKind::ServiceUnavailableError(inner) => {
-                    Error::ServiceUnavailableError(inner)
+                crate::error::GetDeploymentsErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
                 }
-                crate::error::GetDeploymentsErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::GetDeploymentsErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::GetDeploymentsErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::GetDeploymentsErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::GetDeploymentsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -1265,14 +1265,14 @@ impl From<smithy_http::result::SdkError<crate::error::GetDocumentationPartError>
     fn from(err: smithy_http::result::SdkError<crate::error::GetDocumentationPartError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetDocumentationPartErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::GetDocumentationPartErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::GetDocumentationPartErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::GetDocumentationPartErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::GetDocumentationPartErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::GetDocumentationPartErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::GetDocumentationPartErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -1286,17 +1286,17 @@ impl From<smithy_http::result::SdkError<crate::error::GetDocumentationPartsError
     fn from(err: smithy_http::result::SdkError<crate::error::GetDocumentationPartsError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetDocumentationPartsErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::GetDocumentationPartsErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::GetDocumentationPartsErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::GetDocumentationPartsErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::GetDocumentationPartsErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::GetDocumentationPartsErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::GetDocumentationPartsErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::GetDocumentationPartsErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::GetDocumentationPartsErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -1312,14 +1312,14 @@ impl From<smithy_http::result::SdkError<crate::error::GetDocumentationVersionErr
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetDocumentationVersionErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::GetDocumentationVersionErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::GetDocumentationVersionErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::GetDocumentationVersionErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::GetDocumentationVersionErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::GetDocumentationVersionErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::GetDocumentationVersionErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -1335,17 +1335,17 @@ impl From<smithy_http::result::SdkError<crate::error::GetDocumentationVersionsEr
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetDocumentationVersionsErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::GetDocumentationVersionsErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::GetDocumentationVersionsErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::GetDocumentationVersionsErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::GetDocumentationVersionsErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
-                }
-                crate::error::GetDocumentationVersionsErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::GetDocumentationVersionsErrorKind::TooManyRequestsException(
+                    inner,
+                ) => Error::TooManyRequestsException(inner),
+                crate::error::GetDocumentationVersionsErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::GetDocumentationVersionsErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -1359,17 +1359,17 @@ impl From<smithy_http::result::SdkError<crate::error::GetDomainNameError>> for E
     fn from(err: smithy_http::result::SdkError<crate::error::GetDomainNameError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetDomainNameErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::GetDomainNameErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::GetDomainNameErrorKind::ServiceUnavailableError(inner) => {
-                    Error::ServiceUnavailableError(inner)
+                crate::error::GetDomainNameErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
                 }
-                crate::error::GetDomainNameErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::GetDomainNameErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::GetDomainNameErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::GetDomainNameErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::GetDomainNameErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -1381,14 +1381,14 @@ impl From<smithy_http::result::SdkError<crate::error::GetDomainNamesError>> for 
     fn from(err: smithy_http::result::SdkError<crate::error::GetDomainNamesError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetDomainNamesErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::GetDomainNamesErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::GetDomainNamesErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::GetDomainNamesErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::GetDomainNamesErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::GetDomainNamesErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::GetDomainNamesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -1400,20 +1400,20 @@ impl From<smithy_http::result::SdkError<crate::error::GetExportError>> for Error
     fn from(err: smithy_http::result::SdkError<crate::error::GetExportError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetExportErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::GetExportErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::GetExportErrorKind::ConflictError(inner) => {
-                    Error::ConflictError(inner)
+                crate::error::GetExportErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
                 }
-                crate::error::GetExportErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::GetExportErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::GetExportErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::GetExportErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::GetExportErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::GetExportErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::GetExportErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -1425,14 +1425,14 @@ impl From<smithy_http::result::SdkError<crate::error::GetGatewayResponseError>> 
     fn from(err: smithy_http::result::SdkError<crate::error::GetGatewayResponseError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetGatewayResponseErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::GetGatewayResponseErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::GetGatewayResponseErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::GetGatewayResponseErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::GetGatewayResponseErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::GetGatewayResponseErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::GetGatewayResponseErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -1446,17 +1446,17 @@ impl From<smithy_http::result::SdkError<crate::error::GetGatewayResponsesError>>
     fn from(err: smithy_http::result::SdkError<crate::error::GetGatewayResponsesError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetGatewayResponsesErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::GetGatewayResponsesErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::GetGatewayResponsesErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::GetGatewayResponsesErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::GetGatewayResponsesErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::GetGatewayResponsesErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::GetGatewayResponsesErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::GetGatewayResponsesErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::GetGatewayResponsesErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -1470,14 +1470,14 @@ impl From<smithy_http::result::SdkError<crate::error::GetIntegrationError>> for 
     fn from(err: smithy_http::result::SdkError<crate::error::GetIntegrationError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetIntegrationErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::GetIntegrationErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::GetIntegrationErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::GetIntegrationErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::GetIntegrationErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::GetIntegrationErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::GetIntegrationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -1489,14 +1489,14 @@ impl From<smithy_http::result::SdkError<crate::error::GetIntegrationResponseErro
     fn from(err: smithy_http::result::SdkError<crate::error::GetIntegrationResponseError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetIntegrationResponseErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::GetIntegrationResponseErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::GetIntegrationResponseErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::GetIntegrationResponseErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::GetIntegrationResponseErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::GetIntegrationResponseErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::GetIntegrationResponseErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -1510,14 +1510,14 @@ impl From<smithy_http::result::SdkError<crate::error::GetMethodError>> for Error
     fn from(err: smithy_http::result::SdkError<crate::error::GetMethodError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetMethodErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::GetMethodErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::GetMethodErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::GetMethodErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::GetMethodErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::GetMethodErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::GetMethodErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -1529,14 +1529,14 @@ impl From<smithy_http::result::SdkError<crate::error::GetMethodResponseError>> f
     fn from(err: smithy_http::result::SdkError<crate::error::GetMethodResponseError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetMethodResponseErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::GetMethodResponseErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::GetMethodResponseErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::GetMethodResponseErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::GetMethodResponseErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::GetMethodResponseErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::GetMethodResponseErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -1550,14 +1550,14 @@ impl From<smithy_http::result::SdkError<crate::error::GetModelError>> for Error 
     fn from(err: smithy_http::result::SdkError<crate::error::GetModelError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetModelErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::GetModelErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::GetModelErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::GetModelErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::GetModelErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::GetModelErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::GetModelErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -1569,17 +1569,17 @@ impl From<smithy_http::result::SdkError<crate::error::GetModelsError>> for Error
     fn from(err: smithy_http::result::SdkError<crate::error::GetModelsError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetModelsErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::GetModelsErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::GetModelsErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::GetModelsErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::GetModelsErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::GetModelsErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::GetModelsErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::GetModelsErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::GetModelsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -1591,17 +1591,17 @@ impl From<smithy_http::result::SdkError<crate::error::GetModelTemplateError>> fo
     fn from(err: smithy_http::result::SdkError<crate::error::GetModelTemplateError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetModelTemplateErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::GetModelTemplateErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::GetModelTemplateErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::GetModelTemplateErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::GetModelTemplateErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::GetModelTemplateErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::GetModelTemplateErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::GetModelTemplateErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::GetModelTemplateErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -1615,14 +1615,14 @@ impl From<smithy_http::result::SdkError<crate::error::GetRequestValidatorError>>
     fn from(err: smithy_http::result::SdkError<crate::error::GetRequestValidatorError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetRequestValidatorErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::GetRequestValidatorErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::GetRequestValidatorErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::GetRequestValidatorErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::GetRequestValidatorErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::GetRequestValidatorErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::GetRequestValidatorErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -1636,17 +1636,17 @@ impl From<smithy_http::result::SdkError<crate::error::GetRequestValidatorsError>
     fn from(err: smithy_http::result::SdkError<crate::error::GetRequestValidatorsError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetRequestValidatorsErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::GetRequestValidatorsErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::GetRequestValidatorsErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::GetRequestValidatorsErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::GetRequestValidatorsErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::GetRequestValidatorsErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::GetRequestValidatorsErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::GetRequestValidatorsErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::GetRequestValidatorsErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -1660,14 +1660,14 @@ impl From<smithy_http::result::SdkError<crate::error::GetResourceError>> for Err
     fn from(err: smithy_http::result::SdkError<crate::error::GetResourceError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetResourceErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::GetResourceErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::GetResourceErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::GetResourceErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::GetResourceErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::GetResourceErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::GetResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -1679,17 +1679,17 @@ impl From<smithy_http::result::SdkError<crate::error::GetResourcesError>> for Er
     fn from(err: smithy_http::result::SdkError<crate::error::GetResourcesError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetResourcesErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::GetResourcesErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::GetResourcesErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::GetResourcesErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::GetResourcesErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::GetResourcesErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::GetResourcesErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::GetResourcesErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::GetResourcesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -1701,14 +1701,14 @@ impl From<smithy_http::result::SdkError<crate::error::GetRestApiError>> for Erro
     fn from(err: smithy_http::result::SdkError<crate::error::GetRestApiError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetRestApiErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::GetRestApiErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::GetRestApiErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::GetRestApiErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::GetRestApiErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::GetRestApiErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::GetRestApiErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -1720,14 +1720,14 @@ impl From<smithy_http::result::SdkError<crate::error::GetRestApisError>> for Err
     fn from(err: smithy_http::result::SdkError<crate::error::GetRestApisError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetRestApisErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::GetRestApisErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::GetRestApisErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::GetRestApisErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::GetRestApisErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::GetRestApisErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::GetRestApisErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -1739,16 +1739,20 @@ impl From<smithy_http::result::SdkError<crate::error::GetSdkError>> for Error {
     fn from(err: smithy_http::result::SdkError<crate::error::GetSdkError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetSdkErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::GetSdkErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::GetSdkErrorKind::ConflictError(inner) => Error::ConflictError(inner),
-                crate::error::GetSdkErrorKind::NotFoundError(inner) => Error::NotFoundError(inner),
-                crate::error::GetSdkErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::GetSdkErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
                 }
-                crate::error::GetSdkErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::GetSdkErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
+                }
+                crate::error::GetSdkErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
+                }
+                crate::error::GetSdkErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::GetSdkErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -1760,14 +1764,14 @@ impl From<smithy_http::result::SdkError<crate::error::GetSdkTypeError>> for Erro
     fn from(err: smithy_http::result::SdkError<crate::error::GetSdkTypeError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetSdkTypeErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::GetSdkTypeErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::GetSdkTypeErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::GetSdkTypeErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::GetSdkTypeErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::GetSdkTypeErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::GetSdkTypeErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -1779,11 +1783,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetSdkTypesError>> for Err
     fn from(err: smithy_http::result::SdkError<crate::error::GetSdkTypesError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetSdkTypesErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::GetSdkTypesErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::GetSdkTypesErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::GetSdkTypesErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::GetSdkTypesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -1795,14 +1799,14 @@ impl From<smithy_http::result::SdkError<crate::error::GetStageError>> for Error 
     fn from(err: smithy_http::result::SdkError<crate::error::GetStageError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetStageErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::GetStageErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::GetStageErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::GetStageErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::GetStageErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::GetStageErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::GetStageErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -1814,14 +1818,14 @@ impl From<smithy_http::result::SdkError<crate::error::GetStagesError>> for Error
     fn from(err: smithy_http::result::SdkError<crate::error::GetStagesError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetStagesErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::GetStagesErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::GetStagesErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::GetStagesErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::GetStagesErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::GetStagesErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::GetStagesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -1833,18 +1837,20 @@ impl From<smithy_http::result::SdkError<crate::error::GetTagsError>> for Error {
     fn from(err: smithy_http::result::SdkError<crate::error::GetTagsError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetTagsErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::GetTagsErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::GetTagsErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
+                crate::error::GetTagsErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
                 }
-                crate::error::GetTagsErrorKind::NotFoundError(inner) => Error::NotFoundError(inner),
-                crate::error::GetTagsErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::GetTagsErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::GetTagsErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::GetTagsErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
+                }
+                crate::error::GetTagsErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::GetTagsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -1856,17 +1862,17 @@ impl From<smithy_http::result::SdkError<crate::error::GetUsageError>> for Error 
     fn from(err: smithy_http::result::SdkError<crate::error::GetUsageError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetUsageErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::GetUsageErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::GetUsageErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::GetUsageErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::GetUsageErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::GetUsageErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::GetUsageErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::GetUsageErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::GetUsageErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -1878,17 +1884,17 @@ impl From<smithy_http::result::SdkError<crate::error::GetUsagePlanError>> for Er
     fn from(err: smithy_http::result::SdkError<crate::error::GetUsagePlanError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetUsagePlanErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::GetUsagePlanErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::GetUsagePlanErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::GetUsagePlanErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::GetUsagePlanErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::GetUsagePlanErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::GetUsagePlanErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::GetUsagePlanErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::GetUsagePlanErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -1900,17 +1906,17 @@ impl From<smithy_http::result::SdkError<crate::error::GetUsagePlanKeyError>> for
     fn from(err: smithy_http::result::SdkError<crate::error::GetUsagePlanKeyError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetUsagePlanKeyErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::GetUsagePlanKeyErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::GetUsagePlanKeyErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::GetUsagePlanKeyErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::GetUsagePlanKeyErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::GetUsagePlanKeyErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::GetUsagePlanKeyErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::GetUsagePlanKeyErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::GetUsagePlanKeyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -1922,17 +1928,17 @@ impl From<smithy_http::result::SdkError<crate::error::GetUsagePlanKeysError>> fo
     fn from(err: smithy_http::result::SdkError<crate::error::GetUsagePlanKeysError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetUsagePlanKeysErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::GetUsagePlanKeysErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::GetUsagePlanKeysErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::GetUsagePlanKeysErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::GetUsagePlanKeysErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::GetUsagePlanKeysErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::GetUsagePlanKeysErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::GetUsagePlanKeysErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::GetUsagePlanKeysErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -1946,20 +1952,20 @@ impl From<smithy_http::result::SdkError<crate::error::GetUsagePlansError>> for E
     fn from(err: smithy_http::result::SdkError<crate::error::GetUsagePlansError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetUsagePlansErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::GetUsagePlansErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::GetUsagePlansErrorKind::ConflictError(inner) => {
-                    Error::ConflictError(inner)
+                crate::error::GetUsagePlansErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
                 }
-                crate::error::GetUsagePlansErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::GetUsagePlansErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::GetUsagePlansErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::GetUsagePlansErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::GetUsagePlansErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::GetUsagePlansErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::GetUsagePlansErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -1971,14 +1977,14 @@ impl From<smithy_http::result::SdkError<crate::error::GetVpcLinkError>> for Erro
     fn from(err: smithy_http::result::SdkError<crate::error::GetVpcLinkError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetVpcLinkErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::GetVpcLinkErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::GetVpcLinkErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::GetVpcLinkErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::GetVpcLinkErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::GetVpcLinkErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::GetVpcLinkErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -1990,14 +1996,14 @@ impl From<smithy_http::result::SdkError<crate::error::GetVpcLinksError>> for Err
     fn from(err: smithy_http::result::SdkError<crate::error::GetVpcLinksError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetVpcLinksErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::GetVpcLinksErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::GetVpcLinksErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::GetVpcLinksErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::GetVpcLinksErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::GetVpcLinksErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::GetVpcLinksErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -2009,23 +2015,23 @@ impl From<smithy_http::result::SdkError<crate::error::ImportApiKeysError>> for E
     fn from(err: smithy_http::result::SdkError<crate::error::ImportApiKeysError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ImportApiKeysErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::ImportApiKeysErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::ImportApiKeysErrorKind::ConflictError(inner) => {
-                    Error::ConflictError(inner)
+                crate::error::ImportApiKeysErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
                 }
-                crate::error::ImportApiKeysErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
+                crate::error::ImportApiKeysErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
                 }
-                crate::error::ImportApiKeysErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::ImportApiKeysErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::ImportApiKeysErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::ImportApiKeysErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::ImportApiKeysErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::ImportApiKeysErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::ImportApiKeysErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -2039,20 +2045,20 @@ impl From<smithy_http::result::SdkError<crate::error::ImportDocumentationPartsEr
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ImportDocumentationPartsErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::ImportDocumentationPartsErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::ImportDocumentationPartsErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
+                crate::error::ImportDocumentationPartsErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
                 }
-                crate::error::ImportDocumentationPartsErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::ImportDocumentationPartsErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::ImportDocumentationPartsErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
-                }
-                crate::error::ImportDocumentationPartsErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::ImportDocumentationPartsErrorKind::TooManyRequestsException(
+                    inner,
+                ) => Error::TooManyRequestsException(inner),
+                crate::error::ImportDocumentationPartsErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::ImportDocumentationPartsErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -2066,20 +2072,20 @@ impl From<smithy_http::result::SdkError<crate::error::ImportRestApiError>> for E
     fn from(err: smithy_http::result::SdkError<crate::error::ImportRestApiError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ImportRestApiErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::ImportRestApiErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::ImportRestApiErrorKind::ConflictError(inner) => {
-                    Error::ConflictError(inner)
+                crate::error::ImportRestApiErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
                 }
-                crate::error::ImportRestApiErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
+                crate::error::ImportRestApiErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
                 }
-                crate::error::ImportRestApiErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::ImportRestApiErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::ImportRestApiErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::ImportRestApiErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::ImportRestApiErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -2091,20 +2097,20 @@ impl From<smithy_http::result::SdkError<crate::error::PutGatewayResponseError>> 
     fn from(err: smithy_http::result::SdkError<crate::error::PutGatewayResponseError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::PutGatewayResponseErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::PutGatewayResponseErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::PutGatewayResponseErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
+                crate::error::PutGatewayResponseErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
                 }
-                crate::error::PutGatewayResponseErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::PutGatewayResponseErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::PutGatewayResponseErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::PutGatewayResponseErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::PutGatewayResponseErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::PutGatewayResponseErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::PutGatewayResponseErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -2118,20 +2124,20 @@ impl From<smithy_http::result::SdkError<crate::error::PutIntegrationError>> for 
     fn from(err: smithy_http::result::SdkError<crate::error::PutIntegrationError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::PutIntegrationErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::PutIntegrationErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::PutIntegrationErrorKind::ConflictError(inner) => {
-                    Error::ConflictError(inner)
+                crate::error::PutIntegrationErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
                 }
-                crate::error::PutIntegrationErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::PutIntegrationErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::PutIntegrationErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::PutIntegrationErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::PutIntegrationErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::PutIntegrationErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::PutIntegrationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -2143,23 +2149,23 @@ impl From<smithy_http::result::SdkError<crate::error::PutIntegrationResponseErro
     fn from(err: smithy_http::result::SdkError<crate::error::PutIntegrationResponseError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::PutIntegrationResponseErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::PutIntegrationResponseErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::PutIntegrationResponseErrorKind::ConflictError(inner) => {
-                    Error::ConflictError(inner)
+                crate::error::PutIntegrationResponseErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
                 }
-                crate::error::PutIntegrationResponseErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
+                crate::error::PutIntegrationResponseErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
                 }
-                crate::error::PutIntegrationResponseErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::PutIntegrationResponseErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::PutIntegrationResponseErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::PutIntegrationResponseErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::PutIntegrationResponseErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::PutIntegrationResponseErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::PutIntegrationResponseErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -2173,23 +2179,23 @@ impl From<smithy_http::result::SdkError<crate::error::PutMethodError>> for Error
     fn from(err: smithy_http::result::SdkError<crate::error::PutMethodError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::PutMethodErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::PutMethodErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::PutMethodErrorKind::ConflictError(inner) => {
-                    Error::ConflictError(inner)
+                crate::error::PutMethodErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
                 }
-                crate::error::PutMethodErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
+                crate::error::PutMethodErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
                 }
-                crate::error::PutMethodErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::PutMethodErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::PutMethodErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::PutMethodErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::PutMethodErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::PutMethodErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::PutMethodErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -2201,23 +2207,23 @@ impl From<smithy_http::result::SdkError<crate::error::PutMethodResponseError>> f
     fn from(err: smithy_http::result::SdkError<crate::error::PutMethodResponseError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::PutMethodResponseErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::PutMethodResponseErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::PutMethodResponseErrorKind::ConflictError(inner) => {
-                    Error::ConflictError(inner)
+                crate::error::PutMethodResponseErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
                 }
-                crate::error::PutMethodResponseErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
+                crate::error::PutMethodResponseErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
                 }
-                crate::error::PutMethodResponseErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::PutMethodResponseErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::PutMethodResponseErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::PutMethodResponseErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::PutMethodResponseErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::PutMethodResponseErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::PutMethodResponseErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -2231,23 +2237,23 @@ impl From<smithy_http::result::SdkError<crate::error::PutRestApiError>> for Erro
     fn from(err: smithy_http::result::SdkError<crate::error::PutRestApiError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::PutRestApiErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::PutRestApiErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::PutRestApiErrorKind::ConflictError(inner) => {
-                    Error::ConflictError(inner)
+                crate::error::PutRestApiErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
                 }
-                crate::error::PutRestApiErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
+                crate::error::PutRestApiErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
                 }
-                crate::error::PutRestApiErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::PutRestApiErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::PutRestApiErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::PutRestApiErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::PutRestApiErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::PutRestApiErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::PutRestApiErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -2259,23 +2265,23 @@ impl From<smithy_http::result::SdkError<crate::error::TagResourceError>> for Err
     fn from(err: smithy_http::result::SdkError<crate::error::TagResourceError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::TagResourceErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::TagResourceErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::TagResourceErrorKind::ConflictError(inner) => {
-                    Error::ConflictError(inner)
+                crate::error::TagResourceErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
                 }
-                crate::error::TagResourceErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
+                crate::error::TagResourceErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
                 }
-                crate::error::TagResourceErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::TagResourceErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::TagResourceErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::TagResourceErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::TagResourceErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::TagResourceErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -2287,17 +2293,17 @@ impl From<smithy_http::result::SdkError<crate::error::TestInvokeAuthorizerError>
     fn from(err: smithy_http::result::SdkError<crate::error::TestInvokeAuthorizerError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::TestInvokeAuthorizerErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::TestInvokeAuthorizerErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::TestInvokeAuthorizerErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::TestInvokeAuthorizerErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::TestInvokeAuthorizerErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::TestInvokeAuthorizerErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::TestInvokeAuthorizerErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::TestInvokeAuthorizerErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::TestInvokeAuthorizerErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -2311,17 +2317,17 @@ impl From<smithy_http::result::SdkError<crate::error::TestInvokeMethodError>> fo
     fn from(err: smithy_http::result::SdkError<crate::error::TestInvokeMethodError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::TestInvokeMethodErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::TestInvokeMethodErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::TestInvokeMethodErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::TestInvokeMethodErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::TestInvokeMethodErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::TestInvokeMethodErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::TestInvokeMethodErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::TestInvokeMethodErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::TestInvokeMethodErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -2335,20 +2341,20 @@ impl From<smithy_http::result::SdkError<crate::error::UntagResourceError>> for E
     fn from(err: smithy_http::result::SdkError<crate::error::UntagResourceError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UntagResourceErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::UntagResourceErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::UntagResourceErrorKind::ConflictError(inner) => {
-                    Error::ConflictError(inner)
+                crate::error::UntagResourceErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
                 }
-                crate::error::UntagResourceErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::UntagResourceErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::UntagResourceErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::UntagResourceErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::UntagResourceErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::UntagResourceErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -2360,17 +2366,17 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateAccountError>> for E
     fn from(err: smithy_http::result::SdkError<crate::error::UpdateAccountError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateAccountErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::UpdateAccountErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::UpdateAccountErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::UpdateAccountErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::UpdateAccountErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::UpdateAccountErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::UpdateAccountErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::UpdateAccountErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::UpdateAccountErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -2382,20 +2388,20 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateApiKeyError>> for Er
     fn from(err: smithy_http::result::SdkError<crate::error::UpdateApiKeyError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateApiKeyErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::UpdateApiKeyErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::UpdateApiKeyErrorKind::ConflictError(inner) => {
-                    Error::ConflictError(inner)
+                crate::error::UpdateApiKeyErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
                 }
-                crate::error::UpdateApiKeyErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::UpdateApiKeyErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::UpdateApiKeyErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::UpdateApiKeyErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::UpdateApiKeyErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::UpdateApiKeyErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::UpdateApiKeyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -2407,17 +2413,17 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateAuthorizerError>> fo
     fn from(err: smithy_http::result::SdkError<crate::error::UpdateAuthorizerError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateAuthorizerErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::UpdateAuthorizerErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::UpdateAuthorizerErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::UpdateAuthorizerErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::UpdateAuthorizerErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::UpdateAuthorizerErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::UpdateAuthorizerErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::UpdateAuthorizerErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::UpdateAuthorizerErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -2431,20 +2437,20 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateBasePathMappingError
     fn from(err: smithy_http::result::SdkError<crate::error::UpdateBasePathMappingError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateBasePathMappingErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::UpdateBasePathMappingErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::UpdateBasePathMappingErrorKind::ConflictError(inner) => {
-                    Error::ConflictError(inner)
+                crate::error::UpdateBasePathMappingErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
                 }
-                crate::error::UpdateBasePathMappingErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::UpdateBasePathMappingErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::UpdateBasePathMappingErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::UpdateBasePathMappingErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::UpdateBasePathMappingErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::UpdateBasePathMappingErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::UpdateBasePathMappingErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -2460,17 +2466,17 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateClientCertificateErr
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateClientCertificateErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::UpdateClientCertificateErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::UpdateClientCertificateErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::UpdateClientCertificateErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::UpdateClientCertificateErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::UpdateClientCertificateErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::UpdateClientCertificateErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::UpdateClientCertificateErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::UpdateClientCertificateErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -2484,20 +2490,20 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateDeploymentError>> fo
     fn from(err: smithy_http::result::SdkError<crate::error::UpdateDeploymentError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateDeploymentErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::UpdateDeploymentErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::UpdateDeploymentErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::UpdateDeploymentErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::UpdateDeploymentErrorKind::ServiceUnavailableError(inner) => {
-                    Error::ServiceUnavailableError(inner)
+                crate::error::UpdateDeploymentErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
                 }
-                crate::error::UpdateDeploymentErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::UpdateDeploymentErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::UpdateDeploymentErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::UpdateDeploymentErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::UpdateDeploymentErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -2513,23 +2519,23 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateDocumentationPartErr
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateDocumentationPartErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::UpdateDocumentationPartErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::UpdateDocumentationPartErrorKind::ConflictError(inner) => {
-                    Error::ConflictError(inner)
+                crate::error::UpdateDocumentationPartErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
                 }
-                crate::error::UpdateDocumentationPartErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
+                crate::error::UpdateDocumentationPartErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
                 }
-                crate::error::UpdateDocumentationPartErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::UpdateDocumentationPartErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::UpdateDocumentationPartErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::UpdateDocumentationPartErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::UpdateDocumentationPartErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::UpdateDocumentationPartErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::UpdateDocumentationPartErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -2545,20 +2551,20 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateDocumentationVersion
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateDocumentationVersionErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::UpdateDocumentationVersionErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::UpdateDocumentationVersionErrorKind::ConflictError(inner) => {
-                    Error::ConflictError(inner)
+                crate::error::UpdateDocumentationVersionErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
                 }
-                crate::error::UpdateDocumentationVersionErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::UpdateDocumentationVersionErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::UpdateDocumentationVersionErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
-                }
-                crate::error::UpdateDocumentationVersionErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::UpdateDocumentationVersionErrorKind::TooManyRequestsException(
+                    inner,
+                ) => Error::TooManyRequestsException(inner),
+                crate::error::UpdateDocumentationVersionErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::UpdateDocumentationVersionErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -2572,20 +2578,20 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateDomainNameError>> fo
     fn from(err: smithy_http::result::SdkError<crate::error::UpdateDomainNameError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateDomainNameErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::UpdateDomainNameErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::UpdateDomainNameErrorKind::ConflictError(inner) => {
-                    Error::ConflictError(inner)
+                crate::error::UpdateDomainNameErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
                 }
-                crate::error::UpdateDomainNameErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::UpdateDomainNameErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::UpdateDomainNameErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::UpdateDomainNameErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::UpdateDomainNameErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::UpdateDomainNameErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::UpdateDomainNameErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -2599,17 +2605,17 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateGatewayResponseError
     fn from(err: smithy_http::result::SdkError<crate::error::UpdateGatewayResponseError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateGatewayResponseErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::UpdateGatewayResponseErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::UpdateGatewayResponseErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::UpdateGatewayResponseErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::UpdateGatewayResponseErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::UpdateGatewayResponseErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::UpdateGatewayResponseErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::UpdateGatewayResponseErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::UpdateGatewayResponseErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -2623,20 +2629,20 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateIntegrationError>> f
     fn from(err: smithy_http::result::SdkError<crate::error::UpdateIntegrationError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateIntegrationErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::UpdateIntegrationErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::UpdateIntegrationErrorKind::ConflictError(inner) => {
-                    Error::ConflictError(inner)
+                crate::error::UpdateIntegrationErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
                 }
-                crate::error::UpdateIntegrationErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::UpdateIntegrationErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::UpdateIntegrationErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::UpdateIntegrationErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::UpdateIntegrationErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::UpdateIntegrationErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::UpdateIntegrationErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -2652,20 +2658,20 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateIntegrationResponseE
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateIntegrationResponseErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::UpdateIntegrationResponseErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::UpdateIntegrationResponseErrorKind::ConflictError(inner) => {
-                    Error::ConflictError(inner)
+                crate::error::UpdateIntegrationResponseErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
                 }
-                crate::error::UpdateIntegrationResponseErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::UpdateIntegrationResponseErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::UpdateIntegrationResponseErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
-                }
-                crate::error::UpdateIntegrationResponseErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::UpdateIntegrationResponseErrorKind::TooManyRequestsException(
+                    inner,
+                ) => Error::TooManyRequestsException(inner),
+                crate::error::UpdateIntegrationResponseErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::UpdateIntegrationResponseErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -2679,20 +2685,20 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateMethodError>> for Er
     fn from(err: smithy_http::result::SdkError<crate::error::UpdateMethodError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateMethodErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::UpdateMethodErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::UpdateMethodErrorKind::ConflictError(inner) => {
-                    Error::ConflictError(inner)
+                crate::error::UpdateMethodErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
                 }
-                crate::error::UpdateMethodErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::UpdateMethodErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::UpdateMethodErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::UpdateMethodErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::UpdateMethodErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::UpdateMethodErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::UpdateMethodErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -2704,23 +2710,23 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateMethodResponseError>
     fn from(err: smithy_http::result::SdkError<crate::error::UpdateMethodResponseError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateMethodResponseErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::UpdateMethodResponseErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::UpdateMethodResponseErrorKind::ConflictError(inner) => {
-                    Error::ConflictError(inner)
+                crate::error::UpdateMethodResponseErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
                 }
-                crate::error::UpdateMethodResponseErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
+                crate::error::UpdateMethodResponseErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
                 }
-                crate::error::UpdateMethodResponseErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::UpdateMethodResponseErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::UpdateMethodResponseErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::UpdateMethodResponseErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::UpdateMethodResponseErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::UpdateMethodResponseErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::UpdateMethodResponseErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -2734,20 +2740,20 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateModelError>> for Err
     fn from(err: smithy_http::result::SdkError<crate::error::UpdateModelError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateModelErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::UpdateModelErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::UpdateModelErrorKind::ConflictError(inner) => {
-                    Error::ConflictError(inner)
+                crate::error::UpdateModelErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
                 }
-                crate::error::UpdateModelErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::UpdateModelErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::UpdateModelErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::UpdateModelErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::UpdateModelErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::UpdateModelErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::UpdateModelErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -2759,17 +2765,17 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateRequestValidatorErro
     fn from(err: smithy_http::result::SdkError<crate::error::UpdateRequestValidatorError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateRequestValidatorErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::UpdateRequestValidatorErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::UpdateRequestValidatorErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::UpdateRequestValidatorErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::UpdateRequestValidatorErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::UpdateRequestValidatorErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::UpdateRequestValidatorErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::UpdateRequestValidatorErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::UpdateRequestValidatorErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -2783,20 +2789,20 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateResourceError>> for 
     fn from(err: smithy_http::result::SdkError<crate::error::UpdateResourceError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateResourceErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::UpdateResourceErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::UpdateResourceErrorKind::ConflictError(inner) => {
-                    Error::ConflictError(inner)
+                crate::error::UpdateResourceErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
                 }
-                crate::error::UpdateResourceErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::UpdateResourceErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::UpdateResourceErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::UpdateResourceErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::UpdateResourceErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::UpdateResourceErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::UpdateResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -2808,20 +2814,20 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateRestApiError>> for E
     fn from(err: smithy_http::result::SdkError<crate::error::UpdateRestApiError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateRestApiErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::UpdateRestApiErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::UpdateRestApiErrorKind::ConflictError(inner) => {
-                    Error::ConflictError(inner)
+                crate::error::UpdateRestApiErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
                 }
-                crate::error::UpdateRestApiErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::UpdateRestApiErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::UpdateRestApiErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::UpdateRestApiErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::UpdateRestApiErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::UpdateRestApiErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::UpdateRestApiErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -2833,20 +2839,20 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateStageError>> for Err
     fn from(err: smithy_http::result::SdkError<crate::error::UpdateStageError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateStageErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::UpdateStageErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::UpdateStageErrorKind::ConflictError(inner) => {
-                    Error::ConflictError(inner)
+                crate::error::UpdateStageErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
                 }
-                crate::error::UpdateStageErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::UpdateStageErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::UpdateStageErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::UpdateStageErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::UpdateStageErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::UpdateStageErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::UpdateStageErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -2858,17 +2864,17 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateUsageError>> for Err
     fn from(err: smithy_http::result::SdkError<crate::error::UpdateUsageError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateUsageErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::UpdateUsageErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::UpdateUsageErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::UpdateUsageErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::UpdateUsageErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::UpdateUsageErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::UpdateUsageErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::UpdateUsageErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::UpdateUsageErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -2880,20 +2886,20 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateUsagePlanError>> for
     fn from(err: smithy_http::result::SdkError<crate::error::UpdateUsagePlanError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateUsagePlanErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::UpdateUsagePlanErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::UpdateUsagePlanErrorKind::ConflictError(inner) => {
-                    Error::ConflictError(inner)
+                crate::error::UpdateUsagePlanErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
                 }
-                crate::error::UpdateUsagePlanErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::UpdateUsagePlanErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::UpdateUsagePlanErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::UpdateUsagePlanErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::UpdateUsagePlanErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::UpdateUsagePlanErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::UpdateUsagePlanErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -2905,20 +2911,20 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateVpcLinkError>> for E
     fn from(err: smithy_http::result::SdkError<crate::error::UpdateVpcLinkError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateVpcLinkErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::UpdateVpcLinkErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::UpdateVpcLinkErrorKind::ConflictError(inner) => {
-                    Error::ConflictError(inner)
+                crate::error::UpdateVpcLinkErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
                 }
-                crate::error::UpdateVpcLinkErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::UpdateVpcLinkErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::UpdateVpcLinkErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::UpdateVpcLinkErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::UpdateVpcLinkErrorKind::UnauthorizedError(inner) => {
-                    Error::UnauthorizedError(inner)
+                crate::error::UpdateVpcLinkErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
                 }
                 crate::error::UpdateVpcLinkErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },

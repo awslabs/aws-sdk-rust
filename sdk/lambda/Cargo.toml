@@ -20,9 +20,6 @@ path = "..//aws-types"
 path = "..//aws-auth"
 [dependencies.smithy-types]
 path = "..//smithy-types"
-[dependencies.serde]
-version = "1"
-features = ["derive"]
 [dependencies.http]
 version = "0.2"
 [dependencies.aws-http]
@@ -31,9 +28,6 @@ path = "..//aws-http"
 path = "..//aws-sig-auth"
 [dependencies.bytes]
 version = "1"
-[dependencies.serde_json]
-version = "1"
-features = ["float_roundtrip"]
 [dependencies.smithy-json]
 path = "..//smithy-json"
 [features]

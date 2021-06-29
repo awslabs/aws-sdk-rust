@@ -2,23 +2,23 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    InvalidParameterError(crate::error::InvalidParameterError),
-    LimitExceededError(crate::error::LimitExceededError),
-    ResourceAlreadyExistsError(crate::error::ResourceAlreadyExistsError),
-    ResourceInUseError(crate::error::ResourceInUseError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ResourcePreconditionNotMetError(crate::error::ResourcePreconditionNotMetError),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    LimitExceededException(crate::error::LimitExceededException),
+    ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
+    ResourceInUseException(crate::error::ResourceInUseException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ResourcePreconditionNotMetException(crate::error::ResourcePreconditionNotMetException),
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
-            Error::InvalidParameterError(inner) => inner.fmt(f),
-            Error::LimitExceededError(inner) => inner.fmt(f),
-            Error::ResourceAlreadyExistsError(inner) => inner.fmt(f),
-            Error::ResourceInUseError(inner) => inner.fmt(f),
-            Error::ResourceNotFoundError(inner) => inner.fmt(f),
-            Error::ResourcePreconditionNotMetError(inner) => inner.fmt(f),
+            Error::InvalidParameterException(inner) => inner.fmt(f),
+            Error::LimitExceededException(inner) => inner.fmt(f),
+            Error::ResourceAlreadyExistsException(inner) => inner.fmt(f),
+            Error::ResourceInUseException(inner) => inner.fmt(f),
+            Error::ResourceNotFoundException(inner) => inner.fmt(f),
+            Error::ResourcePreconditionNotMetException(inner) => inner.fmt(f),
             Error::Unhandled(inner) => inner.fmt(f),
         }
     }
@@ -29,9 +29,9 @@ impl From<smithy_http::result::SdkError<crate::error::CancelJournalKinesisStream
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
-                crate::error::CancelJournalKinesisStreamErrorKind::InvalidParameterError(inner) => Error::InvalidParameterError(inner),
-                crate::error::CancelJournalKinesisStreamErrorKind::ResourceNotFoundError(inner) => Error::ResourceNotFoundError(inner),
-                crate::error::CancelJournalKinesisStreamErrorKind::ResourcePreconditionNotMetError(inner) => Error::ResourcePreconditionNotMetError(inner),
+                crate::error::CancelJournalKinesisStreamErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+                crate::error::CancelJournalKinesisStreamErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::CancelJournalKinesisStreamErrorKind::ResourcePreconditionNotMetException(inner) => Error::ResourcePreconditionNotMetException(inner),
                 crate::error::CancelJournalKinesisStreamErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
@@ -42,17 +42,17 @@ impl From<smithy_http::result::SdkError<crate::error::CreateLedgerError>> for Er
     fn from(err: smithy_http::result::SdkError<crate::error::CreateLedgerError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateLedgerErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
+                crate::error::CreateLedgerErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
                 }
-                crate::error::CreateLedgerErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
+                crate::error::CreateLedgerErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
                 }
-                crate::error::CreateLedgerErrorKind::ResourceAlreadyExistsError(inner) => {
-                    Error::ResourceAlreadyExistsError(inner)
+                crate::error::CreateLedgerErrorKind::ResourceAlreadyExistsException(inner) => {
+                    Error::ResourceAlreadyExistsException(inner)
                 }
-                crate::error::CreateLedgerErrorKind::ResourceInUseError(inner) => {
-                    Error::ResourceInUseError(inner)
+                crate::error::CreateLedgerErrorKind::ResourceInUseException(inner) => {
+                    Error::ResourceInUseException(inner)
                 }
                 crate::error::CreateLedgerErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -64,17 +64,17 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteLedgerError>> for Er
     fn from(err: smithy_http::result::SdkError<crate::error::DeleteLedgerError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteLedgerErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
+                crate::error::DeleteLedgerErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
                 }
-                crate::error::DeleteLedgerErrorKind::ResourceInUseError(inner) => {
-                    Error::ResourceInUseError(inner)
+                crate::error::DeleteLedgerErrorKind::ResourceInUseException(inner) => {
+                    Error::ResourceInUseException(inner)
                 }
-                crate::error::DeleteLedgerErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::DeleteLedgerErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
-                crate::error::DeleteLedgerErrorKind::ResourcePreconditionNotMetError(inner) => {
-                    Error::ResourcePreconditionNotMetError(inner)
+                crate::error::DeleteLedgerErrorKind::ResourcePreconditionNotMetException(inner) => {
+                    Error::ResourcePreconditionNotMetException(inner)
                 }
                 crate::error::DeleteLedgerErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -90,9 +90,9 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeJournalKinesisStre
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
-                crate::error::DescribeJournalKinesisStreamErrorKind::InvalidParameterError(inner) => Error::InvalidParameterError(inner),
-                crate::error::DescribeJournalKinesisStreamErrorKind::ResourceNotFoundError(inner) => Error::ResourceNotFoundError(inner),
-                crate::error::DescribeJournalKinesisStreamErrorKind::ResourcePreconditionNotMetError(inner) => Error::ResourcePreconditionNotMetError(inner),
+                crate::error::DescribeJournalKinesisStreamErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+                crate::error::DescribeJournalKinesisStreamErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::DescribeJournalKinesisStreamErrorKind::ResourcePreconditionNotMetException(inner) => Error::ResourcePreconditionNotMetException(inner),
                 crate::error::DescribeJournalKinesisStreamErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
@@ -105,9 +105,9 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeJournalS3ExportErr
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeJournalS3ExportErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
-                }
+                crate::error::DescribeJournalS3ExportErrorKind::ResourceNotFoundException(
+                    inner,
+                ) => Error::ResourceNotFoundException(inner),
                 crate::error::DescribeJournalS3ExportErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -120,11 +120,11 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeLedgerError>> for 
     fn from(err: smithy_http::result::SdkError<crate::error::DescribeLedgerError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeLedgerErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
+                crate::error::DescribeLedgerErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
                 }
-                crate::error::DescribeLedgerErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::DescribeLedgerErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
                 crate::error::DescribeLedgerErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -136,12 +136,12 @@ impl From<smithy_http::result::SdkError<crate::error::ExportJournalToS3Error>> f
     fn from(err: smithy_http::result::SdkError<crate::error::ExportJournalToS3Error>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ExportJournalToS3ErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::ExportJournalToS3ErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
-                crate::error::ExportJournalToS3ErrorKind::ResourcePreconditionNotMetError(
+                crate::error::ExportJournalToS3ErrorKind::ResourcePreconditionNotMetException(
                     inner,
-                ) => Error::ResourcePreconditionNotMetError(inner),
+                ) => Error::ResourcePreconditionNotMetException(inner),
                 crate::error::ExportJournalToS3ErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -154,14 +154,14 @@ impl From<smithy_http::result::SdkError<crate::error::GetBlockError>> for Error 
     fn from(err: smithy_http::result::SdkError<crate::error::GetBlockError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetBlockErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
+                crate::error::GetBlockErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
                 }
-                crate::error::GetBlockErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::GetBlockErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
-                crate::error::GetBlockErrorKind::ResourcePreconditionNotMetError(inner) => {
-                    Error::ResourcePreconditionNotMetError(inner)
+                crate::error::GetBlockErrorKind::ResourcePreconditionNotMetException(inner) => {
+                    Error::ResourcePreconditionNotMetException(inner)
                 }
                 crate::error::GetBlockErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -173,14 +173,14 @@ impl From<smithy_http::result::SdkError<crate::error::GetDigestError>> for Error
     fn from(err: smithy_http::result::SdkError<crate::error::GetDigestError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetDigestErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
+                crate::error::GetDigestErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
                 }
-                crate::error::GetDigestErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::GetDigestErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
-                crate::error::GetDigestErrorKind::ResourcePreconditionNotMetError(inner) => {
-                    Error::ResourcePreconditionNotMetError(inner)
+                crate::error::GetDigestErrorKind::ResourcePreconditionNotMetException(inner) => {
+                    Error::ResourcePreconditionNotMetException(inner)
                 }
                 crate::error::GetDigestErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -192,14 +192,14 @@ impl From<smithy_http::result::SdkError<crate::error::GetRevisionError>> for Err
     fn from(err: smithy_http::result::SdkError<crate::error::GetRevisionError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetRevisionErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
+                crate::error::GetRevisionErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
                 }
-                crate::error::GetRevisionErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::GetRevisionErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
-                crate::error::GetRevisionErrorKind::ResourcePreconditionNotMetError(inner) => {
-                    Error::ResourcePreconditionNotMetError(inner)
+                crate::error::GetRevisionErrorKind::ResourcePreconditionNotMetException(inner) => {
+                    Error::ResourcePreconditionNotMetException(inner)
                 }
                 crate::error::GetRevisionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -215,9 +215,9 @@ impl From<smithy_http::result::SdkError<crate::error::ListJournalKinesisStreamsF
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
-                crate::error::ListJournalKinesisStreamsForLedgerErrorKind::InvalidParameterError(inner) => Error::InvalidParameterError(inner),
-                crate::error::ListJournalKinesisStreamsForLedgerErrorKind::ResourceNotFoundError(inner) => Error::ResourceNotFoundError(inner),
-                crate::error::ListJournalKinesisStreamsForLedgerErrorKind::ResourcePreconditionNotMetError(inner) => Error::ResourcePreconditionNotMetError(inner),
+                crate::error::ListJournalKinesisStreamsForLedgerErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+                crate::error::ListJournalKinesisStreamsForLedgerErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::ListJournalKinesisStreamsForLedgerErrorKind::ResourcePreconditionNotMetException(inner) => Error::ResourcePreconditionNotMetException(inner),
                 crate::error::ListJournalKinesisStreamsForLedgerErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
@@ -266,11 +266,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListTagsForResourceError>>
     fn from(err: smithy_http::result::SdkError<crate::error::ListTagsForResourceError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListTagsForResourceErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
+                crate::error::ListTagsForResourceErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
                 }
-                crate::error::ListTagsForResourceErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::ListTagsForResourceErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
                 crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -283,20 +283,12 @@ impl From<smithy_http::result::SdkError<crate::error::ListTagsForResourceError>>
 impl From<smithy_http::result::SdkError<crate::error::StreamJournalToKinesisError>> for Error {
     fn from(err: smithy_http::result::SdkError<crate::error::StreamJournalToKinesisError>) -> Self {
         match err {
-            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::StreamJournalToKinesisErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
-                }
-                crate::error::StreamJournalToKinesisErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
-                }
-                crate::error::StreamJournalToKinesisErrorKind::ResourcePreconditionNotMetError(
-                    inner,
-                ) => Error::ResourcePreconditionNotMetError(inner),
-                crate::error::StreamJournalToKinesisErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
+            smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::StreamJournalToKinesisErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+                crate::error::StreamJournalToKinesisErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::StreamJournalToKinesisErrorKind::ResourcePreconditionNotMetException(inner) => Error::ResourcePreconditionNotMetException(inner),
+                crate::error::StreamJournalToKinesisErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -305,11 +297,11 @@ impl From<smithy_http::result::SdkError<crate::error::TagResourceError>> for Err
     fn from(err: smithy_http::result::SdkError<crate::error::TagResourceError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::TagResourceErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
+                crate::error::TagResourceErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
                 }
-                crate::error::TagResourceErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::TagResourceErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
                 crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -321,11 +313,11 @@ impl From<smithy_http::result::SdkError<crate::error::UntagResourceError>> for E
     fn from(err: smithy_http::result::SdkError<crate::error::UntagResourceError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UntagResourceErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
+                crate::error::UntagResourceErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
                 }
-                crate::error::UntagResourceErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::UntagResourceErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
                 crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -337,11 +329,11 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateLedgerError>> for Er
     fn from(err: smithy_http::result::SdkError<crate::error::UpdateLedgerError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateLedgerErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
+                crate::error::UpdateLedgerErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
                 }
-                crate::error::UpdateLedgerErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::UpdateLedgerErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
                 crate::error::UpdateLedgerErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -355,12 +347,12 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateLedgerPermissionsMod
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateLedgerPermissionsModeErrorKind::InvalidParameterError(
+                crate::error::UpdateLedgerPermissionsModeErrorKind::InvalidParameterException(
                     inner,
-                ) => Error::InvalidParameterError(inner),
-                crate::error::UpdateLedgerPermissionsModeErrorKind::ResourceNotFoundError(
+                ) => Error::InvalidParameterException(inner),
+                crate::error::UpdateLedgerPermissionsModeErrorKind::ResourceNotFoundException(
                     inner,
-                ) => Error::ResourceNotFoundError(inner),
+                ) => Error::ResourceNotFoundException(inner),
                 crate::error::UpdateLedgerPermissionsModeErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }

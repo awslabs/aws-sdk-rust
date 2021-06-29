@@ -9637,7 +9637,7 @@ pub fn parse_enable_vgw_route_propagation_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_enable_volume_io_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::EnableVolumeIOOutput, crate::error::EnableVolumeIOError> {
+) -> std::result::Result<crate::output::EnableVolumeIoOutput, crate::error::EnableVolumeIOError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::EnableVolumeIOError::unhandled)?;
     Err(crate::error::EnableVolumeIOError::generic(generic))
@@ -9646,7 +9646,7 @@ pub fn parse_enable_volume_io_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_enable_volume_io_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::EnableVolumeIOOutput, crate::error::EnableVolumeIOError> {
+) -> std::result::Result<crate::output::EnableVolumeIoOutput, crate::error::EnableVolumeIOError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::enable_volume_io_output::Builder::default();
