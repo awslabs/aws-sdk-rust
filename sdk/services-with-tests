@@ -1,1 +1,0 @@
--p aws-sdk-batch -p aws-sdk-dynamodb -p aws-sdk-iam -p aws-sdk-kms -p aws-sdk-qldbsession -p aws-sdk-s3 -p aws-sdk-sqs
