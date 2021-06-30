@@ -31,6 +31,9 @@ The alpha SDK for Rust currently supports the checked services below. If you wan
 - [x] [Amazon Ec2](https://github.com/awslabs/aws-sdk-rust/issues/18)
 - [x] [Amazon SES v2](https://github.com/awslabs/aws-sdk-rust/issues/27)
 - [x] [Amazon Cloudwatch Logs](https://github.com/awslabs/aws-sdk-rust/issues/30)
+- [x] [Amazon ECR](https://github.com/awslabs/aws-sdk-rust/issues/34)
+- [x] Amazon EKS
+- [x] Cloudwatch (metrics)
 
 ------
 - [ ] Amazon Access Analyzer
@@ -63,7 +66,6 @@ The alpha SDK for Rust currently supports the checked services below. If you wan
 - [ ] Amazon Cloudhsmv2
 - [ ] Amazon Cloudsearch
 - [ ] Amazon Cloudsearchdomain
-- [ ] Amazon Cloudwatch
 - [ ] Amazon Cloud Trail
 - [ ] Amazon Code Artifact
 - [ ] Amazon Code Build
@@ -100,8 +102,6 @@ The alpha SDK for Rust currently supports the checked services below. If you wan
 - [ ] Amazon DS
 - [ ] Amazon Ebs
 - [ ] Amazon Ec2-Instance-Connect
-- [ ] [Amazon ECR](https://github.com/awslabs/aws-sdk-rust/issues/34)
-- [ ] Amazon Eks
 - [ ] Amazon Elasticache
 - [ ] Amazon Elastic Beanstalk
 - [ ] Amazon Elastic Filesystem
